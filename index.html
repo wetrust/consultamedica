@@ -36,10 +36,10 @@
         <div class="col-4">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#">Nueva Paciente</a>
+              <a class="nav-link" href="#" id="irPaciente">Nueva Paciente</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Nueva Consulta</a>
+              <a class="nav-link" href="#" id="irConsulta">Nueva Consulta</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
@@ -50,32 +50,48 @@
           </ul>
         </div>
     </div>
-    <div class="container" id="consulta">
+    <div class="container" id="consulta" style="display:none;">
       <h1>Nueva Consulta / Exámen / Procedimiento</h1>
       <div class="row">
         <div class="col">
-        1 of 2
+          <form>
+            <div class="form-group">
+              <label for="fum">Fecha de última mestruación</label>
+              <input class="form-control" type="date" value="2011-08-19" id="fum">
+              <small id="fumHelp" class="form-text text-muted">Seleccione una fecha.</small>
+            </div>
+            <div class="form-group">
+              <label for="fee">Fecha de última mestruación</label>
+              <input class="form-control" type="date" value="2017-06-25" id="fee">
+              <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
+            </div>
+            <button class="btn btn-primary" id="irExamen">Elegir el tipo de exámen / ecografía</button>
+          </form>
         </div>
-        <div class="col-4">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-        </div>
+      </div>
     </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script>
+      $( document ).ready(function() {
+        console.log( 'ready' );
+      });
+      $( "#irPaciente" ).on( "click", function() {
+        console.log( 'paciente' );
+      });
+      $( "#irConsulta" ).on( "click", function() {
+        show_hide('home');
+        show_hide('consulta');
+      });
+      
+      function show_hide(id){
+        if (document.getElementById){
+          var el = document.getElementById(id);
+          el.style.display = (el.style.display == 'none') ? 'block' : 'none';
+        }
+      }
+    </script>
   </body>
 </html>
