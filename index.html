@@ -62,23 +62,33 @@
       <h2>Nueva Consulta / Exámen / Procedimiento</h2>
       <div class="row">
         <div class="col">
-          <h4>Seleccione un paciente</h4>
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">Seleccione un paciente</h3>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col">
-          <h4>O realice un exámen rápido</h4>
-          <form>
-            <div class="form-group">
-              <label for="fum">Fecha de última mestruación</label>
-              <input class="form-control" type="date" value="2011-08-19" id="fum">
-              <small id="fumHelp" class="form-text text-muted">Seleccione una fecha.</small>
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">o realice un exámen rápido</h3>
+              <form>
+                <div class="form-group">
+                  <label for="fum">Fecha de última mestruación</label>
+                  <input class="form-control" type="date" value="2011-08-19" id="fum">
+                  <small id="fumHelp" class="form-text text-muted">Seleccione una fecha.</small>
+                </div>
+                <div class="form-group">
+                  <label for="fee">Fecha de exámen</label>
+                  <input class="form-control" type="date" value="2017-06-25" id="fee">
+                  <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
+                </div>
+                <button class="btn btn-primary" id="irExamen">Continuar y elegir el tipo de exámen / ecografía</button>
+              </form>
             </div>
-            <div class="form-group">
-              <label for="fee">Fecha de exámen</label>
-              <input class="form-control" type="date" value="2017-06-25" id="fee">
-              <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
-            </div>
-            <button class="btn btn-primary" id="irExamen">Continuar y elegir el tipo de exámen / ecografía</button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
