@@ -77,10 +77,10 @@
         <div class="col">
           <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Ecografía Obstétrica</a>
+              <a class="nav-link active" data-toggle="tab" href="#ecoObst" role="tab">Ecografía Obstétrica</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Ecografía Ginecológica</a>
+              <a class="nav-link" data-toggle="tab" href="#ecoGine" role="tab">Ecografía Ginecológica</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="tab" href="#messages" role="tab">No disponible</a>
@@ -90,7 +90,7 @@
             </li>
           </ul>
           <div class="tab-content">
-            <div class="tab-pane active" id="home" role="tabpanel">
+            <div class="tab-pane active" id="ecoObst" role="tabpanel">
               <div class="card">
                 <div class="card-block">
                   <h4 class="card-title">Ecografía Obstétrica 1° Trimestre</h4>
@@ -119,7 +119,7 @@
                 </div>
               </div>
             </div>
-            <div class="tab-pane" id="profile" role="tabpanel">...</div>
+            <div class="tab-pane" id="ecoGine" role="tabpanel">...</div>
             <div class="tab-pane" id="messages" role="tabpanel">...</div>
             <div class="tab-pane" id="settings" role="tabpanel">...</div>
           </div>
@@ -142,8 +142,8 @@
         show_hide('consulta');
       });
       $( "#irExamen" ).on( "click", function() {
-        show_hide('home');
         show_hide('consulta');
+        show_hide('tipoExamen');
       });
       
       function show_hide(id){
