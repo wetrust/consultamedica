@@ -96,7 +96,7 @@
                   <h4 class="card-title">Ecografía Obstétrica 1° Trimestre</h4>
                   <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                   <p class="card-text">Su objetivo es.</p>
-                  <a href="#" class="card-link">Ir al exámen</a>
+                  <a href="#" class="card-link" id="irEcoObsPrimTrim">Ir al exámen</a>
                   <a href="#" class="card-link">Imágen de referencia</a>
                 </div>
               </div>
@@ -105,7 +105,7 @@
                   <h4 class="card-title">Ecografía Obstétrica 2° - 3° Trimestre</h4>
                   <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                   <p class="card-text">Su objetivo es.</p>
-                  <a href="#" class="card-link">Ir al exámen</a>
+                  <a href="#" class="card-link" id="irEcoObsSegTrim">Ir al exámen</a>
                   <a href="#" class="card-link">Imágen de referencia</a>
                 </div>
               </div>
@@ -114,7 +114,7 @@
                   <h4 class="card-title">Flujometría Doppler Materna y/o Fetal</h4>
                   <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                   <p class="card-text">Su objetivo es.</p>
-                  <a href="#" class="card-link">Ir al exámen</a>
+                  <a href="#" class="card-link" id="irEcoDoppler">Ir al exámen</a>
                   <a href="#" class="card-link">Imágen de referencia</a>
                 </div>
               </div>
@@ -123,6 +123,27 @@
             <div class="tab-pane" id="messages" role="tabpanel">...</div>
             <div class="tab-pane" id="settings" role="tabpanel">...</div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="ecoObsPrimTrim" style="display:none;">
+      <h2>Ecografía Obstétrica de Primer Trimestre</h2>
+      <div class="row">
+        <div class="col">
+        </div>
+      </div>
+    </div>
+    <div class="container" id="ecoObsSegTrim" style="display:none;">
+      <h2>Ecografía Obstétrica de Segundo / Tercer trimestre</h2>
+      <div class="row">
+        <div class="col">
+        </div>
+      </div>
+    </div>
+    <div class="container" id="ecoDoppler" style="display:none;">
+      <h2>Ecografía Doppler Materno fetal</h2>
+      <div class="row">
+        <div class="col">
         </div>
       </div>
     </div>
@@ -145,7 +166,18 @@
         show_hide('consulta');
         show_hide('tipoExamen');
       });
-      
+      $( "#irEcoObsPrimTrim" ).on( "click", function() {
+        show_hide('tipoExamen');
+        show_hide('ecoObsPrimTrim');
+      });
+      $( "#irEcoObsSegTrim" ).on( "click", function() {
+        show_hide('tipoExamen');
+        show_hide('ecoObsSegTrim');
+      });
+     $( "#irEcoDopple" ).on( "click", function() {
+        show_hide('tipoExamen');
+        show_hide('ecoDopple');
+      });
       function show_hide(id){
         if (document.getElementById){
           var el = document.getElementById(id);
