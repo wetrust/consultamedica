@@ -65,8 +65,19 @@
           <div class="card">
             <div class="card-block">
               <h3 class="card-title">Seleccione un paciente</h3>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <form>
+                <div class="form-group">
+                  <label for="buscarpacienteid">Buscar por ID</label>
+                  <input class="form-control" type="text" value="12345678-9" id="buscarpacienteid">
+                  <small id="idHelp" class="form-text text-muted">Escriba un ID para buscar.</small>
+                </div>
+                <div class="form-group">
+                  <label for="buscarpacienteapellido">Buscar por apellido</label>
+                  <input class="form-control" type="text" value="Juanita Pérez" id="buscarpacientenombre">
+                  <small id="apellidoHelp" class="form-text text-muted">Escriba un apellido para buscar.</small>
+                </div>
+                <button class="btn btn-primary" id="irExamenPaciente">Continuar y elegir el tipo de exámen / ecografía</button>
+              </form>
             </div>
           </div>
         </div>
