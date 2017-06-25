@@ -49,9 +49,10 @@
             </li>
           </ul>
         </div>
+      </div>
     </div>
     <div class="container" id="consulta" style="display:none;">
-      <h1>Nueva Consulta / Exámen / Procedimiento</h1>
+      <h2>Nueva Consulta / Exámen / Procedimiento</h2>
       <div class="row">
         <div class="col">
           <form>
@@ -65,8 +66,63 @@
               <input class="form-control" type="date" value="2017-06-25" id="fee">
               <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
             </div>
-            <button class="btn btn-primary" id="irExamen">Elegir el tipo de exámen / ecografía</button>
+            <button class="btn btn-primary" id="irExamen">Continuar y elegir el tipo de exámen / ecografía</button>
           </form>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="tipoExamen" style="display:none;">
+      <h2>Elija un tipo de Consulta / Exámen / Procedimiento</h2>
+      <div class="row">
+        <div class="col">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Ecografía Obstétrica</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Ecografía Ginecológica</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#messages" role="tab">No disponible</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#settings" role="tab">No Disponible</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="home" role="tabpanel">
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title">Ecografía Obstétrica 1° Trimestre</h4>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Su objetivo es.</p>
+                  <a href="#" class="card-link">Ir al exámen</a>
+                  <a href="#" class="card-link">Imágen de referencia</a>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title">Ecografía Obstétrica 2° - 3° Trimestre</h4>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Su objetivo es.</p>
+                  <a href="#" class="card-link">Ir al exámen</a>
+                  <a href="#" class="card-link">Imágen de referencia</a>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title">Flujometría Doppler Materna y/o Fetal</h4>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Su objetivo es.</p>
+                  <a href="#" class="card-link">Ir al exámen</a>
+                  <a href="#" class="card-link">Imágen de referencia</a>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="profile" role="tabpanel">...</div>
+            <div class="tab-pane" id="messages" role="tabpanel">...</div>
+            <div class="tab-pane" id="settings" role="tabpanel">...</div>
+          </div>
         </div>
       </div>
     </div>
@@ -82,6 +138,10 @@
         console.log( 'paciente' );
       });
       $( "#irConsulta" ).on( "click", function() {
+        show_hide('home');
+        show_hide('consulta');
+      });
+      $( "#irExamen" ).on( "click", function() {
         show_hide('home');
         show_hide('consulta');
       });
