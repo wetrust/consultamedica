@@ -33,22 +33,22 @@ function activarBotones() {
     $('#modalGenerico').modal({
       show: true
     });
-    $('#modalTitle').innerHTML("Imágen Ecografía Primer Trimestre");
-    $('#popupBody').innerHTML("<img src='img/eco1.jpg' class='img-fluid' alt='Responsive image'>");
+    $('#modalTitle').val("Imágen Ecografía Primer Trimestre");
+    $('#popupBody').HTML("<img src='img/eco1.jpg' class='img-fluid' alt='Responsive image'>");
   });
   $( "#imgEcoObstSegTrim" ).on( "click", function() {
     $('#modalGenerico').modal({
       show: true
     });
-    $('#modalTitle').innerHTML("Imágen Ecografía Segundo - Tercer Trimestre");
-    $('#popupBody').innerHTML("<img src='img/eco2.jpg' class='img-fluid' alt='Responsive image'>");
+    $('#modalTitle').val("Imágen Ecografía Segundo - Tercer Trimestre");
+    $('#popupBody').HTML("<img src='img/eco2.jpg' class='img-fluid' alt='Responsive image'>");
   });
   $( "#imgEcoDoppler" ).on( "click", function() {
     $('#modalGenerico').modal({
       show: true
     });
-    $('#modalTitle').innerHTML("Imágen Ecografía Doppler Materno - Fetal");
-    $('#popupBody').innerHTML("<img src='img/eco3.jpg' class='img-fluid' alt='Responsive image'>");
+    $('#modalTitle').val("Imágen Ecografía Doppler Materno - Fetal");
+    $('#popupBody').HTML("<img src='img/eco3.jpg' class='img-fluid' alt='Responsive image'>");
   });
   
 }
