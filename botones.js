@@ -6,6 +6,13 @@ function activarBotones() {
     show_hide('home');
     show_hide('consulta');
   });
+  $( "#irPacienteNav" ).on( "click", function() {
+    console.log( 'paciente' );
+  });
+  $( "#irConsultaNav" ).on( "click", function() {
+    show_hide('home');
+    show_hide('consulta');
+  });
   $( "#irExamen" ).on( "click", function() {
     show_hide('consulta');
     show_hide('tipoExamen');
