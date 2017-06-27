@@ -30,25 +30,19 @@ function activarBotones() {
     show_hide('ecoDopple');
   });
   $( "#imgEcoObsrimTrim" ).on( "click", function() {
-    $('#modalTitle').val("Imágen Ecografía Primer Trimestre");
+    $('#popupTitle').val("Imágen Ecografía Primer Trimestre");
     $('#popupBody').html("<img src='img/eco1.png' class='img-fluid' alt='Responsive image'>");
-    $('#modalGenerico').modal({
-      show: true
-    });
+    $('#popupGenerico').modal('hide')
   });
   $( "#imgEcoObstSegTrim" ).on( "click", function() {
-    $('#modalTitle').val("Imágen Ecografía Segundo - Tercer Trimestre");
+    $('#popupTitle').val("Imágen Ecografía Segundo - Tercer Trimestre");
     $('#popupBody').html("<img src='img/eco2.png' class='img-fluid' alt='Responsive image'>");
-    $('#modalGenerico').modal({
-      show: true
-    });
+    $('#popupGenerico').modal('hide')
   });
   $( "#imgEcoDoppler" ).on( "click", function() {
-    $('#modalTitle').val("Imágen Ecografía Doppler Materno - Fetal");
+    $('#popupTitle').val("Imágen Ecografía Doppler Materno - Fetal");
     $('#popupBody').html("<img src='img/eco3.png' class='img-fluid' alt='Responsive image'>");
-    $('#modalGenerico').modal({
-      show: true
-    });
+    $('#popupGenerico').modal('hide')
   });
   
 }
