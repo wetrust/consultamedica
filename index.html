@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="consulta.css">
   </head>
   <body>
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
@@ -28,10 +29,10 @@
       </div>
     </nav>
     <div class="container" id="home">
-      <div class="jumbotron jumbotron-fluid" style="background-image: url('http://www.hdfondos.eu/pictures/2015/0908/1/blurred-greenish-background-4k-wallpapers-234758.jpg'); background-repeat: no-repeat;background-size:cover;">
+      <div class="jumbotron jumbotron-fluid bienvenida">
         <div class="container">
           <h1 class="display-3">Consulta Médica</h1>
-          <p class="lead">Domingo 25 de Junio 2017.</p>
+          <p class="lead" id="fechaHora"></p>
         </div>
       </div>
       <div class="row">
@@ -61,7 +62,7 @@
     <div class="container" id="consulta" style="display:none;">
       <h2>Nueva Consulta / Exámen / Procedimiento</h2>
       <div class="row">
-        <div class="col">
+        <div class="col col-xs-12">
           <div class="card">
             <div class="card-block">
               <h3 class="card-title">Seleccione un paciente</h3>
@@ -81,7 +82,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col col-xs-12">
           <div class="card">
             <div class="card-block">
               <h3 class="card-title">o realice un exámen rápido</h3>
@@ -212,81 +213,27 @@
         </div>
       </div>
     </div>
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="funciones.js"></script>
+    <script src="graficos.js"></script>
+    <script src="botones.js"></script>
+    <script src="main.js"></script>
     <script>
+
+      var navegadorDowgrade, Hoy[];
+      var DiasEsp=["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
       $( document ).ready(function() {
-        $('#graficolcn').highcharts({
-        title: {
-            text: 'LCN',
-            x: -20 //center
-        },
-        xAxis: {
-            categories: ['6', '7', '8', '9', '10',  '11', '12', '13', '14', '15']
-        },
-        yAxis: {
-            title: {
-                text: 'Milimetros (mm)'
-            },
-            tickPositions: [0.2, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 11]
-        },
-        credits: {enabled:false},
-        colors: ['#313131', '#313131', '#313131'],
-        plotOptions: {
-            series: {
-                enableMouseTracking: false
-            }
-         },
-        series: [{
-            name: '(-) 2DE',
-            type: "line",
-            marker: { enabled: false },
-            data: [0.26, 0.77, 1.4, 2.05, 2.75,3.65, 4.64, 5.82, 7.1, 8.02]
-        }, {
-            name: 'Media',
-            type: "line",
-            marker: { enabled: false },
-            data: [0.38, 0.89, 1.54, 2.25, 3.05,4.05, 5.29, 6.65, 7.98, 9.01]
-        }, {
-            name: '(+) 2DE',
-            type: "line",
-            marker: { enabled: false },
-            data: [0.53, 1.04, 1.71, 2.49, 3.42,4.64, 6.12, 7.67, 9.01, 10.01]
-        }]
-    });
+        puedoGuardarEnElNavegador();
+        queDiaEs();
+        cualEsMiIp();
+        cargarDatosGenerales();
+        construirGraficos();
+        activarBotones();
       });
-      $( "#irPaciente" ).on( "click", function() {
-        console.log( 'paciente' );
-      });
-      $( "#irConsulta" ).on( "click", function() {
-        show_hide('home');
-        show_hide('consulta');
-      });
-      $( "#irExamen" ).on( "click", function() {
-        show_hide('consulta');
-        show_hide('tipoExamen');
-      });
-      $( "#irEcoObsPrimTrim" ).on( "click", function() {
-        show_hide('tipoExamen');
-        show_hide('ecoObsPrimTrim');
-      });
-      $( "#irEcoObsSegTrim" ).on( "click", function() {
-        show_hide('tipoExamen');
-        show_hide('ecoObsSegTrim');
-      });
-     $( "#irEcoDopple" ).on( "click", function() {
-        show_hide('tipoExamen');
-        show_hide('ecoDopple');
-      });
-      function show_hide(id){
-        if (document.getElementById){
-          var el = document.getElementById(id);
-          el.style.display = (el.style.display == 'none') ? 'block' : 'none';
-        }
-      }
     </script>
   </body>
 </html>
