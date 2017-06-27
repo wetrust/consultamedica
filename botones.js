@@ -32,17 +32,17 @@ function activarBotones() {
   $( "#imgEcoObsrimTrim" ).on( "click", function() {
     $('#popupTitle').val("Imágen Ecografía Primer Trimestre");
     $('#popupBody').html("<img src='img/eco1.png' class='img-fluid' alt='Responsive image'>");
-    $('#popupGenerico').modal('hide')
+    $('#popupGenerico').modal('show')
   });
   $( "#imgEcoObstSegTrim" ).on( "click", function() {
     $('#popupTitle').val("Imágen Ecografía Segundo - Tercer Trimestre");
     $('#popupBody').html("<img src='img/eco2.png' class='img-fluid' alt='Responsive image'>");
-    $('#popupGenerico').modal('hide')
+    $('#popupGenerico').modal('show')
   });
   $( "#imgEcoDoppler" ).on( "click", function() {
     $('#popupTitle').val("Imágen Ecografía Doppler Materno - Fetal");
     $('#popupBody').html("<img src='img/eco3.png' class='img-fluid' alt='Responsive image'>");
-    $('#popupGenerico').modal('hide')
+    $('#popupGenerico').modal('show')
   });
   
 }
