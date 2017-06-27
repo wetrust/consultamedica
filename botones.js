@@ -34,21 +34,21 @@ function activarBotones() {
       show: true
     });
     $('#modalTitle').val("Imágen Ecografía Primer Trimestre");
-    $('#popupBody').html("<img src='img/eco1.jpg' class='img-fluid' alt='Responsive image'>");
+    $('#popupBody').html("<img src='img/eco1.png' class='img-fluid' alt='Responsive image'>");
   });
   $( "#imgEcoObstSegTrim" ).on( "click", function() {
     $('#modalGenerico').modal({
       show: true
     });
     $('#modalTitle').val("Imágen Ecografía Segundo - Tercer Trimestre");
-    $('#popupBody').html("<img src='img/eco2.jpg' class='img-fluid' alt='Responsive image'>");
+    $('#popupBody').html("<img src='img/eco2.png' class='img-fluid' alt='Responsive image'>");
   });
   $( "#imgEcoDoppler" ).on( "click", function() {
     $('#modalGenerico').modal({
       show: true
     });
     $('#modalTitle').val("Imágen Ecografía Doppler Materno - Fetal");
-    $('#popupBody').html("<img src='img/eco3.jpg' class='img-fluid' alt='Responsive image'>");
+    $('#popupBody').html("<img src='img/eco3.png' class='img-fluid' alt='Responsive image'>");
   });
   
 }
