@@ -26,7 +26,7 @@ function queDiaEs(){
 function cualEsMiIp(){
 
   if (navegadorDowgrade == false) {
-    $.getJSON( "http://jsonip.com/?callback=?", function( data ) {
+    $.getJSON( "https://jsonip.com/?callback=?", function( data ) {
       localStorage.lastLoginIP = data.ip;
     });
   }
