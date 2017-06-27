@@ -1,4 +1,4 @@
-function activarBotones(){
+function activarBotones() {
   $( "#irPaciente" ).on( "click", function() {
     console.log( 'paciente' );
   });

@@ -3,11 +3,6 @@ function puedoGuardarEnElNavegador() {
     navegadorDowgrade = false;
     if (localStorage.ecografista != null) {
       var ecografista = JSON.parse(localStorage["ecografista"]);
-      for (var i = 0; i < ecografista.length; i++) {
-        var node = document.createElement("option");
-        node.value = ecografista[i];
-        document.getElementById("ecografista-list").appendChild(node);
-      } 
     }
   }
   else{
@@ -23,6 +18,7 @@ function queDiaEs(){
     localStorage.lastLoginDate = d;
   }
   Hoy.push(d.getDay());
+  Hoy.push(d.getDate());
   Hoy.push(d.getMonth());
   Hoy.push(d.getFullYear());
 };
@@ -30,9 +26,7 @@ function queDiaEs(){
 function cualEsMiIp(){
 
   if (navegadorDowgrade == false) {
-    $.getJSON(
-      "http://jsonip.com/?callback=?"
-    ).done(function (data) {
+    $.getJSON( "http://jsonip.com/?callback=?", function( data ) {
       localStorage.lastLoginIP = data.ip;
     });
   }

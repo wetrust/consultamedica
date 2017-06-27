@@ -1,4 +1,4 @@
-construirGraficos(){
+function construirGraficos() {
         $('#graficolcn').highcharts({
         title: {
             text: 'LCN',
