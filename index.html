@@ -14,17 +14,17 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Consulta Médica</a>
+      <a class="navbar-brand" href="#"><i class="fa fa-hospital-o" aria-hidden="true"></i> Consulta Médica</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hidden-md-up" href="#" id="irPaciente" title="Crear un nuevo paciente"><i class="fa fa-user-plus" aria-hidden="true"></i> Nueva Paciente</a>
+            <a class="nav-link hidden-md-up" href="#" id="irPacienteNav" title="Crear un nuevo paciente"><i class="fa fa-user-plus" aria-hidden="true"></i> Nueva Paciente</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hidden-md-up" href="#" id="irConsulta" title="Crear una nueva consulta"><i class="fa fa-user-md" aria-hidden="true"></i> Nueva Consulta</a>
+            <a class="nav-link hidden-md-up" href="#" id="irConsultaNav" title="Crear una nueva consulta"><i class="fa fa-user-md" aria-hidden="true"></i> Nueva Consulta</a>
           </li>
           <li class="nav-item">
             <a class="nav-link hidden-md-up" href="#" title="Crear y modificar reserva de pacientes"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Administrar Agenda</a>
@@ -68,7 +68,15 @@
       </div>
     </div>
     <div class="container" id="consulta" style="display:none;">
-      <h2 class="mt-3 mb-3">Nueva Consulta / Exámen / Procedimiento</h2>
+      <div class="jumbotron jumbotron-fluid bienvenida">
+        <div class="container">
+          <h3>Nueva Consulta</h3>
+        </div>
+      </div>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+        <li class="breadcrumb-item active">Nueva Consulta</li>
+      </ol>
       <div class="row">
         <div class="col col-xs-12">
           <div class="card">
