@@ -38,3 +38,7 @@ function show_hide(id){
     el.style.display = (el.style.display == 'none') ? 'block' : 'none';
   }
 };
+
+function activarTooltips(){
+  $('[data-toggle="tooltip"]').tooltip();
+}
