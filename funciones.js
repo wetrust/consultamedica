@@ -1,4 +1,4 @@
-function puedoGuardarEnElNavegador(){
+function puedoGuardarEnElNavegador() {
   if (window.localStorage) {
     navegadorDowgrade = false;
     if (localStorage.ecografista != null) {
@@ -30,7 +30,9 @@ function queDiaEs(){
 function cualEsMiIp(){
 
   if (navegadorDowgrade == false) {
-    $.getJSON("http://jsonip.com/?callback=?", function (data) {
+    $.getJSON(
+      "http://jsonip.com/?callback=?"
+    ).done(function (data) {
       localStorage.lastLoginIP = data.ip;
     });
   }
