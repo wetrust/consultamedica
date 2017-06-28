@@ -112,6 +112,66 @@ $( '#graficoCc' ).on( 'click', function() {
 $( '#graficoCa' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico CA");
     $('#popupBody').html("<div id='graficoCaView'></div>");
+    $('#graficoCaView').highcharts({
+       title: {
+           text: 'CA**',
+           x: -20
+       },
+       subtitle: {
+           text: 'Milimetros (mm)',
+           x: -20
+       },
+       plotOptions: {
+           series: {
+               enableMouseTracking: false
+           }
+       },
+       yAxis: {
+           title: { text: 'Milimetros (mm)' },
+           tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
+       },
+       colors: ['#313131', '#313131', '#313131'],
+       xAxis: {
+           categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+       },
+       credits: { enabled: false },
+       series: [{
+           type: "line",
+           name: 'Pct. 3',
+           marker: { enabled: false },
+           data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
+       }, {
+           type: "line",
+           name: 'Pct 97',
+           marker: { enabled: false },
+           data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
+       }, {
+           type: "line",
+           name: 'CA',
+           dashStyle: "Dot",
+           marker: { symbol: 'square' },
+           lineWidth: 0,
+           data: (function () {
+               var data = [];
+               var edadGest = parseInt(localStorage.eg) - 1;
+
+               for (i = 12; i <= edadGest; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               data.push({
+                   y: parseInt(document.getElementById("ca").value),
+               });
+               for (i = edadGest + 1; i <= 39; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               return data;
+           }())
+       }]
+   });
     $('#popupGenerico').modal('show')
 });
 $( '#graficoLf' ).on( 'click', function() {
