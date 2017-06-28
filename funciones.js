@@ -120,3 +120,4 @@ function dbpPct() {
 
   document.getElementById("pctcc").innerHTML = (parseInt(95 / (uno) * (dos) + 3));
  }
+}
