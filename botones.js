@@ -47,11 +47,13 @@ function activarBotones() {
  $( '#dbp' ).on( 'change', dbpPct);
  $( '#fum').on('change', function() {
    if (navegadorDowgrade == false) {
+      localStorage.fum = $("#fum").val();
       localStorage.eg = calcularEG();
     }
  });
  $( '#fee').on('change', function() {
    if (navegadorDowgrade == false) {
+      localStorage.fee = $("#fee").val();
       localStorage.eg = calcularEG();
     }
  });
