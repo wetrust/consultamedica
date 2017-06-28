@@ -177,15 +177,196 @@ $( '#graficoCa' ).on( 'click', function() {
 $( '#graficoLf' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico LF");
     $('#popupBody').html("<div id='graficoLfView'></div>");
+    $('#graficoLfView').highcharts({
+       title: {
+           text: 'LF',
+           x: -20
+       },
+       subtitle: {
+           text: 'Milimetros (mm)',
+           x: -20
+       },
+       plotOptions: {
+           series: {
+               enableMouseTracking: false
+           }
+       },
+       yAxis: {
+           title: { text: 'Milimetros (mm)' },
+           tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+       },
+       colors: ['#313131', '#313131', '#313131'],
+       xAxis: {
+           categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+       },
+       credits: { enabled: false },
+       series: [{
+           type: "line",
+           name: 'Pct. 3',
+           marker: { enabled: false },
+           data: [6,9,12,14,17,20,22,25,27,30,32,35,37,40,42,45,47,49,52,54,56,58,59,61,62,64,65,66,67]
+       }, {
+           type: "line",
+           name: 'Pct. 97',
+           marker: { enabled: false },
+           data: [12,15,18,21,24,28,31,34,38,41,44,47,50,53,55,57,60,62,65,67,70,71,73,75,77,79,80,81,82]
+       }, {
+           type: "line",
+           name: 'LF',
+           dashStyle: "Dot",
+           marker: { symbol: 'square' },
+           lineWidth: 0,
+           data: (function () {
+               var data = [];
+               var edadGest = parseInt(localStorage.eg) - 1;
+
+               for (i = 12; i <= edadGest; i++) {
+                   data.push({ y: 0, });
+               }
+               data.push({
+                   y: parseInt(document.getElementById("lf").value),
+               });
+               for (i = edadGest + 1; i <= 39; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               return data;
+           }())
+       }]
+   });
     $('#popupGenerico').modal('show')
 });
 $( '#graficoLh' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico LH");
     $('#popupBody').html("<div id='graficoLhView'></div>");
+    $('#graficoLhView').highcharts({
+            title: {
+                text: 'Largo Humeral',
+                x: -20
+            },
+            subtitle: {
+                text: 'Milimetros (mm)',
+                x: -20
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Milimetros (mm)' },
+                tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            },
+            credits: { enabled: false },
+            series: [{
+                type: "line",
+                name: 'Pct. 5',
+                marker: { enabled: false },
+                data: [4.8, 7.6, 10.3, 13.1, 15.8, 18.5, 21.2, 23.8, 26.3, 28.8, 31.2, 33.5, 35.7, 37.9, 39.9, 41.9, 43.7, 45.5, 47.2, 48.9, 50.4, 52.1, 53.4, 54.8, 56.2, 57.6, 59.8, 60.4, 61.9]
+            }, {
+                type: "line",
+                name: 'Pct. 95',
+                marker: { enabled: false },
+                data: [12.3, 15.1, 17.9, 20.7, 23.5, 26.3, 29.1, 31.6, 34.2, 36.7, 39.2, 41.6, 43.9, 46.1, 48.1, 50.1, 52.1, 53.9, 55.6, 57.3, 58.9, 60.5, 62.1, 63.5, 64.9, 66.4, 67.8, 69.3, 70.8]
+            }, {
+                type: "line",
+                name: 'Humero',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    var data = [];
+                    var edadGest = parseInt(localStorage.eg) - 1;
+
+                    for (i = 12; i <= edadGest; i++) {
+                        data.push({ y: 0, });
+                    }
+                    data.push({
+                        y: parseInt(document.getElementById("lh").value),
+                    });
+                    for (i = edadGest + 1; i <= 39; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+        });
     $('#popupGenerico').modal('show')
 });
 $( '#graficoCerebelo' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Cerebelo");
     $('#popupBody').html("<div id='graficoCerebeloView'></div>");
+    $('#graficoCerebeloView').highcharts({
+            title: {
+                text: 'Diámetro de Cerebelo',
+                x: -20
+            },
+            subtitle: {
+                text: 'Milimetros (mm)',
+                x: -20
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Milimetros (mm)' },
+                tickPositions: [5, 10,20,30,40,50,60,70]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories:['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            },
+            credits: {enabled: false},
+            series: [{
+                type: "line",
+                name: '-2DE',
+                marker: {enabled: false},
+                data: [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
+            }, {
+                type: "line",
+                name: 'media',
+                marker: {enabled: false},
+                data: [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
+            }, {
+                type: "line",
+                name: '+2DE',
+                marker: {enabled: false},
+                data: [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
+            }, {
+                type: "line",
+                name: 'Cerebelo',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    var data = [];
+                    var edadGest = parseInt(localStorage.eg) - 1;
+
+                    for (i = 15; i <= edadGest; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    data.push({
+                        y: parseInt(document.getElementById("cerebelo").value),
+                    });
+                    for (i = edadGest + 1; i <= 39; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+        });
     $('#popupGenerico').modal('show')
 });
