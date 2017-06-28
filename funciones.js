@@ -60,12 +60,12 @@ function calcularEG(){
   FUM = new Date (FUM);
   FExamen = new Date (FExamen);
   
-  EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / oneweek);
+  EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana);
   
   if (FExame.getTime() < FUM.getTime()) {
     EdadGestacional = "0";
   }
-  else if (((FExame.getTime() - FUM.getTime()) / oneweek) > 42) {
+  else if (((FExame.getTime() - FUM.getTime()) / unasemana) > 42) {
     EdadGestacional = "42";
   }
   else {
