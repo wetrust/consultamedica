@@ -50,11 +50,11 @@ function calcularEG(){
   
  if (navegadorDowgrade == false) {
     FUM = localStorage.fum;
-		FExamen = localStorage.fee;
-	}
+	FExamen = localStorage.fee;
+  }
   else{ 
     FUM = $("#fum").val();
-		FExamen = $("#fee").val();
+    FExamen = $("#fee").val();
   }
   
   FUM = new Date (FUM);
@@ -64,8 +64,10 @@ function calcularEG(){
   
   if (FExame.getTime() < FUM.getTime()) {
     EdadGestacional = "0";
+  }
   else if (((FExame.getTime() - FUM.getTime()) / oneweek) > 42) {
     EdadGestacional = "42";
+  }
   else {
     EdadGestacional = Math.floor(EdadGestacional)+"."+Math.round((EdadGestacional - Math.floor(EdadGestacional))*7);
   }
