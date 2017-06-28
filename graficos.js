@@ -38,3 +38,94 @@ function construirGraficos() {
         }]
     });
 }
+
+$( '#graficoDbp' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico DBP");
+    $('#popupBody').html("<div id='graficoDbpView'></div>");
+    $('#popupGenerico').modal('show')
+});
+$( '#graficoCc' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico CC");
+    $('#popupBody').html("<div id='graficoCcView'></div>");
+    $('#graficoCcView').highcharts({
+       title: {
+           text: 'CC',
+           x: -20
+       },
+       subtitle: {
+           text: 'Milimetros (mm)',
+           x: -20
+       },
+       plotOptions: {
+           series: {
+               enableMouseTracking: false
+           }
+       },
+       yAxis: {
+           title: { text: 'Milimetros (mm)' },
+           tickPositions: [30, 72, 114, 156, 198, 240, 282, 324, 366, 408]
+       },
+       colors: ['#313131', '#313131', '#313131'],
+       xAxis: {
+           categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+       },
+       credits: {enabled: false},
+       series: [{
+           type: "line",
+           name: 'Pct. 3',
+           marker: {enabled: false},
+           data: [70, 80, 90, 100, 113, 126, 137, 149, 161, 172, 183, 194, 204, 214, 224, 233, 242, 250, 258, 267, 274, 280, 287, 293, 299, 303, 308, 311, 315]
+       }, {
+           type: "line",
+           name: 'Pct. 97',
+           marker: {enabled: false},
+           data: [90,100,111,124,136,150,165,179,193,206,219,232,243,256,268,279,290,300,310,319,328,336,343,351,358,363,368,373,377]
+       }, {
+           type: "line",
+           name: 'CC',
+           dashStyle: "Dot",
+           marker: { symbol: 'square' },
+           lineWidth: 0,
+           data: (function () {
+               var data = [];
+               var edadGest = parseInt(localStorage.eg) - 1;
+
+               for (i = 12; i <= edadGest; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               data.push({
+                   y: parseInt(document.getElementById("cc").value),
+               });
+               for (i = edadGest + 1; i <= 39; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               return data;
+           }())
+       }]
+   });
+    $('#popupGenerico').modal('show')
+});
+$( '#graficoCa' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico CA");
+    $('#popupBody').html("<div id='graficoCaView'></div>");
+    $('#popupGenerico').modal('show')
+});
+$( '#graficoLf' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico LF");
+    $('#popupBody').html("<div id='graficoLfView'></div>");
+    $('#popupGenerico').modal('show')
+});
+$( '#graficoLh' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico LH");
+    $('#popupBody').html("<div id='graficoLhView'></div>");
+    $('#popupGenerico').modal('show')
+});
+$( '#graficoCerebelo' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico Cerebelo");
+    $('#popupBody').html("<div id='graficoCerebeloView'></div>");
+    $('#popupGenerico').modal('show')
+});
