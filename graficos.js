@@ -42,6 +42,61 @@ function construirGraficos() {
 $( '#graficoDbp' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico DBP");
     $('#popupBody').html("<div id='graficoDbpView'></div>");
+    $('#graficoDbpView').highcharts({
+       title: {
+           text: 'DBP',
+           x: -20
+       },
+       subtitle: {
+           text: 'Milimetros (mm)',
+           x: -20
+       },
+       plotOptions: {
+           series: {
+               enableMouseTracking: false
+           }
+       },
+       yAxis: {
+           title: { text: 'Milimetros (mm)' },
+           tickPositions: [30, 72, 114, 156, 198, 240, 282, 324, 366, 408]
+       },
+       colors: ['#313131', '#313131', '#313131'],
+       xAxis: {
+           categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+       },
+       credits: {enabled: false},
+       series: [{
+           type: "line",
+           name: 'Pct. 50',
+           marker: {enabled: false},
+           data: [21,24,27,30,34,37,41,44,47,50,53,56,59,62,64,67,70,72,75,78,81,82,84,86,88,90,92,94,95]
+       }, {
+           type: "line",
+           name: 'DBP',
+           dashStyle: "Dot",
+           marker: { symbol: 'square' },
+           lineWidth: 0,
+           data: (function () {
+               var data = [];
+               var edadGest = parseInt(localStorage.eg) - 1;
+
+               for (i = 12; i <= edadGest; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               data.push({
+                   y: parseInt(document.getElementById("dbp").value),
+               });
+               for (i = edadGest + 1; i <= 39; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               return data;
+           }())
+       }]
+   });
     $('#popupGenerico').modal('show')
 });
 $( '#graficoCc' ).on( 'click', function() {
