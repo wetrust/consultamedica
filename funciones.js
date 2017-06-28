@@ -62,10 +62,10 @@ function calcularEG(){
   
   EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana);
   
-  if (FExame.getTime() < FUM.getTime()) {
+  if (FExamen.getTime() < FUM.getTime()) {
     EdadGestacional = "0";
   }
-  else if (((FExame.getTime() - FUM.getTime()) / unasemana) > 42) {
+  else if (((FExamen.getTime() - FUM.getTime()) / unasemana) > 42) {
     EdadGestacional = "42";
   }
   else {
