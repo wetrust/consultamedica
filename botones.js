@@ -44,8 +44,10 @@ function activarBotones() {
     $('#popupBody').html("<img src='img/eco3.png' class='img-fluid' alt='Responsive image'>");
     $('#popupGenerico').modal('show')
   });
- $( '#dbp' ).on( 'change', dbpPct);
- $( '#cc' ).on( 'change', pctcc());
+ $( '#cc' ).change( pctcc);
+ $( '#ca' ).change( pctca);
+ $( '#lf' ).change( pctlf);
+ $( '#cb' ).change( pctcb);
  $( '#fum').on('change', function() {
    if (navegadorDowgrade == false) {
       localStorage.fum = $("#fum").val();
