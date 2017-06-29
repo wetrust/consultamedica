@@ -45,6 +45,7 @@ function activarBotones() {
     $('#popupGenerico').modal('show')
   });
  $( '#dbp' ).on( 'change', dbpPct);
+ $( '#cc' ).on( 'change', pctcc());
  $( '#fum').on('change', function() {
    if (navegadorDowgrade == false) {
       localStorage.fum = $("#fum").val();
