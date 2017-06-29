@@ -58,7 +58,7 @@ $( '#graficoDbp' ).on( 'click', function() {
        },
        yAxis: {
            title: { text: 'Milimetros (mm)' },
-           tickPositions: [10,30, 72, 90, 114]
+           tickPositions: [10,30, 50, 72, 90, 114]
        },
        colors: ['#313131', '#313131', '#313131'],
        xAxis: {
