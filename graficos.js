@@ -429,8 +429,7 @@ $( '#graficoCerebelo' ).on( 'click', function() {
 
 function pctcc() {
 
- var pct3 = [];
- var pct97 = [];
+ var pct3 = [], pct97 = [];
 
  pct3[0] = 64;pct3[1] = 74;pct3[2] = 88;pct3[3] = 100;pct3[4] = 113;pct3[5] = 126;
  pct3[6] = 137;pct3[7] = 149;pct3[8] = 161;pct3[9] = 172;pct3[10] = 183;
@@ -446,20 +445,22 @@ function pctcc() {
  pct97[20] = 328;pct97[21] = 336;pct97[22] = 343;pct97[23] = 351;pct97[24] = 358;
  pct97[25] = 363;pct97[26] = 368;pct97[27] = 373;pct97[28] = 377;
 
- var eg=0;
- var cc=0;
+ var eg=0, cc=0;
+
  eg=parseFloat(localStorage.eg);
  cc=parseInt(document.getElementById("cc").value);
 
- if (eg < 12) {document.getElementById("ccPct").innerHTML="0";}
- else if (eg > 40){document.getElementById("ccPct").innerHTML="0";}
+ if (eg < 12) {
+         $("#ccPct").val("0");
+ }
+ else if (eg > 40){ 
+         $("#ccPct").val("0");
+ }
  else {
-
   eg = eg - 12;
   eg = parseInt(eg);
   var uno=pct97[eg] - pct3[eg];
   var dos=cc - pct3[eg];
-
-  document.getElementById("ccPct").innerHTML = (parseInt(95 / (uno) * (dos) + 3));
+  $("#ccPct").val(parseInt(95 / (uno) * (dos) + 3));
  }
 };
