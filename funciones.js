@@ -221,7 +221,7 @@ var pct2dsmas = [];
  var eg=0;
  var cb=0;
  eg=parseFloat(localStorage.eg);
- cb=parseInt(document.getElementById("cb").value);
+ cb=parseInt(document.getElementById("cerebelo").value);
 
  if (eg < 15) {$("#cbPct").val("0");}
  else if (eg > 40){$("#cbPct").val("0");}
@@ -278,7 +278,6 @@ function pctlh() {
  else if (eg > 40){$("#lhPct").val("0");}
  else {
 
-  eg = eg - 15;
   eg = parseInt(eg);
   var uno=pct95[eg] - pct05[eg];
   var dos=lh - pct05[eg];
