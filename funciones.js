@@ -231,7 +231,7 @@ var pct2dsmas = [];
   eg = parseInt(eg);
   var uno=pct2dsmas[eg] - pct2ds[eg];
   var dos=cb - pct2ds[eg];
-  $("#cbPct").val(parseInt(95 / (uno) * (dos)));
+  $("#cerebeloPct").val(parseInt(95 / (uno) * (dos)));
  }
 };
 
