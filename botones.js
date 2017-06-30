@@ -47,7 +47,7 @@ function activarBotones() {
  $( '#cc' ).change( pctcc);
  $( '#ca' ).change( pctca);
  $( '#lf' ).change( pctlf);
- $( '#cb' ).change( pctcb);
+ $( '#cerebelo' ).change( pctcb);
  $( '#fum').on('change', function() {
    if (navegadorDowgrade == false) {
       localStorage.fum = $("#fum").val();
