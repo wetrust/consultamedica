@@ -54,12 +54,14 @@ function activarBotones() {
    if (navegadorDowgrade == false) {
       localStorage.fum = $("#fum").val();
       localStorage.eg = calcularEG();
+      $("#egPrimTrim").val(localStorage.eg);
     }
  });
  $( '#fee').on('change', function() {
    if (navegadorDowgrade == false) {
       localStorage.fee = $("#fee").val();
       localStorage.eg = calcularEG();
+      $("#egPrimTrim").val(localStorage.eg);
     }
  });
 }
