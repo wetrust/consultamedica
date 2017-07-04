@@ -48,7 +48,6 @@ function activarBotones() {
  $( '#ca' ).change( pctca);
  $( '#lf' ).change( pctlf);
  $( '#cerebelo' ).change( pctcb);
- $( '#lh' ).change( pctlh);
  $( '#saco' ).change( egsaco); 
  $( '#lcn' ).change( eglcn); 
   
