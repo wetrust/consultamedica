@@ -517,6 +517,5 @@ $( '#graficoLcn' ).on( 'click', function() {
             }())
         }]
       });
-    });
     $('#popupGenerico').modal('show');
 });
