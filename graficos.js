@@ -519,3 +519,75 @@ $( '#graficoLcn' ).on( 'click', function() {
       });
     $('#popupGenerico').modal('show');
 });
+
+$( '#graficoSaco' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico Saco");
+    $('#popupBody').html("<div id='graficoSacoView'></div>");
+    $('#graficoSacoView').highcharts({
+             title: {
+                 text: 'Promedio Saco Gestacional',
+                 x: -20
+             },
+             subtitle: {
+                 text: 'Milimetros (mm)',
+                 x: -20
+             },
+             plotOptions: {
+                 series: {
+                     enableMouseTracking: false
+                 }
+             },
+             yAxis: {
+                 title: { text: '' },
+                 tickPositions: [-1, 1.0, 2.5, 4.0]
+             },
+             colors: ['#313131', '#313131', '#313131'],
+             xAxis: {
+                 categories:['4.2','4.3','4.4','4.5','4.6','5','5.1','5.2','5.3','5.4','5.5','5.6','6','6.1','6.2','6.3','6.4','6.5','6.6','7','7.1','7.2','7.3','7.4','7.5','7.6','8']
+             },
+             credits: { enabled: false },
+             series: [{
+                 type: "line",
+                 name: '-DE',
+                 marker: { enabled: false },
+                 data: [0.012,0.101,0.145,0.214,0.293,0.41,0.51,0.61,0.7,0.8,0.9,0.99,1.07,1.15,1.22,1.33,1.39,1.49,1.59,1.67,1.76,1.86,1.94,2.04,2.1,2.2,2.3],
+                 dashStyle: 'shortdot'
+             },{
+                 type: "line",
+                 name: 'media',
+                 marker: { enabled: false },
+                 data: [0.4,0.5,0.6,0.7,0.8,0.9,1,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,1.99,2.09,2.18,2.29,2.41,2.5,2.6,2.7,2.8,2.9,3]
+             },{
+                 type: "line",
+                 name: '+DE',
+                 marker: { enabled: false },
+                 data: [0.99,1.09,1.16,1.26,1.36,1.51,1.6,1.7,1.8,1.9,1.99,2.11,2.19,2.29,2.41,2.51,2.61,2.7,2.8,2.9,3,3.1,3.2,3.3,3.4,3.5,3.6],
+                 dashStyle: 'shortdot'
+             }, {
+                 type: "line",
+                 name: 'Saco gestacional [Hellmann y col. Am. J O & G 1968; 1.03(6)789 800]',
+                 dashStyle: "Dot",
+                 marker: { symbol: 'square' },
+                 lineWidth: 0,
+                 data: (function () {
+                     var data = [];
+                     var categories = [4.2,4.3,4.4,4.5,4.6,5,5.1,5.2,5.3,5.4,5.5,5.6,6,6.1,6.2,6.3,6.4,6.5,6.6,7,7.1,7.2,7.3,7.4,7.5,7.6,8];
+                     var edadGest = parseInt(localStorage.eg);
+
+                     for (i = 0; i <= 27; i++) {
+
+                         if (categories[i] == edadGest){
+                              data.push({
+                                   y: document.getElementById("saco").value /10,
+                              });
+                         }
+                         else{
+                              data.push({ y: -2, });
+                         }
+                     }
+                     return data;
+                 }())
+             }]
+         });
+    $('#popupGenerico').modal('show');
+});
