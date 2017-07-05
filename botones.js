@@ -25,9 +25,9 @@ function activarBotones() {
     show_hide('tipoExamen');
     show_hide('ecoObsSegTrim');
   });
-  $( '#irEcoDopple' ).on( 'click', function() {
+  $( '#irEcoDoppler' ).on( 'click', function() {
     show_hide('tipoExamen');
-    show_hide('ecoDopple');
+    show_hide('ecoDoppler');
   });
   $( '#imgEcoObsrimTrim' ).on( 'click', function() {
     $('#popupTitle').html("Imágen Ecografía Primer Trimestre");
