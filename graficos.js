@@ -96,7 +96,7 @@ $( '#graficoDbp' ).on( 'click', function() {
                    });
                }
                data.push({
-                   y: parseInt(document.getElementById("dbp").value),
+                   y: parseInt($("#dbp").val()),
                });
                for (i = edadGest + 1; i <= 39; i++) {
                    data.push({
