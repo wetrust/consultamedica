@@ -111,6 +111,7 @@ function deDBP() {
 
 	var eg=0, dbp=0;
 	eg=parseFloat(localStorage.eg);
+	dbp = $("#dbp").val();
 
 	if (eg < 12) {
 		$("#dbpDE").val('0');
