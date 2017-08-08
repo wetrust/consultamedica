@@ -69,6 +69,7 @@ function activarBotones() {
     $('#popupBody').html("<img src='img/eco3.png' class='img-fluid' alt='Responsive image'>");
     $('#popupGenerico').modal('show')
   });
+ $( '#dbp' ).change( deDBP);
  $( '#cc' ).change( pctcc);
  $( '#ca' ).change( pctca);
  $( '#lf' ).change( pctlf);
