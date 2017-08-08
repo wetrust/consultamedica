@@ -126,7 +126,8 @@ function deDBP() {
 
 		var uno = DBPMas2DE[eg] - DBPMenos2DE[eg];
 		var dos = dbp - DBPMenos2DE[eg];
-		$("#dbpDE").val((parseInt(95 / (uno) * (dos) + 3)));
+		var resultado = (parseInt(95 / (uno) * (dos) + 3));
+		$("#dbpDE").val(resultado);
 	}
 }
 
