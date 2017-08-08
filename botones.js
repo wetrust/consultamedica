@@ -87,6 +87,7 @@ function activarBotones() {
       localStorage.eg = calcularEG();
       $("#egPrimTrim").val(localStorage.eg);
       $("#egSegTrim").val(localStorage.eg);
+      $('#egDoppler').val(localStorage.eg);
     }
  });
  $( '#fee').on('change', function() {
@@ -95,6 +96,7 @@ function activarBotones() {
       localStorage.eg = calcularEG();
       $("#egPrimTrim").val(localStorage.eg);
       $("#egSegTrim").val(localStorage.eg);
+      $('#egDoppler').val(localStorage.eg);
     }
  });
 }
