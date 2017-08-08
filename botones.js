@@ -77,6 +77,7 @@ function activarBotones() {
  $( '#saco' ).change( egsaco); 
  $( '#lcn' ).change( eglcn);
  $( '#dv' ).change( pctdv);
+ $( '#lh').change( pctlh);
   
  $( '#fum').on('change', function() {
    if (navegadorDowgrade == false) {
