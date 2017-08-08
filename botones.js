@@ -6,6 +6,18 @@ function activarBotones() {
     show_hide('home');
     show_hide('consulta');
   });
+  $( '#volverConsultadesdeTipo' ).on( 'click', function() {
+    show_hide('tipoExamen');
+    show_hide('consulta');
+  });
+  $( '#volverConsultadesdeEco1' ).on( 'click', function() {
+    show_hide('ecoObsPrimTrim');
+    show_hide('consulta');
+  });
+  $( '#volverTipodesdeEco1' ).on( 'click', function() {
+    show_hide('tipoExamen');
+    show_hide('ecoObsPrimTrim');
+  });
   $( '#irPacienteNav' ).on( 'click', function() {
     console.log( 'paciente' );
   });
