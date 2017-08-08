@@ -78,6 +78,8 @@ function activarBotones() {
  $( '#lcn' ).change( eglcn);
  $( '#dv' ).change( pctdv);
  $( '#lh').change( pctlh);
+ $( '#aud').change( pctut);
+ $( '#aui').change( pctut);
   
  $( '#fum').on('change', function() {
    if (navegadorDowgrade == false) {
