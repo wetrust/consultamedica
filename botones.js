@@ -14,9 +14,22 @@ function activarBotones() {
     show_hide('ecoObsPrimTrim');
     show_hide('consulta');
   });
-  $( '#volverTipodesdeEco1' ).on( 'click', function() {
+  $( '#volverConsultadesdeEco2' ).on( 'click', function() {
+    show_hide('ecoObsSegTrim');
+    show_hide('consulta');
+  });
+  $( '#volverTipodesdeEco2' ).on( 'click', function() {
     show_hide('tipoExamen');
-    show_hide('ecoObsPrimTrim');
+    show_hide('ecoObsSegTrim');
+  });
+  
+  $( '#volverConsultadesdeDoppler' ).on( 'click', function() {
+    show_hide('ecoDoppler');
+    show_hide('consulta');
+  });
+  $( '#volverTipodesdeDoppler' ).on( 'click', function() {
+    show_hide('tipoExamen');
+    show_hide('ecoDoppler');
   });
   $( '#irPacienteNav' ).on( 'click', function() {
     console.log( 'paciente' );
