@@ -651,7 +651,7 @@ $( '#graficoAud' ).on( 'click', function() {
                         });
                     }
                     data.push({
-                            y: parseFloat($('#aud').val();),
+                            y: parseFloat($('#aud').val()),
                         });
                     for (i = edadGest +1; i <= 39; i ++ ) {
                         data.push({
@@ -714,7 +714,7 @@ $( '#graficoAui' ).on( 'click', function() {
                         });
                     }
                     data.push({
-                            y: parseFloat($('#aui').val();),
+                            y: parseFloat($('#aui').val()),
                         });
                     for (i = edadGest +1; i <= 39; i ++ ) {
                         data.push({
@@ -777,7 +777,7 @@ $( '#graficoAu' ).on( 'click', function() {
                         });
                     }
                     data.push({
-                            y: parseFloat($('#auprom').val();),
+                            y: parseFloat($('#auprom').val()),
                         });
                     for (i = edadGest +1; i <= 39; i ++ ) {
                         data.push({
