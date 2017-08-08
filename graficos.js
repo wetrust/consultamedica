@@ -67,9 +67,19 @@ $( '#graficoDbp' ).on( 'click', function() {
        credits: {enabled: false},
        series: [{
            type: "line",
-           name: 'Pct. 50',
+           name: '(-) 2DE',
            marker: {enabled: false},
+           data: [14,17,19,25,29,33,34,38,41,43,46,49,52,54,57,61,63,65,69,69,74,74,77,78,78,81,85,88]
+       }, {
+           type: "line",
+           name: 'Pct. 50',
+           marker: { enabled: false },
            data: [21,24,27,30,34,37,41,44,47,50,53,56,59,62,64,67,70,72,75,78,81,82,84,86,88,90,92,94,95]
+       }, {
+            type: "line",
+            name: '(+) 2DE',
+            marker: { enabled: false },
+            data: [25,29,33,35,41,42,46,50,52,56,59,63,66,70,71,75,77,81,83,87,88,91,94,95,97,99,97,106]        
        }, {
            type: "line",
            name: 'DBP',
