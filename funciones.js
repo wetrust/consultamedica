@@ -605,19 +605,22 @@ function pctut() {
  var eg=0;
  
  eg=parseFloat(localStorage.eg);
- var utd = parseFloat($("#utd").val());
- var uti = parseFloat($("#uti").val());
+ var utd = parseFloat($("#aud").val());
+ var uti = parseFloat($("#aui").val());
+	
+	var utprom = ((uti + utd) / 2)
+	$("#auprom").val(utprom.toFixed(2));
 
  if (eg < 10) {  
-   $("#utdpct").val('0');
-   $("#pctuti").val('0');
-   $("#pctutp").val('0');
+   $("#audPct").val('0');
+   $("#auiPct").val('0');
+   $("#auPct").val('0');
  }
  else if (eg > 40)
  {
-   $("#pctutd").val('0');
-   $("#pctuti").val('0');
-   $("#pctutp").val('0');
+   $("#audPct").val('0');
+   $("#auiPct").val('0');
+   $("#auPct").val('0');
  }
  else {
     eg = eg - 10;
@@ -625,22 +628,20 @@ function pctut() {
       eg = parseInt(eg);
       var uno=pct95[eg] - pct5[eg];
       var dos=utd - pct5[eg];
-     $("#pctutd").val(parseInt(90 / (uno) * (dos) + 5));
+     $("#audPct").val(parseInt(90 / (uno) * (dos) + 5));
  	}
  	if (uti > 0){
       eg = parseInt(eg);
       var uno=pct95[eg] - pct5[eg];
       var dos=uti - pct5[eg];
-     $("#pctuti").val(parseInt(90 / (uno) * (dos) + 5));
+     $("#auiPct").val(parseInt(90 / (uno) * (dos) + 5));
  	}
   	if (utd > 0){
  	 if (uti > 0){
       eg = parseInt(eg);
       var uno=pct95[eg] - pct5[eg];
       var dos = ((uti + utd) / 2) - pct5[eg];
-      var utprom = ((uti + utd) / 2)
-      $("#utp").innerHTML = utprom.toFixed(2);
-     $("#pctutp").innerHTML=(parseInt(90 / (uno) * (dos) + 5));
+     $("#auPct").val=(parseInt(90 / (uno) * (dos) + 5));
  	 }
  	}
  }
