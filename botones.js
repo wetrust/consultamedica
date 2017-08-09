@@ -76,10 +76,14 @@ function activarBotones() {
  $( '#cerebelo' ).change( pctcb);
  $( '#saco' ).change( egsaco); 
  $( '#lcn' ).change( eglcn);
- $( '#dv' ).change( pctdv);
  $( '#lh').change( pctlh);
+  
+ //doppler
  $( '#aud').change( pctut);
  $( '#aui').change( pctut);
+ $( '#dv' ).change( pctdv);
+ $( 'ipau' ).change( pctau);
+ $( 'ipacm' ).change( pctacm);
   
  $( '#fum').on('change', function() {
    if (navegadorDowgrade == false) {
