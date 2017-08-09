@@ -625,25 +625,24 @@ function pctut() {
 	 }
 	 else {
 		eg = eg - 10;
+		var uno=0;
+		var dos=0;
 		if (utd > 0){
 			eg = parseInt(eg);
-			var uno=pct95[eg] - pct5[eg];
-			var dos=utd - pct5[eg];
-			$("#audPct").val(parseInt(90 / (uno) * (dos) + 5));
+			uno=pct95[eg] - pct5[eg];
+			dos=utd - pct5[eg];
+			$('#audPct').val(parseInt(90 / (uno) * (dos) + 5));
 		}
 		if (uti > 0){
 			eg = parseInt(eg);
-			var uno=pct95[eg] - pct5[eg];
-			var dos=uti - pct5[eg];
-			$("#auiPct").val(parseInt(90 / (uno) * (dos) + 5));
+			uno=pct95[eg] - pct5[eg];
+			dos=uti - pct5[eg];
+			$('#auiPct').val(parseInt(90 / (uno) * (dos) + 5));
 		}
-		if (utd > 0){
-			if (uti > 0){
-				eg = parseInt(eg);
-				var uno = pct95[eg] - pct5[eg];
-				var dos = utprom - pct5[eg];
-				$("#auPct").val=(parseInt(90 / (uno) * (dos) + 5));
-			}
+		if ($("#aud").val() && $("#aui").val()){
+			uno = pct95[eg] - pct5[eg];
+			dos = utprom - pct5[eg];
+			$('#auPct').val(parseInt(90 / (uno) * (dos) + 5));
 		}
 	 }
 }
