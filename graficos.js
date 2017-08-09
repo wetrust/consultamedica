@@ -795,6 +795,60 @@ $( '#graficoIpau' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico IP Arteria Umbilical");
     $('#popupBody').html("<div id='graficoIpauView'></div>");
     $('#graficoIpauView').highcharts({
+         title: {
+             text: 'IP Arteria Umbilical **',
+             x: -20 //center
+         },
+         plotOptions: {
+             series: {
+                 enableMouseTracking: false
+             }
+         },
+         yAxis: {
+             title: { text: 'Valor IP' },
+             tickPositions: [0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]
+         },
+         colors: ['#313131', '#313131', '#313131'],
+         xAxis: {
+             categories:['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+         },
+         credits: { enabled: false },
+         series: [{
+             type: "line",
+             name: 'Pct. 5',
+             marker: { enabled: false },
+             data: [0.97,0.95,0.94,0.92,0.9,0.89,0.87,0.85,0.82,0.8,0.78,0.75,0.73,0.7,0.67,0.65,0.62,0.58,0.55,0.52,0.49]
+         }, {
+             type: "line",
+             name: 'Pct. 95',
+             marker: { enabled: false },
+             data: [1.6,1.56,1.53,1.5,1.46,1.43,1.4,1.37,1.35,1.32,1.29,1.27,1.25,1.22,1.2,1.18,1.16,1.14,1.13,1.11,1.09]
+         }, {
+             type: "line",
+             name: 'Arteria',
+             dashStyle: "Dot",
+             marker: { symbol: 'square' },
+             lineWidth: 0,
+             data: (function () {
+                 var data = [];
+                 var edadGest = parseInt(localStorage.eg) -1;
+
+                 for (i = 20; i <= edadGest; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 data.push({
+                     y: parseFloat($('#ipau').val()),
+                 });
+                 for (i = edadGest + 1; i <= 39; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 return data;
+             }())
+         }]
     });
     $('#popupGenerico').modal('show');
 });
@@ -803,6 +857,62 @@ $( '#graficoIpacm' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico IP Arteria C. Media");
     $('#popupBody').html("<div id='graficoIpacmView'></div>");
     $('#graficoIpacmView').highcharts({
+        title: {
+             text: 'IP Arteria Cerebral Media **',
+             x: -20
+         },
+         plotOptions: {
+             series: {
+                 enableMouseTracking: false
+             }
+         },
+         yAxis: {
+             title: { text: 'Valor IP' },
+             tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
+         },
+         colors: ['#313131', '#313131', '#313131'],
+         xAxis: {
+             categories: ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+         },
+         credits: {
+             enabled: false
+         },
+         series: [{
+             type: "line",
+             name: 'Pct. 5',
+             marker: { enabled: false },
+             data: [1.24,1.29,1.34,1.37,1.4,1.43,1.44,1.45,1.45,1.44,1.43,1.41,1.38,1.34,1.3,1.25,1.19,1.13,1.05,0.98,0.89]
+         }, {
+             type: "line",
+             name: 'Pct. 95',
+             marker: { enabled: false },
+             data: [1.98,2.12,2.25,2.36,2.45,2.53,2.59,2.63,2.66,2.67,2.67,2.65,2.62,2.56,2.5,2.41,2.31,2.2,2.07,1.92,1.76]
+         }, {
+             type: "line",
+             name: 'Arteria',
+             dashStyle: "Dot",
+             marker: { symbol: 'square' },
+             lineWidth: 0,
+             data: (function () {
+                 var data = [];
+                 var edadGest = parseInt(localStorage.eg) -1;
+
+                 for (i = 20; i <= edadGest; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 data.push({
+                     y: parseFloat($('#ipacm').val()),
+                 });
+                 for (i = edadGest + 1; i <= 39; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 return data;
+             }())
+         }]
     });
     $('#popupGenerico').modal('show');
 });
@@ -811,6 +921,62 @@ $( '#graficoCcp' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Cuociente Cerebro Placentario");
     $('#popupBody').html("<div id='graficoCcpView'></div>");
     $('#graficoCcpView').highcharts({
+         title: {
+             text: 'IP de CCP (Indice ACM / AU) **',
+             x: -20 //center
+         },
+         plotOptions: {
+             series: {
+                 enableMouseTracking: false
+             }
+         },
+         yAxis: {
+             title: { text: 'Valor IP' },
+             tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
+         },
+         colors: ['#313131', '#313131', '#313131'],
+         xAxis: {
+             categories:
+             ['20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+         },
+         credits: { enabled: false },
+         series: [{
+             type: "line",
+             name: 'Pct. 5',
+             marker: { enabled: false },
+             data: [0.78,0.87,0.95,1.02,1.09,1.15,1.2,1.24,1.28,1.31,1.33,1.35,1.36,1.36,1.36,1.34,1.32,1.3,1.26,1.22,1.18]
+         }, {
+             type: "line",
+             name: 'Pct. 95',
+             marker: { enabled: false },
+             data: [1.68,1.88,2.06,2.22,2.36,2.49,2.6,2.7,2.78,2.84,2.89,2.92,2.93,2.93,2.91,2.87,2.82,2.75,2.67,2.57,2.45]
+         }, {
+             type: "line",
+             name: 'Cuociente',
+             dashStyle: "Dot",
+             marker: { symbol: 'square' },
+             lineWidth: 0,
+             data: (function () {
+                 // generate an array of random data
+                 var data = [];
+                 var edadGest = parseInt(localStorage.eg) -1;
+
+                 for (i = 20; i <= edadGest; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 data.push({
+                     y: parseFloat($('#ccp').val()),
+                 });
+                 for (i = edadGest + 1; i <= 38; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 return data;
+             }())
+         }]
     });
     $('#popupGenerico').modal('show');
 });
@@ -819,6 +985,62 @@ $( '#graficoDv' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Ductus Venoso");
     $('#popupBody').html("<div id='graficoDvView'></div>");
     $('#graficoDvView').highcharts({
+        title: {
+            text: 'Ductus Venoso',
+            x: -20 //center
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'Valor' },
+            tickPositions: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories: 
+            ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Pct. 5',
+            marker: { enabled: false },
+            data: [0.32,0.32,0.32,0.32,0.32,0.32,0.31,0.31,0.31,0.3,0.29,0.28,0.28,0.27,0.26,0.25,0.24,0.23,0.22,0.21,0.2]
+        }, {
+            type: "line",
+            name: 'Pct. 95',
+            marker: { enabled: false },
+            data: [0.83,0.83,0.83,0.83,0.83,0.83,0.82,0.82,0.81,0.81,0.8,0.79,0.78,0.77,0.76,0.75,0.74,0.73,0.72,0.71,0.7]
+        }, {
+            type: "line",
+                name: 'Ductus Venoso',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+            data: (function () {
+                    // generate an array of random data
+                    var data = [];
+                    var edadGest = parseInt(localStorage.eg) -1;
+
+                    for (i = 20; i <= edadGest; i ++ ) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    data.push({
+                            y: parseFloat($('#dv').val()),
+                        });
+                    for (i = edadGest +1; i <= 39; i ++ ) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
     });
     $('#popupGenerico').modal('show');
 });
