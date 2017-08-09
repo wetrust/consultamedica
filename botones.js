@@ -82,8 +82,8 @@ function activarBotones() {
  $( '#aud').change( pctut);
  $( '#aui').change( pctut);
  $( '#dv' ).change( pctdv);
- $( 'ipau' ).change( pctau);
- $( 'ipacm' ).change( pctacm);
+ $( '#ipau' ).change( pctau);
+ $( '#ipacm' ).change( pctacm);
   
  $( '#fum').on('change', function() {
    if (navegadorDowgrade == false) {
