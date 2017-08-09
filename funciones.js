@@ -566,83 +566,133 @@ function pctdv() {
 
 function pctut() {
 
- var pct5 = [];
- var pct95 = [];
+	var pct5 = [];
+	var pct95 = [];
 
- pct5[0] = 1.23; pct5[1] = 1.18;
- pct5[2] = 1.11; pct5[3] = 1.05;
- pct5[4] = 0.99; pct5[5] = 0.94;
- pct5[6] = 0.89; pct5[7] = 0.85;
- pct5[8] = 0.81; pct5[9] = 0.78;
- pct5[10] = 0.74; pct5[11] = 0.71;
- pct5[12] = 0.69; pct5[13] = 0.66;
- pct5[14] = 0.64; pct5[15] = 0.62;
- pct5[16] = 0.6; pct5[17] = 0.58;
- pct5[18] = 0.56; pct5[19] = 0.55;
- pct5[20] = 0.54; pct5[21] = 0.52;
- pct5[22] = 0.51; pct5[23] = 0.51;
- pct5[24] = 0.51; pct5[25] = 0.49;
- pct5[26] = 0.48; pct5[27] = 0.48;
- pct5[28] = 0.47; pct5[29] = 0.47;
- pct5[30] = 0.47;
+	pct5[0] = 1.23; pct5[1] = 1.18;
+	pct5[2] = 1.11; pct5[3] = 1.05;
+	pct5[4] = 0.99; pct5[5] = 0.94;
+	pct5[6] = 0.89; pct5[7] = 0.85;
+	pct5[8] = 0.81; pct5[9] = 0.78;
+	pct5[10] = 0.74; pct5[11] = 0.71;
+	pct5[12] = 0.69; pct5[13] = 0.66;
+	pct5[14] = 0.64; pct5[15] = 0.62;
+	pct5[16] = 0.6; pct5[17] = 0.58;
+	pct5[18] = 0.56; pct5[19] = 0.55;
+	pct5[20] = 0.54; pct5[21] = 0.52;
+	pct5[22] = 0.51; pct5[23] = 0.51;
+	pct5[24] = 0.51; pct5[25] = 0.49;
+	pct5[26] = 0.48; pct5[27] = 0.48;
+	pct5[28] = 0.47; pct5[29] = 0.47;
+	pct5[30] = 0.47;
 
- pct95[0] = 2.84; pct95[1] = 2.71;
- pct95[2] = 2.53; pct95[3] = 2.38;
- pct95[4] = 2.24; pct95[5] = 2.11;
- pct95[6] = 1.99; pct95[7] = 1.88;
- pct95[8] = 1.79; pct95[9] = 1.71;
- pct95[10] = 1.61; pct95[11] = 1.54;
- pct95[12] = 1.47; pct95[13] = 1.41;
- pct95[14] = 1.35; pct95[15] = 1.3;
- pct95[16] = 1.25; pct95[17] = 1.21;
- pct95[18] = 1.17; pct95[19] = 1.13;
- pct95[20] = 1.11; pct95[21] = 1.06;
- pct95[22] = 1.04; pct95[23] = 1.01;
- pct95[24] = 0.99; pct95[25] = 0.97;
- pct95[26] = 0.95; pct95[27] = 0.94;
- pct95[28] = 0.92; pct95[29] = 0.91;
- pct95[30] = 0.91;
- var eg=0;
+	pct95[0] = 2.84; pct95[1] = 2.71;
+	pct95[2] = 2.53; pct95[3] = 2.38;
+	pct95[4] = 2.24; pct95[5] = 2.11;
+	pct95[6] = 1.99; pct95[7] = 1.88;
+	pct95[8] = 1.79; pct95[9] = 1.71;
+	pct95[10] = 1.61; pct95[11] = 1.54;
+	pct95[12] = 1.47; pct95[13] = 1.41;
+	pct95[14] = 1.35; pct95[15] = 1.3;
+	pct95[16] = 1.25; pct95[17] = 1.21;
+	pct95[18] = 1.17; pct95[19] = 1.13;
+	pct95[20] = 1.11; pct95[21] = 1.06;
+	pct95[22] = 1.04; pct95[23] = 1.01;
+	pct95[24] = 0.99; pct95[25] = 0.97;
+	pct95[26] = 0.95; pct95[27] = 0.94;
+	pct95[28] = 0.92; pct95[29] = 0.91;
+	pct95[30] = 0.91;
+
+	var eg=0;
  
- eg=parseFloat(localStorage.eg);
- var utd = parseFloat($("#aud").val());
- var uti = parseFloat($("#aui").val());
+	eg=parseFloat(localStorage.eg);
+	var utd = parseFloat($("#aud").val());
+	var uti = parseFloat($("#aui").val());
 	
 	var utprom = ((uti + utd) / 2)
 	$("#auprom").val(utprom.toFixed(2));
 
- if (eg < 10) {  
-   $("#audPct").val('0');
-   $("#auiPct").val('0');
-   $("#auPct").val('0');
- }
- else if (eg > 40)
- {
-   $("#audPct").val('0');
-   $("#auiPct").val('0');
-   $("#auPct").val('0');
- }
- else {
-    eg = eg - 10;
- 	if (utd > 0){
-      eg = parseInt(eg);
-      var uno=pct95[eg] - pct5[eg];
-      var dos=utd - pct5[eg];
-     $("#audPct").val(parseInt(90 / (uno) * (dos) + 5));
- 	}
- 	if (uti > 0){
-      eg = parseInt(eg);
-      var uno=pct95[eg] - pct5[eg];
-      var dos=uti - pct5[eg];
-     $("#auiPct").val(parseInt(90 / (uno) * (dos) + 5));
- 	}
-  	if (utd > 0){
- 	 if (uti > 0){
-      eg = parseInt(eg);
-      var uno=pct95[eg] - pct5[eg];
-      var dos = ((uti + utd) / 2) - pct5[eg];
-     $("#auPct").val=(parseInt(90 / (uno) * (dos) + 5));
- 	 }
- 	}
- }
+	if (eg < 10) {  
+		$("#audPct").val('0');
+		$("#auiPct").val('0');
+		$("#auPct").val('0');
+	 }
+	 else if (eg > 40)
+	 {
+	   $("#audPct").val('0');
+	   $("#auiPct").val('0');
+	   $("#auPct").val('0');
+	 }
+	 else {
+		eg = eg - 10;
+		if (utd > 0){
+			eg = parseInt(eg);
+			var uno=pct95[eg] - pct5[eg];
+			var dos=utd - pct5[eg];
+			$("#audPct").val(parseInt(90 / (uno) * (dos) + 5));
+		}
+		if (uti > 0){
+			eg = parseInt(eg);
+			var uno=pct95[eg] - pct5[eg];
+			var dos=uti - pct5[eg];
+			$("#auiPct").val(parseInt(90 / (uno) * (dos) + 5));
+		}
+		if (utd > 0){
+			if (uti > 0){
+				eg = parseInt(eg);
+				var uno = pct95[eg] - pct5[eg];
+				var dos = utprom - pct5[eg];
+				$("#auPct").val=(parseInt(90 / (uno) * (dos) + 5));
+			}
+		}
+	 }
+}
+
+function pctau() {
+	var pct5 = [];
+	var pct95 = [];
+
+	pct5[0] = 0.97;	pct5[1] = 0.95;
+	pct5[2] = 0.94;	pct5[3] = 0.92;
+	pct5[4] = 0.9;	pct5[5] = 0.89;
+	pct5[6] = 0.87;	pct5[7] = 0.85;
+	pct5[8] = 0.82;	pct5[9] = 0.8;
+	pct5[10] = 0.78;	pct5[11] = 0.75;
+	pct5[12] = 0.73;	pct5[13] = 0.7;
+	pct5[14] = 0.67;	pct5[15] = 0.65;
+	pct5[16] = 0.62;	pct5[17] = 0.58;
+	pct5[18] = 0.55;	pct5[19] = 0.52;
+	pct5[20] = 0.49;
+
+	pct95[0] = 1.6;	pct95[1] = 1.56;
+	pct95[2] = 1.53;	pct95[3] = 1.5;
+	pct95[4] = 1.46;	pct95[5] = 1.43;
+	pct95[6] = 1.4;	pct95[7] = 1.37;
+	pct95[8] = 1.35;	pct95[9] = 1.32;
+	pct95[10] = 1.29;	pct95[11] = 1.27;
+	pct95[12] = 1.25;	pct95[13] = 1.22;
+	pct95[14] = 1.2;	pct95[15] = 1.18;
+	pct95[16] = 1.16;	pct95[17] = 1.14;
+	pct95[18] = 1.13;	pct95[19] = 1.11;
+	pct95[20] = 1.09;
+
+	var eg=0;
+	eg=parseFloat(localStorage.eg);
+ 	var aumb = parseFloat($('#ipau').val());
+ 
+	if (eg < 20) {
+		$('#ipauPct').val('0');
+	}
+	else if (eg > 40)
+	{
+		$('#ipauPct').val('0');
+	}
+	else {
+		eg = eg - 20;
+		eg = parseInt(eg);
+		var uno=pct95[eg] - pct5[eg];
+		var dos=aumb - pct5[eg];
+  
+		$("#ipauPct").val(parseInt(90 / (uno) * (dos) + 5));
+	}
 }
