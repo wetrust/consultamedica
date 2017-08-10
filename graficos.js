@@ -1190,9 +1190,142 @@ $( '#graficoCCCA' ).on( 'click', function() {
     $('#popupGenerico').modal('show');
 });
 
+$( '#graficoBVM' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico BVM");
+    $('#popupBody').html("<div id='graficoBVMView'></div>");
+    $('#graficoBVMView').highcharts({
+        title: {
+            text: 'BVM***',
+            x: -20
+        },
+        subtitle: {
+            text: 'Milimetros (mm)',
+            x: -20
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'Milimetros (mm)' },
+            tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
+        },
+        colors: ['#313131','#313131','#313131'],
+        xAxis: {
+            categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+        },
+        credits: {enabled:false},
+        series: [{
+            type: "line",
+            name: 'Pct. 5',
+            marker: {enabled:false},
+            data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
+        }, {
+            type: "line",
+            name: 'Pct. 95',
+            marker: { enabled: false },
+            data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
+        }, {
+            type: "line",
+            name: 'BVM',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (
+                function () {
+                    var data = [];
+                    var edadGest = parseInt(localStorage.eg) -1;
+
+                    for (i = 16; i <= edadGest; i ++ ) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    data.push({
+                            y: parseFloat($('#bvm').val()),
+                        });
+                    for (i = edadGest +1; i <= 39; i ++ ) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+    });
+    $('#popupGenerico').modal('show');
+});
+
+$( '#graficoILA' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico ILA");
+    $('#popupBody').html("<div id='graficoILAView'></div>");
+    $('#graficoILAView').highcharts({
+       title: {
+           text: 'ILA',
+           x: -20
+       },
+       subtitle: {
+           text: 'Milimetros (mm)',
+           x: -20
+       },
+       plotOptions: {
+           series: {
+               enableMouseTracking: false
+           }
+       },
+       yAxis: {
+           title: { text: 'Milimetros (mm)' },
+           tickPositions: [20, 52, 84, 116, 148, 180, 212, 244, 276, 308]
+       },
+       colors: ['#313131', '#313131', '#313131'],
+       xAxis: {
+           categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+       },
+       credits: {enabled: false},
+       series: [{
+           type: "line",
+           name: 'Pct. 5',
+           marker: {enabled: false},
+           data: [79,83,87,90,93,95,97,98,98,97,97,95,94,92,90,88,86,83,81,79,77,75,73,72,71]
+       }, {
+           type: "line",
+           name: 'Pct. 95',
+           marker: {enabled: false},
+           data: [185,194,200,204,208,212,214,217,218,221,223,226,228,231,234,238,242,245,248,249,249,244,239,226,214]
+       }, {
+           type: "line",
+           name: 'ILA',
+           dashStyle: "Dot",
+           marker: {symbol: 'square'},
+           lineWidth: 0,
+           data: (function () {
+               var data = [];
+               var edadGest = parseInt(localStorage.eg) -1;
+
+               for (i = 16; i <= edadGest; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               data.push({
+                   y: parseFloat($('#ila').val()),
+               });
+               for (i = edadGest + 1; i <= 39; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               return data;
+           }())
+       }]
+   });
+    $('#popupGenerico').modal('show');
+});
+
 $( '#infDoppler1' ).on( 'click', function() {
     $('#popupTitle').html("Gráfica para evaluación de la flujometría doppler materno fetal básica");
-    $('#popupBody').html("<div class='row'><div class='col'><div id='graficoIpArtUtView'></div></div><div class='col'><div id='graficoIpArtUmbView'></div></div></div><div class='row'><div class='col'><div id='graficoIpArtCMView'></div></div><div class='col'><div id='graficoIpCCPView'></div></div></div>");
+    $('#popupBody').html("<div class='row'><div class='col'><div id='graficoIpArtUtView'></div></div><div class='col'><div id='graficoIpArtUmbView'></div></div></div><div class='row'><div class='col'><div id='graficoIpArtCMView'></div></div><div class='col'><div id='graficoIpCCPView'></div></div></div><div class='row'><div class'col'><p>* Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32<br>** Referencia para Doppler de arteria umbilical, C Media y CCP Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div></div>");
     $('#graficoIpArtUtView').highcharts({
         title: {
             text: 'IP Promedio Arteria Uterinas',
@@ -1421,6 +1554,1010 @@ $( '#infDoppler1' ).on( 'click', function() {
                  return data;
              }())
          }]
+    });
+    $('#popupGenerico').modal('show');
+});
+
+$( '#infDoppler2' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfica crecimiento intrauterino, Peso Fetal Estimado + Flujometría Doppler - Fetal");
+    $('#popupBody').html("<div class='row'><div class='col'><div id='graficoInfPFEView'></div></div><div class='col'><div id='graficoInfIpArtUmbView'></div></div></div><div class='row'><div class='col'><div id='graficoInfIpArtCMView'></div></div><div class='col'><div id='graficoInfIpCCPView'></div></div></div><div class='row'><div class='col'><p>* Referencia evaluación de crecimiento fetal según gráfica de Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad entre pct. 10 a 90)<br>** Referencia para Doppler Fetal: Baschat AA, Gembruch U. the cerebroplacental Doppler ratio revisited. Ultrasound Obstet. Ginecol. 2003; 21: 124 - 127<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div></div>");
+    $('#graficoInfPFEView').highcharts({
+       title: {
+           text: 'Peso Fetal Estimado *',
+           x: -20 //center
+       },
+       subtitle: {
+           text: 'Kilogramos',
+           x: -20
+       },
+       plotOptions: {
+           series: {
+               enableMouseTracking: false,
+               pointInterval: 1
+           }
+       },
+       yAxis: {
+           title: { text: 'Kilogramos' },
+           tickPositions: [100, 560, 1020, 1480, 1940, 2400, 2860, 3320, 3780, 4340, 4900]
+       },
+       colors: ['#313131', '#313131', '#313131'],
+       xAxis: {
+           categories: ['16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+       },
+       credits: {enabled: false},
+       series: [{
+           type: "line",
+           name: 'Pct 3',
+           dashStyle: "Dot",
+           marker: {enabled: false},
+           data: [110,136,167,205,248,299,359,426,503,589,685,791,908,1034,1169,1313,1465,1622,1783,1946,2110,2271,2427,2576,2714]
+       }, {
+           type: "line",
+           name: 'Pct 10',
+           marker: { enabled: false },
+           data: [121,150,185,227,275,331,398,471,556,652,758,876,1004,1145,1294,1453,1621,1794,1973,2154,2335,2513,2686,2851,2985]
+       }, {
+           type: "line",
+           name: 'Pct 90',
+           marker: { enabled: false },
+           data: [171,212,261,319,387,467,559,665,784,918,1068,1234,1416,1613,1824,2049,2285,2530,2781,3036,3291,3543,3786,4019,4234]
+       }, {
+           type: "line",
+           name: 'Pct 97',
+           dashStyle: "Dot",
+           marker: { enabled: false, },
+           data: [183,226,279,341,414,499,598,710,838,981,1141,1319,1513,1724,1949,2189,2441,2703,2971,3244,3516,3785,4045,4294,4474]
+       }, {
+           type: "line",
+           name: 'Peso',
+           dashStyle: "Dot",
+           marker: {symbol:'square'},
+           lineWidth: 0,
+           data: (function () {
+               var data = [];
+               var edadGest = parseInt(localStorage.eg) -1;
+
+               for (i = 16; i <= edadGest; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               data.push({
+                   y: parseFloat($('#pfe').val()),
+               });
+               for (i = edadGest + 1; i <= 39; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               return data;
+           }())
+       }]
+    });
+    $('#graficoInfIpArtUmbView').highcharts({
+         title: {
+             text: 'IP Arteria Umbilical **',
+             x: -20 //center
+         },
+         plotOptions: {
+             series: {
+                 enableMouseTracking: false
+             }
+         },
+         yAxis: {
+             title: { text: 'Valor IP' },
+             tickPositions: [0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]
+         },
+         colors: ['#313131', '#313131', '#313131'],
+         xAxis: {
+             categories:['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+         },
+         credits: { enabled: false },
+         series: [{
+             type: "line",
+             name: 'Pct. 5',
+             marker: { enabled: false },
+             data: [0.97,0.95,0.94,0.92,0.9,0.89,0.87,0.85,0.82,0.8,0.78,0.75,0.73,0.7,0.67,0.65,0.62,0.58,0.55,0.52,0.49]
+         }, {
+             type: "line",
+             name: 'Pct. 95',
+             marker: { enabled: false },
+             data: [1.6,1.56,1.53,1.5,1.46,1.43,1.4,1.37,1.35,1.32,1.29,1.27,1.25,1.22,1.2,1.18,1.16,1.14,1.13,1.11,1.09]
+         }, {
+             type: "line",
+             name: 'Arteria',
+             dashStyle: "Dot",
+             marker: { symbol: 'square' },
+             lineWidth: 0,
+             data: (function () {
+                 var data = [];
+                 var edadGest = parseInt(localStorage.eg) -1;
+
+                 for (i = 20; i <= edadGest; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 data.push({
+                     y: parseFloat($('#ipau').val()),
+                 });
+                 for (i = edadGest + 1; i <= 39; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 return data;
+             }())
+         }]
+    });
+    $('#graficoInfIpArtCMView').highcharts({
+        title: {
+             text: 'IP Arteria Cerebral Media **',
+             x: -20
+         },
+         plotOptions: {
+             series: {
+                 enableMouseTracking: false
+             }
+         },
+         yAxis: {
+             title: { text: 'Valor IP' },
+             tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
+         },
+         colors: ['#313131', '#313131', '#313131'],
+         xAxis: {
+             categories: ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+         },
+         credits: {
+             enabled: false
+         },
+         series: [{
+             type: "line",
+             name: 'Pct. 5',
+             marker: { enabled: false },
+             data: [1.24,1.29,1.34,1.37,1.4,1.43,1.44,1.45,1.45,1.44,1.43,1.41,1.38,1.34,1.3,1.25,1.19,1.13,1.05,0.98,0.89]
+         }, {
+             type: "line",
+             name: 'Pct. 95',
+             marker: { enabled: false },
+             data: [1.98,2.12,2.25,2.36,2.45,2.53,2.59,2.63,2.66,2.67,2.67,2.65,2.62,2.56,2.5,2.41,2.31,2.2,2.07,1.92,1.76]
+         }, {
+             type: "line",
+             name: 'Arteria',
+             dashStyle: "Dot",
+             marker: { symbol: 'square' },
+             lineWidth: 0,
+             data: (function () {
+                 var data = [];
+                 var edadGest = parseInt(localStorage.eg) -1;
+
+                 for (i = 20; i <= edadGest; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 data.push({
+                     y: parseFloat($('#ipacm').val()),
+                 });
+                 for (i = edadGest + 1; i <= 39; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 return data;
+             }())
+         }]
+    });
+    $('#graficoInfIpCCPView').highcharts({
+         title: {
+             text: 'IP de CCP (Indice ACM / AU) **',
+             x: -20 //center
+         },
+         plotOptions: {
+             series: {
+                 enableMouseTracking: false
+             }
+         },
+         yAxis: {
+             title: { text: 'Valor IP' },
+             tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
+         },
+         colors: ['#313131', '#313131', '#313131'],
+         xAxis: {
+             categories:
+             ['20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+         },
+         credits: { enabled: false },
+         series: [{
+             type: "line",
+             name: 'Pct. 5',
+             marker: { enabled: false },
+             data: [0.78,0.87,0.95,1.02,1.09,1.15,1.2,1.24,1.28,1.31,1.33,1.35,1.36,1.36,1.36,1.34,1.32,1.3,1.26,1.22,1.18]
+         }, {
+             type: "line",
+             name: 'Pct. 95',
+             marker: { enabled: false },
+             data: [1.68,1.88,2.06,2.22,2.36,2.49,2.6,2.7,2.78,2.84,2.89,2.92,2.93,2.93,2.91,2.87,2.82,2.75,2.67,2.57,2.45]
+         }, {
+             type: "line",
+             name: 'Cuociente',
+             dashStyle: "Dot",
+             marker: { symbol: 'square' },
+             lineWidth: 0,
+             data: (function () {
+                 // generate an array of random data
+                 var data = [];
+                 var edadGest = parseInt(localStorage.eg) -1;
+
+                 for (i = 20; i <= edadGest; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 data.push({
+                     y: parseFloat($('#ccp').val()),
+                 });
+                 for (i = edadGest + 1; i <= 38; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 return data;
+             }())
+         }]
+    });
+    $('#popupGenerico').modal('show');
+});
+
+$( '#infDoppler3' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfica crecimiento intrauterino, Peso Estimado + Flujometría Dopler Materno Fetal");
+    $('#popupBody').html("<div class='row'><div class='col'><div id='graficoInfDoplerPFEView'></div></div><div class='col'><div id='graficoInfDoplerIpArtUmbView'></div></div></div><div class='row'><div class='col'><div id='graficoInfDoplerArtUtView'></div></div><div class='col'><div id='graficoInfDoplerIpCCPView'></div></div></div><div class='row'><div class='col'><p>* Referencia evaluación de crecimiento fetal según gráfica de Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad entre pct. 10 a 90)<br>** Referencia para Doppler Fetal: Baschat AA, Gembruch U. the cerebroplacental Doppler ratio revisited. Ultrasound Obstet. Ginecol. 2003; 21: 124 - 127<br>*** Referencia para arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div></div>");
+    $('#graficoInfDoplerPFEView').highcharts({
+       title: {
+           text: 'Peso Fetal Estimado *',
+           x: -20 //center
+       },
+       subtitle: {
+           text: 'Kilogramos',
+           x: -20
+       },
+       plotOptions: {
+           series: {
+               enableMouseTracking: false,
+               pointInterval: 1
+           }
+       },
+       yAxis: {
+           title: { text: 'Kilogramos' },
+           tickPositions: [100, 560, 1020, 1480, 1940, 2400, 2860, 3320, 3780, 4340, 4900]
+       },
+       colors: ['#313131', '#313131', '#313131'],
+       xAxis: {
+           categories: ['16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+       },
+       credits: {enabled: false},
+       series: [{
+           type: "line",
+           name: 'Pct 3',
+           dashStyle: "Dot",
+           marker: {enabled: false},
+           data: [110,136,167,205,248,299,359,426,503,589,685,791,908,1034,1169,1313,1465,1622,1783,1946,2110,2271,2427,2576,2714]
+       }, {
+           type: "line",
+           name: 'Pct 10',
+           marker: { enabled: false },
+           data: [121,150,185,227,275,331,398,471,556,652,758,876,1004,1145,1294,1453,1621,1794,1973,2154,2335,2513,2686,2851,2985]
+       }, {
+           type: "line",
+           name: 'Pct 90',
+           marker: { enabled: false },
+           data: [171,212,261,319,387,467,559,665,784,918,1068,1234,1416,1613,1824,2049,2285,2530,2781,3036,3291,3543,3786,4019,4234]
+       }, {
+           type: "line",
+           name: 'Pct 97',
+           dashStyle: "Dot",
+           marker: { enabled: false, },
+           data: [183,226,279,341,414,499,598,710,838,981,1141,1319,1513,1724,1949,2189,2441,2703,2971,3244,3516,3785,4045,4294,4474]
+       }, {
+           type: "line",
+           name: 'Peso',
+           dashStyle: "Dot",
+           marker: {symbol:'square'},
+           lineWidth: 0,
+           data: (function () {
+               var data = [];
+               var edadGest = parseInt(localStorage.eg) -1;
+
+               for (i = 16; i <= edadGest; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               data.push({
+                   y: parseFloat($('#pfe').val()),
+               });
+               for (i = edadGest + 1; i <= 39; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               return data;
+           }())
+       }]
+    });
+    $('#graficoInfDoplerIpArtUmbView').highcharts({
+         title: {
+             text: 'IP Arteria Umbilical **',
+             x: -20 //center
+         },
+         plotOptions: {
+             series: {
+                 enableMouseTracking: false
+             }
+         },
+         yAxis: {
+             title: { text: 'Valor IP' },
+             tickPositions: [0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]
+         },
+         colors: ['#313131', '#313131', '#313131'],
+         xAxis: {
+             categories:['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+         },
+         credits: { enabled: false },
+         series: [{
+             type: "line",
+             name: 'Pct. 5',
+             marker: { enabled: false },
+             data: [0.97,0.95,0.94,0.92,0.9,0.89,0.87,0.85,0.82,0.8,0.78,0.75,0.73,0.7,0.67,0.65,0.62,0.58,0.55,0.52,0.49]
+         }, {
+             type: "line",
+             name: 'Pct. 95',
+             marker: { enabled: false },
+             data: [1.6,1.56,1.53,1.5,1.46,1.43,1.4,1.37,1.35,1.32,1.29,1.27,1.25,1.22,1.2,1.18,1.16,1.14,1.13,1.11,1.09]
+         }, {
+             type: "line",
+             name: 'Arteria',
+             dashStyle: "Dot",
+             marker: { symbol: 'square' },
+             lineWidth: 0,
+             data: (function () {
+                 var data = [];
+                 var edadGest = parseInt(localStorage.eg) -1;
+
+                 for (i = 20; i <= edadGest; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 data.push({
+                     y: parseFloat($('#ipau').val()),
+                 });
+                 for (i = edadGest + 1; i <= 39; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 return data;
+             }())
+         }]
+    });
+    $('#graficoInfDoplerArtUtView').highcharts({
+        title: {
+            text: 'IP Promedio Arteria Uterinas',
+            x: -20
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'Valor IP' },
+            tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Pct. 5',
+            marker: { enabled: false },
+            data: [1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47]
+        }, {
+            type: "line",
+            name: 'Pct. 95',
+            marker: { enabled: false },
+            data: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
+        }, {
+            type: "line",
+                name: 'Arteria Promedio',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+            data: (function () {
+                    // generate an array of random data
+                    var data = [];
+                    var edadGest = parseInt(localStorage.eg) -1;
+
+                    for (i = 10; i <= edadGest; i ++ ) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    data.push({
+                            y: parseFloat($('#auprom').val()),
+                        });
+                    for (i = edadGest +1; i <= 39; i ++ ) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+    });
+    $('#graficoInfDoplerIpCCPView').highcharts({
+         title: {
+             text: 'IP de CCP (Indice ACM / AU) **',
+             x: -20 //center
+         },
+         plotOptions: {
+             series: {
+                 enableMouseTracking: false
+             }
+         },
+         yAxis: {
+             title: { text: 'Valor IP' },
+             tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
+         },
+         colors: ['#313131', '#313131', '#313131'],
+         xAxis: {
+             categories:
+             ['20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+         },
+         credits: { enabled: false },
+         series: [{
+             type: "line",
+             name: 'Pct. 5',
+             marker: { enabled: false },
+             data: [0.78,0.87,0.95,1.02,1.09,1.15,1.2,1.24,1.28,1.31,1.33,1.35,1.36,1.36,1.36,1.34,1.32,1.3,1.26,1.22,1.18]
+         }, {
+             type: "line",
+             name: 'Pct. 95',
+             marker: { enabled: false },
+             data: [1.68,1.88,2.06,2.22,2.36,2.49,2.6,2.7,2.78,2.84,2.89,2.92,2.93,2.93,2.91,2.87,2.82,2.75,2.67,2.57,2.45]
+         }, {
+             type: "line",
+             name: 'Cuociente',
+             dashStyle: "Dot",
+             marker: { symbol: 'square' },
+             lineWidth: 0,
+             data: (function () {
+                 // generate an array of random data
+                 var data = [];
+                 var edadGest = parseInt(localStorage.eg) -1;
+
+                 for (i = 20; i <= edadGest; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 data.push({
+                     y: parseFloat($('#ccp').val()),
+                 });
+                 for (i = edadGest + 1; i <= 38; i++) {
+                     data.push({
+                         y: 0,
+                     });
+                 }
+                 return data;
+             }())
+         }]
+    });
+    $('#popupGenerico').modal('show');
+});
+
+$( '#infecoObsSegTrim1' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfica evaluación ecográfica del crecimiento fetal");
+    $('#popupBody').html("<div class='row'><div class='col'><div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col'><div id='graficoBVMView'></div></div></div><div class='row'><div class='col'><div id='graficoLfView'></div></div><div class='col'><div id='graficoLhView'></div></div></div><div class='row'><div class='col'><p>* Evaluación del crecimiento fetal, según referencia propuesta por Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90)<br>** Perímetro Abdominal según ege, normalidad pct. 3 a pct. 97. Referencia Hadlock y col. 1984<br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Software diseñado: Dr. Rudecindo Lagos S.  Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div></div>");
+    $('#graficoInfecoObsSegTrimPFEView').highcharts({
+       title: {
+           text: 'Peso Fetal Estimado *',
+           x: -20 //center
+       },
+       subtitle: {
+           text: 'Kilogramos',
+           x: -20
+       },
+       plotOptions: {
+           series: {
+               enableMouseTracking: false,
+               pointInterval: 1
+           }
+       },
+       yAxis: {
+           title: { text: 'Kilogramos' },
+           tickPositions: [100, 560, 1020, 1480, 1940, 2400, 2860, 3320, 3780, 4340, 4900]
+       },
+       colors: ['#313131', '#313131', '#313131'],
+       xAxis: {
+           categories: ['16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+       },
+       credits: {enabled: false},
+       series: [{
+           type: "line",
+           name: 'Pct 3',
+           dashStyle: "Dot",
+           marker: {enabled: false},
+           data: [110,136,167,205,248,299,359,426,503,589,685,791,908,1034,1169,1313,1465,1622,1783,1946,2110,2271,2427,2576,2714]
+       }, {
+           type: "line",
+           name: 'Pct 10',
+           marker: { enabled: false },
+           data: [121,150,185,227,275,331,398,471,556,652,758,876,1004,1145,1294,1453,1621,1794,1973,2154,2335,2513,2686,2851,2985]
+       }, {
+           type: "line",
+           name: 'Pct 90',
+           marker: { enabled: false },
+           data: [171,212,261,319,387,467,559,665,784,918,1068,1234,1416,1613,1824,2049,2285,2530,2781,3036,3291,3543,3786,4019,4234]
+       }, {
+           type: "line",
+           name: 'Pct 97',
+           dashStyle: "Dot",
+           marker: { enabled: false, },
+           data: [183,226,279,341,414,499,598,710,838,981,1141,1319,1513,1724,1949,2189,2441,2703,2971,3244,3516,3785,4045,4294,4474]
+       }, {
+           type: "line",
+           name: 'Peso',
+           dashStyle: "Dot",
+           marker: {symbol:'square'},
+           lineWidth: 0,
+           data: (function () {
+               var data = [];
+               var edadGest = parseInt(localStorage.eg) -1;
+
+               for (i = 16; i <= edadGest; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               data.push({
+                   y: parseFloat($('#pfe').val()),
+               });
+               for (i = edadGest + 1; i <= 39; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               return data;
+           }())
+       }]
+    });
+    $('#graficoBVMView').highcharts({
+        title: {
+            text: 'BVM***',
+            x: -20
+        },
+        subtitle: {
+            text: 'Milimetros (mm)',
+            x: -20
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'Milimetros (mm)' },
+            tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
+        },
+        colors: ['#313131','#313131','#313131'],
+        xAxis: {
+            categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+        },
+        credits: {enabled:false},
+        series: [{
+            type: "line",
+            name: 'Pct. 5',
+            marker: {enabled:false},
+            data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
+        }, {
+            type: "line",
+            name: 'Pct. 95',
+            marker: { enabled: false },
+            data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
+        }, {
+            type: "line",
+            name: 'BVM',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (
+                function () {
+                    var data = [];
+                    var edadGest = parseInt(localStorage.eg) -1;
+
+                    for (i = 16; i <= edadGest; i ++ ) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    data.push({
+                            y: parseFloat($('#bvm').val()),
+                        });
+                    for (i = edadGest +1; i <= 39; i ++ ) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+    });
+    $('#graficoLfView').highcharts({
+       title: {
+           text: 'LF',
+           x: -20
+       },
+       subtitle: {
+           text: 'Milimetros (mm)',
+           x: -20
+       },
+       plotOptions: {
+           series: {
+               enableMouseTracking: false
+           }
+       },
+       yAxis: {
+           title: { text: 'Milimetros (mm)' },
+           tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+       },
+       colors: ['#313131', '#313131', '#313131'],
+       xAxis: {
+           categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+       },
+       credits: { enabled: false },
+       series: [{
+           type: "line",
+           name: 'Pct. 3',
+           marker: { enabled: false },
+           data: [6,9,12,14,17,20,22,25,27,30,32,35,37,40,42,45,47,49,52,54,56,58,59,61,62,64,65,66,67]
+       }, {
+           type: "line",
+           name: 'Pct. 97',
+           marker: { enabled: false },
+           data: [12,15,18,21,24,28,31,34,38,41,44,47,50,53,55,57,60,62,65,67,70,71,73,75,77,79,80,81,82]
+       }, {
+           type: "line",
+           name: 'LF',
+           dashStyle: "Dot",
+           marker: { symbol: 'square' },
+           lineWidth: 0,
+           data: (function () {
+               var data = [];
+               var edadGest = parseInt(localStorage.eg) - 1;
+
+               for (i = 12; i <= edadGest; i++) {
+                   data.push({ y: 0, });
+               }
+               data.push({
+                   y: parseInt(document.getElementById("lf").value),
+               });
+               for (i = edadGest + 1; i <= 39; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               return data;
+           }())
+       }]
+   });
+   $('#graficoLhView').highcharts({
+            title: {
+                text: 'Largo Humeral',
+                x: -20
+            },
+            subtitle: {
+                text: 'Milimetros (mm)',
+                x: -20
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Milimetros (mm)' },
+                tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            },
+            credits: { enabled: false },
+            series: [{
+                type: "line",
+                name: 'Pct. 5',
+                marker: { enabled: false },
+                data: [4.8, 7.6, 10.3, 13.1, 15.8, 18.5, 21.2, 23.8, 26.3, 28.8, 31.2, 33.5, 35.7, 37.9, 39.9, 41.9, 43.7, 45.5, 47.2, 48.9, 50.4, 52.1, 53.4, 54.8, 56.2, 57.6, 59.8, 60.4, 61.9]
+            }, {
+                type: "line",
+                name: 'Pct. 95',
+                marker: { enabled: false },
+                data: [12.3, 15.1, 17.9, 20.7, 23.5, 26.3, 29.1, 31.6, 34.2, 36.7, 39.2, 41.6, 43.9, 46.1, 48.1, 50.1, 52.1, 53.9, 55.6, 57.3, 58.9, 60.5, 62.1, 63.5, 64.9, 66.4, 67.8, 69.3, 70.8]
+            }, {
+                type: "line",
+                name: 'Humero',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    var data = [];
+                    var edadGest = parseInt(localStorage.eg) - 1;
+
+                    for (i = 12; i <= edadGest; i++) {
+                        data.push({ y: 0, });
+                    }
+                    data.push({
+                        y: parseInt(document.getElementById("lh").value),
+                    });
+                    for (i = edadGest + 1; i <= 39; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+    });
+    $('#popupGenerico').modal('show');
+});
+
+$( '#infecoObsSegTrim2' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfica Determinación Ecográfica (Tardía) de la Edad Gestacional");
+    $('#popupBody').html("<div class='row'><div class='col'><div id='graficoCcView'></div></div><div class='col'><div id='graficoBVMView'></div></div></div><div class='row'><div class='col'><div id='graficoLfView'></div></div><div class='col'><div id='graficoLhView'></div></div></div><div class='row'><div class='col'><p>* Para evaluación morfológica, ceñirse a recomendaciones dadas en guías Perinatales MINSAL - Chile 2015<br>http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf<br>** Referencias: CC y LF Hadlock y col. 1984; LH Jeanty y col.<br>*** Diámetro cerebeloso transverso Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div></div>");
+    $('#graficoCcView').highcharts({
+       title: {
+           text: 'CC',
+           x: -20
+       },
+       subtitle: {
+           text: 'Milimetros (mm)',
+           x: -20
+       },
+       plotOptions: {
+           series: {
+               enableMouseTracking: false
+           }
+       },
+       yAxis: {
+           title: { text: 'Milimetros (mm)' },
+           tickPositions: [30, 72, 114, 156, 198, 240, 282, 324, 366, 408]
+       },
+       colors: ['#313131', '#313131', '#313131'],
+       xAxis: {
+           categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+       },
+       credits: {enabled: false},
+       series: [{
+           type: "line",
+           name: 'Pct. 3',
+           marker: {enabled: false},
+           data: [70, 80, 90, 100, 113, 126, 137, 149, 161, 172, 183, 194, 204, 214, 224, 233, 242, 250, 258, 267, 274, 280, 287, 293, 299, 303, 308, 311, 315]
+       }, {
+           type: "line",
+           name: 'Pct. 97',
+           marker: {enabled: false},
+           data: [90,100,111,124,136,150,165,179,193,206,219,232,243,256,268,279,290,300,310,319,328,336,343,351,358,363,368,373,377]
+       }, {
+           type: "line",
+           name: 'CC',
+           dashStyle: "Dot",
+           marker: { symbol: 'square' },
+           lineWidth: 0,
+           data: (function () {
+               var data = [];
+               var edadGest = parseInt(localStorage.eg) - 1;
+
+               for (i = 12; i <= edadGest; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               data.push({
+                   y: parseInt(document.getElementById("cc").value),
+               });
+               for (i = edadGest + 1; i <= 39; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               return data;
+           }())
+       }]
+   });
+   $('#graficoCerebeloView').highcharts({
+            title: {
+                text: 'Diámetro de Cerebelo',
+                x: -20
+            },
+            subtitle: {
+                text: 'Milimetros (mm)',
+                x: -20
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Milimetros (mm)' },
+                tickPositions: [5, 10,20,30,40,50,60,70]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories:['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            },
+            credits: {enabled: false},
+            series: [{
+                type: "line",
+                name: '-2DE',
+                marker: {enabled: false},
+                data: [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
+            }, {
+                type: "line",
+                name: 'media',
+                marker: {enabled: false},
+                data: [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
+            }, {
+                type: "line",
+                name: '+2DE',
+                marker: {enabled: false},
+                data: [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
+            }, {
+                type: "line",
+                name: 'Cerebelo',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    var data = [];
+                    var edadGest = parseInt(localStorage.eg) - 1;
+
+                    for (i = 15; i <= edadGest; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    data.push({
+                        y: parseInt(document.getElementById("cerebelo").value),
+                    });
+                    for (i = edadGest + 1; i <= 39; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+        });
+    $('#graficoLfView').highcharts({
+       title: {
+           text: 'LF',
+           x: -20
+       },
+       subtitle: {
+           text: 'Milimetros (mm)',
+           x: -20
+       },
+       plotOptions: {
+           series: {
+               enableMouseTracking: false
+           }
+       },
+       yAxis: {
+           title: { text: 'Milimetros (mm)' },
+           tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+       },
+       colors: ['#313131', '#313131', '#313131'],
+       xAxis: {
+           categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+       },
+       credits: { enabled: false },
+       series: [{
+           type: "line",
+           name: 'Pct. 3',
+           marker: { enabled: false },
+           data: [6,9,12,14,17,20,22,25,27,30,32,35,37,40,42,45,47,49,52,54,56,58,59,61,62,64,65,66,67]
+       }, {
+           type: "line",
+           name: 'Pct. 97',
+           marker: { enabled: false },
+           data: [12,15,18,21,24,28,31,34,38,41,44,47,50,53,55,57,60,62,65,67,70,71,73,75,77,79,80,81,82]
+       }, {
+           type: "line",
+           name: 'LF',
+           dashStyle: "Dot",
+           marker: { symbol: 'square' },
+           lineWidth: 0,
+           data: (function () {
+               var data = [];
+               var edadGest = parseInt(localStorage.eg) - 1;
+
+               for (i = 12; i <= edadGest; i++) {
+                   data.push({ y: 0, });
+               }
+               data.push({
+                   y: parseInt(document.getElementById("lf").value),
+               });
+               for (i = edadGest + 1; i <= 39; i++) {
+                   data.push({
+                       y: 0,
+                   });
+               }
+               return data;
+           }())
+       }]
+   });
+   $('#graficoLhView').highcharts({
+            title: {
+                text: 'Largo Humeral',
+                x: -20
+            },
+            subtitle: {
+                text: 'Milimetros (mm)',
+                x: -20
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Milimetros (mm)' },
+                tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            },
+            credits: { enabled: false },
+            series: [{
+                type: "line",
+                name: 'Pct. 5',
+                marker: { enabled: false },
+                data: [4.8, 7.6, 10.3, 13.1, 15.8, 18.5, 21.2, 23.8, 26.3, 28.8, 31.2, 33.5, 35.7, 37.9, 39.9, 41.9, 43.7, 45.5, 47.2, 48.9, 50.4, 52.1, 53.4, 54.8, 56.2, 57.6, 59.8, 60.4, 61.9]
+            }, {
+                type: "line",
+                name: 'Pct. 95',
+                marker: { enabled: false },
+                data: [12.3, 15.1, 17.9, 20.7, 23.5, 26.3, 29.1, 31.6, 34.2, 36.7, 39.2, 41.6, 43.9, 46.1, 48.1, 50.1, 52.1, 53.9, 55.6, 57.3, 58.9, 60.5, 62.1, 63.5, 64.9, 66.4, 67.8, 69.3, 70.8]
+            }, {
+                type: "line",
+                name: 'Humero',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    var data = [];
+                    var edadGest = parseInt(localStorage.eg) - 1;
+
+                    for (i = 12; i <= edadGest; i++) {
+                        data.push({ y: 0, });
+                    }
+                    data.push({
+                        y: parseInt(document.getElementById("lh").value),
+                    });
+                    for (i = edadGest + 1; i <= 39; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
     });
     $('#popupGenerico').modal('show');
 });
