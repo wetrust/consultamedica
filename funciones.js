@@ -1,3 +1,4 @@
+//funciones
 function puedoGuardarEnElNavegador() {
   if (window.localStorage) {
     navegadorDowgrade = false;
