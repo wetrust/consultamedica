@@ -9,6 +9,7 @@ function puedoGuardarEnElNavegador() {
   else {
     $("#home").prepend("<div class='alert alert-warning alert-dismissible fade show' role='alert' id='navegadorDowgrade'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Hey!</strong> debes actualizar tu navegador para mejorar el desempeño de esta aplicación.</div>");
     navegadorDowgrade = true;
+	  navegadorDowgrade = true;
   }
 };
 
