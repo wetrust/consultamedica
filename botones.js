@@ -95,6 +95,8 @@ function activarBotones() {
    if (navegadorDowgrade == false) {
       localStorage.fum = $("#fum").val();
       localStorage.eg = calcularEG();
+     $("#egExamen").val(localStorage.eg);
+     $("#egConsulta").val(localStorage.eg);
       $("#egPrimTrim").val(localStorage.eg);
       $("#egSegTrim").val(localStorage.eg);
       $('#egDoppler').val(localStorage.eg);
@@ -104,6 +106,8 @@ function activarBotones() {
    if (navegadorDowgrade == false) {
       localStorage.fee = $("#fee").val();
       localStorage.eg = calcularEG();
+     $("#egExamen").val(localStorage.eg);
+     $("#egConsulta").val(localStorage.eg);
       $("#egPrimTrim").val(localStorage.eg);
       $("#egSegTrim").val(localStorage.eg);
       $('#egDoppler').val(localStorage.eg);
