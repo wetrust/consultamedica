@@ -14,6 +14,10 @@ function activarBotones() {
     show_hide('ecoObsPrimTrim');
     show_hide('consulta');
   });
+  $( '#volverTipodesdeEco1' ).on( 'click', function() {
+    show_hide('tipoExamen');
+    show_hide('ecoObsPrimTrim');
+  });
   $( '#volverConsultadesdeEco2' ).on( 'click', function() {
     show_hide('ecoObsSegTrim');
     show_hide('consulta');
