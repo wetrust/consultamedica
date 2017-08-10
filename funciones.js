@@ -836,7 +836,7 @@ function psohdlk() {
 
  CC=parseFloat($("#cc").val());
  CA=parseInt($("#ca").val());
- if $("#cc").val() && $("#cc").val())
+ if ($("#cc").val() && $("#cc").val())
     var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA))
     $("#pfe").val(psoP.toFixed(0));
     pctpfe();
