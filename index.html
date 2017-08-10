@@ -102,13 +102,18 @@
           <div class="card mb-3">
             <div class="card-block">
               <h3 class="card-title">o realice un exámen rápido</h3>
-              <form>
-                <div class="form-group">
+              <form class="row">
+                <div class="form-group col">
                   <label for="fum">Fecha de última mestruación</label>
                   <input class="form-control" type="date" value="2011-08-19" id="fum">
                   <small id="fumHelp" class="form-text text-muted">Seleccione una fecha.</small>
                 </div>
-                <div class="form-group">
+                <div class="form-group col">
+                  <label for="egExamen">EG</label>
+                  <input class="form-control" type="number" value="0" id="egExamen" readonly>
+                  <small id="egExamenHelp" class="form-text text-muted">Semanas.</small>
+                </div>
+                <div class="form-group col-12">
                   <label for="fee">Fecha de exámen</label>
                   <input class="form-control" type="date" value="2017-06-25" id="fee">
                   <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
@@ -131,6 +136,16 @@
         <li class="breadcrumb-item"><a href="#" id="volverConsultadesdeTipo">Nueva Consulta</a></li>
         <li class="breadcrumb-item active">Tipo de consulta</li>
       </ol>
+      <div class="form-group row">
+        <div class="col">
+          <label for="dbp" class="col-form-label">EG</label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" id="egConsulta" readonly>
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
       <div class="row">
         <div class="col">
             <div class="tab-pane active" id="ecoObst" role="tabpanel">
@@ -475,7 +490,7 @@
                   </div>
                   <div class="col">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                      <input type="text" class="form-control" id="bvm" readonly>
+                      <input type="text" class="form-control" id="bvm">
                       <div class="input-group-addon">mm.</div>
                     </div>
                   </div>
@@ -495,7 +510,7 @@
                   </div>
                   <div class="col">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                      <input type="text" class="form-control" id="ila" readonly>
+                      <input type="text" class="form-control" id="ila">
                       <div class="input-group-addon">mm.</div>
                     </div>
                   </div>
