@@ -1190,7 +1190,7 @@ $( '#graficoCCCA' ).on( 'click', function() {
     $('#popupGenerico').modal('show');
 });
 
-$( '#graficoCCCA' ).on( 'click', function() {
+$( '#infDoppler1' ).on( 'click', function() {
     $('#popupTitle').html("Gráfica para evaluación de la flujometría doppler materno fetal básica");
     $('#popupBody').html("<div class='row'><div class='col'><div id='graficoIpArtUtView'></div></div><div class'col'><div id='graficoIpArtUmbView'></div></div></div><div class='row'><div class='col'><div id='graficoIpArtCMView'></div></div><div class='col'><div id='graficoIpCCPView'></div></div></div>");
     $('#graficoIpArtUtView').highcharts({
