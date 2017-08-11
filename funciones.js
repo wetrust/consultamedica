@@ -87,10 +87,10 @@ function calcularEdad(){
 	     fcumpleanos = localStorage.fnac;
 	  }
 	  else{ 
-	     fcumpleaños = $("#fNacimiento").val();
+	     fcumpleanos = $("#fNacimiento").val();
 	  }
 
-	Edad = ((fcumpleaños.getTime() - d.getTime()) / unano);
+	Edad = ((fcumpleanos.getTime() - d.getTime()) / unano);
 
 	return Edad;
 }
