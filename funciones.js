@@ -77,14 +77,14 @@ function calcularEG(){
 }
 
 function calcularEdad(){
-	var fcumpleaños, Edad;
+	var fcumpleanos, Edad;
 	var d = new Date();
 	var undia = 1000 * 60 * 60 * 24;
  	var unasemana = undia * 7;
 	var unano = undia * 365;
 	
 	if (navegadorDowgrade == false) {
-	     fcumpleaños = localStorage.fnac;
+	     fcumpleanos = localStorage.fnac;
 	  }
 	  else{ 
 	     fcumpleaños = $("#fNacimiento").val();
