@@ -73,6 +73,12 @@ function activarBotones() {
     $('#popupBody').html("<img src='img/eco3.png' class='img-fluid' alt='Responsive image'>");
     $('#popupGenerico').modal('show')
   });
+  
+  $( '#irPaciente' ).on( 'click', function() {
+    show_hide('consulta');
+    show_hide('paciente');
+  });
+  
  $( '#dbp' ).change( deDBP);
  $( '#cc' ).change( pctcc);
  $( '#ca' ).change( pctca);
