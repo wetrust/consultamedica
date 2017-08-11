@@ -84,10 +84,10 @@ function calcularEdad(){
 	var unano = undia * 365;
 	
 	if (navegadorDowgrade == false) {
-	     fcumpleanos = new date(localStorage.fnac);
+	     fcumpleanos = new Date(localStorage.fnac);
 	  }
 	  else{ 
-	     fcumpleanos = new date($("#fNacimiento").val());
+	     fcumpleanos = new Date($("#fNacimiento").val());
 	  }
 
 	Edad = ((fcumpleanos.getTime() - d.getTime()) / unano);
