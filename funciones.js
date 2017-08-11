@@ -110,9 +110,10 @@ function deDBP() {
 	DBPMas2DE[24] = 97;	DBPMas2DE[25] = 99;
 	DBPMas2DE[26] = 97;	DBPMas2DE[27] = 106;
 
-	var eg=0, dbp=0;
+	var eg=0;
 	eg=parseFloat(localStorage.eg);
-	dbp = $("#dbp").val();
+	var dbp = $("#dbp").val()
+    	dbp = dbp.replace(",", ".");
 
 	if (eg < 12) {
 		$("#dbpDE").val('0');
@@ -411,8 +412,9 @@ var y = [];
     y[60] =12.1;
     y[61] =12.2;
 
-	
-    var prs = parseInt(document.getElementById("saco").value);
+    var saco = document.getElementById("saco").value;
+    saco = saco.replace(",", ".");
+    var prs = parseInt(saco);
 
     if (prs < 5) {
         $("#sacoPct").val("0");
@@ -475,8 +477,9 @@ function eglcn() {
     LCN[1][57] = 14.1; LCN[1][58] = 14.2; LCN[1][59] = 14.3;
     LCN[1][60] = 14.4; LCN[1][61] = 14.5; LCN[1][62] = 14.6;
     LCN[1][63] = 15;
-
+	
     var lcn = document.getElementById("lcn").value;
+    lcn = lcn.replace(",", ".");
 
     if (lcn > 90) {
         $("#lcnPct").val("0");
