@@ -89,7 +89,6 @@ function calcularEdad(){
 	  else{ 
 	     fcumpleaños = $("#fNacimiento").val();
 	  }
-	}
 
 	Edad = ((fcumpleaños.getTime() - d.getTime()) / unano);
 
