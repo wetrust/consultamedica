@@ -76,6 +76,26 @@ function calcularEG(){
   return EdadGestacional;
 }
 
+function calcularEdad(){
+	var fcumpleaños, Edad;
+	var d = new Date();
+	var undia = 1000 * 60 * 60 * 24;
+ 	var unasemana = undia * 7;
+	var unano = undia * 365;
+	
+	if (navegadorDowgrade == false) {
+	     fcumpleaños = localStorage.fnac;
+	  }
+	  else{ 
+	     fcumpleaños = $("#fNacimiento").val();
+	  }
+	}
+
+	Edad = ((fcumpleaños.getTime() - d.getTime()) / unano);
+
+	return Edad;
+}
+
 function deDBP() {
 	var DBPMenos2DE = [];
 	var DBPMas2DE = [];
