@@ -75,7 +75,7 @@ function activarBotones() {
   });
   
   $( '#irPaciente' ).on( 'click', function() {
-    show_hide('consulta');
+    show_hide('home');
     show_hide('paciente');
   });
   
