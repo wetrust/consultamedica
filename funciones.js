@@ -27,7 +27,7 @@ function queDiaEs(){
 function cualEsMiIp(){
 
   if (navegadorDowgrade == false) {
-    $.getJSON( "https://api.ipify.org?format=json", function( data ) {
+    $.getJSON( "https://api.ipify.org?format=jsonp&callback=?", function( data ) {
       localStorage.lastLoginIP = data.ip;
     });
   }
