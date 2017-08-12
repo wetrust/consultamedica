@@ -4,6 +4,7 @@ function puedoGuardarEnElNavegador() {
     navegadorDowgrade = false;
     if (localStorage.ecografista != null) {
       var ecografista = JSON.parse(localStorage["ecografista"]);
+      $('#ecografista').val(ecografista);
     }
   }
   else {
