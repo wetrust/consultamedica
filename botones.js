@@ -5,6 +5,8 @@ function activarBotones() {
   $( '#irConsulta' ).on( 'click', function() {
     show_hide('home');
     show_hide('consulta');
+    localStorage.ecografista = $('#ecografista').val();
+    
   });
   $( '#volverConsultadesdeTipo' ).on( 'click', function() {
     show_hide('tipoExamen');
