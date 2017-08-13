@@ -23,8 +23,8 @@ class app {
 	};
 	this.loadPacientes = function(successCallback,errCallback){
 		this.db.transaction(
-			function(transaction){
-				transaction.executeSql('SELECT * FROM Users', [],function(transaction, results){this.listPacientes(results);}, errCallback);
+			function(transaction,successCallback){
+				transaction.executeSql('SELECT * FROM Users', [],function(transaction, results){successCallback(results);}, errCallback);
 		});
 	};
 	this.listPacientes = function(results){
