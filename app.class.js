@@ -23,7 +23,7 @@ class app {
 	};
 	this.loadPacientes = function(successCallback){
 		this.db.transaction(function(transaction){
-			transaction.executeSql(("SELECT * FROM Users),
+			transaction.executeSql(("SELECT * FROM Users"),
 			function(transaction, results){successCallback(results);}, this.errCallback);
 		});
 	};
