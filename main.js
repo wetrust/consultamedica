@@ -19,7 +19,7 @@ $( document ).ready(function() {
 		}
 		else{
 			show_hide('browser');
-			window.onhashchange = aplication.onHashChange();
+			window.addEventListener("hashchange", aplication.onHashChange(), false);
 			aplication.run();
 		}
 	}
