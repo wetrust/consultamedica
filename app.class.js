@@ -22,7 +22,7 @@ class app {
 		});
 	};
 	this.loadPacientes = function(successCallback,errCallback){
-		this.db.transaction(function(transaction){
+		this.db.transaction(function(transaction,successCallback,errCallback){
 			transaction.executeSql('SELECT * FROM Users', [],
 			function(transaction, results){successCallback(results);}, errCallback);
 		});
