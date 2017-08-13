@@ -134,7 +134,7 @@ class app {
 	    var fnac = $('#fNacimiento').val();
 	    var fum = $('#fum').val();
 	    
-	    this.db.readTransaction(function (tran) {
+	    this.db.transaction(function (tran) {
 	    	tran.executeSql('insert into Users (id unique, user_id, user_name, user_lastname, careReason, sonographer, controlPlace, city, phone, email, birthdate, fum) values (' + id + ',' + id + ',' + nombre + ', ' + apellido + ', ' + motivo + ', ' + ecograf + ', ' + lugarcontrol + ', ' + ciudad + ', ' + tel + ', ' + email + ', ' + fnac + ', ' + fum + ')');
 	    });
 	    
