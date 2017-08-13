@@ -141,7 +141,7 @@ class app {
 	    this.db.readTransaction(function (tran) {
                 var html = '<table><thead><th>ID</th><th>Nombre</th><th>Apellido</th><th>Motivo</th><th>FUM </th><th>Ciudad </th></thead><tbody>';
                 tran.executeSql('SELECT * FROM Users', [], function (tran, data) {
-                    for (i = 0; i < data.rows.length; i++) {
+                    for (var i = 0; i < data.rows.length; i++) {
                         html += '<tr><td>'
                             + data.rows[i].user_id + '</td><td>' + data.rows[i].user_name + '</td><td>' + data.rows[i].user_lastname + '</td><td>' + data.rows[i].careReason + '</td><td>' + data.rows[i].fum + '</td><td>' + data.rows[i].city + '</td></tr>';
                     };
