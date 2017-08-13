@@ -24,24 +24,26 @@ class app {
 	this.loadPacientes = function(successCallback,errCallback){
 		this.db.transaction(
 			function(transaction,successCallback){
-				transaction.executeSql('SELECT * FROM Users', [],function(transaction, results){successCallback(results);}, errCallback);
+				transaction.executeSql('SELECT * FROM Users', [],function(transaction, results){successCallback.result = results;successCallback.tabla();}, errCallback);
 		});
 	};
-	this.listPacientes = function(results){
-		var contenedor = $("#tablaPacientes");
-		contenedor.empty();
-		var html = '<table><thead><th>ID</th><th>Nombre</th><th>Apellido</th><th>Motivo</th><th>FUM </th><th>Ciudad </th></thead><tbody>';
-		
-		if (results.rows.length==0){
-			html = "<div class='alert alert-primary' role='alert'>No hay pacientes en la base de datos</div>";
-		} else {
-			$.each(results.rows, function(rowIndex){
-				html += '<tr><td>'
-				var row = results.rows.item(rowIndex);
-				html += row.user_id + '</td><td>' + row.user_name + '</td><td>' + row.user_lastname + '</td><td>' + row.careReason + '</td><td>' + row.fum + '</td><td>' + row.city + '</td></tr>';
-			});
-			html += '</tbody></table>';
-		}
+	this.listPacientes = function(){
+		this.result = '';
+		this.tabla = function(){
+			var contenedor = $("#tablaPacientes");
+			contenedor.empty();
+			var html = '<table><thead><th>ID</th><th>Nombre</th><th>Apellido</th><th>Motivo</th><th>FUM </th><th>Ciudad </th></thead><tbody>';
+			if (this.result.rows.length==0){
+				html = "<div class='alert alert-primary' role='alert'>No hay pacientes en la base de datos</div>";
+			} else {
+				$.each(this.result.rows, function(rowIndex){
+					html += '<tr><td>'
+					var row = this.result.rows.item(rowIndex);
+					html += row.user_id + '</td><td>' + row.user_name + '</td><td>' + row.user_lastname + '</td><td>' + row.careReason + '</td><td>' + row.fum + '</td><td>' + row.city + '</td></tr>';
+				});
+				html += '</tbody></table>';
+			}
+		};
 	};
     }
 
