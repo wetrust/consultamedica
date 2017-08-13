@@ -1,3 +1,8 @@
+$( '#nuevoPaciente' ).change( aplication.nuevoPaciente());
+$( '#editarPaciente').change( aplication.editarPaciente());
+$( '#guardarPaciente').change( aplication.guardarPaciente());
+$( '#eliminarPaciente').change( aplication.eliminarPaciente());
+
 function activarBotones() {
   $( '#imgEcoObsrimTrim' ).on( 'click', function() {
     $('#popupTitle').html("Imágen Ecografía Primer Trimestre");
