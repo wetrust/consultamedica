@@ -12,8 +12,14 @@ $( document ).ready(function() {
 	}
 	else{
 		var aplication = new app();
+		
 		if (aplication.checkBrowser == false){
 			console.log(aplication.strings.error.browser);
+		}
+		else{
+			show_hide('browser');
+			show_hide('home');
+			aplication.run();
 		}
 	}
 });
