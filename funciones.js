@@ -2,51 +2,12 @@
 //from https://stackoverflow.com/questions/17907445/how-to-detect-ie11
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
 
-function puedoGuardarEnElNavegador() {
-  if (window.localStorage) {
-    navegadorDowgrade = false;
-    if (localStorage.ecografista != null) {
-      var ecografista = JSON.parse(localStorage["ecografista"]);
-      $('#ecografista').val(ecografista);
-    }
-  }
-  else {
-    $("#home").prepend("<div class='alert alert-warning alert-dismissible fade show' role='alert' id='navegadorDowgrade'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Hey!</strong> debes actualizar tu navegador para mejorar el desempeño de esta aplicación.</div>");
-    navegadorDowgrade = true;
-  }
-};
-
-function queDiaEs(){
-  var d = new Date();
-
-  if (navegadorDowgrade == false) {
-    localStorage.lastLoginDate = d;
-  }
-  Hoy.push(d.getDay());
-  Hoy.push(d.getDate());
-  Hoy.push(d.getMonth());
-  Hoy.push(d.getFullYear());
-};
-
-function cualEsMiIp(){
-
-  if (navegadorDowgrade == false) {
-    $.getJSON( "https://api.ipify.org?format=jsonp&callback=?", function( data ) {
-      localStorage.lastLoginIP = data.ip;
-    });
-  }
-};
-
 function show_hide(id){
   if (document.getElementById){
     var el = document.getElementById(id);
     el.style.display = (el.style.display == 'none') ? 'block' : 'none';
   }
 };
-
-function activarTooltips(){
-  $('[data-toggle="tooltip"]').tooltip();
-}
 
 function calcularEG(){
  var FExamen, FUM, EdadGestacional;
