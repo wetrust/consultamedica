@@ -1,4 +1,5 @@
-//var navegadorDowgrade, Hoy = [];
+var aplication;
+
 $( document ).ready(function() {
 	//puedoGuardarEnElNavegador();
         //queDiaEs();
@@ -11,7 +12,7 @@ $( document ).ready(function() {
 		console.log('navegador incompatible')
 	}
 	else{
-		var aplication = new app();
+		aplication = new app();
 		
 		if (aplication.checkBrowser == false){
 			console.log(aplication.strings.error.browser);
