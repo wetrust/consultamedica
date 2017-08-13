@@ -68,7 +68,7 @@ class app {
 	    $('#idPaciente').val('');
 	    $('#nombre').val('');
 	    $('#apellido').val('');
-	    $(''#motivo').val('');
+	    $('#motivo').val('');
 	    $('#ecografista').val('');
 	    $('#lugarControl').val('');
 	    $('#ciudad').val('');
