@@ -1,3 +1,5 @@
+//revisar https://gist.github.com/benpoole/1041277
+
 class app {
     constructor() {
 	var daysES=["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
