@@ -1,4 +1,7 @@
 //funciones
+//from https://stackoverflow.com/questions/17907445/how-to-detect-ie11
+function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
+
 function puedoGuardarEnElNavegador() {
   if (window.localStorage) {
     navegadorDowgrade = false;
