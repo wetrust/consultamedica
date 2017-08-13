@@ -19,11 +19,11 @@ $( document ).ready(function() {
 		}
 		else{
 			show_hide('browser');
-			$( '#nuevoPaciente' ).change( aplication.nuevoPaciente());
-$( '#editarPaciente').change( aplication.editarPaciente());
-$( '#guardarPaciente').change( aplication.guardarPaciente());
-$( '#cancelarPaciente').change( aplication.cancelarPaciente());
-$( '#eliminarPaciente').change( aplication.eliminarPaciente());
+			$( '#nuevoPaciente' ).on( 'click',  aplication.nuevoPaciente());
+$( '#editarPaciente').on( 'click',  aplication.editarPaciente());
+$( '#guardarPaciente').on( 'click',  aplication.guardarPaciente());
+$( '#cancelarPaciente').on( 'click',  aplication.cancelarPaciente());
+$( '#eliminarPaciente').on( 'click',  aplication.eliminarPaciente());
 			aplication.run();
 			
 		}
