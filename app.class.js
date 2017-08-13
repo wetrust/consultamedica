@@ -134,19 +134,11 @@ class app {
 	    var fnac = $('#fNacimiento').val();
 	    var fum = $('#fum').val();
 	    
-	    this.makedb();
+	    var version = this.db.version;
 	    
-	    //this.db.transaction(function (tran) {
-	    //	tran.executeSql('insert into Users (id unique, user_id, user_name, user_lastname, careReason, sonographer, controlPlace, city, phone, email, birthdate, fum) values (' + id + ',' + id + ',' + nombre + ', ' + apellido + ', ' + motivo + ', ' + ecograf + ', ' + lugarcontrol + ', ' + ciudad + ', ' + tel + ', ' + email + ', ' + fnac + ', ' + fum + ')');
-	    //});
-	    
-	   this.db.transaction(function (tran) {
-                tran.executeSql('CREATE TABLE IF NOT EXISTS Usersx (id unique, Name, MailID)');
-                //tran.executeSql('insert into Users (id, Name, MailID) values (?,?,?)', [id, name, MailID]);
-                tran.executeSql('insert into Users (id, Name, MailID) values (1, "Sibi","sibikv4u@gmail.com")');
-                tran.executeSql('insert into Users (id, Name, MailID) values (2, "Aji","ajaybhasy@gmail.com")');
-                tran.executeSql('insert into Users (id, Name, MailID) values (3, "Ansu","ansary.ans21@gmail.com")');
-            });
+	    this.db.transaction(function (tran) {
+	    	tran.executeSql('insert into Users (id unique, user_id, user_name, user_lastname, careReason, sonographer, controlPlace, city, phone, email, birthdate, fum) values (' + id + ',' + id + ',' + nombre + ', ' + apellido + ', ' + motivo + ', ' + ecograf + ', ' + lugarcontrol + ', ' + ciudad + ', ' + tel + ', ' + email + ', ' + fnac + ', ' + fum + ')');
+	    });
 	    
 	    this.db.readTransaction(function (tran) {
                 var html = '<table><thead><th>ID</th><th>Nombre</th><th>Apellido</th><th>Motivo</th><th>FUM </th><th>Ciudad </th></thead><tbody>';
