@@ -13,11 +13,24 @@ class app {
 
     run(){
     	this.makedb();
-	var d = new Date();
-	this.lastLoginDate(d);
+	this.day = new Date();
+	this.lastLoginDate(this.day);
 	this.lastLoginIP();
 	$('[data-toggle="tooltip"]').tooltip();
+	this.resetInputs()
 	this.displayElement("home");
+    }
+
+    onHashChange(){
+    	//https://stackoverflow.com/questions/6478485/jquery-change-the-url-address-without-redirecting
+	this.hash = document.location.hash;    
+    
+	if (this.hash=="#inicio"){
+		displayElement("home");
+	}
+	else if (this.hash=="#consulta"){
+		displayElement("consulta");
+	}
     }
     
     checkBrowser() {
@@ -55,17 +68,25 @@ class app {
     }
 	
    lastLoginDate(date){
-   	if (!date){
-		return localStorage.lastLoginDate;
-	}
-	else{
-		localStorage.lastLoginDate = date;
-	}
+	localStorage.lastLoginDate = date;
    }
 
    lastLoginIP() {
-	$.getJSON( "https://api.ipify.org?format=jsonp&callback=?", function( data ) {
-		localStorage.lastLoginIP = data.ip;
-	});
+	   $.getJSON( "https://api.ipify.org?format=jsonp", function( data ) {
+		   localStorage.lastLoginIP = data.ip;
+	   });
+   }
+	
+  resetInputs(){
+	
+	$("#fechaHora").append(this.strings.datetime.ES.days[this.day.getDay()] + ", " + this.day.getDate() + " de "+ this.strings.datetime.ES.months[this.day.getMonth()] + " " + this.day.getFullYear());
+
+	var day = ("0" + this.day.getDate()).slice(-2);
+	var month = ("0" + (this.day.getMonth() + 1)).slice(-2);
+
+	$('#fNacimiento').val(this.day.getFullYear()+"-"+(month)+"-"+(day));
+	$("input[name='fum']").val(this.day.getFullYear()+"-"+(month)+"-"+(day));
+	$("#fee').val(this.day.getFullYear()+"-"+(month)+"-"+(day));
   }
+
 }
