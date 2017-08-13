@@ -1,4 +1,5 @@
 //revisar https://gist.github.com/benpoole/1041277
+//http://programacion.net/articulo/introduccion_a_web_sql_1305
 
 class app {
     constructor() {
