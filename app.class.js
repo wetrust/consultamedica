@@ -48,6 +48,109 @@ class app {
 	}
     }
     
+//Funciones para los pacientes
+
+    nuevoPaciente(){
+	    //activar los input
+
+	    $('#idPaciente').prop('readonly', false);
+	    $('#nombre').prop('readonly', false);
+	    $('#apellido').prop('readonly', false);
+	    $(''#motivo').prop('readonly', false);
+	    $('#ecografista').prop('readonly', false);
+	    $('#lugarControl').prop('readonly', false);
+	    $('#ciudad').prop('readonly', false);
+	    $('#telefono').prop('readonly', false);
+	    $('#email').prop('readonly', false);
+	    $('#fNacimiento').prop('readonly', false);
+	    $('#fum').prop('readonly', false);
+
+	    $('#idPaciente').val('');
+	    $('#nombre').val('');
+	    $('#apellido').val('');
+	    $(''#motivo').val('');
+	    $('#ecografista').val('');
+	    $('#lugarControl').val('');
+	    $('#ciudad').val('');
+	    $('#telefono').val('');
+	    $('#email').val('');
+	    $('#fNacimiento').val('');
+	    $('#fum').val('');
+	    
+	    $('#idPaciente').focus();
+    }
+	
+    editarPaciente(){
+	    
+	    $('#idPaciente').prop('readonly', false);
+	    $('#nombre').prop('readonly', false);
+	    $('#apellido').prop('readonly', false);
+	    $(''#motivo').prop('readonly', false);
+	    $('#ecografista').prop('readonly', false);
+	    $('#lugarControl').prop('readonly', false);
+	    $('#ciudad').prop('readonly', false);
+	    $('#telefono').prop('readonly', false);
+	    $('#email').prop('readonly', false);
+	    $('#fNacimiento').prop('readonly', false);
+	    $('#fum').prop('readonly', false);
+
+	    $('#idPaciente').val('');
+	    $('#nombre').val('');
+	    $('#apellido').val('');
+	    $(''#motivo').val('');
+	    $('#ecografista').val('');
+	    $('#lugarControl').val('');
+	    $('#ciudad').val('');
+	    $('#telefono').val('');
+	    $('#email').val('');
+	    $('#fNacimiento').val('');
+	    $('#fum').val('');
+	    
+	    $('#idPaciente').focus();
+    }
+
+    guardarPaciente(){
+	    $('#idPaciente').prop('readonly', true);
+	    $('#nombre').prop('readonly', true);
+	    $('#apellido').prop('readonly', true);
+	    $(''#motivo').prop('readonly', true);
+	    $('#ecografista').prop('readonly', true);
+	    $('#lugarControl').prop('readonly', true);
+	    $('#ciudad').prop('readonly', true);
+	    $('#telefono').prop('readonly', true);
+	    $('#email').prop('readonly', true);
+	    $('#fNacimiento').prop('readonly', true);
+	    $('#fum').prop('readonly', true);
+
+	    var id = $('#idPaciente').val();
+	    var nombre = $('#nombre').val();
+	    var apellido = $('#apellido').val();
+	    var motivo = $('#motivo').val();
+	    var ecograf = $('#ecografista').val();
+	    var lugarcontrol = $('#lugarControl').val();
+	    var ciudad = $('#ciudad').val();
+	    var tel = $('#telefono').val();
+	    var email = $('#email').val();
+	    var fnac = $('#fNacimiento').val();
+	    var fum = $('#fum').val();
+	    
+	    this.db.executeSql('insert into Users (id unique, user_id, user_name, user_lastname, careReason, sonographer, controlPlace, city, phone, email, birthdate, fum) values (' + id + ',' + id + ',' + nombre + ', ' + apellido + ', ' + motivo + ', ' + ecograf + ', ' + lugarcontrol + ', ' + ciudad + ', ' + tel + ', ' + email + ', ' + fnac + ', ' + fum + ')');
+	    
+	    this.db.transaction(function (tran) {
+                var html = '<table><thead><th>ID</th><th>Nombre</th><th>Apellido</th><th>Motivo</th><th>FUM </th><th>Ciudad </th></thead><tbody>';
+                tran.executeSql('SELECT * FROM Users', [], function (tran, data) {
+                    for (i = 0; i < data.rows.length; i++) {
+                        html += '<tr><td>'
+                            + data.rows[i].user_id + '</td><td>' + data.rows[i].user_name + '</td><td>' + data.rows[i].user_lastname + '</td><td>' + data.rows[i].careReason + '</td><td>' + data.rows[i].fum + '</td><td>' + data.rows[i].city + '</td></tr>';
+                    };
+                    html += '</tbody></table>';
+                    $('#tablaPacientes').html(html);
+                });
+            });
+    }
+    cancelarPaciente(){}
+    eliminarPaciente(){}
+
     checkBrowser() {
 	if (!window.openDatabase || !window.localStorage || !("onhashchange" in window)){
 		return false;
