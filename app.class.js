@@ -56,7 +56,7 @@ class app {
 	    $('#idPaciente').prop('readonly', false);
 	    $('#nombre').prop('readonly', false);
 	    $('#apellido').prop('readonly', false);
-	    $(''#motivo').prop('readonly', false);
+	    $('#motivo').prop('readonly', false);
 	    $('#ecografista').prop('readonly', false);
 	    $('#lugarControl').prop('readonly', false);
 	    $('#ciudad').prop('readonly', false);
@@ -85,7 +85,7 @@ class app {
 	    $('#idPaciente').prop('readonly', false);
 	    $('#nombre').prop('readonly', false);
 	    $('#apellido').prop('readonly', false);
-	    $(''#motivo').prop('readonly', false);
+	    $('#motivo').prop('readonly', false);
 	    $('#ecografista').prop('readonly', false);
 	    $('#lugarControl').prop('readonly', false);
 	    $('#ciudad').prop('readonly', false);
@@ -97,7 +97,7 @@ class app {
 	    $('#idPaciente').val('');
 	    $('#nombre').val('');
 	    $('#apellido').val('');
-	    $(''#motivo').val('');
+	    $('#motivo').val('');
 	    $('#ecografista').val('');
 	    $('#lugarControl').val('');
 	    $('#ciudad').val('');
@@ -113,7 +113,7 @@ class app {
 	    $('#idPaciente').prop('readonly', true);
 	    $('#nombre').prop('readonly', true);
 	    $('#apellido').prop('readonly', true);
-	    $(''#motivo').prop('readonly', true);
+	    $('#motivo').prop('readonly', true);
 	    $('#ecografista').prop('readonly', true);
 	    $('#lugarControl').prop('readonly', true);
 	    $('#ciudad').prop('readonly', true);
