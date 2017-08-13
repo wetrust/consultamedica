@@ -18,13 +18,13 @@ class app {
 	this.savePacientes = function(idPaciente, nombre, apellido, motivo, ecografia, lugarControl, ciudad, telefono, email, fNac, fum, successCallback){
 		this.db.transaction(function(transaction){
 			transaction.executeSql(("insert into Users (user_id, user_name, user_lastname, careReason, sonographer, controlPlace, city, phone, email, birthdate, fum) values (?,?,?,?,?,?,?,?,?,?,?);"), 
-			[idPaciente, nombre, apellido, motivo, ecografia, lugarControl, ciudad, telefono, email, fNac, fum], function(transaction, results){successCallback(results);}, this.errCallback);
+			[idPaciente, nombre, apellido, motivo, ecografia, lugarControl, ciudad, telefono, email, fNac, fum], function(transaction, results){successCallback(results);}, this.errCallback());
 		});
 	};
 	this.loadPacientes = function(successCallback){
 		this.db.transaction(function(transaction){
 			transaction.executeSql(("SELECT * FROM Users"),
-			function(transaction, results){successCallback(results);}, this.errCallback);
+			function(transaction, results){successCallback(results);}, this.errCallback());
 		});
 	};
 	this.listPacientes = function(results){
