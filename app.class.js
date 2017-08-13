@@ -26,10 +26,10 @@ class app {
 	this.hash = document.location.hash;    
     
 	if (this.hash=="#inicio"){
-		displayElement("home");
+		this.displayElement("home");
 	}
 	else if (this.hash=="#consulta"){
-		displayElement("consulta");
+		this.displayElement("consulta");
 	}
     }
     
