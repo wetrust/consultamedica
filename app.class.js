@@ -88,5 +88,4 @@ class app {
 	$("input[name='fum']").val(this.day.getFullYear()+"-"+(month)+"-"+(day));
 	$('#fee').val(this.day.getFullYear()+ "-" + (month) + "-" + (day));
   }
-
 }
