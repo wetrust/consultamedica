@@ -19,11 +19,6 @@ class app {
 	$('[data-toggle="tooltip"]').tooltip();
 	this.resetInputs()
 	this.displayElement("home");
-	    $( '#nuevoPaciente' ).on( 'click',  aplication.nuevoPaciente());
-			$( '#editarPaciente').on( 'click',  aplication.editarPaciente());
-			$( '#guardarPaciente').on( 'click',  aplication.guardarPaciente());
-			$( '#cancelarPaciente').on( 'click',  aplication.cancelarPaciente());
-			$( '#eliminarPaciente').on( 'click',  aplication.eliminarPaciente());
     }
 
     onHashChange(){
