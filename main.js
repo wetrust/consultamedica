@@ -15,7 +15,8 @@ $( document ).ready(function() {
 		if (aplication.checkBrowser == false){
 			console.log(aplication.strings.error.browser);
 		}
-      });
+	}
+});
 
 
 
