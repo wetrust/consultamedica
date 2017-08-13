@@ -56,17 +56,17 @@ class app {
     }
 
     displayElement(div_id){
-	$('#home').css("display", 'none');
-	$('#consulta').css("display", 'none');
-	$('#tipoExamen').css("display", 'none');
-	$('#ecoObsPrimTrim').css("display", 'none');
-	$('#ecoObsSegTrim').css("display", 'none');
-	$('#ecoDoppler').css("display", 'none');
+	$('#home').hide();
+	$('#consulta').hide();
+	$('#tipoExamen').hide();
+	$('#ecoObsPrimTrim').hide();
+	$('#ecoObsSegTrim').hide();
+	$('#ecoDoppler').hide();
 	if ($('#popupGenerico').is(':visible')){
 		$('#popupGenerico').modal('hide');
 	}
-	$('#paciente').css("display", 'none');
-	$('#'+div_id).css("display", 'block');
+	$('#paciente').hide();
+	$('#'+div_id).show();
     }
 	
    lastLoginDate(date){
