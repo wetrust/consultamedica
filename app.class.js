@@ -15,16 +15,16 @@ class app {
 	this.errCallback = function(){
 		alert("Oh noes! There haz bin a datamabase error!");
 	};
-	this.savePacientes = function(idPaciente, nombre, apellido, motivo, ecografia, lugarControl, ciudad, telefono, email, fNac, fum, successCallback){
+	this.savePacientes = function(idPaciente, nombre, apellido, motivo, ecografia, lugarControl, ciudad, telefono, email, fNac, fum, successCallback,errCallback){
 		this.db.transaction(function(transaction){
 			transaction.executeSql(("insert into Users (user_id, user_name, user_lastname, careReason, sonographer, controlPlace, city, phone, email, birthdate, fum) values (?,?,?,?,?,?,?,?,?,?,?);"), 
-			[idPaciente, nombre, apellido, motivo, ecografia, lugarControl, ciudad, telefono, email, fNac, fum], function(transaction, results){successCallback(results);}, this.errCallback());
+			[idPaciente, nombre, apellido, motivo, ecografia, lugarControl, ciudad, telefono, email, fNac, fum], function(transaction, results){successCallback(results);}, errCallback);
 		});
 	};
-	this.loadPacientes = function(successCallback){
+	this.loadPacientes = function(successCallback,errCallback){
 		this.db.transaction(function(transaction){
 			transaction.executeSql(("SELECT * FROM Users"),
-			function(transaction, results){successCallback(results);}, this.errCallback());
+			function(transaction, results){successCallback(results);}, errCallback);
 		});
 	};
 	this.listPacientes = function(results){
@@ -53,7 +53,7 @@ class app {
 	$('[data-toggle="tooltip"]').tooltip();
 	this.resetInputs()
 	this.displayElement("home");
-	this.loadPacientes(this.listPacientes);
+	this.loadPacientes(this.listPacientes, this.errCallback);
     }
 
     onHashChange(){
@@ -168,8 +168,8 @@ class app {
 	    var email = $('#email').val();
 	    var fnac = $('#fNacimiento').val();
 	    var fum = $('#fum').val();
-	    this.savePacientes(id, nombre, apellido, motivo, ecograf, lugarcontrol, ciudad, tel, email, fnac, fum, function(){console.log("data has been saved!");});
-	    this.loadPacientes(this.listPacientes);
+	    this.savePacientes(id, nombre, apellido, motivo, ecograf, lugarcontrol, ciudad, tel, email, fnac, fum, function(){console.log("data has been saved!");},this.errCallback);
+	    this.loadPacientes(this.listPacientes,this.errCallback);
 
     }
     cancelarPaciente(){}
