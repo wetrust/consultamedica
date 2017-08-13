@@ -19,7 +19,13 @@ $( document ).ready(function() {
 		}
 		else{
 			show_hide('browser');
+			$( '#nuevoPaciente' ).change( aplication.nuevoPaciente());
+$( '#editarPaciente').change( aplication.editarPaciente());
+$( '#guardarPaciente').change( aplication.guardarPaciente());
+$( '#cancelarPaciente').change( aplication.cancelarPaciente());
+$( '#eliminarPaciente').change( aplication.eliminarPaciente());
 			aplication.run();
+			
 		}
 	}
 });
