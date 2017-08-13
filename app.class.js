@@ -62,7 +62,9 @@ class app {
 	$('#ecoObsPrimTrim').css("display", 'none');
 	$('#ecoObsSegTrim').css("display", 'none');
 	$('#ecoDoppler').css("display", 'none');
-	$('#popupGenerico').modal('hide');
+	if ($('#popupGenerico').is(':visible')){
+		$('#popupGenerico').modal('hide');
+	}
 	$('#paciente').css("display", 'none');
 	$('#'+div_id).css("display", 'block');
     }
