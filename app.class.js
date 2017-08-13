@@ -22,9 +22,9 @@ class app {
 		});
 	};
 	this.loadPacientes = function(successCallback,errCallback){
-		this.db.transaction(function(transaction,successCallback,errCallback){
+		this.db.transaction(function(transaction){
 			transaction.executeSql('SELECT * FROM Users', [],
-			function(transaction, results){successCallback(results);}, errCallback);
+			function(transaction, results){this.successCallback(results);}, this.errCallback);
 		});
 	};
 	this.listPacientes = function(results){
