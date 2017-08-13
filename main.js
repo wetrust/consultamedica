@@ -19,13 +19,14 @@ $( document ).ready(function() {
 		}
 		else{
 			show_hide('browser');
-			window.addEventListener("hashchange", aplication.onHashChange(), false);
 			aplication.run();
 		}
 	}
 });
 
-
+$(window).on('hashchange', function(){
+	aplication.onHashChange();
+});
 
 function cargarDatosGenerales(){
 	
