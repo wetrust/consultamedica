@@ -770,6 +770,21 @@
         <li class="breadcrumb-item"><a href="#inicio">Inicio</a></li>
         <li class="breadcrumb-item active">Nueva Paciente</li>
       </ol>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="nuevoPaciente">Nuevo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="editarPaciente">Editar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="guardarPaciente">Guardar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="eliminarPaciente">Eliminar</a>
+        </li>
+      </ul>
+      <hr>
       <div class="row">
         <div class="col">
           <div class="card mb-3">
@@ -781,7 +796,7 @@
                     <label for="aud" class="col-form-label">ID</label>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" id="idPaciente">
+                    <input type="text" class="form-control" id="idPaciente" readonly>
                   </div>
                   <div class="col">
                   </div>
@@ -793,13 +808,13 @@
                     <label for="aud" class="col-form-label">Nombre</label>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" id="nombre">
+                    <input type="text" class="form-control" id="nombre" readonly>
                   </div>
                   <div class="col">
                     <label for="aud" class="col-form-label">Apellido</label>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" id="apellido">
+                    <input type="text" class="form-control" id="apellido" readonly>
                   </div>
                 </div>
                 <div class="form-group row">
@@ -808,7 +823,7 @@
                   </div>
                   <div class="col">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                      <select class="form-control" id="motivo">
+                      <select class="form-control" id="motivo" readonly>
                           <option>Eco Confirmación de Embarazo</option>
                           <option>Eco. Determinación edad gestacional
                           <option>Eco evaluación crecimiento
@@ -824,7 +839,7 @@
                   </div>
                   <div class="col">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                      <input type="text" class="form-control" id="ecografista">
+                      <input type="text" class="form-control" id="ecografista" readonly>
                     </div>
                   </div>
                 </div>
@@ -833,13 +848,13 @@
                     <label for="aud" class="col-form-label">Lugar del control prenatal</label>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" id="lugarControl">
+                    <input type="text" class="form-control" id="lugarControl" readonly>
                   </div>
                   <div class="col">
                     <label for="aud" class="col-form-label">Ciudad</label>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" id="ciudad">
+                    <input type="text" class="form-control" id="ciudad" readonly>
                   </div>
                 </div>
                 <div class="form-group row">
@@ -847,29 +862,16 @@
                     <label for="aud" class="col-form-label">Teléfono</label>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" id="telefono">
+                    <input type="text" class="form-control" id="telefono" readonly>
                   </div>
                   <div class="col">
                     <label for="aud" class="col-form-label">EMail</label>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" id="email">
+                    <input type="text" class="form-control" id="email" readonly>
                   </div>
                 </div>
               </form>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-3">
-            <div class="card-block">
-              <h3 class="card-title">Acciones</h3>
-              <div class="btn-group-vertical">
-                <a class="btn btn-secondary" href="#inicio">Nuevo</a>
-                <a class="btn btn-secondary" href="#consulta">Editar</a>
-                <a class="btn btn-secondary" href="#tipoExamen">Guardar</a>
-                <a class="btn btn-secondary" href="#">Eliminar</a>
-              </div>
             </div>
           </div>
         </div>
@@ -915,6 +917,14 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card mb-3">
+            <div id="tablaPacientes">
             </div>
           </div>
         </div>
