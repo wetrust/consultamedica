@@ -53,7 +53,7 @@ class app {
 	$('[data-toggle="tooltip"]').tooltip();
 	this.resetInputs()
 	this.displayElement("home");
-	this.loadPacientes(this.listPacientes(), this.errCallback);
+	this.loadPacientes(this.listPacientes, this.errCallback);
     }
 
     onHashChange(){
