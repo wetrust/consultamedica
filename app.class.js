@@ -28,8 +28,23 @@ class app {
 	if (this.hash=="#inicio"){
 		this.displayElement("home");
 	}
+	else if (this.hash=="#paciente"){
+		this.displayElement("paciente");
+	}
 	else if (this.hash=="#consulta"){
 		this.displayElement("consulta");
+	}
+        else if (this.hash=="#tipoExamen"){
+		this.displayElement("tipoExamen");
+	}
+	else if (this.hash=="#ecoDoppler"){
+		this.displayElement("ecoDoppler");
+	}
+	else if (this.hash=="#ecoObsSegTrim"){
+		this.displayElement("ecoObsSegTrim");
+	}
+	else if (this.hash=="#ecoObsPrimTrim"){
+		this.displayElement("ecoObsPrimTrim");
 	}
     }
     
