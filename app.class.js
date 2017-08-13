@@ -86,7 +86,7 @@ class app {
 
 	$('#fNacimiento').val(this.day.getFullYear()+"-"+(month)+"-"+(day));
 	$("input[name='fum']").val(this.day.getFullYear()+"-"+(month)+"-"+(day));
-	$("#fee').val(this.day.getFullYear()+"-"+(month)+"-"+(day));
+	$("#fee').val(this.day.getFullYear()+ "-" + (month) + "-" + (day));
   }
 
 }
