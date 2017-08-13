@@ -1,18 +1,20 @@
 //var navegadorDowgrade, Hoy = [];
-      
-
-      $( document ).ready(function() {
-        //puedoGuardarEnElNavegador();
+$( document ).ready(function() {
+	//puedoGuardarEnElNavegador();
         //queDiaEs();
         //cualEsMiIp();
         //cargarDatosGenerales();
         //activarTooltips();
         //activarBotones();
-	var aplication = new app();
-	
-	if (aplication.checkBrowser == false){
-		console.log(aplication.strings.error.browser);
+
+	if (isIE()){
+		console.log('navegador incompatible')
 	}
+	else{
+		var aplication = new app();
+		if (aplication.checkBrowser == false){
+			console.log(aplication.strings.error.browser);
+		}
       });
 
 
