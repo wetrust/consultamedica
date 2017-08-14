@@ -57,6 +57,8 @@ var listPaciente = function(results){
 	$('#fum').val(row.fum);
 	$('#fum2').val(row.fum);
 	localStorage.fum = $('#fum').val();
+	$('#fum').trigger( "change" );
+	$('#fum2').trigger( "change" );
 
 };
 
