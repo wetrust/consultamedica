@@ -55,7 +55,8 @@ class app {
 
     nuevoPaciente(){
 	    //activar los input
-
+		$('#pacientesForm1').show();
+		$('#pacientesForm2').show();
 	    $('#idPaciente').prop('readonly', false);
 	    $('#nombre').prop('readonly', false);
 	    $('#apellido').prop('readonly', false);
@@ -83,8 +84,9 @@ class app {
 	    $('#idPaciente').focus();
     }
 	
-    editarPaciente(){
+    editarPaciente(idPaciente){
 	    
+	    loadPaciente(idPaciente, loadPaciente);
 	    $('#idPaciente').prop('readonly', false);
 	    $('#nombre').prop('readonly', false);
 	    $('#apellido').prop('readonly', false);
@@ -113,6 +115,9 @@ class app {
     }
 
     guardarPaciente(){
+	    
+		$('#pacientesForm1').hide();
+		$('#pacientesForm2').hide();
 	    $('#idPaciente').prop('readonly', true);
 	    $('#nombre').prop('readonly', true);
 	    $('#apellido').prop('readonly', true);
@@ -141,7 +146,10 @@ class app {
 	    loadPacientes(listPacientes);
 
     }
-    cancelarPaciente(){}
+    cancelarPaciente(){
+		$('#pacientesForm1').hide();
+		$('#pacientesForm2').hide();
+    }
     eliminarPaciente(){}
 
     checkBrowser() {
