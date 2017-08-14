@@ -12,36 +12,6 @@ class app {
 	var dt = {ES:espanol, EN: english};
 	var errorString = {browser: 'Su navegador está desactualizado, esta aplicación no funcionará correctamente'};
         this.strings = {datetime: dt, error: errorString};
-	this.errCallback = function(){
-		alert("Oh noes! There haz bin a datamabase error!");
-	};
-	this.savePacientes = function(idPaciente, nombre, apellido, motivo, ecografia, lugarControl, ciudad, telefono, email, fNac, fum, successCallback,errCallback){
-		this.db.transaction(function(transaction){
-			transaction.executeSql(("insert into Users (user_id, user_name, user_lastname, careReason, sonographer, controlPlace, city, phone, email, birthdate, fum) values (?,?,?,?,?,?,?,?,?,?,?);"), 
-			[idPaciente, nombre, apellido, motivo, ecografia, lugarControl, ciudad, telefono, email, fNac, fum], function(transaction, results){successCallback(results);}, errCallback);
-		});
-	};
-	this.loadPacientes = function(successCallback,errCallback){
-		this.db.transaction(
-			function(transaction){
-				transaction.executeSql('SELECT * FROM Users', [],function(transaction, results){successCallback(results);}, errCallback);
-		});
-	};
-	this.listPacientes = function(results){
-		var contenedor = $("#tablaPacientes");
-		contenedor.empty();
-		var html = '<table><thead><th>ID</th><th>Nombre</th><th>Apellido</th><th>Motivo</th><th>FUM </th><th>Ciudad </th></thead><tbody>';
-		if (results.rows.length==0){
-			html = "<div class='alert alert-primary' role='alert'>No hay pacientes en la base de datos</div>";
-		} else {
-			$.each(results.rows, function(rowIndex){
-				html += '<tr><td>'
-				var row = results.rows.item(rowIndex);
-				html += row.user_id + '</td><td>' + row.user_name + '</td><td>' + row.user_lastname + '</td><td>' + row.careReason + '</td><td>' + row.fum + '</td><td>' + row.city + '</td></tr>';
-			});
-			html += '</tbody></table>';
-		}
-	};
     }
 
     run(){
@@ -52,7 +22,6 @@ class app {
 	$('[data-toggle="tooltip"]').tooltip();
 	this.resetInputs()
 	this.displayElement("home");
-	this.loadPacientes(this.listPacientes, this.errCallback);
     }
 
     onHashChange(){
@@ -167,8 +136,9 @@ class app {
 	    var email = $('#email').val();
 	    var fnac = $('#fNacimiento').val();
 	    var fum = $('#fum').val();
-	    this.savePacientes(id, nombre, apellido, motivo, ecograf, lugarcontrol, ciudad, tel, email, fnac, fum, function(){console.log("data has been saved!");},this.errCallback);
-	    this.loadPacientes(this.listPacientes,this.errCallback);
+	    
+	    savePacientes(id, nombre, apellido, motivo, ecograf, lugarcontrol, ciudad, tel, email, fnac, fum, function(){console.log("data has been saved!");},errCallback);
+	    loadPacientes(listPacientes);
 
     }
     cancelarPaciente(){}
