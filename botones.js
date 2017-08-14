@@ -34,15 +34,12 @@ function activarBotones() {
  $( '#ipacm' ).change( pctacm);
  
  $( '#fNacimiento').on('change', function() {
-   if (navegadorDowgrade == false) {
       localStorage.fnac = $("#fNacimiento").val();
       localStorage.edad = calcularEdad();
      $("#edad").val(localStorage.edad);
-    }
  });
   
  $( '#fum').on('change', function() {
-   if (navegadorDowgrade == false) {
       localStorage.fum = $("#fum").val();
       localStorage.eg = calcularEG();
      $("#edadGestacional").val(localStorage.eg);
@@ -51,10 +48,8 @@ function activarBotones() {
       $("#egPrimTrim").val(localStorage.eg);
       $("#egSegTrim").val(localStorage.eg);
       $('#egDoppler').val(localStorage.eg);
-    }
  });
  $( '#fee').on('change', function() {
-   if (navegadorDowgrade == false) {
       localStorage.fee = $("#fee").val();
       localStorage.eg = calcularEG();
      $("#egExamen").val(localStorage.eg);
@@ -62,10 +57,8 @@ function activarBotones() {
       $("#egPrimTrim").val(localStorage.eg);
       $("#egSegTrim").val(localStorage.eg);
       $('#egDoppler').val(localStorage.eg);
-    }
  });
  $( '#fum2').on('change', function() {
-   if (navegadorDowgrade == false) {
       localStorage.fum = $("#fum2").val();
       localStorage.eg = calcularEG();
      $("#edadGestacional").val(localStorage.eg);
@@ -74,6 +67,5 @@ function activarBotones() {
       $("#egPrimTrim").val(localStorage.eg);
       $("#egSegTrim").val(localStorage.eg);
       $('#egDoppler').val(localStorage.eg);
-    }
  });
 }
