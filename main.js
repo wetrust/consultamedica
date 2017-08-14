@@ -17,18 +17,6 @@ var loadPacientes = function(successCallback){
 	});
 };
 
-$( document ).ready(function() {
-	//puedoGuardarEnElNavegador();
-        //queDiaEs();
-        //cualEsMiIp();
-        //cargarDatosGenerales();
-        //activarTooltips();
-        //activarBotones();
-
-	if (isIE()){
-		console.log('navegador incompatible')
-	}
-	else{
 		var listPacientes = function(results){
 			var contenedor = $("#tablaPacientes");
 			contenedor.empty();
@@ -45,7 +33,19 @@ $( document ).ready(function() {
 			}
 			contenedor.html(html);
 		};
-		
+
+$( document ).ready(function() {
+	//puedoGuardarEnElNavegador();
+        //queDiaEs();
+        //cualEsMiIp();
+        //cargarDatosGenerales();
+        //activarTooltips();
+        //activarBotones();
+
+	if (isIE()){
+		console.log('navegador incompatible')
+	}
+	else{
 		aplication = new app();
 		
 		if (aplication.checkBrowser == false){
