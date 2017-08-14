@@ -82,6 +82,7 @@ class app {
 	    $('#fum').val('');
 	    
 	    $('#idPaciente').focus();
+	    $("#tablaPacientes").hide();
     }
 	
     editarPaciente(idPaciente){
@@ -114,6 +115,7 @@ class app {
 	    $('#fum').val('');
 	    
 	    $('#idPaciente').focus();
+	    $("#tablaPacientes").hide();
     }
 
     guardarPaciente(){
@@ -146,11 +148,13 @@ class app {
 	    
 	    savePacientes(id, nombre, apellido, motivo, ecograf, lugarcontrol, ciudad, tel, email, fnac, fum, function(){console.log("data has been saved!");},errCallback);
 	    loadPacientes(listPacientes);
+	    $("#tablaPacientes").show();
 
     }
     cancelarPaciente(){
 		$('#pacientesForm1').hide();
 		$('#pacientesForm2').hide();
+	    	$("#tablaPacientes").show();
     }
     eliminarPaciente(){}
 
