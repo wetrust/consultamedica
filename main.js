@@ -26,7 +26,7 @@ var loadPacientes = function(successCallback){
 			} else {
 				$.each(results.rows, function(rowIndex){
 					var row = results.rows.item(rowIndex);
-					html += '<tr data-id="'+ row.id +'"><td scope="row">'
+					html += '<tr data-id="'+ row.id +'"><td scope="row">';
 					html += row.user_id + '</td><td>' + row.user_name + '</td><td>' + row.user_lastname + '</td><td>' + row.careReason + '</td><td>' + row.fum + '</td><td>' + row.city + '</td></tr>';
 				});
 				html += '</tbody></table>';
