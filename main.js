@@ -34,7 +34,7 @@ var listPacientes = function(results){
 		$.each(results.rows, function(rowIndex){
 			var row = results.rows.item(rowIndex);
 			html += '<tr onclick="aplication.editarPaciente('+ row.id +')"><td scope="row">';
-			html += row.user_id + '</td><td>' + row.user_name + '</td><td>' + row.user_lastname + '</td><td>' + row.careReason + '</td><td>' + row.fum + '</td><td>' + row.city + '</td></tr>';
+			html += row.user_id + '</td><td>' + row.user_name + '</td><td>' + row.user_lastname + '</td><td>' + row.careReason + '</td><td>' + row.fum + '</td><td>' + row.city + '</td><td><button type="button" class="btn btn-primary"  onclick="aplication.usarPaciente(' + row.id +')">exámen</button></td></tr>';
 		});
 		html += '</tbody></table>';
 	}
@@ -55,6 +55,7 @@ var listPaciente = function(results){
 	$('#email').val(row.email);
 	$('#fNacimiento').val(row.birthdate);
 	$('#fum').val(row.fum);
+	localStorage.fum = $('#fum').val();
 
 };
 
