@@ -25,8 +25,8 @@ var loadPacientes = function(successCallback){
 				html = "<div class='alert alert-primary' role='alert'>No hay pacientes en la base de datos</div>";
 			} else {
 				$.each(results.rows, function(rowIndex){
-					html += '<tr data-id="'+ row.id +'"><td scope="row">'
 					var row = results.rows.item(rowIndex);
+					html += '<tr data-id="'+ row.id +'"><td scope="row">'
 					html += row.user_id + '</td><td>' + row.user_name + '</td><td>' + row.user_lastname + '</td><td>' + row.careReason + '</td><td>' + row.fum + '</td><td>' + row.city + '</td></tr>';
 				});
 				html += '</tbody></table>';
