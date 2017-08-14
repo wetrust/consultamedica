@@ -1035,48 +1035,48 @@ function ajustarProgreso(valor, objeto){
 	$("#"+objeto + " > .pivote-tres").html("");
 	$("#"+objeto + " > .pivote-cuatro").html("");
 	
-	if valor <= 10{
+	if (valor <= 10){
 		$("#"+objeto + " > .pivote-cero").html("X");
 	}
-	else if valor <= 10{
+	else if (valor <= 10){
 		$("#"+objeto + " > .pivote-uno").css( "width", "10%");
 		$("#"+objeto + " > .pivote-uno").html("X");
 		$("#"+objeto + " > .pivote-dos").css("width", "25%");
 	}
-	else if valor <= 20{
+	else if (valor <= 20){
 		$("#"+objeto + " > .pivote-uno").css( "width", "15%");
 		$("#"+objeto + " > .pivote-uno").html("X");
 		$("#"+objeto + " > .pivote-dos").css("width", "15%");
 	}
-	else if valor <= 30{
+	else if (valor <= 30){
 		$("#"+objeto + " > .pivote-uno").css( "width", "20%");
 		$("#"+objeto + " > .pivote-dos").css("width", "15%");
 		$("#"+objeto + " > .pivote-dos").html("X");
 	}
-	else if valor <= 40{
+	else if (valor <= 40){
 		$("#"+objeto + " > .pivote-uno").css( "width", "25%");
 		$("#"+objeto + " > .pivote-dos").css("width", "10%");
 		$("#"+objeto + " > .pivote-dos").html("X");
 	}
-	else if valor <= 50{
+	else if (valor <= 50){
 		$("#"+objeto + " > .pivote-centro").html("X");
 	}
-	else if valor <= 60{
+	else if (valor <= 60){
 		$("#"+objeto + " > .pivote-tres").css( "width", "10%");
 		$("#"+objeto + " > .pivote-tres").html("X");
 		$("#"+objeto + " > .pivote-cuatro").css("width", "25%");
 	}
-	else if valor <= 70{
+	else if (valor <= 70){
 		$("#"+objeto + " > .pivote-tres").css( "width", "15%");
 		$("#"+objeto + " > .pivote-tres").html("X");
 		$("#"+objeto + " > .pivote-cuatro").css("width", "15%");
 	}
-	else if valor <= 80{
+	else if (valor <= 80){
 		$("#"+objeto + " > .pivote-tres").css( "width", "20%");
 		$("#"+objeto + " > .pivote-cuatro").css("width", "15%");
 		$("#"+objeto + " > .pivote-cuatro").html("X");
 	}
-	else if valor <= 90{
+	else if (valor <= 90){
 		$("#"+objeto + " > .pivote-tres").css( "width", "25%");
 		$("#"+objeto + " > .pivote-cuatro").css("width", "10%");
 		$("#"+objeto + " > .pivote-cuatro").html("X");
