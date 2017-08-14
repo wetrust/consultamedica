@@ -86,7 +86,7 @@ class app {
 	
     editarPaciente(idPaciente){
 	    
-	    loadPaciente(idPaciente, loadPaciente);
+	    loadPaciente(idPaciente,listPaciente);
 	    $('#idPaciente').prop('readonly', false);
 	    $('#nombre').prop('readonly', false);
 	    $('#apellido').prop('readonly', false);
