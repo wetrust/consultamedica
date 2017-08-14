@@ -41,7 +41,7 @@ var listPacientes = function(results){
 	contenedor.html(html);
 };
 
-var loadPaciente = function(results){
+var listPaciente = function(results){
 	
 	var row = results.rows.item(0);
 	$('#idPaciente').val(row.user_id);
