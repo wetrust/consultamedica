@@ -161,6 +161,11 @@ class app {
 	return true;
     }
 	
+    usarPaciente(idPaciente){
+	loadPaciente(idPaciente, listPaciente);
+	this.displayElement("consulta");
+    }
+	
     makedb(){
 	this.db = openDatabase('crecimientoFetal', '1.0', 'base de datos para los casos', 2 * 1024 * 1024);
 	this.db.transaction(function (tran) {
