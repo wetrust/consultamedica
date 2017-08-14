@@ -55,6 +55,7 @@ var listPaciente = function(results){
 	$('#email').val(row.email);
 	$('#fNacimiento').val(row.birthdate);
 	$('#fum').val(row.fum);
+	$('#fum2').val(row.fum);
 	localStorage.fum = $('#fum').val();
 
 };
