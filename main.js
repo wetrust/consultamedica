@@ -83,6 +83,7 @@ $( document ).ready(function() {
 			show_hide('browser');
 			aplication.run();
 			loadPacientes(listPacientes);
+			activarBotones();
 			
 		}
 	}
