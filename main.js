@@ -17,6 +17,13 @@ var loadPacientes = function(successCallback){
 	});
 };
 
+var loadPaciente = function(idPaciente, successCallback){
+	aplication.db.transaction(
+		function(transaction){
+			transaction.executeSql(("SELECT * FROM Users WHERE location=?"), [idPaciente],function(transaction, results){successCallback(results);}, errCallback);
+	});
+};
+
 var listPacientes = function(results){
 	var contenedor = $("#tablaPacientes");
 	contenedor.empty();
@@ -26,12 +33,29 @@ var listPacientes = function(results){
 	} else {
 		$.each(results.rows, function(rowIndex){
 			var row = results.rows.item(rowIndex);
-			html += '<tr data-id="'+ row.id +'"><td scope="row">';
+			html += '<tr onclick="aplication.editarPaciente("'+ row.id +')"><td scope="row">';
 			html += row.user_id + '</td><td>' + row.user_name + '</td><td>' + row.user_lastname + '</td><td>' + row.careReason + '</td><td>' + row.fum + '</td><td>' + row.city + '</td></tr>';
 		});
 		html += '</tbody></table>';
 	}
 	contenedor.html(html);
+};
+
+var loadPaciente = function(results){
+	
+	var row = results.rows.item(0);
+	$('#idPaciente').val(row.user_id);
+	$('#nombre').val(row.user_name);
+	$('#apellido').val(row.user_lastname);
+	$('#motivo').val(row.careReason);
+	$('#ecografista').val(row.sonographer);
+	$('#lugarControl').val(row.controlPlace);
+	$('#ciudad').val(row.city);
+	$('#telefono').val(row.phone);
+	$('#email').val(row.email);
+	$('#fNacimiento').val(row.birthdate);
+	$('#fum').val(row.fum);
+
 };
 
 $( document ).ready(function() {
