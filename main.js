@@ -20,12 +20,12 @@ var loadPacientes = function(successCallback){
 		var listPacientes = function(results){
 			var contenedor = $("#tablaPacientes");
 			contenedor.empty();
-			var html = '<table class="table table-responsive table-bordered table-hover"><thead class="bg-primary"><th>ID</th><th>Nombre</th><th>Apellido</th><th>Motivo</th><th>FUM </th><th>Ciudad </th></thead><tbody>';
+			var html = '<table class="table table-bordered table-hover"><thead class="bg-primary text-white"><th>ID</th><th>Nombre</th><th>Apellido</th><th>Motivo</th><th>FUM </th><th>Ciudad </th></thead><tbody>';
 			if (results.rows.length==0){
 				html = "<div class='alert alert-primary' role='alert'>No hay pacientes en la base de datos</div>";
 			} else {
 				$.each(results.rows, function(rowIndex){
-					html += '<tr><td scope="row">'
+					html += '<tr data-id="'+ row.id +'"><td scope="row">'
 					var row = results.rows.item(rowIndex);
 					html += row.user_id + '</td><td>' + row.user_name + '</td><td>' + row.user_lastname + '</td><td>' + row.careReason + '</td><td>' + row.fum + '</td><td>' + row.city + '</td></tr>';
 				});
