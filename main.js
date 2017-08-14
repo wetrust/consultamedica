@@ -20,7 +20,7 @@ var loadPacientes = function(successCallback){
 var loadPaciente = function(idPaciente, successCallback){
 	aplication.db.transaction(
 		function(transaction){
-			transaction.executeSql(("SELECT * FROM Users WHERE location=?"), [idPaciente],function(transaction, results){successCallback(results);}, errCallback);
+			transaction.executeSql(("SELECT * FROM Users WHERE id=?"), [idPaciente],function(transaction, results){successCallback(results);}, errCallback);
 	});
 };
 
