@@ -1035,7 +1035,7 @@ function ajustarProgreso(valor, objeto){
 	$("#"+objeto + " > .pivote-tres").html("");
 	$("#"+objeto + " > .pivote-cuatro").html("");
 	
-	if (valor <= 10){
+	if (valor <= 3){
 		$("#"+objeto + " > .pivote-cero").html("X");
 	}
 	else if (valor <= 10){
