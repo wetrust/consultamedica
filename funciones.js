@@ -1044,9 +1044,9 @@ function ajustarProgreso(valor, objeto){
 		$("#"+objeto + " > .pivote-dos").css("width", "25%");
 	}
 	else if (valor <= 20){
-		$("#"+objeto + " > .pivote-uno").css( "width", "15%");
+		$("#"+objeto + " > .pivote-uno").css( "width", "17.5%");
 		$("#"+objeto + " > .pivote-uno").html("X");
-		$("#"+objeto + " > .pivote-dos").css("width", "15%");
+		$("#"+objeto + " > .pivote-dos").css("width", "17.5%");
 	}
 	else if (valor <= 30){
 		$("#"+objeto + " > .pivote-uno").css( "width", "20%");
@@ -1067,9 +1067,9 @@ function ajustarProgreso(valor, objeto){
 		$("#"+objeto + " > .pivote-cuatro").css("width", "25%");
 	}
 	else if (valor <= 70){
-		$("#"+objeto + " > .pivote-tres").css( "width", "15%");
+		$("#"+objeto + " > .pivote-tres").css( "width", "17.5%");
 		$("#"+objeto + " > .pivote-tres").html("X");
-		$("#"+objeto + " > .pivote-cuatro").css("width", "15%");
+		$("#"+objeto + " > .pivote-cuatro").css("width", "17.5%");
 	}
 	else if (valor <= 80){
 		$("#"+objeto + " > .pivote-tres").css( "width", "20%");
