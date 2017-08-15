@@ -42,14 +42,7 @@ function calcularEdad(){
  	var unasemana = undia * 7;
 	var unano = undia * 365;
 	
-	if (navegadorDowgrade == false)
-	{
-	     fcumpleanos = new Date(localStorage.fnac);
-	}
-	else
-	{ 
-	     fcumpleanos = new Date($("#fNacimiento").val());
-	}
+	fcumpleanos = new Date($("#fNacimiento").val());
 
 	Edad = ((d.getTime() - fcumpleanos.getTime()) / unano).toFixed(0);
 
