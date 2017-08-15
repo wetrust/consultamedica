@@ -14,7 +14,7 @@ function calcularEG(){
  var undia = 1000 * 60 * 60 * 24;
  var unasemana = undia * 7;
   
-    FUM = $("#fum").val();
+    FUM = localStorage.fum;
     FExamen = $("#fee").val();
   
   FUM = new Date (FUM);
