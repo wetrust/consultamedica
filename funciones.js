@@ -1082,6 +1082,6 @@ function ajustarProgreso(valor, objeto){
 		$("#"+objeto + " > .pivote-cuatro").html("X");
 	}
 	else{
-		$("#"+objeto + " > .pivote-cien").html("|");
+		$("#"+objeto + " > .pivote-cien").html("X");
 	}
 }
