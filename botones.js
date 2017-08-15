@@ -58,8 +58,8 @@ function activarBotones() {
       $("#egSegTrim").val(localStorage.eg);
       $('#egDoppler').val(localStorage.eg);
  });
- $( '#fum2').on('change', function() {
-      localStorage.fum = $("#fum2").val();
+ $( '#fum-dos').on('change', function() {
+      localStorage.fum = $("#fum-dos").val();
       localStorage.eg = calcularEG();
      $("#edadGestacional").val(localStorage.eg);
      $("#egExamen").val(localStorage.eg);
