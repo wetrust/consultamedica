@@ -525,8 +525,10 @@ function pctdv() {
  var eg=0;
  
  eg=parseFloat(localStorage.eg);
- var dv = parseFloat(document.getElementById("dv").value);
- 
+ var dv = document.getElementById("dv").value;
+ dv = dv.replace(",", ".");
+ dv  parseFloat(dv);
+	
  if (eg < 20) {  
    $("#dvPct").val("0");
  }
@@ -587,7 +589,11 @@ function pctut() {
  
 	eg=parseFloat(localStorage.eg);
 	var utd = parseFloat($("#aud").val());
+ 	utd = utd.replace(",", ".");
+ 	utd  parseFloat(utd);
 	var uti = parseFloat($("#aui").val());
+ 	uti = uti.replace(",", ".");
+ 	uti  parseFloat(uti);
 	
 	var utprom = ((uti + utd) / 2)
 	$("#auprom").val(utprom.toFixed(2));
@@ -685,6 +691,8 @@ function pctau() {
 	var eg=0;
 	eg=parseFloat(localStorage.eg);
  	var aumb = parseFloat($('#ipau').val());
+ 	aumb = aumb.replace(",", ".");
+ 	aumb  parseFloat(aumb);
  
 	if (eg < 20) {
 		$('#ipauPct').val('0');
@@ -771,7 +779,9 @@ function pctacm() {
 	var eg=0;
 
 	eg=parseFloat(localStorage.eg);
-	var acm = parseFloat($('#ipacm').val())
+	var acm = parseFloat($('#ipacm').val());
+ 	acm = acm.replace(",", ".");
+ 	acm  parseFloat(acm);
 
 	if (eg < 20) {  
 		$('#ipacmPct').val('0');
