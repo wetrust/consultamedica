@@ -140,7 +140,7 @@ function pctcc() {
   eg = parseInt(eg);
   var uno=pct97[eg] - pct3[eg];
   var dos=cc - pct3[eg];
-			ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "ccPct");
+  ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "ccPct");
 	 psohdlk()
  }
 };
@@ -539,7 +539,7 @@ function pctdv() {
       eg = parseInt(eg);
       var uno=pct95[eg] - pct5[eg];
       var dos=dv - pct5[eg];
-      $("#dvPct").val(parseInt(90 / (uno) * (dos) + 5));
+      ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "dvPct");
  }
 
 }
@@ -611,18 +611,20 @@ function pctut() {
 			eg = parseInt(eg);
 			uno=pct95[eg] - pct5[eg];
 			dos=utd - pct5[eg];
-			$('#audPct').val(parseInt(90 / (uno) * (dos) + 5));
+			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "audPct");
 		}
 		if (uti > 0){
 			eg = parseInt(eg);
 			uno=pct95[eg] - pct5[eg];
 			dos=uti - pct5[eg];
 			$('#auiPct').val(parseInt(90 / (uno) * (dos) + 5));
+			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "auiPct");
 		}
 		if ($("#aud").val() && $("#aui").val()){
 			uno = pct95[eg] - pct5[eg];
 			dos = utprom - pct5[eg];
 			$('#auPct').val(parseInt(90 / (uno) * (dos) + 5));
+			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "auPct");
 		}
 	 }
 }
@@ -696,8 +698,7 @@ function pctau() {
 		eg = parseInt(eg);
 		var uno=pct95[eg] - pct5[eg];
 		var dos=aumb - pct5[eg];
-  
-		$("#ipauPct").val(parseInt(90 / (uno) * (dos) + 5));
+		ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ipauPct");
 		
 		if ($('#ipacm').val()){
 			var ccp = ($('#ipacm').val() / $('#ipau').val());
@@ -708,7 +709,7 @@ function pctau() {
 			uno = xpct95[eg] - xpct5[eg];
 			dos = ccp - xpct5[eg];
 
-			$("#ccpPct").val(parseInt(90 / (uno) * (dos) + 5));
+			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ccpPct");
 		}
 	}
 }
@@ -789,7 +790,7 @@ function pctacm() {
 		var uno = pct95[eg] - pct5[eg];
 		var dos = acm - pct5[eg];
  
-		$('#ipacmPct').val(parseInt(90 / (uno) * (dos) + 5));
+		ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ipacmPct");
 
 		if ($('#ipau').val()){
 			var ccp = (acm / $('#ipau').val());
@@ -800,7 +801,7 @@ function pctacm() {
 			uno = xpct95[eg] - xpct5[eg];
 			dos = ccp - xpct5[eg];
 
-			$("#ccpPct").val(parseInt(90 / (uno) * (dos) + 5));
+			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ccpPct");
 		}
 	}
 }
@@ -1020,52 +1021,52 @@ function ajustarProgreso(valor, objeto){
 	$("#"+objeto + " > .pivote-cuatro").html("");
 	
 	if (valor <= 3){
-		$("#"+objeto + " > .pivote-cero").html("X");
+		$("#"+objeto + " > .pivote-cero").html("<strong style='color:red;'>X</strong>");
 	}
 	else if (valor <= 10){
 		$("#"+objeto + " > .pivote-uno").css( "width", "10%");
-		$("#"+objeto + " > .pivote-uno").html("X");
+		$("#"+objeto + " > .pivote-uno").html("<strong style='color:red;'>X</strong>");
 		$("#"+objeto + " > .pivote-dos").css("width", "25%");
 	}
 	else if (valor <= 20){
 		$("#"+objeto + " > .pivote-uno").css( "width", "17.5%");
-		$("#"+objeto + " > .pivote-uno").html("X");
+		$("#"+objeto + " > .pivote-uno").html("<strong style='color:red;'>X</strong>");
 		$("#"+objeto + " > .pivote-dos").css("width", "17.5%");
 	}
 	else if (valor <= 30){
 		$("#"+objeto + " > .pivote-uno").css( "width", "20%");
 		$("#"+objeto + " > .pivote-dos").css("width", "15%");
-		$("#"+objeto + " > .pivote-dos").html("X");
+		$("#"+objeto + " > .pivote-dos").html("<strong style='color:red;'>X</strong>");
 	}
 	else if (valor <= 40){
 		$("#"+objeto + " > .pivote-uno").css( "width", "25%");
 		$("#"+objeto + " > .pivote-dos").css("width", "10%");
-		$("#"+objeto + " > .pivote-dos").html("X");
+		$("#"+objeto + " > .pivote-dos").html("<strong style='color:red;'>X</strong>");
 	}
 	else if (valor <= 50){
-		$("#"+objeto + " > .pivote-centro").html("X");
+		$("#"+objeto + " > .pivote-centro").html("<strong style='color:red;'>X</strong>");
 	}
 	else if (valor <= 60){
 		$("#"+objeto + " > .pivote-tres").css( "width", "10%");
-		$("#"+objeto + " > .pivote-tres").html("X");
+		$("#"+objeto + " > .pivote-tres").html("<strong style='color:red;'>X</strong>");
 		$("#"+objeto + " > .pivote-cuatro").css("width", "25%");
 	}
 	else if (valor <= 70){
 		$("#"+objeto + " > .pivote-tres").css( "width", "17.5%");
-		$("#"+objeto + " > .pivote-tres").html("X");
+		$("#"+objeto + " > .pivote-tres").html("<strong style='color:red;'>X</strong>");
 		$("#"+objeto + " > .pivote-cuatro").css("width", "17.5%");
 	}
 	else if (valor <= 80){
 		$("#"+objeto + " > .pivote-tres").css( "width", "20%");
 		$("#"+objeto + " > .pivote-cuatro").css("width", "15%");
-		$("#"+objeto + " > .pivote-cuatro").html("X");
+		$("#"+objeto + " > .pivote-cuatro").html("<strong style='color:red;'>X</strong>");
 	}
 	else if (valor <= 90){
 		$("#"+objeto + " > .pivote-tres").css( "width", "25%");
 		$("#"+objeto + " > .pivote-cuatro").css("width", "10%");
-		$("#"+objeto + " > .pivote-cuatro").html("X");
+		$("#"+objeto + " > .pivote-cuatro").html("<strong style='color:red;'>X</strong>");
 	}
 	else{
-		$("#"+objeto + " > .pivote-cien").html("X");
+		$("#"+objeto + " > .pivote-cien").html("<strong style='color:red;'>X</strong>");
 	}
 }
