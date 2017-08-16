@@ -590,7 +590,7 @@ function pctut() {
 	eg=parseFloat(localStorage.eg);
 	var utd = parseFloat($("#aud").val());
  	utd = utd.replace(",", ".");
- 	utd  parseFloat(utd);
+ 	utd = parseFloat(utd);
 	var uti = parseFloat($("#aui").val());
  	uti = uti.replace(",", ".");
  	uti = parseFloat(uti);
