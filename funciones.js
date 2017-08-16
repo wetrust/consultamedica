@@ -85,8 +85,10 @@ function deDBP() {
 
 	var eg=0;
 	eg=parseFloat(localStorage.eg);
-	var dbp = $("#dbp").val()
+	var dbp = $("#dbp").val();
+	dbp = dbp.toString();
     	dbp = dbp.replace(",", ".");
+	dbp = parseFloat(dbp);
 
 	if (eg < 12) {
 		$("#dbpDE").val('0');
@@ -453,7 +455,9 @@ function eglcn() {
     LCN[1][63] = 15;
 	
     var lcn = document.getElementById("lcn").value;
+    lcn = lcn.toString();
     lcn = lcn.replace(",", ".");
+    lcn = parseFloat(lcn);
 
     if (lcn > 90) {
         $("#lcnPct").val("0");
@@ -526,6 +530,7 @@ function pctdv() {
  
  eg=parseFloat(localStorage.eg);
  var dv = document.getElementById("dv").value;
+dv = dv.toString();
  dv = dv.replace(",", ".");
  dv = parseFloat(dv);
 	
@@ -588,10 +593,12 @@ function pctut() {
 	var eg=0;
  
 	eg=parseFloat(localStorage.eg);
-	var utd = parseFloat($("#aud").val());
+	var utd = $("#aud").val();
  	utd = utd.replace(",", ".");
+	utd = utd.toString();
  	utd = parseFloat(utd);
-	var uti = parseFloat($("#aui").val());
+	var uti =$("#aui").val();
+	uti = uti.toString();
  	uti = uti.replace(",", ".");
  	uti = parseFloat(uti);
 	
@@ -690,7 +697,8 @@ function pctau() {
 	
 	var eg=0;
 	eg=parseFloat(localStorage.eg);
- 	var aumb = parseFloat($('#ipau').val());
+ 	var aumb = $('#ipau').val();
+	aumb = aumb.toString();
  	aumb = aumb.replace(",", ".");
  	aumb = parseFloat(aumb);
  
@@ -779,7 +787,8 @@ function pctacm() {
 	var eg=0;
 
 	eg=parseFloat(localStorage.eg);
-	var acm = parseFloat($('#ipacm').val());
+	var acm = $('#ipacm').val();
+	acm = acm.toString();
  	acm = acm.replace(",", ".");
  	acm = parseFloat(acm);
 
