@@ -595,7 +595,7 @@ function pctut() {
 	eg=parseFloat(localStorage.eg);
 	var utd = $("#aud").val();
  	utd = utd.replace(",", ".");
-	utd = utd.toString();
+	utd = utd.toString(); 
  	utd = parseFloat(utd);
 	var uti =$("#aui").val();
 	uti = uti.toString();
