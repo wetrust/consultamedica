@@ -589,7 +589,7 @@ function pctut() {
 	pct95[26] = 0.95; pct95[27] = 0.94;
 	pct95[28] = 0.92; pct95[29] = 0.91;
 	pct95[30] = 0.91;
-
+//
 	var eg=0;
  
 	eg=parseFloat(localStorage.eg);
