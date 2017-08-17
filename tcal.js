@@ -150,9 +150,11 @@ function f_tcalUpdate (n_date, b_keepOpen) {
 		var e_cal = document.getElementById(s_pfx);
 		if (!e_cal || e_cal.style.visibility != 'visible') return;
 		e_cal.innerHTML = f_tcalGetHTML(d_date, e_input);
+		e_cal.change();
 	}
 	else {
 		e_input.value = f_tcalGenerateDate(d_date, A_TCALCONF.format);
+		e_input.change();
 		f_tcalCancel();
 	}
 }
