@@ -29,7 +29,7 @@ var listPacientes = function(results){
 	contenedor.empty();
 	var html = '<table class="table table-bordered table-hover"><thead class="bg-primary text-white"><th>ID</th><th>Nombre</th><th>Apellido</th><th>Motivo</th><th>FUM </th><th>Ciudad </th></thead><tbody>';
 	if (results.rows.length==0){
-		html = "<div class='alert alert-primary' role='alert'>No hay pacientes en la base de datos</div>";
+		html = "<div class='alert alert-primary' role='alert'>No hay pacientes su base de datos personal.</div>";
 	} else {
 		$.each(results.rows, function(rowIndex){
 			var row = results.rows.item(rowIndex);
