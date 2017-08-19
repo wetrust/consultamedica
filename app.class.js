@@ -194,7 +194,7 @@ class app {
 	if ($('#popupGenerico').is(':visible')){
 		$('#popupGenerico').modal('hide');
 	}
-	$('#tcal').hide();
+	$('#tcal').css("visibility", "hidden");
 	$('#paciente').hide();
 	$('#'+div_id).show();
     }
