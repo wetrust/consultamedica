@@ -49,6 +49,9 @@ class app {
 	else if (this.hash=="#ecoObsPrimTrim"){
 		this.displayElement("ecoObsPrimTrim");
 	}
+	else if (this.hash=="#informacion"){
+		$("#informacion").show();
+	}
     }
 
 //Funciones para los pacientes
