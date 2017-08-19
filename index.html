@@ -926,29 +926,29 @@
         <div class="col">
           <div class="card mb-3">
             <div class="card-block">
-              <h3 class="card-title">Nueva Paciente</h3>
+              <h3 class="card-title text-primary"><i class="fa fa-user-plus" aria-hidden="true"></i> Nueva Paciente</h3>
               <form class="mt-3 mb-3">
                 <div class="form-group row">
-                  <div class="col">
-                    <label for="aud" class="col-form-label">ID</label>
+                  <div class="col-md-4 col-lg-3">
+                    <label for="idPaciente" class="col-form-label text-primary"><i class="fa fa-id-badge hidden-lg-up" aria-hidden="true"></i> ID</label>
                   </div>
-                  <div class="col">
+                  <div class="col-md-8 col-lg-3">
                     <input type="text" class="form-control" id="idPaciente" readonly>
                   </div>
-                  <div class="col">
+                  <div class="col-md-4 col-lg-3">
                   </div>
-                  <div class="col">
+                  <div class="col-md-8 col-lg-3">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-md-4 col-lg-3">
-                    <label for="aud" class="col-form-label">Nombre</label>
+                    <label for="nombre" class="col-form-label text-primary"><i class="fa fa-user hidden-lg-up" aria-hidden="true"></i> Nombre</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
                     <input type="text" class="form-control" id="nombre" readonly>
                   </div>
                   <div class="col-md-4 col-lg-3">
-                    <label for="aud" class="col-form-label">Apellido</label>
+                    <label for="apellido" class="col-form-label text-primary"><i class="fa fa-user hidden-lg-up" aria-hidden="true"></i> Apellido</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
                     <input type="text" class="form-control" id="apellido" readonly>
@@ -956,11 +956,11 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-md-4 col-lg-3">
-                    <label for="aui" class="col-form-label">Motivo de Exámen</label>
+                    <label for="motivo" class="col-form-label text-primary"><i class="fa fa-question hidden-lg-up" aria-hidden="true"></i> Motivo de Exámen</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                      <select class="form-control" id="motivo" readonly>
+                      <select class="form-control" id="motivo">
                           <option>Eco Confirmación de Embarazo</option>
                           <option>Eco. Determinación edad gestacional
                           <option>Eco evaluación crecimiento
@@ -972,7 +972,7 @@
                     </div>
                   </div>
                   <div class="col-md-4 col-lg-3">
-                    <label for="aui" class="col-form-label">Ecografista</label>
+                    <label for="ecografista" class="col-form-label text-primary"><i class="fa fa-user-md hidden-lg-up" aria-hidden="true"></i> Ecografista</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -982,13 +982,13 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-md-4 col-lg-3">
-                    <label for="aud" class="col-form-label">Lugar del control prenatal</label>
+                    <label for="aud" class="col-form-label text-primary"><i class="fa fa-hospital-o hidden-lg-up" aria-hidden="true"></i> Lugar del control prenatal</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
                     <input type="text" class="form-control" id="lugarControl" readonly>
                   </div>
                   <div class="col-md-4 col-lg-3">
-                    <label for="aud" class="col-form-label">Ciudad</label>
+                    <label for="aud" class="col-form-label text-primary"><i class="fa fa-map-marker hidden-lg-up" aria-hidden="true"></i> Ciudad</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
                     <input type="text" class="form-control" id="ciudad" readonly>
@@ -996,13 +996,13 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-md-4 col-lg-3">
-                    <label for="aud" class="col-form-label">Teléfono</label>
+                    <label for="aud" class="col-form-label text-primary"><i class="fa fa-mobile hidden-lg-up" aria-hidden="true"></i> Teléfono</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
-                    <input type="text" class="form-control" id="telefono" readonly>
+                    <input type="number" class="form-control" id="telefono" readonly>
                   </div>
                   <div class="col-md-4 col-lg-3">
-                    <label for="aud" class="col-form-label">EMail</label>
+                    <label for="aud" class="col-form-label text-primary"><i class="fa fa-envelope-o hidden-lg-up" aria-hidden="true"></i> EMail</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
                     <input type="text" class="form-control" id="email" readonly>
@@ -1017,17 +1017,17 @@
         <div class="col">
           <div class="card mb-3">
             <div class="card-block">
-              <h3 class="card-title">Datos para exámen</h3>
+              <h3 class="card-title text-primary"><i class="fa fa-id-card" aria-hidden="true"></i> Datos para exámen</h3>
               <form class="mt-3 mb-3">
                 <div class="form-group row">
                   <div class="col-md-4 col-lg-3">
-                    <label for="aud" class="col-form-label">Fecha Nacimiento</label>
+                    <label for="aud" class="col-form-label text-primary"><i class="fa fa-calendar" aria-hidden="true"></i> Fecha Nacimiento</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
                     <input class="form-control tcal" type="text" value="2011-08-19" id="fNacimiento" readonly>
                   </div>
                   <div class="col-md-4 col-lg-3">
-                    <label for="aud" class="col-form-label">Edad</label>
+                    <label for="aud" class="col-form-label text-primary"><i class="fa fa-calendar" aria-hidden="true"></i> Edad</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1038,13 +1038,13 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-md-4 col-lg-3">
-                    <label for="aud" class="col-form-label">Fecha de ultima mestruación</label>
+                    <label for="aud" class="col-form-label text-primary"><i class="fa fa-calendar" aria-hidden="true"></i> Fecha de ultima mestruación</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
                     <input class="form-control tcal" type="text" value="2011-08-19" name="fum" id="fum" readonly>
                   </div>
                   <div class="col-md-4 col-lg-3">
-                    <label for="aud" class="col-form-label">Edad Gestacional</label>
+                    <label for="aud" class="col-form-label text-primary"><i class="fa fa-calendar" aria-hidden="true"></i> Edad Gestacional</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
