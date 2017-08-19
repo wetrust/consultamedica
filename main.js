@@ -73,6 +73,10 @@ var listPaciente = function(results){
       $('#egDoppler').val(localStorage.eg);
  });
 
+$( '.informacion').on('click', function() {
+	$("#informacion").hide();
+ });
+
 $( document ).ready(function() {
 	//puedoGuardarEnElNavegador();
         //queDiaEs();
