@@ -909,16 +909,16 @@
       </ol>
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="aplication.nuevoPaciente()">Nuevo</a>
+          <a class="nav-link" href="#" onclick="aplication.nuevoPaciente()"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="aplication.guardarPaciente()">Guardar</a>
+          <a class="nav-link invisible" href="#" onclick="aplication.guardarPaciente()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="aplication.cancelarPaciente()">Cancelar</a>
+        <li class="nav-item invisible">
+          <a class="nav-link" href="#" onclick="aplication.cancelarPaciente()"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="aplication.eliminarPaciente()">Eliminar</a>
+        <li class="nav-item invisible">
+          <a class="nav-link" href="#" onclick="aplication.eliminarPaciente()"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
         </li>
       </ul>
       <hr>
@@ -926,7 +926,7 @@
         <div class="col">
           <div class="card mb-3">
             <div class="card-block">
-              <h3 class="card-title text-primary"><i class="fa fa-user-plus" aria-hidden="true"></i> Nueva Paciente</h3>
+              <h3 class="card-title"><i class="fa fa-user-plus" aria-hidden="true"></i> Nueva Paciente</h3>
               <form class="mt-3 mb-3">
                 <div class="form-group row">
                   <div class="col-md-4 col-lg-3">
@@ -1005,7 +1005,7 @@
                     <label for="aud" class="col-form-label text-primary"><i class="fa fa-envelope-o hidden-lg-up" aria-hidden="true"></i> EMail</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
-                    <input type="text" class="form-control" id="email" readonly>
+                    <input type="email" class="form-control" id="email" readonly>
                   </div>
                 </div>
               </form>
@@ -1017,7 +1017,7 @@
         <div class="col">
           <div class="card mb-3">
             <div class="card-block">
-              <h3 class="card-title text-primary"><i class="fa fa-id-card" aria-hidden="true"></i> Datos para exámen</h3>
+              <h3 class="card-title"><i class="fa fa-id-card" aria-hidden="true"></i> Datos para exámen</h3>
               <form class="mt-3 mb-3">
                 <div class="form-group row">
                   <div class="col-md-4 col-lg-3">
