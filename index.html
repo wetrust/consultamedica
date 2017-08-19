@@ -911,13 +911,16 @@
         <li class="nav-item">
           <a class="nav-link" href="#" onclick="aplication.nuevoPaciente()"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link invisible" href="#" onclick="aplication.guardarPaciente()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+        <li class="nav-item editar-paciente" style="display:none;">
+          <a class="nav-link" href="#" onclick="aplication.guardarPaciente()"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
         </li>
-        <li class="nav-item invisible">
+        <li class="nav-item guardar-paciente" style="display:none;">
+          <a class="nav-link" href="#" onclick="aplication.guardarPaciente()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+        </li>
+        <li class="nav-item cancelar-paciente" style="display:none;">
           <a class="nav-link" href="#" onclick="aplication.cancelarPaciente()"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
         </li>
-        <li class="nav-item invisible">
+        <li class="nav-item eliminar-paciente" style="display:none;">
           <a class="nav-link" href="#" onclick="aplication.eliminarPaciente()"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
         </li>
       </ul>
