@@ -22,7 +22,7 @@ function calcularEG(){
   
   EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana);
   var B = new Date();
-  B = FUM.getTime() + (unasemana * 40);
+  B.setTime(FUM.getTime() + 40 * unasemana);    
   $("#fppPaciente").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
   
   if (FExamen.getTime() < FUM.getTime()) {
