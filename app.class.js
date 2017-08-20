@@ -1,6 +1,5 @@
 //revisar https://gist.github.com/benpoole/1041277
 //http://programacion.net/articulo/introduccion_a_web_sql_1305
-
 class app {
     constructor() {
 	var daysES=["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
@@ -160,6 +159,7 @@ class app {
 	    	$("#tablaPacientes").show();
     }
     eliminarPaciente(){}
+
 
 //calculos genéricos
 
