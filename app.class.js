@@ -230,6 +230,7 @@ class app {
 	}
 	$('#tcal').css("visibility", "hidden");
 	$('#paciente').hide();
+	$('#configuracion').hide();
 	$('#'+div_id).show();
     }
 	
