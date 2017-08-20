@@ -172,15 +172,15 @@ class app {
 
     estadoNutricional(imc){
 
-	    if (IMC < 20)
+	    if (imc < 20)
 	    {
 		    return "Enflaquecida";
 	    }
-	    else if (IMC <= 25)
+	    else if (imc <= 25)
 	    {
 		    return "Normal";
 	    }
-	    else if (IMC <= 30)
+	    else if (imc <= 30)
 	    {
 		    return "Sobrepeso";
 	    }
