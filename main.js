@@ -89,8 +89,8 @@ $( '.informacion').on('click', function() {
 
 $('#configTab a').click(function (e) {
   e.preventDefault()
-  $(this).tab('show');
-})
+  $(this.hash).tab('show');
+});
 
 $( document ).ready(function() {
 	//puedoGuardarEnElNavegador();
