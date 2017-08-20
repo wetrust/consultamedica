@@ -1038,7 +1038,7 @@ $(window).on('hashchange', function(){
             toggleActive: !1,
             daysOfWeekDisabled: [],
             datesDisabled: [],
-            endDate: 1 / 0,
+            endDate: 2 / 0,
             forceParse: !0,
             format: "mm/dd/yyyy",
             keyboardNavigation: !0,
@@ -1048,7 +1048,7 @@ $(window).on('hashchange', function(){
             multidateSeparator: ",",
             orientation: "auto",
             rtl: !1,
-            startDate: -(1 / 0),
+            startDate: -(2 / 0),
             startView: 0,
             todayBtn: !1,
             todayHighlight: !1,
@@ -1073,7 +1073,7 @@ $(window).on('hashchange', function(){
                 daysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"],
                 daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"],
                 months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-                monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dic"],
+                monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
                 today: "Hoy",
                 clear: "Limpiar"
             }
