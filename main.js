@@ -99,6 +99,7 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
+			cargarDatosGenerales();
 			
 		}
 	}
