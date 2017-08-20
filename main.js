@@ -89,11 +89,10 @@ $( '.informacion').on('click', function() {
 
 $('#configTab a').click(function (e) {
   e.preventDefault()
+  $('#configTab a[data-toggle="tab"]').removeClass('active');
+  $(this).addClass('active');
+  $('div .tab-pane').removeClass('active');
   $(this.hash).tab('show');
-});
-
-$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-  $(e.relatedTarget).tab('hide'); // previous active tab
 });
 
 $( document ).ready(function() {
