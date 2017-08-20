@@ -162,6 +162,94 @@ class app {
 
 
 //calculos genéricos
+    imc(talla, peso){
+	    var tallapeso = peso / Math.pow(talla,2);
+	    var IMC = tallapeso * 10000;
+	    
+	    return IMC.toFixed(1);
+    }
 
+    estadoNutricional(imc){
+
+	    if (imc < 20)
+	    {
+		    return "Enflaquecida";
+	    }
+	    else if (imc <= 25)
+	    {
+		    return "Normal";
+	    }
+	    else if (imc <= 30)
+	    {
+		    return "Sobrepeso";
+	    }
+	    else
+	    {
+		    return "Obesidad";
+	    }
+    }
+
+    checkBrowser() {
+	if (!window.openDatabase || !window.localStorage || !("onhashchange" in window)){
+		return false;
+	}
+	return true;
+    }
+	
+    usarPaciente(idPaciente){
+	loadPaciente(idPaciente, listPaciente);
+	this.displayElement("consulta");
+    }
+	
+    makedb(){
+	this.db = openDatabase('crecimientoFetal', '1.0', 'base de datos para los casos', 2 * 1024 * 1024);
+	this.db.transaction(function (tran) {
+		tran.executeSql('CREATE TABLE IF NOT EXISTS Users (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, user_id, user_name, user_lastname, careReason, sonographer, controlPlace, city, phone, email, birthdate, fum)');
+		tran.executeSql('CREATE TABLE IF NOT EXISTS sonographer (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name)');
+		tran.executeSql('CREATE TABLE IF NOT EXISTS ecoPrimTrim (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, eg, lcn, saco_one, saco_two, saco_three, saco_average)');
+		tran.executeSql('CREATE TABLE IF NOT EXISTS ecoSegTrim (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, eg, dbp, cc,ca,lf,lh,cb, size, pfe, ccca, bvm, ila)');
+		tran.executeSql('CREATE TABLE IF NOT EXISTS ecoDoppler (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, eg, aud, aui, au_average, ipau, ipacm, ccp, dv)');
+		tran.executeSql('CREATE TABLE IF NOT EXISTS careReason (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, reason)');
+		tran.executeSql('CREATE TABLE IF NOT EXISTS controlPlace (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, place)');
+		tran.executeSql('CREATE TABLE IF NOT EXISTS city (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, city)');
+        });
+    }
+
+    displayElement(div_id){
+	$('#home').hide();
+	$('#consulta').hide();
+	$('#tipoExamen').hide();
+	$('#ecoObsPrimTrim').hide();
+	$('#ecoObsSegTrim').hide();
+	$('#ecoDoppler').hide();
+	if ($('#popupGenerico').is(':visible')){
+		$('#popupGenerico').modal('hide');
+	}
+	$('#tcal').css("visibility", "hidden");
+	$('#paciente').hide();
+	$('#'+div_id).show();
+    }
+	
+   lastLoginDate(date){
+	localStorage.lastLoginDate = date;
+   }
+
+   lastLoginIP() {
+	   $.getJSON( "https://api.ipify.org?format=json", function( data ) {
+		   localStorage.lastLoginIP = data.ip;
+	   });
+   }
+	
+  resetInputs(){
+	
+	$("p[name='fechaHora']").append(this.strings.datetime.ES.days[this.day.getDay()] + ", " + this.day.getDate() + " de "+ this.strings.datetime.ES.months[this.day.getMonth()] + " " + this.day.getFullYear());
+
+	var day = ("0" + this.day.getDate()).slice(-2);
+	var month = ("0" + (this.day.getMonth() + 1)).slice(-2);
+
+	$('#fNacimiento').val((day)+"/"+(month)+"/"+this.day.getFullYear());
+	$("input[name='fum']").val((day)+"/"+(month)+"/"+this.day.getFullYear());
+	$('#fee').val((day)+"/"+(month)+"/"+this.day.getFullYear());
+  }
 
 }
