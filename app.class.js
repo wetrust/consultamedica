@@ -219,8 +219,8 @@ class app {
 	var day = ("0" + this.day.getDate()).slice(-2);
 	var month = ("0" + (this.day.getMonth() + 1)).slice(-2);
 
-	$('#fNacimiento').val(this.day.getFullYear()+"-"+(month)+"-"+(day));
-	$("input[name='fum']").val(this.day.getFullYear()+"-"+(month)+"-"+(day));
-	$('#fee').val(this.day.getFullYear()+ "-" + (month) + "-" + (day));
+	$('#fNacimiento').val((day)+"/"+(month)+"-"+this.day.getFullYear());
+	$("input[name='fum']").val((day)+"/"+(month)+"-"+this.day.getFullYear());
+	$('#fee').val((day)+"/"+(month)+"-"+this.day.getFullYear());
   }
 }
