@@ -52,7 +52,7 @@ class app {
 		$("#informacion").show();
 	}
 	else if (this.hash=="#configuracion"){
-		$("#configuracion").show();
+		this.displayElement("configuracion");
 	}
     }
 
