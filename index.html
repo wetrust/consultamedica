@@ -81,7 +81,7 @@
               <a class="nav-link" href="#consulta"><i class="fa fa-user-md" aria-hidden="true"></i> Nueva consulta</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#opciones"><i class="fa fa-cog" aria-hidden="true"></i> Opciones</a>
+              <a class="nav-link" href="#configuracion"><i class="fa fa-cog" aria-hidden="true"></i> Configuracion</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#informacion"><i class="fa fa-info" aria-hidden="true"></i> Ver información</a>
@@ -1333,6 +1333,93 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="container" id="configuracion" style="display:none;">
+      <div class="bienvenida mb-3 rounded-bottom">
+        <div class="container">
+          <div class="media">
+            <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
+            <div class="media-body mt-4">
+              <h3 class="mt-0 mb-1">Configuración</h3>
+              <p class="lead" name="fechaHora"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#inicio">Inicio</a></li>
+        <li class="breadcrumb-item active">Configuración</li>
+      </ol>
+      <hr>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#lugarConfig" role="tab">Lugar de control Prenatal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#ciudadConfig" role="tab">Ciudad</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#motivoConfig" role="tab">Motivo exámen</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#poconConfig" role="tab">Patología obstétrica concomitante</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#ecografistaConfig" role="tab">Ecografista</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="lugarConfig" role="tabpanel">
+          <div class="tabla">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Lugar de control</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry the Bird</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="formulario">
+          </div>
+        </div>
+        <div class="tab-pane" id="ciudadConfig" role="tabpanel">...</div>
+        <div class="tab-pane" id="motivoConfig" role="tabpanel">...</div>
+        <div class="tab-pane" id="poconConfig" role="tabpanel">...</div>
+        <div class="tab-pane" id="ecografistaConfig" role="tabpanel">...</div>
+      </div>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
+        </li>
+        <li class="nav-item editar-paciente" style="display:none;">
+          <a class="nav-link" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+        </li>
+        <li class="nav-item guardar-paciente" style="display:none;">
+          <a class="nav-link" href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+        </li>
+        <li class="nav-item cancelar-paciente" style="display:none;">
+          <a class="nav-link" href="#"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
+        </li>
+        <li class="nav-item eliminar-paciente" style="display:none;">
+          <a class="nav-link" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
+        </li>
+      </ul>
+      <hr>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
