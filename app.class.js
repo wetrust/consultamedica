@@ -161,6 +161,35 @@ class app {
     }
     eliminarPaciente(){}
 
+//calculos genéricos
+
+    imc(talla, peso){
+	    var tallapeso = peso / Math.pow(talla,2);
+	    var IMC = tallapeso * 10000;
+	    
+	    return IMC.toFixed(1);
+    }
+
+    estadoNutricional(imc){
+
+	    if (IMC < 20)
+	    {
+		    return "Enflaquecida";
+	    }
+	    else if (IMC <= 25)
+	    {
+		    return "Normal";
+	    }
+	    else if (IMC <= 30)
+	    {
+		    return "Sobrepeso";
+	    }
+	    else
+	    {
+		    return "Obesidad";
+	    }
+    }
+
     checkBrowser() {
 	if (!window.openDatabase || !window.localStorage || !("onhashchange" in window)){
 		return false;
