@@ -62,6 +62,16 @@ var listPaciente = function(results){
 
 };
 
+ $( '#peso').on('change', function() {
+     $("#imc").val(aplication.imc($("#talla").val(), $(this).val()));
+     $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));
+ });
+
+ $( '#talla').on('change', function() {
+     $("#imc").val(aplication.imc($(this).val(), $("#peso").val()));
+     $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));
+ });
+
  $( '#fum-dos').on('change', function() {
       localStorage.fum = $("#fum-dos").val();
       localStorage.eg = calcularEG();
