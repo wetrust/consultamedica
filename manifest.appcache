@@ -3,7 +3,6 @@ CACHE MANIFEST
 index.html
 #cache de css y fonts
 consulta.css
-tcal.css
 https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css
 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0
@@ -18,19 +17,13 @@ https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js
 https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js
 https://code.highcharts.com/highcharts.js
 #cache de funciones
-tcal.js
 botones.js
 funciones.js
 graficos.js
 app.class.js
 main.js
 img/ic_launcher-web.png
-img/cal.gif
+img/blurred-greenish.jpg
 img/eco1.png
 img/eco2.png
 img/eco3.png
-img/next_mon.gif
-img/next_year.gif
-img/no_cal.gif
-img/prev_mon.gif
-img/prev_year.gif
