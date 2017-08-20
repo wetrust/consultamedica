@@ -214,7 +214,7 @@ class app {
 	
   resetInputs(){
 	
-	$("#fechaHora").append(this.strings.datetime.ES.days[this.day.getDay()] + ", " + this.day.getDate() + " de "+ this.strings.datetime.ES.months[this.day.getMonth()] + " " + this.day.getFullYear());
+	$("p[name='fechaHora']").append(this.strings.datetime.ES.days[this.day.getDay()] + ", " + this.day.getDate() + " de "+ this.strings.datetime.ES.months[this.day.getMonth()] + " " + this.day.getFullYear());
 
 	var day = ("0" + this.day.getDate()).slice(-2);
 	var month = ("0" + (this.day.getMonth() + 1)).slice(-2);
