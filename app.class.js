@@ -25,8 +25,8 @@ class app {
 
     onHashChange(){
     	//https://stackoverflow.com/questions/6478485/jquery-change-the-url-address-without-redirecting
-	this.hash = document.location.hash;    
-    
+	this.hash = document.location.hash;
+
 	if (this.hash=="#inicio"){
 		this.displayElement("home");
 	}
@@ -50,6 +50,9 @@ class app {
 	}
 	else if (this.hash=="#informacion"){
 		$("#informacion").show();
+	}
+	else if (this.hash=="#configuracion"){
+		$("#configuracion").show();
 	}
     }
 
