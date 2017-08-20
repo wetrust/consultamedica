@@ -1050,7 +1050,7 @@ $(window).on('hashchange', function(){
             datesDisabled: [],
             endDate: 1 / 0,
             forceParse: !0,
-            format: "mm/dd/yyyy",
+            format: "dd/mm/yyyy",
             keyboardNavigation: !0,
             language: "es",
             minViewMode: 0,
