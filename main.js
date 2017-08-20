@@ -87,6 +87,11 @@ $( '.informacion').on('click', function() {
 	$("#informacion").hide();
  });
 
+$('#configTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show');
+})
+
 $( document ).ready(function() {
 	//puedoGuardarEnElNavegador();
         //queDiaEs();
