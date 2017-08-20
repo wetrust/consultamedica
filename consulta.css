@@ -1,9 +1,12 @@
 .bienvenida{	
-	background: #eceeef; /* For browsers that do not support gradients */
-	background: -webkit-linear-gradient(left, #cdb47b, #2c5c8c); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(right,#cdb47b,  #2c5c8c); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(right,#cdb47b, #2c5c8c); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(to right, #cdb47b, #2c5c8c); /* Standard syntax (must be last) */
+	background: #2c5889; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #c0a577, #f7e4a9, #8fedaf, #4dc7b2, #3483a4, #2c5889); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left,#c0a577, #f7e4a9, #8fedaf, #4dc7b2, #3483a4, #2c5889); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, #c0a577, #f7e4a9, #8fedaf, #4dc7b2, #3483a4, #2c5889); /* For Fx 3.6 to 15 */
+	background: linear-gradient(to right, #c0a577, #f7e4a9, #8fedaf, #4dc7b2, #3483a4, #2c5889); /* Standard syntax (must be last) */
+	background-image: url('img/blurred-greenish.jpg');
+	background-repeat: no-repeat;
+	background-size:cover;
 }
 .alert-gris{
 	background: #ccd4d8; /* For browsers that do not support gradients */
