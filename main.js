@@ -92,6 +92,10 @@ $('#configTab a').click(function (e) {
   $(this.hash).tab('show');
 });
 
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  $(e.relatedTarget).tab('hide'); // previous active tab
+});
+
 $( document ).ready(function() {
 	//puedoGuardarEnElNavegador();
         //queDiaEs();
