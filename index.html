@@ -7,7 +7,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="consulta.css">
-    <link rel="stylesheet" href="tcal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
@@ -157,7 +156,7 @@
               <form class="row">
                 <div class="form-group col">
                   <label for="fum2">Fecha de última mestruación</label>
-                  <input class="form-control tcal" type="text" value="2011-08-19" name="fum" id="fum-dos">
+                  <input class="form-control" type="text" data-provide="datepicker-inline" name="fum" id="fum-dos">
                   <small id="fum2Help" class="form-text text-muted">Seleccione una fecha.</small>
                 </div>
                 <div class="form-group col">
@@ -167,7 +166,7 @@
                 </div>
                 <div class="form-group col-12">
                   <label for="fee">Fecha de exámen</label>
-                  <input class="form-control tcal" type="text" value="2017-06-25" id="fee">
+                  <input class="form-control" type="text" data-provide="datepicker-inline" id="fee">
                   <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
                 </div>
                 <a class="btn btn-primary" href="#tipoExamen">Continuar</a>
@@ -1012,7 +1011,7 @@
                     <label for="fNacimiento" class="col-form-label text-primary"><i class="fa fa-calendar hidden-lg-up" aria-hidden="true"></i> Fecha Nacimiento</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
-                    <input class="form-control tcal" type="text" value="2011-08-19" id="fNacimiento" readonly>
+                    <input class="form-control" type="text" data-provide="datepicker-inline" id="fNacimiento" readonly>
                   </div>
                   <div class="col-md-4 col-lg-3">
                     <label for="edad" class="col-form-label text-primary"><i class="fa fa-calendar hidden-lg-up" aria-hidden="true"></i> Edad</label>
@@ -1108,7 +1107,7 @@
                     <label for="aud" class="col-form-label text-primary"><i class="fa fa-calendar hidden-lg-up" aria-hidden="true"></i> Fecha de ultima mestruación</label>
                   </div>
                   <div class="col-md-8 col-lg-3">
-                    <input class="form-control" type="text" value="02/02/2010" name="fum" id="fum" data-provide="datepicker-inline" readonly>
+                    <input class="form-control" type="text" name="fum" id="fum" data-provide="datepicker-inline" readonly>
                   </div>
                   <div class="col-md-4 col-lg-3">
                     <label for="aud" class="col-form-label text-primary"><i class="fa fa-calendar hidden-lg-up" aria-hidden="true"></i> Edad Gestacional</label>
@@ -1191,7 +1190,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="tcal.js"></script>
     <script src="funciones.js"></script>
     <script src="graficos.js"></script>
     <script src="botones.js"></script>
