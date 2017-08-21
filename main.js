@@ -95,6 +95,16 @@ $('#configTab a').click(function (e) {
   $(this.hash).tab('show');
 });
 
+$( '#nuevoLugarConfig').on('click', function() {
+	$("#lugarConfig .tabla").hide();
+	$("#lugarConfig .formulario").show();
+ });
+
+$( '#cancelarLugarConfig').on('click', function() {
+	$("#lugarConfig .tabla").show();
+	$("#lugarConfig .formulario").hide();
+ });
+
 $( document ).ready(function() {
 	//puedoGuardarEnElNavegador();
         //queDiaEs();
