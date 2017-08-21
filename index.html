@@ -1359,40 +1359,40 @@
           <a class="nav-link active" data-toggle="tab" href="#lugarConfig" role="tab">Lugar de control Prenatal</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#ciudadConfig" role="tab">Ciudad</a>
+          <a class="nav-link" data-toggle="tab" href="#ciudadConfig" role="tab">Ciudad</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#motivoConfig" role="tab">Motivo exámen</a>
+          <a class="nav-link" data-toggle="tab" href="#motivoConfig" role="tab">Motivo exámen</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#poconConfig" role="tab">Patología obstétrica concomitante</a>
+          <a class="nav-link" data-toggle="tab" href="#poconConfig" role="tab">Patología obstétrica concomitante</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#ecografistaConfig" role="tab">Ecografista</a>
+          <a class="nav-link" data-toggle="tab" href="#ecografistaConfig" role="tab">Ecografista</a>
         </li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="lugarConfig" role="tabpanel">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
+            </li>
+            <li class="nav-item editar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+            </li>
+            <li class="nav-item guardar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+            </li>
+            <li class="nav-item cancelar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
+            </li>
+            <li class="nav-item eliminar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
+            </li>
+          </ul>
+          <hr>
           <div class="card tabla">
             <div class="card-block">
-              <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
-                </li>
-                <li class="nav-item editar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-                </li>
-                <li class="nav-item guardar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                </li>
-                <li class="nav-item cancelar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
-                </li>
-                <li class="nav-item eliminar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                </li>
-              </ul>
-              <hr>
               <table class="table table-hover table-bordered">
                 <thead>
                   <tr>
@@ -1417,30 +1417,37 @@
               </table>
             </div>
           </div>
-          <div class="formulario">
+          <div class="card formulario" style="display:none;">
+            <form class="card-block">
+              <div class="form-group">
+                <label for="lugarInput">Lugar de control</label>
+                <input type="text" class="form-control" id="lugarInput" aria-describedby="lugarInputHelp" placeholder="Lugar de control">
+                <small id="lugarInputHelp" class="form-text text-muted">Lugar de control prenatal.</small>
+              </div>
+            </form>
           </div>
         </div>
         <div class="tab-pane" id="ciudadConfig" role="tabpanel">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
+            </li>
+            <li class="nav-item editar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+            </li>
+            <li class="nav-item guardar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+            </li>
+            <li class="nav-item cancelar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
+            </li>
+            <li class="nav-item eliminar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
+            </li>
+          </ul>
+          <hr>
           <div class="card tabla">
             <div class="card-block">
-              <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
-                </li>
-                <li class="nav-item editar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-                </li>
-                <li class="nav-item guardar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                </li>
-                <li class="nav-item cancelar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
-                </li>
-                <li class="nav-item eliminar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                </li>
-              </ul>
-              <hr>
               <table class="table table-hover table-bordered">
                 <thead>
                   <tr>
@@ -1469,26 +1476,26 @@
           </div>
         </div>
         <div class="tab-pane" id="motivoConfig" role="tabpanel">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
+            </li>
+            <li class="nav-item editar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+            </li>
+            <li class="nav-item guardar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+            </li>
+            <li class="nav-item cancelar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
+            </li>
+            <li class="nav-item eliminar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
+            </li>
+          </ul>
+          <hr>
           <div class="card tabla">
             <div class="card-block">
-              <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
-                </li>
-                <li class="nav-item editar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-                </li>
-                <li class="nav-item guardar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                </li>
-                <li class="nav-item cancelar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
-                </li>
-                <li class="nav-item eliminar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                </li>
-              </ul>
-              <hr>
               <table class="table table-hover table-bordered">
                 <thead>
                   <tr>
@@ -1513,30 +1520,37 @@
               </table>
             </div>
           </div>
-          <div class="formulario">
+          <div class="card formulario" style="display:none;">
+            <form class="card-block">
+              <div class="form-group">
+                <label for="motivoInput">Motivo de exámen</label>
+                <input type="text" class="form-control" id="motivoInput" aria-describedby="motivoInputHelp" placeholder="Motivo de exámen">
+                <small id="motivoInputHelp" class="form-text text-muted">Motivo de exámen o control ecográfico.</small>
+              </div>
+            </form>
           </div>
         </div>
         <div class="tab-pane" id="poconConfig" role="tabpanel">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
+            </li>
+            <li class="nav-item editar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+            </li>
+            <li class="nav-item guardar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+            </li>
+            <li class="nav-item cancelar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
+            </li>
+            <li class="nav-item eliminar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
+            </li>
+          </ul>
+          <hr>
           <div class="card tabla">
             <div class="card-block">
-              <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
-                </li>
-                <li class="nav-item editar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-                </li>
-                <li class="nav-item guardar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                </li>
-                <li class="nav-item cancelar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
-                </li>
-                <li class="nav-item eliminar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                </li>
-              </ul>
-              <hr>
               <table class="table table-hover table-bordered">
                 <thead>
                   <tr>
@@ -1561,30 +1575,37 @@
               </table>
             </div>
           </div>
-          <div class="formulario">
+          <div class="card formulario" style="display:none;">
+            <form class="card-block">
+              <div class="form-group">
+                <label for="poconInput">Patología obstétrica concomitante</label>
+                <input type="text" class="form-control" id="poconInput" aria-describedby="poconInputHelp" placeholder="Patologia">
+                <small id="poconInputHelp" class="form-text text-muted">Patología obstétrica concomitante.</small>
+              </div>
+            </form>
           </div>
         </div>
         <div class="tab-pane" id="ecografistaConfig" role="tabpanel">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
+            </li>
+            <li class="nav-item editar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+            </li>
+            <li class="nav-item guardar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+            </li>
+            <li class="nav-item cancelar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
+            </li>
+            <li class="nav-item eliminar-paciente" style="display:none;">
+              <a class="nav-link" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
+            </li>
+          </ul>
+          <hr>
           <div class="card tabla">
             <div class="card-block">
-              <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
-                </li>
-                <li class="nav-item editar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-                </li>
-                <li class="nav-item guardar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                </li>
-                <li class="nav-item cancelar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
-                </li>
-                <li class="nav-item eliminar-paciente" style="display:none;">
-                  <a class="nav-link" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                </li>
-              </ul>
-              <hr>
               <table class="table table-hover table-bordered">
                 <thead>
                   <tr>
@@ -1609,7 +1630,14 @@
               </table>
             </div>
           </div>
-          <div class="formulario">
+          <div class="card formulario" style="display:none;">
+            <form class="card-block">
+              <div class="form-group">
+                <label for="ecografistaInput">Ecografista</label>
+                <input type="text" class="form-control" id="ecografistaInput" aria-describedby="ecografistaInputHelp" placeholder="ecografista">
+                <small id="ecografistaInputHelp" class="form-text text-muted">Médico ecografista.</small>
+              </div>
+            </form>
           </div>
         </div>
       </div>
