@@ -156,18 +156,20 @@
           <div class="card mb-3">
             <div class="card-block">
               <h3 class="card-title">Realizar exámen rápido</h3>
-              <form class="row">
-                <div class="form-group col">
-                  <label for="fum2">Fecha de última mestruación</label>
-                  <input class="form-control" type="text" data-provide="datepicker-inline" name="fum" id="fum-dos">
-                  <small id="fum2Help" class="form-text text-muted">Seleccione una fecha.</small>
+              <form>
+                <div class="row">
+                  <div class="form-group col">
+                    <label for="fum2">Fecha de última mestruación</label>
+                    <input class="form-control" type="text" data-provide="datepicker-inline" name="fum" id="fum-dos">
+                    <small id="fum2Help" class="form-text text-muted">Seleccione una fecha.</small>
+                  </div>
+                  <div class="form-group col">
+                    <label for="egExamen">EG</label>
+                    <input class="form-control" type="number" value="0" id="egExamen" readonly>
+                    <small id="egExamenHelp" class="form-text text-muted">Semanas.</small>
+                  </div>
                 </div>
-                <div class="form-group col">
-                  <label for="egExamen">EG</label>
-                  <input class="form-control" type="number" value="0" id="egExamen" readonly>
-                  <small id="egExamenHelp" class="form-text text-muted">Semanas.</small>
-                </div>
-                <div class="form-group col-12">
+                <div class="form-group">
                   <label for="fee">Fecha de exámen</label>
                   <input class="form-control" type="text" data-provide="datepicker-inline" id="fee">
                   <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
