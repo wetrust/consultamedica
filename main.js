@@ -96,13 +96,93 @@ $('#configTab a').click(function (e) {
 });
 
 $( '#nuevoLugarConfig').on('click', function() {
-	$("#lugarConfig .tabla").hide();
-	$("#lugarConfig .formulario").show();
+	$('#lugarConfig .tabla').hide();
+	$('#nuevoLugarConfig').hide();
+	$('#editarLugarConfig').hide();
+	$('#guardarLugarConfig').show();
+	$('#cancelarLugarConfig').show();
+	$('#lugarConfig .formulario').show();
  });
 
 $( '#cancelarLugarConfig').on('click', function() {
 	$("#lugarConfig .tabla").show();
+	$('#nuevoLugarConfig').show();
+	$('#editarLugarConfig').show();
+	$('#guardarLugarConfig').hide();
+	$('#cancelarLugarConfig').hide();
 	$("#lugarConfig .formulario").hide();
+ });
+
+$( '#nuevoCiudadConfig').on('click', function() {
+	$('#ciudadConfig .tabla').hide();
+	$('#nuevoCiudadConfig').hide();
+	$('#editarCiudadConfig').hide();
+	$('#guardarCiudadConfig').show();
+	$('#cancelarCiudadConfig').show();
+	$('#ciudadConfig .formulario').show();
+ });
+
+$( '#cancelarCiudadConfig').on('click', function() {
+	$("#ciudadConfig .tabla").show();
+	$('#nuevoCiudadConfig').show();
+	$('#editarCiudadConfig').show();
+	$('#guardarCiudadConfig').hide();
+	$('#cancelarCiudadConfig').hide();
+	$("#ciudadConfig .formulario").hide();
+ });
+
+$( '#nuevoMotivoConfig').on('click', function() {
+	$('#motivoConfig .tabla').hide();
+	$('#nuevoMotivoConfig').hide();
+	$('#editarMotivoConfig').hide();
+	$('#guardarMotivoConfig').show();
+	$('#cancelarMotivoConfig').show();
+	$('#motivoConfig .formulario').show();
+ });
+
+$( '#cancelarMotivoConfig').on('click', function() {
+	$("#motivoConfig .tabla").show();
+	$('#nuevoMotivoConfig').show();
+	$('#editarMotivoConfig').show();
+	$('#guardarMotivoConfig').hide();
+	$('#cancelarMotivoConfig').hide();
+	$("#motivoConfig .formulario").hide();
+ });
+
+$( '#nuevoPoconConfig').on('click', function() {
+	$('#poconConfig .tabla').hide();
+	$('#nuevoPoconConfig').hide();
+	$('#editarPoconConfig').hide();
+	$('#guardarPoconConfig').show();
+	$('#cancelarPoconConfig').show();
+	$('#poconConfig .formulario').show();
+ });
+
+$( '#cancelarPoconConfig').on('click', function() {
+	$("#poconConfig .tabla").show();
+	$('#nuevoPoconConfig').show();
+	$('#editarPoconConfig').show();
+	$('#guardarPoconConfig').hide();
+	$('#cancelarPoconConfig').hide();
+	$("#poconConfig .formulario").hide();
+ });
+
+$( '#nuevoEcografistaConfig').on('click', function() {
+	$('#ecografistaConfig .tabla').hide();
+	$('#nuevoEcografistaConfig').hide();
+	$('#editarEcografistaConfig').hide();
+	$('#guardarEcografistaConfig').show();
+	$('#cancelarEcografistaConfig').show();
+	$('#ecografistaConfig .formulario').show();
+ });
+
+$( '#cancelarEcografistaConfig').on('click', function() {
+	$("#ecografistaConfig .tabla").show();
+	$('#nuevoEcografistaConfig').show();
+	$('#editarEcografistaConfig').show();
+	$('#guardarEcografistaConfig').hide();
+	$('#cancelarEcografistaConfig').hide();
+	$("#ecografistaConfig .formulario").hide();
  });
 
 $( document ).ready(function() {
