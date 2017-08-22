@@ -34,7 +34,7 @@ function activarBotones() {
  $( '#ipacm' ).change( pctacm);
  
  //imprimir
-  $( '#impEcoObsSegTrim2').change( imprSelec("popupBody"));
+  $( '#impEcoObsSegTrim2').click( imprSelec("popupBody"));
  
  $( '#fNacimiento').on('change', function() {
       localStorage.fnac = $("#fNacimiento").val();
