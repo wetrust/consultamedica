@@ -2318,6 +2318,9 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
 $( '#infecoObsSegTrim2' ).on( 'click', function() {
     $('#popupTitle').html("Gráfica Determinación Ecográfica (Tardía) de la Edad Gestacional");
     $('#popupBody').html("<button type='button' class='btn btn-outline-info' id='impEcoObsSegTrim2'>Imprimir</button><div class='row'><div class='col'><div id='graficoCcView'></div></div><div class='col'><div id='graficoCerebeloView'></div></div></div><div class='row'><div class='col'><div id='graficoLfView'></div></div><div class='col'><div id='graficoLhView'></div></div></div><div class='row'><div class='col'><p></small>* Para evaluación morfológica, ceñirse a recomendaciones dadas en guías Perinatales MINSAL - Chile 2015<br>http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf<br>** Referencias: CC y LF Hadlock y col. 1984; LH Jeanty y col.<br>*** Diámetro cerebeloso transverso Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</small></p></div></div>");
+    $( '#impEcoObsSegTrim2').on("click", function(){
+      imprSelec("popupBody");
+    });
     $('#graficoCcView').highcharts({
        title: {
            text: 'CC',
