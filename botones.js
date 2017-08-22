@@ -33,9 +33,6 @@ function activarBotones() {
  $( '#ipau' ).change( pctau);
  $( '#ipacm' ).change( pctacm);
  
- //imprimir
-  $( '#impEcoObsSegTrim2').click( imprSelec("popupBody"));
- 
  $( '#fNacimiento').on('change', function() {
       localStorage.fnac = $("#fNacimiento").val();
       localStorage.edad = calcularEdad();
