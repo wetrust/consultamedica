@@ -1330,6 +1330,10 @@ $( '#infDoppler1' ).on( 'click', function() {
     $( '#impDoppler1').on("click", function(){
       imprSelec("popupBody");
     });
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
     $('#graficoIpArtUtView').highcharts({
         title: {
             text: 'IP Promedio Arteria Uterinas',
@@ -1569,6 +1573,10 @@ $( '#infDoppler2' ).on( 'click', function() {
     $( '#impDoppler2').on("click", function(){
       imprSelec("popupBody");
     });
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler1').remove();
     $('#graficoInfPFEView').highcharts({
        title: {
            text: 'Peso Fetal Estimado *',
@@ -1824,6 +1832,10 @@ $( '#infDoppler3' ).on( 'click', function() {
     $( '#impDoppler3').on("click", function(){
       imprSelec("popupBody");
     });
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoInfDoplerPFEView').highcharts({
        title: {
            text: 'Peso Fetal Estimado *',
@@ -2078,6 +2090,10 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     $( '#impEcoObsSegTrim1').on("click", function(){
       imprSelec("popupBody");
     });
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoInfecoObsSegTrimPFEView').highcharts({
        title: {
            text: 'Peso Fetal Estimado *',
@@ -2338,6 +2354,10 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
     $( '#impEcoObsSegTrim2').on("click", function(){
       imprSelec("popupBody");
     });
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoCcView').highcharts({
        title: {
            text: 'CC',
