@@ -967,6 +967,7 @@ function imprSelec(muestra)
 	document = document.replace(":DATOS", ficha);
 	document = document.replace(":ESTILO", estilo);
 	document = document.replace(":FUNCION", funcion);
+	document = document.replace("invisible", "");
 	
 	ventimp.document.write(document);
 	ventimp.document.close();
