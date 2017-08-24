@@ -962,7 +962,7 @@ function imprSelec(muestra)
 	var ficha=$("#popupBody").html();
 	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Inpresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container">:DATOS</div</body></html>';
 	var ventimp=window.open(" ","popimpr");
-	var estilo = '<style>@media print {.col{width:290px;height:330px;float:left;}.pie-pagina{font-size:9px;}#lineclear{clear:both;margin-top:80px;}}</style>';
+	var estilo = '<style>@media print {.col{width:290px;height:330px;float:left;}.pie-pagina{font-size:9px;}#lineclear{clear:both;margin-top:200px;}}</style>';
 	
 	document = document.replace(":DATOS", ficha);
 	document = document.replace(":ESTILO", estilo);
