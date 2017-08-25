@@ -72,6 +72,7 @@ var listPaciente = function(results){
 
  $( '#fum-dos').on('change', function() {
      localStorage.fum = $("#fum-dos").val();
+     $("#fum-tres").val($("#fum-dos").val());
      localStorage.eg = calcularEG();
      $("#edadGestacional").val(localStorage.eg);
      $("#egExamen").val(localStorage.eg);
@@ -83,6 +84,7 @@ var listPaciente = function(results){
 
  $( '#fum-tres').on('change', function() {
      localStorage.fum = $("#fum-tres").val();
+     $("#fum-dos").val($("#fum-tres").val());
      localStorage.eg = calcularEG();
      $("#edadGestacional").val(localStorage.eg);
      $("#egExamen").val(localStorage.eg);
