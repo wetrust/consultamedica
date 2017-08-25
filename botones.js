@@ -41,6 +41,7 @@ function activarBotones() {
   
  $( '#fum').on('change', function() {
       localStorage.fum = $("#fum").val();
+      $("#fee-dos").val($("#fee").val());
       localStorage.eg = calcularEG();
      $("#edadGestacional").val(localStorage.eg);
      $("#egExamen").val(localStorage.eg);
@@ -60,8 +61,9 @@ function activarBotones() {
  });
 }
 
- $( '#ffee-dos').on('change', function() {
+ $( '#fee-dos').on('change', function() {
       localStorage.fee = $("#fee-dos").val();
+      $("#fee").val($("#fee-dos").val());
       localStorage.eg = calcularEG();
      $("#egExamen").val(localStorage.eg);
      $("#egConsulta").val(localStorage.eg);
