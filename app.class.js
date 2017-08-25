@@ -254,6 +254,7 @@ class app {
 	$('#fNacimiento').val((day)+"/"+(month)+"/"+this.day.getFullYear());
 	$("input[name='fum']").val((day)+"/"+(month)+"/"+this.day.getFullYear());
 	$('#fee').val((day)+"/"+(month)+"/"+this.day.getFullYear());
+	$('#fee-dos').val((day)+"/"+(month)+"/"+this.day.getFullYear());
   }
 
 }
