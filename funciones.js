@@ -129,6 +129,7 @@ function calcularEG(){
   
     FUM = localStorage.fum;
     FExamen = $("#fee").val();
+    $("#fee-dos").val(FExamen);
   
     FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
     FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
