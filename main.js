@@ -42,7 +42,6 @@ var listPacientes = function(results){
 };
 
 var listPaciente = function(results){
-	
 	var row = results.rows.item(0);
 	$('#idPaciente').val(row.user_id);
 	$('#nombre').val(row.user_name);
@@ -59,7 +58,6 @@ var listPaciente = function(results){
 	localStorage.fum = $('#fum').val();
 	$('#fum').trigger( "change" );
 	$('#fum2').trigger( "change" );
-
 };
 
  $( '#peso').on('change', function() {
@@ -73,18 +71,29 @@ var listPaciente = function(results){
  });
 
  $( '#fum-dos').on('change', function() {
-      localStorage.fum = $("#fum-dos").val();
-      localStorage.eg = calcularEG();
+     localStorage.fum = $("#fum-dos").val();
+     localStorage.eg = calcularEG();
      $("#edadGestacional").val(localStorage.eg);
      $("#egExamen").val(localStorage.eg);
      $("#egConsulta").val(localStorage.eg);
-      $("#egPrimTrim").val(localStorage.eg);
-      $("#egSegTrim").val(localStorage.eg);
-      $('#egDoppler').val(localStorage.eg);
+     $("#egPrimTrim").val(localStorage.eg);
+     $("#egSegTrim").val(localStorage.eg);
+     $('#egDoppler').val(localStorage.eg);
+ });
+
+ $( '#fum-tres').on('change', function() {
+     localStorage.fum = $("#fum-tres").val();
+     localStorage.eg = calcularEG();
+     $("#edadGestacional").val(localStorage.eg);
+     $("#egExamen").val(localStorage.eg);
+     $("#egConsulta").val(localStorage.eg);
+     $("#egPrimTrim").val(localStorage.eg);
+     $("#egSegTrim").val(localStorage.eg);
+     $('#egDoppler').val(localStorage.eg);
  });
 
 $( '.informacion').on('click', function() {
-	$("#informacion").hide();
+     $("#informacion").hide();
  });
 
 $('#configTab a').click(function (e) {
