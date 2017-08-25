@@ -2,6 +2,119 @@
 //from https://stackoverflow.com/questions/17907445/how-to-detect-ie11
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
 
+//enters
+$( "#lcn" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("saco").focus()
+  }
+});
+
+$( "#saco" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("graficoSaco").focus()
+  }
+});
+
+$( "#dbp" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("cc").focus()
+  }
+});
+
+$( "#cc" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("ca").focus()
+  }
+});
+
+$( "#ca" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("lf").focus()
+  }
+});
+
+$( "#lf" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("lh").focus()
+  }
+});
+
+$( "#lh" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("cerebelo").focus()
+  }
+});
+
+$( "#cerebelo" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("bvm").focus()
+  }
+});
+
+$( "#bvm" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("ila").focus()
+  }
+});
+
+$( "#ila" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("graficoILA").focus()
+  }
+});
+
+$( "#aud" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("aui").focus()
+  }
+});
+
+$( "#aui" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("ipau").focus()
+  }
+});
+
+$( "#aui" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("ipau").focus()
+  }
+});
+
+$( "#ipau" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("ipacm").focus()
+  }
+});
+
+$( "#ipacm" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("dv").focus()
+  }
+});
+
+$( "#dv" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("graficoDv").focus()
+  }
+});
+
 function show_hide(id){
   if (document.getElementById){
     var el = document.getElementById(id);
