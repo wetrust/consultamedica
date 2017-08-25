@@ -132,7 +132,7 @@
         <li class="breadcrumb-item active">Nueva Consulta</li>
       </ol>
       <div class="row">
-        <div class="col">
+        <div class="col-md-12 col-lg-4">
           <div class="card mb-3">
             <div class="card-block">
               <h3 class="card-title">Seleccione un paciente</h3>
@@ -152,7 +152,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-12 col-lg-4">
           <div class="card mb-3">
             <div class="card-block">
               <h3 class="card-title">Realizar exámen rápido</h3>
@@ -160,7 +160,7 @@
                 <div class="row">
                   <div class="form-group col">
                     <label for="fum2">Fecha de última mestruación</label>
-                    <input class="form-control" type="text" data-provide="datepicker-inline" name="fum" id="fum-dos">
+                    <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-dos">
                     <small id="fum2Help" class="form-text text-muted">Seleccione una fecha.</small>
                   </div>
                   <div class="form-group col">
@@ -171,7 +171,7 @@
                 </div>
                 <div class="form-group">
                   <label for="fee">Fecha de exámen</label>
-                  <input class="form-control" type="text" data-provide="datepicker-inline" id="fee">
+                  <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee">
                   <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
                 </div>
                 <a class="btn btn-primary" href="#tipoExamen">Continuar</a>
