@@ -59,3 +59,14 @@ function activarBotones() {
       $('#egDoppler').val(localStorage.eg);
  });
 }
+
+ $( '#ffee-dos').on('change', function() {
+      localStorage.fee = $("#fee-dos").val();
+      localStorage.eg = calcularEG();
+     $("#egExamen").val(localStorage.eg);
+     $("#egConsulta").val(localStorage.eg);
+      $("#egPrimTrim").val(localStorage.eg);
+      $("#egSegTrim").val(localStorage.eg);
+      $('#egDoppler').val(localStorage.eg);
+ });
+}
