@@ -59,8 +59,6 @@ function activarBotones() {
       $("#egSegTrim").val(localStorage.eg);
       $('#egDoppler').val(localStorage.eg);
  });
-}
-
  $( '#fee-dos').on('change', function() {
       localStorage.fee = $("#fee-dos").val();
       $("#fee").val($("#fee-dos").val());
