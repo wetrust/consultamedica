@@ -6,112 +6,112 @@ function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') |
 $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("saco").focus()
+     $("#saco").focus()
   }
 });
 
 $( "#saco" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("graficoSaco").focus()
+     $("#graficoSaco").focus()
   }
 });
 
 $( "#dbp" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("cc").focus()
+     $("#cc").focus()
   }
 });
 
 $( "#cc" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("ca").focus()
+     $("#ca").focus()
   }
 });
 
 $( "#ca" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("lf").focus()
+     $("#lf").focus()
   }
 });
 
 $( "#lf" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("lh").focus()
+     $("#lh").focus()
   }
 });
 
 $( "#lh" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("cerebelo").focus()
+     $("#cerebelo").focus()
   }
 });
 
 $( "#cerebelo" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("bvm").focus()
+     $("#bvm").focus()
   }
 });
 
 $( "#bvm" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("ila").focus()
+     $("#ila").focus()
   }
 });
 
 $( "#ila" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("graficoILA").focus()
+     $("#graficoILA").focus()
   }
 });
 
 $( "#aud" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("aui").focus()
+     $("#aui").focus()
   }
 });
 
 $( "#aui" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("ipau").focus()
+     $("#ipau").focus()
   }
 });
 
 $( "#aui" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("ipau").focus()
+     $("#ipau").focus()
   }
 });
 
 $( "#ipau" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("ipacm").focus()
+     $("#ipacm").focus()
   }
 });
 
 $( "#ipacm" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("dv").focus()
+     $("#dv").focus()
   }
 });
 
 $( "#dv" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("graficoDv").focus()
+     $("#graficoDv").focus()
   }
 });
 
