@@ -141,6 +141,7 @@ function calcularEG(){
   var B = new Date();
   B.setTime(FUM.getTime() + 40 * unasemana);    
   $("#fppPaciente").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+  $("#fpp").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
   
   if (FExamen.getTime() < FUM.getTime()) {
     EdadGestacional = "0";
