@@ -172,10 +172,16 @@
                     <small id="egExamenHelp" class="form-text text-muted">Semanas.</small>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="fee">Fecha de exámen</label>
-                  <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee">
-                  <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
+                <div class="row">
+                  <div class="form-group class">
+                    <label for="fee">Fecha de exámen</label>
+                    <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee">
+                    <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
+                  </div>
+                  <div class="form-group col">
+                    <label for="egExamen">FPP</label>
+                    <input class="form-control" type="number" value="0" name="fpp" readonly>
+                  </div>
                 </div>
                 <a class="btn btn-primary" href="#tipoExamen">Continuar</a>
               </form>
@@ -211,7 +217,7 @@
           <label for="dbp" class="col-form-label">FPP</label>
         </div>
         <div class="col">
-          <input type="text" class="form-control" id="fpp" readonly>
+          <input type="text" class="form-control" name="fpp" readonly>
         </div>
       </div>
       <div class="form-group row">
