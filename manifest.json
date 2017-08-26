@@ -1,5 +1,5 @@
 {
-  "short_name": "Crecimiento Fetal.cl",
+  "short_name": "Crecto.Fetal",
   "name": "Crecimiento Fetal.cl",
   "icons": [
     {
@@ -22,7 +22,8 @@
   "background_color": "#0275d8",
   "display": "standalone",
   "theme_color": "#0275d8",
-  "prefer_related_applications": true,
+  "orientation": "portrait",
+  "prefer_related_applications": false,
   "related_applications": [{
     "platform": "play",
     "id": "cl.wetrust.calculadorecografico"
