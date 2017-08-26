@@ -16,6 +16,11 @@
       "src": "img/icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {  
+      "src": "/img/ic_launcher-web.png",  
+      "sizes": "512x512",  
+      "type": "image/png"  
     }
   ],
   "start_url": "index.html",
