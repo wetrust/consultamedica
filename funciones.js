@@ -226,6 +226,7 @@ function deDBP() {
 		var dos = dbp - DBPMenos2DE[eg];
 		var resultado = (parseInt(95 / (uno) * (dos) + 3));
 		ajustarProgreso(resultado, "dbpDE");
+		p50();
 	}
 }
 
@@ -264,7 +265,8 @@ function pctcc() {
   var uno=pct97[eg] - pct3[eg];
   var dos=cc - pct3[eg];
   ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "ccPct");
-	 psohdlk()
+	 psohdlk();
+	 p50();
  }
 };
 
@@ -304,7 +306,8 @@ function pctca() {
   var uno=pct97[eg] - pct3[eg];
   var dos=ca - pct3[eg];
 	 ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "caPct");
-	 psohdlk()
+	 psohdlk();
+	 p50();
  }
 };
 
@@ -343,6 +346,8 @@ function pctlf() {
   var uno=pct97[eg] - pct3[eg];
   var dos=lf - pct3[eg];
 	 ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "lfPct");
+	 p50();
+	 $('tallaFetal').val(parseInt(lf * 0.55 + 9.6));
  }
 };
 
@@ -389,6 +394,7 @@ var pct2dsmas = [];
   var dos=cb - pct2ds[eg];
   $("#cerebeloPct").val(parseInt(95 / (uno) * (dos)));
 	 ajustarProgreso(parseInt(95 / (uno) * (dos)), "cerebeloPct");
+	 p50();
  }
 };
 
@@ -430,6 +436,7 @@ function pctlh() {
 		var dos = lh - pct05[eg];
 		var resultado = (parseInt(95 / (uno) * (dos) + 5));
 		 ajustarProgreso(resultado, "lhPct");
+		p50();
 	}
 }
 
@@ -1088,3 +1095,74 @@ function imprSelec(muestra)
 	ventimp.document.close();
 	ventimp.show();
 }
+
+function p50() {
+
+    //calcular dbp
+    const N7 = new Number(9.468544279);
+    const N8 = new Number(1.015432196);
+    var dbp= $('#dbp').val();
+    var N = new Number(N7 * Math.pow(N8, dbp));
+    dbp = Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
+
+    var c1 = new Number(9.413641651);
+    var c2 = new Number(1.004137705);
+    var cc = $('#cc').val();
+    N = new Number(c1 * Math.pow(c2, cc));
+    cc =  Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
+
+    c1 = new Number(11.20178254);
+    c2 = new Number(1.01704237);
+    var lf = $('#lf').val();
+    N = new Number(c1 * Math.pow(c2, lf));
+    lf =  Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
+
+    var cb = $('#cerebelo').val();
+    cb = cb / 10;
+    var egHill = 6.37+(5.4*cb)+(0.78*Math.pow(cb,2))-(0.13*Math.pow(cb,3));
+    //añadir mayor presicion, ya se suma 1 dia
+    cb = Math.round( egHill * 10 ) / 10;
+
+    var  humeroPromedioDE = [];
+
+    humeroPromedioDE[10]=12.4;humeroPromedioDE[11]=12.6;humeroPromedioDE[12]=13.1;humeroPromedioDE[13]=13.4;
+    humeroPromedioDE[14]=13.6;humeroPromedioDE[15]=14.1;humeroPromedioDE[16]=14.4;humeroPromedioDE[17]=14.6;
+    humeroPromedioDE[18]=15.1;humeroPromedioDE[19]=15.4;humeroPromedioDE[20]=15.6;humeroPromedioDE[21]=16.2;
+    humeroPromedioDE[22]=16.5;humeroPromedioDE[23]=17.1;humeroPromedioDE[24]=17.3;humeroPromedioDE[25]=17.6;
+    humeroPromedioDE[26]=18.1;humeroPromedioDE[27]=18.4;humeroPromedioDE[28]=19;humeroPromedioDE[29]=19.3;
+    humeroPromedioDE[30]=19.6;humeroPromedioDE[31]=20.2;humeroPromedioDE[32]=20.5;humeroPromedioDE[33]=21.1;
+    humeroPromedioDE[34]=21.4;humeroPromedioDE[35]=22;humeroPromedioDE[36]=22.4;humeroPromedioDE[37]=22.6;
+    humeroPromedioDE[38]=23.3;humeroPromedioDE[39]=23.6;humeroPromedioDE[40]=24.2;humeroPromedioDE[41]=24.6;
+    humeroPromedioDE[42]=25.2;humeroPromedioDE[43]=25.5;humeroPromedioDE[44]=26.1;humeroPromedioDE[45]=26.5;
+    humeroPromedioDE[46]=27.1;humeroPromedioDE[47]=27.5;humeroPromedioDE[48]=28.1;humeroPromedioDE[49]=28.6;
+    humeroPromedioDE[50]=29.2;humeroPromedioDE[51]=29.6;humeroPromedioDE[52]=30.2;humeroPromedioDE[53]=30.6;
+    humeroPromedioDE[54]=31.3;humeroPromedioDE[55]=32;humeroPromedioDE[56]=32.4;humeroPromedioDE[57]=33.1;
+    humeroPromedioDE[58]=33.4;humeroPromedioDE[59]=34.1;humeroPromedioDE[60]=34.6;humeroPromedioDE[61]=35.2;
+    humeroPromedioDE[62]=35.6;humeroPromedioDE[63]=36.4;humeroPromedioDE[64]=37.1;humeroPromedioDE[65]=37.5;
+    humeroPromedioDE[66]=38.2;humeroPromedioDE[67]=38.6;humeroPromedioDE[68]=39.4;humeroPromedioDE[69]=40.1;
+     
+    var lh = parseInt($('#lh').val();
+    lh =  humeroPromedioDE[lh];
+
+     var dbpdias = (Math.floor(dbp) * 7) + ((dbp - Math.floor(dbp)) * 10);
+     var ccdias = (Math.floor(cc) * 7) + ((cc - Math.floor(cc)) * 10);
+     var lfdias = (Math.floor(lf) * 7) + ((lf - Math.floor(lf)) * 10);
+
+     if (cb > 0) {
+        var cbdias = (Math.floor(cb) * 7) + ((cb - Math.floor(cb)) * 10);
+        egbio = (ccdias + lfdias + cbdias) /3;
+     }
+     else {
+        egbio = (dbpdias + ccdias + lfdias) /3;
+     }
+
+     if (lh > 0) {
+        var lhdias = (Math.floor(lh) * 7) + ((lh - Math.floor(lh)) * 10);
+        egbio = (lhdias + egbio) /2;
+     }
+
+     egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
+
+     $('#egP50').val(egbio);
+
+    }
