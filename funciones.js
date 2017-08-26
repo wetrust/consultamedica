@@ -1141,7 +1141,7 @@ function p50() {
     humeroPromedioDE[62]=35.6;humeroPromedioDE[63]=36.4;humeroPromedioDE[64]=37.1;humeroPromedioDE[65]=37.5;
     humeroPromedioDE[66]=38.2;humeroPromedioDE[67]=38.6;humeroPromedioDE[68]=39.4;humeroPromedioDE[69]=40.1;
      
-    var lh = parseInt($('#lh').val();
+    var lh = parseInt($('#lh').val());
     lh =  humeroPromedioDE[lh];
 
      var dbpdias = (Math.floor(dbp) * 7) + ((dbp - Math.floor(dbp)) * 10);
