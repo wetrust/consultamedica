@@ -21,7 +21,7 @@
   "start_url": "index.html",
   "background_color": "#0275d8",
   "display": "standalone",
-  "theme-color": "#0275d8",
+  "theme_color": "#0275d8",
   "prefer_related_applications": true,
   "related_applications": [{
     "platform": "play",
