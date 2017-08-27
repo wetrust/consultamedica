@@ -95,8 +95,13 @@ $( '#graficoDbp' ).on( 'click', function() {
                        y: 0,
                    });
                }
+               var dbp = $("#dbp").val();
+               dbp = dbp.toString();
+               dbp = dbp.replace(",", ".");
+               dbp = parseFloat(dbp);
+                   
                data.push({
-                   y: parseInt($("#dbp").val()),
+                   y: dbp,
                });
                for (i = edadGest + 1; i <= 39; i++) {
                    data.push({
@@ -160,8 +165,14 @@ $( '#graficoCc' ).on( 'click', function() {
                        y: 0,
                    });
                }
+
+               var cc = $("#cc").val();
+               cc = cc.toString();
+               cc = cc.replace(",", ".");
+               cc = parseFloat(cc);
+
                data.push({
-                   y: parseInt(document.getElementById("cc").value),
+                   y: cc,
                });
                for (i = edadGest + 1; i <= 39; i++) {
                    data.push({
@@ -225,8 +236,14 @@ $( '#graficoCa' ).on( 'click', function() {
                        y: 0,
                    });
                }
+
+               var ca = $("#ca").val();
+               ca = ca.toString();
+               ca = ca.replace(",", ".");
+               ca = parseFloat(ca);
+
                data.push({
-                   y: parseInt(document.getElementById("ca").value),
+                   y:ca,
                });
                for (i = edadGest + 1; i <= 39; i++) {
                    data.push({
@@ -288,8 +305,13 @@ $( '#graficoLf' ).on( 'click', function() {
                for (i = 12; i <= edadGest; i++) {
                    data.push({ y: 0, });
                }
+               
+               var lf = $("#lf").val();
+               lf = lf.toString();
+               lf = lf.replace(",", ".");
+               lf = parseFloat(lf);
                data.push({
-                   y: parseInt(document.getElementById("lf").value),
+                   y: lf,
                });
                for (i = edadGest + 1; i <= 39; i++) {
                    data.push({
@@ -351,8 +373,14 @@ $( '#graficoLh' ).on( 'click', function() {
                     for (i = 12; i <= edadGest; i++) {
                         data.push({ y: 0, });
                     }
+ 
+                    var lh = $("#lh").val();
+                    lh = lh.toString();
+                    lh = lh.replace(",", ".");
+                    lh = parseFloat(lh);
+                        
                     data.push({
-                        y: parseInt(document.getElementById("lh").value),
+                        y: lh,
                     });
                     for (i = edadGest + 1; i <= 39; i++) {
                         data.push({
@@ -421,8 +449,14 @@ $( '#graficoCerebelo' ).on( 'click', function() {
                             y: 0,
                         });
                     }
+
+                   var cerebelo = $("#cerebelo").val();
+                   cerebelo = cerebelo.toString();
+                   cerebelo = cerebelo.replace(",", ".");
+                   cerebelo = parseFloat(cerebelo);
+
                     data.push({
-                        y: parseInt(document.getElementById("cerebelo").value),
+                        y: cerebelo,
                     });
                     for (i = edadGest + 1; i <= 39; i++) {
                         data.push({
@@ -488,7 +522,11 @@ $( '#graficoLcn' ).on( 'click', function() {
                 // generate an array of random data
                 var data = [];
                 var egLcn = parseInt(localStorage.eg);
-                var valLcn = parseFloat(document.getElementById("lcn").value) / 10;
+                var lcn = $("#lcn").val();
+                lcn = lcn.toString();
+                lcn = lcn.replace(",", ".");
+                lcn = parseFloat(lcn) / 10;
+
                 var lcnegx = [];
                 var flag = false;
 
@@ -507,7 +545,7 @@ $( '#graficoLcn' ).on( 'click', function() {
                     if (lcnegx[i] >= egLcn) {
                         if (flag == false) {
                         data.push({
-                            y: valLcn,
+                            y: lcn,
                         });
                         flag = true;
                         }
@@ -584,11 +622,16 @@ $( '#graficoSaco' ).on( 'click', function() {
                      var categories = [4.2,4.3,4.4,4.5,4.6,5,5.1,5.2,5.3,5.4,5.5,5.6,6,6.1,6.2,6.3,6.4,6.5,6.6,7,7.1,7.2,7.3,7.4,7.5,7.6,8];
                      var edadGest = parseInt(localStorage.eg);
 
+                     var saco = $("#saco").val();
+                     saco = saco.toString();
+                     saco = saco.replace(",", ".");
+                     saco = parseFloat(saco) / 10;
+                     
                      for (i = 0; i <= 27; i++) {
 
                          if (categories[i] == edadGest){
                               data.push({
-                                   y: document.getElementById("saco").value /10,
+                                   y: saco,
                               });
                          }
                          else{
@@ -650,8 +693,13 @@ $( '#graficoAud' ).on( 'click', function() {
                             y: 0,
                         });
                     }
+                    var aud = $("#aud").val();
+                    aud = aud.toString();
+                    aud = aud.replace(",", ".");
+                    aud = parseFloat(aud);
+                    
                     data.push({
-                            y: parseFloat($('#aud').val()),
+                            y: aud,
                         });
                     for (i = edadGest +1; i <= 39; i ++ ) {
                         data.push({
@@ -713,8 +761,14 @@ $( '#graficoAui' ).on( 'click', function() {
                             y: 0,
                         });
                     }
+                    
+                    var aui = $("#aui").val();
+                    aui = aui.toString();
+                    aui = aui.replace(",", ".");
+                    aui = parseFloat(aui);
+                    
                     data.push({
-                            y: parseFloat($('#aui').val()),
+                            y: aui,
                         });
                     for (i = edadGest +1; i <= 39; i ++ ) {
                         data.push({
@@ -776,8 +830,13 @@ $( '#graficoAu' ).on( 'click', function() {
                             y: 0,
                         });
                     }
+                    var auprom = $("#auprom").val();
+                    auprom = auprom.toString();
+                    auprom = auprom.replace(",", ".");
+                    auprom = parseFloat(auprom);
+                    
                     data.push({
-                            y: parseFloat($('#auprom').val()),
+                            y: auprom,
                         });
                     for (i = edadGest +1; i <= 39; i ++ ) {
                         data.push({
@@ -838,8 +897,13 @@ $( '#graficoIpau' ).on( 'click', function() {
                          y: 0,
                      });
                  }
+                 var ipau = $("#ipau").val();
+                 ipau = ipau.toString();
+                 ipau = ipau.replace(",", ".");
+                 ipau = parseFloat(ipau);
+                 
                  data.push({
-                     y: parseFloat($('#ipau').val()),
+                     y: ipau,
                  });
                  for (i = edadGest + 1; i <= 39; i++) {
                      data.push({
@@ -902,8 +966,14 @@ $( '#graficoIpacm' ).on( 'click', function() {
                          y: 0,
                      });
                  }
+                     
+                 var ipacm = $("#ipacm").val();
+                 ipacm = ipacm.toString();
+                 ipacm = ipacm.replace(",", ".");
+                 ipacm = parseFloat(ipacm);
+                     
                  data.push({
-                     y: parseFloat($('#ipacm').val()),
+                     y: ipacm,
                  });
                  for (i = edadGest + 1; i <= 39; i++) {
                      data.push({
@@ -966,8 +1036,13 @@ $( '#graficoCcp' ).on( 'click', function() {
                          y: 0,
                      });
                  }
+                 var ccp = $("#ccp").val();
+                 ccp = ccp.toString();
+                 ccp = ccp.replace(",", ".");
+                 ccp = parseFloat(ccp);
+                 
                  data.push({
-                     y: parseFloat($('#ccp').val()),
+                     y: ccp,
                  });
                  for (i = edadGest + 1; i <= 38; i++) {
                      data.push({
@@ -1030,8 +1105,13 @@ $( '#graficoDv' ).on( 'click', function() {
                             y: 0,
                         });
                     }
+                    var dv = $("#dv").val();
+                    dv = dv.toString();
+                    dv = dv.replace(",", ".");
+                    dv = parseFloat(dv);
+                    
                     data.push({
-                            y: parseFloat($('#dv').val()),
+                            y: dv,
                         });
                     for (i = edadGest +1; i <= 39; i ++ ) {
                         data.push({
@@ -1242,8 +1322,14 @@ $( '#graficoBVM' ).on( 'click', function() {
                             y: 0,
                         });
                     }
+                    
+                    var bvm = $("#bvm").val();
+                    bvm = bvm.toString();
+                    bvm = bvm.replace(",", ".");
+                    bvm = parseFloat(bvm);
+                    
                     data.push({
-                            y: parseFloat($('#bvm').val()),
+                            y: bvm,
                         });
                     for (i = edadGest +1; i <= 39; i ++ ) {
                         data.push({
@@ -1308,8 +1394,13 @@ $( '#graficoILA' ).on( 'click', function() {
                        y: 0,
                    });
                }
+               var ila = $("#ila").val();
+               ila = ila.toString();
+               ila = ila.replace(",", ".");
+               ila = parseFloat(ila);
+               
                data.push({
-                   y: parseFloat($('#ila').val()),
+                   y: ila,
                });
                for (i = edadGest + 1; i <= 39; i++) {
                    data.push({
@@ -1380,8 +1471,14 @@ $( '#infDoppler1' ).on( 'click', function() {
                             y: 0,
                         });
                     }
+                    
+                    var auprom = $("#auprom").val();
+                    auprom = auprom.toString();
+                    auprom = auprom.replace(",", ".");
+                    auprom = parseFloat(auprom);
+                    
                     data.push({
-                            y: parseFloat($('#auprom').val()),
+                            y: auprom,
                         });
                     for (i = edadGest +1; i <= 39; i ++ ) {
                         data.push({
@@ -1436,8 +1533,13 @@ $( '#infDoppler1' ).on( 'click', function() {
                          y: 0,
                      });
                  }
+                 var ipau = $("#ipau").val();
+                 ipau = ipau.toString();
+                 ipau = ipau.replace(",", ".");
+                 ipau = parseFloat(ipau);
+                 
                  data.push({
-                     y: parseFloat($('#ipau').val()),
+                     y: ipau,
                  });
                  for (i = edadGest + 1; i <= 39; i++) {
                      data.push({
@@ -1494,8 +1596,14 @@ $( '#infDoppler1' ).on( 'click', function() {
                          y: 0,
                      });
                  }
+
+                 var ipacm = $("#ipacm").val();
+                 ipacm = ipacm.toString();
+                 ipacm = ipacm.replace(",", ".");
+                 ipacm = parseFloat(ipacm);
+
                  data.push({
-                     y: parseFloat($('#ipacm').val()),
+                     y: ipacm,
                  });
                  for (i = edadGest + 1; i <= 39; i++) {
                      data.push({
@@ -1552,8 +1660,14 @@ $( '#infDoppler1' ).on( 'click', function() {
                          y: 0,
                      });
                  }
+
+                 var ccp = $("#ccp").val();
+                 ccp = ccp.toString();
+                 ccp = ccp.replace(",", ".");
+                 ccp = parseFloat(ccp);
+
                  data.push({
-                     y: parseFloat($('#ccp').val()),
+                     y: ccp,
                  });
                  for (i = edadGest + 1; i <= 38; i++) {
                      data.push({
