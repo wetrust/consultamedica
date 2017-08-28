@@ -54,6 +54,15 @@ class app {
 	else if (this.hash=="#configuracion"){
 		this.displayElement("configuracion");
 	}
+	else if (this.hash=="#tamizaje-11"){
+		this.displayElement("tamizaje-11");
+	}
+	else if (this.hash=="#morfologica-22"){
+		this.displayElement("morfologica-22");
+	}
+	else if (this.hash=="#ecocardio"){
+		this.displayElement("ecocardio");
+	}
     }
 
 //Funciones para los pacientes
