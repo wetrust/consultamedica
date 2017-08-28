@@ -74,24 +74,14 @@ var listPaciente = function(results){
      localStorage.fum = $("#fum-dos").val();
      $("#fum-tres").val($("#fum-dos").val());
      localStorage.eg = calcularEG();
-     $("#edadGestacional").val(localStorage.eg);
-     $("#egExamen").val(localStorage.eg);
-     $("#egConsulta").val(localStorage.eg);
-     $("#egPrimTrim").val(localStorage.eg);
-     $("#egSegTrim").val(localStorage.eg);
-     $('#egDoppler').val(localStorage.eg);
+     $("input[name='eg']").val(localStorage.eg);
  });
 
  $( '#fum-tres').on('change', function() {
      localStorage.fum = $("#fum-tres").val();
      $("#fum-dos").val($("#fum-tres").val());
      localStorage.eg = calcularEG();
-     $("#edadGestacional").val(localStorage.eg);
-     $("#egExamen").val(localStorage.eg);
-     $("#egConsulta").val(localStorage.eg);
-     $("#egPrimTrim").val(localStorage.eg);
-     $("#egSegTrim").val(localStorage.eg);
-     $('#egDoppler').val(localStorage.eg);
+     $("input[name='eg']").val(localStorage.eg);
  });
 
 $( '.informacion').on('click', function() {
