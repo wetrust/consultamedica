@@ -240,6 +240,9 @@ class app {
 	$('#tcal').css("visibility", "hidden");
 	$('#paciente').hide();
 	$('#configuracion').hide();
+	$('#tamizaje-11').hide();
+	$('#morfologica-22').hide();
+	$('#ecocardio').hide();
 	$('#'+div_id).show();
     }
 	
