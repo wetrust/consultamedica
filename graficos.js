@@ -2722,11 +2722,14 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
 });
 
 $( '#graficoTallaPeso' ).on( 'click', function() {
-    $('#popupTitle').html("Análisis Talla Peso");
+    $('#popupTitle').html("Análisis Talla Peso según referencias postnatales");
     $('#popupBody').html("<div id='viewGraficoTallaPeso'></div>");
 $('#viewGraficoTallaPeso').highcharts({
     title: {
-        text: 'Análisis Talla Peso'
+        text: 'Análisis Talla Peso según referencias postnatales'
+    },
+    subtitle: {
+        text: 'Alarcón y col. 2008'
     },
     xAxis: [{
         categories: ['24', '25', '26', '27', '28', '29',
