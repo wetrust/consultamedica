@@ -2821,7 +2821,7 @@ $('#viewGraficoTallaPeso').highcharts({
                 data.push({
                         y: parseInt(document.getElementById("pfe").value),
                 });
-                for (i = edadGest + 1; i <= 42; i++) {
+                for (i = edadGest + 1; i <= 41; i++) {
                         data.push({
                             y: 0,
                         });
@@ -2876,7 +2876,7 @@ $('#viewGraficoTallaPeso').highcharts({
                 data.push({
                         y: parseInt(document.getElementById("tallaFetal").value),
                 });
-                for (i = edadGest + 1; i <= 42; i++) {
+                for (i = edadGest + 1; i <= 41; i++) {
                         data.push({
                             y: 0,
                         });
