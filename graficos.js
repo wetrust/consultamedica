@@ -2805,6 +2805,35 @@ $('#viewGraficoTallaPeso').highcharts({
         },
         color: Highcharts.getOptions().colors[0]
 
+    },{
+        name: 'Peso',
+        type: 'spline',
+        yAxis: 1,
+        data: (function () {
+                var data = [];
+                var edadGest = parseInt(localStorage.eg) - 1;
+
+                for (i = 24; i <= edadGest; i++) {
+                        data.push({ y: 0, });
+                }
+                data.push({
+                        y: parseInt(document.getElementById("pfe").value),
+                });
+                for (i = edadGest + 1; i <= 42; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                }
+                return data;
+        }()),
+        dashStyle: "Dot",
+        marker: { symbol: 'square' },
+        lineWidth: 0,
+        tooltip: {
+            valueSuffix: ' kgs'
+        },
+        color: Highcharts.getOptions().colors[0]
+
     }, {
         name: 'Talla PCT 90',
         type: 'spline',
@@ -2828,6 +2857,33 @@ $('#viewGraficoTallaPeso').highcharts({
         type: 'spline',
         data: [29.8,31.1,32.3,33.6,35.1,36.5,37.7,39.1,40.5,41.8,43.1,44.2,45.3,46.3,47.2,47.9,48.5,48.8,49.1],
         marker: { enabled: false },
+        tooltip: {
+            valueSuffix: ' mm'
+        },
+        color: Highcharts.getOptions().colors[1]
+    }, {
+        name: 'Talla',
+        type: 'spline',
+        data: (function () {
+                var data = [];
+                var edadGest = parseInt(localStorage.eg) - 1;
+
+                for (i = 24; i <= edadGest; i++) {
+                        data.push({ y: 0, });
+                }
+                data.push({
+                        y: parseInt(document.getElementById("tallaFetal").value),
+                });
+                for (i = edadGest + 1; i <= 42; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                }
+                return data;
+        }()),
+        dashStyle: "Dot",
+        marker: { symbol: 'square' },
+        lineWidth: 0,
         tooltip: {
             valueSuffix: ' mm'
         },
