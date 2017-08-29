@@ -2720,3 +2720,116 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
     });
     $('#popupGenerico').modal('show');
 });
+
+$( '#graficoTallaPeso' ).on( 'click', function() {
+    $('#popupTitle').html("Análisis Talla Peso");
+    $('#popupBody').html("<div id='viewGraficoTallaPeso'></div>");
+$('#viewGraficoTallaPeso').highcharts({
+    title: {
+        text: 'Análisis Talla Peso'
+    },
+    xAxis: [{
+        categories: ['24', '25', '26', '27', '28', '29',
+            '30', '31', '32', '33', '34', '35','36','37','38','39','40','41','42'],
+        crosshair: true
+    }],
+    yAxis: [{ // Primary yAxis
+        labels: {
+            format: '{value} mm',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        },
+        title: {
+            text: 'Talla Fetal',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        },
+        opposite: true,
+        max: 55,
+        tickAmount: 5
+
+    }, { // Secondary yAxis
+        gridLineWidth: 0,
+        title: {
+            text: 'Peso',
+            style: {
+                color: Highcharts.getOptions().colors[0]
+            }
+        },
+        labels: {
+            format: '{value} kgs',
+            style: {
+                color: Highcharts.getOptions().colors[0]
+            }
+        }
+    }],
+    tooltip: {
+        shared: true
+    },
+    credits: { enabled: false },
+    series: [{
+        name: 'Peso PCT90',
+        type: 'spline',
+        yAxis: 1,
+        data: [899,966,1074,1219,1395,1597,1820,2059,2308,2562,2817,3067,3307,3532,3736,3914,4061,4173,4244],
+        marker: { enabled: false },
+        tooltip: {
+            valueSuffix: ' kgs'
+        },
+        color: Highcharts.getOptions().colors[0]
+
+    },{
+        name: 'Peso PCT50',
+        type: 'spline',
+        yAxis: 1,
+        data: [750,810,905,1032,1185,1361,1555,1763,1980,2202,2424,2642,2852,3049,3228,3386,3517,3618,3684],
+        marker: { enabled: false },
+        tooltip: {
+            valueSuffix: ' kgs'
+        },
+        color: Highcharts.getOptions().colors[0]
+
+    },{
+        name: 'Peso PCT10',
+        type: 'spline',
+        yAxis: 1,
+        data: [630,661,728,826,951,1099,1265,1446,1637,1834,2032,2263,2438,2596,2795,2903,3024,3116,3176],
+        marker: { enabled: false },
+        tooltip: {
+            valueSuffix: ' kgs'
+        },
+        color: Highcharts.getOptions().colors[0]
+
+    }, {
+        name: 'Talla PCT 90',
+        type: 'spline',
+        data: [34.1,35.7,37.2,38.7,40.1,41.6,43.1,44.3,45.6,46.8,47.9,49.1,49.9,50.8,51.5,52.1,52.6,52.9,53.1],
+        marker: { enabled: false },
+        tooltip: {
+            valueSuffix: ' mm'
+        },
+        color: Highcharts.getOptions().colors[1]
+    }, {
+        name: 'Talla PCT 50',
+        type: 'spline',
+        data: [31.6,33.1,34.5,36.1,37.5,39.1,40.5,41.9,43.3,44.6,45.8,46.9,47.9,48.7,49.6,50.3,50.8,51.1,51.3],
+        marker: { enabled: false },
+        tooltip: {
+            valueSuffix: ' mm'
+        },
+        color: Highcharts.getOptions().colors[1]
+    }, {
+        name: 'Talla PCT 10',
+        type: 'spline',
+        data: [29.8,31.1,32.3,33.6,35.1,36.5,37.7,39.1,40.5,41.8,43.1,44.2,45.3,46.3,47.2,47.9,48.5,48.8,49.1],
+        marker: { enabled: false },
+        tooltip: {
+            valueSuffix: ' mm'
+        },
+        color: Highcharts.getOptions().colors[1]
+    }]
+});
+    $('#popupGenerico').modal('show');
+});
