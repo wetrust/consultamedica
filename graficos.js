@@ -2750,6 +2750,7 @@ $('#viewGraficoTallaPeso').highcharts({
             }
         },
         opposite: true,
+        min:5,
         max: 55,
         tickAmount: 5
 
@@ -2766,7 +2767,8 @@ $('#viewGraficoTallaPeso').highcharts({
             style: {
                 color: Highcharts.getOptions().colors[0]
             }
-        }
+        },
+        min:5
     }],
     tooltip: {
         shared: true
