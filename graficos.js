@@ -2978,6 +2978,7 @@ $('#viewGraficoTalla').highcharts({
         },
         yAxis: {
             title: { text: 'mm' },
+            tickPositions: 25, 35, 45, 55]
         },
         colors: ['#313131', '#313131', '#313131'],
         xAxis: {
