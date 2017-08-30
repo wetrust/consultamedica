@@ -2981,8 +2981,7 @@ $('#viewGraficoTalla').highcharts({
             }
         },
         yAxis: {
-            title: { text: '' },
-            tickPositions: [1, 1.6, 2.2, 2.8, 3.4, 4]
+            title: { text: 'mm' },
         },
         colors: ['#313131', '#313131', '#313131'],
         xAxis: {
