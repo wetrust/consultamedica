@@ -2894,3 +2894,144 @@ $('#viewGraficoTallaPeso').highcharts({
 });
     $('#popupGenerico').modal('show');
 });
+
+$( '#graficoIPN' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico IPN");
+    $('#popupBody').html("<div id='viewGraficoIPN'></div>");
+$('#viewGraficoIPN').highcharts({
+        title: {
+            text: 'IPN / EG',
+            x: -20 //center
+        },
+        subtitle: {
+            text: '',
+            x: -20
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: '' },
+            tickPositions: [1, 1.6, 2.2, 2.8, 3.4, 4]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories:
+            ['24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42']
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Pct. 10',
+            marker: { enabled: false },
+            data: [1.79, 1.83, 1.87, 1.91, 1.95, 1.99, 2.04, 2.08, 2.12, 2.16, 2.2, 2.25, 2.29, 2.33, 2.37, 2.41, 2.45, 2.5, 2.54]
+        }, {
+            type: "line",
+            name: 'Pct. 90',
+            marker: { enabled: false },
+            data: [2.54,2.57,2.59,2.62,2.65,2.68,2.71,2.74,2.77,2.8,2.83,2.86,2.89,2.92,2.95,2.98,3.01,3.04,3.07]
+        }, {
+            type: "line",
+            name: 'IPN',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (function () {
+                // generate an array of random data
+                var data = [];
+                var edadGest = parseInt(localStorage.eg) - 1;
+
+                for (i = 24; i <= edadGest; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                data.push({
+                    y: parseFloat(document.getElementById("ipn").value),
+                });
+                for (i = edadGest + 1; i <= 39; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                return data;
+            }())
+        }]
+    });
+            $('#popupGenerico').modal('show');
+});
+
+$( '#graficoTalla' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico Talla Fetal Estimada");
+    $('#popupBody').html("<div id='viewGraficoTalla'></div>");
+$('#viewGraficoTalla').highcharts({
+        title: {
+            text: 'Talla Fetal estimada',
+            x: -20 //center
+        },
+        subtitle: {
+            text: '',
+            x: -20
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: '' },
+            tickPositions: [1, 1.6, 2.2, 2.8, 3.4, 4]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories:
+            ['24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42']
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Talla PCT 90',
+            marker: { enabled: false },
+            data:  [34.1,35.7,37.2,38.7,40.1,41.6,43.1,44.3,45.6,46.8,47.9,49.1,49.9,50.8,51.5,52.1,52.6,52.9,53.1]
+        }, {
+            type: "line",
+            name: 'Talla PCT 50',
+            marker: { enabled: false },
+            data: [31.6,33.1,34.5,36.1,37.5,39.1,40.5,41.9,43.3,44.6,45.8,46.9,47.9,48.7,49.6,50.3,50.8,51.1,51.3]
+        }, {
+            type: "line",
+            name: 'Talla PCT 10',
+            marker: { enabled: false },
+            data: [29.8,31.1,32.3,33.6,35.1,36.5,37.7,39.1,40.5,41.8,43.1,44.2,45.3,46.3,47.2,47.9,48.5,48.8,49.1]
+        }, {
+            type: "line",
+            name: 'talla',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (function () {
+                // generate an array of random data
+                var data = [];
+                var edadGest = parseInt(localStorage.eg) - 1;
+
+                for (i = 24; i <= edadGest; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                data.push({
+                    y: parseInt(document.getElementById("tallaFetal").value),
+                });
+                for (i = edadGest + 1; i <= 39; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                return data;
+            }())
+        }]
+    });
+            $('#popupGenerico').modal('show');
+});
