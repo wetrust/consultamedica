@@ -2971,10 +2971,6 @@ $('#viewGraficoTalla').highcharts({
             text: 'Talla Fetal estimada',
             x: -20 //center
         },
-        subtitle: {
-            text: '',
-            x: -20
-        },
         plotOptions: {
             series: {
                 enableMouseTracking: false
@@ -2985,8 +2981,7 @@ $('#viewGraficoTalla').highcharts({
         },
         colors: ['#313131', '#313131', '#313131'],
         xAxis: {
-            categories:
-            ['24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42']
+            categories: ['24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42']
         },
         credits: { enabled: false },
         series: [{
