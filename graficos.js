@@ -2964,8 +2964,8 @@ $('#viewGraficoIPN').highcharts({
 });
 
 $( '#graficoTalla' ).on( 'click', function() {
-    $('#popupTitle').html("Gráfico Talla Fetal Estimada");
-    $('#popupBody').html("<div id='viewGraficoTalla'></div>");
+    $('#popupTitle').html("Gráfico Talla Fetal Estimada Referencia Neonatal SOCHIPE");
+    $('#popupBody').html("<div id='viewGraficoTalla'></div><p><small>Talla (Formula = lf * 0.55 + 9.6) </small></p>");
 $('#viewGraficoTalla').highcharts({
         title: {
             text: 'Talla Fetal estimada',
