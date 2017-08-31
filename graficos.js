@@ -2896,7 +2896,7 @@ $('#viewGraficoTallaPeso').highcharts({
 });
 
 $( '#graficoIPN' ).on( 'click', function() {
-    $('#popupTitle').html("Gráfico IPN");
+    $('#popupTitle').html("Gráfico IPN Referencia Neonatal SOCHIPE");
     $('#popupBody').html("<div id='viewGraficoIPN'></div>");
 $('#viewGraficoIPN').highcharts({
         title: {
