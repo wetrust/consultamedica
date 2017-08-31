@@ -402,6 +402,7 @@ function pctlf() {
           dos=tallaFet -  Pct10Talla[eg];
 		 
           ajustarProgreso(parseInt(80 / (uno) * (dos) + 10), "tallaPct");
+		 ipn()
 	 } 
  }
 };
@@ -818,6 +819,7 @@ function psohdlk() {
     $("#pfe").val(psoP.toFixed(0));
     pctpfe();
 	valccca()
+	 ipn()
   }
 }
 
@@ -1219,5 +1221,50 @@ function p50() {
      egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
 
      $('#egP50').val(egbio);
-
     }
+
+function ipn() {
+    var talla = $('#tallaFetal').val();
+    var peso = $('#pfe').val();
+
+    if (talla > 0) {
+        if (peso > 0) {
+            var IPN = peso / (Math.pow(talla, 3));
+            IPN = IPN * 100000;
+           $('#ipn').val(IPN.toFixed(1));
+	
+	   var Pct10IPN = [];
+	   var Pct90IPN = [];
+		
+	   Pct10IPN[24] = 1.79;	   Pct10IPN[25] = 1.83;
+	   Pct10IPN[26] = 1.87;	   Pct10IPN[27] = 1.91;
+	   Pct10IPN[28] = 1.95;	   Pct10IPN[29] = 1.99;
+	   Pct10IPN[30] = 2.04;	   Pct10IPN[31] = 2.08;
+	   Pct10IPN[32] = 2.12;	   Pct10IPN[33] = 2.16;
+	   Pct10IPN[34] = 2.2;	   Pct10IPN[35] = 2.25;
+	   Pct10IPN[36] = 2.29;	   Pct10IPN[37] = 2.33;
+	   Pct10IPN[38] = 2.37;	   Pct10IPN[39] = 2.41;
+	   Pct10IPN[40] = 2.45;	   Pct10IPN[41] = 2.5;
+	   Pct10IPN[42] = 2.54;
+		
+	   Pct90IPN[24] = 2.54;	   Pct90IPN[25] = 2.57;
+	   Pct90IPN[26] = 2.59;	   Pct90IPN[27] = 2.62;
+	   Pct90IPN[28] = 2.65;	   Pct90IPN[29] = 2.68;
+	   Pct90IPN[30] = 2.71;	   Pct90IPN[31] = 2.74;
+	   Pct90IPN[32] = 2.77;	   Pct90IPN[33] = 2.8;
+	   Pct90IPN[34] = 2.83;	   Pct90IPN[35] = 2.86;
+	   Pct90IPN[36] = 2.89;	   Pct90IPN[37] = 2.92;
+	   Pct90IPN[38] = 2.95;	   Pct90IPN[39] = 2.98;
+	   Pct90IPN[40] = 3.01;	   Pct90IPN[41] = 3.04;
+	   Pct90IPN[42] = 3.07;
+	
+	   var eg = parseFloat(localStorage.eg);
+           eg = parseInt(eg);
+           var uno=Pct90IPN[eg] - Pct10IPN[eg];
+           var dos=IPN - Pct10IPN[eg];
+
+           ajustarProgreso(parseInt(80 / (uno) * (dos) + 10), "IPNPct");
+
+        }
+    }
+}
