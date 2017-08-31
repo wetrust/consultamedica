@@ -347,7 +347,9 @@ function pctlf() {
   var dos=lf - pct3[eg];
 	 ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "lfPct");
 	 p50();
-	 $('#tallaFetal').val(parseInt(lf * 0.55 + 9.6));
+	 //$('#tallaFetal').val(parseInt(lf * 0.55 + 9.6));
+	 $('#tallaFetal').val(parseInt(lf * 5.9 + 6.18));
+
 	 eg = eg + 12;
 	 
 	 if (eg >= 24){
