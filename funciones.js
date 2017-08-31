@@ -62,7 +62,7 @@ $( "#cerebelo" ).keypress(function( event ) {
 $( "#bvm" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("#ila").focus()
+     $("#pfe").focus()
   }
 });
 
