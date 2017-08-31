@@ -1229,7 +1229,7 @@ function ipn() {
 
     if (talla > 0) {
         if (peso > 0) {
-            var IPN = peso / (Math.pow(talla, 3));
+            var IPN = peso / (Math.pow((talla * 10), 3));
             IPN = IPN * 100000;
            $('#ipn').val(IPN.toFixed(1));
 	
