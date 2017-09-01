@@ -2,6 +2,15 @@
 //from https://stackoverflow.com/questions/17907445/how-to-detect-ie11
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
 
+$( '#adicionalCrecimientoView' ).on( 'click', function() {
+	if ($('#adicionalCrecimiento').css( "none" ) == 'none'){
+		$('#adicionalCrecimiento').show();
+	}
+	else{
+		$('#adicionalCrecimiento').hide();
+	}
+	
+});
 //enters
 $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
