@@ -246,6 +246,7 @@ class app {
 	$('#tamizaje-11').hide();
 	$('#morfologica-22').hide();
 	$('#ecocardio').hide();
+        $('#dNeonatales').hide();
 	$('#'+div_id).show();
     }
 	
