@@ -63,6 +63,9 @@ class app {
 	else if (this.hash=="#ecocardio"){
 		this.displayElement("ecocardio");
 	}
+	else if (this.hash=="#dneonatales"){
+		this.displayElement("dNeonatales");
+	}
     }
 
 //Funciones para los pacientes
