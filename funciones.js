@@ -143,7 +143,7 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 		if ($(this).val() == 1){
 			var LCN = parseInt($('#lcn').val());
 			var saco = parseInt($('#saco').val());
-			var eg = parseInt($("input[name='eg']").val());
+			var eg = parseFloat($("input[name='eg']").val());
 			
 			if (isNaN(LCN) | LCN < 0 | isNaN(eg) | eg < 1) {
 				if (isNaN(saco) | saco < 0 | isNaN(eg) | eg < 1) {
@@ -154,8 +154,7 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 				else{
 					$('#calculoAjusteEcoPrimTrim').show();
 					$('#preguntaAjusteEcoPrimTrim').show();
-					var egsaco = $('#sacoPct').val();
-					var eg1 = new Number((Math.floor(egsaco) * 7) + Math.round((egsaco - Math.floor(egsaco)) * 7));
+					var eg1 = new Number((Math.floor(saco) * 7) + Math.round((egsaco - Math.floor(saco)) * 7));
 					var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
 					var diferencia = Math.abs(Math.floor(eg1 - eg2) + Math.round(((eg1 - eg2) - Math.floor(eg1 - eg2)) * 7));
 					$('#diferenciaEcoPrimTrim').html('Hay ' + diferencia + ' días de diferencia entre la Edad de FUM y la obtenida por ecografía (saco)');
@@ -167,8 +166,7 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 			else{
 				$('#calculoAjusteEcoPrimTrim').show();
 				$('#preguntaAjusteEcoPrimTrim').show();
-				var egLCN = $('#lcnPct').val();
-				var eg1 = new Number((Math.floor(egLCN) * 7) + Math.round((egsaco - Math.floor(egLCN)) * 7));
+				var eg1 = new Number((Math.floor(LCN) * 7) + Math.round((egsaco - Math.floor(LCN)) * 7));
 				var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
 				var diferencia = Math.abs(Math.floor(eg1 - eg2) + Math.round(((eg1 - eg2) - Math.floor(eg1 - eg2)) * 7));
 				$('#diferenciaEcoPrimTrim').html('Hay ' + diferencia + ' días de diferencia entre la Edad de FUM y la obtenida por ecografía (LCN)');
