@@ -146,7 +146,7 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 			var eg = parseInt($("input[name='eg']").val());
 			
 			if (isNaN(LCN) | LCN < 0 | isNaN(eg) | eg < 1) {
-				if (!isNaN(saco) | saco > 0 | !isNaN(eg) | eg < 1) {
+				if (!isNaN(saco) | saco > 0 | !isNaN(eg) | eg > 1) {
 					$('#calculoAjusteEcoPrimTrim').show();
 					$('#preguntaAjusteEcoPrimTrim').show();
 				}
