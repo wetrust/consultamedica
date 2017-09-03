@@ -154,11 +154,27 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 				else{
 					$('#calculoAjusteEcoPrimTrim').show();
 					$('#preguntaAjusteEcoPrimTrim').show();
+					var egsaco = $('#sacoPct').val();
+					var eg1 = new Number((Math.floor(egsaco) * 7) + Math.round((egsaco - Math.floor(egsaco)) * 7));
+					var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
+					var diferencia = Math.abs(Math.floor(eg1 - eg2) + Math.round(((eg1 - eg2) - Math.floor(eg1 - eg2)) * 7));
+					$('#diferenciaEcoPrimTrim').html('Hay ' + diferencia + ' días de diferencia entre la Edad de FUM y la obtenida por ecografía (saco)');
+					$('#furReferida').val($("input[name='fum']").val());
+					$('#egReferida').val(eg);
+					$('#fppReferida').val($("input[name='fpp']").val());
 				}
 			}
 			else{
 				$('#calculoAjusteEcoPrimTrim').show();
 				$('#preguntaAjusteEcoPrimTrim').show();
+				var egLCN = $('#lcnPct').val();
+				var eg1 = new Number((Math.floor(egLCN) * 7) + Math.round((egsaco - Math.floor(egLCN)) * 7));
+				var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
+				var diferencia = Math.abs(Math.floor(eg1 - eg2) + Math.round(((eg1 - eg2) - Math.floor(eg1 - eg2)) * 7));
+				$('#diferenciaEcoPrimTrim').html('Hay ' + diferencia + ' días de diferencia entre la Edad de FUM y la obtenida por ecografía (LCN)');
+				$('#furReferida').val($("input[name='fum']").val());
+				$('#egReferida').val(eg);
+				$('#fppReferida').val($("input[name='fpp']").val());
 			}	
 		}
 		else {
