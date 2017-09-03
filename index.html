@@ -457,7 +457,7 @@
                     <div class="col">
                         <div class="alert alert-info" role="alert">
                             <h5 class="alert-heading">Edad Gestacional según LCN: </h5>
-                            <p>Hay 11 días de diferencia entre la Edad de FUM y la obtenida por ecografía (LCN)</p>
+                            <p id="diferenciaEcoPrimTrim">Hay 11 días de diferencia entre la Edad de FUM y la obtenida por ecografía (LCN)</p>
 
                         </div>
                     </div>
@@ -467,10 +467,10 @@
                         <p>¿Desea ajustar la edad gestacional referida?</p>
                         <div class="btn-group" data-toggle="buttons">
                             <label class="btn btn-outline-primary p-3 active" aria-pressed="true">
-                                <input type="radio" name="options" id="option1" autocomplete="off" checked=""> NO
+                                <input type="radio" name="ajustarEcoPrimTrim" value="0" autocomplete="off" checked=""> NO
                             </label>
                             <label class="btn btn-outline-primary p-3" aria-pressed="true">
-                                <input type="radio" name="options" id="option2" autocomplete="off"> SI
+                                <input type="radio" name="ajustarEcoPrimTrim" value="1" autocomplete="off"> SI
                             </label>
                         </div>
                     </div>
@@ -486,7 +486,7 @@
                                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                             <div class="input-group-addon"><i class="fa fa-calendar-o" aria-hidden="true"></i>
                                             </div>
-                                            <input type="text" class="form-control" id="inlineFormInputGroup" readonly="">
+                                            <input type="text" class="form-control" id="furReferida" readonly="">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -494,7 +494,7 @@
                                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                             <div class="input-group-addon"><i class="fa fa-clock-o" aria-hidden="true"></i>
                                             </div>
-                                            <input type="text" class="form-control" id="inlineFormInputGroup" readonly="">
+                                            <input type="text" class="form-control" id="egReferida" readonly="">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -502,7 +502,7 @@
                                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                             <div class="input-group-addon"><i class="fa fa-calendar-o" aria-hidden="true"></i>
                                             </div>
-                                            <input type="text" class="form-control" id="inlineFormInputGroup" readonly="">
+                                            <input type="text" class="form-control" id="fppReferida" readonly="">
                                         </div>
                                     </div>
                                 </div>
@@ -512,7 +512,7 @@
                                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                             <div class="input-group-addon"><i class="fa fa-calendar-o" aria-hidden="true"></i>
                                             </div>
-                                            <input type="text" class="form-control" id="inlineFormInputGroup" readonly="">
+                                            <input type="text" class="form-control" id="furAjustada" readonly="">
                                         </div>
                                     </div>
 
@@ -522,7 +522,7 @@
                                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                             <div class="input-group-addon"><i class="fa fa-clock-o" aria-hidden="true"></i>
                                             </div>
-                                            <input type="text" class="form-control" id="inlineFormInputGroup" readonly="">
+                                            <input type="text" class="form-control" id="egAjustada" readonly="">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -530,7 +530,7 @@
                                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                             <div class="input-group-addon"><i class="fa fa-calendar-o" aria-hidden="true"></i>
                                             </div>
-                                            <input type="text" class="form-control" id="inlineFormInputGroup" readonly="">
+                                            <input type="text" class="form-control" id="fppAjustada" readonly="">
                                         </div>
                                     </div>
                                 </div>
