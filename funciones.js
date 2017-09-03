@@ -211,7 +211,7 @@ $("input[name='ajustarEcoPrimTrim']").on("change", function(){
 					var B = new Date();
   					B.setTime(FUM.getTime() + diferencia);
 					$("#fum-tres").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
-					$("#fum-tres").trigger("click");
+					$("#fum-tres").trigger("change");
 					$('#furAjustada').val($("input[name='fum']").val());
 					$('#egAjustada').val($("input[name='eg']").val());
 					$('#fppAjustada').val($("input[name='fpp']").val());
@@ -229,7 +229,7 @@ $("input[name='ajustarEcoPrimTrim']").on("change", function(){
 				var B = new Date();
   				B.setTime(FUM.getTime() + diferencia);
 				$("#fum-tres").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
-				$("#fum-tres").trigger("click");
+				$("#fum-tres").trigger("change");
 				$('#furAjustada').val($("input[name='fum']").val());
 				$('#egAjustada').val($("input[name='eg']").val());
 				$('#fppAjustada').val($("input[name='fpp']").val());
