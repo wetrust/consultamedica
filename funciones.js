@@ -138,7 +138,7 @@ function show_hide(id){
 
 
 $("input[name='ajusteEcoPrimTrim']").on("change", function(){
-
+	event.preventDefault();
 	if ($(this).is(":checked")){
 		if ($(this).val() == 1){
 			var LCN = $('lcn').val();
