@@ -147,7 +147,7 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 				$('#popupTitle').html("Información");
 				$('#popupBody').html("<p>Debe escribir un valor en LCN o Saco Gestacional</p>");
 				$('#popupGenerico').modal('show');
-				$("input[name='ajusteEcoPrimTrim'][value=0]").button('toggle');
+				$("input[name='ajusteEcoPrimTrim'][value=0]").trigger('click');
 			}
 			else {
 				$('#calculoAjusteEcoPrimTrim').show();
