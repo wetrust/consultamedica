@@ -184,6 +184,16 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 	}
 });
 
+$("input[name='ajustarEcoPrimTrim']").on("change", function(){
+	event.preventDefault();
+	if ($(this).is(":checked")){
+		if ($(this).val() == 1){
+			$('#resultadoAjusteEcoPrimTrim').show();
+		}
+	}
+});
+
+
 
 ////////////////////////////////////////////
 function calcularEG(){
