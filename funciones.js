@@ -131,6 +131,38 @@ function show_hide(id){
   }
 };
 
+////////////////////////////////////////////
+// Ajuste primer trimestre
+//
+////////////////////////////////////////////
+
+
+$("input[name='ajusteEcoPrimTrim']").on("change", function(){
+
+	if ($(this).is(":checked")){
+		if ($(this).val() == 1){
+			var LCN = $('lcn').val();
+			var saco = $('saco').val();
+			if (LCN < 0 | saco < 0){
+				$('input[name='ajusteEcoPrimTrim'][value=0]').attr('checked', 'checked');
+				$('#popupTitle').html("Información");
+				$('#popupBody').html("<p>Debe escribir un valor en LCN o Saco Gestacional</p>");
+				$('#popupGenerico').modal('show');
+			}
+			else {
+				$('#calculoAjusteEcoPrimTrim').show();
+				$('#preguntaAjusteEcoPrimTrim').show();
+			}
+		}
+		else {
+			$('#calculoAjusteEcoPrimTrim').hide();
+			$('#preguntaAjusteEcoPrimTrim').hide();
+		}
+	}
+});
+
+
+////////////////////////////////////////////
 function calcularEG(){
  var FExamen, FUM, EdadGestacional;
  var undia = 1000 * 60 * 60 * 24;
