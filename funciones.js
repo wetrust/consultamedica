@@ -141,13 +141,13 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 	event.preventDefault();
 	if ($(this).is(":checked")){
 		if ($(this).val() == 1){
-			var LCN = $('lcn').val();
-			var saco = $('saco').val();
+			var LCN = $('#lcn').val();
+			var saco = $('#saco').val();
 			if (LCN == null | saco == null | LCN < 0 | saco < 0) {
 				$('#popupTitle').html("Información");
 				$('#popupBody').html("<p>Debe escribir un valor en LCN o Saco Gestacional</p>");
 				$('#popupGenerico').modal('show');
-				$("input[name='ajusteEcoPrimTrim'][value=0]").attr('checked', 'true');
+				$("input[name='ajusteEcoPrimTrim'][value=0]").button('toggle');
 			}
 			else {
 				$('#calculoAjusteEcoPrimTrim').show();
