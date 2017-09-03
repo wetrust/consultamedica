@@ -143,7 +143,7 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 		if ($(this).val() == 1){
 			var LCN = parseInt($('#lcn').val());
 			var saco = parseInt($('#saco').val());
-			if (LCN == null | saco == null | LCN < 0 | saco < 0) {
+			if (isNaN(LCN) | isNaN(saco) | LCN < 0 | saco < 0) {
 				$('#popupTitle').html("Información");
 				$('#popupBody').html("<p>Debe escribir un valor en LCN o Saco Gestacional</p>");
 				$('#popupGenerico').modal('show');
