@@ -141,7 +141,17 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 	event.preventDefault();
 	if ($(this).is(":checked")){
 		if ($(this).val() == 1){
-			
+			var LCN = parseInt($('#lcn').val());
+			var saco = parseInt($('#saco').val());
+			if (isNaN(LCN) | isNaN(saco) | LCN < 0 | saco < 0) {
+				$('#popupTitle').html("Información");
+				$('#popupBody').html("<p>Debe escribir un valor en LCN o Saco Gestacional</p>");
+				$('#popupGenerico').modal('show');
+			}
+			else {
+				$('#calculoAjusteEcoPrimTrim').show();
+				$('#preguntaAjusteEcoPrimTrim').show();
+			}	
 		}
 		else {
 			$('#calculoAjusteEcoPrimTrim').hide();
@@ -149,22 +159,6 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 		}
 	}
 });
-
-$("input[name='ajusteEcoPrimTrim'][value=1]").on('click.bs.button', function (e) {
-	var LCN = parseInt($('#lcn').val());
-	var saco = parseInt($('#saco').val());
-	if (isNaN(LCN) | isNaN(saco) | LCN < 0 | saco < 0) {
-		$('#popupTitle').html("Información");
-				$('#popupBody').html("<p>Debe escribir un valor en LCN o Saco Gestacional</p>");
-				$('#popupGenerico').modal('show');
-				$("input[name='ajusteEcoPrimTrim'][value=0]").trigger('click');
-	}
-	else {
-		$('#calculoAjusteEcoPrimTrim').show();
-		$('#preguntaAjusteEcoPrimTrim').show();
-	}
-})
-
 
 
 ////////////////////////////////////////////
