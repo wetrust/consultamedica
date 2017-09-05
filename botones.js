@@ -26,12 +26,14 @@ function activarBotones() {
   $( '#bvm').change( pctbvm);
   $( '#ila').change( pctila);
   
+  
  //doppler
  $( '#aud').change( pctut);
  $( '#aui').change( pctut);
  $( '#dv' ).change( pctdv);
  $( '#ipau' ).change( pctau);
  $( '#ipacm' ).change( pctacm);
+  $('#psmACM').change( psmACM);
  
  $( '#fNacimiento').on('change', function() {
       localStorage.fnac = $("#fNacimiento").val();
