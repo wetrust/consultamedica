@@ -3033,8 +3033,8 @@ $('#viewGraficoTalla').highcharts({
 
 $( '#graficopsmACM' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Pick sistólico máximo de ACM");
-    $('#popupBody').html("<div id='graficopsmACM'></div>");
-$('#graficopsmACM').highcharts({
+    $('#popupBody').html("<div id='viewGraficopsmACM'></div>");
+$('#viewGraficopsmACM').highcharts({
         title: {
             text: 'Pick sistólico máximo de ACM',
             x: -20 //center
@@ -3046,7 +3046,7 @@ $('#graficopsmACM').highcharts({
         },
         yAxis: {
             title: { text: 'mm' },
-            tickPositions: [25, 35, 45, 55]
+            tickPositions: [20, 40, 60, 80, 100]
         },
         colors: ['#313131', '#313131', '#313131'],
         xAxis: {
