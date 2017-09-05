@@ -3030,3 +3030,71 @@ $('#viewGraficoTalla').highcharts({
     });
             $('#popupGenerico').modal('show');
 });
+
+$( '#graficopsmACM' ).on( 'click', function() {
+    $('#popupTitle').html("Gráfico Pick sistólico máximo de ACM");
+    $('#popupBody').html("<div id='graficopsmACM'></div>");
+$('#graficopsmACM').highcharts({
+        title: {
+            text: 'Pick sistólico máximo de ACM',
+            x: -20 //center
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'mm' },
+            tickPositions: [25, 35, 45, 55]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories: ['18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Valor de la Media',
+            marker: { enabled: false },  
+            data:  [23.2,24.3,25.5,26.7,27.9,29.3,30.7,32.1,33.6,35.2,36.9,38.7,40.5,42.4,44.4,46.5,48.7,51.1,53.5,56,58.7,61.5,64.4]
+        }, {
+            type: "line",
+            name: 'Anemia leve',
+            marker: { enabled: false },
+            data: [29.9, 31.1, 32.8,34.5,36,37.8,39.5,41.5,43.3,45.6,47.6,50.4,52.2,55,57.3,60.1,62.9,66,69,72.8,75.7,79.8,83] 
+        }, {
+            type: "line",
+            name: 'Anemia moderada',
+            marker: { enabled: false },
+            data: [34.8,36.5,38.2,39.7,41.9,44,46,48,50.4,53,55.4,58,60.9,63.5,66.6,70,73.1,76.5,80.2,84,88,92.5,96.6]
+        }, {
+            type: "line",
+            name: 'Pick sistólico máximo de ACM',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (function () {
+                // generate an array of random data
+                var data = [];
+                var edadGest = parseInt(localStorage.eg) - 1;
+
+                for (i = 18; i <= edadGest; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                data.push({
+                    y: parseInt(document.getElementById("psmACM").value),
+                });
+                for (i = edadGest + 1; i <= 39; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                return data;
+            }())
+        }]
+    });
+            $('#popupGenerico').modal('show');
+});
