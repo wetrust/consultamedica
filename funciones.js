@@ -15,7 +15,7 @@ $( '#adicionalCrecimientoView' ).on( 'click', function() {
 $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("#saco").focus()
+     $("#graficoLcn").focus()
   }
 });
 
