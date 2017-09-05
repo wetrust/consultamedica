@@ -124,6 +124,13 @@ $( "#dv" ).keypress(function( event ) {
   }
 });
 
+$( "#psmACM" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
+     $("#graficopsmACM").focus()
+  }
+});
+
 function show_hide(id){
   if (document.getElementById){
     var el = document.getElementById(id);
