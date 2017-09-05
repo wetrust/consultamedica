@@ -85,10 +85,10 @@
             <div class="col">
                 <ul class="nav justify-content-center hidden-lg-up mb-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="#informacion"><i class="fa fa-info" aria-hidden="true"></i> Acerca de <span class="badge badge-default">Libre</span></a>
+                        <a class="nav-link" href="#informacion"><i class="fa fa-info" aria-hidden="true"></i> Acerca del software <span class="badge badge-default">Libre</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#consulta"><i class="fa fa-user-md" aria-hidden="true"></i> Ir a exámenes <span class="badge badge-default">Libre</span></a>
+                        <a class="nav-link" href="#consulta"><i class="fa fa-user-md" aria-hidden="true"></i> Ir a exámen ecográfico <span class="badge badge-default">Libre</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#paciente"><i class="fa fa-user-plus" aria-hidden="true"></i> Datos de pacientes <span class="badge badge-default">Restringido</span></a>
@@ -107,13 +107,13 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <td><a href="#informacion"><i class="fa fa-info" aria-hidden="true"></i> Acerca de</a>
+                                    <td><a href="#informacion"><i class="fa fa-info" aria-hidden="true"></i> Acerca del software</a>
                                     </td>
                                     <td><span class="badge badge-default">Libre</span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><a href="#consulta" title="Crear una nueva consulta"><i class="fa fa-user-md" aria-hidden="true"></i> Ir a exámenes</a>
+                                    <td><a href="#consulta" title="Crear una nueva consulta"><i class="fa fa-user-md" aria-hidden="true"></i> Ir a exámen ecográfico</a>
                                     </td>
                                     <td><span class="badge badge-default">Libre</span>
                                     </td>
@@ -131,7 +131,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><a href="#" title="Crear y modificar reserva de pacientes"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Agenda personal</a>
+                                    <td><a href="#" title="Crear y modificar reserva de pacientes"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Ir a agenda personal</a>
                                     </td>
                                     <td><span class="badge badge-default">Restringido</span>
                                     </td>
@@ -375,13 +375,17 @@
         <form class="mt-3 mb-3">
             <div class="form-group row">
                 <div class="col">
+                <label for="fum2">Fecha de última mestruación</label>
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-cuatro">
+            </div>
+                <div class="col">
                     <label for="dbp" class="col-form-label">Edad Gestacional</label>
                 </div>
                 <div class="col">
                     <input type="text" class="form-control" name="eg" readonly>
                 </div>
-                <div class="col"></div>
-                <div class="col"></div>
             </div>
         </form>
         <div class="card mb-3">
