@@ -1428,10 +1428,10 @@ function ipn() {
 	    else if (ACM = M[eg]){
 		    $('#psmACMPct').html('media');
 	    }
-	    else if (ACM =< AL[38]){
+	    else if (ACM <= AL[38]){
 		    $('#psmACMPct').html('Anemia leve');
 	    }
-	    else if (ACM =< AM[38]){
+	    else if (ACM <= AM[38]){
 		    $('#psmACMPct').html('Anemia moderado');
 	    }
 	    else if (ACM > AM[38]){
