@@ -1417,5 +1417,25 @@ function ipn() {
 	    M[38] = 58.7;	    M[39] = 61.5;	    M[40] = 64.4;	    
 	    
 	    
+	   var eg = parseFloat(localStorage.eg);
+           eg = parseInt(eg);
+
+	   var ACM = $('#psmACM').val();
+	    
+	   if (ACM < M[eg]){
+		   $('#psmACMPct').html('bajo la media');
+	   }
+	    else if (ACM = M[eg]){
+		    $('#psmACMPct').html('media');
+	    }
+	    else if (ACM =< AL[38]){
+		    $('#psmACMPct').html('Anemia leve');
+	    }
+	    else if (ACM =< AM[38]){
+		    $('#psmACMPct').html('Anemia moderado');
+	    }
+	    else if (ACM > AM[38]){
+		    $('#psmACMPct').html('Anemia severa');
+	    }
     }
 }
