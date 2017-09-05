@@ -165,7 +165,7 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 					var eg1 = new Number((Math.floor(EGsaco) * 7) + Math.round((EGsaco - Math.floor(EGsaco)) * 7));
 					var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
 					var diferencia = Math.abs(Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
-					$('#diferenciaEcoPrimTrim').html('Hay ' + diferencia + ' días de diferencia entre la Edad de FUM y la obtenida por ecografía (saco)<br><br>La determinación de edad gestacional ecográfica y ajuste a edad gestacional real, ha de realizarse solo una vez lograda la medición embrionaria (LCN).');
+					$('#diferenciaEcoPrimTrim').html('La direfencia observada entre edad gestacional por FUM referida y la edad por ecografia (Saco) es de ' + diferencia + ' días.<br><br>La determinación de edad gestacional ecográfica y ajuste a edad gestacional real, ha de realizarse solo una vez lograda la medición embrionaria (LCN).');
 					$('#furReferida').val($("input[name='fum']").val());
 					$('#egReferida').val(eg);
 					$('#fppReferida').val($("input[name='fpp']").val());
@@ -178,7 +178,7 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 				var eg1 = new Number((Math.floor(EGLCN) * 7) + Math.round((EGLCN - Math.floor(EGLCN)) * 7));
 				var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
 				var diferencia = Math.abs(Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
-				$('#diferenciaEcoPrimTrim').html('Hay ' + diferencia + ' días de diferencia entre la Edad de FUM y la obtenida por ecografía (LCN)');
+				$('#diferenciaEcoPrimTrim').html('La direfencia observada entre edad gestacional por FUM referida y la edad por ecografia (LCN) es de ' + diferencia + ' días.');
 				$('#furReferida').val($("input[name='fum']").val());
 				$('#egReferida').val(eg);
 				$('#fppReferida').val($("input[name='fpp']").val());
