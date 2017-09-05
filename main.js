@@ -84,6 +84,13 @@ var listPaciente = function(results){
      $("input[name='eg']").val(localStorage.eg);
  });
 
+ $( '#fum-cuatro').on('change', function() {
+     localStorage.fum = $("#fum-cuatro").val();
+     $("#fum-dos").val($("#fum-tres").val());
+     localStorage.eg = calcularEG();
+     $("input[name='eg']").val(localStorage.eg);
+ });
+
 $( '.informacion').on('click', function() {
      $("#informacion").hide();
  });
