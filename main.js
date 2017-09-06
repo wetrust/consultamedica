@@ -73,10 +73,10 @@ var listPaciente = function(results){
  $( '#fum-dos').on('change', function() {
      localStorage.fum = $("#fum-dos").val();
      $("#fum").val($("#fum-dos").val()).trigger("changeDate");
-     $("#fum-tres").val($("#fum-dos").val());
-     $("#fum-cuatro").val($("#fum-dos").val());
-     $("#fum-cinco").val($("#fum-dos").val());
-     $("#fum-seis").val($("#fum-dos").val());
+     $("#fum-tres").val($("#fum-dos").val()).trigger("changeDate");
+     $("#fum-cuatro").val($("#fum-dos").val()).trigger("changeDate");
+     $("#fum-cinco").val($("#fum-dos").val()).trigger("changeDate");
+     $("#fum-seis").val($("#fum-dos").val()).trigger("changeDate");
      localStorage.eg = calcularEG();
      $("input[name='eg']").val(localStorage.eg);
  });
