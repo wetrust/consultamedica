@@ -159,8 +159,6 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 					$('#popupGenerico').modal('show');
 				}
 				else{
-					$('#calculoAjusteEcoPrimTrim').show();
-					$('#preguntaAjusteEcoPrimTrim').show();
 					var EGsaco = parseFloat($('#sacoPct').val());
 					var eg1 = new Number((Math.floor(EGsaco) * 7) + Math.round((EGsaco - Math.floor(EGsaco)) * 7));
 					var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
