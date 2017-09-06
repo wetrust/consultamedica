@@ -72,21 +72,55 @@ var listPaciente = function(results){
 
  $( '#fum-dos').on('change', function() {
      localStorage.fum = $("#fum-dos").val();
+     $("#fum").val($("#fum-dos").val());
      $("#fum-tres").val($("#fum-dos").val());
+     $("#fum-cuatro").val($("#fum-dos").val());
+     $("#fum-cinco").val($("#fum-dos").val());
+     $("#fum-seis").val($("#fum-dos").val());
      localStorage.eg = calcularEG();
      $("input[name='eg']").val(localStorage.eg);
  });
 
  $( '#fum-tres').on('change', function() {
      localStorage.fum = $("#fum-tres").val();
+     $("#fum").val($("#fum-tres").val());
      $("#fum-dos").val($("#fum-tres").val());
+     $("#fum-cuatro").val($("#fum-tres").val());
+     $("#fum-cinco").val($("#fum-tres").val());
+     $("#fum-seis").val($("#fum-tres").val());
      localStorage.eg = calcularEG();
      $("input[name='eg']").val(localStorage.eg);
  });
 
  $( '#fum-cuatro').on('change', function() {
      localStorage.fum = $("#fum-cuatro").val();
-     $("#fum-dos").val($("#fum-tres").val());
+     $("#fum").val($("#fum-cuatro").val());
+     $("#fum-dos").val($("#fum-cuatro").val());
+     $("#fum-tres").val($("#fum-cuatro").val());
+     $("#fum-cinco").val($("#fum-cuatro").val());
+     $("#fum-seis").val($("#fum-cuatro").val());
+     localStorage.eg = calcularEG();
+     $("input[name='eg']").val(localStorage.eg);
+ });
+
+ $( '#fum-cinco').on('change', function() {
+     localStorage.fum = $("#fum-cinco").val();
+     $("#fum").val($("#fum-cinco").val());
+     $("#fum-dos").val($("#fum-cinco").val());
+     $("#fum-tres").val($("#fum-cinco").val());
+     $("#fum-cuatro").val($("#fum-cinco").val());
+     $("#fum-seis").val($("#fum-cinco").val());
+     localStorage.eg = calcularEG();
+     $("input[name='eg']").val(localStorage.eg);
+ });
+
+ $( '#fum-seis').on('change', function() {
+     localStorage.fum = $("#fum-seis").val();
+     $("#fum").val($("#fum-seis").val());
+     $("#fum-dos").val($("#fum-seis").val());
+     $("#fum-tres").val($("#fum-seis").val());
+     $("#fum-cuatro").val($("#fum-seis").val());
+     $("#fum-cinco").val($("#fum-seis").val());
      localStorage.eg = calcularEG();
      $("input[name='eg']").val(localStorage.eg);
  });
