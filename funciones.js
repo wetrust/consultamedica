@@ -16,11 +16,12 @@ $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
      $('#lcn').trigger("change");
+     var eg = parseFloat($("input[name='eg']").val());
      $('#furReferida').val($("input[name='fum']").val());
      $('#egReferida').val(eg);
      $('#fppReferida').val($("input[name='fpp']").val());
      var LCN = parseInt($('#lcn').val());
-     var eg = parseFloat($("input[name='eg']").val());
+     
      if (isNaN(LCN) | LCN < 0 | isNaN(eg) | eg < 1) {
          $('#diferenciaEcoPrimTrim').html('La diferencia observada entre edad gestacional por FUM referida y la edad por ecografia es de 0 días.');
      }
