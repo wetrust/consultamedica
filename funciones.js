@@ -170,7 +170,6 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 				}
 			}
 			else{
-				$('#calculoAjusteEcoPrimTrim').show();
 				$('#preguntaAjusteEcoPrimTrim').show();
 				var EGLCN = parseFloat($('#lcnPct').val());
 				var eg1 = new Number((Math.floor(EGLCN) * 7) + Math.round((EGLCN - Math.floor(EGLCN)) * 7));
@@ -183,7 +182,6 @@ $("input[name='ajusteEcoPrimTrim']").on("change", function(){
 			}	
 		}
 		else {
-			$('#calculoAjusteEcoPrimTrim').hide();
 			$('#preguntaAjusteEcoPrimTrim').hide();
 			$('#resultadoAjusteEcoPrimTrim').hide();
 		}
