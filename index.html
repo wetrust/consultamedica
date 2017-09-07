@@ -470,6 +470,9 @@
         </div>
         <div class="card mb-3">
             <div class="card-block">
+                <div class="alert alert-info" role="alert">
+                    <p id="diferenciaEcoPrimTrim">La direfencia observada entre edad gestacional por FUM referida y la edad por ecografia (LCN) es de 154 días.</p>
+                </div>
                 <h4 class="card-title">¿Determinará edad gestacional ecográfica?</h4>
                 <div class="row">
                     <div class="col text-center mt-3">
@@ -480,14 +483,6 @@
                             <label class="btn btn-outline-primary p-3" aria-pressed="true">
                                 <input type="radio" name="ajusteEcoPrimTrim" value="1" autocomplete="off"> SI
                             </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-2" id="calculoAjusteEcoPrimTrim" style="display:none;">
-                    <div class="col">
-                        <div class="alert alert-info" role="alert">
-                            <h5 class="alert-heading" id="tituloEcoPrimTrim">Edad Gestacional según LCN: </h5>
-                            <p id="diferenciaEcoPrimTrim">La direfencia observada entre edad gestacional por FUM referida y la edad por ecografia (LCN) es de 154 días.</p>
                         </div>
                     </div>
                 </div>
@@ -574,6 +569,15 @@
                 </div>
             </div>
         </div>
+        <div class="card mb-3">
+            <div class="card-block">
+                <div class="row">
+                    <div class="col text-center mt-3">
+                        <button class="btn btn-outline-danger" type="button" id="ecoPrimTrimSubir">Volver a gráfica</button>
+                    </div>
+                </div>
+            </div>
+        </div>    
     </div>
     <div class="container" id="ecoObsSegTrim" style="display:none;">
         <div class="bienvenida mb-3 rounded-bottom">
