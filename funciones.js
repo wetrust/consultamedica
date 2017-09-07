@@ -16,6 +16,9 @@ $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
      $('#lcn').trigger("change");
+     $('#furReferida').val($("input[name='fum']").val());
+     $('#egReferida').val(eg);
+     $('#fppReferida').val($("input[name='fpp']").val());
      var LCN = parseInt($('#lcn').val());
      var eg = parseFloat($("input[name='eg']").val());
      if (isNaN(LCN) | LCN < 0 | isNaN(eg) | eg < 1) {
