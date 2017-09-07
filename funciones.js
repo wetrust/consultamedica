@@ -15,6 +15,17 @@ $( '#adicionalCrecimientoView' ).on( 'click', function() {
 $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
+	  
+     if (isNaN(LCN) | LCN < 0 | isNaN(eg) | eg < 1) {
+         $('#diferenciaEcoPrimTrim').html('La direfencia observada entre edad gestacional por FUM referida y la edad por ecografia es de 0 días.');
+     }
+     else{
+	var EGLCN = parseFloat($('#lcnPct').val());
+	var eg1 = new Number((Math.floor(EGLCN) * 7) + Math.round((EGLCN - Math.floor(EGLCN)) * 7));
+	var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
+	var diferencia = Math.abs(Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
+	$('#diferenciaEcoPrimTrim').html('La direfencia observada entre edad gestacional por FUM referida y la edad por exámen ecografico es de ' + diferencia + ' días.');
+     }  
      $("#graficoLcn").focus()
   }
 });
