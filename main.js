@@ -73,7 +73,6 @@ var listPaciente = function(results){
  $( '#fum-dos').on('change', function() {
      localStorage.fum = $("#fum-dos").val();
      $("#fum").val($("#fum-dos").val()).trigger("changeDate");
-     $('#fum-tres').datetimepicker.trigger("changeDate");
      $("#fum-tres").val($("#fum-dos").val()).trigger("changeDate");
      $("#fum-cuatro").val($("#fum-dos").val()).trigger("changeDate");
      $("#fum-cinco").val($("#fum-dos").val()).trigger("changeDate");
