@@ -489,7 +489,7 @@ $( '#graficoLcn' ).on( 'click', function() {
                     title: {
                         text: 'Milimetros (mm)'
                     },
-                    tickPositions: [0.2, 1.1, 2.2, 3.3, 4.4]
+                    tickPositions: [0.2, 1.1, 2.2, 3.3]
                 },
                 credits: {enabled:false},
                 colors: ['#313131', '#313131', '#313131'],
