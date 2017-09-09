@@ -473,98 +473,561 @@ $( '#graficoCerebelo' ).on( 'click', function() {
 $( '#graficoLcn' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico LCN");
     $('#popupBody').html("<div id='graficoLcnView'></div>");
-    $('#graficoLcnView').highcharts({
-        title: {
-            text: 'LCN',
-            x: -20 //center
-        },
-        xAxis: {
-            categories: ['6', '7', '8', '9', '10',  '11', '12', '13', '14', '15']
-        },
-        yAxis: {
-            title: {
-                text: 'Milimetros (mm)'
-            },
-            tickPositions: [0.2, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 11]
-        },
-        credits: {enabled:false},
-        colors: ['#313131', '#313131', '#313131'],
-        plotOptions: {
-            series: {
-                enableMouseTracking: false
-            }
-         },
-        series: [{
-            name: '(-) 2DE',
-            type: "line",
-            marker: { enabled: false },
-            data: [0.26, 0.77, 1.4, 2.05, 2.75,3.65, 4.64, 5.82, 7.1, 8.02],
-            dashStyle: 'shortdot'
-        }, {
-            name: 'Media',
-            type: "line",
-            marker: { enabled: false },
-            data: [0.38, 0.89, 1.54, 2.25, 3.05,4.05, 5.29, 6.65, 7.98, 9.01]
-        }, {
-            name: '(+) 2DE',
-            type: "line",
-            marker: { enabled: false },
-            data: [0.53, 1.04, 1.71, 2.49, 3.42,4.64, 6.12, 7.67, 9.01, 10.01],
-            dashStyle: 'shortdot'
-        }, {
-            type: "line",
-            name: 'LCN (Hadlock y col. Radiology 182. 501, 1992)',
-            dashStyle: "Dot",
-            marker: { symbol: 'square' },
-            lineWidth: 0,
-            data: (function () {
-
-                // generate an array of random data
-                var data = [];
-                var egLcn = parseInt(localStorage.eg);
-                var lcn = $("#lcn").val();
-                lcn = lcn.toString();
-                lcn = lcn.replace(",", ".");
-                lcn = parseFloat(lcn) / 10;
-
-                var lcnegx = [];
-                var flag = false;
-
-                lcnegx[1] = 6;
-                lcnegx[2] = 7;
-                lcnegx[3] = 8;
-                lcnegx[4] = 9;
-                lcnegx[5] = 10;
-                lcnegx[6] = 11;
-                lcnegx[7] = 12;
-                lcnegx[8] = 13;
-                lcnegx[9] = 14;
-                lcnegx[10] = 14;
-
-                for (i = 1; i <= 10; i++) {
-                    if (lcnegx[i] >= egLcn) {
-                        if (flag == false) {
-                        data.push({
-                            y: lcn,
-                        });
-                        flag = true;
-                        }
-                        else {
-                         data.push({
-                            y:0,
-                         });
-                        }
+        
+    var egLcn = parseFloat($("input[name='eg']").val());
+        
+    if (egLcn < 10){
+            $('#graficoLcnView').highcharts({
+                title: {
+                    text: 'LCN',
+                    x: -20 //center
+                },
+                xAxis: {
+                    categories: ['6', '7', '8', '9']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Milimetros (mm)'
+                    },
+                    tickPositions: [0.2, 1.1, 2.2, 3.3, 4.4]
+                },
+                credits: {enabled:false},
+                colors: ['#313131', '#313131', '#313131'],
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
                     }
-                    else {
-                        data.push({
-                            y: 0,
-                        });
+                 },
+                series: [{
+                    name: '(-) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [0.26, 0.77, 1.4, 2.05],
+                    dashStyle: 'shortdot'
+                }, {
+                    name: 'Media',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [0.38, 0.89, 1.54, 2.25]
+                }, {
+                    name: '(+) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [0.53, 1.04, 1.71, 2.49],
+                    dashStyle: 'shortdot'
+                }, {
+                    type: "line",
+                    name: 'LCN (Hadlock y col. Radiology 182. 501, 1992)',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                    data: (function () {
+
+                        // generate an array of random data
+                        var data = [];
+                        var lcn = $("#lcn").val();
+                        lcn = lcn.toString();
+                        lcn = lcn.replace(",", ".");
+                        lcn = parseFloat(lcn) / 10;
+
+                        var lcnegx = [];
+                        var flag = false;
+
+                        lcnegx[1] = 6;
+                        lcnegx[2] = 7;
+                        lcnegx[3] = 8;
+                        lcnegx[4] = 9;
+
+                        for (i = 1; i <= 4; i++) {
+                            if (lcnegx[i] >= egLcn) {
+                                if (flag == false) {
+                                data.push({
+                                    y: lcn,
+                                });
+                                flag = true;
+                                }
+                                else {
+                                 data.push({
+                                    y:0,
+                                 });
+                                }
+                            }
+                            else {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                        }
+                        return data;
+                    }())
+                }]
+              });
+    }
+    else if (egLcn < 11){
+            $('#graficoLcnView').highcharts({
+                title: {
+                    text: 'LCN',
+                    x: -20 //center
+                },
+                xAxis: {
+                    categories: ['8', '9', '10',  '10,1', '10,2', '10,3', '10,4', '10,5', '10,6']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Milimetros (mm)'
+                    },
+                    tickPositions: [1.1, 2.2, 3.3, 4.4, 5.5]
+                },
+                credits: {enabled:false},
+                colors: ['#313131', '#313131', '#313131'],
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
                     }
-                }
-                return data;
-            }())
-        }]
-      });
+                 },
+                series: [{
+                    name: '(-) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [1.4, 2.05, 2.75,2.85,2.95,3.1,3.25,3.35,3.55],
+                    dashStyle: 'shortdot'
+                }, {
+                    name: 'Media',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [1.54, 2.25, 3.05,3.2,3.35,3.5,3.6,3.8,3.9]
+                }, {
+                    name: '(+) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [1.71, 2.49, 3.42,3.55,3.76,3.9,4.05,4.3,4.45],
+                    dashStyle: 'shortdot'
+                }, {
+                    type: "line",
+                    name: 'LCN (Hadlock y col. Radiology 182. 501, 1992)',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                    data: (function () {
+
+                        // generate an array of random data
+                        var data = [];
+                        var lcn = $("#lcn").val();
+                        lcn = lcn.toString();
+                        lcn = lcn.replace(",", ".");
+                        lcn = parseFloat(lcn) / 10;
+
+                        var lcnegx = [];
+                        var flag = false;
+
+                        lcnegx[1] = 8;
+                        lcnegx[2] = 9;
+                        lcnegx[3] = 10;
+                        lcnegx[4] = 10.1;
+                        lcnegx[5] = 10.2;
+                        lcnegx[6] = 10.3;
+                        lcnegx[7] = 10.4;
+                        lcnegx[8] = 10.5;
+                        lcnegx[9] = 10.6;
+
+                        for (i = 1; i <= 9; i++) {
+                            if (lcnegx[i] >= egLcn) {
+                                if (flag == false) {
+                                data.push({
+                                    y: lcn,
+                                });
+                                flag = true;
+                                }
+                                else {
+                                 data.push({
+                                    y:0,
+                                 });
+                                }
+                            }
+                            else {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                        }
+                        return data;
+                    }())
+                }]
+              });
+    }
+    else if (egLcn < 12){
+            $('#graficoLcnView').highcharts({
+                title: {
+                    text: 'LCN',
+                    x: -20 //center
+                },
+                xAxis: {
+                    categories: ['9','10','11','11.1','11.2','11.3','11.4','11.5','11.6']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Milimetros (mm)'
+                    },
+                    tickPositions: [0.2, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 11]
+                },
+                credits: {enabled:false},
+                colors: ['#313131', '#313131', '#313131'],
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
+                    }
+                 },
+                series: [{
+                    name: '(-) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [2.05,2.75,3.65,3.75,3.85,4,4.2,4.4,4.55],
+                    dashStyle: 'shortdot'
+                }, {
+                    name: 'Media',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [2.25,3.05,4.05,4.2,4.38,4.5,4.8,5,5.2]
+                }, {
+                    name: '(+) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [2.49,3.42,4.64,4.8,5,5.24,5.44,5.64,5.84],
+                    dashStyle: 'shortdot'
+                }, {
+                    type: "line",
+                    name: 'LCN (Hadlock y col. Radiology 182. 501, 1992)',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                    data: (function () {
+
+                        // generate an array of random data
+                        var data = [];
+                        var lcn = $("#lcn").val();
+                        lcn = lcn.toString();
+                        lcn = lcn.replace(",", ".");
+                        lcn = parseFloat(lcn) / 10;
+
+                        var lcnegx = [];
+                        var flag = false;
+
+                        lcnegx[1] = 9;
+                        lcnegx[2] = 10;
+                        lcnegx[3] = 11;
+                        lcnegx[4] = 11.1;
+                        lcnegx[5] = 11.2;
+                        lcnegx[6] = 11.3;
+                        lcnegx[7] = 11.4;
+                        lcnegx[8] = 11.5;
+                        lcnegx[9] = 11.6;
+
+                        for (i = 1; i <= 9; i++) {
+                            if (lcnegx[i] >= egLcn) {
+                                if (flag == false) {
+                                data.push({
+                                    y: lcn,
+                                });
+                                flag = true;
+                                }
+                                else {
+                                 data.push({
+                                    y:0,
+                                 });
+                                }
+                            }
+                            else {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                        }
+                        return data;
+                    }())
+                }]
+              });
+            
+    }
+    else if (egLcn < 13){
+            $('#graficoLcnView').highcharts({
+                title: {
+                    text: 'LCN',
+                    x: -20 //center
+                },
+                xAxis: {
+                    categories: ['10','11', '12', '12.1', '12.2', '12.3', '12.4', '12.5', '12.6']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Milimetros (mm)'
+                    },
+                    tickPositions: [0.2, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 11]
+                },
+                credits: {enabled:false},
+                colors: ['#313131', '#313131', '#313131'],
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
+                    }
+                 },
+                series: [{
+                    name: '(-) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [2.75,3.65, 4.64,4.77,4.98,5.2,5.4,5.52,5.7],
+                    dashStyle: 'shortdot'
+                }, {
+                    name: 'Media',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [3.05,4.05, 5.29,5.5,5.7,5.9,6.1,6.3,6.5]
+                }, {
+                    name: '(+) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [3.42,4.64, 6.12,6.8,6.5,6.8,7,7.26,7.45],
+                    dashStyle: 'shortdot'
+                }, {
+                    type: "line",
+                    name: 'LCN (Hadlock y col. Radiology 182. 501, 1992)',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                    data: (function () {
+
+                        // generate an array of random data
+                        var data = [];
+                        var egLcn = parseInt(localStorage.eg);
+                        var lcn = $("#lcn").val();
+                        lcn = lcn.toString();
+                        lcn = lcn.replace(",", ".");
+                        lcn = parseFloat(lcn) / 10;
+
+                        var lcnegx = [];
+                        var flag = false;
+
+                        lcnegx[1] = 10;
+                        lcnegx[2] = 11;
+                        lcnegx[3] = 12;
+                        lcnegx[4] = 12.1;
+                        lcnegx[5] = 12.2;
+                        lcnegx[6] = 12.3;
+                        lcnegx[7] = 12.4;
+                        lcnegx[8] = 12.5;
+                        lcnegx[9] = 12.6;
+
+
+                        for (i = 1; i <= 9; i++) {
+                            if (lcnegx[i] >= egLcn) {
+                                if (flag == false) {
+                                data.push({
+                                    y: lcn,
+                                });
+                                flag = true;
+                                }
+                                else {
+                                 data.push({
+                                    y:0,
+                                 });
+                                }
+                            }
+                            else {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                        }
+                        return data;
+                    }())
+                }]
+              });
+    }
+    else if (egLcn < 14){
+            $('#graficoLcnView').highcharts({
+                title: {
+                    text: 'LCN',
+                    x: -20 //center
+                },
+                xAxis: {
+                    categories: ['11', '12', '13', '13.1', '13.2', '13.3', '13.4', '13.5', '13.6']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Milimetros (mm)'
+                    },
+                    tickPositions: [0.2, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 11]
+                },
+                credits: {enabled:false},
+                colors: ['#313131', '#313131', '#313131'],
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
+                    }
+                 },
+                series: [{
+                    name: '(-) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [3.65, 4.64, 5.82,6,6.15,6.25,6.45,6.65,6.85],
+                    dashStyle: 'shortdot'
+                }, {
+                    name: 'Media',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [4.05, 5.29, 6.65,6.85,7,7.15,7.3,7.5,7.67]
+                }, {
+                    name: '(+) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [4.64, 6.12, 7.67,7.88,8.08,8.25,8.4,8.6,8.8],
+                    dashStyle: 'shortdot'
+                }, {
+                    type: "line",
+                    name: 'LCN (Hadlock y col. Radiology 182. 501, 1992)',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                    data: (function () {
+
+                        // generate an array of random data
+                        var data = [];
+                        var egLcn = parseInt(localStorage.eg);
+                        var lcn = $("#lcn").val();
+                        lcn = lcn.toString();
+                        lcn = lcn.replace(",", ".");
+                        lcn = parseFloat(lcn) / 10;
+
+                        var lcnegx = [];
+                        var flag = false;
+
+                        lcnegx[1] = 11;
+                        lcnegx[2] = 12;
+                        lcnegx[3] = 13;
+                        lcnegx[4] = 13.1;
+                        lcnegx[5] = 13.2;
+                        lcnegx[6] = 13.3;
+                        lcnegx[7] = 13.4;
+                        lcnegx[8] = 13.5;
+                        lcnegx[9] = 13.6;
+
+                        for (i = 1; i <= 9; i++) {
+                            if (lcnegx[i] >= egLcn) {
+                                if (flag == false) {
+                                data.push({
+                                    y: lcn,
+                                });
+                                flag = true;
+                                }
+                                else {
+                                 data.push({
+                                    y:0,
+                                 });
+                                }
+                            }
+                            else {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                        }
+                        return data;
+                    }())
+                }]
+              });
+    }
+    else if (egLcn < 15){
+            $('#graficoLcnView').highcharts({
+                title: {
+                    text: 'LCN',
+                    x: -20 //center
+                },
+                xAxis: {
+                    categories: ['12', '13', '14', '14.1', '14.2', '14.3', '14.4', '14.5', '14.6', '15']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Milimetros (mm)'
+                    },
+                    tickPositions: [0.2, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 11]
+                },
+                credits: {enabled:false},
+                colors: ['#313131', '#313131', '#313131'],
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
+                    }
+                 },
+                series: [{
+                    name: '(-) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [4.64, 5.82, 7.1,7.19,7.24,7.39,7.56,7.7,7.87,8.02],
+                    dashStyle: 'shortdot'
+                }, {
+                    name: 'Media',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [5.29, 6.65, 7.98,8.05,8.2,8.3,8.5,8.7,8.87,9.01]
+                }, {
+                    name: '(+) 2DE',
+                    type: "line",
+                    marker: { enabled: false },
+                    data: [6.12, 7.67, 9.01,9.18,9.24,9.4,9.55,9.7,9.87,10.01],
+                    dashStyle: 'shortdot'
+                }, {
+                    type: "line",
+                    name: 'LCN (Hadlock y col. Radiology 182. 501, 1992)',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                    data: (function () {
+
+                        // generate an array of random data
+                        var data = [];
+                        var lcn = $("#lcn").val();
+                        lcn = lcn.toString();
+                        lcn = lcn.replace(",", ".");
+                        lcn = parseFloat(lcn) / 10;
+
+                        var lcnegx = [];
+                        var flag = false;
+
+                        lcnegx[1] = 12;
+                        lcnegx[2] = 13;
+                        lcnegx[3] = 14;
+                        lcnegx[4] = 14.1;
+                        lcnegx[5] = 14.2;
+                        lcnegx[6] = 14.3;
+                        lcnegx[7] = 14.4;
+                        lcnegx[8] = 14.5;
+                        lcnegx[9] = 14.6;
+                        lcnegx[10] = 15;
+
+                        for (i = 1; i <= 10; i++) {
+                            if (lcnegx[i] >= egLcn) {
+                                if (flag == false) {
+                                data.push({
+                                    y: lcn,
+                                });
+                                flag = true;
+                                }
+                                else {
+                                 data.push({
+                                    y:0,
+                                 });
+                                }
+                            }
+                            else {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                        }
+                        return data;
+                    }())
+                }]
+              });
+    }
     $('#popupGenerico').modal('show');
 });
 
