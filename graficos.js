@@ -618,7 +618,7 @@ $( '#graficoLcn' ).on( 'click', function() {
 
                         // generate an array of random data
                         var data = [];
-                        var egLcn = parseInt(egLcn);
+                        egLcn = parseInt(egLcn);
                         var lcn = $("#lcn").val();
                         lcn = lcn.toString();
                         lcn = lcn.replace(",", ".");
