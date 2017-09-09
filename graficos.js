@@ -875,7 +875,7 @@ $( '#graficoLcn' ).on( 'click', function() {
                     name: '(+) 2DE',
                     type: "line",
                     marker: { enabled: false },
-                    data: [6.12,6.8,6.5,6.8,7,7.26,7.45],
+                    data: [6.12,6.3,6.5,6.8,7,7.26,7.45],
                     dashStyle: 'shortdot'
                 }, {
                     type: "line",
