@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es-CL" manifest="manifest.appcache">
-
 <head>
     <meta charset="utf-8">
     <title>Crecimiento Fetal</title>
@@ -13,7 +12,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#0275d8">
 </head>
-
 <body>
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded bg-primary">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -166,26 +164,6 @@
             <div class="col-md-12 col-lg-6">
                 <div class="card mb-3">
                     <div class="card-block">
-                        <h5 class="card-title">Seleccione un paciente</h5>
-                        <form>
-                            <div class="form-group">
-                                <label for="buscarpacienteid">Buscar por ID</label>
-                                <input class="form-control" type="text" placeholder="12345678-9" id="buscarpacienteid">
-                                <small id="idHelp" class="form-text text-muted">Escriba un ID para buscar.</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="buscarpacienteapellido">Buscar por apellido</label>
-                                <input class="form-control" type="text" placeholder="Juanita Pérez" id="buscarpacienteapellido">
-                                <small id="apellidoHelp" class="form-text text-muted">Escriba un apellido para buscar.</small>
-                            </div>
-                            <a class="btn btn-primary" href="#tipoExamen">Continuar</a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-6">
-                <div class="card mb-3">
-                    <div class="card-block">
                         <h5 class="card-title">Realizar exámen rápido</h5>
                         <form>
                             <div class="row">
@@ -213,6 +191,26 @@
                                     <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee">
                                     <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
                                 </div>
+                            </div>
+                            <a class="btn btn-primary" href="#tipoExamen">Continuar</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="card mb-3">
+                    <div class="card-block">
+                        <h5 class="card-title">Seleccione un paciente</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="buscarpacienteid">Buscar por ID</label>
+                                <input class="form-control" type="text" placeholder="12345678-9" id="buscarpacienteid">
+                                <small id="idHelp" class="form-text text-muted">Escriba un ID para buscar.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="buscarpacienteapellido">Buscar por apellido</label>
+                                <input class="form-control" type="text" placeholder="Juanita Pérez" id="buscarpacienteapellido">
+                                <small id="apellidoHelp" class="form-text text-muted">Escriba un apellido para buscar.</small>
                             </div>
                             <a class="btn btn-primary" href="#tipoExamen">Continuar</a>
                         </form>
