@@ -66,6 +66,9 @@ class app {
 	else if (this.hash=="#dneonatales"){
 		this.displayElement("dNeonatales");
 	}
+	else if (this.hash=="#agenda"){
+		this.displayElement("agenda");
+	}
     }
 
 //Funciones para los pacientes
@@ -247,6 +250,7 @@ class app {
 	$('#morfologica-22').hide();
 	$('#ecocardio').hide();
         $('#dNeonatales').hide();
+	$('#agenda').hide();
 	$('#'+div_id).show();
     }
 	
