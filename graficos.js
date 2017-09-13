@@ -3581,6 +3581,12 @@ $('#viewGraficoTalla').highcharts({
 $( '#graficopsmACM' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Pick sistólico máximo de ACM");
     $('#popupBody').html("<div id='viewGraficopsmACM'></div>");
+    
+    var medida = document.getElementById("psmACM").value;
+    medida = medida.toString();
+    medida = medida.replace(",", ".");
+    medida = parseFloat(medida) * 100;
+                                
 $('#viewGraficopsmACM').highcharts({
         title: {
             text: 'Pick sistólico máximo de ACM',
@@ -3632,7 +3638,7 @@ $('#viewGraficopsmACM').highcharts({
                     });
                 }
                 data.push({
-                    y: (parseInt(document.getElementById("psmACM").value) * 100),
+                    y: medida,
                 });
                 for (i = edadGest + 1; i <= 39; i++) {
                     data.push({
