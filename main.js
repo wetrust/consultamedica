@@ -258,6 +258,12 @@ $(window).on('hashchange', function(){
 	aplication.onHashChange();
 });
 
+$( '#loadPacienteSelect' ).on( 'click', function() {
+    $('#popupTitle').html("Mensaje");
+    $('#popupBody').html("<p>Módulo en construcción</p>");
+    $('#popupGenerico').modal('show');
+});
+
 //toolkit bootstrap themes
 !function(t, e) {
         function i() {
