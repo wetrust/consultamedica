@@ -481,6 +481,9 @@ $( '#graficoLcn' ).on( 'click', function() {
             text: 'LCN',
             x: -20 //center
         },
+        subtitle: {
+            text: '6 a 15 semanas'
+        },
         xAxis: {
             categories: ['6', '7', '8', '9', '10',  '11', '12', '13', '14', '15']
         },
@@ -572,7 +575,7 @@ $( '#graficoLcn' ).on( 'click', function() {
     if (egLcn < 10){
             $('#graficoLcnView').highcharts({
                 title: {
-                    text: 'LCN',
+                    text: 'LCN semana 9',
                     x: -20 //center
                 },
                 xAxis: {
@@ -660,7 +663,7 @@ $( '#graficoLcn' ).on( 'click', function() {
     else if (egLcn < 11){
             $('#graficoLcnView').highcharts({
                 title: {
-                    text: 'LCN',
+                    text: 'LCN semana 10',
                     x: -20 //center
                 },
                 xAxis: {
@@ -750,7 +753,7 @@ $( '#graficoLcn' ).on( 'click', function() {
     else if (egLcn < 12){
             $('#graficoLcnView').highcharts({
                 title: {
-                    text: 'LCN',
+                    text: 'LCN semana 11',
                     x: -20 //center
                 },
                 xAxis: {
@@ -841,7 +844,7 @@ $( '#graficoLcn' ).on( 'click', function() {
     else if (egLcn < 13){
             $('#graficoLcnView').highcharts({
                 title: {
-                    text: 'LCN',
+                    text: 'LCN semana 12',
                     x: -20 //center
                 },
                 xAxis: {
@@ -933,7 +936,7 @@ $( '#graficoLcn' ).on( 'click', function() {
     else if (egLcn < 14){
             $('#graficoLcnView').highcharts({
                 title: {
-                    text: 'LCN',
+                    text: 'LCN semana 13',
                     x: -20 //center
                 },
                 xAxis: {
@@ -1024,7 +1027,7 @@ $( '#graficoLcn' ).on( 'click', function() {
     else if (egLcn < 15){
             $('#graficoLcnView').highcharts({
                 title: {
-                    text: 'LCN',
+                    text: 'LCN semana 14',
                     x: -20 //center
                 },
                 xAxis: {
