@@ -3632,7 +3632,7 @@ $('#viewGraficopsmACM').highcharts({
                     });
                 }
                 data.push({
-                    y: parseInt(document.getElementById("psmACM").value),
+                    y: (parseInt(document.getElementById("psmACM").value) * 10),
                 });
                 for (i = edadGest + 1; i <= 39; i++) {
                     data.push({
