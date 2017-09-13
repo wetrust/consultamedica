@@ -234,7 +234,6 @@ class app {
     }
 
     displayElement(div_id){
-	$('#home').hide();
 	$('#consulta').hide();
 	$('#tipoExamen').hide();
 	$('#ecoObsPrimTrim').hide();
@@ -251,6 +250,9 @@ class app {
 	$('#ecocardio').hide();
         $('#dNeonatales').hide();
 	$('#agenda').hide();
+	if (div_id != 'agenda'){
+		$('#home').hide();
+	}
 	$('#'+div_id).show();
     }
 	
