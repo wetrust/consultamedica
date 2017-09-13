@@ -478,11 +478,8 @@ $( '#graficoLcn' ).on( 'click', function() {
         
     $('#graficoLcnBaseView').highcharts({
         title: {
-            text: 'LCN',
+            text: 'LCN 6 a 15 semanas',
             x: -20 //center
-        },
-        subtitle: {
-            text: '6 a 15 semanas'
         },
         xAxis: {
             categories: ['6', '7', '8', '9', '10',  '11', '12', '13', '14', '15']
