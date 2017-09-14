@@ -43,11 +43,13 @@ function activarBotones() {
  $("input[name='fum']").on('change', function() {
    localStorage.fum = $(this).val();
    localStorage.eg = calcularEG();
+   localStorage.fee = $("input[name='fee']").val();
    $("input[name='fum']").val(localStorage.fum);
    $("input[name='eg']").val(localStorage.eg);
  });
   
   $("input[name='fee']").on('change', function() {
+   localStorage.fum = $("input[name='fum']").val();
    localStorage.fee = $(this).val();
    localStorage.eg = calcularEG();
    $("input[name='fee']").val(localStorage.fee);
