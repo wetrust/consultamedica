@@ -512,7 +512,7 @@ $( '#graficoLcn' ).on( 'click', function() {
             name: '(+) 2DE',
             type: "line",
             marker: { enabled: false },
-            data: [0.53, 1.04, 1.71, 2.49, 3.32,4.64, 6.608, 7.57, 8.91, 10.01],
+            data: [0.53, 1.04, 1.71, 2.49, 3.32,4.64, 6.08, 7.57, 8.91, 10.01],
             dashStyle: 'shortdot'
         }, {
             type: "line",
