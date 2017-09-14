@@ -125,6 +125,28 @@ var listPaciente = function(results){
      $("input[name='eg']").val(localStorage.eg);
  });
 
+$( '#fum-siete').on('change', function() {
+     localStorage.fum = $("#fum-siete").val();
+     $("#fum").val($("#fum-siete").val());
+     $("#fum-dos").val($("#fum-siete").val());
+     $("#fum-tres").val($("#fum-siete").val());
+     $("#fum-cuatro").val($("#fum-siete").val());
+     $("#fum-cinco").val($("#fum-siete").val());
+     localStorage.eg = calcularEG();
+     $("input[name='eg']").val(localStorage.eg);
+ });
+
+$( '#fum-ocho').on('change', function() {
+     localStorage.fum = $("#fum-ocho").val();
+     $("#fum").val($("#fum-ocho").val());
+     $("#fum-dos").val($("#fum-ocho").val());
+     $("#fum-tres").val($("#fum-ocho").val());
+     $("#fum-cuatro").val($("#fum-ocho").val());
+     $("#fum-cinco").val($("#fum-ocho").val());
+     localStorage.eg = calcularEG();
+     $("input[name='eg']").val(localStorage.eg);
+ });
+
 $( '.informacion').on('click', function() {
      $("#informacion").hide();
  });
