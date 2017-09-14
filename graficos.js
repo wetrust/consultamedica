@@ -501,18 +501,18 @@ $( '#graficoLcn' ).on( 'click', function() {
             name: '(-) 2DE',
             type: "line",
             marker: { enabled: false },
-            data: [0.26, 0.77, 1.4, 2.05, 2.75,3.65, 4.64, 5.82, 7.1, 8.02],
+            data: [0.26, 0.77, 1.4, 2.05, 2.62,3.55, 4.68, 5.82, 6.98, 8.02],
             dashStyle: 'shortdot'
         }, {
             name: 'Media',
             type: "line",
             marker: { enabled: false },
-            data: [0.38, 0.89, 1.54, 2.25, 3.05,4.05, 5.29, 6.65, 7.98, 9.01]
+            data: [0.38, 0.89, 1.54, 2.25, 2.95,4.05, 5.29, 6.65, 7.90, 9.01]
         }, {
             name: '(+) 2DE',
             type: "line",
             marker: { enabled: false },
-            data: [0.53, 1.04, 1.71, 2.49, 3.42,4.64, 6.12, 7.67, 9.01, 10.01],
+            data: [0.53, 1.04, 1.71, 2.49, 3.32,4.64, 6.608, 7.57, 8.91, 10.01],
             dashStyle: 'shortdot'
         }, {
             type: "line",
@@ -683,18 +683,18 @@ $( '#graficoLcn' ).on( 'click', function() {
                     name: '(-) 2DE',
                     type: "line",
                     marker: { enabled: false },
-                    data: [2.75,2.85,2.95,3.1,3.25,3.35,3.55],
+                    data: [2.62,2.75,2.85,2.95,3.11,3.25,3.45],
                     dashStyle: 'shortdot'
                 }, {
                     name: 'Media',
                     type: "line",
                     marker: { enabled: false },
-                    data: [3.05,3.2,3.35,3.5,3.6,3.8,3.9]
+                    data: [2.95,3.10,3.25,3.40,3.55,3.70,3.9]
                 }, {
                     name: '(+) 2DE',
                     type: "line",
                     marker: { enabled: false },
-                    data: [3.42,3.55,3.76,3.9,4.05,4.3,4.45],
+                    data: [3.32,3.55,3.68,3.9,4.05,4.25,4.45],
                     dashStyle: 'shortdot'
                 }, {
                     type: "line",
@@ -773,13 +773,13 @@ $( '#graficoLcn' ).on( 'click', function() {
                     name: '(-) 2DE',
                     type: "line",
                     marker: { enabled: false },
-                    data: [3.65,3.75,3.85,4,4.2,4.4,4.55],
+                    data: [3.55,3.75,3.85,4,4.2,4.4,4.55],
                     dashStyle: 'shortdot'
                 }, {
                     name: 'Media',
                     type: "line",
                     marker: { enabled: false },
-                    data: [4.05,4.2,4.38,4.5,4.8,5,5.2]
+                    data: [4.05,4.2,4.38,4.58,4.8,4.95,5.15]
                 }, {
                     name: '(+) 2DE',
                     type: "line",
@@ -864,7 +864,7 @@ $( '#graficoLcn' ).on( 'click', function() {
                     name: '(-) 2DE',
                     type: "line",
                     marker: { enabled: false },
-                    data: [4.64,4.77,4.98,5.2,5.4,5.52,5.7],
+                    data: [4.68,4.87,5.02,5.2,5.4,5.52,5.7],
                     dashStyle: 'shortdot'
                 }, {
                     name: 'Media',
@@ -875,7 +875,7 @@ $( '#graficoLcn' ).on( 'click', function() {
                     name: '(+) 2DE',
                     type: "line",
                     marker: { enabled: false },
-                    data: [6.12,6.3,6.5,6.8,7,7.26,7.45],
+                    data: [6.08,6.28,6.5,6.7,6.90,7.15,7.35],
                     dashStyle: 'shortdot'
                 }, {
                     type: "line",
@@ -956,7 +956,7 @@ $( '#graficoLcn' ).on( 'click', function() {
                     name: '(-) 2DE',
                     type: "line",
                     marker: { enabled: false },
-                    data: [5.82,6,6.15,6.25,6.45,6.65,6.85],
+                    data: [5.82,6,6.15,6.29,6.45,6.65,6.85],
                     dashStyle: 'shortdot'
                 }, {
                     name: 'Media',
@@ -967,7 +967,7 @@ $( '#graficoLcn' ).on( 'click', function() {
                     name: '(+) 2DE',
                     type: "line",
                     marker: { enabled: false },
-                    data: [7.67,7.88,8.08,8.25,8.4,8.6,8.8],
+                    data: [7.57,7.78,7.98,8.15,8.4,8.55,8.75],
                     dashStyle: 'shortdot'
                 }, {
                     type: "line",
@@ -1047,18 +1047,18 @@ $( '#graficoLcn' ).on( 'click', function() {
                     name: '(-) 2DE',
                     type: "line",
                     marker: { enabled: false },
-                    data: [7.1,7.19,7.24,7.39,7.56,7.7,7.87,8.02],
+                    data: [6.98,7.12,7.24,7.39,7.56,7.7,7.87,8.02],
                     dashStyle: 'shortdot'
                 }, {
                     name: 'Media',
                     type: "line",
                     marker: { enabled: false },
-                    data: [7.98,8.05,8.2,8.3,8.5,8.7,8.87,9.01]
+                    data: [7.9,8.05,8.2,8.35,8.5,8.7,8.87,9.01]
                 }, {
                     name: '(+) 2DE',
                     type: "line",
                     marker: { enabled: false },
-                    data: [9.01,9.18,9.24,9.4,9.55,9.7,9.87,10.01],
+                    data: [8.91,9.11,9.24,9.4,9.55,9.7,9.87,10.01],
                     dashStyle: 'shortdot'
                 }, {
                     type: "line",
