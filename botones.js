@@ -40,85 +40,17 @@ function activarBotones() {
      $("#edad").val(localStorage.edad);
  });
   
- $( '#fum').on('change', function() {
-      localStorage.fum = $("#fum").val();
-      $("#fee-dos").val($("#fee").val());
-      localStorage.eg = calcularEG();
-     $("#edadGestacional").val(localStorage.eg);
-     $("#egExamen").val(localStorage.eg);
-     $("#egConsulta").val(localStorage.eg);
-      $("#egPrimTrim").val(localStorage.eg);
-      $("#egSegTrim").val(localStorage.eg);
-      $('#egDoppler').val(localStorage.eg);
- });
- $( '#fee').on('change', function() {
-      localStorage.fee = $("#fee").val();
-      localStorage.eg = calcularEG();
-     $("#egExamen").val(localStorage.eg);
-     $("#egConsulta").val(localStorage.eg);
-      $("#egPrimTrim").val(localStorage.eg);
-      $("#egSegTrim").val(localStorage.eg);
-      $('#egDoppler').val(localStorage.eg);
- });
- $( '#fee-dos').on('change', function() {
-      localStorage.fee = $("#fee-dos").val();
-      $("#fee").val($("#fee-dos").val());
-      localStorage.eg = calcularEG();
-     $("#egExamen").val(localStorage.eg);
-     $("#egConsulta").val(localStorage.eg);
-      $("#egPrimTrim").val(localStorage.eg);
-      $("#egSegTrim").val(localStorage.eg);
-      $('#egDoppler').val(localStorage.eg);
+ $("input[name='fum']").on('change', function() {
+   localStorage.fum = $(this).val();
+   localStorage.eg = calcularEG();
+   $("input[name='fum']").val(localStorage.fum);
+   $("input[name='eg']").val(localStorage.eg);
  });
   
- $( '#fee-tres').on('change', function() {
-      localStorage.fee = $("#fee-tres").val();
-      $("#fee").val($("#fee-tres").val());
-      localStorage.eg = calcularEG();
-     $("#egExamen").val(localStorage.eg);
-     $("#egConsulta").val(localStorage.eg);
-      $("#egPrimTrim").val(localStorage.eg);
-      $("#egSegTrim").val(localStorage.eg);
-      $('#egDoppler').val(localStorage.eg);
- });
-  $( '#fee-cuatro').on('change', function() {
-      localStorage.fee = $("#fee-cuatro").val();
-      $("#fee").val($("#fee-cuatro").val());
-      localStorage.eg = calcularEG();
-     $("#egExamen").val(localStorage.eg);
-     $("#egConsulta").val(localStorage.eg);
-      $("#egPrimTrim").val(localStorage.eg);
-      $("#egSegTrim").val(localStorage.eg);
-      $('#egDoppler').val(localStorage.eg);
- });
-  $( '#fee-cinco').on('change', function() {
-      localStorage.fee = $("#fee-cinco").val();
-      $("#fee").val($("#fee-cinco").val());
-      localStorage.eg = calcularEG();
-     $("#egExamen").val(localStorage.eg);
-     $("#egConsulta").val(localStorage.eg);
-      $("#egPrimTrim").val(localStorage.eg);
-      $("#egSegTrim").val(localStorage.eg);
-      $('#egDoppler').val(localStorage.eg);
- });
-  $( '#fee-seis').on('change', function() {
-      localStorage.fee = $("#fee-seis").val();
-      $("#fee").val($("#fee-seis").val());
-      localStorage.eg = calcularEG();
-     $("#egExamen").val(localStorage.eg);
-     $("#egConsulta").val(localStorage.eg);
-      $("#egPrimTrim").val(localStorage.eg);
-      $("#egSegTrim").val(localStorage.eg);
-      $('#egDoppler').val(localStorage.eg);
- });
-  $( '#fee-siete').on('change', function() {
-      localStorage.fee = $("#fee-siete").val();
-      $("#fee").val($("#fee-siete").val());
-      localStorage.eg = calcularEG();
-     $("#egExamen").val(localStorage.eg);
-     $("#egConsulta").val(localStorage.eg);
-      $("#egPrimTrim").val(localStorage.eg);
-      $("#egSegTrim").val(localStorage.eg);
-      $('#egDoppler').val(localStorage.eg);
+  $("input[name='fee']").on('change', function() {
+   localStorage.fee = $(this).val();
+   localStorage.eg = calcularEG();
+   $("input[name='fee']").val(localStorage.fee);
+   $("input[name='eg']").val(localStorage.eg);
  });
 }
