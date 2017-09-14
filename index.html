@@ -32,7 +32,7 @@
                <div class="media">
                   <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
                   <div class="media-body mt-5">
-                     <h2 class="mt-0 mb-1"><em>CrecimientoFetal.cl</em></h2>
+                     <h3 class="mt-0 mb-1"><em>CrecimientoFetal.cl</em></h3>
                      <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
                   </div>
                </div>
@@ -52,7 +52,7 @@
                <div class="media">
                   <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
                   <div class="media-body mt-4">
-                     <h2 class="mt-0 mb-1"><em>CrecimientoFetal.cl</em></h2>
+                     <h3 class="mt-0 mb-1"><em>CrecimientoFetal.cl</em></h3>
                      <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
                   </div>
                   <div class="media-body mt-4">
@@ -147,7 +147,7 @@
                <div class="media">
                   <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
                   <div class="media-body  mt-4">
-                    <h2 class="mt-0 mb-1"><em>Nuevo exámen ecográfico</em></h2>
+                    <h3 class="mt-0 mb-1"><em>Nuevo exámen ecográfico</em></h3>
                      <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
                   </div>
                   <div class="media-body mt-4">
@@ -166,35 +166,38 @@
                <div class="card mb-3">
                   <div class="card-block">
                      <h5 class="card-title">Realizar exámen rápido</h5>
-                     <form>
-                        <div class="row">
-                           <div class="form-group col">
-                              <label for="fum2">Fecha de última mestruación</label>
-                              <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-dos">
-                              <small id="fum2Help" class="form-text text-muted">Seleccione una fecha.</small>
-                           </div>
-                           <div class="form-group col">
-                              <label for="egExamen">Edad Gestacional</label>
-                              <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                 <input class="form-control" type="number" value="0" name="eg" readonly>
-                                 <div class="input-group-addon">Sem.</div>
-                              </div>
-                              <small id="egExamenHelp" class="form-text text-muted">Semanas.</small>
-                           </div>
-                        </div>
-                        <div class="row">
-                           <div class="form-group col">
-                              <label for="egExamen">Fecha probable de parto</label>
-                              <input class="form-control" type="text" value="0" name="fpp" readonly>
-                           </div>
-                           <div class="form-group col">
-                              <label for="fee">Fecha de exámen</label>
-                              <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee">
-                              <small id="feeHelp" class="form-text text-muted">¿La fecha de exámen es para hoy?.</small>
-                           </div>
-                        </div>
-                        <a class="btn btn-primary" href="#tipoExamen">Continuar</a>
-                     </form>
+                     <div class="form-group row">
+                       <div class="col">
+                         <label for="fum2">Fecha de última mestruación</label>
+                       </div>
+                       <div class="col">
+                         <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-dos">
+                       </div>
+                       <div class="col">
+                         <label for="dbp" class="col-form-label">Edad Gestacional</label>
+                       </div>
+                       <div class="col">
+                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                           <input type="text" class="form-control" name="eg" readonly>
+                           <div class="input-group-addon">Semanas</div>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="form-group row">
+                       <div class="col">
+                         <label for="dbp" class="col-form-label">Fecha probable de parto</label>
+                       </div>
+                       <div class="col">
+                         <input type="text" class="form-control" name="fpp" readonly>
+                       </div>
+                       <div class="col">
+                         <label for="fee" class="col-form-label">Fecha de exámen</label>
+                       </div>
+                       <div class="col">
+                         <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee">
+                       </div>
+                     </div>
+                     <a class="btn btn-primary" href="#tipoExamen">Continuar</a>
                   </div>
                </div>
             </div>
@@ -226,7 +229,7 @@
                <div class="media">
                   <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
                   <div class="media-body mt-4">
-                     <h2 class="mt-0 mb-1"><em>Elija un tipo de exámen</em></h2>
+                     <h3 class="mt-0 mb-1"><em>Elija un tipo de exámen</em></h3>
                      <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
                   </div>
                   <div class="media-body mt-4">
@@ -267,7 +270,7 @@
                <input type="text" class="form-control" name="fpp" readonly>
             </div>
             <div class="col">
-               <label for="fee">Fecha de exámen</label>
+               <label for="fee" class="col-form-label">Fecha de exámen</label>
             </div>
             <div class="col">
                <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee-dos">
@@ -345,13 +348,44 @@
                <div class="media">
                   <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
                   <div class="media-body mt-4">
-                     <h2 class="mt-0 mb-1"><em>Ecografía Obstétrica de 1° Trimestre</em></h2>
+                     <h3 class="mt-0 mb-1"><em>Ecografía Obstétrica de 1° Trimestre</em></h3>
                      <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
                   </div>
                   <div class="media-body mt-4">
                      <p class="float-right" name="fechaHora" style="color: #f0df90;"></p>
                   </div>
                </div>
+            </div>
+         </div>
+         <div class="form-group row">
+            <div class="col">
+               <label for="fum2">Fecha de última mestruación</label>
+            </div>
+            <div class="col">
+               <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-cuatro">
+            </div>
+            <div class="col">
+               <label for="dbp" class="col-form-label">Edad Gestacional</label>
+            </div>
+            <div class="col">
+               <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <input type="text" class="form-control" name="eg" readonly>
+                  <div class="input-group-addon">Semanas</div>
+               </div>
+            </div>
+         </div>
+         <div class="form-group row">
+            <div class="col">
+               <label for="dbp" class="col-form-label">Fecha probable de parto</label>
+            </div>
+            <div class="col">
+               <input type="text" class="form-control" name="fpp" readonly>
+            </div>
+            <div class="col">
+               <label for="fee" class="col-form-label">Fecha de exámen</label>
+            </div>
+            <div class="col">
+               <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee-tres">
             </div>
          </div>
          <ol class="breadcrumb">
@@ -363,25 +397,6 @@
             </li>
             <li class="breadcrumb-item active">Ecografía Obstétrica</li>
          </ol>
-         <form class="mt-3 mb-3">
-            <div class="form-group row">
-               <div class="col">
-                  <label for="fum2"><strong>Fecha de última mestruación</strong></label>
-               </div>
-               <div class="col">
-                  <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-cuatro">
-               </div>
-               <div class="col">
-                  <label for="dbp" class="col-form-label"><strong>Edad Gestacional</strong></label>
-               </div>
-               <div class="col">
-                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                     <input type="text" class="form-control" name="eg" readonly>
-                     <div class="input-group-addon">Semanas</div>
-                  </div>
-               </div>
-            </div>
-         </form>
          <div class="card mb-3">
             <div class="card-block">
                <h4 class="card-title">Medida del embrión</h4>
@@ -550,13 +565,44 @@
                <div class="media">
                   <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
                   <div class="media-body mt-4">
-                     <h2 class="mt-0 mb-1"><em>Ecografía Obstétrica de 2° / 3° trimestre</em></h2>
+                     <h3 class="mt-0 mb-1"><em>Ecografía Obstétrica de 2° / 3° trimestre</em></h3>
                      <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
                   </div>
                   <div class="media-body mt-4">
                      <p class="float-right" name="fechaHora" style="color: #f0df90;"></p>
                   </div>
                </div>
+            </div>
+         </div>
+         <div class="form-group row">
+            <div class="col">
+               <label for="fum2">Fecha de última mestruación</label>
+            </div>
+            <div class="col">
+               <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-cinco">
+            </div>
+            <div class="col">
+               <label for="dbp" class="col-form-label">Edad Gestacional</label>
+            </div>
+            <div class="col">
+               <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <input type="text" class="form-control" name="eg" readonly>
+                  <div class="input-group-addon">Semanas</div>
+               </div>
+            </div>
+         </div>
+         <div class="form-group row">
+            <div class="col">
+               <label for="dbp" class="col-form-label">Fecha probable de parto</label>
+            </div>
+            <div class="col">
+               <input type="text" class="form-control" name="fpp" readonly>
+            </div>
+            <div class="col">
+               <label for="fee" class="col-form-label">Fecha de exámen</label>
+            </div>
+            <div class="col">
+               <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee-cuatro">
             </div>
          </div>
          <ol class="breadcrumb">
@@ -568,25 +614,6 @@
             </li>
             <li class="breadcrumb-item active">Ecografía Obstétrica</li>
          </ol>
-         <form class="mt-3 mb-3">
-            <div class="form-group row">
-               <div class="col">
-                  <label for="fum2"><strong>Fecha de última mestruación</strong></label>
-               </div>
-               <div class="col">
-                  <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-cinco">
-               </div>
-               <div class="col">
-                  <label for="dbp" class="col-form-label"><strong>Edad Gestacional</strong></label>
-               </div>
-               <div class="col">
-                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                     <input type="text" class="form-control" name="eg" readonly>
-                     <div class="input-group-addon">Semanas</div>
-                  </div>
-               </div>
-            </div>
-         </form>
          <div class="row">
             <div class="col">
                <div class="card mb-3">
@@ -953,13 +980,44 @@
                <div class="media">
                   <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
                   <div class="media-body mt-4">
-                     <h2 class="mt-0 mb-1"><em>Ecografía Doppler Materno fetal</em></h2>
+                     <h3 class="mt-0 mb-1"><em>Ecografía Doppler Materno fetal</em></h3>
                      <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
                   </div>
                   <div class="media-body mt-4">
                      <p class="float-right" name="fechaHora" style="color: #f0df90;"></p>
                   </div>
                </div>
+            </div>
+         </div>
+         <div class="form-group row">
+            <div class="col">
+               <label for="fum2">Fecha de última mestruación</label>
+            </div>
+            <div class="col">
+               <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-seis">
+            </div>
+            <div class="col">
+               <label for="dbp" class="col-form-label">Edad Gestacional</label>
+            </div>
+            <div class="col">
+               <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <input type="text" class="form-control" name="eg" readonly>
+                  <div class="input-group-addon">Semanas</div>
+               </div>
+            </div>
+         </div>
+         <div class="form-group row">
+            <div class="col">
+               <label for="dbp" class="col-form-label">Fecha probable de parto</label>
+            </div>
+            <div class="col">
+               <input type="text" class="form-control" name="fpp" readonly>
+            </div>
+            <div class="col">
+               <label for="fee" class="col-form-label">Fecha de exámen</label>
+            </div>
+            <div class="col">
+               <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee-cinco">
             </div>
          </div>
          <ol class="breadcrumb">
@@ -971,25 +1029,6 @@
             </li>
             <li class="breadcrumb-item active">Ecografía Doppler</li>
          </ol>
-         <form class="mt-3 mb-3">
-            <div class="form-group row">
-               <div class="col">
-                  <label for="fum2"><strong>Fecha de última mestruación</strong></label>
-               </div>
-               <div class="col">
-                  <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-seis">
-               </div>
-               <div class="col">
-                  <label for="dbp" class="col-form-label"><strong>Edad Gestacional</strong></label>
-               </div>
-               <div class="col">
-                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                     <input type="text" class="form-control" name="eg" readonly>
-                     <div class="input-group-addon">Semanas</div>
-                  </div>
-               </div>
-            </div>
-         </form>
          <div class="card mb-3">
             <div class="card-block">
                <h4 class="card-title">FLUJOMETRÍA DOPPLER MATERNO</h4>
@@ -1242,7 +1281,7 @@
                <div class="media">
                   <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
                   <div class="media-body mt-4">
-                     <h2 class="mt-0 mb-1"><em>Datos de pacientes</em></h2>
+                     <h3 class="mt-0 mb-1"><em>Datos de pacientes</em></h3>
                      <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
                   </div>
                   <div class="media-body mt-4">
@@ -1669,7 +1708,7 @@
       <div class="media">
       <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
       <div class="media-body mt-4">
-      <h2 class="mt-0 mb-1"><em>Configuración</em></h2>
+      <h3 class="mt-0 mb-1"><em>Configuración</em></h3>
       <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
       </div>
       <div class="media-body mt-4">
@@ -1995,7 +2034,7 @@
       <div class="media">
       <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
       <div class="media-body mt-4">
-      <h2 class="mt-0 mb-1"><em>Tamizaje 11- 14</em></h2>
+      <h3 class="mt-0 mb-1"><em>Tamizaje 11- 14</em></h3>
          <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
       </div>
       <div class="media-body mt-4">
@@ -2004,6 +2043,37 @@
       </div>
       </div>
       </div>
+      <div class="form-group row">
+            <div class="col">
+               <label for="fum2">Fecha de última mestruación</label>
+            </div>
+            <div class="col">
+               <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-siete">
+            </div>
+            <div class="col">
+               <label for="dbp" class="col-form-label">Edad Gestacional</label>
+            </div>
+            <div class="col">
+               <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <input type="text" class="form-control" name="eg" readonly>
+                  <div class="input-group-addon">Semanas</div>
+               </div>
+            </div>
+         </div>
+         <div class="form-group row">
+            <div class="col">
+               <label for="dbp" class="col-form-label">Fecha probable de parto</label>
+            </div>
+            <div class="col">
+               <input type="text" class="form-control" name="fpp" readonly>
+            </div>
+            <div class="col">
+               <label for="fee" class="col-form-label">Fecha de exámen</label>
+            </div>
+            <div class="col">
+               <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee-seis">
+            </div>
+         </div>
       <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="#inicio">Inicio</a>
       </li>
@@ -2013,18 +2083,6 @@
       </li>
       <li class="breadcrumb-item active">Tamizaje 11 - 14</li>
       </ol>
-      <form class="mt-3 mb-3">
-      <div class="form-group row">
-      <div class="col">
-      <label for="dbp" class="col-form-label">Edad Gestacional</label>
-      </div>
-      <div class="col">
-      <input type="text" class="form-control" name="eg" readonly>
-      </div>
-      <div class="col"></div>
-      <div class="col"></div>
-      </div>
-      </form>
       </div>
       <div class="container" id="morfologica-22" style="display:none;">
          <div class="bienvenida mb-3">
@@ -2032,7 +2090,7 @@
                <div class="media">
                   <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
                   <div class="media-body mt-4">
-                     <h2 class="mt-0 mb-1"><em>Evaluación morfológica 22 - 24</em></h2>
+                     <h3 class="mt-0 mb-1"><em>Evaluación morfológica 22 - 24</em></h3>
                      <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
                   </div>
                   <div class="media-body mt-4">
@@ -2069,13 +2127,44 @@
                <div class="media">
                   <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
                   <div class="media-body mt-4">
-                     <h2 class="mt-0 mb-1"><em>Eco cardiografía fetal</em></h2>
+                     <h3 class="mt-0 mb-1"><em>Eco cardiografía fetal</em></h3>
                      <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
                   </div>
                   <div class="media-body mt-4">
                      <p class="float-right" name="fechaHora" style="color: #f0df90;"></p>
                   </div>
                </div>
+            </div>
+         </div>
+         <div class="form-group row">
+            <div class="col">
+               <label for="fum2">Fecha de última mestruación</label>
+            </div>
+            <div class="col">
+               <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" name="fum" id="fum-ocho">
+            </div>
+            <div class="col">
+               <label for="dbp" class="col-form-label">Edad Gestacional</label>
+            </div>
+            <div class="col">
+               <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <input type="text" class="form-control" name="eg" readonly>
+                  <div class="input-group-addon">Semanas</div>
+               </div>
+            </div>
+         </div>
+         <div class="form-group row">
+            <div class="col">
+               <label for="dbp" class="col-form-label">Fecha probable de parto</label>
+            </div>
+            <div class="col">
+               <input type="text" class="form-control" name="fpp" readonly>
+            </div>
+            <div class="col">
+               <label for="fee" class="col-form-label">Fecha de exámen</label>
+            </div>
+            <div class="col">
+               <input class="form-control" type="text" data-provide="datepicker-inline" onfocus="blur();" id="fee-siete">
             </div>
          </div>
          <ol class="breadcrumb">
@@ -2087,18 +2176,6 @@
             </li>
             <li class="breadcrumb-item active">Eco cardiografía fetal</li>
          </ol>
-         <form class="mt-3 mb-3">
-            <div class="form-group row">
-               <div class="col">
-                  <label for="dbp" class="col-form-label">Edad Gestacional</label>
-               </div>
-               <div class="col">
-                  <input type="text" class="form-control" name="eg" readonly>
-               </div>
-               <div class="col"></div>
-               <div class="col"></div>
-            </div>
-         </form>
       </div>
       <div class="container" id="dNeonatales" style="display:none;">
          <div class="bienvenida mb-3">
@@ -2106,7 +2183,7 @@
                <div class="media">
                   <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
                   <div class="media-body mt-4">
-                     <h2 class="mt-0 mb-1"><em>Datos Neonatales</em></h2>
+                     <h3 class="mt-0 mb-1"><em>Datos Neonatales</em></h3>
                      <p class="lead"><strong><em>Ecografia obstetrica On Line</em></strong></p>
                   </div>
                   <div class="media-body mt-4">
