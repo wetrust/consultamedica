@@ -239,8 +239,7 @@ function calcularEG(){
  var unasemana = undia * 7;
   
     FUM = localStorage.fum;
-    FExamen = $("#fee").val();
-    $("#fee-dos").val(FExamen);
+    FExamen = localStorage.fee;
   
     FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
     FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
