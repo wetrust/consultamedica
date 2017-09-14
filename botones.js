@@ -44,7 +44,7 @@ function activarBotones() {
    localStorage.fum = $(this).val();
    localStorage.fee = $("input[name='fee']").val();
    localStorage.eg = calcularEG();
-   $("input[name='fum']").val(localStorage.fum).trigger("change");
+   $("input[name='fum']").val(localStorage.fum);
    $("input[name='eg']").val(localStorage.eg);
  });
   
@@ -52,7 +52,7 @@ function activarBotones() {
    localStorage.fum = $("input[name='fum']").val();
    localStorage.fee = $(this).val();
    localStorage.eg = calcularEG();
-   $("input[name='fee']").val(localStorage.fee).trigger("change");
+   $("input[name='fee']").val(localStorage.fee);
    $("input[name='eg']").val(localStorage.eg);
  });
 }
