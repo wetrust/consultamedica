@@ -697,20 +697,28 @@ function eglcn() {
     lcn = lcn.replace(",", ".");
     lcn = parseFloat(lcn);
 
-    if (lcn > 90) {
-        $("#lcnPct").val("0");
-    }
-    else {
-
-	    var ValLCN1 = lcn / 10;
-
-	    for (i = 1; i <= 63; i ++ ) {
-		if (LCN[0][i] >= ValLCN1) {
-		    var eglcn = LCN[1][i];
-		    i = 63;
-		}
+    if (isNaN(lcn) != false){
+	    if (lcn > 90) {
+		$("#lcnPct").val("0");
 	    }
-            $("#lcnPct").val(eglcn);
+	    else if (lcn < 1){
+	    	$("#lcnPct").val("0");
+	    }
+	    else {
+
+		    var ValLCN1 = lcn / 10;
+
+		    for (i = 1; i <= 63; i ++ ) {
+			if (LCN[0][i] >= ValLCN1) {
+			    var eglcn = LCN[1][i];
+			    i = 63;
+			}
+		    }
+		    $("#lcnPct").val(eglcn);
+	    }
+    }
+    else{
+    	$("#lcnPct").val("0");
     }
 };
 
