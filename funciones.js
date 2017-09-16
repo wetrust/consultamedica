@@ -47,7 +47,7 @@ $( "#saco" ).keypress(function( event ) {
      var eg1 = new Number((Math.floor(EGsaco) * 7) + Math.round((EGsaco - Math.floor(EGsaco)) * 7));
      var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
      var diferencia = Math.abs(Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
-     $('#diferenciaEcoPrimTrim').html('La diferencia observada entre edad gestacional por FUM referida y la edad por exámen ecografico es de ' + diferencia + ' días.<br><br>La determinación de edad gestacional ecográfica y ajuste a edad gestacional real, ha de realizarse solo una vez lograda la medición embrionaria (LCN).');
+     $('#diferenciaEcoPrimTrim').html('La diferencia observada entre edad gestacional por FUM referida y la edad por exámen ecografico es de ' + diferencia + ' días.<br><small>La determinación de edad gestacional ecográfica y ajuste a edad gestacional real, ha de realizarse solo una vez lograda la medición embrionaria (LCN).</small>');
      $('#preguntaAjusteEcoPrimTrim').hide();
      $("#graficoSaco").focus();
   }
