@@ -283,7 +283,9 @@ class app {
 	$('#fNacimiento').val((day)+"/"+(month)+"/"+this.day.getFullYear());
 	$("input[name='fum']").val((day)+"/"+(month)+"/"+this.day.getFullYear());
 	$("input[name='fee']").val((day)+"/"+(month)+"/"+this.day.getFullYear()).trigger("change");
-	$("#lcn").val("").trigger("change").trigger("keypress", {which: 13});
+	var e = jQuery.Event("keydown");
+        e.which = 13; // # Some key code value
+	$("#lcn").val("").trigger("change").trigger(e);
 	$("#saco").val("").trigger("change");
 
 	$("#dbp").val("").trigger("change");
