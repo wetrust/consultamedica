@@ -35,6 +35,7 @@ class app {
 	}
 	else if (this.hash=="#consulta"){
 		this.displayElement("consulta");
+		this.clearData();
 	}
         else if (this.hash=="#tipoExamen"){
 		this.displayElement("tipoExamen");
@@ -273,6 +274,34 @@ class app {
 	$('#fNacimiento').val((day)+"/"+(month)+"/"+this.day.getFullYear());
 	$("input[name='fum']").val((day)+"/"+(month)+"/"+this.day.getFullYear());
 	$("input[name='fee']").val((day)+"/"+(month)+"/"+this.day.getFullYear());
+  }
+
+  clearData(){
+        var day = ("0" + this.day.getDate()).slice(-2);
+	var month = ("0" + (this.day.getMonth() + 1)).slice(-2);
+
+	$('#fNacimiento').val((day)+"/"+(month)+"/"+this.day.getFullYear());
+	$("input[name='fum']").val((day)+"/"+(month)+"/"+this.day.getFullYear());
+	$("input[name='fee']").val((day)+"/"+(month)+"/"+this.day.getFullYear());
+	$("#lcn").val("").trigger("change");
+	$("#saco").val("").trigger("change");
+
+	$("#dbp").val("").trigger("change");
+	$("#cc").val("").trigger("change");
+	$("#ca").val("").trigger("change");
+	$("#lf").val("").trigger("change");
+	$("#lh").val("").trigger("change");
+	$("#cerebelo").val("").trigger("change");
+	$("#bvm").val("").trigger("change");
+	$("#ila").val("").trigger("change");
+
+	$("#aud").val("").trigger("change");
+	$("#aui").val("").trigger("change");
+	$("#auprom").val("").trigger("change");
+	$("#ipau").val("").trigger("change");
+	$("#ipacm").val("").trigger("change");
+	$("#dv").val("").trigger("change");
+	$("#psmACM").val("").trigger("change");
   }
 
 }
