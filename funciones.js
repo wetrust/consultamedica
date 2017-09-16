@@ -24,6 +24,7 @@ $( "#lcn" ).keypress(function( event ) {
      
      if (isNaN(LCN) | LCN < 0 | isNaN(eg) | eg < 1) {
          $('#diferenciaEcoPrimTrim').html('La diferencia observada entre edad gestacional por FUM referida y la edad por ecografia es de 0 días.');
+         $('#preguntaAjusteEcoPrimTrim').hide();
      }
      else{
 	var EGLCN = parseFloat($('#lcnPct').val());
@@ -31,9 +32,9 @@ $( "#lcn" ).keypress(function( event ) {
 	var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
 	var diferencia = Math.abs(Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
 	$('#diferenciaEcoPrimTrim').html('La diferencia observada entre edad gestacional por FUM referida y la edad por exámen ecografico es de ' + diferencia + ' días.');
+        $('#preguntaAjusteEcoPrimTrim').show();
+        $("#graficoLcn").focus()
      }
-     $('#preguntaAjusteEcoPrimTrim').show();
-     $("#graficoLcn").focus()
   }
 });
 
