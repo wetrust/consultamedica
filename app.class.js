@@ -282,7 +282,7 @@ class app {
 
 	$('#fNacimiento').val((day)+"/"+(month)+"/"+this.day.getFullYear());
 	$("input[name='fum']").val((day)+"/"+(month)+"/"+this.day.getFullYear());
-	$("input[name='fee']").val((day)+"/"+(month)+"/"+this.day.getFullYear());
+	$("input[name='fee']").val((day)+"/"+(month)+"/"+this.day.getFullYear()).trigger("change");
 	$("#lcn").val("").trigger("change");
 	$("#saco").val("").trigger("change");
 
