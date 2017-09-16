@@ -697,7 +697,7 @@ function eglcn() {
     lcn = lcn.replace(",", ".");
     lcn = parseFloat(lcn);
 
-    if (isNaN(lcn) != false){
+    if (isNaN(lcn) != true){
 	    if (lcn > 90) {
 		$("#lcnPct").val("0");
 	    }
