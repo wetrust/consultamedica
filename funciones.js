@@ -243,7 +243,7 @@ function crearInformeEcoSegTrim1(){
         var linea3 = "<strong>Anatomía fetal *</strong>  " + document.getElementById("ev-morfo").value + ", " + document.getElementById("comentarios-anatomia-informe-eg-texto").value;
         var linea4 = "<strong>Placenta</strong> inserción " + document.getElementById("incersion").value + " y de ubicación " + document.getElementById("ubicacion").value + ", grado " + document.getElementById("grado-placenta").value;
         var linea5 = "<strong>Cordón</strong> umbilical " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
-        var linea6 = "<strong>Líquido</strong> amniótico cualitativamente " + document.getElementById("liq-amnio").value + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm" + ilatxt;
+        var linea6 = "<strong>Líquido</strong> amniótico con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm" + ilatxt;
 	
 	var fur = $( "input[name='fum']").val();
 	var fexamen = $( "input[name='fee']").val();
