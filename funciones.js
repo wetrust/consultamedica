@@ -176,6 +176,7 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 	$( '#impDoppler2').remove();
 	$( '#impDoppler1').remove();
         $('#popupBody').html("<div class='form-group'><label>Presentaci&oacute;n</label><select id='presentacion' class='form-control'><option value='cefalica'>Cef&aacute;lica</option><option value='podalica'>Pod&aacute;lica</option><option value='transversa'>transversa</option><option value='indiferente'>indiferente</option></select></div><div class='form-group'><label>Dorso Fetal</label><select id='dorso' class='form-control'><option value='anterior'>Anterior</option><option value='lateral izquiedo'>Lat. Izquierdo</option><option value='posterior'>Posterior</option><option value='lateral derecho'>Lat. Derecho</option></select></div><div class='form-group'><label>Actividada Cardiaca</label></div><div class='form-group'><div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' checked='checked' name='accard' value='1'> Si</label></div><div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='accard' value='0'> No</label></div></div><div class='form-group'><label>Mov. Fetales</label></div><div class='form-group'><div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' checked='checked' name='movfet' value='1'> Si</label></div><div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='movfet' value='0'> No</label></div></div><div class='form-group'><label>FCF</label><select id='fcf' class='form-control'><option value='90'>90</option><option value='91'>91</option><option value='92'>92</option><option value='93'>93</option><option value='94'>94</option><option value='95'>95</option><option value='96'>96</option><option value='97'>97</option><option value='98'>98</option><option value='99'>99</option><option value='100'>100</option><option value='101'>101</option><option value='102'>102</option><option value='103'>103</option><option value='104'>104</option><option value='105'>105</option><option value='106'>106</option><option value='107'>107</option><option value='108'>108</option><option value='109'>109</option><option value='110'>110</option><option value='111'>111</option><option value='112'>112</option><option value='113'>113</option><option value='114'>114</option><option value='115'>115</option><option value='116'>116</option><option value='117'>117</option><option value='118'>118</option><option value='119'>119</option><option value='120'>120</option><option value='121'>121</option><option value='122'>122</option><option value='123'>123</option><option value='124'>124</option><option value='125'>125</option><option value='126'>126</option><option value='127'>127</option><option value='128'>128</option><option value='129'>129</option><option value='130'>130</option><option value='131'>131</option><option value='132'>132</option><option value='133'>133</option><option value='134'>134</option><option value='135'>135</option><option value='136'>136</option><option value='137'>137</option><option value='138'>138</option><option value='139'>139</option><option selected='selected' value='140'>140</option><option value='141'>141</option><option value='142'>142</option><option value='143'>143</option><option value='144'>144</option><option value='145'>145</option><option value='146'>146</option><option value='147'>147</option><option value='148'>148</option><option value='149'>149</option><option value='150'>150</option><option value='151'>151</option><option value='152'>152</option><option value='153'>153</option><option value='154'>154</option><option value='155'>155</option><option value='156'>156</option><option value='157'>157</option><option value='158'>158</option><option value='159'>159</option><option value='160'>160</option><option value='161'>161</option><option value='162'>162</option><option value='163'>163</option><option value='164'>164</option><option value='165'>165</option><option value='166'>166</option><option value='167'>167</option><option value='168'>168</option><option value='169'>169</option><option value='170'>170</option></select></div><div class='form-group'><label>Anatom&iacute;a fetal</label><select id='ev-morfo' class='form-control'><option value='no evaluada dirigidamente'>No evaluada dirigidamente</option><option selected='selected' value='aspecto general normal'>Aspecto general normal</option><option value='alteraciones de cr&aacute;neo'>Alteraciones de cr&aacute;neo</option><option value='alteraciones de columna'>Alteraciones de columna</option><option value='alteraciones de t&oacute;rax'>Alteraciones de t&oacute;rax</option><option value='alteraciones de coraz&oacute;n'>Alteraciones de coraz&oacute;n</option><option value='alteraciones de abdomen'>Alteraciones de abdomen</option><option value='alteraciones de ri&ntilde;ones'>Alteraciones de ri&ntilde;ones</option><option value='alteraciones de vejiga'>Alteraciones de vejiga</option><option value='alteracion extemidades'>Alteracion extemidades</option><option value='alteraciones m&uacute;ltiples'>Alteraciones m&uacute;ltiples</option></select></div><div class='form-group'><p><strong>Comentarios anatom&iacute;a</strong></p><textarea id='comentarios-anatomia-informe-eg-texto' class='form-control' rows='3'></textarea></div><div class='form-group'><label>Placenta Ubicaci&oacute;n</label><select id='ubicacion' class='form-control'><option value='normal'>Normal</option><option value='prev. lateral'>previa lateral</option><option value='prev. marginal'>previa marginal</option><option value='prev. parcial'>previa parcial</option><option value='prev. total'>previa total</option></select></div><div class='form-group'><label>Placenta incersi&oacute;n</label><select id='incersion' class='form-control'><option value='anterior'>anterior</option><option value='posterior'>posterior</option><option value='fundica'>f&uacute;ndica</option><option value='lat. derecha'>lateral derecha</option><option value='lat. izquierda'>lateral izquierda</option><option value='segmentaria'>segmentaria</option></select></div><div class='form-group'><label>Placenta Grado (Grannum)</label><select id='grado-placenta' class='form-control'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option></select></div><div class='form-group'><label>Cord&oacute;n umbilical</label><select id='cordon' class='form-control'><option value='inserci&oacute;n central'>Inserci&oacute;n central</option><option value='inserci&oacute;n marginal'>Inserci&oacute;n marginal</option><option value='inserci&oacute;n velamentosa'>Inserci&oacute;n velamentosa</option><option value='inserci&oacute;n no evaluable'>Inserci&oacute;n no evaluable</option></select></div><div class='form-group'><label>N&uacute;mero de vasos</label><select id='vasos' class='form-control'><option value='2'>2</option><option selected='selected' value='3'>3</option></select></div>");
+	//añadir boton de imprimir
 	$('#popupGenerico').modal('show');
 });
 
@@ -188,8 +189,148 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 	$( '#impDoppler2').remove();
 	$( '#impDoppler1').remove();
         $('#popupBody').html("<div class='form-group'><label>Presentaci&oacute;n</label><select id='presentacion' class='form-control'><option value='cefalica'>Cef&aacute;lica</option><option value='podalica'>Pod&aacute;lica</option><option value='transversa'>transversa</option><option value='indiferente'>indiferente</option></select></div><div class='form-group'><label>Dorso Fetal</label><select id='dorso' class='form-control'><option value='anterior'>Anterior</option><option value='lateral izquiedo'>Lat. Izquierdo</option><option value='posterior'>Posterior</option><option value='lateral derecho'>Lat. Derecho</option></select></div><div class='form-group'><label>Actividada Cardiaca</label></div><div class='form-group'><div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' checked='checked' name='accard' value='1'> Si</label></div><div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='accard' value='0'> No</label></div></div><div class='form-group'><label>Mov. Fetales</label></div><div class='form-group'><div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' checked='checked' name='movfet' value='1'> Si</label></div><div class='form-check form-check-inline'><label class='form-check-label'><input class='form-check-input' type='radio' name='movfet' value='0'> No</label></div></div><div class='form-group'><label>FCF</label><select id='fcf' class='form-control'><option value='90'>90</option><option value='91'>91</option><option value='92'>92</option><option value='93'>93</option><option value='94'>94</option><option value='95'>95</option><option value='96'>96</option><option value='97'>97</option><option value='98'>98</option><option value='99'>99</option><option value='100'>100</option><option value='101'>101</option><option value='102'>102</option><option value='103'>103</option><option value='104'>104</option><option value='105'>105</option><option value='106'>106</option><option value='107'>107</option><option value='108'>108</option><option value='109'>109</option><option value='110'>110</option><option value='111'>111</option><option value='112'>112</option><option value='113'>113</option><option value='114'>114</option><option value='115'>115</option><option value='116'>116</option><option value='117'>117</option><option value='118'>118</option><option value='119'>119</option><option value='120'>120</option><option value='121'>121</option><option value='122'>122</option><option value='123'>123</option><option value='124'>124</option><option value='125'>125</option><option value='126'>126</option><option value='127'>127</option><option value='128'>128</option><option value='129'>129</option><option value='130'>130</option><option value='131'>131</option><option value='132'>132</option><option value='133'>133</option><option value='134'>134</option><option value='135'>135</option><option value='136'>136</option><option value='137'>137</option><option value='138'>138</option><option value='139'>139</option><option selected='selected' value='140'>140</option><option value='141'>141</option><option value='142'>142</option><option value='143'>143</option><option value='144'>144</option><option value='145'>145</option><option value='146'>146</option><option value='147'>147</option><option value='148'>148</option><option value='149'>149</option><option value='150'>150</option><option value='151'>151</option><option value='152'>152</option><option value='153'>153</option><option value='154'>154</option><option value='155'>155</option><option value='156'>156</option><option value='157'>157</option><option value='158'>158</option><option value='159'>159</option><option value='160'>160</option><option value='161'>161</option><option value='162'>162</option><option value='163'>163</option><option value='164'>164</option><option value='165'>165</option><option value='166'>166</option><option value='167'>167</option><option value='168'>168</option><option value='169'>169</option><option value='170'>170</option></select></div><div class='form-group'><label>Anatom&iacute;a fetal</label><select id='ev-morfo' class='form-control'><option value='no evaluada dirigidamente'>No evaluada dirigidamente</option><option selected='selected' value='aspecto general normal'>Aspecto general normal</option><option value='alteraciones de cr&aacute;neo'>Alteraciones de cr&aacute;neo</option><option value='alteraciones de columna'>Alteraciones de columna</option><option value='alteraciones de t&oacute;rax'>Alteraciones de t&oacute;rax</option><option value='alteraciones de coraz&oacute;n'>Alteraciones de coraz&oacute;n</option><option value='alteraciones de abdomen'>Alteraciones de abdomen</option><option value='alteraciones de ri&ntilde;ones'>Alteraciones de ri&ntilde;ones</option><option value='alteraciones de vejiga'>Alteraciones de vejiga</option><option value='alteracion extemidades'>Alteracion extemidades</option><option value='alteraciones m&uacute;ltiples'>Alteraciones m&uacute;ltiples</option></select></div><div class='form-group'><p><strong>Comentarios anatom&iacute;a</strong></p><textarea id='comentarios-anatomia-informe-eg-texto' class='form-control' rows='3'></textarea></div><div class='form-group'><label>Placenta Ubicaci&oacute;n</label><select id='ubicacion' class='form-control'><option value='normal'>Normal</option><option value='prev. lateral'>previa lateral</option><option value='prev. marginal'>previa marginal</option><option value='prev. parcial'>previa parcial</option><option value='prev. total'>previa total</option></select></div><div class='form-group'><label>Placenta incersi&oacute;n</label><select id='incersion' class='form-control'><option value='anterior'>anterior</option><option value='posterior'>posterior</option><option value='fundica'>f&uacute;ndica</option><option value='lat. derecha'>lateral derecha</option><option value='lat. izquierda'>lateral izquierda</option><option value='segmentaria'>segmentaria</option></select></div><div class='form-group'><label>Placenta Grado (Grannum)</label><select id='grado-placenta' class='form-control'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option></select></div><div class='form-group'><label>Cord&oacute;n umbilical</label><select id='cordon' class='form-control'><option value='inserci&oacute;n central'>Inserci&oacute;n central</option><option value='inserci&oacute;n marginal'>Inserci&oacute;n marginal</option><option value='inserci&oacute;n velamentosa'>Inserci&oacute;n velamentosa</option><option value='inserci&oacute;n no evaluable'>Inserci&oacute;n no evaluable</option></select></div><div class='form-group'><label>N&uacute;mero de vasos</label><select id='vasos' class='form-control'><option value='2'>2</option><option selected='selected' value='3'>3</option></select></div>");
+	//añadir boton de imprimir
 	$('#popupGenerico').modal('show');
 });
+
+function crearInformeEcoSegTrim1(){
+var actCard;
+        var movCorp;
+        var ilatxt;
+
+        elem=document.getElementsByName('accard');
+        for(i=0;i<elem.length;i++)
+            if (elem[i].checked) {
+                actCard = elem[i].value;
+            }
+
+        elem=document.getElementsByName('movfet');
+        for(i=0;i<elem.length;i++)
+            if (elem[i].checked) {
+                movCorp = elem[i].value;
+            }
+
+        if (actCard = 0){
+            actCard = "sin actividad cardiaca";
+        }
+        else
+        {
+            actCard = "con actividad cardiaca";
+        }
+        if (movCorp = 0){
+            movCorp = "sin movimientos corporales";
+        }
+        else
+        {
+            movCorp = "con movimientos corporales";
+        }
+
+        ilatxt = document.getElementById("ila").value;
+
+        if (ilatxt > 0){
+            ilatxt = " e ILA de " + ilatxt +" mm."
+        }
+        else{
+            ilatxt = "."
+        }
+        
+        document.getElementById("linea1-informe1").innerHTML = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
+        document.getElementById("linea2-informe1").innerHTML = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
+        document.getElementById("linea3-informe1").innerHTML = "<strong>Anatomía fetal *</strong>  " + document.getElementById("ev-morfo").value + ", " + document.getElementById("comentarios-anatomia-informe-eg-texto").value;
+        document.getElementById("linea4-informe1").innerHTML = "<strong>Placenta</strong> inserción " + document.getElementById("incersion").value + " y de ubicación " + document.getElementById("ubicacion").value + ", grado " + document.getElementById("grado-placenta").value;
+        document.getElementById("linea5-informe1").innerHTML = "<strong>Cordón</strong> umbilical " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
+        document.getElementById("linea6-informe1").innerHTML = "<strong>Líquido</strong> amniótico cualitativamente " + document.getElementById("liq-amnio").value + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm" + ilatxt;
+        document.getElementById("comentarios-informe-eg-texto").value= "El crecimiento fetal es: ";
+	
+	
+	
+	<div class="container-fluid">
+                         <h3 class="page-header" style="font-size:2.6em;">Evaluación ecográfica del crecimiento fetal</h3>
+                         <p><strong>Paciente Sra. (Srta.):</strong> <span id="texto-paciente2"></span>      <strong>Fecha de Exámen:</strong> <span id="texto-fecha2"></span></p>
+                         <p><strong>ID Paciente: </strong><span id="texto-id-paciente"></span>              <strong>Motivo: </strong><span id="texto-motivo-paciente"></span></p>
+                         <p><strong>FUM: </strong> <span id="fur13"></span><br>
+                             <strong>Ege: </strong> <span id="edadG13"> </span> semanas<br>
+                             <strong>FPP: </strong> <span id="FPP13"></span></p>
+                     </div>
+                     <div class="container-fluid">
+                         <p><strong>DESCRIPCIÓN</strong></p>
+                         <p><span id="linea1-informe1"></span><br>
+                            <span id="linea2-informe1"></span><br>
+                            <span id="linea3-informe1"></span><br>
+                            <span id="linea4-informe1"></span><br>
+                            <span id="linea5-informe1"></span><br>
+                            <span id="linea6-informe1"></span></p>
+                         <p></p>
+                         <p></p>
+                     </div>
+                     <div class="container-fluid">
+                         <table class="table">
+                             <thead>
+                             <tr>
+                                 <th>BIOMETRÍAS**</th>
+                                 <th>Valor</th>
+                                 <th>Percentil de Crecimiento</th>
+                             </tr>
+                             </thead>
+                             <tbody>
+                             <tr>
+                                 <td>DBP:</td>
+                                 <td id="dbp-informe"></td>
+                             </tr>
+                             <tr>
+                                 <td>CC:</td>
+                                 <td id="cc-informe"></td>
+                                 <td id="cc-pct-informe" class="text-center"></td>
+                             </tr>
+                             <tr>
+                                 <td>CA:</td>
+                                 <td id="ca-informe"></td>
+                                 <td id="ca-pct-informe" class="text-center"></td>
+                             </tr>
+                             <tr>
+                                 <td>LF:</td>
+                                 <td id="lf-informe"></td>
+                                 <td id="lf-pct-informe" class="text-center"></td>
+                             </tr>
+                             <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                             </tr>
+                             <tr>
+                                 <td>Peso Fetal Estimado (PFE)***</td>
+                                 <td id="pfe-informe"></td>
+                                 <td id="pfe-pct-informe" class="text-center"></td>
+                             </tr>
+                             <tr>
+                                 <td>Relación Cc/Ca</td>
+                                 <td id="ccca-informe"></td>
+                                 <td id="ccca-pct-informe" class="text-center"></td>
+                             </tr>
+                             <tr>
+                                 <td>Talla Fetal estimada</td>
+                                 <td id="tf-informe"></td>
+                                 <td class="text-center"></td>
+                             </tr>
+                             <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                             </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                     <div class="container-fluid">
+                         <p><strong>COMENTARIOS Y OBSERVACIONES</strong></p>
+                         <p id="comentarios-informe-eg" style="max-width: 700px;text-align: justify;"></p>
+                     </div>
+                     <div class="container-fluid">
+                         <p class="text-right top40" style="margin-right:100px;">Ecografista: <strong><span id="texto-ecografista2"></span></strong></p>
+                         <p class="pie-pagina">* Para evaluación morfológica, ceñirse a recomendaciones dadas en guías Perinatales MINSAL - Chile 2015<br>http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf<br>** Referencias para: Cráneo, Abdómen y Fémur. Hadlock y col. 1984<br>*** Referencia para crecimiento fetal Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90)<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p>
+                     </div>
+	
+	imprInforme(muestra)
+}
 
 ////////////////////////////////////////////
 // Ajuste primer trimestre
@@ -1287,6 +1428,23 @@ function imprSelec(muestra)
 	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container">:DATOS</div>:FUNCION</body></html>';
 	var ventimp=window.open(" ","popimpr");
 	var estilo = '<style>@media print {.col{width:48%;float:left;}.pie-pagina{font-size:9px;}#lineclear{clear:both;}h4{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}}</style>';
+	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
+	document = document.replace(":DATOS", ficha);
+	document = document.replace(":ESTILO", estilo);
+	document = document.replace(":FUNCION", funcion);
+	document = document.replace("invisible", "");
+	
+	ventimp.document.write(document);
+	ventimp.document.close();
+	ventimp.show();
+}
+
+function imprInforme(muestra)
+{
+	var ficha=$(muestra).html();
+	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container">:DATOS</div>:FUNCION</body></html>';
+	var ventimp=window.open(" ","popimpr");
+	var estilo = '<style>@media print {.pie-pagina{font-size:9px;}#lineclear{clear:both;}}</style>';
 	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
 	document = document.replace(":DATOS", ficha);
 	document = document.replace(":ESTILO", estilo);
