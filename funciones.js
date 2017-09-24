@@ -1393,7 +1393,7 @@ function imprInforme(muestra)
 	var ficha= muestra;
 	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container">:DATOS</div>:FUNCION</body></html>';
 	var ventimp=window.open(" ","popimpr");
-	var estilo = '<style>@media print {*{margin:0; padding:0; border:0;} p, th, td {font-size:11px;line-height:17px;margin-bottom:7px;}.pie-pagina{font-size:9px;}#lineclear{clear:both;} h3{line-height:30px;}}</style>';
+	var estilo = '<style>@media print {*{margin:0; padding:0; border:0;} p, th, td {font-size:11px;line-height:17px;margin-bottom:7px;}.pie-pagina{font-size:9px;}#lineclear{clear:both;} h3{font-size: 1.75rem;font-weight: 500;line-height: 1.1;margin:0;}}</style>';
 	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
 	document = document.replace(":DATOS", ficha);
 	document = document.replace(":ESTILO", estilo);
