@@ -56,6 +56,13 @@ $( "#saco" ).keypress(function( event ) {
 $( "#dbp" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
+     $("#dof").focus()
+  }
+});
+
+$( "#dof" ).keypress(function( event ) {
+  if ( event.which == 13 ) {
+     event.preventDefault();
      $("#cc").focus()
   }
 });
