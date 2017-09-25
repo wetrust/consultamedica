@@ -434,6 +434,7 @@ function deDBP() {
 	var eg=0;
 	eg=parseFloat(localStorage.eg);
 	var dbp = $("#dbp").val();
+	var dof = $("#dof").val();
 	dbp = dbp.toString();
     	dbp = dbp.replace(",", ".");
 	dbp = parseFloat(dbp);
@@ -454,6 +455,38 @@ function deDBP() {
 		var resultado = (parseInt(95 / (uno) * (dos) + 3));
 		ajustarProgreso(resultado, "dbpDE");
 		p50();
+	}
+	
+	if (dbp > 0){
+		if (dof > 0){
+			var valor = ((dof/dbp)*100);
+			$('#dof-dbp').val(valor.toFixed(0) + "%");
+		}
+		else{
+			$('#dof-dbp').val("0");
+		}
+	}
+	else{
+		$('#dof-dbp').val("0");
+	}
+}
+
+function calcdof(){
+
+	var dbp = $("#dbp").val();
+	var dof = $("#dof").val();
+	
+	if (dbp > 0){
+		if (dof > 0){
+			var valor = ((dof/dbp)*100);
+			$('#dof-dbp').val(valor.toFixed(0) + "%");
+		}
+		else{
+			$('#dof-dbp').val("0");
+		}
+	}
+	else{
+		$('#dof-dbp').val("0");
 	}
 }
 
