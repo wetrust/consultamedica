@@ -25,7 +25,7 @@ function activarBotones() {
  $( '#lh').change( pctlh);
   $( '#bvm').change( pctbvm);
   $( '#ila').change( pctila);
-  
+  $( '#dof').change( calcdof);
   
  //doppler
  $( '#aud').change( pctut);
