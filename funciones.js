@@ -459,7 +459,7 @@ function deDBP() {
 	
 	if (dbp > 0){
 		if (dof > 0){
-			var valor = ((dof/dbp)*100);
+			var valor = ((dbp/dof)*100);
 			$('#dof-dbp').val(valor.toFixed(0) + "%");
 		}
 		else{
@@ -478,7 +478,7 @@ function calcdof(){
 	
 	if (dbp > 0){
 		if (dof > 0){
-			var valor = ((dof/dbp)*100);
+			var valor = ((dbp/dof)*100);
 			$('#dof-dbp').val(valor.toFixed(0) + "%");
 		}
 		else{
