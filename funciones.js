@@ -1159,11 +1159,11 @@ function pctbvm() {
  bvm=parseInt($("#bvm").val());
  
  if (eg < 16) {  
-   $("#bvm").val('0');
+  //
  }
  else if (eg > 40)
  {
-   $("#bvm").val('0');
+   //
  }
  else {
   eg = eg - 16;
@@ -1201,11 +1201,11 @@ function pctila() {
  ila=parseInt($("#ila").val());
  
  if (eg < 16) {  
-   $("#ila").val('0');
+  //
  }
  else if (eg > 40)
  {
-   $("#ila").val('0');
+   //
  }
  else {
   eg = eg - 16;
