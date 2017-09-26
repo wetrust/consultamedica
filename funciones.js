@@ -481,13 +481,16 @@ function deDBP() {
 		if (dof > 0){
 			var valor = ((dbp/dof)*100);
 			$('#dof-dbp').val(valor.toFixed(0) + "%");
+			$('#ic').val(valor.toFixed(0) + "%");
 		}
 		else{
 			$('#dof-dbp').val("0");
+			$('#ic').val("0");
 		}
 	}
 	else{
 		$('#dof-dbp').val("0");
+		$('#ic').val("0");
 	}
 }
 
@@ -500,13 +503,16 @@ function calcdof(){
 		if (dof > 0){
 			var valor = ((dbp/dof)*100);
 			$('#dof-dbp').val(valor.toFixed(0) + "%");
+			$('#ic').val(valor.toFixed(0) + "%");
 		}
 		else{
 			$('#dof-dbp').val("0");
+			$('#ic').val("0");
 		}
 	}
 	else{
 		$('#dof-dbp').val("0");
+		$('#ic').val("0");
 	}
 }
 
