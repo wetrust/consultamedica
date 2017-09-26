@@ -257,11 +257,12 @@ function crearInformeEcoSegTrim1(){
 	var eg = $( "input[name='eg']").val();
 	var fpp = $( "input[name='fpp']").val();
 	var dbp = $( '#dbp').val();
+	var dof = $( '#dof').val();
 	var cc = $( '#cc').val();
 	var ca = $( '#ca').val();
 	var lf = $( '#lf').val();
 	var pfe = $( '#pfe').val();
-	var ccca = $( '#ccca').val();
+	var ic = $( '#dof-dbp').val();
 	var tf = $( '#tallaFetal').val();
 	
 	var paciente = $( '#nombre-paciente').val();
@@ -269,7 +270,7 @@ function crearInformeEcoSegTrim1(){
 	var motivo = $( '#motivo-examen').val();
 	var ecografista = $( '#ecografista').val();
 	
-	var InformeString = "<h3>Evaluación ecográfica del crecimiento fetal</h3><p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE</span><strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong>ID Paciente: </strong>:IDPACIENTE<strong>Motivo: </strong>:MOTIVO</p><p><strong>FUM: </strong>:FUR<br><strong>Ege: </strong>:EG semanas<br><strong>FPP: </strong>:FPP</p></div><div class='container'><p><strong>DESCRIPCIÓN</strong></p><p>:LINEA1<br>:LINEA2<br>:LINEA3<br>:LINEA4<br>:LINEA5<br>:LINEA6</p><p></p><p></p></div><div class='container'><table class='table'><thead><tr><th>BIOMETRÍAS**</th><th>Valor</th><th>Percentil de Crecimiento</th></tr></thead><tbody><tr><td>DBP:</td><td>:DBP</td></tr><tr><td>CC:</td><td>:CC</td><td></td></tr><tr><td>CA:</td><td>:CA</td><td></td></tr><tr><td>LF:</td><td>:LF</td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td>Peso Fetal Estimado (PFE)***</td><td>:PFE</td><td class='text-center'></td></tr><tr><td>Relación Cc/Ca</td><td>:CCCA</td><td class='text-center'></td></tr><tr><td>Talla Fetal estimada</td><td>:TF</td><td class='text-center'></td></tr><tr><td></td><td></td><td></td></tr></tbody></table></div><div class='container'><p><strong>COMENTARIOS Y OBSERVACIONES</strong></p><p id='comentarios-informe-eg' style='max-width: 700px;text-align: justify;'></p></div><div class='container'><p class='text-right top40' style='margin-right:100px;'>Ecografista: <strong>:ECOGRAFISTA</strong></p><p class='pie-pagina'>* Para evaluación morfológica, ceñirse a recomendaciones dadas en guías Perinatales MINSAL - Chile 2015<br>http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf<br>** Referencias para: Cráneo, Abdómen y Fémur. Hadlock y col. 1984<br>*** Referencia para crecimiento fetal Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90)<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div>";
+	var InformeString = "<h3>Evaluación ecográfica del crecimiento fetal</h3><p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE</span><strong> Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE<strong> Motivo: </strong>:MOTIVO</p><p><strong>FUM: </strong>:FUR<br><strong>Ege: </strong>:EG semanas<br><strong>FPP: </strong>:FPP</p></div><div class='container'><p><strong>DESCRIPCIÓN</strong></p><p>:LINEA1<br>:LINEA2<br>:LINEA3<br>:LINEA4<br>:LINEA5<br>:LINEA6</p><p></p><p></p></div><div class='container'><table class='table'><thead><tr><th>BIOMETRÍAS**</th><th>Valor</th><th>Percentil de Crecimiento</th></tr></thead><tbody><tr><td>DBP:</td><td>:DBP</td></tr><tr><td>DOF:</td><td>:DOF</td></tr><tr><td>CC:</td><td>:CC</td><td></td></tr><tr><td>CA:</td><td>:CA</td><td></td></tr><tr><td>LF:</td><td>:LF</td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td>Peso Fetal Estimado (PFE)***</td><td>:PFE</td><td class='text-center'></td></tr><tr><td>Indice Cefálico</td><td>:IC</td><td class='text-center'></td></tr><tr><td>Talla Fetal estimada</td><td>:TF</td><td class='text-center'></td></tr><tr><td></td><td></td><td></td></tr></tbody></table></div><div class='container'><p><strong>COMENTARIOS Y OBSERVACIONES</strong></p><p id='comentarios-informe-eg' style='max-width: 700px;text-align: justify;'></p></div><div class='container'><p class='text-right top40' style='margin-right:100px;'>Ecografista: <strong>:ECOGRAFISTA</strong></p><p class='pie-pagina'>* Para evaluación morfológica, ceñirse a recomendaciones dadas en guías Perinatales MINSAL - Chile 2015<br>http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf<br>** Referencias para: Cráneo, Abdómen y Fémur. Hadlock y col. 1984<br>*** Referencia para crecimiento fetal Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90)<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div>";
 	
 	
 	InformeString = InformeString.replace(":PACIENTE", paciente);
@@ -282,11 +283,12 @@ function crearInformeEcoSegTrim1(){
 	InformeString = InformeString.replace(":EG", eg);
 	InformeString = InformeString.replace(":FPP", fpp);
 	InformeString = InformeString.replace(":DBP", dbp);
+	InformeString = InformeString.replace(":DOF", dof);
 	InformeString = InformeString.replace(":CC", cc);
 	InformeString = InformeString.replace(":CA", ca);
 	InformeString = InformeString.replace(":LF", lf);
 	InformeString = InformeString.replace(":PFE", pfe);
-	InformeString = InformeString.replace(":CCCA", ccca);
+	InformeString = InformeString.replace(":IC", ic);
 	InformeString = InformeString.replace(":TF", tf);
 	
 	InformeString = InformeString.replace(":LINEA1", linea1);
