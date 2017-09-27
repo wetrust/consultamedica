@@ -307,6 +307,45 @@ function crearInformeEcoSegTrim1(){
 
 function crearInformeEcoSegTrim2(){
 
+	var actCard;
+        var movCorp;
+        var ilatxt;
+
+        elem=document.getElementsByName('accard');
+        for(i=0;i<elem.length;i++)
+            if (elem[i].checked) {
+                actCard = elem[i].value;
+            }
+
+        elem=document.getElementsByName('movfet');
+        for(i=0;i<elem.length;i++)
+            if (elem[i].checked) {
+                movCorp = elem[i].value;
+            }
+
+        if (actCard = 0){
+            actCard = "sin actividad cardiaca";
+        }
+        else
+        {
+            actCard = "con actividad cardiaca";
+        }
+        if (movCorp = 0){
+            movCorp = "sin movimientos corporales";
+        }
+        else
+        {
+            movCorp = "con movimientos corporales";
+        }
+
+        ilatxt = document.getElementById("ila").value;
+
+        if (ilatxt > 0){
+            ilatxt = " e ILA de " + ilatxt +" mm."
+        }
+        else{
+            ilatxt = "."
+        }
 
 	var p50 = $('#egP50').val();
 	var lh =  $( '#lh').val();
