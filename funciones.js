@@ -403,6 +403,65 @@ function crearInformeEcoSegTrim2(){
 	imprInforme(InformeString);
 	
 }
+
+function crearInformeDoppler(){
+
+	var InformeString = "<h3 class='page-header' style='font-size:2.4em;'>Evaluación de flujometria doppler materno fetal</h3><p><strong>Paciente Sra. (Srta.):</strong> :PACIENTE</span>      <strong>Fecha de Exámen:</strong> :FEXAMEN</p><p><strong>ID Paciente: </strong>:IDPACIENTE              <strong>Motivo: </strong>:MOTIVO</p><p><strong>FUM: </strong> :FUM<br><strong>Ege: </strong> :EG semanas<br><strong>FPP: </strong> :FPP</p></div><div class='container'><p><strong>Antecedentes y descripción general del feto y anexos ovulares</strong></p><p>Motivo del exámen: :MOTIVODOPPLER<br>Antecedentes Obstétricos: :ANTECEDENTES<br>Feto en Presentación: :PRESENTACION<br>Motilidad Fetal: :MOTILIDAD<br>Ubicación Placentaria: :UBICACION<br>Líquido Amniótico***: :LIQUIDO<br>Medida única de BVM***: :BVM</p></div><div class='container'><table class='table'><thead><tr><th>Flujometrías</th><th>Medidas</th><th>IP Referencia para E.G.</th><th>Percentiles de IP</th></tr></thead><tbody><tr><td>Arteria Uterina Derecha*</td><td>:UD</td><td></td><td></td></tr><tr><td>Arteria Uterina Izquierda*</td><td>:UI</td><td></td><td></td></tr><tr><td>Prom. Arterias Uterinas*</td><td>:UPROM</td><td></td><td></td></tr><tr><td>Arteria Umbilical**</td><td>:AU</td><td></td><td></td></tr><tr><td>Arteria Cerebral Media**</td><td>:ACM</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td>Relación CCP**</td><td>:CCP</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table></div><div class='container'><p><strong>Comentarios y observaciones</strong></p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container'><p class='text-right top40' style='margin-right:100px;'>Ecografista: :ECOGRAFISTA</p><p class='pie-pagina'>* Referencia para Doppler promedio de arterias uterinas: Gómes O. UOG 2008; 32:128<br>** Referencia para Doppler de arteria umbilical, C Media y CCP Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127<br>*** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div>";
+
+	var paciente = $( '#nombre-paciente').val();
+	var idpaciente = $( '#id-paciente').val();
+	var motivo = $( '#motivo-examen').val();
+	var ecografista = $( '#ecografista').val();
+
+	var fur = $( "input[name='fum']").val();
+	var fexamen = $( "input[name='fee']").val();
+	var eg = $( "input[name='eg']").val();
+	var fpp = $( "input[name='fpp']").val();
+	
+	var bvm = document.getElementById("bvm").value;
+	var comentario = "";
+	
+	var motivoDoppler = $( '#motivo-examen').val();
+	var antecedentes = $( '#motivo-examen').val();
+	var motilidad = $( '#motivo-examen').val();
+	var ubicacion = $( '#motivo-examen').val();
+	var liquido = $( '#motivo-examen').val();
+	var ud = $( '#aud').val();
+	var ui = $( '#aui').val();
+	var uprom = $( '#auprom').val();
+	var au = $( '#ipau').val();
+	var acm = $( '#ipacm').val();
+	var ccp = $( '#ccp').val();
+	
+	
+	InformeString = InformeString.replace(":PACIENTE", paciente);
+	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
+	InformeString = InformeString.replace(":MOTIVO", motivo);
+	InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
+	
+	InformeString = InformeString.replace(":FUM", fur);
+	InformeString = InformeString.replace(":FEXAMEN", fexamen);
+	InformeString = InformeString.replace(":EG", eg);
+	InformeString = InformeString.replace(":FPP", fpp);
+	
+	InformeString = InformeString.replace(":MOTIVODOPPLER", linea6);
+	InformeString = InformeString.replace(":ANTECEDENTES", linea6);
+	InformeString = InformeString.replace(":MOTILIDAD", linea6);
+	InformeString = InformeString.replace(":UBICACION", linea6);
+	InformeString = InformeString.replace(":LIQUIDO", linea6);
+	InformeString = InformeString.replace(":BVM", bvm);
+	InformeString = InformeString.replace(":UD", ud);
+	InformeString = InformeString.replace(":UI", ui);
+	InformeString = InformeString.replace(":UPROM", uprom);
+	InformeString = InformeString.replace(":AU", au);
+	InformeString = InformeString.replace(":ACM", acm);
+	InformeString = InformeString.replace(":CCP", ccp);
+	InformeString = InformeString.replace(":COMENTARIO", comentario);
+	
+	imprInforme(InformeString);
+	
+}
+
 ////////////////////////////////////////////
 // Ajuste primer trimestre
 //
