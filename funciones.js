@@ -438,11 +438,11 @@ function crearInformeDoppler(){
 	var bvm = document.getElementById("bvm").value;
 	var comentario = "";
 	
-	var motivoDoppler = $( '#motivo-examen').val();
-	var antecedentes = $( '#motivo-examen').val();
-	var motilidad = $( '#motivo-examen').val();
-	var ubicacion = $( '#motivo-examen').val();
-	var liquido = $( '#motivo-examen').val();
+	var motivoDoppler = $( '#motivo-doppler').val();
+	var antecedentes = $( '#antecedentes-doppler').val();
+	var motilidad = $( '#motilidad-doppler').val();
+	var ubicacion = $( '#ubicacion-doppler').val();
+	var liquido = $( '#liq-amnio-doppler').val();
 	var ud = $( '#aud').val();
 	var ui = $( '#aui').val();
 	var uprom = $( '#auprom').val();
@@ -461,11 +461,11 @@ function crearInformeDoppler(){
 	InformeString = InformeString.replace(":EG", eg);
 	InformeString = InformeString.replace(":FPP", fpp);
 	
-	InformeString = InformeString.replace(":MOTIVODOPPLER", linea6);
-	InformeString = InformeString.replace(":ANTECEDENTES", linea6);
-	InformeString = InformeString.replace(":MOTILIDAD", linea6);
-	InformeString = InformeString.replace(":UBICACION", linea6);
-	InformeString = InformeString.replace(":LIQUIDO", linea6);
+	InformeString = InformeString.replace(":MOTIVODOPPLER", motivoDoppler);
+	InformeString = InformeString.replace(":ANTECEDENTES", antecedentes);
+	InformeString = InformeString.replace(":MOTILIDAD", motilidad);
+	InformeString = InformeString.replace(":UBICACION", ubicacion);
+	InformeString = InformeString.replace(":LIQUIDO", liquido);
 	InformeString = InformeString.replace(":BVM", bvm);
 	InformeString = InformeString.replace(":UD", ud);
 	InformeString = InformeString.replace(":UI", ui);
