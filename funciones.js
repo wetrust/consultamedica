@@ -220,7 +220,7 @@ $( '#modalPreInfEcoDoppler' ).on( 'click', function() {
 	//añadir boton de imprimir
 	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Imprimir</button>");
 	$( '#impDoppler1').on("click", function(){
-	      crearInformeEcoSegTrim2();
+	     crearInformeDoppler();
 	});
 	$('#popupGenerico').modal('show');
 });
