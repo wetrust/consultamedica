@@ -1198,7 +1198,10 @@ $( '#graficoAud' ).on( 'click', function() {
     $('#graficoArtUtDerView').highcharts({
         title: {
             text: 'IP Arterias Uterinas Derecha',
-            x: -20
+            x: -20,
+                style: {
+            fontSize: '12px'
+        }
         },
         plotOptions: {
             series: {
@@ -1266,7 +1269,10 @@ $( '#graficoAui' ).on( 'click', function() {
     $('#graficoArtUtIzqView').highcharts({
         title: {
             text: 'IP Arterias Uterinas Izquierda',
-            x: -20
+            x: -20,
+                style: {
+            fontSize: '12px'
+        }
         },
         plotOptions: {
             series: {
@@ -1335,7 +1341,10 @@ $( '#graficoAu' ).on( 'click', function() {
     $('#graficoArtUtView').highcharts({
         title: {
             text: 'IP Promedio Arteria Uterinas',
-            x: -20
+            x: -20,
+                style: {
+            fontSize: '12px'
+        }
         },
         plotOptions: {
             series: {
@@ -1403,7 +1412,10 @@ $( '#graficoIpau' ).on( 'click', function() {
     $('#graficoIpauView').highcharts({
          title: {
              text: 'IP Arteria Umbilical **',
-             x: -20 //center
+             x: -20, //center
+                 style: {
+            fontSize: '12px'
+        }
          },
          plotOptions: {
              series: {
@@ -1470,7 +1482,10 @@ $( '#graficoIpacm' ).on( 'click', function() {
     $('#graficoIpacmView').highcharts({
         title: {
              text: 'IP Arteria Cerebral Media **',
-             x: -20
+             x: -20,
+                style: {
+            fontSize: '12px'
+        }
          },
          plotOptions: {
              series: {
