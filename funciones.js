@@ -423,7 +423,7 @@ function crearInformeEcoSegTrim2(){
 
 function crearInformeDoppler(){
 
-	var InformeString = "<h3>Evaluación de flujometria doppler materno fetal</h3><p><strong>Paciente Sra. (Srta.):</strong> :PACIENTE</span>      <strong>Fecha de Exámen:</strong> :FEXAMEN</p><p><strong>ID Paciente: </strong>:IDPACIENTE              <strong>Motivo: </strong>:MOTIVO</p><p><strong>FUM: </strong> :FUM<br><strong>Ege: </strong> :EG semanas<br><strong>FPP: </strong> :FPP</p></div><div class='container'><p><strong>Antecedentes y descripción general del feto y anexos ovulares</strong></p><p>Motivo del exámen: :MOTIVODOPPLER<br>Antecedentes Obstétricos: :ANTECEDENTES<br>Feto en Presentación: :PRESENTACION<br>Motilidad Fetal: :MOTILIDAD<br>Ubicación Placentaria: :UBICACION<br>Líquido Amniótico***: :LIQUIDO<br>Medida única de BVM***: :BVM</p></div><div class='container'><table class='table'><thead><tr><th>Flujometrías</th><th>Medidas</th><th>IP Referencia para E.G.</th><th>Percentiles de IP</th></tr></thead><tbody><tr><td>Arteria Uterina Derecha*</td><td>:UD</td><td></td><td></td></tr><tr><td>Arteria Uterina Izquierda*</td><td>:UI</td><td></td><td></td></tr><tr><td>Prom. Arterias Uterinas*</td><td>:UPROM</td><td></td><td></td></tr><tr><td>Arteria Umbilical**</td><td>:AU</td><td></td><td></td></tr><tr><td>Arteria Cerebral Media**</td><td>:ACM</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td>Relación CCP**</td><td>:CCP</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table></div><div class='container'><p><strong>Comentarios y observaciones</strong></p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container'><p class='text-right top40' style='margin-right:100px;'>Ecografista: :ECOGRAFISTA</p><p class='pie-pagina'>* Referencia para Doppler promedio de arterias uterinas: Gómes O. UOG 2008; 32:128<br>** Referencia para Doppler de arteria umbilical, C Media y CCP Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127<br>*** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div>";
+	var InformeString = "<h3>Evaluación de flujometria doppler materno fetal</h3><p><strong>Paciente Sra. (Srta.):</strong> :PACIENTE</span>      <strong>Fecha de Exámen:</strong> :FEXAMEN</p><p><strong>ID Paciente: </strong>:IDPACIENTE              <strong>Motivo: </strong>:MOTIVO</p><p><strong>FUM: </strong> :FUM<br><strong>Ege: </strong> :EG semanas<br><strong>FPP: </strong> :FPP</p></div><div class='container'><p><strong>Antecedentes y descripción general del feto y anexos ovulares</strong></p><p>Motivo del exámen: :MOTIVODOPPLER<br>Antecedentes Obstétricos: :ANTECEDENTES<br>Feto en Presentación: :PRESENTACION<br>Motilidad Fetal: :MOTILIDAD<br>Ubicación Placentaria: :UBICACION<br>Líquido Amniótico***: :LIQUIDO<br>Medida única de BVM***: :BVM</p></div><div class='container'><table class='table'><thead><tr><th>Flujometrías</th><th>Medidas</th><th>IP Referencia para E.G.</th><th>Percentiles de IP</th></tr></thead><tbody><tr><td>Arteria Uterina Derecha*</td><td>:UD</td><td>:UDRGO</td><td>:UDTXT</td></tr><tr><td>Arteria Uterina Izquierda*</td><td>:UI</td><td>:UIRGO</td><td>:UITXT</td></tr><tr><td>Prom. Arterias Uterinas*</td><td>:UPROM</td><td>:UPROMRGO</td><td>:UPROMTXT</td></tr><tr><td>Arteria Umbilical**</td><td>:AU</td><td>:AURGO</td><td>:AUTXT</td></tr><tr><td>Arteria Cerebral Media**</td><td>:ACM</td><td>:ACMRGO</td><td>:ACMTXT</td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td>Relación CCP**</td><td>:CCP</td><td>:CCPRGO</td><td>:CCPTXT</td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table></div><div class='container'><p><strong>Comentarios y observaciones</strong></p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container'><p class='text-right top40' style='margin-right:100px;'>Ecografista: :ECOGRAFISTA</p><p class='pie-pagina'>* Referencia para Doppler promedio de arterias uterinas: Gómes O. UOG 2008; 32:128<br>** Referencia para Doppler de arteria umbilical, C Media y CCP Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127<br>*** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div>";
 
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
@@ -444,11 +444,23 @@ function crearInformeDoppler(){
 	var ubicacion = $( '#ubicacion-doppler').val();
 	var liquido = $( '#liq-amnio-doppler').val();
 	var ud = $( '#aud').val();
+	var udTxt = $( '#audPctTxt').val();
+	var udRgo = $( '#audRngo').val();
 	var ui = $( '#aui').val();
+	var uiTxt = $( '#auiPctTxt').val();
+	var uiRgo = $( '#auiRngo').val();
 	var uprom = $( '#auprom').val();
+	var upromTxt = $( '#auPctTxt').val();
+	var upromRgo = $( '#auRngo').val();
 	var au = $( '#ipau').val();
+	var auTxt = $( '#ipauPctTxt').val();
+	var auRgo = $( '#ipauRngo').val();
 	var acm = $( '#ipacm').val();
+	var acmTxt = $( '#ipacmPctTxt').val();
+	var acmRgo = $( '#ipacmRngo').val();
 	var ccp = $( '#ccp').val();
+	var ccpTxt = $( '#ccpPctTxt').val();
+	var ccpRgo = $( '#ccpRngo').val();
 	
 	
 	InformeString = InformeString.replace(":PACIENTE", paciente);
@@ -468,11 +480,23 @@ function crearInformeDoppler(){
 	InformeString = InformeString.replace(":LIQUIDO", liquido);
 	InformeString = InformeString.replace(":BVM", bvm);
 	InformeString = InformeString.replace(":UD", ud);
+	InformeString = InformeString.replace(":UDRGO", udRgo);
+	InformeString = InformeString.replace(":UDTXT", udTxt);
 	InformeString = InformeString.replace(":UI", ui);
+	InformeString = InformeString.replace(":UIRGO", uiRgo);
+	InformeString = InformeString.replace(":UITXT", uiTxt);
 	InformeString = InformeString.replace(":UPROM", uprom);
+	InformeString = InformeString.replace(":UPROMRGO", upromRgo);
+	InformeString = InformeString.replace(":UPROMTXT", upromTxt);
 	InformeString = InformeString.replace(":AU", au);
+	InformeString = InformeString.replace(":AURGO", auRgo);
+	InformeString = InformeString.replace(":AUTXT", auTxt);
 	InformeString = InformeString.replace(":ACM", acm);
+	InformeString = InformeString.replace(":ACMRGO", acmRgo);
+	InformeString = InformeString.replace(":ACMTXT", acmTxt);
 	InformeString = InformeString.replace(":CCP", ccp);
+	InformeString = InformeString.replace(":CCPRGO", ccpRgo);
+	InformeString = InformeString.replace(":CCPTXT", ccpTxt);
 	InformeString = InformeString.replace(":COMENTARIO", comentario);
 	
 	imprInforme(InformeString);
