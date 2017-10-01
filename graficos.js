@@ -1200,7 +1200,7 @@ $( '#graficoAud' ).on( 'click', function() {
             text: 'IP Arterias Uterinas Derecha',
             x: -20,
                 style: {
-            fontSize: '12px'
+            fontSize: '10px'
         }
         },
         plotOptions: {
@@ -1271,7 +1271,7 @@ $( '#graficoAui' ).on( 'click', function() {
             text: 'IP Arterias Uterinas Izquierda',
             x: -20,
                 style: {
-            fontSize: '12px'
+            fontSize: '10px'
         }
         },
         plotOptions: {
@@ -1343,7 +1343,7 @@ $( '#graficoAu' ).on( 'click', function() {
             text: 'IP Promedio Arteria Uterinas',
             x: -20,
                 style: {
-            fontSize: '12px'
+            fontSize: '10px'
         }
         },
         plotOptions: {
@@ -1414,7 +1414,7 @@ $( '#graficoIpau' ).on( 'click', function() {
              text: 'IP Arteria Umbilical **',
              x: -20, //center
                  style: {
-            fontSize: '12px'
+            fontSize: '10px'
         }
          },
          plotOptions: {
@@ -1484,7 +1484,7 @@ $( '#graficoIpacm' ).on( 'click', function() {
              text: 'IP Arteria Cerebral Media **',
              x: -20,
                 style: {
-            fontSize: '12px'
+            fontSize: '10px'
         }
          },
          plotOptions: {
@@ -1991,7 +1991,10 @@ $( '#infDoppler1' ).on( 'click', function() {
     $('#graficoIpArtUtView').highcharts({
         title: {
             text: 'IP Promedio Arteria Uterinas',
-            x: -20
+            x: -20,
+                 style: {
+            fontSize: '10px'
+        }
         },
         plotOptions: {
             series: {
@@ -2056,7 +2059,10 @@ $( '#infDoppler1' ).on( 'click', function() {
     $('#graficoIpArtUmbView').highcharts({
          title: {
              text: 'IP Arteria Umbilical **',
-             x: -20 //center
+             x: -20, //center
+                  style: {
+            fontSize: '10px'
+        }
          },
          plotOptions: {
              series: {
@@ -2119,7 +2125,10 @@ $( '#infDoppler1' ).on( 'click', function() {
     $('#graficoIpArtCMView').highcharts({
         title: {
              text: 'IP Arteria Cerebral Media **',
-             x: -20
+             x: -20,
+                 style: {
+            fontSize: '10px'
+        }
          },
          plotOptions: {
              series: {
@@ -2185,7 +2194,10 @@ $( '#infDoppler1' ).on( 'click', function() {
     $('#graficoIpCCPView').highcharts({
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
-             x: -20 //center
+             x: -20, //center
+                  style: {
+            fontSize: '10px'
+        }
          },
          plotOptions: {
              series: {
