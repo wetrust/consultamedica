@@ -1636,8 +1636,8 @@ function pctut() {
 			dos=uti - pct5[eg];
 			$('#auiPct').val(parseInt(90 / (uno) * (dos) + 5));
 			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "auiPct");
-			$("#audPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
-                        $("#audRngo").val(pct5[eg] + " - " + pct95[eg]);
+			$("#auiPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+                        $("#auiRngo").val(pct5[eg] + " - " + pct95[eg]);
 		}
 		if ($("#aud").val() && $("#aui").val()){
 			uno = pct95[eg] - pct5[eg];
@@ -1670,7 +1670,7 @@ function imprSelec(muestra)
 function imprInforme(muestra)
 {
 	var ficha= muestra;
-	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container">:DATOS</div>:FUNCION</body></html>';
+	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container" style="margin-top:50px;">:DATOS</div>:FUNCION</body></html>';
 	var ventimp=window.open(" ","popimpr");
 	var estilo = '<style>@media print {*{margin:0; padding:0; border:0;} p, th, td {font-size:11px;line-height:17px;margin-bottom:7px;} th, td{ margin:0 !important;padding:0 !important;} .pie-pagina{font-size:7px;}#lineclear{clear:both;} h3{font-size: 130%; text-align:center;} h3::first-letter {font-size: 130%;}</style>';
 	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
