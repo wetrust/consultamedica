@@ -1117,6 +1117,8 @@ dv = dv.toString();
       var uno=pct95[eg] - pct5[eg];
       var dos=dv - pct5[eg];
       ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "dvPct");
+      $("#dvPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+      $("#dvRngo").val( pct5[eg] + " - " + pct95[eg]);
  }
 
 }
@@ -1190,6 +1192,9 @@ function pctau() {
 		var dos=aumb - pct5[eg];
 		ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ipauPct");
 		
+		$("#ipacmPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+                $("#ipacmRngo").val(pct5[eg] + " - " + pct95[eg]);
+		
 		if ($('#ipacm').val()){
 			var ccp = ($('#ipacm').val() / $('#ipau').val());
 
@@ -1200,6 +1205,9 @@ function pctau() {
 			dos = ccp - xpct5[eg];
 
 			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ccpPct");
+			$("#ccpPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+                        $("#ccpRngo").val(xpct5[eg] + " - " + xpct95[eg]);
+			
 		}
 	}
 }
@@ -1264,6 +1272,8 @@ function pctacm() {
 		var dos = acm - pct5[eg];
  
 		ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ipacmPct");
+		$("#ipacmPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+                $("#ipacmRngo").val(pct5[eg] + " - " + pct95[eg]);
 
 		if ($('#ipau').val()){
 			var ccp = (acm / $('#ipau').val());
@@ -1275,6 +1285,8 @@ function pctacm() {
 			dos = ccp - xpct5[eg];
 
 			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ccpPct");
+			$("#ipacmPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+                        $("#ipacmRngo").val(xpct5[eg] + " - " + xpct95[eg]);
 		}
 	}
 }
@@ -1591,6 +1603,8 @@ function pctut() {
 			uno=pct95[eg] - pct5[eg];
 			dos=utd - pct5[eg];
 			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "audPct");
+			$("#audPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+                        $("#audRngo").val(pct5[eg] + " - " + pct95[eg]);
 		}
 		if (uti > 0){
 			eg = parseInt(eg);
@@ -1598,12 +1612,16 @@ function pctut() {
 			dos=uti - pct5[eg];
 			$('#auiPct').val(parseInt(90 / (uno) * (dos) + 5));
 			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "auiPct");
+			$("#audPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+                        $("#audRngo").val(pct5[eg] + " - " + pct95[eg]);
 		}
 		if ($("#aud").val() && $("#aui").val()){
 			uno = pct95[eg] - pct5[eg];
 			dos = utprom - pct5[eg];
 			$('#auPct').val(parseInt(90 / (uno) * (dos) + 5));
 			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "auPct");
+			$("#auiPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+                        $("#auiRngo").val(pct5[eg] + " - " + pct95[eg]);
 		}
 	 }
 }
