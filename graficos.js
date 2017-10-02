@@ -2024,7 +2024,7 @@ $( '#infDoppler1' ).on( 'click', function() {
             data: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
         }, {
             type: "line",
-                name: 'Arteria Promedio',
+                name: 'Promedio Uterinas',
                 dashStyle: "Dot",
                 marker: { symbol: 'square' },
                 lineWidth: 0,
@@ -2092,7 +2092,7 @@ $( '#infDoppler1' ).on( 'click', function() {
              data: [1.6,1.56,1.53,1.5,1.46,1.43,1.4,1.37,1.35,1.32,1.29,1.27,1.25,1.22,1.2,1.18,1.16,1.14,1.13,1.11,1.09]
          }, {
              type: "line",
-             name: 'Arteria',
+             name: 'Arteria Umbilical',
              dashStyle: "Dot",
              marker: { symbol: 'square' },
              lineWidth: 0,
@@ -2160,7 +2160,7 @@ $( '#infDoppler1' ).on( 'click', function() {
              data: [1.98,2.12,2.25,2.36,2.45,2.53,2.59,2.63,2.66,2.67,2.67,2.65,2.62,2.56,2.5,2.41,2.31,2.2,2.07,1.92,1.76]
          }, {
              type: "line",
-             name: 'Arteria',
+             name: 'Arteria C. Media',
              dashStyle: "Dot",
              marker: { symbol: 'square' },
              lineWidth: 0,
@@ -2228,7 +2228,7 @@ $( '#infDoppler1' ).on( 'click', function() {
              data: [1.68,1.88,2.06,2.22,2.36,2.49,2.6,2.7,2.78,2.84,2.89,2.92,2.93,2.93,2.91,2.87,2.82,2.75,2.67,2.57,2.45]
          }, {
              type: "line",
-             name: 'Cuociente',
+             name: 'Cuociente CP.',
              dashStyle: "Dot",
              marker: { symbol: 'square' },
              lineWidth: 0,
