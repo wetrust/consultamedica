@@ -165,7 +165,7 @@ $( "#psmACM" ).keypress(function( event ) {
   }
 });
 
-$( "#bvm-doppler" ).change(function(){
+$( "#bvmDoppler" ).change(function(){
 	bvmDoppler();
 });
 
@@ -1446,7 +1446,7 @@ function bvmDoppler() {
  var bvm=0;
  
  eg=parseFloat(localStorage.eg);
- bvm=parseInt($("#bvm-doppler").val());
+ bvm=parseInt($("#bvmDoppler").val());
  
  if (eg < 16) {  
   //
@@ -1462,13 +1462,13 @@ function bvmDoppler() {
   var dos=bvm - pct5[eg];
   $("#pctbvm-doppler").val(parseInt(90 / (uno) * (dos) + 5));
   if ( bvm <= pct5[eg]){
-	 $("#liq-amnio-doppler").val("disminuido"); 
+	 $("#liqAmnioDoppler").val("disminuido"); 
   }
   else if ( bvm <= pct95[eg]){
-  	$("#liq-amnio-doppler").val("normal");
+  	$("#liqAmnioDoppler").val("normal");
   }
   else{
-  	$("#liq-amnio-doppler").val("Aumentado");
+  	$("#liqAmnioDoppler").val("Aumentado");
   }
  }
 }
