@@ -1445,7 +1445,7 @@ function bvmDoppler() {
  var bvm=0;
  
  eg=parseFloat(localStorage.eg);
- bvm=parseInt($("#bvm-doppler").val();
+ bvm=parseInt($("#bvm-doppler").val());
  
  if (eg < 16) {  
   //
