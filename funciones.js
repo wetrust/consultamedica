@@ -165,9 +165,10 @@ $( "#psmACM" ).keypress(function( event ) {
   }
 });
 
-$("#bvm-doppler").on('change', function(){
+$( "#bvm-doppler" ).change(function(){
 	bvmDoppler();
 });
+
 function show_hide(id){1
   if (document.getElementById){
     var el = document.getElementById(id);
