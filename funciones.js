@@ -1459,7 +1459,7 @@ function bvmDoppler() {
   eg = parseInt(eg);
   var uno=pct95[eg] - pct5[eg];
   var dos=bvm - pct5[eg];
-  $("#pctbvm-doppler").val(parseInt(90 / (uno) * (dos) + 5));
+  $("#pctbvmDoppler").val(parseInt(90 / (uno) * (dos) + 5));
   if ( bvm <= pct5[eg]){
 	 $("#liqAmnioDoppler").val("disminuido"); 
   }
@@ -1467,7 +1467,7 @@ function bvmDoppler() {
   	$("#liqAmnioDoppler").val("normal");
   }
   else{
-  	$("#liqAmnioDoppler").val("Aumentado");
+  	$("#liqAmnioDoppler").val("aumentado");
   }
  }
 }
