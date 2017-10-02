@@ -194,7 +194,11 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
-			console.log(aplication.day);
+
+			var day = ("0" + aplication.day.getDate()).slice(-2);
+			var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
+
+			console.log((day)+"/"+(month)+"/"+aplication.day.getFullYear());
 			
 		}
 	}
