@@ -315,10 +315,10 @@ function crearInformeEcoSegTrim1(){
 	InformeString = InformeString.replace(":IC", ic);
 	InformeString = InformeString.replace(":TF", tf);
 	
-	var day = ("0" + this.day.getDate()).slice(-2);
-	var month = ("0" + (this.day.getMonth() + 1)).slice(-2);
+	var day = ("0" + aplication.day.getDate()).slice(-2);
+	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
 
-	var dateInf = (day)+"/"+(month)+"/"+this.day.getFullYear();
+	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
 	
 	InformeString = InformeString.replace(":DATEINFORME", dateInf);
 	
@@ -391,10 +391,10 @@ function crearInformeEcoSegTrim2(){
 	var motivo = $( '#motivo-examen').val();
 	var ecografista = $( '#ecografista').val();
 	
-	var day = ("0" + this.day.getDate()).slice(-2);
-	var month = ("0" + (this.day.getMonth() + 1)).slice(-2);
+	var day = ("0" + aplication.day.getDate()).slice(-2);
+	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
 
-	var dateInf = (day)+"/"+(month)+"/"+this.day.getFullYear();
+	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
 
 	var linea1 = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
         var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
@@ -480,10 +480,10 @@ function crearInformeDoppler(){
 	var ccpRgo = $( '#ccpRngo').val();
 	var presentacion = $("#presentacion-doppler").val();
 	
-	var day = ("0" + this.day.getDate()).slice(-2);
-	var month = ("0" + (this.day.getMonth() + 1)).slice(-2);
+	var day = ("0" + aplication.day.getDate()).slice(-2);
+	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
 
-	var dateInf = (day)+"/"+(month)+"/"+this.day.getFullYear();
+	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
 	
 	InformeString = InformeString.replace(":PACIENTE", paciente);
 	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
