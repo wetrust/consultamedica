@@ -165,7 +165,7 @@ $( "#psmACM" ).keypress(function( event ) {
   }
 });
 
-$("#bvm-doppler").on("change", function(){
+$("#bvm-doppler").on('change', function(){
 	bvmDoppler();
 });
 function show_hide(id){1
@@ -1445,7 +1445,7 @@ function bvmDoppler() {
  var bvm=0;
  
  eg=parseFloat(localStorage.eg);
- bvm=parseInt($("#bvm-doppler").val());
+ bvm=parseInt($("#bvm-doppler").val();
  
  if (eg < 16) {  
   //
