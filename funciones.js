@@ -766,10 +766,10 @@ function pctcc() {
  cc=parseInt(document.getElementById("cc").value);
 
  if (eg < 12) {
-         $("#ccPct").val("0");
+         $("#ccPct").val("");
  }
  else if (eg > 40){ 
-         $("#ccPct").val("0");
+         $("#ccPct").val("");
  }
  else {
   eg = eg - 12;
@@ -1304,14 +1304,14 @@ function pctacm() {
 
 	if (eg < 20) {  
 		$('#ipacmPct').val('0');
-		$('#ccp').val('0');
-		$('#ccpPct').val('0');
+		$('#ccp').val('');
+		$('#ccpPct').val('');
 	}
 	else if (eg > 40)
 	{
 		$('#ipacmPct').val('0');
-		$('#ccp').val('0');
-		$('#ccpPct').val('0');
+		$('#ccp').val('');
+		$('#ccpPct').val('');
 	}
 	else {
 		eg = eg - 20;
