@@ -194,6 +194,7 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
+			console.log(aplication.day);
 			
 		}
 	}
