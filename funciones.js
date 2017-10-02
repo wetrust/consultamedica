@@ -165,7 +165,10 @@ $( "#psmACM" ).keypress(function( event ) {
   }
 });
 
-function show_hide(id){
+$("#bvm-doppler").on("change", function(){
+	bvmDoppler();
+});
+function show_hide(id){1
   if (document.getElementById){
     var el = document.getElementById(id);
     el.style.display = (el.style.display == 'none') ? 'block' : 'none';
@@ -436,7 +439,8 @@ function crearInformeDoppler(){
 	var fpp = $( "input[name='fpp']").val();
 	
 	var bvm = $('#bvm-doppler').val();
-	var comentario = $("#comentarios-doppler").val();;
+	var comentario = $("#comentarios-doppler").val();
+	comentario = comentario.replace(/\r?\n/g, "<br>");
 	
 	var motivoDoppler = $( '#motivo-doppler').val();
 	var antecedentes = $( '#antecedentes-doppler').val();
@@ -1413,6 +1417,58 @@ function pctbvm() {
   var dos=bvm - pct5[eg];
 ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "bvmPct");
 
+ }
+}
+
+function bvmDoppler() {
+
+ var pct5 = [];
+ var pct95 = [];
+
+    pct5[0] = 23;    pct5[1] = 25;    pct5[2] = 27;    pct5[3] = 28;
+    pct5[4] = 29;    pct5[5] = 29;    pct5[6] = 30;    pct5[7] = 30;
+    pct5[8] = 30;    pct5[9] = 30;    pct5[10] = 30;    pct5[11] = 30;
+    pct5[12] = 30;    pct5[13] = 29;    pct5[14] = 29;    pct5[15] = 29;
+    pct5[16] = 29;    pct5[17] = 29;    pct5[18] = 28;    pct5[19] = 28;
+    pct5[20] = 27;    pct5[21] = 26;    pct5[22] = 24;    pct5[23] = 23;
+    pct5[24] = 21;
+
+     pct95[0] = 59;     pct95[1] = 62;     pct95[2] = 64;     pct95[3] = 66;
+     pct95[4] = 67;     pct95[5] = 68;     pct95[6] = 68;     pct95[7] = 68;
+     pct95[8] = 68;     pct95[9] = 68;     pct95[10] = 68;     pct95[11] = 69;
+     pct95[12] = 69;     pct95[13] = 69;     pct95[14] = 69;     pct95[15] = 70;
+     pct95[16] = 71;     pct95[17] = 72;     pct95[18] = 72;     pct95[19] = 72;
+     pct95[20] = 71;     pct95[21] = 70;     pct95[22] = 68;     pct95[23] = 66;
+     pct95[24] = 62;
+
+ var eg=0;
+ var bvm=0;
+ 
+ eg=parseFloat(localStorage.eg);
+ bvm=parseInt($("#bvm-doppler").val());
+ 
+ if (eg < 16) {  
+  //
+ }
+ else if (eg > 40)
+ {
+   //
+ }
+ else {
+  eg = eg - 16;
+  eg = parseInt(eg);
+  var uno=pct95[eg] - pct5[eg];
+  var dos=bvm - pct5[eg];
+  $("#pctbvm-doppler").val(parseInt(90 / (uno) * (dos) + 5));
+  if ( bvm <= pct5[eg]){
+	 $("#liq-amnio-doppler").val("disminuido"); 
+  }
+  else if ( bvm <= pct95[eg]){
+  	$("#liq-amnio-doppler").val("normal");
+  }
+  else{
+  	$("#liq-amnio-doppler").val("Aumentado");
+  }
  }
 }
 
