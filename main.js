@@ -65,10 +65,6 @@ var listPaciente = function(results){
      $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));
  });
 
-$( '#bvmDoppler' ).on('change', function(){
-	bvmDoppler();
-});
-
  $( '#talla').on('change', function() {
      $("#imc").val(aplication.imc($(this).val(), $("#peso").val()));
      $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));
