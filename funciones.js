@@ -165,7 +165,7 @@ $( "#psmACM" ).keypress(function( event ) {
   }
 });
 
-function show_hide(id){1
+function show_hide(id){
   if (document.getElementById){
     var el = document.getElementById(id);
     el.style.display = (el.style.display == 'none') ? 'block' : 'none';
@@ -315,6 +315,13 @@ function crearInformeEcoSegTrim1(){
 	InformeString = InformeString.replace(":IC", ic);
 	InformeString = InformeString.replace(":TF", tf);
 	
+	var day = ("0" + this.day.getDate()).slice(-2);
+	var month = ("0" + (this.day.getMonth() + 1)).slice(-2);
+
+	var dateInf = (day)+"/"+(month)+"/"+this.day.getFullYear();
+	
+	InformeString = InformeString.replace(":DATEINFORME", dateInf);
+	
 	InformeString = InformeString.replace(":LINEA1", linea1);
 	InformeString = InformeString.replace(":LINEA2", linea2);
 	InformeString = InformeString.replace(":LINEA3", linea3);
@@ -383,6 +390,11 @@ function crearInformeEcoSegTrim2(){
 	var idpaciente = $( '#id-paciente').val();
 	var motivo = $( '#motivo-examen').val();
 	var ecografista = $( '#ecografista').val();
+	
+	var day = ("0" + this.day.getDate()).slice(-2);
+	var month = ("0" + (this.day.getMonth() + 1)).slice(-2);
+
+	var dateInf = (day)+"/"+(month)+"/"+this.day.getFullYear();
 
 	var linea1 = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
         var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
@@ -419,6 +431,7 @@ function crearInformeEcoSegTrim2(){
 	InformeString = InformeString.replace(":LINEA4", linea4);
 	InformeString = InformeString.replace(":LINEA5", linea5);
 	InformeString = InformeString.replace(":LINEA6", linea6);
+	InformeString = InformeString.replace(":DATEINFORME", dateInf);
 	
 	imprInforme(InformeString);
 	
@@ -467,6 +480,11 @@ function crearInformeDoppler(){
 	var ccpRgo = $( '#ccpRngo').val();
 	var presentacion = $("#presentacion-doppler").val();
 	
+	var day = ("0" + this.day.getDate()).slice(-2);
+	var month = ("0" + (this.day.getMonth() + 1)).slice(-2);
+
+	var dateInf = (day)+"/"+(month)+"/"+this.day.getFullYear();
+	
 	InformeString = InformeString.replace(":PACIENTE", paciente);
 	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
 	InformeString = InformeString.replace(":MOTIVO", motivo);
@@ -503,6 +521,7 @@ function crearInformeDoppler(){
 	InformeString = InformeString.replace(":CCPRGO", ccpRgo);
 	InformeString = InformeString.replace(":CCPTXT", ccpTxt);
 	InformeString = InformeString.replace(":COMENTARIO", comentario);
+	InformeString = InformeString.replace(":DATEINFORME", dateInf);
 	
 	imprInforme(InformeString);
 	
