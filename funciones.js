@@ -785,6 +785,7 @@ function calcdof(){
 			$('#dofPctRpt').val(resultado);
 			$('#dof-dbp').val(valor.toFixed(0) + "%");
 			$('#ic').val(valor.toFixed(0) + "%");
+			$('#cc').val(valCC(dof,dbp));
 		}
 		else{
 			$('#dof-dbp').val("0");
@@ -1941,4 +1942,9 @@ function ipn() {
 
         }
     }
+}
+
+function valCC(dof,dbp){
+    var delta = 1.62;
+    return (dof + dbp) * delta;
 }
