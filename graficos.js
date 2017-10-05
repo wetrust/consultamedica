@@ -1988,7 +1988,8 @@ $( '#infDoppler1' ).on( 'click', function() {
     $( '#impEcoObsSegTrim1').remove();
     $( '#impDoppler3').remove();
     $( '#impDoppler2').remove();
-    $('#graficoIpArtUtView').highcharts({
+    //$('#graficoIpArtUtView').highcharts({
+    graficoUno = Highcharts.chart('graficoIpArtUtView', {
         title: {
             text: 'IP Promedio Arteria Uterinas',
             x: -20,
@@ -2056,7 +2057,9 @@ $( '#infDoppler1' ).on( 'click', function() {
                 }())
             }]
     });
-    $('#graficoIpArtUmbView').highcharts({
+    
+    //$('#graficoIpArtUmbView').highcharts({
+    graficoDos = Highcharts.chart('graficoIpArtUmbView', {
          title: {
              text: 'IP Arteria Umbilical **',
              x: -20, //center
@@ -2122,7 +2125,8 @@ $( '#infDoppler1' ).on( 'click', function() {
              }())
          }]
     });
-    $('#graficoIpArtCMView').highcharts({
+    //$('#graficoIpArtCMView').highcharts({
+    graficoTres = Highcharts.chart('graficoIpArtCMView', {
         title: {
              text: 'IP Arteria Cerebral Media **',
              x: -20,
@@ -2191,7 +2195,8 @@ $( '#infDoppler1' ).on( 'click', function() {
              }())
          }]
     });
-    $('#graficoIpCCPView').highcharts({
+    //$('#graficoIpCCPView').highcharts({
+    graficoCuatro = Highcharts.chart('graficoIpCCPView', {
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
              x: -20, //center
