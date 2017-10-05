@@ -186,6 +186,8 @@ $( document ).ready(function() {
 	else{
 		aplication = new app();
 		
+		graficoUno, graficoDos,graficoTres, graficoCuatro;
+		
 		if (aplication.checkBrowser == false){
 			console.log(aplication.strings.error.browser);
 		}
