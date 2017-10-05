@@ -1035,7 +1035,7 @@ function pctlh() {
 		var uno = pct95[eg] - pct05[eg];
 		var dos = lh - pct05[eg];
 		var resultado = (parseInt(95 / (uno) * (dos) + 5));
-		$('#lhPctRpt').val((parseInt(95 / (uno) * (dos)));
+		$('#lhPctRpt').val(parseInt(95 / (uno) * (dos)));
 		 ajustarProgreso(resultado, "lhPct");
 		p50();
 	}
