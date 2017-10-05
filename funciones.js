@@ -989,8 +989,9 @@ var pct2dsmas = [];
   eg = parseInt(eg);
   var uno=pct2dsmas[eg] - pct2ds[eg];
   var dos=cb - pct2ds[eg];
-	 ajustarProgreso(parseInt(95 / (uno) * (dos)), "cerebeloPct");
 	 $('#cerebeloPctRpt').val(parseInt(95 / (uno) * (dos)));
+	 ajustarProgreso(parseInt(95 / (uno) * (dos)), "cerebeloPct");
+	 
 	 p50();
  }
 };
