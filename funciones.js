@@ -192,10 +192,10 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 });
 
 $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
-	var cb = $('#cerebelo').val();
-	var lh = $('#lh').val();
+	var cb = parseInt($('#cerebelo').val());
+	var lh = parseInt($('#lh').val());
 	
-	if (cb < 0 || lh < 0){
+	if (cb == 0 || lh == 0){
 		alert("Debes ingresar Cerebelo y Largo humeral");
 		$('#lh').focus();
 		return;
