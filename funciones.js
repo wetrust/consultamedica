@@ -196,7 +196,7 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 	var lh = parseInt($('#lh').val());
 	
 	if (isNaN(cb) || isNaN(lh)){
-		alert("Debes ingresar Cerebelo y Largo humeral");
+		alert("Para calcular Edad Gestacional, debe ingresar las variables Largo humeral y Cerebelo");
 		$('#lh').focus();
 		return;
 	}
