@@ -2024,7 +2024,8 @@ $( '#infDoppler1' ).on( 'click', function() {
         },
         legend: {
             itemStyle: {
-                fontSize: '10px'
+                fontSize: '10px',
+                fontWeight:'normal'
             }
         },
         yAxis: {
@@ -2103,6 +2104,12 @@ $( '#infDoppler1' ).on( 'click', function() {
          xAxis: {
              categories:['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
          },
+         legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
          credits: { enabled: false },
          series: [{
              type: "line",
@@ -2170,6 +2177,12 @@ $( '#infDoppler1' ).on( 'click', function() {
          xAxis: {
              categories: ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
          },
+         legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
          credits: {
              enabled: false
          },
@@ -2236,6 +2249,12 @@ $( '#infDoppler1' ).on( 'click', function() {
              title: { text: 'Valor IP' },
              tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
          },
+         legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
          colors: ['#313131', '#313131', '#313131'],
          xAxis: {
              categories:
