@@ -785,7 +785,7 @@ function calcdof(){
 			$('#dofPctRpt').val(resultado);
 			$('#dof-dbp').val(valor.toFixed(0) + "%");
 			$('#ic').val(valor.toFixed(0) + "%");
-			$('#cc').val(valCC(dof,dbp));
+			$('#cc').val(valCC(dof,dbp)).trigger('change');
 		}
 		else{
 			$('#dof-dbp').val("0");
