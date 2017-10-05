@@ -777,10 +777,11 @@ function calcdof(){
 			DOF95PCT[38]=119; DOF95PCT[39]=121; DOF95PCT[40]=122;
 
 			var uno = DOF95PCT[eg] - DOF05PCT[eg];
-			var dos = dbp - DOF05PCT[eg];
+			var dos = valor - DOF05PCT[eg];
 			var resultado = (parseInt(95 / (uno) * (dos) + 3));
 			ajustarProgreso(resultado, "dofPct");
-			$('#dof-dbp').val(valor.toFixed(0) + "%"); resultado
+			$('#dofPctRpt').val(resultado);
+			$('#dof-dbp').val(valor.toFixed(0) + "%");
 			$('#ic').val(valor.toFixed(0) + "%");
 		}
 		else{
