@@ -1984,23 +1984,22 @@ $( '#infDoppler1' ).on( 'click', function() {
     $( '#impDoppler1').on("click", function(){
       graficoUno.update({
         chart: {
-            height: 800
+            height: 300
         }
       });
-      graficoUno.redraw() 
       graficoDos.update({
         chart: {
-            height: 800
+            height: 300
         }
       });
       graficoTres.update({
         chart: {
-            height: 800
+            height: 300
         }
       });
       graficoCuatro.update({
         chart: {
-            height: 800
+            height: 300
         }
       });
       imprSelec("popupBody");
