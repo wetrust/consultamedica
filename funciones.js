@@ -1945,6 +1945,6 @@ function ipn() {
 }
 
 function valCC(dof,dbp){
-    var delta = 1.62;
-    return (dof + dbp) * delta;
+    var delta = parseFloat(1.62);
+    return round((parseInt(dof) + parseInt(dbp)) * delta);
 }
