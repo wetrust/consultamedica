@@ -299,10 +299,10 @@ function crearInformeEcoSegTrim1(){
 	var lf = $( '#lf').val();
 	var lfPct = $( '#lfPctRpt').val();
 	var pfe = $( '#pfe').val();
-	var pfePct = $( '#pfePctRpt').val();
+	var pfePct = parseInt($( '#pfePctRpt').val());
 	var ic = $( '#dof-dbp').val();
 	var tf = $( '#tallaFetal').val();
-	var tfPct = $( '#tallaFetalRpt').val();
+	var tfPct = $( '#tallaPctRpt').val();
 	
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
