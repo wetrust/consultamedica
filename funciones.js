@@ -195,7 +195,7 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 	var cb = parseInt($('#cerebelo').val());
 	var lh = parseInt($('#lh').val());
 	
-	if (cb == 0 || lh == 0){
+	if (isNan(cb) || isNan(lh)){
 		alert("Debes ingresar Cerebelo y Largo humeral");
 		$('#lh').focus();
 		return;
