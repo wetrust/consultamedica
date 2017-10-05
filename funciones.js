@@ -1778,12 +1778,6 @@ function p50() {
     N = new Number(c1 * Math.pow(c2, lf));
     lf =  Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
 
-    var cb = $('#cerebelo').val();
-    cb = cb / 10;
-    var egHill = 6.37+(5.4*cb)+(0.78*Math.pow(cb,2))-(0.13*Math.pow(cb,3));
-    //añadir mayor presicion, ya se suma 1 dia
-    cb = Math.round( egHill * 10 ) / 10;
-
     var  humeroPromedioDE = [];
 
     humeroPromedioDE[10]=12.4;humeroPromedioDE[11]=12.6;humeroPromedioDE[12]=13.1;humeroPromedioDE[13]=13.4;
@@ -1801,15 +1795,19 @@ function p50() {
     humeroPromedioDE[58]=33.4;humeroPromedioDE[59]=34.1;humeroPromedioDE[60]=34.6;humeroPromedioDE[61]=35.2;
     humeroPromedioDE[62]=35.6;humeroPromedioDE[63]=36.4;humeroPromedioDE[64]=37.1;humeroPromedioDE[65]=37.5;
     humeroPromedioDE[66]=38.2;humeroPromedioDE[67]=38.6;humeroPromedioDE[68]=39.4;humeroPromedioDE[69]=40.1;
-     
-    var lh = parseInt($('#lh').val());
-    lh =  humeroPromedioDE[lh];
 
      var dbpdias = (Math.floor(dbp) * 7) + ((dbp - Math.floor(dbp)) * 10);
      var ccdias = (Math.floor(cc) * 7) + ((cc - Math.floor(cc)) * 10);
      var lfdias = (Math.floor(lf) * 7) + ((lf - Math.floor(lf)) * 10);
 
-     if (cb > 0) {
+    var cb = $('#cerebelo').val();
+
+    if (cb > 0) {
+        cb = cb / 10;
+        var egHill = 6.37+(5.4*cb)+(0.78*Math.pow(cb,2))-(0.13*Math.pow(cb,3));
+        //añadir mayor presicion, ya se suma 1 dia
+        cb = Math.round( egHill * 10 ) / 10;
+	
         var cbdias = (Math.floor(cb) * 7) + ((cb - Math.floor(cb)) * 10);
         egbio = (ccdias + lfdias + cbdias) /3;
      }
@@ -1817,7 +1815,9 @@ function p50() {
         egbio = (dbpdias + ccdias + lfdias) /3;
      }
 
+     var lh = parseInt($('#lh').val());
      if (lh > 0) {
+	lh =  humeroPromedioDE[lh];
         var lhdias = (Math.floor(lh) * 7) + ((lh - Math.floor(lh)) * 10);
         egbio = (lhdias + egbio) /2;
      }
