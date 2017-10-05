@@ -290,10 +290,14 @@ function crearInformeEcoSegTrim1(){
 	var eg = $( "input[name='eg']").val();
 	var fpp = $( "input[name='fpp']").val();
 	var dbp = $( '#dbp').val();
+	var dbpPct = $( '#dbpPct').val();
 	var dof = $( '#dof').val();
 	var cc = $( '#cc').val();
+	var ccPct = $( '#ccPctRpt').val();
 	var ca = $( '#ca').val();
+	var caPct = $( '#caPctRpt').val();
 	var lf = $( '#lf').val();
+	var lfPct = $( '#lfPctRpt').val();
 	var pfe = $( '#pfe').val();
 	var ic = $( '#dof-dbp').val();
 	var tf = $( '#tallaFetal').val();
@@ -316,10 +320,14 @@ function crearInformeEcoSegTrim1(){
 	InformeString = InformeString.replace(":EG", eg);
 	InformeString = InformeString.replace(":FPP", fpp);
 	InformeString = InformeString.replace(":DBP", dbp);
+	InformeString = InformeString.replace(":DBPPCT", dbpPct);
 	InformeString = InformeString.replace(":DOF", dof);
 	InformeString = InformeString.replace(":CC", cc);
+	InformeString = InformeString.replace(":CCPCT", ccPct);
 	InformeString = InformeString.replace(":CA", ca);
+	InformeString = InformeString.replace(":CAPCT", caPct);
 	InformeString = InformeString.replace(":LF", lf);
+	InformeString = InformeString.replace(":LFPCT", lfPct);
 	InformeString = InformeString.replace(":PFE", pfe);
 	InformeString = InformeString.replace(":IC", ic);
 	InformeString = InformeString.replace(":TF", tf);
@@ -982,7 +990,7 @@ var pct2dsmas = [];
   var uno=pct2dsmas[eg] - pct2ds[eg];
   var dos=cb - pct2ds[eg];
 	 ajustarProgreso(parseInt(95 / (uno) * (dos)), "cerebeloPct");
-	 $('#cerebeloPctRpt').val((parseInt(95 / (uno) * (dos)));
+	 $('#cerebeloPctRpt').val((parseInt(95 / (uno) * (dos));
 	 p50();
  }
 };
