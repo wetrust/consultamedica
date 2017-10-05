@@ -696,10 +696,12 @@ function deDBP() {
 
 	if (eg < 12) {
 		$("#dbpDE").val('0');
+		$('#dbpPct').val('0');
 	}
 	else if (eg > 40)
 	{
 		$("#dbpDE").val('0');
+		$('#dbpPct').val('0');
 	}
 	else {
 		eg = eg - 12;
@@ -709,6 +711,7 @@ function deDBP() {
 		var dos = dbp - DBPMenos2DE[eg];
 		var resultado = (parseInt(95 / (uno) * (dos) + 3));
 		ajustarProgreso(resultado, "dbpDE");
+		$('#dbpPct').val(resultado);
 		p50();
 	}
 	
@@ -776,9 +779,11 @@ function pctcc() {
 
  if (eg < 12) {
          $("#ccPct").val("");
+	 $('#ccPctRpt').val("");
  }
  else if (eg > 40){ 
          $("#ccPct").val("");
+	 $('#ccPctRpt').val("");
  }
  else {
   eg = eg - 12;
@@ -786,6 +791,7 @@ function pctcc() {
   var uno=pct97[eg] - pct3[eg];
   var dos=cc - pct3[eg];
   ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "ccPct");
+	 $('#ccPctRpt').val(parseInt(95 / (uno) * (dos) + 3));
 	 psohdlk();
 	 p50();
  }
@@ -817,9 +823,11 @@ function pctca() {
 
  if (eg < 12) {
          $("#caPct").val("0");
+	 $('#caPctRpt').val("0");
  }
  else if (eg > 40){ 
          $("#caPct").val("0");
+	 $('#caPctRpt').val("0");
  }
  else {
   eg = eg - 12;
@@ -827,6 +835,7 @@ function pctca() {
   var uno=pct97[eg] - pct3[eg];
   var dos=ca - pct3[eg];
 	 ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "caPct");
+	 $('#caPctRpt').val(parseInt(95 / (uno) * (dos) + 3));
 	 psohdlk();
 	 p50();
  }
@@ -857,9 +866,11 @@ function pctlf() {
 
  if (eg < 12) {
          $("#lfPct").val("0");
+	 $('#lfPctRpt').val("0");
  }
  else if (eg > 40){ 
          $("#lfPct").val("0");
+	 $('#lfPctRpt').val("0");
  }
  else {
   eg = eg - 12;
@@ -867,6 +878,7 @@ function pctlf() {
   var uno=pct97[eg] - pct3[eg];
   var dos=lf - pct3[eg];
 	 ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "lfPct");
+	 $('#lfPctRpt').val(parseInt(95 / (uno) * (dos) + 3));
 	 p50();
 	 $('#tallaFetal').val(parseInt(lf * 0.55 + 9.6));
 	 //$('#tallaFetal').val(parseInt(6.18+5.9*lf/10));
@@ -961,16 +973,16 @@ var pct2dsmas = [];
  eg=parseFloat(localStorage.eg);
  cb=parseInt(document.getElementById("cerebelo").value);
 
- if (eg < 15) {$("#cbPct").val("0");}
- else if (eg > 40){$("#cbPct").val("0");}
+ if (eg < 15) {$("#cbPct").val("0");$('#cerebeloPctRpt').val("0")}
+ else if (eg > 40){$("#cbPct").val("0");$('#cerebeloPctRpt').val("0");}
  else {
 
   eg = eg - 15;
   eg = parseInt(eg);
   var uno=pct2dsmas[eg] - pct2ds[eg];
   var dos=cb - pct2ds[eg];
-  $("#cerebeloPct").val(parseInt(95 / (uno) * (dos)));
 	 ajustarProgreso(parseInt(95 / (uno) * (dos)), "cerebeloPct");
+	 $('#cerebeloPctRpt').val((parseInt(95 / (uno) * (dos)));
 	 p50();
  }
 };
@@ -1003,15 +1015,18 @@ function pctlh() {
 
         if (eg < 12) {
         	$("#lhPct").val('0');
+		$('#lhPctRpt').val('0');
         }
         else if (eg > 40) {
         	$("#lhPct").val('0');
+		$('#lhPctRpt').val('0');
         }
         else {
         	eg = parseInt(eg);
 		var uno = pct95[eg] - pct05[eg];
 		var dos = lh - pct05[eg];
 		var resultado = (parseInt(95 / (uno) * (dos) + 5));
+		$('#lhPctRpt').val((parseInt(95 / (uno) * (dos)));
 		 ajustarProgreso(resultado, "lhPct");
 		p50();
 	}
