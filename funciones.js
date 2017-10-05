@@ -196,7 +196,7 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 	var lh = parseInt($('#lh').val());
 	
 	if (isNaN(cb) || isNaN(lh)){
-		alert("Para calcular Edad Gestacional, debe ingresar las variables Largo humeral y Cerebelo");
+		alert("Para calcular Edad Gestacional en edades tardías (> 20 semanas), debe ingresar adicionalmente las variables Largo humeral y Cerebelo");
 		$('#lh').focus();
 		return;
 	}
