@@ -943,6 +943,7 @@ function pctlf() {
           dos=tallaFet -  Pct10Talla[eg];
 		 
           ajustarProgreso(parseInt(80 / (uno) * (dos) + 10), "tallaPct");
+          $('#tallaPctRpt').val(parseInt(80 / (uno) * (dos) + 10));
 		 ipn()
 	 } 
  }
@@ -1425,6 +1426,7 @@ function pctpfe() {
   var dos=pfe - pct10[eg];
   var pctFinal = (80 / (uno) * (dos)) + 10
   ajustarProgreso(pctFinal, "pfePct");
+	 $('#pfePctRpt').val(pctFinal);
  }
 }
 
