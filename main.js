@@ -186,7 +186,10 @@ $( document ).ready(function() {
 	else{
 		aplication = new app();
 		
-		graficoUno, graficoDos,graficoTres, graficoCuatro;
+		graficoUno = null;
+		graficoDos = null;
+		graficoTres = null;
+		graficoCuatro = null;
 		
 		if (aplication.checkBrowser == false){
 			console.log(aplication.strings.error.browser);
