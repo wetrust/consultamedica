@@ -2918,11 +2918,13 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
         series: [{
             type: "line",
             name: 'Pct. 5',
+            dashStyle: "Dot",
             marker: {enabled:false},
             data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
         }, {
             type: "line",
             name: 'Pct. 95',
+            dashStyle: "Dot",
             marker: { enabled: false },
             data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
         }, {
@@ -2979,11 +2981,13 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
        series: [{
            type: "line",
            name: 'Pct. 3',
+           dashStyle: "Dot",
            marker: { enabled: false },
            data: [6,9,12,14,17,20,22,25,27,30,32,35,37,40,42,45,47,49,52,54,56,58,59,61,62,64,65,66,67]
        }, {
            type: "line",
            name: 'Pct. 97',
+           dashStyle: "Dot",
            marker: { enabled: false },
            data: [12,15,18,21,24,28,31,34,38,41,44,47,50,53,55,57,60,62,65,67,70,71,73,75,77,79,80,81,82]
        }, {
@@ -3037,11 +3041,13 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
             series: [{
                 type: "line",
                 name: 'Pct. 5',
+                dashStyle: "Dot",
                 marker: { enabled: false },
                 data: [4.8, 7.6, 10.3, 13.1, 15.8, 18.5, 21.2, 23.8, 26.3, 28.8, 31.2, 33.5, 35.7, 37.9, 39.9, 41.9, 43.7, 45.5, 47.2, 48.9, 50.4, 52.1, 53.4, 54.8, 56.2, 57.6, 59.8, 60.4, 61.9]
             }, {
                 type: "line",
                 name: 'Pct. 95',
+                dashStyle: "Dot",
                 marker: { enabled: false },
                 data: [12.3, 15.1, 17.9, 20.7, 23.5, 26.3, 29.1, 31.6, 34.2, 36.7, 39.2, 41.6, 43.9, 46.1, 48.1, 50.1, 52.1, 53.9, 55.6, 57.3, 58.9, 60.5, 62.1, 63.5, 64.9, 66.4, 67.8, 69.3, 70.8]
             }, {
@@ -3110,11 +3116,13 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
        series: [{
            type: "line",
            name: 'Pct. 3',
+           dashStyle: "Dot",
            marker: {enabled: false},
            data: [70, 80, 90, 100, 113, 126, 137, 149, 161, 172, 183, 194, 204, 214, 224, 233, 242, 250, 258, 267, 274, 280, 287, 293, 299, 303, 308, 311, 315]
        }, {
            type: "line",
            name: 'Pct. 97',
+           dashStyle: "Dot",
            marker: {enabled: false},
            data: [90,100,111,124,136,150,165,179,193,206,219,232,243,256,268,279,290,300,310,319,328,336,343,351,358,363,368,373,377]
        }, {
@@ -3170,16 +3178,19 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
             series: [{
                 type: "line",
                 name: '-2DE',
+                dashStyle: "Dot",
                 marker: {enabled: false},
                 data: [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
             }, {
                 type: "line",
                 name: 'media',
+                dashStyle: "Dot",
                 marker: {enabled: false},
                 data: [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
             }, {
                 type: "line",
                 name: '+2DE',
+                dashStyle: "Dot",
                 marker: {enabled: false},
                 data: [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
             }, {
@@ -3235,11 +3246,13 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
        series: [{
            type: "line",
            name: 'Pct. 3',
+           dashStyle: "Dot",
            marker: { enabled: false },
            data: [6,9,12,14,17,20,22,25,27,30,32,35,37,40,42,45,47,49,52,54,56,58,59,61,62,64,65,66,67]
        }, {
            type: "line",
            name: 'Pct. 97',
+           dashStyle: "Dot",
            marker: { enabled: false },
            data: [12,15,18,21,24,28,31,34,38,41,44,47,50,53,55,57,60,62,65,67,70,71,73,75,77,79,80,81,82]
        }, {
@@ -3293,11 +3306,13 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
             series: [{
                 type: "line",
                 name: 'Pct. 5',
+                dashStyle: "Dot",
                 marker: { enabled: false },
                 data: [4.8, 7.6, 10.3, 13.1, 15.8, 18.5, 21.2, 23.8, 26.3, 28.8, 31.2, 33.5, 35.7, 37.9, 39.9, 41.9, 43.7, 45.5, 47.2, 48.9, 50.4, 52.1, 53.4, 54.8, 56.2, 57.6, 59.8, 60.4, 61.9]
             }, {
                 type: "line",
                 name: 'Pct. 95',
+                dashStyle: "Dot",
                 marker: { enabled: false },
                 data: [12.3, 15.1, 17.9, 20.7, 23.5, 26.3, 29.1, 31.6, 34.2, 36.7, 39.2, 41.6, 43.9, 46.1, 48.1, 50.1, 52.1, 53.9, 55.6, 57.3, 58.9, 60.5, 62.1, 63.5, 64.9, 66.4, 67.8, 69.3, 70.8]
             }, {
