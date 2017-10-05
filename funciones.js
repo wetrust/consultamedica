@@ -451,7 +451,7 @@ function crearInformeDoppler(){
 	var eg = $( "input[name='eg']").val();
 	var fpp = $( "input[name='fpp']").val();
 	
-	var bvm = $('#bvm-doppler').val();
+	var bvm = $('#bvmDoppler').val();
 	var comentario = $("#comentarios-doppler").val();
 	comentario = comentario.replace(/\r?\n/g, "<br>");
 	
@@ -459,7 +459,7 @@ function crearInformeDoppler(){
 	var antecedentes = $( '#antecedentes-doppler').val();
 	var motilidad = $( '#motilidad-doppler').val();
 	var ubicacion = $( '#ubicacion-doppler').val();
-	var liquido = $( '#liq-amnio-doppler').val();
+	var liquido = $( '#liqAmnioDoppler').val();
 	var ud = $( '#aud').val();
 	var udTxt = $( '#audPctTxt').val();
 	var udRgo = $( '#audRngo').val();
