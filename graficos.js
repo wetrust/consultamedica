@@ -1987,6 +1987,7 @@ $( '#infDoppler1' ).on( 'click', function() {
             height: 800
         }
       });
+      graficoUno.redraw() 
       graficoDos.update({
         chart: {
             height: 800
