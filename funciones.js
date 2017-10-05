@@ -56,7 +56,7 @@ $( "#saco" ).keypress(function( event ) {
 $( "#dbp" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("#dof").focus()
+     $("#cc").focus()
   }
 });
 
