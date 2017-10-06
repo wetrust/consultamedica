@@ -549,7 +549,6 @@ function crearInformeDoppler(){
 	InformeString = InformeString.replace(":DATEINFORME", dateInf);
 	
 	imprInforme(InformeString);
-	
 }
 
 ////////////////////////////////////////////
@@ -1213,7 +1212,6 @@ dv = dv.toString();
       $("#dvPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
       $("#dvRngo").val( pct5[eg] + " - " + pct95[eg]);
  }
-
 }
 
 function pctau() {
