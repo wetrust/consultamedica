@@ -935,45 +935,18 @@ function pctlf() {
 	 
 	  var Pct90Talla = [];
 	  var Pct10Talla = [];
-	  Pct90Talla[24] = 34.1;
-	  Pct90Talla[25] = 35.7;
-	  Pct90Talla[26] = 37.2;
-	  Pct90Talla[27] = 38.7;
-	  Pct90Talla[28] = 40.1;
-	  Pct90Talla[29] = 41.6;
-	  Pct90Talla[30] = 43.1;
-	  Pct90Talla[31] = 44.3;
-	  Pct90Talla[32] = 45.6;
-	  Pct90Talla[33] = 46.8;
-	  Pct90Talla[34] = 47.9;
-	  Pct90Talla[35] = 49.1;
-	  Pct90Talla[36] = 49.9;
-	  Pct90Talla[37] = 50.8;
-	  Pct90Talla[38] = 51.5;
-	  Pct90Talla[39] = 52.1;
-	  Pct90Talla[40] = 52.6;
-	  Pct90Talla[41] = 52.9;
-	  Pct90Talla[42] = 53.1;		 
+
+	  Pct90Talla[24] = 34.1;	  Pct90Talla[25] = 35.7;	  Pct90Talla[26] = 37.2;	  Pct90Talla[27] = 38.7;
+	  Pct90Talla[28] = 40.1;	  Pct90Talla[29] = 41.6;	  Pct90Talla[30] = 43.1;	  Pct90Talla[31] = 44.3;
+	  Pct90Talla[32] = 45.6;	  Pct90Talla[33] = 46.8;	  Pct90Talla[34] = 47.9;	  Pct90Talla[35] = 49.1;
+	  Pct90Talla[36] = 49.9;	  Pct90Talla[37] = 50.8;	  Pct90Talla[38] = 51.5;	  Pct90Talla[39] = 52.1;
+	  Pct90Talla[40] = 52.6;	  Pct90Talla[41] = 52.9;	  Pct90Talla[42] = 53.1;		 
 		 
-	  Pct10Talla[24] = 29.8;
-	  Pct10Talla[25] = 31.1;
-	  Pct10Talla[26] = 32.3;
-	  Pct10Talla[27] = 33.6;
-	  Pct10Talla[28] = 35.1;
-	  Pct10Talla[29] = 36.5;
-	  Pct10Talla[30] = 37.7;
-	  Pct10Talla[31] = 39.1;
-	  Pct10Talla[32] = 40.5;
-	  Pct10Talla[33] = 41.8;
-	  Pct10Talla[34] = 43.1;
-	  Pct10Talla[35] = 44.2;
-	  Pct10Talla[36] = 45.3;
-	  Pct10Talla[37] = 46.3;
-	  Pct10Talla[38] = 47.2;
-	  Pct10Talla[39] = 47.9;
-	  Pct10Talla[40] = 48.5;
-	  Pct10Talla[41] = 48.8;
-	  Pct10Talla[42] = 49.1;
+	  Pct10Talla[24] = 29.8;	  Pct10Talla[25] = 31.1;	  Pct10Talla[26] = 32.3;	  Pct10Talla[27] = 33.6;
+	  Pct10Talla[28] = 35.1;	  Pct10Talla[29] = 36.5;	  Pct10Talla[30] = 37.7;	  Pct10Talla[31] = 39.1;
+	  Pct10Talla[32] = 40.5;	  Pct10Talla[33] = 41.8;	  Pct10Talla[34] = 43.1;	  Pct10Talla[35] = 44.2;
+	  Pct10Talla[36] = 45.3;	  Pct10Talla[37] = 46.3;	  Pct10Talla[38] = 47.2;	  Pct10Talla[39] = 47.9;
+	  Pct10Talla[40] = 48.5;	  Pct10Talla[41] = 48.8;	  Pct10Talla[42] = 49.1;
 
           eg = parseInt(eg);
           var tallaFet = $('#tallaFetal').val(); 
@@ -1273,16 +1246,11 @@ function pctau() {
 	pct95[18] = 1.13;	pct95[19] = 1.11;
 	pct95[20] = 1.09;
 
-	xpct5[20] = 0.78;	xpct5[21] = 0.87;
-	xpct5[22] = 0.95;	xpct5[23] = 1.02;
-	xpct5[24] = 1.09;	xpct5[25] = 1.15;
-	xpct5[26] = 1.2;	xpct5[27] = 1.24;
-	xpct5[28] = 1.28;	xpct5[29] = 1.31;
-	xpct5[30] = 1.33;	xpct5[31] = 1.35;
-	xpct5[32] = 1.36;	xpct5[33] = 1.36;
-	xpct5[34] = 1.36;	xpct5[35] = 1.34;
-	xpct5[36] = 1.32;	xpct5[37] = 1.3;
-	xpct5[38] = 1.26;	xpct5[39] = 1.22;
+	xpct5[20] = 0.78;	xpct5[21] = 0.87;	xpct5[22] = 0.95;	xpct5[23] = 1.02;
+	xpct5[24] = 1.09;	xpct5[25] = 1.15;	xpct5[26] = 1.2;	xpct5[27] = 1.24;
+	xpct5[28] = 1.28;	xpct5[29] = 1.31;	xpct5[30] = 1.33;	xpct5[31] = 1.35;
+	xpct5[32] = 1.36;	xpct5[33] = 1.36;	xpct5[34] = 1.36;	xpct5[35] = 1.34;
+	xpct5[36] = 1.32;	xpct5[37] = 1.3;	xpct5[38] = 1.26;	xpct5[39] = 1.22;
 	xpct5[40] = 1.18;
 
 	xpct95[20] = 1.68;	xpct95[21] = 1.88;	xpct95[22] = 2.06;	xpct95[23] = 2.22;
@@ -1799,7 +1767,7 @@ function pctut() {
 function imprSelec(muestra)
 {
 	var ficha=$("#popupBody").html();
-	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container" style="margin-top:30px !important;">:DATOS</div>:FUNCION</body></html>';
+	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container" style="margin-top:150px !important;">:DATOS</div>:FUNCION</body></html>';
 	var ventimp=window.open(" ","popimpr");
 	var estilo = '<style>@media print {.col{width:40%; height:30% float:left;}.text-center{text-align:center;}.pie-pagina{font-size:9px;}.pie-pagina-dos{font-size:10px;}#lineclear{clear:both;}h4{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}}</style>';
 	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
