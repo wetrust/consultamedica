@@ -1982,26 +1982,6 @@ $( '#infDoppler1' ).on( 'click', function() {
     $('#popupHeader').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Imprimir</button>");
     $('#popupBody').html("<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='invisible'></span><h4 class='text-center invisible mt-2'>Gráfica para evaluación de la flujometría doppler materno fetal básica</h4><div class='row'><div class='col'><div id='graficoIpArtUtView'></div></div><div class='col'><div id='graficoIpArtUmbView'></div></div></div><div class='row'><div class='col'><div id='graficoIpArtCMView'></div></div><div class='col'><div id='graficoIpCCPView'></div></div></div><div class='row' id='lineclear'><div class='col'><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina'><small>* Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32<br>** Referencia para Doppler de arteria umbilical, C Media y CCP Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127</p><p class='pie-pagina-dos'>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</small></p></div></div>");
     $( '#impDoppler1').on("click", function(){
-      graficoUno.update({
-        chart: {
-            height: 250
-        }
-      });
-      graficoDos.update({
-        chart: {
-            height: 250
-        }
-      });
-      graficoTres.update({
-        chart: {
-            height: 250
-        }
-      });
-      graficoCuatro.update({
-        chart: {
-            height: 250
-        }
-      });
       imprSelec("popupBody");
     });
     $( '#impEcoObsSegTrim2').remove();
@@ -2010,6 +1990,9 @@ $( '#infDoppler1' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     //$('#graficoIpArtUtView').highcharts({
     graficoUno = Highcharts.chart('graficoIpArtUtView', {
+            chart: {
+            height: 250
+        },
         title: {
             text: 'IP Promedio Arteria Uterinas',
             x: -20,
@@ -2084,6 +2067,9 @@ $( '#infDoppler1' ).on( 'click', function() {
     
     //$('#graficoIpArtUmbView').highcharts({
     graficoDos = Highcharts.chart('graficoIpArtUmbView', {
+            chart: {
+            height: 250
+        },
          title: {
              text: 'IP Arteria Umbilical **',
              x: -20, //center
@@ -2157,6 +2143,9 @@ $( '#infDoppler1' ).on( 'click', function() {
     });
     //$('#graficoIpArtCMView').highcharts({
     graficoTres = Highcharts.chart('graficoIpArtCMView', {
+            chart: {
+            height: 250
+        },
         title: {
              text: 'IP Arteria Cerebral Media **',
              x: -20,
@@ -2233,6 +2222,9 @@ $( '#infDoppler1' ).on( 'click', function() {
     });
     //$('#graficoIpCCPView').highcharts({
     graficoCuatro = Highcharts.chart('graficoIpCCPView', {
+            chart: {
+            height: 250
+        },
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
              x: -20, //center
@@ -2321,6 +2313,9 @@ $( '#infDoppler2' ).on( 'click', function() {
     $( '#impDoppler3').remove();
     $( '#impDoppler1').remove();
     $('#graficoInfPFEView').highcharts({
+            chart: {
+            height: 250
+        },
        title: {
            text: 'Peso Fetal Estimado *',
            x: -20 //center
@@ -2394,6 +2389,9 @@ $( '#infDoppler2' ).on( 'click', function() {
        }]
     });
     $('#graficoInfIpArtUmbView').highcharts({
+            chart: {
+            height: 250
+        },
          title: {
              text: 'IP Arteria Umbilical **',
              x: -20 //center
@@ -2450,6 +2448,9 @@ $( '#infDoppler2' ).on( 'click', function() {
          }]
     });
     $('#graficoInfIpArtCMView').highcharts({
+            chart: {
+            height: 250
+        },
         title: {
              text: 'IP Arteria Cerebral Media **',
              x: -20
@@ -2508,6 +2509,9 @@ $( '#infDoppler2' ).on( 'click', function() {
          }]
     });
     $('#graficoInfIpCCPView').highcharts({
+            chart: {
+            height: 250
+        },
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
              x: -20 //center
@@ -2581,6 +2585,9 @@ $( '#infDoppler3' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoInfDoplerPFEView').highcharts({
+            chart: {
+            height: 250
+        },
        title: {
            text: 'Peso Fetal Estimado *',
            x: -20 //center
@@ -2654,6 +2661,9 @@ $( '#infDoppler3' ).on( 'click', function() {
        }]
     });
     $('#graficoInfDoplerIpArtUmbView').highcharts({
+            chart: {
+            height: 250
+        },
          title: {
              text: 'IP Arteria Umbilical **',
              x: -20 //center
@@ -2710,6 +2720,9 @@ $( '#infDoppler3' ).on( 'click', function() {
          }]
     });
     $('#graficoInfDoplerArtUtView').highcharts({
+            chart: {
+            height: 250
+        },
         title: {
             text: 'IP Promedio Arteria Uterinas',
             x: -20
@@ -2767,6 +2780,9 @@ $( '#infDoppler3' ).on( 'click', function() {
             }]
     });
     $('#graficoInfDoplerIpCCPView').highcharts({
+            chart: {
+            height: 250
+        },
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
              x: -20 //center
@@ -2840,6 +2856,9 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoInfecoObsSegTrimPFEView').highcharts({
+            chart: {
+            height: 250
+        },
        title: {
            text: 'Peso Fetal Estimado *',
            x: -20, //center
@@ -2922,6 +2941,9 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
        }]
     });
     $('#graficoBVMView').highcharts({
+            chart: {
+            height: 250
+        },
         title: {
             text: 'BVM de Líquido Amniótico ***',
             x: -20,
@@ -2994,6 +3016,9 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
             }]
     });
     $('#graficoLfView').highcharts({
+            chart: {
+            height: 250
+        },
        title: {
            text: 'LF',
            x: -20,
@@ -3063,6 +3088,9 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
        }]
    });
    $('#graficoLhView').highcharts({
+           chart: {
+            height: 250
+        },
             title: {
                 text: 'Largo Humeral',
                 x: -20,
@@ -3147,6 +3175,9 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoCcView').highcharts({
+            chart: {
+            height: 250
+        },
        title: {
            text: 'CC',
            x: -20,
@@ -3218,6 +3249,9 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
        }]
    });
    $('#graficoCerebeloView').highcharts({
+           chart: {
+            height: 250
+        },
             title: {
                 text: 'Diámetro de Cerebelo',
                 x: -20,
@@ -3295,6 +3329,9 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
             }]
         });
     $('#graficoLfView').highcharts({
+            chart: {
+            height: 250
+        },
        title: {
            text: 'LF',
            x: -20,
@@ -3364,6 +3401,9 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
        }]
    });
    $('#graficoLhView').highcharts({
+           chart: {
+            height: 250
+        },
             title: {
                 text: 'Largo Humeral',
                 x: -20,
