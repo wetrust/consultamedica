@@ -1771,7 +1771,13 @@ function imprSelec(muestra)
 	var ventimp=window.open(" ","popimpr");
 	var estilo = '<style>@media print {.col{width:40%; height:30% float:left;}.text-center{text-align:center;}.pie-pagina{font-size:9px;}.pie-pagina-dos{font-size:10px;}#lineclear{clear:both;}h4{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}}</style>';
 	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
+	
+	var day = ("0" + aplication.day.getDate()).slice(-2);
+	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
+	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
+	
 	document = document.replace(":DATOS", ficha);
+	document = document.replace(":DATEINFORME", dateInf);
 	document = document.replace(":ESTILO", estilo);
 	document = document.replace(":FUNCION", funcion);
 	document = document.replace("invisible", "");
