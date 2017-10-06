@@ -2842,12 +2842,21 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     $('#graficoInfecoObsSegTrimPFEView').highcharts({
        title: {
            text: 'Peso Fetal Estimado *',
-           x: -20 //center
+           x: -20, //center
+               style: {
+            fontSize: '14px'
+        }
        },
        subtitle: {
            text: 'Kilogramos',
            x: -20
        },
+            legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
        plotOptions: {
            series: {
                enableMouseTracking: false,
@@ -2915,7 +2924,10 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     $('#graficoBVMView').highcharts({
         title: {
             text: 'BVM de Líquido Amniótico ***',
-            x: -20
+            x: -20,
+                style: {
+            fontSize: '14px'
+        }
         },
         subtitle: {
             text: 'Milimetros (mm)',
@@ -2924,6 +2936,12 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
         plotOptions: {
             series: {
                 enableMouseTracking: false
+            }
+        },
+            legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
             }
         },
         yAxis: {
@@ -2978,7 +2996,10 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     $('#graficoLfView').highcharts({
        title: {
            text: 'LF',
-           x: -20
+           x: -20,
+               style: {
+            fontSize: '14px'
+        }
        },
        subtitle: {
            text: 'Milimetros (mm)',
@@ -2989,6 +3010,12 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                enableMouseTracking: false
            }
        },
+            legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
        yAxis: {
            title: { text: 'Milimetros (mm)' },
            tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80, 90]
@@ -3038,7 +3065,10 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
    $('#graficoLhView').highcharts({
             title: {
                 text: 'Largo Humeral',
-                x: -20
+                x: -20,
+                    style: {
+            fontSize: '14px'
+        }
             },
             subtitle: {
                 text: 'Milimetros (mm)',
@@ -3049,6 +3079,12 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                     enableMouseTracking: false
                 }
             },
+           legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
             yAxis: {
                 title: { text: 'Milimetros (mm)' },
                 tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80]
@@ -3113,7 +3149,10 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
     $('#graficoCcView').highcharts({
        title: {
            text: 'CC',
-           x: -20
+           x: -20,
+               style: {
+            fontSize: '14px'
+        }
        },
        subtitle: {
            text: 'Milimetros (mm)',
@@ -3128,6 +3167,12 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
            title: { text: 'Milimetros (mm)' },
            tickPositions: [30, 72, 114, 156, 198, 240, 282, 324, 366, 408]
        },
+            legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
        colors: ['#313131', '#313131', '#313131'],
        xAxis: {
            categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
@@ -3175,7 +3220,10 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
    $('#graficoCerebeloView').highcharts({
             title: {
                 text: 'Diámetro de Cerebelo',
-                x: -20
+                x: -20,
+                    style: {
+            fontSize: '14px'
+        }
             },
             subtitle: {
                 text: 'Milimetros (mm)',
@@ -3190,6 +3238,12 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
                 title: { text: 'Milimetros (mm)' },
                 tickPositions: [5, 10,20,30,40,50,60,70]
             },
+           legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
             colors: ['#313131', '#313131', '#313131'],
             xAxis: {
                 categories:['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
@@ -3243,7 +3297,10 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
     $('#graficoLfView').highcharts({
        title: {
            text: 'LF',
-           x: -20
+           x: -20,
+               style: {
+            fontSize: '14px'
+        }
        },
        subtitle: {
            text: 'Milimetros (mm)',
@@ -3254,6 +3311,12 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
                enableMouseTracking: false
            }
        },
+            legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
        yAxis: {
            title: { text: 'Milimetros (mm)' },
            tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80, 90]
@@ -3303,7 +3366,10 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
    $('#graficoLhView').highcharts({
             title: {
                 text: 'Largo Humeral',
-                x: -20
+                x: -20,
+                    style: {
+            fontSize: '14px'
+        }
             },
             subtitle: {
                 text: 'Milimetros (mm)',
@@ -3314,6 +3380,12 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
                     enableMouseTracking: false
                 }
             },
+           legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
             yAxis: {
                 title: { text: 'Milimetros (mm)' },
                 tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80]
