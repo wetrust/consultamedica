@@ -1778,7 +1778,7 @@ function imprSelec(muestra)
 	document = document.replace(":DATEINFORME", dateInf);
 	document = document.replace(":ESTILO", estilo);
 	document = document.replace(":FUNCION", funcion);
-	document = document.replace("invisible", "");
+	document = document.replace(new RegExp('invisible', 'g'), "");
 	
 	ventimp.document.write(document);
 	ventimp.document.close();
@@ -1795,7 +1795,7 @@ function imprInforme(muestra)
 	document = document.replace(":DATOS", ficha);
 	document = document.replace(":ESTILO", estilo);
 	document = document.replace(":FUNCION", funcion);
-	document = document.replace("invisible", "");
+	document = document.replace(new RegExp('invisible', 'g'), "");
 	
 	ventimp.document.write(document);
 	ventimp.document.close();
