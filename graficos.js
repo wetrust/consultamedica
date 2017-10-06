@@ -1994,7 +1994,7 @@ $( '#infDoppler1' ).on( 'click', function() {
             height: 250
         },
         title: {
-            text: 'IP Promedio Arteria Uterinas',
+            text: 'IP Promedio Arteria Uterinas *',
             x: -20,
                  style: {
             fontSize: '14px'
