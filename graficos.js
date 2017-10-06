@@ -2914,7 +2914,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     });
     $('#graficoBVMView').highcharts({
         title: {
-            text: 'BVM***',
+            text: 'BVM de Líquido Amniótico ***',
             x: -20
         },
         subtitle: {
