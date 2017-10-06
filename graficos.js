@@ -261,7 +261,7 @@ $( '#graficoLf' ).on( 'click', function() {
     $('#popupBody').html("<div id='graficoLfView'></div>");
     $('#graficoLfView').highcharts({
        title: {
-           text: 'LF',
+           text: 'Largo Femoral',
            x: -20
        },
        subtitle: {
@@ -3004,7 +3004,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
             height: 250
         },
        title: {
-           text: 'LF',
+           text: 'Largo Femoral',
            x: -20,
                style: {
             fontSize: '14px'
