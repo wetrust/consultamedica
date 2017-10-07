@@ -400,26 +400,26 @@ function crearInformeEcoSegTrim2(){
 
 	var p50 = $('#egP50').val();
 	var lh =  $( '#lh').val();
-	var lhRango =  $( '#lhRango').val();
+	var lhRango =  '( ' + $( '#lhRango').val() + ')';
 	var fur = $( "input[name='fum']").val();
 	var fexamen = $( "input[name='fee']").val();
 	var eg = $( "input[name='eg']").val();
 	var fpp = $( "input[name='fpp']").val();
 	var dbp = $( '#dbp').val();
-	var dbpRango = $( '#dbpRango').val();
+	var dbpRango = '( ' + $( '#dbpRango').val() + ')';
 	var dof = $( '#dof').val();
-	var dofRango = $( '#dofRango').val();
+	var dofRango = '( ' + $( '#dofRango').val() + ')';
 	var cc = $( '#cc').val();
-	var ccRango = $( '#ccRango').val();
+	var ccRango = '( ' + $( '#ccRango').val() + ')';
 	var ca = $( '#ca').val();
-	var caRango = $( '#caRango').val();
+	var caRango = '( ' + $( '#caRango').val() + ')';
 	var ccca = $( '#ccca').val();
-	var cccaRango = $( '#cccaRango').val();
+	var cccaRango = '( ' + $( '#cccaRango').val() + ')';
 	var lf = $( '#lf').val();
-	var lfRango = $( '#lfRango').val();
+	var lfRango = '( ' + $( '#lfRango').val() + ')';
 	var ic = $( '#dof-dbp').val();
 	var cb = $('#cerebelo').val();
-	var cbRango = $('#cerebeloRango').val();
+	var cbRango = '( ' + $('#cerebeloRango').val() + ')';
 	
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
@@ -438,7 +438,7 @@ function crearInformeEcoSegTrim2(){
         var linea5 = "<strong>Cordón</strong> umbilical " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
         var linea6 = "<strong>Líquido **</strong> amniótico con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm" + ilatxt;
 	
-	var InformeString = "<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;'></span><h3>Determinación Ecográfica (Tardía) de la Edad Gestacional</h3><p><strong>Paciente Sra. (Srta.):</strong> :PACIENTE       <strong>Fecha de Exámen:</strong> :FEXAMEN</p><p><strong>ID Paciente: </strong>:IDPACIENTE              <strong>Motivo: </strong>:MOTIVO</p><p><strong>FUM: </strong> :FUR<br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container'><p><strong>DESCRIPCIÓN</strong></p><p>:LINEA1<br>:LINEA2<br>:LINEA3<br>:LINEA4<br>:LINEA5<br>:LINEA6</p><p></p><p></p></div><div class='container-fluid'><table class='table'><tbody><tr><th style='line-height:15px !important;'>Biometrías</th><th>Valor (mm)</th><th>Referencia</th></tr><tr><td>DBP (Hadlock):</td><td>:DBP</td><td>:DBPRANGO</td></tr><tr><td>DOF (Jeanty):</td><td>:DOF</td><td>:DOFRANGO</td></tr><tr><td>CC (Hadlock):</td><td>:CC</td><td>:CCRANGO</td></tr><tr><td>CA (Hadlock):</td><td>:CA</td><td>:CARANGO</td></tr><tr><td>LF (Hadlock):</td><td>:LF</td><td>:LFRANGO</td></tr><tr><td>LH (Jeanty):</td><td>:LH</td><td>:LHRANGO</td></tr><tr><td>Cerebelo (Diámetro transverso) (Hill):</td><td>:CB</td><td>:CBRANGO</td></tr><tr><td>Indice Cefálico (DBP / DOF)</td><td>:IC</td></tr><tr><td>Relación CC / CA (Campbell)</td><td>:CCCA</td><td>:CCCARANGO</td></tr><tr><td></td><td></td><td></td></tr></tbody></table></div><div class='container-fluid'><p><strong>COMENTARIOS Y OBSERVACIONES</strong></p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'><p class='text-right top40' style='margin-right:100px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong></p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina'><strong>* Para evaluación morfológica, ceñirse a recomendaciones dadas en guías Perinatales MINSAL - Chile 2015</strong> http://web.minsal.cl/sites/default/files/files/GUIA<br>%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf<br>** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br><strong>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div>";
+	var InformeString = "<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;'></span><h3>Determinación Ecográfica (Tardía) de la Edad Gestacional</h3><p><strong>Paciente Sra. (Srta.):</strong> :PACIENTE       <strong>Fecha de Exámen:</strong> :FEXAMEN</p><p><strong>ID Paciente: </strong>:IDPACIENTE              <strong>Motivo: </strong>:MOTIVO</p><p><strong>FUM: </strong> :FUR<br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container'><p><strong>DESCRIPCIÓN</strong></p><p>:LINEA1<br>:LINEA2<br>:LINEA3<br>:LINEA4<br>:LINEA5<br>:LINEA6</p><p></p><p></p></div><div class='container-fluid'><table class='table'><tbody><tr><th style='line-height:15px !important;'>Biometrías</th><th>Valor (mm)</th><th style='text-align:center;'>Referencia</th></tr><tr><td>DBP (Hadlock):</td><td>:DBP</td><td style='text-align:center;'>:DBPRANGO</td></tr><tr><td>DOF (Jeanty):</td><td>:DOF</td><td style='text-align:center;'>:DOFRANGO</td></tr><tr><td>CC (Hadlock):</td><td>:CC</td><td style='text-align:center;'>:CCRANGO</td></tr><tr><td>CA (Hadlock):</td><td>:CA</td><td style='text-align:center;'>:CARANGO</td></tr><tr><td>LF (Hadlock):</td><td>:LF</td><td style='text-align:center;'>:LFRANGO</td></tr><tr><td>LH (Jeanty):</td><td>:LH</td><td style='text-align:center;'>:LHRANGO</td></tr><tr><td>Cerebelo (Diámetro transverso) (Hill):</td><td>:CB</td><td style='text-align:center;'>:CBRANGO</td></tr><tr><td>Indice Cefálico (DBP / DOF)</td><td>:IC</td><td style='text-align:center;'>( 70% - 86% )</td></tr><tr><td>Relación CC / CA (Campbell)</td><td>:CCCA</td><td style='text-align:center;'>:CCCARANGO</td></tr><tr><td></td><td></td><td></td></tr></tbody></table></div><div class='container-fluid'><p><strong>COMENTARIOS Y OBSERVACIONES</strong></p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'><p class='text-right top40' style='margin-right:100px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong></p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina'><strong>* Para evaluación morfológica, ceñirse a recomendaciones dadas en guías Perinatales MINSAL - Chile 2015</strong> http://web.minsal.cl/sites/default/files/files/GUIA<br>%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf<br>** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br><strong>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div>";
 
 	var comentario = "Edad ecográfica (Bp50): <strong>" + p50 + " Semanas</strong>, <small>(La Bp50 no incluiye el perímetro abdominal)</small><br>Fum operacional: " + fur + "<br>Fecha probable de parto: " + fpp;
 	
