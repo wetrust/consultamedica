@@ -400,26 +400,26 @@ function crearInformeEcoSegTrim2(){
 
 	var p50 = $('#egP50').val();
 	var lh =  $( '#lh').val();
-	var lhRango =  '( ' + $( '#lhRango').val() + ')';
+	var lhRango =  '( ' + $( '#lhRango').val() + ' )';
 	var fur = $( "input[name='fum']").val();
 	var fexamen = $( "input[name='fee']").val();
 	var eg = $( "input[name='eg']").val();
 	var fpp = $( "input[name='fpp']").val();
 	var dbp = $( '#dbp').val();
-	var dbpRango = '( ' + $( '#dbpRango').val() + ')';
+	var dbpRango = '( ' + $( '#dbpRango').val() + ' )';
 	var dof = $( '#dof').val();
-	var dofRango = '( ' + $( '#dofRango').val() + ')';
+	var dofRango = '( ' + $( '#dofRango').val() + ' )';
 	var cc = $( '#cc').val();
-	var ccRango = '( ' + $( '#ccRango').val() + ')';
+	var ccRango = '( ' + $( '#ccRango').val() + ' )';
 	var ca = $( '#ca').val();
-	var caRango = '( ' + $( '#caRango').val() + ')';
+	var caRango = '( ' + $( '#caRango').val() + ' )';
 	var ccca = $( '#ccca').val();
-	var cccaRango = '( ' + $( '#cccaRango').val() + ')';
+	var cccaRango = '( ' + $( '#cccaRango').val() + ' )';
 	var lf = $( '#lf').val();
-	var lfRango = '( ' + $( '#lfRango').val() + ')';
+	var lfRango = '( ' + $( '#lfRango').val() + ' )';
 	var ic = $( '#dof-dbp').val();
 	var cb = $('#cerebelo').val();
-	var cbRango = '( ' + $('#cerebeloRango').val() + ')';
+	var cbRango = '( ' + $('#cerebeloRango').val() + ' )';
 	
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
