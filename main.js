@@ -1,5 +1,5 @@
 var aplication;
-var keynum, lines = 3;
+var keynum, lines = 1;
 
 function limitLines(obj, e) {
         // IE
