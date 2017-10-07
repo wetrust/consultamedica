@@ -310,9 +310,11 @@ function crearInformeEcoSegTrim1(){
 	var cccaRango = '( ' + $( '#cccaRango').val() + ' )';
 	var pfe = $( '#pfe').val();
 	var pfePct = parseInt($( '#pfePctRpt').val());
+	var pfeRango = $( '#pfeRango').val();
 	var ic = $( '#dof-dbp').val();
 	var tf = $( '#tallaFetal').val();
 	var tfPct = $( '#tallaPctRpt').val();
+	var tfRango = $( '#tallaRango').val();
 	
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
@@ -349,9 +351,11 @@ function crearInformeEcoSegTrim1(){
 	InformeString = InformeString.replace(":LFRANGO", lfRango);
 	InformeString = InformeString.replace(":PFE", pfe);
 	InformeString = InformeString.replace(":PFEPCT", pfePct);
+	InformeString = InformeString.replace(":PFERANGO", pfeRango);
 	InformeString = InformeString.replace(":IC", ic);
 	InformeString = InformeString.replace(":TF", tf);
 	InformeString = InformeString.replace(":TFPCT", tfPct);	
+	InformeString = InformeString.replace(":TFRANGO", tfRango);
 	
 	var day = ("0" + aplication.day.getDate()).slice(-2);
 	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
@@ -992,6 +996,7 @@ function pctlf() {
 		 
           ajustarProgreso(parseInt(80 / (uno) * (dos) + 10), "tallaPct");
           $('#tallaPctRpt').val(parseInt(80 / (uno) * (dos) + 10));
+	  $('#tallaRango').val(Pct10Talla[eg] + ' - ' + Pct90Talla[eg]);
 		 ipn()
 	 } 
  }
@@ -1471,6 +1476,7 @@ function pctpfe() {
   var pctFinal = (80 / (uno) * (dos)) + 10
   ajustarProgreso(pctFinal, "pfePct");
 	 $('#pfePctRpt').val(pctFinal);
+	 $('#pfeRango').val(pct10[eg] + ' - ' +pct90[eg]);
  }
 }
 
