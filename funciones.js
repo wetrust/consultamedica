@@ -70,13 +70,15 @@ $( "#dof" ).keypress(function( event ) {
 $( "#cc" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("#ca").focus()
+     $("#cc").trigger('change');
+     $("#ca").focus().trigger('change');
   }
 });
 
 $( "#ca" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
+     $("#ca").trigger('change');
      $("#lf").focus()
   }
 });
@@ -430,7 +432,7 @@ function crearInformeEcoSegTrim2(){
 	
 	var InformeString = "<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;'></span><h3>Determinación Ecográfica (Tardía) de la Edad Gestacional</h3><p><strong>Paciente Sra. (Srta.):</strong> :PACIENTE       <strong>Fecha de Exámen:</strong> :FEXAMEN</p><p><strong>ID Paciente: </strong>:IDPACIENTE              <strong>Motivo: </strong>:MOTIVO</p><p><strong>FUM: </strong> :FUR<br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container'><p><strong>DESCRIPCIÓN</strong></p><p>:LINEA1<br>:LINEA2<br>:LINEA3<br>:LINEA4<br>:LINEA5<br>:LINEA6</p><p></p><p></p></div><div class='container-fluid'><table class='table'><tbody><tr><th style='line-height:15px !important;'>Biometrías**</th><th>Valor (mm)</th></tr><tr><td>DBP (Hadlock):</td><td>:DBP</td></tr><tr><td>DOF (Jeanty):</td><td>:DOF</td></tr><tr><td>CC (Hadlock):</td><td>:CC</td></tr><tr><td>CA (Hadlock):</td><td>:CA</td></tr><tr><td>LF (Hadlock):</td><td>:LF</td></tr><tr><td>LH (Jeanty):</td><td>:LH</td></tr><tr><td>Cerebelo (Diámetro transverso) (Hill) ***:</td><td>:CB</td></tr><tr><td>Indice Cefálico (DBP / DOF)</td><td>:IC</td></tr><tr><td>Relación CC / CA (Campbell)</td><td>:CCCA</td></tr><tr><td></td><td></td><td></td></tr></tbody></table></div><div class='container-fluid'><p><strong>COMENTARIOS Y OBSERVACIONES</strong></p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'><p class='text-right top40' style='margin-right:100px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong></p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina text-center'><strong'>* Para evaluación morfológica, ceñirse a recomendaciones dadas en guías Perinatales MINSAL - Chile 2015<br>http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf</strong><br>** Referencias: CC y LF Hadlock y col. 1984; LH Jeanty y col.<br>*** Diámetro cerebeloso transverso Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div>";
 
-	var comentario = "Edad ecográfica (Bp50): " + p50 + "Semanas,  (No incluido en la ecuación el perímetro abdominal)<br>Fum operacional: " + fur + "<br>Fecha probable de parto: " + fpp;
+	var comentario = "Edad ecográfica (La Bp50 no incluiye el perímetro abdominal): " + p50 + "Semanas<br>Fum operacional: " + fur + "<br>Fecha probable de parto: " + fpp;
 	
 	InformeString = InformeString.replace(":PACIENTE", paciente);
 	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
