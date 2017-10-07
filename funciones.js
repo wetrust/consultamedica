@@ -1827,7 +1827,7 @@ function imprSelec(muestra)
 	document = document.replace(":DATEINFORME", dateInf);
 	document = document.replace(":ESTILO", estilo);
 	document = document.replace(":FUNCION", funcion);
-	document = document.replace(new RegExp('invisible', 'g'), "");
+	document = document.replace(new RegExp('d-none', 'g'), "");
 	
 	ventimp.document.write(document);
 	ventimp.document.close();
