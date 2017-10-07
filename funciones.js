@@ -1632,7 +1632,7 @@ function valccca() {
  else {
   eg = eg - 15;
   eg = parseInt(eg);
-  var uno=;
+  var uno= pct97[eg] - pct3[eg];
   var dos=ccca - pct3[eg];
 
   ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "cccaPct");
