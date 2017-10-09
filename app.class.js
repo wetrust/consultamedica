@@ -36,6 +36,10 @@ class app {
 	else if (this.hash=="#consulta"){
 		this.displayElement("consulta");
 		this.clearData();
+		var contador = $('#membrete').val('');
+		if (contador.length < 1){
+			$('#membrete').val('SERVICIO DE SALUD ARAUCANIA SUR\r\nHOSPITAL HERNAN HENRIQUEZ ARAVENA\r\nCENTRO DE RESPONSABILIDAD DE LA MUJER');
+		}
 	}
         else if (this.hash=="#tipoExamen"){
 		this.displayElement("tipoExamen");
