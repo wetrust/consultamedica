@@ -42,6 +42,11 @@ function construirGraficos() {
 $( '#graficoDbp' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico DBP");
     $('#popupBody').html("<div id='graficoDbpView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoDbpView').highcharts({
        title: {
            text: 'DBP',
@@ -117,6 +122,11 @@ $( '#graficoDbp' ).on( 'click', function() {
 $( '#graficoCc' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico CC");
     $('#popupBody').html("<div id='graficoCcView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoCcView').highcharts({
        title: {
            text: 'Circunferencia de Cráneo',
@@ -188,6 +198,11 @@ $( '#graficoCc' ).on( 'click', function() {
 $( '#graficoCa' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico CA");
     $('#popupBody').html("<div id='graficoCaView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoCaView').highcharts({
        title: {
            text: 'CA**',
@@ -259,6 +274,11 @@ $( '#graficoCa' ).on( 'click', function() {
 $( '#graficoLf' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico LF");
     $('#popupBody').html("<div id='graficoLfView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoLfView').highcharts({
        title: {
            text: 'Largo Femoral',
@@ -327,6 +347,11 @@ $( '#graficoLf' ).on( 'click', function() {
 $( '#graficoLh' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico LH");
     $('#popupBody').html("<div id='graficoLhView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoLhView').highcharts({
             title: {
                 text: 'Largo Humeral',
@@ -396,6 +421,11 @@ $( '#graficoLh' ).on( 'click', function() {
 $( '#graficoCerebelo' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Cerebelo");
     $('#popupBody').html("<div id='graficoCerebeloView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoCerebeloView').highcharts({
             title: {
                 text: 'Diámetro de Cerebelo',
@@ -475,7 +505,11 @@ $( '#graficoLcn' ).on( 'click', function() {
     $('#popupBody').html("<div class='row'><div class='col'><div id='graficoLcnBaseView'></div></div><div class='col'><div id='graficoLcnView'></div></div>");
         
     var egLcn = parseFloat($("input[name='eg']").val());
-        
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoLcnBaseView').highcharts({
         title: {
             text: 'LCN 6 a 15 semanas',
@@ -1118,6 +1152,11 @@ $( '#graficoLcn' ).on( 'click', function() {
 $( '#graficoSaco' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Saco");
     $('#popupBody').html("<div id='graficoSacoView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoSacoView').highcharts({
              title: {
                  text: 'Promedio Saco Gestacional',
@@ -1195,6 +1234,11 @@ $( '#graficoSaco' ).on( 'click', function() {
 $( '#graficoAud' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Arteria Uterina Derecha");
     $('#popupBody').html("<div id='graficoArtUtDerView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoArtUtDerView').highcharts({
         title: {
             text: 'IP Arterias Uterinas Derecha',
@@ -1266,6 +1310,11 @@ $( '#graficoAud' ).on( 'click', function() {
 $( '#graficoAui' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Arteria Uterina Izquierda");
     $('#popupBody').html("<div id='graficoArtUtIzqView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoArtUtIzqView').highcharts({
         title: {
             text: 'IP Arterias Uterinas Izquierda',
@@ -1338,6 +1387,11 @@ $( '#graficoAui' ).on( 'click', function() {
 $( '#graficoAu' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Promedio Arteria Uterinas");
     $('#popupBody').html("<div id='graficoArtUtView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoArtUtView').highcharts({
         title: {
             text: 'IP Promedio Arteria Uterinas',
@@ -1409,6 +1463,11 @@ $( '#graficoAu' ).on( 'click', function() {
 $( '#graficoIpau' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico IP Arteria Umbilical");
     $('#popupBody').html("<div id='graficoIpauView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoIpauView').highcharts({
          title: {
              text: 'IP Arteria Umbilical **',
@@ -1479,6 +1538,11 @@ $( '#graficoIpau' ).on( 'click', function() {
 $( '#graficoIpacm' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico IP Arteria C. Media");
     $('#popupBody').html("<div id='graficoIpacmView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoIpacmView').highcharts({
         title: {
              text: 'IP Arteria Cerebral Media **',
@@ -1552,6 +1616,11 @@ $( '#graficoIpacm' ).on( 'click', function() {
 $( '#graficoCcp' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Cuociente Cerebro Placentario");
     $('#popupBody').html("<div id='graficoCcpView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoCcpView').highcharts({
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
@@ -1621,6 +1690,11 @@ $( '#graficoCcp' ).on( 'click', function() {
 $( '#graficoDv' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Ductus Venoso");
     $('#popupBody').html("<div id='graficoDvView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoDvView').highcharts({
         title: {
             text: 'Ductus Venoso',
@@ -1690,6 +1764,11 @@ $( '#graficoDv' ).on( 'click', function() {
 $( '#graficoPFE' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Peso Fetal Estimado");
     $('#popupBody').html("<div id='graficoPesoView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoPesoView').highcharts({
        title: {
            text: 'Peso Fetal Estimado *',
@@ -1769,6 +1848,11 @@ $( '#graficoPFE' ).on( 'click', function() {
 $( '#graficoCCCA' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Relación Cráneo Abdómen (CC/CA)");
     $('#popupBody').html("<div id='graficoCCCAView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoCCCAView').highcharts({
        title: {
            text: 'Cc / Ca *',
@@ -1835,6 +1919,11 @@ $( '#graficoCCCA' ).on( 'click', function() {
 $( '#graficoBVM' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico BVM");
     $('#popupBody').html("<div id='graficoBVMView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoBVMView').highcharts({
         title: {
             text: 'BVM***',
@@ -1908,6 +1997,11 @@ $( '#graficoBVM' ).on( 'click', function() {
 $( '#graficoILA' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico ILA");
     $('#popupBody').html("<div id='graficoILAView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     $('#graficoILAView').highcharts({
        title: {
            text: 'ILA',
@@ -3438,6 +3532,11 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
 $( '#graficoTallaPeso' ).on( 'click', function() {
     $('#popupTitle').html("Análisis Talla Peso según referencias postnatales");
     $('#popupBody').html("<div id='viewGraficoTallaPeso'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
 $('#viewGraficoTallaPeso').highcharts({
     title: {
         text: 'Análisis Talla Peso según referencias postnatales'
@@ -3612,6 +3711,11 @@ $('#viewGraficoTallaPeso').highcharts({
 $( '#graficoIPN' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico IPN Referencia Neonatal SOCHIPE");
     $('#popupBody').html("<div id='viewGraficoIPN'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
 $('#viewGraficoIPN').highcharts({
         title: {
             text: 'IPN / EG',
@@ -3680,6 +3784,11 @@ $('#viewGraficoIPN').highcharts({
 $( '#graficoTalla' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Talla Fetal Estimada Referencia Neonatal SOCHIPE");
     $('#popupBody').html("<div id='viewGraficoTalla'></div><p><small>Talla (Formula = lf * 0.55 + 9.6) </small></p>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
 $('#viewGraficoTalla').highcharts({
         title: {
             text: 'Talla Fetal estimada',
@@ -3748,7 +3857,11 @@ $('#viewGraficoTalla').highcharts({
 $( '#graficopsmACM' ).on( 'click', function() {
     $('#popupTitle').html("Gráfico Pick sistólico máximo de ACM");
     $('#popupBody').html("<div id='viewGraficopsmACM'></div>");
-    
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
     var medida = document.getElementById("psmACM").value;
     medida = medida.toString();
     medida = medida.replace(",", ".");
