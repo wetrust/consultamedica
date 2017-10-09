@@ -609,7 +609,134 @@ function crearInformeDoppler(){
 
 function crearInformeEcoPrimTrim(){
 
-	var InformeString = "<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;'></span><div class='container-fluid'><h3 class='page-header text-center'>Evaluación ecografía obstétrica de primer trimestre</h3><p><strong>Paciente Sra. (Srta.):</strong> :PACIENTE                   <strong>Fecha de Exámen:</strong> :FEXAMEN</p><p><strong>ID Paciente: </strong>:IDPACIENTE              <strong>Motivo: </strong>:MOTIVO</p></div><div class='container-fluid'><p><strong>ANTECEDENTES</strong></p><p><strong>FUM: </strong> :FUM<br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container-fluid'><p><strong>DESCRIPCIÓN</strong></p><p>Cuerpo Uterino :LINEA1<br>Saco Gestacional :LINEA2<br>Saco Vitelino :LINEA3<br>Embrión :LINEA4<br>Exploración anexial derecha :LINEA5<br>Exploración anexial izquierda :LINEA6<br>Exploración de Douglas :LINEA7</p><p></p><p></p><p id='titulo-biometria'><strong>BIOMETRÍAS</strong></p><p>:LINEA12</p><p>:LINEA13</p><p></p><p></p><p><strong>HIPÓTESIS DIAGNÓSTICA</strong></p><p>:LINEA8 :LINEA9<br>:LINEA10<br>:LINEA11</p></div><div class='container-fluid'><p><strong>COMENTARIOS Y OBSERVACIONES</strong></p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'><p class='text-right top40'>Ecografista: <strong>:ECOGRAFISTA</strong></p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina'>Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800<br>Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992.<br>Referencia Diámetro biparital según gráfica de Hadlock y col. 1984<br><br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div>";
+	var sacovitelinotxt = $('#saco-vitelino-mm').val();
+
+        if (sacovitelinotxt > 0){
+            sacovitelinotxt = " de diametro " + sacovitelinotxt +" mm.";
+        }
+        else{
+            sacovitelinotxt = ".";
+        }
+
+        var sacogestacionaltxt = $("#prs").val();
+
+        if (sacogestacionaltxt > 0){
+            sacogestacionaltxt = " diametro promedio " + sacogestacionaltxt +" mm.";
+        }
+        else{
+             sacogestacionaltxt = ".";
+        }
+
+        var fcftexto = $("#embrion").val();
+
+        if (fcftexto == 'no se observa aun'){
+              fcftexto = ".";
+        }
+        else if (fcftexto == 'act. no evidenciable'){
+              fcftexto = ".";
+        }
+        else{
+              if ($("#fcf-prim").val() == '(+) inicial'){
+                  fcftexto = " frecuencia cardiaca fetal " + $("#fcf-prim").val();
+              }
+              else {
+                   fcftexto = " frecuencia cardiaca fetal de " + $("#fcf-prim").val() +" x min.";
+              }
+        }
+
+	var douglasinforme = '';
+	
+        if ($("#exploracion-douglas").val() == 'ocupado'){
+               douglasinforme = $("#comentarios-douglas-informe").val();
+        }
+        else
+        {
+               douglasinforme = ".";
+        }
+
+        var LINEA1 = $("#utero-ubic1").val() + " " + $("utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
+        var LINEA2 = $("#saco-gestacional").val() + sacogestacionaltxt;
+        var LINEA3 = $("#saco-vitelino").val() + sacovitelinotxt;
+        var LINEA4 = $("#embrion").val() + fcftexto;
+        var LINEA5 = $("#anexo-derecho").val();
+        var LINEA6 = $("#anexo-izquierdo").val();
+        var LINEA7 = $("#exploracion-douglas").val() + ", " + douglasinforme;
+        var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
+        var LINEA10 = "Exploración anexial derecha " + $("#anexo-derecho").val();
+        var LINEA11 = "Exploración anexial izquierda " + $("#anexo-izquierdo").val();
+
+        sacogestacionaltxt = $("prs").val();
+	
+	var LINEA12 = '';
+	var LINEA8 = '';
+		
+        if (sacogestacionaltxt > 0){
+            LINEA12 = "Saco gestacional diámetro promedio de " + sacogestacionaltxt +" mm.<br>" + $("#eco1-linea12").html;
+            LINEA8 = "Edad gestacional estimada " + $("#pctprs").html; + " por saco gestacional.<br>";
+                    //eliminar referencias que no son alusivas a saco
+                    //comprobar si no hay lcn
+            //if ($("#lcn").val()( < 1){
+            //    $("#referencia-eco1").html("Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800<br><br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.");
+            //}
+        }
+
+        if ($('#lcn').val() > 0) {
+            LINEA12 = "Largo embrionario máximo de " + $("#lcn").val() + "mm";
+            LINEA8 = "Edad gestacional estimada " + $("#edadG").html() + " semanas por LCN.<br>";
+        }
+
+        if ($('eco1-dbp').val() > 0){
+            $("eco1-linea13").html = "DBP: " + $("eco1-dbp").val() + "mm";
+        }
+
+	var TITULOBIOMETRIAS = 'BIOMETRÍAS';
+	
+        if ($('#lcn').val() < 1) {
+            if ($('#eco1-dbp').val() < 1) {
+                if (sacogestacionaltxt < 1){
+                    LINEA12 = '';
+                    LINEA8 = '';
+                    TITULOBIOMETRIAS = '';
+                }
+            }
+        }
+	
+	var InformeString = "<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;'></span><div class='container-fluid'><h3 class='page-header text-center'>Evaluación ecografía obstétrica de primer trimestre</h3><p><strong>Paciente Sra. (Srta.):</strong> :PACIENTE                   <strong>Fecha de Exámen:</strong> :FEXAMEN</p><p><strong>ID Paciente: </strong>:IDPACIENTE              <strong>Motivo: </strong>:MOTIVO</p></div><div class='container-fluid'><p><strong>ANTECEDENTES</strong></p><p><strong>FUM: </strong> :FUM<br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container-fluid'><p><strong>DESCRIPCIÓN</strong></p><p>Cuerpo Uterino :LINEA1<br>Saco Gestacional :LINEA2<br>Saco Vitelino :LINEA3<br>Embrión :LINEA4<br>Exploración anexial derecha :LINEA5<br>Exploración anexial izquierda :LINEA6<br>Exploración de Douglas :LINEA7</p><p></p><p></p><p><strong>:TITULOBIOMETRIAS</strong></p><p>:LINEA12<br>:LINEA13</p><p></p><p></p><p><strong>HIPÓTESIS DIAGNÓSTICA</strong></p><p>:LINEA8 :LINEA9<br>:LINEA10<br>:LINEA11</p></div><div class='container-fluid'><p><strong>COMENTARIOS Y OBSERVACIONES</strong></p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'><p class='text-right top40'>Ecografista: <strong>:ECOGRAFISTA</strong></p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina'>Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800<br>Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992.<br>Referencia Diámetro biparital según gráfica de Hadlock y col. 1984<br><strong>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div>";
+	
+	var paciente = $( '#nombre-paciente').val();
+	var idpaciente = $( '#id-paciente').val();
+	var motivo = $( '#motivo-examen').val();
+	var ecografista = $( '#ecografista').val();
+
+	var fur = $( "input[name='fum']").val();
+	var fexamen = $( "input[name='fee']").val();
+	
+	InformeString = InformeString.replace(":PACIENTE", paciente);
+	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
+	InformeString = InformeString.replace(":MOTIVO", motivo);
+	InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
+	
+	var day = ("0" + aplication.day.getDate()).slice(-2);
+	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
+
+	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
+	
+	InformeString = InformeString.replace(":FUM", fur);
+	InformeString = InformeString.replace(":FEXAMEN", fexamen);
+	InformeString = InformeString.replace(":LINEA1", LINEA1);
+	InformeString = InformeString.replace(":LINEA2", LINEA2);
+	InformeString = InformeString.replace(":LINEA3", LINEA3);
+	InformeString = InformeString.replace(":LINEA4", LINEA4);
+	InformeString = InformeString.replace(":LINEA5", LINEA5);
+	InformeString = InformeString.replace(":LINEA6", LINEA6);
+	InformeString = InformeString.replace(":LINEA6", LINEA7);
+	InformeString = InformeString.replace(":LINEA6", LINEA8);
+	InformeString = InformeString.replace(":LINEA6", LINEA9);
+	InformeString = InformeString.replace(":LINEA6", LINEA10);
+	InformeString = InformeString.replace(":LINEA6", LINEA11);
+	InformeString = InformeString.replace(":LINEA6", LINEA12);
+	InformeString = InformeString.replace(":DATEINFORME", dateInf);
+	
 	imprInforme(InformeString);
 
 }
