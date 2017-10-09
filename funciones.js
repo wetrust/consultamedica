@@ -187,7 +187,7 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	//añadir boton de imprimir
 	$("#saco-gestacional-mm").val($('#saco').val());
 	$( '#saco-vitelino').on("click", function(){
-	    if ($(this).val== 'no se observa'){
+	    if ($(this).val() == 'no se observa'){
 	        $('#valor-saco-vitelino').css('display', 'block');
 	    }
 	    else{
@@ -195,7 +195,7 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	    }
 	});
 	$( '#exploracion-douglas').on("click", function(){
-	    if ($(this).val== 'ocupado'){
+	    if ($(this).val() == 'ocupado'){
 	        $('#exploracion-douglas-informe').css('display', 'block');
 	    }
 	    else{
