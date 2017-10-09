@@ -188,7 +188,7 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	//añadir boton de imprimir
 	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver Impresion</button>");
 	$( '#impDoppler1').on("click", function(){
-	      crearInformeEcoSegTrim1();
+	      crearInformeEcoPrimTrim();
 	});
 	$('#popupGenerico').modal('show');
 });
@@ -605,6 +605,13 @@ function crearInformeDoppler(){
 	InformeString = InformeString.replace(":DATEINFORME", dateInf);
 	
 	imprInforme(InformeString);
+}
+
+function crearInformeEcoPrimTrim(){
+
+	var InformeString = "<div class='container-fluid'><h3 class='page-header text-center'>Evaluación ecografía obstétrica de primer trimestre</h3><p><strong>Paciente Sra. (Srta.):</strong> :PACIENTE                   <strong>Fecha de Exámen:</strong> :FEXAMEN</p><p><strong>ID Paciente: </strong>:IDPACIENTE              <strong>Motivo: </strong>:MOTIVO</p></div><div class='container-fluid'><p><strong>ANTECEDENTES</strong></p><p><strong>FUM: </strong> :FUM<br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container-fluid'><p><strong>DESCRIPCIÓN</strong></p><p>Cuerpo Uterino :LINEA1<br>Saco Gestacional :LINEA2<br>Saco Vitelino :LINEA3<br>Embrión :LINEA4<br>Exploración anexial derecha :LINEA5<br>Exploración anexial izquierda :LINEA6<br>Exploración de Douglas :LINEA7</p><p></p><p></p><p id='titulo-biometria'><strong>BIOMETRÍAS</strong></p><p>:LINEA12</p><p>:LINEA13</p><p></p><p></p><p><strong>HIPÓTESIS DIAGNÓSTICA</strong></p><p>:LINEA8 :LINEA9<br>:LINEA10<br>:LINEA11</p></div><div class='container-fluid'><p><strong>COMENTARIOS Y OBSERVACIONES</strong></p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'><p class='text-right top40'>Ecografista: <strong>:ECOGRAFISTA</strong></p><p class='pie-pagina'>Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800<br>Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992.<br>Referencia Diámetro biparital según gráfica de Hadlock y col. 1984<br><br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div>";
+	imprInforme(InformeString);
+
 }
 
 ////////////////////////////////////////////
