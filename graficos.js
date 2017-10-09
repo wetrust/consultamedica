@@ -119,7 +119,7 @@ $( '#graficoCc' ).on( 'click', function() {
     $('#popupBody').html("<div id='graficoCcView'></div>");
     $('#graficoCcView').highcharts({
        title: {
-           text: 'CC',
+           text: 'Circunferencia de Cráneo',
            x: -20
        },
        subtitle: {
@@ -3155,7 +3155,7 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
             height: 250
         },
        title: {
-           text: 'CC',
+           text: 'Circunferencia de Cráneo',
            x: -20,
                style: {
             fontSize: '14px'
