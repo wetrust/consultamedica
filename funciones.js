@@ -1635,11 +1635,17 @@ function psohdlk() {
 
     var CC = 0;
     var CA = 0;
+    var LF = 0;
+    var DBP = 0;
 
  CC=parseFloat($("#cc").val());
  CA=parseInt($("#ca").val());
- if ($("#cc").val() && $("#cc").val()) {
-    var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA));
+ LF=parseFloat($("#lf").val());
+ DBP=parseInt($("#dbp").val());
+	
+ if ($("#cc").val() && $("#cc").val() && $("#lf").val() && $("#dbp").val()) {
+    var psoP =  Math.pow(10, (1.3596 - 0.00386 * CA * LF + 0.00064*CC+0.00061*DBP*CA+0.0424*CA+0.174*LF));
+	 
     $("#pfe").val(psoP.toFixed(0));
     pctpfe();
 	valccca()
