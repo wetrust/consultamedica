@@ -188,7 +188,7 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	$('#saco-gestacional-mm').val($('#saco').val());
 	$('#lcn-informe').val($('#lcn').val());
 	$( '#saco-vitelino').on("click", function(){
-	    if ($(this).val() == 'no se observa'){
+	    if (!$(this).val() == 'no se observa'){
 	        $('#valor-saco-vitelino').css('display', 'block');
 	    }
 	    else{
