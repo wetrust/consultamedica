@@ -1635,16 +1635,12 @@ function psohdlk() {
 
     var CC = 0;
     var CA = 0;
-    var LF = 0;
-    var DBP = 0;
 
  CC=parseFloat($("#cc").val()) /10;
  CA=parseInt($("#ca").val()) /10;
- LF=parseFloat($("#lf").val()) /10;
- DBP=parseInt($("#dbp").val()) /10;
 	
  if ($("#cc").val() && $("#cc").val() && $("#lf").val() && $("#dbp").val()) {
-    var psoP =  Math.pow(10, (1.182 + 0.00273 * parseInt(CC) + 0.007057 * parseInt(CA) - 0.0000063 * parseInt(CA) ^ 2 - 0.000002184 * parseInt(CC) * parseInt(CA)));
+    var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA))
 	 
     $("#pfe").val(psoP.toFixed(0));
     pctpfe();
