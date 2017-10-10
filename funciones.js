@@ -187,7 +187,7 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	//añadir boton de imprimir
 	var fur = $( "input[name='fum']").val();
 	var fpp = $( "input[name='fpp']").val();
-	var comentario = "\r\nFum operacional: " + fur + "\r\nFecha probable de parto: " + fpp;
+	var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp;
 	$('#comentarios-eco-uno').val(comentario);
 	$('#saco-gestacional-mm').val($('#saco').val());
 	$('#lcn-informe').val($('#lcn').val());
