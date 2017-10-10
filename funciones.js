@@ -204,11 +204,11 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	    }
 	});
 	$( '#embrion').on("click", function(){
-	    if ($(this).val() == 'no se observa aun' || $(this).val() == 'act. no evidenciable'){
+	    if ($(this).val() == 'no se observa aun' || $(this).val() == 'act. no evidenciable' || $(this).val() == 'act. card. y Corp. (-)'){
 	        $('#fcf-primer-trim').css('display', 'none');
 	    }
 	    else if ($(this).val() == 'act. cardiaca evidenciable'){
-	        $('#fcf-prim').val($("#target option:first").val());
+	        $('#fcf-prim').val($("#fcf-prim option:first").val());
 	    }
 	    else{
 		$('#fcf-primer-trim').css('display', 'block');	
