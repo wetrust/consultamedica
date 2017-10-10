@@ -1644,7 +1644,7 @@ function psohdlk() {
  DBP=parseInt($("#dbp").val());
 	
  if ($("#cc").val() && $("#cc").val() && $("#lf").val() && $("#dbp").val()) {
-    var psoP =  Math.pow(10, (1.3596 - 0.00386 * CA * LF + 0.00064*CC+0.00061*DBP*CA+0.0424*CA+0.174*LF));
+    var psoP =  Math.pow(10, (1.3596 - ((0.00386 * CA) * LF) + (0.00064*CC)+ ((0.00061*DBP)*CA)+(0.0424*CA)+(0.174*LF)));
 	 
     $("#pfe").val(psoP.toFixed(0));
     pctpfe();
