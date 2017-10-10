@@ -1636,8 +1636,8 @@ function psohdlk() {
     var CC = 0;
     var CA = 0;
 
- CC=parseFloat($("#cc").val()) /10;
- CA=parseInt($("#ca").val()) /10;
+ CC=parseFloat($("#cc").val());
+ CA=parseInt($("#ca").val());
 	
  if ($("#cc").val() && $("#cc").val() && $("#lf").val() && $("#dbp").val()) {
     var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA))
