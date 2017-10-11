@@ -11,6 +11,20 @@ $( '#adicionalCrecimientoView' ).on( 'click', function() {
 	}
 	
 });
+
+$( '#mensajeRestringido' ).on( 'click', function() {
+	$('#popupTitle').html("Mensaje");
+	//remueve los botones de imprimir en caso de que estén
+	$( '#impEcoObsSegTrim2').remove();
+	$( '#impEcoObsSegTrim1').remove();
+	$( '#impDoppler3').remove();
+	$( '#impDoppler2').remove();
+	$( '#impDoppler1').remove();
+        $('#popupBody').html("<p>Esta sección está restringida, solo está disponible para usuarios capacitados en la plataforma. </p><a href="#paciente">l</a>");
+	$('#popupGenerico').modal('show');
+});
+
+
 //enters
 $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
