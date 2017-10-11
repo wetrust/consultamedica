@@ -22,6 +22,48 @@ $( '#mensajeRestringido' ).on( 'click', function() {
 	$( '#impDoppler1').remove();
 	$( '#impDoppler1').remove();
         $('#popupBody').html("<form><h5 class='text-center'>Formulario solicitud de ingreso</h5><div class='row'><div class='form-group col'> <label for='contact-name'>Nombre, Apellido</label> <input type='text' class='form-control' id='contact-name'> </div><div class='form-group col'> <label for='contact-id'>DNI o RUT</label> <input type='text' class='form-control' id='contact-id'> </div></div><div class='row'><div class='form-group col'> <label for='contact-country'>Nacionalidad</label> <input type='text' class='form-control' id='contact-country'> </div><div class='form-group col'> <label for='contact-job'>Profesión</label> <select class='form-control' id='contact-job'> <option>Médico con especialidad en perinatología</option> <option>Médico con especialidad en gineco-obstetricia</option> <option>Médico sin especialidad en gineco-obstetricia</option> <option>Médico en formación de la especialidad</option> <option>Otros, ultrosonografistas gineco - obstétrico</option> </select> </div></div><div class='row'><div class='form-group col'> <label for='contact-grade'>Año de título profesional</label> <input type='text' class='form-control' id='contact-grade'> </div><div class='form-group col'> <label for='contact-register'>Registro Médico de especialidad</label> <input type='text' class='form-control' id='contact-register'> </div></div><div class='row'><div class='form-group col'> <label for='contact-expertise'>Años de experiencia en US Obstétrico</label> <input type='text' class='form-control' id='contact-expertise'> </div><div class='form-group col'> <label for='contact-job-location'>Lugar de trabajo</label> <input type='text' class='form-control' id='contact-job-location'> </div></div><div class='row'><div class='form-group col'> <label for='exampleInputEmail1'>Ciudad</label> <input type='email' class='form-control' id='exampleInputEmail1' aria-describedby='emailHelp'> </div><div class='form-group col'> <label for='exampleInputEmail1'>Teléfono de contacto</label> <input type='number' class='form-control' id='exampleInputEmail1' aria-describedby='emailHelp'> <small id='emailHelp' class='form-text text-muted'>Nunca compartiremos tu correo con terceros</small> </div></div><div class='form-group'> <label for='exampleInputEmail1'>Correo electrónico</label> <input type='email' class='form-control' id='exampleInputEmail1'> </div><div class='row'><div class='form-group col'> <label for='exampleInputEmail1'>Servicio de salud</label>  <input type='email' class='form-control' id='exampleInputEmail1'></div><div class='form-group col'><label for='exampleInputEmail1'>Hospital o Unidad académica</label>   <input type='email' class='form-control' id='exampleInputEmail1'></div></div><div class='row'><div class='form-group col'> <label for='exampleInputEmail1'>Consultorio público</label> <input type='email' class='form-control' id='exampleInputEmail1'> </div><div class='form-group col'> <label for='exampleInputEmail1'>Consulta privada</label> <input type='email' class='form-control' id='exampleInputEmail1'> </div></div><div class='form-group'> <label for='exampleInputEmail1'>Comentarios y sugerencias</label> <input type='email' class='form-control' id='exampleInputEmail1'> </div></form>");
+	$( "#contact-name" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-id").focus()
+	  }
+	});
+		$( "#contact-id" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-country").focus()
+	  }
+	});
+		$( "#contact-country" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-job").focus()
+	  }
+	});
+		$( "#contact-job" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-grade").focus()
+	  }
+	});
+		$( "#contact-grade" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-register").focus()
+	  }
+	});
+		$( "#contact-register" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-expertise").focus()
+	  }
+	});
+		$( "#contact-expertise" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-job-location").focus()
+	  }
+	});
 	$('#popupGenerico').modal('show');
 });
 
