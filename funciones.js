@@ -20,7 +20,7 @@ $( '#mensajeRestringido' ).on( 'click', function() {
 	$( '#impDoppler3').remove();
 	$( '#impDoppler2').remove();
 	$( '#impDoppler1').remove();
-        $('#popupBody').html("<p>Esta sección está restringida, solo está disponible para usuarios capacitados en la plataforma. </p><a href="#paciente">l</a>");
+        $('#popupBody').html("<p>Esta sección está restringida, solo está disponible para usuarios capacitados en la plataforma. </p><a href='#paciente'>l</a>");
 	$('#popupGenerico').modal('show');
 });
 
