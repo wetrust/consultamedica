@@ -13,7 +13,7 @@ $( '#adicionalCrecimientoView' ).on( 'click', function() {
 });
 
 $( '#mensajeRestringido' ).on( 'click', function() {
-	$('#popupTitle').html("Sección restringida, solo está disponible para usuarios capacitados en la plataforma.");
+	$('#popupTitle').html("Sección restringida, solo disponible para usuarios capacitados en la plataforma.");
 	//remueve los botones de imprimir en caso de que estén
 	$( '#impEcoObsSegTrim2').remove();
 	$( '#impEcoObsSegTrim1').remove();
