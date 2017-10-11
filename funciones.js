@@ -21,7 +21,7 @@ $( '#mensajeRestringido' ).on( 'click', function() {
 	$( '#impDoppler2').remove();
 	$( '#impDoppler1').remove();
 	$( '#impDoppler1').remove();
-        $('#popupBody').html("<form><h5 class='text-center'>Formulario solicitud de ingreso</h5><div class='row'><div class='form-group col'> <label for='contact-name'>Nombre, Apellido</label> <input type='text' class='form-control' id='contact-name'> </div><div class='form-group col'> <label for='contact-id'>DNI o RUT</label> <input type='text' class='form-control' id='contact-id'> </div></div><div class='row'><div class='form-group col'> <label for='contact-country'>Nacionalidad</label> <input type='text' class='form-control' id='contact-country'> </div><div class='form-group col'> <label for='contact-job'>Profesión</label> <select class='form-control' id='contact-job'> <option>Médico con especialidad en perinatología</option> <option>Médico con especialidad en gineco-obstetricia</option> <option>Médico sin especialidad en gineco-obstetricia</option> <option>Médico en formación de la especialidad</option> <option>Otros, ultrosonografistas gineco - obstétrico</option> </select> </div></div><div class='row'><div class='form-group col'> <label for='contact-grade'>Año de título profesional</label> <input type='text' class='form-control' id='contact-grade'> </div><div class='form-group col'> <label for='contact-register'>Registro Médico de especialidad</label> <input type='text' class='form-control' id='contact-register'> </div></div><div class='row'><div class='form-group col'> <label for='contact-expertise'>Años de experiencia en US Obstétrico</label> <input type='text' class='form-control' id='contact-expertise'> </div><div class='form-group col'> <label for='contact-job-location'>Lugar de trabajo</label> <input type='text' class='form-control' id='contact-job-location'> </div></div><div class='row'><div class='form-group col'> <label for='exampleInputEmail1'>Ciudad</label> <input type='email' class='form-control' id='exampleInputEmail1' aria-describedby='emailHelp'> </div><div class='form-group col'> <label for='exampleInputEmail1'>Teléfono de contacto</label> <input type='number' class='form-control' id='exampleInputEmail1' aria-describedby='emailHelp'> <small id='emailHelp' class='form-text text-muted'>Nunca compartiremos tu correo con terceros</small> </div></div><div class='form-group'> <label for='exampleInputEmail1'>Correo electrónico</label> <input type='email' class='form-control' id='exampleInputEmail1'> </div><div class='row'><div class='form-group col'> <label for='exampleInputEmail1'>Servicio de salud</label>  <input type='email' class='form-control' id='exampleInputEmail1'></div><div class='form-group col'><label for='exampleInputEmail1'>Hospital o Unidad académica</label>   <input type='email' class='form-control' id='exampleInputEmail1'></div></div><div class='row'><div class='form-group col'> <label for='exampleInputEmail1'>Consultorio público</label> <input type='email' class='form-control' id='exampleInputEmail1'> </div><div class='form-group col'> <label for='exampleInputEmail1'>Consulta privada</label> <input type='email' class='form-control' id='exampleInputEmail1'> </div></div><div class='form-group'> <label for='exampleInputEmail1'>Comentarios y sugerencias</label> <input type='email' class='form-control' id='exampleInputEmail1'> </div></form>");
+        $('#popupBody').html("<form><h5 class='text-center'>Formulario solicitud de ingreso</h5><div class='row'><div class='form-group col'> <label for='contact-name'>Nombre, Apellido</label> <input type='text' class='form-control' id='contact-name'> </div><div class='form-group col'> <label for='contact-id'>RUT o DNI</label> <input type='text' class='form-control' id='contact-id'> </div></div><div class='row'><div class='form-group col'> <label for='contact-country'>Nacionalidad</label> <input type='text' class='form-control' id='contact-country'> </div><div class='form-group col'> <label for='contact-job'>Profesión</label> <select class='form-control' id='contact-job'> <option>Médico con especialidad en perinatología</option> <option>Médico con especialidad en gineco-obstetricia</option> <option>Médico sin especialidad en gineco-obstetricia</option> <option>Médico en formación de la especialidad</option> <option>Otros, ultrosonografistas gineco - obstétrico</option> </select> </div></div><div class='row'><div class='form-group col'> <label for='contact-grade'>Año de título profesional</label> <input type='text' class='form-control' id='contact-grade'> </div><div class='form-group col'> <label for='contact-register'>N° de registro profesional</label> <input type='text' class='form-control' id='contact-register'> </div></div><div class='row'><div class='form-group col'> <label for='contact-expertise'>Años de experiencia en US Obstétrico</label> <input type='text' class='form-control' id='contact-expertise'> </div><div class='form-group col'> <label for='contact-job-location'>Pais</label> <input type='text' class='form-control' id='contact-job-location'> </div></div><div class='row'><div class='form-group col'> <label for='contact-city'>Ciudad</label> <input type='text' class='form-control' id='contact-city'> </div><div class='form-group col'> <label for='contact-phone'>Teléfono de contacto</label> <input type='number' class='form-control' id='contact-phone'> </div></div><div class='form-group'> <label for='contact-email'>Correo electrónico</label> <input type='email' class='form-control' id='contact-email'> <small id='emailHelp' class='form-text text-muted'>Nunca compartiremos tu correo con terceros</small></div><div class='row'><div class='form-group col'> <label for='contact-ss'>Servicio de salud / Clínica</label>  <input type='text' class='form-control' id='contact-ss'></div><div class='form-group col'><label for='contact-h'>Hospital / Unidad académica</label>   <input type='text' class='form-control' id='contact-h'></div></div><div class='row'><div class='form-group col'> <label for='contact-consultorio'>Consultorio público</label> <input type='text' class='form-control' id='contact-consultorio'> </div><div class='form-group col'> <label for='contact-private-job'>Consulta privada</label> <input type='text' class='form-control' id='contact-private-job'> </div></div><div class='form-group'> <label for='contact-comments'>Comentarios y sugerencias</label> <input type='text' class='form-control' id='contact-comments'> </div></form>");
 	$( "#contact-name" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
@@ -58,11 +58,63 @@ $( '#mensajeRestringido' ).on( 'click', function() {
 	     $("#contact-expertise").focus()
 	  }
 	});
-		$( "#contact-expertise" ).keypress(function( event ) {
+	$( "#contact-expertise" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
 	     $("#contact-job-location").focus()
 	  }
+	});
+	$( "#contact-job-location" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-city").focus()
+	  }
+	});
+	$( "#contact-city" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-phone").focus()
+	  }
+	});
+	$( "#contact-phone" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-email").focus()
+	  }
+	});
+	$( "#contact-email" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-ss").focus()
+	  }
+	});
+	$( "#contact-ss" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-h").focus()
+	  }
+	});
+	$( "#contact-h" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-consultorio").focus()
+	  }
+	});
+	$( "#contact-consultorio" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-private-job").focus()
+	  }
+	});
+	$( "#contact-private-job" ).keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	     event.preventDefault();
+	     $("#contact-comments").focus()
+	  }
+	});
+	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Genere PDF y envíe solicitud de ingreso</button>");
+	$( '#impDoppler1').on("click", function(){
+	      //crearInformeEcoPrimTrim();
 	});
 	$('#popupGenerico').modal('show');
 });
