@@ -3878,7 +3878,7 @@ $('#viewGraficopsmACM').highcharts({
             }
         },
         yAxis: {
-            title: { text: 'mm' },
+            title: { text: 'cm/s' },
             tickPositions: [20, 40, 60, 80, 100]
         },
         colors: ['#313131', '#313131', '#313131'],
