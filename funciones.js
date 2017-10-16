@@ -297,7 +297,7 @@ $( '#semanasEcoObs' ).on( 'change', function() {
 	FExamen = new Date (FExamen);
 	
 	var B = new Date();
-	B.setTime(FUM.getTime() + eg * undia);
+	B.setTime(FExamen.getTime() - eg * undia);
 	
 	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
 	
