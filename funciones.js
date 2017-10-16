@@ -289,7 +289,8 @@ $( '#semanasEcoObs' ).on( 'change', function() {
 	var undia = 1000 * 60 * 60 * 24;
 	var unasemana = undia * 7;
 	
-	semanas = semanas * 7;
+	semanas = semanas * unasemana;
+	dias = dias * undia;
 	var eg = semanas + dias;
 	
 	var FExamen = $("input[name='fee']").val();
@@ -297,7 +298,7 @@ $( '#semanasEcoObs' ).on( 'change', function() {
 	FExamen = new Date (FExamen);
 	
 	var B = new Date();
-	B.setTime(FExamen.getTime() - (eg * undia));
+	B.setTime(FExamen.getTime() - eg);
 	
 	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
 	
