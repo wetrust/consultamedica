@@ -314,6 +314,37 @@ $( '#semanasEcoObs' ).on( 'change', function() {
     	localStorage.fee = $("input[name='fee']").val();
 });
 
+$( '#diasEcoObs' ).on( 'change', function() {
+	var semanas = $('#semanasEcoObs').val();
+	var dias = $(this).val();
+	var undia = 1000 * 60 * 60 * 24;
+	var unasemana = undia * 7;
+	
+	semanas = semanas * unasemana;
+	dias = dias * undia;
+	var eg = semanas + dias;
+	
+	var FExamen = $("input[name='fee']").val();
+	FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FExamen = new Date (FExamen);
+	
+	var B = new Date();
+	B.setTime(FExamen.getTime() - eg);
+	
+	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	var FUM = $("input[name='fum']").val();
+	FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FUM = new Date (FUM);
+	
+	B = new Date();
+	B.setTime(FUM.getTime() + 40 * unasemana); 
+	$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	localStorage.fum = $("input[name='fum']").val();
+    	localStorage.fee = $("input[name='fee']").val();
+});
+
 
 //modales para informe
 $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
@@ -1035,6 +1066,8 @@ function calcularEG(){
   }
   else {
     EdadGestacional = Math.floor(EdadGestacional)+"."+Math.round((EdadGestacional - Math.floor(EdadGestacional))*7);
+    $('#semanasEcoObs').val(Math.floor(EdadGestacional));
+    $('#diasEcoObs').val(Math.round((EdadGestacional - Math.floor(EdadGestacional))*7));
   }
  
   return EdadGestacional;
