@@ -1065,9 +1065,9 @@ function calcularEG(){
     EdadGestacional = "42";
   }
   else {
-    EdadGestacional = Math.floor(EdadGestacional)+"."+Math.round((EdadGestacional - Math.floor(EdadGestacional))*7);
     $('#semanasEcoObs').val(Math.floor(EdadGestacional));
     $('#diasEcoObs').val(Math.round((EdadGestacional - Math.floor(EdadGestacional))*7));
+    EdadGestacional = Math.floor(EdadGestacional)+"."+Math.round((EdadGestacional - Math.floor(EdadGestacional))*7);
   }
  
   return EdadGestacional;
