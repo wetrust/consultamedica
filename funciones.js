@@ -314,7 +314,7 @@ $( '#semanasEcoObs' ).on( 'change', function() {
     	localStorage.fee = $("input[name='fee']").val();
 	semanas = semanas / unasemana;
 	dias = dias / undia;
-	localStorage.edad = semanas + "." + dias;
+	localStorage.eg = semanas + "." + dias;
 });
 
 $( '#diasEcoObs' ).on( 'change', function() {
@@ -348,7 +348,7 @@ $( '#diasEcoObs' ).on( 'change', function() {
     	localStorage.fee = $("input[name='fee']").val();
 	semanas = semanas / unasemana;
 	dias = dias / undia;
-	localStorage.edad = semanas + "." + dias;
+	localStorage.eg = semanas + "." + dias;
 });
 
 $( '#semanasEcoDopp' ).on( 'change', function() {
@@ -382,7 +382,7 @@ $( '#semanasEcoDopp' ).on( 'change', function() {
     	localStorage.fee = $("input[name='fee']").val();
 	semanas = semanas / unasemana;
 	dias = dias / undia;
-	localStorage.edad = semanas + "." + dias;
+	localStorage.eg = semanas + "." + dias;
 });
 
 $( '#diasEcoDopp' ).on( 'change', function() {
@@ -416,7 +416,7 @@ $( '#diasEcoDopp' ).on( 'change', function() {
     	localStorage.fee = $("input[name='fee']").val();
 	semanas = semanas / unasemana;
 	dias = dias / undia;
-	localStorage.edad = semanas + "." + dias;
+	localStorage.eg = semanas + "." + dias;
 });
 
 
