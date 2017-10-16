@@ -312,6 +312,7 @@ $( '#semanasEcoObs' ).on( 'change', function() {
 	
 	localStorage.fum = $("input[name='fum']").val();
     	localStorage.fee = $("input[name='fee']").val();
+	localStorage.edad = calcularEdad();
 });
 
 $( '#diasEcoObs' ).on( 'change', function() {
@@ -343,6 +344,7 @@ $( '#diasEcoObs' ).on( 'change', function() {
 	
 	localStorage.fum = $("input[name='fum']").val();
     	localStorage.fee = $("input[name='fee']").val();
+	localStorage.edad = calcularEdad();
 });
 
 $( '#semanasEcoDopp' ).on( 'change', function() {
@@ -374,6 +376,7 @@ $( '#semanasEcoDopp' ).on( 'change', function() {
 	
 	localStorage.fum = $("input[name='fum']").val();
     	localStorage.fee = $("input[name='fee']").val();
+	localStorage.edad = calcularEdad();
 });
 
 $( '#diasEcoDopp' ).on( 'change', function() {
@@ -405,6 +408,7 @@ $( '#diasEcoDopp' ).on( 'change', function() {
 	
 	localStorage.fum = $("input[name='fum']").val();
     	localStorage.fee = $("input[name='fee']").val();
+	localStorage.edad = calcularEdad();
 });
 
 
