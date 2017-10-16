@@ -282,6 +282,34 @@ function show_hide(id){
   }
 };
 
+
+$( '#semanasEcoObs' ).on( 'change', function() {
+	var semanas = $(this).val();
+	var dias = $('#diasEcoObs').val();
+	var undia = 1000 * 60 * 60 * 24;
+	var unasemana = undia * 7;
+	
+	semanas = semanas * 7;
+	var eg = semanas + dias;
+	
+	var FExamen = $("input[name='fee']").val();
+	FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FExamen = new Date (FExamen);
+	
+	var B = new Date();
+	B.setTime(FUM.getTime() + eg * undia);
+	
+	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	B = new Date();
+	B.setTime(FUM.getTime() + 40 * unasemana); 
+	$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	localStorage.fum = $("input[name='fum']").val();
+    	localStorage.fee = $("input[name='fee']").val();
+});
+
+
 //modales para informe
 $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	$('#popupTitle').html("Datos para informe");
