@@ -312,7 +312,7 @@ $( '#semanasEcoObs' ).on( 'change', function() {
 	
 	localStorage.fum = $("input[name='fum']").val();
     	localStorage.fee = $("input[name='fee']").val();
-	localStorage.edad = calcularEdad();
+	localStorage.edad = (semanas / unasemana) + "." + ( dias / undia);
 });
 
 $( '#diasEcoObs' ).on( 'change', function() {
@@ -344,7 +344,7 @@ $( '#diasEcoObs' ).on( 'change', function() {
 	
 	localStorage.fum = $("input[name='fum']").val();
     	localStorage.fee = $("input[name='fee']").val();
-	localStorage.edad = calcularEdad();
+	localStorage.edad = (semanas / unasemana) + "." + ( dias / undia);
 });
 
 $( '#semanasEcoDopp' ).on( 'change', function() {
@@ -376,7 +376,7 @@ $( '#semanasEcoDopp' ).on( 'change', function() {
 	
 	localStorage.fum = $("input[name='fum']").val();
     	localStorage.fee = $("input[name='fee']").val();
-	localStorage.edad = calcularEdad();
+	localStorage.edad = (semanas / unasemana) + "." + ( dias / undia);
 });
 
 $( '#diasEcoDopp' ).on( 'change', function() {
@@ -408,7 +408,7 @@ $( '#diasEcoDopp' ).on( 'change', function() {
 	
 	localStorage.fum = $("input[name='fum']").val();
     	localStorage.fee = $("input[name='fee']").val();
-	localStorage.edad = calcularEdad();
+	localStorage.edad = (semanas / unasemana) + "." + ( dias / undia);
 });
 
 
