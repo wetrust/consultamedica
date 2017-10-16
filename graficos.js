@@ -2933,7 +2933,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     $('#popupTitle').html("Gráfica evaluación ecográfica del crecimiento fetal");
     $( '#impEcoObsSegTrim1').remove();
     $('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impEcoObsSegTrim1'>Ver Impresion</button>");
-    $('#popupBody').html("<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none'></span><h4 class='text-center d-none mt-2'>Gráfica evaluación ecográfica del crecimiento fetal</h4><hr class='d-none'><div class='row'><div class='col'><div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col'><div class='row'><div class='col-12'><div id='graficoCCCAView'></div></div><div class='col-12'><div id='graficoLhView'></div></div></div></div></div><div class='row' id='lineclear'><div class='col'><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Evaluación del crecimiento fetal, según referencia propuesta por Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90)<br>** Perímetro Abdominal según ege, normalidad pct. 3 a pct. 97. Referencia Hadlock y col. 1984<br><strong>Herramienta informática diseñada por Dr. Rudecindo Lagos S.  Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>");
+    $('#popupBody').html("<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none'></span><h4 class='text-center d-none mt-2'>Gráfica evaluación ecográfica del crecimiento fetal</h4><hr class='d-none'><div class='row'><div class='col'><div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col'><div class='row'><div class='col-12'><div id='graficoCCCAView'></div></div><div class='col-12'><div id='graficoBVMView'></div></div></div></div></div><div class='row' id='lineclear'><div class='col'><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Evaluación del crecimiento fetal, según referencia propuesta por Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90)<br>** Perímetro Abdominal según ege, normalidad pct. 3 a pct. 97. Referencia Hadlock y col. 1984<br><strong>Herramienta informática diseñada por Dr. Rudecindo Lagos S.  Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>");
     $( '#impEcoObsSegTrim1').on("click", function(){
       imprSelec("popupBody");
     });
@@ -3056,11 +3056,13 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
        series: [{
            type: "line",
            name: 'Pct. 3',
+               dashStyle: "Dot",
            marker: { enabled: false },
            data: [1.1,1.09,1.08,1.07,1.06,1.06,1.05,1.04,1.03,1.02,1.01,1,1,0.99,0.98,0.97,0.96,0.95,0.95,0.94,0.93,0.92,0.91,0.9,0.89,0.89]
        }, {
            type: "line",
            name: 'Pct. 97',
+           dashStyle: "Dot",
            marker: { enabled: false },
            data: [1.29,1.28,1.27,1.26,1.25,1.24,1.24,1.23,1.22,1.21,1.2,1.19,1.18,1.18,1.17,1.17,1.16,1.15,1.14,1.13,1.12,1.11,1.1,1.09,1.08,1.08]
        }, {
@@ -3091,78 +3093,77 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
        }]
     });
         
-        
-        
-        
-        
-   $('#graficoLhView').highcharts({
-           chart: {
-            height: 250
-        },
-            title: {
-                text: 'Largo Humeral',
-                x: -20,
-                    style: {
-            fontSize: '14px'
-        }
-            },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false
-                }
-            },
-           legend: {
-            itemStyle: {
-                fontSize: '10px',
-                fontWeight:'normal'
-            }
-        },
-            yAxis: {
-                title: { text: 'Milimetros (mm)' },
-                tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80]
-            },
-            colors: ['#313131', '#313131', '#313131'],
-            xAxis: {
-                categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
-            },
-            credits: { enabled: false },
-            series: [{
-                type: "line",
-                name: 'Pct. 5',
-                dashStyle: "Dot",
-                marker: { enabled: false },
-                data: [4.8, 7.6, 10.3, 13.1, 15.8, 18.5, 21.2, 23.8, 26.3, 28.8, 31.2, 33.5, 35.7, 37.9, 39.9, 41.9, 43.7, 45.5, 47.2, 48.9, 50.4, 52.1, 53.4, 54.8, 56.2, 57.6, 59.8, 60.4, 61.9]
-            }, {
-                type: "line",
-                name: 'Pct. 95',
-                dashStyle: "Dot",
-                marker: { enabled: false },
-                data: [12.3, 15.1, 17.9, 20.7, 23.5, 26.3, 29.1, 31.6, 34.2, 36.7, 39.2, 41.6, 43.9, 46.1, 48.1, 50.1, 52.1, 53.9, 55.6, 57.3, 58.9, 60.5, 62.1, 63.5, 64.9, 66.4, 67.8, 69.3, 70.8]
-            }, {
-                type: "line",
-                name: 'Humero',
-                dashStyle: "Dot",
-                marker: { symbol: 'square' },
-                lineWidth: 0,
-                data: (function () {
-                    var data = [];
-                    var edadGest = parseInt(localStorage.eg) - 1;
-
-                    for (i = 12; i <= edadGest; i++) {
-                        data.push({ y: 0, });
-                    }
-                    data.push({
-                        y: parseInt(document.getElementById("lh").value),
-                    });
-                    for (i = edadGest + 1; i <= 39; i++) {
-                        data.push({
-                            y: 0,
-                        });
-                    }
-                    return data;
-                }())
-            }]
-    });
+   $('#graficoBVMView').highcharts({
+             chart: {
+             height: 250
+         },
+         title: {
+             text: 'BVM de Líquido Amniótico ***',
+             x: -20,
+                 style: {
+             fontSize: '14px'
+         }
+         },
+         plotOptions: {
+             series: {
+                 enableMouseTracking: false
+             }
+         },
+             legend: {
+             itemStyle: {
+                 fontSize: '10px',
+                 fontWeight:'normal'
+             }
+         },
+         yAxis: {
+             title: { text: 'Milimetros (mm)' },
+             tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
+         },
+         colors: ['#313131','#313131','#313131'],
+         xAxis: {
+             categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+         },
+         credits: {enabled:false},
+         series: [{
+             type: "line",
+             name: 'Pct. 5',
+             dashStyle: "Dot",
+             marker: {enabled:false},
+             data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
+         }, {
+             type: "line",
+             name: 'Pct. 95',
+             dashStyle: "Dot",
+             marker: { enabled: false },
+             data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
+         }, {
+             type: "line",
+             name: 'BVM',
+             dashStyle: "Dot",
+             marker: { symbol: 'square' },
+             lineWidth: 0,
+             data: (
+                 function () {
+                     var data = [];
+                     var edadGest = parseInt(localStorage.eg) -1;
+ 
+                     for (i = 16; i <= edadGest; i ++ ) {
+                         data.push({
+                             y: 0,
+                         });
+                     }
+                     data.push({
+                             y: parseFloat($('#bvm').val()),
+                         });
+                     for (i = edadGest +1; i <= 39; i ++ ) {
+                         data.push({
+                             y: 0,
+                         });
+                     }
+                     return data;
+                 }())
+             }]
+     });
     $('#popupGenerico').modal('show');
 });
 
