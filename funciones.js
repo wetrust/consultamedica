@@ -769,12 +769,11 @@ function crearInformeEcoSegTrim2(){
         var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
         
 	var anatomiaFetal = $('#ev-morfo').val();
-	var anatomiaFetalCount = anatomiaFetal.length;
 	var anatomiaFetalString = "";
 	
-	for(i=0;i<anatomiaFetalCount;i++)
+	for(i=0;i<anatomiaFetal.length;i++)
         {
-		anatomiaFetalString = anatomiaFetal[i] + "<br>";
+		anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i] + "<br>";
         }
 	
 	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
