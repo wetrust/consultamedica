@@ -594,7 +594,16 @@ function crearInformeEcoSegTrim1(){
         
         var linea1 = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
         var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
-        var linea3 = "<strong>Anatomía fetal *</strong>  " + document.getElementById("ev-morfo").value + ", " + document.getElementById("comentarios-anatomia-informe-eg-texto").value;
+	
+	var anatomiaFetal = $('#ev-morfo').val();
+	var anatomiaFetalString = "";
+	
+	for(i=0;i<anatomiaFetal.length;i++)
+        {
+		anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i] + " +<br>";
+        }
+	
+        var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
         var linea4 = "<strong>Placenta</strong> inserción " + document.getElementById("incersion").value + " y de ubicación " + document.getElementById("ubicacion").value + ", grado " + document.getElementById("grado-placenta").value;
         var linea5 = "<strong>Cordón</strong> umbilical " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
         var linea6 = "<strong>Líquido **</strong> amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm" + ilatxt;
