@@ -774,7 +774,7 @@ function crearInformeEcoSegTrim2(){
 	
 	for(i=0;i<anatomiaFetalCount;i++)
         {
-		anatomiaFetalString = anatomiaFetal[i] + <br>;
+		anatomiaFetalString = anatomiaFetal[i] + "<br>";
         }
 	
 	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
