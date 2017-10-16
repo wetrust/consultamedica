@@ -301,6 +301,10 @@ $( '#semanasEcoObs' ).on( 'change', function() {
 	
 	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
 	
+	var FUM = $("input[name='fum']").val();
+	FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FUM = new Date (FUM);
+	
 	B = new Date();
 	B.setTime(FUM.getTime() + 40 * unasemana); 
 	$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
