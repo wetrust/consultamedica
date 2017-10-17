@@ -283,6 +283,74 @@ function show_hide(id){
   }
 };
 
+$( '#semanasEcoGen' ).on( 'change', function() {
+	var semanas = $(this).val();
+	var dias = $('#diasEcoGen').val();
+	var undia = 1000 * 60 * 60 * 24;
+	var unasemana = undia * 7;
+	
+	semanas = semanas * unasemana;
+	dias = dias * undia;
+	var eg = semanas + dias;
+	
+	var FExamen = $("input[name='fee']").val();
+	FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FExamen = new Date (FExamen);
+	
+	var B = new Date();
+	B.setTime(FExamen.getTime() - eg);
+	
+	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	var FUM = $("input[name='fum']").val();
+	FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FUM = new Date (FUM);
+	
+	B = new Date();
+	B.setTime(FUM.getTime() + 40 * unasemana); 
+	$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	localStorage.fum = $("input[name='fum']").val();
+    	localStorage.fee = $("input[name='fee']").val();
+	semanas = semanas / unasemana;
+	dias = dias / undia;
+	localStorage.eg = semanas + "." + dias;
+});
+
+$( '#diasEcoGen' ).on( 'change', function() {
+	var semanas = $('#semanasEcoGen').val();
+	var dias = $(this).val();
+	var undia = 1000 * 60 * 60 * 24;
+	var unasemana = undia * 7;
+	
+	semanas = semanas * unasemana;
+	dias = dias * undia;
+	var eg = semanas + dias;
+	
+	var FExamen = $("input[name='fee']").val();
+	FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FExamen = new Date (FExamen);
+	
+	var B = new Date();
+	B.setTime(FExamen.getTime() - eg);
+	
+	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	var FUM = $("input[name='fum']").val();
+	FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FUM = new Date (FUM);
+	
+	B = new Date();
+	B.setTime(FUM.getTime() + 40 * unasemana); 
+	$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	localStorage.fum = $("input[name='fum']").val();
+    	localStorage.fee = $("input[name='fee']").val();
+	semanas = semanas / unasemana;
+	dias = dias / undia;
+	localStorage.eg = semanas + "." + dias;
+});
+
 
 $( '#semanasEcoObs' ).on( 'change', function() {
 	var semanas = $(this).val();
@@ -1154,6 +1222,8 @@ function calcularEG(){
     EdadGestacional = "42";
   }
   else {
+    $('#semanasEcoGen').val(Math.floor(EdadGestacional));
+    $('#diasEcoGen').val(Math.round((EdadGestacional - Math.floor(EdadGestacional))*7));
     $('#semanasEcoObs').val(Math.floor(EdadGestacional));
     $('#diasEcoObs').val(Math.round((EdadGestacional - Math.floor(EdadGestacional))*7));
     $('#semanasEcoDopp').val(Math.floor(EdadGestacional));
