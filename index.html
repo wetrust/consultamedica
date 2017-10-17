@@ -127,11 +127,11 @@
                 </div>
                 <div class="col">
                     <h4 class="alert-heading text-azul">Crecimientofetal.cl</h4>
-                    <p class="text-justify text-azul"><small>Sitio web <strong>diseñado para profesionales de la salud (médicos) vinculados con la vigilancia del control prenatal</strong>, sitio coordinado por Dr. Rudecindo Lagos, Médicos Gineco-obstetra. Maternidad de Hospital Regional de Temuco y Facultad de Medicina, Universidad de La Frontera - Chile.<br>En el diseño y mantenimiento del sitio participa el ingeniero civil informático, Sr Cristopher Castro.<br>El objetivo de esta aplicación es facilitar la valoración de datos obstétricos ecográficos relacionados con la vigilancia del crecimiento fetal. <strong>El sitio inicialmente incluye solo herramientas informaticas tales como:</strong></small></p>
+                    <p class="text-justify text-azul"><small>Sitio web <strong>diseñado para profesionales de la salud (médicos) vinculados con la vigilancia del control prenatal</strong>, sitio coordinado por Dr. Rudecindo Lagos, Médicos Gineco-obstetra. Maternidad de Hospital Regional de Temuco y Facultad de Medicina, Universidad de La Frontera - Chile.<br>En el diseño y mantenimiento del sitio participa el ingeniero civil informático, Sr Cristopher Castro.<br>El objetivo de esta aplicación es facilitar la valoración de datos obstétricos ecográficos relacionados con la vigilancia del crecimiento fetal. <strong>El sitio inicialmente incluye solo herramientas informaticas para:</strong></small></p>
                     <ul>
                       <li class="text-azul"><small>Determinación ecográfica de la edad gestacional</small></li>
                       <li class="text-azul"><small>Valoración de biometrías y crecimiento fetal</small></li>
-                      <li class="text-azul"><small>Flujometria Materno / Fetal básica</small></li>
+                      <li class="text-azul"><small>Flujometria Doppler Materno / Fetal básica</small></li>
                     </ul>
                     <p class="text-justify text-azul"><small>El análisis general de los datos ecográficos se encuentran disponibles para uso abierto <strong>(Ir a examen ecográfico rápido)</strong>, en tanto que, registro de información y  la emisión de documentos requiere acceso mediante registro previo.<br>Los cálculos y resultados de los contenidos en esta aplicación web deben ser confirmados antes de ser usados clínicamente, los resultados obtenidos mediante ella, no sustituyen el buen juicio clínico.<br><strong>La interpretación de los datos extraídos mediante esta herramienta informática es responsabilidad exclusiva de quien realiza y certifica el examen</strong>.</small></p>
                 </div>
@@ -942,7 +942,7 @@
                 <div class="col">
                     <div class="card mb-3">
                         <div class="card-block">
-                            <h5 class="card-title">Evaluación semi cuantitativa de Líquido Amniótico</h5>
+                            <h5 class="card-title">Evaluación semi cuantitativa de Líquido Amniótico <span class="float-right" id="ilaController">Opcional ILA</span></h5>
                             <form class="mt-3 mb-3">
                                 <div class="form-group row">
                                     <div class="col mb-2">
@@ -971,7 +971,7 @@
                                         <button type="button" class="btn btn-outline-info" id="graficoBVM">Ver Gráficas</button>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row d-none" id="ilaView">
                                     <div class="col mb-2">
                                         <label for="pfe" class="col-form-label"><strong>ILA</strong> (opcional)
                                         <br><small class="text-muted">Moore y col. Am J. O &amp; G. 1990; 162: 1168 - 1173</small>
