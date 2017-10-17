@@ -119,6 +119,18 @@ $( '#mensajeRestringido' ).on( 'click', function() {
 	$('#popupGenerico').modal('show');
 });
 
+$('#ilaController').on('click', function(){
+
+	if ($('#ilaView').hasClass('d-none')){
+		$('#ilaView').removeClass('d-none');
+	}
+	else{
+		$('#ilaView').addClass('d-none');
+	}
+
+});
+
+
 //enters
 $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
