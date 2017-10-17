@@ -853,7 +853,14 @@ function crearInformeEcoSegTrim2(){
 	
 	for(i=0;i<anatomiaFetal.length;i++)
         {
-		anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i] + " +<br>";
+		anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i];
+		
+		if (anatomiaFetal[i] !== 'no evaluada dirigidamente, pero el aspecto general es normal' && anatomiaFetal[i] !== 'de aspecto general normal'){
+			anatomiaFetalString = anatomiaFetalString + " +<br>";
+		}
+		else{
+			anatomiaFetalString = anatomiaFetalString + " <br>";
+		}
         }
 	
 	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
