@@ -571,7 +571,7 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
         else{
             ilatxt = "."
         }
-	var linea6 = "<strong>Líquido amniótico **</strong>" + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm" + ilatxt;
+	var linea6 = "Líquido amniótico **" + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm" + ilatxt;
 	
 	comentarios = comentarios + linea6 + '\r\n';
 	comentarios = comentarios + $('#comentarios-eco-dos-generico').val();
