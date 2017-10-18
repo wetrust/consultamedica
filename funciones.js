@@ -1274,6 +1274,20 @@ function calcularEdad(){
 	return Edad;
 }
 
+function calcularEdadMaterna(){
+	var fcumpleanos, Edad;
+	var d = new Date();
+	var undia = 1000 * 60 * 60 * 24;
+ 	var unasemana = undia * 7;
+	var unano = undia * 365;
+	
+	fcumpleanos = new Date($("input[name='fecha_nacimiento']").val());
+
+	Edad = ((d.getTime() - fcumpleanos.getTime()) / unano).toFixed(0);
+
+	return Edad;
+}
+
 function deDBP() {
 	var DBPMenos2DE = [];
 	var DBPMas2DE = [];
