@@ -875,6 +875,7 @@ function crearInformeEcoSegTrim2(){
 	var idpaciente = $( '#id-paciente').val();
 	var motivo = $( '#motivo-examen').val();
 	var ecografista = $( '#ecografista').val();
+	var edadmaterna = $( "input[name='edad_materna']").val();
 	
 	var day = ("0" + aplication.day.getDate()).slice(-2);
 	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
@@ -912,6 +913,7 @@ function crearInformeEcoSegTrim2(){
 	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
 	InformeString = InformeString.replace(":MOTIVO", motivo);
 	InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
+	InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
 
 	InformeString = InformeString.replace(":FUR", fur);
 	InformeString = InformeString.replace(":FEXAMEN", fexamen);
@@ -989,6 +991,7 @@ function crearInformeDoppler(){
 	var ccpTxt = $( '#ccpPctTxt').val();
 	var ccpRgo = $( '#ccpRngo').val();
 	var presentacion = $("#presentacion-doppler").val();
+	var edadmaterna = $( "input[name='edad_materna']").val();
 	
 	var day = ("0" + aplication.day.getDate()).slice(-2);
 	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
@@ -999,6 +1002,7 @@ function crearInformeDoppler(){
 	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
 	InformeString = InformeString.replace(":MOTIVO", motivo);
 	InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
+	InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
 	
 	InformeString = InformeString.replace(":FUM", fur);
 	InformeString = InformeString.replace(":FEXAMEN", fexamen);
