@@ -571,7 +571,7 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 	$( '#impDoppler1').on("click", function(){
 	      crearInformeEcoSegTrim1();
 	});
-	var comentarios = 'Crecimiento fetal en percentil ' + parseInt($('#pfePctRpt').val()) + '\r\n';
+	var comentarios = 'Crecimiento (peso) en percentil ' + parseInt($('#pfePctRpt').val()) + ', para gráfica de peso fetal Hadlock* \r\n';
 	
 	var ilatxt = document.getElementById("ila").value;
         if (ilatxt > 0){
