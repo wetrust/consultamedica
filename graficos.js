@@ -3032,7 +3032,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     });
     $('#graficoCaView').highcharts({
             chart: {
-            height: 512
+            height: 250
         },
        title: {
            text: 'CA**',
