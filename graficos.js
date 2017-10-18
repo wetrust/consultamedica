@@ -2937,7 +2937,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     $('#popupTitle').html("Gráfica evaluación ecográfica del crecimiento fetal");
     $( '#impEcoObsSegTrim1').remove();
     $('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impEcoObsSegTrim1'>Ver Impresion</button>");
-    var stringGraficos = "<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none'></span><h4 class='text-center d-none mt-2'>Gráfica evaluación ecográfica del crecimiento fetal</h4><hr class='d-none'><div class='row'><div class='col'><div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col'><div class='row'><div class='col-12'><div id='graficoCCCAView'></div></div><div class='col-12'><div id='graficoBVMView'></div></div></div></div></div><div class='row' id='lineclear'><div class='col'><p class='d-none' style='font-size:12px;'><strong>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Evaluación del crecimiento fetal, según referencia propuesta por Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90)<br>** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br><strong>Herramienta informática diseñada por Dr. Rudecindo Lagos S.  Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
+    var stringGraficos = "<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none'></span><h4 class='text-center d-none mt-2'>Gráfica evaluación ecográfica del crecimiento fetal</h4><hr class='d-none'><div class='row'><div class='col'><div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col'><div class='row'><div class='col-12'><div id='graficoCaView'></div></div><div class='col-12'><div id='graficoBVMView'></div></div></div></div></div><div class='row' id='lineclear'><div class='col'><p class='d-none' style='font-size:12px;'><strong>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Evaluación del crecimiento fetal, según referencia propuesta por Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90)<br>** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br><strong>Herramienta informática diseñada por Dr. Rudecindo Lagos S.  Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
     var comentarios = $('#comentarios-eco-dos-generico').val().replace(/\r\n|\r|\n/g,"<br />");
     stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
         
@@ -3030,16 +3030,17 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
            }())
        }]
     });
-    $('#graficoCCCAView').highcharts({
-             chart: {
-            height: 250
-        },
+    $('#graficoCaView').highcharts({
        title: {
-           text: 'Cc / Ca *',
+           text: 'CA**',
            x: -20, //center
                style: {
             fontSize: '14px'
         }
+       },
+       subtitle: {
+           text: 'Milimetros (mm)',
+           x: -20
        },
             legend: {
             itemStyle: {
@@ -3053,43 +3054,49 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
            }
        },
        yAxis: {
-           title: { text: 'Valor cuociente' },
-           tickPositions: [0.75, 0.82, 0.88, 0.95, 1, 1.07, 1.14, 1.2, 1.27, 1.33]
+           title: { text: 'Milimetros (mm)' },
+           tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
        },
        colors: ['#313131', '#313131', '#313131'],
        xAxis: {
-           categories: ['15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+           categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
        },
        credits: { enabled: false },
        series: [{
            type: "line",
            name: 'Pct. 3',
-               dashStyle: "Dot",
-           marker: { enabled: false },
-           data: [1.1,1.09,1.08,1.07,1.06,1.06,1.05,1.04,1.03,1.02,1.01,1,1,0.99,0.98,0.97,0.96,0.95,0.95,0.94,0.93,0.92,0.91,0.9,0.89,0.89]
-       }, {
-           type: "line",
-           name: 'Pct. 97',
            dashStyle: "Dot",
            marker: { enabled: false },
-           data: [1.29,1.28,1.27,1.26,1.25,1.24,1.24,1.23,1.22,1.21,1.2,1.19,1.18,1.18,1.17,1.17,1.16,1.15,1.14,1.13,1.12,1.11,1.1,1.09,1.08,1.08]
+           data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
        }, {
            type: "line",
-           name: 'CC/CA',
+           name: 'Pct 97',
+           dashStyle: "Dot",
+           marker: { enabled: false },
+           data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
+       }, {
+           type: "line",
+           name: 'CA',
            dashStyle: "Dot",
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
                var data = [];
-               var edadGest = parseInt(localStorage.eg) -1;
+               var edadGest = parseInt(localStorage.eg) - 1;
 
-               for (i = 16; i <= edadGest; i++) {
+               for (i = 12; i <= edadGest; i++) {
                    data.push({
                        y: 0,
                    });
                }
+
+               var ca = $("#ca").val();
+               ca = ca.toString();
+               ca = ca.replace(",", ".");
+               ca = parseFloat(ca);
+
                data.push({
-                   y: parseFloat($('#ccca').val()),
+                   y:ca,
                });
                for (i = edadGest + 1; i <= 39; i++) {
                    data.push({
@@ -3099,7 +3106,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                return data;
            }())
        }]
-    });
+   });
         
    $('#graficoBVMView').highcharts({
              chart: {
