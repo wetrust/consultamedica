@@ -46,8 +46,6 @@ function activarBotones() {
      $("input[name='edad_materna']").val(localStorage.edad);
  });
   
-  fecha_nacimiento
-  
  $("input[name='fum']").on('change', function() {
    localStorage.fum = $(this).val();
    localStorage.fee = $("input[name='fee']").val();
