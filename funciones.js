@@ -743,7 +743,7 @@ function crearInformeEcoSegTrim1(){
 	var cccaRango = '( ' + $( '#cccaRango').val() + ' )';
 	var pfe = $( '#pfe').val();
 	var pfePct = parseInt($( '#pfePctRpt').val());
-	var pfeRango = $( '#pfeRango').val();
+	var pfeRango = $( '#pfeRango').val() + ' ***';
 	var ic = $( '#dof-dbp').val();
 	
 	var paciente = $( '#nombre-paciente').val();
