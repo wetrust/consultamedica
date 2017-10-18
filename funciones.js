@@ -714,7 +714,7 @@ function crearInformeEcoSegTrim1(){
 		}
         }
 	
-        var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
+        var linea3 = "<strong>Anatomía fetal ***</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
         var linea4 = "<strong>Placenta</strong> inserción " + document.getElementById("incersion").value + " y de ubicación " + document.getElementById("ubicacion").value + ", grado " + document.getElementById("grado-placenta").value;
         var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
         var linea6 = "<strong>Líquido amniótico **</strong>" + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm" + ilatxt;
@@ -743,7 +743,7 @@ function crearInformeEcoSegTrim1(){
 	var cccaRango = '( ' + $( '#cccaRango').val() + ' )';
 	var pfe = $( '#pfe').val();
 	var pfePct = parseInt($( '#pfePctRpt').val());
-	var pfeRango = $( '#pfeRango').val() + ' ***';
+	var pfeRango = $( '#pfeRango').val() + ' *';
 	var ic = $( '#dof-dbp').val();
 	
 	var paciente = $( '#nombre-paciente').val();
