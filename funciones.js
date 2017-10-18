@@ -706,7 +706,7 @@ function crearInformeEcoSegTrim1(){
         {
 		anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i];
 		
-		if (anatomiaFetal[i] !== 'no evaluada dirigidamente, pero el aspecto general es normal' && anatomiaFetal[i] !== 'de aspecto general normal'){
+		if (anatomiaFetal[i] !== 'no evaluada dirigidamente, pero el aspecto morfológico general es normal' && anatomiaFetal[i] !== 'de aspecto general normal'){
 			anatomiaFetalString = anatomiaFetalString + " +<br>";
 		}
 		else{
@@ -892,7 +892,7 @@ function crearInformeEcoSegTrim2(){
         {
 		anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i];
 		
-		if (anatomiaFetal[i] !== 'no evaluada dirigidamente, pero el aspecto general es normal' && anatomiaFetal[i] !== 'de aspecto general normal'){
+		if (anatomiaFetal[i] !== 'no evaluada dirigidamente, pero el aspecto morfológico general es normal' && anatomiaFetal[i] !== 'de aspecto general normal'){
 			anatomiaFetalString = anatomiaFetalString + " +<br>";
 		}
 		else{
