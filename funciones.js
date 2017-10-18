@@ -567,7 +567,10 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 		$('#bvm').val($(this).val()).trigger('change');
 	});
 	$('#bvmEcoDos').val($('#bvm').val()).trigger('change');
-	
+	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button>");
+	$( '#impDoppler1').on("click", function(){
+	      crearInformeEcoSegTrim1();
+	});
 	var comentarios = 'Crecimiento fetal en percentil ' + parseInt($('#pfePctRpt').val()) + '\r\n';
 	
 	var ilatxt = document.getElementById("ila").value;
@@ -582,12 +585,6 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 	comentarios = comentarios + linea6 + '\r\n';
 	comentarios = comentarios + $('#comentarios-eco-dos-generico').val();
 	$('#comentarios-eco-dos-inf-uno').val(comentarios);
-	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button>");
-	$( '#impDoppler1').on("click", function(){
-	      crearInformeEcoSegTrim1();
-	});
-	
-	
 	$('#popupGenerico').modal('show');
 });
 
