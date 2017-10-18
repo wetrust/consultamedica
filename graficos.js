@@ -3031,6 +3031,9 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
        }]
     });
     $('#graficoCaView').highcharts({
+            chart: {
+            height: 512
+        },
        title: {
            text: 'CA**',
            x: -20, //center
