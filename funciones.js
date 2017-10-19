@@ -1371,7 +1371,19 @@ function deDBP() {
 		var dos = dbp - DBPMenos2DE[eg];
 		var resultado = (parseInt(95 / (uno) * (dos) + 3));
 		ajustarProgreso(resultado, "dbpDE");
-		$('#dbpPct').val(resultado);
+		var pctDBP = '';
+		//truncador de Pct, sobre 100 o bajo 1
+		if (resultado > 99){
+			pctDBP = '&gt; 99';
+		}
+		else if (resultado < 1){
+			pctDBP = '&lt; 1';
+		}
+		else{
+			pctDBP = resultado;
+		}
+		
+		$('#dbpPct').val(pctDBP);
 		$('#dbpRango').val(DBPMenos2DE[eg] + ' - ' + DBPMas2DE[eg] );
 		p50();
 	}
@@ -1429,7 +1441,18 @@ function calcdof(){
 			var dos = dof - DOF05PCT[eg];
 			var resultado = (parseInt(95 / (uno) * (dos) + 3));
 			ajustarProgreso(resultado, "dofPct");
-			$('#dofPctRpt').val(resultado);
+			var pctDOF = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctDOF = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctDOF = '&lt; 1';
+			}
+			else{
+				pctDOF = resultado;
+			}
+			$('#dofPctRpt').val(pctDOF);
 			$('#dofRango').val(DOF05PCT[eg] + ' - '+ DOF95PCT[eg]);
 			$('#dof-dbp').val(valor.toFixed(0) + "%");
 			$('#ic').val(valor.toFixed(0) + "%");
@@ -1483,7 +1506,20 @@ function pctcc() {
   var uno=pct97[eg] - pct3[eg];
   var dos=cc - pct3[eg];
   ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "ccPct");
-	 $('#ccPctRpt').val(parseInt(95 / (uno) * (dos) + 3));
+  var resultado = parseInt(95 / (uno) * (dos) + 3);
+  var pctCC = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctCC = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctCC = '&lt; 1';
+			}
+			else{
+				pctCC = resultado;
+			}
+	 
+	 $('#ccPctRpt').val(pctCC);
 	 $('#ccRango').val(pct3[eg] + ' - ' + pct97[eg]);
 	 psohdlk();
 	 p50();
@@ -1527,8 +1563,20 @@ function pctca() {
   eg = parseInt(eg);
   var uno=pct97[eg] - pct3[eg];
   var dos=ca - pct3[eg];
-	 ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "caPct");
-	 $('#caPctRpt').val(parseInt(95 / (uno) * (dos) + 3));
+	 var resultado = parseInt(95 / (uno) * (dos) + 3);
+	 ajustarProgreso(resultado, "caPct");
+	 var pctCA = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctCA = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctCA = '&lt; 1';
+			}
+			else{
+				pctCA = resultado;
+			}
+	 $('#caPctRpt').val(pctCA);
 	 $('#caRango').val(pct3[eg] + ' - ' + pct97[eg]);
 	 psohdlk();
 	 p50();
@@ -1571,8 +1619,20 @@ function pctlf() {
   eg = parseInt(eg);
   var uno=pct97[eg] - pct3[eg];
   var dos=lf - pct3[eg];
-	 ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "lfPct");
-	 $('#lfPctRpt').val(parseInt(95 / (uno) * (dos) + 3));
+	 var resultado = parseInt(95 / (uno) * (dos) + 3);
+	 ajustarProgreso(resultado, "lfPct");
+	 var pctLF = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctLF = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctLF = '&lt; 1';
+			}
+			else{
+				pctLF = resultado;
+			}
+	 $('#lfPctRpt').val(pctLF);
 	 $('#lfRango').val(pct3[eg] + ' - ' + pct97[eg]);
 	 p50();
 	 $('#tallaFetal').val(parseInt(lf * 0.55 + 9.6));
@@ -1601,9 +1661,20 @@ function pctlf() {
           var tallaFet = $('#tallaFetal').val(); 
           uno=Pct90Talla[eg] -  Pct10Talla[eg];
           dos=tallaFet -  Pct10Talla[eg];
-		 
-          ajustarProgreso(parseInt(80 / (uno) * (dos) + 10), "tallaPct");
-          $('#tallaPctRpt').val(parseInt(80 / (uno) * (dos) + 10));
+	  resultado = parseInt(80 / (uno) * (dos) + 10);
+          ajustarProgreso(resultado, "tallaPct");
+		 var pctTalla = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctTalla = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctTalla = '&lt; 1';
+			}
+			else{
+				pctTalla = resultado;
+			}
+          $('#tallaPctRpt').val(pctTalla);
 	  $('#tallaRango').val(Pct10Talla[eg] + ' - ' + Pct90Talla[eg]);
 		 ipn()
 	 } 
@@ -1651,9 +1722,21 @@ var pct2dsmas = [];
   eg = parseInt(eg);
   var uno=pct2dsmas[eg] - pct2ds[eg];
   var dos=cb - pct2ds[eg];
-	 $('#cerebeloPctRpt').val(parseInt(95 / (uno) * (dos)));
+	 var resultado = parseInt(95 / (uno) * (dos));
+	 var pctCB = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctCB = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctCB = '&lt; 1';
+			}
+			else{
+				pctCB = resultado;
+			}
+	 $('#cerebeloPctRpt').val(pctCB);
 	 $('#cerebeloRango').val(pct2ds[eg] + ' - ' + pct2dsmas[eg]);
-	 ajustarProgreso(parseInt(95 / (uno) * (dos)), "cerebeloPct");
+	 ajustarProgreso(resultado, "cerebeloPct");
 	 
 	 p50();
  }
@@ -1681,9 +1764,8 @@ function pctlh() {
         pct05[40] = 61.9;  pct95[40] = 70.8;
 	
 	var eg=0;
- 	var cb=0;
  	eg=parseFloat(localStorage.eg);
- 	lh=parseInt($("#lh").val());
+ 	var lh=parseInt($("#lh").val());
 
         if (eg < 12) {
         	$("#lhPct").val('0');
@@ -1698,7 +1780,18 @@ function pctlh() {
 		var uno = pct95[eg] - pct05[eg];
 		var dos = lh - pct05[eg];
 		var resultado = (parseInt(95 / (uno) * (dos) + 5));
-		$('#lhPctRpt').val(parseInt(95 / (uno) * (dos)));
+		var pctLH = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctLH = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctLH = '&lt; 1';
+			}
+			else{
+				pctLH = resultado;
+			}
+		$('#lhPctRpt').val(pctLH);
 		$('#lhRango').val(pct05[eg] + ' - ' + pct95[eg]);
 		 ajustarProgreso(resultado, "lhPct");
 		p50();
@@ -1861,8 +1954,20 @@ dv = dv.toString();
       eg = parseInt(eg);
       var uno=pct95[eg] - pct5[eg];
       var dos=dv - pct5[eg];
-      ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "dvPct");
-      $("#dvPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+	 var resultado = parseInt(90 / (uno) * (dos) + 5);
+	 var pctDV = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctDV = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctDV = '&lt; 1';
+			}
+			else{
+				pctDV = resultado;
+			}
+      ajustarProgreso(resultado, "dvPct");
+      $("#dvPctTxt").val(pctDV);
       $("#dvRngo").val( pct5[eg] + " - " + pct95[eg]);
  }
 }
@@ -1929,9 +2034,21 @@ function pctau() {
 		eg = parseInt(eg);
 		var uno=pct95[eg] - pct5[eg];
 		var dos=aumb - pct5[eg];
-		ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ipauPct");
+		var resultado = parseInt(90 / (uno) * (dos) + 5);
+		ajustarProgreso(resultado, "ipauPct");
+		var pctAUMB = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctAUMB = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctAUMB = '&lt; 1';
+			}
+			else{
+				pctAUMB = resultado;
+			}
 		
-		$("#ipauPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+		$("#ipauPctTxt").val(pctAUMB);
                 $("#ipauRngo").val(pct5[eg] + " - " + pct95[eg]);
 		
 		if ($('#ipacm').val()){
@@ -1942,9 +2059,20 @@ function pctau() {
 			eg = eg + 20;
 			uno = xpct95[eg] - xpct5[eg];
 			dos = ccp - xpct5[eg];
-
-			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ccpPct");
-			$("#ccpPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+			resultado = parseInt(90 / (uno) * (dos) + 5);
+			ajustarProgreso(resultado, "ccpPct");
+			var pctCCP = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctCCP = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctCCP = '&lt; 1';
+			}
+			else{
+				pctCCP = resultado;
+			}
+			$("#ccpPctTxt").val(pctCCP);
                         $("#ccpRngo").val(xpct5[eg] + " - " + xpct95[eg]);
 			
 		}
@@ -2009,9 +2137,20 @@ function pctacm() {
 		eg = parseInt(eg);
 		var uno = pct95[eg] - pct5[eg];
 		var dos = acm - pct5[eg];
- 
-		ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ipacmPct");
-		$("#ipacmPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+ 		var resultado = parseInt(90 / (uno) * (dos) + 5);
+		ajustarProgreso(resultado, "ipacmPct");
+		var pctACM = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctACM = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctACM = '&lt; 1';
+			}
+			else{
+				pctACM = resultado;
+			}
+		$("#ipacmPctTxt").val(pctACM);
                 $("#ipacmRngo").val(pct5[eg] + " - " + pct95[eg]);
 
 		if ($('#ipau').val()){
@@ -2022,9 +2161,20 @@ function pctacm() {
 			eg = eg + 20;
 			uno = xpct95[eg] - xpct5[eg];
 			dos = ccp - xpct5[eg];
-
-			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ccpPct");
-			$("#ccpPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+			resultado = parseInt(90 / (uno) * (dos) + 5);
+			ajustarProgreso(resultado, "ccpPct");
+			var pctCCP = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctCCP = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctCCP = '&lt; 1';
+			}
+			else{
+				pctCCP = resultado;
+			}
+			$("#ccpPctTxt").val(pctCCP);
                         $("#ccpRngo").val(xpct5[eg] + " - " + xpct95[eg]);
 		}
 	}
@@ -2085,7 +2235,18 @@ function pctpfe() {
   var dos=pfe - pct10[eg];
   var pctFinal = (80 / (uno) * (dos)) + 10
   ajustarProgreso(pctFinal, "pfePct");
-	 $('#pfePctRpt').val(pctFinal);
+	 var pctPFE = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (pctFinal > 99){
+				pctPFE = '&gt; 99';
+			}
+			else if (pctFinal < 1){
+				pctPFE = '&lt; 1';
+			}
+			else{
+				pctPFE = pctFinal;
+			}
+	 $('#pfePctRpt').val(pctPFE);
 	 $('#pfeRango').val(pct10[eg] + ' - ' +pct90[eg]);
  }
 }
@@ -2130,6 +2291,7 @@ function pctbvm() {
   var uno=pct95[eg] - pct5[eg];
   var dos=bvm - pct5[eg];
 ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "bvmPct");
+	 
 if ( bvm <= pct5[eg]){
 	 $("#liq-cualitativo-eco").val("disminuido"); 
   }
@@ -2322,9 +2484,20 @@ function valccca() {
   eg = parseInt(eg);
   var uno= pct97[eg] - pct3[eg];
   var dos=ccca - pct3[eg];
-
-  ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "cccaPct");
-	 $('#cccaPct').val(parseInt(95 / (uno) * (dos) + 3));
+ var resultado = parseInt(95 / (uno) * (dos) + 3);
+  ajustarProgreso(resultado, "cccaPct");
+	 var pctCCCA = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctCCCA = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctCCCA = '&lt; 1';
+			}
+			else{
+				pctCCCA = resultado;
+			}
+	 $('#cccaPct').val(pctCCCA);
 	  $("#cccaRango").val(pct3[eg] + ' - ' + pct97[eg]);
  }
   } else {
@@ -2449,12 +2622,25 @@ function pctut() {
 		eg = eg - 10;
 		var uno=0;
 		var dos=0;
+		 var resultado = '';
 		if (utd > 0){
 			eg = parseInt(eg);
 			uno=pct95[eg] - pct5[eg];
 			dos=utd - pct5[eg];
-			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "audPct");
-			$("#audPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+			resultado = parseInt(90 / (uno) * (dos) + 5);
+			ajustarProgreso(resultado, "audPct");
+			var pctUTD = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctUTD = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctUTD = '&lt; 1';
+			}
+			else{
+				pctUTD = resultado;
+			}
+			$("#audPctTxt").val(pctUTD);
                         $("#audRngo").val(pct5[eg] + " - " + pct95[eg]);
 		}
 		if (uti > 0){
@@ -2462,16 +2648,40 @@ function pctut() {
 			uno=pct95[eg] - pct5[eg];
 			dos=uti - pct5[eg];
 			$('#auiPct').val(parseInt(90 / (uno) * (dos) + 5));
-			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "auiPct");
-			$("#auiPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+			resultado = (parseInt(90 / (uno) * (dos) + 5);
+			ajustarProgreso(resultado, "auiPct");
+			var pctUTI = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctUTI = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctUTI = '&lt; 1';
+			}
+			else{
+				pctUTI = resultado;
+			}
+			$("#auiPctTxt").val(pctUTI);
                         $("#auiRngo").val(pct5[eg] + " - " + pct95[eg]);
 		}
 		if ($("#aud").val() && $("#aui").val()){
 			uno = pct95[eg] - pct5[eg];
 			dos = utprom - pct5[eg];
 			$('#auPct').val(parseInt(90 / (uno) * (dos) + 5));
-			ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "auPct");
-			$("#auPctTxt").val(parseInt(90 / (uno) * (dos) + 5));
+			resultado = (parseInt(90 / (uno) * (dos) + 5);
+			ajustarProgreso(resultado, "auPct");
+			var pctAUD = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctAUD = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctAUD = '&lt; 1';
+			}
+			else{
+				pctAUD = resultado;
+			}
+			$("#auPctTxt").val(pctAUD);
                         $("#auRngo").val(pct5[eg] + " - " + pct95[eg]);
 		}
 	 }
