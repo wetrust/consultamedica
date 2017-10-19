@@ -571,7 +571,7 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 	$( '#impDoppler1').on("click", function(){
 	      crearInformeEcoSegTrim1();
 	});
-	var comentarios = 'Crecimiento (peso) en percentil ' + parseInt($('#pfePctRpt').val()) + ', para gráfica de peso fetal Hadlock* \r\n';
+	var comentarios = 'Crecimiento (peso) percentil ' + parseInt($('#pfePctRpt').val()) + ', para gráfica de peso fetal Hadlock* \r\n';
 	
 	var ilatxt = document.getElementById("ila").value;
         if (ilatxt > 0){
@@ -580,7 +580,7 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
         else{
             ilatxt = "."
         }
-	var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm" + ilatxt;
+	var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvm").value + " mm" + ilatxt;
 	
 	comentarios = comentarios + linea6 + '\r\n';
 	comentarios = comentarios + $('#comentarios-eco-dos-generico').val();
@@ -740,7 +740,7 @@ function crearInformeEcoSegTrim1(){
 	var ccca = $( '#ccca').val();
 	var cccaPct = $( '#cccaPct').val();
 	var cccaRango = '( ' + $( '#cccaRango').val() + ' )';
-	var pfe = $( '#pfe').val();
+	var pfe = $( '#pfe').val() + ' gramos';
 	var pfePct = parseInt($( '#pfePctRpt').val());
 	var pfeRango = $( '#pfeRango').val() + ' *';
 	var ic = $( '#dof-dbp').val();
