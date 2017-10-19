@@ -638,7 +638,7 @@ $( '#modalPreInfEcoDoppler' ).on( 'click', function() {
 		comentarios = 'F. Doppler materno (promedio), IP en percentil = ' + $('#auPctTxt').val() + '\r\n';
 	}
 	if ($('#ipau').val() > 0){
-		comentarios = comentarios + 'F. Doppler fetal; IP CCP en percentil = ' + $('#ccpPctTxt').val() + '\r\n';
+		comentarios = comentarios + 'F. Doppler fetal, IP de CCP en percentil = ' + $('#ccpPctTxt').val() + '\r\n';
 	}
 	
 	comentarios = comentarios + $('#comentarios-eco-doppler-generico').val();
