@@ -635,10 +635,10 @@ $( '#modalPreInfEcoDoppler' ).on( 'click', function() {
 	//añadir boton de imprimir
 	var comentarios = "";
 	if ($('#auprom').val() > 0){
-		comentarios = 'F. Doppler materno (promedio), IP en percentil = ' + $('#auPctTxt').val() + '\r\n';
+		comentarios = 'F. Doppler materno (promedio uterinas), IP percentil ' + $('#auPctTxt').val() + '\r\n';
 	}
 	if ($('#ipau').val() > 0){
-		comentarios = comentarios + 'F. Doppler fetal, IP de CCP en percentil = ' + $('#ccpPctTxt').val() + '\r\n';
+		comentarios = comentarios + 'F. Doppler fetal, IP de CCP percentil ' + $('#ccpPctTxt').val() + '\r\n';
 	}
 	
 	comentarios = comentarios + $('#comentarios-eco-doppler-generico').val();
