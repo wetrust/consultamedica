@@ -2648,7 +2648,7 @@ function pctut() {
 			uno=pct95[eg] - pct5[eg];
 			dos=uti - pct5[eg];
 			$('#auiPct').val(parseInt(90 / (uno) * (dos) + 5));
-			resultado = (parseInt(90 / (uno) * (dos) + 5);
+			resultado = parseInt(90 / (uno) * (dos) + 5);
 			ajustarProgreso(resultado, "auiPct");
 			var pctUTI = '';
 			//truncador de Pct, sobre 100 o bajo 1
@@ -2668,7 +2668,7 @@ function pctut() {
 			uno = pct95[eg] - pct5[eg];
 			dos = utprom - pct5[eg];
 			$('#auPct').val(parseInt(90 / (uno) * (dos) + 5));
-			resultado = (parseInt(90 / (uno) * (dos) + 5);
+			resultado = parseInt(90 / (uno) * (dos) + 5);
 			ajustarProgreso(resultado, "auPct");
 			var pctAUD = '';
 			//truncador de Pct, sobre 100 o bajo 1
