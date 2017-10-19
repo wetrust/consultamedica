@@ -636,7 +636,7 @@ $( '#modalPreInfEcoDoppler' ).on( 'click', function() {
 	//añadir boton de imprimir
 	var comentarios = "";
 	if ($('#auprom').val() > 0){
-		comentarios = 'Flujometria doppler materno promedio de arterias uterinas IP = ' + parseInt($('#auprom').val()) + '\r\n';
+		comentarios = 'Flujometria doppler materno promedio de arterias uterinas IP = ' + $('#auprom').val() + '\r\n';
 	}
 	if ($('#ipau').val() > 0){
 		comentarios = comentarios + 'Flujometria doppler fetal\r\n';
