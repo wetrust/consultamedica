@@ -932,7 +932,7 @@ function crearInformeEcoSegTrim2(){
 	InformeString = InformeString.replace(":CB", cb);
 	InformeString = InformeString.replace(":CBRANGO", cbRango);
 	InformeString = InformeString.replace(":COMENTARIO", comentario);
-	InformeString = InformeString.replace(":P50", comentario);
+	InformeString = InformeString.replace(":P50", p50);
 	
 	InformeString = InformeString.replace(":LINEA1", linea1);
 	InformeString = InformeString.replace(":LINEA2", linea2);
@@ -940,7 +940,7 @@ function crearInformeEcoSegTrim2(){
 	InformeString = InformeString.replace(":LINEA4", linea4);
 	InformeString = InformeString.replace(":LINEA5", linea5);
 	InformeString = InformeString.replace(":LINEA6", linea6);
-	InformeString = InformeString.replace(":DATEINFORME", p50);
+	InformeString = InformeString.replace(":DATEINFORME", dateInf);
 	
 	imprInforme(InformeString);
 }
