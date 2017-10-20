@@ -228,7 +228,7 @@ function tiempo(){
 	timeCount = parseInt(timeCount) +1;
 
 	var widthProgress = $("#tiempoLectura").width()
-	widthProgress = widthProgress + 1.6;
+	widthProgress = widthProgress + 3.2;
 	$("#tiempoLectura").width(widthProgress);
 	if (timeCount == 30){
 	    clearInterval(timeLoad);
