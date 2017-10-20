@@ -230,7 +230,7 @@ function tiempo(){
 	var widthProgress = $("#tiempoLectura").width()
 	widthProgress = widthProgress + 1.6;
 	$("#tiempoLectura").width(widthProgress);
-	if (timeCount == 60){
+	if (timeCount == 30){
 	    clearInterval(timeLoad);
 	    $( "#textoMensaje" ).fadeOut( 1600, "linear" );
 	}
