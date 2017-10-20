@@ -232,7 +232,7 @@ function tiempo(){
 	$("#tiempoLectura").width(widthProgress);
 	if (timeCount == 30){
 	    clearInterval(timeLoad);
-	    $( "#textoMensaje" ).fadeOut( 1600, "linear" );
+	    $( "#textoMensaje" ).fadeOut( 1000, "linear" );
 	}
 }
 
