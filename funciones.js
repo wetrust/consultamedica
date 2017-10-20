@@ -28,13 +28,15 @@ $( '#mensajeRestringido' ).on( 'click', function() {
 	     $("#contact-id").focus()
 	  }
 	});
-		$( "#contact-id" ).keypress(function( event ) {
+	
+	$( "#contact-id" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
 	     $("#contact-country").focus()
 	  }
 	});
-		$( "#contact-country" ).keypress(function( event ) {
+	
+	$( "#contact-country" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
 	     $("#contact-job-location").focus()
@@ -52,7 +54,8 @@ $( '#mensajeRestringido' ).on( 'click', function() {
 	     $("#contact-register").focus()
 	  }
 	});
-		$( "#contact-register" ).keypress(function( event ) {
+	
+	$( "#contact-register" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
 	     $("#contact-expertise").focus()
@@ -129,7 +132,6 @@ $('#ilaController').on('click', function(){
 	}
 
 });
-
 
 //enters
 $( "#lcn" ).keypress(function( event ) {
