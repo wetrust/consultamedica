@@ -740,7 +740,7 @@ function crearInformeEcoSegTrim1(){
 	var ccca = $( '#ccca').val();
 	var cccaPct = $( '#cccaPct').val();
 	var cccaRango = '( ' + $( '#cccaRango').val() + ' )';
-	var pfe = $( '#pfe').val() + ' gramos';
+	var pfe = $( '#pfe').val() + ' Gr.';
 	var pfePct = parseInt($( '#pfePctRpt').val());
 	var pfeRango = $( '#pfeRango').val() + ' *';
 	var ic = $( '#dof-dbp').val();
