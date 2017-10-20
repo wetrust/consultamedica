@@ -327,6 +327,11 @@ $( '#semanasEcoGen' ).on( 'change', function() {
 	semanas = semanas / unasemana;
 	dias = dias / undia;
 	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$('#semanasEcoDopp').val(semanas);
+	$('#diasEcoDopp').val(dias);
 });
 
 $( '#diasEcoGen' ).on( 'change', function() {
@@ -361,6 +366,11 @@ $( '#diasEcoGen' ).on( 'change', function() {
 	semanas = semanas / unasemana;
 	dias = dias / undia;
 	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$('#semanasEcoDopp').val(semanas);
+	$('#diasEcoDopp').val(dias);
 });
 
 
@@ -396,6 +406,11 @@ $( '#semanasEcoObs' ).on( 'change', function() {
 	semanas = semanas / unasemana;
 	dias = dias / undia;
 	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoGen').val(semanas);
+	$('#diasEcoGen').val(dias);
+	$('#semanasEcoDopp').val(semanas);
+	$('#diasEcoDopp').val(dias);
 });
 
 $( '#diasEcoObs' ).on( 'change', function() {
@@ -430,6 +445,11 @@ $( '#diasEcoObs' ).on( 'change', function() {
 	semanas = semanas / unasemana;
 	dias = dias / undia;
 	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoGen').val(semanas);
+	$('#diasEcoGen').val(dias);
+	$('#semanasEcoDopp').val(semanas);
+	$('#diasEcoDopp').val(dias);
 });
 
 $( '#semanasEcoDopp' ).on( 'change', function() {
@@ -464,6 +484,11 @@ $( '#semanasEcoDopp' ).on( 'change', function() {
 	semanas = semanas / unasemana;
 	dias = dias / undia;
 	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$('#semanasEcoGen').val(semanas);
+	$('#diasEcoGen').val(dias);
 });
 
 $( '#diasEcoDopp' ).on( 'change', function() {
@@ -498,6 +523,11 @@ $( '#diasEcoDopp' ).on( 'change', function() {
 	semanas = semanas / unasemana;
 	dias = dias / undia;
 	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$('#semanasEcoGen').val(semanas);
+	$('#diasEcoGen').val(dias);
 });
 
 
