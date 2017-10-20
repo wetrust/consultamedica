@@ -29,13 +29,13 @@ class app {
 
 	if (this.hash=="#inicio"){
 		this.displayElement("home");
+		this.clearData();
 	}
 	else if (this.hash=="#paciente"){
 		this.displayElement("paciente");
 	}
 	else if (this.hash=="#consulta"){
 		this.displayElement("consulta");
-		this.clearData();
 		var contador = $('#membrete').val();
 		if (contador.length < 1){
 			$('#membrete').val('SERVICIO DE SALUD ARAUCANIA SUR\r\nHOSPITAL HERNAN HENRIQUEZ ARAVENA\r\nCENTRO DE RESPONSABILIDAD DE LA MUJER');
