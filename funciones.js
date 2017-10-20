@@ -848,24 +848,24 @@ function crearInformeEcoSegTrim2(){
         }
 
 	var p50 = $('#egP50').val();
-	var lh =  $( '#lh').val();
+	var lh =  $( '#lh').val() + ' mm';
 	var lhRango =  '( ' + $( '#lhRango').val() + ' )';
 	var fur = $( "input[name='fum']").val();
 	var fexamen = $( "input[name='fee']").val();
 	var eg = $( "input[name='eg']").val();
 	var fpp = $( "input[name='fpp']").val();
-	var dbp = $( '#dbp').val();
+	var dbp = $( '#dbp').val() + ' mm';
 	var dbpRango = '( ' + $( '#dbpRango').val() + ' )';
-	var dof = $( '#dof').val();
+	var dof = $( '#dof').val() + ' mm';
 	var dofRango = '( ' + $( '#dofRango').val() + ' )';
-	var cc = $( '#cc').val();
+	var cc = $( '#cc').val() + ' mm';
 	var ccRango = '( ' + $( '#ccRango').val() + ' )';
-	var ca = $( '#ca').val();
+	var ca = $( '#ca').val() + ' mm';
 	var caRango = '( ' + $( '#caRango').val() + ' )';
-	var lf = $( '#lf').val();
+	var lf = $( '#lf').val() + ' mm';
 	var lfRango = '( ' + $( '#lfRango').val() + ' )';
 	var ic = $( '#dof-dbp').val();
-	var cb = $('#cerebelo').val();
+	var cb = $('#cerebelo').val() + ' mm';
 	var cbRango = '( ' + $('#cerebeloRango').val() + ' )';
 	
 	var paciente = $( '#nombre-paciente').val();
