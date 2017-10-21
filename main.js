@@ -218,7 +218,6 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
-			$("#sliderMensaje").carousel({interval: 600000});
 		}
 	}
 });
