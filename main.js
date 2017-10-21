@@ -1,5 +1,5 @@
 var aplication;
-var keynum, lines = 1, timeLoad, timeCount =0;
+var keynum, lines = 1;
 
 function limitLines(obj, e) {
         // IE
@@ -218,24 +218,12 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
-			timeLoad = setInterval(tiempo, 1000);
-			
+			$('#sliderMensaje').carousel({
+  interval: 60000
+})
 		}
 	}
 });
-
-function tiempo(){
-	timeCount = parseInt(timeCount) +1;
-
-	var widthProgress = parseInt($("#tiempoLectura").data("width"));
-	widthProgress = widthProgress + 3.2;
-	$("#tiempoLectura").width(widthProgress + '%');
-	$("#tiempoLectura").data("width", widthProgress);
-	if (timeCount == 30){
-	    clearInterval(timeLoad);
-	    $( "#textoMensaje" ).fadeOut( 1000, "linear" );
-	}
-}
 
 $(window).on('hashchange', function(){
 	aplication.onHashChange();
