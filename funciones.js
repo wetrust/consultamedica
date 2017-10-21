@@ -1282,10 +1282,6 @@ $("input[name='ajustarEcoPrimTrim']").on("change", function(){
 	}
 });
 
-$( "#ecoPrimTrimSubir" ).on("click", function( event ) {
-  $('#graficoLcn').focus();
-});
-
 ////////////////////////////////////////////
 function calcularEG(){
  var FExamen, FUM, EdadGestacional;
