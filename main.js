@@ -227,9 +227,10 @@ $( document ).ready(function() {
 function tiempo(){
 	timeCount = parseInt(timeCount) +1;
 
-	var widthProgress = $("#tiempoLectura").width()
+	var widthProgress = $("#tiempoLectura").data("width");
 	widthProgress = widthProgress + 3.2;
 	$("#tiempoLectura").width(widthProgress + '%');
+	$("#tiempoLectura").data("width", widthProgress);
 	if (timeCount == 30){
 	    clearInterval(timeLoad);
 	    $( "#textoMensaje" ).fadeOut( 1000, "linear" );
