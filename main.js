@@ -227,7 +227,7 @@ $( document ).ready(function() {
 function tiempo(){
 	timeCount = parseInt(timeCount) +1;
 
-	var widthProgress = $("#tiempoLectura").data("width");
+	var widthProgress = parseInt($("#tiempoLectura").data("width"));
 	widthProgress = widthProgress + 3.2;
 	$("#tiempoLectura").width(widthProgress + '%');
 	$("#tiempoLectura").data("width", widthProgress);
