@@ -67,5 +67,10 @@ function activarBotones() {
    localStorage.eg = calcularEG();
    $("input[name='fee']").val(localStorage.fee);
    $("input[name='eg']").val(localStorage.eg);
+	  $('#fee-dos').datepicker('setValue', localStorage.fum);
+	 $('#fee-tres').datepicker('setValue', localStorage.fum);
+	 $('#fee-cuatro').datepicker('setValue', localStorage.fum);
+	 $('#fee-cinco').datepicker('setValue', localStorage.fum);
+	 $('#fee-seis').datepicker('setValue', localStorage.fum);
  });
 }
