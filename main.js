@@ -223,6 +223,11 @@ $( document ).ready(function() {
 				  .on('changeDate', function(ev){
 				    $("input[name='fum']").trigger("change");
 				  });
+			$("#fum-tres").datepicker();
+			$('#fum-tres').datepicker()
+				  .on('changeDate', function(ev){
+				    $("input[name='fum']").trigger("change");
+				  });
 		}
 	}
 });
