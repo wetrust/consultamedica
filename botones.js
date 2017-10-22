@@ -51,7 +51,14 @@ function activarBotones() {
    localStorage.fee = $("input[name='fee']").val();
    localStorage.eg = calcularEG();
    $("input[name='fum']").val(localStorage.fum);
+   
    $("input[name='eg']").val(localStorage.eg);
+   
+   $('#fum-dos').datepicker('setValue', localStorage.fum);
+	 $('#fum-tres').datepicker('setValue', localStorage.fum);
+	 $('#fum-cuantro').datepicker('setValue', localStorage.fum);
+	 $('#fum-cinco').datepicker('setValue', localStorage.fum);
+	 $('#fum-seis').datepicker('setValue', localStorage.fum);
  });
   
   $("input[name='fee']").on('change', function() {
