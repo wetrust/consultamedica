@@ -546,7 +546,7 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	//añadir boton de imprimir
 	var fur = $( "input[name='fum']").val();
 	var fpp = $( "input[name='fpp']").val();
-	if ($('#saco').val() > 0){
+	if ($('#lcn').val() < 1){
 		var comentario = "Reevaluar más adelante para definir edad gestacional\r\n";
 	}
 	else{
