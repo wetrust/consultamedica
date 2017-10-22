@@ -228,7 +228,7 @@ $( document ).ready(function() {
 				  .on('changeDate', function(ev){
 				    $(this).trigger("change");
 				  });
-			$('#fum-cuantro').datepicker();
+			$('#fum-cuatro').datepicker();
 			$('#fum-cuatro').datepicker()
 				  .on('changeDate', function(ev){
 				    $(this).trigger("change");
