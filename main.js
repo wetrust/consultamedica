@@ -218,13 +218,28 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
-			$("#fum-dos").datepicker();
+			$('#fum-dos').datepicker();
 			$('#fum-dos').datepicker()
 				  .on('changeDate', function(ev){
 				    $(this).trigger("change");
 				  });
-			$("#fum-tres").datepicker();
+			$('#fum-tres').datepicker();
 			$('#fum-tres').datepicker()
+				  .on('changeDate', function(ev){
+				    $(this).trigger("change");
+				  });
+			$('#fum-cuantro').datepicker();
+			$('#fum-cuatro').datepicker()
+				  .on('changeDate', function(ev){
+				    $(this).trigger("change");
+				  });
+			$('#fum-cinco').datepicker();
+			$('#fum-cinco').datepicker()
+				  .on('changeDate', function(ev){
+				    $(this).trigger("change");
+				  });
+			$('#fum-seis').datepicker();
+			$('#fum-seis').datepicker()
 				  .on('changeDate', function(ev){
 				    $(this).trigger("change");
 				  });
