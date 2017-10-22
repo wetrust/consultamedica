@@ -221,12 +221,12 @@ $( document ).ready(function() {
 			$("#fum-dos").datepicker();
 			$('#fum-dos').datepicker()
 				  .on('changeDate', function(ev){
-				    $("input[name='fum']").trigger("change");
+				    $(this).trigger("change");
 				  });
 			$("#fum-tres").datepicker();
 			$('#fum-tres').datepicker()
 				  .on('changeDate', function(ev){
-				    $("input[name='fum']").trigger("change");
+				    $(this).trigger("change");
 				  });
 		}
 	}
