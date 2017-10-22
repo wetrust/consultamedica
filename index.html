@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="consulta.css">
+        <link rel="stylesheet" href="datepicker.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/png" sizes="96x96" href="img/icon-96x96.png">
         <link rel="manifest" href="/manifest.json">
@@ -178,7 +179,7 @@
                                     <label for="fum2">Fecha de última mestruación</label>
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" onfocus="blur();" name="fum" id="fum-dos">
+                                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" data-weekStart="1" onfocus="blur();" name="fum" id="fum-dos">
                                 </div>
                                 <div class="col">
                                     <label for="dbp" class="col-form-label">Edad Gestacional</label>
@@ -228,7 +229,7 @@
                                     <label for="fee" class="col-form-label">Fecha de exámen (Modificable)</label>
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" onfocus="blur();" name="fee">
+                                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee">
                                 </div>
                             </div>
                             <a class="btn btn-primary" href="#tipoExamen">Continuar a exámen ecográfico</a>
@@ -360,7 +361,7 @@
                     <label for="fum2">Fecha de última mestruación</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" onfocus="blur();" name="fum" id="fum-tres">
+                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fum" id="fum-tres">
                 </div>
                 <div class="col">
                     <label for="dbp" class="col-form-label">Edad Gestacional</label>
@@ -383,7 +384,7 @@
                     <label for="fee" class="col-form-label">Fecha de exámen (Modificable)</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text"  onfocus="blur();" name="fee">
+                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee">
                 </div>
             </div>
             <hr style="border-color:rgba(0, 0, 0, 0.36);">
@@ -482,7 +483,7 @@
                     <label for="fum2">Fecha de última mestruación</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" onfocus="blur();" name="fum" id="fum-cuatro">
+                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fum" id="fum-cuatro">
                 </div>
                 <div class="col">
                     <label for="dbp" class="col-form-label">Edad Gestacional</label>
@@ -505,7 +506,7 @@
                     <label for="fee" class="col-form-label">Fecha de exámen (Modificable)</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text"  onfocus="blur();" name="fee">
+                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee">
                 </div>
             </div>
             <hr style="border-color:rgba(0, 0, 0, 0.36);">
@@ -680,7 +681,7 @@
                     <label for="fum2">Fecha de última mestruación</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" onfocus="blur();" name="fum" id="fum-cinco">
+                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fum" id="fum-cinco">
                 </div>
                 <div class="col">
                     <label for="dbp" class="col-form-label">Edad Gestacional</label>
@@ -726,7 +727,7 @@
                     <label for="fee" class="col-form-label">Fecha de exámen (Modificable)</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" onfocus="blur();" name="fee">
+                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee">
                 </div>
             </div>
             <hr style="border-color:rgba(0, 0, 0, 0.36);">
@@ -1215,7 +1216,7 @@
                     <label for="fum2">Fecha de última mestruación</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text"  onfocus="blur();" name="fum" id="fum-seis">
+                    <input class="form-control" type="text"  data-date-format="dd/mm/yyyy" onfocus="blur();" name="fum" id="fum-seis">
                 </div>
                 <div class="col">
                     <label for="dbp" class="col-form-label">Edad Gestacional</label>
@@ -1261,7 +1262,7 @@
                     <label for="fee" class="col-form-label">Fecha de exámen (Modificable)</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" onfocus="blur();" name="fee">
+                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee">
                 </div>
             </div>
             <hr style="border-color:rgba(0, 0, 0, 0.36);">
@@ -1640,7 +1641,7 @@
                                         <label for="fNacimiento" class="col-form-label text-primary"><i class="fa fa-calendar hidden-lg-up" aria-hidden="true"></i> Fecha Nacimiento</label>
                                     </div>
                                     <div class="col-md-8 col-lg-3">
-                                        <input class="form-control" type="text" id="fNacimiento" onfocus="blur();" readonly>
+                                        <input class="form-control" type="text" id="fNacimiento" data-date-format="dd/mm/yyyy" onfocus="blur();" readonly>
                                     </div>
                                     <div class="col-md-4 col-lg-3">
                                         <label for="edad" class="col-form-label text-primary"><i class="fa fa-calendar hidden-lg-up" aria-hidden="true"></i> Edad</label>
@@ -1884,7 +1885,7 @@
                                         <label for="aud" class="col-form-label text-primary"><i class="fa fa-calendar hidden-lg-up" aria-hidden="true"></i> Fecha de ultima mestruación</label>
                                     </div>
                                     <div class="col-md-8 col-lg-3">
-                                        <input class="form-control" type="text" name="fum" id="fum" onfocus="blur();" readonly>
+                                        <input class="form-control" type="text" name="fum" id="fum" data-date-format="dd/mm/yyyy" onfocus="blur();" readonly>
                                     </div>
                                     <div class="col-md-4 col-lg-3">
                                         <label for="aud" class="col-form-label text-primary"><i class="fa fa-child hidden-lg-up" aria-hidden="true"></i> Edad Gestacional</label>
@@ -2371,7 +2372,7 @@
                     <label for="fum2">Fecha de última mestruación</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" onfocus="blur();" name="fum" id="fum-siete">
+                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fum" id="fum-siete">
                 </div>
                 <div class="col">
                     <label for="dbp" class="col-form-label">Edad Gestacional</label>
@@ -2394,7 +2395,7 @@
                     <label for="fee" class="col-form-label">Fecha de exámen (Modificable)</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" onfocus="blur();" name="fee">
+                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee">
                 </div>
             </div>
             <hr style="border-color:rgba(0, 0, 0, 0.36);">
@@ -2468,7 +2469,7 @@
                     <label for="fum2">Fecha de última mestruación</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" onfocus="blur();" name="fum" id="fum-ocho">
+                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fum" id="fum-ocho">
                 </div>
                 <div class="col">
                     <label for="dbp" class="col-form-label">Edad Gestacional</label>
@@ -2491,7 +2492,7 @@
                     <label for="fee" class="col-form-label">Fecha de exámen (Modificable)</label>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" onfocus="blur();" name="fee">
+                    <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee">
                 </div>
             </div>
             <hr style="border-color:rgba(0, 0, 0, 0.36);">
@@ -2593,5 +2594,6 @@
         <script src="botones.js"></script>
         <script src="app.class.js"></script>
         <script src="main.js"></script>
+        <script src="bootstrap-datepicker.js"></script>
     </body>
 </html>
