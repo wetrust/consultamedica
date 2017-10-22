@@ -31,3 +31,5 @@ img/eco3.png
 img/icon-96x96.png
 img/calendario.png
 manifest.json
+bootstrap-datepicker.js
+datepicker.css
