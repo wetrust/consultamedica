@@ -56,7 +56,7 @@ function activarBotones() {
    
    $('#fum-dos').datepicker('setValue', localStorage.fum);
 	 $('#fum-tres').datepicker('setValue', localStorage.fum);
-	 $('#fum-cuantro').datepicker('setValue', localStorage.fum);
+	 $('#fum-cuatro').datepicker('setValue', localStorage.fum);
 	 $('#fum-cinco').datepicker('setValue', localStorage.fum);
 	 $('#fum-seis').datepicker('setValue', localStorage.fum);
  });
