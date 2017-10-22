@@ -218,6 +218,7 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
+			$("input[name='fur']").datepicker();
 		}
 	}
 });
