@@ -561,7 +561,8 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	        $('#valor-saco-vitelino').css('display', 'block');
 	    }
 	    else{
-		$('#valor-saco-vitelino').css('display', 'none');	
+		$('#valor-saco-vitelino').css('display', 'none');
+		$('#valor-saco-vitelino').val('');	
 	    }
 	});
 	$( '#exploracion-douglas').on("click", function(){
@@ -575,12 +576,19 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	$( '#embrion').on("click", function(){
 	    if ($(this).val() == 'no se observa aun' || $(this).val() == 'act. no evidenciable' || $(this).val() == 'act. card. y Corp. (-)'){
 	        $('#fcf-primer-trim').css('display', 'none');
+		$('#fcf-primer-trim').val('');
+		$('#lcn-informe').css('display', 'none');
+		$('#lcn-informe').val('');
 	    }
 	    else if ($(this).val() == 'act. cardiaca evidenciable'){
 	        $('#fcf-prim').val($("#fcf-prim option:first").val());
+		$('#lcn-informe').css('display', 'none');
+		$('#lcn-informe').val($('#lcn').val());
 	    }
 	    else{
-		$('#fcf-primer-trim').css('display', 'block');	
+		$('#fcf-primer-trim').css('display', 'block');
+		$('#lcn-informe').css('display', 'block');
+		$('#lcn-informe').val($('#lcn').val());
 	    }
 	});
 	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver Impresion</button>");
@@ -1082,13 +1090,13 @@ function crearInformeDoppler(){
 
 function crearInformeEcoPrimTrim(){
 
-	var sacovitelinotxt = $('#saco-vitelino-mm').val();
-
-        if (sacovitelinotxt > 0){
-            sacovitelinotxt = " de diametro " + sacovitelinotxt +" mm.";
+	var sacovitelinotxt = "";
+        if ($('#saco-vitelino-mm').val() == "no se observa"){
+            sacovitelinotxt = ".";
         }
         else{
-            sacovitelinotxt = ".";
+            
+	     sacovitelinotxt = " de diametro " + $('#saco-vitelino-mm').val() +" mm.";
         }
 
         var sacogestacionaltxt = $("#saco-gestacional-mm").val();
