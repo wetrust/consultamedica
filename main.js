@@ -219,6 +219,10 @@ $( document ).ready(function() {
 			loadPacientes(listPacientes);
 			activarBotones();
 			$("#fum-dos").datepicker();
+			$('#fum-dos').datepicker()
+				  .on('changeDate', function(ev){
+				    $("input[name='fum']").trigger("change");
+				  });
 		}
 	}
 });
