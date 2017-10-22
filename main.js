@@ -243,6 +243,32 @@ $( document ).ready(function() {
 				  .on('changeDate', function(ev){
 				    $(this).trigger("change");
 				  });
+			
+			$('#fee-dos').datepicker();
+			$('#fee-dos').datepicker()
+				  .on('changeDate', function(ev){
+				    $(this).trigger("change");
+				  });
+			$('#fee-tres').datepicker();
+			$('#fee-tres').datepicker()
+				  .on('changeDate', function(ev){
+				    $(this).trigger("change");
+				  });
+			$('#fee-cuatro').datepicker();
+			$('#fee-cuatro').datepicker()
+				  .on('changeDate', function(ev){
+				    $(this).trigger("change");
+				  });
+			$('#fee-cinco').datepicker();
+			$('#fee-cinco').datepicker()
+				  .on('changeDate', function(ev){
+				    $(this).trigger("change");
+				  });
+			$('#fee-seis').datepicker();
+			$('#fee-seis').datepicker()
+				  .on('changeDate', function(ev){
+				    $(this).trigger("change");
+				  });
 		}
 	}
 });
