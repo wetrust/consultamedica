@@ -1360,7 +1360,7 @@ function calcularEdadMaterna(){
  	var unasemana = undia * 7;
 	var unano = undia * 365;
 	
-	fcumpleanos = new Date($("input[name='fecha_nacimiento']").val().split(/\//).reverse().join('/'));
+	fcumpleanos = new Date($("#fechaMaterna").val().split(/\//).reverse().join('/'));
 
 	Edad = ((d.getTime() - fcumpleanos.getTime()) / unano).toFixed(0);
 
