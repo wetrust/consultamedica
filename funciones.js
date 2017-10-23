@@ -1263,7 +1263,7 @@ function crearInformeEcoPrimTrim(){
 	}
 	
 	var procedencia = $( '#procedencia').val();
-	var edadmaterna = $( "input[name='edad_materna']").val();
+	var edadmaterna = $( "select[name='edad_materna']").val();
 	
 	InformeString = InformeString.replace(":FUM", fur);
 	InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
