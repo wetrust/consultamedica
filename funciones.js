@@ -1187,6 +1187,8 @@ function crearInformeEcoPrimTrim(){
         var LINEA5 = $("#anexo-derecho").val();
         var LINEA6 = $("#anexo-izquierdo").val();
         var LINEA7 = $("#exploracion-douglas").val() + ", " + douglasinforme;
+	var LINEA12 = '';
+	var LINEA8 = '';
         if ($('#lcn').val() > 0){
 	    var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
 	    var LINEA10 = "Exploración anexial derecha " + $("#anexo-derecho").val();
@@ -1196,11 +1198,9 @@ function crearInformeEcoPrimTrim(){
 	    var LINEA9 = "Gestación Inicial<br>Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
 	    var LINEA10 = "Exploración anexial " + $("#anexo-derecho").val();
             var LINEA11 = "";
+	    LINEA12 = "Embrion no se observa";
 	}
 	
-	var LINEA12 = '';
-	var LINEA8 = '';
-		
         if (sacogestacionaltxt > 0){
             LINEA12 = "Saco gestacional diámetro promedio de " + sacogestacionaltxt +" mm.<br>";
             LINEA8 = "Edad gestacional estimada " + $("#sacoPct").val() + " por saco gestacional.<br>";
@@ -1215,9 +1215,6 @@ function crearInformeEcoPrimTrim(){
             LINEA12 = "Largo embrionario máximo de " + $("#lcn").val() + " mm.";
             LINEA8 = "Edad gestacional estimada " + $("#lcnPct").val() + " semanas por LCN.<br>";
         }
-	else{
-		LINEA8 = "Embrion no se observa";
-	}
 	var LINEA13 = '';
 	
         if ($('eco1-dbp').val() > 0){
