@@ -40,8 +40,8 @@ function activarBotones() {
      $("#edad").val(localStorage.edad);
  });
   
-  $( "input[name='fecha_nacimiento']").on('change', function() {
-      localStorage.fnac = $("input[name='fecha_nacimiento']").val();
+  $( "#fechaMaterna").on('change', function() {
+      localStorage.fnac = $("#fechaMaterna").val();
       localStorage.edad = calcularEdadMaterna();
      $("input[name='edad_materna']").val(localStorage.edad);
  });
