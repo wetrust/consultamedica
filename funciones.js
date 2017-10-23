@@ -1214,7 +1214,10 @@ function crearInformeEcoPrimTrim(){
             LINEA12 = "Largo embrionario máximo de " + $("#lcn").val() + " mm.";
             LINEA8 = "Edad gestacional estimada " + $("#lcnPct").val() + " semanas por LCN.<br>";
         }
-	var LINEA13 = 'LINEA13';
+	else{
+		LINEA12 = "Embrion no se observa";
+	}
+	var LINEA13 = '';
 	
         if ($('eco1-dbp').val() > 0){
             LINEA13 = "DBP: " + $("eco1-dbp").val() + "mm";
@@ -1225,8 +1228,8 @@ function crearInformeEcoPrimTrim(){
         if ($('#lcn').val() < 1) {
             if ($('#eco1-dbp').val() < 1) {
                 if (sacogestacionaltxt < 1){
-                    LINEA12 = 'LINEA12';
-                    LINEA8 = 'LINEA8';
+                    LINEA12 = '';
+                    LINEA8 = '';
                     TITULOBIOMETRIAS = '';
                 }
             }
