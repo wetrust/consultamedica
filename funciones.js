@@ -824,7 +824,7 @@ function crearInformeEcoSegTrim1(){
 	var motivo = $( '#motivo-examen').val();
 	var ecografista = $( '#ecografista').val();
 	var comentario = $('#comentarios-eco-dos-inf-uno').val();
-	if (comentario.length > 0){
+	if (typeof comentario === "undefined"){
 		comentario = comentario.replace(/\r?\n/g, "<br>");
 	}
 	var edadmaterna = $( "input[name='edad_materna']").val();
@@ -984,7 +984,7 @@ function crearInformeEcoSegTrim2(){
 	var InformeString = "<div class='container'> <h3>Determinación Ecográfica <small>(Tardía)</small> de la Edad Gestacional</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha de Exámen: </strong>:FEXAMEN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Procedencia: </strong> :PROCEDENCIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo: </strong>:MOTIVO</p><p><strong>FUM: </strong> :FUR <br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p style='margin-bottom:0;'>:LINEA1 <br>:LINEA2</p><p style='margin-bottom:0; word-wrap: break-word;'>:LINEA3</p><p>:LINEA4 <br>:LINEA5 <br>:LINEA6</p><p></p><p></p></div><div class='container-fluid'> <table class='table'> <tbody> <tr> <th style='line-height:15px !important;color:#045dab;'>BIOMETRIA FETAL</th> <th style='text-align:center;'>Valor observado</th> <th style='text-align:center;'>Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style='text-align:center;'>:DBP</td><td style='text-align:center;'>:DBPRANGO</td></tr><tr> <td>DOF (Jeanty):</td><td style='text-align:center;'>:DOF</td><td style='text-align:center;'>:DOFRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style='text-align:center;'>:CC</td><td style='text-align:center;'>:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style='text-align:center;'>:CA</td><td style='text-align:center;'>:CARANGO</td></tr><tr> <td>LF (Hadlock):</td><td style='text-align:center;'>:LF</td><td style='text-align:center;'>:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style='text-align:center;'>:LH</td><td style='text-align:center;'>:LHRANGO</td></tr><tr> <td>Cerebelo (Diámetro transverso) (Hill):</td><td style='text-align:center;'>:CB</td><td style='text-align:center;'>:CBRANGO</td></tr><tr> <td style='padding-bottom: 15px !important;'>Indice Cefálico (DBP / DOF)</td><td style='text-align:center;padding-bottom: 15px !important;'>:IC</td><td style='text-align:center;padding-bottom: 15px !important;'>( 70% - 86% )</td></tr><tr> <td style='border-top:1px dashed #045dab;'><strong>Edad gestacional ecográfica (Bp50)</strong></td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:P50</strong></td><td style='text-align:left;border-top:1px dashed #045dab;'><strong><small>(El cálculo de Bp50, excluye CA.)</small></strong> </td></tr><tr> <td style='border-top:1px dashed #045dab;'></td><td style='border-top:1px dashed #045dab;'></td><td style='border-top:1px dashed #045dab;'></td></tr></tbody> </table></div><div class='container-fluid'> <p><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <small>(Comentarios modificables por el ecografista)</small> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40' style='margin-right:100px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='margin-bottom:0;'><strong>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015</strong> <br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p style='margin-bottom:0 !important;' class='pie-pagina-dos'><strong>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>";
 
 	var comentario = $('#comentarios-eco-dos-inf-dos').val()
-	if (comentario.length > 0){
+	if (typeof comentario === "undefined"){
 		comentario = comentario.replace(/\r?\n/g, "<br>");
 	}
 	
@@ -1044,7 +1044,7 @@ function crearInformeDoppler(){
 	
 	var bvm = $('#bvmDoppler').val();
 	var comentario = $("#comentarios-doppler").val();
-	if (comentario.length > 0){
+	if (typeof comentario === "undefined"){
 		comentario = comentario.replace(/\r?\n/g, "<br>");
 	}
 	
@@ -1238,7 +1238,7 @@ function crearInformeEcoPrimTrim(){
 	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
 	
 	var comentario = $("#comentarios-eco-uno").val();
-	if (comentario.length > 0){
+	if (typeof comentario === "undefined"){
 		comentario = comentario.replace(/\r?\n/g, "<br>");
 	}
 	var procedencia = $( '#procedencia').val();
