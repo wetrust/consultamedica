@@ -547,7 +547,7 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	var fur = $( "input[name='fum']").val();
 	var fpp = $( "input[name='fpp']").val();
 	if ($('#lcn').val() < 1){
-		var comentario = "Reevaluar más adelante para definir edad gestacional\r\n";
+		var comentario = "En relación a fecha de ultima menstruación referida;<br>se sugiere reevaluar más adelante para definir edad gestacional\r\n";
 	}
 	else{
 		var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp;
@@ -1188,8 +1188,14 @@ function crearInformeEcoPrimTrim(){
         var LINEA6 = $("#anexo-izquierdo").val();
         var LINEA7 = $("#exploracion-douglas").val() + ", " + douglasinforme;
         var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
-        var LINEA10 = "Exploración anexial derecha " + $("#anexo-derecho").val();
-        var LINEA11 = "Exploración anexial izquierda " + $("#anexo-izquierdo").val();
+        if ($('#lcn').val() > 0){
+	    var LINEA10 = "Exploración anexial derecha " + $("#anexo-derecho").val();
+            var LINEA11 = "Exploración anexial izquierda " + $("#anexo-izquierdo").val();
+        }
+	else{
+	    var LINEA10 = "Exploración anexial " + $("#anexo-derecho").val();
+            var LINEA11 = "";
+	}
 	
 	var LINEA12 = '';
 	var LINEA8 = '';
@@ -1208,7 +1214,7 @@ function crearInformeEcoPrimTrim(){
             LINEA12 = "Largo embrionario máximo de " + $("#lcn").val() + " mm.";
             LINEA8 = "Edad gestacional estimada " + $("#lcnPct").val() + " semanas por LCN.<br>";
         }
-	var LINEA13 = '';
+	var LINEA13 = 'LINEA13';
 	
         if ($('eco1-dbp').val() > 0){
             LINEA13 = "DBP: " + $("eco1-dbp").val() + "mm";
@@ -1219,8 +1225,8 @@ function crearInformeEcoPrimTrim(){
         if ($('#lcn').val() < 1) {
             if ($('#eco1-dbp').val() < 1) {
                 if (sacogestacionaltxt < 1){
-                    LINEA12 = '';
-                    LINEA8 = '';
+                    LINEA12 = 'LINEA12';
+                    LINEA8 = 'LINEA8';
                     TITULOBIOMETRIAS = '';
                 }
             }
