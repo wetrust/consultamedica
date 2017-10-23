@@ -576,7 +576,7 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	});
 	$( '#exploracion-douglas').trigger('click');
 	$( '#embrion').on("click", function(){
-	    if ($(this).val() == 'no se observa aun' || $(this).val() == 'act. no evidenciable' || $(this).val() == 'act. card. y Corp. (-)'){
+	    if ($(this).val() == 'no se observa aun' || $(this).val() == 'act. no evidenciable' ){
 	        $('#fcf-primer-trim').css('display', 'none');
 		$('#fcf-primer-trim').val('');
 		$('#lcn-informe').css('display', 'none');
@@ -585,6 +585,10 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	    else if ($(this).val() == 'act. cardiaca evidenciable'){
 	        $('#fcf-prim').val($("#fcf-prim option:first").val());
 		$('#lcn-informe').css('display', 'none');
+		$('#lcn-informe').val($('#lcn').val());
+	    }
+	    else if ($(this).val() == 'act. card. y Corp. (-)'){
+		$('#lcn-informe').css('display', 'block');
 		$('#lcn-informe').val($('#lcn').val());
 	    }
 	    else{
