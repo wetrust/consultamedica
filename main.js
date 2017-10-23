@@ -269,6 +269,11 @@ $( document ).ready(function() {
 				  .on('changeDate', function(ev){
 				    $(this).trigger("change");
 				  });
+			$('#fechaMaterna').datepicker();
+			$('#fechaMaterna').datepicker()
+				  .on('changeDate', function(ev){
+				    $(this).trigger("change");
+				  });
 		}
 	}
 });
