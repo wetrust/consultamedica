@@ -547,7 +547,7 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	var fur = $( "input[name='fum']").val();
 	var fpp = $( "input[name='fpp']").val();
 	if ($('#lcn').val() < 1){
-		var comentario = "En relación a fecha de ultima menstruación referida;<br>se sugiere reevaluar más adelante para definir edad gestacional\r\n";
+		var comentario = "En relación a fecha de ultima menstruación referida;\r\nse sugiere reevaluar más adelante para definir edad gestacional\r\n";
 	}
 	else{
 		var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp;
@@ -1187,12 +1187,13 @@ function crearInformeEcoPrimTrim(){
         var LINEA5 = $("#anexo-derecho").val();
         var LINEA6 = $("#anexo-izquierdo").val();
         var LINEA7 = $("#exploracion-douglas").val() + ", " + douglasinforme;
-        var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
         if ($('#lcn').val() > 0){
+	    var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
 	    var LINEA10 = "Exploración anexial derecha " + $("#anexo-derecho").val();
             var LINEA11 = "Exploración anexial izquierda " + $("#anexo-izquierdo").val();
         }
 	else{
+	    var LINEA9 = "Gestación Inicial<br>Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
 	    var LINEA10 = "Exploración anexial " + $("#anexo-derecho").val();
             var LINEA11 = "";
 	}
@@ -1215,7 +1216,7 @@ function crearInformeEcoPrimTrim(){
             LINEA8 = "Edad gestacional estimada " + $("#lcnPct").val() + " semanas por LCN.<br>";
         }
 	else{
-		LINEA12 = "Embrion no se observa";
+		LINEA8 = "Embrion no se observa";
 	}
 	var LINEA13 = '';
 	
