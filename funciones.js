@@ -155,6 +155,39 @@ $( "#lcn" ).keypress(function( event ) {
 	var diferencia = Math.abs(Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
 	$('#diferenciaEcoPrimTrim').html('La diferencia observada entre edad gestacional por FUM referida y la edad por exámen ecografico es de ' + diferencia + ' días.');
         $('#preguntaAjusteEcoPrimTrim').show();
+	$('#resultadoAjusteEcoPrimTrim').show();
+	     
+	var LCN = parseInt($('#lcn').val());
+	var eg = parseFloat($("input[name='eg']").val());
+	var oneday = 1000 * 60 * 60 * 24;
+			
+	if (isNaN(LCN) | LCN < 0 | isNaN(eg) | eg < 1) {
+		$('#popupTitle').html("Información");
+		$('#popupBody').html("<p>El paciente debe tener una Edad Gestacional y un valor en LCN o Saco Gestacional</p>");
+		$('#popupGenerico').modal('show');
+	}
+	else{
+		var EGLCN = parseFloat($('#lcnPct').val());
+		var eg1 = new Number((Math.floor(EGLCN) * 7) + Math.round((EGLCN - Math.floor(EGLCN)) * 7));
+		var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
+		var diferencia = (Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
+		diferencia = diferencia * oneday;
+		var FUM = localStorage.fum;
+		FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+		FUM = new Date (FUM);
+		var B = new Date();
+  		B.setTime(FUM.getTime() + diferencia);
+		$('#furAjustada').val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+		var undia = 1000 * 60 * 60 * 24;
+		var unasemana = undia * 7;
+		var FExamen = localStorage.fee;
+		FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+		FExamen = new Date (FExamen);
+		var EdadGestacional = ((FExamen.getTime() - B.getTime()) / unasemana).toFixed(1);
+		$('#egAjustada').val(EdadGestacional);
+		B.setTime(FUM.getTime() + 40 * unasemana); 
+		$('#fppAjustada').val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	}  
         $("#graficoLcn").focus()
      }
   }
