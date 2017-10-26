@@ -682,7 +682,7 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 	
 	comentarios = comentarios + linea6 + '\r\n';
 	comentarios = comentarios + $('#comentarios-eco-dos-generico').val();
-	$('#comentarios-eco-dos-inf-uno').val(comentarios);
+	$('#comentarios-eco-dos-inf-dos').val(comentarios);
 	$('#popupGenerico').modal('show');
 });
 
