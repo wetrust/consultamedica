@@ -852,7 +852,7 @@ function crearInformeEcoSegTrim1(){
 	var idpaciente = $( '#id-paciente').val();
 	var motivo = $( '#motivo-examen').val();
 	var ecografista = $( '#ecografista').val();
-	var comentario = $('#comentarios-eco-dos-inf-uno').val();
+	var comentario = $('#comentarios-eco-dos-inf-dos').val();
 	if (typeof comentario !== 'undefined'){
 		comentario = comentario.replace(/\r?\n/g, "<br>");
 	}
