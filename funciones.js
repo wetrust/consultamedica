@@ -185,8 +185,9 @@ $( "#lcn" ).keypress(function( event ) {
 		FExamen = new Date (FExamen);
 		var EdadGestacional = ((FExamen.getTime() - B.getTime()) / unasemana).toFixed(1);
 		$('#egAjustada').val(EdadGestacional);
-		B.setTime(FUM.getTime() + 40 * unasemana); 
-		$('#fppAjustada').val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+		var C = new Date();
+		C.setTime(FUM.getTime() + (40 * unasemana)); 
+		$('#fppAjustada').val(C.getDate()+"/"+(C.getMonth()+1)+"/"+C.getFullYear());
 	}  
         $("#graficoLcn").focus()
      }
