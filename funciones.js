@@ -186,7 +186,7 @@ $( "#lcn" ).keypress(function( event ) {
 		var EdadGestacional = ((FExamen.getTime() - B.getTime()) / unasemana).toFixed(1);
 		$('#egAjustada').val(EdadGestacional);
 		var C = new Date();
-		C.setTime(FUM.getTime() + (40 * unasemana)); 
+		C.setTime(B.getTime() + (40 * unasemana)); 
 		$('#fppAjustada').val(C.getDate()+"/"+(C.getMonth()+1)+"/"+C.getFullYear());
 	}  
         $("#graficoLcn").focus()
