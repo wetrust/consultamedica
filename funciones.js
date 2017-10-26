@@ -777,13 +777,7 @@ function crearInformeEcoSegTrim1(){
 	for(i=0;i<anatomiaFetal.length;i++)
         {
 		anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i];
-		
-		if (anatomiaFetal[i] !== 'no evaluada dirigidamente, pero el aspecto morfológico general es normal' && anatomiaFetal[i] !== 'de aspecto general normal'){
-			anatomiaFetalString = anatomiaFetalString + " +<br>";
-		}
-		else{
-			anatomiaFetalString = anatomiaFetalString + " <br>";
-		}
+		anatomiaFetalString = anatomiaFetalString + " <br>";
         }
 	
         var linea3 = "<strong>Anatomía fetal ***</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
@@ -971,13 +965,7 @@ function crearInformeEcoSegTrim2(){
 	for(i=0;i<anatomiaFetal.length;i++)
         {
 		anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i];
-		
-		if (anatomiaFetal[i] !== 'no evaluada dirigidamente, pero el aspecto morfológico general es normal' && anatomiaFetal[i] !== 'de aspecto general normal'){
-			anatomiaFetalString = anatomiaFetalString + " +<br>";
-		}
-		else{
-			anatomiaFetalString = anatomiaFetalString + " <br>";
-		}
+		anatomiaFetalString = anatomiaFetalString + " <br>";
         }
 	
 	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
