@@ -1059,7 +1059,7 @@ function crearInformeDoppler(){
 	var uiRgo = '( ' + $( '#auiRngo').val() + ' )';
 	var uprom = '<strong>' + $( '#auprom').val() + '</strong>';
 	var upromTxt = '<strong>' + $( '#auPctTxt').val() + '</strong>';
-	var upromRgo = '( ' + $( '#auRngo').val() + ' )';
+	var upromRgo = '<strong>( ' + $( '#auRngo').val() + ' )</strong>';
 	var au = $( '#ipau').val();
 	var auTxt = $( '#ipauPctTxt').val();
 	var auRgo = '( ' + $( '#ipauRngo').val() + ' )';
@@ -1068,7 +1068,7 @@ function crearInformeDoppler(){
 	var acmRgo = '( ' + $( '#ipacmRngo').val() + ' )';
 	var ccp = '<strong>' + $( '#ccp').val() + '</strong>';
 	var ccpTxt = '<strong>' + $( '#ccpPctTxt').val() + '</strong>';
-	var ccpRgo = '( ' + $( '#ccpRngo').val() + ' )';
+	var ccpRgo = '<strong>( ' + $( '#ccpRngo').val() + ' )</strong>';
 	var presentacion = $("#presentacion-doppler").val();
 	var edadmaterna = $( "select[name='edad_materna']").val();
 	
