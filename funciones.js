@@ -2,10 +2,6 @@
 //from https://stackoverflow.com/questions/17907445/how-to-detect-ie11
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
 
-$('#infecoObsSegTrim1Clon').on("click", function(){
-	$('#infecoObsSegTrim1').trigger("click");
-});
-
 $( '#adicionalCrecimientoView' ).on( 'click', function() {
 	if ($('#adicionalCrecimiento').css( "display" ) == 'none'){
 		$('#adicionalCrecimiento').show();
@@ -671,9 +667,12 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 	});
 	$('#ev-morfo').trigger('change');
 
-	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button><button type='button' class='btn btn-outline-info' id='infecoObsSegTrim1Clon'>Ver informe</button>");
+	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button><button type='button' class='btn btn-outline-info' id='infecoObsSegTrim1Clon'>Ver Gráficas</button>");
 	$( '#impDoppler1').on("click", function(){
 	      crearInformeEcoSegTrim1();
+	});
+	$('#infecoObsSegTrim1Clon').on("click", function(){
+		$('#infecoObsSegTrim1').trigger("click");
 	});
 	var comentarios = 'Crecimiento (peso) percentil ' + parseInt($('#pfePctRpt').val()) + ', para gráfica de peso fetal Hadlock* \r\n';
 	
