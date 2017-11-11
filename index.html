@@ -233,113 +233,115 @@
                                 </div>
                             </div>
                             <h5 class="card-title text-primary text-left mt-2 mb-4">Información Adicional para reporte de documentos y gráficas</h5>
-                            <div class="form-group row">
-                                <div class="col-2">
-                                    <label for="membrete" class="col-form-label">Membrete institucional</label>
+                            <div class="form-group d-none" id="infadicionalView">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <label for="membrete" class="col-form-label">Membrete institucional</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <textarea class="form-control" rows="3" id="membrete" style="font-size: 12px;" onkeydown="return limitLines(this, event)"></textarea>
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="nombre-paciente" class="col-form-label">Nombre paciente</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input class="form-control" type="text" id="nombre-paciente" value="Paciente de Prueba">
+                                    </div>
                                 </div>
-                                <div class="col-4">
-                                    <textarea class="form-control" rows="3" id="membrete" style="font-size: 12px;" onkeydown="return limitLines(this, event)"></textarea>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <label for="id-paciente" class="col-form-label">Número de registro</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" class="form-control" id="id-paciente">
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="procedencia" class="col-form-label">Procedencia / origen</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input class="form-control" id="procedencia" value="Consultorio de">
+                                    </div>
                                 </div>
-                                <div class="col-2">
-                                    <label for="nombre-paciente" class="col-form-label">Nombre paciente</label>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <label class="col-form-label">Edad materna</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <select name="edad_materna" class="form-control">
+                                             <option value="10">10 años</option>
+                                             <option value="11">11 años</option>
+                                             <option value="12">12 años</option>
+                                             <option value="13">13 años</option>
+                                             <option value="14">14 años</option>
+                                             <option value="15">15 años</option>
+                                             <option value="16">16 años</option>
+                                             <option value="17">17 años</option>
+                                             <option value="18">18 años</option>
+                                             <option value="19">19 años</option>
+                                             <option value="20">20 años</option>
+                                             <option value="21">21 años</option>
+                                             <option value="22">22 años</option>
+                                             <option value="23">23 años</option>
+                                             <option value="24">24 años</option>
+                                             <option value="25">25 años</option>
+                                             <option value="26">26 años</option>
+                                             <option value="27">27 años</option>
+                                             <option value="28">28 años</option>
+                                             <option value="29">29 años</option>
+                                             <option value="30">30 años</option>
+                                             <option value="31">31 años</option>
+                                             <option value="32">32 años</option>
+                                             <option value="33">33 años</option>
+                                             <option value="34">34 años</option>
+                                             <option value="35">35 años</option>
+                                             <option value="36">36 años</option>
+                                             <option value="37">37 años</option>
+                                             <option value="38">38 años</option>
+                                             <option value="39">39 años</option>
+                                             <option value="40">40 años</option>
+                                             <option value="41">41 años</option>
+                                             <option value="42">42 años</option>
+                                             <option value="43">43 años</option>
+                                             <option value="44">44 años</option>
+                                             <option value="45">45 años</option>
+                                             <option value="46">46 años</option>
+                                             <option value="47">47 años</option>
+                                             <option value="48">48 años</option>
+                                             <option value="49">49 años</option>
+                                             <option value="50">50 años</option>
+                                         </select>
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="ecografista" class="col-form-label">Ecografista Dr(a)</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input class="form-control" type="text" id="ecografista" value="De Turno">
+                                    </div>
                                 </div>
-                                <div class="col-4">
-                                    <input class="form-control" type="text" id="nombre-paciente" value="Paciente de Prueba">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <label for="motivo-examen" class="col-form-label">Tipo de exámen Eco.</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <select id="motivo-examen" class="form-control">
+                                             <option value="Eco. para confirmar viabilidad fetal">Eco. para confirmar viabilidad fetal</option>
+                                            <option value="Eco. para determinar edad gestacional">Eco. para determinar edad gestacional</option>
+                                            <option value="Eco. para valorar crecimiento" selected>Eco. para valorar crecimiento</option>
+                                            <option value="Eco. para biometría doppler">Eco. para biometría doppler</option>
+                                            <option value="Eco. para tamizaje 11-14">Eco. para tamizaje 11-14</option>
+                                             <option value="Eco. para morfología 22-26">Eco. para morfología 22-26</option>
+                                             <option value="Evaluación patología específica">Evaluación patología específica</option>
+                                         </select>
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="motivo-examen" class="col-form-label">Motivo del exámen</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input class="form-control" type="text" id="motivo-examen">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-2">
-                                    <label for="id-paciente" class="col-form-label">Número de registro</label>
-                                </div>
-                                <div class="col-4">
-                                    <input type="text" class="form-control" id="id-paciente">
-                                </div>
-                                <div class="col-2">
-                                    <label for="procedencia" class="col-form-label">Procedencia / origen</label>
-                                </div>
-                                <div class="col-4">
-                                    <input class="form-control" id="procedencia" value="Consultorio de">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-2">
-                                    <label class="col-form-label">Edad materna</label>
-                                </div>
-                                <div class="col-4">
-                                    <select name="edad_materna" class="form-control">
-                                         <option value="10">10 años</option>
-                                         <option value="11">11 años</option>
-                                         <option value="12">12 años</option>
-                                         <option value="13">13 años</option>
-                                         <option value="14">14 años</option>
-                                         <option value="15">15 años</option>
-                                         <option value="16">16 años</option>
-                                         <option value="17">17 años</option>
-                                         <option value="18">18 años</option>
-                                         <option value="19">19 años</option>
-                                         <option value="20">20 años</option>
-                                         <option value="21">21 años</option>
-                                         <option value="22">22 años</option>
-                                         <option value="23">23 años</option>
-                                         <option value="24">24 años</option>
-                                         <option value="25">25 años</option>
-                                         <option value="26">26 años</option>
-                                         <option value="27">27 años</option>
-                                         <option value="28">28 años</option>
-                                         <option value="29">29 años</option>
-                                         <option value="30">30 años</option>
-                                         <option value="31">31 años</option>
-                                         <option value="32">32 años</option>
-                                         <option value="33">33 años</option>
-                                         <option value="34">34 años</option>
-                                         <option value="35">35 años</option>
-                                         <option value="36">36 años</option>
-                                         <option value="37">37 años</option>
-                                         <option value="38">38 años</option>
-                                         <option value="39">39 años</option>
-                                         <option value="40">40 años</option>
-                                         <option value="41">41 años</option>
-                                         <option value="42">42 años</option>
-                                         <option value="43">43 años</option>
-                                         <option value="44">44 años</option>
-                                         <option value="45">45 años</option>
-                                         <option value="46">46 años</option>
-                                         <option value="47">47 años</option>
-                                         <option value="48">48 años</option>
-                                         <option value="49">49 años</option>
-                                         <option value="50">50 años</option>
-                                     </select>
-                                </div>
-                                <div class="col-2">
-                                    <label for="ecografista" class="col-form-label">Ecografista Dr(a)</label>
-                                </div>
-                                <div class="col-4">
-                                    <input class="form-control" type="text" id="ecografista" value="De Turno">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-2">
-                                    <label for="motivo-examen" class="col-form-label">Tipo de exámen Eco.</label>
-                                </div>
-                                <div class="col-4">
-                                    <select id="motivo-examen" class="form-control">
-                                         <option value="Eco. para confirmar viabilidad fetal">Eco. para confirmar viabilidad fetal</option>
-                                        <option value="Eco. para determinar edad gestacional">Eco. para determinar edad gestacional</option>
-                                        <option value="Eco. para valorar crecimiento" selected>Eco. para valorar crecimiento</option>
-                                        <option value="Eco. para biometría doppler">Eco. para biometría doppler</option>
-                                        <option value="Eco. para tamizaje 11-14">Eco. para tamizaje 11-14</option>
-                                         <option value="Eco. para morfología 22-26">Eco. para morfología 22-26</option>
-                                         <option value="Evaluación patología específica">Evaluación patología específica</option>
-                                     </select>
-                                </div>
-                                <div class="col-2">
-                                    <label for="motivo-examen" class="col-form-label">Motivo del exámen</label>
-                                </div>
-                                <div class="col-4">
-                                    <input class="form-control" type="text" id="motivo-examen">
-                                </div>
-                            </div>
-                            <div class="form-group row">
+                            <div class="row">
                                 <div class="col text-left">
                                     <a class="nav-link" href="#configuracion"><i class="fa fa-cog" aria-hidden="true"></i> Configuración básica</a>
                                 </div>
