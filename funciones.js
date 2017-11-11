@@ -379,6 +379,8 @@ $( '#semanasEcoGen' ).on( 'change', function() {
 	$('#diasEcoObs').val(dias);
 	$('#semanasEcoDopp').val(semanas);
 	$('#diasEcoDopp').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
 });
 
 $( '#diasEcoGen' ).on( 'change', function() {
@@ -414,6 +416,90 @@ $( '#diasEcoGen' ).on( 'change', function() {
 	dias = dias / undia;
 	localStorage.eg = semanas + "." + dias;
 	$("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$('#semanasEcoDopp').val(semanas);
+	$('#diasEcoDopp').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
+});
+
+$( '#semanasTipoEco' ).on( 'change', function() {
+	var semanas = $(this).val();
+	var dias = $('#diasTipoEco').val();
+	var undia = 1000 * 60 * 60 * 24;
+	var unasemana = undia * 7;
+	
+	semanas = semanas * unasemana;
+	dias = dias * undia;
+	var eg = semanas + dias;
+	
+	var FExamen = $("input[name='fee']").val();
+	FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FExamen = new Date (FExamen);
+	
+	var B = new Date();
+	B.setTime(FExamen.getTime() - eg);
+	
+	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	var FUM = $("input[name='fum']").val();
+	FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FUM = new Date (FUM);
+	
+	B = new Date();
+	B.setTime(FUM.getTime() + 40 * unasemana); 
+	$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	localStorage.fum = $("input[name='fum']").val();
+    	localStorage.fee = $("input[name='fee']").val();
+	semanas = semanas / unasemana;
+	dias = dias / undia;
+	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$( '#semanasEcoGen' ).val(semanas);
+	$( '#diasEcoGen' ).val(dias);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$('#semanasEcoDopp').val(semanas);
+	$('#diasEcoDopp').val(dias);
+});
+
+$( '#diasTipoEco' ).on( 'change', function() {
+	var semanas = $('#semanasTipoEco').val();
+	var dias = $(this).val();
+	var undia = 1000 * 60 * 60 * 24;
+	var unasemana = undia * 7;
+	
+	semanas = semanas * unasemana;
+	dias = dias * undia;
+	var eg = semanas + dias;
+	
+	var FExamen = $("input[name='fee']").val();
+	FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FExamen = new Date (FExamen);
+	
+	var B = new Date();
+	B.setTime(FExamen.getTime() - eg);
+	
+	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	var FUM = $("input[name='fum']").val();
+	FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FUM = new Date (FUM);
+	
+	B = new Date();
+	B.setTime(FUM.getTime() + 40 * unasemana); 
+	$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	localStorage.fum = $("input[name='fum']").val();
+    	localStorage.fee = $("input[name='fee']").val();
+	semanas = semanas / unasemana;
+	dias = dias / undia;
+	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$( '#semanasEcoGen' ).val(semanas);
+	$( '#diasEcoGen' ).val(dias);
 	$('#semanasEcoObs').val(semanas);
 	$('#diasEcoObs').val(dias);
 	$('#semanasEcoDopp').val(semanas);
@@ -458,6 +544,8 @@ $( '#semanasEcoObs' ).on( 'change', function() {
 	$('#diasEcoGen').val(dias);
 	$('#semanasEcoDopp').val(semanas);
 	$('#diasEcoDopp').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
 });
 
 $( '#diasEcoObs' ).on( 'change', function() {
@@ -497,6 +585,8 @@ $( '#diasEcoObs' ).on( 'change', function() {
 	$('#diasEcoGen').val(dias);
 	$('#semanasEcoDopp').val(semanas);
 	$('#diasEcoDopp').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
 });
 
 $( '#semanasEcoDopp' ).on( 'change', function() {
@@ -536,6 +626,8 @@ $( '#semanasEcoDopp' ).on( 'change', function() {
 	$('#diasEcoObs').val(dias);
 	$('#semanasEcoGen').val(semanas);
 	$('#diasEcoGen').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
 });
 
 $( '#diasEcoDopp' ).on( 'change', function() {
@@ -575,6 +667,8 @@ $( '#diasEcoDopp' ).on( 'change', function() {
 	$('#diasEcoObs').val(dias);
 	$('#semanasEcoGen').val(semanas);
 	$('#diasEcoGen').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
 });
 
 
