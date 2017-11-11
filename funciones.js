@@ -133,6 +133,17 @@ $('#ilaController').on('click', function(){
 
 });
 
+$('#cccaController').on('click', function(){
+
+	if ($('#cccaView').hasClass('d-none')){
+		$('#cccaView').removeClass('d-none');
+	}
+	else{
+		$('#cccaView').addClass('d-none');
+	}
+
+});
+
 //enters
 $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
