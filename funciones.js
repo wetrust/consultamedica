@@ -144,6 +144,17 @@ $('#cccaController').on('click', function(){
 
 });
 
+$('#infadicionalController').on('click', function(){
+
+	if ($('#infadicionalView').hasClass('d-none')){
+		$('#infadicionalView').removeClass('d-none');
+	}
+	else{
+		$('#infadicionalView').addClass('d-none');
+	}
+
+});
+
 //enters
 $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
