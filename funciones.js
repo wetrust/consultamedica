@@ -162,6 +162,12 @@ $('#infadicionalSiController').on('click', function(){
 
 });
 
+$('#configSiController').on('click', function(){
+	document.location.hash = "configuracion";
+});
+
+
+
 //enters
 $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
