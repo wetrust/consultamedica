@@ -23,8 +23,6 @@ function activarBotones() {
  $( '#saco' ).change( egsaco); 
  $( '#lcn' ).change( eglcn);
  $( '#lh').change( pctlh);
-  $( '#bvm').change( pctbvm);
-  $( '#ila').change( pctila);
   $( '#dof').change( calcdof);
   
  //doppler
