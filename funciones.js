@@ -366,6 +366,88 @@ function show_hide(id){
   }
 };
 
+$( '#semanasEcoPrim' ).on( 'change', function() {
+	var semanas = $(this).val();
+	var dias = $('#diasEcoPrim').val();
+	var undia = 1000 * 60 * 60 * 24;
+	var unasemana = undia * 7;
+	
+	semanas = semanas * unasemana;
+	dias = dias * undia;
+	var eg = semanas + dias;
+	
+	var FExamen = $("input[name='fee']").val();
+	FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FExamen = new Date (FExamen);
+	
+	var B = new Date();
+	B.setTime(FExamen.getTime() - eg);
+	
+	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	var FUM = $("input[name='fum']").val();
+	FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FUM = new Date (FUM);
+	
+	B = new Date();
+	B.setTime(FUM.getTime() + 40 * unasemana); 
+	$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	localStorage.fum = $("input[name='fum']").val();
+    	localStorage.fee = $("input[name='fee']").val();
+	semanas = semanas / unasemana;
+	dias = dias / undia;
+	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$('#semanasEcoDopp').val(semanas);
+	$('#diasEcoDopp').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
+});
+
+$( '#diasEcoPrim' ).on( 'change', function() {
+	var semanas = $('#semanasEcoPrim').val();
+	var dias = $(this).val();
+	var undia = 1000 * 60 * 60 * 24;
+	var unasemana = undia * 7;
+	
+	semanas = semanas * unasemana;
+	dias = dias * undia;
+	var eg = semanas + dias;
+	
+	var FExamen = $("input[name='fee']").val();
+	FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FExamen = new Date (FExamen);
+	
+	var B = new Date();
+	B.setTime(FExamen.getTime() - eg);
+	
+	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	var FUM = $("input[name='fum']").val();
+	FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FUM = new Date (FUM);
+	
+	B = new Date();
+	B.setTime(FUM.getTime() + 40 * unasemana); 
+	$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	localStorage.fum = $("input[name='fum']").val();
+    	localStorage.fee = $("input[name='fee']").val();
+	semanas = semanas / unasemana;
+	dias = dias / undia;
+	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$('#semanasEcoDopp').val(semanas);
+	$('#diasEcoDopp').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
+});
+
 $( '#semanasEcoGen' ).on( 'change', function() {
 	var semanas = $(this).val();
 	var dias = $('#diasEcoGen').val();
@@ -405,6 +487,8 @@ $( '#semanasEcoGen' ).on( 'change', function() {
 	$('#diasEcoDopp').val(dias);
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoPrim').val(semanas);
+        $( '#diasEcoPrim' ).val(dias);
 });
 
 $( '#diasEcoGen' ).on( 'change', function() {
@@ -446,6 +530,8 @@ $( '#diasEcoGen' ).on( 'change', function() {
 	$('#diasEcoDopp').val(dias);
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoPrim').val(semanas);
+        $( '#diasEcoPrim' ).val(dias);
 });
 
 $( '#semanasTipoEco' ).on( 'change', function() {
@@ -487,6 +573,8 @@ $( '#semanasTipoEco' ).on( 'change', function() {
 	$('#diasEcoObs').val(dias);
 	$('#semanasEcoDopp').val(semanas);
 	$('#diasEcoDopp').val(dias);
+	$('#semanasEcoPrim').val(semanas);
+        $( '#diasEcoPrim' ).val(dias);
 });
 
 $( '#diasTipoEco' ).on( 'change', function() {
@@ -528,6 +616,8 @@ $( '#diasTipoEco' ).on( 'change', function() {
 	$('#diasEcoObs').val(dias);
 	$('#semanasEcoDopp').val(semanas);
 	$('#diasEcoDopp').val(dias);
+	$('#semanasEcoPrim').val(semanas);
+        $( '#diasEcoPrim' ).val(dias);
 });
 
 
@@ -570,6 +660,8 @@ $( '#semanasEcoObs' ).on( 'change', function() {
 	$('#diasEcoDopp').val(dias);
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoPrim').val(semanas);
+        $( '#diasEcoPrim' ).val(dias);
 });
 
 $( '#diasEcoObs' ).on( 'change', function() {
@@ -611,6 +703,8 @@ $( '#diasEcoObs' ).on( 'change', function() {
 	$('#diasEcoDopp').val(dias);
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoPrim').val(semanas);
+        $( '#diasEcoPrim' ).val(dias);
 });
 
 $( '#semanasEcoDopp' ).on( 'change', function() {
@@ -652,6 +746,8 @@ $( '#semanasEcoDopp' ).on( 'change', function() {
 	$('#diasEcoGen').val(dias);
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoPrim').val(semanas);
+        $( '#diasEcoPrim' ).val(dias);
 });
 
 $( '#diasEcoDopp' ).on( 'change', function() {
@@ -693,6 +789,8 @@ $( '#diasEcoDopp' ).on( 'change', function() {
 	$('#diasEcoGen').val(dias);
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoPrim').val(semanas);
+        $( '#diasEcoPrim' ).val(dias);
 });
 
 
