@@ -267,7 +267,7 @@ $( "#lf" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
      $("#ca").trigger('change');
-     $("#bvm").focus()
+     $("#pfe").focus()
   }
 });
 
