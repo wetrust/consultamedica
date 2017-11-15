@@ -122,17 +122,6 @@ $( '#mensajeRestringido' ).on( 'click', function() {
 	$('#popupGenerico').modal('show');
 });
 
-$('#ilaController').on('click', function(){
-
-	if ($('#ilaView').hasClass('d-none')){
-		$('#ilaView').removeClass('d-none');
-	}
-	else{
-		$('#ilaView').addClass('d-none');
-	}
-
-});
-
 $('#cccaController').on('click', function(){
 
 	if ($('#cccaView').hasClass('d-none')){
@@ -300,13 +289,6 @@ $( "#bvm" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
      $("#pfe").focus()
-  }
-});
-
-$( "#ila" ).keypress(function( event ) {
-  if ( event.which == 13 ) {
-     event.preventDefault();
-     $("#graficoILA").focus()
   }
 });
 
@@ -903,14 +885,7 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 	});
 	var comentarios = 'Crecimiento (peso) percentil ' + parseInt($('#pfePctRpt').val()) + ', para gráfica de peso fetal Hadlock* \r\n';
 	
-	var ilatxt = document.getElementById("ila").value;
-        if (ilatxt > 0){
-            ilatxt = " e ILA de " + ilatxt +" mm."
-        }
-        else{
-            ilatxt = "."
-        }
-	var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvm").value + " mm" + ilatxt;
+	var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvm").value + " mm.";
 	
 	comentarios = comentarios + linea6 + '\r\n';
 	comentarios = comentarios + $('#comentarios-eco-dos-generico').val();
@@ -999,7 +974,6 @@ $( '#modalPreInfEcoDoppler' ).on( 'click', function() {
 function crearInformeEcoSegTrim1(){
         var actCard;
         var movCorp;
-        var ilatxt;
 
         elem=document.getElementsByName('accard');
         for(i=0;i<elem.length;i++)
@@ -1027,15 +1001,6 @@ function crearInformeEcoSegTrim1(){
         {
             movCorp = "con movimientos corporales";
         }
-
-        ilatxt = document.getElementById("ila").value;
-
-        if (ilatxt > 0){
-            ilatxt = " e ILA de " + ilatxt +" mm."
-        }
-        else{
-            ilatxt = "."
-        }
         
         var linea1 = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
         var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
@@ -1052,7 +1017,7 @@ function crearInformeEcoSegTrim1(){
         var linea3 = "<strong>Anatomía fetal ***</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
         var linea4 = "<strong>Placenta</strong> inserción " + document.getElementById("incersion").value + " y de ubicación " + document.getElementById("ubicacion").value + ", grado " + document.getElementById("grado-placenta").value;
         var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
-        var linea6 = "<strong>Líquido amniótico **</strong>" + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm" + ilatxt;
+        var linea6 = "<strong>Líquido amniótico **</strong>" + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm.";
 	
 	var fur = $( "input[name='fum']").val();
 	var fexamen = $( "input[name='fee']").val();
@@ -1154,7 +1119,6 @@ function crearInformeEcoSegTrim2(){
 
 	var actCard;
         var movCorp;
-        var ilatxt;
 
         elem=document.getElementsByName('accard');
         for(i=0;i<elem.length;i++)
@@ -1181,15 +1145,6 @@ function crearInformeEcoSegTrim2(){
         else
         {
             movCorp = "con movimientos corporales";
-        }
-
-        ilatxt = document.getElementById("ila").value;
-
-        if (ilatxt > 0){
-            ilatxt = " e ILA de " + ilatxt +" mm."
-        }
-        else{
-            ilatxt = "."
         }
 
 	var p50 = $('#egP50').val() + ' semanas';
@@ -1240,7 +1195,7 @@ function crearInformeEcoSegTrim2(){
 	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
         var linea4 = "<strong>Placenta</strong> inserción " + document.getElementById("incersion").value + " y de ubicación " + document.getElementById("ubicacion").value + ", grado " + document.getElementById("grado-placenta").value;
         var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
-        var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm" + ilatxt;
+        var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm.";
 	
 	var InformeString = "<div class='container'> <h3>Determinación Ecográfica <small>(Tardía)</small> de la Edad Gestacional</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha de Exámen: </strong>:FEXAMEN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Procedencia: </strong> :PROCEDENCIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo: </strong>:MOTIVO</p><p><strong>FUM: </strong> :FUR <br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p style='margin-bottom:0;'>:LINEA1 <br>:LINEA2</p><p style='margin-bottom:0; word-wrap: break-word;'>:LINEA3</p><p>:LINEA4 <br>:LINEA5 <br>:LINEA6</p><p></p><p></p></div><div class='container-fluid'> <table class='table'> <tbody> <tr> <th style='line-height:15px !important;color:#045dab;'>BIOMETRIA FETAL</th> <th style='text-align:center;'>Valor observado</th> <th style='text-align:center;'>Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style='text-align:center;'>:DBP</td><td style='text-align:center;'>:DBPRANGO</td></tr><tr> <td>DOF (Jeanty):</td><td style='text-align:center;'>:DOF</td><td style='text-align:center;'>:DOFRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style='text-align:center;'>:CC</td><td style='text-align:center;'>:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style='text-align:center;'>:CA</td><td style='text-align:center;'>:CARANGO</td></tr><tr> <td>LF (Hadlock):</td><td style='text-align:center;'>:LF</td><td style='text-align:center;'>:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style='text-align:center;'>:LH</td><td style='text-align:center;'>:LHRANGO</td></tr><tr> <td>Cerebelo (Diámetro transverso) (Hill):</td><td style='text-align:center;'>:CB</td><td style='text-align:center;'>:CBRANGO</td></tr><tr> <td style='padding-bottom: 15px !important;'>Indice Cefálico (DBP / DOF)</td><td style='text-align:center;padding-bottom: 15px !important;'>:IC</td><td style='text-align:center;padding-bottom: 15px !important;'>( 70% - 86% )</td></tr><tr> <td style='border-top:1px dashed #045dab;'><strong>Edad gestacional ecográfica (Bp50)</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:P50</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>(Para el cálculo de Bp50, se excluye CA.)</strong> </td></tr><tr> <td style='border-top:1px dashed #045dab;'></td><td style='border-top:1px dashed #045dab;'></td><td style='border-top:1px dashed #045dab;'></td></tr></tbody> </table></div><div class='container-fluid'> <p style='padding-bottom:0px;margin-bottom:0px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40' style='margin-right:100px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='margin-bottom:0;'><strong>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015</strong> <br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p style='margin-bottom:0 !important;' class='pie-pagina-dos'>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>";
 
@@ -2625,60 +2580,6 @@ function pctpfe() {
  }
 }
 
-function pctbvm() {
-
- var pct5 = [];
- var pct95 = [];
-
-    pct5[0] = 23;    pct5[1] = 25;    pct5[2] = 27;    pct5[3] = 28;
-    pct5[4] = 29;    pct5[5] = 29;    pct5[6] = 30;    pct5[7] = 30;
-    pct5[8] = 30;    pct5[9] = 30;    pct5[10] = 30;    pct5[11] = 30;
-    pct5[12] = 30;    pct5[13] = 29;    pct5[14] = 29;    pct5[15] = 29;
-    pct5[16] = 29;    pct5[17] = 29;    pct5[18] = 28;    pct5[19] = 28;
-    pct5[20] = 27;    pct5[21] = 26;    pct5[22] = 24;    pct5[23] = 23;
-    pct5[24] = 21;
-
-     pct95[0] = 59;     pct95[1] = 62;     pct95[2] = 64;     pct95[3] = 66;
-     pct95[4] = 67;     pct95[5] = 68;     pct95[6] = 68;     pct95[7] = 68;
-     pct95[8] = 68;     pct95[9] = 68;     pct95[10] = 68;     pct95[11] = 69;
-     pct95[12] = 69;     pct95[13] = 69;     pct95[14] = 69;     pct95[15] = 70;
-     pct95[16] = 71;     pct95[17] = 72;     pct95[18] = 72;     pct95[19] = 72;
-     pct95[20] = 71;     pct95[21] = 70;     pct95[22] = 68;     pct95[23] = 66;
-     pct95[24] = 62;
-
- var eg=0;
- var bvm=0;
- 
- eg=parseFloat(localStorage.eg);
- bvm=parseInt($("#bvm").val());
- 
- if (eg < 16) {  
-  //
- }
- else if (eg > 40)
- {
-   //
- }
- else {
-  eg = eg - 16;
-  eg = parseInt(eg);
-  var uno=pct95[eg] - pct5[eg];
-  var dos=bvm - pct5[eg];
-ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "bvmPct");
-	 
-if ( bvm <= pct5[eg]){
-	 $("#liq-cualitativo-eco").val("disminuido"); 
-  }
-  else if ( bvm <= pct95[eg]){
-  	$("#liq-cualitativo-eco").val("normal");
-  }
-  else{
-  	$("#liq-cualitativo-eco").val("aumentado");
-  }
-
- }
-}
-
 function bvmDoppler() {
 
  var pct5 = [];
@@ -2776,47 +2677,6 @@ function bvmEcoDos() {
   }
  }
 }
-
-function pctila() {
-
- var pct5 = [];
- var pct95 = [];
-
-
- pct5[0] = 79;pct5[1] = 83;pct5[2] = 87;pct5[3] = 90;pct5[4] = 93;pct5[5] = 95;
- pct5[6] = 97;pct5[7] = 98;pct5[8] = 98;pct5[9] = 97;pct5[10] = 97;pct5[11] = 95;
- pct5[12] = 94;pct5[13] = 92;pct5[14] = 90;pct5[15] = 88;pct5[16] = 86;pct5[17] = 83;
- pct5[18] = 81;pct5[19] = 79;pct5[20] = 77;pct5[21] = 75;pct5[23] = 73;
- pct5[24] = 72;pct5[25] = 71;
-
- pct95[0] = 185;pct95[1] = 194;pct95[2] = 200;pct95[3] = 204;pct95[4] = 208;
- pct95[5] = 212;pct95[6] = 214;pct95[7] = 217;pct95[8] = 218;pct95[9] = 221;
- pct95[10] = 223;pct95[11] = 226;pct95[12] = 228;pct95[13] = 231;
- pct95[14] = 234;pct95[15] = 238;pct95[16] = 242;pct95[17] = 245;
- pct95[18] = 248;pct95[19] = 249;pct95[20] = 249;pct95[21] = 244;
- pct95[22] = 239;pct95[23] = 226;pct95[24] = 214;
-
- var eg=0;
- var ila=0;
- 
- eg=parseFloat(localStorage.eg);
- ila=parseInt($("#ila").val());
- 
- if (eg < 16) {  
-  //
- }
- else if (eg > 40)
- {
-   //
- }
- else {
-  eg = eg - 16;
-  eg = parseInt(eg);
-  var uno=pct95[eg] - pct5[eg];
-  var dos=ila - pct5[eg];
-  ajustarProgreso(parseInt(90 / (uno) * (dos) + 5), "ilaPct");
- }
-} 
 
 function valccca() {
 
