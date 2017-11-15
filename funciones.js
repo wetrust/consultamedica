@@ -1592,7 +1592,7 @@ $("input[name='ajustarEcoSegTrim']").on("change", function(){
 			if (isNaN(lf) | lf < 0 | isNaN(eg) | eg < 1) {
 				if (isNaN(lh) | lh < 0 | isNaN(cerebelo) | cerebelo < 1) {
 					$('#popupTitle').html("Información");
-					$('#popupBody').html("<p>Edad gestacional calculada solamente por Cráneo y Fémur.<br>Para mayor exactitud ingrese Humero y Cerebelo.</p>");
+					$('#popupBody').html("<p><strong>Edad gestacional calculada solamente por Cráneo y Fémur.<br>Para mayor exactitud ingrese medición de Humero y Cerebelo.</strong></p>");
 					$('#popupGenerico').modal('show');
 				}
 				else{
