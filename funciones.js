@@ -884,8 +884,8 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 		$('#infecoObsSegTrim1').trigger("click");
 	});
 	var comentarios = 'Crecimiento (peso) percentil ' + parseInt($('#pfePctRpt').val()) + ', para gráfica de peso fetal Hadlock* \r\n';
-	
-	var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvm").value + " mm.";
+
+	var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvmEcoDos").value + " mm.";
 	
 	comentarios = comentarios + linea6 + '\r\n';
 	comentarios = comentarios + $('#comentarios-eco-dos-generico').val();
