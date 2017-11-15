@@ -149,8 +149,9 @@ $('#infadicionalSiController').on('click', function(){
 
 $('#configSiController').on('click', function(){
 	document.location.hash = "configuracion";
+	$('#configSiController').button('toggle');
 	$('#configNoController').button('toggle');
-	//$().button('toggle');
+	
 });
 
 
