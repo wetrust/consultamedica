@@ -922,10 +922,15 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 	var fpp = $( "input[name='fpp']").val();
 	var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n" + $('#comentarios-eco-dos-generico').val();
 	$('#comentarios-eco-dos-inf-dos').val(comentario);
-	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button>");
+	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button><button type='button' class='btn btn-outline-info' id='infecoObsSegTrim1Clon'>Ver Gráficas</button>");
 	$( '#impDoppler1').on("click", function(){
 	      crearInformeEcoSegTrim2();
 	});
+	
+	$('#infecoObsSegTrim1Clon').on("click", function(){
+		$('#infecoObsSegTrim2').trigger("click");
+	});
+	
 	$( '#bvmEcoDos' ).on('change', function(){
 		bvmEcoDos();
 		$('#bvm').val($(this).val()).trigger('change');
