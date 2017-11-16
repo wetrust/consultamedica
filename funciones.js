@@ -970,12 +970,15 @@ $( '#modalPreInfEcoDoppler' ).on( 'click', function() {
 	comentarios = comentarios + $('#comentarios-eco-doppler-generico').val();
 	
 	$('#comentarios-doppler').val(comentarios);
-	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button>");
+	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button><button type='button' class='btn btn-outline-info' id='infecoObsSegTrim1Clon'>Ver Gráficas</button>");
 	$( '#bvmDoppler' ).on('change', function(){
 		bvmDoppler();
 	});
 	$( '#impDoppler1').on("click", function(){
 	     crearInformeDoppler();
+	});
+	$( '#infecoObsSegTrim1Clon').on("click", function(){
+	     $('#infDoppler1').trigger('click');
 	});
 	$('#popupGenerico').modal('show');
 });
