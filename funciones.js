@@ -149,9 +149,10 @@ $('#infadicionalSiController').on('click', function(){
 
 $('#configSiController').on('click', function(){
 	document.location.hash = "configuracion";
-	$('#configSiController').button('toggle');
+});
+
+$('#configSiController').on('focusout', function(){
 	$('#configNoController').button('toggle');
-	
 });
 
 
