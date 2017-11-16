@@ -353,7 +353,7 @@ $( '#semanasEcoPrim' ).on( 'change', function() {
 	var dias = $('#diasEcoPrim').val();
 	var undia = 1000 * 60 * 60 * 24;
 	var unasemana = undia * 7;
-	
+
 	semanas = semanas * unasemana;
 	dias = dias * undia;
 	var eg = semanas + dias;
