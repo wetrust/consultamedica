@@ -902,6 +902,7 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 		$('#popupTitle').html("Información");
 		$('#popupBody').html("<p><strong>Edad gestacional calculada solamente por Cráneo y Fémur.<br>Para mayor exactitud ingrese medición de Humero y Cerebelo.</strong></p>");
 		$('#impDoppler1').remove();
+		$('#infecoObsSegTrim1Clon').remove();
 		$('#popupGenerico').modal('show');
 		$('#lh').focus();
 		return;
@@ -1597,6 +1598,7 @@ $("input[name='ajustarEcoSegTrim']").on("change", function(){
 					$('#popupTitle').html("Información");
 					$('#popupBody').html("<p><strong>Edad gestacional calculada solamente por Cráneo y Fémur.<br>Para mayor exactitud ingrese medición de Humero y Cerebelo.</strong></p>");
 					$('#impDoppler1').remove();
+					$('#infecoObsSegTrim1Clon').remove()
 					$('#popupGenerico').modal('show');
 				}
 				else{
