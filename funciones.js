@@ -901,6 +901,7 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 	if (isNaN(cb) || isNaN(lh)){
 		$('#popupTitle').html("Información");
 		$('#popupBody').html("<p><strong>Edad gestacional calculada solamente por Cráneo y Fémur.<br>Para mayor exactitud ingrese medición de Humero y Cerebelo.</strong></p>");
+		$('#impDoppler1').remove();
 		$('#popupGenerico').modal('show');
 		$('#lh').focus();
 		return;
@@ -1595,6 +1596,7 @@ $("input[name='ajustarEcoSegTrim']").on("change", function(){
 				if (isNaN(lh) | lh < 0 | isNaN(cerebelo) | cerebelo < 1) {
 					$('#popupTitle').html("Información");
 					$('#popupBody').html("<p><strong>Edad gestacional calculada solamente por Cráneo y Fémur.<br>Para mayor exactitud ingrese medición de Humero y Cerebelo.</strong></p>");
+					$('#impDoppler1').remove();
 					$('#popupGenerico').modal('show');
 				}
 				else{
