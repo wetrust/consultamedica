@@ -882,7 +882,6 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 	});
 	$('#infecoObsSegTrim1Clon').on("click", function(){
 		$('#infecoObsSegTrim1').trigger("click");
-		$('#infecoObsSegTrim1Clon').trigger("click");
 	});
 	var comentarios = 'Crecimiento (peso) percentil ' + parseInt($('#pfePctRpt').val()) + ', para gráfica de peso fetal Hadlock* \r\n';
 
