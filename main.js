@@ -218,6 +218,8 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
+			var h = loadTpoExamen();
+			
 			$('#fum-dos').datepicker();
 			$('#fum-dos').datepicker()
 				  .on('changeDate', function(ev){
