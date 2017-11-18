@@ -218,6 +218,18 @@ $( '#cancelarEcografistaConfig').on('click', function() {
 	$("#ecografistaConfig .formulario").hide();
  });
 
+$( '#guardarEcografistaConfig').on('click', function() {
+	saveEcografistaExamenLocalStorage();
+	$("#ecografistaConfig .tabla").show();
+	$('#nuevoEcografistaConfig').show();
+	$('#guardarEcografistaConfig').hide();
+	$('#cancelarEcografistaConfig').hide();
+	$("#ecografistaConfig .formulario").hide();
+ });
+
+
+
+
 $( document ).ready(function() {
 	//puedoGuardarEnElNavegador();
         //queDiaEs();
@@ -414,7 +426,7 @@ function saveMotivoExamenLocalStorage(){
 		if (localStorage.configuracion != null) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
-			$('#motivo-examen').html();
+			$('#motivo-examen').html("");
 			$('#MotivoConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
@@ -444,7 +456,7 @@ function saveLugarExamenLocalStorage(){
 		if (localStorage.configuracion != null) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
-			$('#Lugar-examen').html();
+			$('#Lugar-examen').html("");
 			$('#LugarConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
@@ -462,6 +474,36 @@ function saveLugarExamenLocalStorage(){
 				    }));
 					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 					$('#LugarConfigTable').append(fila);
+				});
+			localStorage["configuracion"] = JSON.stringify(configuracion);
+		}
+	}
+}
+
+function saveEcografistaExamenLocalStorage(){
+	
+	if (window.localStorage) {
+		if (localStorage.configuracion != null) {
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			$('#ecografista').html("");
+			$('#EcografistaConfigTable').html("");
+		
+				var aRR = {id:0, nombre:"Doe"};
+				aRR["id"] = configuracion.configuracion.profesional.length +1;
+				aRR["nombre"] = $('#ecografistaInput').val();
+				
+                        	configuracion.configuracion.profesional.push(aRR);
+				
+				
+				
+				$.each(configuracion.configuracion.profesional, function (i, item) {
+				    $('#ecografista').append($('<option>', { 
+					value: item.id,
+					text : item.nombre
+				    }));
+					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+					$('#EcografistaConfigTable').append(fila);
 				});
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
