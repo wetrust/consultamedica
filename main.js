@@ -128,23 +128,32 @@ $('#guardarTipoConfig').on('click', function(){
 	$("#tipoConfig .formulario").hide();
 });
 
-$( '#nuevoCiudadConfig').on('click', function() {
-	$('#ciudadConfig .tabla').hide();
-	$('#nuevoCiudadConfig').hide();
-	$('#editarCiudadConfig').hide();
-	$('#guardarCiudadConfig').show();
-	$('#cancelarCiudadConfig').show();
-	$('#ciudadConfig .formulario').show();
+$( '#nuevoLugarConfig').on('click', function() {
+	$('#LugarConfig .tabla').hide();
+	$('#nuevoLugarConfig').hide();
+	$('#editarLugarConfig').hide();
+	$('#guardarLugarConfig').show();
+	$('#cancelarLugarConfig').show();
+	$('#LugarConfig .formulario').show();
  });
 
-$( '#cancelarCiudadConfig').on('click', function() {
-	$("#ciudadConfig .tabla").show();
-	$('#nuevoCiudadConfig').show();
-	$('#editarCiudadConfig').show();
-	$('#guardarCiudadConfig').hide();
-	$('#cancelarCiudadConfig').hide();
-	$("#ciudadConfig .formulario").hide();
+$( '#cancelarLugarConfig').on('click', function() {
+	$("#LugarConfig .tabla").show();
+	$('#nuevoLugarConfig').show();
+	$('#editarLugarConfig').show();
+	$('#guardarLugarConfig').hide();
+	$('#cancelarLugarConfig').hide();
+	$("#LugarConfig .formulario").hide();
  });
+
+$('#LugarTipoConfig').on('click', function(){
+	saveLugarExamenLocalStorage();
+	$("#LugarConfig .tabla").show();
+	$('#nuevoLugarConfig').show();
+	$('#guardarLugarConfig').hide();
+	$('#cancelarLugarConfig').hide();
+	$("#LugarConfig .formulario").hide();
+});
 
 $( '#nuevoMotivoConfig').on('click', function() {
 	$('#motivoConfig .tabla').hide();
@@ -423,6 +432,36 @@ function saveMotivoExamenLocalStorage(){
 				    }));
 					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 					$('#MotivoConfigTable').append(fila);
+				});
+			localStorage["configuracion"] = JSON.stringify(configuracion);
+		}
+	}
+}
+
+function saveLugarExamenLocalStorage(){
+	
+	if (window.localStorage) {
+		if (localStorage.configuracion != null) {
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			$('#Lugar-examen').html();
+			$('#LugarConfigTable').html();
+		
+				var aRR = {id:0, nombre:"Doe"};
+				aRR["id"] = configuracion.configuracion.LugarControlPrenatal.length +1;
+				aRR["nombre"] = $('#LugarInput').val();
+				
+                        	configuracion.configuracion.LugarControlPrenatal.push(aRR);
+				
+				
+				
+				$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {
+				    $('#Lugar-examen').append($('<option>', { 
+					value: item.id,
+					text : item.nombre
+				    }));
+					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+					$('#LugarConfigTable').append(fila);
 				});
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
