@@ -101,23 +101,32 @@ $('#configTab a').click(function (e) {
   $(this.hash).tab('show');
 });
 
-$( '#nuevoLugarConfig').on('click', function() {
-	$('#lugarConfig .tabla').hide();
-	$('#nuevoLugarConfig').hide();
-	$('#editarLugarConfig').hide();
-	$('#guardarLugarConfig').show();
-	$('#cancelarLugarConfig').show();
-	$('#lugarConfig .formulario').show();
+$( '#nuevoTipoConfig').on('click', function() {
+	$('#TipoConfig .tabla').hide();
+	$('#nuevoTipoConfig').hide();
+	$('#editarTipoConfig').hide();
+	$('#guardarTipoConfig').show();
+	$('#cancelarTipoConfig').show();
+	$('#TipoConfig .formulario').show();
  });
 
-$( '#cancelarLugarConfig').on('click', function() {
-	$("#lugarConfig .tabla").show();
-	$('#nuevoLugarConfig').show();
-	$('#editarLugarConfig').show();
-	$('#guardarLugarConfig').hide();
-	$('#cancelarLugarConfig').hide();
-	$("#lugarConfig .formulario").hide();
+$( '#cancelarTipoConfig').on('click', function() {
+	$("#TipoConfig .tabla").show();
+	$('#nuevoTipoConfig').show();
+	$('#editarTipoConfig').show();
+	$('#guardarTipoConfig').hide();
+	$('#cancelarTipoConfig').hide();
+	$("#TipoConfig .formulario").hide();
  });
+
+$('#guardarTipoConfig').on('click', function(){
+	saveTipoExamenLocalStorage();
+	$("#motivoConfig .tabla").show();
+	$('#nuevoMotivoConfig').show();
+	$('#guardarMotivoConfig').hide();
+	$('#cancelarMotivoConfig').hide();
+	$("#motivoConfig .formulario").hide();
+});
 
 $( '#nuevoCiudadConfig').on('click', function() {
 	$('#ciudadConfig .tabla').hide();
@@ -147,7 +156,7 @@ $( '#nuevoMotivoConfig').on('click', function() {
  });
 
 $('#guardarMotivoConfig').on('click', function(){
-	saveTipoExamenLocalStorage();
+	saveMotivoExamenLocalStorage();
 	$("#motivoConfig .tabla").show();
 	$('#nuevoMotivoConfig').show();
 	$('#guardarMotivoConfig').hide();
@@ -304,21 +313,57 @@ function makedbLocalStorage(){
 		if (localStorage.configuracion != null) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
-			$('#motivo-examen').empty();
+			$('#tipo-examen').empty();
 			if (configuracion.configuracion.tipoExamen.length > 0){
 				$.each(configuracion.configuracion.tipoExamen, function (i, item) {
+				    $('#tipo-examen').append($('<option>', { 
+					value: item.id,
+					text : item.nombre
+				    }));
+					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+					$('#TipoConfigTable').append(fila);
+					
+				});
+			}
+			$('#motivo-examen').empty();
+			if (configuracion.configuracion.MotivoExamen.length > 0){
+				$.each(configuracion.configuracion.MotivoExamen, function (i, item) {
 				    $('#motivo-examen').append($('<option>', { 
 					value: item.id,
 					text : item.nombre
 				    }));
 					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#motivoConfigTable').append(fila);
+					$('#MotivoConfigTable').append(fila);
+					
+				});
+			}
+			$('#Lugar-examen').empty();
+			if (configuracion.configuracion.LugarControlPrenatal.length > 0){
+				$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {
+				    $('#lugar-examen').append($('<option>', { 
+					value: item.id,
+					text : item.nombre
+				    }));
+					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+					$('#LugarConfigTable').append(fila);
+					
+				});
+			}
+			$('#ecografista').empty();
+			if (configuracion.configuracion.profesional.length > 0){
+				$.each(configuracion.configuracion.profesional, function (i, item) {
+				    $('#ecografista').append($('<option>', { 
+					value: item.id,
+					text : item.nombre
+				    }));
+					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+					$('#EcografistaConfigTable').append(fila);
 					
 				});
 			}
 		}else{
 			//crear un array vacio
-			var stringVacio = '{"configuracion": {"tipoExamen":[]}}';
+			var stringVacio = '{"configuracion": {"tipoExamen":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[]}}';
 			localStorage["configuracion"] = stringVacio;
 		}
 	}
@@ -330,24 +375,54 @@ function saveTipoExamenLocalStorage(){
 		if (localStorage.configuracion != null) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
-			$('#motivo-examen').empty();
-			$('#motivoConfigTable').empty();
+			$('#tipo-examen').empty();
+			$('#TipoConfigTable').empty();
 		
 				var aRR = {id:0, nombre:"Doe"};
 				aRR["id"] = configuracion.configuracion.tipoExamen.length +1;
-				aRR["nombre"] = $('#motivoInput').val();
+				aRR["nombre"] = $('#tipoInput').val();
 				
                         	configuracion.configuracion.tipoExamen.push(aRR);
 				
 				
 				
 				$.each(configuracion.configuracion.tipoExamen, function (i, item) {
+				    $('#tipo-examen').append($('<option>', { 
+					value: item.id,
+					text : item.nombre
+				    }));
+					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+					$('#TipoConfigTable').append(fila);
+				});
+			localStorage["configuracion"] = JSON.stringify(configuracion);
+		}
+	}
+}
+
+function saveMotivoExamenLocalStorage(){
+	
+	if (window.localStorage) {
+		if (localStorage.configuracion != null) {
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			$('#motivo-examen').empty();
+			$('#motivoConfigTable').empty();
+		
+				var aRR = {id:0, nombre:"Doe"};
+				aRR["id"] = configuracion.configuracion.MotivoExamen.length +1;
+				aRR["nombre"] = $('#motivoInput').val();
+				
+                        	configuracion.configuracion.MotivoExamen.push(aRR);
+				
+				
+				
+				$.each(configuracion.configuracion.MotivoExamen, function (i, item) {
 				    $('#motivo-examen').append($('<option>', { 
 					value: item.id,
 					text : item.nombre
 				    }));
 					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#motivoConfigTable').append(fila);
+					$('#MotivoConfigTable').append(fila);
 				});
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
