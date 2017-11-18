@@ -333,7 +333,7 @@ function saveTipoExamenLocalStorage(){
 			$('#motivo-examen').empty();
 			$('#motivoConfigTable').empty();
 		
-				var aRR = [];
+				var aRR = {id:0, nombre:"Doe"};
 				aRR["id"] = configuracion.configuracion.tipoExamen.length +1;
 				aRR["nombre"] = $('#motivoInput').val();
 				
