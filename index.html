@@ -328,13 +328,21 @@
                                         <label for="motivo-examen" class="col-form-label">Lugar de control prenatal</label>
                                     </div>
                                     <div class="col-4">
-                                        <input class="form-control" type="text" id="lugarControl">
+                                        <select id="Lugar-examen" class="form-control">
+                                             <option value="Eco. para confirmar viabilidad fetal">Eco. para confirmar viabilidad fetal</option>
+                                            <option value="Eco. para determinar edad gestacional">Eco. para determinar edad gestacional</option>
+                                            <option value="Eco. para valorar crecimiento" selected>Eco. para valorar crecimiento</option>
+                                            <option value="Eco. para biometría doppler">Eco. para biometría doppler</option>
+                                            <option value="Eco. para tamizaje 11-14">Eco. para tamizaje 11-14</option>
+                                             <option value="Eco. para morfología 22-26">Eco. para morfología 22-26</option>
+                                             <option value="Evaluación patología específica">Evaluación patología específica</option>
+                                         </select>
                                     </div>
                                     <div class="col-2">
                                         <label for="motivo-examen" class="col-form-label">Tipo de exámen Eco.</label>
                                     </div>
                                     <div class="col-4">
-                                        <select id="motivo-examen" class="form-control">
+                                        <select id="tipo-examen" class="form-control">
                                              <option value="Eco. para confirmar viabilidad fetal">Eco. para confirmar viabilidad fetal</option>
                                             <option value="Eco. para determinar edad gestacional">Eco. para determinar edad gestacional</option>
                                             <option value="Eco. para valorar crecimiento" selected>Eco. para valorar crecimiento</option>
@@ -350,7 +358,15 @@
                                         <label for="motivo-examen" class="col-form-label">Motivo del exámen</label>
                                     </div>
                                     <div class="col-4">
-                                        <input class="form-control" type="text" id="motivo-examen">
+                                        <select id="motivo-examen" class="form-control">
+                                             <option value="Eco. para confirmar viabilidad fetal">Eco. para confirmar viabilidad fetal</option>
+                                            <option value="Eco. para determinar edad gestacional">Eco. para determinar edad gestacional</option>
+                                            <option value="Eco. para valorar crecimiento" selected>Eco. para valorar crecimiento</option>
+                                            <option value="Eco. para biometría doppler">Eco. para biometría doppler</option>
+                                            <option value="Eco. para tamizaje 11-14">Eco. para tamizaje 11-14</option>
+                                             <option value="Eco. para morfología 22-26">Eco. para morfología 22-26</option>
+                                             <option value="Evaluación patología específica">Evaluación patología específica</option>
+                                         </select>
                                     </div>
                                     <div class="col-2">
                                         <label for="ecografista" class="col-form-label">Profesional referente</label>
@@ -364,7 +380,15 @@
                                         <label for="ecografista" class="col-form-label">Profesional examinador</label>
                                     </div>
                                     <div class="col-4">
-                                        <input class="form-control" type="text" id="ecografista" value="De Turno">
+                                        <select id="ecografista" class="form-control">
+                                             <option value="Eco. para confirmar viabilidad fetal">Eco. para confirmar viabilidad fetal</option>
+                                            <option value="Eco. para determinar edad gestacional">Eco. para determinar edad gestacional</option>
+                                            <option value="Eco. para valorar crecimiento" selected>Eco. para valorar crecimiento</option>
+                                            <option value="Eco. para biometría doppler">Eco. para biometría doppler</option>
+                                            <option value="Eco. para tamizaje 11-14">Eco. para tamizaje 11-14</option>
+                                             <option value="Eco. para morfología 22-26">Eco. para morfología 22-26</option>
+                                             <option value="Evaluación patología específica">Evaluación patología específica</option>
+                                         </select>
                                     </div>
                                      <div class="col-2">
                                         <label for="membrete" class="col-form-label">Membrete institucional</label>
@@ -2142,10 +2166,10 @@
             <hr>
             <ul class="nav nav-tabs" role="tablist" id="configTab">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#lugarConfig" role="tab">Lugar de control Prenatal</a>
+                    <a class="nav-link active" data-toggle="tab" href="#tipoConfig" role="tab">Tipo de exámen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#ciudadConfig" role="tab">Ciudad</a>
+                    <a class="nav-link" data-toggle="tab" href="#LugarConfig" role="tab">Lugar Control prenatal</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#motivoConfig" role="tab">Motivo exámen</a>
@@ -2158,7 +2182,52 @@
                 </li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane active pt-2" id="lugarConfig" role="tabpanel">
+                <div class="tab-pane active pt-2" id="tipoConfig" role="tabpanel">
+                    <ul class="nav justify-content-center m-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nuevoTipoConfig">Nuevo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="editarTipoConfig" style="display:none;"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="guardarTipoConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="cancelarTipoConfig" style="display:none;"> Cancelar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
+                        </li>
+                    </ul>
+                    <div class="card tabla">
+                        <div class="card-block">
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Lugar de control</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="TipoConfigTable">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card formulario" style="display:none;">
+                        <div class="card-block">
+                            <div class="form-group">
+                                <h5>Tipo de Exámen</h5>
+                            </div>
+                            <div class="form-group">
+                                <label for="TipoInput">Lugar de control</label>
+                                <input type="text" class="form-control" id="lugarInput" aria-describedby="lugarInputHelp" placeholder="Lugar de control">
+                                <small id="lugarInputHelp" class="form-text text-muted">Lugar de control prenatal.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane pt-2" id="LugarConfig" role="tabpanel">
                     <ul class="nav justify-content-center m-3">
                         <li class="nav-item">
                             <a class="nav-link" href="#" id="nuevoLugarConfig">Nuevo</a>
@@ -2182,79 +2251,10 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Lugar de control</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry the Bird</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card formulario" style="display:none;">
-                        <div class="card-block">
-                            <div class="form-group">
-                                <h5>Nuevo Lugar de control</h5>
-                            </div>
-                            <div class="form-group">
-                                <label for="lugarInput">Lugar de control</label>
-                                <input type="text" class="form-control" id="lugarInput" aria-describedby="lugarInputHelp" placeholder="Lugar de control">
-                                <small id="lugarInputHelp" class="form-text text-muted">Lugar de control prenatal.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane pt-2" id="ciudadConfig" role="tabpanel">
-                    <ul class="nav justify-content-center m-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="nuevoCiudadConfig">Nuevo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="editarCiudadConfig" style="display:none;"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="guardarCiudadConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="cancelarCiudadConfig" style="display:none;"> Cancelar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                        </li>
-                    </ul>
-                    <div class="card tabla">
-                        <div class="card-block">
-                            <table class="table table-hover table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
                                         <th>Ciudad</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry the Bird</td>
-                                    </tr>
+                                <tbody id="LugarConfigTable">
                                 </tbody>
                             </table>
                         </div>
@@ -2266,7 +2266,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="ciudadInput">Ciudad</label>
-                                <input type="text" class="form-control" id="ciudadInput" aria-describedby="ciudadInputHelp" placeholder="ciudad">
+                                <input type="text" class="form-control" id="LugarInput" aria-describedby="ciudadInputHelp" placeholder="ciudad">
                                 <small id="ciudadInputHelp" class="form-text text-muted">ciudad o pueblo.</small>
                             </div>
                         </div>
@@ -2299,7 +2299,7 @@
                                         <th>Motivo de exámen</th>
                                     </tr>
                                 </thead>
-                                <tbody id="motivoConfigTable">
+                                <tbody id="MotivoConfigTable">
                                 </tbody>
                             </table>
                         </div>
@@ -2345,18 +2345,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry the Bird</td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -2401,19 +2389,7 @@
                                         <th>Ecografista</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry the Bird</td>
-                                    </tr>
+                                <tbody id="EcografistaConfigTable">
                                 </tbody>
                             </table>
                         </div>
