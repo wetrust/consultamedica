@@ -146,7 +146,7 @@ $( '#cancelarLugarConfig').on('click', function() {
 	$("#LugarConfig .formulario").hide();
  });
 
-$('#LugarTipoConfig').on('click', function(){
+$('#guardarLugarConfig').on('click', function(){
 	saveLugarExamenLocalStorage();
 	$("#LugarConfig .tabla").show();
 	$('#nuevoLugarConfig').show();
