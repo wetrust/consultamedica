@@ -23,7 +23,7 @@ open.onsuccess = function() {
     store.put({id: 2, name: "Bob"});
     
     // Query the data
-    var getJohn = store.getAll;
+    var getJohn = store.getAll();
 
     getJohn.onsuccess = function() {
         console.log(getJohn.result.name);
