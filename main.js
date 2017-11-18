@@ -361,7 +361,7 @@ function makedbLocalStorage(){
 			$('#Lugar-examen').empty();
 			if (configuracion.configuracion.LugarControlPrenatal.length > 0){
 				$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {
-				    $('#lugar-examen').append($('<option>', { 
+				    $('#Lugar-examen').append($('<option>', { 
 					value: item.id,
 					text : item.nombre
 				    }));
