@@ -218,8 +218,7 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
-			var h = loadTpoExamen();
-			
+			makedbLocalStorage()
 			$('#fum-dos').datepicker();
 			$('#fum-dos').datepicker()
 				  .on('changeDate', function(ev){
@@ -289,3 +288,26 @@ $( '#loadPacienteSelect' ).on( 'click', function() {
     $('#popupBody').html("<p>Módulo en construcción</p>");
     $('#popupGenerico').modal('show');
 });
+
+function makedbLocalStorage(){
+	
+	if (window.localStorage) {
+		if (localStorage.configuracion != null) {
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			$('#motivo-examen').empty();
+			if (configuracion.configuracion.tipoExamen.length > 0){
+				$.each(configuracion.configuracion.tipoExamen, function (i, item) {
+				    $('#motivo-examen').append($('<option>', { 
+					value: item.id,
+					text : item.nombre
+				    }));
+				});
+			}
+		}else{
+			//crear un array vacio
+			var stringVacio = "{"configuracion": {"tipoExamen":[]}}";
+			localStorage["configuracion"] = JSON.stringify(stringVacio);
+		}
+	}
+}
