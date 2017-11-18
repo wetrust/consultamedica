@@ -26,7 +26,9 @@ open.onsuccess = function() {
     var getJohn = store.getAll();
 
     getJohn.onsuccess = function() {
-        console.log(getJohn.result.name);
+        for (i = 0; i < getJohn.result.length; i++) { 
+            console.log(getJohn.result[i].name);
+        }
     };
 
 
