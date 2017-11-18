@@ -1,52 +1,37 @@
-class dbModel {
-	run(){
-		this.check = this.checkNavigator();
-		if (this.check == true){
-			this.dbReady = false;
-			this.makedb();
-		}
-		else{
-			window.alert("Su navegador no tiene la capacidad de almacenar datos, actualice su navegador.");
-		}
-	};
-	makedb(){
-		this.openRequest = indexedDB.open('WeTrust', 1);
-		
-		this.openRequest.onerror = function(event) {
-			window.alert("Database error: " + event.target.errorCode);
-		};
-		
-		this.openRequest.onsuccess = function(event) {
-			this.db = this.openRequest.result;
-		};
-		
-		this.openRequest.onupgradeneeded = function(event) { 
-			let db = event.target.result;
-			
-			this.tpoExamenStore = db.createObjectStore("tpoExamen", { keyPath: "id",autoIncrement: 'true' });
-			this.tpoExamenStore.createIndex("nombre", "nombre", { unique: true });
-			
-			this.tpoExamenStore.put({id: 1, name: "eco 3d"});
-    			this.tpoExamenStore.put({id: 2, name: "eco 4d"});
-		};
-		
-		this.openRequest.transaction.oncomplete = function(e) {
-			this.dbReady = true;
-		};
-	};
-	getTpoExamen(){
-		this.resultado = this.tpoExamenStore.getAll();
-		
-		this.resultado.onsuccess = function() {
-			return resultado.result;
-		};
-	};
-	checkNavigator(){
-		if (!window.indexedDB) {
-			return false;
-		}
-		else{
-			return true;
-		}
-	};
+// This works on all devices/browsers, and uses IndexedDBShim as a final fallback 
+var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
+
+// Open (or create) the database
+var open = indexedDB.open("WeTrust", 1);
+
+// Create the schema
+open.onupgradeneeded = function() {
+    var db = open.result;
+    var store = db.createObjectStore("tpoExamen", {keyPath: "id"});
+    var index = store.createIndex("nombre", ["name.last", "name.first"]);
+};
+
+open.onsuccess = function() {
+    // Start a new transaction
+    var db = open.result;
+    var tx = db.transaction("MyObjectStore", "readwrite");
+    var store = tx.objectStore("MyObjectStore", { keyPath: "id",autoIncrement: 'true' });
+    var index = store.index("nombre", "nombre", { unique: true });
+
+    // Add some data
+    store.put({id: 1, name: "John"});
+    store.put({id: 2, name: "Bob"});
+    
+    // Query the data
+    var getJohn = store.getAll;
+
+    getJohn.onsuccess = function() {
+        console.log(getJohn.result.name);
+    };
+
+
+    // Close the db when the transaction is done
+    tx.oncomplete = function() {
+        db.close();
+    };
 }
