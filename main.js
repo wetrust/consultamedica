@@ -146,6 +146,10 @@ $( '#nuevoMotivoConfig').on('click', function() {
 	$('#motivoConfig .formulario').show();
  });
 
+$('#guardarMotivoConfig').on('click', function(){
+	saveTipoExamenLocalStorage();
+});
+
 $( '#cancelarMotivoConfig').on('click', function() {
 	$("#motivoConfig .tabla").show();
 	$('#nuevoMotivoConfig').show();
@@ -302,12 +306,45 @@ function makedbLocalStorage(){
 					value: item.id,
 					text : item.nombre
 				    }));
+					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+					$('#motivoConfigTable').append(fila);
+					
 				});
 			}
 		}else{
 			//crear un array vacio
 			var stringVacio = '{"configuracion": {"tipoExamen":[]}}';
 			localStorage["configuracion"] = stringVacio;
+		}
+	}
+}
+
+function saveTipoExamenLocalStorage(){
+	
+	if (window.localStorage) {
+		if (localStorage.configuracion != null) {
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			$('#motivo-examen').empty();
+			
+			if (configuracion.configuracion.tipoExamen.length > 0){
+				var aRR = [];
+				arRR["id"] = configuracion.configuracion.tipoExamen.length +1;
+				arRR["nombre"] = $('#motivoInput').val();
+				
+                        	configuracion.configuracion.tipoExamen.push(aRR);
+				
+				
+				
+				$.each(configuracion.configuracion.tipoExamen, function (i, item) {
+				    $('#motivo-examen').append($('<option>', { 
+					value: item.id,
+					text : item.nombre
+				    }));
+					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+					$('#motivoConfigTable').append(fila);
+				});
+			}
 		}
 	}
 }
