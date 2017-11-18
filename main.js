@@ -148,6 +148,11 @@ $( '#nuevoMotivoConfig').on('click', function() {
 
 $('#guardarMotivoConfig').on('click', function(){
 	saveTipoExamenLocalStorage();
+	$("#motivoConfig .tabla").show();
+	$('#nuevoMotivoConfig').show();
+	$('#guardarMotivoConfig').hide();
+	$('#cancelarMotivoConfig').hide();
+	$("#motivoConfig .formulario").hide();
 });
 
 $( '#cancelarMotivoConfig').on('click', function() {
@@ -329,8 +334,8 @@ function saveTipoExamenLocalStorage(){
 			$('#motivoConfigTable').empty();
 		
 				var aRR = [];
-				arRR["id"] = configuracion.configuracion.tipoExamen.length +1;
-				arRR["nombre"] = $('#motivoInput').val();
+				aRR["id"] = configuracion.configuracion.tipoExamen.length +1;
+				aRR["nombre"] = $('#motivoInput').val();
 				
                         	configuracion.configuracion.tipoExamen.push(aRR);
 				
