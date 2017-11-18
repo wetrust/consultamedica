@@ -40,13 +40,13 @@ open.onsuccess = function() {
 
 async function loadTpoExamen(){
     // Start a new transaction
-    var db = open.result;
-    var tx = db.transaction("tpoExamen", "readwrite");
-    var store = tx.objectStore("tpoExamen");
-    var index = store.index("nombre");
+    var db = await open.result;
+    var tx = await db.transaction("tpoExamen", "readwrite");
+    var store = await tx.objectStore("tpoExamen");
+    var index = await store.index("nombre");
     
     // Query the data
-    var getJohn = store.getAll();
+    var getJohn = await store.getAll();
 
     getJohn.onsuccess = function() {
         return getJohn.result;
