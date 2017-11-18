@@ -37,3 +37,24 @@ open.onsuccess = function() {
         db.close();
     };
 }
+
+function loadTpoExamen(){
+    // Start a new transaction
+    var db = open.result;
+    var tx = db.transaction("tpoExamen", "readwrite");
+    var store = tx.objectStore("tpoExamen");
+    var index = store.index("nombre");
+    
+    // Query the data
+    var getJohn = store.getAll();
+
+    getJohn.onsuccess = function() {
+        return getJohn.result;
+    };
+
+
+    // Close the db when the transaction is done
+    tx.oncomplete = function() {
+        db.close();
+    };
+}
