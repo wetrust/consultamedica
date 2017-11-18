@@ -17,7 +17,7 @@ class dbModel {
 		};
 		
 		this.openRequest.onsuccess = function(event) {
-			this.db = request.result;
+			this.db = this.openRequest.result;
 		};
 		
 		this.openRequest.onupgradeneeded = function(event) { 
