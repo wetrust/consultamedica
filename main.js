@@ -384,8 +384,8 @@ function saveTipoExamenLocalStorage(){
 		if (localStorage.configuracion != null) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
-			$('#tipo-examen').empty();
-			$('#TipoConfigTable').empty();
+			$('#tipo-examen').html("");
+			$('#TipoConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
 				aRR["id"] = configuracion.configuracion.tipoExamen.length +1;
@@ -415,7 +415,7 @@ function saveMotivoExamenLocalStorage(){
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
 			$('#motivo-examen').html();
-			$('#MotivoConfigTable').html();
+			$('#MotivoConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
 				aRR["id"] = configuracion.configuracion.MotivoExamen.length +1;
@@ -445,7 +445,7 @@ function saveLugarExamenLocalStorage(){
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
 			$('#Lugar-examen').html();
-			$('#LugarConfigTable').html();
+			$('#LugarConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
 				aRR["id"] = configuracion.configuracion.LugarControlPrenatal.length +1;
