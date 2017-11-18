@@ -38,7 +38,7 @@ open.onsuccess = function() {
     };
 }
 
-function loadTpoExamen(){
+async function loadTpoExamen(){
     // Start a new transaction
     var db = open.result;
     var tx = db.transaction("tpoExamen", "readwrite");
@@ -49,7 +49,7 @@ function loadTpoExamen(){
     var getJohn = store.getAll();
 
     getJohn.onsuccess = function() {
-        return getJohn.result;
+        return await getJohn.result;
     };
 
 
@@ -57,4 +57,11 @@ function loadTpoExamen(){
     tx.oncomplete = function() {
         db.close();
     };
+}
+
+
+async function añadir2(x) {
+  var a = await resolverDespuesDe2Segundos(20);
+  var b = await resolverDespuesDe2Segundos(30);
+  return x + a + b;
 }
