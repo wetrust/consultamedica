@@ -307,7 +307,7 @@ function makedbLocalStorage(){
 		}else{
 			//crear un array vacio
 			var stringVacio = '{"configuracion": {"tipoExamen":[]}}';
-			localStorage["configuracion"] = JSON.stringify(stringVacio);
+			localStorage["configuracion"] = stringVacio;
 		}
 	}
 }
