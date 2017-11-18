@@ -49,7 +49,7 @@ async function loadTpoExamen(){
     var getJohn = store.getAll();
 
     getJohn.onsuccess = function() {
-        return await getJohn.result;
+        return getJohn.result;
     };
 
 
