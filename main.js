@@ -102,30 +102,30 @@ $('#configTab a').click(function (e) {
 });
 
 $( '#nuevoTipoConfig').on('click', function() {
-	$('#TipoConfig .tabla').hide();
+	$('#tipoConfig .tabla').hide();
 	$('#nuevoTipoConfig').hide();
 	$('#editarTipoConfig').hide();
 	$('#guardarTipoConfig').show();
 	$('#cancelarTipoConfig').show();
-	$('#TipoConfig .formulario').show();
+	$('#tipoConfig .formulario').show();
  });
 
 $( '#cancelarTipoConfig').on('click', function() {
-	$("#TipoConfig .tabla").show();
+	$("#tipoConfig .tabla").show();
 	$('#nuevoTipoConfig').show();
 	$('#editarTipoConfig').show();
 	$('#guardarTipoConfig').hide();
 	$('#cancelarTipoConfig').hide();
-	$("#TipoConfig .formulario").hide();
+	$("#tipoConfig .formulario").hide();
  });
 
 $('#guardarTipoConfig').on('click', function(){
 	saveTipoExamenLocalStorage();
-	$("#motivoConfig .tabla").show();
-	$('#nuevoMotivoConfig').show();
-	$('#guardarMotivoConfig').hide();
-	$('#cancelarMotivoConfig').hide();
-	$("#motivoConfig .formulario").hide();
+	$("#tipoConfig .tabla").show();
+	$('#nuevoTipoConfig').show();
+	$('#guardarTipoConfig').hide();
+	$('#cancelarTipoConfig').hide();
+	$("#tipoConfig .formulario").hide();
 });
 
 $( '#nuevoCiudadConfig').on('click', function() {
