@@ -216,6 +216,12 @@ $( document ).ready(function() {
 		else{
 			show_hide('browser');
 			aplication.run();
+			
+			databaseBing = new dbModel();
+			databaseBing.run();
+			if (databaseBing.dbReady == true){
+				var jala =  databaseBing.getTpoExamen();
+			}
 			loadPacientes(listPacientes);
 			activarBotones();
 			$('#fum-dos').datepicker();
