@@ -349,6 +349,7 @@ function saveTipoExamenLocalStorage(){
 					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 					$('#motivoConfigTable').append(fila);
 				});
+			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	}
 }
