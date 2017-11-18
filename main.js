@@ -405,8 +405,8 @@ function saveMotivoExamenLocalStorage(){
 		if (localStorage.configuracion != null) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
-			$('#motivo-examen').empty();
-			$('#MotivoConfigTable').empty();
+			$('#motivo-examen').html();
+			$('#MotivoConfigTable').html();
 		
 				var aRR = {id:0, nombre:"Doe"};
 				aRR["id"] = configuracion.configuracion.MotivoExamen.length +1;
