@@ -326,8 +326,8 @@ function saveTipoExamenLocalStorage(){
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
 			$('#motivo-examen').empty();
-			
-			if (configuracion.configuracion.tipoExamen.length > 0){
+			$('#motivoConfigTable').empty();
+		
 				var aRR = [];
 				arRR["id"] = configuracion.configuracion.tipoExamen.length +1;
 				arRR["nombre"] = $('#motivoInput').val();
@@ -344,7 +344,6 @@ function saveTipoExamenLocalStorage(){
 					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 					$('#motivoConfigTable').append(fila);
 				});
-			}
 		}
 	}
 }
