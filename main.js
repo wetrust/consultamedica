@@ -321,13 +321,13 @@ $( document ).ready(function() {
 $('#EcografistaConfigTable tr').on('click',function(){
 	activateTr(this);
 });
-$('#LugarConfigTable > tr').on('click',function(){
+$('#LugarConfigTable tr').on('click',function(){
 	activateTr(this);
 });
-$('#MotivoConfigTable > tr').on('click',function(){
+$('#MotivoConfigTable tr').on('click',function(){
 	activateTr(this);
 });
-$('#TipoConfigTable > tr').on('click',function(){
+$('#TipoConfigTable tr').on('click',function(){
 	activateTr(this);
 });
 			
