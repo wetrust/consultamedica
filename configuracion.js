@@ -181,7 +181,7 @@ function saveEcografistaExamenLocalStorage(){
 }
 
 function activateTr(element){
-	$.each( $(element).parent(), function( i, val ) {
+	$.each( $(element).parent().children(), function( i, val ) {
 		$( val ).removeClass( 'table-active');
 	});
 	$(element).addClass('table-active');
