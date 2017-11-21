@@ -263,3 +263,16 @@
     border-color: #6bb4e0 !important;
     color: #fff;
 }
+
+.btn-outline-consulta {
+    color: #6bb4e0;
+    background-image: none;
+    background-color: transparent;
+    border-color: #6bb4e0;
+}
+
+.btn-outline-consulta:active {
+    color: #fff;
+    background-color: #6bb4e0;
+    border-color: #6bb4e0;
+}
