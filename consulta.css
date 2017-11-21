@@ -271,7 +271,7 @@
     border-color: #6bb4e0;
 }
 
-.btn-outline-consulta:active {
+.btn-outline-consulta:active, .btn-outline-consulta.active {
     color: #fff;
     background-color: #6bb4e0;
     border-color: #6bb4e0;
