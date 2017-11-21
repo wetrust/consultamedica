@@ -15,6 +15,7 @@ function makedbLocalStorage(){
 					$('#TipoConfigTable').append(fila);
 					
 				});
+				$('#eliminarTipoConfig').css("display","block");
 			}
 			$('#motivo-examen').empty();
 			if (configuracion.configuracion.MotivoExamen.length > 0){
@@ -27,6 +28,7 @@ function makedbLocalStorage(){
 					$('#MotivoConfigTable').append(fila);
 					
 				});
+				$('#eliminarMotivoConfig').css("display","block");
 			}
 			$('#Lugar-examen').empty();
 			if (configuracion.configuracion.LugarControlPrenatal.length > 0){
@@ -39,6 +41,7 @@ function makedbLocalStorage(){
 					$('#LugarConfigTable').append(fila);
 					
 				});
+				$('#eliminarLugarConfig').css("display","block");
 			}
 			$('#ecografista').empty();
 			if (configuracion.configuracion.profesional.length > 0){
@@ -51,6 +54,7 @@ function makedbLocalStorage(){
 					$('#EcografistaConfigTable').append(fila);
 					
 				});
+				$('#eliminarEcografistaConfig').css("display","block");
 			}
 		}else{
 			//crear un array vacio
@@ -186,3 +190,47 @@ function activateTr(element){
 	});
 	$(element).addClass('table-active');
 }
+
+//manejadore de botones
+
+$( '#eliminarTipoConfig').on('click', function() {
+	var getElement = false;
+	
+	$.each( $('#TipoConfigTable').children(), function( i, val ) {
+		if ($( val ).hasClass( 'table-active') == true){
+			getElement = true;
+		}
+	});
+	
+	if (getElement == false){
+		window.alert("haga click sobre un elemento para eliminar");
+	}
+	else{
+		makedbLocalStorage();
+	}
+	
+ });
+$( '#eliminarMotivoConfig').on('click', function() {
+	$("#ecografistaConfig .tabla").show();
+	$('#nuevoEcografistaConfig').show();
+	$('#editarEcografistaConfig').show();
+	$('#guardarEcografistaConfig').hide();
+	$('#cancelarEcografistaConfig').hide();
+	$("#ecografistaConfig .formulario").hide();
+ });
+$( '#eliminarLugarConfig').on('click', function() {
+	$("#ecografistaConfig .tabla").show();
+	$('#nuevoEcografistaConfig').show();
+	$('#editarEcografistaConfig').show();
+	$('#guardarEcografistaConfig').hide();
+	$('#cancelarEcografistaConfig').hide();
+	$("#ecografistaConfig .formulario").hide();
+ });
+$( '#eliminarEcografistaConfig').on('click', function() {
+	$("#ecografistaConfig .tabla").show();
+	$('#nuevoEcografistaConfig').show();
+	$('#editarEcografistaConfig').show();
+	$('#guardarEcografistaConfig').hide();
+	$('#cancelarEcografistaConfig').hide();
+	$("#ecografistaConfig .formulario").hide();
+ });
