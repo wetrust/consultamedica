@@ -182,7 +182,7 @@ function saveEcografistaExamenLocalStorage(){
 
 $( document ).ready(function() {
 //manejador de click sobre las tablas de configuración
-$('#EcografistaConfigTable ~ tr').on('click',function(){
+$('#EcografistaConfigTable').on('click',function(){
 	activateTr(this);
 });
 $('#LugarConfigTable > tr').on('click',function(){
