@@ -258,3 +258,8 @@
     cursor: default;
     background-color: transparent; }
 
+.btn-consulta{
+    background-color: #6bb4e0 !important;
+    border-color: #6bb4e0 !important;
+    color: #fff;
+}
