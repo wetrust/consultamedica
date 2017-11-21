@@ -197,7 +197,7 @@ $('#TipoConfigTable > tr').on('click',function(){
 });
 
 function activateTr(element){
-	$.each( $(element).parent(), function( i, val ) {
+	$.each( $(element).children(), function( i, val ) {
 		$( "#" + i ).removeClass( 'table-active');
 	});
 	$(element).addClass('table-active');
