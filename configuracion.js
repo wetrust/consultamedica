@@ -180,22 +180,6 @@ function saveEcografistaExamenLocalStorage(){
 	}
 }
 
-$( document ).ready(function() {
-//manejador de click sobre las tablas de configuración
-$('#EcografistaConfigTable tr').on('click',function(){
-	activateTr(this);
-});
-$('#LugarConfigTable > tr').on('click',function(){
-	activateTr(this);
-});
-$('#MotivoConfigTable > tr').on('click',function(){
-	activateTr(this);
-});
-$('#TipoConfigTable > tr').on('click',function(){
-	activateTr(this);
-});
-});
-
 function activateTr(element){
 	$.each( $(element).children(), function( i, val ) {
 		$( val ).removeClass( 'table-active');
