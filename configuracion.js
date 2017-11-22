@@ -75,9 +75,27 @@ function makedbLocalStorage(){
 					activateTr(this);
 				});
 			}
+			
+			$('#procedencia').empty();
+			$('#CiudadConfigTable').empty();
+			if (configuracion.configuracion.ciudad.length > 0){
+				$.each(configuracion.configuracion.ciudad, function (i, item) {
+				    $('#procedencia').append($('<option>', { 
+					value: item.id,
+					text : item.nombre
+				    }));
+					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+					$('#CiudadConfigTable').append(fila);
+					
+				});
+				$('#eliminarCiudadConfig').css("display","block");
+				$('#CiudadConfigTable tr').on('click',function(){
+					activateTr(this);
+				});
+			}
 		}else{
 			//crear un array vacio
-			var stringVacio = '{"configuracion": {"tipoExamen":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[]}}';
+			var stringVacio = '{"configuracion": {"tipoExamen":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[]}}';
 			localStorage["configuracion"] = stringVacio;
 		}
 	}
@@ -161,6 +179,27 @@ function saveEcografistaExamenLocalStorage(){
 				
                         	configuracion.configuracion.profesional.push(aRR);
 			$('#eliminarEcografistaConfig').css("display","block");
+			localStorage["configuracion"] = JSON.stringify(configuracion);
+			makedbLocalStorage();
+		}
+	}
+}
+
+function saveCiudadExamenLocalStorage(){
+	
+	if (window.localStorage) {
+		if (localStorage.configuracion != null) {
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			$('#procedencia').html("");
+			$('#CiudadConfigTable').html("");
+		
+				var aRR = {id:0, nombre:"Doe"};
+				aRR["id"] = configuracion.configuracion.ciudad.length +1;
+				aRR["nombre"] = $('#CiudadInput').val();
+				
+                        	configuracion.configuracion.ciudad.push(aRR);
+			$('#eliminarCiudadConfig').css("display","block");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 			makedbLocalStorage();
 		}
@@ -302,6 +341,41 @@ $( '#eliminarEcografistaConfig').on('click', function() {
 			});
 			
 			configuracion.configuracion.profesional = profesional;
+			localStorage["configuracion"] = JSON.stringify(configuracion);
+		}
+	});
+	
+	if (getElement == false){
+		window.alert("haga click sobre un elemento para eliminar");
+	}
+	else{
+		makedbLocalStorage();
+	}
+ });
+
+$( '#eliminarCiudadConfig').on('click', function() {
+	var getElement = false;
+	var contador = 0
+	$.each( $('#CiudadConfigTable').children(), function( i, val ) {
+		if ($( val ).hasClass( 'table-active') == true){
+			getElement = true;
+			var nombre = $(val).children('td').html();
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			//construir un nuevo array de objetos
+			var ciudad = [];
+			$.each(configuracion.configuracion.ciudad, function (i, item) {	
+				if (item.nombre != nombre){
+					var aRR = {id:0, nombre:"Doe"};
+					aRR["id"] =contador +1;
+					aRR["nombre"] = item.nombre;
+				
+                        		ciudad.push(aRR);
+					contador++;
+				}
+			});
+			
+			configuracion.configuracion.ciudad = ciudad;
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	});
