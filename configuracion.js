@@ -97,19 +97,9 @@ function saveTipoExamenLocalStorage(){
 				aRR["nombre"] = $('#tipoInput').val();
 				
                         	configuracion.configuracion.tipoExamen.push(aRR);
-				
-				
-				
-				$.each(configuracion.configuracion.tipoExamen, function (i, item) {
-				    $('#tipo-examen').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#TipoConfigTable').append(fila);
-				});
 			$('#eliminarTipoConfig').css("display","block");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
+			makedbLocalStorage();
 		}
 	}
 }
@@ -128,19 +118,9 @@ function saveMotivoExamenLocalStorage(){
 				aRR["nombre"] = $('#motivoInput').val();
 				
                         	configuracion.configuracion.MotivoExamen.push(aRR);
-				
-				
-				
-				$.each(configuracion.configuracion.MotivoExamen, function (i, item) {
-				    $('#motivo-examen').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#MotivoConfigTable').append(fila);
-				});
 			$('#eliminarMotivoConfig').css("display","block");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
+			makedbLocalStorage();
 		}
 	}
 }
@@ -159,19 +139,9 @@ function saveLugarExamenLocalStorage(){
 				aRR["nombre"] = $('#LugarInput').val();
 				
                         	configuracion.configuracion.LugarControlPrenatal.push(aRR);
-				
-				
-				
-				$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {
-				    $('#Lugar-examen').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#LugarConfigTable').append(fila);
-				});
 			$('#eliminarLugarConfig').css("display","block");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
+			makedbLocalStorage();
 		}
 	}
 }
@@ -190,19 +160,9 @@ function saveEcografistaExamenLocalStorage(){
 				aRR["nombre"] = $('#ecografistaInput').val();
 				
                         	configuracion.configuracion.profesional.push(aRR);
-				
-				
-				
-				$.each(configuracion.configuracion.profesional, function (i, item) {
-				    $('#ecografista').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#EcografistaConfigTable').append(fila);
-				});
 			$('#eliminarEcografistaConfig').css("display","block");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
+			makedbLocalStorage();
 		}
 	}
 }
