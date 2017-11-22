@@ -182,22 +182,31 @@ $( '#cancelarMotivoConfig').on('click', function() {
 	$("#motivoConfig .formulario").hide();
  });
 
-$( '#nuevoPoconConfig').on('click', function() {
-	$('#poconConfig .tabla').hide();
-	$('#nuevoPoconConfig').hide();
-	$('#editarPoconConfig').hide();
-	$('#guardarPoconConfig').show();
-	$('#cancelarPoconConfig').show();
-	$('#poconConfig .formulario').show();
+$( '#nuevoCiudadConfig').on('click', function() {
+	$('#CiudadConfig .tabla').hide();
+	$('#nuevoCiudadConfig').hide();
+	$('#editarCiudadConfig').hide();
+	$('#guardarCiudadConfig').show();
+	$('#cancelarCiudadConfig').show();
+	$('#CiudadConfig .formulario').show();
  });
 
-$( '#cancelarPoconConfig').on('click', function() {
-	$("#poconConfig .tabla").show();
-	$('#nuevoPoconConfig').show();
-	$('#editarPoconConfig').show();
-	$('#guardarPoconConfig').hide();
-	$('#cancelarPoconConfig').hide();
-	$("#poconConfig .formulario").hide();
+$( '#cancelarCiudadConfig').on('click', function() {
+	$("#CiudadConfig .tabla").show();
+	$('#nuevoCiudadConfig').show();
+	$('#editarCiudadConfig').show();
+	$('#guardarCiudadConfig').hide();
+	$('#cancelarCiudadConfig').hide();
+	$("#CiudadConfig .formulario").hide();
+ });
+
+$( '#guardarCiudadConfig').on('click', function() {
+	saveCiudadExamenLocalStorage();
+	$("#CiudadConfig .tabla").show();
+	$('#nuevoCiudadConfig').show();
+	$('#guardarCiudadConfig').hide();
+	$('#cancelarCiudadConfig').hide();
+	$("#CiudadConfig .formulario").hide();
  });
 
 $( '#nuevoEcografistaConfig').on('click', function() {
