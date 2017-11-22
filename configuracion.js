@@ -17,6 +17,9 @@ function makedbLocalStorage(){
 					
 				});
 				$('#eliminarTipoConfig').css("display","block");
+				$('#TipoConfigTable tr').on('click',function(){
+					activateTr(this);
+				});
 			}
 			
 			$('#motivo-examen').empty();
@@ -32,6 +35,9 @@ function makedbLocalStorage(){
 					
 				});
 				$('#eliminarMotivoConfig').css("display","block");
+				$('#MotivoConfigTable tr').on('click',function(){
+					activateTr(this);
+				});
 			}
 			
 			$('#Lugar-examen').empty();
@@ -47,6 +53,10 @@ function makedbLocalStorage(){
 					
 				});
 				$('#eliminarLugarConfig').css("display","block");
+				//manejador de click sobre las tablas de configuración
+				$('#LugarConfigTable tr').on('click',function(){
+					activateTr(this);
+				});
 			}
 			$('#ecografista').empty();
 			$('#EcografistaConfigTable').empty();
@@ -61,6 +71,9 @@ function makedbLocalStorage(){
 					
 				});
 				$('#eliminarEcografistaConfig').css("display","block");
+				$('#EcografistaConfigTable tr').on('click',function(){
+					activateTr(this);
+				});
 			}
 		}else{
 			//crear un array vacio
@@ -95,6 +108,7 @@ function saveTipoExamenLocalStorage(){
 					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 					$('#TipoConfigTable').append(fila);
 				});
+			$('#eliminarTipoConfig').css("display","block");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	}
@@ -125,6 +139,7 @@ function saveMotivoExamenLocalStorage(){
 					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 					$('#MotivoConfigTable').append(fila);
 				});
+			$('#eliminarMotivoConfig').css("display","block");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	}
@@ -155,6 +170,7 @@ function saveLugarExamenLocalStorage(){
 					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 					$('#LugarConfigTable').append(fila);
 				});
+			$('#eliminarLugarConfig').css("display","block");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	}
@@ -185,6 +201,7 @@ function saveEcografistaExamenLocalStorage(){
 					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 					$('#EcografistaConfigTable').append(fila);
 				});
+			$('#eliminarEcografistaConfig').css("display","block");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	}
