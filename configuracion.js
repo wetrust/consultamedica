@@ -217,8 +217,8 @@ $( '#eliminarTipoConfig').on('click', function() {
 					aRR["nombre"] = item.nombre;
 				
                         		tipoExamen.push(aRR);
+					contador++;
 				}
-				contador++;
 			});
 			
 			configuracion.configuracion.tipoExamen = tipoExamen;
@@ -235,26 +235,104 @@ $( '#eliminarTipoConfig').on('click', function() {
 	
  });
 $( '#eliminarMotivoConfig').on('click', function() {
-	$("#ecografistaConfig .tabla").show();
-	$('#nuevoEcografistaConfig').show();
-	$('#editarEcografistaConfig').show();
-	$('#guardarEcografistaConfig').hide();
-	$('#cancelarEcografistaConfig').hide();
-	$("#ecografistaConfig .formulario").hide();
+	var getElement = false;
+	var contador = 0
+	$.each( $('#MotivoConfigTable').children(), function( i, val ) {
+		if ($( val ).hasClass( 'table-active') == true){
+			getElement = true;
+			var nombre = $(val).children('td').html();
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			//construir un nuevo array de objetos
+			var MotivoExamen = [];
+			$.each(configuracion.configuracion.MotivoExamen, function (i, item) {	
+				if (item.nombre != nombre){
+					var aRR = {id:0, nombre:"Doe"};
+					aRR["id"] =contador +1;
+					aRR["nombre"] = item.nombre;
+				
+                        		MotivoExamen.push(aRR);
+					contador++;
+				}
+			});
+			
+			configuracion.configuracion.MotivoExamen = MotivoExamen;
+			localStorage["configuracion"] = JSON.stringify(configuracion);
+		}
+	});
+	
+	if (getElement == false){
+		window.alert("haga click sobre un elemento para eliminar");
+	}
+	else{
+		makedbLocalStorage();
+	}
  });
 $( '#eliminarLugarConfig').on('click', function() {
-	$("#ecografistaConfig .tabla").show();
-	$('#nuevoEcografistaConfig').show();
-	$('#editarEcografistaConfig').show();
-	$('#guardarEcografistaConfig').hide();
-	$('#cancelarEcografistaConfig').hide();
-	$("#ecografistaConfig .formulario").hide();
+	var getElement = false;
+	var contador = 0
+	$.each( $('#LugarConfigTable').children(), function( i, val ) {
+		if ($( val ).hasClass( 'table-active') == true){
+			getElement = true;
+			var nombre = $(val).children('td').html();
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			//construir un nuevo array de objetos
+			var LugarControlPrenatal = [];
+			$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {	
+				if (item.nombre != nombre){
+					var aRR = {id:0, nombre:"Doe"};
+					aRR["id"] =contador +1;
+					aRR["nombre"] = item.nombre;
+				
+                        		LugarControlPrenatal.push(aRR);
+					contador++;
+				}
+			});
+			
+			configuracion.configuracion.LugarControlPrenatal = LugarControlPrenatal;
+			localStorage["configuracion"] = JSON.stringify(configuracion);
+		}
+	});
+	
+	if (getElement == false){
+		window.alert("haga click sobre un elemento para eliminar");
+	}
+	else{
+		makedbLocalStorage();
+	}
  });
 $( '#eliminarEcografistaConfig').on('click', function() {
-	$("#ecografistaConfig .tabla").show();
-	$('#nuevoEcografistaConfig').show();
-	$('#editarEcografistaConfig').show();
-	$('#guardarEcografistaConfig').hide();
-	$('#cancelarEcografistaConfig').hide();
-	$("#ecografistaConfig .formulario").hide();
+	var getElement = false;
+	var contador = 0
+	$.each( $('#EcografistaConfigTable').children(), function( i, val ) {
+		if ($( val ).hasClass( 'table-active') == true){
+			getElement = true;
+			var nombre = $(val).children('td').html();
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			//construir un nuevo array de objetos
+			var profesional = [];
+			$.each(configuracion.configuracion.profesional, function (i, item) {	
+				if (item.nombre != nombre){
+					var aRR = {id:0, nombre:"Doe"};
+					aRR["id"] =contador +1;
+					aRR["nombre"] = item.nombre;
+				
+                        		profesional.push(aRR);
+					contador++;
+				}
+			});
+			
+			configuracion.configuracion.profesional = profesional;
+			localStorage["configuracion"] = JSON.stringify(configuracion);
+		}
+	});
+	
+	if (getElement == false){
+		window.alert("haga click sobre un elemento para eliminar");
+	}
+	else{
+		makedbLocalStorage();
+	}
  });
