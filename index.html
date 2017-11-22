@@ -2138,6 +2138,9 @@
             <hr>
             <ul class="nav nav-tabs" role="tablist" id="configTab">
                 <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#ciudadConfig" role="tab">Procedencia (Ciudad)</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" data-toggle="tab" href="#tipoConfig" role="tab">Tipo de exámen</a>
                 </li>
                 <li class="nav-item">
@@ -2145,9 +2148,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#motivoConfig" role="tab">Motivo exámen</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#poconConfig" role="tab">Patología obstétrica concomitante</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#ecografistaConfig" role="tab">Ecografista</a>
@@ -2292,19 +2292,19 @@
                 <div class="tab-pane pt-2" id="poconConfig" role="tabpanel">
                     <ul class="nav justify-content-center m-3">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="nuevoPoconConfig">Nuevo</a>
+                            <a class="nav-link" href="#" id="nuevoCiudadConfig">Nuevo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="editarPoconConfig" style="display:none;"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</a>
+                            <a class="nav-link" href="#" id="editarCiudadConfig" style="display:none;"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="guardarPoconConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+                            <a class="nav-link" href="#" id="guardarCiudadConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="cancelarPoconConfig" style="display:none;"> Cancelar</a>
+                            <a class="nav-link" href="#" id="cancelarCiudadConfig" style="display:none;"> Cancelar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
+                            <a class="nav-link" href="#" id="eliminarCiudadConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
                         </li>
                     </ul>
                     <div class="card tabla">
@@ -2316,7 +2316,7 @@
                                         <th>Patología Obstétrica concomitante</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody d="CiudadConfigTable">
                                 </tbody>
                             </table>
                         </div>
@@ -2324,12 +2324,11 @@
                     <div class="card formulario" style="display:none;">
                         <div class="card-block">
                             <div class="form-group">
-                                <h5>Nuevo Patología obstétrica concomitante</h5>
+                                <h5>Nuevo Procedencia (Ciudad)</h5>
                             </div>
                             <div class="form-group">
-                                <label for="poconInput">Patología obstétrica concomitante</label>
-                                <input type="text" class="form-control" id="poconInput" aria-describedby="poconInputHelp" placeholder="Patologia">
-                                <small id="poconInputHelp" class="form-text text-muted">Patología obstétrica concomitante.</small>
+                                <label for="CiudadInput">Procedencia (Ciudad)</label>
+                                <input type="text" class="form-control" id="CiudadInput" placeholder="Ciudad">
                             </div>
                         </div>
                     </div>
