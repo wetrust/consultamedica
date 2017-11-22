@@ -5,6 +5,7 @@ function makedbLocalStorage(){
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
 			$('#tipo-examen').empty();
+			$('#TipoConfigTable').empty();
 			if (configuracion.configuracion.tipoExamen.length > 0){
 				$.each(configuracion.configuracion.tipoExamen, function (i, item) {
 				    $('#tipo-examen').append($('<option>', { 
@@ -17,7 +18,9 @@ function makedbLocalStorage(){
 				});
 				$('#eliminarTipoConfig').css("display","block");
 			}
+			
 			$('#motivo-examen').empty();
+			$('#MotivoConfigTable').empty();
 			if (configuracion.configuracion.MotivoExamen.length > 0){
 				$.each(configuracion.configuracion.MotivoExamen, function (i, item) {
 				    $('#motivo-examen').append($('<option>', { 
@@ -30,7 +33,9 @@ function makedbLocalStorage(){
 				});
 				$('#eliminarMotivoConfig').css("display","block");
 			}
+			
 			$('#Lugar-examen').empty();
+			$('#LugarConfigTable').empty();
 			if (configuracion.configuracion.LugarControlPrenatal.length > 0){
 				$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {
 				    $('#Lugar-examen').append($('<option>', { 
@@ -44,6 +49,7 @@ function makedbLocalStorage(){
 				$('#eliminarLugarConfig').css("display","block");
 			}
 			$('#ecografista').empty();
+			$('#EcografistaConfigTable').empty();
 			if (configuracion.configuracion.profesional.length > 0){
 				$.each(configuracion.configuracion.profesional, function (i, item) {
 				    $('#ecografista').append($('<option>', { 
@@ -195,10 +201,28 @@ function activateTr(element){
 
 $( '#eliminarTipoConfig').on('click', function() {
 	var getElement = false;
-	
+	var contador = 0
 	$.each( $('#TipoConfigTable').children(), function( i, val ) {
 		if ($( val ).hasClass( 'table-active') == true){
 			getElement = true;
+			var nombre = val.children('td').html();
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			//construir un nuevo array de objetos
+			var tipoExamen = {};
+			$.each(configuracion.configuracion.tipoExamen, function (i, item) {	
+				if (item.nombre != nombre){
+					var aRR = {id:0, nombre:"Doe"};
+					aRR["id"] =contador +1;
+					aRR["nombre"] = item.nombre;
+				
+                        		tipoExamen.push(aRR);
+				}
+				contador++;
+			});
+			
+			configuracion.configuracion.tipoExamen = tipoExamen;
+			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	});
 	
