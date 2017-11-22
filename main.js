@@ -188,7 +188,7 @@ $( '#nuevoCiudadConfig').on('click', function() {
 	$('#editarCiudadConfig').hide();
 	$('#guardarCiudadConfig').show();
 	$('#cancelarCiudadConfig').show();
-	$('#CiudadConfig .formulario').show();
+	$('#ciudadConfig .formulario').show();
  });
 
 $( '#cancelarCiudadConfig').on('click', function() {
@@ -197,7 +197,7 @@ $( '#cancelarCiudadConfig').on('click', function() {
 	$('#editarCiudadConfig').show();
 	$('#guardarCiudadConfig').hide();
 	$('#cancelarCiudadConfig').hide();
-	$("#CiudadConfig .formulario").hide();
+	$("#ciudadConfig .formulario").hide();
  });
 
 $( '#guardarCiudadConfig').on('click', function() {
@@ -206,7 +206,7 @@ $( '#guardarCiudadConfig').on('click', function() {
 	$('#nuevoCiudadConfig').show();
 	$('#guardarCiudadConfig').hide();
 	$('#cancelarCiudadConfig').hide();
-	$("#CiudadConfig .formulario").hide();
+	$("#ciudadConfig .formulario").hide();
  });
 
 $( '#nuevoEcografistaConfig').on('click', function() {
