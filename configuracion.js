@@ -205,7 +205,7 @@ $( '#eliminarTipoConfig').on('click', function() {
 	$.each( $('#TipoConfigTable').children(), function( i, val ) {
 		if ($( val ).hasClass( 'table-active') == true){
 			getElement = true;
-			var nombre = val.children('td').html();
+			var nombre = $(val).children('td').html();
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
 			//construir un nuevo array de objetos
