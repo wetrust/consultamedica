@@ -314,25 +314,6 @@ $( document ).ready(function() {
 				  .on('changeDate', function(ev){
 				    $(this).trigger("change");
 				  });
-			
-			
-			
-			//manejador de click sobre las tablas de configuración
-$('#EcografistaConfigTable tr').on('click',function(){
-	activateTr(this);
-});
-$('#LugarConfigTable tr').on('click',function(){
-	activateTr(this);
-});
-$('#MotivoConfigTable tr').on('click',function(){
-	activateTr(this);
-});
-$('#TipoConfigTable tr').on('click',function(){
-	activateTr(this);
-});
-			
-			
-			
 		}
 	}
 });
