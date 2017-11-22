@@ -209,7 +209,7 @@ $( '#eliminarTipoConfig').on('click', function() {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
 			//construir un nuevo array de objetos
-			var tipoExamen = {};
+			var tipoExamen = [];
 			$.each(configuracion.configuracion.tipoExamen, function (i, item) {	
 				if (item.nombre != nombre){
 					var aRR = {id:0, nombre:"Doe"};
