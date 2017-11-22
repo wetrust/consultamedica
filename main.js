@@ -183,7 +183,7 @@ $( '#cancelarMotivoConfig').on('click', function() {
  });
 
 $( '#nuevoCiudadConfig').on('click', function() {
-	$('#CiudadConfig .tabla').hide();
+	$('#ciudadConfig .tabla').hide();
 	$('#nuevoCiudadConfig').hide();
 	$('#editarCiudadConfig').hide();
 	$('#guardarCiudadConfig').show();
@@ -192,7 +192,7 @@ $( '#nuevoCiudadConfig').on('click', function() {
  });
 
 $( '#cancelarCiudadConfig').on('click', function() {
-	$("#CiudadConfig .tabla").show();
+	$("#ciudadConfig .tabla").show();
 	$('#nuevoCiudadConfig').show();
 	$('#editarCiudadConfig').show();
 	$('#guardarCiudadConfig').hide();
@@ -202,7 +202,7 @@ $( '#cancelarCiudadConfig').on('click', function() {
 
 $( '#guardarCiudadConfig').on('click', function() {
 	saveCiudadExamenLocalStorage();
-	$("#CiudadConfig .tabla").show();
+	$("#ciudadConfig .tabla").show();
 	$('#nuevoCiudadConfig').show();
 	$('#guardarCiudadConfig').hide();
 	$('#cancelarCiudadConfig').hide();
