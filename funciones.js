@@ -1057,12 +1057,12 @@ function crearInformeEcoSegTrim1(){
 	var pfePct = '<strong>' + parseInt($( '#pfePctRpt').val()) + '</strong>';
 	var pfeRango = '<strong>' + $( '#pfeRango').val() + ' *</strong>';
 	var ic = $( '#dof-dbp').val();
-	var procedencia = $( '#procedencia').text();
+	var procedencia = $( '#procedencia option:selected').text();
 	
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
-	var motivo = $( '#motivo-examen').text();
-	var ecografista = $( '#ecografista').text();
+	var motivo = $( '#motivo-examen option:selected').text();
+	var ecografista = $( '#ecografista option:selected').text();
 	var comentario = $('#comentarios-eco-dos-inf-dos').val();
 	if (typeof comentario !== 'undefined'){
 		comentario = comentario.replace(/\r?\n/g, "<br>");
@@ -1182,10 +1182,10 @@ function crearInformeEcoSegTrim2(){
 	
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
-	var motivo = $( '#motivo-examen').text();
-	var ecografista = $( '#ecografista').text();
+	var motivo = $( '#motivo-examen option:selected').text();
+	var ecografista = $( '#ecografista option:selected').text();
 	var edadmaterna = $( "select[name='edad_materna']").val();
-	var procedencia = $( '#procedencia').text();
+	var procedencia = $( '#procedencia option:selected').text();
 	
 	var day = ("0" + aplication.day.getDate()).slice(-2);
 	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
@@ -1265,8 +1265,8 @@ function crearInformeDoppler(){
 
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
-	var motivo = $( '#motivo-examen').text();
-	var ecografista = $( '#ecografista').text();
+	var motivo = $( '#motivo-examen option:selected').text();
+	var ecografista = $( '#ecografista option:selected').text();
 
 	var fur = $( "input[name='fum']").val();
 	var fexamen = $( "input[name='fee']").val();
@@ -1312,7 +1312,7 @@ function crearInformeDoppler(){
 	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
 
 	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
-	var procedencia = $( '#procedencia').text();
+	var procedencia = $( '#procedencia option:selected').text();
 	
 	InformeString = InformeString.replace(":PACIENTE", paciente);
 	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
@@ -1468,8 +1468,8 @@ function crearInformeEcoPrimTrim(){
 	
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
-	var motivo = $( '#motivo-examen').text();
-	var ecografista = $( '#ecografista').text();
+	var motivo = $( '#motivo-examen option:selected').text();
+	var ecografista = $( '#ecografista option:selected').text();
 
 	var fur = $( "input[name='fum']").val();
 	var fexamen = $( "input[name='fee']").val();
@@ -1493,7 +1493,7 @@ function crearInformeEcoPrimTrim(){
 		comentario='';
 	}
 	
-	var procedencia = $( '#procedencia').text();
+	var procedencia = $( '#procedencia option:selected').text();
 	var edadmaterna = $( "select[name='edad_materna']").val();
 	
 	InformeString = InformeString.replace(":FUM", fur);
