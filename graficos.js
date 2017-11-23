@@ -3818,7 +3818,7 @@ $( '#graficoBVM' ).on( 'click', function() {
                          });
                      }
                      data.push({
-                             y: parseFloat($('#bvmPct').val()),
+                             y: parseFloat($('#bvm').val()),
                          });
                      for (i = edadGest +1; i <= 39; i ++ ) {
                          data.push({
