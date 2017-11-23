@@ -3749,3 +3749,85 @@ $('#viewGraficopsmACM').highcharts({
     });
             $('#popupGraficos').modal('show');
 });
+
+$( '#graficoBVM' ).on( 'click', function() {
+    $('#graficosTitle').html("Gráfica BVM");
+    $('#graficosBody').html("<div id='graficoBVMView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
+    $('#graficoBVMView').highcharts({
+             chart: {
+             height: 250
+         },
+         title: {
+             text: 'BVM de Líquido Amniótico ***',
+             x: -20,
+                 style: {
+             fontSize: '14px'
+         }
+         },
+         plotOptions: {
+             series: {
+                 enableMouseTracking: false
+             }
+         },
+             legend: {
+             itemStyle: {
+                 fontSize: '10px',
+                 fontWeight:'normal'
+             }
+         },
+         yAxis: {
+             title: { text: 'Milimetros (mm)' },
+             tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
+         },
+         colors: ['#313131','#313131','#313131'],
+         xAxis: {
+             categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+         },
+         credits: {enabled:false},
+         series: [{
+             type: "line",
+             name: 'Pct. 5',
+             dashStyle: "Dot",
+             marker: {enabled:false},
+             data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
+         }, {
+             type: "line",
+             name: 'Pct. 95',
+             dashStyle: "Dot",
+             marker: { enabled: false },
+             data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
+         }, {
+             type: "line",
+             name: 'BVM',
+             dashStyle: "Dot",
+             marker: { symbol: 'square' },
+             lineWidth: 0,
+             data: (
+                 function () {
+                     var data = [];
+                     var edadGest = parseInt(localStorage.eg) -1;
+ 
+                     for (i = 16; i <= edadGest; i ++ ) {
+                         data.push({
+                             y: 0,
+                         });
+                     }
+                     data.push({
+                             y: parseFloat($('#bvmPct').val()),
+                         });
+                     for (i = edadGest +1; i <= 39; i ++ ) {
+                         data.push({
+                             y: 0,
+                         });
+                     }
+                     return data;
+                 }())
+             }]
+     });
+    $('#popupGraficos').modal('show');
+});
