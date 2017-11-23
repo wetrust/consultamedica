@@ -1057,11 +1057,11 @@ function crearInformeEcoSegTrim1(){
 	var pfePct = '<strong>' + parseInt($( '#pfePctRpt').val()) + '</strong>';
 	var pfeRango = '<strong>' + $( '#pfeRango').val() + ' *</strong>';
 	var ic = $( '#dof-dbp').val();
-	var procedencia = $( '#procedencia').val();
+	var procedencia = $( '#procedencia').html();
 	
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
-	var motivo = $( '#motivo-examen').val();
+	var motivo = $( '#motivo-examen').html();
 	var ecografista = $( '#ecografista').html();
 	var comentario = $('#comentarios-eco-dos-inf-dos').val();
 	if (typeof comentario !== 'undefined'){
@@ -1182,10 +1182,10 @@ function crearInformeEcoSegTrim2(){
 	
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
-	var motivo = $( '#motivo-examen').val();
-	var ecografista = $( '#ecografista').val();
+	var motivo = $( '#motivo-examen').html();
+	var ecografista = $( '#ecografista').html();
 	var edadmaterna = $( "select[name='edad_materna']").val();
-	var procedencia = $( '#procedencia').val();
+	var procedencia = $( '#procedencia').html();
 	
 	var day = ("0" + aplication.day.getDate()).slice(-2);
 	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
@@ -1265,8 +1265,8 @@ function crearInformeDoppler(){
 
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
-	var motivo = $( '#motivo-examen').val();
-	var ecografista = $( '#ecografista').val();
+	var motivo = $( '#motivo-examen').html();
+	var ecografista = $( '#ecografista').html();
 
 	var fur = $( "input[name='fum']").val();
 	var fexamen = $( "input[name='fee']").val();
@@ -1312,7 +1312,7 @@ function crearInformeDoppler(){
 	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
 
 	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
-	var procedencia = $( '#procedencia').val();
+	var procedencia = $( '#procedencia').html();
 	
 	InformeString = InformeString.replace(":PACIENTE", paciente);
 	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
@@ -1468,8 +1468,8 @@ function crearInformeEcoPrimTrim(){
 	
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
-	var motivo = $( '#motivo-examen').val();
-	var ecografista = $( '#ecografista').val();
+	var motivo = $( '#motivo-examen').html();
+	var ecografista = $( '#ecografista').html();
 
 	var fur = $( "input[name='fum']").val();
 	var fexamen = $( "input[name='fee']").val();
@@ -1493,7 +1493,7 @@ function crearInformeEcoPrimTrim(){
 		comentario='';
 	}
 	
-	var procedencia = $( '#procedencia').val();
+	var procedencia = $( '#procedencia').html();
 	var edadmaterna = $( "select[name='edad_materna']").val();
 	
 	InformeString = InformeString.replace(":FUM", fur);
