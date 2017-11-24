@@ -77,15 +77,10 @@ function makedbLocalStorage(){
 			}
 			
 			$('#patologiaObstetricaUno').empty();
-			$('#patologiaObstetricaDos').empty();
 			$('#PatologiaObstetricaConfigTable').empty();
 			if (configuracion.configuracion.PatologiaObstetrica.length > 0){
 				$.each(configuracion.configuracion.PatologiaObstetrica, function (i, item) {
 				    $('#patologiaObstetricaUno').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-				   $('#patologiaObstetricaDos').append($('<option>', { 
 					value: item.id,
 					text : item.nombre
 				    }));
@@ -201,7 +196,6 @@ function savePatologiaObstetricaExamenLocalStorage(){
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
 			$('#patologiaObstetricaUno').html("");
-			$('#patologiaObstetricaDos').html("");
 			$('#PatologiaObstetricaConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
