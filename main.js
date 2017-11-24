@@ -244,6 +244,33 @@ $( '#guardarEcografistaConfig').on('click', function() {
 	$("#ecografistaConfig .formulario").hide();
  });
 
+$( '#nuevoPatologiaObstetricaConfig').on('click', function() {
+	$('#patologiaObstetricaConfig .tabla').hide();
+	$('#nuevoPatologiaObstetricaConfig').hide();
+	$('#editarPatologiaObstetricaConfig').hide();
+	$('#guardarPatologiaObstetricaConfig').show();
+	$('#cancelarPatologiaObstetricaConfig').show();
+	$('#patologiaObstetricaConfig .formulario').show();
+ });
+
+$( '#cancelarPatologiaObstetricaConfig').on('click', function() {
+	$("#patologiaObstetricaConfig .tabla").show();
+	$('#nuevoPatologiaObstetricaConfig').show();
+	$('#editarPatologiaObstetricaConfig').show();
+	$('#guardarPatologiaObstetricaConfig').hide();
+	$('#cancelarPatologiaObstetricaConfig').hide();
+	$("#patologiaObstetricaConfig .formulario").hide();
+ });
+
+$( '#guardarPatologiaObstetricaConfig').on('click', function() {
+	savePatologiaObstetricaExamenLocalStorage();
+	$("#patologiaObstetricaConfig .tabla").show();
+	$('#nuevoPatologiaObstetricaConfig').show();
+	$('#guardarPatologiaObstetricaConfig').hide();
+	$('#cancelarPatologiaObstetricaConfig').hide();
+	$("#patologiaObstetricaConfig .formulario").hide();
+ });
+
 
 
 
