@@ -89,6 +89,14 @@ var listPaciente = function(results){
      $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));
  });
 
+ $( '#pesoMaterno').on('change', function() {
+     $("#imcMaterno").val(aplication.imc($("#tallaMaterna").val(), $(this).val()));
+ });
+
+ $( '#tallaMaterna').on('change', function() {
+     $("#imcMaterno").val(aplication.imc($(this).val(), $("#pesoMaterno").val()));
+ });
+
 $( '.informacion').on('click', function() {
      $("#informacion").hide();
  });
