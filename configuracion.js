@@ -4,24 +4,6 @@ function makedbLocalStorage(){
 		if (localStorage.configuracion != null) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
-			$('#tipo-examen').empty();
-			$('#TipoConfigTable').empty();
-			if (configuracion.configuracion.tipoExamen.length > 0){
-				$.each(configuracion.configuracion.tipoExamen, function (i, item) {
-				    $('#tipo-examen').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#TipoConfigTable').append(fila);
-					
-				});
-				$('#eliminarTipoConfig').css("display","block");
-				$('#TipoConfigTable tr').on('click',function(){
-					activateTr(this);
-				});
-			}
-			
 			$('#motivo-examen').empty();
 			$('#MotivoConfigTable').empty();
 			if (configuracion.configuracion.MotivoExamen.length > 0){
@@ -118,30 +100,8 @@ function makedbLocalStorage(){
 			}
 		}else{
 			//crear un array vacio
-			var stringVacio = '{"configuracion": {"tipoExamen":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[]}}';
+			var stringVacio = '{"configuracion": {"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[]}}';
 			localStorage["configuracion"] = stringVacio;
-		}
-	}
-}
-
-function saveTipoExamenLocalStorage(){
-	
-	if (window.localStorage) {
-		if (localStorage.configuracion != null) {
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			$('#tipo-examen').html("");
-			$('#TipoConfigTable').html("");
-		
-				var aRR = {id:0, nombre:"Doe"};
-				aRR["id"] = configuracion.configuracion.tipoExamen.length +1;
-				aRR["nombre"] = $('#tipoInput').val();
-				
-                        	configuracion.configuracion.tipoExamen.push(aRR);
-			$('#eliminarTipoConfig').css("display","block");
-			$('#tipoInput').val("");
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-			makedbLocalStorage();
 		}
 	}
 }
@@ -266,41 +226,6 @@ function activateTr(element){
 
 //manejadore de botones
 
-$( '#eliminarTipoConfig').on('click', function() {
-	var getElement = false;
-	var contador = 0
-	$.each( $('#TipoConfigTable').children(), function( i, val ) {
-		if ($( val ).hasClass( 'table-active') == true){
-			getElement = true;
-			var nombre = $(val).children('td').html();
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			//construir un nuevo array de objetos
-			var tipoExamen = [];
-			$.each(configuracion.configuracion.tipoExamen, function (i, item) {	
-				if (item.nombre != nombre){
-					var aRR = {id:0, nombre:"Doe"};
-					aRR["id"] =contador +1;
-					aRR["nombre"] = item.nombre;
-				
-                        		tipoExamen.push(aRR);
-					contador++;
-				}
-			});
-			
-			configuracion.configuracion.tipoExamen = tipoExamen;
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-		}
-	});
-	
-	if (getElement == false){
-		window.alert("haga click sobre un elemento para eliminar");
-	}
-	else{
-		makedbLocalStorage();
-	}
-	
- });
 $( '#eliminarMotivoConfig').on('click', function() {
 	var getElement = false;
 	var contador = 0
