@@ -3029,7 +3029,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                          });
                      }
                      data.push({
-                             y: parseFloat($('#bvmEcoDos').val()),
+                             y: parseFloat($('#bvm').val()),
                          });
                      for (i = edadGest +1; i <= 39; i ++ ) {
                          data.push({
