@@ -144,6 +144,16 @@ $('#infadicionalSiController').on('click', function(){
 	$('#continuarExamenEcografico').addClass('d-none');
 });
 
+$('#infadicionalClinicoNoController').on('click', function(){
+	if ($('#infadicionalClinicoView').hasClass('d-none') == false){
+		$('#infadicionalView').addClass('d-none');
+	}
+});
+
+$('#infadicionalClinicoSiController').on('click', function(){
+	$('#infadicionalClinicoView').removeClass('d-none');
+});
+
 $('#configSiController').on('click', function(){
 	document.location.hash = "configuracion";
 });
