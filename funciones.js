@@ -135,11 +135,13 @@ $('#cccaController').on('click', function(){
 $('#infadicionalNoController').on('click', function(){
 	if ($('#infadicionalView').hasClass('d-none') == false){
 		$('#infadicionalView').addClass('d-none');
+		$('#continuarExamenEcografico').removeClass('d-none');
 	}
 });
 
 $('#infadicionalSiController').on('click', function(){
 	$('#infadicionalView').removeClass('d-none');
+	$('#continuarExamenEcografico').addClass('d-none');
 });
 
 $('#configSiController').on('click', function(){
