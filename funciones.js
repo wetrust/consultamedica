@@ -9,7 +9,6 @@ $( '#adicionalCrecimientoView' ).on( 'click', function() {
 	else{
 		$('#adicionalCrecimiento').hide();
 	}
-	
 });
 
 $( '#mensajeRestringido' ).on( 'click', function() {
@@ -134,17 +133,13 @@ $('#cccaController').on('click', function(){
 });
 
 $('#infadicionalNoController').on('click', function(){
-
 	if ($('#infadicionalView').hasClass('d-none') == false){
 		$('#infadicionalView').addClass('d-none');
 	}
-
 });
 
 $('#infadicionalSiController').on('click', function(){
-
 	$('#infadicionalView').removeClass('d-none');
-
 });
 
 $('#configSiController').on('click', function(){
@@ -796,7 +791,6 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	else{
 		var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp;
 	}
-	
 	$('#comentarios-eco-uno').val(comentario);
 	$('#saco-gestacional-mm').val($('#saco').val());
 	$('#lcn-informe').val($('#lcn').val());
@@ -2392,37 +2386,37 @@ function pctau() {
 	pct5[4] = 0.9;	pct5[5] = 0.89;
 	pct5[6] = 0.87;	pct5[7] = 0.85;
 	pct5[8] = 0.82;	pct5[9] = 0.8;
-	pct5[10] = 0.78;	pct5[11] = 0.75;
-	pct5[12] = 0.73;	pct5[13] = 0.7;
-	pct5[14] = 0.67;	pct5[15] = 0.65;
-	pct5[16] = 0.62;	pct5[17] = 0.58;
-	pct5[18] = 0.55;	pct5[19] = 0.52;
+	pct5[10] = 0.78; pct5[11] = 0.75;
+	pct5[12] = 0.73; pct5[13] = 0.7;
+	pct5[14] = 0.67; pct5[15] = 0.65;
+	pct5[16] = 0.62; pct5[17] = 0.58;
+	pct5[18] = 0.55; pct5[19] = 0.52;
 	pct5[20] = 0.49;
 
 	pct95[0] = 1.6;	pct95[1] = 1.56;
-	pct95[2] = 1.53;	pct95[3] = 1.5;
-	pct95[4] = 1.46;	pct95[5] = 1.43;
+	pct95[2] = 1.53; pct95[3] = 1.5;
+	pct95[4] = 1.46; pct95[5] = 1.43;
 	pct95[6] = 1.4;	pct95[7] = 1.37;
-	pct95[8] = 1.35;	pct95[9] = 1.32;
-	pct95[10] = 1.29;	pct95[11] = 1.27;
-	pct95[12] = 1.25;	pct95[13] = 1.22;
-	pct95[14] = 1.2;	pct95[15] = 1.18;
-	pct95[16] = 1.16;	pct95[17] = 1.14;
-	pct95[18] = 1.13;	pct95[19] = 1.11;
+	pct95[8] = 1.35; pct95[9] = 1.32;
+	pct95[10] = 1.29; pct95[11] = 1.27;
+	pct95[12] = 1.25; pct95[13] = 1.22;
+	pct95[14] = 1.2; pct95[15] = 1.18;
+	pct95[16] = 1.16; pct95[17] = 1.14;
+	pct95[18] = 1.13; pct95[19] = 1.11;
 	pct95[20] = 1.09;
 
-	xpct5[20] = 0.78;	xpct5[21] = 0.87;	xpct5[22] = 0.95;	xpct5[23] = 1.02;
-	xpct5[24] = 1.09;	xpct5[25] = 1.15;	xpct5[26] = 1.2;	xpct5[27] = 1.24;
-	xpct5[28] = 1.28;	xpct5[29] = 1.31;	xpct5[30] = 1.33;	xpct5[31] = 1.35;
-	xpct5[32] = 1.36;	xpct5[33] = 1.36;	xpct5[34] = 1.36;	xpct5[35] = 1.34;
-	xpct5[36] = 1.32;	xpct5[37] = 1.3;	xpct5[38] = 1.26;	xpct5[39] = 1.22;
+	xpct5[20] = 0.78; xpct5[21] = 0.87; xpct5[22] = 0.95; xpct5[23] = 1.02;
+	xpct5[24] = 1.09; xpct5[25] = 1.15; xpct5[26] = 1.2; xpct5[27] = 1.24;
+	xpct5[28] = 1.28; xpct5[29] = 1.31; xpct5[30] = 1.33; xpct5[31] = 1.35;
+	xpct5[32] = 1.36; xpct5[33] = 1.36; xpct5[34] = 1.36; xpct5[35] = 1.34;
+	xpct5[36] = 1.32; xpct5[37] = 1.3; xpct5[38] = 1.26; xpct5[39] = 1.22;
 	xpct5[40] = 1.18;
 
-	xpct95[20] = 1.68;	xpct95[21] = 1.88;	xpct95[22] = 2.06;	xpct95[23] = 2.22;
-	xpct95[24] = 2.36;	xpct95[25] = 2.49;	xpct95[26] = 2.6;	xpct95[27] = 2.7;
-	xpct95[28] = 2.78;	xpct95[29] = 2.84;	xpct95[30] = 2.89;	xpct95[31] = 2.92;
-	xpct95[32] = 2.93;	xpct95[33] = 2.93;	xpct95[34] = 2.91;	xpct95[35] = 2.87;
-	xpct95[36] = 2.82;	xpct95[37] = 2.75;	xpct95[38] = 2.67;	xpct95[39] = 2.57;
+	xpct95[20] = 1.68; xpct95[21] = 1.88; xpct95[22] = 2.06; xpct95[23] = 2.22;
+	xpct95[24] = 2.36; xpct95[25] = 2.49; xpct95[26] = 2.6;	xpct95[27] = 2.7;
+	xpct95[28] = 2.78; xpct95[29] = 2.84; xpct95[30] = 2.89; xpct95[31] = 2.92;
+	xpct95[32] = 2.93; xpct95[33] = 2.93; xpct95[34] = 2.91; xpct95[35] = 2.87;
+	xpct95[36] = 2.82; xpct95[37] = 2.75; xpct95[38] = 2.67; xpct95[39] = 2.57;
 	
 	var eg=0;
 	eg=parseFloat(localStorage.eg);
@@ -2456,13 +2450,10 @@ function pctau() {
 			else{
 				pctAUMB = resultado;
 			}
-		
 		$("#ipauPctTxt").val(pctAUMB);
                 $("#ipauRngo").val(pct5[eg] + " - " + pct95[eg]);
-		
 		if ($('#ipacm').val()){
 			var ccp = ($('#ipacm').val() / $('#ipau').val());
-
 			$('#ccp').val(ccp.toFixed(2));
 
 			eg = eg + 20;
@@ -2483,7 +2474,6 @@ function pctau() {
 			}
 			$("#ccpPctTxt").val(pctCCP);
                         $("#ccpRngo").val(xpct5[eg] + " - " + xpct95[eg]);
-			
 		}
 	}
 }
