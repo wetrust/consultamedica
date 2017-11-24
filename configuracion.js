@@ -139,6 +139,7 @@ function saveTipoExamenLocalStorage(){
 				
                         	configuracion.configuracion.tipoExamen.push(aRR);
 			$('#eliminarTipoConfig').css("display","block");
+			$('#tipoInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 			makedbLocalStorage();
 		}
@@ -160,6 +161,7 @@ function saveMotivoExamenLocalStorage(){
 				
                         	configuracion.configuracion.MotivoExamen.push(aRR);
 			$('#eliminarMotivoConfig').css("display","block");
+			$('#motivoInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 			makedbLocalStorage();
 		}
@@ -181,6 +183,7 @@ function saveLugarExamenLocalStorage(){
 				
                         	configuracion.configuracion.LugarControlPrenatal.push(aRR);
 			$('#eliminarLugarConfig').css("display","block");
+			$('#LugarInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 			makedbLocalStorage();
 		}
@@ -202,6 +205,7 @@ function saveEcografistaExamenLocalStorage(){
 				
                         	configuracion.configuracion.profesional.push(aRR);
 			$('#eliminarEcografistaConfig').css("display","block");
+			$('#ecografistaInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 			makedbLocalStorage();
 		}
@@ -223,6 +227,7 @@ function saveCiudadExamenLocalStorage(){
 				
                         	configuracion.configuracion.ciudad.push(aRR);
 			$('#eliminarCiudadConfig').css("display","block");
+			$('#CiudadInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 			makedbLocalStorage();
 		}
@@ -245,6 +250,7 @@ function savePatologiaObstetricaExamenLocalStorage(){
 				
                         	configuracion.configuracion.PatologiaObstetrica.push(aRR);
 			$('#eliminarPatologiaObstetricaConfig').css("display","block");
+			$('#PatologiaObstetricaInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 			makedbLocalStorage();
 		}
