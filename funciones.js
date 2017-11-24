@@ -146,7 +146,7 @@ $('#infadicionalSiController').on('click', function(){
 
 $('#infadicionalClinicoNoController').on('click', function(){
 	if ($('#infadicionalClinicoView').hasClass('d-none') == false){
-		$('#infadicionalView').addClass('d-none');
+		$('#infadicionalClinicoView').addClass('d-none');
 	}
 });
 
