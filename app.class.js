@@ -41,7 +41,7 @@ class app {
 		this.displayElement("consulta");
 		var contador = $('#membrete').val();
 		if (contador.length < 1){
-			$('#membrete').val('SERVICIO DE SALUD ARAUCANIA SUR\r\nHOSPITAL Dr. HERNAN HENRIQUEZ ARAVENA\r\nUNIDAD DE MEDICINA MATERNO FETAL');
+			//$('#membrete').val('SERVICIO DE SALUD ARAUCANIA SUR\r\nHOSPITAL Dr. HERNAN HENRIQUEZ ARAVENA\r\nUNIDAD DE MEDICINA MATERNO FETAL');
 		}
 	}
         else if (this.hash=="#tipoExamen"){
