@@ -356,6 +356,15 @@ function show_hide(id){
   }
 };
 
+
+$( '#embarazoNo' ).on( 'click', function() {
+	$("div[name='embarazo']").addClass("d-none");
+});
+
+$( '#embarazoSi' ).on( 'click', function() {
+	$("div[name='embarazo']").removeClass("d-none");
+});
+
 $( '#semanasEcoPrim' ).on( 'change', function() {
 	var semanas = $(this).val();
 	var dias = $('#diasEcoPrim').val();
