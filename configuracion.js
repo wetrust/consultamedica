@@ -93,9 +93,10 @@ function makedbLocalStorage(){
 					activateTr(this);
 				});
 			}
+			$("#membrete").val(configuracion.configuracion.membrete);
 		}else{
 			//crear un array vacio
-			var stringVacio = '{"configuracion": {"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[]}}';
+			var stringVacio = '{"configuracion": {"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}}';
 			localStorage["configuracion"] = stringVacio;
 		}
 	}
