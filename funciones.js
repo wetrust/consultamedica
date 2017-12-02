@@ -11,6 +11,15 @@ $( '#adicionalCrecimientoView' ).on( 'click', function() {
 	}
 });
 
+$('#gestas').on("change", function(){
+	if ($(this).val() > 0){
+		$('#itemGestasPrevias').removeClass("d-none");
+	}
+	else{
+		$('#itemGestasPrevias').addClass("d-none");
+	}
+});
+
 $( '#mensajeRestringido' ).on( 'click', function() {
 	$('#popupTitle').html("Sección restringida, solo disponible para usuarios capacitados en la plataforma.");
 	//remueve los botones de imprimir en caso de que estén
