@@ -421,7 +421,7 @@
                                 <div class="form-group d-none" id="infadicionalClinicoView">
                                     <div class="row mt-2 mb-2">
                                         <div class="col-2">
-                                            <label for="gestas" class="col-form-label">Gestas</label>
+                                            <label for="gestas" class="col-form-label">Gestas previas</label>
                                         </div>
                                         <div class="col-2">
                                             <select class="form-control" id="gestas">
@@ -473,6 +473,47 @@
                                                 <option value="9">9</option>
                                                 <option value="10">10</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 mb-2">
+                                        <div class="col-2">
+                                            <label class="col-form-label">Prematuro</label>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-outline-consulta active" id="prematuroNo" data-value="0">
+                                                <input type="radio" value="0" checked=""> NO
+                                                </label>
+                                                <label class="btn btn-outline-consulta" id="prematuroSi" data-value="1">
+                                                <input type="radio" value="1"> SI
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <label class="col-form-label">Feto PEG o RCIU</label>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-outline-consulta active" id="fetoPEGNo" data-value="0">
+                                                <input type="radio" value="0" checked=""> NO
+                                                </label>
+                                                <label class="btn btn-outline-consulta" id="fetoPEGSi" data-value="1">
+                                                <input type="radio" value="1"> SI
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <label class="col-form-label">Feto SHE</label>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-outline-consulta active" id="fetoSHENo" data-value="0">
+                                                <input type="radio" value="0" checked=""> NO
+                                                </label>
+                                                <label class="btn btn-outline-consulta" id="fetoSHESi" data-value="1">
+                                                <input type="radio" value="1"> SI
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row mt-2 mb-2">
