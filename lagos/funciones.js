@@ -41,7 +41,7 @@ $("#GuardarPacienteButton").on("click", function(){
 });
 
 $("#CancelarPacienteButton").on("click", function(){
-	$("#cGuardarPacienteButton").addcClass("d-none");
+	$("#cGuardarPacienteButton").addClass("d-none");
 	$("#cCancelarPacienteButton").addClass("d-none");
 	$("#nombre-paciente").prop('disabled', true);
 	$("#id-paciente").prop('disabled', true);
