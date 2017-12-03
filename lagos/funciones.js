@@ -1089,7 +1089,9 @@ function crearInformeEcoSegTrim1(){
 	var cccaPct = $( '#cccaPct').val();
 	var cccaRango = '( ' + $( '#cccaRango').val() + ' )';
 	var pfe = '<strong>' + $( '#pfe').val() + ' Gr.' + '</strong>';
-	var pfePct = '<strong>' + parseInt($( '#pfePctRpt').val()) + '</strong>';
+	var percentilPeso = $('#pfePctRpt').val();
+	percentilPeso = percentilPeso.replace('&lt;','<').replace('&gt;', '>');
+	var pfePct = '<strong>' + percentilPeso + '</strong>';
 	var pfeRango = '<strong>' + $( '#pfeRango').val() + ' *</strong>';
 	var ic = $( '#dof-dbp').val();
 	var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
