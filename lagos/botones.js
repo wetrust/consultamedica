@@ -52,11 +52,21 @@ function activarBotones() {
    
    $("input[name='eg']").val(localStorage.eg);
    
-   $('#fum-dos').datepicker('setValue', localStorage.fum);
-	 $('#fum-tres').datepicker('setValue', localStorage.fum);
-	 $('#fum-cuatro').datepicker('setValue', localStorage.fum);
-	 $('#fum-cinco').datepicker('setValue', localStorage.fum);
-	 $('#fum-seis').datepicker('setValue', localStorage.fum);
+   if (this.id != "fum-dos"){
+	   $('#fum-dos').datepicker('setValue', localStorage.fum);
+   }
+   if (this.id != "fum-tres"){
+	   $('#fum-tres').datepicker('setValue', localStorage.fum);
+   }
+   if (this.id != "fum-cuatro"){
+	   $('#fum-cuatro').datepicker('setValue', localStorage.fum);
+   }
+   if (this.id != "fum-cinco"){
+	   $('#fum-cinco').datepicker('setValue', localStorage.fum);
+   }
+   if (this.id != "fum-seis"){
+	   $('#fum-seis').datepicker('setValue', localStorage.fum);
+   }
  });
   
   $("input[name='fee']").on('change', function() {
@@ -65,10 +75,21 @@ function activarBotones() {
    localStorage.eg = calcularEG();
    $("input[name='fee']").val(localStorage.fee);
    $("input[name='eg']").val(localStorage.eg);
-	  $('#fee-dos').datepicker('setValue', localStorage.fee);
-	 $('#fee-tres').datepicker('setValue', localStorage.fee);
-	 $('#fee-cuatro').datepicker('setValue', localStorage.fee);
-	 $('#fee-cinco').datepicker('setValue', localStorage.fee);
-	 $('#fee-seis').datepicker('setValue', localStorage.fee);
+	  
+   if (this.id != "fee-dos"){
+	   $('#fee-dos').datepicker('setValue', localStorage.fee);
+   }
+   if (this.id != "fee-tres"){
+	   $('#fee-tres').datepicker('setValue', localStorage.fee);
+   }
+   if (this.id != "fee-cuatro"){
+	   $('#fee-cuatro').datepicker('setValue', localStorage.fee);
+   }
+   if (this.id != "fee-cinco"){
+	   $('#fee-cinco').datepicker('setValue', localStorage.fee);
+   }
+   if (this.id != "fee-seis"){
+	   $('#fee-seis').datepicker('setValue', localStorage.fee);
+   }
  });
 }
