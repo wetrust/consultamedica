@@ -1091,7 +1091,7 @@ function crearInformeEcoSegTrim1(){
 	var pfe = '<strong>' + $( '#pfe').val() + ' Gr.' + '</strong>';
 	var percentilPeso = $('#pfePctRpt').val();
 	percentilPeso = percentilPeso.replace('&lt;','<').replace('&gt;', '>');
-	var pfePct = '<strong>' + percentilPes + '</strong>';
+	var pfePct = '<strong>' + percentilPeso + '</strong>';
 	var pfeRango = '<strong>' + $( '#pfeRango').val() + ' *</strong>';
 	var ic = $( '#dof-dbp').val();
 	var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
