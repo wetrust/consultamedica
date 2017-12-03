@@ -2,6 +2,69 @@
 //from https://stackoverflow.com/questions/17907445/how-to-detect-ie11
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
 
+$("#NuevoPacienteButton").on("click", function(){
+	$("#cGuardarPacienteButton").removeclass("d-none");
+	$("#cCancelarPacienteButton").removeclass("d-none");
+	$("#nombre-paciente").prop('disabled', false);
+	$("#id-paciente").prop('disabled', false);
+	$("#edad_materna").prop('disabled', false);
+	$("#procedencia").prop('disabled', false);
+	$("#Lugar-examen").prop('disabled', false);
+	$("#motivo-examen").prop('disabled', false);
+	$("#patologiaObstetricaUno").prop('disabled', false);
+	$("#profReferente").prop('disabled', false);
+	$("#ecografista").prop('disabled', false);
+	
+	$("#nombre-paciente").val("");
+	$("#id-paciente").val("");
+	$("#edad_materna").val([]);
+	$("#procedencia").val([]);
+	$("#Lugar-examen").val([]);
+	$("#motivo-examen").val([]);
+	$("#patologiaObstetricaUno").val([]);
+	$("#profReferente").val("");
+	$("#ecografista").val([]);
+});
+
+$("#GuardarPacienteButton").on("click", function(){
+	$("#cGuardarPacienteButton").addclass("d-none");
+	$("#cCancelarPacienteButton").addclass("d-none");
+	$("#nombre-paciente").prop('disabled', true);
+	$("#id-paciente").prop('disabled', true);
+	$("#edad_materna").prop('disabled', true);
+	$("#procedencia").prop('disabled', true);
+	$("#Lugar-examen").prop('disabled', true);
+	$("#motivo-examen").prop('disabled', true);
+	$("#patologiaObstetricaUno").prop('disabled', true);
+	$("#profReferente").prop('disabled', true);
+	$("#ecografista").prop('disabled', true);
+});
+
+$("#CancelarPacienteButton").on("click", function(){
+	$("#cGuardarPacienteButton").addclass("d-none");
+	$("#cCancelarPacienteButton").addclass("d-none");
+	$("#nombre-paciente").prop('disabled', true);
+	$("#id-paciente").prop('disabled', true);
+	$("#edad_materna").prop('disabled', true);
+	$("#procedencia").prop('disabled', true);
+	$("#Lugar-examen").prop('disabled', true);
+	$("#motivo-examen").prop('disabled', true);
+	$("#patologiaObstetricaUno").prop('disabled', true);
+	$("#profReferente").prop('disabled', true);
+	$("#ecografista").prop('disabled', true);
+	
+	$("#nombre-paciente").val("");
+	$("#id-paciente").val("");
+	$("#edad_materna").val([]);
+	$("#procedencia").val([]);
+	$("#Lugar-examen").val([]);
+	$("#motivo-examen").val([]);
+	$("#patologiaObstetricaUno").val([]);
+	$("#profReferente").val("");
+	$("#ecografista").val([]);
+});
+
+
 $( '#adicionalCrecimientoView' ).on( 'click', function() {
 	if ($('#adicionalCrecimiento').css( "display" ) == 'none'){
 		$('#adicionalCrecimiento').show();
