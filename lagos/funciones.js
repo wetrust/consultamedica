@@ -7,7 +7,7 @@ $("#NuevoPacienteButton").on("click", function(){
 	$("#cCancelarPacienteButton").removeClass("d-none");
 	$("#nombre-paciente").prop('disabled', false);
 	$("#id-paciente").prop('disabled', false);
-	$("#edad_materna").prop('disabled', false);
+	$("select[name='edad_materna']").prop('disabled', false);
 	$("#procedencia").prop('disabled', false);
 	$("#Lugar-examen").prop('disabled', false);
 	$("#motivo-examen").prop('disabled', false);
@@ -17,7 +17,7 @@ $("#NuevoPacienteButton").on("click", function(){
 	
 	$("#nombre-paciente").val("");
 	$("#id-paciente").val("");
-	$("#edad_materna").val([]);
+	$("select[name='edad_materna']").val([]);
 	$("#procedencia").val([]);
 	$("#Lugar-examen").val([]);
 	$("#motivo-examen").val([]);
@@ -31,7 +31,7 @@ $("#GuardarPacienteButton").on("click", function(){
 	$("#cCancelarPacienteButton").addClass("d-none");
 	$("#nombre-paciente").prop('disabled', true);
 	$("#id-paciente").prop('disabled', true);
-	$("#edad_materna").prop('disabled', true);
+	$("select[name='edad_materna']").prop('disabled', true);
 	$("#procedencia").prop('disabled', true);
 	$("#Lugar-examen").prop('disabled', true);
 	$("#motivo-examen").prop('disabled', true);
@@ -45,7 +45,7 @@ $("#CancelarPacienteButton").on("click", function(){
 	$("#cCancelarPacienteButton").addClass("d-none");
 	$("#nombre-paciente").prop('disabled', true);
 	$("#id-paciente").prop('disabled', true);
-	$("#edad_materna").prop('disabled', true);
+	$("select[name='edad_materna']").prop('disabled', true);
 	$("#procedencia").prop('disabled', true);
 	$("#Lugar-examen").prop('disabled', true);
 	$("#motivo-examen").prop('disabled', true);
@@ -55,7 +55,7 @@ $("#CancelarPacienteButton").on("click", function(){
 	
 	$("#nombre-paciente").val("");
 	$("#id-paciente").val("");
-	$("#edad_materna").val([]);
+	$("select[name='edad_materna']").val([]);
 	$("#procedencia").val([]);
 	$("#Lugar-examen").val([]);
 	$("#motivo-examen").val([]);
