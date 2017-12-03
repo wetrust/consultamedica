@@ -916,7 +916,7 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 	$('#infecoObsSegTrim1Clon').on("click", function(){
 		$('#infecoObsSegTrim1').trigger("click");
 	});
-	var comentarios = 'Crecimiento (peso) percentil ' + parseInt($('#pfePctRpt').val()) + ', para gráfica de peso fetal Hadlock* \r\n';
+	var comentarios = 'Crecimiento (peso) percentil ' + $('#pfePctRpt').val() + ', para gráfica de peso fetal Hadlock* \r\n';
 
 	var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvmEcoDos").value + " mm.";
 	
