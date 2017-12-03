@@ -3,8 +3,8 @@
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
 
 $("#NuevoPacienteButton").on("click", function(){
-	$("#cGuardarPacienteButton").removeclass("d-none");
-	$("#cCancelarPacienteButton").removeclass("d-none");
+	$("#cGuardarPacienteButton").removeClass("d-none");
+	$("#cCancelarPacienteButton").removeClass("d-none");
 	$("#nombre-paciente").prop('disabled', false);
 	$("#id-paciente").prop('disabled', false);
 	$("#edad_materna").prop('disabled', false);
@@ -27,8 +27,8 @@ $("#NuevoPacienteButton").on("click", function(){
 });
 
 $("#GuardarPacienteButton").on("click", function(){
-	$("#cGuardarPacienteButton").addclass("d-none");
-	$("#cCancelarPacienteButton").addclass("d-none");
+	$("#cGuardarPacienteButton").addClass("d-none");
+	$("#cCancelarPacienteButton").addClass("d-none");
 	$("#nombre-paciente").prop('disabled', true);
 	$("#id-paciente").prop('disabled', true);
 	$("#edad_materna").prop('disabled', true);
@@ -41,8 +41,8 @@ $("#GuardarPacienteButton").on("click", function(){
 });
 
 $("#CancelarPacienteButton").on("click", function(){
-	$("#cGuardarPacienteButton").addclass("d-none");
-	$("#cCancelarPacienteButton").addclass("d-none");
+	$("#cGuardarPacienteButton").addcClass("d-none");
+	$("#cCancelarPacienteButton").addClass("d-none");
 	$("#nombre-paciente").prop('disabled', true);
 	$("#id-paciente").prop('disabled', true);
 	$("#edad_materna").prop('disabled', true);
