@@ -74,7 +74,7 @@ $( '#adicionalCrecimientoView' ).on( 'click', function() {
 	}
 });
 
-$('#gestas').on("change", function(){
+$('#partos').on("change", function(){
 	if ($(this).val() > 0){
 		$('#itemGestasPrevias').removeClass("d-none");
 	}
