@@ -41,7 +41,7 @@ $("#GuardarPacienteButton").on("click", function(){
 	
 	if (window.localStorage) {
 		if (localStorage.pacientes != null) {
-			$.getJSON( "https://raw.githubusercontent.com/wetrust/consultamedica/master/lagos/base.json", function( data ) {
+			$.getJSON( "base.json", function( data ) {
 				var paciente = data;
 				
 				paciente.RUT = $("#id-paciente").val();
