@@ -23,7 +23,7 @@ $("#NuevoPacienteButton").on("click", function(){
 	$("#motivo-examen").val([]);
 	$("#patologiaObstetricaUno").val([]);
 	$("#profReferente").val("");
-	$("#ecografista").val([]);
+	$("#ecografista").val([]);  
 });
 
 $("#GuardarPacienteButton").on("click", function(){
@@ -38,6 +38,55 @@ $("#GuardarPacienteButton").on("click", function(){
 	$("#patologiaObstetricaUno").prop('disabled', true);
 	$("#profReferente").prop('disabled', true);
 	$("#ecografista").prop('disabled', true);
+	
+	if (window.localStorage) {
+		if (localStorage.pacientes != null) {
+			$.getJSON( "https://raw.githubusercontent.com/wetrust/consultamedica/master/lagos/base.json", function( data ) {
+				var paciente = data;
+				
+				paciente.RUT = $("#id-paciente").val();
+				paciente.nombre = $("#nombre-paciente").val();
+				paciente.edad = $("select[name='edad_materna'] option:selected").val();
+				paciente.ciudad = $("#procedencia option:selected").val();
+				paciente.examenes.motivo = $("#motivo-examen option:selected").val();
+				paciente.examenes.patologia = $("#patologiaObstetricaUno option:selected").val();
+				paciente.examenes.profReferente = $("#profReferente").val();
+				paciente.examenes.profExaminador = $("#ecografista option:selected").val();
+				paciente.examenes.FUM = $("input[name='fum'] option:selected").val();
+				
+				localStorage["pacientes"] = JSON.stringify(paciente);
+			});
+		}
+		else{
+			$.getJSON( "https://raw.githubusercontent.com/wetrust/consultamedica/master/lagos/base.json", function( data ) {
+				var pacientes = JSON.parse(localStorage["pacientes"]);
+				var paciente = [];
+				
+				if (pacientes.length > 1){
+					paciente = pacientes
+					paciente.push(data);
+				}
+				else{
+					paciente[0] = pacientes;
+					paciente[1] = data;
+				}
+
+				var cantidad = pacientes.length -1
+				
+				paciente[cantidad].RUT = $("#id-paciente").val();
+				paciente[cantidad].nombre = $("#nombre-paciente").val();
+				paciente[cantidad].edad = $("select[name='edad_materna'] option:selected").val();
+				paciente[cantidad].ciudad = $("#procedencia option:selected").val();
+				paciente[cantidad].examenes.motivo = $("#motivo-examen option:selected").val();
+				paciente[cantidad].examenes.patologia = $("#patologiaObstetricaUno option:selected").val();
+				paciente[cantidad].examenes.profReferente = $("#profReferente").val();
+				paciente[cantidad].examenes.profExaminador = $("#ecografista option:selected").val();
+				paciente[cantidad].examenes.FUM = $("input[name='fum'] option:selected").val();
+				
+				localStorage["pacientes"] = JSON.stringify(paciente);
+			});
+		}
+	}
 });
 
 $("#CancelarPacienteButton").on("click", function(){
