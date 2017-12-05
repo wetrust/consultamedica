@@ -40,7 +40,7 @@ $("#GuardarPacienteButton").on("click", function(){
 	$("#ecografista").prop('disabled', true);
 	
 	if (window.localStorage) {
-		if (localStorage.pacientes != null) {
+		if (typeof localStorage.pacientes == 'undefined') {
 			$.getJSON( "base.json", function( data ) {
 				var paciente = data;
 				
