@@ -45,15 +45,15 @@ $("#GuardarPacienteButton").on("click", function(){
 				var paciente = [];
 				paciente[0] = data;
 				
-				paciente.RUT = $("#id-paciente").val();
-				paciente.nombre = $("#nombre-paciente").val();
-				paciente.edad = $("select[name='edad_materna'] option:selected").val();
-				paciente.ciudad = $("#procedencia option:selected").val();
-				paciente.examenes[0].motivo = $("#motivo-examen option:selected").val();
-				paciente.examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
-				paciente.examenes[0].profReferente = $("#profReferente").val();
-				paciente.examenes[0].profExaminador = $("#ecografista option:selected").val();
-				paciente.examenes[0].FUM = $("input[name='fum'] option:selected").val();
+				paciente[0].RUT = $("#id-paciente").val();
+				paciente[0].nombre = $("#nombre-paciente").val();
+				paciente[0].edad = $("select[name='edad_materna'] option:selected").val();
+				paciente[0].ciudad = $("#procedencia option:selected").val();
+				paciente[0].examenes[0].motivo = $("#motivo-examen option:selected").val();
+				paciente[0].examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
+				paciente[0].examenes[0].profReferente = $("#profReferente").val();
+				paciente[0].examenes[0].profExaminador = $("#ecografista option:selected").val();
+				paciente[0].examenes[0].FUM = $("input[name='fum'] option:selected").val();
 				
 				localStorage["pacientes"] = JSON.stringify(paciente);
 			});
