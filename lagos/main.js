@@ -358,6 +358,15 @@ $( document ).ready(function() {
 				  .on('changeDate', function(ev){
 				    $(this).trigger("change");
 				  });
+			if (window.localStorage) {
+				if (typeof localStorage.pacientes == 'undefined') {
+					$('#numPacientes').html("0");
+				}
+				else{
+					$('#numPacientes').html(Object.keys(pacientes).length);
+				}
+			}
+			
 		}
 	}
 });
