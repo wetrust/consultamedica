@@ -42,7 +42,8 @@ $("#GuardarPacienteButton").on("click", function(){
 	if (window.localStorage) {
 		if (typeof localStorage.pacientes == 'undefined') {
 			$.getJSON( "base.json", function( data ) {
-				var paciente = data;
+				var paciente = [];
+				paciente[0] = data;
 				
 				paciente.RUT = $("#id-paciente").val();
 				paciente.nombre = $("#nombre-paciente").val();
@@ -62,7 +63,7 @@ $("#GuardarPacienteButton").on("click", function(){
 				var pacientes = JSON.parse(localStorage["pacientes"]);
 				var paciente = [];
 				
-				if (pacientes.length > 1){
+				if (Object.keys(pacientes).length > 1){
 					paciente = pacientes
 					paciente.push(data);
 				}
