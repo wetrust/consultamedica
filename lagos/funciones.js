@@ -7,7 +7,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 		event.preventDefault();
 		var pacientes = JSON.parse(localStorage["pacientes"]);
 		$.each(pacientes, function( index, value ) {
-			if (value.nombre == $(this).val()){
+			if (value.RUT == $("#buscarPacientes").val()){
 				$("#id-paciente").val(value.RUT);
 				$("#nombre-paciente").val(value.nombre);
 				$("select[name='edad_materna']").val(value.edad);
@@ -17,6 +17,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 				$("#profReferente").val(value.examenes[0].profReferente);
 				$("#ecografista").val(value.examenes[0].profExaminador); 
 				$("input[name='fum']").val(value.examenes[0].FUM);
+				return false;
 			}
 			else{
 				$("#nombre-paciente").val("");
