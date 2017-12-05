@@ -63,14 +63,8 @@ $("#GuardarPacienteButton").on("click", function(){
 				var pacientes = JSON.parse(localStorage["pacientes"]);
 				var paciente = [];
 				
-				if (Object.keys(pacientes).length > 1){
-					paciente = pacientes
-					paciente.push(data);
-				}
-				else{
-					paciente[0] = pacientes;
-					paciente[1] = data;
-				}
+				paciente = pacientes
+				paciente.push(data);
 
 				var cantidad = Object.keys(pacientes).length;
 				cantidad = cantidad -1;
