@@ -71,7 +71,7 @@ $("#GuardarPacienteButton").on("click", function(){
 					paciente[1] = data;
 				}
 
-				var cantidad = pacientes.length;
+				var cantidad = Object.keys(pacientes).length;
 				cantidad = cantidad -1;
 				
 				paciente[cantidad].RUT = $("#id-paciente").val();
