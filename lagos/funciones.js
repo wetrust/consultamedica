@@ -58,7 +58,7 @@ $("#GuardarPacienteButton").on("click", function(){
 			});
 		}
 		else{
-			$.getJSON( "https://raw.githubusercontent.com/wetrust/consultamedica/master/lagos/base.json", function( data ) {
+			$.getJSON( "base.json", function( data ) {
 				var pacientes = JSON.parse(localStorage["pacientes"]);
 				var paciente = [];
 				
