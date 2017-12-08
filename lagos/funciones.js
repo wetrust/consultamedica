@@ -183,7 +183,7 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 
 						//cantidad de exámenes
 						var cExm = pacientes[qPct].examenes.ecoPrimTrim;
-						if (typeof cExm = 'undefined') {
+						if (typeof cExm == 'undefined') {
 							cExm = 0;
 						}
 						
