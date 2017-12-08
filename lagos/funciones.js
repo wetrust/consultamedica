@@ -196,13 +196,52 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 						//determinar si es un embarazo gemelar
 						if ($("#embarazoSi").hasClass("active")){
 							var qFto = $("#embarazoEcoPrimTrim").val();
-							if (cExm > 0) {
+							
+							
+							if (cExm == 0){
+								var examenes = [];
+								var fetos = [];
+								fetos[qFto] = data;
+								examenes[0] = fetos;
+								pacientes[qPct].examenes.ecoPrimTrim = examenes;
+							}
+							else{
+								//determinar si en el exámen anterior solo hay guardado un feto
+								var cFetos = pacientes[qPct].examenes.ecoPrimTrim[cExm].lenght;
+								
+								if (typeof cFetos == 'undefined') {
+									//no hay otro feto guardado para este numero de exámen
+									var fetos = [];
+									var examenes = [];
+									fetos[qFto] = data;
+									examenes[0] = fetos;
+									pacientes[qPct].examenes.ecoPrimTrim.push(examenes);
+								}
+								else{
+									//se guardo un feto y actualmente se guarda el segundo feto.-
+								}
+								
 								cExm = cExm -1;
+								var fetos = [];
+								fetos[qFto] = data;
+								pacientes[qPct].examenes.ecoPrimTrim.push(data);
+							}
+							
+							
+							if (cExm > 0) {
+								
 							}
 							pacientes[qPct].examenes.ecoPrimTrim[cExm][qFto] = data;
 						}
 						else{
-							pacientes[qPct].examenes.ecoPrimTrim[cExm] = data;	
+							if (cExm == 0){
+								var examenes = [];
+								examenes[0] = data;
+								pacientes[qPct].examenes.ecoPrimTrim = examenes;
+							}
+							else{
+								pacientes[qPct].examenes.ecoPrimTrim.push(data);
+							}
 						}
 						localStorage["pacientes"] = JSON.stringify(pacientes);
 
