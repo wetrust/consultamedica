@@ -206,7 +206,7 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 						return false;
 					}
 					qPct++;
-				]);
+				});
 			});
 		}
 	}
