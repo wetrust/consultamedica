@@ -183,6 +183,9 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 
 						//cantidad de exámenes
 						var cExm = pacientes[qPct].examenes.ecoPrimTrim;
+						if (typeof cExm = 'undefined') {
+							cExm = 0;
+						}
 						
 						data.fecha = $("#fee-dos").val();
 						data.eg[0] = $("#semanasEcoGen").val();
