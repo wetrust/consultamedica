@@ -142,6 +142,96 @@ $("#CancelarPacienteButton").on("click", function(){
 });
 
 
+
+$("#NuevoEcoPrimButton").on("click", function(){
+	$("#cGuardarEcoPrimButton").removeClass("d-none");
+	$("#cCancelarEcoPrimButton").removeClass("d-none");
+	$("#cNuevoEcoPrimButton").addClass("d-none");
+	
+	$("#lcn").prop('disabled', false);
+	$("#saco").prop('disabled', false);
+	$("#semanasEcoPrim").prop('disabled', true);
+	$("#diasEcoPrim").prop('disabled', true);
+	$("#fum-cuatro").prop('disabled', true);
+	$("#modalPreInfEcoPrimTrim").prop('disabled', true);
+        $("#embarazoEcoPrimTrim").prop('disabled', true);
+
+	$("#lcn").val("");
+	$("#saco").val("");
+});
+
+$("#cGuardarEcoPrimButton").on("click", function(){
+	$("#cGuardarEcoPrimButton").addClass("d-none");
+	$("#cCancelarEcoPrimButton").addClass("d-none");
+	$("#cNuevoEcoPrimButton").removeClass("d-none");
+	
+	$("#lcn").prop('disabled', true);
+	$("#saco").prop('disabled', true);
+	$("#semanasEcoPrim").prop('disabled', false);
+	$("#diasEcoPrim").prop('disabled', false);
+	$("#fum-cuatro").prop('disabled', false);
+	$("#modalPreInfEcoPrimTrim").prop('disabled', true);
+        $("#embarazoEcoPrimTrim").prop('disabled', true);
+	
+	if (window.localStorage) {
+		if (typeof localStorage.pacientes != 'undefined') {
+			$.getJSON( "ecoprimtrim.json", function( data ) {
+				var pacientes = JSON.parse(localStorage["pacientes"]);
+				var qPct = 0;
+				$.each(pacientes, function( index, value ) {
+					if (value.RUT == $("#id-paciente").val()){
+
+						//cantidad de exámenes
+						var cExm = pacientes[qPct].examenes.ecoPrimTrim;
+						
+						data.fecha = $("#fee-dos").val();
+						data.eg[0] = $("#semanasEcoGen").val();
+						data.eg[1] = $("#diasEcoGen").val();
+						data.lcn = $("#lcn").val();;
+						data.saco = $("#saco").val();;
+						
+						//determinar si es un embarazo gemelar
+						if ($("#embarazoSi").hasClass("active")){
+							var qFto = $("#embarazoEcoPrimTrim").val();
+							if (cExm > 0) {
+								cExm = cExm -1;
+							}
+							pacientes[qPct].examenes.ecoPrimTrim[cExm][qFto] = data;
+						}
+						else{
+							pacientes[qPct].examenes.ecoPrimTrim[cExm] = data;	
+						}
+						localStorage["pacientes"] = JSON.stringify(pacientes);
+
+						return false;
+					}
+					qPct++;
+				]);
+			});
+		}
+	}
+});
+
+$("#cCancelarEcoPrimButton").on("click", function(){
+	$("#cGuardarEcoPrimButton").addClass("d-none");
+	$("#cCancelarEcoPrimButton").addClass("d-none");
+	$("#cNuevoEcoPrimButton").removeClass("d-none");
+	
+	$("#lcn").prop('disabled', true);
+	$("#saco").prop('disabled', true);
+	$("#semanasEcoPrim").prop('disabled', false);
+	$("#diasEcoPrim").prop('disabled', false);
+	$("#fum-cuatro").prop('disabled', false);
+	$("#modalPreInfEcoPrimTrim").prop('disabled', true);
+        $("#embarazoEcoPrimTrim").prop('disabled', true);
+	
+	$("#lcn").val("");
+	$("#saco").val("");
+});
+
+
+
+
 $( '#adicionalCrecimientoView' ).on( 'click', function() {
 	if ($('#adicionalCrecimiento').css( "display" ) == 'none'){
 		$('#adicionalCrecimiento').show();
