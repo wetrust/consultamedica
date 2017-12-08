@@ -90,11 +90,11 @@ var listPaciente = function(results){
  });
 
  $( '#pesoMaterno').on('change', function() {
-     $("#imcMaterno").val(aplication.imc($("#tallaMaterna").val(), $(this).val()));
+     $("#imcMaterno").val(aplication.imc($("#tallaMaterna").val(), $(this).val()) + " kl/m2");
  });
 
  $( '#tallaMaterna').on('change', function() {
-     $("#imcMaterno").val(aplication.imc($(this).val(), $("#pesoMaterno").val()));
+     $("#imcMaterno").val(aplication.imc($(this).val(), $("#pesoMaterno").val()) + " kl/m2");
  });
 
 $( '.informacion').on('click', function() {
