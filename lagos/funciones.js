@@ -174,8 +174,8 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 	$("#semanasEcoPrim").prop('disabled', false);
 	$("#diasEcoPrim").prop('disabled', false);
 	$("#fum-cuatro").prop('disabled', false);
-	$("#modalPreInfEcoPrimTrim").prop('disabled', true);
-        $("#embarazoEcoPrimTrim").prop('disabled', true);
+	$("#modalPreInfEcoPrimTrim").prop('disabled', false);
+        $("#embarazoEcoPrimTrim").prop('disabled', false);
 	
 	if (window.localStorage) {
 		if (typeof localStorage.pacientes != 'undefined') {
@@ -275,7 +275,108 @@ $("#cCancelarEcoPrimButton").on("click", function(){
 	$("#saco").val("");
 });
 
+$("#NuevoEcoSegButton").on("click", function(){
+	if ($("#fum-cinco").val() == ""){
+		alert("¿Cual es la FUM?");
+		return false;
+	}
+	$("#cGuardarEcoSegButton").removeClass("d-none");
+	$("#cCancelarEcoSegButton").removeClass("d-none");
+	$("#cNuevoEcoSegButton").addClass("d-none");
+	
+	$("#dbp").prop('disabled', false);
+	$("#dof").prop('disabled', false);
+	$("#cc").prop('disabled', false);
+	$("#ca").prop('disabled', false);
+	$("#lf").prop('disabled', false);
+	$("#lh").prop('disabled', false);
+	$("#cerebelo").prop('disabled', false);
+	$("#bvm").prop('disabled', false);
+	$("#comentarios-eco-dos-generico").prop('disabled', false);
+	
+	$("#semanasEcoObs").prop('disabled', true);
+	$("#diasEcoObs").prop('disabled', true);
+	$("#fum-cinco").prop('disabled', true);
+	
+	
+	$("#modalPreInfEcoObsSegTrim1").prop('disabled', true);
+	$("#modalPreInfEcoObsSegTrim2").prop('disabled', true);
+	$("#infecoObsSegTrim1").prop('disabled', true);
+	$("#infecoObsSegTrim2").prop('disabled', true);
+        $("#embarazoEcoSegTrim").prop('disabled', true);
 
+	$("#dbp").val("");
+	$("#dof").val("");
+	$("#cc").val("");
+	$("#ca").val("");
+	$("#lf").val("");
+	$("#lh").val("");
+	$("#cerebelo").val("");
+	$("#bvm").val("");
+	$("#comentarios-eco-dos-generico").val("");
+});
+
+$("#cGuardarEcoSegButton").on("click", function(){
+	$("#cGuardarEcoSegButton").addClass("d-none");
+	$("#cCancelarEcoSegButton").addClass("d-none");
+	$("#cNuevoEcoSegButton").removeClass("d-none");
+	
+	$("#dbp").prop('disabled', true);
+	$("#dof").prop('disabled', true);
+	$("#cc").prop('disabled', true);
+	$("#ca").prop('disabled', true);
+	$("#lf").prop('disabled', true);
+	$("#lh").prop('disabled', true);
+	$("#cerebelo").prop('disabled', true);
+	$("#bvm").prop('disabled', true);
+	$("#comentarios-eco-dos-generico").prop('disabled', true);
+	
+	$("#semanasEcoObs").prop('disabled', false);
+	$("#diasEcoObs").prop('disabled', false);
+	$("#fum-cinco").prop('disabled', false);
+	
+	$("#modalPreInfEcoObsSegTrim1").prop('disabled', false);
+	$("#modalPreInfEcoObsSegTrim2").prop('disabled', false);
+	$("#infecoObsSegTrim1").prop('disabled', false);
+	$("#infecoObsSegTrim2").prop('disabled', false);
+        $("#embarazoEcoSegTrim").prop('disabled', false);
+});
+
+$("#cCancelarEcoSegButton").on("click", function(){
+	$("#cGuardarEcoSegButton").addClass("d-none");
+	$("#cCancelarEcoSegButton").addClass("d-none");
+	$("#cNuevoEcoSegButton").removeClass("d-none");
+	
+	$("#dbp").prop('disabled', false);
+	$("#dof").prop('disabled', false);
+	$("#cc").prop('disabled', false);
+	$("#ca").prop('disabled', false);
+	$("#lf").prop('disabled', false);
+	$("#lh").prop('disabled', false);
+	$("#cerebelo").prop('disabled', false);
+	$("#bvm").prop('disabled', false);
+	$("#comentarios-eco-dos-generico").prop('disabled', false);
+	
+	$("#semanasEcoObs").prop('disabled', false);
+	$("#diasEcoObs").prop('disabled', false);
+	$("#fum-cinco").prop('disabled', false);
+	
+	$("#modalPreInfEcoObsSegTrim1").prop('disabled', false);
+	$("#modalPreInfEcoObsSegTrim2").prop('disabled', false);
+	$("#infecoObsSegTrim1").prop('disabled', false);
+	$("#infecoObsSegTrim2").prop('disabled', false);
+        $("#embarazoEcoSegTrim").prop('disabled', false);
+	
+	$("#dbp").val("");
+	$("#dof").val("");
+	$("#cc").val("");
+	$("#ca").val("");
+	$("#lf").val("");
+	$("#lh").val("");
+	$("#cerebelo").val("");
+	$("#bvm").val("");
+	$("#comentarios-eco-dos-generico").val("");
+});
 
 
 $( '#adicionalCrecimientoView' ).on( 'click', function() {
