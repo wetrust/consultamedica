@@ -144,6 +144,10 @@ $("#CancelarPacienteButton").on("click", function(){
 
 
 $("#NuevoEcoPrimButton").on("click", function(){
+	if ($("#fum-cuatro").val() == ""){
+		alert("¿Cual es la FUM?");
+		return false;
+	}
 	$("#cGuardarEcoPrimButton").removeClass("d-none");
 	$("#cCancelarEcoPrimButton").removeClass("d-none");
 	$("#cNuevoEcoPrimButton").addClass("d-none");
@@ -264,8 +268,8 @@ $("#cCancelarEcoPrimButton").on("click", function(){
 	$("#semanasEcoPrim").prop('disabled', false);
 	$("#diasEcoPrim").prop('disabled', false);
 	$("#fum-cuatro").prop('disabled', false);
-	$("#modalPreInfEcoPrimTrim").prop('disabled', true);
-        $("#embarazoEcoPrimTrim").prop('disabled', true);
+	$("#modalPreInfEcoPrimTrim").prop('disabled', false);
+        $("#embarazoEcoPrimTrim").prop('disabled', false);
 	
 	$("#lcn").val("");
 	$("#saco").val("");
