@@ -378,6 +378,103 @@ $("#cCancelarEcoSegButton").on("click", function(){
 	$("#comentarios-eco-dos-generico").val("");
 });
 
+$("#NuevoEcoDoppButton").on("click", function(){
+	if ($("#fum-seis").val() == ""){
+		alert("¿Cual es la FUM?");
+		return false;
+	}
+	$("#cGuardarEcoDoppButton").removeClass("d-none");
+	$("#cCancelarEcoDoppButton").removeClass("d-none");
+	$("#cNuevoEcoDoppButton").addClass("d-none");
+	
+	$("#aud").prop('disabled', false);
+	$("#aui").prop('disabled', false);
+	$("#auprom").prop('disabled', false);
+	$("#ipau").prop('disabled', false);
+	$("#ipacm").prop('disabled', false);
+	$("#ccp").prop('disabled', false);
+	$("#dv").prop('disabled', false);
+	$("#psmACM").prop('disabled', false);
+	$("#comentarios-eco-doppler-generico").prop('disabled', false);
+	
+	$("#semanasEcoDopp").prop('disabled', true);
+	$("#diasEcoDopp").prop('disabled', true);
+	$("#fum-seis").prop('disabled', true);
+	
+	
+	$("#modalPreInfEcoDoppler").prop('disabled', true);
+	$("#infDoppler1").prop('disabled', true);
+        $("#embarazoEcoDoppler").prop('disabled', true);
+
+	$("#aud").val("");
+	$("#aui").val("");
+	$("#auprom").val("");
+	$("#ipau").val("");
+	$("#ipacm").val("");
+	$("#ccp").val("");
+	$("#dv").val("");
+	$("#psmACM").val("");
+	$("#comentarios-eco-doppler-generico").val("");
+});
+
+$("#GuardarEcoDoppButton").on("click", function(){
+	$("#cGuardarEcoDoppButton").addClass("d-none");
+	$("#cCancelarEcoDoppButton").addClass("d-none");
+	$("#cNuevoEcoDoppButton").removeClass("d-none");
+	
+	$("#aud").prop('disabled', true);
+	$("#aui").prop('disabled', true);
+	$("#auprom").prop('disabled', true);
+	$("#ipau").prop('disabled', true);
+	$("#ipacm").prop('disabled', true);
+	$("#ccp").prop('disabled', true);
+	$("#dv").prop('disabled', true);
+	$("#psmACM").prop('disabled', true);
+	$("#comentarios-eco-doppler-generico").prop('disabled', true);
+	
+	$("#semanasEcoDopp").prop('disabled', false);
+	$("#diasEcoDopp").prop('disabled', false);
+	$("#fum-seis").prop('disabled', false);
+	
+	$("#modalPreInfEcoDoppler").prop('disabled', false);
+	$("#infDoppler1").prop('disabled', false);
+	$("#embarazoEcoDoppler").prop('disabled', false);
+
+});
+
+$("#CancelarEcoDoppButton").on("click", function(){
+	$("#cGuardarEcoDoppButton").addClass("d-none");
+	$("#cCancelarEcoDoppButton").addClass("d-none");
+	$("#cNuevoEcoDoppButton").removeClass("d-none");
+	
+	$("#aud").prop('disabled', true);
+	$("#aui").prop('disabled', true);
+	$("#auprom").prop('disabled', true);
+	$("#ipau").prop('disabled', true);
+	$("#ipacm").prop('disabled', true);
+	$("#ccp").prop('disabled', true);
+	$("#dv").prop('disabled', true);
+	$("#psmACM").prop('disabled', true);
+	$("#comentarios-eco-doppler-generico").prop('disabled', true);
+	
+	$("#semanasEcoDopp").prop('disabled', false);
+	$("#diasEcoDopp").prop('disabled', false);
+	$("#fum-seis").prop('disabled', false);
+	
+	$("#modalPreInfEcoDoppler").prop('disabled', false);
+	$("#infDoppler1").prop('disabled', false);
+	$("#embarazoEcoDoppler").prop('disabled', false);
+	
+	$("#aud").val("");
+	$("#aui").val("");
+	$("#auprom").val("");
+	$("#ipau").val("");
+	$("#ipacm").val("");
+	$("#ccp").val("");
+	$("#dv").val("");
+	$("#psmACM").val("");
+	$("#comentarios-eco-doppler-generico").val("");
+});
 
 $( '#adicionalCrecimientoView' ).on( 'click', function() {
 	if ($('#adicionalCrecimiento').css( "display" ) == 'none'){
