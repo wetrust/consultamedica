@@ -296,9 +296,6 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 						if (typeof cExmPrimTrim == 'undefined') {
 							cExmPrimTrim = 0;
 						}
-						else{
-							cExmPrimTrim = cExmPrimTrim -1;
-						}
 						
 						data.fecha = $("#fee-dos").val();
 						data.eg[0] = $("#semanasEcoPrim").val();
