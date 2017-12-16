@@ -160,7 +160,10 @@ $("#NuevoPacienteButton").on("click", function(){
 	$("#profReferente").val("");
 	$("#ecografista").val([]); 
 	
-	$("#continuarSegundario").prop('disabled', true);
+	$("#continuarSegundario").on("click", function(e){
+		e.preventDefault();
+		return false;
+	});
 });
 
 $("#GuardarPacienteButton").on("click", function(){
@@ -223,7 +226,7 @@ $("#GuardarPacienteButton").on("click", function(){
 			});
 		}
 	}
-	$("#continuarSegundario").prop('disabled', false);
+	$("#continuarSegundario").off("click");
 });
 
 $("#CancelarPacienteButton").on("click", function(){
@@ -251,7 +254,7 @@ $("#CancelarPacienteButton").on("click", function(){
 	$("#patologiaObstetricaUno").val([]);
 	$("#profReferente").val("");
 	$("#ecografista").val([]);
-	$("#continuarSegundario").prop('disabled', false);
+	$("#continuarSegundario").off("click");
 });
 
 $("#NuevoExamenButton").on("click", function(){
@@ -269,7 +272,11 @@ $("#NuevoExamenButton").on("click", function(){
 	$("#ecografista").prop('disabled', false);
 	$("#buscarPacientes").prop('disabled', true);
 	$("#buscarPacientesBtn").prop('disabled', true);
-	$("#continuarSegundario").prop('disabled', true);
+	
+	$("#continuarSegundario").on("click", function(e){
+		e.preventDefault();
+		return false;
+	});
 });
 
 $("#GuardarExamenButton").on("click", function(){
@@ -314,7 +321,7 @@ $("#GuardarExamenButton").on("click", function(){
 			});
 		});
 	}
-	$("#continuarSegundario").prop('disabled', false);
+	$("#continuarSegundario").off("click");
 });
 
 $("#CancelarExamenButton").on("click", function(){
@@ -335,7 +342,7 @@ $("#CancelarExamenButton").on("click", function(){
 	
 	$("#buscarPacientes").val($("#id-paciente").val()); 
 	$( "#buscarPacientesBtn" ).trigger("click");
-	$("#continuarSegundario").prop('disabled', false);
+	$("#continuarSegundario").off("click");
 });
 
 
