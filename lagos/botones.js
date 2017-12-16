@@ -53,16 +53,18 @@ function activarBotones() {
    $("input[name='eg']").val(localStorage.eg);
    var Eg = parseFloat(localStorage.eg);
    if (Eg.toFixed() < Eg){
-	   $('#diasEcoPrim').val((Eg - Eg.toFixed(0))*10);
+	   var Dias = parseInt((Eg - Eg.toFixed(0))*10);
+	   
+	   $('#diasEcoPrim').val(Dias);
 	   $('#semanasEcoPrim').val(Eg.toFixed(0));
 	   $('#semanasEcoGen').val(Eg.toFixed(0));
-	   $('#diasEcoGen').val((Eg - Eg.toFixed(0))*10);
+	   $('#diasEcoGen').val(Dias);
 	   $('#semanasEcoObs').val(Eg.toFixed(0));
-	   $('#diasEcoObs').val((Eg - Eg.toFixed(0))*10);
+	   $('#diasEcoObs').val(Dias);
 	   $('#semanasEcoDopp').val(Eg.toFixed(0));
-	   $('#diasEcoDopp').val((Eg - Eg.toFixed(0))*10);
+	   $('#diasEcoDopp').val(Dias);
 	   $( '#semanasTipoEco' ).val(Eg.toFixed(0));
-	   $( '#diasTipoEco' ).val((Eg - Eg.toFixed(0))*10);
+	   $( '#diasTipoEco' ).val(Dias);
    }
    else{
 	$('#diasEcoPrim').val(0);
