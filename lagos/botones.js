@@ -52,7 +52,7 @@ function activarBotones() {
    
    $("input[name='eg']").val(localStorage.eg);
    var Eg = localStorage.eg;
-   if (Eg.toFixed(0) < ){
+   if (Eg.toFixed(0) < Eg){
 	   $('#diasEcoPrim').val((Eg - Eg.toFixed(0))*10);
 	   $('#semanasEcoPrim').val(Eg.toFixed(0));
 	   $('#semanasEcoGen').val(Eg.toFixed(0));
