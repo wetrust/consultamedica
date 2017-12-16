@@ -19,6 +19,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 					$("#profReferente").val(value.examenes[0].profReferente);
 					$("#ecografista").val(value.examenes[0].profExaminador); 
 					$("input[name='fum']").val(value.examenes[0].FUM);
+					$("#cNuevoExamenButton").removeClass("d-none");
 					return false;
 				}
 				else{
@@ -31,6 +32,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 					$("#patologiaObstetricaUno").val([]);
 					$("#profReferente").val("");
 					$("#ecografista").val([]);
+					$("#cNuevoExamenButton").addClass("d-none");
 				}
 			});
 		}else{
@@ -45,6 +47,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 					$("#profReferente").val(value.examenes[0].profReferente);
 					$("#ecografista").val(value.examenes[0].profExaminador); 
 					$("input[name='fum']").val(value.examenes[0].FUM);
+					$("#cNuevoExamenButton").removeClass("d-none");
 					return false;
 				}
 				else{
@@ -57,6 +60,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 					$("#patologiaObstetricaUno").val([]);
 					$("#profReferente").val("");
 					$("#ecografista").val([]);
+					$("#cNuevoExamenButton").addClass("d-none");
 				}	
 			});
 		}
@@ -79,6 +83,7 @@ $( "#buscarPacientesBtn" ).on("click", function( e ) {
 				$("#profReferente").val(value.examenes[0].profReferente);
 				$("#ecografista").val(value.examenes[0].profExaminador); 
 				$("input[name='fum']").val(value.examenes[0].FUM);
+				$("#cNuevoExamenButton").removeClass("d-none");
 				return false;
 			}
 			else{
@@ -91,6 +96,7 @@ $( "#buscarPacientesBtn" ).on("click", function( e ) {
 				$("#patologiaObstetricaUno").val([]);
 				$("#profReferente").val("");
 				$("#ecografista").val([]);
+				$("#cNuevoExamenButton").addClass("d-none");
 			}
 		});
 	}else{
@@ -105,6 +111,7 @@ $( "#buscarPacientesBtn" ).on("click", function( e ) {
 				$("#profReferente").val(value.examenes[0].profReferente);
 				$("#ecografista").val(value.examenes[0].profExaminador); 
 				$("input[name='fum']").val(value.examenes[0].FUM);
+				$("#cNuevoExamenButton").removeClass("d-none");
 				return false;
 			}
 			else{
@@ -117,6 +124,7 @@ $( "#buscarPacientesBtn" ).on("click", function( e ) {
 				$("#patologiaObstetricaUno").val([]);
 				$("#profReferente").val("");
 				$("#ecografista").val([]);
+				$("#cNuevoExamenButton").addClass("d-none");
 			}	
 		});
 	}
