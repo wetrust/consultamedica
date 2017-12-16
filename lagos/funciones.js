@@ -548,6 +548,104 @@ $("#cGuardarEcoSegButton").on("click", function(){
 	$("#infecoObsSegTrim1").prop('disabled', false);
 	$("#infecoObsSegTrim2").prop('disabled', false);
         $("#embarazoEcoSegTrim").prop('disabled', false);
+	
+	
+	
+	if (window.localStorage) {
+		if (typeof localStorage.pacientes != 'undefined') {
+			$.getJSON( "ecosegtrim.json", function( data ) {
+				var pacientes = JSON.parse(localStorage["pacientes"]);
+				var qPct = 0;
+				$.each(pacientes, function( index, value ) {
+					if (value.RUT == $("#id-paciente").val()){
+
+						//cantidad de exámenes
+						var cExm = Object.keys(pacientes[qPct].examenes).length;
+						if (typeof cExm == 'undefined') {
+							cExm = 0;
+						}
+						else{
+							cExm = cExm -1;
+						}
+						var tmp = pacientes[qPct];
+						var tmp2 = tmp.examenes[cExm];
+						var tmp3 = tmp2.ecoSegTrim
+						var cExmSegTrim = Object.keys(tmp3).length;
+							
+						if (typeof cExmSegTrim == 'undefined') {
+							cExmSegTrim = 0;
+						}
+						
+						data.fecha = $("#fee-cinco").val();
+						data.eg[0] = $("#semanasEcoObs").val();
+						data.eg[1] = $("#diasEcoObs").val();
+						data.dbp = $("#dbp").val();
+						data.dof = $("#dof").val();
+						data.cc = $("#cc").val();
+						data.ca = $("#ca").val();
+						data.lf = $("#lf").val();
+						data.lh = $("#lh").val();
+						data.cerebelo = $("#cerebelo").val();
+						data.pfe = $("#pfe").val();
+						data.bvm = $("#bvm").val();
+						data.ccca = $("#ccca").val();
+						data.comentarioGeneral = $("#comentarios-eco-dos-generico").val();
+						data.EGp50 = $("#egP50").val();
+						
+						//determinar si es un embarazo gemelar
+						if ($("#embarazoSi").hasClass("active")){
+							var qFto = $("#embarazoEcoPrimTrim").val();
+							
+							//determinar si ya se ha guardado datos para este embarazon gemelar
+							
+							var examenes = [];
+							var fetos = [];
+							fetos[qFto] = data;
+							examenes[0] = fetos;
+							pacientes[qPct].examenes[cExm].ecoSegTrim.push(examenes);
+							
+							//determinar si en el exámen anterior solo hay guardado un feto
+							var cFetos = pacientes[qPct].examenes.ecoSegTrim[cExm].lenght;
+								
+							if (typeof cFetos == 'undefined') {
+								//no hay otro feto guardado para este numero de exámen
+								var fetos = [];
+								var examenes = [];
+								fetos[qFto] = data;
+								examenes[0] = fetos;
+								pacientes[qPct].examenes.ecoSegTrim.push(examenes);
+							}
+							else{
+								//se guardo un feto y actualmente se guarda el segundo feto.-
+							}
+								
+							cExm = cExm -1;
+							var fetos = [];
+							fetos[qFto] = data;
+							pacientes[qPct].examenes.ecoSegTrim.push(data);
+							
+							pacientes[qPct].examenes.ecoSegTrim[cExm][qFto] = data;
+						}
+						else{
+							if (cExmSegTrim == 0){
+								var examenes = [];
+								examenes[0] = data;
+								//pacientes[qPct].examenes.ecoPrimTrim = examenes;
+								pacientes[qPct].examenes[cExm].ecoSegTrim = examenes;
+							}
+							else{
+								pacientes[qPct].examenes[cExm].ecoSegTrim.push(data);
+							}
+						}
+						localStorage["pacientes"] = JSON.stringify(pacientes);
+
+						return false;
+					}
+					qPct++;
+				});
+			});
+		}
+	}
 });
 
 $("#cCancelarEcoSegButton").on("click", function(){
