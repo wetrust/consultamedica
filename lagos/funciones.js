@@ -17,8 +17,9 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 					$("#motivo-examen").val(value.examenes[0].motivo);
 					$("#patologiaObstetricaUno").val(value.examenes[0].patologia);
 					$("#profReferente").val(value.examenes[0].profReferente);
-					$("#ecografista").val(value.examenes[0].profExaminador); 
-					$("input[name='fum']").val(value.examenes[0].FUM);
+					$("#ecografista").val(value.examenes[0].profExaminador);
+					var nExm = Object.keys(value.examene).length -1;
+					$("input[name='fum']").val(value.examenes[nExm].FUM);
 					$("#cNuevoExamenButton").removeClass("d-none");
 					return false;
 				}
@@ -46,7 +47,8 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 					$("#patologiaObstetricaUno").val(value.examenes[0].patologia);
 					$("#profReferente").val(value.examenes[0].profReferente);
 					$("#ecografista").val(value.examenes[0].profExaminador); 
-					$("input[name='fum']").val(value.examenes[0].FUM);
+					var nExm = Object.keys(value.examene).length -1;
+					$("input[name='fum']").val(value.examenes[nExm].FUM);
 					$("#cNuevoExamenButton").removeClass("d-none");
 					return false;
 				}
@@ -82,7 +84,8 @@ $( "#buscarPacientesBtn" ).on("click", function( e ) {
 				$("#patologiaObstetricaUno").val(value.examenes[0].patologia);
 				$("#profReferente").val(value.examenes[0].profReferente);
 				$("#ecografista").val(value.examenes[0].profExaminador); 
-				$("input[name='fum']").val(value.examenes[0].FUM);
+				var nExm = Object.keys(value.examene).length -1;
+				$("input[name='fum']").val(value.examenes[nExm].FUM);
 				$("#cNuevoExamenButton").removeClass("d-none");
 				return false;
 			}
@@ -110,7 +113,8 @@ $( "#buscarPacientesBtn" ).on("click", function( e ) {
 				$("#patologiaObstetricaUno").val(value.examenes[0].patologia);
 				$("#profReferente").val(value.examenes[0].profReferente);
 				$("#ecografista").val(value.examenes[0].profExaminador); 
-				$("input[name='fum']").val(value.examenes[0].FUM);
+				var nExm = Object.keys(value.examene).length -1;
+				$("input[name='fum']").val(value.examenes[nExm].FUM);
 				$("#cNuevoExamenButton").removeClass("d-none");
 				return false;
 			}
