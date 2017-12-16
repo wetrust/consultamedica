@@ -304,7 +304,7 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 								var fetos = [];
 								fetos[qFto] = data;
 								examenes[0] = fetos;
-								pacientes[qPct].examenes.ecoPrimTrim = examenes;
+								pacientes[qPct].examenes.ecoPrimTrim.push(examenes);
 							}
 							else{
 								//determinar si en el exámen anterior solo hay guardado un feto
