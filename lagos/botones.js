@@ -102,7 +102,36 @@ function activarBotones() {
    localStorage.eg = calcularEG();
    $("input[name='fee']").val(localStorage.fee);
    $("input[name='eg']").val(localStorage.eg);
-	  
+
+   $("input[name='eg']").val(localStorage.eg);
+   var Eg = parseFloat(localStorage.eg);
+   if (Eg.toFixed(0) < Eg){
+	   var Dias = parseInt((Eg - Eg.toFixed(0))*10);
+	   
+	   $('#diasEcoPrim').val(Dias);
+	   $('#semanasEcoPrim').val(Eg.toFixed(0));
+	   $('#semanasEcoGen').val(Eg.toFixed(0));
+	   $('#diasEcoGen').val(Dias);
+	   $('#semanasEcoObs').val(Eg.toFixed(0));
+	   $('#diasEcoObs').val(Dias);
+	   $('#semanasEcoDopp').val(Eg.toFixed(0));
+	   $('#diasEcoDopp').val(Dias);
+	   $( '#semanasTipoEco' ).val(Eg.toFixed(0));
+	   $( '#diasTipoEco' ).val(Dias);
+   }
+   else{
+	$('#diasEcoPrim').val(0);
+	$('#semanasEcoPrim').val(Eg.toFixed(0));
+	$('#semanasEcoGen').val(Eg.toFixed(0));
+	$('#diasEcoGen').val(0);
+	$('#semanasEcoObs').val(Eg.toFixed(0));
+	$('#diasEcoObs').val(0);
+	$('#semanasEcoDopp').val(Eg.toFixed(0));
+	$('#diasEcoDopp').val(0);
+	$('#semanasTipoEco').val(Eg.toFixed(0));
+	$('#diasTipoEco').val(0);
+   }
+
    if (this.id != "fee-dos"){
 	   $('#fee-dos').datepicker('setValue', localStorage.fee);
    }
