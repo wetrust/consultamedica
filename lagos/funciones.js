@@ -246,6 +246,93 @@ $("#CancelarPacienteButton").on("click", function(){
 	$("#ecografista").val([]);
 });
 
+$("#NuevoExamenButton").on("click", function(){
+	$("#cGuardarExamenButton").removeClass("d-none");
+	$("#cCancelarExamenButton").removeClass("d-none");
+	$("#NuevoExamenButton").addClass("d-none");
+	$("#NuevoPacienteButton").addClass("d-none");
+	
+	$("select[name='edad_materna']").prop('disabled', false);
+	$("#procedencia").prop('disabled', false);
+	$("#Lugar-examen").prop('disabled', false);
+	$("#motivo-examen").prop('disabled', false);
+	$("#patologiaObstetricaUno").prop('disabled', false);
+	$("#profReferente").prop('disabled', false);
+	$("#ecografista").prop('disabled', false);
+	$("#buscarPacientes").prop('disabled', true);
+	$("#buscarPacientesBtn").prop('disabled', true);
+});
+
+$("#GuardarExamenButton").on("click", function(){
+	$("#cGuardarExamenButton").addClass("d-none");
+	$("#cCancelarExamenButton").addClass("d-none");
+	$("#cNuevoExamenButton").removeClass("d-none");
+	$("#NuevoPacienteButton").removeClass("d-none");
+	
+	$("select[name='edad_materna']").prop('disabled', true);
+	$("#procedencia").prop('disabled', true);
+	$("#Lugar-examen").prop('disabled', true);
+	$("#motivo-examen").prop('disabled', true);
+	$("#patologiaObstetricaUno").prop('disabled', true);
+	$("#profReferente").prop('disabled', true);
+	$("#ecografista").prop('disabled', true);
+	$("#buscarPacientes").prop('disabled', false);
+	$("#buscarPacientesBtn").prop('disabled', false);
+	
+	if (window.localStorage) {
+		$.getJSON( "baseExamen.json", function( data ) {
+			var pacientes = JSON.parse(localStorage["pacientes"]);
+			var pIndex = 0;
+			
+			$.each(pacientes, function( index, value ) {
+				if (value.RUT == $("#buscarPacientes").val()){
+
+					pacientes[pIndex].edad = $("select[name='edad_materna'] option:selected").val();
+					pacientes[pIndex].ciudad = $("#procedencia option:selected").val();
+
+					data.motivo = $("#motivo-examen option:selected").val();
+					data.patologia = $("#patologiaObstetricaUno option:selected").val();
+					data.profReferente = $("#profReferente").val();
+					data.profExaminador = $("#ecografista option:selected").val();
+					data.FUM = $("input[name='fum']").val();
+
+					pacientes[pIndex].examenes.push(data);
+
+					localStorage["pacientes"] = JSON.stringify(pacientes);
+					return true;
+				}
+				pIndex++
+			});
+		});
+	}
+});
+
+$("#CancelarExamenButton").on("click", function(){
+	$("#cGuardarExamenButton").addClass("d-none");
+	$("#cCancelarExamenButton").addClass("d-none");
+	$("#cNuevoExamenButton").removeClass("d-none");
+	$("#NuevoPacienteButton").removeClass("d-none");
+
+	$("select[name='edad_materna']").prop('disabled', true);
+	$("#procedencia").prop('disabled', true);
+	$("#Lugar-examen").prop('disabled', true);
+	$("#motivo-examen").prop('disabled', true);
+	$("#patologiaObstetricaUno").prop('disabled', true);
+	$("#profReferente").prop('disabled', true);
+	$("#ecografista").prop('disabled', true);
+	$("#buscarPacientes").prop('disabled', false);
+	$("#buscarPacientesBtn").prop('disabled', false);
+	
+	$("#buscarPacientes").val($("#id-paciente").val()); 
+	$( "#buscarPacientesBtn" ).trigger("click")
+});
+
+
+
+
+
+
+
 
 
 $("#NuevoEcoPrimButton").on("click", function(){
