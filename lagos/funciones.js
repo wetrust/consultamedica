@@ -37,6 +37,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 $("#NuevoPacienteButton").on("click", function(){
 	$("#cGuardarPacienteButton").removeClass("d-none");
 	$("#cCancelarPacienteButton").removeClass("d-none");
+	$("#cNuevoPacienteButton").addClass("d-none");
 	$("#nombre-paciente").prop('disabled', false);
 	$("#id-paciente").prop('disabled', false);
 	$("select[name='edad_materna']").prop('disabled', false);
@@ -46,6 +47,7 @@ $("#NuevoPacienteButton").on("click", function(){
 	$("#patologiaObstetricaUno").prop('disabled', false);
 	$("#profReferente").prop('disabled', false);
 	$("#ecografista").prop('disabled', false);
+	$("#buscarPacientes").prop('disabled', true);
 	
 	$("#nombre-paciente").val("");
 	$("#id-paciente").val("");
@@ -61,6 +63,7 @@ $("#NuevoPacienteButton").on("click", function(){
 $("#GuardarPacienteButton").on("click", function(){
 	$("#cGuardarPacienteButton").addClass("d-none");
 	$("#cCancelarPacienteButton").addClass("d-none");
+	$("#cNuevoPacienteButton").removeClass("d-none");
 	$("#nombre-paciente").prop('disabled', true);
 	$("#id-paciente").prop('disabled', true);
 	$("select[name='edad_materna']").prop('disabled', true);
@@ -70,6 +73,7 @@ $("#GuardarPacienteButton").on("click", function(){
 	$("#patologiaObstetricaUno").prop('disabled', true);
 	$("#profReferente").prop('disabled', true);
 	$("#ecografista").prop('disabled', true);
+	$("#buscarPacientes").prop('disabled', false);
 	
 	if (window.localStorage) {
 		if (typeof localStorage.pacientes == 'undefined') {
@@ -120,6 +124,7 @@ $("#GuardarPacienteButton").on("click", function(){
 $("#CancelarPacienteButton").on("click", function(){
 	$("#cGuardarPacienteButton").addClass("d-none");
 	$("#cCancelarPacienteButton").addClass("d-none");
+	$("#cNuevoPacienteButton").removeClass("d-none");
 	$("#nombre-paciente").prop('disabled', true);
 	$("#id-paciente").prop('disabled', true);
 	$("select[name='edad_materna']").prop('disabled', true);
@@ -129,6 +134,7 @@ $("#CancelarPacienteButton").on("click", function(){
 	$("#patologiaObstetricaUno").prop('disabled', true);
 	$("#profReferente").prop('disabled', true);
 	$("#ecografista").prop('disabled', true);
+	$("#buscarPacientes").prop('disabled', false);
 	
 	$("#nombre-paciente").val("");
 	$("#id-paciente").val("");
