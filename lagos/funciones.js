@@ -280,7 +280,7 @@ $("#GuardarExamenButton").on("click", function(){
 	$("#buscarPacientesBtn").prop('disabled', false);
 	
 	if (window.localStorage) {
-		$.getJSON( "baseExamen.json", function( data ) {
+		$.getJSON( "BaseExamen.json", function( data ) {
 			var pacientes = JSON.parse(localStorage["pacientes"]);
 			var pIndex = 0;
 			
