@@ -290,8 +290,10 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 						else{
 							cExm = cExm -1;
 						}
+						var tmp = pacientes[qPct];
+						var tmp2 = tmp.examenes[cExm];
 						
-						var cExmPrimTrim = pacientes[qPct].examenes[cExm].ecoPrimTrim.lenght;
+						var cExmPrimTrim = tmp2.lenght;
 							
 						if (typeof cExmPrimTrim == 'undefined') {
 							cExmPrimTrim = 0;
