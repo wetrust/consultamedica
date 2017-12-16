@@ -241,7 +241,8 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 							if (cExm == 0){
 								var examenes = [];
 								examenes[0] = data;
-								pacientes[qPct].examenes.ecoPrimTrim = examenes;
+								//pacientes[qPct].examenes.ecoPrimTrim = examenes;
+								pacientes[qPct].examenes.ecoPrimTrim.push(examenes);
 							}
 							else{
 								pacientes[qPct].examenes.ecoPrimTrim.push(data);
