@@ -318,33 +318,26 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 							examenes[0] = fetos;
 							pacientes[qPct].examenes[cExm].ecoPrimTrim.push(examenes);
 							
-							
-							else{
-								//determinar si en el exámen anterior solo hay guardado un feto
-								var cFetos = pacientes[qPct].examenes.ecoPrimTrim[cExm].lenght;
+							//determinar si en el exámen anterior solo hay guardado un feto
+							var cFetos = pacientes[qPct].examenes.ecoPrimTrim[cExm].lenght;
 								
-								if (typeof cFetos == 'undefined') {
-									//no hay otro feto guardado para este numero de exámen
-									var fetos = [];
-									var examenes = [];
-									fetos[qFto] = data;
-									examenes[0] = fetos;
-									pacientes[qPct].examenes.ecoPrimTrim.push(examenes);
-								}
-								else{
-									//se guardo un feto y actualmente se guarda el segundo feto.-
-								}
-								
-								cExm = cExm -1;
+							if (typeof cFetos == 'undefined') {
+								//no hay otro feto guardado para este numero de exámen
 								var fetos = [];
+								var examenes = [];
 								fetos[qFto] = data;
-								pacientes[qPct].examenes.ecoPrimTrim.push(data);
+								examenes[0] = fetos;
+								pacientes[qPct].examenes.ecoPrimTrim.push(examenes);
 							}
-							
-							
-							if (cExm > 0) {
+							else{
+								//se guardo un feto y actualmente se guarda el segundo feto.-
+							}
 								
-							}
+							cExm = cExm -1;
+							var fetos = [];
+							fetos[qFto] = data;
+							pacientes[qPct].examenes.ecoPrimTrim.push(data);
+							
 							pacientes[qPct].examenes.ecoPrimTrim[cExm][qFto] = data;
 						}
 						else{
