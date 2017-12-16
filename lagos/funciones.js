@@ -283,9 +283,21 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 					if (value.RUT == $("#id-paciente").val()){
 
 						//cantidad de exámenes
-						var cExm = pacientes[qPct].examenes.ecoPrimTrim;
+						var cExm = pacientes[qPct].examenes.lenght;
 						if (typeof cExm == 'undefined') {
 							cExm = 0;
+						}
+						else{
+							cExm = cExm -1;
+						}
+						
+						var cExmPrimTrim = pacientes[qPct].examenes[cExm].ecoPrimTrim.lenght;
+							
+						if (typeof cExmPrimTrim == 'undefined') {
+							cExmPrimTrim = 0;
+						}
+						else{
+							cExmPrimTrim = cExmPrimTrim -1;
 						}
 						
 						data.fecha = $("#fee-dos").val();
@@ -298,14 +310,15 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 						if ($("#embarazoSi").hasClass("active")){
 							var qFto = $("#embarazoEcoPrimTrim").val();
 							
+							//determinar si ya se ha guardado datos para este embarazon gemelar
 							
-							if (cExm == 0){
-								var examenes = [];
-								var fetos = [];
-								fetos[qFto] = data;
-								examenes[0] = fetos;
-								pacientes[qPct].examenes.ecoPrimTrim.push(examenes);
-							}
+							var examenes = [];
+							var fetos = [];
+							fetos[qFto] = data;
+							examenes[0] = fetos;
+							pacientes[qPct].examenes[cExm].ecoPrimTrim.push(examenes);
+							
+							
 							else{
 								//determinar si en el exámen anterior solo hay guardado un feto
 								var cFetos = pacientes[qPct].examenes.ecoPrimTrim[cExm].lenght;
@@ -335,14 +348,14 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 							pacientes[qPct].examenes.ecoPrimTrim[cExm][qFto] = data;
 						}
 						else{
-							if (cExm == 0){
+							if (cExmPrimTrim == 0){
 								var examenes = [];
 								examenes[0] = data;
 								//pacientes[qPct].examenes.ecoPrimTrim = examenes;
-								pacientes[qPct].examenes.ecoPrimTrim.push(examenes);
+								pacientes[qPct].examenes[cExm].ecoPrimTrim = examenes;
 							}
 							else{
-								pacientes[qPct].examenes.ecoPrimTrim.push(data);
+								pacientes[qPct].examenes[cExm].ecoPrimTrim.push(data);
 							}
 						}
 						localStorage["pacientes"] = JSON.stringify(pacientes);
