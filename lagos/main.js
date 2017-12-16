@@ -364,7 +364,7 @@ $( document ).ready(function() {
 				}
 				else{
 					var pacientes = JSON.parse(localStorage["pacientes"]);
-					$('#numPacientes').html(Object.keys(pacientes).length);
+					$('#numPacientes').html("Pacientes en base<br>" + Object.keys(pacientes).length);
 				}
 			}
 			
