@@ -160,7 +160,7 @@ $("#NuevoPacienteButton").on("click", function(){
 	$("#profReferente").val("");
 	$("#ecografista").val([]); 
 	
-	$("a[href='#tipoExamen']").prop('disabled', true);
+	$("#continuarSegundario").prop('disabled', true);
 });
 
 $("#GuardarPacienteButton").on("click", function(){
