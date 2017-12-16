@@ -51,6 +51,31 @@ function activarBotones() {
    $("input[name='fum']").val(localStorage.fum);
    
    $("input[name='eg']").val(localStorage.eg);
+   var Eg = localStorage.eg;
+   if (Eg.toFixed(0) < ){
+	   $('#diasEcoPrim').val((Eg - Eg.toFixed(0))*10);
+	   $('#semanasEcoPrim').val(Eg.toFixed(0));
+	   $('#semanasEcoGen').val(Eg.toFixed(0));
+	   $('#diasEcoGen').val((Eg - Eg.toFixed(0))*10);
+	   $('#semanasEcoObs').val(Eg.toFixed(0));
+	   $('#diasEcoObs').val((Eg - Eg.toFixed(0))*10);
+	   $('#semanasEcoDopp').val(Eg.toFixed(0));
+	   $('#diasEcoDopp').val((Eg - Eg.toFixed(0))*10);
+	   $( '#semanasTipoEco' ).val(Eg.toFixed(0));
+	   $( '#diasTipoEco' ).val((Eg - Eg.toFixed(0))*10);
+   }
+   else{
+	$('#diasEcoPrim').val(0);
+	$('#semanasEcoPrim').val(Eg.toFixed(0));
+	$('#semanasEcoGen').val(Eg.toFixed(0));
+	$('#diasEcoGen').val(0);
+	$('#semanasEcoObs').val(Eg.toFixed(0));
+	$('#diasEcoObs').val(0);
+	$('#semanasEcoDopp').val(Eg.toFixed(0));
+	$('#diasEcoDopp').val(0);
+	$('#semanasTipoEco').val(Eg.toFixed(0));
+	$('#diasTipoEco').val(0);
+   }	 
    
    if (this.id != "fum-dos"){
 	   $('#fum-dos').datepicker('setValue', localStorage.fum);
