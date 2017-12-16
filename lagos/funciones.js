@@ -48,6 +48,7 @@ $("#NuevoPacienteButton").on("click", function(){
 	$("#profReferente").prop('disabled', false);
 	$("#ecografista").prop('disabled', false);
 	$("#buscarPacientes").prop('disabled', true);
+	$("#buscarPacientesBtn").prop('disabled', true);
 	
 	$("#nombre-paciente").val("");
 	$("#id-paciente").val("");
@@ -74,6 +75,7 @@ $("#GuardarPacienteButton").on("click", function(){
 	$("#profReferente").prop('disabled', true);
 	$("#ecografista").prop('disabled', true);
 	$("#buscarPacientes").prop('disabled', false);
+	$("#buscarPacientesBtn").prop('disabled', false);
 	
 	if (window.localStorage) {
 		if (typeof localStorage.pacientes == 'undefined') {
@@ -135,6 +137,7 @@ $("#CancelarPacienteButton").on("click", function(){
 	$("#profReferente").prop('disabled', true);
 	$("#ecografista").prop('disabled', true);
 	$("#buscarPacientes").prop('disabled', false);
+	$("#buscarPacientesBtn").prop('disabled', false);
 	
 	$("#nombre-paciente").val("");
 	$("#id-paciente").val("");
