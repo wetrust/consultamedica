@@ -179,7 +179,7 @@ $("#GuardarPacienteButton").on("click", function(){
 				paciente[0].examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
 				paciente[0].examenes[0].profReferente = $("#profReferente").val();
 				paciente[0].examenes[0].profExaminador = $("#ecografista option:selected").val();
-				paciente[0].examenes[0].FUM = $("input[name='fum'] option:selected").val();
+				paciente[0].examenes[0].FUM = $("input[name='fum']").val();
 				
 				localStorage["pacientes"] = JSON.stringify(paciente);
 			});
@@ -203,7 +203,7 @@ $("#GuardarPacienteButton").on("click", function(){
 				paciente[cantidad].examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
 				paciente[cantidad].examenes[0].profReferente = $("#profReferente").val();
 				paciente[cantidad].examenes[0].profExaminador = $("#ecografista option:selected").val();
-				paciente[cantidad].examenes[0].FUM = $("input[name='fum'] option:selected").val();
+				paciente[cantidad].examenes[0].FUM = $("input[name='fum']").val();
 				
 				localStorage["pacientes"] = JSON.stringify(paciente);
 			});
