@@ -36,7 +36,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 			});
 		}else{
 			$.each(pacientes, function( index, value ) {
-				if (value.apellido == $("#buscarPacientes").val()){
+				if (value.nombre == $("#buscarPacientes").val()){
 					$("#id-paciente").val(value.RUT);
 					$("#nombre-paciente").val(value.nombre);
 					$("select[name='edad_materna']").val(value.edad);
