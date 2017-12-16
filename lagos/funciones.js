@@ -345,14 +345,6 @@ $("#CancelarExamenButton").on("click", function(){
 	$("#continuarSegundario").off("click");
 });
 
-
-
-
-
-
-
-
-
 $("#NuevoEcoPrimButton").on("click", function(){
 	if ($("#fum-cuatro").val() == ""){
 		alert("¿Cual es la FUM?");
@@ -396,7 +388,7 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 					if (value.RUT == $("#id-paciente").val()){
 
 						//cantidad de exámenes
-						var cExm = pacientes[qPct].examenes.lenght;
+						var cExm = Object.keys(pacientes[qPct].examenes).length;
 						if (typeof cExm == 'undefined') {
 							cExm = 0;
 						}
