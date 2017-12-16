@@ -293,7 +293,7 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 						var tmp = pacientes[qPct];
 						var tmp2 = tmp.examenes[cExm];
 						var tmp3 = tmp2.ecoPrimTrim
-						var cExmPrimTrim = tmp3.lenght;
+						var cExmPrimTrim = Object.keys(tmp3).length;
 							
 						if (typeof cExmPrimTrim == 'undefined') {
 							cExmPrimTrim = 0;
