@@ -223,7 +223,7 @@ $("#GuardarPacienteButton").on("click", function(){
 			});
 		}
 	}
-	$("a[href='#tipoExamen']").prop('disabled', false);
+	$("#continuarSegundario").prop('disabled', false);
 });
 
 $("#CancelarPacienteButton").on("click", function(){
@@ -251,7 +251,7 @@ $("#CancelarPacienteButton").on("click", function(){
 	$("#patologiaObstetricaUno").val([]);
 	$("#profReferente").val("");
 	$("#ecografista").val([]);
-	$("a[href='#tipoExamen']").prop('disabled', false);
+	$("#continuarSegundario").prop('disabled', false);
 });
 
 $("#NuevoExamenButton").on("click", function(){
@@ -269,7 +269,7 @@ $("#NuevoExamenButton").on("click", function(){
 	$("#ecografista").prop('disabled', false);
 	$("#buscarPacientes").prop('disabled', true);
 	$("#buscarPacientesBtn").prop('disabled', true);
-	$("a[href='#tipoExamen']").prop('disabled', true);
+	$("#continuarSegundario").prop('disabled', true);
 });
 
 $("#GuardarExamenButton").on("click", function(){
@@ -314,7 +314,7 @@ $("#GuardarExamenButton").on("click", function(){
 			});
 		});
 	}
-	$("a[href='#tipoExamen']").prop('disabled', false);
+	$("#continuarSegundario").prop('disabled', false);
 });
 
 $("#CancelarExamenButton").on("click", function(){
@@ -335,7 +335,7 @@ $("#CancelarExamenButton").on("click", function(){
 	
 	$("#buscarPacientes").val($("#id-paciente").val()); 
 	$( "#buscarPacientesBtn" ).trigger("click");
-	$("a[href='#tipoExamen']").prop('disabled', false);
+	$("#continuarSegundario").prop('disabled', false);
 });
 
 
