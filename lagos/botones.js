@@ -51,7 +51,7 @@ function activarBotones() {
    $("input[name='fum']").val(localStorage.fum);
    
    $("input[name='eg']").val(localStorage.eg);
-   var Eg = localStorage.eg;
+   var Eg = parseFloat(localStorage.eg);
    if (Eg.toFixed() < Eg){
 	   $('#diasEcoPrim').val((Eg - Eg.toFixed(0))*10);
 	   $('#semanasEcoPrim').val(Eg.toFixed(0));
