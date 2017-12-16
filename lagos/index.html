@@ -106,7 +106,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><a href="#" title="Crear un nuevo paciente" class="text-uppercase"><small><strong> Ingresar a plataforma de datos</strong></small></a>
+                                        <td><a href="#" title="Crear un nuevo paciente" class="text-uppercase" data-toggle="modal" data-target="#modalLogin"><small><strong> Ingresar a plataforma de datos</strong></small></a>
                                         </td>
                                         <td><span class="badge badge-default">Restringido</span>
                                         </td>
@@ -3110,6 +3110,32 @@
                     <p class="text-muted" style="float:right">Artículo de referencia: Rev. Chil. Pediat 2010; 81 (3): 264-274</p>
                 </div>
             </div>
+        </div>
+        <div class="modal fade" id="modalLogin">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Ingreso a plataforma personal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="userEmail">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="userPassword">
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Ingresar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+              </div>
+            </div>
+          </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
