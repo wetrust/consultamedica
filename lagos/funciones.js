@@ -301,8 +301,8 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 						}
 						
 						data.fecha = $("#fee-dos").val();
-						data.eg[0] = $("#semanasEcoGen").val();
-						data.eg[1] = $("#diasEcoGen").val();
+						data.eg[0] = $("#semanasEcoPrim").val();
+						data.eg[1] = $("#diasEcoPrim").val();
 						data.lcn = $("#lcn").val();;
 						data.saco = $("#saco").val();;
 						
