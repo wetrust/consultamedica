@@ -34,6 +34,36 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 	}
 });
 
+$( "#buscarPacientesBtn" ).on("click", function( e ) {
+	e.preventDefault();
+	var pacientes = JSON.parse(localStorage["pacientes"]);
+	$.each(pacientes, function( index, value ) {
+		if (value.RUT == $("#buscarPacientes").val()){
+			$("#id-paciente").val(value.RUT);
+			$("#nombre-paciente").val(value.nombre);
+			$("select[name='edad_materna']").val(value.edad);
+			$("#procedencia").val(value.ciudad);
+			$("#motivo-examen").val(value.examenes[0].motivo);
+			$("#patologiaObstetricaUno").val(value.examenes[0].patologia);
+			$("#profReferente").val(value.examenes[0].profReferente);
+			$("#ecografista").val(value.examenes[0].profExaminador); 
+			$("input[name='fum']").val(value.examenes[0].FUM);
+			return false;
+		}
+		else{
+			$("#nombre-paciente").val("");
+			$("#id-paciente").val("");
+			$("select[name='edad_materna']").val([]);
+			$("#procedencia").val([]);
+			$("#Lugar-examen").val([]);
+			$("#motivo-examen").val([]);
+			$("#patologiaObstetricaUno").val([]);
+			$("#profReferente").val("");
+			$("#ecografista").val([]);
+		}
+	});
+});
+
 $("#NuevoPacienteButton").on("click", function(){
 	$("#cGuardarPacienteButton").removeClass("d-none");
 	$("#cCancelarPacienteButton").removeClass("d-none");
