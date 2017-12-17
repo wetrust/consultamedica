@@ -1,6 +1,6 @@
 var APPHOST = location.hostname + "/";
 var APPDEBUG = true;
-var APPDEBUG_URL = lagos/;
+var APPDEBUG_URL = "lagos/";
 
 $(document).ready(function{
   //determinar si está en modo depuración
