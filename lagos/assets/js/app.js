@@ -1,4 +1,4 @@
-var APPHOST = location.hostname + "/";
+var APPHOST = "://" + location.hostname + "/";
 var APPDEBUG = true;
 var APPDEBUG_URL = "lagos/";
 
