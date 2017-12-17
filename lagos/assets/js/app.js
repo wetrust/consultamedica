@@ -8,5 +8,5 @@ $(document).ready(function{
     APPHOST += APPDEBUG_URL;
   }
   //cargar el estilo
-  $('head').append(<link rel="stylesheet" href="' + APPHOST + '/consulta.css">');
+  $('head').append('<link rel="stylesheet" href="' + APPHOST + 'assets/css/consulta.css">');
 });
