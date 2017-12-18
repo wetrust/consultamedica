@@ -15,9 +15,11 @@ $(document).ready(function(){
 			    case 2:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
+				var fila = '<th>#</th><th>Ciudad</th>';
+				$('#tableHead').append(fila);
 				if (configuracion.ciudad.length > 0){
 					$.each(configuracion.ciudad, function (i, item) {
-						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
 					$('#eliminarConfig').css("display","block");
@@ -31,9 +33,11 @@ $(document).ready(function(){
 			    case 4:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
+				var fila = '<th>#</th><th>Profesional Ecografista</th>';
+				$('#tableHead').append(fila);
 				if (configuracion.profesionalEcografista.length > 0){
 					$.each(configuracion.profesionalEcografista, function (i, item) {
-						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
 					$('#eliminarConfig').css("display","block");
@@ -45,9 +49,11 @@ $(document).ready(function(){
 			    case 5:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
+				var fila = '<th>#</th><th>Lugar Control Prenatal</th>';
+				$('#tableHead').append(fila);
 				if (configuracion.lugarControlPrenatal.length > 0){
 					$.each(configuracion.lugarControlPrenatal, function (i, item) {
-						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
 					$('#eliminarConfig').removeClass("d-none");
@@ -59,9 +65,11 @@ $(document).ready(function(){
 			    case 6:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
+				var fila = '<th>#</th><th>Patología Obstétrica</th>';
+				$('#tableHead').append(fila);
 				if (configuracion.patologiaObstetrica.length > 0){
 					$.each(configuracion.patologiaObstetrica, function (i, item) {
-						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
 					$('#eliminarConfig').removeClass("d-none");
@@ -73,10 +81,12 @@ $(document).ready(function(){
 			    case 7:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
+				var fila = '<th>#</th><th>Motivo Exámen</th>';
+				$('#tableHead').append(fila);
 				CONFIG_ACTIVE = "motivoExamen";
 				if (configuracion.motivoExamen.length > 0){
 					$.each(configuracion.motivoExamen, function (i, item) {
-						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
 					$('#eliminarConfig').removeClass("d-none");
