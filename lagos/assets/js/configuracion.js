@@ -235,6 +235,76 @@ $(document).ready(function(){
 		$("#oConfig").prop('disabled', false);
 		$("#oConfig").trigger("change");
 	});
+
+	$("#eliminarConfig").on("click", function(){
+		if (window.localStorage) {
+			if (localStorage.configuracion != null) {
+				var configuracion = JSON.parse(localStorage["configuracion"]);
+				var getElement = false;
+				var contador = 0;
+				var nARR = [];
+				var aRR = {id:0, nombre:"Doe"};
+				
+				switch(CONFIG_ACTIVE){
+					case "centroRegional":
+						break;
+					case "ciudad":
+						aRR["id"] = configuracion.ciudad.length +1;
+						aRR["nombre"] = $('#inputConfig').val();
+                        			configuracion.ciudad.push(aRR);
+						break;
+					case "unidadUltrasonografica":
+						aRR["id"] = configuracion.unidadUltrasonografica.length +1;
+						aRR["nombre"] = $('#inputConfig').val();
+						configuracion.unidadUltrasonografica.push(aRR);
+						break;
+					case "profesionalEcografista":
+						aRR["id"] = configuracion.profesionalEcografista.length +1;
+						aRR["nombre"] = $('#inputConfig').val();
+                        			configuracion.profesionalEcografista.push(aRR);
+						break;
+					case "lugarControlPrenatal":
+						aRR["id"] = configuracion.lugarControlPrenatal.length +1;
+						aRR["nombre"] = $('#inputConfig').val();
+						configuracion.lugarControlPrenatal.push(aRR);
+						break;
+					case "patologiaObstetrica":
+						aRR["id"] = configuracion.patologiaObstetrica.length +1;
+						aRR["nombre"] = $('#inputConfig').val();
+                        			configuracion.patologiaObstetrica.push(aRR);
+						break;
+					case "motivoExamen":
+						$.each( $('#tableBody'), function( i, val ) {
+							if ($( val ).hasClass( 'table-active') == true){
+								getElement = true;
+								var nombre = $(val).children('td').html();
+								$.each(configuracion.motivoExamen, function (i, item) {	
+									if (item.nombre != nombre){
+										aRR["id"] =contador +1;
+										aRR["nombre"] = item.nombre;
+										nARR.push(aRR);
+										contador++;
+									}
+								});
+								configuracion.motivoExamen = nARR;
+							}
+						});
+						break;
+				}
+				$('#inputConfig').val("");
+				localStorage["configuracion"] = JSON.stringify(configuracion);
+			}
+		}
+		
+		if (getElement == false){
+			window.alert("haga click sobre un elemento para eliminar");
+		}
+		else{
+			$("#oConfig").trigger("change");
+		}
+	});
+	
+	$("#oConfig").trigger("change");
 });
 
 
