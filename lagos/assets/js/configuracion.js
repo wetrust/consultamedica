@@ -31,7 +31,7 @@ $(document).ready(function(){
 			    case 2:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Ciudad</th>';
+				var fila = '<th>#</th><th>Ciudad</th><th>Centro Regional</th>';
 				$('#tableHead').append(fila);
 				CONFIG_ACTIVE = "ciudad";
 				if (configuracion.ciudad.length > 0){
@@ -48,7 +48,7 @@ $(document).ready(function(){
 			    case 3:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Unidad Ultrasonográfica</th>';
+				var fila = '<th>#</th><th>Unidad Ultrasonográfica</th><th>Ciudad</th>';
 				$('#tableHead').append(fila);
 				CONFIG_ACTIVE = "unidadUltrasonografica";
 				if (configuracion.unidadUltrasonografica.length > 0){
@@ -65,7 +65,7 @@ $(document).ready(function(){
 			    case 4:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Profesional Ecografista</th>';
+				var fila = '<th>#</th><th>Profesional Ecografista</th><th>Unidad Ultrasonográfica</th>';
 				$('#tableHead').append(fila);
 				CONFIG_ACTIVE = "profesionalEcografista";
 				if (configuracion.profesionalEcografista.length > 0){
