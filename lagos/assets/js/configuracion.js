@@ -274,7 +274,7 @@ $(document).ready(function(){
                         			configuracion.patologiaObstetrica.push(aRR);
 						break;
 					case "motivoExamen":
-						$.each( $('#tableBody'), function( i, val ) {
+						$.each( $('#tableBody').children(), function( i, val ) {
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
