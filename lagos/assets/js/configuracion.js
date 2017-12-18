@@ -247,31 +247,106 @@ $(document).ready(function(){
 				
 				switch(CONFIG_ACTIVE){
 					case "centroRegional":
+						$.each( $('#tableBody').children(), function( i, val ) {
+							if ($( val ).hasClass( 'table-active') == true){
+								getElement = true;
+								var nombre = $(val).children('td').html();
+								$.each(configuracion.centroRegional, function (i, item) {	
+									if (item.nombre != nombre){
+										aRR["id"] =contador +1;
+										aRR["nombre"] = item.nombre;
+										nARR.push(aRR);
+										contador++;
+									}
+								});
+								configuracion.centroRegional = nARR;
+							}
+						});
 						break;
 					case "ciudad":
-						aRR["id"] = configuracion.ciudad.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-                        			configuracion.ciudad.push(aRR);
+						$.each( $('#tableBody').children(), function( i, val ) {
+							if ($( val ).hasClass( 'table-active') == true){
+								getElement = true;
+								var nombre = $(val).children('td').html();
+								$.each(configuracion.ciudad, function (i, item) {	
+									if (item.nombre != nombre){
+										aRR["id"] =contador +1;
+										aRR["nombre"] = item.nombre;
+										nARR.push(aRR);
+										contador++;
+									}
+								});
+								configuracion.ciudad = nARR;
+							}
+						});
 						break;
 					case "unidadUltrasonografica":
-						aRR["id"] = configuracion.unidadUltrasonografica.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-						configuracion.unidadUltrasonografica.push(aRR);
+						$.each( $('#tableBody').children(), function( i, val ) {
+							if ($( val ).hasClass( 'table-active') == true){
+								getElement = true;
+								var nombre = $(val).children('td').html();
+								$.each(configuracion.unidadUltrasonografica, function (i, item) {	
+									if (item.nombre != nombre){
+										aRR["id"] =contador +1;
+										aRR["nombre"] = item.nombre;
+										nARR.push(aRR);
+										contador++;
+									}
+								});
+								configuracion.unidadUltrasonografica = nARR;
+							}
+						});
 						break;
 					case "profesionalEcografista":
-						aRR["id"] = configuracion.profesionalEcografista.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-                        			configuracion.profesionalEcografista.push(aRR);
+						$.each( $('#tableBody').children(), function( i, val ) {
+							if ($( val ).hasClass( 'table-active') == true){
+								getElement = true;
+								var nombre = $(val).children('td').html();
+								$.each(configuracion.profesionalEcografista, function (i, item) {	
+									if (item.nombre != nombre){
+										aRR["id"] =contador +1;
+										aRR["nombre"] = item.nombre;
+										nARR.push(aRR);
+										contador++;
+									}
+								});
+								configuracion.profesionalEcografista = nARR;
+							}
+						});
 						break;
 					case "lugarControlPrenatal":
-						aRR["id"] = configuracion.lugarControlPrenatal.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-						configuracion.lugarControlPrenatal.push(aRR);
+						$.each( $('#tableBody').children(), function( i, val ) {
+							if ($( val ).hasClass( 'table-active') == true){
+								getElement = true;
+								var nombre = $(val).children('td').html();
+								$.each(configuracion.lugarControlPrenatal, function (i, item) {	
+									if (item.nombre != nombre){
+										aRR["id"] =contador +1;
+										aRR["nombre"] = item.nombre;
+										nARR.push(aRR);
+										contador++;
+									}
+								});
+								configuracion.lugarControlPrenatal = nARR;
+							}
+						});
 						break;
 					case "patologiaObstetrica":
-						aRR["id"] = configuracion.patologiaObstetrica.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-                        			configuracion.patologiaObstetrica.push(aRR);
+						$.each( $('#tableBody').children(), function( i, val ) {
+							if ($( val ).hasClass( 'table-active') == true){
+								getElement = true;
+								var nombre = $(val).children('td').html();
+								$.each(configuracion.patologiaObstetrica, function (i, item) {	
+									if (item.nombre != nombre){
+										aRR["id"] =contador +1;
+										aRR["nombre"] = item.nombre;
+										nARR.push(aRR);
+										contador++;
+									}
+								});
+								configuracion.patologiaObstetrica = nARR;
+							}
+						});
 						break;
 					case "motivoExamen":
 						$.each( $('#tableBody').children(), function( i, val ) {
@@ -350,178 +425,3 @@ function activateTr(element){
 	});
 	$(element).addClass('table-active');
 }
-
-//manejadore de botones
-
-$( '#eliminarMotivoConfig').on('click', function() {
-	var getElement = false;
-	var contador = 0
-	$.each( $('#MotivoConfigTable').children(), function( i, val ) {
-		if ($( val ).hasClass( 'table-active') == true){
-			getElement = true;
-			var nombre = $(val).children('td').html();
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			//construir un nuevo array de objetos
-			var MotivoExamen = [];
-			$.each(configuracion.configuracion.MotivoExamen, function (i, item) {	
-				if (item.nombre != nombre){
-					var aRR = {id:0, nombre:"Doe"};
-					aRR["id"] =contador +1;
-					aRR["nombre"] = item.nombre;
-				
-                        		MotivoExamen.push(aRR);
-					contador++;
-				}
-			});
-			
-			configuracion.configuracion.MotivoExamen = MotivoExamen;
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-		}
-	});
-	
-	if (getElement == false){
-		window.alert("haga click sobre un elemento para eliminar");
-	}
-	else{
-		makedbLocalStorage();
-	}
- });
-$( '#eliminarLugarConfig').on('click', function() {
-	var getElement = false;
-	var contador = 0
-	$.each( $('#LugarConfigTable').children(), function( i, val ) {
-		if ($( val ).hasClass( 'table-active') == true){
-			getElement = true;
-			var nombre = $(val).children('td').html();
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			//construir un nuevo array de objetos
-			var LugarControlPrenatal = [];
-			$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {	
-				if (item.nombre != nombre){
-					var aRR = {id:0, nombre:"Doe"};
-					aRR["id"] =contador +1;
-					aRR["nombre"] = item.nombre;
-				
-                        		LugarControlPrenatal.push(aRR);
-					contador++;
-				}
-			});
-			
-			configuracion.configuracion.LugarControlPrenatal = LugarControlPrenatal;
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-		}
-	});
-	
-	if (getElement == false){
-		window.alert("haga click sobre un elemento para eliminar");
-	}
-	else{
-		makedbLocalStorage();
-	}
- });
-$( '#eliminarEcografistaConfig').on('click', function() {
-	var getElement = false;
-	var contador = 0
-	$.each( $('#EcografistaConfigTable').children(), function( i, val ) {
-		if ($( val ).hasClass( 'table-active') == true){
-			getElement = true;
-			var nombre = $(val).children('td').html();
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			//construir un nuevo array de objetos
-			var profesional = [];
-			$.each(configuracion.configuracion.profesional, function (i, item) {	
-				if (item.nombre != nombre){
-					var aRR = {id:0, nombre:"Doe"};
-					aRR["id"] =contador +1;
-					aRR["nombre"] = item.nombre;
-				
-                        		profesional.push(aRR);
-					contador++;
-				}
-			});
-			
-			configuracion.configuracion.profesional = profesional;
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-		}
-	});
-	
-	if (getElement == false){
-		window.alert("haga click sobre un elemento para eliminar");
-	}
-	else{
-		makedbLocalStorage();
-	}
- });
-
-$( '#eliminarCiudadConfig').on('click', function() {
-	var getElement = false;
-	var contador = 0
-	$.each( $('#CiudadConfigTable').children(), function( i, val ) {
-		if ($( val ).hasClass( 'table-active') == true){
-			getElement = true;
-			var nombre = $(val).children('td').html();
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			//construir un nuevo array de objetos
-			var ciudad = [];
-			$.each(configuracion.configuracion.ciudad, function (i, item) {	
-				if (item.nombre != nombre){
-					var aRR = {id:0, nombre:"Doe"};
-					aRR["id"] =contador +1;
-					aRR["nombre"] = item.nombre;
-				
-                        		ciudad.push(aRR);
-					contador++;
-				}
-			});
-			
-			configuracion.configuracion.ciudad = ciudad;
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-		}
-	});
-	
-	if (getElement == false){
-		window.alert("haga click sobre un elemento para eliminar");
-	}
-	else{
-		makedbLocalStorage();
-	}
- });
-
-$( '#eliminarPatologiaObstetricaConfig').on('click', function() {
-	var getElement = false;
-	var contador = 0
-	$.each( $('#PatologiaObstetricaConfigTable').children(), function( i, val ) {
-		if ($( val ).hasClass( 'table-active') == true){
-			getElement = true;
-			var nombre = $(val).children('td').html();
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			//construir un nuevo array de objetos
-			var PatologiaObstetrica = [];
-			$.each(configuracion.configuracion.PatologiaObstetrica, function (i, item) {	
-				if (item.nombre != nombre){
-					var aRR = {id:0, nombre:"Doe"};
-					aRR["id"] =contador +1;
-					aRR["nombre"] = item.nombre;
-				
-                        		PatologiaObstetrica.push(aRR);
-					contador++;
-				}
-			});
-			
-			configuracion.configuracion.PatologiaObstetrica = PatologiaObstetrica;
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-		}
-	});
-	
-	if (getElement == false){
-		window.alert("haga click sobre un elemento para eliminar");
-	}
-	else{
-		makedbLocalStorage();
-	}
- });
