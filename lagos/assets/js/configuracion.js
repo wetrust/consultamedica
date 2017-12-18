@@ -22,7 +22,7 @@ $(document).ready(function(){
 						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
-					$('#eliminarConfig').css("display","block");
+					$('#eliminarConfig').removeClass("d-none");
 					$('#tableBody tr').on('click',function(){
 						activateTr(this);
 					});
@@ -39,7 +39,7 @@ $(document).ready(function(){
 						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
-					$('#eliminarConfig').css("display","block");
+					$('#eliminarConfig').removeClass("d-none");
 					$('#tableBody tr').on('click',function(){
 						activateTr(this);
 					});
@@ -56,7 +56,7 @@ $(document).ready(function(){
 						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
-					$('#eliminarConfig').css("display","block");
+					$('#eliminarConfig').removeClass("d-none");
 					$('#tableBody tr').on('click',function(){
 						activateTr(this);
 					});
@@ -73,7 +73,7 @@ $(document).ready(function(){
 						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
-					$('#eliminarConfig').css("display","block");
+					$('#eliminarConfig').removeClass("d-none");
 					$('#tableBody tr').on('click',function(){
 						activateTr(this);
 					});
