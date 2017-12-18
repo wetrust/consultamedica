@@ -260,7 +260,7 @@ $(document).ready(function(){
 										context.contador++;
 									}
 								});
-								configuracion.centroRegional = this.matrisVacia;
+								configuracion.centroRegional = this.nARR;
 							}
 						});
 						break;
@@ -281,7 +281,7 @@ $(document).ready(function(){
 										context.contador++;
 									}
 								});
-								configuracion.ciudad = this.matrisVacia;
+								configuracion.ciudad = this.nARR;
 							}
 						});
 						break;
@@ -302,7 +302,7 @@ $(document).ready(function(){
 										context.contador++;
 									}
 								});
-								configuracion.unidadUltrasonografica = this.matrisVacia;
+								configuracion.unidadUltrasonografica = this.nARR;
 							}
 						});
 						break;
@@ -323,7 +323,7 @@ $(document).ready(function(){
 										context.contador++;
 									}
 								});
-								configuracion.profesionalEcografista = this.matrisVacia;
+								configuracion.profesionalEcografista = this.nARR;
 							}
 						});
 						break;
@@ -344,7 +344,7 @@ $(document).ready(function(){
 										context.contador++;
 									}
 								});
-								configuracion.lugarControlPrenatal = this.matrisVacia;
+								configuracion.lugarControlPrenatal = this.nARR;
 							}
 						});
 						break;
@@ -365,7 +365,7 @@ $(document).ready(function(){
 										context.contador++;
 									}
 								});
-								configuracion.patologiaObstetrica = this.matrisVacia;
+								configuracion.patologiaObstetrica = this.nARR;
 							}
 						});
 						break;
@@ -386,7 +386,7 @@ $(document).ready(function(){
 										context.contador++;
 									}
 								});
-								configuracion.motivoExamen = this.matrisVacia;
+								configuracion.motivoExamen = this.nARR;
 							}
 						});
 						break;
