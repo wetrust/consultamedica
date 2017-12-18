@@ -1,103 +1,132 @@
-function makedbLocalStorage(){
-	
-	if (window.localStorage) {
-		if (localStorage.configuracion != null) {
+var CONFIG_ACTIVE = "";
+$(document).ready(function(){
+	//comprobar si existe la base de datos de configuración
+	makedbLocalStorage();
+	loadConfig();
+	$("#oConfig").on("change", function(){
+		//al cambiar la alternativa, cargar los datos en la tabla
+		if (window.localStorage) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			$('#motivo-examen').empty();
-			$('#MotivoConfigTable').empty();
-			if (configuracion.configuracion.MotivoExamen.length > 0){
-				$.each(configuracion.configuracion.MotivoExamen, function (i, item) {
-				    $('#motivo-examen').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#MotivoConfigTable').append(fila);
-					
-				});
-				$('#eliminarMotivoConfig').css("display","block");
-				$('#MotivoConfigTable tr').on('click',function(){
-					activateTr(this);
-				});
+			$('#eliminarConfig').addClass("d-none");
+			switch($(this).val()) {
+			    case 1:
+				code block
+				break;
+			    case 2:
+				$('#tableHead').empty();
+				$('#tableBody').empty();
+				if (configuracion.configuracion.ciudad.length > 0){
+					$.each(configuracion.configuracion.ciudad, function (i, item) {
+						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						$('#tableBody').append(fila);
+					});
+					$('#eliminarConfig').css("display","block");
+					$('#tableBody tr').on('click',function(){
+						activateTr(this);
+					});
+				}
+				break;
+			    case 3:
+				code block
+				break;
+			    case 4:
+				$('#tableHead').empty();
+				$('#tableBody').empty();
+				if (configuracion.configuracion.profesional.length > 0){
+					$.each(configuracion.configuracion.profesional, function (i, item) {
+						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						$('#tableBody').append(fila);
+					});
+					$('#eliminarConfig').css("display","block");
+					$('#tableBody tr').on('click',function(){
+						activateTr(this);
+					});
+				}
+				break;
+			    case 5:
+				$('#tableHead').empty();
+				$('#tableBody').empty();
+				if (configuracion.configuracion.LugarControlPrenatal.length > 0){
+					$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {
+						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						$('#tableBody').append(fila);
+					});
+					$('#eliminarConfig').removeClass("d-none");
+					$('#tableBody tr').on('click',function(){
+						activateTr(this);
+					});
+				}
+				break;
+			    case 6:
+				$('#tableHead').empty();
+				$('#tableBody').empty();
+				if (configuracion.configuracion.patologiaObstetrica.length > 0){
+					$.each(configuracion.configuracion.PatologiaObstetrica, function (i, item) {
+						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						$('#tableBody').append(fila);
+					});
+					$('#eliminarConfig').removeClass("d-none");
+					$('#tableBody tr').on('click',function(){
+						activateTr(this);
+					});
+				}
+				break;
+			    case 7:
+				$('#tableHead').empty();
+				$('#tableBody').empty();
+				CONFIG_ACTIVE = "motivoExamen";
+				if (configuracion.motivoExamen.length > 0){
+					$.each(configuracion.configuracion.MotivoExamen, function (i, item) {
+						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						$('#tableBody').append(fila);
+					});
+					$('#eliminarConfig').removeClass("d-none");
+					$('#tableBody tr').on('click',function(){
+						activateTr(this);
+					});
+				}
+				break;
 			}
-			
-			$('#Lugar-examen').empty();
-			$('#LugarConfigTable').empty();
-			if (configuracion.configuracion.LugarControlPrenatal.length > 0){
-				$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {
-				    $('#Lugar-examen').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#LugarConfigTable').append(fila);
-					
-				});
-				$('#eliminarLugarConfig').css("display","block");
-				//manejador de click sobre las tablas de configuración
-				$('#LugarConfigTable tr').on('click',function(){
-					activateTr(this);
-				});
-			}
-			$('#ecografista').empty();
-			$('#EcografistaConfigTable').empty();
-			if (configuracion.configuracion.profesional.length > 0){
-				$.each(configuracion.configuracion.profesional, function (i, item) {
-				    $('#ecografista').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#EcografistaConfigTable').append(fila);
-					
-				});
-				$('#eliminarEcografistaConfig').css("display","block");
-				$('#EcografistaConfigTable tr').on('click',function(){
-					activateTr(this);
-				});
-			}
-			
-			$('#procedencia').empty();
-			$('#CiudadConfigTable').empty();
-			if (configuracion.configuracion.ciudad.length > 0){
-				$.each(configuracion.configuracion.ciudad, function (i, item) {
-				    $('#procedencia').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#CiudadConfigTable').append(fila);
-					
-				});
-				$('#eliminarCiudadConfig').css("display","block");
-				$('#CiudadConfigTable tr').on('click',function(){
-					activateTr(this);
-				});
-			}
-			
-			$('#patologiaObstetricaUno').empty();
-			$('#PatologiaObstetricaConfigTable').empty();
-			if (configuracion.configuracion.PatologiaObstetrica.length > 0){
-				$.each(configuracion.configuracion.PatologiaObstetrica, function (i, item) {
-				    $('#patologiaObstetricaUno').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#PatologiaObstetricaConfigTable').append(fila);
-					
-				});
-				$('#eliminarPatologiaObstetricaConfig').css("display","block");
-				$('#PatologiaObstetricaConfigTable tr').on('click',function(){
-					activateTr(this);
-				});
-			}
-			$("#membrete").val(configuracion.configuracion.membrete);
-		}else{
+		}
+		else{
+			window.alert("tu navegador no es compatible con la plataforma, por favor actualiza tu navegador");
+		}
+	});
+});
+
+
+function makedbLocalStorage(){
+	if (window.localStorage) {
+		if (localStorage.configuracion == null) {
 			//crear un array vacio
-			var stringVacio = '{"configuracion": {"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}}';
+			var stringVacio = '{"centroRegional": [],"ciudad":[],"unidadUltrasonografica":[],"profesionalEcografista":[],"lugarControlPrenatal":[],"patologiaObstetrica":[],"motivoExamen":[],"membrete":""}';
 			localStorage["configuracion"] = stringVacio;
+		}
+	}
+	else{
+		window.alert("tu navegador no es compatible con la plataforma, por favor actualiza tu navegador");
+	}
+}
+
+function loadConfig(){
+	if (window.localStorage) {
+		if (localStorage.configuracion == null) {
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			$.each(configuracion.configuracion.MotivoExamen, function (i, item) {
+				$('#motivo-examen').append($('<option>', { value: item.id,text : item.nombre}));
+			});
+			$.each(configuracion.configuracion.PatologiaObstetrica, function (i, item) {
+				$('#patologiaObstetricaUno').append($('<option>', { value: item.id,text : item.nombre}));
+			});
+			$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {
+				$('#Lugar-examen').append($('<option>', { value: item.id,text : item.nombre}));
+			});
+			$.each(configuracion.configuracion.profesional, function (i, item) {
+				$('#ecografista').append($('<option>', { value: item.id,text : item.nombre}));
+			});
+			$.each(configuracion.configuracion.ciudad, function (i, item) {
+				$('#procedencia').append($('<option>', {value: item.id,text : item.nombre}));
+			});
 		}
 	}
 }
