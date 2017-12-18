@@ -1,6 +1,6 @@
-var APPHOST = "https://" + location.hostname + "/";
+var APPHOST = "https://" + location.hostname;
 var APPDEBUG = true;
-var APPDEBUG_URL = "lagos/";
+var APPDEBUG_URL = "/lagos/";
 var APPSETINGS = "app/settings.html";
 
 $(document).ready(function() {
