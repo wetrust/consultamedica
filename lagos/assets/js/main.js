@@ -366,7 +366,7 @@ $( document ).ready(function() {
 					$('#numPacientes').html("N° Pacientes<br>" + Object.keys(pacientes).length);
 					
 	if (window.localStorage) {
-		if (localStorage.configuracion == null) {
+		if (localStorage.configuracion != null) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			$.each(configuracion.motivoExamen, function (i, item) {
 				$('#motivo-examen').append($('<option>', { value: item.id,text : item.nombre}));
