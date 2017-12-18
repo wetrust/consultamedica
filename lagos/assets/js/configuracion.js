@@ -31,8 +31,8 @@ $(document).ready(function(){
 			    case 4:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
-				if (configuracion.profesional.length > 0){
-					$.each(configuracion.profesional, function (i, item) {
+				if (configuracion.profesionalEcografista.length > 0){
+					$.each(configuracion.profesionalEcografista, function (i, item) {
 						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
@@ -120,7 +120,7 @@ function loadConfig(){
 			$.each(configuracion.LugarControlPrenatal, function (i, item) {
 				$('#Lugar-examen').append($('<option>', { value: item.id,text : item.nombre}));
 			});
-			$.each(configuracion.profesional, function (i, item) {
+			$.each(configuracion.profesionalEcografista, function (i, item) {
 				$('#ecografista').append($('<option>', { value: item.id,text : item.nombre}));
 			});
 			$.each(configuracion.ciudad, function (i, item) {
