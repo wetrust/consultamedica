@@ -301,7 +301,6 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
-			makedbLocalStorage();
 			$('#fum-dos').datepicker();
 			$('#fum-dos').datepicker()
 				  .on('changeDate', function(ev){
