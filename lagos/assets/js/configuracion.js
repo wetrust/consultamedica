@@ -169,6 +169,25 @@ $(document).ready(function(){
 				break;
 		}
 	});
+	
+	$("#guardarConfig").on("click", function(){
+		$('#tableHead').parent().parent().removeClass("d-none");
+		$("#nuevoConfig").removeClass("d-none");
+		$("#guardarConfig").addClass("d-none");
+		$("#cancelarConfig").addClass("d-none");
+		$(".formulario").addClass("d-none");
+		$("#oConfig").prop('disabled', false);
+		loadConfig();
+	}
+
+	$("#cancelarConfig").on("click", function(){
+		$('#tableHead').parent().parent().removeClass("d-none");
+		$("#nuevoConfig").removeClass("d-none");
+		$("#guardarConfig").addClass("d-none");
+		$("#cancelarConfig").addClass("d-none");
+		$(".formulario").addClass("d-none");
+		$("#oConfig").prop('disabled', false);
+	}
 });
 
 
