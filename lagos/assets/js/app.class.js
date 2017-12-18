@@ -42,7 +42,7 @@ class app {
 		var contador = $('#membrete').val();
 		if (contador.length < 1){
 			var configuracion = JSON.parse(localStorage["configuracion"]);
-			$('#membrete').val(configuracion.configuracion.membrete);
+			$('#membrete').val(configuracion.membrete);
 		}
 	}
         else if (this.hash=="#tipoExamen"){
