@@ -1,8 +1,9 @@
-var CONFIG_ACTIVE = "";
+var CONFIG_ACTIVE = "centroRegional";
 $(document).ready(function(){
 	//comprobar si existe la base de datos de configuración
 	makedbLocalStorage();
 	loadConfig();
+	
 	$("#oConfig").on("change", function(){
 		//al cambiar la alternativa, cargar los datos en la tabla
 		if (window.localStorage) {
@@ -15,6 +16,7 @@ $(document).ready(function(){
 				$('#tableBody').empty();
 				var fila = '<th>#</th><th>Centro Regional</th>';
 				$('#tableHead').append(fila);
+				CONFIG_ACTIVE = "centroRegional";
 				if (configuracion.centroRegional.length > 0){
 					$.each(configuracion.centroRegional, function (i, item) {
 						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
@@ -31,6 +33,7 @@ $(document).ready(function(){
 				$('#tableBody').empty();
 				var fila = '<th>#</th><th>Ciudad</th>';
 				$('#tableHead').append(fila);
+				CONFIG_ACTIVE = "ciudad";
 				if (configuracion.ciudad.length > 0){
 					$.each(configuracion.ciudad, function (i, item) {
 						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
@@ -47,6 +50,7 @@ $(document).ready(function(){
 				$('#tableBody').empty();
 				var fila = '<th>#</th><th>Unidad Ultrasonográfica</th>';
 				$('#tableHead').append(fila);
+				CONFIG_ACTIVE = "unidadUltrasonografica";
 				if (configuracion.unidadUltrasonografica.length > 0){
 					$.each(configuracion.unidadUltrasonografica, function (i, item) {
 						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
@@ -63,6 +67,7 @@ $(document).ready(function(){
 				$('#tableBody').empty();
 				var fila = '<th>#</th><th>Profesional Ecografista</th>';
 				$('#tableHead').append(fila);
+				CONFIG_ACTIVE = "profesionalEcografista";
 				if (configuracion.profesionalEcografista.length > 0){
 					$.each(configuracion.profesionalEcografista, function (i, item) {
 						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
@@ -79,6 +84,7 @@ $(document).ready(function(){
 				$('#tableBody').empty();
 				var fila = '<th>#</th><th>Lugar Control Prenatal</th>';
 				$('#tableHead').append(fila);
+				CONFIG_ACTIVE = "lugarControlPrenatal";
 				if (configuracion.lugarControlPrenatal.length > 0){
 					$.each(configuracion.lugarControlPrenatal, function (i, item) {
 						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
@@ -95,6 +101,7 @@ $(document).ready(function(){
 				$('#tableBody').empty();
 				var fila = '<th>#</th><th>Patología Obstétrica</th>';
 				$('#tableHead').append(fila);
+				CONFIG_ACTIVE = "patologiaObstetrica";
 				if (configuracion.patologiaObstetrica.length > 0){
 					$.each(configuracion.patologiaObstetrica, function (i, item) {
 						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
@@ -127,6 +134,38 @@ $(document).ready(function(){
 		}
 		else{
 			window.alert("tu navegador no es compatible con la plataforma, por favor actualiza tu navegador");
+		}
+	});
+	
+	$("#nuevoConfig").on("click", function(){
+		$('#tableHead').parent().parent().addClass("d-none");
+		$("#nuevoConfig").addClass("d-none");
+		$("#guardarConfig").removeClass("d-none");
+		$("#cancelarConfig").removeClass("d-none");
+		$(".formulario").removeClass("d-none");
+
+		switch(CONFIG_ACTIVE){
+			case "centroRegional":
+				$("#titleInput").html("Nuevo Centro Regional");
+				break;
+			case "ciudad":
+				$("#titleInput").html("Nueva Ciudad");
+				break;
+			case "unidadUltrasonografica":
+				$("#titleInput").html("Nueva unidad Ultrasonográfica");
+				break;
+			case "profesionalEcografista":
+				$("#titleInput").html("Nuevo ecografista");
+				break;
+			case "lugarControlPrenatal":
+				$("#titleInput").html("Nuevo lugar de control prenatal");
+				break;
+			case "patologiaObstetrica":
+				$("#titleInput").html("Nueva Patología obstétrica");
+				break;
+			case "motivoExamen":
+				$("#titleInput").html("Nuevo motivo de exámen");
+				break;
 		}
 	});
 });
