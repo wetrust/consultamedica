@@ -944,7 +944,7 @@ $('#infadicionalClinicoSiController').on('click', function(){
 });
 
 $('#configSiController').on('click', function(){
-	document.location.hash = "configuracion";
+	document.location = "https://crecimientofetal.cl/lagos/app/settings.html";
 });
 
 $('#configSiController').on('focusout', function(){
