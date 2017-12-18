@@ -241,25 +241,24 @@ $(document).ready(function(){
 			if (localStorage.configuracion != null) {
 				var configuracion = JSON.parse(localStorage["configuracion"]);
 				var getElement = false;
-				
+				var contador = 0;
+				var matrisVacia = [];
+				var aRR = {id:0, nombre:"Doe"};
 				switch(CONFIG_ACTIVE){
 					case "centroRegional":
 						$.each( $('#tableBody').children(), function( i, val ) {
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								var contador = 0;
-								var nARR = [];
-								var aRR = {id:0, nombre:"Doe"};
 								$.each(configuracion.centroRegional, function (i, item) {	
 									if (item.nombre != nombre){
 										aRR["id"] =contador +1;
 										aRR["nombre"] = item.nombre;
-										nARR.push(aRR);
+										matrisVacia.push(aRR);
 										contador++;
 									}
 								});
-								configuracion.centroRegional = nARR;
+								configuracion.centroRegional = matrisVacia;
 							}
 						});
 						break;
@@ -268,18 +267,15 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								var contador = 0;
-								var nARR = [];
-								var aRR = {id:0, nombre:"Doe"};
 								$.each(configuracion.ciudad, function (i, item) {	
 									if (item.nombre != nombre){
 										aRR["id"] =contador +1;
 										aRR["nombre"] = item.nombre;
-										nARR.push(aRR);
+										matrisVacia.push(aRR);
 										contador++;
 									}
 								});
-								configuracion.ciudad = nARR;
+								configuracion.ciudad = matrisVacia;
 							}
 						});
 						break;
@@ -288,18 +284,15 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								var contador = 0;
-								var nARR = [];
-								var aRR = {id:0, nombre:"Doe"};
 								$.each(configuracion.unidadUltrasonografica, function (i, item) {	
 									if (item.nombre != nombre){
 										aRR["id"] =contador +1;
 										aRR["nombre"] = item.nombre;
-										nARR.push(aRR);
+										matrisVacia.push(aRR);
 										contador++;
 									}
 								});
-								configuracion.unidadUltrasonografica = nARR;
+								configuracion.unidadUltrasonografica = matrisVacia;
 							}
 						});
 						break;
@@ -308,18 +301,15 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								var contador = 0;
-								var nARR = [];
-								var aRR = {id:0, nombre:"Doe"};
 								$.each(configuracion.profesionalEcografista, function (i, item) {	
 									if (item.nombre != nombre){
 										aRR["id"] =contador +1;
 										aRR["nombre"] = item.nombre;
-										nARR.push(aRR);
+										matrisVacia.push(aRR);
 										contador++;
 									}
 								});
-								configuracion.profesionalEcografista = nARR;
+								configuracion.profesionalEcografista = matrisVacia;
 							}
 						});
 						break;
@@ -328,18 +318,15 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								var contador = 0;
-								var nARR = [];
-								var aRR = {id:0, nombre:"Doe"};
 								$.each(configuracion.lugarControlPrenatal, function (i, item) {	
 									if (item.nombre != nombre){
 										aRR["id"] =contador +1;
 										aRR["nombre"] = item.nombre;
-										nARR.push(aRR);
+										matrisVacia.push(aRR);
 										contador++;
 									}
 								});
-								configuracion.lugarControlPrenatal = nARR;
+								configuracion.lugarControlPrenatal = matrisVacia;
 							}
 						});
 						break;
@@ -348,18 +335,15 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								var contador = 0;
-								var nARR = [];
-								var aRR = {id:0, nombre:"Doe"};
 								$.each(configuracion.patologiaObstetrica, function (i, item) {	
 									if (item.nombre != nombre){
 										aRR["id"] =contador +1;
 										aRR["nombre"] = item.nombre;
-										nARR.push(aRR);
+										matrisVacia.push(aRR);
 										contador++;
 									}
 								});
-								configuracion.patologiaObstetrica = nARR;
+								configuracion.patologiaObstetrica = matrisVacia;
 							}
 						});
 						break;
@@ -368,18 +352,15 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								var contador = 0;
-								var nARR = [];
-								var aRR = {id:0, nombre:"Doe"};
 								$.each(configuracion.motivoExamen, function (i, item) {	
 									if (item.nombre != nombre){
 										aRR["id"] =contador +1;
 										aRR["nombre"] = item.nombre;
-										nARR.push(aRR);
+										matrisVacia.push(aRR);
 										contador++;
 									}
 								});
-								configuracion.motivoExamen = nARR;
+								configuracion.motivoExamen = matrisVacia;
 							}
 						});
 						break;
