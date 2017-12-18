@@ -241,28 +241,31 @@ $(document).ready(function(){
 		if (window.localStorage) {
 			if (localStorage.configuracion != null) {
 				var configuracion = JSON.parse(localStorage["configuracion"]);
-				var getElement = false;
 				switch(CONFIG_ACTIVE){
 					case "centroRegional":
+						var nombre = "";
+						var getElement = false;
+						var nARR = [];
+						var aRR = {id:0, nombre:"Doe"};
+						var contador = 0;
 						$.each( $('#tableBody').children(), function( i, val ) {
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
-								var nombre = $(val).children('td').html();
-								this.contador = 0;
-								this.nARR = [];
-								this.aRR = {id:0, nombre:"Doe"};
-								var context = this;
-								$.each(configuracion.centroRegional, function (i, item) {	
-									if (item.nombre != nombre){
-										context.aRR["id"] = context.contador +1;
-										context.aRR["nombre"] = item.nombre;
-										context.nARR.push(context.aRR);
-										context.contador++;
-									}
-								});
-								configuracion.centroRegional = this.nARR;
+								nombre = $(val).children('td').html();
 							}
 						});
+						
+						if (getElement == true){
+							$.each(configuracion.centroRegional, function (i, item) {
+								if (item.nombre != nombre){
+									aRR["id"] = contador +1;
+									aRR["nombre"] = item.nombre;
+									nARR.push(aRR);
+									contador++;
+								}
+							});
+							configuracion.centroRegional = nARR;
+						}
 						break;
 					case "ciudad":
 						$.each( $('#tableBody').children(), function( i, val ) {
