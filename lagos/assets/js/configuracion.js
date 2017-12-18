@@ -1,4 +1,6 @@
 var CONFIG_ACTIVE = "centroRegional";
+var matrisVacia = [];
+
 $(document).ready(function(){
 	//comprobar si existe la base de datos de configuración
 	makedbLocalStorage();
@@ -242,7 +244,7 @@ $(document).ready(function(){
 				var configuracion = JSON.parse(localStorage["configuracion"]);
 				var getElement = false;
 				var contador = 0;
-				var matrisVacia = [];
+				matrisVacia = [];
 				var aRR = {id:0, nombre:"Doe"};
 				switch(CONFIG_ACTIVE){
 					case "centroRegional":
