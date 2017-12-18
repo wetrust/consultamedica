@@ -11,6 +11,20 @@ $(document).ready(function(){
 			var valueS = parseInt($("#oConfig option:selected").val());
 			switch(valueS) {
 			    case 1:
+				$('#tableHead').empty();
+				$('#tableBody').empty();
+				var fila = '<th>#</th><th>Centro Regional</th>';
+				$('#tableHead').append(fila);
+				if (configuracion.centroRegional.length > 0){
+					$.each(configuracion.centroRegional, function (i, item) {
+						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						$('#tableBody').append(fila);
+					});
+					$('#eliminarConfig').css("display","block");
+					$('#tableBody tr').on('click',function(){
+						activateTr(this);
+					});
+				}
 				break;
 			    case 2:
 				$('#tableHead').empty();
@@ -29,6 +43,20 @@ $(document).ready(function(){
 				}
 				break;
 			    case 3:
+				$('#tableHead').empty();
+				$('#tableBody').empty();
+				var fila = '<th>#</th><th>Unidad Ultrasonográfica</th>';
+				$('#tableHead').append(fila);
+				if (configuracion.unidadUltrasonografica.length > 0){
+					$.each(configuracion.unidadUltrasonografica, function (i, item) {
+						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						$('#tableBody').append(fila);
+					});
+					$('#eliminarConfig').css("display","block");
+					$('#tableBody tr').on('click',function(){
+						activateTr(this);
+					});
+				}
 				break;
 			    case 4:
 				$('#tableHead').empty();
