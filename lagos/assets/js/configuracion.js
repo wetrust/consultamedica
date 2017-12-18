@@ -15,8 +15,8 @@ $(document).ready(function(){
 			    case 2:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
-				if (configuracion.configuracion.ciudad.length > 0){
-					$.each(configuracion.configuracion.ciudad, function (i, item) {
+				if (configuracion.ciudad.length > 0){
+					$.each(configuracion.ciudad, function (i, item) {
 						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
@@ -31,8 +31,8 @@ $(document).ready(function(){
 			    case 4:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
-				if (configuracion.configuracion.profesional.length > 0){
-					$.each(configuracion.configuracion.profesional, function (i, item) {
+				if (configuracion.profesional.length > 0){
+					$.each(configuracion.profesional, function (i, item) {
 						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
@@ -45,8 +45,8 @@ $(document).ready(function(){
 			    case 5:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
-				if (configuracion.configuracion.LugarControlPrenatal.length > 0){
-					$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {
+				if (configuracion.LugarControlPrenatal.length > 0){
+					$.each(configuracion.LugarControlPrenatal, function (i, item) {
 						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
@@ -59,8 +59,8 @@ $(document).ready(function(){
 			    case 6:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
-				if (configuracion.configuracion.patologiaObstetrica.length > 0){
-					$.each(configuracion.configuracion.PatologiaObstetrica, function (i, item) {
+				if (configuracion.patologiaObstetrica.length > 0){
+					$.each(configuracion.PatologiaObstetrica, function (i, item) {
 						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
@@ -75,7 +75,7 @@ $(document).ready(function(){
 				$('#tableBody').empty();
 				CONFIG_ACTIVE = "motivoExamen";
 				if (configuracion.motivoExamen.length > 0){
-					$.each(configuracion.configuracion.MotivoExamen, function (i, item) {
+					$.each(configuracion.MotivoExamen, function (i, item) {
 						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
@@ -111,19 +111,19 @@ function loadConfig(){
 	if (window.localStorage) {
 		if (localStorage.configuracion == null) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
-			$.each(configuracion.configuracion.MotivoExamen, function (i, item) {
+			$.each(configuracion.MotivoExamen, function (i, item) {
 				$('#motivo-examen').append($('<option>', { value: item.id,text : item.nombre}));
 			});
-			$.each(configuracion.configuracion.PatologiaObstetrica, function (i, item) {
+			$.each(configuracion.PatologiaObstetrica, function (i, item) {
 				$('#patologiaObstetricaUno').append($('<option>', { value: item.id,text : item.nombre}));
 			});
-			$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {
+			$.each(configuracion.LugarControlPrenatal, function (i, item) {
 				$('#Lugar-examen').append($('<option>', { value: item.id,text : item.nombre}));
 			});
-			$.each(configuracion.configuracion.profesional, function (i, item) {
+			$.each(.configuracion.profesional, function (i, item) {
 				$('#ecografista').append($('<option>', { value: item.id,text : item.nombre}));
 			});
-			$.each(configuracion.configuracion.ciudad, function (i, item) {
+			$.each(configuracion.ciudad, function (i, item) {
 				$('#procedencia').append($('<option>', {value: item.id,text : item.nombre}));
 			});
 		}
