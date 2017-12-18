@@ -260,7 +260,12 @@ $(document).ready(function(){
 								if (item.nombre != nombre){
 									aRR["id"] = contador +1;
 									aRR["nombre"] = item.nombre;
-									nARR.push(aRR);
+									if (contador == 0){
+										nARR[0] = aRR;
+									}
+									else{
+										nARR.push(aRR);
+									}
 									contador++;
 								}
 							});
