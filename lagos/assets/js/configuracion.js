@@ -45,8 +45,8 @@ $(document).ready(function(){
 			    case 5:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
-				if (configuracion.LugarControlPrenatal.length > 0){
-					$.each(configuracion.LugarControlPrenatal, function (i, item) {
+				if (configuracion.lugarControlPrenatal.length > 0){
+					$.each(configuracion.lugarControlPrenatal, function (i, item) {
 						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
@@ -60,7 +60,7 @@ $(document).ready(function(){
 				$('#tableHead').empty();
 				$('#tableBody').empty();
 				if (configuracion.patologiaObstetrica.length > 0){
-					$.each(configuracion.PatologiaObstetrica, function (i, item) {
+					$.each(configuracion.patologiaObstetrica, function (i, item) {
 						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
@@ -75,7 +75,7 @@ $(document).ready(function(){
 				$('#tableBody').empty();
 				CONFIG_ACTIVE = "motivoExamen";
 				if (configuracion.motivoExamen.length > 0){
-					$.each(configuracion.MotivoExamen, function (i, item) {
+					$.each(configuracion.motivoExamen, function (i, item) {
 						var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 						$('#tableBody').append(fila);
 					});
