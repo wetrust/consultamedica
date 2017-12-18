@@ -243,34 +243,34 @@ $(document).ready(function(){
 				var configuracion = JSON.parse(localStorage["configuracion"]);
 				switch(CONFIG_ACTIVE){
 					case "centroRegional":
-						var nombre = "";
-						var getElement = false;
-						var nARR = [];
-						var aRR = {id:0, nombre:"Doe"};
-						var contador = 0;
-						$.each( $('#tableBody').children(), function( i, val ) {
-							if ($( val ).hasClass( 'table-active') == true){
-								getElement = true;
-								nombre = $(val).children('td').html();
-							}
-						});
+						//var nombre = "";
+						//var getElement = false;
+						//var nARR = [];
+						//var aRR = {id:0, nombre:"Doe"};
+						//var contador = 0;
+						//$.each( $('#tableBody').children(), function( i, val ) {
+						//	if ($( val ).hasClass( 'table-active') == true){
+						//		getElement = true;
+						//		nombre = $(val).children('td').html();
+						//	}
+						//});
 						
-						if (getElement == true){
-							$.each(configuracion.centroRegional, function (i, item) {
-								if (item.nombre != nombre){
-									aRR["id"] = contador +1;
-									aRR["nombre"] = item.nombre;
-									if (contador == 0){
-										nARR[0] = aRR;
-									}
-									else{
-										nARR.push(aRR);
-									}
-									contador++;
-								}
-							});
-							configuracion.centroRegional = nARR;
-						}
+						//if (getElement == true){
+						//	$.each(configuracion.centroRegional, function (i, item) {
+						//		if (item.nombre != nombre){
+						//			aRR["id"] = contador +1;
+						//			aRR["nombre"] = item.nombre;
+						//			if (contador == 0){
+						//				nARR[0] = aRR;
+						//			}
+						//			else{
+						//				nARR.push(aRR);
+						//			}
+						//			contador++;
+						//		}
+						//	});
+						//	configuracion.centroRegional = nARR;
+						//}
 						break;
 					case "ciudad":
 						$.each( $('#tableBody').children(), function( i, val ) {
