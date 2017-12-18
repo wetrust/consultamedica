@@ -178,6 +178,7 @@ $(document).ready(function(){
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
 		loadConfig();
+		$("#oConfig").trigger("change");
 	}
 
 	$("#cancelarConfig").on("click", function(){
@@ -187,6 +188,7 @@ $(document).ready(function(){
 		$("#cancelarConfig").addClass("d-none");
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
+		$("#oConfig").trigger("change");
 	}
 });
 
