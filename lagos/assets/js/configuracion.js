@@ -10,7 +10,6 @@ $(document).ready(function(){
 			$('#eliminarConfig').addClass("d-none");
 			switch($(this).val()) {
 			    case 1:
-				code block
 				break;
 			    case 2:
 				$('#tableHead').empty();
@@ -27,7 +26,6 @@ $(document).ready(function(){
 				}
 				break;
 			    case 3:
-				code block
 				break;
 			    case 4:
 				$('#tableHead').empty();
