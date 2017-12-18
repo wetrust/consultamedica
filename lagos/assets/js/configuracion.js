@@ -8,7 +8,7 @@ $(document).ready(function(){
 		if (window.localStorage) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			$('#eliminarConfig').addClass("d-none");
-			switch($(this).val()) {
+			switch($("#oConfig selected").val()) {
 			    case 1:
 				break;
 			    case 2:
