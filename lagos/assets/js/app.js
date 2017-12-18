@@ -11,6 +11,6 @@ $(document).ready(function() {
   //cargar el estilo
   $('head').append('<link rel="stylesheet" href="' + APPHOST + 'assets/css/consulta.css">');
   if (location.pathname == APPDEBUG_URL + APPSETINGS){
-    $('head').append('<script src="' + APPHOST + 'assets/js/configuracion.js" async></script>');
+    $('head').append('<script src="' + APPHOST + 'assets/js/configuracion.js" async="true"></script>');
   }
 });
