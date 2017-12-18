@@ -120,7 +120,7 @@ function loadConfig(){
 			$.each(configuracion.LugarControlPrenatal, function (i, item) {
 				$('#Lugar-examen').append($('<option>', { value: item.id,text : item.nombre}));
 			});
-			$.each(.configuracion.profesional, function (i, item) {
+			$.each(configuracion.profesional, function (i, item) {
 				$('#ecografista').append($('<option>', { value: item.id,text : item.nombre}));
 			});
 			$.each(configuracion.ciudad, function (i, item) {
