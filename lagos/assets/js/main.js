@@ -364,6 +364,27 @@ $( document ).ready(function() {
 				else{
 					var pacientes = JSON.parse(localStorage["pacientes"]);
 					$('#numPacientes').html("N° Pacientes<br>" + Object.keys(pacientes).length);
+					
+	if (window.localStorage) {
+		if (localStorage.configuracion == null) {
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			$.each(configuracion.motivoExamen, function (i, item) {
+				$('#motivo-examen').append($('<option>', { value: item.id,text : item.nombre}));
+			});
+			$.each(configuracion.patologiaObstetrica, function (i, item) {
+				$('#patologiaObstetricaUno').append($('<option>', { value: item.id,text : item.nombre}));
+			});
+			$.each(configuracion.lugarControlPrenatal, function (i, item) {
+				$('#Lugar-examen').append($('<option>', { value: item.id,text : item.nombre}));
+			});
+			$.each(configuracion.profesionalEcografista, function (i, item) {
+				$('#ecografista').append($('<option>', { value: item.id,text : item.nombre}));
+			});
+			$.each(configuracion.ciudad, function (i, item) {
+				$('#procedencia').append($('<option>', {value: item.id,text : item.nombre}));
+			});
+		}
+	}
 				}
 			}
 			
