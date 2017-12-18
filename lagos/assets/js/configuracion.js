@@ -143,6 +143,7 @@ $(document).ready(function(){
 		$("#guardarConfig").removeClass("d-none");
 		$("#cancelarConfig").removeClass("d-none");
 		$(".formulario").removeClass("d-none");
+		$("#oConfig").prop('disabled', true);
 
 		switch(CONFIG_ACTIVE){
 			case "centroRegional":
