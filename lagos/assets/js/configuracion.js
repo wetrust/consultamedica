@@ -179,7 +179,7 @@ $(document).ready(function(){
 		$("#oConfig").prop('disabled', false);
 		loadConfig();
 		$("#oConfig").trigger("change");
-	}
+	});
 
 	$("#cancelarConfig").on("click", function(){
 		$('#tableHead').parent().parent().removeClass("d-none");
@@ -189,7 +189,7 @@ $(document).ready(function(){
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
 		$("#oConfig").trigger("change");
-	}
+	});
 });
 
 
