@@ -131,6 +131,23 @@ $(document).ready(function(){
 					});
 				}
 				break;
+			    case 8:
+				$('#tableHead').empty();
+				$('#tableBody').empty();
+				var fila = '<th>#</th><th>Previsión</th>';
+				$('#tableHead').append(fila);
+				CONFIG_ACTIVE = "prevision";
+				if (configuracion.prevision.length > 0){
+					$.each(configuracion.prevision, function (i, item) {
+						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						$('#tableBody').append(fila);
+					});
+					$('#eliminarConfig').removeClass("d-none");
+					$('#tableBody tr').on('click',function(){
+						activateTr(this);
+					});
+				}
+				break;
 			}
 		}
 		else{
@@ -167,6 +184,9 @@ $(document).ready(function(){
 				break;
 			case "motivoExamen":
 				$("#titleInput").html("Nuevo motivo de exámen");
+				break;
+			case "prevision":
+				$("#titleInput").html("Nueva previsión");
 				break;
 		}
 	});
@@ -218,6 +238,11 @@ $(document).ready(function(){
 						aRR["id"] = configuracion.motivoExamen.length +1;
 						aRR["nombre"] = $('#inputConfig').val();
 						configuracion.motivoExamen.push(aRR);
+						break;
+					case "prevision":
+						aRR["id"] = configuracion.prevision.length +1;
+						aRR["nombre"] = $('#inputConfig').val();
+						configuracion.prevision.push(aRR);
 						break;
 				}
 				$('#inputConfig').val("");
