@@ -197,6 +197,7 @@ $("#GuardarPacienteButton").on("click", function(){
 				paciente[0].nombre = $("#nombre-paciente").val();
 				paciente[0].edad = $("select[name='edad_materna'] option:selected").val();
 				paciente[0].ciudad = $("#procedencia option:selected").val();
+				paciente[0].prevision = $("#prevision option:selected").val();
 				paciente[0].examenes[0].motivo = $("#motivo-examen option:selected").val();
 				paciente[0].examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
 				paciente[0].examenes[0].profReferente = $("#profReferente").val();
@@ -221,6 +222,7 @@ $("#GuardarPacienteButton").on("click", function(){
 				paciente[cantidad].nombre = $("#nombre-paciente").val();
 				paciente[cantidad].edad = $("select[name='edad_materna'] option:selected").val();
 				paciente[cantidad].ciudad = $("#procedencia option:selected").val();
+				paciente[0].prevision = $("#prevision option:selected").val();
 				paciente[cantidad].examenes[0].motivo = $("#motivo-examen option:selected").val();
 				paciente[cantidad].examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
 				paciente[cantidad].examenes[0].profReferente = $("#profReferente").val();
