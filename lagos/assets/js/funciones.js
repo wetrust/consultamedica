@@ -140,6 +140,7 @@ $("#NuevoPacienteButton").on("click", function(){
 	$("#cGuardarPacienteButton").removeClass("d-none");
 	$("#cCancelarPacienteButton").removeClass("d-none");
 	$("#cNuevoPacienteButton").addClass("d-none");
+	$("#cModificarPacienteButton").addClass("d-none")
 	$("#nombre-paciente").prop('disabled', false);
 	$("#id-paciente").prop('disabled', false);
 	$("select[name='edad_materna']").prop('disabled', false);
@@ -168,6 +169,31 @@ $("#NuevoPacienteButton").on("click", function(){
 		return false;
 	});
 });
+
+$("#ModificarPacienteButton").on("click", function(){
+	$("#cGuardarPacienteButton").removeClass("d-none");
+	$("#cCancelarPacienteButton").removeClass("d-none");
+	$("#cNuevoPacienteButton").addClass("d-none");
+	$("#nombre-paciente").prop('disabled', false);
+	$("#cModificarPacienteButton").addClass("d-none")
+	$("#id-paciente").prop('disabled', false);
+	$("select[name='edad_materna']").prop('disabled', false);
+	$("#procedencia").prop('disabled', false);
+	$("#Lugar-examen").prop('disabled', false);
+	$("#motivo-examen").prop('disabled', false);
+	$("#patologiaObstetricaUno").prop('disabled', false);
+	$("#profReferente").prop('disabled', false);
+	$("#ecografista").prop('disabled', false);
+	$("#buscarPacientes").prop('disabled', true);
+	$("#buscarPacientesBtn").prop('disabled', true);
+	$("#prevision").prop('disabled', false);
+	
+	$("#continuarSegundario").on("click", function(e){
+		e.preventDefault();
+		return false;
+	});
+});
+
 
 $("#GuardarPacienteButton").on("click", function(){
 	$("#cGuardarPacienteButton").addClass("d-none");
@@ -208,29 +234,57 @@ $("#GuardarPacienteButton").on("click", function(){
 			});
 		}
 		else{
-			$.getJSON( "base.json", function( data ) {
-				var pacientes = JSON.parse(localStorage["pacientes"]);
-				var paciente = [];
-				
-				paciente = pacientes
-				paciente.push(data);
-
-				var cantidad = Object.keys(pacientes).length;
-				cantidad = cantidad -1;
-				
-				paciente[cantidad].RUT = $("#id-paciente").val();
-				paciente[cantidad].nombre = $("#nombre-paciente").val();
-				paciente[cantidad].edad = $("select[name='edad_materna'] option:selected").val();
-				paciente[cantidad].ciudad = $("#procedencia option:selected").val();
-				paciente[0].prevision = $("#prevision option:selected").val();
-				paciente[cantidad].examenes[0].motivo = $("#motivo-examen option:selected").val();
-				paciente[cantidad].examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
-				paciente[cantidad].examenes[0].profReferente = $("#profReferente").val();
-				paciente[cantidad].examenes[0].profExaminador = $("#ecografista option:selected").val();
-				paciente[cantidad].examenes[0].FUM = $("input[name='fum']").val();
-				
-				localStorage["pacientes"] = JSON.stringify(paciente);
+			//determinar si es un nuevo paciente o correccion de un paciente anterior
+			var pacientes = JSON.parse(localStorage["pacientes"]);
+			var mdfk = false;
+			var pctIndex = 0;
+			
+			$.each(pacientes, function( index, value ) {
+				if (value.RUT == $("#buscarPacientes").val()){
+					mdfk = true;
+					pctIndex = index;
+				}
 			});
+			
+			if (mdfk == true){
+				var cantidad = Object.keys(pacientes[pctIndex].examenes).length;
+				
+				pacientes[pctIndex].RUT = $("#id-paciente").val();
+				pacientes[pctIndex].nombre = $("#nombre-paciente").val();
+				pacientes[pctIndex].edad = $("select[name='edad_materna'] option:selected").val();
+				pacientes[pctIndex].ciudad = $("#procedencia option:selected").val();
+				pacientes[pctIndex].prevision = $("#prevision option:selected").val();
+				pacientes[pctIndex].examenes[0].motivo = $("#motivo-examen option:selected").val();
+				pacientes[pctIndex].examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
+				pacientes[pctIndex].examenes[0].profReferente = $("#profReferente").val();
+				pacientes[pctIndex].examenes[0].profExaminador = $("#ecografista option:selected").val();
+				pacientes[pctIndex].examenes[0].FUM = $("input[name='fum']").val();
+			}
+			else{
+				$.getJSON( "base.json", function( data ) {
+					var pacientes = JSON.parse(localStorage["pacientes"]);
+					var paciente = [];
+
+					paciente = pacientes
+					paciente.push(data);
+
+					var cantidad = Object.keys(pacientes).length;
+					cantidad = cantidad -1;
+
+					paciente[cantidad].RUT = $("#id-paciente").val();
+					paciente[cantidad].nombre = $("#nombre-paciente").val();
+					paciente[cantidad].edad = $("select[name='edad_materna'] option:selected").val();
+					paciente[cantidad].ciudad = $("#procedencia option:selected").val();
+					paciente[cantidad].prevision = $("#prevision option:selected").val();
+					paciente[cantidad].examenes[0].motivo = $("#motivo-examen option:selected").val();
+					paciente[cantidad].examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
+					paciente[cantidad].examenes[0].profReferente = $("#profReferente").val();
+					paciente[cantidad].examenes[0].profExaminador = $("#ecografista option:selected").val();
+					paciente[cantidad].examenes[0].FUM = $("input[name='fum']").val();
+
+					localStorage["pacientes"] = JSON.stringify(paciente);
+				});
+			}
 		}
 	}
 	$("#continuarSegundario").off("click");
