@@ -445,7 +445,7 @@ function makedbLocalStorage(){
 	if (window.localStorage) {
 		if (localStorage.configuracion == null) {
 			//crear un array vacio
-			var stringVacio = '{"centroRegional": [],"ciudad":[],"unidadUltrasonografica":[],"profesionalEcografista":[],"lugarControlPrenatal":[],"patologiaObstetrica":[],"motivoExamen":[],"membrete":""}';
+			var stringVacio = '{"centroRegional": [],"ciudad":[],"unidadUltrasonografica":[],"profesionalEcografista":[],"lugarControlPrenatal":[],"patologiaObstetrica":[],"motivoExamen":[],"prevision":[],"membrete":""}';
 			localStorage["configuracion"] = stringVacio;
 		}
 	}
