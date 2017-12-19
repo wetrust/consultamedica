@@ -87,6 +87,7 @@ $( "#buscarPacientesBtn" ).on("click", function( e ) {
 				var nExm = Object.keys(value.examenes).length -1;
 				$("input[name='fum']").val(value.examenes[nExm].FUM);
 				$("#cNuevoExamenButton").removeClass("d-none");
+				$("#cModificarPacienteButton").removeClass("d-none");
 				return false;
 			}
 			else{
@@ -116,6 +117,7 @@ $( "#buscarPacientesBtn" ).on("click", function( e ) {
 				var nExm = Object.keys(value.examenes).length -1;
 				$("input[name='fum']").val(value.examenes[nExm].FUM);
 				$("#cNuevoExamenButton").removeClass("d-none");
+				$("#cModificarPacienteButton").removeClass("d-none");
 				return false;
 			}
 			else{
@@ -171,6 +173,7 @@ $("#GuardarPacienteButton").on("click", function(){
 	$("#cGuardarPacienteButton").addClass("d-none");
 	$("#cCancelarPacienteButton").addClass("d-none");
 	$("#cNuevoPacienteButton").removeClass("d-none");
+	$("#cModificarPacienteButton").removeClass("d-none");
 	$("#nombre-paciente").prop('disabled', true);
 	$("#id-paciente").prop('disabled', true);
 	$("select[name='edad_materna']").prop('disabled', true);
