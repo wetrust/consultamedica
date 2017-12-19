@@ -23,7 +23,7 @@ class app {
 	this.lastLoginIP();
 	$('[data-toggle="tooltip"]').tooltip();
 	this.resetInputs()
-	this.displayElement("home");
+	this.onHashChange();
     }
 
     onHashChange(){
@@ -74,6 +74,10 @@ class app {
 	}
 	else if (this.hash=="#agenda"){
 		this.displayElement("agenda");
+	}
+	else{
+		this.displayElement("home");
+		this.clearData();
 	}
     }
 
