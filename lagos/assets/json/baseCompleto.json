@@ -4,6 +4,7 @@
    "nombre":"",
    "apellido":"",
    "edad":0,
+   "prevision":"",
    "ciudad":[],
    "lugar de control":[],
    "examenes":[
