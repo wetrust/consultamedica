@@ -385,6 +385,10 @@ $( document ).ready(function() {
 			$.each(configuracion.ciudad, function (i, item) {
 				$('#procedencia').append($('<option>', {value: item.id,text : item.nombre}));
 			});
+			
+			$.each(configuracion.prevision, function (i, item) {
+				$('#prevision').append($('<option>', {value: item.id,text : item.nombre}));
+			});
 		}
 	}
 			
