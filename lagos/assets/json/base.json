@@ -5,6 +5,7 @@
    "apellido":"",
    "edad":0,
    "ciudad":[],
+   "prevision":"",
    "lugar de control":[],
    "examenes":[
       {
