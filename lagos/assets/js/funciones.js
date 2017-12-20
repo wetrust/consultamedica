@@ -21,6 +21,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 					var nExm = Object.keys(value.examenes).length -1;
 					$("input[name='fum']").val(value.examenes[nExm].FUM);
 					$("#cNuevoExamenButton").removeClass("d-none");
+					$("#cModificarPacienteButton").removeClass("d-none");
 					return false;
 				}
 				else{
@@ -50,6 +51,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 					var nExm = Object.keys(value.examenes).length -1;
 					$("input[name='fum']").val(value.examenes[nExm].FUM);
 					$("#cNuevoExamenButton").removeClass("d-none");
+					$("#cModificarPacienteButton").removeClass("d-none");
 					return false;
 				}
 				else{
@@ -259,6 +261,7 @@ $("#GuardarPacienteButton").on("click", function(){
 				pacientes[pctIndex].examenes[cantidad].profReferente = $("#profReferente").val();
 				pacientes[pctIndex].examenes[cantidad].profExaminador = $("#ecografista option:selected").val();
 				pacientes[pctIndex].examenes[cantidad].FUM = $("input[name='fum']").val();
+				localStorage["pacientes"] = JSON.stringify(pacientes);
 			}
 			else{
 				$.getJSON( "assets/json/base.json", function( data ) {
