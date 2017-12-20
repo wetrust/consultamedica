@@ -215,7 +215,7 @@ $("#GuardarPacienteButton").on("click", function(){
 	
 	if (window.localStorage) {
 		if (typeof localStorage.pacientes == 'undefined') {
-			$.getJSON( "base.json", function( data ) {
+			$.getJSON( "assets/json/base.json", function( data ) {
 				var paciente = [];
 				paciente[0] = data;
 				
@@ -261,7 +261,7 @@ $("#GuardarPacienteButton").on("click", function(){
 				pacientes[pctIndex].examenes[0].FUM = $("input[name='fum']").val();
 			}
 			else{
-				$.getJSON( "base.json", function( data ) {
+				$.getJSON( "assets/json/base.json", function( data ) {
 					var pacientes = JSON.parse(localStorage["pacientes"]);
 					var paciente = [];
 
@@ -358,7 +358,7 @@ $("#GuardarExamenButton").on("click", function(){
 	$("#buscarPacientesBtn").prop('disabled', false);
 	
 	if (window.localStorage) {
-		$.getJSON( "BaseExamen.json", function( data ) {
+		$.getJSON( "assets/json/BaseExamen.json", function( data ) {
 			var pacientes = JSON.parse(localStorage["pacientes"]);
 			var pIndex = 0;
 			
@@ -443,7 +443,7 @@ $("#cGuardarEcoPrimButton").on("click", function(){
 	
 	if (window.localStorage) {
 		if (typeof localStorage.pacientes != 'undefined') {
-			$.getJSON( "ecoprimtrim.json", function( data ) {
+			$.getJSON( "assets/json/ecoprimtrim.json", function( data ) {
 				var pacientes = JSON.parse(localStorage["pacientes"]);
 				var qPct = 0;
 				$.each(pacientes, function( index, value ) {
@@ -615,7 +615,7 @@ $("#cGuardarEcoSegButton").on("click", function(){
 	
 	if (window.localStorage) {
 		if (typeof localStorage.pacientes != 'undefined') {
-			$.getJSON( "ecosegtrim.json", function( data ) {
+			$.getJSON( "assets/json/ecosegtrim.json", function( data ) {
 				var pacientes = JSON.parse(localStorage["pacientes"]);
 				var qPct = 0;
 				$.each(pacientes, function( index, value ) {
