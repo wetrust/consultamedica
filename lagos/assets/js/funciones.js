@@ -78,7 +78,7 @@ $( "#buscarPacientesBtn" ).on("click", function( e ) {
 			if (value.RUT == $("#buscarPacientes").val()){
 				$("#id-paciente").val(value.RUT);
 				$("#nombre-paciente").val(value.nombre);
-				$("select[name='edad_materna']").val(value.edad);
+				$("select[name='edad_materna").val(value.edad);
 				$("#procedencia").val(value.ciudad);
 				$("#motivo-examen").val(value.examenes[0].motivo);
 				$("#patologiaObstetricaUno").val(value.examenes[0].patologia);
@@ -254,11 +254,11 @@ $("#GuardarPacienteButton").on("click", function(){
 				pacientes[pctIndex].edad = $("select[name='edad_materna'] option:selected").val();
 				pacientes[pctIndex].ciudad = $("#procedencia option:selected").val();
 				pacientes[pctIndex].prevision = $("#prevision option:selected").val();
-				pacientes[pctIndex].examenes[0].motivo = $("#motivo-examen option:selected").val();
-				pacientes[pctIndex].examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
-				pacientes[pctIndex].examenes[0].profReferente = $("#profReferente").val();
-				pacientes[pctIndex].examenes[0].profExaminador = $("#ecografista option:selected").val();
-				pacientes[pctIndex].examenes[0].FUM = $("input[name='fum']").val();
+				pacientes[pctIndex].examenes[cantidad].motivo = $("#motivo-examen option:selected").val();
+				pacientes[pctIndex].examenes[cantidad].patologia = $("#patologiaObstetricaUno option:selected").val();
+				pacientes[pctIndex].examenes[cantidad].profReferente = $("#profReferente").val();
+				pacientes[pctIndex].examenes[cantidad].profExaminador = $("#ecografista option:selected").val();
+				pacientes[pctIndex].examenes[cantidad].FUM = $("input[name='fum']").val();
 			}
 			else{
 				$.getJSON( "assets/json/base.json", function( data ) {
