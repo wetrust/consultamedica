@@ -35,6 +35,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 					$("#profReferente").val("");
 					$("#ecografista").val([]);
 					$("#cNuevoExamenButton").addClass("d-none");
+					$("#cModificarPacienteButton").addClass("d-none");
 				}
 			});
 		}else{
@@ -65,6 +66,7 @@ $( "#buscarPacientes" ).keypress(function( event ) {
 					$("#profReferente").val("");
 					$("#ecografista").val([]);
 					$("#cNuevoExamenButton").addClass("d-none");
+					$("#cModificarPacienteButton").addClass("d-none");
 				}	
 			});
 		}
@@ -103,6 +105,7 @@ $( "#buscarPacientesBtn" ).on("click", function( e ) {
 				$("#profReferente").val("");
 				$("#ecografista").val([]);
 				$("#cNuevoExamenButton").addClass("d-none");
+				$("#cModificarPacienteButton").addClass("d-none");
 			}
 		});
 	}else{
@@ -133,6 +136,7 @@ $( "#buscarPacientesBtn" ).on("click", function( e ) {
 				$("#profReferente").val("");
 				$("#ecografista").val([]);
 				$("#cNuevoExamenButton").addClass("d-none");
+				$("#cModificarPacienteButton").addClass("d-none");
 			}	
 		});
 	}
