@@ -475,7 +475,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		var configuracion = JSON.parse(localStorage["configuracion"]);
 		var membrete = $('#inputMembrete').val();
-		configuracion.configuracion.membrete = membrete;
+		configuracion.membrete = membrete;
 
 		localStorage["configuracion"] = JSON.stringify(configuracion);
 	});
