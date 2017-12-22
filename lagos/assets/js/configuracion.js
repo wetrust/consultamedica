@@ -482,6 +482,10 @@ $(document).ready(function(){
 	});
 	
 	$("a[name='"+ CONFIG_ACTIVE+ "']").trigger("click");
+	
+	//cargar membrete en input membrete
+	var configuracion = JSON.parse(localStorage["configuracion"]);
+	$('#inputMembrete').val(configuracion.membrete);
 });
 
 function limitLines(obj, e) {
