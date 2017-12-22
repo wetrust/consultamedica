@@ -162,16 +162,16 @@ $(document).ready(function(){
 				var fila = '<th>#</th><th>Nombre del profesional referente</th>';
 				$('#tableHead').append(fila);
 				CONFIG_ACTIVE = "profesionalReferente";
-				//if (configuracion.prevision.length > 0){
-				//	$.each(configuracion.prevision, function (i, item) {
-				//		fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-				//		$('#tableBody').append(fila);
-				//	});
-				//	$('#eliminarConfig').removeClass("d-none");
-				//	$('#tableBody tr').on('click',function(){
-				//		activateTr(this);
-				//	});
-				//}
+				if (configuracion.profesionalReferente.length > 0){
+					$.each(configuracion.profesionalReferente, function (i, item) {
+						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+						$('#tableBody').append(fila);
+					});
+					$('#eliminarConfig').removeClass("d-none");
+					$('#tableBody tr').on('click',function(){
+						activateTr(this);
+					});
+				}
 				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo profesional referente");
 				break;
 			}
@@ -274,6 +274,9 @@ $(document).ready(function(){
 						configuracion.prevision.push(aRR);
 						break;
 					case "profesionalReferente":
+						aRR["id"] = configuracion.profesionalReferente.length +1;
+						aRR["nombre"] = $('#inputConfig').val();
+						configuracion.profesionalReferente.push(aRR);
 						break;
 				}
 				$('#inputConfig').val("");
@@ -476,7 +479,7 @@ function makedbLocalStorage(){
 	if (window.localStorage) {
 		if (localStorage.configuracion == null) {
 			//crear un array vacio
-			var stringVacio = '{"centroRegional": [],"ciudad":[],"unidadUltrasonografica":[],"profesionalEcografista":[],"lugarControlPrenatal":[],"patologiaObstetrica":[],"motivoExamen":[],"prevision":[],"membrete":""}';
+			var stringVacio = '{"centroRegional": [],"ciudad":[],"unidadUltrasonografica":[],"profesionalEcografista":[],"profesionalReferente":[],"lugarControlPrenatal":[],"patologiaObstetrica":[],"motivoExamen":[],"prevision":[],"membrete":""}';
 			localStorage["configuracion"] = stringVacio;
 		}
 	}
