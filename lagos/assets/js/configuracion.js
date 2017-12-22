@@ -5,12 +5,12 @@ $(document).ready(function(){
 	makedbLocalStorage();
 	loadConfig();
 	
-	$("#oConfig").on("change", function(){
+	$("a[href='#dp']").on("click", function(){
 		//al cambiar la alternativa, cargar los datos en la tabla
 		if (window.localStorage) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			$('#eliminarConfig').addClass("d-none");
-			var valueS = parseInt($("#oConfig option:selected").val());
+			var valueS = parseInt($(this).data("id"));
 			switch(valueS) {
 			    case 1:
 				$('#tableHead').empty();
@@ -249,7 +249,7 @@ $(document).ready(function(){
 				localStorage["configuracion"] = JSON.stringify(configuracion);
 			}
 		}
-		$("#oConfig").trigger("change");
+		$("a[name="+ CONFIG_ACTIVE+ ']").trigger("click");
 	});
 
 	$("#cancelarConfig").on("click", function(){
@@ -259,7 +259,7 @@ $(document).ready(function(){
 		$("#cancelarConfig").addClass("d-none");
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
-		$("#oConfig").trigger("change");
+		$("a[name="+ CONFIG_ACTIVE+ ']").trigger("click");
 	});
 
 	$("#eliminarConfig").on("click", function(){
@@ -433,11 +433,11 @@ $(document).ready(function(){
 			window.alert("haga click sobre un elemento para eliminar");
 		}
 		else{
-			$("#oConfig").trigger("change");
+			$("a[name="+ CONFIG_ACTIVE+ ']").trigger("click");
 		}
 	});
 	
-	$("#oConfig").trigger("change");
+	$("a[name="+ CONFIG_ACTIVE+ ']").trigger("click");
 });
 
 
