@@ -3961,7 +3961,10 @@ function imprSelec(muestra)
 	var ventimp= window.open(" ","popimpr");
 	var estilo = '<style>@media print {.col{width:40%; height:30% float:left;}.text-center{text-align:center;}.pie-pagina{font-size:9px;}.pie-pagina-dos{font-size:10px;}#lineclear{clear:both;}h4{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}.membrete::first-letter{font-size:14px;}.membrete::first-line {font-size: 14px;}.membrete {font-size: 10px;}}</style>';
 	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
-	var membrete = $("#membrete").val().replace(/\r\n|\r|\n/g,"<br />");
+	
+	var configuracion = JSON.parse(localStorage["configuracion"]);
+	var membrete = configuracion.membrete;
+	membrete = membrete.replace(/\r\n|\r|\n/g,"<br />");
 	
 	var day = ("0" + aplication.day.getDate()).slice(-2);
 	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
@@ -3987,7 +3990,8 @@ function imprInforme(muestra)
 	var ventimp = window.open(" ","popimpr");
 	var estilo = '<style>@media print{*{margin:0;padding:0;border:0}p,th,td{font-size:11px;line-height:17px;margin-bottom:7px}th,td{margin:0 !important;padding:0 !important}.pie-pagina{font-size:9px}.pie-pagina-dos{font-size:10px}#lineclear{clear:both}h3{font-size:130%;text-align:center}h3::first-letter{font-size:100%}.membrete::first-letter{font-size:14px;}.membrete::first-line{font-size:14px;}.membrete{font-size:10px;}}</style>';
 	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
-	var membrete = $("#membrete").val().replace(/\r\n|\r|\n/g,"<br />");
+	var membrete = configuracion.membrete;
+	membrete = membrete.replace(/\r\n|\r|\n/g,"<br />");
 	
 	document = document.replace(":DATOS", ficha);
 	document = document.replace(":ESTILO", estilo);
