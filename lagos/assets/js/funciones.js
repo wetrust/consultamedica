@@ -878,103 +878,131 @@ $( '#mensajeRestringido' ).on( 'click', function() {
 	$( '#impDoppler2').remove();
 	$( '#impDoppler1').remove();
 	$( '#impDoppler1').remove();
-        $('#popupBody').html("<form><h5 class='text-center'>Formulario solicitud de ingreso</h5><div class='row'><div class='form-group col'> <label for='contact-name'>Nombre, Apellido</label> <input type='text' class='form-control' id='contact-name'> </div><div class='form-group col'> <label for='contact-id'>RUT o DNI</label> <input type='text' class='form-control' id='contact-id'> </div></div><div class='row'><div class='form-group col'> <label for='contact-country'>Nacionalidad</label> <input type='text' class='form-control' id='contact-country'> </div><div class='form-group col'> <label for='contact-job-location'>Pais</label> <input type='text' class='form-control' id='contact-job-location'> </div></div><div class='row'><div class='form-group col'> <label for='contact-grade'>Año de título profesional</label> <input type='text' class='form-control' id='contact-grade'> </div><div class='form-group col'> <label for='contact-register'>N° de registro profesional</label> <input type='text' class='form-control' id='contact-register'> </div></div><div class='row'><div class='form-group col'> <label for='contact-expertise'>Años de experiencia en US Obstétrico</label> <input type='text' class='form-control' id='contact-expertise'> </div><div class='form-group col'> <label for='contact-job'>Profesión</label> <select class='form-control' id='contact-job'> <option>Médico con especialidad en perinatología</option> <option>Médico con especialidad en gineco-obstetricia</option> <option>Médico sin especialidad en gineco-obstetricia</option> <option>Médico en formación de la especialidad</option> <option>Otros, ultrosonografistas gineco - obstétrico</option> </select> </div></div><div class='row'><div class='form-group col'> <label for='contact-phone'>Teléfono de contacto</label> <input type='number' class='form-control' id='contact-phone'> </div><div class='form-group col'> <label for='contact-email'>Correo electrónico</label> <input type='email' class='form-control' id='contact-email'> <small id='emailHelp' class='form-text text-muted'>Nunca compartiremos tu correo con terceros</small></div></div><div class='row'><div class='col'><h5>Lugar de desempeño laboral</h5></div></div><div class='row'><div class='form-group col'> <label for='contact-city'>Ciudad</label> <input type='text' class='form-control' id='contact-city'> </div><div class='form-group col'> <label for='contact-ss'>Servicio de salud / Clínica</label>  <input type='text' class='form-control' id='contact-ss'></div><div class='form-group col'><label for='contact-h'>Hospital / Unidad académica</label>   <input type='text' class='form-control' id='contact-h'></div></div><div class='row'><div class='form-group col'> <label for='contact-consultorio'>Consultorio público</label> <input type='text' class='form-control' id='contact-consultorio'> </div><div class='form-group col'> <label for='contact-private-job'>Consulta privada</label> <input type='text' class='form-control' id='contact-private-job'> </div></div><div class='form-group'> <label for='contact-comments'>Comentarios y sugerencias</label> <input type='text' class='form-control' id='contact-comments'> </div></form>");
-	$( "#contact-name" ).keypress(function( event ) {
+        $('#popupBody').html("<form><h5 class='text-center'>Formulario solicitud de ingreso</h5><div class='row'><div class='form-group col'><label>Nombre, Apellido</label> <input class="form-control" name="prof_name" type="text" /></div><div class="form-group col"><label>RUT o DNI</label> <input class="form-control" name="prof_dni" type="text" /></div></div><div class="row"><div class="form-group col"><label>Nacionalidad</label> <input class="form-control" name="prof_nationality" type="text" /></div><div class="form-group col"><label>Pais</label> <input class="form-control" name="prof_country" type="text" /></div></div><div class="row"><div class="form-group col"><label>A&ntilde;o de t&iacute;tulo profesional</label> <input class="form-control" name="prof_year_title" type="text" /></div><div class="form-group col"><label>N&deg; de registro profesional</label> <input class="form-control" name="prof_register" type="text" /></div></div><div class="row"><div class="form-group col"><label>A&ntilde;os de experiencia en US Obst&eacute;trico</label> <input class="form-control" name="prof_expertise" type="text" /></div><div class="form-group col"><label>Profesi&oacute;n</label><select class="form-control" name="prof_prof"><option>M&eacute;dico con especialidad en perinatolog&iacute;a</option><option>M&eacute;dico con especialidad en gineco-obstetricia</option><option>M&eacute;dico sin especialidad en gineco-obstetricia</option><option>M&eacute;dico en formaci&oacute;n de la especialidad</option><option>Otros, ultrosonografistas gineco - obst&eacute;trico</option></select></div></div><div class="row"><div class="form-group col"><label>Tel&eacute;fono de contacto</label> <input class="form-control" name="prof_tel" type="number" /></div><div class="form-group col"><label>Correo electr&oacute;nico</label> <input class="form-control" name="prof_email" type="email" /> <small class="form-text text-muted">Nunca compartiremos tu correo con terceros</small></div></div><div class="row"><div class="col"><h5>Lugar de desempe&ntilde;o laboral</h5></div></div><div class="row"><div class="form-group col"><label>Ciudad</label> <input class="form-control" name="prof_work_city" type="text" /></div><div class="form-group col"><label>Servicio de salud / Cl&iacute;nica</label> <input class="form-control" name="prof_work_service" type="text" /></div><div class="form-group col"><label>Hospital / Unidad acad&eacute;mica</label> <input class="form-control" name="prof_work_hospital" type="text" /></div></div><div class="row"><div class="form-group col"><label>Consultorio p&uacute;blico</label> <input class="form-control" name="prof_work_doctor_office_public" type="text" /></div><div class="form-group col"><label>Consulta privada</label> <input class="form-control" name="prof_work_doctor_office_private" type="text" /></div></div><div class="form-group"><label>Comentarios y sugerencias</label> <input class="form-control" name="prof_suggestions" type="text" /></div></form>");
+	
+	$( "input[name='prof_name']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-id").focus()
+	     $("input[name='prof_dni']").focus()
 	  }
 	});
 	
-	$( "#contact-id" ).keypress(function( event ) {
+	$( "input[name='prof_dni']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-country").focus()
+	     $("input[name='prof_nationality']").focus()
 	  }
 	});
 	
-	$( "#contact-country" ).keypress(function( event ) {
+	$( "input[name='prof_nationality']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-job-location").focus()
+	     $("input[name='prof_country']").focus()
 	  }
 	});
-	$( "#contact-job" ).keypress(function( event ) {
+	$( "input[name='prof_country']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-city").focus()
+	     $("input[name='prof_year_title']").focus()
 	  }
 	});
-	$( "#contact-grade" ).keypress(function( event ) {
+	$( "input[name='prof_year_title']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-register").focus()
+	     $("input[name='prof_register']").focus()
 	  }
 	});
 	
-	$( "#contact-register" ).keypress(function( event ) {
+	$( "input[name='prof_register']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-expertise").focus()
+	     $("input[name='prof_expertise']").focus()
 	  }
 	});
-	$( "#contact-expertise" ).keypress(function( event ) {
+	$( "input[name='prof_expertise']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-job").focus()
+	     $("input[name='prof_prof']").focus()
 	  }
 	});
-	$( "#contact-job-location" ).keypress(function( event ) {
+	$( "input[name='prof_prof']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-grade").focus()
+	     $("input[name='prof_tel']").focus()
 	  }
 	});
-	$( "#contact-city" ).keypress(function( event ) {
+	$( "input[name='prof_tel']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-phone").focus()
+	     $("input[name='prof_email']").focus()
 	  }
 	});
-	$( "#contact-phone" ).keypress(function( event ) {
+	$( "input[name='prof_email']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-email").focus()
+	     $("input[name='prof_work_city']").focus()
 	  }
 	});
-	$( "#contact-email" ).keypress(function( event ) {
+	$( "input[name='prof_work_city']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-ss").focus()
+	     $("input[name='prof_work_service']").focus()
 	  }
 	});
-	$( "#contact-ss" ).keypress(function( event ) {
+	$( "input[name='prof_work_service']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-h").focus()
+	     $("input[name='prof_work_hospital']").focus()
 	  }
 	});
-	$( "#contact-h" ).keypress(function( event ) {
+	$( "input[name='prof_work_hospital']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-consultorio").focus()
+	     $("input[name='prof_work_doctor_office_public']").focus()
 	  }
 	});
-	$( "#contact-consultorio" ).keypress(function( event ) {
+	$( "input[name='prof_work_doctor_office_public']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-private-job").focus()
+	     $("input[name='prof_work_doctor_office_private']").focus()
 	  }
 	});
-	$( "#contact-private-job" ).keypress(function( event ) {
+	$( "input[name='prof_work_doctor_office_private']" ).keypress(function( event ) {
 	  if ( event.which == 13 ) {
 	     event.preventDefault();
-	     $("#contact-comments").focus()
+	     $("input[name='prof_suggestions']").focus() 
 	  }
 	});
-	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Genere PDF y envíe solicitud de ingreso</button>");
-	$( '#impDoppler1').on("click", function(){
-	      //crearInformeEcoPrimTrim();
+	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='enviarInscripcion'>Genere PDF y envíe solicitud de ingreso</button>");
+	$( '#enviarInscripcion').on("click", function(){
+		emailjs.send(
+			"gmail",
+			"template_svZNhnBn",
+			{
+				prof_name: $( "input[name='prof_name']" ).val(),
+				prof_dni: $( "input[name='prof_dni']" ).val(),
+				prof_nationality: $( "input[name='prof_nationality']" ).val(),
+				prof_country: $( "input[name='prof_country']" ).val(),
+				prof_year_title: $( "input[name='prof_year_title']" ).val(),
+				prof_register: $( "input[name='prof_register']" ).val(),
+				prof_expertise: $( "input[name='prof_expertise']" ).val(),
+				prof_prof: $( "input[name='prof_prof']" ).val(),
+				prof_tel: $( "input[name='prof_tel']" ).val(),
+				prof_email: $( "input[name='prof_email']" ).val(),
+				prof_work_city: $( "input[name='prof_work_city']" ).val(),
+				prof_work_service: $( "input[name='prof_work_service']" ).val(),
+				prof_work_hospital: $( "input[name='prof_work_hospital']" ).val(),
+				prof_work_doctor_office_public: $( "input[name='prof_work_doctor_office_public']" ).val(),
+				prof_work_doctor_office_private: $( "input[name='prof_work_doctor_office_private']" ).val(),
+				prof_suggestions: $( "input[name='prof_suggestions']" ).val()
+		}).then(function(response) {
+			console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+			$( '#enviarInscripcion').remove();
+	      		$('#popupGenerico').modal('hide');
+		}, function(err) {
+			console.log("FAILED. error=", err);
+		});
+	      
 	});
 	$('#popupGenerico').modal('show');
 });
