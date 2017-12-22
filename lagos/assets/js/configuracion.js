@@ -156,6 +156,24 @@ $(document).ready(function(){
 				}
 				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva previsión");
 				break;
+			    case 9:
+				$('#tableHead').empty();
+				$('#tableBody').empty();
+				var fila = '<th>#</th><th>Previsión</th>';
+				$('#tableHead').append(fila);
+				CONFIG_ACTIVE = "profesionalReferente";
+				//if (configuracion.prevision.length > 0){
+				//	$.each(configuracion.prevision, function (i, item) {
+				//		fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+				//		$('#tableBody').append(fila);
+				//	});
+				//	$('#eliminarConfig').removeClass("d-none");
+				//	$('#tableBody tr').on('click',function(){
+				//		activateTr(this);
+				//	});
+				//}
+				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo profesional referente");
+				break;
 			}
 		}
 		else{
@@ -195,6 +213,9 @@ $(document).ready(function(){
 				break;
 			case "prevision":
 				$("#titleInput").html("Nueva previsión");
+				break;
+			case "profesionalReferente":
+				$("#titleInput").html("Nuevo Profesional referente");
 				break;
 		}
 	});
@@ -251,6 +272,8 @@ $(document).ready(function(){
 						aRR["id"] = configuracion.prevision.length +1;
 						aRR["nombre"] = $('#inputConfig').val();
 						configuracion.prevision.push(aRR);
+						break;
+					case "profesionalReferente":
 						break;
 				}
 				$('#inputConfig').val("");
