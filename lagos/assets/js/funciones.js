@@ -1056,16 +1056,6 @@ $('#configSiController').on('focusout', function(){
 	$('#configNoController').button('toggle');
 });
 
-
-$("#saveMebrete").on("click", function(event){
-	event.preventDefault();
-	var configuracion = JSON.parse(localStorage["configuracion"]);
-	var membrete = $('#membrete').val();
-	configuracion.configuracion.membrete = membrete;
-	
-	localStorage["configuracion"] = JSON.stringify(configuracion);
-});
-
 //enters
 $( "#lcn" ).keypress(function( event ) {
   if ( event.which == 13 ) {
