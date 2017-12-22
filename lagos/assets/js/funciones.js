@@ -232,7 +232,7 @@ $("#GuardarPacienteButton").on("click", function(){
 				paciente[0].prevision = $("#prevision option:selected").val();
 				paciente[0].examenes[0].motivo = $("#motivo-examen option:selected").val();
 				paciente[0].examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
-				paciente[0].examenes[0].profReferente = $("#profReferente").val();
+				paciente[0].examenes[0].profReferente = $("#profReferente option:selected").val();
 				paciente[0].examenes[0].profExaminador = $("#ecografista option:selected").val();
 				paciente[0].examenes[0].FUM = $("input[name='fum']").val();
 				
@@ -262,7 +262,7 @@ $("#GuardarPacienteButton").on("click", function(){
 				pacientes[pctIndex].prevision = $("#prevision option:selected").val();
 				pacientes[pctIndex].examenes[cantidad].motivo = $("#motivo-examen option:selected").val();
 				pacientes[pctIndex].examenes[cantidad].patologia = $("#patologiaObstetricaUno option:selected").val();
-				pacientes[pctIndex].examenes[cantidad].profReferente = $("#profReferente").val();
+				pacientes[pctIndex].examenes[cantidad].profReferente = $("#profReferente option:selected").val();
 				pacientes[pctIndex].examenes[cantidad].profExaminador = $("#ecografista option:selected").val();
 				pacientes[pctIndex].examenes[cantidad].FUM = $("input[name='fum']").val();
 				localStorage["pacientes"] = JSON.stringify(pacientes);
@@ -285,7 +285,7 @@ $("#GuardarPacienteButton").on("click", function(){
 					paciente[cantidad].prevision = $("#prevision option:selected").val();
 					paciente[cantidad].examenes[0].motivo = $("#motivo-examen option:selected").val();
 					paciente[cantidad].examenes[0].patologia = $("#patologiaObstetricaUno option:selected").val();
-					paciente[cantidad].examenes[0].profReferente = $("#profReferente").val();
+					paciente[cantidad].examenes[0].profReferente = $("#profReferente option:selected").val();
 					paciente[cantidad].examenes[0].profExaminador = $("#ecografista option:selected").val();
 					paciente[cantidad].examenes[0].FUM = $("input[name='fum']").val();
 
