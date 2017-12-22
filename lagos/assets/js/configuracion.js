@@ -1,4 +1,5 @@
 var CONFIG_ACTIVE = "centroRegional";
+var keynum, lines = 1;
 
 $(document).ready(function(){
 	//comprobar si existe la base de datos de configuración
@@ -483,6 +484,23 @@ $(document).ready(function(){
 	$("a[name='"+ CONFIG_ACTIVE+ "']").trigger("click");
 });
 
+function limitLines(obj, e) {
+        // IE
+        if(window.event) {
+          keynum = e.keyCode;
+        // Netscape/Firefox/Opera
+        } else if(e.which) {
+          keynum = e.which;
+        }
+
+        if(keynum == 13) {
+          if(lines == obj.rows) {
+            return false;
+          }else{
+            lines++;
+          }
+        }
+}
 
 function makedbLocalStorage(){
 	if (window.localStorage) {
