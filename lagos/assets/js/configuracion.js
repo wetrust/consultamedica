@@ -471,6 +471,15 @@ $(document).ready(function(){
 		}
 	});
 	
+	$("#saveMebrete").on("click", function(event){
+		event.preventDefault();
+		var configuracion = JSON.parse(localStorage["configuracion"]);
+		var membrete = $('#inputMembrete').val();
+		configuracion.configuracion.membrete = membrete;
+
+		localStorage["configuracion"] = JSON.stringify(configuracion);
+	});
+	
 	$("a[name='"+ CONFIG_ACTIVE+ "']").trigger("click");
 });
 
