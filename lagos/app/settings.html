@@ -40,6 +40,9 @@
                         <a class="nav-link" data-toggle="tab" href="#dp" data-id="3" name="unidadUltrasonografica">Unidad Ultrasonográfica</a>
                      </li>
                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#membrete" data-id="3">Membrete</a>
+                     </li>
+                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#dp" data-id="4" name="profesionalEcografista">Profesional Ecografista</a>
                      </li>
                      <li class="nav-item">
@@ -106,6 +109,20 @@
                                  <input type="text" class="form-control" id="inputConfig">
                               </div>
                            </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="tab-pane" id="membrete" role="tabpanel">
+                  <h2 class="my-4">Membrete para informe</h2>
+                  <div class="card">
+                     <div class="card-block">
+                        <div class="form-group">
+                           <h5 id="titleInput">Escriba un membrete personalizado</h5>
+                        </div>
+                        <div class="form-group">
+                           <textarea class="form-control" rows="3" onkeydown="return limitLines(this, event)" id="inputMembrete"></textarea>
+                           <button class="btn btn-danger" id="saveMebrete"><small><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Membrete</small></button>
                         </div>
                      </div>
                   </div>
