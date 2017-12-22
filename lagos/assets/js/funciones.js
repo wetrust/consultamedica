@@ -297,7 +297,7 @@ $("#GuardarPacienteButton").on("click", function(){
 		//cargar la tabla
 		var pacientes = JSON.parse(localStorage["pacientes"]);
 		$.each(pacientes, function( index, value ) {
-			var fila = '<tr><th scope="row">' + item.index + '</th><td>' + item.nombre + ' ' + item.apellido + '</td><td>' + item.edad + '</td><td>' + item.ciudad + '</td><td>' + item.examenes[0].motivo + '</td><td>' + item.examenes[0].profExaminador + '</td></tr>';
+			var fila = '<tr><th scope="row">' + index + '</th><td>' + value.nombre + ' ' + value.apellido + '</td><td>' + value.edad + '</td><td>' + value.ciudad + '</td><td>' + value.examenes[0].motivo + '</td><td>' + value.examenes[0].profExaminador + '</td></tr>';
 			$('#tablePacientesBody').append(fila);
 		});
 		
