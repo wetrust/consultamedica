@@ -28,6 +28,7 @@ $(document).ready(function(){
 						activateTr(this);
 					});
 				}
+				$("#nuevoConfig").val("<i class='fa fa-plus' aria-hidden='true'></i> Nueva región de salud");
 				break;
 			    case 2:
 				$('#tableHead').empty();
@@ -45,6 +46,7 @@ $(document).ready(function(){
 						activateTr(this);
 					});
 				}
+				$("#nuevoConfig").val("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo Hospital");
 				break;
 			    case 3:
 				$('#tableHead').empty();
@@ -62,6 +64,7 @@ $(document).ready(function(){
 						activateTr(this);
 					});
 				}
+				$("#nuevoConfig").val("<i class='fa fa-plus' aria-hidden='true'></i> Nueva unidad ultrasonográfica");
 				break;
 			    case 4:
 				$('#tableHead').empty();
@@ -79,6 +82,7 @@ $(document).ready(function(){
 						activateTr(this);
 					});
 				}
+				$("#nuevoConfig").val("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo profesional ultrasonografista");
 				break;
 			    case 5:
 				$('#tableHead').empty();
@@ -96,6 +100,7 @@ $(document).ready(function(){
 						activateTr(this);
 					});
 				}
+				$("#nuevoConfig").val("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo lugar de control");
 				break;
 			    case 6:
 				$('#tableHead').empty();
@@ -113,6 +118,7 @@ $(document).ready(function(){
 						activateTr(this);
 					});
 				}
+				$("#nuevoConfig").val("<i class='fa fa-plus' aria-hidden='true'></i> Nueva patología");
 				break;
 			    case 7:
 				$('#tableHead').empty();
@@ -130,6 +136,7 @@ $(document).ready(function(){
 						activateTr(this);
 					});
 				}
+				$("#nuevoConfig").val("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo motivo de exámen");
 				break;
 			    case 8:
 				$('#tableHead').empty();
@@ -147,6 +154,7 @@ $(document).ready(function(){
 						activateTr(this);
 					});
 				}
+				$("#nuevoConfig").val("<i class='fa fa-plus' aria-hidden='true'></i> Nueva previsión");
 				break;
 			}
 		}
