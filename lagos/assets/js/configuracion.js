@@ -159,7 +159,7 @@ $(document).ready(function(){
 			    case 9:
 				$('#tableHead').empty();
 				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Previsión</th>';
+				var fila = '<th>#</th><th>Nombre del profesional referente</th>';
 				$('#tableHead').append(fila);
 				CONFIG_ACTIVE = "profesionalReferente";
 				//if (configuracion.prevision.length > 0){
