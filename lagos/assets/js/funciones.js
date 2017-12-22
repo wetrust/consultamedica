@@ -293,6 +293,14 @@ $("#GuardarPacienteButton").on("click", function(){
 				});
 			}
 		}
+		
+		//cargar la tabla
+		var pacientes = JSON.parse(localStorage["pacientes"]);
+		$.each(pacientes, function( index, value ) {
+			var fila = '<tr><th scope="row">' + item.index + '</th><td>' + item.nombre + ' ' + item.apellido'</td><td>' + item.edad + '</td><td>' + item.ciudad + '</td><td>' + item.examenes[0].motivo + '</td><td>' + item.examenes[0].profExaminador + '</td></tr>';
+			$('#tablePacientesBody').append(fila);
+		});
+		
 	}
 	$("#continuarSegundario").off("click");
 });
