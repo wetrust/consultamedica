@@ -249,7 +249,7 @@ $(document).ready(function(){
 				localStorage["configuracion"] = JSON.stringify(configuracion);
 			}
 		}
-		$("a[name="+ CONFIG_ACTIVE+ ']").trigger("click");
+		$("a[name='"+ CONFIG_ACTIVE+ "']").trigger("click");
 	});
 
 	$("#cancelarConfig").on("click", function(){
@@ -259,7 +259,7 @@ $(document).ready(function(){
 		$("#cancelarConfig").addClass("d-none");
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
-		$("a[name="+ CONFIG_ACTIVE+ ']").trigger("click");
+		$("a[name='"+ CONFIG_ACTIVE + "']").trigger("click");
 	});
 
 	$("#eliminarConfig").on("click", function(){
@@ -433,11 +433,11 @@ $(document).ready(function(){
 			window.alert("haga click sobre un elemento para eliminar");
 		}
 		else{
-			$("a[name="+ CONFIG_ACTIVE+ ']").trigger("click");
+			$("a[name='"+ CONFIG_ACTIVE+ "']").trigger("click");
 		}
 	});
 	
-	$("a[name="+ CONFIG_ACTIVE+ ']").trigger("click");
+	$("a[name='"+ CONFIG_ACTIVE+ "']").trigger("click");
 });
 
 
