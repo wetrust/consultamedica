@@ -389,6 +389,10 @@ $( document ).ready(function() {
 			$.each(configuracion.prevision, function (i, item) {
 				$('#prevision').append($('<option>', {value: item.id,text : item.nombre}));
 			});
+			
+			$.each(configuracion.profesionalReferente, function (i, item) {
+				$('#profReferente').append($('<option>', {value: item.id,text : item.nombre}));
+			});
 		}
 	}
 			
