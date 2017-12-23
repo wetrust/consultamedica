@@ -84,3 +84,5 @@ curl -X PUT "https://api.cloudflare.com/client/v4/zones/023e105f4ecef8ad9ca31a83
     "total_count": 2000
   }
 }
+
+http://www.cuelogic.com/blog/php-and-html5-websocket-server-and-client-communication/
