@@ -31,6 +31,7 @@ $(document).ready(function(){
 					});
 				}
 				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva región de salud");
+				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar región de salud");
 				break;
 			    case 2:
 				$('#tableHead').empty();
@@ -49,6 +50,7 @@ $(document).ready(function(){
 					});
 				}
 				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo Hospital");
+				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar Hospital");
 				break;
 			    case 3:
 				$('#tableHead').empty();
@@ -67,6 +69,7 @@ $(document).ready(function(){
 					});
 				}
 				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva unidad ultrasonográfica");
+				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar unidad ultrasonográfica");
 				break;
 			    case 4:
 				$('#tableHead').empty();
@@ -85,6 +88,7 @@ $(document).ready(function(){
 					});
 				}
 				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo profesional ultrasonografista");
+				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar profesional ultrasonografista");
 				break;
 			    case 5:
 				$('#tableHead').empty();
@@ -103,6 +107,7 @@ $(document).ready(function(){
 					});
 				}
 				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo lugar de control");
+				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar lugar de control");
 				break;
 			    case 6:
 				$('#tableHead').empty();
@@ -121,6 +126,7 @@ $(document).ready(function(){
 					});
 				}
 				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva patología");
+				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar patología");
 				break;
 			    case 7:
 				$('#tableHead').empty();
@@ -139,6 +145,7 @@ $(document).ready(function(){
 					});
 				}
 				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo motivo de exámen");
+				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar motivo de exámen");
 				break;
 			    case 8:
 				$('#tableHead').empty();
@@ -157,6 +164,7 @@ $(document).ready(function(){
 					});
 				}
 				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva previsión");
+				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar previsión");
 				break;
 			    case 9:
 				$('#tableHead').empty();
@@ -175,6 +183,7 @@ $(document).ready(function(){
 					});
 				}
 				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo profesional referente");
+				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar profesional referente");
 				break;
 			}
 		}
