@@ -232,6 +232,51 @@ $(document).ready(function(){
 		}
 	});
 	
+	$("#editarConfig").on("click", function(){
+		$('#tableHead').parent().parent().addClass("d-none");
+		$("#nuevoConfig").addClass("d-none");
+		$("#guardarConfig").removeClass("d-none");
+		$("#editarConfig").addClass("d-none");
+		$("#cancelarConfig").removeClass("d-none");
+		$(".formulario").removeClass("d-none");
+		$("#oConfig").prop('disabled', true);
+		
+		$.each( $("#tableBody").children(), function( i, val ) {
+			if ($( val ).hasClass( 'table-active')){
+				window.alert($( val ).children("td").html());
+			}
+		});
+		
+		switch(CONFIG_ACTIVE){
+			case "centroRegional":
+				$("#titleInput").html("Editar Centro Regional");
+				break;
+			case "ciudad":
+				$("#titleInput").html("Editar Ciudad");
+				break;
+			case "unidadUltrasonografica":
+				$("#titleInput").html("Editar unidad Ultrasonográfica");
+				break;
+			case "profesionalEcografista":
+				$("#titleInput").html("Editar ecografista");
+				break;
+			case "lugarControlPrenatal":
+				$("#titleInput").html("Editar lugar de control prenatal");
+				break;
+			case "patologiaObstetrica":
+				$("#titleInput").html("Editar Patología obstétrica");
+				break;
+			case "motivoExamen":
+				$("#titleInput").html("Editar motivo de exámen");
+				break;
+			case "prevision":
+				$("#titleInput").html("Editar previsión");
+				break;
+			case "profesionalReferente":
+				$("#titleInput").html("Editar Profesional referente");
+				break;
+		}
+	});
 	$("#guardarConfig").on("click", function(){
 		$('#tableHead').parent().parent().removeClass("d-none");
 		$("#nuevoConfig").removeClass("d-none");
