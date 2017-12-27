@@ -11,6 +11,7 @@ $(document).ready(function(){
 		if (window.localStorage) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			$('#eliminarConfig').addClass("d-none");
+			$("#editarConfig").addClass("d-none");
 			var valueS = parseInt($(this).data("id"));
 			switch(valueS) {
 			    case 1:
@@ -186,6 +187,7 @@ $(document).ready(function(){
 		$('#tableHead').parent().parent().addClass("d-none");
 		$("#nuevoConfig").addClass("d-none");
 		$("#guardarConfig").removeClass("d-none");
+		$("#editarConfig").addClass("d-none");
 		$("#cancelarConfig").removeClass("d-none");
 		$(".formulario").removeClass("d-none");
 		$("#oConfig").prop('disabled', true);
@@ -225,6 +227,7 @@ $(document).ready(function(){
 		$('#tableHead').parent().parent().removeClass("d-none");
 		$("#nuevoConfig").removeClass("d-none");
 		$("#guardarConfig").addClass("d-none");
+		$("#editarConfig").removeClass("d-none");
 		$("#cancelarConfig").addClass("d-none");
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
@@ -291,6 +294,7 @@ $(document).ready(function(){
 		$('#tableHead').parent().parent().removeClass("d-none");
 		$("#nuevoConfig").removeClass("d-none");
 		$("#guardarConfig").addClass("d-none");
+		$("#editarConfig").addClass("d-none");
 		$("#cancelarConfig").addClass("d-none");
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
@@ -547,4 +551,5 @@ function activateTr(element){
 		$( val ).removeClass( 'table-active');
 	});
 	$(element).addClass('table-active');
+	$("#editarConfig").removeClass("d-none");
 }
