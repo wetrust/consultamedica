@@ -197,6 +197,7 @@ $(document).ready(function(){
 		$("#nuevoConfig").addClass("d-none");
 		$("#guardarConfig").removeClass("d-none");
 		$("#editarConfig").addClass("d-none");
+		$("#eliminarConfig").addClass("d-none");
 		$("#cancelarConfig").removeClass("d-none");
 		$(".formulario").removeClass("d-none");
 		$("#oConfig").prop('disabled', true);
@@ -230,6 +231,13 @@ $(document).ready(function(){
 				$("#titleInput").html("Nuevo Profesional referente");
 				break;
 		}
+		
+		$("a").on("click",function(e){
+			e.preventDefault();
+			window.alert("Primero debes guardar o cancelar");
+			$("#guardarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" );
+			$("#cancelarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" ); 
+		});
 	});
 	
 	$("#editarConfig").on("click", function(){
@@ -237,13 +245,14 @@ $(document).ready(function(){
 		$("#nuevoConfig").addClass("d-none");
 		$("#guardarConfig").removeClass("d-none");
 		$("#editarConfig").addClass("d-none");
+		$("#eliminarConfig").addClass("d-none");
 		$("#cancelarConfig").removeClass("d-none");
 		$(".formulario").removeClass("d-none");
 		$("#oConfig").prop('disabled', true);
 		
 		$.each( $("#tableBody").children(), function( i, val ) {
 			if ($( val ).hasClass( 'table-active')){
-				window.alert($( val ).children("td").html());
+				$("#inputConfig").val($( val ).children("td").html());
 			}
 		});
 		
@@ -276,6 +285,13 @@ $(document).ready(function(){
 				$("#titleInput").html("Editar Profesional referente");
 				break;
 		}
+		
+		$("a").on("click",function(e){
+			e.preventDefault();
+			window.alert("Primero debes guardar o cancelar");
+			$("#guardarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" );
+			$("#cancelarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" ); 
+		});
 	});
 	$("#guardarConfig").on("click", function(){
 		$('#tableHead').parent().parent().removeClass("d-none");
@@ -341,6 +357,9 @@ $(document).ready(function(){
 				localStorage["configuracion"] = JSON.stringify(configuracion);
 			}
 		}
+		
+		$("a").off("click");
+		
 		$("a[name='"+ CONFIG_ACTIVE+ "']").trigger("click");
 	});
 
@@ -352,6 +371,7 @@ $(document).ready(function(){
 		$("#cancelarConfig").addClass("d-none");
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
+		$("a").off("click");
 		$("a[name='"+ CONFIG_ACTIVE + "']").trigger("click");
 	});
 
