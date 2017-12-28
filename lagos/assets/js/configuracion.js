@@ -34,7 +34,7 @@ $(document).ready(function(){
 						});
 					}
 					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva región de salud");
-					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar región de salud");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Modificar región de salud");
 					break;
 				    case 2:
 					$('#tableHead').empty();
@@ -53,7 +53,7 @@ $(document).ready(function(){
 						});
 					}
 					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo Hospital");
-					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar Hospital");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Modificar Hospital");
 					break;
 				    case 3:
 					$('#tableHead').empty();
@@ -72,7 +72,7 @@ $(document).ready(function(){
 						});
 					}
 					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva unidad ultrasonográfica");
-					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar unidad ultrasonográfica");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Modificar unidad ultrasonográfica");
 					break;
 				    case 4:
 					$('#tableHead').empty();
@@ -91,7 +91,7 @@ $(document).ready(function(){
 						});
 					}
 					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo profesional ultrasonografista");
-					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar profesional ultrasonografista");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Modificar profesional ultrasonografista");
 					break;
 				    case 5:
 					$('#tableHead').empty();
@@ -110,7 +110,7 @@ $(document).ready(function(){
 						});
 					}
 					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo lugar de control");
-					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar lugar de control");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Modificar lugar de control");
 					break;
 				    case 6:
 					$('#tableHead').empty();
@@ -129,7 +129,7 @@ $(document).ready(function(){
 						});
 					}
 					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva patología");
-					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar patología");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Modificar patología");
 					break;
 				    case 7:
 					$('#tableHead').empty();
@@ -148,7 +148,7 @@ $(document).ready(function(){
 						});
 					}
 					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo motivo de exámen");
-					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar motivo de exámen");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Modificar motivo de exámen");
 					break;
 				    case 8:
 					$('#tableHead').empty();
@@ -167,7 +167,7 @@ $(document).ready(function(){
 						});
 					}
 					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva previsión");
-					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar previsión");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Modificar previsión");
 					break;
 				    case 9:
 					$('#tableHead').empty();
@@ -186,7 +186,7 @@ $(document).ready(function(){
 						});
 					}
 					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo profesional referente");
-					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar profesional referente");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Modificar profesional referente");
 					break;
 				}
 			}
@@ -236,12 +236,7 @@ $(document).ready(function(){
 				break;
 		}
 		
-		$("a").on("click",function(e){
-			e.preventDefault();
-			window.alert("Primero debes guardar o cancelar");
-			$("#guardarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" );
-			$("#cancelarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" ); 
-		});
+		$("a").on("click",disableA(e));
 		CONFIG_EDIT = true;
 	});
 	
@@ -263,40 +258,35 @@ $(document).ready(function(){
 		
 		switch(CONFIG_ACTIVE){
 			case "centroRegional":
-				$("#titleInput").html("Editar Centro Regional");
+				$("#titleInput").html("Modificar Centro Regional");
 				break;
 			case "ciudad":
-				$("#titleInput").html("Editar Ciudad");
+				$("#titleInput").html("Modificar Ciudad");
 				break;
 			case "unidadUltrasonografica":
-				$("#titleInput").html("Editar unidad Ultrasonográfica");
+				$("#titleInput").html("Modificar unidad Ultrasonográfica");
 				break;
 			case "profesionalEcografista":
-				$("#titleInput").html("Editar ecografista");
+				$("#titleInput").html("Modificar ecografista");
 				break;
 			case "lugarControlPrenatal":
-				$("#titleInput").html("Editar lugar de control prenatal");
+				$("#titleInput").html("Modificar lugar de control prenatal");
 				break;
 			case "patologiaObstetrica":
-				$("#titleInput").html("Editar Patología obstétrica");
+				$("#titleInput").html("Modificar Patología obstétrica");
 				break;
 			case "motivoExamen":
-				$("#titleInput").html("Editar motivo de exámen");
+				$("#titleInput").html("Modificar motivo de exámen");
 				break;
 			case "prevision":
-				$("#titleInput").html("Editar previsión");
+				$("#titleInput").html("Modificar previsión");
 				break;
 			case "profesionalReferente":
-				$("#titleInput").html("Editar Profesional referente");
+				$("#titleInput").html("Modificar Profesional referente");
 				break;
 		}
 		
-		$("a").on("click",function(e){
-			e.preventDefault();
-			window.alert("Primero debes guardar o cancelar");
-			$("#guardarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" );
-			$("#cancelarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" ); 
-		});
+		$("a").on("click",disableA(e));
 		CONFIG_EDIT = true;
 	});
 	
@@ -364,9 +354,8 @@ $(document).ready(function(){
 				localStorage["configuracion"] = JSON.stringify(configuracion);
 			}
 		}
-		
-		$("a").off("click");
 		CONFIG_EDIT = false;
+		$("a").off("click", disableA);
 		$("a[name='"+ CONFIG_ACTIVE+ "']").trigger("click");
 	});
 
@@ -378,8 +367,8 @@ $(document).ready(function(){
 		$("#cancelarConfig").addClass("d-none");
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
-		$("a").off("click");
 		CONFIG_EDIT = false;
+		$("a").off("click", disableA);
 		$("a[name='"+ CONFIG_ACTIVE + "']").trigger("click");
 	});
 
@@ -389,53 +378,48 @@ $(document).ready(function(){
 				var configuracion = JSON.parse(localStorage["configuracion"]);
 				switch(CONFIG_ACTIVE){
 					case "centroRegional":
-						//var nombre = "";
-						//var getElement = false;
-						//var nARR = [];
-						//var aRR = {id:0, nombre:"Doe"};
-						//var contador = 0;
-						//$.each( $('#tableBody').children(), function( i, val ) {
-						//	if ($( val ).hasClass( 'table-active') == true){
-						//		getElement = true;
-						//		nombre = $(val).children('td').html();
-						//	}
-						//});
-						
-						//if (getElement == true){
-						//	$.each(configuracion.centroRegional, function (i, item) {
-						//		if (item.nombre != nombre){
-						//			aRR["id"] = contador +1;
-						//			aRR["nombre"] = item.nombre;
-						//			if (contador == 0){
-						//				nARR[0] = aRR;
-						//			}
-						//			else{
-						//				nARR.push(aRR);
-						//			}
-						//			contador++;
-						//		}
-						//	});
-						//	configuracion.centroRegional = nARR;
-						//}
+						$.each( $('#tableBody').children(), function( i, val ) {
+							if ($( val ).hasClass( 'table-active') == true){
+								getElement = true;
+								var nombre = $(val).children('td').html();
+								$.each(configuracion.centroRegional, function (X, item) {	
+									var cf = JSON.parse(localStorage["configuracion"]);
+									var aRR = {id:X, nombre:"Doe"};
+									if (X == 0){
+										var nARR = [];
+										cf.centroRegional = nARR;
+									}
+									
+									if (item.nombre != nombre){
+										aRR["nombre"] = item.nombre;
+										cf.centroRegional.push(aRR);
+									}
+									
+									localStorage["configuracion"] = JSON.stringify(cf);
+								});
+							}
+						});
 						break;
 					case "ciudad":
 						$.each( $('#tableBody').children(), function( i, val ) {
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								this.contador = 0;
-								this.nARR = [];
-								this.aRR = {id:0, nombre:"Doe"};
-								var context = this;
-								$.each(configuracion.ciudad, function (i, item) {	
-									if (item.nombre != nombre){
-										context.aRR["id"] = context.contador +1;
-										context.aRR["nombre"] = item.nombre;
-										context.nARR.push(context.aRR);
-										context.contador++;
+								$.each(configuracion.ciudad, function (X, item) {	
+									var cf = JSON.parse(localStorage["configuracion"]);
+									var aRR = {id:X, nombre:"Doe"};
+									if (X == 0){
+										var nARR = [];
+										cf.ciudad = nARR;
 									}
+									
+									if (item.nombre != nombre){
+										aRR["nombre"] = item.nombre;
+										cf.ciudad.push(aRR);
+									}
+									
+									localStorage["configuracion"] = JSON.stringify(cf);
 								});
-								configuracion.ciudad = this.nARR;
 							}
 						});
 						break;
@@ -444,19 +428,21 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								this.contador = 0;
-								this.nARR = [];
-								this.aRR = {id:0, nombre:"Doe"};
-								var context = this;
-								$.each(configuracion.unidadUltrasonografica, function (i, item) {	
-									if (item.nombre != nombre){
-										context.aRR["id"] = context.contador +1;
-										context.aRR["nombre"] = item.nombre;
-										context.nARR.push(context.aRR);
-										context.contador++;
+								$.each(configuracion.unidadUltrasonografica, function (X, item) {	
+									var cf = JSON.parse(localStorage["configuracion"]);
+									var aRR = {id:X, nombre:"Doe"};
+									if (X == 0){
+										var nARR = [];
+										cf.unidadUltrasonografica = nARR;
 									}
+									
+									if (item.nombre != nombre){
+										aRR["nombre"] = item.nombre;
+										cf.unidadUltrasonografica.push(aRR);
+									}
+									
+									localStorage["configuracion"] = JSON.stringify(cf);
 								});
-								configuracion.unidadUltrasonografica = this.nARR;
 							}
 						});
 						break;
@@ -465,19 +451,21 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								this.contador = 0;
-								this.nARR = [];
-								this.aRR = {id:0, nombre:"Doe"};
-								var context = this;
-								$.each(configuracion.profesionalEcografista, function (x, item) {	
-									if (item.nombre != nombre){
-										context.aRR["id"] = context.contador +1;
-										context.aRR["nombre"] = item.nombre;
-										context.nARR.push(context.aRR);
-										context.contador++;
+								$.each(configuracion.profesionalEcografista, function (X, item) {	
+									var cf = JSON.parse(localStorage["configuracion"]);
+									var aRR = {id:X, nombre:"Doe"};
+									if (X == 0){
+										var nARR = [];
+										cf.profesionalEcografista = nARR;
 									}
+									
+									if (item.nombre != nombre){
+										aRR["nombre"] = item.nombre;
+										cf.profesionalEcografista.push(aRR);
+									}
+									
+									localStorage["configuracion"] = JSON.stringify(cf);
 								});
-								configuracion.profesionalEcografista = this.nARR;
 							}
 						});
 						break;
@@ -509,19 +497,21 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								this.contador = 0;
-								this.nARR = [];
-								this.aRR = {id:0, nombre:"Doe"};
-								var context = this;
-								$.each(configuracion.patologiaObstetrica, function (i, item) {	
-									if (item.nombre != nombre){
-										context.aRR["id"] = context.contador +1;
-										context.aRR["nombre"] = item.nombre;
-										context.nARR.push(context.aRR);
-										context.contador++;
+								$.each(configuracion.patologiaObstetrica, function (X, item) {	
+									var cf = JSON.parse(localStorage["configuracion"]);
+									var aRR = {id:X, nombre:"Doe"};
+									if (X == 0){
+										var nARR = [];
+										cf.patologiaObstetrica = nARR;
 									}
+									
+									if (item.nombre != nombre){
+										aRR["nombre"] = item.nombre;
+										cf.patologiaObstetrica.push(aRR);
+									}
+									
+									localStorage["configuracion"] = JSON.stringify(cf);
 								});
-								configuracion.patologiaObstetrica = this.nARR;
 							}
 						});
 						break;
@@ -530,19 +520,67 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								this.contador = 0;
-								this.nARR = [];
-								this.aRR = {id:0, nombre:"Doe"};
-								var context = this;
-								$.each(configuracion.motivoExamen, function (i, item) {	
-									if (item.nombre != nombre){
-										context.aRR["id"] = context.contador +1;
-										context.aRR["nombre"] = item.nombre;
-										context.nARR.push(context.aRR);
-										context.contador++;
+								$.each(configuracion.motivoExamen, function (X, item) {	
+									var cf = JSON.parse(localStorage["configuracion"]);
+									var aRR = {id:X, nombre:"Doe"};
+									if (X == 0){
+										var nARR = [];
+										cf.motivoExamen = nARR;
 									}
+									
+									if (item.nombre != nombre){
+										aRR["nombre"] = item.nombre;
+										cf.motivoExamen.push(aRR);
+									}
+									
+									localStorage["configuracion"] = JSON.stringify(cf);
 								});
-								configuracion.motivoExamen = this.nARR;
+							}
+						});
+						break;
+					case "prevision":
+						$.each( $('#tableBody').children(), function( i, val ) {
+							if ($( val ).hasClass( 'table-active') == true){
+								getElement = true;
+								var nombre = $(val).children('td').html();
+								$.each(configuracion.prevision, function (X, item) {	
+									var cf = JSON.parse(localStorage["configuracion"]);
+									var aRR = {id:X, nombre:"Doe"};
+									if (X == 0){
+										var nARR = [];
+										cf.prevision = nARR;
+									}
+									
+									if (item.nombre != nombre){
+										aRR["nombre"] = item.nombre;
+										cf.prevision.push(aRR);
+									}
+									
+									localStorage["configuracion"] = JSON.stringify(cf);
+								});
+							}
+						});
+						break;
+					case "profesionalReferente":
+						$.each( $('#tableBody').children(), function( i, val ) {
+							if ($( val ).hasClass( 'table-active') == true){
+								getElement = true;
+								var nombre = $(val).children('td').html();
+								$.each(configuracion.profesionalReferente, function (X, item) {	
+									var cf = JSON.parse(localStorage["configuracion"]);
+									var aRR = {id:X, nombre:"Doe"};
+									if (X == 0){
+										var nARR = [];
+										cf.profesionalReferente = nARR;
+									}
+									
+									if (item.nombre != nombre){
+										aRR["nombre"] = item.nombre;
+										cf.profesionalReferente.push(aRR);
+									}
+									
+									localStorage["configuracion"] = JSON.stringify(cf);
+								});
 							}
 						});
 						break;
@@ -636,3 +674,11 @@ function activateTr(element){
 	$(element).addClass('table-active');
 	$("#editarConfig").removeClass("d-none");
 }
+
+function disableA(e){
+	e.preventDefault();
+	window.alert("Primero debes guardar o cancelar");
+	$("#guardarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" );
+	$("#cancelarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" ); 
+}
+
