@@ -236,7 +236,7 @@ $(document).ready(function(){
 				break;
 		}
 		
-		$("a").on("click",disableA(e));
+		$("a").on("click",disableA);
 		CONFIG_EDIT = true;
 	});
 	
@@ -286,7 +286,7 @@ $(document).ready(function(){
 				break;
 		}
 		
-		$("a").on("click",disableA(e));
+		$("a").on("click",disableA);
 		CONFIG_EDIT = true;
 	});
 	
