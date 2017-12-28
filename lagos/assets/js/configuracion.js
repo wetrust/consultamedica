@@ -28,7 +28,6 @@ $(document).ready(function(){
 							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 							$('#tableBody').append(fila);
 						});
-						$('#eliminarConfig').removeClass("d-none");
 						$('#tableBody tr').on('click',function(){
 							activateTr(this);
 						});
@@ -47,7 +46,6 @@ $(document).ready(function(){
 							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 							$('#tableBody').append(fila);
 						});
-						$('#eliminarConfig').removeClass("d-none");
 						$('#tableBody tr').on('click',function(){
 							activateTr(this);
 						});
@@ -66,7 +64,6 @@ $(document).ready(function(){
 							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 							$('#tableBody').append(fila);
 						});
-						$('#eliminarConfig').removeClass("d-none");
 						$('#tableBody tr').on('click',function(){
 							activateTr(this);
 						});
@@ -85,7 +82,6 @@ $(document).ready(function(){
 							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 							$('#tableBody').append(fila);
 						});
-						$('#eliminarConfig').removeClass("d-none");
 						$('#tableBody tr').on('click',function(){
 							activateTr(this);
 						});
@@ -104,7 +100,6 @@ $(document).ready(function(){
 							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 							$('#tableBody').append(fila);
 						});
-						$('#eliminarConfig').removeClass("d-none");
 						$('#tableBody tr').on('click',function(){
 							activateTr(this);
 						});
@@ -123,7 +118,6 @@ $(document).ready(function(){
 							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 							$('#tableBody').append(fila);
 						});
-						$('#eliminarConfig').removeClass("d-none");
 						$('#tableBody tr').on('click',function(){
 							activateTr(this);
 						});
@@ -142,7 +136,6 @@ $(document).ready(function(){
 							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 							$('#tableBody').append(fila);
 						});
-						$('#eliminarConfig').removeClass("d-none");
 						$('#tableBody tr').on('click',function(){
 							activateTr(this);
 						});
@@ -161,7 +154,6 @@ $(document).ready(function(){
 							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 							$('#tableBody').append(fila);
 						});
-						$('#eliminarConfig').removeClass("d-none");
 						$('#tableBody tr').on('click',function(){
 							activateTr(this);
 						});
@@ -180,7 +172,6 @@ $(document).ready(function(){
 							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 							$('#tableBody').append(fila);
 						});
-						$('#eliminarConfig').removeClass("d-none");
 						$('#tableBody tr').on('click',function(){
 							activateTr(this);
 						});
@@ -253,6 +244,7 @@ $(document).ready(function(){
 		$.each( $("#tableBody").children(), function( i, val ) {
 			if ($( val ).hasClass( 'table-active')){
 				$("#inputConfig").val($( val ).children("td").html());
+				$("#inputConfig").data("id") = $( val ).children("th").html();
 			}
 		});
 		
@@ -305,53 +297,322 @@ $(document).ready(function(){
 				var aRR = {id:0, nombre:"Doe"};
 				switch(CONFIG_ACTIVE){
 					case "centroRegional":
-						aRR["id"] = configuracion.centroRegional.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-						configuracion.centroRegional.push(aRR);
+						if ($('#inputConfig').data("id") > -1){
+							var strReplace = $('#inputConfig').val();
+							var idReplace =  $('#inputConfig').data("id");
+							$('#inputConfig').data("id") = -1;
+							
+							var contador = 1;
+							$.each(configuracion.centroRegional, function (X, item) {	
+								var cf = JSON.parse(localStorage["configuracion"]);
+								var aRR = {id:contador, nombre:"Doe"};
+								if (X == 0){
+									var nARR = [];
+									cf.centroRegional = nARR;
+								}
+								
+								if (contador == idReplace){
+									aRR["nombre"] = strReplace;
+								}
+								else{
+									aRR["nombre"] = item.nombre;
+								}
+								
+								cf.centroRegional.push(aRR);
+								contador++;
+									
+								localStorage["configuracion"] = JSON.stringify(cf);
+							});
+						}
+						else{
+							aRR["id"] = configuracion.centroRegional.length +1;
+							aRR["nombre"] = $('#inputConfig').val();
+							configuracion.centroRegional.push(aRR);
+							localStorage["configuracion"] = JSON.stringify(configuracion);
+						}
 						break;
 					case "ciudad":
-						aRR["id"] = configuracion.ciudad.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-                        			configuracion.ciudad.push(aRR);
+						if ($('#inputConfig').data("id") > -1){
+							var strReplace = $('#inputConfig').val();
+							var idReplace =  $('#inputConfig').data("id");
+							$('#inputConfig').data("id") = -1;
+							
+							var contador = 1;
+							$.each(configuracion.ciudad, function (X, item) {	
+								var cf = JSON.parse(localStorage["configuracion"]);
+								var aRR = {id:contador, nombre:"Doe"};
+								if (X == 0){
+									var nARR = [];
+									cf.ciudad = nARR;
+								}
+								
+								if (contador == idReplace){
+									aRR["nombre"] = strReplace;
+								}
+								else{
+									aRR["nombre"] = item.nombre;
+								}
+								
+								cf.ciudad.push(aRR);
+								contador++;
+									
+								localStorage["configuracion"] = JSON.stringify(cf);
+							});
+						}
+						else{
+							aRR["id"] = configuracion.ciudad.length +1;
+							aRR["nombre"] = $('#inputConfig').val();
+							configuracion.ciudad.push(aRR);
+							localStorage["configuracion"] = JSON.stringify(configuracion);
+						}
 						break;
 					case "unidadUltrasonografica":
-						aRR["id"] = configuracion.unidadUltrasonografica.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-						configuracion.unidadUltrasonografica.push(aRR);
+						if ($('#inputConfig').data("id") > -1){
+							var strReplace = $('#inputConfig').val();
+							var idReplace =  $('#inputConfig').data("id");
+							$('#inputConfig').data("id") = -1;
+							
+							var contador = 1;
+							$.each(configuracion.unidadUltrasonografica, function (X, item) {	
+								var cf = JSON.parse(localStorage["configuracion"]);
+								var aRR = {id:contador, nombre:"Doe"};
+								if (X == 0){
+									var nARR = [];
+									cf.unidadUltrasonografica = nARR;
+								}
+								
+								if (contador == idReplace){
+									aRR["nombre"] = strReplace;
+								}
+								else{
+									aRR["nombre"] = item.nombre;
+								}
+								
+								cf.unidadUltrasonografica.push(aRR);
+								contador++;
+									
+								localStorage["configuracion"] = JSON.stringify(cf);
+							});
+						}
+						else{
+							aRR["id"] = configuracion.unidadUltrasonografica.length +1;
+							aRR["nombre"] = $('#inputConfig').val();
+							configuracion.unidadUltrasonografica.push(aRR);
+							localStorage["configuracion"] = JSON.stringify(configuracion);
+						}
 						break;
 					case "profesionalEcografista":
-						aRR["id"] = configuracion.profesionalEcografista.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-                        			configuracion.profesionalEcografista.push(aRR);
+						if ($('#inputConfig').data("id") > -1){
+							var strReplace = $('#inputConfig').val();
+							var idReplace =  $('#inputConfig').data("id");
+							$('#inputConfig').data("id") = -1;
+							
+							var contador = 1;
+							$.each(configuracion.profesionalEcografista, function (X, item) {	
+								var cf = JSON.parse(localStorage["configuracion"]);
+								var aRR = {id:contador, nombre:"Doe"};
+								if (X == 0){
+									var nARR = [];
+									cf.profesionalEcografista = nARR;
+								}
+								
+								if (contador == idReplace){
+									aRR["nombre"] = strReplace;
+								}
+								else{
+									aRR["nombre"] = item.nombre;
+								}
+								
+								cf.profesionalEcografista.push(aRR);
+								contador++;
+									
+								localStorage["configuracion"] = JSON.stringify(cf);
+							});
+						}
+						else{
+							aRR["id"] = configuracion.profesionalEcografista.length +1;
+							aRR["nombre"] = $('#inputConfig').val();
+							configuracion.profesionalEcografista.push(aRR);
+							localStorage["configuracion"] = JSON.stringify(configuracion);
+						}
 						break;
 					case "lugarControlPrenatal":
-						aRR["id"] = configuracion.lugarControlPrenatal.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-						configuracion.lugarControlPrenatal.push(aRR);
+						if ($('#inputConfig').data("id") > -1){
+							var strReplace = $('#inputConfig').val();
+							var idReplace =  $('#inputConfig').data("id");
+							$('#inputConfig').data("id") = -1;
+							
+							var contador = 1;
+							$.each(configuracion.lugarControlPrenatal, function (X, item) {	
+								var cf = JSON.parse(localStorage["configuracion"]);
+								var aRR = {id:contador, nombre:"Doe"};
+								if (X == 0){
+									var nARR = [];
+									cf.lugarControlPrenatal = nARR;
+								}
+								
+								if (contador == idReplace){
+									aRR["nombre"] = strReplace;
+								}
+								else{
+									aRR["nombre"] = item.nombre;
+								}
+								
+								cf.lugarControlPrenatal.push(aRR);
+								contador++;
+									
+								localStorage["configuracion"] = JSON.stringify(cf);
+							});
+						}
+						else{
+							aRR["id"] = configuracion.lugarControlPrenatal.length +1;
+							aRR["nombre"] = $('#inputConfig').val();
+							configuracion.lugarControlPrenatal.push(aRR);
+							localStorage["configuracion"] = JSON.stringify(configuracion);
+						}
 						break;
 					case "patologiaObstetrica":
-						aRR["id"] = configuracion.patologiaObstetrica.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-                        			configuracion.patologiaObstetrica.push(aRR);
+						if ($('#inputConfig').data("id") > -1){
+							var strReplace = $('#inputConfig').val();
+							var idReplace =  $('#inputConfig').data("id");
+							$('#inputConfig').data("id") = -1;
+							
+							var contador = 1;
+							$.each(configuracion.patologiaObstetrica, function (X, item) {	
+								var cf = JSON.parse(localStorage["configuracion"]);
+								var aRR = {id:contador, nombre:"Doe"};
+								if (X == 0){
+									var nARR = [];
+									cf.patologiaObstetrica = nARR;
+								}
+								
+								if (contador == idReplace){
+									aRR["nombre"] = strReplace;
+								}
+								else{
+									aRR["nombre"] = item.nombre;
+								}
+								
+								cf.patologiaObstetrica.push(aRR);
+								contador++;
+									
+								localStorage["configuracion"] = JSON.stringify(cf);
+							});
+						}
+						else{
+							aRR["id"] = configuracion.patologiaObstetrica.length +1;
+							aRR["nombre"] = $('#inputConfig').val();
+							configuracion.patologiaObstetrica.push(aRR);
+							localStorage["configuracion"] = JSON.stringify(configuracion);
+						}
 						break;
 					case "motivoExamen":
-						aRR["id"] = configuracion.motivoExamen.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-						configuracion.motivoExamen.push(aRR);
+						if ($('#inputConfig').data("id") > -1){
+							var strReplace = $('#inputConfig').val();
+							var idReplace =  $('#inputConfig').data("id");
+							$('#inputConfig').data("id") = -1;
+							
+							var contador = 1;
+							$.each(configuracion.motivoExamen, function (X, item) {	
+								var cf = JSON.parse(localStorage["configuracion"]);
+								var aRR = {id:contador, nombre:"Doe"};
+								if (X == 0){
+									var nARR = [];
+									cf.motivoExamen = nARR;
+								}
+								
+								if (contador == idReplace){
+									aRR["nombre"] = strReplace;
+								}
+								else{
+									aRR["nombre"] = item.nombre;
+								}
+								
+								cf.motivoExamen.push(aRR);
+								contador++;
+									
+								localStorage["configuracion"] = JSON.stringify(cf);
+							});
+						}
+						else{
+							aRR["id"] = configuracion.motivoExamen.length +1;
+							aRR["nombre"] = $('#inputConfig').val();
+							configuracion.motivoExamen.push(aRR);
+							localStorage["configuracion"] = JSON.stringify(configuracion);
+						}
 						break;
 					case "prevision":
-						aRR["id"] = configuracion.prevision.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-						configuracion.prevision.push(aRR);
+						if ($('#inputConfig').data("id") > -1){
+							var strReplace = $('#inputConfig').val();
+							var idReplace =  $('#inputConfig').data("id");
+							$('#inputConfig').data("id") = -1;
+							
+							var contador = 1;
+							$.each(configuracion.prevision, function (X, item) {	
+								var cf = JSON.parse(localStorage["configuracion"]);
+								var aRR = {id:contador, nombre:"Doe"};
+								if (X == 0){
+									var nARR = [];
+									cf.prevision = nARR;
+								}
+								
+								if (contador == idReplace){
+									aRR["nombre"] = strReplace;
+								}
+								else{
+									aRR["nombre"] = item.nombre;
+								}
+								
+								cf.prevision.push(aRR);
+								contador++;
+									
+								localStorage["configuracion"] = JSON.stringify(cf);
+							});
+						}
+						else{
+							aRR["id"] = configuracion.prevision.length +1;
+							aRR["nombre"] = $('#inputConfig').val();
+							configuracion.prevision.push(aRR);
+							localStorage["configuracion"] = JSON.stringify(configuracion);
+						}
 						break;
 					case "profesionalReferente":
-						aRR["id"] = configuracion.profesionalReferente.length +1;
-						aRR["nombre"] = $('#inputConfig').val();
-						configuracion.profesionalReferente.push(aRR);
+						if ($('#inputConfig').data("id") > -1){
+							var strReplace = $('#inputConfig').val();
+							var idReplace =  $('#inputConfig').data("id");
+							$('#inputConfig').data("id") = -1;
+							
+							var contador = 1;
+							$.each(configuracion.profesionalReferente, function (X, item) {	
+								var cf = JSON.parse(localStorage["configuracion"]);
+								var aRR = {id:contador, nombre:"Doe"};
+								if (X == 0){
+									var nARR = [];
+									cf.profesionalReferente = nARR;
+								}
+								
+								if (contador == idReplace){
+									aRR["nombre"] = strReplace;
+								}
+								else{
+									aRR["nombre"] = item.nombre;
+								}
+								
+								cf.profesionalReferente.push(aRR);
+								contador++;
+									
+								localStorage["configuracion"] = JSON.stringify(cf);
+							});
+						}
+						else{
+							aRR["id"] = configuracion.profesionalReferente.length +1;
+							aRR["nombre"] = $('#inputConfig').val();
+							configuracion.profesionalReferente.push(aRR);
+							localStorage["configuracion"] = JSON.stringify(configuracion);
+						}
 						break;
 				}
 				$('#inputConfig').val("");
-				localStorage["configuracion"] = JSON.stringify(configuracion);
 			}
 		}
 		CONFIG_EDIT = false;
