@@ -487,20 +487,19 @@ $(document).ready(function(){
 								getElement = true;
 								var nombre = $(val).children('td').html();
 								$.each(configuracion.lugarControlPrenatal, function (X, item) {	
+									var cf = JSON.parse(localStorage["configuracion"]);
+									var aRR = {id:X, nombre:"Doe"};
+									if (X == 0){
+										var nARR = [];
+										cf.lugarControlPrenatal = nARR;
+									}
+									
 									if (item.nombre != nombre){
-										
-										var cf = JSON.parse(localStorage["configuracion"]);
-										var aRR = {id:X, nombre:"Doe"};
-										if (X == 0){
-											var nARR = [];
-											cf.lugarControlPrenatal = nARR;
-										}
-										
 										aRR["nombre"] = item.nombre;
 										cf.lugarControlPrenatal.push(aRR);
-										
-										localStorage["configuracion"] = JSON.stringify(cf);
 									}
+									
+									localStorage["configuracion"] = JSON.stringify(cf);
 								});
 							}
 						});
