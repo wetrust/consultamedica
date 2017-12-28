@@ -197,6 +197,10 @@ $(document).ready(function(){
 		$(".formulario").removeClass("d-none");
 		$("#oConfig").prop('disabled', true);
 
+		
+		$("a[href='#membrete']").addClass("a-disabled");
+		$("a[href='#usuario']").addClass("a-disabled");
+		
 		switch(CONFIG_ACTIVE){
 			case "centroRegional":
 				$("#titleInput").html("Nuevo Centro Regional");
@@ -943,6 +947,7 @@ function disableA(e){
 	e.preventDefault();
 	window.alert("Primero debes guardar o cancelar");
 	$("#guardarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" );
-	$("#cancelarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" ); 
+	$("#cancelarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" );
+	return false;
 }
 
