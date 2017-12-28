@@ -349,6 +349,17 @@ $( document ).ready(function() {
 			}
 			
 				if (window.localStorage) {
+				$('#tablePacientesBody').empty();
+				if (localStorage.pacientes != null) {
+					//cargar la tabla
+		var pacientes = JSON.parse(localStorage["pacientes"]);
+		$.each(pacientes, function( index, value ) {
+			var fila = '<tr><th scope="row">' + index + '</th><td>' + value.nombre + ' ' + value.apellido + '</td><td>' + value.edad + '</td><td>' + value.ciudad + '</td><td>' + value.examenes[0].motivo + '</td><td>' + value.examenes[0].profExaminador + '</td></tr>';
+			$('#tablePacientesBody').append(fila);
+		});
+				}
+					
+					
 		if (localStorage.configuracion != null) {
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			$.each(configuracion.motivoExamen, function (i, item) {
