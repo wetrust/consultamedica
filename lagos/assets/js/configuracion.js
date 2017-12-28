@@ -382,9 +382,10 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
+								var contador = 1;
 								$.each(configuracion.centroRegional, function (X, item) {	
 									var cf = JSON.parse(localStorage["configuracion"]);
-									var aRR = {id:X, nombre:"Doe"};
+									var aRR = {id:contador, nombre:"Doe"};
 									if (X == 0){
 										var nARR = [];
 										cf.centroRegional = nARR;
@@ -393,6 +394,7 @@ $(document).ready(function(){
 									if (item.nombre != nombre){
 										aRR["nombre"] = item.nombre;
 										cf.centroRegional.push(aRR);
+										contador++;
 									}
 									
 									localStorage["configuracion"] = JSON.stringify(cf);
