@@ -936,6 +936,7 @@ function activateTr(element){
 	});
 	$(element).addClass('table-active');
 	$("#editarConfig").removeClass("d-none");
+	$('#eliminarConfig').removeClass("d-none");
 }
 
 function disableA(e){
