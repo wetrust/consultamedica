@@ -244,7 +244,7 @@ $(document).ready(function(){
 		$.each( $("#tableBody").children(), function( i, val ) {
 			if ($( val ).hasClass( 'table-active')){
 				$("#inputConfig").val($( val ).children("td").html());
-				$("#inputConfig").data("id") = $( val ).children("th").html();
+				$("#inputConfig").data("id",$( val ).children("th").html());
 			}
 		});
 		
@@ -300,7 +300,7 @@ $(document).ready(function(){
 						if ($('#inputConfig').data("id") > -1){
 							var strReplace = $('#inputConfig').val();
 							var idReplace =  $('#inputConfig').data("id");
-							$('#inputConfig').data("id") = -1;
+							$('#inputConfig').data("id",-1);
 							
 							var contador = 1;
 							$.each(configuracion.centroRegional, function (X, item) {	
@@ -335,7 +335,7 @@ $(document).ready(function(){
 						if ($('#inputConfig').data("id") > -1){
 							var strReplace = $('#inputConfig').val();
 							var idReplace =  $('#inputConfig').data("id");
-							$('#inputConfig').data("id") = -1;
+							$('#inputConfig').data("id",-1);
 							
 							var contador = 1;
 							$.each(configuracion.ciudad, function (X, item) {	
@@ -370,7 +370,7 @@ $(document).ready(function(){
 						if ($('#inputConfig').data("id") > -1){
 							var strReplace = $('#inputConfig').val();
 							var idReplace =  $('#inputConfig').data("id");
-							$('#inputConfig').data("id") = -1;
+							$('#inputConfig').data("id",-1);
 							
 							var contador = 1;
 							$.each(configuracion.unidadUltrasonografica, function (X, item) {	
@@ -405,7 +405,7 @@ $(document).ready(function(){
 						if ($('#inputConfig').data("id") > -1){
 							var strReplace = $('#inputConfig').val();
 							var idReplace =  $('#inputConfig').data("id");
-							$('#inputConfig').data("id") = -1;
+							$('#inputConfig').data("id",-1);
 							
 							var contador = 1;
 							$.each(configuracion.profesionalEcografista, function (X, item) {	
@@ -440,7 +440,7 @@ $(document).ready(function(){
 						if ($('#inputConfig').data("id") > -1){
 							var strReplace = $('#inputConfig').val();
 							var idReplace =  $('#inputConfig').data("id");
-							$('#inputConfig').data("id") = -1;
+							$('#inputConfig').data("id",-1);
 							
 							var contador = 1;
 							$.each(configuracion.lugarControlPrenatal, function (X, item) {	
@@ -475,7 +475,7 @@ $(document).ready(function(){
 						if ($('#inputConfig').data("id") > -1){
 							var strReplace = $('#inputConfig').val();
 							var idReplace =  $('#inputConfig').data("id");
-							$('#inputConfig').data("id") = -1;
+							$('#inputConfig').data("id",-1);
 							
 							var contador = 1;
 							$.each(configuracion.patologiaObstetrica, function (X, item) {	
@@ -510,7 +510,7 @@ $(document).ready(function(){
 						if ($('#inputConfig').data("id") > -1){
 							var strReplace = $('#inputConfig').val();
 							var idReplace =  $('#inputConfig').data("id");
-							$('#inputConfig').data("id") = -1;
+							$('#inputConfig').data("id",-1);
 							
 							var contador = 1;
 							$.each(configuracion.motivoExamen, function (X, item) {	
@@ -545,7 +545,7 @@ $(document).ready(function(){
 						if ($('#inputConfig').data("id") > -1){
 							var strReplace = $('#inputConfig').val();
 							var idReplace =  $('#inputConfig').data("id");
-							$('#inputConfig').data("id") = -1;
+							$('#inputConfig').data("id",-1);
 							
 							var contador = 1;
 							$.each(configuracion.prevision, function (X, item) {	
@@ -580,7 +580,7 @@ $(document).ready(function(){
 						if ($('#inputConfig').data("id") > -1){
 							var strReplace = $('#inputConfig').val();
 							var idReplace =  $('#inputConfig').data("id");
-							$('#inputConfig').data("id") = -1;
+							$('#inputConfig').data("id",-1);
 							
 							var contador = 1;
 							$.each(configuracion.profesionalReferente, function (X, item) {	
