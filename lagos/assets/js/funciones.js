@@ -296,6 +296,7 @@ $("#GuardarPacienteButton").on("click", function(){
 		
 		//cargar la tabla
 		var pacientes = JSON.parse(localStorage["pacientes"]);
+		$('#tablePacientesBody').empty();
 		$.each(pacientes, function( index, value ) {
 			var fila = '<tr><th scope="row">' + index + '</th><td>' + value.nombre + ' ' + value.apellido + '</td><td>' + value.edad + '</td><td>' + value.ciudad + '</td><td>' + value.examenes[0].motivo + '</td><td>' + value.examenes[0].profExaminador + '</td></tr>';
 			$('#tablePacientesBody').append(fila);
@@ -332,6 +333,14 @@ $("#CancelarPacienteButton").on("click", function(){
 	$("#profReferente").val("");
 	$("#ecografista").val([]);
 	$("#continuarSegundario").off("click");
+	
+	//cargar la tabla
+		var pacientes = JSON.parse(localStorage["pacientes"]);
+		$('#tablePacientesBody').empty();
+		$.each(pacientes, function( index, value ) {
+			var fila = '<tr><th scope="row">' + index + '</th><td>' + value.nombre + ' ' + value.apellido + '</td><td>' + value.edad + '</td><td>' + value.ciudad + '</td><td>' + value.examenes[0].motivo + '</td><td>' + value.examenes[0].profExaminador + '</td></tr>';
+			$('#tablePacientesBody').append(fila);
+		});
 });
 
 $("#NuevoExamenButton").on("click", function(){
