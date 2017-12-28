@@ -245,6 +245,9 @@ $(document).ready(function(){
 		$(".formulario").removeClass("d-none");
 		$("#oConfig").prop('disabled', true);
 		
+		$("a[href='#membrete']").addClass("a-disabled");
+		$("a[href='#usuario']").addClass("a-disabled");
+		
 		$.each( $("#tableBody").children(), function( i, val ) {
 			if ($( val ).hasClass( 'table-active')){
 				$("#inputConfig").val($( val ).children("td").html());
@@ -294,6 +297,9 @@ $(document).ready(function(){
 		$("#cancelarConfig").addClass("d-none");
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
+		
+		$("a[href='#membrete']").removeClass("a-disabled");
+		$("a[href='#usuario']").removeClass("a-disabled");
 		
 		if (window.localStorage) {
 			if (localStorage.configuracion != null) {
@@ -632,6 +638,10 @@ $(document).ready(function(){
 		$("#cancelarConfig").addClass("d-none");
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
+		
+		$("a[href='#membrete']").removeClass("a-disabled");
+		$("a[href='#usuario']").removeClass("a-disabled");
+		
 		CONFIG_EDIT = false;
 		$("a").off("click", disableA);
 		$("a[name='"+ CONFIG_ACTIVE + "']").trigger("click");
