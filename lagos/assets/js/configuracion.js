@@ -300,6 +300,8 @@ $(document).ready(function(){
 		
 		$("a[href='#membrete']").removeClass("a-disabled");
 		$("a[href='#usuario']").removeClass("a-disabled");
+		$("#guardarConfig").addClass("btn-outline-primary").removeClass("btn-outline-danger" );
+		$("#cancelarConfig").addClass("btn-outline-primary").removeClass("btn-outline-danger" );
 		
 		if (window.localStorage) {
 			if (localStorage.configuracion != null) {
@@ -641,6 +643,8 @@ $(document).ready(function(){
 		
 		$("a[href='#membrete']").removeClass("a-disabled");
 		$("a[href='#usuario']").removeClass("a-disabled");
+		$("#guardarConfig").addClass("btn-outline-primary").removeClass("btn-outline-danger" );
+		$("#cancelarConfig").addClass("btn-outline-primary").removeClass("btn-outline-danger" );
 		
 		CONFIG_EDIT = false;
 		$("a").off("click", disableA);
