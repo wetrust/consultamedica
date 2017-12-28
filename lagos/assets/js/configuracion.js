@@ -1,5 +1,6 @@
 var CONFIG_ACTIVE = "centroRegional";
 var keynum, lines = 1;
+var CONFIG_EDIT = false;
 
 $(document).ready(function(){
 	//comprobar si existe la base de datos de configuración
@@ -9,182 +10,185 @@ $(document).ready(function(){
 	$("a[href='#dp']").on("click", function(){
 		//al cambiar la alternativa, cargar los datos en la tabla
 		if (window.localStorage) {
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			$('#eliminarConfig').addClass("d-none");
-			$("#editarConfig").addClass("d-none");
-			var valueS = parseInt($(this).data("id"));
-			switch(valueS) {
-			    case 1:
-				$('#tableHead').empty();
-				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Centro Regional</th>';
-				$('#tableHead').append(fila);
-				CONFIG_ACTIVE = "centroRegional";
-				if (configuracion.centroRegional.length > 0){
-					$.each(configuracion.centroRegional, function (i, item) {
-						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-						$('#tableBody').append(fila);
-					});
-					$('#eliminarConfig').removeClass("d-none");
-					$('#tableBody tr').on('click',function(){
-						activateTr(this);
-					});
+			if (CONFIG_EDIT == false){
+				var configuracion = JSON.parse(localStorage["configuracion"]);
+				$('#eliminarConfig').addClass("d-none");
+				$("#editarConfig").addClass("d-none");
+				var valueS = parseInt($(this).data("id"));
+
+				switch(valueS) {
+				    case 1:
+					$('#tableHead').empty();
+					$('#tableBody').empty();
+					var fila = '<th>#</th><th>Centro Regional</th>';
+					$('#tableHead').append(fila);
+					CONFIG_ACTIVE = "centroRegional";
+					if (configuracion.centroRegional.length > 0){
+						$.each(configuracion.centroRegional, function (i, item) {
+							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+							$('#tableBody').append(fila);
+						});
+						$('#eliminarConfig').removeClass("d-none");
+						$('#tableBody tr').on('click',function(){
+							activateTr(this);
+						});
+					}
+					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva región de salud");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar región de salud");
+					break;
+				    case 2:
+					$('#tableHead').empty();
+					$('#tableBody').empty();
+					var fila = '<th>#</th><th>Ciudad</th><th>Centro Regional</th>';
+					$('#tableHead').append(fila);
+					CONFIG_ACTIVE = "ciudad";
+					if (configuracion.ciudad.length > 0){
+						$.each(configuracion.ciudad, function (i, item) {
+							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+							$('#tableBody').append(fila);
+						});
+						$('#eliminarConfig').removeClass("d-none");
+						$('#tableBody tr').on('click',function(){
+							activateTr(this);
+						});
+					}
+					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo Hospital");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar Hospital");
+					break;
+				    case 3:
+					$('#tableHead').empty();
+					$('#tableBody').empty();
+					var fila = '<th>#</th><th>Unidad Ultrasonográfica</th><th>Ciudad</th>';
+					$('#tableHead').append(fila);
+					CONFIG_ACTIVE = "unidadUltrasonografica";
+					if (configuracion.unidadUltrasonografica.length > 0){
+						$.each(configuracion.unidadUltrasonografica, function (i, item) {
+							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+							$('#tableBody').append(fila);
+						});
+						$('#eliminarConfig').removeClass("d-none");
+						$('#tableBody tr').on('click',function(){
+							activateTr(this);
+						});
+					}
+					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva unidad ultrasonográfica");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar unidad ultrasonográfica");
+					break;
+				    case 4:
+					$('#tableHead').empty();
+					$('#tableBody').empty();
+					var fila = '<th>#</th><th>Profesional Ecografista</th><th>Unidad Ultrasonográfica</th>';
+					$('#tableHead').append(fila);
+					CONFIG_ACTIVE = "profesionalEcografista";
+					if (configuracion.profesionalEcografista.length > 0){
+						$.each(configuracion.profesionalEcografista, function (i, item) {
+							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+							$('#tableBody').append(fila);
+						});
+						$('#eliminarConfig').removeClass("d-none");
+						$('#tableBody tr').on('click',function(){
+							activateTr(this);
+						});
+					}
+					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo profesional ultrasonografista");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar profesional ultrasonografista");
+					break;
+				    case 5:
+					$('#tableHead').empty();
+					$('#tableBody').empty();
+					var fila = '<th>#</th><th>Lugar Control Prenatal</th>';
+					$('#tableHead').append(fila);
+					CONFIG_ACTIVE = "lugarControlPrenatal";
+					if (configuracion.lugarControlPrenatal.length > 0){
+						$.each(configuracion.lugarControlPrenatal, function (i, item) {
+							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+							$('#tableBody').append(fila);
+						});
+						$('#eliminarConfig').removeClass("d-none");
+						$('#tableBody tr').on('click',function(){
+							activateTr(this);
+						});
+					}
+					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo lugar de control");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar lugar de control");
+					break;
+				    case 6:
+					$('#tableHead').empty();
+					$('#tableBody').empty();
+					var fila = '<th>#</th><th>Patología Obstétrica</th>';
+					$('#tableHead').append(fila);
+					CONFIG_ACTIVE = "patologiaObstetrica";
+					if (configuracion.patologiaObstetrica.length > 0){
+						$.each(configuracion.patologiaObstetrica, function (i, item) {
+							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+							$('#tableBody').append(fila);
+						});
+						$('#eliminarConfig').removeClass("d-none");
+						$('#tableBody tr').on('click',function(){
+							activateTr(this);
+						});
+					}
+					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva patología");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar patología");
+					break;
+				    case 7:
+					$('#tableHead').empty();
+					$('#tableBody').empty();
+					var fila = '<th>#</th><th>Motivo Exámen</th>';
+					$('#tableHead').append(fila);
+					CONFIG_ACTIVE = "motivoExamen";
+					if (configuracion.motivoExamen.length > 0){
+						$.each(configuracion.motivoExamen, function (i, item) {
+							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+							$('#tableBody').append(fila);
+						});
+						$('#eliminarConfig').removeClass("d-none");
+						$('#tableBody tr').on('click',function(){
+							activateTr(this);
+						});
+					}
+					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo motivo de exámen");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar motivo de exámen");
+					break;
+				    case 8:
+					$('#tableHead').empty();
+					$('#tableBody').empty();
+					var fila = '<th>#</th><th>Previsión</th>';
+					$('#tableHead').append(fila);
+					CONFIG_ACTIVE = "prevision";
+					if (configuracion.prevision.length > 0){
+						$.each(configuracion.prevision, function (i, item) {
+							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+							$('#tableBody').append(fila);
+						});
+						$('#eliminarConfig').removeClass("d-none");
+						$('#tableBody tr').on('click',function(){
+							activateTr(this);
+						});
+					}
+					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva previsión");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar previsión");
+					break;
+				    case 9:
+					$('#tableHead').empty();
+					$('#tableBody').empty();
+					var fila = '<th>#</th><th>Nombre del profesional referente</th>';
+					$('#tableHead').append(fila);
+					CONFIG_ACTIVE = "profesionalReferente";
+					if (configuracion.profesionalReferente.length > 0){
+						$.each(configuracion.profesionalReferente, function (i, item) {
+							fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+							$('#tableBody').append(fila);
+						});
+						$('#eliminarConfig').removeClass("d-none");
+						$('#tableBody tr').on('click',function(){
+							activateTr(this);
+						});
+					}
+					$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo profesional referente");
+					$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar profesional referente");
+					break;
 				}
-				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva región de salud");
-				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar región de salud");
-				break;
-			    case 2:
-				$('#tableHead').empty();
-				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Ciudad</th><th>Centro Regional</th>';
-				$('#tableHead').append(fila);
-				CONFIG_ACTIVE = "ciudad";
-				if (configuracion.ciudad.length > 0){
-					$.each(configuracion.ciudad, function (i, item) {
-						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-						$('#tableBody').append(fila);
-					});
-					$('#eliminarConfig').removeClass("d-none");
-					$('#tableBody tr').on('click',function(){
-						activateTr(this);
-					});
-				}
-				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo Hospital");
-				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar Hospital");
-				break;
-			    case 3:
-				$('#tableHead').empty();
-				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Unidad Ultrasonográfica</th><th>Ciudad</th>';
-				$('#tableHead').append(fila);
-				CONFIG_ACTIVE = "unidadUltrasonografica";
-				if (configuracion.unidadUltrasonografica.length > 0){
-					$.each(configuracion.unidadUltrasonografica, function (i, item) {
-						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-						$('#tableBody').append(fila);
-					});
-					$('#eliminarConfig').removeClass("d-none");
-					$('#tableBody tr').on('click',function(){
-						activateTr(this);
-					});
-				}
-				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva unidad ultrasonográfica");
-				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar unidad ultrasonográfica");
-				break;
-			    case 4:
-				$('#tableHead').empty();
-				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Profesional Ecografista</th><th>Unidad Ultrasonográfica</th>';
-				$('#tableHead').append(fila);
-				CONFIG_ACTIVE = "profesionalEcografista";
-				if (configuracion.profesionalEcografista.length > 0){
-					$.each(configuracion.profesionalEcografista, function (i, item) {
-						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-						$('#tableBody').append(fila);
-					});
-					$('#eliminarConfig').removeClass("d-none");
-					$('#tableBody tr').on('click',function(){
-						activateTr(this);
-					});
-				}
-				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo profesional ultrasonografista");
-				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar profesional ultrasonografista");
-				break;
-			    case 5:
-				$('#tableHead').empty();
-				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Lugar Control Prenatal</th>';
-				$('#tableHead').append(fila);
-				CONFIG_ACTIVE = "lugarControlPrenatal";
-				if (configuracion.lugarControlPrenatal.length > 0){
-					$.each(configuracion.lugarControlPrenatal, function (i, item) {
-						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-						$('#tableBody').append(fila);
-					});
-					$('#eliminarConfig').removeClass("d-none");
-					$('#tableBody tr').on('click',function(){
-						activateTr(this);
-					});
-				}
-				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo lugar de control");
-				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar lugar de control");
-				break;
-			    case 6:
-				$('#tableHead').empty();
-				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Patología Obstétrica</th>';
-				$('#tableHead').append(fila);
-				CONFIG_ACTIVE = "patologiaObstetrica";
-				if (configuracion.patologiaObstetrica.length > 0){
-					$.each(configuracion.patologiaObstetrica, function (i, item) {
-						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-						$('#tableBody').append(fila);
-					});
-					$('#eliminarConfig').removeClass("d-none");
-					$('#tableBody tr').on('click',function(){
-						activateTr(this);
-					});
-				}
-				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva patología");
-				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar patología");
-				break;
-			    case 7:
-				$('#tableHead').empty();
-				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Motivo Exámen</th>';
-				$('#tableHead').append(fila);
-				CONFIG_ACTIVE = "motivoExamen";
-				if (configuracion.motivoExamen.length > 0){
-					$.each(configuracion.motivoExamen, function (i, item) {
-						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-						$('#tableBody').append(fila);
-					});
-					$('#eliminarConfig').removeClass("d-none");
-					$('#tableBody tr').on('click',function(){
-						activateTr(this);
-					});
-				}
-				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo motivo de exámen");
-				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar motivo de exámen");
-				break;
-			    case 8:
-				$('#tableHead').empty();
-				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Previsión</th>';
-				$('#tableHead').append(fila);
-				CONFIG_ACTIVE = "prevision";
-				if (configuracion.prevision.length > 0){
-					$.each(configuracion.prevision, function (i, item) {
-						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-						$('#tableBody').append(fila);
-					});
-					$('#eliminarConfig').removeClass("d-none");
-					$('#tableBody tr').on('click',function(){
-						activateTr(this);
-					});
-				}
-				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nueva previsión");
-				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar previsión");
-				break;
-			    case 9:
-				$('#tableHead').empty();
-				$('#tableBody').empty();
-				var fila = '<th>#</th><th>Nombre del profesional referente</th>';
-				$('#tableHead').append(fila);
-				CONFIG_ACTIVE = "profesionalReferente";
-				if (configuracion.profesionalReferente.length > 0){
-					$.each(configuracion.profesionalReferente, function (i, item) {
-						fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-						$('#tableBody').append(fila);
-					});
-					$('#eliminarConfig').removeClass("d-none");
-					$('#tableBody tr').on('click',function(){
-						activateTr(this);
-					});
-				}
-				$("#nuevoConfig").html("<i class='fa fa-plus' aria-hidden='true'></i> Nuevo profesional referente");
-				$("#editarConfig").html("<i class='fa fa-pencil' aria-hidden='true'></i> Editar profesional referente");
-				break;
 			}
 		}
 		else{
@@ -238,6 +242,7 @@ $(document).ready(function(){
 			$("#guardarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" );
 			$("#cancelarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" ); 
 		});
+		CONFIG_EDIT = true;
 	});
 	
 	$("#editarConfig").on("click", function(){
@@ -292,7 +297,9 @@ $(document).ready(function(){
 			$("#guardarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" );
 			$("#cancelarConfig").removeClass("btn-outline-danger btn-outline-primary").addClass("btn-outline-danger" ); 
 		});
+		CONFIG_EDIT = true;
 	});
+	
 	$("#guardarConfig").on("click", function(){
 		$('#tableHead').parent().parent().removeClass("d-none");
 		$("#nuevoConfig").removeClass("d-none");
@@ -359,7 +366,7 @@ $(document).ready(function(){
 		}
 		
 		$("a").off("click");
-		
+		CONFIG_EDIT = false;
 		$("a[name='"+ CONFIG_ACTIVE+ "']").trigger("click");
 	});
 
@@ -372,6 +379,7 @@ $(document).ready(function(){
 		$(".formulario").addClass("d-none");
 		$("#oConfig").prop('disabled', false);
 		$("a").off("click");
+		CONFIG_EDIT = false;
 		$("a[name='"+ CONFIG_ACTIVE + "']").trigger("click");
 	});
 
@@ -461,7 +469,7 @@ $(document).ready(function(){
 								this.nARR = [];
 								this.aRR = {id:0, nombre:"Doe"};
 								var context = this;
-								$.each(configuracion.profesionalEcografista, function (i, item) {	
+								$.each(configuracion.profesionalEcografista, function (x, item) {	
 									if (item.nombre != nombre){
 										context.aRR["id"] = context.contador +1;
 										context.aRR["nombre"] = item.nombre;
@@ -478,19 +486,22 @@ $(document).ready(function(){
 							if ($( val ).hasClass( 'table-active') == true){
 								getElement = true;
 								var nombre = $(val).children('td').html();
-								this.contador = 0;
-								this.nARR = [];
-								this.aRR = {id:0, nombre:"Doe"};
-								var context = this;
-								$.each(configuracion.lugarControlPrenatal, function (i, item) {	
+								$.each(configuracion.lugarControlPrenatal, function (X, item) {	
 									if (item.nombre != nombre){
-										context.aRR["id"] = context.contador +1;
-										context.aRR["nombre"] = item.nombre;
-										context.nARR.push(context.aRR);
-										context.contador++;
+										
+										var cf = JSON.parse(localStorage["configuracion"]);
+										var aRR = {id:X, nombre:"Doe"};
+										if (X == 0){
+											var nARR = [];
+											cf.lugarControlPrenatal = nARR;
+										}
+										
+										aRR["nombre"] = item.nombre;
+										cf.lugarControlPrenatal.push(aRR);
+										
+										localStorage["configuracion"] = JSON.stringify(cf);
 									}
 								});
-								configuracion.lugarControlPrenatal = this.nARR;
 							}
 						});
 						break;
@@ -538,7 +549,6 @@ $(document).ready(function(){
 						break;
 				}
 				$('#inputConfig').val("");
-				localStorage["configuracion"] = JSON.stringify(configuracion);
 			}
 		}
 		
