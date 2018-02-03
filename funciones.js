@@ -981,7 +981,7 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 		$( "#infEcoObsSegTrim2verSi").on("click", function(){
 		      $('#popupGenerico').modal('hide');
 			$('#lh').focus();
-			$("html, body").animate({ scrollTop: 0 }, "slow");
+			$("html, body").animate({ scrollTop: 50 }, "slow");
 		});
 		return;
 	}
