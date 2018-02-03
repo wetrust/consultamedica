@@ -939,7 +939,6 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 		$('#impDoppler1').remove();
 		$('#infecoObsSegTrim1Clon').remove();
 		$('#popupGenerico').modal('show');
-		$('#lh').focus();
 		$( "#infEcoObsSegTrim2verNO").on("click", function(){
 		      $('#popupTitle').html("Datos para informe");
 			//remueve los botones de imprimir en caso de que estén
@@ -981,6 +980,8 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 		});
 		$( "#infEcoObsSegTrim2verSi").on("click", function(){
 		      $('#popupGenerico').modal('hide');
+			$('#lh').focus();
+			$("html, body").animate({ scrollTop: 0 }, "slow");
 		});
 		return;
 	}
