@@ -69,18 +69,10 @@ function activarBotones() {
    }
 
 	 var semanas = Math.trunc(localStorage.eg)
-	 var dias = (localStorage.eg - Math.trunc(localStorage.eg)) * 10
+	 var dias =  Math.trunc((localStorage.eg - Math.trunc(localStorage.eg)) * 10)
 
 	 $('#semanasEcoGen').val(semanas);
 	$('#diasEcoGen').val(dias);
-	 $('#semanasEcoObs').val(semanas);
-	$('#diasEcoObs').val(dias);
-	$('#semanasEcoDopp').val(semanas);
-	$('#diasEcoDopp').val(dias);
-	$( '#semanasTipoEco' ).val(semanas);
-	$( '#diasTipoEco' ).val(dias);
-	$('#semanasEcoPrim').val(semanas);
-        $( '#diasEcoPrim' ).val(dias);
  });
   
   $("input[name='fee']").on('change', function() {
