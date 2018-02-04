@@ -67,6 +67,20 @@ function activarBotones() {
    if (this.id != "fum-seis"){
 	   $('#fum-seis').datepicker('setValue', localStorage.fum);
    }
+	 
+	 var semanas = Math.abs(localStorage.eg)
+	 var dias = localStorage.eg - Math.abs(localStorage.eg)
+
+	 $('#semanasEcoGen').val(semanas);
+	$('#diasEcoGen').val(dias);
+	 $('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$('#semanasEcoDopp').val(semanas);
+	$('#diasEcoDopp').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoPrim').val(semanas);
+        $( '#diasEcoPrim' ).val(dias);
  });
   
   $("input[name='fee']").on('change', function() {
