@@ -69,7 +69,7 @@ function activarBotones() {
    }
 
 	 var semanas = Math.trunc(localStorage.eg)
-	 var dias = localStorage.eg - Math.trunc(localStorage.eg)
+	 var dias = (localStorage.eg - Math.trunc(localStorage.eg)) * 10
 
 	 $('#semanasEcoGen').val(semanas);
 	$('#diasEcoGen').val(dias);
