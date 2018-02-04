@@ -67,9 +67,9 @@ function activarBotones() {
    if (this.id != "fum-seis"){
 	   $('#fum-seis').datepicker('setValue', localStorage.fum);
    }
-	 
-	 var semanas = Math.abs(localStorage.eg)
-	 var dias = localStorage.eg - Math.abs(localStorage.eg)
+
+	 var semanas = Math.trunc(localStorage.eg)
+	 var dias = localStorage.eg - Math.trunc(localStorage.eg)
 
 	 $('#semanasEcoGen').val(semanas);
 	$('#diasEcoGen').val(dias);
