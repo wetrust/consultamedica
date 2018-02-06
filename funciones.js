@@ -421,6 +421,8 @@ $( '#semanasEcoPrim' ).on( 'change', function() {
 	$('#diasEcoDopp').val(dias);
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoGen').val(semanas);
+	$('#diasEcoGen').val(dias);
 });
 
 $( '#diasEcoPrim' ).on( 'change', function() {
@@ -462,6 +464,8 @@ $( '#diasEcoPrim' ).on( 'change', function() {
 	$('#diasEcoDopp').val(dias);
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoGen').val(semanas);
+	$('#diasEcoGen').val(dias);
 });
 
 $( '#semanasEcoGen' ).on( 'change', function() {
