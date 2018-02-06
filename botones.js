@@ -73,6 +73,15 @@ function activarBotones() {
 
 	 $('#semanasEcoGen').val(semanas);
 	$('#diasEcoGen').val(dias);
+	 $("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoPrim').val(semanas);
+        $( '#diasEcoPrim' ).val(dias);
+	$( '#diasEcoDopp' ).val(dias);
+	$('#semanasEcoDopp').val(semanas);
  });
   
   $("input[name='fee']").on('change', function() {
@@ -97,5 +106,20 @@ function activarBotones() {
    if (this.id != "fee-seis"){
 	   $('#fee-seis').datepicker('setValue', localStorage.fee);
    }
+	  
+	  var semanas = Math.trunc(localStorage.eg)
+	 var dias =  Math.trunc((localStorage.eg - Math.trunc(localStorage.eg)) * 10)
+
+	 $('#semanasEcoGen').val(semanas);
+	$('#diasEcoGen').val(dias);
+	 $("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoPrim').val(semanas);
+        $( '#diasEcoPrim' ).val(dias);
+	$( '#diasEcoDopp' ).val(dias);
+	$('#semanasEcoDopp').val(semanas);
  });
 }
