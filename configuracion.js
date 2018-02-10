@@ -96,7 +96,7 @@ function makedbLocalStorage(){
 			$("#membrete").val(configuracion.configuracion.membrete);
 		}else{
 			//crear un array vacio
-			var stringVacio = '{"configuracion": {"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}}';
+			var stringVacio = '{"configuracion": {"profRef":[]"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}}';
 			localStorage["configuracion"] = stringVacio;
 		}
 	}
@@ -118,6 +118,28 @@ function saveMotivoExamenLocalStorage(){
                         	configuracion.configuracion.MotivoExamen.push(aRR);
 			$('#eliminarMotivoConfig').css("display","block");
 			$('#motivoInput').val("");
+			localStorage["configuracion"] = JSON.stringify(configuracion);
+			makedbLocalStorage();
+		}
+	}
+}
+
+function saveprofRefLocalStorage(){
+
+		if (window.localStorage) {
+		if (localStorage.configuracion != null) {
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			$('#profReferente').html("");
+			$('#profRefConfigTable').html("");
+		
+				var aRR = {id:0, nombre:"Doe"};
+				aRR["id"] = configuracion.configuracion.profRef.length +1;
+				aRR["nombre"] = $('#profRefInput').val();
+				
+                        	configuracion.configuracion.profRef.push(aRR);
+			$('#eliminarprofRefConfig').css("display","block");
+			$('#profRefInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 			makedbLocalStorage();
 		}
