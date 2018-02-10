@@ -76,6 +76,24 @@ function makedbLocalStorage(){
 				});
 			}
 			
+			$('#profReferente').empty();
+			$('#profRefConfigTable').empty();
+			if (configuracion.configuracion.profRef.length > 0){
+				$.each(configuracion.configuracion.profRef, function (i, item) {
+				    $('#profReferente').append($('<option>', { 
+					value: item.id,
+					text : item.nombre
+				    }));
+					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+					$('#profRefConfigTable').append(fila);
+					
+				});
+				$('#eliminarprofRefConfig').css("display","block");
+				$('#profRefConfigTable tr').on('click',function(){
+					activateTr(this);
+				});
+			}
+			
 			$('#patologiaObstetricaUno').empty();
 			$('#PatologiaObstetricaConfigTable').empty();
 			if (configuracion.configuracion.PatologiaObstetrica.length > 0){
@@ -96,7 +114,7 @@ function makedbLocalStorage(){
 			$("#membrete").val(configuracion.configuracion.membrete);
 		}else{
 			//crear un array vacio
-			var stringVacio = '{"configuracion": {"profRef":[]"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}}';
+			var stringVacio = '{"configuracion": {"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}}';
 			localStorage["configuracion"] = stringVacio;
 		}
 	}
