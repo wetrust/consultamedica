@@ -136,6 +136,34 @@ $('#guardarTipoConfig').on('click', function(){
 	$("#tipoConfig .formulario").hide();
 });
 
+$( '#nuevoprofRefConfig').on('click', function() {
+	$('#profRefConfig .tabla').hide();
+	$('#nuevoprofRefConfig').hide();
+	$('#editarprofRefConfig').hide();
+	$('#guardarprofRefConfig').show();
+	$('#cancelarprofRefConfig').show();
+	$('#profRefConfig .formulario').show();
+ });
+
+$( '#cancelarprofRefConfig').on('click', function() {
+	$("#profRefConfig .tabla").show();
+	$('#nuevoprofRefConfig').show();
+	$('#editarprofRefConfig').show();
+	$('#guardarprofRefConfig').hide();
+	$('#cancelarprofRefConfig').hide();
+	$("#profRefConfig .formulario").hide();
+ });
+
+$('#guardarprofRefConfig').on('click', function(){
+	saveprofRefLocalStorage();
+	$("#profRefConfig .tabla").show();
+	$('#nuevoprofRefConfig').show();
+	$('#guardarprofRefConfig').hide();
+	$('#cancelarprofRefConfig').hide();
+	$("#profRefConfig .formulario").hide();
+});
+
+
 $( '#nuevoLugarConfig').on('click', function() {
 	$('#LugarConfig .tabla').hide();
 	$('#nuevoLugarConfig').hide();
