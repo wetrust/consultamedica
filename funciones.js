@@ -911,6 +911,7 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 			$("#comentarios-anatomia-informe-eg-texto").val('');
 		}
 	});
+	$("#ev-morfo").val('no evaluada dirigidamente, pero el aspecto morfológico general es normal');
 	$('#ev-morfo').trigger('change');
 
 	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button><button type='button' class='btn btn-outline-info' id='infecoObsSegTrim1Clon'>Ver Gráficas</button>");
@@ -1026,6 +1027,7 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 			$("#comentarios-anatomia-informe-eg-texto").val('');
 		}
 	});
+	$("#ev-morfo").val('no evaluada dirigidamente, pero el aspecto morfológico general es normal');
 	$('#ev-morfo').trigger('change');
 	$('#popupGenerico').modal('show');
 });
