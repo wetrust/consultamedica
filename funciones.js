@@ -2735,7 +2735,7 @@ function pctpfe() {
 				pctPFE = '&lt; 1';
 			}
 			else{
-				pctPFE = pctFinal;
+				pctPFE = pctFinal.toFixed();
 			}
 	 $('#pfePctRpt').val(pctPFE);
 	 $('#pfeRango').val(pct10[eg] + ' - ' +pct90[eg]);
