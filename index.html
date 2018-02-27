@@ -383,17 +383,6 @@
                                     </div>
                                 </div>
                                 <div class="row mt-2 mb-2">
-                                     <div class="col-2">
-                                        <label for="membrete" class="col-form-label">Membrete institucional</label>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <textarea class="form-control" rows="3" id="membrete" style="font-size: 12px;" onkeydown="return limitLines(this, event)"></textarea>
-                                    </div>
-                                    <div class="col-2">
-                                        <button class="btn btn-danger my-2" id="saveMebrete"><small><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Membrete</small></button>
-                                    </div>
-                                </div>
-                                <div class="row mt-2 mb-2">
                                     <div class="col-2 mt-3">
                                         <label for="ecografista" class="col-form-label d-none">Embarazo Gemelar</label>
                                     </div>
@@ -2573,7 +2562,10 @@
             <hr>
             <ul class="nav nav-tabs" role="tablist" id="configTab">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#ciudadConfig" role="tab">Procedencia (Ciudad)</a>
+                    <a class="nav-link active" data-toggle="tab" href="#membreteConfig" role="tab">Membrete</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#ciudadConfig" role="tab">Procedencia (Ciudad)</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#LugarConfig" role="tab">Lugar Control prenatal</a>
@@ -2592,6 +2584,23 @@
                 </li>
             </ul>
             <div class="tab-content">
+                <div class="tab-pane active pt-2" id="membreteConfig" role="tabpanel">
+                    <div class="card tabla">
+                        <div class="card-block">
+                            <div class="row mt-2 mb-2">
+                                     <div class="col-2">
+                                        <label for="membrete" class="col-form-label">Membrete institucional</label>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <textarea class="form-control" rows="3" id="membrete" style="font-size: 12px;" onkeydown="return limitLines(this, event)"></textarea>
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="btn btn-danger my-2" id="saveMebrete"><small><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Membrete</small></button>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="tab-pane pt-2" id="patologiaObstetricaConfig" role="tabpanel">
                     <ul class="nav justify-content-center m-3">
                         <li class="nav-item">
@@ -2771,7 +2780,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane active pt-2" id="ciudadConfig" role="tabpanel">
+                <div class="tab-pane pt-2" id="ciudadConfig" role="tabpanel">
                     <ul class="nav justify-content-center m-3">
                         <li class="nav-item">
                             <a class="nav-link" href="#" id="nuevoCiudadConfig">Nuevo</a>
