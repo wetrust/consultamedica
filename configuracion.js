@@ -433,3 +433,38 @@ $( '#eliminarPatologiaObstetricaConfig').on('click', function() {
 		makedbLocalStorage();
 	}
  });
+
+$( '#eliminarprofRefConfig').on('click', function() {
+	var getElement = false;
+	var contador = 0
+	$.each( $('#profRefConfigTable').children(), function( i, val ) {
+		if ($( val ).hasClass( 'table-active') == true){
+			getElement = true;
+			var nombre = $(val).children('td').html();
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			//construir un nuevo array de objetos
+			var profRef = [];
+			$.each(configuracion.configuracion.profRef, function (i, item) {	
+				if (item.nombre != nombre){
+					var aRR = {id:0, nombre:"Doe"};
+					aRR["id"] =contador +1;
+					aRR["nombre"] = item.nombre;
+				
+                        		profRef.push(aRR);
+					contador++;
+				}
+			});
+			
+			configuracion.configuracion.profRef = profRef;
+			localStorage["configuracion"] = JSON.stringify(configuracion);
+		}
+	});
+	
+	if (getElement == false){
+		window.alert("haga click sobre un elemento para eliminar");
+	}
+	else{
+		makedbLocalStorage();
+	}
+ });
