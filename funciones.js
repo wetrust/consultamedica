@@ -1050,7 +1050,7 @@ $( '#modalPreInfEcoDoppler' ).on( 'click', function() {
 	if ($('#ipau').val() > 0){
 		comentarios = comentarios + 'F. Doppler fetal, IP de CCP percentil ' + $('#ccpPctTxt').val() + '\r\n';
 	}
-	
+	$("#comentarios-doppler").val(comentarios);
 	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button><button type='button' class='btn btn-outline-info' id='infecoObsSegTrim1Clon'>Ver Gráficas</button>");
 	$( '#bvmDoppler' ).on('change', function(){
 		bvmDoppler();
