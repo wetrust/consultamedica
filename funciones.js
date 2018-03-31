@@ -957,7 +957,7 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 			//añadir boton de imprimir
 			var fur = $( "input[name='fum']").val();
 			var fpp = $( "input[name='fpp']").val();
-			var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n" + $('#comentarios-eco-dos-generico').val();
+			var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n";
 			$('#comentarios-eco-dos-inf-dos').val(comentario);
 			$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button><button type='button' class='btn btn-outline-info' id='infecoObsSegTrim1Clon'>Ver Gráficas</button>");
 			$( '#impDoppler1').on("click", function(){
@@ -1003,7 +1003,7 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 	//añadir boton de imprimir
 	var fur = $( "input[name='fum']").val();
 	var fpp = $( "input[name='fpp']").val();
-	var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n" + $('#comentarios-eco-dos-generico').val();
+	var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n";
 	$('#comentarios-eco-dos-inf-dos').val(comentario);
 	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button><button type='button' class='btn btn-outline-info' id='infecoObsSegTrim1Clon'>Ver Gráficas</button>");
 	$( '#impDoppler1').on("click", function(){
@@ -1051,9 +1051,6 @@ $( '#modalPreInfEcoDoppler' ).on( 'click', function() {
 		comentarios = comentarios + 'F. Doppler fetal, IP de CCP percentil ' + $('#ccpPctTxt').val() + '\r\n';
 	}
 	
-	comentarios = comentarios + $('#comentarios-eco-doppler-generico').val();
-	
-	$('#comentarios-doppler').val(comentarios);
 	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver informe</button><button type='button' class='btn btn-outline-info' id='infecoObsSegTrim1Clon'>Ver Gráficas</button>");
 	$( '#bvmDoppler' ).on('change', function(){
 		bvmDoppler();
