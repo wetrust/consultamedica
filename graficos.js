@@ -1943,8 +1943,6 @@ $( '#infDoppler1' ).on( 'click', function() {
     else{
 	    comentarios = $("#comentarios-doppler").val().replace(/\r\n|\r|\n/g,"<br />");
     }
-	
-    comentarios = comentarios + $('#comentarios-eco-doppler-generico').val().replace(/\r\n|\r|\n/g,"<br />");
     stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
         
     $('#graficosBody').html(stringGraficos);
