@@ -928,7 +928,6 @@ $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 	var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvmEcoDos").value + " mm.";
 	
 	comentarios = comentarios + linea6 + '\r\n';
-	comentarios = comentarios + $('#comentarios-eco-dos-generico').val();
 	$('#popupGenerico').modal('show');
 	$("#comentarios-eco-dos-inf-dos").val(comentarios);
 	
