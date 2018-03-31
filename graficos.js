@@ -2817,7 +2817,6 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
 	     comentarios = $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
     }
 	
-    comentarios = comentarios + '<br />' +  $('#comentarios-eco-dos-generico').val().replace(/\r\n|\r|\n/g,"<br />");
     stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
     var paciente = $( '#nombre-paciente').val();
     var idpaciente = $( '#id-paciente').val();
