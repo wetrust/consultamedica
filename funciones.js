@@ -3292,6 +3292,6 @@ function ipn() {
 }
 
 function valCC(dof,dbp){
-    var delta = parseFloat(1.59);
+    var delta = parseFloat(1.60);
     return Math.round((parseInt(dof) + parseInt(dbp)) * delta);
 }
