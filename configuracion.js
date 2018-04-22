@@ -14,7 +14,7 @@ function checkIntegrity(){
 	for (var j = 0; j < tables.length; j++) {
 		let table = false;
 		$.each(db, function( index, value ) {
-			if (value.name == tables[j]){
+			if (index == tables[j]){
 			    table = true;
 			}
 		});
