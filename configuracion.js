@@ -21,9 +21,12 @@ function checkIntegrity(){
 		
 		if (table == false){
 			let element = JSON.parse('{"' +tables[j] +'":[]}');
-			db.push(element);
+			$.extend( db, element );
 		}
 	}
+	
+	localStorage["configuracion"] = JSON.stringify(db);
+	
 }
 
 function makeDatabase(){
