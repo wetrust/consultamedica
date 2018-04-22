@@ -47,16 +47,13 @@ function checkDatabase(){
 	return false;
 }
 
-function makedbLocalStorage(){
-	
-	if (window.localStorage) {
-		if (localStorage.configuracion != null) {
+function loadDatabase(){
 			var configuracion = JSON.parse(localStorage["configuracion"]);
 			
 			$('#motivo-examen').empty();
 			$('#MotivoConfigTable').empty();
-			if (configuracion.configuracion.MotivoExamen.length > 0){
-				$.each(configuracion.configuracion.MotivoExamen, function (i, item) {
+			if (configuracion.MotivoExamen.length > 0){
+				$.each(configuracion.MotivoExamen, function (i, item) {
 				    $('#motivo-examen').append($('<option>', { 
 					value: item.id,
 					text : item.nombre
@@ -73,8 +70,8 @@ function makedbLocalStorage(){
 			
 			$('#Lugar-examen').empty();
 			$('#LugarConfigTable').empty();
-			if (configuracion.configuracion.LugarControlPrenatal.length > 0){
-				$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {
+			if (configuracion.LugarControlPrenatal.length > 0){
+				$.each(configuracion.LugarControlPrenatal, function (i, item) {
 				    $('#Lugar-examen').append($('<option>', { 
 					value: item.id,
 					text : item.nombre
@@ -91,8 +88,8 @@ function makedbLocalStorage(){
 			}
 			$('#ecografista').empty();
 			$('#EcografistaConfigTable').empty();
-			if (configuracion.configuracion.profesional.length > 0){
-				$.each(configuracion.configuracion.profesional, function (i, item) {
+			if (configuracion.profesional.length > 0){
+				$.each(configuracion.profesional, function (i, item) {
 				    $('#ecografista').append($('<option>', { 
 					value: item.id,
 					text : item.nombre
@@ -109,8 +106,8 @@ function makedbLocalStorage(){
 			
 			$('#procedencia').empty();
 			$('#CiudadConfigTable').empty();
-			if (configuracion.configuracion.ciudad.length > 0){
-				$.each(configuracion.configuracion.ciudad, function (i, item) {
+			if (configuracion.ciudad.length > 0){
+				$.each(configuracion.ciudad, function (i, item) {
 				    $('#procedencia').append($('<option>', { 
 					value: item.id,
 					text : item.nombre
@@ -127,8 +124,8 @@ function makedbLocalStorage(){
 			
 			$('#profReferente').empty();
 			$('#profRefConfigTable').empty();
-			if (configuracion.configuracion.profRef.length > 0){
-				$.each(configuracion.configuracion.profRef, function (i, item) {
+			if (configuracion.profRef.length > 0){
+				$.each(configuracion.profRef, function (i, item) {
 				    $('#profReferente').append($('<option>', { 
 					value: item.id,
 					text : item.nombre
@@ -145,8 +142,8 @@ function makedbLocalStorage(){
 			
 			$('#patologiaObstetricaUno').empty();
 			$('#PatologiaObstetricaConfigTable').empty();
-			if (configuracion.configuracion.PatologiaObstetrica.length > 0){
-				$.each(configuracion.configuracion.PatologiaObstetrica, function (i, item) {
+			if (configuracion.PatologiaObstetrica.length > 0){
+				$.each(configuracion.PatologiaObstetrica, function (i, item) {
 				    $('#patologiaObstetricaUno').append($('<option>', { 
 					value: item.id,
 					text : item.nombre
@@ -161,11 +158,6 @@ function makedbLocalStorage(){
 				});
 			}
 			$("#membrete").val(configuracion.membrete);
-		}else{
-			//crear un array vacio
-			var stringVacio = '{"configuracion": {"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}}';
-			localStorage["configuracion"] = stringVacio;
-		}
 	}
 }
 
@@ -186,7 +178,7 @@ function saveMotivoExamenLocalStorage(){
 			$('#eliminarMotivoConfig').css("display","block");
 			$('#motivoInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
-			makedbLocalStorage();
+			loadDatabase();
 		}
 	}
 }
@@ -208,7 +200,7 @@ function saveprofRefLocalStorage(){
 			$('#eliminarprofRefConfig').css("display","block");
 			$('#profRefInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
-			makedbLocalStorage();
+			loadDatabase();
 		}
 	}
 }
@@ -230,7 +222,7 @@ function saveLugarExamenLocalStorage(){
 			$('#eliminarLugarConfig').css("display","block");
 			$('#LugarInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
-			makedbLocalStorage();
+			loadDatabase();
 		}
 	}
 }
@@ -252,7 +244,7 @@ function saveEcografistaExamenLocalStorage(){
 			$('#eliminarEcografistaConfig').css("display","block");
 			$('#ecografistaInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
-			makedbLocalStorage();
+			loadDatabase();
 		}
 	}
 }
@@ -274,7 +266,7 @@ function saveCiudadExamenLocalStorage(){
 			$('#eliminarCiudadConfig').css("display","block");
 			$('#CiudadInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
-			makedbLocalStorage();
+			loadDatabase();
 		}
 	}
 }
@@ -296,7 +288,7 @@ function savePatologiaObstetricaExamenLocalStorage(){
 			$('#eliminarPatologiaObstetricaConfig').css("display","block");
 			$('#PatologiaObstetricaInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
-			makedbLocalStorage();
+			loadDatabase();
 		}
 	}
 }
@@ -341,7 +333,7 @@ $( '#eliminarMotivoConfig').on('click', function() {
 		window.alert("haga click sobre un elemento para eliminar");
 	}
 	else{
-		makedbLocalStorage();
+		loadDatabase();
 	}
  });
 $( '#eliminarLugarConfig').on('click', function() {
@@ -375,7 +367,7 @@ $( '#eliminarLugarConfig').on('click', function() {
 		window.alert("haga click sobre un elemento para eliminar");
 	}
 	else{
-		makedbLocalStorage();
+		loadDatabase();
 	}
  });
 $( '#eliminarEcografistaConfig').on('click', function() {
@@ -409,7 +401,7 @@ $( '#eliminarEcografistaConfig').on('click', function() {
 		window.alert("haga click sobre un elemento para eliminar");
 	}
 	else{
-		makedbLocalStorage();
+		loadDatabase();
 	}
  });
 
@@ -444,7 +436,7 @@ $( '#eliminarCiudadConfig').on('click', function() {
 		window.alert("haga click sobre un elemento para eliminar");
 	}
 	else{
-		makedbLocalStorage();
+		loadDatabase();
 	}
  });
 
@@ -479,7 +471,7 @@ $( '#eliminarPatologiaObstetricaConfig').on('click', function() {
 		window.alert("haga click sobre un elemento para eliminar");
 	}
 	else{
-		makedbLocalStorage();
+		loadDatabase();
 	}
  });
 
@@ -514,6 +506,6 @@ $( '#eliminarprofRefConfig').on('click', function() {
 		window.alert("haga click sobre un elemento para eliminar");
 	}
 	else{
-		makedbLocalStorage();
+		loadDatabase();
 	}
  });
