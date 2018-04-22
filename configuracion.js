@@ -21,6 +21,10 @@ function checkIntegrity(){
 	}
 }
 
+
+
+
+
 function checkIntegrity(){
 	let db = JSON.parse(localStorage["configuracion"]);
 	
