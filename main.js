@@ -331,7 +331,7 @@ $( document ).ready(function() {
 			activarBotones();
 			let database = checkDatabase();
 			if (database == true){
-				//
+				loadDatabase();
 			}
 			else{
 				alert("Debes actualizar tu navegador para usar este sistema");
