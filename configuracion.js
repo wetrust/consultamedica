@@ -1,3 +1,60 @@
+function haveDatabase(){
+	if (localStorage.configuracion != null) {
+		return true;
+	}
+	return false;
+}
+
+function checkIntegrity(){
+	let db = JSON.parse(localStorage["configuracion"]);
+	
+	let tables = ['MotivoExamen', 'LugarControlPrenatal', 'profesional', 'ciudad', 'profRef', 'PatologiaObstetrica', 'membrete'];
+	let baseTables = JSON.parse('{"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}');
+	
+	for (var j = 0; j < tables.length; j++) {
+		let table = db.find(function(x) {return x.propertyName===tables[j];});
+		
+		if (table == false){
+			let element = baseTables[tables[j]];
+			db.push(element);
+		}
+	}
+}
+
+function checkIntegrity(){
+	let db = JSON.parse(localStorage["configuracion"]);
+	
+	let tables = ['MotivoExamen', 'LugarControlPrenatal', 'profesional', 'ciudad', 'profRef', 'PatologiaObstetrica', 'membrete'];
+	let baseTables = JSON.parse('{"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}');
+	
+	for (var j = 0; j < tables.length; j++) {
+		let table = db.find(function(x) {return x.propertyName===tables[j];});
+		
+		if (table == false){
+			let element = baseTables[tables[j]];
+			db.push(element);
+		}
+	}
+}
+
+function makeDatabase(){
+	var db = '{"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}';
+	localStorage["configuracion"] = db;
+}
+
+function chekcDatabase(){
+	if (window.localStorage) {
+		if (haveDatabase() == true){
+			checkIntegrity();
+		}
+		else{
+			makeDatabase();
+		}
+		return true;
+	}
+	return false;
+}
+
 function makedbLocalStorage(){
 	
 	if (window.localStorage) {
