@@ -160,7 +160,7 @@ function makedbLocalStorage(){
 					activateTr(this);
 				});
 			}
-			$("#membrete").val(configuracion.configuracion.membrete);
+			$("#membrete").val(configuracion.membrete);
 		}else{
 			//crear un array vacio
 			var stringVacio = '{"configuracion": {"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}}';
@@ -179,10 +179,10 @@ function saveMotivoExamenLocalStorage(){
 			$('#MotivoConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
-				aRR["id"] = configuracion.configuracion.MotivoExamen.length +1;
+				aRR["id"] = configuracion.MotivoExamen.length +1;
 				aRR["nombre"] = $('#motivoInput').val();
 				
-                        	configuracion.configuracion.MotivoExamen.push(aRR);
+                        	configuracion.MotivoExamen.push(aRR);
 			$('#eliminarMotivoConfig').css("display","block");
 			$('#motivoInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
@@ -201,10 +201,10 @@ function saveprofRefLocalStorage(){
 			$('#profRefConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
-				aRR["id"] = configuracion.configuracion.profRef.length +1;
+				aRR["id"] = configuracion.profRef.length +1;
 				aRR["nombre"] = $('#profRefInput').val();
 				
-                        	configuracion.configuracion.profRef.push(aRR);
+                        	configuracion.profRef.push(aRR);
 			$('#eliminarprofRefConfig').css("display","block");
 			$('#profRefInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
@@ -223,10 +223,10 @@ function saveLugarExamenLocalStorage(){
 			$('#LugarConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
-				aRR["id"] = configuracion.configuracion.LugarControlPrenatal.length +1;
+				aRR["id"] = configuracion.LugarControlPrenatal.length +1;
 				aRR["nombre"] = $('#LugarInput').val();
 				
-                        	configuracion.configuracion.LugarControlPrenatal.push(aRR);
+                        	configuracion.LugarControlPrenatal.push(aRR);
 			$('#eliminarLugarConfig').css("display","block");
 			$('#LugarInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
@@ -245,10 +245,10 @@ function saveEcografistaExamenLocalStorage(){
 			$('#EcografistaConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
-				aRR["id"] = configuracion.configuracion.profesional.length +1;
+				aRR["id"] = configuracion.profesional.length +1;
 				aRR["nombre"] = $('#ecografistaInput').val();
 				
-                        	configuracion.configuracion.profesional.push(aRR);
+                        	configuracion.profesional.push(aRR);
 			$('#eliminarEcografistaConfig').css("display","block");
 			$('#ecografistaInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
@@ -267,10 +267,10 @@ function saveCiudadExamenLocalStorage(){
 			$('#CiudadConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
-				aRR["id"] = configuracion.configuracion.ciudad.length +1;
+				aRR["id"] = configuracion.ciudad.length +1;
 				aRR["nombre"] = $('#CiudadInput').val();
 				
-                        	configuracion.configuracion.ciudad.push(aRR);
+                        	configuracion.ciudad.push(aRR);
 			$('#eliminarCiudadConfig').css("display","block");
 			$('#CiudadInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
@@ -289,10 +289,10 @@ function savePatologiaObstetricaExamenLocalStorage(){
 			$('#PatologiaObstetricaConfigTable').html("");
 		
 				var aRR = {id:0, nombre:"Doe"};
-				aRR["id"] = configuracion.configuracion.PatologiaObstetrica.length +1;
+				aRR["id"] = configuracion.PatologiaObstetrica.length +1;
 				aRR["nombre"] = $('#PatologiaObstetricaInput').val();
 				
-                        	configuracion.configuracion.PatologiaObstetrica.push(aRR);
+                        	configuracion.PatologiaObstetrica.push(aRR);
 			$('#eliminarPatologiaObstetricaConfig').css("display","block");
 			$('#PatologiaObstetricaInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
@@ -321,7 +321,7 @@ $( '#eliminarMotivoConfig').on('click', function() {
 			
 			//construir un nuevo array de objetos
 			var MotivoExamen = [];
-			$.each(configuracion.configuracion.MotivoExamen, function (i, item) {	
+			$.each(configuracion.MotivoExamen, function (i, item) {	
 				if (item.nombre != nombre){
 					var aRR = {id:0, nombre:"Doe"};
 					aRR["id"] =contador +1;
@@ -332,7 +332,7 @@ $( '#eliminarMotivoConfig').on('click', function() {
 				}
 			});
 			
-			configuracion.configuracion.MotivoExamen = MotivoExamen;
+			configuracion.MotivoExamen = MotivoExamen;
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	});
@@ -355,7 +355,7 @@ $( '#eliminarLugarConfig').on('click', function() {
 			
 			//construir un nuevo array de objetos
 			var LugarControlPrenatal = [];
-			$.each(configuracion.configuracion.LugarControlPrenatal, function (i, item) {	
+			$.each(configuracion.LugarControlPrenatal, function (i, item) {	
 				if (item.nombre != nombre){
 					var aRR = {id:0, nombre:"Doe"};
 					aRR["id"] =contador +1;
@@ -366,7 +366,7 @@ $( '#eliminarLugarConfig').on('click', function() {
 				}
 			});
 			
-			configuracion.configuracion.LugarControlPrenatal = LugarControlPrenatal;
+			configuracion.LugarControlPrenatal = LugarControlPrenatal;
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	});
@@ -389,7 +389,7 @@ $( '#eliminarEcografistaConfig').on('click', function() {
 			
 			//construir un nuevo array de objetos
 			var profesional = [];
-			$.each(configuracion.configuracion.profesional, function (i, item) {	
+			$.each(configuracion.profesional, function (i, item) {	
 				if (item.nombre != nombre){
 					var aRR = {id:0, nombre:"Doe"};
 					aRR["id"] =contador +1;
@@ -400,7 +400,7 @@ $( '#eliminarEcografistaConfig').on('click', function() {
 				}
 			});
 			
-			configuracion.configuracion.profesional = profesional;
+			configuracion.profesional = profesional;
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	});
@@ -424,7 +424,7 @@ $( '#eliminarCiudadConfig').on('click', function() {
 			
 			//construir un nuevo array de objetos
 			var ciudad = [];
-			$.each(configuracion.configuracion.ciudad, function (i, item) {	
+			$.each(configuracion.ciudad, function (i, item) {	
 				if (item.nombre != nombre){
 					var aRR = {id:0, nombre:"Doe"};
 					aRR["id"] =contador +1;
@@ -435,7 +435,7 @@ $( '#eliminarCiudadConfig').on('click', function() {
 				}
 			});
 			
-			configuracion.configuracion.ciudad = ciudad;
+			configuracion.ciudad = ciudad;
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	});
@@ -459,7 +459,7 @@ $( '#eliminarPatologiaObstetricaConfig').on('click', function() {
 			
 			//construir un nuevo array de objetos
 			var PatologiaObstetrica = [];
-			$.each(configuracion.configuracion.PatologiaObstetrica, function (i, item) {	
+			$.each(configuracion.PatologiaObstetrica, function (i, item) {	
 				if (item.nombre != nombre){
 					var aRR = {id:0, nombre:"Doe"};
 					aRR["id"] =contador +1;
@@ -470,7 +470,7 @@ $( '#eliminarPatologiaObstetricaConfig').on('click', function() {
 				}
 			});
 			
-			configuracion.configuracion.PatologiaObstetrica = PatologiaObstetrica;
+			configuracion.PatologiaObstetrica = PatologiaObstetrica;
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	});
@@ -494,7 +494,7 @@ $( '#eliminarprofRefConfig').on('click', function() {
 			
 			//construir un nuevo array de objetos
 			var profRef = [];
-			$.each(configuracion.configuracion.profRef, function (i, item) {	
+			$.each(configuracion.profRef, function (i, item) {	
 				if (item.nombre != nombre){
 					var aRR = {id:0, nombre:"Doe"};
 					aRR["id"] =contador +1;
@@ -505,7 +505,7 @@ $( '#eliminarprofRefConfig').on('click', function() {
 				}
 			});
 			
-			configuracion.configuracion.profRef = profRef;
+			configuracion.profRef = profRef;
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	});
