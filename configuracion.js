@@ -20,7 +20,7 @@ function checkIntegrity(){
 		});
 		
 		if (table == false){
-			let element = baseTables["'" + tables[j]"'"];
+			let element = baseTables["'" + tables[j] + "'"];
 			db.push(element);
 		}
 	}
