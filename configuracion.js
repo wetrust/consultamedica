@@ -5,21 +5,7 @@ function haveDatabase(){
 	return false;
 }
 
-function checkIntegrity(){
-	let db = JSON.parse(localStorage["configuracion"]);
-	
-	let tables = ['MotivoExamen', 'LugarControlPrenatal', 'profesional', 'ciudad', 'profRef', 'PatologiaObstetrica', 'membrete'];
-	let baseTables = JSON.parse('{"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}');
-	
-	for (var j = 0; j < tables.length; j++) {
-		let table = db.inArray( tables[j], db );
-		
-		if (table == false){
-			let element = baseTables[tables[j]];
-			db.push(element);
-		}
-	}
-}
+
 
 
 
