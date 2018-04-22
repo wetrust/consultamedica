@@ -14,7 +14,7 @@ function checkIntegrity(){
 	for (var j = 0; j < tables.length; j++) {
 		
 		let table = $.map(db, function(obj) {
-			if(obj.id === tables[j]){
+			if(db.id === tables[j]){
 				return true;
 			}
 			else{
