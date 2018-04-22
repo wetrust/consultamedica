@@ -158,7 +158,6 @@ function loadDatabase(){
 				});
 			}
 			$("#membrete").val(configuracion.membrete);
-	}
 }
 
 function saveMotivoExamenLocalStorage(){
