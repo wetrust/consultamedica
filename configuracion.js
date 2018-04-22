@@ -12,13 +12,10 @@ function checkIntegrity(){
 	let baseTables = JSON.parse('{"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}');
 	
 	for (var j = 0; j < tables.length; j++) {
-		
-		let table = $.map(db, function(obj) {
-			if(db.id === tables[j]){
-				return true;
-			}
-			else{
-				return false;
+		let table = false;
+		$.each(db, function( index, value ) {
+			if (value.name == tables[j]){
+			    table = true;
 			}
 		});
 		
