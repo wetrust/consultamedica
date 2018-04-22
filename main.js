@@ -329,7 +329,7 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
-			let database = chekcDatabase();
+			let database = checkDatabase();
 			if (database == true){
 				//
 			}
