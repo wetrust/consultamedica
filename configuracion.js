@@ -12,7 +12,7 @@ function checkIntegrity(){
 	let baseTables = JSON.parse('{"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}');
 	
 	for (var j = 0; j < tables.length; j++) {
-		let table = db.find(function(x) {return x.propertyName===tables[j];});
+		let table = db.inArray( tables[j], db );
 		
 		if (table == false){
 			let element = baseTables[tables[j]];
