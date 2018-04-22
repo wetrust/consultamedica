@@ -1985,7 +1985,7 @@ function pctcc() {
 
  var eg=0, cc=0;
 
- eg=parseFloat(localStorage.eg);
+ eg=Math.trunc(parseFloat(localStorage.eg));
  cc=parseInt(document.getElementById("cc").value);
 
  if (eg < 12) {
@@ -2043,7 +2043,7 @@ function pctca() {
 
  var eg=0, ca=0;
 
- eg=parseFloat(localStorage.eg);
+ eg=Math.trunc(parseFloat(localStorage.eg));
  ca=parseInt(document.getElementById("ca").value);
 
  if (eg < 12) {
@@ -2099,7 +2099,7 @@ function pctlf() {
 
  var eg=0, lf=0;
 
- eg=parseFloat(localStorage.eg);
+ eg=Math.trunc(parseFloat(localStorage.eg));
  lf=parseInt(document.getElementById("lf").value);
 
  if (eg < 12) {
@@ -2207,7 +2207,7 @@ var pct2dsmas = [];
 
  var eg=0;
  var cb=0;
- eg=parseFloat(localStorage.eg);
+ eg=Math.trunc(parseFloat(localStorage.eg));
  cb=parseInt(document.getElementById("cerebelo").value);
 
  if (eg < 15) {$("#cbPct").val("0");$('#cerebeloPctRpt').val("0")}
@@ -2260,7 +2260,7 @@ function pctlh() {
         pct05[40] = 61.9;  pct95[40] = 70.8;
 	
 	var eg=0;
- 	eg=parseFloat(localStorage.eg);
+ 	eg=Math.trunc(parseFloat(localStorage.eg));
  	var lh=parseInt($("#lh").val());
 
         if (eg < 12) {
