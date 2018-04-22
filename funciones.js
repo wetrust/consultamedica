@@ -1898,53 +1898,55 @@ function deDBP() {
 
 function calcdof(){
 
-	var dbp = $("#dbp").val();
 	var dof = $("#dof").val();
+
+	var eg=0;
+	eg=parseFloat(localStorage.eg);
 	
-	if (dbp > 0){
-		if (dof > 0){
+	if (eg > 9 && dof > 0){
+		var DOF05PCT = [];
+		var DOF95PCT = [];
+		DOF05PCT[10]=7;	DOF05PCT[11]=11; DOF05PCT[12]=16; DOF05PCT[13]=20;
+		DOF05PCT[14]=24; DOF05PCT[15]=29; DOF05PCT[16]=33; DOF05PCT[17]=37;
+		DOF05PCT[18]=41; DOF05PCT[19]=46; DOF05PCT[20]=50; DOF05PCT[21]=54;
+		DOF05PCT[22]=58; DOF05PCT[23]=62; DOF05PCT[24]=65; DOF05PCT[25]=69;
+		DOF05PCT[26]=73; DOF05PCT[27]=76; DOF05PCT[28]=80; DOF05PCT[29]=83;
+		DOF05PCT[30]=86; DOF05PCT[31]=89; DOF05PCT[32]=92; DOF05PCT[33]=95;
+		DOF05PCT[34]=97; DOF05PCT[35]=99; DOF05PCT[36]=102; DOF05PCT[37]=104;
+		DOF05PCT[38]=105; DOF05PCT[39]=107; DOF05PCT[40]=108;
+
+		DOF95PCT[10]=21; DOF95PCT[11]=25; DOF95PCT[12]=30; DOF95PCT[13]=34;
+		DOF95PCT[14]=38; DOF95PCT[15]=43; DOF95PCT[16]=47; DOF95PCT[17]=51;
+		DOF95PCT[18]=55; DOF95PCT[19]=60; DOF95PCT[20]=64; DOF95PCT[21]=68;
+		DOF95PCT[22]=72; DOF95PCT[23]=76; DOF95PCT[24]=79; DOF95PCT[25]=83;
+		DOF95PCT[26]=87; DOF95PCT[27]=90; DOF95PCT[28]=94; DOF95PCT[29]=97;
+		DOF95PCT[30]=100; DOF95PCT[31]=103; DOF95PCT[32]=106; DOF95PCT[33]=108;
+		DOF95PCT[34]=111; DOF95PCT[35]=113; DOF95PCT[36]=116; DOF95PCT[37]=118;
+		DOF95PCT[38]=119; DOF95PCT[39]=121; DOF95PCT[40]=122;
+
+		var uno = DOF95PCT[eg] - DOF05PCT[eg];
+		var dos = dof - DOF05PCT[eg];
+		var resultado = (parseInt(95 / (uno) * (dos) + 3));
+		ajustarProgreso(resultado, "dofPct");
+		var pctDOF = '';
+		//truncador de Pct, sobre 100 o bajo 1
+		if (resultado > 99){
+			pctDOF = '&gt; 99';
+		}
+		else if (resultado < 1){
+			pctDOF = '&lt; 1';
+		}
+		else{
+			pctDOF = resultado;
+		}
+		$('#dofPctRpt').val(pctDOF);
+		$('#dofRango').val(DOF05PCT[eg] + ' - '+ DOF95PCT[eg]);
+
+		var dbp = $("#dbp").val();
+
+		if (dbp > 0){
 			var valor = ((dbp/dof)*100);
-			var DOF05PCT = [];
-			var DOF95PCT = [];
-			
-			var eg=0;
-			eg=parseFloat(localStorage.eg);
-			
-			DOF05PCT[10]=7;	DOF05PCT[11]=11; DOF05PCT[12]=16; DOF05PCT[13]=20;
-			DOF05PCT[14]=24; DOF05PCT[15]=29; DOF05PCT[16]=33; DOF05PCT[17]=37;
-			DOF05PCT[18]=41; DOF05PCT[19]=46; DOF05PCT[20]=50; DOF05PCT[21]=54;
-			DOF05PCT[22]=58; DOF05PCT[23]=62; DOF05PCT[24]=65; DOF05PCT[25]=69;
-			DOF05PCT[26]=73; DOF05PCT[27]=76; DOF05PCT[28]=80; DOF05PCT[29]=83;
-			DOF05PCT[30]=86; DOF05PCT[31]=89; DOF05PCT[32]=92; DOF05PCT[33]=95;
-			DOF05PCT[34]=97; DOF05PCT[35]=99; DOF05PCT[36]=102; DOF05PCT[37]=104;
-			DOF05PCT[38]=105; DOF05PCT[39]=107; DOF05PCT[40]=108;
-
-			DOF95PCT[10]=21; DOF95PCT[11]=25; DOF95PCT[12]=30; DOF95PCT[13]=34;
-			DOF95PCT[14]=38; DOF95PCT[15]=43; DOF95PCT[16]=47; DOF95PCT[17]=51;
-			DOF95PCT[18]=55; DOF95PCT[19]=60; DOF95PCT[20]=64; DOF95PCT[21]=68;
-			DOF95PCT[22]=72; DOF95PCT[23]=76; DOF95PCT[24]=79; DOF95PCT[25]=83;
-			DOF95PCT[26]=87; DOF95PCT[27]=90; DOF95PCT[28]=94; DOF95PCT[29]=97;
-			DOF95PCT[30]=100; DOF95PCT[31]=103; DOF95PCT[32]=106; DOF95PCT[33]=108;
-			DOF95PCT[34]=111; DOF95PCT[35]=113; DOF95PCT[36]=116; DOF95PCT[37]=118;
-			DOF95PCT[38]=119; DOF95PCT[39]=121; DOF95PCT[40]=122;
-
-			var uno = DOF95PCT[eg] - DOF05PCT[eg];
-			var dos = dof - DOF05PCT[eg];
-			var resultado = (parseInt(95 / (uno) * (dos) + 3));
-			ajustarProgreso(resultado, "dofPct");
-			var pctDOF = '';
-			//truncador de Pct, sobre 100 o bajo 1
-			if (resultado > 99){
-				pctDOF = '&gt; 99';
-			}
-			else if (resultado < 1){
-				pctDOF = '&lt; 1';
-			}
-			else{
-				pctDOF = resultado;
-			}
-			$('#dofPctRpt').val(pctDOF);
-			$('#dofRango').val(DOF05PCT[eg] + ' - '+ DOF95PCT[eg]);
+				
 			$('#dof-dbp').val(valor.toFixed(0) + "%");
 			$('#ic').val(valor.toFixed(0) + "%");
 			$('#cc').val(valCC(dof,dbp)).trigger('change');
@@ -1955,6 +1957,9 @@ function calcdof(){
 		}
 	}
 	else{
+		ajustarProgreso(0, "dofPct");
+		$('#dofRango').val(0);
+		$('#dofPctRpt').val(0);
 		$('#dof-dbp').val("0");
 		$('#ic').val("0");
 	}
