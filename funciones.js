@@ -1901,7 +1901,7 @@ function calcdof(){
 	var dof = $("#dof").val();
 
 	var eg=0;
-	eg=parseFloat(localStorage.eg);
+	eg=Math.trunc(parseFloat(localStorage.eg));
 	
 	if (eg > 9 && dof > 0){
 		var DOF05PCT = [];
