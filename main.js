@@ -329,7 +329,14 @@ $( document ).ready(function() {
 			aplication.run();
 			loadPacientes(listPacientes);
 			activarBotones();
-			makedbLocalStorage();
+			let database = chekcDatabase();
+			if (database == true){
+				//
+			}
+			else{
+				alert("Debes actualizar tu navegador para usar este sistema");
+				return;
+			}
 			$('#fum-dos').datepicker();
 			$('#fum-dos').datepicker()
 				  .on('changeDate', function(ev){
