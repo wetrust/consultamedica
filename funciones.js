@@ -176,7 +176,7 @@ $("#saveMebrete").on("click", function(event){
 	event.preventDefault();
 	var configuracion = JSON.parse(localStorage["configuracion"]);
 	var membrete = $('#membrete').val();
-	configuracion.configuracion.membrete = membrete;
+	configuracion.membrete = membrete;
 	
 	localStorage["configuracion"] = JSON.stringify(configuracion);
 });
