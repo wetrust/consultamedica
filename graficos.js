@@ -3724,10 +3724,7 @@ $( '#graficopsmACM' ).on( 'click', function() {
     $( '#impDoppler3').remove();
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
-    var medida = document.getElementById("psmACM").value;
-    medida = medida.toString();
-    medida = medida.replace(",", ".");
-    medida = parseFloat(medida) * 100;
+    var medida = parseFloat(document.getElementById("psmACM").value);
                                 
 $('#viewGraficopsmACM').highcharts({
         title: {
