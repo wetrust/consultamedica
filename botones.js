@@ -84,16 +84,16 @@ function activarBotones() {
 	$('#semanasEcoDopp').val(semanas);
 	 
 	  //borrar los colores de las tarjetas
-	$("#ecografia\\.uno").removeClass("border-primary");
-	$("#ecografia\\.dos").removeClass("border-primary");
-	$("#ecografia\\.doppler").removeClass("border-primary");
+	$("#ecografia\\.uno").removeClass("card-outline-primary");
+	$("#ecografia\\.dos").removeClass("card-outline-primary");
+	$("#ecografia\\.doppler").removeClass("card-outline-primary");
 	//determinar a quien le pongo el color
 	if (semanas < 15){
-		$("#ecografia\\.uno").addClass("border-primary");
+		$("#ecografia\\.uno").addClass("card-outline-primary");
 	}
 	else{
-		$("#ecografia\\.dos").addClass("border-primary");
-		$("#ecografia\\.doppler").addClass("border-primary");
+		$("#ecografia\\.dos").addClass("card-outline-primary");
+		$("#ecografia\\.doppler").addClass("card-outline-primary");
 	}
  });
   
@@ -136,16 +136,16 @@ function activarBotones() {
 	$('#semanasEcoDopp').val(semanas);
 	  
 	   //borrar los colores de las tarjetas
-	$("#ecografia\\.uno").removeClass("border-primary");
-	$("#ecografia\\.dos").removeClass("border-primary");
-	$("#ecografia\\.doppler").removeClass("border-primary");
+	$("#ecografia\\.uno").removeClass("card-outline-primary");
+	$("#ecografia\\.dos").removeClass("card-outline-primary");
+	$("#ecografia\\.doppler").removeClass("card-outline-primary");
 	//determinar a quien le pongo el color
 	if (semanas < 15){
-		$("#ecografia\\.uno").addClass("border-primary");
+		$("#ecografia\\.uno").addClass("card-outline-primary");
 	}
 	else{
-		$("#ecografia\\.dos").addClass("border-primary");
-		$("#ecografia\\.doppler").addClass("border-primary");
+		$("#ecografia\\.dos").addClass("card-outline-primary");
+		$("#ecografia\\.doppler").addClass("card-outline-primary");
 	}
  });
 }
