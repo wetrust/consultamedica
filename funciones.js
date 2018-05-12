@@ -423,6 +423,18 @@ $( '#semanasEcoPrim' ).on( 'change', function() {
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoGen').val(semanas);
 	$('#diasEcoGen').val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("border-primary");
+	$("#ecografia\\.dos").removeClass("border-primary");
+	$("#ecografia\\.doppler").removeClass("border-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("border-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("border-primary");
+		$("#ecografia\\.doppler").addClass("border-primary");
+	}
 });
 
 $( '#diasEcoPrim' ).on( 'change', function() {
@@ -466,6 +478,18 @@ $( '#diasEcoPrim' ).on( 'change', function() {
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoGen').val(semanas);
 	$('#diasEcoGen').val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("border-primary");
+	$("#ecografia\\.dos").removeClass("border-primary");
+	$("#ecografia\\.doppler").removeClass("border-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("border-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("border-primary");
+		$("#ecografia\\.doppler").addClass("border-primary");
+	}
 });
 
 $( '#semanasEcoGen' ).on( 'change', function() {
@@ -509,6 +533,18 @@ $( '#semanasEcoGen' ).on( 'change', function() {
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
         $( '#diasEcoPrim' ).val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("border-primary");
+	$("#ecografia\\.dos").removeClass("border-primary");
+	$("#ecografia\\.doppler").removeClass("border-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("border-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("border-primary");
+		$("#ecografia\\.doppler").addClass("border-primary");
+	}
 });
 
 $( '#diasEcoGen' ).on( 'change', function() {
@@ -552,6 +588,18 @@ $( '#diasEcoGen' ).on( 'change', function() {
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
         $( '#diasEcoPrim' ).val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("border-primary");
+	$("#ecografia\\.dos").removeClass("border-primary");
+	$("#ecografia\\.doppler").removeClass("border-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("border-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("border-primary");
+		$("#ecografia\\.doppler").addClass("border-primary");
+	}
 });
 
 $( '#semanasTipoEco' ).on( 'change', function() {
@@ -595,6 +643,18 @@ $( '#semanasTipoEco' ).on( 'change', function() {
 	$('#diasEcoDopp').val(dias);
 	$('#semanasEcoPrim').val(semanas);
         $( '#diasEcoPrim' ).val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("border-primary");
+	$("#ecografia\\.dos").removeClass("border-primary");
+	$("#ecografia\\.doppler").removeClass("border-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("border-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("border-primary");
+		$("#ecografia\\.doppler").addClass("border-primary");
+	}
 });
 
 $( '#diasTipoEco' ).on( 'change', function() {
@@ -638,6 +698,18 @@ $( '#diasTipoEco' ).on( 'change', function() {
 	$('#diasEcoDopp').val(dias);
 	$('#semanasEcoPrim').val(semanas);
         $( '#diasEcoPrim' ).val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("border-primary");
+	$("#ecografia\\.dos").removeClass("border-primary");
+	$("#ecografia\\.doppler").removeClass("border-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("border-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("border-primary");
+		$("#ecografia\\.doppler").addClass("border-primary");
+	}
 });
 
 
@@ -682,6 +754,18 @@ $( '#semanasEcoObs' ).on( 'change', function() {
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
         $( '#diasEcoPrim' ).val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("border-primary");
+	$("#ecografia\\.dos").removeClass("border-primary");
+	$("#ecografia\\.doppler").removeClass("border-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("border-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("border-primary");
+		$("#ecografia\\.doppler").addClass("border-primary");
+	}
 });
 
 $( '#diasEcoObs' ).on( 'change', function() {
@@ -725,6 +809,18 @@ $( '#diasEcoObs' ).on( 'change', function() {
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
         $( '#diasEcoPrim' ).val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("border-primary");
+	$("#ecografia\\.dos").removeClass("border-primary");
+	$("#ecografia\\.doppler").removeClass("border-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("border-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("border-primary");
+		$("#ecografia\\.doppler").addClass("border-primary");
+	}
 });
 
 $( '#semanasEcoDopp' ).on( 'change', function() {
@@ -768,6 +864,18 @@ $( '#semanasEcoDopp' ).on( 'change', function() {
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
         $( '#diasEcoPrim' ).val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("border-primary");
+	$("#ecografia\\.dos").removeClass("border-primary");
+	$("#ecografia\\.doppler").removeClass("border-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("border-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("border-primary");
+		$("#ecografia\\.doppler").addClass("border-primary");
+	}
 });
 
 $( '#diasEcoDopp' ).on( 'change', function() {
@@ -811,6 +919,18 @@ $( '#diasEcoDopp' ).on( 'change', function() {
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
         $( '#diasEcoPrim' ).val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("border-primary");
+	$("#ecografia\\.dos").removeClass("border-primary");
+	$("#ecografia\\.doppler").removeClass("border-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("border-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("border-primary");
+		$("#ecografia\\.doppler").addClass("border-primary");
+	}
 });
 
 
