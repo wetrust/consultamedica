@@ -17,7 +17,7 @@ class app {
     }
 
     run(){
-    	this.makedb();
+    	//this.makedb();
 	this.day = new Date();
 	this.lastLoginDate(this.day);
 	this.lastLoginIP();
