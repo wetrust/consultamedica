@@ -766,15 +766,62 @@
                 <li class="float-right"><a href="#consulta">Volver</a></li>
             </ol>
             <hr style="border-color:rgba(0, 0, 0, 0.36);">
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col">
-                    <h4 class="text-primary">Evaluación de biometría y Doppler</h4>
-                    <p class="text-primary"><small>Módulos actualmente en funcionamiento, Objetivos: valoración de la biometría fetal más flujometria Doppler materno fetal.</small></p>
-                    <div class="card mb-2" style="display:none;">
-                        <div class="card-block p-2">
-                            <div class="clearfix">
-                            <h6 class="card-title float-left">Otros protocolos</h6><a href="#ecocardio" class="card-link float-right">en desarrollo</a>
-                            </div>
+                    <div class="card">
+                        <div class="card-block">
+                            <h4>Peso y recién nacido</h4>
+                            <form>
+                                <div class="form-group">
+                                    <label for="edadGestacional">Edad Gestacional</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="edadGestacional" aria-describedby="edadGestacionalHelp" placeholder="40" min="24" max="42">
+                                        <div class="input-group-addon">semanas</div>
+                                    </div>
+                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pesoRN">Peso RN</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="pesoRN" aria-describedby="pesoRNHelp" placeholder="3500" min="0" max="9999">
+                                        <div class="input-group-addon">kgr</div>
+                                    </div>
+                                    <small id="pesoRNHelp" class="form-text text-muted">Peso del recien nacido en kilogramos.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tallaRN">Talla RN</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="tallaRN" aria-describedby="tallaRNHelp" placeholder="350" min="0" max="999">
+                                        <div class="input-group-addon">mm</div>
+                                    </div>
+                                    <small id="tallaRNHelp" class="form-text text-muted">Talla del recien nacido en mm.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="IPNRN">IPN</label>
+                                    <input type="number" class="form-control" id="IPNRN" aria-describedby="IPNRNHelp" disabled>
+                                    <small id="IPNRNHelp" class="form-text text-muted">IPN calculado.</small>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-block">
+                            <form>
+                              <div class="form-group">
+                                <label for="graficoEstandar">Seleccione la tabla / estándar</label>
+                                <select class="form-control" id="graficoEstandar">
+                                  <option value="0">Chile - Peso/EG (Alarcon, Pittaluga SOCHIPE)</option>
+                                  <option value="1">Chile - Peso/EG (Lagos y col. Araucanía)</option>
+                                  <option value="2">Chile - IPN/EG (Alarcon, Pittaluga SOCHIPE)</option>
+                                  <option value="3">Chile - IPN/EG (Lagos y col. Araucanía)</option>
+                                </select>
+                              </div>
+                            </form>
+                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                            <div id="grafico"></div>
                         </div>
                     </div>
                 </div>
