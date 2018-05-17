@@ -77,6 +77,9 @@ class app {
 	else if (this.hash=="#postnatal"){
 		this.displayElement("postnatal");
 	}
+	else if (this.hash=="#ajustepeso"){
+		this.displayElement("ajustepeso");
+	}
     }
 
 //Funciones para los pacientes
@@ -259,6 +262,7 @@ class app {
         $('#dNeonatales').hide();
 	$('#agenda').hide();
 	$('#postnatal').hide();
+	$('#ajustepeso').hide();
 	if (div_id != 'agenda'){
 		$('#home').hide();
 	}
