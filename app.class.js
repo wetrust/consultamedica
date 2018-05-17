@@ -74,6 +74,9 @@ class app {
 	else if (this.hash=="#agenda"){
 		this.displayElement("agenda");
 	}
+	else if (this.hash=="#postnatal"){
+		this.displayElement("postnatal");
+	}
     }
 
 //Funciones para los pacientes
@@ -255,6 +258,7 @@ class app {
 	$('#ecocardio').hide();
         $('#dNeonatales').hide();
 	$('#agenda').hide();
+	$('#postnatal').hide();
 	if (div_id != 'agenda'){
 		$('#home').hide();
 	}
