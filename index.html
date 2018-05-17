@@ -980,10 +980,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
         <div class="container" id="ecoObsPrimTrim" style="display:none;">
             <div class="bienvenida mb-3">
                 <div class="container">
@@ -3203,6 +3199,364 @@
         <script src="app.class.js"></script>
         <script src="configuracion.js"></script>
         <script src="main.js"></script>
-        <script src="bootstrap-datepicker.js"></script>
+        <script src="bootstrap-datepicker.js"></script>}<script type="text/javascript">
+            $( document ).ready(function() {
+                Highcharts.chart('grafico', {
+
+                    title: {
+                        text: 'Estándar neonatal de la relación Peso / EG'
+                    },
+
+                    subtitle: {
+                        text: 'M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274'
+                    },
+                    credits: { enabled: false },
+                    yAxis: {
+                        title: {
+                            text: 'Kilogramos'
+                        },
+                        tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540]
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'middle'
+                    },
+
+                    plotOptions: {
+                        series: {
+                            pointStart: 24
+                        }
+                    },
+                    colors: ['#ff3300', '#ff3300', '#000000'],
+                    series: [{
+                        name: 'Pct. 10',
+                        data: [640.6,666,728.2,822.9,945.7,1092.2,1258.2,1439.2,1630.8,1828.7,2028.6,2226,2416.7,2596.2,2760.2,2904.2,3024.1,3115.3,3173.5]
+                    }, {
+                        name: 'Pct. 90',
+                        data:  [897.9,963.3,1070.6,1214.6,1390.1,1592,1815,2053.8,2303.4,2558.5,2813.9,3064.4,3304.7,3529.8,3734.4,3913.2,4061.2,4173,4243.5]
+                    }]
+                });
+            });
+            $("#graficoEstandar").on('click', function(){
+                if (this.value == 0){
+                    Highcharts.chart('grafico', {
+                        title: {
+                            text: 'Estándar neonatal de la relación Peso / EG'
+                        },
+
+                        subtitle: {
+                            text: 'M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274'
+                        },
+                        credits: { enabled: false },
+                        yAxis: {
+                            title: {
+                                text: 'Kilogramos'
+                            },
+                            tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540]
+                        },
+                        legend: {
+                            layout: 'vertical',
+                            align: 'right',
+                            verticalAlign: 'middle'
+                        },
+
+                        plotOptions: {
+                            series: {
+                                pointStart: 24
+                            }
+                        },
+                        colors: ['#ff3300', '#ff3300', '#000000'],
+                        series: [{
+                            name: 'Pct. 10',
+                            data: [640.6,666,728.2,822.9,945.7,1092.2,1258.2,1439.2,1630.8,1828.7,2028.6,2226,2416.7,2596.2,2760.2,2904.2,3024.1,3115.3,3173.5]
+                        }, {
+                            name: 'Pct. 90',
+                            data:  [897.9,963.3,1070.6,1214.6,1390.1,1592,1815,2053.8,2303.4,2558.5,2813.9,3064.4,3304.7,3529.8,3734.4,3913.2,4061.2,4173,4243.5]
+                        }, {
+                            type: "line",
+                            name: 'Peso',
+                            dashStyle: "Dot",
+                            marker: { symbol: 'square' },
+                            lineWidth: 0,
+                            data: (function () {
+                                var data = [];
+                                var eg = $("#edadGestacional").val();
+                                var peso = $("#pesoRN").val();
+
+                                if (eg > 24){
+                                    for (i = 24; i <= (eg -1); i++) {
+                                        data.push({
+                                            y: 0,
+                                        });
+                                    }
+                                    data.push({
+                                        y: parseInt(peso),
+                                    });
+                                    for (i = eg + 1; i <= 39; i++) {
+                                        data.push({
+                                            y: 0,
+                                        });
+                                    }
+                                }
+                                return data;
+                            }())
+                        }]
+                    });
+                } 
+                else if (this.value == 1){
+                    Highcharts.chart('grafico', {
+                        title: {
+                            text: 'Estándar neonatal de la relación Peso / EG'
+                        },
+
+                        subtitle: {
+                            text: 'Lagos y col. Rev. Chilena Obtet. Ginecol. 2009; 74(4)'
+                        },
+                        credits: { enabled: false },
+                        yAxis: {
+                            title: {
+                                text: 'Kilogramos'
+                            },
+                            tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540]
+                        },
+                        legend: {
+                            layout: 'vertical',
+                            align: 'right',
+                            verticalAlign: 'middle'
+                        },
+
+                        plotOptions: {
+                            series: {
+                                pointStart: 24
+                            }
+                        },
+                        colors: ['#ff3300', '#ff3300', '#000000'],
+                        series: [{
+                            name: 'Pct. 10',
+                            data: [600,662,739,830,938,1064,1208,1373,1565,1756,1970,2192,2415,2628,2820,2978,3089,3120,3123]
+                        }, {
+                            name: 'Pct. 90',
+                            data:  [800,960,1139,1337, 1551,1781,2022,2272,2527,2781,3031,3270, 3494,3699,3878,4030,4150,4236,4287]
+                        }, {
+                            type: "line",
+                            name: 'Peso',
+                            dashStyle: "Dot",
+                            marker: { symbol: 'square' },
+                            lineWidth: 0,
+                            data: (function () {
+                                var data = [];
+                                var eg = $("#edadGestacional").val();
+                                var peso = $("#pesoRN").val();
+
+                                if (eg > 24){
+                                    for (i = 24; i <= (eg -1); i++) {
+                                        data.push({
+                                            y: 0,
+                                        });
+                                    }
+                                    data.push({
+                                        y: parseInt(peso),
+                                    });
+                                    for (i = eg + 1; i <= 39; i++) {
+                                        data.push({
+                                            y: 0,
+                                        });
+                                    }
+                                }
+                                return data;
+                            }())
+                        }]
+                    });
+                }
+                else if (this.value == 2){
+                    Highcharts.setOptions({
+                        lang: {
+                            numericSymbols: [ "k" , "M" , "G" , "T" , "P" , "E"]
+                        }
+                    });
+                    Highcharts.chart('grafico', {
+                        title: {
+                            text: 'Estándar neonatal de la relación IPN / EG'
+                        },
+
+                        subtitle: {
+                            text: 'M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274'
+                        },
+                        credits: { enabled: false },
+                        yAxis: {
+                            title: {
+                                text: 'Kilogramos'
+                            },
+                            tickPositions: [1, 1.6, 2.2, 2.8, 3.4, 4],
+                        },
+                        legend: {
+                            layout: 'vertical',
+                            align: 'right',
+                            verticalAlign: 'middle'
+                        },
+                        colors: ['#ff3300', '#ff3300', '#000000'],
+                        plotOptions: {
+                            series: {
+                                pointStart: 24
+                            }
+                        },
+                        series: [{
+                            name: 'Pct. 10',
+                            data: [1.79, 1.83, 1.87, 1.91, 1.95, 1.99, 2.04, 2.08, 2.12, 2.16, 2.2, 2.25, 2.29, 2.33, 2.37, 2.41, 2.45, 2.5, 2.54]
+                        }, {
+                            name: 'Pct. 90',
+                            data:  [2.54, 2.57, 2.59, 2.62, 2.65, 2.68, 2.71, 2.74, 2.77, 2.8, 2.83, 2.86, 2.89, 2.92 ,2.95, 2.98, 3.01,3.04, 3.07]
+                        }, {
+                            type: "line",
+                            name: 'IPN',
+                            dashStyle: "Dot",
+                            marker: { symbol: 'square' },
+                            lineWidth: 0,
+                            data: (function () {
+                                var data = [];
+                                var eg = $("#edadGestacional").val();
+                                var ipn = $("#IPNRN").val();
+
+                                if (eg > 24){
+                                    for (i = 24; i <= (eg - 1); i++) {
+                                        data.push({
+                                            y: 0,
+                                        });
+                                    }
+                                    data.push({
+                                        y: parseFloat(ipn),
+                                    });
+                                    for (i = eg + 1; i <= 43; i++) {
+                                        data.push({
+                                            y: 0,
+                                        });
+                                    }
+                                }
+                                return data;
+                            }())
+                        }]
+                    });
+                }
+                else if (this.value == 3){
+                    Highcharts.setOptions({
+                        lang: {
+                            numericSymbols: [ "k" , "M" , "G" , "T" , "P" , "E"]
+                        }
+                    });
+                    Highcharts.chart('grafico', {
+                        title: {
+                            text: 'Estándar neonatal de la relación IPN / EG'
+                        },
+
+                        subtitle: {
+                            text: 'Lagos y col. Rev. Chilena Obtet. Ginecol. 2009; 74(4)'
+                        },
+                        credits: { enabled: false },
+                        yAxis: {
+                            title: {
+                                text: 'Kilogramos'
+                            },
+                            tickPositions: [1, 1.6, 2.2, 2.8, 3.4, 4],
+                        },
+                        legend: {
+                            layout: 'vertical',
+                            align: 'right',
+                            verticalAlign: 'middle'
+                        },
+                        colors: ['#ff3300', '#ff3300', '#000000'],
+                        plotOptions: {
+                            series: {
+                                pointStart: 24
+                            }
+                        },
+                        series: [{
+                            name: 'Pct. 10',
+                            data: [1.95,1.93,1.92,1.92,1.94,1.97,2.01,2.06,2.11,2.17,2.23,2.28,2.33,2.38,2.41,2.44,2.44,2.42,2.39]
+                        }, {
+                            name: 'Pct. 90',
+                            data:  [2.43,2.44,2.46,2.49,2.53,2.57,2.62,2.68,2.74,2.79,2.85,2.9,2.95,2.99,3.02,3.04,3.05,3.04,3.01]
+                        }, {
+                            type: "line",
+                            name: 'IPN',
+                            dashStyle: "Dot",
+                            marker: { symbol: 'square' },
+                            lineWidth: 0,
+                            data: (function () {
+                                var data = [];
+                                var eg = $("#edadGestacional").val();
+                                var ipn = $("#IPNRN").val();
+
+                                if (eg > 24){
+                                    for (i = 24; i <= (eg - 1); i++) {
+                                        data.push({
+                                            y: 0,
+                                        });
+                                    }
+                                    data.push({
+                                        y: parseFloat(ipn),
+                                    });
+                                    for (i = eg + 1; i <= 43; i++) {
+                                        data.push({
+                                            y: 0,
+                                        });
+                                    }
+                                }
+                                return data;
+                            }())
+                        }]
+                    });
+                }
+            });
+            $( "#edadGestacional" ).change(function() {
+              var max = parseInt($(this).attr('max'));
+              var min = parseInt($(this).attr('min'));
+              if ($(this).val() > max)
+              {
+                  $(this).val(max);
+              }
+              else if ($(this).val() < min)
+              {
+                  $(this).val(min);
+              }       
+            });
+            $( "#pesoRN" ).change(function() {
+              var max = parseInt($(this).attr('max'));
+              var min = parseInt($(this).attr('min'));
+              if ($(this).val() > max)
+              {
+                  $(this).val(max);
+              }
+              else if ($(this).val() < min)
+              {
+                  $(this).val(min);
+              }
+
+              if ($("#tallaRN").val() > 1){
+                var valor = $(this).val() / (Math.pow($("#tallaRN").val(), 3));
+                valor = valor * 100000;
+                $("#IPNRN").val(valor.toFixed(1));
+              }
+              $("#graficoEstandar").trigger("click");
+            });
+            $( "#tallaRN" ).change(function() {
+              var max = parseInt($(this).attr('max'));
+              var min = parseInt($(this).attr('min'));
+              if ($(this).val() > max)
+              {
+                  $(this).val(max);
+              }
+              else if ($(this).val() < min)
+              {
+                  $(this).val(min);
+              }
+
+            if ($("#pesoRN").val() > 1){
+                var valor = $("#pesoRN").val() / (Math.pow($("#tallaRN").val(), 3));
+                valor = valor * 100000;
+                $("#IPNRN").val(valor.toFixed(1));
+              }    
+            });
+        </script>
     </body>
 </html>
