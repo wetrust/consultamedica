@@ -856,103 +856,90 @@
                     <div class="card">
                         <div class="card-block">
                             <h4>Recién Nacido</h4>
-                            
-                            
-                            <div class="row" style="padding-top:5px;background-color: #337ab7;">
-      <div class="col-xs-5">
-       <p class="text-left">Sexo Neonatal</p>
-      </div>
-      <div class="col-xs-7">
-       <select id="sn" class="form-control">
-        <option value="1" selected>Femeníno</option>
-        <option value="0">Masculíno</option>
-       </select>
-      </div>
-     </div>
-     <div class="row" style="padding-top:5px;background-color: #337ab7;">
-      <div class="col-xs-5">
-       <p class="text-left">Paridad Materna</p>
-      </div>
-      <div class="col-xs-7">
-       <select id="pm" class="form-control">
-        <option value="1" selected>Primípara</option>
-        <option value="0">Multípara</option>
-       </select>
-      </div>
-     </div>
-     <div class="row" style="padding-top:5px;padding-bottom:5px;background-color: #337ab7;">
-      <div class="col-xs-5">
-       <p class="text-left">Estado Nutricional</p>
-      </div>
-      <div class="col-xs-7">
-       <select id="imc" class="form-control">
-        <option value="1">Enflaquecida</option>
-        <option value="2">Normal</option>
-        <option value="3">SobrePeso</option>
-        <option value="4" selected>Obesidad</option>
-       </select>
-      </div>
-     </div>
-     <div class="row" style="margin-top:5px;">
-      <div class="col-xs-5">
-       <p class="text-left">Talla Materna</p>
-      </div>
-      <div class="col-xs-7">
-       <select id="tm" class="form-control">
-        <option value="135">135 cms</option>
-        <option value="136">136 cms</option>
-        <option value="137">137 cms</option>
-        <option value="138">138 cms</option>
-        <option value="139">139 cms</option>
-        <option value="140">140 cms</option>
-        <option value="141">141 cms</option>
-        <option value="142">142 cms</option>
-        <option value="143">143 cms</option>
-        <option value="144">144 cms</option>
-        <option value="145">145 cms</option>
-        <option value="146">146 cms</option>
-        <option value="147">147 cms</option>
-        <option value="148">148 cms</option>
-        <option value="149" selected>149 cms</option>
-        <option value="150">150 cms</option>
-        <option value="151">151 cms</option>
-        <option value="152">152 cms</option>
-        <option value="153">153 cms</option>
-        <option value="154">154 cms</option>
-        <option value="155">155 cms</option>
-        <option value="156">156 cms</option>
-        <option value="157">157 cms</option>
-        <option value="158">158 cms</option>
-        <option value="159">159 cms</option>
-        <option value="160">160 cms</option>
-        <option value="161">161 cms</option>
-        <option value="162">162 cms</option>
-        <option value="163">163 cms</option>
-        <option value="164">164 cms</option>
-        <option value="165">165 cms</option>
-        <option value="166">166 cms</option>
-        <option value="167">167 cms</option>
-        <option value="168">168 cms</option>
-        <option value="169">169 cms</option>
-        <option value="170">170 cms</option>
-        <option value="171">171 cms</option>
-        <option value="172">172 cms</option>
-        <option value="173">173 cms</option>
-        <option value="174">174 cms</option>
-        <option value="175">175 cms</option>
-        <option value="176">176 cms</option>
-        <option value="177">177 cms</option>
-        <option value="178">178 cms</option>
-        <option value="179">179 cms</option>
-        <option value="180">180 cms</option>
-        <option value="181">181 cms</option>
-        <option value="182">182 cms</option>
-        <option value="183">183 cms</option>
-        <option value="184">184 cms</option>
-        <option value="185">185 cms</option>
-       </select>
-      </div>
-     </div>
+                            <form>
+                                <div class="form-group">
+                                    <label for="edadGestacional">Sexo Neonatal</label>
+                                    <select id="sn" class="form-control">
+                                        <option value="1" selected>Femeníno</option>
+                                        <option value="0">Masculíno</option>
+                                    </select>
+                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="edadGestacional">Paridad Materna</label>
+                                    <select id="pm" class="form-control">
+                                        <option value="1" selected>Primípara</option>
+                                        <option value="0">Multípara</option>
+                                    </select>
+                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="edadGestacional">Estado Nutricional</label>
+                                    <select id="imc" class="form-control">
+                                        <option value="1">Enflaquecida</option>
+                                        <option value="2">Normal</option>
+                                        <option value="3">SobrePeso</option>
+                                        <option value="4" selected>Obesidad</option>
+                                    </select>
+                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="edadGestacional">Talla Materna</label>
+                                    <select id="tm" class="form-control">
+                                        <option value="135">135 cms</option>
+                                        <option value="136">136 cms</option>
+                                        <option value="137">137 cms</option>
+                                        <option value="138">138 cms</option>
+                                        <option value="139">139 cms</option>
+                                        <option value="140">140 cms</option>
+                                        <option value="141">141 cms</option>
+                                        <option value="142">142 cms</option>
+                                        <option value="143">143 cms</option>
+                                        <option value="144">144 cms</option>
+                                        <option value="145">145 cms</option>
+                                        <option value="146">146 cms</option>
+                                        <option value="147">147 cms</option>
+                                        <option value="148">148 cms</option>
+                                        <option value="149" selected>149 cms</option>
+                                        <option value="150">150 cms</option>
+                                        <option value="151">151 cms</option>
+                                        <option value="152">152 cms</option>
+                                        <option value="153">153 cms</option>
+                                        <option value="154">154 cms</option>
+                                        <option value="155">155 cms</option>
+                                        <option value="156">156 cms</option>
+                                        <option value="157">157 cms</option>
+                                        <option value="158">158 cms</option>
+                                        <option value="159">159 cms</option>
+                                        <option value="160">160 cms</option>
+                                        <option value="161">161 cms</option>
+                                        <option value="162">162 cms</option>
+                                        <option value="163">163 cms</option>
+                                        <option value="164">164 cms</option>
+                                        <option value="165">165 cms</option>
+                                        <option value="166">166 cms</option>
+                                        <option value="167">167 cms</option>
+                                        <option value="168">168 cms</option>
+                                        <option value="169">169 cms</option>
+                                        <option value="170">170 cms</option>
+                                        <option value="171">171 cms</option>
+                                        <option value="172">172 cms</option>
+                                        <option value="173">173 cms</option>
+                                        <option value="174">174 cms</option>
+                                        <option value="175">175 cms</option>
+                                        <option value="176">176 cms</option>
+                                        <option value="177">177 cms</option>
+                                        <option value="178">178 cms</option>
+                                        <option value="179">179 cms</option>
+                                        <option value="180">180 cms</option>
+                                        <option value="181">181 cms</option>
+                                        <option value="182">182 cms</option>
+                                        <option value="183">183 cms</option>
+                                        <option value="184">184 cms</option>
+                                        <option value="185">185 cms</option>
+                                    </select>
+                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
+                                </div>
      <div class="row" style="margin-top:5px;">
       <div class="col-xs-5">
        <p class="text-left">Peso Materno</p>
