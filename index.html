@@ -785,7 +785,7 @@
                                         <input type="number" class="form-control" id="pesoRN" aria-describedby="pesoRNHelp" min="0" max="9999">
                                         <div class="input-group-addon">kgr</div>
                                     </div>
-                                    <small id="pesoRNHelp" class="form-text text-muted">Peso del recien nacido en kilogramos.</small>
+                                    <small id="pesoRNHelp" class="form-text text-muted">Peso del recien nacido en gramos.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="tallaRN">Talla RN</label>
@@ -857,21 +857,19 @@
                         <div class="card-block">
                             <h4>Recién Nacido</h4>
                             <form>
-                                <div class="form-group">
-                                    <label for="edadGestacional">Sexo Neonatal</label>
-                                    <select id="sn" class="form-control">
+                                <div class="form-group row">
+                                    <label class="col-4" for="edadGestacional">Sexo Neonatal</label>
+                                    <select id="sn" class="form-control col-8">
                                         <option value="1" selected>Femeníno</option>
                                         <option value="0">Masculíno</option>
                                     </select>
-                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
                                 </div>
-                                <div class="form-group">
-                                    <label for="edadGestacional">Paridad Materna</label>
-                                    <select id="pm" class="form-control">
+                                <div class="form-group row">
+                                    <label for="edadGestacional" class="col-4">Paridad Materna</label>
+                                    <select id="pm" class="form-control col-8">
                                         <option value="1" selected>Primípara</option>
                                         <option value="0">Multípara</option>
                                     </select>
-                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="edadGestacional">Estado Nutricional</label>
@@ -881,7 +879,6 @@
                                         <option value="3">SobrePeso</option>
                                         <option value="4" selected>Obesidad</option>
                                     </select>
-                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="edadGestacional">Talla Materna</label>
@@ -938,7 +935,6 @@
                                         <option value="184">184 cms</option>
                                         <option value="185">185 cms</option>
                                     </select>
-                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="edadGestacional">Peso Materno</label>
@@ -1050,12 +1046,10 @@
                                         <option value="139">139 kgs</option>
                                         <option value="140">140 kgs</option>
                                     </select>
-                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="edadGestacional">Valor IMC</label>
                                     <input type="text" class="form-control" id="valorimc" disabled>
-                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="edadGestacional">Edad Materna</label>
@@ -1067,7 +1061,6 @@
                                         <option value="5">26 - 27</option>
                                         <option value="6" selected>&gt; 27</option>
                                     </select>
-                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="edadGestacional">Etnia Materna</label>
@@ -1076,10 +1069,9 @@
                                         <option value="2">Solo uno Caucásico</option>
                                         <option value="1" selected>Ninguno Caucásico</option>
                                     </select>
-                                    <small id="edadGestacionalHelp" class="form-text text-muted">Edad gestacional al nacer.</small>
                                 </div>
                             </form>
-                            <h4 class="text-left" style="margin-top:30px;">Cuatro ejemplos para ajuste al peso</h4>
+                            <h6 class="text-left" style="margin-top:30px;">Cuatro ejemplos para ajuste al peso</h6>
                             <div class="btn-group" role="group" aria-label="Default button group">
                                 <button type="button" class="btn btn-secondary">Neutro</button>
                                 <button type="button" class="btn btn-secondary">Pct.</button>
