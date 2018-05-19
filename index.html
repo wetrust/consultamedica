@@ -801,13 +801,12 @@
                                     <small id="IPNRNHelp" class="form-text text-muted">IPN calculado.</small>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="IPNRN" class="col-4">Peso / EG</label>
-                                    <input type="number" class="form-control col-8" id="IPNRN" aria-describedby="IPNRNHelp" disabled>
+                                    <label for="PesoEge" class="col-4">Peso / EG</label>
+                                    <input type="number" class="form-control col-8" id="PesoEge" disabled>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="IPNRN" class="col-4">IPN / Ege</label>
-                                    <input type="number" class="form-control col-8" id="IPNRN" aria-describedby="IPNRNHelp" disabled>
-                                    <small id="IPNRNHelp" class="form-text text-muted">IPN calculado.</small>
+                                    <label for="IpnEge" class="col-4">IPN / Ege</label>
+                                    <input type="number" class="form-control col-8" id="IpnEge" disabled>
                                 </div>
                             </form>
                             <a class="btn btn-outline-info" href="#ajustepeso" id="ajustePesoGo" role="button">Ajuste al peso</a>
@@ -3812,8 +3811,26 @@
               {
                   $(this).val(min);
               }
-
               $("#graficoEstandar").trigger("click");
+
+                if ($("#pesoRN").val > 1 && $("#tallaRN").val() > 1){
+                    RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
+                    
+                    if ($("#graficoEstandar").val() == 1){
+                        $("#PesoEge").val(RN.pesoTemucoCondicion);
+                    }
+                    else{
+                        $("#PesoEge").val(RN.pesoChileCondicion);
+                    }
+
+                    if ($("#graficoEstandar").val() == 3){
+                        $("#IpnEge").val(RN.ipnTemucoCondicion);
+                    }
+                    else{
+                        $("#IpnEge").val(RN.ipnChileCondicion);
+                    }
+                }
+              
             });
             $( "#pesoRN" ).change(function() {
               var max = parseInt($(this).attr('max'));
@@ -3833,6 +3850,24 @@
                 $("#IPNRN").val(valor.toFixed(1));
               }
               $("#graficoEstandar").trigger("click");
+
+                if ($("#pesoRN").val > 1 && $("#tallaRN").val() > 1){
+                    RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
+                    
+                    if ($("#graficoEstandar").val() == 1){
+                        $("#PesoEge").val(RN.pesoTemucoCondicion);
+                    }
+                    else{
+                        $("#PesoEge").val(RN.pesoChileCondicion);
+                    }
+
+                    if ($("#graficoEstandar").val() == 3){
+                        $("#IpnEge").val(RN.ipnTemucoCondicion);
+                    }
+                    else{
+                        $("#IpnEge").val(RN.ipnChileCondicion);
+                    }
+                }
             });
             $( "#tallaRN" ).change(function() {
               var max = parseInt($(this).attr('max'));
@@ -3852,6 +3887,24 @@
                 $("#IPNRN").val(valor.toFixed(1));
                 }
                 $("#graficoEstandar").trigger("click");
+
+                if ($("#pesoRN").val > 1 && $("#tallaRN").val() > 1){
+                    RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
+                    
+                    if ($("#graficoEstandar").val() == 1){
+                        $("#PesoEge").val(RN.pesoTemucoCondicion);
+                    }
+                    else{
+                        $("#PesoEge").val(RN.pesoChileCondicion);
+                    }
+
+                    if ($("#graficoEstandar").val() == 3){
+                        $("#IpnEge").val(RN.ipnTemucoCondicion);
+                    }
+                    else{
+                        $("#IpnEge").val(RN.ipnChileCondicion);
+                    }
+                }
             });
             
             
