@@ -810,12 +810,12 @@
                         <div class="card-block">
                             <form>
                               <div class="form-group row">
-                                <label for="graficoEstandar" class="col-4 mt-2">Seleccione tabla</label>
-                                <select class="form-control col-8" id="graficoEstandar">
+                                <label for="graficoEstandar" class="col-3 mt-2">Seleccione tabla</label>
+                                <select class="form-control col-9" id="graficoEstandar" style="font-size: 0.8rem;">
                                   <option value="0">Peso/EG (T. Nacional Alarcon, Pittaluga SOCHIPE)</option>
-                                  <option value="1">Peso/EG (T. Regional Araucanía Lagos y col.)</option>
+                                  <option value="1">Peso/EG (T. Regional Araucanía R. Lagos y col.)</option>
                                   <option value="2">IPN/EG (T. Nacional Alarcon, Pittaluga SOCHIPE)</option>
-                                  <option value="3">IPN/EG (T. Regional Araucanía Lagos y col.)</option>
+                                  <option value="3">IPN/EG (T. Regional Araucanía R. Lagos y col.)</option>
                                 </select>
                               </div>
                             </form>
@@ -3473,7 +3473,7 @@
                 Highcharts.chart('grafico', {
 
                     title: {
-                        text: 'Estándar neonatal de la relación Peso / EG',
+                        text: 'Relación Peso / EG Nacional',
                         style:{
                             "font-size": "14px"
                         }
@@ -3514,7 +3514,10 @@
                 if (this.value == 0){
                     Highcharts.chart('grafico', {
                         title: {
-                            text: 'Relación Peso / EG Nacional'
+                            text: 'Relación Peso / EG Nacional',
+                            style:{
+                                "font-size": "14px"
+                            }
                         },
 
                         subtitle: {
@@ -3579,7 +3582,10 @@
                 else if (this.value == 1){
                     Highcharts.chart('grafico', {
                         title: {
-                            text: 'Relación Peso / EG Regional'
+                            text: 'Relación Peso / EG Regional',
+                            style:{
+                                "font-size": "14px"
+                            }
                         },
 
                         subtitle: {
@@ -3649,7 +3655,10 @@
                     });
                     Highcharts.chart('grafico', {
                         title: {
-                            text: 'Relación IPN / EG Nacional'
+                            text: 'Relación IPN / EG Nacional',
+                            style:{
+                                "font-size": "14px"
+                            }
                         },
 
                         subtitle: {
@@ -3718,7 +3727,10 @@
                     });
                     Highcharts.chart('grafico', {
                         title: {
-                            text: 'Relación IPN / EG Regional'
+                            text: 'Relación IPN / EG Regional',
+                            style:{
+                                "font-size": "14px"
+                            }
                         },
 
                         subtitle: {
