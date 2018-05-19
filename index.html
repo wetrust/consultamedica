@@ -3788,7 +3788,9 @@
               else if ($(this).val() < min)
               {
                   $(this).val(min);
-              }       
+              }
+
+              $("#graficoEstandar").trigger("click");
             });
             $( "#pesoRN" ).change(function() {
               var max = parseInt($(this).attr('max'));
@@ -3821,11 +3823,12 @@
                   $(this).val(min);
               }
 
-            if ($("#pesoRN").val() > 1){
+                if ($("#pesoRN").val() > 1){
                 var valor = $("#pesoRN").val() / (Math.pow($("#tallaRN").val(), 3));
                 valor = valor * 100000;
                 $("#IPNRN").val(valor.toFixed(1));
-              }    
+                }
+                $("#graficoEstandar").trigger("click");
             });
             
             
@@ -4011,31 +4014,18 @@
             });
 
             $('#opt1').click(function () {
-
                 $('#pm').val("1");
-
                 $('#sn').val("1");
-
                 $('#tm').val("149");
-
                 $('#pesom').val("70");
-
                 $('#em').val("6");
-
                 $('#apellm').val("1");
-
                 varMama = new Mama('149','70',$("#em").val(),$('#apellm').val());
-
                 varMama.talla = '149';
-
                 varMama.peso = '70';
-
                 $('#valorimc').val(varMama.imc());
-
                 $('#imc').val(varMama.imcCondicion());
-
                 RN.ajustePequeno = false;
-
             });
 
             $('#opt2').click(function () {
