@@ -772,7 +772,7 @@
                             <form>
                                 <div class="form-group row">
                                     <label for="edadGestacional" class="col-4">Edad Gestacional</label>
-                                    <div class="input-group col-4">
+                                    <div class="input-group col-8">
                                         <select id="edadGestacional" class="form-control" aria-describedby="edadGestacionalHelp">
                                         <option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40" selected>40</option><option value="41">41</option><option value="42">42</option></select>
                                         <div class="input-group-addon">semanas</div>
@@ -783,7 +783,7 @@
                                     <label for="pesoRN" class="col-4">Peso RN</label>
                                     <div class="input-group col-8">
                                         <input type="number" class="form-control" id="pesoRN" aria-describedby="pesoRNHelp" min="0" max="9999">
-                                        <div class="input-group-addon">kgr</div>
+                                        <div class="input-group-addon">gr</div>
                                     </div>
                                     <small id="pesoRNHelp" class="form-text text-muted">Peso del recien nacido en gramos.</small>
                                 </div>
@@ -809,9 +809,9 @@
                     <div class="card">
                         <div class="card-block">
                             <form>
-                              <div class="form-group">
-                                <label for="graficoEstandar">Seleccione la tabla / estándar</label>
-                                <select class="form-control" id="graficoEstandar">
+                              <div class="form-group row">
+                                <label for="graficoEstandar" class="col-4">Seleccione tabla</label>
+                                <select class="form-control col-8" id="graficoEstandar">
                                   <option value="0">Chile - Peso/EG (Alarcon, Pittaluga SOCHIPE)</option>
                                   <option value="1">Chile - Peso/EG (Lagos y col. Araucanía)</option>
                                   <option value="2">Chile - IPN/EG (Alarcon, Pittaluga SOCHIPE)</option>
