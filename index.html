@@ -796,19 +796,18 @@
                                     <small id="tallaRNHelp" class="form-text text-muted">Talla del recien nacido en mm.</small>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="IPNRN" class="col-4">IPN</label>
-                                    <input type="number" class="form-control col-8" id="IPNRN" aria-describedby="IPNRNHelp" disabled>
-                                    <small id="IPNRNHelp" class="form-text text-muted">IPN calculado.</small>
+                                    <label for="IPNRN" class="col-4">IPN ((peso * talla)^3)*100</label>
+                                    <input type="number" class="form-control col-8" id="IPNRN" disabled>
                                 </div>
                                 <div class="form-group row">
                                     <label for="PesoEge" class="col-4">Peso / EG</label>
                                     <input type="text" class="form-control col-2" id="PesoPct" disabled>
-                                    <input type="text" class="form-control col-6" id="PesoEge" disabled>
+                                    <input type="text" class="form-control col-5 ml-3" id="PesoEge" disabled>
                                 </div>
                                 <div class="form-group row">
                                     <label for="IpnEge" class="col-4">IPN / Ege</label>
                                     <input type="text" class="form-control col-2" id="IpnPct" disabled>
-                                    <input type="text" class="form-control col-6" id="IpnEge" disabled>
+                                    <input type="text" class="form-control col-5 ml-3" id="IpnEge" disabled>
                                 </div>
                             </form>
                             <a class="btn btn-outline-info" href="#ajustepeso" id="ajustePesoGo" role="button">Ajuste al peso</a>
@@ -3819,20 +3818,20 @@
                     RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val()); 
 
                     if ($("#graficoEstandar").val() == 1){
-                        $("#PesoPct").val(RN.pesoTemuco());
+                        $("#PesoPct").val(RN.pesoTemuco() + " Pct.");
                         $("#PesoEge").val(RN.pesoTemucoCondicion());
                     }
                     else{
-                        $("#PesoPct").val(RN.pesoChile());
+                        $("#PesoPct").val(RN.pesoChile() + " Pct.");
                         $("#PesoEge").val(RN.pesoChileCondicion());
                     }
 
                     if ($("#graficoEstandar").val() == 3){
-                        $("#IpnPct").val(RN.ipnTemuco());
+                        $("#IpnPct").val(RN.ipnTemuco() + " Pct.");
                         $("#IpnEge").val(RN.ipnTemucoCondicion());
                     }
                     else{
-                        $("#IpnPct").val(RN.ipnChile());
+                        $("#IpnPct").val(RN.ipnChile() + " Pct.");
                         $("#IpnEge").val(RN.ipnChileCondicion());
                     }
                 }
