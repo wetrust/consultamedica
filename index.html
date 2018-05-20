@@ -3816,18 +3816,19 @@
                 if (($("#pesoRN").val() > 1) && ($("#tallaRN").val() > 1)){
                     RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
                     
+
                     if ($("#graficoEstandar").val() == 1){
-                        $("#PesoEge").val(RN.pesoTemucoCondicion());
+                        $("#PesoEge").val(RN.pesoTemucoCondicion()());
                     }
                     else{
-                        $("#PesoEge").val(RN.pesoChileCondicion());
+                        $("#PesoEge").val(RN.pesoChileCondicion()());
                     }
 
                     if ($("#graficoEstandar").val() == 3){
-                        $("#IpnEge").val(RN.ipnTemucoCondicion());
+                        $("#IpnEge").val(RN.ipnTemucoCondicion()());
                     }
                     else{
-                        $("#IpnEge").val(RN.ipnChileCondicion());
+                        $("#IpnEge").val(RN.ipnChileCondicion()());
                     }
                 }
               
