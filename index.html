@@ -3854,7 +3854,7 @@
                 if ($("#pesoRN").val() > 1 && $("#tallaRN").val() > 1){
                     RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
                     
-                    valor = RN.pesoTemucoCondicion;
+                    valor = RN.pesoTemucoCondicion();
                     if ($("#graficoEstandar").val() == 1){
                         $("#PesoEge").val(valor);
                     }
