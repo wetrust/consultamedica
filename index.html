@@ -3814,7 +3814,7 @@
               $("#graficoEstandar").trigger("click");
 
                 if (($("#pesoRN").val() > 1) && ($("#tallaRN").val() > 1)){
-                    RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
+                    RN = RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val()).pesoTemucoCondicion;
                     
                     if ($("#graficoEstandar").val() == 1){
                         $("#PesoEge").val(RN.pesoTemucoCondicion);
@@ -3854,7 +3854,6 @@
                 if ($("#pesoRN").val() > 1 && $("#tallaRN").val() > 1){
                     RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
                     
-                    valor = RN.pesoTemucoCondicion();
                     if ($("#graficoEstandar").val() == 1){
                         $("#PesoEge").val(valor);
                     }
