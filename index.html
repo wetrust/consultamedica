@@ -802,11 +802,11 @@
                                 </div>
                                 <div class="form-group row">
                                     <label for="PesoEge" class="col-4">Peso / EG</label>
-                                    <input type="number" class="form-control col-8" id="PesoEge" disabled>
+                                    <input type="text" class="form-control col-8" id="PesoEge" disabled>
                                 </div>
                                 <div class="form-group row">
                                     <label for="IpnEge" class="col-4">IPN / Ege</label>
-                                    <input type="number" class="form-control col-8" id="IpnEge" disabled>
+                                    <input type="text" class="form-control col-8" id="IpnEge" disabled>
                                 </div>
                             </form>
                             <a class="btn btn-outline-info" href="#ajustepeso" id="ajustePesoGo" role="button">Ajuste al peso</a>
@@ -3814,8 +3814,7 @@
               $("#graficoEstandar").trigger("click");
 
                 if (($("#pesoRN").val() > 1) && ($("#tallaRN").val() > 1)){
-                    RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
-                    
+                    RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val()); 
 
                     if ($("#graficoEstandar").val() == 1){
                         $("#PesoEge").val(RN.pesoTemucoCondicion());
@@ -3853,20 +3852,20 @@
               $("#graficoEstandar").trigger("click");
 
                 if ($("#pesoRN").val() > 1 && $("#tallaRN").val() > 1){
-                    RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
-                    
+                    RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val()); 
+
                     if ($("#graficoEstandar").val() == 1){
-                        $("#PesoEge").val(valor);
+                        $("#PesoEge").val(RN.pesoTemucoCondicion());
                     }
                     else{
-                        $("#PesoEge").val(RN.pesoChileCondicion);
+                        $("#PesoEge").val(RN.pesoChileCondicion());
                     }
 
                     if ($("#graficoEstandar").val() == 3){
-                        $("#IpnEge").val(RN.ipnTemucoCondicion);
+                        $("#IpnEge").val(RN.ipnTemucoCondicion());
                     }
                     else{
-                        $("#IpnEge").val(RN.ipnChileCondicion);
+                        $("#IpnEge").val(RN.ipnChileCondicion());
                     }
                 }
             });
@@ -3890,20 +3889,20 @@
                 $("#graficoEstandar").trigger("click");
 
                 if ($("#pesoRN").val() > 1 && $("#tallaRN").val() > 1){
-                    RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
-                    
+                    RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val()); 
+
                     if ($("#graficoEstandar").val() == 1){
-                        $("#PesoEge").val(RN.pesoTemucoCondicion);
+                        $("#PesoEge").val(RN.pesoTemucoCondicion());
                     }
                     else{
-                        $("#PesoEge").val(RN.pesoChileCondicion);
+                        $("#PesoEge").val(RN.pesoChileCondicion());
                     }
 
                     if ($("#graficoEstandar").val() == 3){
-                        $("#IpnEge").val(RN.ipnTemucoCondicion);
+                        $("#IpnEge").val(RN.ipnTemucoCondicion());
                     }
                     else{
-                        $("#IpnEge").val(RN.ipnChileCondicion);
+                        $("#IpnEge").val(RN.ipnChileCondicion());
                     }
                 }
             });
