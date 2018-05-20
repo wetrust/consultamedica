@@ -3813,7 +3813,7 @@
               }
               $("#graficoEstandar").trigger("click");
 
-                if ($("#pesoRN").val() > 1 && $("#tallaRN").val() > 1){
+                if (($("#pesoRN").val() > 1) && ($("#tallaRN").val() > 1)){
                     RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
                     
                     if ($("#graficoEstandar").val() == 1){
