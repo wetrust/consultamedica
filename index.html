@@ -802,11 +802,13 @@
                                 </div>
                                 <div class="form-group row">
                                     <label for="PesoEge" class="col-4">Peso / EG</label>
-                                    <input type="text" class="form-control col-8" id="PesoEge" disabled>
+                                    <input type="text" class="form-control col-2" id="PesoPct" disabled>
+                                    <input type="text" class="form-control col-6" id="PesoEge" disabled>
                                 </div>
                                 <div class="form-group row">
                                     <label for="IpnEge" class="col-4">IPN / Ege</label>
-                                    <input type="text" class="form-control col-8" id="IpnEge" disabled>
+                                    <input type="text" class="form-control col-2" id="IpnPct" disabled>
+                                    <input type="text" class="form-control col-6" id="IpnEge" disabled>
                                 </div>
                             </form>
                             <a class="btn btn-outline-info" href="#ajustepeso" id="ajustePesoGo" role="button">Ajuste al peso</a>
@@ -3817,16 +3819,20 @@
                     RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val()); 
 
                     if ($("#graficoEstandar").val() == 1){
+                        $("#PesoPct").val(RN.pesoTemuco());
                         $("#PesoEge").val(RN.pesoTemucoCondicion());
                     }
                     else{
+                        $("#PesoPct").val(RN.pesoChile());
                         $("#PesoEge").val(RN.pesoChileCondicion());
                     }
 
                     if ($("#graficoEstandar").val() == 3){
+                        $("#IpnPct").val(RN.ipnTemuco());
                         $("#IpnEge").val(RN.ipnTemucoCondicion());
                     }
                     else{
+                        $("#IpnPct").val(RN.ipnChile());
                         $("#IpnEge").val(RN.ipnChileCondicion());
                     }
                 }
@@ -4193,7 +4199,7 @@
                                 eg = this.eg - 24;
                                 var tablas = new Tabla;
                                 if (this.peso < tablas.pct10PesoNacional[eg]){
-                                return "Peque&ntilde;o";
+                                return "Pequeño";
                                 }
                                 else if (this.peso <= tablas.pct90PesoNacional[eg]) {
                                 return "Adecuado";
@@ -4206,7 +4212,7 @@
                                 eg = this.eg - 24;
                                 var tablas = new Tabla;
                                 if (this.peso < tablas.pct10PesoTemuco[eg]){
-                                return "Peque&ntilde;o";
+                                return "Pequeño";
                                 }
                                 else if (this.peso <= tablas.pct90PesoTemuco[eg]) {
                                 return "Adecuado";
@@ -4236,7 +4242,7 @@
                                 if (this.ipn() < tablas.pct10IpnNacional[eg]){
                                 return "Enflaquecido";
                                 } else if (this.ipn() <= tablas.pct90IpnNacional[eg]) {
-                                return "Eutr&oacute;fico";
+                                return "Eutrófico";
                                 } else if (this.ipn() > tablas.pct90IpnNacional[eg]) {
                                 return "RN Obeso";
                                 }
@@ -4247,7 +4253,7 @@
                                 if (this.ipn() < tablas.pct10IpnTemuco[eg]){
                                 return "Enflaquecido";
                                 } else if (this.ipn() <= tablas.pct90IpnTemuco[eg]) {
-                                return "Eutr&oacute;fico";
+                                return "Eutrófico";
                                 } else if (this.ipn() > tablas.pct90IpnTemuco[eg]) {
                                 return "RN Obeso";
                                 }
