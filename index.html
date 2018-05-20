@@ -3861,16 +3861,20 @@
                     RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val()); 
 
                     if ($("#graficoEstandar").val() == 1){
+                        $("#PesoPct").val(RN.pesoTemuco());
                         $("#PesoEge").val(RN.pesoTemucoCondicion());
                     }
                     else{
+                        $("#PesoPct").val(RN.pesoChile());
                         $("#PesoEge").val(RN.pesoChileCondicion());
                     }
 
                     if ($("#graficoEstandar").val() == 3){
+                        $("#IpnPct").val(RN.ipnTemuco());
                         $("#IpnEge").val(RN.ipnTemucoCondicion());
                     }
                     else{
+                        $("#IpnPct").val(RN.ipnChile());
                         $("#IpnEge").val(RN.ipnChileCondicion());
                     }
                 }
@@ -3898,16 +3902,20 @@
                     RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val()); 
 
                     if ($("#graficoEstandar").val() == 1){
+                        $("#PesoPct").val(RN.pesoTemuco());
                         $("#PesoEge").val(RN.pesoTemucoCondicion());
                     }
                     else{
+                        $("#PesoPct").val(RN.pesoChile());
                         $("#PesoEge").val(RN.pesoChileCondicion());
                     }
 
                     if ($("#graficoEstandar").val() == 3){
+                        $("#IpnPct").val(RN.ipnTemuco());
                         $("#IpnEge").val(RN.ipnTemucoCondicion());
                     }
                     else{
+                        $("#IpnPct").val(RN.ipnChile());
                         $("#IpnEge").val(RN.ipnChileCondicion());
                     }
                 }
