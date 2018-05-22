@@ -846,12 +846,21 @@
                             </form>
                             <script src="https://code.highcharts.com/highcharts.js"></script>
                             <div id="grafico"></div>
+                            <div>
+                                <div class="form-group row">
+                                    <label for="PesoEge" class="col-5">Percentil Peso sin ajuste</label>
+                                    <input type="text" class="form-control col-5" id="PesoPct" disabled>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="PesoEge" class="col-5">Percentil Peso con ajuste</label>
+                                    <input type="text" class="form-control col-5" id="PesoPct" disabled>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="container" id="ajustepeso" style="display:none;">
             <div class="bienvenida mb-3 rounded-bottom">
                 <div class="container">
@@ -1120,7 +1129,6 @@
                 </div>
             </div>
         </div>
-
 <div class="container" id="tipoExamen" style="display:none;">
             <div class="bienvenida mb-3 rounded-bottom">
                 <div class="container">
