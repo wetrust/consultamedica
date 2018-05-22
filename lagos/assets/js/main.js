@@ -280,7 +280,7 @@ $( document ).ready(function() {
 		else{
 			show_hide('browser');
 			aplication.run();
-			loadPacientes(listPacientes);
+			//loadPacientes(listPacientes);
 			activarBotones();
 			$('#fum-dos').datepicker();
 			$('#fum-dos').datepicker()
