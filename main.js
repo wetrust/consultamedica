@@ -1,4 +1,3 @@
-var aplication;
 var keynum, lines = 1;
 
 function limitLines(obj, e) {
@@ -18,30 +17,6 @@ function limitLines(obj, e) {
           }
         }
       }
-
-var errCallback = function(){
-	alert("Oh noes! There haz bin a datamabase error!");
-};
-var savePacientes = function(idPaciente, nombre, apellido, motivo, ecografia, lugarControl, ciudad, telefono, email, fNac, fum, successCallback){
-	aplication.db.transaction(function(transaction){
-		transaction.executeSql(("insert into Users (user_id, user_name, user_lastname, careReason, sonographer, controlPlace, city, phone, email, birthdate, fum) values (?,?,?,?,?,?,?,?,?,?,?);"), 
-		[idPaciente, nombre, apellido, motivo, ecografia, lugarControl, ciudad, telefono, email, fNac, fum], function(transaction, results){successCallback(results);}, errCallback);
-	});
-};
-
-var loadPacientes = function(successCallback){
-	aplication.db.transaction(
-		function(transaction){
-			transaction.executeSql('SELECT * FROM Users', [],function(transaction, results){successCallback(results);}, errCallback);
-	});
-};
-
-var loadPaciente = function(idPaciente, successCallback){
-	aplication.db.transaction(
-		function(transaction){
-			transaction.executeSql(("SELECT * FROM Users WHERE id=?"), [idPaciente],function(transaction, results){successCallback(results);}, errCallback);
-	});
-};
 
 var listPacientes = function(results){
 	var contenedor = $("#tablaPacientes");
@@ -315,7 +290,6 @@ $( document ).ready(function() {
 	}
 	else{
 		aplication = new app();
-		
 		graficoUno = null;
 		graficoDos = null;
 		graficoTres = null;
