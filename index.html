@@ -3928,14 +3928,11 @@
                     p10Pso[x] = Math.pow(10, ((i * p10[0]) + (Math.pow(i, 2) * p10[1]) + (Math.pow(i, 3) * p10[2]) + (p10[3] * $("#pm").val()) + (p10[4] * $("#sn").val()) + (p10[5] * apell) + (p10[6] * $("#imc").val()) + (p10[7] * $("#em").val()) + p10[8]));;
                 }
 
-                Tablas.pct10PesoAjustado = p10Pso;
-                Tablas.pct90PesoAjustado = p90Pso;
-
                 $("#PesoEgeSAj").val(RN.pesoTemuco);
                 eg = RN.eg - 24;
                 var tablas = new Tabla;
-                var uno = tablas.pct90PesoAjustado[eg] - tablas.pct10PesoAjustado[eg];
-                var dos = RN.peso - tablas.pct10PesoAjustado[eg];
+                var uno = p90Pso[eg] - p90Pso[eg];
+                var dos = RN.peso - p10Pso[eg];
                 $("#PesoEgeCAj").val(parseInt((80 / (uno)) * (dos)) + 10);
 
                 Highcharts.chart('graficoAjustado', {
