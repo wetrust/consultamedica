@@ -1116,12 +1116,12 @@
                             <div id="graficoAjustado"></div>
                             <div>
                                 <div class="form-group row">
-                                    <label for="PesoEge" class="col-6">Percentil Peso sin ajuste</label>
-                                    <input type="text" class="form-control col-2" id="PesoPct" disabled>
+                                    <label for="PesoEgeSAj" class="col-6">Percentil Peso sin ajuste</label>
+                                    <input type="text" class="form-control col-2" id="PesoEgeSAj" disabled>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="PesoEge" class="col-6">Percentil Peso con ajuste</label>
-                                    <input type="text" class="form-control col-2" id="PesoPct" disabled>
+                                    <label for="PesoEgeCAj" class="col-6">Percentil Peso con ajuste</label>
+                                    <input type="text" class="form-control col-2" id="PesoEgeCAj" disabled>
                                 </div>
                             </div>
                         </div>
@@ -3930,6 +3930,13 @@
 
                 Tablas.pct10PesoAjustado = p10Pso;
                 Tablas.pct90PesoAjustado = p90Pso;
+
+                $("#PesoEgeSAj").val(RN.pesoTemuco);
+                eg = RN.eg - 24;
+                var tablas = new Tabla;
+                var uno = tablas.pct90PesoAjustado[eg] - tablas.pct10PesoAjustado[eg];
+                var dos = RN.peso - tablas.pct10PesoAjustado[eg];
+                $("#PesoEgeCAj").val(parseInt((80 / (uno)) * (dos)) + 10);
 
                 Highcharts.chart('graficoAjustado', {
                     title: {
