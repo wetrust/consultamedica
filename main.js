@@ -301,7 +301,6 @@ $( document ).ready(function() {
 		else{
 			show_hide('browser');
 			aplication.run();
-			loadPacientes(listPacientes);
 			activarBotones();
 			let database = checkDatabase();
 			if (database == true){
