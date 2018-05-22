@@ -3907,6 +3907,7 @@
             $('#g3').click(function () {
                 tipografico = 0;
                 var apell = 0;
+                RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
                 if ($("#apellm").val() == 2) {
                     apell = 1;
                 }
@@ -3931,9 +3932,12 @@
                 $("#PesoEgeSAj").val(RN.pesoTemuco);
                 eg = RN.eg - 24;
                 var tablas = new Tabla;
+                var uno, dos, tres;
+
                 uno = p90Pso[eg] - p90Pso[eg];
                 dos = RN.peso - p10Pso[eg];
-                $("#PesoEgeCAj").val(parseInt((80 / (uno)) * (dos)) + 10);
+                tres = parseInt((80 / (uno)) * (dos)) + 10;
+                $("#PesoEgeCAj").val(tres);
 
                 Highcharts.chart('graficoAjustado', {
                     title: {
