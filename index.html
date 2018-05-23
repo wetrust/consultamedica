@@ -4157,7 +4157,123 @@
             });
 
             $("#opt4").click(function(){
-                var chart = $('#graficoAjustado').Highcharts();
+                var chart =  Highcharts.chart('graficoAjustado', {
+                    title: {
+                        text: 'GRAFICO PESO / EG',
+                        style: {
+                        "color": "#337ab7",
+                        }
+                    },
+                    subtitle: {
+                        text: 'TABLA AJUSTADA SEGÚN VARIABLES',
+                        style: {
+                        "color": "#337ab7",
+                        }
+                    },
+                    chart: {
+                        backgroundColor: "rgba(0, 0, 0, 0)"
+                    },
+                    yAxis: {
+                        title: { text: '' },
+                        tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540,4980],
+                        tickColor: "#337ab7",
+                        labels: {
+                        enabled: true,
+                        style: {
+                        color: '#337ab7',
+                        }
+                        }
+                    },
+                    colors: ['#ff3300', '#ff3300', '#ff3300'],
+                    xAxis: {
+                        categories:
+                        ['24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42'],
+                        labels: {
+                        enabled: true,
+                        style: {
+                        color: '#337ab7',
+                        }
+                        }
+                    },
+                    credits: { enabled: false },
+                    series: [{
+                        type: "line",
+                        name: 'Pct. 10',
+                        marker: { enabled: false },
+                            dashStyle: (function (){
+                                estilo = 'Dash';
+
+                                return estilo;
+                            }()),
+                            color: (function(){
+                                color = '#003d99';
+                                return color;
+                            }())
+                    }, {
+                        type: "line",
+                        name: 'Pct. 90',
+                        marker: { enabled: false },
+                        dashStyle: (function (){
+                                estilo = 'Dash';
+                            return estilo;
+                        }()),
+                        color: (function(){
+                            color = '#003d99';
+                            return color;
+                        }())
+                    }, {
+                        type: "line",
+                        name: 'Peso',
+                        dashStyle: "Dot",
+                        marker: { symbol: 'square' },
+                        lineWidth: 0,
+                        data: (function () {
+                            var data = [];
+                            for (i = 24; i <= (RN.eg -1); i++) {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                            data.push({
+                                y: parseInt(RN.peso),
+                            });
+                            for (i = RN.eg + 1; i <= 39; i++) {
+                                data.push({
+                                    y:  0,
+                                });
+                            }
+                            return data;
+                        }())
+                    },{
+                        type: "line",
+                        name: 'Pct. 10',
+                        marker: { enabled: false },
+                            dashStyle: (function (){
+                                estilo = 'solid';
+
+                                return estilo;
+                            }()),
+                            color: (function(){
+                                color = '#ff3300';
+                                return color;
+                            }())
+                    }, {
+                        type: "line",
+                        name: 'Pct. 90',
+                        marker: { enabled: false },
+                        dashStyle: (function (){
+                                estilo = 'solid';
+                            return estilo;
+                        }()),
+                        color: (function(){
+                            color = '#ff3300';
+                            return color;
+                        }())
+                    }]
+                });
+
+
+
                 chart.setTitle({ text: 'Visión simultánea de los extremos' }, { text: 'TABLA AJUSTADA SEGÚN VARIABLES' });
                 chart.series[0].setData([614.911761594748,688.2409351621351,775.8261252713739,879.2765685663702,1000.14921864602,1139.7859521609507,1299.0982567628794,1478.2976958841446,1676.578914688683,1891.7742075463264,2120.0143470672206,2355.4478861757852,2590.0872856319534,2813.8600915466154,3014.940876697811,3180.418712251241,3297.311672544965,3353.875214095742,3341.073271117301]);
                 chart.series[1].setData([845.6847516567528,1019.8791186895171,1215.1332367429115,1430.6549439464502,1664.8783277732855,1915.435357904167,2179.1679353682594,2452.1831280795927,2729.951302092218,3007.4436584447762,3279.3026501881805,3540.0361747837806,3784.224559989481,4006.728359825368,4202.884932894939,4368.682671927062,4500.903482341126,4597.226484532643,4656.288703467283]);
