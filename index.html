@@ -3897,8 +3897,6 @@
                 $('#g3').trigger("click");
             });
             
-            
-            
             var RN = 0;
             var Tablas = 0;
             var varMama = 0;
@@ -4073,12 +4071,30 @@
                 varMama = new Mama($("#tm").val(),$("#pesom").val(),$("#em").val(),$('#apellm').val());
                 $('#valorimc').val(varMama.imc());
                 $('#imc').val(varMama.imcCondicion());
+                $('#g3').trigger("click");
             });
 
             $('#pesom').change(function () {
                 varMama = new Mama($("#tm").val(),$("#pesom").val(),$("#em").val(),$('#apellm').val());
                 $('#valorimc').val(varMama.imc());
                 $('#imc').val(varMama.imcCondicion());
+                $('#g3').trigger("click");
+            });
+
+            $('#sn').change(function () {
+                $('#g3').trigger("click");
+            });
+            $('#pm').change(function () {
+                $('#g3').trigger("click");
+            });
+            $('#imc').change(function () {
+                $('#g3').trigger("click");
+            });
+            $('#em').change(function () {
+                $('#g3').trigger("click");
+            });
+            $('#apellm').change(function () {
+                $('#g3').trigger("click");
             });
 
             $('#opt1').click(function () {
