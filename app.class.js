@@ -76,9 +76,11 @@ class app {
 		}
 		else if (this.hash=="#postnatal"){
 			this.displayElement("postnatal");
+
 		}
 		else if (this.hash=="#ajustepeso"){
 			this.displayElement("ajustepeso");
+			verGraficoAjustePeso();
 		}
 		else if (this.hash=="#recienacido"){
 			this.displayElement("recienacido");

@@ -820,7 +820,7 @@
                             <h4>Recién Nacido</h4>
                             <form>
                                 <div class="form-group row">
-                                    <label for="edadGestacional" class="col-4">Edad Gestacional</label>
+                                    <label for="edadGestacional" class="col-4">E. Gestacional</label>
                                     <div class="input-group col-8">
                                         <select id="edadGestacional" class="form-control" aria-describedby="edadGestacionalHelp">
                                         <option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40" selected>40</option><option value="41">41</option><option value="42">42</option></select>
@@ -859,7 +859,6 @@
                                     <input type="text" class="form-control col-3" id="IpnEge" style="font-size: 0.8rem;" disabled>
                                 </div>
                             </form>
-                            <a class="btn btn-outline-info text-center" href="#ajustepeso" id="ajustePesoGo" role="button">Ajuste al peso según variables biológicas</a>
                         </div>
                     </div>
                 </div>
@@ -3926,11 +3925,11 @@
             });
             
             
-            $("#ajustePesoGo").on("click", function(){
+            function verGraficoAjustePeso(){
                 RN = new RecienNacido($("#pesoRN").val(),$("#tallaRN").val(),$("#edadGestacional").val());
                 $('#opt1').trigger("click");
                 $('#g3').trigger("click");
-            });
+            };
             
             var RN = 0;
             var Tablas = 0;
