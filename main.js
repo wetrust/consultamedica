@@ -366,6 +366,36 @@ $( document ).ready(function() {
 				  .on('changeDate', function(ev){
 				    $(this).trigger("change");
 				  });
+
+				  $('#infadicionalNoController').on('click', function(){
+					if ($('#infadicionalView').hasClass('d-none') == false){
+						$('#infadicionalView').addClass('d-none');
+						$('#continuarExamenEcografico').removeClass('d-none');
+					}
+				});
+				
+				$('#infadicionalSiController').on('click', function(){
+					$('#infadicionalView').removeClass('d-none');
+					$('#continuarExamenEcografico').addClass('d-none');
+				});
+				
+				$('#infadicionalClinicoNoController').on('click', function(){
+					if ($('#infadicionalClinicoView').hasClass('d-none') == false){
+						$('#infadicionalClinicoView').addClass('d-none');
+					}
+				});
+				
+				$('#infadicionalClinicoSiController').on('click', function(){
+					$('#infadicionalClinicoView').removeClass('d-none');
+				});
+				
+				$('#configSiController').on('click', function(){
+					document.location.hash = "configuracion";
+				});
+				
+				$('#configSiController').on('focusout', function(){
+					$('#configNoController').button('toggle');
+				});
 		}
 	}
 });

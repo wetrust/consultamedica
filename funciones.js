@@ -1,5 +1,3 @@
-//funciones
-//from https://stackoverflow.com/questions/17907445/how-to-detect-ie11
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
 
 $( '#adicionalCrecimientoView' ).on( 'click', function() {
@@ -140,37 +138,6 @@ $('#cccaController').on('click', function(){
 	}
 
 });
-
-$('#infadicionalNoController').on('click', function(){
-	if ($('#infadicionalView').hasClass('d-none') == false){
-		$('#infadicionalView').addClass('d-none');
-		$('#continuarExamenEcografico').removeClass('d-none');
-	}
-});
-
-$('#infadicionalSiController').on('click', function(){
-	$('#infadicionalView').removeClass('d-none');
-	$('#continuarExamenEcografico').addClass('d-none');
-});
-
-$('#infadicionalClinicoNoController').on('click', function(){
-	if ($('#infadicionalClinicoView').hasClass('d-none') == false){
-		$('#infadicionalClinicoView').addClass('d-none');
-	}
-});
-
-$('#infadicionalClinicoSiController').on('click', function(){
-	$('#infadicionalClinicoView').removeClass('d-none');
-});
-
-$('#configSiController').on('click', function(){
-	document.location.hash = "configuracion";
-});
-
-$('#configSiController').on('focusout', function(){
-	$('#configNoController').button('toggle');
-});
-
 
 $("#saveMebrete").on("click", function(event){
 	event.preventDefault();
@@ -2864,9 +2831,7 @@ function pctpfe() {
 }
 
 function bvm() {
-
  var pct5 = [], pct95 = [];
-
  pct5[0] = 23; pct5[1] = 25; pct5[2] = 27;  pct5[3] = 28;
  pct5[4] = 29; pct5[5] = 29; pct5[6] = 30;  pct5[7] = 30;
  pct5[8] = 30; pct5[9] = 30; pct5[10] = 30; pct5[11] = 30;
@@ -2881,12 +2846,9 @@ function bvm() {
  pct95[16] = 71; pct95[17] = 72; pct95[18] = 72; pct95[19] = 72;
  pct95[20] = 71; pct95[21] = 70; pct95[22] = 68; pct95[23] = 66;
  pct95[24] = 62;
-
  var eg=0, bvm=0;
-
  eg=parseFloat(localStorage.eg);
  bvm=parseInt($("#bvm").val());
-
  if (eg < 16) {  
   //
  }
@@ -2897,21 +2859,17 @@ function bvm() {
  else {
   eg = eg - 16;
   eg = parseInt(eg);
-
   var uno = pct95[eg] - pct5[eg];
   var dos = bvm - pct5[eg];
   var resultado = parseInt(90 / (uno) * (dos) + 5);
   ajustarProgreso(resultado, "bvmPct");
   $("#bvmPct").val(resultado);
-
  }
 }
 
 function bvmDoppler() {
-
  var pct5 = [];
  var pct95 = [];
-
     pct5[0] = 23;    pct5[1] = 25;    pct5[2] = 27;    pct5[3] = 28;
     pct5[4] = 29;    pct5[5] = 29;    pct5[6] = 30;    pct5[7] = 30;
     pct5[8] = 30;    pct5[9] = 30;    pct5[10] = 30;    pct5[11] = 30;
@@ -2919,7 +2877,6 @@ function bvmDoppler() {
     pct5[16] = 29;    pct5[17] = 29;    pct5[18] = 28;    pct5[19] = 28;
     pct5[20] = 27;    pct5[21] = 26;    pct5[22] = 24;    pct5[23] = 23;
     pct5[24] = 21;
-
      pct95[0] = 59;     pct95[1] = 62;     pct95[2] = 64;     pct95[3] = 66;
      pct95[4] = 67;     pct95[5] = 68;     pct95[6] = 68;     pct95[7] = 68;
      pct95[8] = 68;     pct95[9] = 68;     pct95[10] = 68;     pct95[11] = 69;
@@ -2930,10 +2887,8 @@ function bvmDoppler() {
 
  var eg=0;
  var bvm=0;
- 
  eg=parseFloat(localStorage.eg);
  bvm=parseInt($("#bvmDoppler").val());
- 
  if (eg < 16) {  
   //
  }
@@ -2944,7 +2899,6 @@ function bvmDoppler() {
  else {
   eg = eg - 16;
   eg = parseInt(eg);
-
   if ( bvm <= pct5[eg]){
 	 $("#liqAmnioDoppler").val("disminuido"); 
   }
@@ -2958,10 +2912,8 @@ function bvmDoppler() {
 }
 
 function bvmEcoDos() {
-
  var pct5 = [];
  var pct95 = [];
-
     pct5[0] = 23;    pct5[1] = 25;    pct5[2] = 27;    pct5[3] = 28;
     pct5[4] = 29;    pct5[5] = 29;    pct5[6] = 30;    pct5[7] = 30;
     pct5[8] = 30;    pct5[9] = 30;    pct5[10] = 30;    pct5[11] = 30;
@@ -2969,7 +2921,6 @@ function bvmEcoDos() {
     pct5[16] = 29;    pct5[17] = 29;    pct5[18] = 28;    pct5[19] = 28;
     pct5[20] = 27;    pct5[21] = 26;    pct5[22] = 24;    pct5[23] = 23;
     pct5[24] = 21;
-
      pct95[0] = 59;     pct95[1] = 62;     pct95[2] = 64;     pct95[3] = 66;
      pct95[4] = 67;     pct95[5] = 68;     pct95[6] = 68;     pct95[7] = 68;
      pct95[8] = 68;     pct95[9] = 68;     pct95[10] = 68;     pct95[11] = 69;
@@ -2977,13 +2928,10 @@ function bvmEcoDos() {
      pct95[16] = 71;     pct95[17] = 72;     pct95[18] = 72;     pct95[19] = 72;
      pct95[20] = 71;     pct95[21] = 70;     pct95[22] = 68;     pct95[23] = 66;
      pct95[24] = 62;
-
  var eg=0;
  var bvm=0;
- 
  eg=parseFloat(localStorage.eg);
  bvm=parseInt($("#bvmEcoDos").val());
- 
  if (eg < 16) {  
   //
  }
@@ -3007,7 +2955,6 @@ function bvmEcoDos() {
 }
 
 function valccca() {
-
  var cc=parseInt($("#cc").val());
  var ca=parseInt($("#ca").val());
  if (cc > 0) {
@@ -3080,7 +3027,6 @@ function ajustarProgreso(valor, objeto){
 	$("#"+objeto + " > .pivote-cien").html("|");
 	$("#"+objeto + " > .pivote-tres").html("");
 	$("#"+objeto + " > .pivote-cuatro").html("");
-	
 	if (valor <= 6){
 		$("#"+objeto + " > .pivote-cero").html("<strong style='color:red;'>X</strong>");
 	}
@@ -3133,10 +3079,8 @@ function ajustarProgreso(valor, objeto){
 }
 
 function pctut() {
-
 	var pct5 = [];
 	var pct95 = [];
-
 	pct5[0] = 1.23; pct5[1] = 1.18;	pct5[2] = 1.11; pct5[3] = 1.05;
 	pct5[4] = 0.99; pct5[5] = 0.94;	pct5[6] = 0.89; pct5[7] = 0.85;
 	pct5[8] = 0.81; pct5[9] = 0.78;	pct5[10] = 0.74; pct5[11] = 0.71;
@@ -3145,7 +3089,6 @@ function pctut() {
 	pct5[20] = 0.54; pct5[21] = 0.52;	pct5[22] = 0.51; pct5[23] = 0.51;
 	pct5[24] = 0.51; pct5[25] = 0.49;	pct5[26] = 0.48; pct5[27] = 0.48;
 	pct5[28] = 0.47; pct5[29] = 0.47;	pct5[30] = 0.47;
-
 	pct95[0] = 2.84; pct95[1] = 2.71;	pct95[2] = 2.53; pct95[3] = 2.38;
 	pct95[4] = 2.24; pct95[5] = 2.11;	pct95[6] = 1.99; pct95[7] = 1.88;
 	pct95[8] = 1.79; pct95[9] = 1.71;	pct95[10] = 1.61; pct95[11] = 1.54;
@@ -3155,7 +3098,6 @@ function pctut() {
 	pct95[24] = 0.99; pct95[25] = 0.97;	pct95[26] = 0.95; pct95[27] = 0.94;
 	pct95[28] = 0.92; pct95[29] = 0.91;	pct95[30] = 0.91;
 	var eg=0;
- 
 	eg=parseFloat(localStorage.eg);
 	var utd = $("#aud").val();
 	utd = utd.toString(); 
@@ -3257,18 +3199,15 @@ function imprSelec(muestra)
 	var estilo = '<style>@media print {.col{width:40%; height:30% float:left;}.text-center{text-align:center;}.pie-pagina{font-size:9px;}.pie-pagina-dos{font-size:10px;}#lineclear{clear:both;}h4{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}.membrete::first-letter{font-size:14px;}.membrete::first-line {font-size: 14px;}.membrete {font-size: 10px;}}</style>';
 	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
 	var membrete = $("#membrete").val().replace(/\r\n|\r|\n/g,"<br />");
-	
 	var day = ("0" + aplication.day.getDate()).slice(-2);
 	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
 	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
-	
 	document = document.replace(":DATOS", ficha);
 	document = document.replace(":DATEINFORME", dateInf);
 	document = document.replace(":ESTILO", estilo);
 	document = document.replace(":FUNCION", funcion);
 	document = document.replace(new RegExp('d-none', 'g'), "");
 	document = document.replace(":MEMBRETE", membrete);
-	
 	ventimp.document.write(document);
 	ventimp.document.close();
 	ventimp.show();
@@ -3283,41 +3222,34 @@ function imprInforme(muestra)
 	var estilo = '<style>@media print{*{margin:0;padding:0;border:0}p,th,td{font-size:11px;line-height:17px;margin-bottom:7px}th,td{margin:0 !important;padding:0 !important}.pie-pagina{font-size:9px}.pie-pagina-dos{font-size:10px}#lineclear{clear:both}h3{font-size:130%;text-align:center}h3::first-letter{font-size:100%}.membrete::first-letter{font-size:14px;}.membrete::first-line{font-size:14px;}.membrete{font-size:10px;}}</style>';
 	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
 	var membrete = $("#membrete").val().replace(/\r\n|\r|\n/g,"<br />");
-	
 	document = document.replace(":DATOS", ficha);
 	document = document.replace(":ESTILO", estilo);
 	document = document.replace(":FUNCION", funcion);
 	document = document.replace(new RegExp('invisible', 'g'), "");
 	document = document.replace(":MEMBRETE", membrete);
-	
 	ventimp.document.write(document);
 	ventimp.document.close();
 	ventimp.show();
 }
 
 function p50() {
-
     //calcular dbp
     const N7 = new Number(9.468544279);
     const N8 = new Number(1.015432196);
     var dbp= $('#dbp').val();
     var N = new Number(N7 * Math.pow(N8, dbp));
     dbp = Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
-
     var c1 = new Number(9.413641651);
     var c2 = new Number(1.004137705);
     var cc = $('#cc').val();
     N = new Number(c1 * Math.pow(c2, cc));
     cc =  Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
-
     c1 = new Number(11.20178254);
     c2 = new Number(1.01704237);
     var lf = $('#lf').val();
     N = new Number(c1 * Math.pow(c2, lf));
     lf =  Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
-
     var  humeroPromedioDE = [];
-
     humeroPromedioDE[10]=12.4;humeroPromedioDE[11]=12.6;humeroPromedioDE[12]=13.1;humeroPromedioDE[13]=13.4;
     humeroPromedioDE[14]=13.6;humeroPromedioDE[15]=14.1;humeroPromedioDE[16]=14.4;humeroPromedioDE[17]=14.6;
     humeroPromedioDE[18]=15.1;humeroPromedioDE[19]=15.4;humeroPromedioDE[20]=15.6;humeroPromedioDE[21]=16.2;
@@ -3333,35 +3265,28 @@ function p50() {
     humeroPromedioDE[58]=33.4;humeroPromedioDE[59]=34.1;humeroPromedioDE[60]=34.6;humeroPromedioDE[61]=35.2;
     humeroPromedioDE[62]=35.6;humeroPromedioDE[63]=36.4;humeroPromedioDE[64]=37.1;humeroPromedioDE[65]=37.5;
     humeroPromedioDE[66]=38.2;humeroPromedioDE[67]=38.6;humeroPromedioDE[68]=39.4;humeroPromedioDE[69]=40.1;
-
      var dbpdias = (Math.floor(dbp) * 7) + ((dbp - Math.floor(dbp)) * 10);
      var ccdias = (Math.floor(cc) * 7) + ((cc - Math.floor(cc)) * 10);
      var lfdias = (Math.floor(lf) * 7) + ((lf - Math.floor(lf)) * 10);
-
     var cb = $('#cerebelo').val();
-
     if (cb > 0) {
         cb = cb / 10;
         var egHill = 6.37+(5.4*cb)+(0.78*Math.pow(cb,2))-(0.13*Math.pow(cb,3));
         //añadir mayor presicion, ya se suma 1 dia
         cb = Math.round( egHill * 10 ) / 10;
-	
         var cbdias = (Math.floor(cb) * 7) + ((cb - Math.floor(cb)) * 10);
         egbio = (ccdias + lfdias + cbdias) /3;
      }
      else {
         egbio = (dbpdias + ccdias + lfdias) /3;
      }
-
      var lh = parseInt($('#lh').val());
      if (lh > 0) {
 	lh =  humeroPromedioDE[lh];
         var lhdias = (Math.floor(lh) * 7) + ((lh - Math.floor(lh)) * 10);
         egbio = (lhdias + egbio) /2;
      }
-
      egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
-
      $('#egP50').val(egbio);
     }
 
@@ -3374,10 +3299,8 @@ function ipn() {
             var IPN = peso / (Math.pow((talla * 10), 3));
             IPN = IPN * 100000;
            $('#ipn').val(IPN.toFixed(2));
-	
 	   var Pct10IPN = [];
 	   var Pct90IPN = [];
-		
 	   Pct10IPN[24] = 1.79;	   Pct10IPN[25] = 1.83;
 	   Pct10IPN[26] = 1.87;	   Pct10IPN[27] = 1.91;
 	   Pct10IPN[28] = 1.95;	   Pct10IPN[29] = 1.99;
@@ -3388,7 +3311,6 @@ function ipn() {
 	   Pct10IPN[38] = 2.37;	   Pct10IPN[39] = 2.41;
 	   Pct10IPN[40] = 2.45;	   Pct10IPN[41] = 2.5;
 	   Pct10IPN[42] = 2.54;
-		
 	   Pct90IPN[24] = 2.54;	   Pct90IPN[25] = 2.57;
 	   Pct90IPN[26] = 2.59;	   Pct90IPN[27] = 2.62;
 	   Pct90IPN[28] = 2.65;	   Pct90IPN[29] = 2.68;
@@ -3398,8 +3320,7 @@ function ipn() {
 	   Pct90IPN[36] = 2.89;	   Pct90IPN[37] = 2.92;
 	   Pct90IPN[38] = 2.95;	   Pct90IPN[39] = 2.98;
 	   Pct90IPN[40] = 3.01;	   Pct90IPN[41] = 3.04;
-	   Pct90IPN[42] = 3.07;
-	
+	   Pct90IPN[42] = 3.07;	
 	   var eg = parseFloat(localStorage.eg);
            eg = parseInt(eg);
            var uno=Pct90IPN[eg] - Pct10IPN[eg];
