@@ -28,58 +28,61 @@ class app {
 
     onHashChange(){
     	//https://stackoverflow.com/questions/6478485/jquery-change-the-url-address-without-redirecting
-	this.hash = document.location.hash;
+		this.hash = document.location.hash;
 
-	if (this.hash=="#inicio"){
-		this.displayElement("home");
-		this.clearData();
-	}
-	else if (this.hash=="#paciente"){
-		this.displayElement("paciente");
-	}
-	else if (this.hash=="#consulta"){
-		this.displayElement("consulta");
-		var contador = $('#membrete').val();
-		if (contador.length < 1){
-			//$('#membrete').val('SERVICIO DE SALUD ARAUCANIA SUR\r\nHOSPITAL Dr. HERNAN HENRIQUEZ ARAVENA\r\nUNIDAD DE MEDICINA MATERNO FETAL');
+		if (this.hash=="#inicio"){
+			this.displayElement("home");
+			this.clearData();
 		}
-	}
-        else if (this.hash=="#tipoExamen"){
-		this.displayElement("tipoExamen");
-	}
-	else if (this.hash=="#ecoDoppler"){
-		this.displayElement("ecoDoppler");
-	}
-	else if (this.hash=="#ecoObsSegTrim"){
-		this.displayElement("ecoObsSegTrim");
-	}
-	else if (this.hash=="#ecoObsPrimTrim"){
-		this.displayElement("ecoObsPrimTrim");
-	}
-	else if (this.hash=="#configuracion"){
-		this.displayElement("configuracion");
-	}
-	else if (this.hash=="#tamizaje-11"){
-		this.displayElement("tamizaje-11");
-	}
-	else if (this.hash=="#morfologica-22"){
-		this.displayElement("morfologica-22");
-	}
-	else if (this.hash=="#ecocardio"){
-		this.displayElement("ecocardio");
-	}
-	else if (this.hash=="#dneonatales"){
-		this.displayElement("dNeonatales");
-	}
-	else if (this.hash=="#agenda"){
-		this.displayElement("agenda");
-	}
-	else if (this.hash=="#postnatal"){
-		this.displayElement("postnatal");
-	}
-	else if (this.hash=="#ajustepeso"){
-		this.displayElement("ajustepeso");
-	}
+		else if (this.hash=="#paciente"){
+			this.displayElement("paciente");
+		}
+		else if (this.hash=="#consulta"){
+			this.displayElement("consulta");
+			var contador = $('#membrete').val();
+			if (contador.length < 1){
+				//$('#membrete').val('SERVICIO DE SALUD ARAUCANIA SUR\r\nHOSPITAL Dr. HERNAN HENRIQUEZ ARAVENA\r\nUNIDAD DE MEDICINA MATERNO FETAL');
+			}
+		}
+		else if (this.hash=="#tipoExamen"){
+			this.displayElement("tipoExamen");
+		}
+		else if (this.hash=="#ecoDoppler"){
+			this.displayElement("ecoDoppler");
+		}
+		else if (this.hash=="#ecoObsSegTrim"){
+			this.displayElement("ecoObsSegTrim");
+		}
+		else if (this.hash=="#ecoObsPrimTrim"){
+			this.displayElement("ecoObsPrimTrim");
+		}
+		else if (this.hash=="#configuracion"){
+			this.displayElement("configuracion");
+		}
+		else if (this.hash=="#tamizaje-11"){
+			this.displayElement("tamizaje-11");
+		}
+		else if (this.hash=="#morfologica-22"){
+			this.displayElement("morfologica-22");
+		}
+		else if (this.hash=="#ecocardio"){
+			this.displayElement("ecocardio");
+		}
+		else if (this.hash=="#dneonatales"){
+			this.displayElement("dNeonatales");
+		}
+		else if (this.hash=="#agenda"){
+			this.displayElement("agenda");
+		}
+		else if (this.hash=="#postnatal"){
+			this.displayElement("postnatal");
+		}
+		else if (this.hash=="#ajustepeso"){
+			this.displayElement("ajustepeso");
+		}
+		else if (this.hash=="#recienacido"){
+			this.displayElement("recienacido");
+		}
     }
 
 //Funciones para los pacientes
@@ -111,7 +114,6 @@ class app {
 	    $('#email').val('');
 	    $('#fNacimiento').val('');
 	    $('#fum').val('');
-	    
 	    $('#idPaciente').focus();
 	    $("#tablaPacientes").hide();
     }
@@ -266,6 +268,7 @@ class app {
 	if (div_id != 'agenda'){
 		$('#home').hide();
 	}
+	$('#recienacido').hide();
 	$('#'+div_id).show();
     }
 	
