@@ -882,30 +882,21 @@
                             <form>
                                 <div class="form-group row">
                                     <label class="col-4" for="edadGestacional">Sexo Neonatal</label>
-                                    <select id="sn" class="form-control col-8">
+                                    <select id="sn" class="form-control col-8 bg-light">
                                         <option value="1" selected>Femeníno</option>
                                         <option value="0">Masculíno</option>
                                     </select>
                                 </div>
                                 <div class="form-group row">
                                     <label for="edadGestacional" class="col-4">Paridad Materna</label>
-                                    <select id="pm" class="form-control col-8">
+                                    <select id="pm" class="form-control col-8 bg-light">
                                         <option value="1" selected>Primípara</option>
                                         <option value="0">Multípara</option>
                                     </select>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="edadGestacional" class="col-4">Estado Nutricional</label>
-                                    <select id="imc" class="form-control col-8">
-                                        <option value="1">Enflaquecida</option>
-                                        <option value="2">Normal</option>
-                                        <option value="3">SobrePeso</option>
-                                        <option value="4" selected>Obesidad</option>
-                                    </select>
-                                </div>
-                                <div class="form-group row">
                                     <label for="edadGestacional" class="col-4">Talla Materna</label>
-                                    <select id="tm" class="form-control col-8">
+                                    <select id="tm" class="form-control col-8 bg-light">
                                         <option value="135">135 cms</option>
                                         <option value="136">136 cms</option>
                                         <option value="137">137 cms</option>
@@ -1072,7 +1063,16 @@
                                 </div>
                                 <div class="form-group row">
                                     <label for="edadGestacional" class="col-4">Valor IMC</label>
-                                    <input type="text" class="form-control col-8" id="valorimc" disabled>
+                                    <input type="text" class="form-control col-8 bg-white" id="valorimc" disabled>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="edadGestacional" class="col-4">Estado Nutricional</label>
+                                    <select id="imc" class="form-control col-8">
+                                        <option value="1">Enflaquecida</option>
+                                        <option value="2">Normal</option>
+                                        <option value="3">SobrePeso</option>
+                                        <option value="4" selected>Obesidad</option>
+                                    </select>
                                 </div>
                                 <div class="form-group row">
                                     <label for="edadGestacional" class="col-4">Edad Materna</label>
@@ -2756,10 +2756,10 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-4 col-lg-3">
-                                        <label for="imc" class="col-form-label text-primary"><i class="fa fa-area-chart hidden-lg-up" aria-hidden="true"></i> IMC</label>
+                                        <label for="imcW" class="col-form-label text-primary"><i class="fa fa-area-chart hidden-lg-up" aria-hidden="true"></i> IMC</label>
                                     </div>
                                     <div class="col-md-8 col-lg-3">
-                                        <input type="text" class="form-control" id="imc" readonly>
+                                        <input type="text" class="form-control" id="imcW" readonly>
                                     </div>
                                     <div class="col-md-4 col-lg-3">
                                         <label for="estNutricional" class="col-form-label text-primary"><i class="fa fa-area-chart hidden-lg-up" aria-hidden="true"></i> Estado nutricional</label>
