@@ -3503,7 +3503,7 @@
                     credits: { enabled: false },
                     yAxis: {
                         title: {
-                            text: 'Kilogramos'
+                            text: 'Gramos'
                         },
                         tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540]
                     },
@@ -3567,7 +3567,7 @@
                         credits: { enabled: false },
                         yAxis: {
                             title: {
-                                text: 'Kilogramos'
+                                text: 'Gramos'
                             },
                             tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540]
                         },
@@ -3635,7 +3635,7 @@
                         credits: { enabled: false },
                         yAxis: {
                             title: {
-                                text: 'Kilogramos'
+                                text: 'Gramos'
                             },
                             tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540]
                         },
@@ -3861,7 +3861,7 @@
               if ($("#tallaRN").val() > 1){
                 var valor = $(this).val() / (Math.pow($("#tallaRN").val(), 3));
                 valor = valor * 100000;
-                $("#IPNRN").val(valor.toFixed(1));
+                $("#IPNRN").val(valor.toFixed(2));
               }
               $("#graficoEstandar").trigger("click");
             });
@@ -3881,7 +3881,7 @@
                 if ($("#pesoRN").val() > 1){
                 var valor = $("#pesoRN").val() / (Math.pow($("#tallaRN").val(), 3));
                 valor = valor * 100000;
-                $("#IPNRN").val(valor.toFixed(1));
+                $("#IPNRN").val(valor.toFixed(2));
                 }
                 $("#graficoEstandar").trigger("click");
             });
