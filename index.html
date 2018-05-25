@@ -1174,13 +1174,11 @@
                         <div class="card-block">
                             <div id="graficoAjustado"></div>
                             <div>
-                                <div class="form-group row">
-                                    <p class="col-12 d-none" id="tituloAjusteG"><strong>Peso ajustado para:</strong></p>
-                                    <label for="PesoEgeSAj" class="col-6" id="tituloAjusteAlto" style="font-size: 0.8rem;height: 2rem;">Percentil de peso sin ajuste</label>
-                                    <input type="text" class="form-control col-2" id="PesoEgeSAj" disabled style="font-size: 0.8rem;height: 2rem;">
-                                </div>
                                 <div class="form-group row mb-0">
-                                    <label for="PesoEgeCAj" class="col-6" id="tituloAjusteBajo" style="font-size: 0.8rem;height: 2rem;">Percentil de peso con ajuste</label>
+                                    <p class="col-12 d-none" id="tituloAjusteG"><strong>Peso ajustado para:</strong></p>
+                                    <label for="PesoEgeSAj" class="col-4" id="tituloAjusteAlto" style="font-size: 0.8rem;height: 2rem;">Percentil de peso sin ajuste</label>
+                                    <input type="text" class="form-control col-2" id="PesoEgeSAj" disabled style="font-size: 0.8rem;height: 2rem;">
+                                    <label for="PesoEgeCAj" class="col-4" id="tituloAjusteBajo" style="font-size: 0.8rem;height: 2rem;">Percentil de peso con ajuste</label>
                                     <input type="text" class="form-control col-2" id="PesoEgeCAj" disabled style="font-size: 0.8rem;height: 2rem;">
                                 </div>
                             </div>
@@ -4003,7 +4001,7 @@
 
                 Highcharts.chart('graficoAjustado', {
                     title: {
-                        text: 'GRAFICO PESO / EG',
+                        text: 'Gráfica PESO / EG ajustada',
                         style: {
                         "color": "#337ab7",
                         }
@@ -4218,12 +4216,6 @@
                 var chart =  Highcharts.chart('graficoAjustado', {
                     title: {
                         text: 'GRAFICO PESO / EG',
-                        style: {
-                        "color": "#337ab7",
-                        }
-                    },
-                    subtitle: {
-                        text: 'TABLA AJUSTADA SEGÚN VARIABLES',
                         style: {
                         "color": "#337ab7",
                         }
