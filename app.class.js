@@ -85,6 +85,9 @@ class app {
 		else if (this.hash=="#recienacido"){
 			this.displayElement("recienacido");
 		}
+		else if (this.hash=="#pdfviebox"){
+			this.displayElement("pdfviebox");
+		}
     }
 
 //Funciones para los pacientes
@@ -270,6 +273,7 @@ class app {
 	if (div_id != 'agenda'){
 		$('#home').hide();
 	}
+	$('#pdfviebox').hide();
 	$('#recienacido').hide();
 	$('#'+div_id).show();
     }

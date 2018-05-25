@@ -18,6 +18,14 @@ $('#partos').on("change", function(){
 	}
 });
 
+$("#pdfnacionalview").on("click", function(){
+	$("pdfview").attr('src', "https://crecimientofetal.cl/pdf/gnacional.pdf")
+});
+
+$("#pdfregionalview").on("click", function(){
+	$("pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf")
+});
+
 $( '#mensajeRestringido' ).on( 'click', function() {
 	$('#popupTitle').html("Sección restringida, solo disponible para usuarios capacitados en la plataforma.");
 	//remueve los botones de imprimir en caso de que estén
