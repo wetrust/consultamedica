@@ -374,11 +374,11 @@ $( document ).ready(function() {
 					}
 				});
 				$("#pdfnacionalview").on("click", function(){
-					$("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gnacional.pdf")
+					$("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gnacional.pdf");
 				});
 				
 				$("#pdfregionalview").on("click", function(){
-					$("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf")
+					$("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
 				});
 
 				$('#infadicionalSiController').on('click', function(){
