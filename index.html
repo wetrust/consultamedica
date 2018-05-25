@@ -1160,10 +1160,10 @@
                             </form>
                             <h6 class="text-left" style="margin-top:30px;">Cuatro ejemplos para ajuste al peso esperado según variables</h6>
                             <div class="btn-group" role="group" aria-label="Default button group">
-                                <button type="button" class="btn btn-secondary" id="opt1">Neutro</button>
-                                <button type="button" class="btn btn-secondary" id="opt2">Potencial alto</button>
-                                <button type="button" class="btn btn-secondary" id="opt3">Potencial bajo</button>
-                                <button type="button" class="btn btn-secondary" id="opt4">Cond. extremas</button>
+                                <button type="button" class="btn btn-outline-primary" id="opt1">Neutro</button>
+                                <button type="button" class="btn btn-outline-primary" id="opt2">Potencial alto</button>
+                                <button type="button" class="btn btn-outline-primary" id="opt3">Potencial bajo</button>
+                                <button type="button" class="btn btn-outline-primary" id="opt4">Cond. extremas</button>
                             </div>
                             <button class="btn btn-outline-info d-none" id="g3">Graficar percentil ajustado</button>
                         </div>
@@ -1176,9 +1176,9 @@
                             <div>
                                 <div class="form-group row mb-0">
                                     <p class="col-12 d-none" id="tituloAjusteG"><strong>Peso ajustado para:</strong></p>
-                                    <label for="PesoEgeSAj" class="col-4" id="tituloAjusteAlto" style="font-size: 0.8rem;height: 2rem;">Percentil de peso sin ajuste</label>
+                                    <label for="PesoEgeSAj" class="col-4" id="tituloAjusteAlto" style="font-size: 0.8rem;height: 2rem;">Pct. peso sin ajuste</label>
                                     <input type="text" class="form-control col-2" id="PesoEgeSAj" disabled style="font-size: 0.8rem;height: 2rem;">
-                                    <label for="PesoEgeCAj" class="col-4" id="tituloAjusteBajo" style="font-size: 0.8rem;height: 2rem;">Percentil de peso con ajuste</label>
+                                    <label for="PesoEgeCAj" class="col-4" id="tituloAjusteBajo" style="font-size: 0.8rem;height: 2rem;">Pct. peso con ajuste</label>
                                     <input type="text" class="form-control col-2" id="PesoEgeCAj" disabled style="font-size: 0.8rem;height: 2rem;">
                                 </div>
                             </div>
@@ -3996,8 +3996,8 @@
                 $("#PesoEgeCAj").val(tres);
 
                 $("#tituloAjusteG").addClass("d-none");
-                $("#tituloAjusteAlto").html("Percentil Peso sin ajuste");
-                $("#tituloAjusteBajo").html("Percentil Peso con ajuste");
+                $("#tituloAjusteAlto").html("Pct Peso sin ajuste");
+                $("#tituloAjusteBajo").html("Pct. Peso con ajuste");
 
                 Highcharts.chart('graficoAjustado', {
                     title: {
@@ -4168,8 +4168,8 @@
                 RN.ajustePequeno = false;
                 $('#g3').trigger("click");
                 $("#tituloAjusteG").addClass("d-none");
-                $("#tituloAjusteAlto").html("Percentil de peso sin ajuste");
-                $("#tituloAjusteBajo").html("Percentil de peso con ajuste");
+                $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
+                $("#tituloAjusteBajo").html("Pct. de peso con ajuste");
             });
 
             $('#opt2').click(function () {
@@ -4188,8 +4188,8 @@
                 RN.ajustePequeno = false;
                 $('#g3').trigger("click");
                 $("#tituloAjusteG").addClass("d-none");
-                $("#tituloAjusteAlto").html("Percentil de peso sin ajuste");
-                $("#tituloAjusteBajo").html("Percentil de peso con ajuste");
+                $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
+                $("#tituloAjusteBajo").html("Pct. peso con ajuste");
             });
 
             $('#opt3').click(function () {
@@ -4208,8 +4208,8 @@
                 RN.ajustePequeno = true;
                 $('#g3').trigger("click");
                 $("#tituloAjusteG").addClass("d-none");
-                $("#tituloAjusteAlto").html("Percentil de peso sin ajuste");
-                $("#tituloAjusteBajo").html("Percentil de peso con ajuste");
+                $("#tituloAjusteAlto").html("Pct.peso sin ajuste");
+                $("#tituloAjusteBajo").html("Pct. peso con ajuste");
             });
 
             $("#opt4").click(function(){
