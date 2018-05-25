@@ -868,7 +868,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <h4>Datos de Recién Nacido</h4>
+                            <h4>Datos de RN calculado</h4>
                             <form></form>
                                 <div class="form-group row">
                                     <label for="IPNRN" class="col-6">IPN <small>((peso / talla)^3)*100</small></label>
@@ -896,13 +896,13 @@
                         <div class="card-block">
                             <form>
                               <div class="form-group row">
-                                <label for="graficoEstandar" class="col-3 mt-2"><strong>Seleccione tabla</strong></label>
+                                <label for="graficoEstandar" class="col-3 mt-2"><strong>Seleccione Curva</strong></label>
                                 <select class="form-control col-9" id="graficoEstandar" style="font-size: 0.8rem;">
-                                  <option value="0">Peso/EG (Tabla Nacional Alarcon, Pittaluga SOCHIPE)</option>
-                                  <option value="2">IPN/EG  (Tabla Nacional Alarcon, Pittaluga SOCHIPE)</option>
+                                  <option value="0">Peso/EG (Curva Nacional Alarcon, Pittaluga SOCHIPE)</option>
+                                  <option value="2">IPN/EG  (Curva Nacional Alarcon, Pittaluga SOCHIPE)</option>
                                   <option></option>
-                                  <option value="1">Peso/EG (Tabla Regional Araucanía R. Lagos y col.)</option>
-                                  <option value="3">IPN/EG  (Tabla Regional Araucanía R. Lagos y col.)</option>
+                                  <option value="1">Peso/EG (Curva Regional Araucanía R. Lagos y col.)</option>
+                                  <option value="3">IPN/EG  (Curva Regional Araucanía R. Lagos y col.)</option>
                                   <option></option>
                                 </select>
                               </div>
@@ -1174,12 +1174,12 @@
                             <div>
                                 <div class="form-group row">
                                     <p class="col-12 d-none" id="tituloAjusteG"><strong>Peso ajustado para:</strong></p>
-                                    <label for="PesoEgeSAj" class="col-6" id="tituloAjusteAlto">Percentil de peso sin ajuste</label>
-                                    <input type="text" class="form-control col-2" id="PesoEgeSAj" disabled>
+                                    <label for="PesoEgeSAj" class="col-6" id="tituloAjusteAlto" style="font-size: 0.8rem;height: 2rem;">Percentil de peso sin ajuste</label>
+                                    <input type="text" class="form-control col-2" id="PesoEgeSAj" disabled style="font-size: 0.8rem;height: 2rem;">
                                 </div>
                                 <div class="form-group row">
-                                    <label for="PesoEgeCAj" class="col-6" id="tituloAjusteBajo">Percentil de peso con ajuste</label>
-                                    <input type="text" class="form-control col-2" id="PesoEgeCAj" disabled>
+                                    <label for="PesoEgeCAj" class="col-6" id="tituloAjusteBajo" style="font-size: 0.8rem;height: 2rem;">Percentil de peso con ajuste</label>
+                                    <input type="text" class="form-control col-2" id="PesoEgeCAj" disabled style="font-size: 0.8rem;height: 2rem;">
                                 </div>
                             </div>
                         </div>
