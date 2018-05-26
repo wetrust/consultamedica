@@ -15,7 +15,12 @@ $( document ).ready(function() {
         $("#semanasEcoPrim").append('<option value="' + i +'">' + i + '</option>');
         $("#semanasEcoObs").append('<option value="' + i +'">' + i + '</option>');
         $("#semanasEcoDopp").append('<option value="' + i +'">' + i + '</option>');
-        $("#semanasEcoDopp").append('<option value="' + i +'">' + i + '</option>');
+
+        $('#semanasEcoGen option[value="20"]').prop('selected', true);
+        $('#semanasTipoEco option[value="20"]').prop('selected', true);
+        $('#semanasEcoPrim option[value="20"]').prop('selected', true);
+        $('#semanasEcoObs option[value="20"]').prop('selected', true);
+        $('#semanasEcoDopp option[value="20"]').prop('selected', true);
     }
     //cargar inputs de dias
     for (i = 0; i < 7; i++) {
@@ -49,4 +54,5 @@ $( document ).ready(function() {
         $('#pesom option[value="70"]').prop('selected', true);
         $('#pesoMaterno option[value="70"]').prop('selected', true);
     }
+
 });
