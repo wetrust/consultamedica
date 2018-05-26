@@ -56,7 +56,13 @@ $( document ).ready(function() {
     }
 
     $("#pesoRN").on("keydown", function(e){
+        if (this.value.lenght > 4){
+            return false;
+        }
+        
         switch (e.which) {
+            case 37:
+            case 39:
             case 48:
             case 49:
             case 50:
