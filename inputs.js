@@ -55,4 +55,33 @@ $( document ).ready(function() {
         $('#pesoMaterno option[value="70"]').prop('selected', true);
     }
 
+    $("#pesoRN").on("keydown", function(e){
+        switch (e.which) {
+            case 48:
+            case 49:
+            case 50:
+            case 51:
+            case 52:
+            case 53:
+            case 54:
+            case 55:
+            case 56:
+            case 57:
+            case 96:
+            case 97:
+            case 98:
+            case 99:
+            case 100:
+            case 101:
+            case 102:
+            case 103:
+            case 104:
+            case 105:
+            case 13:
+            case 8:
+                break;
+            default:
+                return false;
+        }
+    });
 });
