@@ -6,6 +6,7 @@ $( document ).ready(function() {
     //cargar input de semanas que empiezan con 25
     for (i = 25; i < 43; i++) {
         $("#edadGestacional").append('<option value="' + i +'">' + i + '</option>');
+        $('#edadGestacional option[value="40"]').prop('selected', true);
     }
     //cargar input de semanas que empiezan con 4
     for (i = 4; i < 43; i++) {
@@ -37,10 +38,15 @@ $( document ).ready(function() {
         $("#talla").append('<option value="' + i +'">' + i + ' cms.</option>');
         $("#tm").append('<option value="' + i +'">' + i + ' cms.</option>');
         $("#tallaMaterna").append('<option value="' + i +'">' + i + ' cms.</option>');
+        $('#talla option[value="149"]').prop('selected', true);
+        $('#tm option[value="149"]').prop('selected', true);
+        $('#tallaMaterna option[value="149"]').prop('selected', true);
     }
     //cargar inputs de peso materno
     for (i = 35; i < 140; i++) {
         $("#pesom").append('<option value="' + i +'">' + i + ' kg</option>');
         $("#pesoMaterno").append('<option value="' + i +'">' + i + ' kg</option>');
+        $('#pesom option[value="70"]').prop('selected', true);
+        $('#pesoMaterno option[value="70"]').prop('selected', true);
     }
 });
