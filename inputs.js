@@ -57,13 +57,8 @@ $( document ).ready(function() {
 
     $("#pesoRN").on("keydown", function(e){
         var text = $(this).val();
-        if (text.toString().length > 4){
-            return false;
-        }
-
+        
         switch (e.which) {
-            case 37:
-            case 39:
             case 48:
             case 49:
             case 50:
@@ -84,8 +79,14 @@ $( document ).ready(function() {
             case 103:
             case 104:
             case 105:
+                if (text.toString().length > 3){
+                    return false;
+                }
+                break;
             case 13:
             case 8:
+            case 37:
+            case 39:
                 break;
             default:
                 return false;
@@ -94,13 +95,8 @@ $( document ).ready(function() {
 
     $("#tallaRN").on("keydown", function(e){
         var text = $(this).val();
-        if (text.toString().length > 3){
-            return false;
-        }
 
         switch (e.which) {
-            case 37:
-            case 39:
             case 48:
             case 49:
             case 50:
@@ -121,8 +117,14 @@ $( document ).ready(function() {
             case 103:
             case 104:
             case 105:
+                if (text.toString().length > 2){
+                    return false;
+                }
+                break;
             case 13:
             case 8:
+            case 37:
+            case 39:
                 break;
             default:
                 return false;
