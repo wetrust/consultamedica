@@ -38,7 +38,7 @@ function construirGraficos() {
         }]
     });
 }
-
+$(document).ready(function(){
 $( '#graficoDbp' ).on( 'click', function() {
     $('#graficosTitle').html("Gráfico DBP");
     $('#graficosBody').html("<div id='graficoDbpView'></div>");
@@ -499,7 +499,7 @@ $( '#graficoCerebelo' ).on( 'click', function() {
         });
     $('#popupGraficos').modal('show');
 });
-$(document).ready(function(){
+
 $( '#graficoLcn' ).on( 'click', function() {
     $('#graficosTitle').html("Gráfico LCN");
     $('#graficosBody').html("<div class='row'><div class='col'><div id='graficoLcnBaseView'></div></div><div class='col'><div id='graficoLcnView'></div></div>");
@@ -1229,7 +1229,6 @@ $( '#graficoSaco' ).on( 'click', function() {
              }]
          });
     $('#popupGraficos').modal('show');
-});
 });
 
 $( '#graficoAud' ).on( 'click', function() {
@@ -3872,4 +3871,5 @@ $( '#graficoBVM' ).on( 'click', function() {
              }]
      });
     $('#popupGraficos').modal('show');
+});
 });
