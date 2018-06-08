@@ -1,5 +1,5 @@
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
-
+$(document).ready(function(){
 $( '#adicionalCrecimientoView' ).on( 'click', function() {
 	if ($('#adicionalCrecimiento').css( "display" ) == 'none'){
 		$('#adicionalCrecimiento').show();
@@ -332,13 +332,6 @@ $( "#psmACM" ).keypress(function( event ) {
      $("#graficopsmACM").focus()
   }
 });
-
-function show_hide(id){
-  if (document.getElementById){
-    var el = document.getElementById(id);
-    el.style.display = (el.style.display == 'none') ? 'block' : 'none';
-  }
-};
 
 
 $( '#embarazoNo' ).on( 'click', function() {
@@ -1149,7 +1142,13 @@ $( '#modalPreInfEcoDoppler' ).on( 'click', function() {
 	});
 	$('#popupGenerico').modal('show');
 });
-
+	});
+function show_hide(id){
+  if (document.getElementById){
+    var el = document.getElementById(id);
+    el.style.display = (el.style.display == 'none') ? 'block' : 'none';
+  }
+};
 function crearInformeEcoSegTrim1(){
         var actCard;
         var movCorp;
@@ -1694,7 +1693,7 @@ function crearInformeEcoPrimTrim(){
 // Ajuste primer trimestre
 //
 ////////////////////////////////////////////
-
+$(document).ready(function(){
 $("input[name='ajustarEcoPrimTrim']").on("change", function(){
 	event.preventDefault();
 	if ($(this).is(":checked")){
@@ -1820,6 +1819,7 @@ $("input[name='ajustarEcoSegTrim']").on("change", function(){
 			$('#resultadoAjusteEcoPrimTrim').hide();
 		}
 	}
+});
 });
 
 ////////////////////////////////////////////
