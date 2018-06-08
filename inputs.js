@@ -16,11 +16,11 @@ $( document ).ready(function() {
         $("#semanasEcoObs").append('<option value="' + i +'">' + i + '</option>');
         $("#semanasEcoDopp").append('<option value="' + i +'">' + i + '</option>');
 
-        $('#semanasEcoGen option[value="20"]').prop('selected', true);
-        $('#semanasTipoEco option[value="20"]').prop('selected', true);
-        $('#semanasEcoPrim option[value="20"]').prop('selected', true);
-        $('#semanasEcoObs option[value="20"]').prop('selected', true);
-        $('#semanasEcoDopp option[value="20"]').prop('selected', true);
+        $('#semanasEcoGen option[value="4"]').prop('selected', true);
+        $('#semanasTipoEco option[value="4"]').prop('selected', true);
+        $('#semanasEcoPrim option[value="4"]').prop('selected', true);
+        $('#semanasEcoObs option[value="4"]').prop('selected', true);
+        $('#semanasEcoDopp option[value="4"]').prop('selected', true);
     }
     //cargar inputs de dias
     for (i = 0; i < 7; i++) {
