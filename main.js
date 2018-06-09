@@ -54,6 +54,7 @@ var listPaciente = function(results){
 	$('#fum2').trigger( "change" );
 };
 
+$(document).ready(function(){
  $( '#peso').on('change', function() {
      $("#imc").val(aplication.imc($("#talla").val(), $(this).val()));
      $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));
@@ -273,6 +274,12 @@ $( '#guardarPatologiaObstetricaConfig').on('click', function() {
 	$('#cancelarPatologiaObstetricaConfig').hide();
 	$("#patologiaObstetricaConfig .formulario").hide();
  });
+$( '#loadPacienteSelect' ).on( 'click', function() {
+    $('#popupTitle').html("Mensaje");
+    $('#popupBody').html("<p>Módulo en construcción</p>");
+    $('#popupGenerico').modal('show');
+});
+});
 
 
 
@@ -411,8 +418,4 @@ $(window).on('hashchange', function(){
 	aplication.onHashChange();
 });
 
-$( '#loadPacienteSelect' ).on( 'click', function() {
-    $('#popupTitle').html("Mensaje");
-    $('#popupBody').html("<p>Módulo en construcción</p>");
-    $('#popupGenerico').modal('show');
-});
+
