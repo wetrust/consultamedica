@@ -1695,7 +1695,6 @@ function crearInformeEcoPrimTrim(){
 ////////////////////////////////////////////
 $(document).ready(function(){
 $("input[name='ajustarEcoPrimTrim']").on("change", function(){
-	event.preventDefault();
 	if ($(this).is(":checked")){
 		if ($(this).val() == 1){
 			var LCN = parseInt($('#lcn').val());
