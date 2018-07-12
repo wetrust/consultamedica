@@ -1,3 +1,17 @@
+$(document).ready(function(){
+	$("input[name='radio_translucencia']").on("change", function(){
+		if ($(this).val() == 1){
+		    $("#examen\\.eco\\.primtrim\\.adicionales").removeClass("d-none");
+		    $("#loncefalocaudal").val($("#lcn").val());
+		}
+		else{
+		    $("#examen\\.eco\\.primtrim\\.adicionales").addClass("d-none");
+		    $("#prob").addClass("d-none");
+		    $("#prob2").addClass("d-none");
+		}
+	});
+});
+
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
 $(document).ready(function(){
 $( '#adicionalCrecimientoView' ).on( 'click', function() {
