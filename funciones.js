@@ -214,7 +214,8 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#primtrim\\.adicionales\\.translucencia").on("click", function(){
+	$("#primtrim\\.adicionales\\.translucencia").on("click", function(event){
+		event.preventDefault();
         	calcularRiesgo(); 
     	});
 });
