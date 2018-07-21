@@ -205,7 +205,11 @@ $(document).ready(function(){
 	$("input[name='radio_translucencia']").on("change", function(){
 		if ($(this).val() == 1){
 		    $("#examen\\.eco\\.primtrim\\.adicionales").removeClass("d-none");
-		    $("#loncefalocaudal").val($("#lcn").val());
+		    var lcn = $("#lcn").val();
+		    if (lcn > 44 && < 85){
+			    $("#loncefalocaudal").val($("#lcn").val());
+		    }
+		    
 		}
 		else{
 		    $("#examen\\.eco\\.primtrim\\.adicionales").addClass("d-none");
