@@ -206,7 +206,7 @@ $(document).ready(function(){
 		if ($(this).val() == 1){
 		    $("#examen\\.eco\\.primtrim\\.adicionales").removeClass("d-none");
 		    var lcn = $("#lcn").val();
-		    if (lcn > 44 && < 85){
+		    if (lcn > 44 && lcn < 85){
 			    $("#loncefalocaudal").val($("#lcn").val());
 		    }
 		    
