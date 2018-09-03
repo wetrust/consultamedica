@@ -1668,53 +1668,18 @@
                     </div>
                 </div>
                 <div class="col-3">
-                        <div class="card mb-3">
-                            <div class="card-block">
-                                <div class="row mb-3">
-                                    <div class="col-4 text-left">
-                                        <h5 class="alert-heading mb-3">Reporte crecimiento fetal</h5>
-                                    </div>
-                                    <div class="col">
-                                        <div class="d-inline-block"><strong>A -</strong></div>
-                                        <button type="button" class="btn btn-outline-info mr-3" id="modalPreInfEcoObsSegTrim1">Protocolo informe de crecimiento</button>
-                                    </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-outline-info mr-3" id="infecoObsSegTrim1">Gráficas de crecimiento</button>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-4 text-left">
-                                        <h5 class="alert-heading mb-3">Reporte edad gestacional</h5>
-                                    </div>
-                                    <div class="col">
-                                        <div class="d-inline-block"><strong>B -</strong></div>
-                                        <button type="button" class="btn btn-outline-info" id="modalPreInfEcoObsSegTrim2">Protocolo informe edad gestacional</button>
-                                    </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-outline-info mr-3" id="infecoObsSegTrim2">Gráfica Edad Gestacional</button>
-                                        <button type="button" class="btn btn-outline-info d-none" id="adicionalCrecimientoView">Adicional proporcionalidad</button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="card-body">
+                        <h6 class="text-center my-2">Ver Informes</h6>
+                        <div class="btn-group-vertical d-flex">
+                            <button type="button" class="btn btn-default text-left p-1" id="modalPreInfEcoObsSegTrim1">Informe de crecimiento</button>
+                            <button type="button" class="btn btn-default text-left p-1" id="modalPreInfEcoObsSegTrim2">Informe edad gestacional</button>
                         </div>
-                        <div class="card mb-3" id="adicionalCrecimiento" style="display:none;">
-                            <div class="card-block">
-                                <h5 class="card-title">Adicional proporcionalidad fetal</h5>
-                                <form class="mt-3 mb-3">
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label for="dof-dbp" class="col-form-label">Indice Cefalico (IC)</label>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <input type="text" class="form-control" id="dof-dbp" readonly>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <p> IC &lt; 74% = Dolicocefalia<br>IC &gt; 83 % = Braquicefalia</p>
-                                        </div>
-                                        <div class="col mb-2">
-                                        </div>
-                                    </div>
-                                </form>
+                        <hr>
+                        <h6 class="text-center my-2">Ver Gráficas</h6>
+                            <div class="btn-group-vertical d-flex">
+                                <button type="button" class="btn btn-default text-left p-1" id="infecoObsSegTrim1">Gráficas de crecimiento</button>
+                                <button type="button" class="btn btn-default text-left p-1" id="infecoObsSegTrim2">Gráfica edad gestacional</button>
+                                <button type="button" class="btn btn-default d-none p-1" i="adicionalCrecimientoView">Adicional proporcionalidad</button>
                             </div>
                         </div>
                     </div>
