@@ -300,7 +300,7 @@ function activateTr(element){
 }
 
 //manejadore de botones
-
+$(document).ready(function(){
 $( '#eliminarMotivoConfig').on('click', function() {
 	var getElement = false;
 	var contador = 0
@@ -507,4 +507,5 @@ $( '#eliminarprofRefConfig').on('click', function() {
 	else{
 		loadDatabase();
 	}
+ });
  });

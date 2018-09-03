@@ -85,6 +85,9 @@ class app {
 		else if (this.hash=="#recienacido"){
 			this.displayElement("recienacido");
 		}
+	    	else if (this.hash=="#hipoglicemia"){
+			this.displayElement("hipoglicemia");
+		}
 		else if (this.hash=="#pdfviebox"){
 			this.displayElement("pdfviebox");
 		}
@@ -275,6 +278,7 @@ class app {
 	}
 	$('#pdfviebox').hide();
 	$('#recienacido').hide();
+	$('#hipoglicemia').hide();
 	$('#'+div_id).show();
     }
 	

@@ -234,14 +234,14 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-9">
-                                    <h5 class="card-title text-primary text-left mt-2 mb-4">¿ Realizar configuración de datos para variable de uso  habitual ?</h5>
+                                    <h5 class="card-title text-primary text-left mt-2 mb-4">Configuración de datos para variable de uso  habitual (Opcional)</h5>
                                 </div>
                                 <div class="col-3">
                                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-secondary active" id="configNoController" data-value="0">
+                                        <label class="btn btn-outline-consulta active" id="configNoController" data-value="0">
                                           <input type="radio" value="0" autocomplete="off" checked> NO
                                         </label>
-                                        <label class="btn btn-secondary" id="configSiController" data-value="1">
+                                        <label class="btn btn-outline-consulta" id="configSiController" data-value="1">
                                           <input type="radio" value="1" autocomplete="off"> SI
                                         </label>
                                       </div>
@@ -249,14 +249,14 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-9">
-                                    <h5 class="card-title text-primary text-left mt-2 mb-4">Ingresar información para <strong>reporte</strong> de informe y / o graficas ?</h5>
+                                    <h5 class="card-title text-primary text-left mt-2 mb-4">Información útil para <strong>reporte</strong> de informe y / o graficas (Opcional)</h5>
                                 </div>
                                 <div class="col-3">
                                     <div class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-outline-consulta p-3 active" id="infadicionalNoController" data-value="0">
+                                        <label class="btn btn-outline-consulta active" id="infadicionalNoController" data-value="0">
                                         <input type="radio" value="0" checked=""> NO
                                         </label>
-                                        <label class="btn btn-outline-consulta p-3" id="infadicionalSiController" data-value="1">
+                                        <label class="btn btn-outline-consulta" id="infadicionalSiController" data-value="1">
                                         <input type="radio" value="1"> SI
                                         </label>
                                     </div>
@@ -326,184 +326,11 @@
                                     </div>
                                 </div>
                                 <div class="row mt-2 mb-2">
-                                    <div class="col-2 mt-3">
-                                        <label for="ecografista" class="col-form-label d-none">Embarazo Gemelar</label>
+                                    <div class="col-8 mt-3">
+                                        <small class="text-primary">La información registrada serán almacenada temporalmente para reporte de informes y / o gráficas</small>
                                     </div>
-                                    <div class="col-4 mt-3">
-                                        <div class="btn-group d-none" data-toggle="buttons">
-                                            <label class="btn btn-outline-consulta active" id="embarazoNo" data-value="0">
-                                            <input type="radio" value="0" checked=""> NO
-                                            </label>
-                                            <label class="btn btn-outline-consulta" id="embarazoSi" data-value="1">
-                                            <input type="radio" value="1"> SI
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2"></div>
                                      <div class="col-4">
-                                        <a class="btn btn-consulta mt-3" href="#tipoExamen">CONTINUAR A EXÁMEN ECOGRÁFICO</a><br><small>Datos registrados serán guardados automáticamente</small>
-                                    </div>
-                                </div>
-                                <div class="row my-3">
-                                    <div class="col-9">
-                                        <h5 class="card-title text-primary text-left mt-2 mb-4">Adicional datos clínicos relevantes</h5>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="btn-group" data-toggle="buttons">
-                                            <label class="btn btn-outline-consulta p-3 active" id="infadicionalClinicoNoController" data-value="0">
-                                            <input type="radio" value="0" checked=""> NO</label>
-                                            <label class="btn btn-outline-consulta p-3" id="infadicionalClinicoSiController" data-value="1">
-                                            <input type="radio" value="1"> SI</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group d-none" id="infadicionalClinicoView">
-                                    <div class="row my-3">
-                                        <div class="col-2">
-                                            <label for="gestas" class="col-form-label">Gestas previas</label>
-                                        </div>
-                                        <div class="col-2">
-                                            <select class="form-control" id="gestas">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-2">
-                                            <label for="id-paciente" class="col-form-label">Partos</label>
-                                        </div>
-                                        <div class="col-2">
-                                            <select class="form-control" id="partos">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-2">
-                                            <label for="abortos" class="col-form-label">Abortos</label>
-                                        </div>
-                                        <div class="col-2">
-                                            <select class="form-control" id="abortos">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row my-3 d-none" id="itemGestasPrevias">
-                                        <div class="col-2">
-                                            <label class="col-form-label">Prematuro</label>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="btn-group" data-toggle="buttons">
-                                                <label class="btn btn-outline-consulta active" id="prematuroNo" data-value="0">
-                                                <input type="radio" value="0" checked=""> NO
-                                                </label>
-                                                <label class="btn btn-outline-consulta" id="prematuroSi" data-value="1">
-                                                <input type="radio" value="1"> SI
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <label class="col-form-label">Feto PEG o RCIU</label>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="btn-group" data-toggle="buttons">
-                                                <label class="btn btn-outline-consulta active" id="fetoPEGNo" data-value="0">
-                                                <input type="radio" value="0" checked=""> NO
-                                                </label>
-                                                <label class="btn btn-outline-consulta" id="fetoPEGSi" data-value="1">
-                                                <input type="radio" value="1"> SI
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <label class="col-form-label">Feto SHE</label>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="btn-group" data-toggle="buttons">
-                                                <label class="btn btn-outline-consulta active" id="fetoSHENo" data-value="0">
-                                                <input type="radio" value="0" checked=""> NO
-                                                </label>
-                                                <label class="btn btn-outline-consulta" id="fetoSHESi" data-value="1">
-                                                <input type="radio" value="1"> SI
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row my-3">
-                                        <div class="col-2">
-                                            <label class="col-form-label">Presión Arterial</label>
-                                        </div>
-                                        <div class="col-2">
-                                            <input class="form-control" type="text" id="sistolica">
-                                        </div>
-                                        <div class="col-1">/</div>
-                                        <div class="col-2">
-                                            <input class="form-control" type="text" id="diastolica">
-                                        </div>
-                                        <div class="col-5">
-                                            <label class="col-form-label">mmHg</label>
-                                        </div>
-                                    </div>
-                                    <div class="row my-3">
-                                        <div class="col-2">
-                                            <label for="pesoMaterno" class="col-form-label">Peso</label>
-                                        </div>
-                                        <div class="col-2">
-                                            <select class="form-control" id="pesoMaterno"></select>
-                                        </div>
-                                        <div class="col-2">
-                                            <label for="id-paciente" class="col-form-label">Talla</label>
-                                        </div>
-                                        <div class="col-2">
-                                            <select class="form-control" id="tallaMaterna"></select>
-                                        </div>
-                                        <div class="col-2">
-                                            <label for="id-paciente" class="col-form-label">IMC</label>
-                                        </div>
-                                        <div class="col-2">
-                                            <input type="text" class="form-control" id="imcMaterno" readonly>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-9">
-                                    <h5 class="card-title text-primary text-left mt-2 mb-4">¿Consentimiento informado para eventual uso en investigación?</h5>
-                                </div>
-                                <div class="col-3">
-                                    <div class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-outline-consulta p-3 active" id="configConsentimientoNoController" data-value="0">
-                                        <input type="radio" value="0" checked=""> NO
-                                        </label>
-                                        <label class="btn btn-outline-consulta p-3" id="configConsentimientoSiController" data-value="1">
-                                        <input type="radio" value="1"> SI
-                                        </label>
+                                        <a class="btn btn-consulta mt-3" href="#tipoExamen">CONTINUAR A EXÁMEN ECOGRÁFICO</a>
                                     </div>
                                 </div>
                             </div>
@@ -549,8 +376,10 @@
             </div>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#inicio">Inicio</a></li>
-                <li class="breadcrumb-item active">Bienvenida</li>
-                <li class="breadcrumb-item"><a href="#recienacido">Recién Nacido</a></li>
+                <li class="breadcrumb-item"><a href="#hipoglicemia">Datos neonatales</a></li>
+                <li class="breadcrumb-item"><a href="#recienacido">Evaluación Peso e IPN</a></li>
+                <li class="breadcrumb-item active">Curvas de crecimiento</li>
+          
                 <li class="breadcrumb-item"><a href="#ajustepeso">Ajuste al Peso Neonatal</a></li>
                 <li class="float-right"><a href="#inicio">Volver</a></li>
             </ol>
@@ -563,12 +392,13 @@
                     <div id="sliderParto" class="carousel slide" data-ride="carousel" data-interval="60000">
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
-                                <p class="text-justify text-azul">El criterio neonatal, tanto con fines pronóstico como de manejo clínico, es categorizar el peso del recién nacido (RN) como pequeño (PEG), adecuado (AEG) o grande (GEG) para su edad gestacional, según se ubique bajo el percentil 10, entre los percentiles 10 y 90 o sobre el percentil 90 de una gráfica de crecimiento determinada. Secundariamente integrando la talla del RN se obtiene el índice ponderal neonatal ((peso / talla)^3)*100), clasificando tambien a los RN en enflaquecidos, eutróficos y obesos, según se ubiquen bajo el percentil 10, entre los percentiles 10 y 90 o sobre el percentil 90 de la gráfica IPN/edad gestacional.<br><br><br><br>Sin embargo, para una población heterogénea, el mejor parámetro para delinear crecimiento intrauterino no necesariamente sería un estándar local generalizado (Peso / Edad), sino uno que además se ajuste a características materno-fetales individuales y por tanto trasciende límites geográficos. Para el ajuste al peso han sido reportado diverso factores (No patológicos) que modulan significativamente el peso a término, entre ellos destacan las variables: Paridad, talla y edad materna, sexo del recién nacido, estado nutricional materno y características étnicas maternas.</p>
+                                <p class="text-justify text-azul">El criterio neonatal, tanto con fines pronóstico como de manejo clínico, es categorizar el peso del recién nacido (RN) como pequeño (PEG), adecuado (AEG) o grande (GEG) para su edad gestacional, según se ubique bajo el percentil 10, entre los percentiles 10 y 90 o sobre el percentil 90 de una gráfica de crecimiento determinada. Secundariamente integrando la talla del RN se obtiene el índice ponderal neonatal ((peso / talla)^3)*100), clasificando tambien a los RN en enflaquecidos, eutróficos y obesos, según se ubiquen bajo el percentil 10, entre los percentiles 10 y 90 o sobre el percentil 90 de la gráfica IPN/edad gestacional.<br><br><br>Sin embargo, para una población heterogénea, el mejor parámetro para delinear crecimiento intrauterino no necesariamente sería un estándar local generalizado (Peso / Edad), sino uno que además se ajuste a características materno-fetales individuales y por tanto trasciende límites geográficos. Para el ajuste al peso han sido reportado diverso factores (No patológicos) que modulan significativamente el peso a término, entre ellos destacan las variables: Paridad, talla y edad materna, sexo del recién nacido, estado nutricional materno y características étnicas maternas.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <p class="bg-faded p-2 text-center">Al paradigma actual: Peso/ Edad gestacional, con el tiempo tal vez debamos adicionarle características propias de cada embarazada.</p>
         </div>
         <div class="container" id="pdfviebox" style="display:none;">
             <div class="bienvenida mb-3 rounded-bottom">
@@ -613,8 +443,10 @@
             </div>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#inicio">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="#postnatal">Bienvenida</a></li>
-                <li class="breadcrumb-item active">Recién Nacido</li>
+                <li class="breadcrumb-item"><a href="#hipoglicemia">Datos neonatales</a></li>
+                <li class="breadcrumb-item active">Evaluación Peso e IPN</li>
+                <li class="breadcrumb-item"><a href="#postnatal">Curvas de crecimiento</a></li>
+         
                 <li class="breadcrumb-item"><a href="#ajustepeso">Ajuste al Peso Neonatal</a></li>
                 <li class="float-right"><a href="#postnatal">Volver</a></li>
             </ol>
@@ -666,8 +498,8 @@
                                     <input type="text" class="form-control col-3" id="IpnEge" style="font-size: 0.8rem;height: calc(2rem + 2px);" disabled>
                                 </div>
                             </form>
-                            <small class="text-primary">Graficas utilizadas para la categorización del crecimiento y ponderación de variables biológicas</small><br>
-                            <small>* Grafica Nacional: M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274. <a id="pdfnacionalview" href="#pdfviebox">Ver PDF</a>
+                            <small class="text-primary">Graficas para categorizar crecimiento y ponderación de variables biológicas</small><br>
+                            <small style="font-size: 60%;">* Grafica Nacional: M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274. <a id="pdfnacionalview" href="#pdfviebox">Ver PDF</a>
                             <br>** Grafica Regional: Lagos y col. Rev. Chilena Obtet. Ginecol. 2009; 74(4). <a id="pdfregionalview" href="#pdfviebox">Ver PDF</a></small>
                         </div>
                     </div>
@@ -688,7 +520,6 @@
                                 </select>
                               </div>
                             </form>
-                            <script src="https://code.highcharts.com/highcharts.js"></script>
                             <div id="grafico"></div>
                         </div>
                     </div>
@@ -712,8 +543,10 @@
             </div>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#inicio">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="#postnatal">Bienvenida</a></li>
-                <li class="breadcrumb-item"><a href="#recienacido">Recién Nacido</a></li>
+                <li class="breadcrumb-item"><a href="#hipoglicemia">Datos neonatales</a></li>
+                <li class="breadcrumb-item"><a href="#recienacido">Evaluación Peso e IPN</a></li>
+                <li class="breadcrumb-item"><a href="#postnatal">Curvas de crecimiento</a></li>
+            
                 <li class="breadcrumb-item active">Ajuste al Peso Neonatal</li>
                 <li class="float-right"><a href="#recienacido">Volver</a></li>
             </ol>
@@ -804,9 +637,38 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+        </div>
+        <div class="container" id="hipoglicemia" style="display:none;">
+            <div class="bienvenida mb-3 rounded-bottom">
+                <div class="container">
+                    <div class="media">
+                        <img class="d-flex ml-3" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
+                        <div class="media-body mt-4">
+                            <h4 class="mt-0 mb-1"><em>Hipoglicemia Neonatal</em></h4>
+                            <p><em>Evaluación postnatal básica para profesionales</em></p>
+                        </div>
+                        <div class="media-body mt-4">
+                            <p class="float-right" name="fechaHora" style="color: #f0df90;"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#inicio">Inicio</a></li>
+                <li class="breadcrumb-item active">Datos neonatales</li>
+                <li class="breadcrumb-item"><a href="#recienacido">Evaluación Peso e IPN</a></li>
+                <li class="breadcrumb-item"><a href="#postnatal">Curvas de crecimiento</a></li>
+                <li class="breadcrumb-item"><a href="#ajustepeso">Ajuste al Peso Neonatal</a></li>
+                <li class="float-right"><a href="#postnatal">Volver</a></li>
+            </ol>
+            <div class="row mt-1"> 
                 <div class="col">
-                        <p class="bg-secondary text-primary text-right">Al paradigma actual: Peso/ Edad gestacional, con el tiempo tal vez debamos adicionarle características propias de cada embarazada.</p>
+                    <div class="card">
+                        <div class="card-block">
+                            <p>En construcción</p>
+                            <p>Incluirá datos del recién nacido (antropometría, adecuación al crecimiento y patologías neonatales prevalentes)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -872,7 +734,7 @@
             <div class="row">
                 <div class="col">
                     <h4 class="text-primary">Evaluación de biometría y Doppler</h4>
-                    <p class="text-primary"><small>Módulos actualmente en funcionamiento, Objetivos: valoración de la biometría fetal más flujometria Doppler materno fetal.</small></p>
+                    <p class="text-primary"><small>Objetivos del módulo, valoración de la biometría fetal más flujometria Doppler materno fetal.</small></p>
                     <div class="card mb-3 mt-3"  id="ecografia.uno">
                         <div class="card-block p-2">
                             <div class="clearfix">
@@ -897,7 +759,7 @@
                 </div>
                 <div class="col">
                     <h4 class="text-primary">Tamizaje y evaluación morfológica</h4>
-                    <p class="text-primary mb-0"><small>Módulos cuyo desarrollo se realizará posteriormente.</small></p><p class="mb-0">&nbsp;</p>
+                    <p class="text-primary mb-0"><small>Módulos cuyo desarrollo se realizará posteriormente en colaboración con otros especialistas.</small></p>
                     <div class="card mb-3 mt-3">
                         <div class="card-block p-2">
                             <div class="clearfix">
@@ -935,6 +797,8 @@
                     </div>
                 </div>
             </div>
+    <hr style="border-color:rgba(0, 0, 0, 0.36);">
+            <p class="bg-faded p-2 text-center"><small>"La verdadera desesperanza no nace ante una adversidad obstinada, sino que surge cuando ya no se ve la razón para luchar"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Héctor Tizón&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;Poeta argentino - 1929&nbsp;)</small>.</p>
         </div>
         <div class="container" id="ecoObsPrimTrim" style="display:none;">
             <div class="bienvenida mb-3">
@@ -1125,19 +989,217 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row" id="preguntaAjusteEcoPrimTrim" style="display:none;">
+                        <div class="form-group row alert alert-info" id="preguntaAjusteEcoPrimTrim" style="display:none;">
                             <div class="col">
                                 <h5 class="alert-heading">¿Necesita realizar ajuste a la edad gestacional?</h5>
                             </div>
-                            <div class="col">
+                            <div class="col-3">
                                 <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-outline-primary p-3 active">
+                                    <label class="btn btn-outline-primary active">
                                     <input type="radio" name="ajustarEcoPrimTrim" value="0" checked=""> NO</label>
-                                    <label class="btn btn-outline-primary p-3">
+                                    <label class="btn btn-outline-primary">
                                     <input type="radio" name="ajustarEcoPrimTrim" value="1"> SI</label>
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group row alert alert-info">
+                            <div class="col-2">
+                                <img src="img/tn.jpeg" class="img-fluid" alt="feto con translucencia">
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Evaluacion adicional de TN ( aplica para LCN de 45 a 84 mm )<br><small>Gentileza Dr. Francisco Guerra Bellone Universidad Austral de Chile</small></p>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-outline-primary active" id="evaluacion.translucencia.no"><input type="radio" name="radio_translucencia" value="0" checked=""> NO</label>
+                                            <label class="btn btn-outline-primary"><input type="radio" name="radio_translucencia" value="1"> SI</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p class="text-right"><small>¡¡El Cribado no constituye diagnóstico, es solo valorar probabilidad de riesgo!!</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                    <div class="form-group row d-none" id="examen.eco.primtrim.adicionales">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Edad Materna</label>
+                                        <select class="form-control" id="edadmaternaprimtrim">
+                                            <option value="14">14 años</option>
+                                            <option value="15">15 años</option>
+                                            <option value="16">16 años</option>
+                                            <option value="17">17 años</option>
+                                            <option value="18">18 años</option>
+                                            <option value="19">19 años</option>
+                                            <option value="20" selected>20 años</option>
+                                            <option value="21">21 años</option>
+                                            <option value="22">22 años</option>
+                                            <option value="23">23 años</option>
+                                            <option value="24">24 años</option>
+                                            <option value="25">25 años</option>
+                                            <option value="26">26 años</option>
+                                            <option value="27">27 años</option>
+                                            <option value="28">28 años</option>
+                                            <option value="29">29 años</option>
+                                            <option value="30">30 años</option>
+                                            <option value="31">31 años</option>
+                                            <option value="32">32 años</option>
+                                            <option value="33">33 años</option>
+                                            <option value="34">34 años</option>
+                                            <option value="35">35 años</option>
+                                            <option value="36">36 años</option>
+                                            <option value="37">37 años</option>
+                                            <option value="38">38 años</option>
+                                            <option value="39">39 años</option>
+                                            <option value="40">40 años</option>
+                                            <option value="41">41 años</option>
+                                            <option value="42">42 años</option>
+                                            <option value="43">43 años</option>
+                                            <option value="44">44 años</option>
+                                            <option value="45">45 años</option>
+                                            <option value="46">46 años</option>
+                                            <option value="47">47 años</option>
+                                            <option value="48">48 años</option>
+                                            <option value="49">49 años</option>
+                                            <option value="50">50 años</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Longitud cefalo caudal (45 a 84 mm)</label>
+                                        <select class="form-control" id="loncefalocaudal">
+                                            <option value="45">45 mm</option>
+                                            <option value="46">46 mm</option>
+                                            <option value="47">47 mm</option>
+                                            <option value="48">48 mm</option>
+                                            <option value="49">49 mm</option>
+                                            <option value="50">50 mm</option>
+                                            <option value="51">51 mm</option>
+                                            <option value="52">52 mm</option>
+                                            <option value="53">53 mm</option>
+                                            <option value="54">54 mm</option>
+                                            <option value="55">55 mm</option>
+                                            <option value="56">56 mm</option>
+                                            <option value="57">57 mm</option>
+                                            <option value="58">58 mm</option>
+                                            <option value="59">59 mm</option>
+                                            <option value="60">60 mm</option>
+                                            <option value="61">61 mm</option>
+                                            <option value="62">62 mm</option>
+                                            <option value="63">63 mm</option>
+                                            <option value="64">64 mm</option>
+                                            <option value="65">65 mm</option>
+                                            <option value="66">66 mm</option>
+                                            <option value="67">67 mm</option>
+                                            <option value="68">68 mm</option>
+                                            <option value="69">69 mm</option>
+                                            <option value="70">70 mm</option>
+                                            <option value="71">71 mm</option>
+                                            <option value="72">72 mm</option>
+                                            <option value="73">73 mm</option>
+                                            <option value="74">74 mm</option>
+                                            <option value="75">75 mm</option>
+                                            <option value="76">76 mm</option>
+                                            <option value="77">77 mm</option>
+                                            <option value="78">78 mm</option>
+                                            <option value="79">79 mm</option>
+                                            <option value="80">80 mm</option>
+                                            <option value="81">81 mm</option>
+                                            <option value="82">82 mm</option>
+                                            <option value="83">83 mm</option>
+                                            <option value="84">84 mm</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Translucidez Nucal</label>
+                                        <input type="number" class="form-control" id="translunucal" value="1">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="formGroupExampleInput">¿Ha tenido algun hijo con trisomia 21?</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="trisomia" id="examen.eco.primtrim.adicionales.translucencia.trisomia.no" value="false" checked>
+                                        <label class="form-check-label" for="examen.eco.primtrim.adicionales.translucencia.trisomia.no">
+                                            No
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="trisomia" id="examen.eco.primtrim.adicionales.translucencia.trisomia.si" value="true">
+                                        <label class="form-check-label" for="examen.eco.primtrim.adicionales.translucencia.trisomia.si">
+                                            Si
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn btn-primary mb-2" id="primtrim.adicionales.translucencia">Calcular riesgo por TN</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-none" id="prob">
+                                    <table class="table">
+                                        <thead class="thead-inverse">
+                                            <tr>
+                                                <th scope="col">Trisomias</th>
+                                                <th scope="col">Riesgo a priori</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>Trisomia 21</th>
+                                                <td id="trisomia.priori.veintiuno"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Trisomia 18</th>
+                                                <td id="trisomia.priori.diesiocho"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Trisomia 13</th>
+                                                <td id="trisomia.priori.trece"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col d-none" id="prob2">
+                                    <table class="table">
+                                        <thead class="thead-inverse">
+                                            <tr>
+                                                <th scope="col">Trisomias</th>
+                                                <th scope="col">Riesgo post - test</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>Trisomia 21</th>
+                                                <td id="trisomia.translucidez.veintiuno"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Trisomia 18</th>
+                                                <td id="trisomia.translucidez.diesiocho"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Trisomia 13</th>
+                                                <td id="trisomia.translucidez.trece"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </form>
                 </div>
             </div> 

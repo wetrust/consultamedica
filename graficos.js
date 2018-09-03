@@ -38,7 +38,7 @@ function construirGraficos() {
         }]
     });
 }
-
+$(document).ready(function(){
 $( '#graficoDbp' ).on( 'click', function() {
     $('#graficosTitle').html("Gráfico DBP");
     $('#graficosBody').html("<div id='graficoDbpView'></div>");
@@ -3871,4 +3871,5 @@ $( '#graficoBVM' ).on( 'click', function() {
              }]
      });
     $('#popupGraficos').modal('show');
+});
 });
