@@ -1221,10 +1221,10 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 	crearInformeEcoSegTrim2();
 });
 
-$('#modalPreInfEcoDoppler').on( 'click', function() {
-	crearInformeDoppler();
-});
+	$('#modalPreInfEcoDoppler').on( 'click', function() {
+		crearInformeDoppler();
 	});
+});
 function show_hide(id){
   if (document.getElementById){
     var el = document.getElementById(id);
