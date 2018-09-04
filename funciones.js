@@ -510,6 +510,10 @@ $( "#bvm" ).keypress(function( event ) {
   }
 });
 
+$( "#bvm" ).on("focusout", function() {
+	$(this).val($("#bvmEcoDos").val());
+  });
+
 $( "#aud" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
