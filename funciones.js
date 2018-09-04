@@ -511,7 +511,7 @@ $( "#bvm" ).keypress(function( event ) {
 });
 
 $( "#bvm" ).on("focusout", function() {
-	$(this).val($("#bvmEcoDos").val());
+	$("#bvmEcoDos").val($(this).val());
   });
 
 $( "#aud" ).keypress(function( event ) {
