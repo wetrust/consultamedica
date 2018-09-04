@@ -851,7 +851,6 @@ $( '#semanasTipoEco' ).on( 'change', function() {
 
 $('#bvmEcoDos').on('change', function() {
 	bvmEcoDos();
-	$('#bvm').val($(this).val()).trigger('change');
 });
 
 $('#bvmEcoDos').on('focusout', function() {
