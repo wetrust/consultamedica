@@ -854,6 +854,9 @@ $('#bvmEcoDos').on('change', function() {
 	$('#bvm').val($(this).val()).trigger('change');
 });
 
+$('#bvmEcoDos').on('focusout', function() {
+	$('#bvm').val($(this).val()).trigger('change');
+});
 $( '#diasTipoEco' ).on( 'change', function() {
 	var semanas = $('#semanasTipoEco').val();
 	var dias = $(this).val();
