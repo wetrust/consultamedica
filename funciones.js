@@ -1221,7 +1221,7 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 	crearInformeEcoSegTrim2();
 });
 
-$( '#modalPreInfEcoDoppler' ).on( 'click', function() {
+$('#modalPreInfEcoDoppler').on( 'click', function() {
 	crearInformeDoppler();
 });
 	});
