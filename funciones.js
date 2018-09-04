@@ -834,6 +834,7 @@ $( '#semanasTipoEco' ).on( 'change', function() {
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
 	$("#ecografia\\.doppler").removeClass("card-outline-primary");
 	//determinar a quien le pongo el color
+
 	if (semanas < 15){
 		$("#ecografia\\.uno").addClass("card-outline-primary");
 	}
@@ -841,6 +842,12 @@ $( '#semanasTipoEco' ).on( 'change', function() {
 		$("#ecografia\\.dos").addClass("card-outline-primary");
 		$("#ecografia\\.doppler").addClass("card-outline-primary");
 	}
+	
+});
+
+$('#bvmEcoDos').on('change', function() {
+	bvmEcoDos();
+	$('#bvm').val($(this).val()).trigger('change');
 });
 
 $( '#diasTipoEco' ).on( 'change', function() {
@@ -1224,6 +1231,10 @@ $( '#modalPreInfEcoObsSegTrim2' ).on( 'click', function() {
 	$('#modalPreInfEcoDoppler').on( 'click', function() {
 		crearInformeDoppler();
 	});
+
+	$('#bvmDoppler').on('change', function() {
+        bvmDoppler();
+    });
 });
 function show_hide(id){
   if (document.getElementById){
