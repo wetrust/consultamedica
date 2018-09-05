@@ -1917,10 +1917,6 @@ $( '#graficoCCCA' ).on( 'click', function() {
 });
 
 $( '#infDoppler1' ).on( 'click', function() {
-    $('#graficosTitle').html("Gráfica para evaluación de la flujometría doppler materno fetal básica");
-    $( '#impDoppler1').remove();
-    $( '#infecoObsSegTrim1Clon').remove();
-    $('#graficosFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver Impresion</button>");
     var stringGraficos = "<h4 class='text-center d-none mt-2'>Gráfica para evaluación de la flujometría doppler materno fetal básica</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none'></span><div class='row d-none mt-2'> <div class='col-5'><p style='font-size:10px;'><strong>Paciente Sra. (Srta.): </strong>:PACIENTE </p></div><div class='col-3'><p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'><p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row'><div class='col'><div id='graficoIpArtUtView'></div></div><div class='col'><div id='graficoIpArtUmbView'></div></div></div><div class='row'><div class='col'><div id='graficoIpArtCMView'></div></div><div class='col'><div id='graficoIpCCPView'></div></div></div><div class='row' id='lineclear'><div class='col'><p class='d-none' style='font-size:12px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;' class='d-none'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32<br>** Referencia para Doppler de arteria umbilical, C Media y CCP Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
     var comentarios = $("#comentarios-doppler").val();
 
@@ -1947,14 +1943,7 @@ $( '#infDoppler1' ).on( 'click', function() {
     stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
         
     $('#graficosBody').html(stringGraficos);
-    $( '#impDoppler1').on("click", function(){
-      imprSelec("graficosBody");
-    });
-    $( '#impEcoObsSegTrim2').remove();
-    $( '#impEcoObsSegTrim1').remove();
-    $( '#impDoppler3').remove();
-    $( '#impDoppler2').remove();
-    //$('#graficoIpArtUtView').highcharts({
+    
     graficoUno = Highcharts.chart('graficoIpArtUtView', {
             chart: {
             height: 250
@@ -2263,21 +2252,11 @@ $( '#infDoppler1' ).on( 'click', function() {
              }())
          }]
     });
-    $('#popupGraficos').modal('show');
+    imprSelec("graficosBody");
 });
 
 $( '#infDoppler2' ).on( 'click', function() {
-    $('#graficosTitle').html("Gráfica crecimiento intrauterino, Peso Fetal Estimado + Flujometría Doppler - Fetal");
-    $( '#impDoppler2').remove();
-    $('#graficosFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler2'>Ver Impresion</button>");
     $('#graficosBody').html("<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none'></span><h4 class='text-center d-none mt-2'>Gráfica crecimiento intrauterino, Peso Fetal Estimado + Flujometría Doppler - Fetal</h4><hr class='d-none'><div class='row'><div class='col'><div id='graficoInfPFEView'></div></div><div class='col'><div id='graficoInfIpArtUmbView'></div></div></div><div class='row'><div class='col'><div id='graficoInfIpArtCMView'></div></div><div class='col'><div id='graficoInfIpCCPView'></div></div></div><div class='row' id='lineclear'><div class='col'><span style='border-top: 1px solid #000;width: 100% !important;display: block;' class='d-none'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Referencia evaluación de crecimiento fetal según gráfica de Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad entre pct. 10 a 90)<br>** Referencia para Doppler Fetal: Baschat AA, Gembruch U. the cerebroplacental Doppler ratio revisited. Ultrasound Obstet. Ginecol. 2003; 21: 124 - 127<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>");
-    $( '#impDoppler2').on("click", function(){
-      imprSelec("graficosBody");
-    });
-    $( '#impEcoObsSegTrim2').remove();
-    $( '#impEcoObsSegTrim1').remove();
-    $( '#impDoppler3').remove();
-    $( '#impDoppler1').remove();
     $('#graficoInfPFEView').highcharts({
             chart: {
             height: 250
@@ -2531,21 +2510,12 @@ $( '#infDoppler2' ).on( 'click', function() {
              }())
          }]
     });
-    $('#popupGraficos').modal('show');
+    imprSelec("graficosBody");
 });
 
 $( '#infDoppler3' ).on( 'click', function() {
-    $('#graficosTitle').html("Gráfica crecimiento intrauterino, Peso Estimado + Flujometría Dopler Materno Fetal");
-    $( '#impDoppler3').remove();
-    $('#graficosFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler3'>Ver Impresion</button>")
     $('#graficosBody').html("<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none'></span><h4 class='text-center d-none mt-2'>Gráfica crecimiento intrauterino, Peso Estimado + Flujometría Dopler Materno Fetal</h4><hr class='d-none'><div class='row'><div class='col'><div id='graficoInfDoplerPFEView'></div></div><div class='col'><div id='graficoInfDoplerIpArtUmbView'></div></div></div><div class='row'><div class='col'><div id='graficoInfDoplerArtUtView'></div></div><div class='col'><div id='graficoInfDoplerIpCCPView'></div></div></div><div class='row' id='lineclear'><div class='col'><span style='border-top: 1px solid #000;width: 100% !important;display: block;' class='d-none'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Referencia evaluación de crecimiento fetal según gráfica de Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad entre pct. 10 a 90)<br>** Referencia para Doppler Fetal: Baschat AA, Gembruch U. the cerebroplacental Doppler ratio revisited. Ultrasound Obstet. Ginecol. 2003; 21: 124 - 127<br>*** Referencia para arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>");
-    $( '#impDoppler3').on("click", function(){
-      imprSelec("graficosBody");
-    });
-    $( '#impEcoObsSegTrim2').remove();
-    $( '#impEcoObsSegTrim1').remove();
-    $( '#impDoppler2').remove();
-    $( '#impDoppler1').remove();
+
     $('#graficoInfDoplerPFEView').highcharts({
             chart: {
             height: 250
@@ -2798,14 +2768,10 @@ $( '#infDoppler3' ).on( 'click', function() {
              }())
          }]
     });
-    $('#popupGraficos').modal('show');
+    imprSelec("graficosBody");
 });
 
 $( '#infecoObsSegTrim1' ).on( 'click', function() {
-    $('#graficosTitle').html("Gráfica evaluación ecográfica del crecimiento fetal");
-    $( '#impEcoObsSegTrim1').remove();
-    $( '#infecoObsSegTrim1Clon').remove();
-    $('#graficosFooter').prepend("<button type='button' class='btn btn-outline-info' id='impEcoObsSegTrim1'>Ver Impresion</button>");
     var stringGraficos = "<div class='container'><div style='width:100px;text-align:center;'></div></div><h4 class='text-center d-none'>Gráfica evaluación ecográfica del crecimiento fetal</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none mt-2'></span><div class='row d-none mt-2'> <div class='col-5'><p style='font-size:10px;'><strong>Paciente Sra. (Srta.): </strong>:PACIENTE </p></div><div class='col-3'><p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'><p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row'><div class='col'><div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col'><div class='row'><div class='col-12'><div id='graficoCaView'></div></div><div class='col-12'><div id='graficoBVMView'></div></div></div></div></div><div class='row' id='lineclear'><div class='col'><p class='d-none' style='font-size:10px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Evaluación del crecimiento fetal, según referencia propuesta por Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90)<br>**  Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97)<br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S.  Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
     var comentarios = $("#comentarios-eco-dos-inf-dos").val();
 
@@ -2827,13 +2793,6 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     stringGraficos = stringGraficos.replace(":FEXAMEN", fexamen);
         
     $('#graficosBody').html(stringGraficos);
-    $( '#impEcoObsSegTrim1').on("click", function(){
-      imprSelec("graficosBody");
-    });
-    $( '#impEcoObsSegTrim2').remove();
-    $( '#impDoppler3').remove();
-    $( '#impDoppler2').remove();
-    $( '#impDoppler1').remove();
     $('#graficoInfecoObsSegTrimPFEView').highcharts({
             chart: {
             height: 512
@@ -3067,14 +3026,10 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                  }())
              }]
      });
-    $('#popupGraficos').modal('show');
+     imprSelec("graficosBody");
 });
 
 $( '#infecoObsSegTrim2' ).on( 'click', function() {
-    $('#graficosTitle').html("Gráfica Determinación Ecográfica (Tardía) de la Edad Gestacional");
-    $( '#impEcoObsSegTrim2').remove();
-    $( '#infecoObsSegTrim1Clon').remove();
-    $('#graficosFooter').prepend("<button type='button' class='btn btn-outline-info' id='impEcoObsSegTrim2'>Ver Impresion</button>");
     var stringGraficos = "<div class='container'><div style='width:100px;text-align:center;'></div></div><h4 class='text-center d-none'>Gráfica evaluación ecográfica del crecimiento fetal</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none mt-2'></span><div class='row d-none mt-2'> <div class='col-5'><p style='font-size:10px;'><strong>Paciente Sra. (Srta.): </strong>:PACIENTE </p></div><div class='col-3'><p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'><p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row mt-2'> <div class='col'><div id='graficoCcView'></div></div><div class='col'><div id='graficoCerebeloView'></div></div></div><div class='row'><div class='col'><div id='graficoLfView'></div></div><div class='col'><div id='graficoLhView'></div></div></div><div class='row' id='lineclear'><div class='col'><p class='d-none' style='font-size:12px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;' class='d-none'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015<br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf<br>** Referencias: CC y LF Hadlock y col. 1984; LH Jeanty y col.<br>*** Diámetro cerebeloso transverso Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
     var fur = $( "input[name='fum']").val();
     var fpp = $( "input[name='fpp']").val();
@@ -3099,13 +3054,7 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
     stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
         
     $('#graficosBody').html(stringGraficos);
-    $( '#impEcoObsSegTrim2').on("click", function(){
-      imprSelec("graficosBody");
-    });
-    $( '#impEcoObsSegTrim1').remove();
-    $( '#impDoppler3').remove();
-    $( '#impDoppler2').remove();
-    $( '#impDoppler1').remove();
+      
     $('#graficoCcView').highcharts({
             chart: {
             height: 250
@@ -3388,7 +3337,7 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
                 }())
             }]
     });
-    $('#popupGraficos').modal('show');
+    imprSelec("graficosBody");
 });
 
 $( '#graficoTallaPeso' ).on( 'click', function() {
