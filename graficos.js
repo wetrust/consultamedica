@@ -3074,6 +3074,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
             series: [{
                 type: "line",
                 name: 'Pct. 3',
+                dashStyle: "Dot",
                 marker: {
                     enabled: false
                 },
@@ -3081,6 +3082,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
             }, {
                 type: "line",
                 name: 'Pct. 97',
+                dashStyle: "Dot",
                 marker: {
                     enabled: false
                 },
