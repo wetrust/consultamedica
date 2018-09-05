@@ -562,8 +562,8 @@ $("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
 		$("#comentarios-eco-dos-inf-dos").val(comentarios);
 	}
 	else if ($(this).val() == 2){
-		var fur = $("#input\\.paciente\\.fum\\.extra").val();
-		var fpp = $("#input\\.paciente\\.fpp\\.extra").val();
+		var fur = $("#fum-cinco").val();
+		var fpp = $("#fpp").val();
 		var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n";
 		$('#comentarios-eco-dos-inf-dos').val(comentario);
 	}
