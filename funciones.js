@@ -459,17 +459,20 @@ $("#eco\\.prim\\.trim\\.nuevo").on("click", function(){
 	$("#saco-vitelino-mm").val("");
 	$("#lcn-informe").val("");
 	$("#comentarios-eco-uno").val("");
+	$("#comentarios-douglas-informe").val("");
 
-	$("#utero-ubic1").val(1);
-	$("#utero-ubic2").val(1);
-	$("#cuerpo-uterino").val(1);
-	$("#saco-gestacional").val(1);
-	$("#saco-vitelino").val(1);
-	$("#embrion").val(1);
-	$("#fcf-prim").val(1);
-	$("#anexo-derecho").val(1);
-	$("#anexo-izquierdo").val(1);
-	$("#exploracion-douglas").val(1);
+	$("#exploracion-douglas-informe").css("display","none");
+	$("#resultadoAjusteEcoPrimTrim").css("display","none");
+	$("#utero-ubic1").val("central");
+	$("#utero-ubic2").val("anterior");
+	$("#cuerpo-uterino").val("aspecto normal");
+	$("#saco-gestacional").val("normal");
+	$("#saco-vitelino").val("presente");
+	$("#embrion").val("no se observa aun");
+	$("#fcf-prim").val(140);
+	$("#anexo-derecho").val("aspecto normal");
+	$("#anexo-izquierdo").val("aspecto normal");
+	$("#exploracion-douglas").val("libre");
 
 });
 
