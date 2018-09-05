@@ -2277,7 +2277,8 @@ $( '#infDoppler2' ).on( 'click', function() {
        plotOptions: {
            series: {
                enableMouseTracking: false,
-               pointInterval: 1
+               pointInterval: 1,
+               animation:false
            }
        },
        yAxis: {
@@ -2340,7 +2341,8 @@ $( '#infDoppler2' ).on( 'click', function() {
     });
     $('#graficoInfIpArtUmbView').highcharts({
             chart: {
-            height: 250
+                height: 250,
+                animation: false
         },
          title: {
              text: 'IP Arteria Umbilical **',
@@ -2348,7 +2350,8 @@ $( '#infDoppler2' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation: false
              }
          },
          yAxis: {
@@ -2399,7 +2402,8 @@ $( '#infDoppler2' ).on( 'click', function() {
     });
     $('#graficoInfIpArtCMView').highcharts({
             chart: {
-            height: 250
+                height: 250,
+                animation: false
         },
         title: {
              text: 'IP Arteria Cerebral Media **',
@@ -2407,7 +2411,8 @@ $( '#infDoppler2' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation: false
              }
          },
          yAxis: {
@@ -2460,7 +2465,8 @@ $( '#infDoppler2' ).on( 'click', function() {
     });
     $('#graficoInfIpCCPView').highcharts({
             chart: {
-            height: 250
+                height: 250,
+                animation: false
         },
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
@@ -2468,7 +2474,8 @@ $( '#infDoppler2' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation: false
              }
          },
          yAxis: {
@@ -2527,7 +2534,8 @@ $( '#infDoppler3' ).on( 'click', function() {
 
     $('#graficoInfDoplerPFEView').highcharts({
             chart: {
-            height: 250
+                height: 250,
+                animation: false
         },
        title: {
            text: 'Peso Fetal Estimado *',
@@ -2536,7 +2544,8 @@ $( '#infDoppler3' ).on( 'click', function() {
        plotOptions: {
            series: {
                enableMouseTracking: false,
-               pointInterval: 1
+               pointInterval: 1,
+               animation: false
            }
        },
        yAxis: {
@@ -2599,7 +2608,8 @@ $( '#infDoppler3' ).on( 'click', function() {
     });
     $('#graficoInfDoplerIpArtUmbView').highcharts({
             chart: {
-            height: 250
+                height: 250,
+                animation: false
         },
          title: {
              text: 'IP Arteria Umbilical **',
@@ -2607,7 +2617,8 @@ $( '#infDoppler3' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation:false
              }
          },
          yAxis: {
@@ -2658,7 +2669,8 @@ $( '#infDoppler3' ).on( 'click', function() {
     });
     $('#graficoInfDoplerArtUtView').highcharts({
             chart: {
-            height: 250
+                height: 250,
+                animation: false
         },
         title: {
             text: 'IP Promedio Arteria Uterinas',
@@ -2666,7 +2678,8 @@ $( '#infDoppler3' ).on( 'click', function() {
         },
         plotOptions: {
             series: {
-                enableMouseTracking: false
+                enableMouseTracking: false,
+                animation: false
             }
         },
         yAxis: {
@@ -2718,7 +2731,8 @@ $( '#infDoppler3' ).on( 'click', function() {
     });
     $('#graficoInfDoplerIpCCPView').highcharts({
             chart: {
-            height: 250
+                height: 250,
+                animation: false
         },
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
@@ -2726,7 +2740,8 @@ $( '#infDoppler3' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation:false
              }
          },
          yAxis: {
@@ -2804,7 +2819,8 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     $('#graficosBody').html(stringGraficos);
     $('#graficoInfecoObsSegTrimPFEView').highcharts({
             chart: {
-            height: 512
+                height: 250,
+                animation: false
         },
        title: {
            text: 'Peso Fetal Estimado *',
@@ -2822,7 +2838,8 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
        plotOptions: {
            series: {
                enableMouseTracking: false,
-               pointInterval: 1
+               pointInterval: 1,
+               animation:false
            }
        },
        yAxis: {
@@ -2885,7 +2902,8 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     });
     $('#graficoCaView').highcharts({
             chart: {
-            height: 250
+                height: 250,
+                animation: false
         },
        title: {
            text: 'Circunferencia Abdominal **',
@@ -2906,7 +2924,8 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
         },
        plotOptions: {
            series: {
-               enableMouseTracking: false
+               enableMouseTracking: false,
+               animation:false
            }
        },
        yAxis: {
@@ -2966,7 +2985,8 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
         
    $('#graficoBVMView').highcharts({
              chart: {
-             height: 250
+                height: 250,
+                animation: false
          },
          title: {
              text: 'BVM de Líquido Amniótico ***',
@@ -2977,7 +2997,8 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation:false
              }
          },
              legend: {
@@ -3066,7 +3087,8 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
       
     $('#graficoCcView').highcharts({
             chart: {
-            height: 250
+                height: 250,
+                animation: false
         },
        title: {
            text: 'Circunferencia de Cráneo',
@@ -3077,7 +3099,8 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
        },
        plotOptions: {
            series: {
-               enableMouseTracking: false
+               enableMouseTracking: false,
+               animation:false
            }
        },
        yAxis: {
@@ -3136,7 +3159,8 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
    });
    $('#graficoCerebeloView').highcharts({
            chart: {
-            height: 250
+            height: 250,
+            animation: false
         },
             title: {
                 text: 'Diámetro de Cerebelo',
@@ -3147,7 +3171,8 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
             },
             plotOptions: {
                 series: {
-                    enableMouseTracking: false
+                    enableMouseTracking: false,
+                    animation:false
                 }
             },
             yAxis: {
@@ -3212,7 +3237,8 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
         });
     $('#graficoLfView').highcharts({
             chart: {
-            height: 250
+                height: 250,
+                animation: false
         },
        title: {
            text: 'Largo Femoral',
@@ -3223,7 +3249,8 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
        },
        plotOptions: {
            series: {
-               enableMouseTracking: false
+               enableMouseTracking: false,
+               animation:false
            }
        },
             legend: {
@@ -3280,7 +3307,8 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
    });
    $('#graficoLhView').highcharts({
            chart: {
-            height: 250
+            height: 250,
+            animation: false
         },
             title: {
                 text: 'Largo Humeral',
@@ -3291,7 +3319,8 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
             },
             plotOptions: {
                 series: {
-                    enableMouseTracking: false
+                    enableMouseTracking: false,
+                    animation:false
                 }
             },
            legend: {
