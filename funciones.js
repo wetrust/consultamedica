@@ -478,7 +478,7 @@ $("#eco\\.prim\\.trim\\.nuevo").on("click", function(){
 
 $("#informe\\.eco\\.seg\\.trim\\.nav").on("click",function(){
 	$("#ev-morfo").trigger("click");
-	$("#eco\\.seg\\.trim\\.select\\.comentario").trigger("click");
+	$("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change");
 })
 
 $( "#dbp" ).keypress(function( event ) {
