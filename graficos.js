@@ -1946,7 +1946,8 @@ $( '#infDoppler1' ).on( 'click', function() {
     
     graficoUno = Highcharts.chart('graficoIpArtUtView', {
             chart: {
-            height: 250
+            height: 250,
+            animation: false
         },
         title: {
             text: 'IP Promedio Arteria Uterinas *',
@@ -1957,7 +1958,8 @@ $( '#infDoppler1' ).on( 'click', function() {
         },
         plotOptions: {
             series: {
-                enableMouseTracking: false
+                enableMouseTracking: false,
+                animation: false
             }
         },
         legend: {
@@ -2023,7 +2025,8 @@ $( '#infDoppler1' ).on( 'click', function() {
     //$('#graficoIpArtUmbView').highcharts({
     graficoDos = Highcharts.chart('graficoIpArtUmbView', {
             chart: {
-            height: 250
+            height: 250,
+            animation: false
         },
          title: {
              text: 'IP Arteria Umbilical **',
@@ -2034,7 +2037,8 @@ $( '#infDoppler1' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation: false
              }
          },
          yAxis: {
@@ -2099,7 +2103,8 @@ $( '#infDoppler1' ).on( 'click', function() {
     //$('#graficoIpArtCMView').highcharts({
     graficoTres = Highcharts.chart('graficoIpArtCMView', {
             chart: {
-            height: 250
+            height: 250,
+            animation: false
         },
         title: {
              text: 'IP Arteria Cerebral Media **',
@@ -2110,7 +2115,8 @@ $( '#infDoppler1' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation: false
              }
          },
          yAxis: {
@@ -2178,7 +2184,8 @@ $( '#infDoppler1' ).on( 'click', function() {
     //$('#graficoIpCCPView').highcharts({
     graficoCuatro = Highcharts.chart('graficoIpCCPView', {
             chart: {
-            height: 250
+            height: 250,
+            animation: false
         },
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
@@ -2189,7 +2196,8 @@ $( '#infDoppler1' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation: false
              }
          },
          yAxis: {
@@ -2259,7 +2267,8 @@ $( '#infDoppler2' ).on( 'click', function() {
     $('#graficosBody').html("<span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none'></span><h4 class='text-center d-none mt-2'>Gráfica crecimiento intrauterino, Peso Fetal Estimado + Flujometría Doppler - Fetal</h4><hr class='d-none'><div class='row'><div class='col'><div id='graficoInfPFEView'></div></div><div class='col'><div id='graficoInfIpArtUmbView'></div></div></div><div class='row'><div class='col'><div id='graficoInfIpArtCMView'></div></div><div class='col'><div id='graficoInfIpCCPView'></div></div></div><div class='row' id='lineclear'><div class='col'><span style='border-top: 1px solid #000;width: 100% !important;display: block;' class='d-none'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Referencia evaluación de crecimiento fetal según gráfica de Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad entre pct. 10 a 90)<br>** Referencia para Doppler Fetal: Baschat AA, Gembruch U. the cerebroplacental Doppler ratio revisited. Ultrasound Obstet. Ginecol. 2003; 21: 124 - 127<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>");
     $('#graficoInfPFEView').highcharts({
             chart: {
-            height: 250
+            height: 250,
+            animation: false
         },
        title: {
            text: 'Peso Fetal Estimado *',
