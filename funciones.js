@@ -450,6 +450,29 @@ $( "#saco" ).keypress(function( event ) {
   }
 });
 
+$("#eco\\.prim\\.trim\\.nuevo").on("click", function(){
+	$("#lcn").val("");
+	$("#saco").val("");
+	$("#lcnPct").val("");
+	$("#sacoPct").val("");
+	$("#saco-gestacional-mm").val("");
+	$("#saco-vitelino-mm").val("");
+	$("#lcn-informe").val("");
+	$("#comentarios-eco-uno").val("");
+
+	$("#utero-ubic1").val(1);
+	$("#utero-ubic2").val(1);
+	$("#cuerpo-uterino").val(1);
+	$("#saco-gestacional").val(1);
+	$("#saco-vitelino").val(1);
+	$("#embrion").val(1);
+	$("#fcf-prim").val(1);
+	$("#anexo-derecho").val(1);
+	$("#anexo-izquierdo").val(1);
+	$("#exploracion-douglas").val(1);
+
+});
+
 $( "#dbp" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
