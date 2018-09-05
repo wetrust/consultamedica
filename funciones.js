@@ -476,6 +476,11 @@ $("#eco\\.prim\\.trim\\.nuevo").on("click", function(){
 
 });
 
+$("#informe\\.eco\\.seg\\.trim\\.nav").on("click",function(){
+	$("#ev-morfo").trigger("click");
+	$("#eco\\.seg\\.trim\\.select\\.comentario").trigger("click");
+})
+
 $( "#dbp" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
