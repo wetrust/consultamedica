@@ -491,7 +491,7 @@ $( "#dbp" ).keypress(function( event ) {
 $( "#dof" ).keypress(function( event ) {
   if ( event.which == 13 ) {
      event.preventDefault();
-     $("#cc").focus()
+     $("#ca").focus()
   }
 });
 
