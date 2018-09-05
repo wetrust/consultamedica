@@ -2934,7 +2934,8 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     {
         $('#graficoInfecoObsSegTrimPFEView').highcharts({
             chart: {
-                height: 250
+                height: 250,
+                animation: false
             },
             title: {
                 text: 'Peso Fetal Estimado *',
@@ -2952,7 +2953,8 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
             plotOptions: {
                 series: {
                     enableMouseTracking: false,
-                    pointInterval: 1
+                    pointInterval: 1,
+                    animation: false
                 }
             },
             yAxis: {
@@ -3039,7 +3041,8 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
 
         $('#graficoCCCAView').highcharts({
             chart: {
-                height: 250
+                height: 250,
+                animation: false
             },
             title: {
                 text: 'Cc / Ca *',
@@ -3051,7 +3054,8 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
             },
             plotOptions: {
                 series: {
-                    enableMouseTracking: false
+                    enableMouseTracking: false,
+                    animation: false
                 }
             },
             yAxis: {
