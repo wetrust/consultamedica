@@ -279,6 +279,20 @@ $( '#loadPacienteSelect' ).on( 'click', function() {
     $('#popupBody').html("<p>Módulo en construcción</p>");
     $('#popupGenerico').modal('show');
 });
+
+for (i = 45; i <= 86; i++) {
+	$("#loncefalocaudal").append("<option value=" + i +">" + i+ " mm</option>");
+}
+
+$( '#cancelarEcografistaConfig').on('click', function() {
+	$("#ecografistaConfig .tabla").show();
+	$('#nuevoEcografistaConfig').show();
+	$('#editarEcografistaConfig').show();
+	$('#guardarEcografistaConfig').hide();
+	$('#cancelarEcografistaConfig').hide();
+	$("#ecografistaConfig .formulario").hide();
+});
+
 });
 
 
