@@ -280,9 +280,14 @@ $( '#loadPacienteSelect' ).on( 'click', function() {
     $('#popupGenerico').modal('show');
 });
 
-for (i = 45; i <= 86; i++) {
+for (i = 45; i <= 87; i++) {
 	$("#loncefalocaudal").append("<option value=" + i +">" + i+ " mm</option>");
 }
+
+for (i = 14; i <= 51; i++){
+	$("#edadmaternaprimtrim").append("<option value=" + i +">" + i+ "años</option>");
+}
+$("#edadmaternaprimtrim").val("20");
 
 $( '#cancelarEcografistaConfig').on('click', function() {
 	$("#ecografistaConfig .tabla").show();
