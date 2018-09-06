@@ -110,10 +110,8 @@ $( '#graficoDbp' ).on( 'click', function() {
                         dbp = dbp.replace(",", ".");
                         dbp = parseFloat(dbp);
                     }
-                    var prueba = data[edadGest];
-                    alert(prueba.y);
-                } 
-               
+                    data[edadGest].y = dbp;
+                }
                 return data;
            }())
        }]
@@ -168,29 +166,18 @@ $( '#graficoCc' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-               var data = [];
-               var edadGest = parseInt(localStorage.eg) - 1;
-
-               for (i = 12; i <= edadGest; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-
-               var cc = $("#cc").val();
-               cc = cc.toString();
-               cc = cc.replace(",", ".");
-               cc = parseFloat(cc);
-
-               data.push({
-                   y: cc,
-               });
-               for (i = edadGest + 1; i <= 39; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               return data;
+                var data = baseGraphic;
+                if (localStorage.eg > 12){
+                    var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
+                    var cc = $("#cc").val();
+                    if (cc !== ""){
+                        cc = cc.toString();
+                        cc = cc.replace(",", ".");
+                        cc = parseFloat(cc);
+                    }
+                    data[edadGest].y = cc;
+                }
+                return data;
            }())
        }]
    });
@@ -244,29 +231,18 @@ $( '#graficoCa' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-               var data = [];
-               var edadGest = parseInt(localStorage.eg) - 1;
-
-               for (i = 12; i <= edadGest; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-
-               var ca = $("#ca").val();
-               ca = ca.toString();
-               ca = ca.replace(",", ".");
-               ca = parseFloat(ca);
-
-               data.push({
-                   y:ca,
-               });
-               for (i = edadGest + 1; i <= 39; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               return data;
+                var data = baseGraphic;
+                if (localStorage.eg > 12){
+                    var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
+                    var ca = $("#ca").val();
+                    if (ca !== ""){
+                        ca = ca.toString();
+                        ca = ca.replace(",", ".");
+                        ca = parseFloat(ca);
+                    }
+                    data[edadGest].y = ca;
+                }
+                return data;
            }())
        }]
    });
@@ -320,26 +296,18 @@ $( '#graficoLf' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-               var data = [];
-               var edadGest = parseInt(localStorage.eg) - 1;
-
-               for (i = 12; i <= edadGest; i++) {
-                   data.push({ y: 0, });
-               }
-               
-               var lf = $("#lf").val();
-               lf = lf.toString();
-               lf = lf.replace(",", ".");
-               lf = parseFloat(lf);
-               data.push({
-                   y: lf,
-               });
-               for (i = edadGest + 1; i <= 39; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               return data;
+                var data = baseGraphic;
+                if (localStorage.eg > 12){
+                    var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
+                    var lf = $("#lf").val();
+                    if (lf !== ""){
+                        lf = lf.toString();
+                        lf = lf.replace(",", ".");
+                        lf = parseFloat(lf);
+                    }
+                    data[edadGest].y = lf;
+                }
+                return data;
            }())
        }]
    });
@@ -393,25 +361,16 @@ $( '#graficoLh' ).on( 'click', function() {
                 marker: { symbol: 'square' },
                 lineWidth: 0,
                 data: (function () {
-                    var data = [];
-                    var edadGest = parseInt(localStorage.eg) - 1;
-
-                    for (i = 12; i <= edadGest; i++) {
-                        data.push({ y: 0, });
-                    }
- 
-                    var lh = $("#lh").val();
-                    lh = lh.toString();
-                    lh = lh.replace(",", ".");
-                    lh = parseFloat(lh);
-                        
-                    data.push({
-                        y: lh,
-                    });
-                    for (i = edadGest + 1; i <= 39; i++) {
-                        data.push({
-                            y: 0,
-                        });
+                    var data = baseGraphic;
+                    if (localStorage.eg > 12){
+                        var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
+                        var lh = $("#lh").val();
+                        if (lh !== ""){
+                            lh = lh.toString();
+                            lh = lh.replace(",", ".");
+                            lh = parseFloat(lh);
+                        }
+                        data[edadGest].y = lh;
                     }
                     return data;
                 }())
@@ -472,27 +431,16 @@ $( '#graficoCerebelo' ).on( 'click', function() {
                 marker: { symbol: 'square' },
                 lineWidth: 0,
                 data: (function () {
-                    var data = [];
-                    var edadGest = parseInt(localStorage.eg) - 1;
-
-                    for (i = 15; i <= edadGest; i++) {
-                        data.push({
-                            y: 0,
-                        });
-                    }
-
-                   var cerebelo = $("#cerebelo").val();
-                   cerebelo = cerebelo.toString();
-                   cerebelo = cerebelo.replace(",", ".");
-                   cerebelo = parseFloat(cerebelo);
-
-                    data.push({
-                        y: cerebelo,
-                    });
-                    for (i = edadGest + 1; i <= 39; i++) {
-                        data.push({
-                            y: 0,
-                        });
+                    var data = baseGraphic;
+                    if (localStorage.eg > 12){
+                        var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
+                        var cerebelo = $("#cerebelo").val();
+                        if (cerebelo !== ""){
+                            cerebelo = cerebelo.toString();
+                            cerebelo = cerebelo.replace(",", ".");
+                            cerebelo = parseFloat(cerebelo);
+                        }
+                        data[edadGest].y = cerebelo;
                     }
                     return data;
                 }())
@@ -3183,29 +3131,18 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-               var data = [];
-               var edadGest = parseInt(localStorage.eg) - 1;
-
-               for (i = 12; i <= edadGest; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-
-               var ca = $("#ca").val();
-               ca = ca.toString();
-               ca = ca.replace(",", ".");
-               ca = parseFloat(ca);
-
-               data.push({
-                   y:ca,
-               });
-               for (i = edadGest + 1; i <= 39; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               return data;
+                var data = baseGraphic;
+                if (localStorage.eg > 12){
+                    var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
+                    var ca = $("#ca").val();
+                    if (ca !== ""){
+                        ca = ca.toString();
+                        ca = ca.replace(",", ".");
+                        ca = parseFloat(ca);
+                    }
+                    data[edadGest].y = ca;
+                }
+                return data;
            }())
        }]
    });
@@ -3364,23 +3301,18 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-               var data = [];
-               var edadGest = parseInt(localStorage.eg) - 1;
-
-               for (i = 12; i <= edadGest; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               data.push({
-                   y: parseInt(document.getElementById("cc").value),
-               });
-               for (i = edadGest + 1; i <= 39; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               return data;
+                var data = baseGraphic;
+                if (localStorage.eg > 12){
+                    var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
+                    var cc = $("#cc").val();
+                    if (cc !== ""){
+                        cc = cc.toString();
+                        cc = cc.replace(",", ".");
+                        cc = parseFloat(cc);
+                    }
+                    data[edadGest].y = cc;
+                }
+                return data;
            }())
        }]
    });
@@ -3514,21 +3446,18 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-               var data = [];
-               var edadGest = parseInt(localStorage.eg) - 1;
-
-               for (i = 12; i <= edadGest; i++) {
-                   data.push({ y: 0, });
-               }
-               data.push({
-                   y: parseInt(document.getElementById("lf").value),
-               });
-               for (i = edadGest + 1; i <= 39; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               return data;
+                var data = baseGraphic;
+                if (localStorage.eg > 12){
+                    var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
+                    var lf = $("#lf").val();
+                    if (lf !== ""){
+                        lf = lf.toString();
+                        lf = lf.replace(",", ".");
+                        lf = parseFloat(lf);
+                    }
+                    data[edadGest].y = lf;
+                }
+                return data;
            }())
        }]
    });
@@ -3584,19 +3513,16 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
                 marker: { symbol: 'square' },
                 lineWidth: 0,
                 data: (function () {
-                    var data = [];
-                    var edadGest = parseInt(localStorage.eg) - 1;
-
-                    for (i = 12; i <= edadGest; i++) {
-                        data.push({ y: 0, });
-                    }
-                    data.push({
-                        y: parseInt(document.getElementById("lh").value),
-                    });
-                    for (i = edadGest + 1; i <= 39; i++) {
-                        data.push({
-                            y: 0,
-                        });
+                    var data = baseGraphic;
+                    if (localStorage.eg > 12){
+                        var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
+                        var lh = $("#lh").val();
+                        if (lh !== ""){
+                            lh = lh.toString();
+                            lh = lh.replace(",", ".");
+                            lh = parseFloat(lh);
+                        }
+                        data[edadGest].y = lh;
                     }
                     return data;
                 }())
