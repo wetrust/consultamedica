@@ -2264,23 +2264,19 @@ $( '#infDoppler2' ).on( 'click', function() {
            marker: {symbol:'square'},
            lineWidth: 0,
            data: (function () {
-               var data = [];
-               var edadGest = parseInt(localStorage.eg) -1;
-
-               for (i = 16; i <= edadGest; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               data.push({
-                   y: parseFloat($('#pfe').val()),
-               });
-               for (i = edadGest + 1; i <= 39; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               return data;
+                var data = baseGraphic16;
+                if (localStorage.eg > 15){
+                    var edadGest = (parseInt(localStorage.eg) - 1) - 16;
+                
+                    var pfe = $("#pfe").val();
+                    if (pfe !== ""){
+                        pfe = pfe.toString();
+                        pfe = pfe.replace(",", ".");
+                        pfe = parseFloat(pfe);
+                    }
+                    data[edadGest].y = pfe;
+                }
+                return data;
            }())
        }]
     });
@@ -2531,23 +2527,19 @@ $( '#infDoppler3' ).on( 'click', function() {
            marker: {symbol:'square'},
            lineWidth: 0,
            data: (function () {
-               var data = [];
-               var edadGest = parseInt(localStorage.eg) -1;
-
-               for (i = 16; i <= edadGest; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               data.push({
-                   y: parseFloat($('#pfe').val()),
-               });
-               for (i = edadGest + 1; i <= 39; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               return data;
+                var data = baseGraphic16;
+                if (localStorage.eg > 15){
+                    var edadGest = (parseInt(localStorage.eg) - 1) - 16;
+                
+                    var pfe = $("#pfe").val();
+                    if (pfe !== ""){
+                        pfe = pfe.toString();
+                        pfe = pfe.replace(",", ".");
+                        pfe = parseFloat(pfe);
+                    }
+                    data[edadGest].y = pfe;
+                }
+                return data;
            }())
        }]
     });
@@ -2845,30 +2837,17 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                 },
                 lineWidth: 0,
                 data: (function() {
-                    var data = [];
-                    var edadGest = parseInt(localStorage.eg) - 1;
-                    let peso = parseFloat($('#pfe').val());
-
-                    if (peso > 1) {
-                        for (i = 16; i <= edadGest; i++) {
-                            data.push({
-                                y: 0,
-                            });
+                    var data = baseGraphic16;
+                    if (localStorage.eg > 15){
+                        var edadGest = (parseInt(localStorage.eg) - 1) - 16;
+                    
+                        var pfe = $("#pfe").val();
+                        if (pfe !== ""){
+                            pfe = pfe.toString();
+                            pfe = pfe.replace(",", ".");
+                            pfe = parseFloat(pfe);
                         }
-                        data.push({
-                            y: peso,
-                        });
-                        for (i = edadGest + 1; i <= 39; i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
-                    } else {
-                        for (i = 16; i <= 40; i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
+                        data[edadGest].y = pfe;
                     }
                     return data;
                 }())
@@ -2954,30 +2933,17 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                 },
                 lineWidth: 0,
                 data: (function() {
-                    var data = [];
-                    var edadGest = parseInt(localStorage.eg) - 1;
-                    let peso = parseFloat($('#pfe').val());
-
-                    if (peso > 1) {
-                        for (i = 16; i <= edadGest; i++) {
-                            data.push({
-                                y: 0,
-                            });
+                    var data = baseGraphic16;
+                    if (localStorage.eg > 15){
+                        var edadGest = (parseInt(localStorage.eg) - 1) - 16;
+                    
+                        var pfe = $("#pfe").val();
+                        if (pfe !== ""){
+                            pfe = pfe.toString();
+                            pfe = pfe.replace(",", ".");
+                            pfe = parseFloat(pfe);
                         }
-                        data.push({
-                            y: peso,
-                        });
-                        for (i = edadGest + 1; i <= 39; i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
-                    } else {
-                        for (i = 16; i <= 40; i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
+                        data[edadGest].y = pfe;
                     }
                     return data;
                 }())
@@ -3041,30 +3007,17 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                 },
                 lineWidth: 0,
                 data: (function() {
-                    var data = [];
-                    var edadGest = parseInt(localStorage.eg) - 1;
-
-                    if (ccca > 1 && edadGest > 16) {
-                        for (i = 16; i <= edadGest; i++) {
-                            data.push({
-                                y: 0,
-                            });
+                    var data = baseGraphic16;
+                    if (localStorage.eg > 15){
+                        var edadGest = (parseInt(localStorage.eg) - 1) - 16;
+                    
+                        var ccca = $("#ccca").val();
+                        if (ccca !== ""){
+                            ccca = ccca.toString();
+                            ccca = ccca.replace(",", ".");
+                            ccca = parseFloat(ccca);
                         }
-                        data.push({
-                            y: parseFloat($('#ccca').val()),
-                        });
-                        for (i = edadGest + 1; i <= 39; i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
-                    }
-                    else{
-                        for (i = 16; i <= 39; i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
+                        data[edadGest].y = ccca;
                     }
                     return data;
                 }())
@@ -3196,23 +3149,19 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
              lineWidth: 0,
              data: (
                  function () {
-                     var data = [];
-                     var edadGest = parseInt(localStorage.eg) -1;
- 
-                     for (i = 16; i <= edadGest; i ++ ) {
-                         data.push({
-                             y: 0,
-                         });
-                     }
-                     data.push({
-                             y: parseFloat($('#bvm').val()),
-                         });
-                     for (i = edadGest +1; i <= 39; i ++ ) {
-                         data.push({
-                             y: 0,
-                         });
-                     }
-                     return data;
+                    var data = baseGraphic16;
+                    if (localStorage.eg > 15){
+                        var edadGest = (parseInt(localStorage.eg) - 1) - 16;
+                    
+                        var bvm = $("#bvm").val();
+                        if (bvm !== ""){
+                            bvm = bvm.toString();
+                            bvm = bvm.replace(",", ".");
+                            bvm = parseFloat(bvm);
+                        }
+                        data[edadGest].y = bvm;
+                    }
+                    return data;
                  }())
              }]
      });
@@ -3986,23 +3935,19 @@ $( '#graficoBVM' ).on( 'click', function() {
              lineWidth: 0,
              data: (
                  function () {
-                     var data = [];
-                     var edadGest = parseInt(localStorage.eg) -1;
- 
-                     for (i = 16; i <= edadGest; i ++ ) {
-                         data.push({
-                             y: 0,
-                         });
-                     }
-                     data.push({
-                             y: parseFloat($('#bvm').val()),
-                         });
-                     for (i = edadGest +1; i <= 39; i ++ ) {
-                         data.push({
-                             y: 0,
-                         });
-                     }
-                     return data;
+                    var data = baseGraphic16;
+                    if (localStorage.eg > 15){
+                        var edadGest = (parseInt(localStorage.eg) - 1) - 16;
+                    
+                        var bvm = $("#bvm").val();
+                        if (bvm !== ""){
+                            bvm = bvm.toString();
+                            bvm = bvm.replace(",", ".");
+                            bvm = parseFloat(bvm);
+                        }
+                        data[edadGest].y = bvm;
+                    }
+                    return data;
                  }())
              }]
      });
