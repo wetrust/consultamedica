@@ -1,4 +1,5 @@
-var baseGraphic = [];
+var baseGraphic12 = [];
+var baseGraphic16 = [];
 
 function construirGraficos() {
         $('#graficolcn').highcharts({
@@ -43,9 +44,12 @@ function construirGraficos() {
 $(document).ready(function(){
 
     for (i = 12; i <= 39; i++) {
-        baseGraphic.push({y: 0,});
+        baseGraphic12.push({y: 0,});
     }
 
+    for (i = 16; i <= 40; i++) {
+        baseGraphic16.push({y: 0,});
+    }
 
 $( '#graficoDbp' ).on( 'click', function() {
     $('#graficosTitle').html("Gráfico DBP");
@@ -100,7 +104,7 @@ $( '#graficoDbp' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-                var data = baseGraphic;
+                var data = baseGraphic12;
                 if (localStorage.eg > 12){
                     var edadGest = (parseInt(localStorage.eg) - 1) - 12;
                 
@@ -166,7 +170,7 @@ $( '#graficoCc' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-                var data = baseGraphic;
+                var data = baseGraphic12;
                 if (localStorage.eg > 12){
                     var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
                     var cc = $("#cc").val();
@@ -231,7 +235,7 @@ $( '#graficoCa' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-                var data = baseGraphic;
+                var data = baseGraphic12;
                 if (localStorage.eg > 12){
                     var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
                     var ca = $("#ca").val();
@@ -296,7 +300,7 @@ $( '#graficoLf' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-                var data = baseGraphic;
+                var data = baseGraphic12;
                 if (localStorage.eg > 12){
                     var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
                     var lf = $("#lf").val();
@@ -361,7 +365,7 @@ $( '#graficoLh' ).on( 'click', function() {
                 marker: { symbol: 'square' },
                 lineWidth: 0,
                 data: (function () {
-                    var data = baseGraphic;
+                    var data = baseGraphic12;
                     if (localStorage.eg > 12){
                         var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
                         var lh = $("#lh").val();
@@ -431,7 +435,7 @@ $( '#graficoCerebelo' ).on( 'click', function() {
                 marker: { symbol: 'square' },
                 lineWidth: 0,
                 data: (function () {
-                    var data = baseGraphic;
+                    var data = baseGraphic12;
                     if (localStorage.eg > 12){
                         var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
                         var cerebelo = $("#cerebelo").val();
@@ -1771,23 +1775,19 @@ $( '#graficoPFE' ).on( 'click', function() {
            marker: {symbol:'square'},
            lineWidth: 0,
            data: (function () {
-               var data = [];
-               var edadGest = parseInt(localStorage.eg) -1;
-
-               for (i = 16; i <= edadGest; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               data.push({
-                   y: parseFloat($('#pfe').val()),
-               });
-               for (i = edadGest + 1; i <= 39; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               return data;
+                var data = baseGraphic16;
+                if (localStorage.eg > 15){
+                    var edadGest = (parseInt(localStorage.eg) - 1) - 16;
+                
+                    var pfe = $("#pfe").val();
+                    if (pfe !== ""){
+                        pfe = pfe.toString();
+                        pfe = pfe.replace(",", ".");
+                        pfe = parseFloat(pfe);
+                    }
+                    data[edadGest].y = pfe;
+                }
+                return data;
            }())
        }]
     });
@@ -1842,23 +1842,19 @@ $( '#graficoCCCA' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-               var data = [];
-               var edadGest = parseInt(localStorage.eg) -1;
-
-               for (i = 16; i <= edadGest; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               data.push({
-                   y: parseFloat($('#ccca').val()),
-               });
-               for (i = edadGest + 1; i <= 39; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               return data;
+                var data = baseGraphic16;
+                if (localStorage.eg > 15){
+                    var edadGest = (parseInt(localStorage.eg) - 1) - 16;
+                
+                    var ccca = $("#ccca").val();
+                    if (ccca !== ""){
+                        ccca = ccca.toString();
+                        ccca = ccca.replace(",", ".");
+                        ccca = parseFloat(ccca);
+                    }
+                    data[edadGest].y = ccca;
+                }
+                return data;
            }())
        }]
     });
@@ -3131,7 +3127,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-                var data = baseGraphic;
+                var data = baseGraphic12;
                 if (localStorage.eg > 12){
                     var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
                     var ca = $("#ca").val();
@@ -3301,7 +3297,7 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-                var data = baseGraphic;
+                var data = baseGraphic12;
                 if (localStorage.eg > 12){
                     var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
                     var cc = $("#cc").val();
@@ -3446,7 +3442,7 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-                var data = baseGraphic;
+                var data = baseGraphic12;
                 if (localStorage.eg > 12){
                     var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
                     var lf = $("#lf").val();
@@ -3513,7 +3509,7 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
                 marker: { symbol: 'square' },
                 lineWidth: 0,
                 data: (function () {
-                    var data = baseGraphic;
+                    var data = baseGraphic12;
                     if (localStorage.eg > 12){
                         var edadGest = (parseInt(localStorage.eg) - 1) - 12;           
                         var lh = $("#lh").val();
