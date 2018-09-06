@@ -110,6 +110,8 @@ $( '#graficoDbp' ).on( 'click', function() {
                         dbp = dbp.replace(",", ".");
                         dbp = parseFloat(dbp);
                     }
+                    var prueba = data[edadGest];
+                    alert(prueba.y);
                 } 
                
                 return data;
