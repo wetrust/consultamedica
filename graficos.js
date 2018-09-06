@@ -43,7 +43,7 @@ function construirGraficos() {
 $(document).ready(function(){
 
     for (i = 12; i <= 39; i++) {
-        data.push({y: 0,});
+        baseGraphic.push({y: 0,});
     }
 
 
