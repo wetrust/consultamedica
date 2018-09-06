@@ -284,10 +284,18 @@ for (i = 45; i <= 87; i++) {
 	$("#loncefalocaudal").append("<option value=" + i +">" + i+ " mm</option>");
 }
 
-for (i = 14; i <= 51; i++){
+for (i = 14; i <= 50; i++){
 	$("#edadmaternaprimtrim").append("<option value=" + i +">" + i+ "años</option>");
 }
 $("#edadmaternaprimtrim").val("20");
+
+$("#fcf-prim").append("<option value='(+) inicial'>(+) inicial</option>");
+$("#fcf-prim").append("<option value='<90'>&lt; 90</option>");
+for (i = 90; i <= 170; i++){
+	$("#fcf-prim").append("<option value=" + i +">" + i+ "</option>");
+}
+$("#fcf-prim").append("<option value=' > 170'>&gt; 170</option>");
+$("#fcf-prim").val("140");
 
 $( '#cancelarEcografistaConfig').on('click', function() {
 	$("#ecografistaConfig .tabla").show();
