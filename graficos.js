@@ -1,3 +1,5 @@
+var baseGraphic = [];
+
 function construirGraficos() {
         $('#graficolcn').highcharts({
         title: {
@@ -39,6 +41,12 @@ function construirGraficos() {
     });
 }
 $(document).ready(function(){
+
+    for (i = 12; i <= 39; i++) {
+        data.push({y: 0,});
+    }
+
+
 $( '#graficoDbp' ).on( 'click', function() {
     $('#graficosTitle').html("Gráfico DBP");
     $('#graficosBody').html("<div id='graficoDbpView'></div>");
@@ -92,28 +100,19 @@ $( '#graficoDbp' ).on( 'click', function() {
            marker: { symbol: 'square' },
            lineWidth: 0,
            data: (function () {
-               var data = [];
-               var edadGest = parseInt(localStorage.eg) - 1;
-
-               for (i = 12; i <= edadGest; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               var dbp = $("#dbp").val();
-               dbp = dbp.toString();
-               dbp = dbp.replace(",", ".");
-               dbp = parseFloat(dbp);
-                   
-               data.push({
-                   y: dbp,
-               });
-               for (i = edadGest + 1; i <= 39; i++) {
-                   data.push({
-                       y: 0,
-                   });
-               }
-               return data;
+                var data = baseGraphic;
+                if (localStorage.eg > 12){
+                    var edadGest = (parseInt(localStorage.eg) - 1) - 12;
+                
+                    var dbp = $("#dbp").val();
+                    if (dbp !== ""){
+                        dbp = dbp.toString();
+                        dbp = dbp.replace(",", ".");
+                        dbp = parseFloat(dbp);
+                    }
+                } 
+               
+                return data;
            }())
        }]
    });
