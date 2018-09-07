@@ -6,6 +6,9 @@ function construirGraficos() {
             chart: {
                 animation: false
             },
+            boost: {
+                useGPUTranslations: true
+            },
         title: {
             text: 'LCN',
             x: -20 //center
@@ -66,6 +69,9 @@ $( '#graficoDbp' ).on( 'click', function() {
     $('#graficoDbpView').highcharts({
         chart: {
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
        title: {
            text: 'DBP',
@@ -142,6 +148,9 @@ $( '#graficoCc' ).on( 'click', function() {
         chart: {
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
        title: {
            text: 'Circunferencia de Cráneo',
            x: -20
@@ -210,6 +219,9 @@ $( '#graficoCa' ).on( 'click', function() {
     $('#graficoCaView').highcharts({
         chart: {
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
        title: {
            text: 'CA**',
@@ -280,6 +292,9 @@ $( '#graficoLf' ).on( 'click', function() {
         chart: {
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
        title: {
            text: 'Largo Femoral',
            x: -20
@@ -349,6 +364,9 @@ $( '#graficoLh' ).on( 'click', function() {
         chart: {
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
             title: {
                 text: 'Largo Humeral',
                 x: -20
@@ -417,6 +435,9 @@ $( '#graficoCerebelo' ).on( 'click', function() {
     $('#graficoCerebeloView').highcharts({
         chart: {
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
             title: {
                 text: 'Diámetro de Cerebelo',
@@ -494,6 +515,9 @@ $( '#graficoLcn' ).on( 'click', function() {
     $('#graficoLcnBaseView').highcharts({
         chart: {
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
         title: {
             text: 'LCN 6 a 15 semanas',
@@ -593,6 +617,9 @@ $( '#graficoLcn' ).on( 'click', function() {
                 chart: {
                     animation: false
                 },
+                boost: {
+                    useGPUTranslations: true
+                },
                 title: {
                     text: 'LCN semana 9',
                     x: -20 //center
@@ -683,6 +710,9 @@ $( '#graficoLcn' ).on( 'click', function() {
             $('#graficoLcnView').highcharts({
                 chart: {
                     animation: false
+                },
+                boost: {
+                    useGPUTranslations: true
                 },
                 title: {
                     text: 'LCN semana 10',
@@ -778,6 +808,9 @@ $( '#graficoLcn' ).on( 'click', function() {
                 chart: {
                     animation: false
                 },
+                boost: {
+                    useGPUTranslations: true
+                },
                 title: {
                     text: 'LCN semana 11',
                     x: -20 //center
@@ -871,6 +904,9 @@ $( '#graficoLcn' ).on( 'click', function() {
             $('#graficoLcnView').highcharts({
                 chart: {
                     animation: false
+                },
+                boost: {
+                    useGPUTranslations: true
                 },
                 title: {
                     text: 'LCN semana 12',
@@ -968,6 +1004,9 @@ $( '#graficoLcn' ).on( 'click', function() {
                 chart: {
                     animation: false
                 },
+                boost: {
+                    useGPUTranslations: true
+                },
                 title: {
                     text: 'LCN semana 13',
                     x: -20 //center
@@ -1062,6 +1101,9 @@ $( '#graficoLcn' ).on( 'click', function() {
             $('#graficoLcnView').highcharts({
                 chart: {
                     animation: false
+                },
+                boost: {
+                    useGPUTranslations: true
                 },
                 title: {
                     text: 'LCN semana 14',
@@ -1168,6 +1210,9 @@ $( '#graficoSaco' ).on( 'click', function() {
         chart: {
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
              title: {
                  text: 'Promedio Saco Gestacional',
                  x: -20
@@ -1254,6 +1299,9 @@ $( '#graficoAud' ).on( 'click', function() {
         chart: {
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
         title: {
             text: 'IP Arterias Uterinas Derecha',
             x: -20,
@@ -1333,6 +1381,9 @@ $( '#graficoAui' ).on( 'click', function() {
     $('#graficoArtUtIzqView').highcharts({
         chart: {
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
         title: {
             text: 'IP Arterias Uterinas Izquierda',
@@ -1415,6 +1466,9 @@ $( '#graficoAu' ).on( 'click', function() {
         chart: {
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
         title: {
             text: 'IP Promedio Arteria Uterinas',
             x: -20,
@@ -1495,6 +1549,9 @@ $( '#graficoIpau' ).on( 'click', function() {
         chart: {
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
          title: {
              text: 'IP Arteria Umbilical **',
              x: -20, //center
@@ -1573,6 +1630,9 @@ $( '#graficoIpacm' ).on( 'click', function() {
     $('#graficoIpacmView').highcharts({
         chart: {
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
         title: {
              text: 'IP Arteria Cerebral Media **',
@@ -1656,6 +1716,9 @@ $( '#graficoCcp' ).on( 'click', function() {
         chart: {
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
              x: -20 //center
@@ -1734,6 +1797,9 @@ $( '#graficoDv' ).on( 'click', function() {
         chart: {
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
         title: {
             text: 'Ductus Venoso',
             x: -20 //center
@@ -1811,6 +1877,9 @@ $( '#graficoPFE' ).on( 'click', function() {
     $('#graficoPesoView').highcharts({
         chart: {
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
        title: {
            text: 'Peso Fetal Estimado *',
@@ -1895,6 +1964,9 @@ $( '#graficoCCCA' ).on( 'click', function() {
     $('#graficoCCCAView').highcharts({
         chart: {
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
        title: {
            text: 'Cc / Ca *',
@@ -1988,6 +2060,9 @@ $( '#infDoppler1' ).on( 'click', function() {
             height: 250,
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
         title: {
             text: 'IP Promedio Arteria Uterinas *',
             x: -20,
@@ -2067,6 +2142,9 @@ $( '#infDoppler1' ).on( 'click', function() {
             height: 250,
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
          title: {
              text: 'IP Arteria Umbilical **',
              x: -20, //center
@@ -2144,6 +2222,9 @@ $( '#infDoppler1' ).on( 'click', function() {
             chart: {
             height: 250,
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
         title: {
              text: 'IP Arteria Cerebral Media **',
@@ -2225,6 +2306,9 @@ $( '#infDoppler1' ).on( 'click', function() {
             chart: {
             height: 250,
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
@@ -2309,6 +2393,9 @@ $( '#infDoppler2' ).on( 'click', function() {
             height: 250,
             animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
        title: {
            text: 'Peso Fetal Estimado *',
            x: -20 //center
@@ -2379,6 +2466,9 @@ $( '#infDoppler2' ).on( 'click', function() {
                 height: 250,
                 animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
          title: {
              text: 'IP Arteria Umbilical **',
              x: -20 //center
@@ -2439,6 +2529,9 @@ $( '#infDoppler2' ).on( 'click', function() {
             chart: {
                 height: 250,
                 animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
         title: {
              text: 'IP Arteria Cerebral Media **',
@@ -2502,6 +2595,9 @@ $( '#infDoppler2' ).on( 'click', function() {
             chart: {
                 height: 250,
                 animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
@@ -2571,6 +2667,9 @@ $( '#infDoppler3' ).on( 'click', function() {
             chart: {
                 height: 250,
                 animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
        title: {
            text: 'Peso Fetal Estimado *',
@@ -2642,6 +2741,9 @@ $( '#infDoppler3' ).on( 'click', function() {
                 height: 250,
                 animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
          title: {
              text: 'IP Arteria Umbilical **',
              x: -20 //center
@@ -2702,6 +2804,9 @@ $( '#infDoppler3' ).on( 'click', function() {
             chart: {
                 height: 250,
                 animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
         title: {
             text: 'IP Promedio Arteria Uterinas',
@@ -2764,6 +2869,9 @@ $( '#infDoppler3' ).on( 'click', function() {
             chart: {
                 height: 250,
                 animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
@@ -2861,6 +2969,9 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                 height: 512,
                 animation:false
             },
+            boost: {
+                useGPUTranslations: true
+            },
             title: {
                 text: 'Peso Fetal Estimado *',
                 x: -20, //center
@@ -2956,6 +3067,9 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                 height: 250,
                 animation: false
             },
+            boost: {
+                useGPUTranslations: true
+            },
             title: {
                 text: 'Peso Fetal Estimado *',
                 x: -20, //center
@@ -3050,6 +3164,9 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                 height: 250,
                 animation: false
             },
+            boost: {
+                useGPUTranslations: true
+            },
             title: {
                 text: 'Cc / Ca *',
                 x: -20
@@ -3124,6 +3241,9 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                 height: 250,
                 animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
        title: {
            text: 'Circunferencia Abdominal **',
            x: -20, //center
@@ -3196,6 +3316,9 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                 height: 250,
                 animation: false
          },
+         boost: {
+            useGPUTranslations: true
+        },
          title: {
              text: 'BVM de Líquido Amniótico ***',
              x: -20,
@@ -3294,6 +3417,9 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
                 height: 250,
                 animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
        title: {
            text: 'Circunferencia de Cráneo',
            x: -20,
@@ -3360,6 +3486,9 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
            chart: {
             height: 250,
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
             title: {
                 text: 'Diámetro de Cerebelo',
@@ -3439,6 +3568,9 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
                 height: 250,
                 animation: false
         },
+        boost: {
+            useGPUTranslations: true
+        },
        title: {
            text: 'Largo Femoral',
            x: -20,
@@ -3505,6 +3637,9 @@ $( '#infecoObsSegTrim2' ).on( 'click', function() {
            chart: {
             height: 250,
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
             title: {
                 text: 'Largo Humeral',
@@ -3582,6 +3717,9 @@ $( '#graficoTallaPeso' ).on( 'click', function() {
 $('#viewGraficoTallaPeso').highcharts({
     chart: {
         animation: false
+    },
+    boost: {
+        useGPUTranslations: true
     },
     title: {
         text: 'Análisis Talla Peso según referencias postnatales'
@@ -3765,6 +3903,9 @@ $('#viewGraficoIPN').highcharts({
     chart: {
         animation: false
     },
+    boost: {
+        useGPUTranslations: true
+    },
         title: {
             text: 'IPN / EG',
             x: -20 //center
@@ -3841,6 +3982,9 @@ $( '#graficoTalla' ).on( 'click', function() {
 $('#viewGraficoTalla').highcharts({
     chart: {
         animation: false
+    },
+    boost: {
+        useGPUTranslations: true
     },
         title: {
             text: 'Talla Fetal estimada',
@@ -3921,6 +4065,9 @@ $('#viewGraficopsmACM').highcharts({
     chart: {
         animation: false
     },
+    boost: {
+        useGPUTranslations: true
+    },
         title: {
             text: 'Pick sistólico máximo de ACM',
             x: -20 //center
@@ -3998,6 +4145,9 @@ $( '#graficoBVM' ).on( 'click', function() {
         chart: {
             height: 250,
             animation: false
+        },
+        boost: {
+            useGPUTranslations: true
         },
          title: {
              text: 'BVM de Líquido Amniótico ***',
