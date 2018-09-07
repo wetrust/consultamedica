@@ -2901,100 +2901,16 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
         
     $('#graficosBody').html(stringGraficos);
     if ($("#cccaView").hasClass("d-none") == true){
-        $('#graficoInfecoObsSegTrimPFEView').highcharts({
-            chart: {
-                height: 512,
-                animation:false
-            },
-            boost: {
-                useGPUTranslations: true
-            },
-            title: {
-                text: 'Peso Fetal Estimado *',
-                x: -20, //center
-                style: {
-                    fontSize: '14px'
-                }
-            },
-            legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight: 'normal'
-                }
-            },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false,
-                    pointInterval: 1
-                }
-            },
-            yAxis: {
-                title: {
-                    text: 'Kilogramos'
-                },
-                tickPositions: [100, 300, 560, 1020, 1200, 1480, 1750, 1940, 2200, 2400, 2600, 2860, 3150, 3320, 3500, 3780, 4050,4340, 4600,4900]
-            },
-            colors: ['#313131', '#313131', '#313131'],
-            xAxis: {
-                categories: ['16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
-            },
-            credits: {
-                enabled: false
-            },
-            series: [{
-                type: "line",
-                name: 'Pct 3',
-                dashStyle: "Dot",
-                marker: {
-                    enabled: false
-                },
-                data: [110, 136, 167, 205, 248, 299, 359, 426, 503, 589, 685, 791, 908, 1034, 1169, 1313, 1465, 1622, 1783, 1946, 2110, 2271, 2427, 2576, 2714]
-            }, {
-                type: "line",
-                name: 'Pct 10',
-                marker: {
-                    enabled: false
-                },
-                data: [121, 150, 185, 227, 275, 331, 398, 471, 556, 652, 758, 876, 1004, 1145, 1294, 1453, 1621, 1794, 1973, 2154, 2335, 2513, 2686, 2851, 2985]
-            }, {
-                type: "line",
-                name: 'Pct 90',
-                marker: {
-                    enabled: false
-                },
-                data: [171, 212, 261, 319, 387, 467, 559, 665, 784, 918, 1068, 1234, 1416, 1613, 1824, 2049, 2285, 2530, 2781, 3036, 3291, 3543, 3786, 4019, 4234]
-            }, {
-                type: "line",
-                name: 'Pct 97',
-                dashStyle: "Dot",
-                marker: {
-                    enabled: false,
-                },
-                data: [183, 226, 279, 341, 414, 499, 598, 710, 838, 981, 1141, 1319, 1513, 1724, 1949, 2189, 2441, 2703, 2971, 3244, 3516, 3785, 4045, 4294, 4474]
-            }, {
-                type: "line",
-                name: 'Peso',
-                dashStyle: "Dot",
-                marker: {
-                    symbol: 'square'
-                },
-                lineWidth: 0,
-                data: (function() {
-                    var data = baseGraphic16;
-                    if (localStorage.eg > 15){
-                        var edadGest = (parseInt(localStorage.eg) - 1) - 16;
-                    
-                        var pfe = $("#pfe").val();
-                        if (pfe !== ""){
-                            pfe = pfe.toString();
-                            pfe = pfe.replace(",", ".");
-                            pfe = parseFloat(pfe);
-                        }
-                        data[edadGest].y = pfe;
-                    }
-                    return data;
-                }())
-            }]
+        var data = {
+            EG: parseInt(localStorage.eg),
+            PESO: parseInt($("#pfe").val())
+        }
+    
+        data = JSON.stringify(data);
+    
+        $.post( "https://servidor.crecimientofetal.cl/api/graph", { type: "PFE", data: data })
+        .done(function( data ) {
+            Highcharts.chart('graficoInfecoObsSegTrimPFEView', data);
         });
     }
     else
