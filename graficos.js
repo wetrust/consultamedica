@@ -2905,7 +2905,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
             EG: parseInt(localStorage.eg),
             PESO: parseInt($("#pfe").val())
         }
-    
+
         data = JSON.stringify(data);
     
         $.post( "https://servidor.crecimientofetal.cl/api/graph", { type: "PFE", data: data })
@@ -3237,6 +3237,11 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                  }())
              }]
      });
+
+     if ($("#cccaView").hasClass("d-none") == false){
+        imprSelec("graficosBody");
+     }
+     
 });
 
 $( '#infecoObsSegTrim2' ).on( 'click', function() {
