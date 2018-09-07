@@ -62,7 +62,7 @@ $(document).ready(function(){
 			PESO: 2800
 		}
 
-		data = JSON.parse(data);
+		data = JSON.stringify(data);
 
 		$.post( "https://servidor.crecimientofetal.cl/api/graph", { type: "PFE", data: data })
 		.done(function( data ) {
