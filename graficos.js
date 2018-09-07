@@ -2911,6 +2911,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
         $.post( "https://servidor.crecimientofetal.cl/api/graph", { type: "PFE", data: data })
         .done(function( data ) {
             Highcharts.chart('graficoInfecoObsSegTrimPFEView', data);
+            imprSelec("graficosBody");
         });
     }
     else
@@ -3236,7 +3237,6 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                  }())
              }]
      });
-     imprSelec("graficosBody");
 });
 
 $( '#infecoObsSegTrim2' ).on( 'click', function() {
