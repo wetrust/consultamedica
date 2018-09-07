@@ -1877,7 +1877,8 @@ $( '#graficoPFE' ).on( 'click', function() {
     $("#graficoPesoView").html("<h6 class='text-center'>Cargando gráfico...</h6>")
     var data = {
         EG: parseInt(localStorage.eg),
-        PESO: parseInt($("#pfe").val())
+        PESO: parseInt($("#pfe").val()),
+        HEIGHT: 512
     }
 
     data = JSON.stringify(data);
