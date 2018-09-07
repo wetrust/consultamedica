@@ -2911,6 +2911,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
         $.post( "https://servidor.crecimientofetal.cl/api/graph", { type: "PFE", data: data })
         .done(function( data ) {
             Highcharts.chart('graficoInfecoObsSegTrimPFEView', data);
+            imprSelec("graficosBody");
         });
     }
     else
@@ -2926,6 +2927,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
         $.post( "https://servidor.crecimientofetal.cl/api/graph", { type: "PFE", data: data })
         .done(function( data ) {
             Highcharts.chart('graficoInfecoObsSegTrimPFEView', data);
+            imprSelec("graficosBody");
         });
         
         $('#graficoCCCAView').highcharts({
@@ -3152,13 +3154,6 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
                  }())
              }]
      });
-
-     if ($("#cccaView").hasClass("d-none") == false){
-        imprSelec("graficosBody");
-     }else
-     {
-        imprSelec("graficosBody");
-     }
 });
 
 $( '#infecoObsSegTrim2' ).on( 'click', function() {
