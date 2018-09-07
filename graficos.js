@@ -2919,7 +2919,7 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
         var data = {
             EG: parseInt(localStorage.eg),
             PESO: parseInt($("#pfe").val()),
-            WIDTH: 250
+            HEIGHT: 250
         }
 
         data = JSON.stringify(data);
