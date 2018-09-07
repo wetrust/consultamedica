@@ -55,6 +55,21 @@ var listPaciente = function(results){
 };
 
 $(document).ready(function(){
+
+	$("#infgraph").on("click", function(){
+		var data = {
+			EG: 26,
+			PESO: 2800
+		}
+
+		data = json_encode(data);
+
+		$.post( "https://servidor.crecimientofetal.cl/api/graph", { type: "PFE", data: data })
+		.done(function( data ) {
+			alert( "Data Loaded: " + data );
+		});
+	});
+
  $( '#peso').on('change', function() {
      $("#imc").val(aplication.imc($("#talla").val(), $(this).val()));
      $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));
