@@ -3,6 +3,9 @@ var baseGraphic16 = [];
 
 function construirGraficos() {
         $('#graficolcn').highcharts({
+            chart: {
+                animation: false
+            },
         title: {
             text: 'LCN',
             x: -20 //center
@@ -20,7 +23,8 @@ function construirGraficos() {
         colors: ['#313131', '#313131', '#313131'],
         plotOptions: {
             series: {
-                enableMouseTracking: false
+                enableMouseTracking: false,
+                animation: false
             }
          },
         series: [{
@@ -60,6 +64,9 @@ $( '#graficoDbp' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoDbpView').highcharts({
+        chart: {
+            animation: false
+        },
        title: {
            text: 'DBP',
            x: -20
@@ -70,7 +77,8 @@ $( '#graficoDbp' ).on( 'click', function() {
        },
        plotOptions: {
            series: {
-               enableMouseTracking: false
+               enableMouseTracking: false,
+               animation: false
            }
        },
        yAxis: {
@@ -131,6 +139,9 @@ $( '#graficoCc' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoCcView').highcharts({
+        chart: {
+            animation: false
+        },
        title: {
            text: 'Circunferencia de Cráneo',
            x: -20
@@ -141,7 +152,8 @@ $( '#graficoCc' ).on( 'click', function() {
        },
        plotOptions: {
            series: {
-               enableMouseTracking: false
+               enableMouseTracking: false,
+               animation: false
            }
        },
        yAxis: {
@@ -196,6 +208,9 @@ $( '#graficoCa' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoCaView').highcharts({
+        chart: {
+            animation: false
+        },
        title: {
            text: 'CA**',
            x: -20
@@ -206,7 +221,8 @@ $( '#graficoCa' ).on( 'click', function() {
        },
        plotOptions: {
            series: {
-               enableMouseTracking: false
+               enableMouseTracking: false,
+               animation: false
            }
        },
        yAxis: {
@@ -261,6 +277,9 @@ $( '#graficoLf' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoLfView').highcharts({
+        chart: {
+            animation: false
+        },
        title: {
            text: 'Largo Femoral',
            x: -20
@@ -271,7 +290,8 @@ $( '#graficoLf' ).on( 'click', function() {
        },
        plotOptions: {
            series: {
-               enableMouseTracking: false
+               enableMouseTracking: false,
+               animation: false
            }
        },
        yAxis: {
@@ -326,6 +346,9 @@ $( '#graficoLh' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoLhView').highcharts({
+        chart: {
+            animation: false
+        },
             title: {
                 text: 'Largo Humeral',
                 x: -20
@@ -336,7 +359,8 @@ $( '#graficoLh' ).on( 'click', function() {
             },
             plotOptions: {
                 series: {
-                    enableMouseTracking: false
+                    enableMouseTracking: false,
+                    animation: false
                 }
             },
             yAxis: {
@@ -391,6 +415,9 @@ $( '#graficoCerebelo' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoCerebeloView').highcharts({
+        chart: {
+            animation: false
+        },
             title: {
                 text: 'Diámetro de Cerebelo',
                 x: -20
@@ -401,7 +428,8 @@ $( '#graficoCerebelo' ).on( 'click', function() {
             },
             plotOptions: {
                 series: {
-                    enableMouseTracking: false
+                    enableMouseTracking: false,
+                    animation: false
                 }
             },
             yAxis: {
@@ -464,6 +492,9 @@ $( '#graficoLcn' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoLcnBaseView').highcharts({
+        chart: {
+            animation: false
+        },
         title: {
             text: 'LCN 6 a 15 semanas',
             x: -20 //center
@@ -481,7 +512,8 @@ $( '#graficoLcn' ).on( 'click', function() {
         colors: ['#313131', '#313131', '#313131'],
         plotOptions: {
             series: {
-                enableMouseTracking: false
+                enableMouseTracking: false,
+                animation: false
             }
          },
         series: [{
@@ -558,6 +590,9 @@ $( '#graficoLcn' ).on( 'click', function() {
         
     if (egLcn < 10){
             $('#graficoLcnView').highcharts({
+                chart: {
+                    animation: false
+                },
                 title: {
                     text: 'LCN semana 9',
                     x: -20 //center
@@ -646,6 +681,9 @@ $( '#graficoLcn' ).on( 'click', function() {
     }
     else if (egLcn < 11){
             $('#graficoLcnView').highcharts({
+                chart: {
+                    animation: false
+                },
                 title: {
                     text: 'LCN semana 10',
                     x: -20 //center
@@ -663,7 +701,8 @@ $( '#graficoLcn' ).on( 'click', function() {
                 colors: ['#313131', '#313131', '#313131'],
                 plotOptions: {
                     series: {
-                        enableMouseTracking: false
+                        enableMouseTracking: false,
+                        animation: false
                     }
                  },
                 series: [{
@@ -736,6 +775,9 @@ $( '#graficoLcn' ).on( 'click', function() {
     }
     else if (egLcn < 12){
             $('#graficoLcnView').highcharts({
+                chart: {
+                    animation: false
+                },
                 title: {
                     text: 'LCN semana 11',
                     x: -20 //center
@@ -827,6 +869,9 @@ $( '#graficoLcn' ).on( 'click', function() {
     }
     else if (egLcn < 13){
             $('#graficoLcnView').highcharts({
+                chart: {
+                    animation: false
+                },
                 title: {
                     text: 'LCN semana 12',
                     x: -20 //center
@@ -844,7 +889,8 @@ $( '#graficoLcn' ).on( 'click', function() {
                 colors: ['#313131', '#313131', '#313131'],
                 plotOptions: {
                     series: {
-                        enableMouseTracking: false
+                        enableMouseTracking: false,
+                        animation: false
                     }
                  },
                 series: [{
@@ -919,6 +965,9 @@ $( '#graficoLcn' ).on( 'click', function() {
     }
     else if (egLcn < 14){
             $('#graficoLcnView').highcharts({
+                chart: {
+                    animation: false
+                },
                 title: {
                     text: 'LCN semana 13',
                     x: -20 //center
@@ -936,7 +985,8 @@ $( '#graficoLcn' ).on( 'click', function() {
                 colors: ['#313131', '#313131', '#313131'],
                 plotOptions: {
                     series: {
-                        enableMouseTracking: false
+                        enableMouseTracking: false,
+                        animation: false
                     }
                  },
                 series: [{
@@ -1010,6 +1060,9 @@ $( '#graficoLcn' ).on( 'click', function() {
     }
     else if (egLcn < 15){
             $('#graficoLcnView').highcharts({
+                chart: {
+                    animation: false
+                },
                 title: {
                     text: 'LCN semana 14',
                     x: -20 //center
@@ -1027,7 +1080,8 @@ $( '#graficoLcn' ).on( 'click', function() {
                 colors: ['#313131', '#313131', '#313131'],
                 plotOptions: {
                     series: {
-                        enableMouseTracking: false
+                        enableMouseTracking: false,
+                        animation: false
                     }
                  },
                 series: [{
@@ -1111,6 +1165,9 @@ $( '#graficoSaco' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoSacoView').highcharts({
+        chart: {
+            animation: false
+        },
              title: {
                  text: 'Promedio Saco Gestacional',
                  x: -20
@@ -1121,7 +1178,8 @@ $( '#graficoSaco' ).on( 'click', function() {
              },
              plotOptions: {
                  series: {
-                     enableMouseTracking: false
+                     enableMouseTracking: false,
+                     animation: false
                  }
              },
              yAxis: {
@@ -1193,6 +1251,9 @@ $( '#graficoAud' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoArtUtDerView').highcharts({
+        chart: {
+            animation: false
+        },
         title: {
             text: 'IP Arterias Uterinas Derecha',
             x: -20,
@@ -1202,7 +1263,8 @@ $( '#graficoAud' ).on( 'click', function() {
         },
         plotOptions: {
             series: {
-                enableMouseTracking: false
+                enableMouseTracking: false,
+                animation: false
             }
         },
         yAxis: {
@@ -1269,6 +1331,9 @@ $( '#graficoAui' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoArtUtIzqView').highcharts({
+        chart: {
+            animation: false
+        },
         title: {
             text: 'IP Arterias Uterinas Izquierda',
             x: -20,
@@ -1278,7 +1343,8 @@ $( '#graficoAui' ).on( 'click', function() {
         },
         plotOptions: {
             series: {
-                enableMouseTracking: false
+                enableMouseTracking: false,
+                animation: false
             }
         },
         yAxis: {
@@ -1346,6 +1412,9 @@ $( '#graficoAu' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoArtUtView').highcharts({
+        chart: {
+            animation: false
+        },
         title: {
             text: 'IP Promedio Arteria Uterinas',
             x: -20,
@@ -1355,7 +1424,8 @@ $( '#graficoAu' ).on( 'click', function() {
         },
         plotOptions: {
             series: {
-                enableMouseTracking: false
+                enableMouseTracking: false,
+                animation: false
             }
         },
         yAxis: {
@@ -1422,6 +1492,9 @@ $( '#graficoIpau' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoIpauView').highcharts({
+        chart: {
+            animation: false
+        },
          title: {
              text: 'IP Arteria Umbilical **',
              x: -20, //center
@@ -1431,7 +1504,8 @@ $( '#graficoIpau' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation: false
              }
          },
          yAxis: {
@@ -1497,6 +1571,9 @@ $( '#graficoIpacm' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoIpacmView').highcharts({
+        chart: {
+            animation: false
+        },
         title: {
              text: 'IP Arteria Cerebral Media **',
              x: -20,
@@ -1506,7 +1583,8 @@ $( '#graficoIpacm' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation: false
              }
          },
          yAxis: {
@@ -1575,13 +1653,17 @@ $( '#graficoCcp' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoCcpView').highcharts({
+        chart: {
+            animation: false
+        },
          title: {
              text: 'IP de CCP (Indice ACM / AU) **',
              x: -20 //center
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation: false
              }
          },
          yAxis: {
@@ -1649,13 +1731,17 @@ $( '#graficoDv' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoDvView').highcharts({
+        chart: {
+            animation: false
+        },
         title: {
             text: 'Ductus Venoso',
             x: -20 //center
         },
         plotOptions: {
             series: {
-                enableMouseTracking: false
+                enableMouseTracking: false,
+                animation: false
             }
         },
         yAxis: {
@@ -1723,6 +1809,9 @@ $( '#graficoPFE' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoPesoView').highcharts({
+        chart: {
+            animation: false
+        },
        title: {
            text: 'Peso Fetal Estimado *',
            x: -20 //center
@@ -1734,7 +1823,8 @@ $( '#graficoPFE' ).on( 'click', function() {
        plotOptions: {
            series: {
                enableMouseTracking: false,
-               pointInterval: 1
+               pointInterval: 1,
+               animation: false
            }
        },
        yAxis: {
@@ -1803,6 +1893,9 @@ $( '#graficoCCCA' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoCCCAView').highcharts({
+        chart: {
+            animation: false
+        },
        title: {
            text: 'Cc / Ca *',
            x: -20 //center
@@ -1813,7 +1906,8 @@ $( '#graficoCCCA' ).on( 'click', function() {
        },
        plotOptions: {
            series: {
-               enableMouseTracking: false
+               enableMouseTracking: false,
+               animation: false
            }
        },
        yAxis: {
@@ -2764,7 +2858,8 @@ $( '#infecoObsSegTrim1' ).on( 'click', function() {
     if ($("#cccaView").hasClass("d-none") == true){
         $('#graficoInfecoObsSegTrimPFEView').highcharts({
             chart: {
-                height: 512
+                height: 512,
+                animation:false
             },
             title: {
                 text: 'Peso Fetal Estimado *',
@@ -3485,6 +3580,9 @@ $( '#graficoTallaPeso' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
 $('#viewGraficoTallaPeso').highcharts({
+    chart: {
+        animation: false
+    },
     title: {
         text: 'Análisis Talla Peso según referencias postnatales'
     },
@@ -3664,6 +3762,9 @@ $( '#graficoIPN' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
 $('#viewGraficoIPN').highcharts({
+    chart: {
+        animation: false
+    },
         title: {
             text: 'IPN / EG',
             x: -20 //center
@@ -3674,7 +3775,8 @@ $('#viewGraficoIPN').highcharts({
         },
         plotOptions: {
             series: {
-                enableMouseTracking: false
+                enableMouseTracking: false,
+                animation: false
             }
         },
         yAxis: {
@@ -3737,13 +3839,17 @@ $( '#graficoTalla' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
 $('#viewGraficoTalla').highcharts({
+    chart: {
+        animation: false
+    },
         title: {
             text: 'Talla Fetal estimada',
             x: -20 //center
         },
         plotOptions: {
             series: {
-                enableMouseTracking: false
+                enableMouseTracking: false,
+                animation: false
             }
         },
         yAxis: {
@@ -3812,13 +3918,17 @@ $( '#graficopsmACM' ).on( 'click', function() {
     var medida = parseFloat(document.getElementById("psmACM").value);
                                 
 $('#viewGraficopsmACM').highcharts({
+    chart: {
+        animation: false
+    },
         title: {
             text: 'Pick sistólico máximo de ACM',
             x: -20 //center
         },
         plotOptions: {
             series: {
-                enableMouseTracking: false
+                enableMouseTracking: false,
+                animation: false
             }
         },
         yAxis: {
@@ -3885,9 +3995,10 @@ $( '#graficoBVM' ).on( 'click', function() {
     $( '#impDoppler2').remove();
     $( '#impDoppler1').remove();
     $('#graficoBVMView').highcharts({
-             chart: {
-             height: 250
-         },
+        chart: {
+            height: 250,
+            animation: false
+        },
          title: {
              text: 'BVM de Líquido Amniótico ***',
              x: -20,
@@ -3897,7 +4008,8 @@ $( '#graficoBVM' ).on( 'click', function() {
          },
          plotOptions: {
              series: {
-                 enableMouseTracking: false
+                 enableMouseTracking: false,
+                 animation: false
              }
          },
              legend: {
