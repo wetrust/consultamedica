@@ -95,8 +95,8 @@ $(document).ready(function(){
             $("#comentarios-eco-dos-inf-dos").val(comentarios);
         }
         else if ($(this).val() == 2){
-            var fur = $("#input\\.paciente\\.fum\\.extra").val();
-            var fpp = $("#input\\.paciente\\.fpp\\.extra").val();
+			var fur = $( "input[name='fum']").val();
+			var fpp = $( "input[name='fpp']").val();
             var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n";
             $('#comentarios-eco-dos-inf-dos').val(comentario);
         }
@@ -174,7 +174,7 @@ $(document).ready(function(){
 		$('#saco-gestacional-mm').val($('#saco').val());
 		$('#lcn-informe').val($('#lcn').val());
 	});
-	
+
  $( '#peso').on('change', function() {
      $("#imc").val(aplication.imc($("#talla").val(), $(this).val()));
      $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));
