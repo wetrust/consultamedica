@@ -81,6 +81,27 @@ $(document).ready(function(){
 		$("#comentarios-eco-dos-inf-dos").val(comentarios);
 	});
 
+	$("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
+        if ($(this).val() == 1){
+            $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
+
+            var percentilPeso = $('#pfePctRpt').val();
+            percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
+            var comentarios = 'Crecimiento (peso) percentil ' + percentilPeso + ', para gráfica de peso fetal Hadlock* \r\n';
+
+            var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvmEcoDos").value + " mm.";
+
+            comentarios = comentarios + linea6 + '\r\n';
+            $("#comentarios-eco-dos-inf-dos").val(comentarios);
+        }
+        else if ($(this).val() == 2){
+            var fur = $("#input\\.paciente\\.fum\\.extra").val();
+            var fpp = $("#input\\.paciente\\.fpp\\.extra").val();
+            var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n";
+            $('#comentarios-eco-dos-inf-dos').val(comentario);
+        }
+	});
+	
  $( '#peso').on('change', function() {
      $("#imc").val(aplication.imc($("#talla").val(), $(this).val()));
      $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));
