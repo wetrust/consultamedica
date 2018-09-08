@@ -55,6 +55,32 @@ var listPaciente = function(results){
 };
 
 $(document).ready(function(){
+	$( '#bvmEcoDos' ).on('change', function(){
+		bvmEcoDos();
+		$('#bvm').val($(this).val()).trigger('change');
+	});
+	$('#ev-morfo').on('change', function(){
+		if ($(this).val() == "Descripcion general detallando distintos segmentos"){
+			$("#comentarios-anatomia-informe-eg-texto").val("Evaluación anatómica general de aspecto normal; cráneo y estructura internas de aspecto normal, cara cuello normal, labio superior integro, Tórax y abdomen de aspecto normal, corazón cuatro cámaras, tractos de salida de aspecto normal, cámara gástrica y vejiga visibles, riñón derecho e izquierdo de aspecto normal, pared abdominal integra, columna visible en toda su extensión, extremidades con movilidad y tono de aspecto normal, sexo fetal masculino.");
+		}
+		else{
+			$("#comentarios-anatomia-informe-eg-texto").val('');
+		}
+	});
+	$("#ev-morfo").val('no evaluada dirigidamente, pero el aspecto morfológico general es normal');
+	$('#ev-morfo').trigger('change');
+
+	$("#informe\\.eco\\.seg\\.trim").on("click", function(){
+		var percentilPeso = $('#pfePctRpt').val();
+		percentilPeso = percentilPeso.replace('&lt;','<').replace('&gt;', '>');
+		var comentarios = 'Crecimiento (peso) percentil ' + percentilPeso + ', para gráfica de peso fetal Hadlock* \r\n';
+	
+		var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvmEcoDos").value + " mm.";
+		
+		comentarios = comentarios + linea6 + '\r\n';
+		$("#comentarios-eco-dos-inf-dos").val(comentarios);
+	});
+
  $( '#peso').on('change', function() {
      $("#imc").val(aplication.imc($("#talla").val(), $(this).val()));
      $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));
