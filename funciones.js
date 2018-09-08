@@ -503,11 +503,12 @@ $( "#cerebelo" ).keypress(function( event ) {
 });
 
 $( "#bvm" ).keypress(function( event ) {
-  if ( event.which == 13 ) {
-     event.preventDefault();
-     $("#pfe").focus()
-     bvm();
-  }
+	if ( event.which == 13 ) {
+    	event.preventDefault();
+		$("#pfe").focus();
+		$("#bvmEcoDos").val($(this).val());
+    	bvm();
+	}
 });
 
 $( "#aud" ).keypress(function( event ) {
