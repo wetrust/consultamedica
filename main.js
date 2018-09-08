@@ -101,7 +101,23 @@ $(document).ready(function(){
             $('#comentarios-eco-dos-inf-dos').val(comentario);
         }
 	});
-	
+
+	$("#informe\\.eco\\.seg\\.trim").on("click", function(){
+		if ($("#comentarios-doppler").val() == ""){
+			var comentarios = "";
+			if ($('#auprom').val() > 0){
+				comentarios = 'F. Doppler materno (promedio uterinas), IP percentil ' + $('#auPctTxt').val() + '\r\n';
+			}
+			if ($('#ipau').val() > 0){
+				comentarios = comentarios + 'F. Doppler fetal, IP de CCP percentil ' + $('#ccpPctTxt').val() + '\r\n';
+			}
+			$("#comentarios-doppler").val(comentarios);
+		}
+	});
+
+	$( '#bvmDoppler' ).on('change', function(){
+		bvmDoppler();
+	});
  $( '#peso').on('change', function() {
      $("#imc").val(aplication.imc($("#talla").val(), $(this).val()));
      $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));
