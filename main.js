@@ -118,6 +118,63 @@ $(document).ready(function(){
 	$( '#bvmDoppler' ).on('change', function(){
 		bvmDoppler();
 	});
+
+	$( '#saco-vitelino').on("click", function(){
+	    if ($(this).val() == 'presente'){
+	        $('#valor-saco-vitelino').css('display', 'block');
+	    }
+	    else{
+		$('#valor-saco-vitelino').css('display', 'none');
+		$('#valor-saco-vitelino').val('');	
+	    }
+	});
+
+	$( '#embrion').on("click", function(){
+	    if ($(this).val() == 'no se observa aun' || $(this).val() == 'act. no evidenciable' ){
+	        $('#fcf-primer-trim').css('display', 'none');
+		$('#fcf-primer-trim').val('');
+		$('#lcn-informe').css('display', 'none');
+		$('#lcn-informe').val('');
+	    }
+	    else if ($(this).val() == 'act. cardiaca evidenciable'){
+	        $('#fcf-prim').val($("#fcf-prim option:first").val());
+		$('#lcn-informe').css('display', 'none');
+		$('#lcn-informe').val($('#lcn').val());
+	    }
+	    else if ($(this).val() == 'act. card. y Corp. (-)'){
+		$('#lcn-informe').css('display', 'block');
+		$('#lcn-informe').val($('#lcn').val());
+	    }
+	    else{
+		$('#fcf-primer-trim').css('display', 'block');
+		$('#lcn-informe').css('display', 'block');
+		$('#lcn-informe').val($('#lcn').val());
+	    }
+	});
+
+	$( '#exploracion-douglas').on("click", function(){
+	    if ($(this).val() == 'ocupado'){
+	        $('#exploracion-douglas-informe').css('display', 'block');
+	    }
+	    else{
+		$('#exploracion-douglas-informe').css('display', 'none');	
+	    }
+	});
+
+	$("#informe\\.eco\\.prim\\.trim").on("click", function(){
+		var fur = $( "input[name='fum']").val();
+		var fpp = $( "input[name='fpp']").val();
+		if ($('#lcn').val() < 1){
+			var comentario = "En relación a fecha de ultima menstruación referida;\r\nse sugiere reevaluar más adelante para definir edad gestacional\r\n";
+		}
+		else{
+			var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp;
+		}
+		$('#comentarios-eco-uno').val(comentario);
+		$('#saco-gestacional-mm').val($('#saco').val());
+		$('#lcn-informe').val($('#lcn').val());
+	});
+	
  $( '#peso').on('change', function() {
      $("#imc").val(aplication.imc($("#talla").val(), $(this).val()));
      $("#estNutricional").val(aplication.estadoNutricional($("#imc").val()));

@@ -1130,66 +1130,7 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	$( '#impDoppler2').remove();
 	$( '#impDoppler1').remove();
 	$( '#infecoObsSegTrim1Clon').remove();
-        $('#popupBody').html("");
-	//añadir boton de imprimir
-	var fur = $( "input[name='fum']").val();
-	var fpp = $( "input[name='fpp']").val();
-	if ($('#lcn').val() < 1){
-		var comentario = "En relación a fecha de ultima menstruación referida;\r\nse sugiere reevaluar más adelante para definir edad gestacional\r\n";
-	}
-	else{
-		var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp;
-	}
-	$('#comentarios-eco-uno').val(comentario);
-	$('#saco-gestacional-mm').val($('#saco').val());
-	$('#lcn-informe').val($('#lcn').val());
-	$( '#saco-vitelino').on("click", function(){
-	    if ($(this).val() == 'presente'){
-	        $('#valor-saco-vitelino').css('display', 'block');
-	    }
-	    else{
-		$('#valor-saco-vitelino').css('display', 'none');
-		$('#valor-saco-vitelino').val('');	
-	    }
-	});
-	$( '#saco-vitelino').trigger('click');
-	$( '#exploracion-douglas').on("click", function(){
-	    if ($(this).val() == 'ocupado'){
-	        $('#exploracion-douglas-informe').css('display', 'block');
-	    }
-	    else{
-		$('#exploracion-douglas-informe').css('display', 'none');	
-	    }
-	});
-	$( '#exploracion-douglas').trigger('click');
-	$( '#embrion').on("click", function(){
-	    if ($(this).val() == 'no se observa aun' || $(this).val() == 'act. no evidenciable' ){
-	        $('#fcf-primer-trim').css('display', 'none');
-		$('#fcf-primer-trim').val('');
-		$('#lcn-informe').css('display', 'none');
-		$('#lcn-informe').val('');
-	    }
-	    else if ($(this).val() == 'act. cardiaca evidenciable'){
-	        $('#fcf-prim').val($("#fcf-prim option:first").val());
-		$('#lcn-informe').css('display', 'none');
-		$('#lcn-informe').val($('#lcn').val());
-	    }
-	    else if ($(this).val() == 'act. card. y Corp. (-)'){
-		$('#lcn-informe').css('display', 'block');
-		$('#lcn-informe').val($('#lcn').val());
-	    }
-	    else{
-		$('#fcf-primer-trim').css('display', 'block');
-		$('#lcn-informe').css('display', 'block');
-		$('#lcn-informe').val($('#lcn').val());
-	    }
-	});
-	$( '#embrion').trigger('click');
-	$('#popupFooter').prepend("<button type='button' class='btn btn-outline-info' id='impDoppler1'>Ver Impresion</button>");
-	$( '#impDoppler1').on("click", function(){
-	      crearInformeEcoPrimTrim();
-	});
-	$('#popupGenerico').modal('show');
+	crearInformeEcoPrimTrim();
 });
 
 $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
