@@ -1841,7 +1841,7 @@
             </div>
             <hr style="border-color:rgba(0, 0, 0, 0.36);">
             <div class="row">
-                <div class="col">
+                <div class="col-9">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab" href="#medidas-eco-doppler" role="tab">Pagina 1 - Medidas</a>
@@ -2082,28 +2082,26 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card mb-3">
-                                    <div class="card-block text-center">
-                                        <div class="row">
-                                            <div class="col-6 text-left">
-                                                <h5>Reporte de Flujometría Doppler</h5>
-                                            </div>
-                                            <div class="col text-center">
-                                                <button type="button" class="btn btn-outline-info" id="modalPreInfEcoDoppler">Protocolo de Informe</button>
-                                            </div>
-                                            <div class="col text-center">
-                                                <button type="button" class="btn btn-outline-info" id="infDoppler1">Resumen de Gráficas</button>
-                                                <!-- <button type="button" class="btn btn-secondary d-none" id="infDoppler2">PFE + Doppler Fetal</button>
-                                                <button type="button" class="btn btn-secondary d-none" id="infDoppler3">PFE + Doppler Materno / Fetal</button> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="tab-pane" id="informe-eco-doppler" role="tabpanel">
                                     <div class='form-group'><label>Evaluación de líquido amniótico</label><select id='liqAmnioDoppler' class='form-control'><option value='normal'>Normal</option><option value='disminuido'>Disminuido</option><option value='aumentado'>Aumentado</option></select></div><div class='form-group'><label>BVM *</label><div class='input-group'><input id='bvmDoppler' type='number' min='001' max='999' class='form-control'><span class='input-group-addon'>mm.</span></div></div><div class='form-group'><label>Motivo del exámen</label><select id='motivo-doppler' class='form-control'><option value='RCIU Emb. Previo'>RCIU Emb. Previo</option><option value='RCIU No PEG &gt; p10'>RCIU No PEG > p10</option><option value='RCIU Moderado &lt; p10'>RCIU Moderado < p10</option><option value='RCIU Severo &lt; p3'>RCIU Severo < p3</option><option value='Seguimiento Evolución'>Seguimiento Evolución</option><option value='Síndrome Hipertensivo'>Síndrome Hipertensivo</option><option value='Preeclampsia'>Preeclampsia</option><option value='Desnutrición Materna'>Desnutrición Materna</option><option value='Amenaza Pto. Prematuro'>Amenaza Pto. Prematuro</option><option value='Tabaquismo'>Tabaquismo</option><option value='Otra Patología ARO'>Otra Patología ARO</option><option value='Sin Patología ARO'>Sin Patología ARO</option><option value='Estudio Doppler' selected>Estudio Doppler</option><option value='Estudio Doppler materno'>Estudio Doppler materno</option></select></div><div class='form-group'><label>Antecedentes Obstétricos</label><select id='antecedentes-doppler' class='form-control'><option value='RCIU Emb. Previo'>RCIU Emb. Previo</option><option value='RCIU No PEG &gt; p10'>RCIU No PEG > p10</option><option value='RCIU Moderado &lt; p10'>RCIU Moderado < p10</option><option value='RCIU Severo &lt; p3'>RCIU Severo < p3</option><option value='Síndrome Hipertensivo'>Síndrome Hipertensivo</option><option value='Desnutrición Materna'>Desnutrición Materna</option><option value='Amenaza Pto. Prematuro'>Amenaza Pto. Prematuro</option><option value='Tabaquismo'>Tabaquismo</option><option value='Otra Patología ARO'>Otra Patología ARO</option><option value='Sin Patología ARO'>Sin Patología ARO</option></select></div><div class='form-group'><label>Presentacion</label><select id='presentacion-doppler' class='form-control'><option value='cefalica' selected>Cefalica</option><option value='podalica'>Podálica</option><option value='transversa'>Transversa</option><option value='indiferente'>Indiferente</option></select></div><div class='form-group'><label>Motilidad Fetal</label><select id='motilidad-doppler' class='form-control'><option value='hiperactivo' selected>Hiperactivo</option><option value='activo'>Activo</option><option value='hipoactivo'>Hipoactivo</option><option value='inmovil'>Inmovil</option></select></div><div class='form-group'><label>Placenta Ubicación</label><select id='ubicacion-doppler' class='form-control'><option value='anterior' selected>Anterior</option><option value='posterior'>Posterior</option><option value='fúndica'>Fúndica</option><option value='lat. derecha'>Lat. derecha</option><option value='lat. izquierda'>Lat. izquierda</option><option value='otro'>Otro</option></select></div><div class='form-group'><label>Comentarios y obsevaciones <small style='font-size:70% !important;'>(La interpretación clínica de los datos es responsabilidad exclusiva de quien realiza y certifica este exámen)</small></label><textarea class='form-control' id='comentarios-doppler' rows='3'></textarea></div>
                             </div>
                     </div>
+                </div>
+                <div class="col-3">
+                        <div class="card">
+                                <div class="card-block">
+                                    <h6 class="text-center my-2">Ver Informes</h6>
+                                    <div class="btn-group-vertical d-flex">
+                                        <button type="button" class="btn btn-outline-info" id="modalPreInfEcoDoppler">Protocolo de Informe</button>
+                                    </div>
+                                    <hr>
+                                    <h6 class="text-center my-2">Ver Gráficas</h6>
+                                        <div class="btn-group-vertical d-flex">
+                                            <button type="button" class="btn btn-outline-info" id="infDoppler1">Resumen de Gráficas</button>
+                                        </div>
+                                    </div>
+                                </div>
                 </div>
             </div>
         </div>
