@@ -79,8 +79,6 @@ $(document).ready(function(){
 		$("#eco\\.prim\\.trim\\.si\\.label").button("toggle");
 		$("#eco\\.prim\\.trim\\.no\\.label").button("toggle");
 		$("input[name='ajustarEcoPrimTrim']").button("toggle");
-
-		$("#eco\\.prim\\.trim\\.nuevo").trigger("click");
 	});
 
 	$("select[name='edad_materna']").on("change", function(){
