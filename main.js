@@ -55,6 +55,24 @@ var listPaciente = function(results){
 };
 
 $(document).ready(function(){
+	$("#eco.prim.trim.nuevo").on("click", function(){
+		$("#lcn").val();
+		$("#saco").val();
+		$("#utero-ubic1").val("central");
+		$("#utero-ubic2").val("anterior");
+		$("#cuerpo-uterino").val("aspecto normal");
+		$("#saco-gestacional").val("normal");
+		$("#saco-vitelino").val("no se observa");
+		$("#embrion").val("no se observa aun");
+		$("#fcf-prim").val(140);
+		$("#anexo-derecho").val("aspecto normal");
+		$("#anexo-izquierdo").val("aspecto normal");
+		$("#exploracion-douglas").val("aspecto normal");
+		$("#comentarios-eco-uno").val("");
+		$("#lcnPct").val("");
+		$("#sacoPct").val("");
+	});
+
 	$( '#bvmEcoDos' ).on('change', function(){
 		bvmEcoDos();
 		$('#bvm').val($(this).val()).trigger('change');
