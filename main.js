@@ -118,6 +118,8 @@ $(document).ready(function(){
 		$("#comentarios-eco-dos-inf-dos").val("");
 	});
 
+	$("#eco\\.doppler\\.nuevo").on("click", function(){})
+
 	$("#nuevo\\.paciente\\.button\\.reset").on("click", function(){
 		$("#nombre-paciente").val("Paciente de Prueba");
 		$("#motivo-examen").val(1);
