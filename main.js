@@ -81,6 +81,27 @@ $(document).ready(function(){
 		$("input[name='ajustarEcoPrimTrim']").button("toggle");
 	});
 
+	$("#nuevo\\.paciente\\.button\\.reset").on("click", function(){
+		$("#nombre-paciente").val("Paciente de Prueba");
+		$("#motivo-examen").val(1);
+		$("#patologiaObstetricaUno").val(1);
+		$("#ecografista").val(1);
+		$("select[name='edad_materna']").val(10);
+		$("#profReferente").val("");
+		$("#procedencia").val("");
+		$("#Lugar-examen").val("");
+
+		var day = ("0" + app.day.getDate()).slice(-2);
+		var month = ("0" + (app.day.getMonth() + 1)).slice(-2);
+
+		$('#fNacimiento').val((day)+"/"+(month)+"/"+app.day.getFullYear());
+		$("input[name='fum']").val((day)+"/"+(month)+"/"+app.day.getFullYear());
+		$("input[name='fee']").val((day)+"/"+(month)+"/"+app.day.getFullYear());
+		$('#id-paciente').val((day)+(month)+app.day.getFullYear());
+		$("#semanasEcoGen").val(4);
+		$("#semanasEcoGen").val(0);
+	});
+
 	$( '#bvmEcoDos' ).on('change', function(){
 		bvmEcoDos();
 		$('#bvm').val($(this).val()).trigger('change');
