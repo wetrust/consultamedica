@@ -75,6 +75,7 @@ $(document).ready(function(){
 		$("#prob").addClass("d-none");
 		$("#examen\\.eco\\.primtrim\\.adicionales").addClass("d-none");
 		$("#evaluacion\\.translucencia\\.no").button("toggle");
+		$("#evaluacion\\.translucencia\\.no\\.label").button("toggle");
 		$("input[name='ajustarEcoPrimTrim']").button("toggle");
 	});
 
