@@ -152,10 +152,10 @@ $(document).ready(function(){
 		var day = ("0" + dayHoy.getDate()).slice(-2);
 		var month = ("0" + (dayHoy.getMonth() + 1)).slice(-2);
 
-		$('#fNacimiento').val((day)+"/"+(month)+"/"+dayHoy.day.getFullYear());
-		$("input[name='fum']").val((day)+"/"+(month)+"/"+dayHoy.day.getFullYear());
-		$("input[name='fee']").val((day)+"/"+(month)+"/"+dayHoy.day.getFullYear());
-		$('#id-paciente').val((day)+(month)+dayHoy.day.getFullYear());
+		$('#fNacimiento').val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$("input[name='fum']").val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$("input[name='fee']").val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$('#id-paciente').val((day)+(month)+dayHoy.getFullYear());
 		$("#semanasEcoGen").val(4);
 		$("#semanasEcoGen").val(0);
 	});
