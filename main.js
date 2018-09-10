@@ -97,6 +97,25 @@ $(document).ready(function(){
 		$("#lh").val("");
 		$("#cerebelo").val("");
 		$("#pfe").val("");
+		$("#egP50").val("");
+		$("#ccca").val("");
+
+		$("#presentacion").val("cefalica");
+		$("#dorso").val("posterior");
+		$("#fcf").val(140);
+		$("input[name='accard']").prop( "checked", true );
+		$("input[name='movfet']").prop( "checked", true );
+		$("#ev-morfo").val("no evaluada dirigidamente, pero el aspecto morfológico general es normal");
+		$("#comentarios-anatomia-informe-eg-texto").val("");
+		$("#ubicacion").val("normal");
+		$("#incersion").val("anterior");
+		$("#grado-placenta").val(0);
+		$("#liq-cualitativo-eco").val("normal");
+		$("#bvmEcoDos").val("");
+		$("#cordon").val("inserción central");
+		$("#vasos").val("3");
+		$("#eco\\.seg\\.trim\\.select\\.comentario").val(1);
+		$("#comentarios-eco-dos-inf-dos").val("");
 	});
 
 	$("#nuevo\\.paciente\\.button\\.reset").on("click", function(){
