@@ -403,9 +403,9 @@ $( "#lcn" ).keypress(function( event ) {
 	var oneday = 1000 * 60 * 60 * 24;
 			
 	if (isNaN(LCN) | LCN < 0 | isNaN(eg) | eg < 1) {
-		$('#popupTitle').html("Información");
-		$('#popupBody').html("<p>El paciente debe tener una Edad Gestacional y un valor en LCN o Saco Gestacional</p>");
-		$('#popupGenerico').modal('show');
+		//$('#popupTitle').html("Información");
+		//$('#popupBody').html("<p>El paciente debe tener una Edad Gestacional y un valor en LCN o Saco Gestacional</p>");
+		//$('#popupGenerico').modal('show');
 	}
 	else{
 		var EGLCN = parseFloat($('#lcnPct').val());
@@ -1760,9 +1760,9 @@ $("input[name='ajustarEcoPrimTrim']").on("change", function(){
 			
 			if (isNaN(LCN) | LCN < 0 | isNaN(eg) | eg < 1) {
 				if (isNaN(saco) | saco < 0 | isNaN(eg) | eg < 1) {
-					$('#popupTitle').html("Información");
-					$('#popupBody').html("<p>El paciente debe tener una Edad Gestacional y un valor en LCN o Saco Gestacional</p>");
-					$('#popupGenerico').modal('show');
+					//$('#popupTitle').html("Información");
+					//$('#popupBody').html("<p>El paciente debe tener una Edad Gestacional y un valor en LCN o Saco Gestacional</p>");
+					//$('#popupGenerico').modal('show');
 				}
 				else{
 					var EGsaco = parseFloat($('#sacoPct').val());
