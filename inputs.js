@@ -32,7 +32,7 @@ $( document ).ready(function() {
     }
     //cargar inputs de edad materna
     for (i = 10; i < 51; i++) {
-        $("#edad_materna").append('<option value="' + i +'">' + i + ' años</option>');
+        $("select[name='edad_materna']").append('<option value="' + i +'">' + i + ' años</option>');
     }
     //cargar inputs de Peso
     for (i = 35; i < 130; i++) {
