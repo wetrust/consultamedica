@@ -56,8 +56,8 @@ var listPaciente = function(results){
 
 $(document).ready(function(){
 	$("#eco\\.prim\\.trim\\.nuevo").on("click", function(){
-		$("#lcn").val();
-		$("#saco").val();
+		$("#lcn").val("");
+		$("#saco").val("");
 		$("#utero-ubic1").val("central");
 		$("#utero-ubic2").val("anterior");
 		$("#cuerpo-uterino").val("aspecto normal");
@@ -71,6 +71,9 @@ $(document).ready(function(){
 		$("#comentarios-eco-uno").val("");
 		$("#lcnPct").val("");
 		$("#sacoPct").val("");
+		$("#resultadoAjusteEcoPrimTrim").css("display", "none");
+		$("#prob").addClass("d-none");
+		$("#examen\\.eco\\.primtrim\\.adicionales").addClass("d-none");
 	});
 
 	$( '#bvmEcoDos' ).on('change', function(){
