@@ -91,8 +91,6 @@ $(document).ready(function(){
 		$("#procedencia").val("");
 		$("#Lugar-examen").val("");
 
-		aplication = new app();
-
 		var day = ("0" + aplication.day.getDate()).slice(-2);
 		var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
 
