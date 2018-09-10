@@ -118,7 +118,24 @@ $(document).ready(function(){
 		$("#comentarios-eco-dos-inf-dos").val("");
 	});
 
-	$("#eco\\.doppler\\.nuevo").on("click", function(){})
+	$("#eco\\.doppler\\.nuevo").on("click", function(){
+		$("#aud").val("");
+		$("#aui").val("");
+		$("#auprom").val("");
+		$("#ipau").val("");
+		$("#ipacm").val("");
+		$("#ccp").val("");
+		$("#dv").val("");
+		$("#psmACM").val("");
+		$("#liqAmnioDoppler").val("normal");
+		$("#bvmDoppler").val("");
+		$("#motivo-doppler").val("Estudio Doppler");
+		$("#antecedentes-doppler").val("RCIU Emb. Previo");
+		$("#presentacion-doppler").val("cefalica");
+		$("#motilidad-doppler").val("hiperactivo");
+		$("#ubicacion-doppler").val("anterior");
+		$("#comentarios-doppler").val("");
+	})
 
 	$("#nuevo\\.paciente\\.button\\.reset").on("click", function(){
 		$("#nombre-paciente").val("Paciente de Prueba");
