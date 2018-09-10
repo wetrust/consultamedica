@@ -67,13 +67,15 @@ $(document).ready(function(){
 		$("#fcf-prim").val(140);
 		$("#anexo-derecho").val("aspecto normal");
 		$("#anexo-izquierdo").val("aspecto normal");
-		$("#exploracion-douglas").val("aspecto normal");
+		$("#exploracion-douglas").val("libre");
 		$("#comentarios-eco-uno").val("");
 		$("#lcnPct").val("");
 		$("#sacoPct").val("");
 		$("#resultadoAjusteEcoPrimTrim").css("display", "none");
 		$("#prob").addClass("d-none");
 		$("#examen\\.eco\\.primtrim\\.adicionales").addClass("d-none");
+		$("#evaluacion\\.translucencia\\.no").button("toggle");
+		$("input[name='ajustarEcoPrimTrim']").button("toggle");
 	});
 
 	$( '#bvmEcoDos' ).on('change', function(){
