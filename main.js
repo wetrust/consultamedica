@@ -91,13 +91,15 @@ $(document).ready(function(){
 		$("#procedencia").val("");
 		$("#Lugar-examen").val("");
 
-		var day = ("0" + aplication.day.getDate()).slice(-2);
-		var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
+		var dayHoy = new Date();
 
-		$('#fNacimiento').val((day)+"/"+(month)+"/"+aplication.day.getFullYear());
-		$("input[name='fum']").val((day)+"/"+(month)+"/"+aplication.day.getFullYear());
-		$("input[name='fee']").val((day)+"/"+(month)+"/"+aplication.day.getFullYear());
-		$('#id-paciente').val((day)+(month)+aplication.day.getFullYear());
+		var day = ("0" + dayHoy.getDate()).slice(-2);
+		var month = ("0" + (dayHoy.getMonth() + 1)).slice(-2);
+
+		$('#fNacimiento').val((day)+"/"+(month)+"/"+dayHoy.day.getFullYear());
+		$("input[name='fum']").val((day)+"/"+(month)+"/"+dayHoy.day.getFullYear());
+		$("input[name='fee']").val((day)+"/"+(month)+"/"+dayHoy.day.getFullYear());
+		$('#id-paciente').val((day)+(month)+dayHoy.day.getFullYear());
 		$("#semanasEcoGen").val(4);
 		$("#semanasEcoGen").val(0);
 	});
