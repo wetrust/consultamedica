@@ -55,7 +55,7 @@ var listPaciente = function(results){
 };
 
 $(document).ready(function(){
-	$("#eco.prim.trim.nuevo").on("click", function(){
+	$("#eco\\.prim\\.trim\\.nuevo").on("click", function(){
 		$("#lcn").val();
 		$("#saco").val();
 		$("#utero-ubic1").val("central");
