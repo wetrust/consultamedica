@@ -79,6 +79,24 @@ $(document).ready(function(){
 		$("#eco\\.prim\\.trim\\.si\\.label").button("toggle");
 		$("#eco\\.prim\\.trim\\.no\\.label").button("toggle");
 		$("input[name='ajustarEcoPrimTrim']").button("toggle");
+
+		$("#eco\\.prim\\.trim\\.nuevo").trigger("click");
+	});
+
+	$("select[name='edad_materna']").on("change", function(){
+		$("#edadmaternaprimtrim").val($(this).val());
+	});
+
+	$("#eco\\.seg\\.trim\\.nuevo").on("click", function(){
+		$("#dbp").val("");
+		$("#dof").val("");
+		$("#cc").val("");
+		$("#ca").val("");
+		$("#lf").val("");
+		$("#bvm").val("");
+		$("#lh").val("");
+		$("#cerebelo").val("");
+		$("#pfe").val("");
 	});
 
 	$("#nuevo\\.paciente\\.button\\.reset").on("click", function(){
