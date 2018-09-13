@@ -1851,7 +1851,7 @@ $("input[name='ajustarEcoSegTrim']").on("change", function(){
 			}
 			else{
 				var EGCalculado = parseFloat($('#egP50').val());
-				var eg1 = new Number((Math.floor(EGLCN) * 7) + Math.round((EGLCN - Math.floor(EGLCN)) * 7));
+				var eg1 = new Number((Math.floor(EGCalculado) * 7) + Math.round((EGCalculado - Math.floor(EGCalculado)) * 7));
 				var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
 				var diferencia = (Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
 				diferencia = diferencia * oneday;
