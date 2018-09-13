@@ -1815,7 +1815,6 @@ $("input[name='ajustarEcoPrimTrim']").on("change", function(){
 ////////////////////////////////////////////
 
 $("input[name='ajustarEcoSegTrim']").on("change", function(){
-	event.preventDefault();
 	if ($(this).is(":checked")){
 		if ($(this).val() == 1){
 			var lh = parseInt($('#lh').val());
