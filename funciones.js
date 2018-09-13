@@ -2823,12 +2823,12 @@ function psohdlk() {
  CA=parseInt($("#ca").val());
 	
  if ($("#cc").val() && $("#cc").val() && $("#lf").val() && $("#dbp").val()) {
-	//hdlk 1
-	var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA))
+	//hdlk 4
+	//var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA))
 	//hdlk 2
-	//var LF = $("#lf").val();
-	//var DBP = $("#dbp").val()
-	//var psoP = Math.pow(10, (1.3596 - 0.00386 * CA * LF + 0.0064 * CC + 0.00061 * DBP * CA + 0.0424 * CA + 0.174 * LF));
+	var LF = $("#lf").val();
+	var DBP = $("#dbp").val();
+	var psoP = Math.pow(10, (1.3596 - ((0.00386 * CA) * LF) + (0.0064 * CC) + ((0.00061 * DBP) * CA) + (0.0424 * CA) + (0.174 * LF)));
 	 
     $("#pfe").val(psoP.toFixed(0));
     pctpfe();
