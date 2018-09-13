@@ -24,6 +24,7 @@ class app {
 	$('[data-toggle="tooltip"]').tooltip();
 	this.resetInputs()
 	this.displayElement("home");
+	document.location.hash = "#inicio";
     }
 
     onHashChange(){
