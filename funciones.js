@@ -1838,7 +1838,7 @@ $("input[name='ajustarEcoSegTrim']").on("change", function(){
 					var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
 					var diferencia = (Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
 					diferencia = diferencia * oneday;
-					var FUM = localStorage.fum;
+					var FUM = $("#fum-dos").val();
 					FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
 					FUM = new Date (FUM);
 					var B = new Date();
@@ -1856,7 +1856,7 @@ $("input[name='ajustarEcoSegTrim']").on("change", function(){
 				var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
 				var diferencia = (Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
 				diferencia = diferencia * oneday;
-				var FUM = localStorage.fum;
+				var FUM = $("#fum-dos").val();
 				FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
 				FUM = new Date (FUM);
 				var B = new Date();
@@ -2823,7 +2823,12 @@ function psohdlk() {
  CA=parseInt($("#ca").val());
 	
  if ($("#cc").val() && $("#cc").val() && $("#lf").val() && $("#dbp").val()) {
-    var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA))
+	//hdlk 1
+	//var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA))
+	//hdlk 2
+	var LF = $("#lf").val();
+	var DBP = $("#dbp").val()
+	var psoP = Math.pow(10, (1.3596 - 0.00386 * CA * LF + 0.0064 * CC + 0.00061 * DBP * CA + 0.0424 * CA + 0.174 + LF));
 	 
     $("#pfe").val(psoP.toFixed(0));
     pctpfe();
