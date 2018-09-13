@@ -2828,7 +2828,7 @@ function psohdlk() {
 	//hdlk 2
 	var LF = $("#lf").val();
 	var DBP = $("#dbp").val()
-	var psoP = Math.pow(10, (1.3596 - 0.00386 * CA * LF + 0.0064 * CC + 0.00061 * DBP * CA + 0.0424 * CA + 0.174 + LF));
+	var psoP = Math.pow(10, (1.3596 - 0.00386 * CA * LF + 0.0064 * CC + 0.00061 * DBP * CA + 0.0424 * CA + 0.174 * LF));
 	 
     $("#pfe").val(psoP.toFixed(0));
     pctpfe();
