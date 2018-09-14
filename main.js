@@ -491,10 +491,10 @@ $(document).ready(function(){
 			percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
 			var sexoFetal = $('#sexomasculino').is(':checked');
 			if (sexoFetal == true){
-				sexoFetal = Masculino;
+				sexoFetal = "Masculino";
 			}
 			else{
-				sexoFetal = Femenino;
+				sexoFetal = "Femenino";
 			}
             var comentarios = 'Sexo Fetal ' + sexoFetal + '\r\nCrecimiento (peso) percentil ' + percentilPeso + ', para gráfica de peso fetal Hadlock* \r\n';
 
