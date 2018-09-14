@@ -484,18 +484,19 @@ $(document).ready(function(){
 	});
 
 	$("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
+		var sexoFetal = $('#sexomasculino').is(':checked');
+		if (sexoFetal == true){
+			sexoFetal = "Masculino";
+		}
+		else{
+			sexoFetal = "Femenino";
+		}
+		
         if ($(this).val() == 1){
             $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
 
             var percentilPeso = $('#pfePctRpt').val();
 			percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
-			var sexoFetal = $('#sexomasculino').is(':checked');
-			if (sexoFetal == true){
-				sexoFetal = "Masculino";
-			}
-			else{
-				sexoFetal = "Femenino";
-			}
             var comentarios = 'Sexo Fetal ' + sexoFetal + '\r\nCrecimiento (peso) percentil ' + percentilPeso + ', para gráfica de peso fetal Hadlock* \r\n';
 
             var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvmEcoDos").value + " mm.";
@@ -506,7 +507,7 @@ $(document).ready(function(){
         else if ($(this).val() == 2){
 			var fur = $( "input[name='fum']").val();
 			var fpp = $( "input[name='fpp']").val();
-            var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n";
+            var comentario = 'Sexo Fetal ' + sexoFetal + "\r\nFum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n";
             $('#comentarios-eco-dos-inf-dos').val(comentario);
         }
 	});
