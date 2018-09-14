@@ -488,8 +488,15 @@ $(document).ready(function(){
             $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
 
             var percentilPeso = $('#pfePctRpt').val();
-            percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
-            var comentarios = 'Crecimiento (peso) percentil ' + percentilPeso + ', para gráfica de peso fetal Hadlock* \r\n';
+			percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
+			var sexoFetal = $('#sexomasculino').is(':checked');
+			if (sexoFetal == true){
+				sexoFetal = Masculino;
+			}
+			else{
+				sexoFetal = Femenino;
+			}
+            var comentarios = 'Sexo Fetal ' + sexoFetal + '\r\nCrecimiento (peso) percentil ' + percentilPeso + ', para gráfica de peso fetal Hadlock* \r\n';
 
             var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvmEcoDos").value + " mm.";
 
