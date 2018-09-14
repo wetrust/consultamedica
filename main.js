@@ -74,11 +74,22 @@ $(document).ready(function(){
 		$("#resultadoAjusteEcoPrimTrim").css("display", "none");
 		$("#prob").addClass("d-none");
 		$("#examen\\.eco\\.primtrim\\.adicionales").addClass("d-none");
-		$("#evaluacion\\.translucencia\\.si\\.label").button("toggle");
 		$("#evaluacion\\.translucencia\\.no\\.label").button("toggle");
-		$("#eco\\.prim\\.trim\\.si\\.label").button("toggle");
 		$("#eco\\.prim\\.trim\\.no\\.label").button("toggle");
 		$("input[name='ajustarEcoPrimTrim']").button("toggle");
+
+		var dayHoy = new Date();
+
+		var day = ("0" + dayHoy.getDate()).slice(-2);
+		var month = ("0" + (dayHoy.getMonth() + 1)).slice(-2);
+
+		$('#fNacimiento').val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$("input[name='fum']").val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$("input[name='fee']").val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$('#id-paciente').val((day)+(month)+dayHoy.getFullYear());
+		$("#semanasEcoGen").val(4);
+		$("#semanasEcoGen").val(0);
+		$('a[href="#medidas-eco-prim"]').tab('show');
 	});
 
 	$("select[name='edad_materna']").on("change", function(){
@@ -87,14 +98,70 @@ $(document).ready(function(){
 
 	$("#eco\\.seg\\.trim\\.nuevo").on("click", function(){
 		$("#dbp").val("");
+		$("#dbp > .pivote-uno").html("");
+		$("#dbp > .pivote-dos").html("");
+		$("#dbp > .pivote-cero").html("|");
+		$("#dbp > .pivote-centro").html("|");
+		$("#dbp > .pivote-cien").html("|");
+		$("#dbp > .pivote-tres").html("");
+		$("#dbp > .pivote-cuatro").html("");
 		$("#dof").val("");
 		$("#cc").val("");
+		$("#cc > .pivote-uno").html("");
+		$("#cc > .pivote-dos").html("");
+		$("#cc > .pivote-cero").html("|");
+		$("#cc > .pivote-centro").html("|");
+		$("#cc > .pivote-cien").html("|");
+		$("#cc > .pivote-tres").html("");
+		$("#cc > .pivote-cuatro").html("");
 		$("#ca").val("");
+		$("#ca > .pivote-uno").html("");
+		$("#ca > .pivote-dos").html("");
+		$("#ca > .pivote-cero").html("|");
+		$("#ca > .pivote-centro").html("|");
+		$("#ca > .pivote-cien").html("|");
+		$("#ca > .pivote-tres").html("");
+		$("#ca > .pivote-cuatro").html("");
 		$("#lf").val("");
+		$("#lf > .pivote-uno").html("");
+		$("#lf > .pivote-dos").html("");
+		$("#lf > .pivote-cero").html("|");
+		$("#lf > .pivote-centro").html("|");
+		$("#lf > .pivote-cien").html("|");
+		$("#lf > .pivote-tres").html("");
+		$("#lf > .pivote-cuatro").html("");
 		$("#bvm").val("");
+		$("#bvm > .pivote-uno").html("");
+		$("#bvm > .pivote-dos").html("");
+		$("#bvm > .pivote-cero").html("|");
+		$("#bvm > .pivote-centro").html("|");
+		$("#bvm > .pivote-cien").html("|");
+		$("#bvm > .pivote-tres").html("");
+		$("#bvm > .pivote-cuatro").html("");
 		$("#lh").val("");
+		$("#lh > .pivote-uno").html("");
+		$("#lh > .pivote-dos").html("");
+		$("#lh > .pivote-cero").html("|");
+		$("#lh > .pivote-centro").html("|");
+		$("#lh > .pivote-cien").html("|");
+		$("#lh > .pivote-tres").html("");
+		$("#lh > .pivote-cuatro").html("");
 		$("#cerebelo").val("");
+		$("#cerebelo > .pivote-uno").html("");
+		$("#cerebelo > .pivote-dos").html("");
+		$("#cerebelo > .pivote-cero").html("|");
+		$("#cerebelo > .pivote-centro").html("|");
+		$("#cerebelo > .pivote-cien").html("|");
+		$("#cerebelo > .pivote-tres").html("");
+		$("#cerebelo > .pivote-cuatro").html("");
 		$("#pfe").val("");
+		$("#pfe > .pivote-uno").html("");
+		$("#pfe > .pivote-dos").html("");
+		$("#pfe > .pivote-cero").html("|");
+		$("#pfe > .pivote-centro").html("|");
+		$("#pfe > .pivote-cien").html("|");
+		$("#pfe > .pivote-tres").html("");
+		$("#pfe > .pivote-cuatro").html("");
 		$("#egP50").val("");
 		$("#ccca").val("");
 
@@ -114,16 +181,90 @@ $(document).ready(function(){
 		$("#vasos").val("3");
 		$("#eco\\.seg\\.trim\\.select\\.comentario").val(1);
 		$("#comentarios-eco-dos-inf-dos").val("");
+
+		var dayHoy = new Date();
+
+		var day = ("0" + dayHoy.getDate()).slice(-2);
+		var month = ("0" + (dayHoy.getMonth() + 1)).slice(-2);
+
+		$('#fNacimiento').val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$("input[name='fum']").val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$("input[name='fee']").val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$('#id-paciente').val((day)+(month)+dayHoy.getFullYear());
+		$("#semanasEcoGen").val(4);
+		$("#semanasEcoGen").val(0);
+		$('a[href="#medidas-eco-seg"]').tab('show');
 	});
 
 	$("#eco\\.doppler\\.nuevo").on("click", function(){
+		var dayHoy = new Date();
+
+		var day = ("0" + dayHoy.getDate()).slice(-2);
+		var month = ("0" + (dayHoy.getMonth() + 1)).slice(-2);
+
+		$('#fNacimiento').val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$("input[name='fum']").val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$("input[name='fee']").val((day)+"/"+(month)+"/"+dayHoy.getFullYear());
+		$('#id-paciente').val((day)+(month)+dayHoy.getFullYear());
+		$("#semanasEcoGen").val(4);
+		$("#semanasEcoGen").val(0);
+
 		$("#aud").val("");
+		$("#aud > .pivote-uno").html("");
+		$("#aud > .pivote-dos").html("");
+		$("#aud > .pivote-cero").html("|");
+		$("#aud > .pivote-centro").html("|");
+		$("#aud > .pivote-cien").html("|");
+		$("#aud > .pivote-tres").html("");
+		$("#aud > .pivote-cuatro").html("");
 		$("#aui").val("");
+		$("#aui > .pivote-uno").html("");
+		$("#aui > .pivote-dos").html("");
+		$("#aui > .pivote-cero").html("|");
+		$("#aui > .pivote-centro").html("|");
+		$("#aui > .pivote-cien").html("|");
+		$("#aui > .pivote-tres").html("");
+		$("#aui > .pivote-cuatro").html("");
 		$("#auprom").val("");
+		$("#auprom > .pivote-uno").html("");
+		$("#auprom > .pivote-dos").html("");
+		$("#auprom > .pivote-cero").html("|");
+		$("#auprom > .pivote-centro").html("|");
+		$("#auprom > .pivote-cien").html("|");
+		$("#auprom > .pivote-tres").html("");
+		$("#auprom > .pivote-cuatro").html("");
 		$("#ipau").val("");
+		$("#ipau > .pivote-uno").html("");
+		$("#ipau > .pivote-dos").html("");
+		$("#ipau > .pivote-cero").html("|");
+		$("#ipau > .pivote-centro").html("|");
+		$("#ipau > .pivote-cien").html("|");
+		$("#ipau > .pivote-tres").html("");
+		$("#ipau > .pivote-cuatro").html("");
 		$("#ipacm").val("");
+		$("#ipacm > .pivote-uno").html("");
+		$("#ipacm > .pivote-dos").html("");
+		$("#ipacm > .pivote-cero").html("|");
+		$("#ipacm > .pivote-centro").html("|");
+		$("#ipacm > .pivote-cien").html("|");
+		$("#ipacm > .pivote-tres").html("");
+		$("#ipacm > .pivote-cuatro").html("");
 		$("#ccp").val("");
+		$("#ccp > .pivote-uno").html("");
+		$("#ccp > .pivote-dos").html("");
+		$("#ccp > .pivote-cero").html("|");
+		$("#ccp > .pivote-centro").html("|");
+		$("#ccp > .pivote-cien").html("|");
+		$("#ccp > .pivote-tres").html("");
+		$("#ccp > .pivote-cuatro").html("");
 		$("#dv").val("");
+		$("#dv > .pivote-uno").html("");
+		$("#dv > .pivote-dos").html("");
+		$("#dv > .pivote-cero").html("|");
+		$("#dv > .pivote-centro").html("|");
+		$("#dv > .pivote-cien").html("|");
+		$("#dv > .pivote-tres").html("");
+		$("#dv > .pivote-cuatro").html("");
 		$("#psmACM").val("");
 		$("#liqAmnioDoppler").val("normal");
 		$("#bvmDoppler").val("");
@@ -133,6 +274,7 @@ $(document).ready(function(){
 		$("#motilidad-doppler").val("hiperactivo");
 		$("#ubicacion-doppler").val("anterior");
 		$("#comentarios-doppler").val("");
+		$('a[href="#medidas-eco-doppler"]').tab('show');
 	})
 
 	$("#nuevo\\.paciente\\.button\\.reset").on("click", function(){
@@ -201,13 +343,13 @@ $(document).ready(function(){
 		$("#lh > .pivote-tres").html("");
 		$("#lh > .pivote-cuatro").html("");
 		$("#bvm").val("");
-		$("#bvm"+objeto + " > .pivote-uno").html("");
-		$("#bvm"+objeto + " > .pivote-dos").html("");
-		$("#bvm"+objeto + " > .pivote-cero").html("|");
-		$("#bvm"+objeto + " > .pivote-centro").html("|");
-		$("#bvm"+objeto + " > .pivote-cien").html("|");
-		$("#bvm"+objeto + " > .pivote-tres").html("");
-		$("#bvm"+objeto + " > .pivote-cuatro").html("");
+		$("#bvm > .pivote-uno").html("");
+		$("#bvm > .pivote-dos").html("");
+		$("#bvm > .pivote-cero").html("|");
+		$("#bvm > .pivote-centro").html("|");
+		$("#bvm > .pivote-cien").html("|");
+		$("#bvm > .pivote-tres").html("");
+		$("#bvm > .pivote-cuatro").html("");
 		$("#cerebelo").val("");
 		$("#cerebelo > .pivote-uno").html("");
 		$("#cerebelo > .pivote-dos").html("");
