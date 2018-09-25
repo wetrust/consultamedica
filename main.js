@@ -484,13 +484,7 @@ $(document).ready(function(){
 	});
 
 	$("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
-		var sexoFetal = $('#sexomasculino').is(':checked');
-		if (sexoFetal == true){
-			sexoFetal = "Masculino";
-		}
-		else{
-			sexoFetal = "Femenino";
-		}
+		var sexoFetal = $('#ecografia\\.segtrim\\.sexo').val();
 		
         if ($(this).val() == 1){
             $('#bvmEcoDos').val($('#bvm').val()).trigger('change');

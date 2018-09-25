@@ -2074,16 +2074,11 @@
                             </div>
                             <div class="form-group col">
                                 <label>Sexo fetal</label>
-                                <div class="form-group">
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" checked="checked" name="movfet" value="1" id="sexomasculino"> Masculino</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="movfet" value="0"> Femenino</label>
-                                    </div>
-                                </div>
+                                <select id='ecografia.segtrim.sexo' class='form-control'>
+                                    <option value='masculino' selected='selected'>Masculino</option>
+                                    <option value='femenino'>Femenino</option>
+                                    <option value='no identificado'>no identificado</option>
+                                </select>
                             </div>
                         </div>
                         <div class='form-group'>
