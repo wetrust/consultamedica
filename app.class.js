@@ -44,6 +44,9 @@ class app {
 			if (contador.length < 1){
 				//$('#membrete').val('SERVICIO DE SALUD ARAUCANIA SUR\r\nHOSPITAL Dr. HERNAN HENRIQUEZ ARAVENA\r\nUNIDAD DE MEDICINA MATERNO FETAL');
 			}
+			$("#link\\.volver\\.ecouno").attr("href","#tipoExamen");
+			$("#link\\.volver\\.ecodos").attr("href","#tipoExamen");
+			$("#link\\.volver\\.doppler").attr("href","#tipoExamen");
 		}
 		else if (this.hash=="#tipoExamen"){
 			this.displayElement("tipoExamen");

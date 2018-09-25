@@ -483,6 +483,15 @@ $(document).ready(function(){
 		$("#comentarios-eco-dos-inf-dos").val(comentarios);
 	});
 
+	$("#link\\.go\\.ecouno").on("click",function(){
+
+	});
+	$("#link\\.go\\.ecodos").on("click",function(){
+
+	});
+	$("#link\\.go\\.doppler").on("click",function(){
+		
+	});
 	$("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
 		var sexoFetal = $('#ecografia\\.segtrim\\.sexo').val();
 		
