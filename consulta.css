@@ -3,6 +3,9 @@
 	background-repeat: no-repeat;
 	background-size:cover;
 }
+.bg-verde{
+  background-color: #009688;
+}
 .alert-gris{
 	background: #ccd4d8; /* For browsers that do not support gradients */
 	background: -webkit-linear-gradient(left, #ccd4d8, #eceeef); /* For Safari 5.1 to 6.0 */
