@@ -38,6 +38,9 @@ class app {
 		else if (this.hash=="#paciente"){
 			this.displayElement("paciente");
 		}
+		else if (this.hash=="#about"){
+			this.displayElement("about");
+		}
 		else if (this.hash=="#consulta"){
 			this.displayElement("consulta");
 			var contador = $('#membrete').val();
@@ -277,6 +280,7 @@ class app {
 	$('#agenda').hide();
 	$('#postnatal').hide();
 	$('#ajustepeso').hide();
+	$('#about').hide();
 	if (div_id != 'agenda'){
 		$('#home').hide();
 	}
