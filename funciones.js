@@ -209,18 +209,21 @@ $(document).ready(function(){
 		    if (lcn > 44 && lcn < 85){
 			    $("#loncefalocaudal").val($("#lcn").val());
 		    }
-		    
 		}
 		else{
 		    $("#examen\\.eco\\.primtrim\\.adicionales").addClass("d-none");
 		    $("#prob").addClass("d-none");
-		    $("#prob2").addClass("d-none");
+			$("#prob2").addClass("d-none");
+			$("#mensaje\\.tamizaje").addClass("d-none");
 		}
 	});
 
 	$("#primtrim\\.adicionales\\.translucencia").on("click", function(event){
 		event.preventDefault();
-        	calcularRiesgo(); 
+			calcularRiesgo();
+			if ($("#mensaje\\.tamizaje").hasClass("d-none")){
+				$("#mensaje\\.tamizaje").removeClass("d-none");
+			}
     	});
 });
 
