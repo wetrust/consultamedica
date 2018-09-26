@@ -484,13 +484,13 @@ $(document).ready(function(){
 	});
 
 	$("#link\\.go\\.ecouno").on("click",function(){
-
+		$("#link\\.volver\\.ecouno").attr("href","#inicio");
 	});
 	$("#link\\.go\\.ecodos").on("click",function(){
-
+		$("#link\\.volver\\.ecodos").attr("href","#inicio");
 	});
 	$("#link\\.go\\.doppler").on("click",function(){
-		
+		$("#link\\.volver\\.doppler").attr("href","#inicio");
 	});
 	$("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
 		var sexoFetal = $('#ecografia\\.segtrim\\.sexo').val();
