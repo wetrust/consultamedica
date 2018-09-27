@@ -218,6 +218,10 @@ $(document).ready(function(){
 		}
 	});
 
+	$("#mostrar\\.pdf\\.consentimiento").on("click", function(){
+		window.location.href = 'https://crecimientofetal.cl/pdf/consentimiento.pdf';
+	});
+
 	$("#primtrim\\.adicionales\\.translucencia").on("click", function(event){
 		event.preventDefault();
 			calcularRiesgo();
