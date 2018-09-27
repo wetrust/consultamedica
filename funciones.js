@@ -219,7 +219,7 @@ $(document).ready(function(){
 	});
 
 	$("#mostrar\\.pdf\\.consentimiento").on("click", function(){
-		window.location.href = 'https://crecimientofetal.cl/pdf/consentimiento.pdf';
+		window.location.href = 'https://github.com/wetrust/consultamedica/raw/reverse/pdf/consentimiento.pdf';
 	});
 
 	$("#primtrim\\.adicionales\\.translucencia").on("click", function(event){
