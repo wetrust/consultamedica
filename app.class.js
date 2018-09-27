@@ -98,6 +98,9 @@ class app {
 		else if (this.hash=="#pdfviebox"){
 			this.displayElement("pdfviebox");
 		}
+		else if (this.hash=="#registro"){
+			this.displayElement("registro");
+		}
     }
 
 //Funciones para los pacientes
