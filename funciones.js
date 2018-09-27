@@ -223,7 +223,7 @@ $(document).ready(function(){
 	});
 
 	$("#mostrar\\.pdf\\.consentimiento").on("click", function(){
-		
+		location.hash = '#consentimiento'
 	});
 
 	$("#primtrim\\.adicionales\\.translucencia").on("click", function(event){

@@ -101,6 +101,10 @@ class app {
 		else if (this.hash=="#registro"){
 			this.displayElement("registro");
 		}
+		else if (this.hash=="#consentimiento")
+		{
+			this.displayElement("consentimiento");
+		}
     }
 
 //Funciones para los pacientes
@@ -291,6 +295,7 @@ class app {
 	$('#recienacido').hide();
 	$('#hipoglicemia').hide();
 	$('#registro').hide();
+	$('#consentimiento').hide();
 	$('#'+div_id).show();
     }
 	
