@@ -901,6 +901,7 @@ $( document ).ready(function() {
 				  .on('changeDate', function(ev){
 				    $(this).trigger("change");
 				  });
+			$('#fecha-consentimiento').datepicker();
 			$('#fechaMaterna').datepicker();
 			$('#fechaMaterna').datepicker()
 				  .on('changeDate', function(ev){
