@@ -218,6 +218,10 @@ $(document).ready(function(){
 		}
 	});
 
+	$("#mostrar\\.pdf\\.registro").on("click", function(){
+		location.hash = '#registro';
+	});
+
 	$("#mostrar\\.pdf\\.consentimiento").on("click", function(){
 		window.location.href = 'https://github.com/wetrust/consultamedica/raw/reverse/pdf/consentimiento.pdf';
 	});

@@ -92,6 +92,78 @@
             </div>
         </div>
     </div>
+    <div class="container" id="registro">
+        <ol class="breadcrumb">
+            <li class="float-right"><a href="#consulta"><strong>Volver</strong></a></li>
+        </ol>
+        <div class="row justify-content-center">
+            <div class="col-8">
+            <div class="card">
+            <div class="card-body">
+            <h5 class="card-title text-center mb-3">Sección restringida, solo disponible para usuarios capacitados en la plataforma</h5>
+            <form method="post" action="https://servidor.crecimientofetal.cl/register/register_action">
+            <h5 class="text-center">Formulario solicitud de ingreso</h5>
+            <div class="row">
+            <div class="form-group col"> <label for="contact-username">Nombre de usuario</label> <input pattern="[a-zA-Z0-9]{2,64}" name="user_name" class="form-control" id="contact-username" type="text"><small class="form-text text-muted">Un nombre para identificar tu cuenta en la plataforma, sin espacios (ej: drJuan)</small></div>
+            <div class="form-group col"> <label for="contact-name">Nombre, Apellido</label> <input class="form-control" id="contact-name" type="text"><small class="form-text text-muted">Tu nombre real</small></div>
+            <div class="form-group col"> <label for="contact-id">RUT o DNI</label> <input class="form-control" id="contact-id" type="text"><small class="form-text text-muted">RUT Chileno o pasaporte</small></div>
+            </div>
+            <div class="row">
+            <div class="form-group col"> <label for="contact-country">Nacionalidad</label> <input class="form-control" id="contact-country" type="text"> </div>
+            <div class="form-group col"> <label for="contact-job-location">Pais</label> <input class="form-control" id="contact-job-location" type="text"> </div>
+            <div class="form-group col"> <label for="contact-grade">Año de título profesional</label> <input class="form-control" id="contact-grade" type="text"> </div>
+            </div>
+            <div class="row">
+            <div class="form-group col"> <label for="contact-register">N° de registro profesional</label> <input class="form-control" id="contact-register" type="text"> </div>
+            <div class="form-group col"> <label for="contact-expertise">Años de experiencia en US Obstétrico</label> <input class="form-control" id="contact-expertise" type="text"> </div>
+            </div>
+            <div class="row">
+            <div class="form-group col">
+            <label for="contact-job">Profesión</label>
+            <select class="form-control" id="contact-job">
+            <option>Médico con especialidad en perinatología</option>
+            <option>Médico con especialidad en gineco-obstetricia</option>
+            <option>Médico sin especialidad en gineco-obstetricia</option>
+            <option>Médico en formación de la especialidad</option>
+            <option>Otros, ultrosonografistas gineco - obstétrico</option>
+            </select>
+            </div>
+            <div class="form-group col"> <label for="contact-phone">Teléfono de contacto</label> <input class="form-control" id="contact-phone" type="number"> </div>
+            </div>
+            <div class="row">
+            <div class="form-group col"> <label for="contact-email">Correo electrónico</label> <input name="user_email" class="form-control" id="contact-email" type="email"> <small class="form-text text-muted">Nunca compartiremos tu correo con terceros</small></div>
+            <div class="form-group col"> <label for="contact-email-dos">Repetir Correo electrónico</label> <input name="user_email_repeat" class="form-control" id="contact-email-dos" type="email"> <small class="form-text text-muted">Para verificar si escribiste bien tu correo</small></div>
+            </div>
+            <div class="row">
+            <div class="form-group col"> <label for="contact-contrasena">Contraseña</label> <input name="user_password_new" class="form-control" id="contact-contrasena" type="password"> <small class="form-text text-muted">Una contraseña para que puedas acceder a tu cuenta</small></div>
+            <div class="form-group col"> <label for="contact-contrasena-dos">Repetir contraseña</label> <input name="user_password_repeat" class="form-control" id="contact-contrasena-dos" type="password"> <small class="form-text text-muted">verifica tu contraseña</small></div>
+            </div>
+            <div class="row">
+            <div class="col">
+            <h5>Lugar de desempeño laboral</h5>
+            </div>
+            </div>
+            <div class="row">
+            <div class="form-group col"> <label for="contact-city">Ciudad</label> <input class="form-control" id="contact-city" type="text"> </div>
+            <div class="form-group col"> <label for="contact-ss">Servicio de salud / Clínica</label> <input class="form-control" id="contact-ss" type="text"></div>
+             <div class="form-group col"><label for="contact-h">Hospital / Unidad académica</label> <input class="form-control" id="contact-h" type="text"></div>
+            </div>
+            <div class="row">
+            <div class="form-group col"> <label for="contact-consultorio">Consultorio público</label> <input class="form-control" id="contact-consultorio" type="text"> </div>
+            <div class="form-group col"> <label for="contact-private-job">Consulta privada</label> <input class="form-control" id="contact-private-job" type="text"> </div>
+            </div>
+            <div class="form-group"> <label for="contact-comments">Comentarios y sugerencias</label> <input class="form-control" id="contact-comments" type="text"> </div>
+            <img id="captcha" class="rounded mx-auto d-block" src="https://servidor.crecimientofetal.cl/register/showCaptcha">
+            <a href="#" class="d-block text-center" onclick="document.getElementById('captcha').src = 'https://servidor.crecimientofetal.cl/register/showCaptcha?' + Math.random(); return false">Cambiar imágen</a>
+            <div class="form-group"> <label for="contact-comments" class="text-center">Escriba las palabras y numeros de la imágen</label> <input class="form-control" name="captcha" required="" type="text"> </div>
+            
+            <button type="submit" class="btn btn-primary"><i class="fa fa-user-plus" aria-hidden="true"></i> Enviar solicitud de registro</button>
+            </form>
+            </div>
+            </div>
+            </div>
+            </div>
+    </div>
     <div class="container" id="browser">
         <div class="row">
             <div class="col">
@@ -346,22 +418,28 @@
                         </div>
                         <hr class="btn-consulta">
                         <div class="row">
-                            <div class="col-12">
-                                <div class="btn-group-vertical d-flex">
-                                    <h5 class="card-title text-primary text-left mt-2 mb-4">Solicitud registro de usuarios ( En construcción )</h5>
-                                    <a class="text-muted d-none" href="#" id="nuevo.paciente.button.reset">Borrar datos para nuevo exámen</a>
-                                </div>
-                            </div>
                             <div class="col-12 mt-3">
                                 <p class="text-primary">La información registrada será almacenada temporalmente, solo para reporte de informes y / o gráficas. El acopio de información en base de datos (versiones posteriores), requerirá acreditación previa del profesional examinador y consentimiento informado de la embarazada.</p>
                             </div>
-                        </div>
-                        <div class="row mt-2 mb-2">
-                            <div class="col-6 text-center">
-                                <button class="btn btn-primary" id="mostrar.pdf.registro">Ver registro</button>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-primary text-left mt-2 mb-4">Solicitud registro de usuarios</h5>
+                                    </div>
+                                    <div class="col text-center">
+                                        <button class="btn btn-primary" id="mostrar.pdf.registro">Ver registro</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-6 text-center">
-                                <button class="btn btn-primary" id="mostrar.pdf.consentimiento">Ver consentimiento</button>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title text-primary text-left mt-2 mb-4">Consentimiento</h5>
+                                    </div>
+                                    <div class="col text-center">
+                                        <button class="btn btn-primary" id="mostrar.pdf.consentimiento">Ver consentimiento</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
