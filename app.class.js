@@ -287,6 +287,7 @@ class app {
 	$('#pdfviebox').hide();
 	$('#recienacido').hide();
 	$('#hipoglicemia').hide();
+	$('#registro').hide();
 	$('#'+div_id).show();
     }
 	
