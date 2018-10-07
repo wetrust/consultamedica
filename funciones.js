@@ -218,6 +218,13 @@ $(document).ready(function(){
 		}
 	});
 
+	$("#imagen\\.oculta\\.trigger").on("click", function(){
+		$("#imagen\\.oculta\\.uno").fadeIn( 400 ).delay( 3000 ).fadeOut( 400 );
+		$("#imagen\\.oculta\\.dos").delay( 800 ).fadeIn( 400 ).delay( 3000 ).fadeOut( 400 );
+		$("#imagen\\.oculta\\.tres").delay( 1200 ).fadeIn( 400 ).delay( 3000 ).fadeOut( 400 );
+		$("#imagen\\.oculta\\.cuatro").delay( 1600 ).fadeIn( 400 ).delay( 3000 ).fadeOut( 400 );
+	});
+
 	$("#mostrar\\.pdf\\.registro").on("click", function(){
 		location.hash = '#registro';
 	});
