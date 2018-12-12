@@ -260,24 +260,34 @@
         </div>
     </div>
     <div class="container" id="home" style="display:none;">
+            <nav class="navbar navbar-expand-lg bg-white shadow">
+                <a class="navbar-brand d-block d-sm-none" href="#">Menu</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#inicio"><i class="fas fa-home"></i></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#consulta">Calculo de EG</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ecografía Obstétrica</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" id="link.go.ecouno" href="#ecoObsPrimTrim">1° Trimestre</a>
+                                <a class="dropdown-item" id="link.go.ecodos" href="#ecoObsSegTrim">2° - 3° Trimestre</a>
+                                <a class="dropdown-item" id="link.go.doppler" href="#ecoDoppler">Doppler Materna y/o Fetal</a>
+                            </div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#about">Acerca de plataforma y autor</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         <div class="row">
             <div class="col">
                 <p class="mt-0 mb-2 text-center"><small><em>Software obstétrico propiedad intelectual Dr. Rudecindo Lagos,  Maternidad Hospital Regional de Temuco, Facultad de Medicina Universidad de La Frontera Temuco - Chile <img src="https://servidor.crecimientofetal.cl/img/chile.jpg" alt="Chile"></em></small></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <ul class="nav justify-content-center hidden-lg-up mb-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#consulta"><i class="fa fa-user-md" aria-hidden="true"></i> <strong>Iniciar exámen ecográfico</strong><span class="badge badge-default">Libre</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#paciente"><i class="fa fa-user-plus" aria-hidden="true"></i> Datos registro de pacientes <span class="badge badge-default">Restringido</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Configuración <span class="badge badge-default">Restringido</span></a>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="row p-2">
@@ -287,32 +297,9 @@
             </div>
             <div class="col-4 hidden-md-down">
                 <div class="card">
-                    <div class="card-block ">
-                        <h5>Ingresar a plataforma online</h5>
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td><a href="#consulta" title="Crear una nueva consulta" class="text-uppercase" style="font-size:80%"><i class="fa fa-user-md" aria-hidden="true"></i> Calculo de Ege y configuración inicial</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a id="link.go.ecouno" href="#ecoObsPrimTrim" title="Ecografía Obstétrica 1° Trimestre" class="text-uppercase" style="font-size:80%"><i class="fa fa-user-md" aria-hidden="true"></i> Ecografía Obstétrica 1° Trimestre</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a id="link.go.ecodos" href="#ecoObsSegTrim" title="Ecografía Obstétrica 2° - 3° Trimestre" class="text-uppercase" style="font-size:80%"><i class="fa fa-user-md" aria-hidden="true"></i> Ecografía Obstétrica 2° - 3° Trimestre</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a id="link.go.doppler" href="#ecoDoppler" title="Flujometría Doppler Materna y/o Fetal" class="text-uppercase" style="font-size:80%"><i class="fa fa-user-md" aria-hidden="true"></i> Flujometría Doppler Materna y/o Fetal</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#about" class="text-uppercase" style="font-size:80%"><i class="fa fa-user-md" aria-hidden="true"></i> Acerca de plataforma y autor</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="card-block">
+                        <h5>Bienvenido</h5>
+                        <p>Seleccione las opciones del menú superior para continuar</p>
                     </div>
                 </div>
             </div>
@@ -337,7 +324,6 @@
                 <div class="card">
                     <div class="card-block">
                         <p class="text-center pb-0 mb-0"><small><em>Herramientas informáticas (aplicación web y apps para smartphone), tienen como objetivo principal favorecer cálculo y análisis preliminar de <strong>DATOS</strong> ecográfico obtenidos en el examen. Datos procesados en referencia a estándares internacionales de uso habitual, que de forma protocolizada son convertidos en <strong>INFORMACIÓN</strong> clínica. El uso de esta información es de exclusiva responsabilidad de quien realiza y certifica el examen y dependerá del <strong>JUCIO CLÍNICO</strong> del ecografista.</em></small></p>
- 
                     </div>
                 </div>
             </div>
