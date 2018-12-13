@@ -485,6 +485,7 @@ $(document).ready(function(){
 
 	$("#link\\.go\\.examen").on("click",function(){
 		if ($("#link\\.go\\.consulta").hasClass("d-none")){
+			$("#link\\.go\\.examen").html("&gt; Exámen ecográfico");
 			$("#link\\.go\\.consulta").removeClass("d-none");
 			$("#link\\.go\\.ecouno").addClass("d-none");
 			$("#link\\.go\\.ecodos").addClass("d-none");
@@ -492,6 +493,7 @@ $(document).ready(function(){
 			$("#link\\.go\\.about").removeClass("d-none");
 		}
 		else{
+			$("#link\\.go\\.examen").html("&lt; Exámen ecográfico");
 			$("#link\\.go\\.consulta").addClass("d-none");
 			$("#link\\.go\\.ecouno").removeClass("d-none");
 			$("#link\\.go\\.ecodos").removeClass("d-none");
