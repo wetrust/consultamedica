@@ -105,6 +105,10 @@ class app {
 		{
 			this.displayElement("consentimiento");
 		}
+		else if (this.hash=="#construccion")
+		{
+			this.displayElement("construccion");
+		}
     }
 
 //Funciones para los pacientes
@@ -296,6 +300,7 @@ class app {
 	$('#hipoglicemia').hide();
 	$('#registro').hide();
 	$('#consentimiento').hide();
+	$('#construccion').hide();
 	$('#'+div_id).show();
     }
 	
