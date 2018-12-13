@@ -483,6 +483,23 @@ $(document).ready(function(){
 		$("#comentarios-eco-dos-inf-dos").val(comentarios);
 	});
 
+	$("#link\\.go\\.examen").on("click",function(){
+		if ($("#link\\.go\\.consulta").hasClass("d-none")){
+			$("#link\\.go\\.consulta").removeClass("d-none");
+			$("#link\\.go\\.ecouno").addClass("d-none");
+			$("#link\\.go\\.ecodos").addClass("d-none");
+			$("#link\\.go\\.doppler").addClass("d-none");
+			$("#link\\.go\\.about").removeClass("d-none");
+		}
+		else{
+			$("#link\\.go\\.consulta").addClass("d-none");
+			$("#link\\.go\\.ecouno").removeClass("d-none");
+			$("#link\\.go\\.ecodos").removeClass("d-none");
+			$("#link\\.go\\.doppler").removeClass("d-none");
+			$("#link\\.go\\.about").addClass("d-none");
+		}
+	});
+
 	$("#link\\.go\\.ecouno").on("click",function(){
 		$("#link\\.volver\\.ecouno").attr("href","#inicio");
 	});
