@@ -57,14 +57,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#inicio"><i class="fa fa-home"></i></a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ecografía Obstétrica</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item text-primary" id="link.go.ecouno" href="#ecoObsPrimTrim">. Determinación de la edad gestacional (1° Trimestre)</a>
-                        <a class="dropdown-item text-primary" id="link.go.ecodos" href="#ecoObsSegTrim">. Valoración de biometrías y crecimiento fetal (2° - 3° Trim.)</a>
-                        <a class="dropdown-item text-primary" id="link.go.doppler" href="#ecoDoppler">. Doppler materno y/o fetal complementario</a>
-                    </div>
-                </li>
             </ul>
         </div>
     </div>
@@ -300,17 +292,14 @@
                     <div class="card-block">
                         <h5>Bienvenido</h5>
                         <p>Seleccione las opciones del menú continuar</p>
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                              <a class="nav-link active" href="#consulta">Datos iniciales básicos</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#">Exámen ecográfico</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#about">Acerca de la plataforma y el autor</a>
-                            </li>
-                          </ul>
+                        <div class="tn-group-vertical" role="group">
+                            <a class="btn btn-outline-secondary" href="#consulta">Datos iniciales básicos</a>
+                            <a class="btn btn-outline-secondary" id="link.go.examen" href="#">Exámen ecográfico</a>
+                            <a class="btn btn-outline-secondary d-none" id="link.go.ecouno" href="#ecoObsPrimTrim">Ecografía de 1° trimestre</a>
+                            <a class="btn btn-outline-secondary d-none" id="link.go.ecodos" href="#ecoObsSegTrim">Ecografía de 2°, 3° trimestre</a>
+                            <a class="btn btn-outline-secondary d-none" id="link.go.doppler" href="#ecoDoppler">Flujometría Doppler</a>
+                            <a class="btn btn-outline-secondary" href="#about">Acerca de la plataforma y el autor</a>
+                        </div>
                     </div>
                 </div>
             </div>
