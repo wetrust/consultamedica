@@ -484,7 +484,14 @@ $(document).ready(function(){
 	});
 
 	$("#link\\.go\\.ecouno").on("click",function(){
-		$("#link\\.volver\\.ecouno").attr("href","#inicio");
+		if ($("#link\\.go\\.ecouno\\.pasouno").hasClass("d-none")){
+			$("#link\\.go\\.ecouno\\.pasouno").removeClass("d-none");
+			$("#link\\.go\\.ecouno\\.pasodos").removeClass("d-none");
+		}
+		else{
+			$("#link\\.go\\.ecouno\\.pasouno").addClass("d-none");
+			$("#link\\.go\\.ecouno\\.pasodos").addClass("d-none");
+		}
 	});
 	$("#link\\.go\\.ecodos").on("click",function(){
 		$("#link\\.volver\\.ecodos").attr("href","#inicio");
