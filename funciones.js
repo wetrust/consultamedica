@@ -182,17 +182,6 @@ function calcularRiesgo(){
         $("#trisomia\\.translucidez\\.veintiuno").html("1 en " + Math.round(riskT21*(1/LR21)));
         $("#trisomia\\.translucidez\\.diesiocho").html("1 en " + Math.round(riskT18*(1/LR18))) ;
         $("#trisomia\\.translucidez\\.trece").html("1 en " + Math.round( riskT13*(1/LR13)));
-      
-        if(!isNaN(riskT21)){
-            $("#prob").removeClass("d-none");
-        }
-        
-        if(!isNaN(NT)){
-            $("#prob2").removeClass("d-none");
-        } 
-        else{
-            $("#prob2").addClass("d-none");
-        }
     }
     else{
         $('#popupTitle').html("Información");
@@ -236,11 +225,11 @@ $(document).ready(function(){
 	$("#primtrim\\.adicionales\\.translucencia").on("click", function(event){
 		event.preventDefault();
 			calcularRiesgo();
-			if ($("#mensaje\\.tamizaje").hasClass("d-none")){
-				$("#mensaje\\.tamizaje").removeClass("d-none");
-			}
+			if($("#prob2").hasClass("d-none")){
+				$("#prob2").removeClass("d-none");
+			} 
 			else{
-				$("#mensaje\\.tamizaje").addClass("d-none");
+				$("#prob2").addClass("d-none");
 			}
     	});
 });
