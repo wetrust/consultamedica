@@ -225,15 +225,15 @@ $(document).ready(function(){
 	$("#primtrim\\.adicionales\\.translucencia").on("click", function(event){
 		event.preventDefault();
 			calcularRiesgo();
-			if($("#prob").hasClass("d-none")){
-				$("#prob").removeClass("d-none");
-				$("#prob2").removeClass("d-none");
-			} 
-			else{
-				$("#prob").addClass("d-none");
-				$("#prob2").addClass("d-none");
-			}
-    	});
+			$("#prob").removeClass("d-none");
+			$("#prob2").removeClass("d-none");
+	});
+		
+	$("#primtrim\\.adicionales\\.translucencia\\.ocultar").on("click", function(event){
+		event.preventDefault();
+		$("#prob").addClass("d-none");
+		$("#prob2").addClass("d-none");
+	});
 });
 
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
