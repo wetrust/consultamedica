@@ -493,7 +493,8 @@ $(document).ready(function(){
 			$("#link\\.go\\.ecouno\\.pasodos").addClass("d-none");
 		}
 		if ($("#link\\.go\\.ecodos\\.pasouno").hasClass("d-none") == false){
-			$("#link\\.go\\.ecodos").trigger("click");
+			$("#link\\.go\\.ecodos\\.pasouno").addClass("d-none");
+			$("#link\\.go\\.ecodos\\.pasodos").addClass("d-none");
 		}
 	});
 	$("#link\\.go\\.ecodos").on("click",function(){
@@ -506,7 +507,8 @@ $(document).ready(function(){
 			$("#link\\.go\\.ecodos\\.pasodos").addClass("d-none");
 		}
 		if ($("#link\\.go\\.ecouno\\.pasouno").hasClass("d-none") == false){
-			$("#link\\.go\\.ecouno").trigger("click");
+			$("#link\\.go\\.ecouno\\.pasouno").addClass("d-none");
+			$("#link\\.go\\.ecouno\\.pasodos").addClass("d-none");
 		}
 	});
 	$("#link\\.go\\.doppler").on("click",function(){
