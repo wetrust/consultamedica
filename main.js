@@ -551,6 +551,24 @@ $(document).ready(function(){
 		}
 	});
 
+	
+	$("#tallaTamizaje").on("keyup", function(){
+		if ($("#tallaTamizaje").val() > 1 && $("#pesoTamizaje").val() > 1){
+			$("#imcTamizaje").val(aplication.imc($("#tallaTamizaje").val(), $("#pesoTamizaje").val()));
+		}
+	});
+
+	$("#pesoTamizaje").on("keyup", function(){
+		if ($("#tallaTamizaje").val() > 1 && $("#pesoTamizaje").val() > 1){
+			$("#imcTamizaje").val(aplication.imc($("#tallaTamizaje").val(), $("#pesoTamizaje").val()));
+		}
+	});
+	
+
+
+
+
+
 	$("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
 		var sexoFetal = $('#ecografia\\.segtrim\\.sexo').val();
 		
