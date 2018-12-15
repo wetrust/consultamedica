@@ -514,6 +514,43 @@ $(document).ready(function(){
 	$("#link\\.go\\.doppler").on("click",function(){
 		$("#link\\.volver\\.doppler").attr("href","#inicio");
 	});
+
+	$("#psisTamizaje").on("keyup", function(){
+		if ($("#psisTamizaje").val() > 1){
+			var unTercioPSis = $("#psisTamizaje").val() / 3;
+			var unTercioPDias = "";
+			var pMedia = "";
+
+			if ($("#pdiasTamizaje").val() > 1){
+				unTercioPDias = $("#pdiasTamizaje").val() / 3;
+			}
+
+			if (unTercioPDias > 0){
+				pMedia = (unTercioPDias * 2) + (unTercioPSis);
+			}
+
+			$("#pmediaTamizaje").val(pMedia);
+		}
+	});
+
+	$("#pdiasTamizaje").on("keyup", function(){
+		if ($("#psisTamizaje").val() > 1){
+			var unTercioPSis = $("#psisTamizaje").val() / 3;
+			var unTercioPDias = "";
+			var pMedia = "";
+
+			if ($("#pdiasTamizaje").val() > 1){
+				unTercioPDias = $("#pdiasTamizaje").val() / 3;
+			}
+
+			if (unTercioPDias > 0){
+				pMedia = (unTercioPDias * 2) + (unTercioPSis);
+			}
+
+			$("#pmediaTamizaje").val(pMedia);
+		}
+	});
+
 	$("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
 		var sexoFetal = $('#ecografia\\.segtrim\\.sexo').val();
 		
