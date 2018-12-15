@@ -225,10 +225,12 @@ $(document).ready(function(){
 	$("#primtrim\\.adicionales\\.translucencia").on("click", function(event){
 		event.preventDefault();
 			calcularRiesgo();
-			if($("#prob2").hasClass("d-none")){
+			if($("#prob1").hasClass("d-none")){
+				$("#prob1").removeClass("d-none");
 				$("#prob2").removeClass("d-none");
 			} 
 			else{
+				$("#prob1").addClass("d-none");
 				$("#prob2").addClass("d-none");
 			}
     	});
