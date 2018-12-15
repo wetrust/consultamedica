@@ -109,8 +109,8 @@ class app {
 		{
 			this.displayElement("construccion");
 		}
-		else if (this.hash=="#ecoObsPrimTrimTrisonomia"){
-			this.displayElement("ecoObsPrimTrimTrisonomia");
+		else if (this.hash=="#ecoObsPrimTrimTrisomia"){
+			this.displayElement("ecoObsPrimTrimTrisomia");
 		}
     }
 
@@ -304,7 +304,7 @@ class app {
 	$('#registro').hide();
 	$('#consentimiento').hide();
 	$('#construccion').hide();
-	$('#ecoObsPrimTrimTrisonomia').hide();
+	$('#ecoObsPrimTrimTrisomia').hide();
 	$('#'+div_id).show();
     }
 	
