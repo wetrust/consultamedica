@@ -526,7 +526,7 @@ $(document).ready(function(){
 			}
 
 			if (unTercioPDias > 0){
-				pMedia = (unTercioPDias * 2) + (unTercioPSis);
+				pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
 			}
 
 			$("#pmediaTamizaje").val(pMedia);
@@ -544,7 +544,7 @@ $(document).ready(function(){
 			}
 
 			if (unTercioPDias > 0){
-				pMedia = (unTercioPDias * 2) + (unTercioPSis);
+				pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
 			}
 
 			$("#pmediaTamizaje").val(pMedia);
