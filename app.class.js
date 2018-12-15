@@ -109,6 +109,9 @@ class app {
 		{
 			this.displayElement("construccion");
 		}
+		else if (this.hash=="ecoObsPrimTrimTrisonomia"){
+			this.displayElement("ecoObsPrimTrimTrisonomia");
+		}
     }
 
 //Funciones para los pacientes
@@ -301,6 +304,7 @@ class app {
 	$('#registro').hide();
 	$('#consentimiento').hide();
 	$('#construccion').hide();
+	$('#ecoObsPrimTrimTrisonomia').hide();
 	$('#'+div_id).show();
     }
 	
