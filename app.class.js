@@ -109,7 +109,7 @@ class app {
 		{
 			this.displayElement("construccion");
 		}
-		else if (this.hash=="ecoObsPrimTrimTrisonomia"){
+		else if (this.hash=="#ecoObsPrimTrimTrisonomia"){
 			this.displayElement("ecoObsPrimTrimTrisonomia");
 		}
     }
