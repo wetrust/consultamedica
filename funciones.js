@@ -239,6 +239,9 @@ $(document).ready(function(){
 			if ($("#mensaje\\.tamizaje").hasClass("d-none")){
 				$("#mensaje\\.tamizaje").removeClass("d-none");
 			}
+			else{
+				$("#mensaje\\.tamizaje").addClass("d-none");
+			}
     	});
 });
 
