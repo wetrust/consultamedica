@@ -737,7 +737,9 @@ $( '#semanasEcoGen' ).on( 'change', function() {
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
-        $( '#diasEcoPrim' ).val(dias);
+	$( '#diasEcoPrim' ).val(dias);
+	$('#semanasEcoPrimTriso').val(semanas);
+    $( '#diasEcoPrimTriso' ).val(dias);
 	 //borrar los colores de las tarjetas
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
@@ -792,7 +794,9 @@ $( '#diasEcoGen' ).on( 'change', function() {
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
-        $( '#diasEcoPrim' ).val(dias);
+	$( '#diasEcoPrim' ).val(dias);
+	$('#semanasEcoPrimTriso').val(semanas);
+    $( '#diasEcoPrimTriso' ).val(dias);
 	 //borrar los colores de las tarjetas
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
@@ -847,7 +851,9 @@ $( '#semanasTipoEco' ).on( 'change', function() {
 	$('#semanasEcoDopp').val(semanas);
 	$('#diasEcoDopp').val(dias);
 	$('#semanasEcoPrim').val(semanas);
-        $( '#diasEcoPrim' ).val(dias);
+	$( '#diasEcoPrim' ).val(dias);
+	$('#semanasEcoPrimTriso').val(semanas);
+    $( '#diasEcoPrimTriso' ).val(dias);
 	 //borrar los colores de las tarjetas
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
@@ -902,7 +908,9 @@ $( '#diasTipoEco' ).on( 'change', function() {
 	$('#semanasEcoDopp').val(semanas);
 	$('#diasEcoDopp').val(dias);
 	$('#semanasEcoPrim').val(semanas);
-        $( '#diasEcoPrim' ).val(dias);
+	$( '#diasEcoPrim' ).val(dias);
+	$('#semanasEcoPrimTriso').val(semanas);
+    $( '#diasEcoPrimTriso' ).val(dias);
 	 //borrar los colores de las tarjetas
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
@@ -958,7 +966,9 @@ $( '#semanasEcoObs' ).on( 'change', function() {
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
-        $( '#diasEcoPrim' ).val(dias);
+	$( '#diasEcoPrim' ).val(dias);
+	$('#semanasEcoPrimTriso').val(semanas);
+    $( '#diasEcoPrimTriso' ).val(dias);
 	 //borrar los colores de las tarjetas
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
@@ -1013,7 +1023,9 @@ $( '#diasEcoObs' ).on( 'change', function() {
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
-        $( '#diasEcoPrim' ).val(dias);
+	$( '#diasEcoPrim' ).val(dias);
+	$('#semanasEcoPrimTriso').val(semanas);
+    $( '#diasEcoPrimTriso' ).val(dias);
 	 //borrar los colores de las tarjetas
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
@@ -1068,7 +1080,9 @@ $( '#semanasEcoDopp' ).on( 'change', function() {
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
-        $( '#diasEcoPrim' ).val(dias);
+	$( '#diasEcoPrim' ).val(dias);
+	$('#semanasEcoPrimTriso').val(semanas);
+    $( '#diasEcoPrimTriso' ).val(dias);
 	 //borrar los colores de las tarjetas
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
@@ -1123,7 +1137,9 @@ $( '#diasEcoDopp' ).on( 'change', function() {
 	$( '#semanasTipoEco' ).val(semanas);
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoPrim').val(semanas);
-        $( '#diasEcoPrim' ).val(dias);
+	$( '#diasEcoPrim' ).val(dias);
+	$('#semanasEcoPrimTriso').val(semanas);
+    $( '#diasEcoPrimTriso' ).val(dias);
 	 //borrar los colores de las tarjetas
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
