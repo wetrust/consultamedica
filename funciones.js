@@ -628,6 +628,8 @@ $( '#semanasEcoPrim' ).on( 'change', function() {
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoGen').val(semanas);
 	$('#diasEcoGen').val(dias);
+	$('#semanasEcoPrimTriso').val(semanas);
+    $( '#diasEcoPrimTriso' ).val(dias);
 	 //borrar los colores de las tarjetas
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
@@ -683,6 +685,8 @@ $( '#diasEcoPrim' ).on( 'change', function() {
 	$( '#diasTipoEco' ).val(dias);
 	$('#semanasEcoGen').val(semanas);
 	$('#diasEcoGen').val(dias);
+	$('#semanasEcoPrimTriso').val(semanas);
+    $( '#diasEcoPrimTriso' ).val(dias);
 	 //borrar los colores de las tarjetas
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
