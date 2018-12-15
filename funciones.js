@@ -587,7 +587,7 @@ $( '#embarazoSi' ).on( 'click', function() {
 	$("div[name='embarazo']").removeClass("d-none");
 });
 
-$( '#semanasEcoPrim' ).on( 'change', function() {
+$('#semanasEcoPrim' ).on( 'change', function() {
 	var semanas = $(this).val();
 	var dias = $('#diasEcoPrim').val();
 	var undia = 1000 * 60 * 60 * 24;
@@ -687,6 +687,120 @@ $( '#diasEcoPrim' ).on( 'change', function() {
 	$('#diasEcoGen').val(dias);
 	$('#semanasEcoPrimTriso').val(semanas);
     $( '#diasEcoPrimTriso' ).val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("card-outline-primary");
+	$("#ecografia\\.dos").removeClass("card-outline-primary");
+	$("#ecografia\\.doppler").removeClass("card-outline-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("card-outline-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("card-outline-primary");
+		$("#ecografia\\.doppler").addClass("card-outline-primary");
+	}
+});
+
+$('#semanasEcoPrimTriso').on( 'change', function() {
+	var semanas = $(this).val();
+	var dias = $('#diasEcoPrim').val();
+	var undia = 1000 * 60 * 60 * 24;
+	var unasemana = undia * 7;
+
+	semanas = semanas * unasemana;
+	dias = dias * undia;
+	var eg = semanas + dias;
+	
+	var FExamen = $("input[name='fee']").val();
+	FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FExamen = new Date (FExamen);
+	
+	var B = new Date();
+	B.setTime(FExamen.getTime() - eg);
+	
+	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	var FUM = $("input[name='fum']").val();
+	FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FUM = new Date (FUM);
+	
+	B = new Date();
+	B.setTime(FUM.getTime() + 40 * unasemana); 
+	$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	localStorage.fum = $("input[name='fum']").val();
+    	localStorage.fee = $("input[name='fee']").val();
+	semanas = semanas / unasemana;
+	dias = dias / undia;
+	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$('#semanasEcoDopp').val(semanas);
+	$('#diasEcoDopp').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoGen').val(semanas);
+	$('#diasEcoGen').val(dias);
+	$('#semanasEcoPrim').val(semanas);
+    $( '#diasEcoPrim' ).val(dias);
+	 //borrar los colores de las tarjetas
+	$("#ecografia\\.uno").removeClass("card-outline-primary");
+	$("#ecografia\\.dos").removeClass("card-outline-primary");
+	$("#ecografia\\.doppler").removeClass("card-outline-primary");
+	//determinar a quien le pongo el color
+	if (semanas < 15){
+		$("#ecografia\\.uno").addClass("card-outline-primary");
+	}
+	else{
+		$("#ecografia\\.dos").addClass("card-outliner-primary");
+		$("#ecografia\\.doppler").addClass("card-outline-primary");
+	}
+});
+
+$('#diasEcoPrimTriso').on( 'change', function() {
+	var semanas = $('#semanasEcoPrim').val();
+	var dias = $(this).val();
+	var undia = 1000 * 60 * 60 * 24;
+	var unasemana = undia * 7;
+	
+	semanas = semanas * unasemana;
+	dias = dias * undia;
+	var eg = semanas + dias;
+	
+	var FExamen = $("input[name='fee']").val();
+	FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FExamen = new Date (FExamen);
+	
+	var B = new Date();
+	B.setTime(FExamen.getTime() - eg);
+	
+	$("input[name='fum']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	var FUM = $("input[name='fum']").val();
+	FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+	FUM = new Date (FUM);
+	
+	B = new Date();
+	B.setTime(FUM.getTime() + 40 * unasemana); 
+	$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+	
+	localStorage.fum = $("input[name='fum']").val();
+    	localStorage.fee = $("input[name='fee']").val();
+	semanas = semanas / unasemana;
+	dias = dias / undia;
+	localStorage.eg = semanas + "." + dias;
+	$("input[name='eg']").val(localStorage.eg);
+	$('#semanasEcoObs').val(semanas);
+	$('#diasEcoObs').val(dias);
+	$('#semanasEcoDopp').val(semanas);
+	$('#diasEcoDopp').val(dias);
+	$( '#semanasTipoEco' ).val(semanas);
+	$( '#diasTipoEco' ).val(dias);
+	$('#semanasEcoGen').val(semanas);
+	$('#diasEcoGen').val(dias);
+	$('#semanasEcoPrim').val(semanas);
+    $( '#diasEcoPrim' ).val(dias);
 	 //borrar los colores de las tarjetas
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");

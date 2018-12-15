@@ -13,12 +13,14 @@ $( document ).ready(function() {
         $("#semanasEcoGen").append('<option value="' + i +'">' + i + '</option>');
         $("#semanasTipoEco").append('<option value="' + i +'">' + i + '</option>');
         $("#semanasEcoPrim").append('<option value="' + i +'">' + i + '</option>');
+        $("#semanasEcoPrimTriso").append('<option value="' + i +'">' + i + '</option>');
         $("#semanasEcoObs").append('<option value="' + i +'">' + i + '</option>');
         $("#semanasEcoDopp").append('<option value="' + i +'">' + i + '</option>');
 
         $('#semanasEcoGen option[value="4"]').prop('selected', true);
         $('#semanasTipoEco option[value="4"]').prop('selected', true);
         $('#semanasEcoPrim option[value="4"]').prop('selected', true);
+        $('#semanasEcoPrimTriso option[value="4"]').prop('selected', true);
         $('#semanasEcoObs option[value="4"]').prop('selected', true);
         $('#semanasEcoDopp option[value="4"]').prop('selected', true);
     }
@@ -27,6 +29,7 @@ $( document ).ready(function() {
         $("#diasEcoGen").append('<option value="' + i +'">' + i + '</option>');
         $("#diasTipoEco").append('<option value="' + i +'">' + i + '</option>');
         $("#diasEcoPrim").append('<option value="' + i +'">' + i + '</option>');
+        $("#diasEcoPrimTriso").append('<option value="' + i +'">' + i + '</option>');
         $("#diasEcoObs").append('<option value="' + i +'">' + i + '</option>');
         $("#diasEcoDopp").append('<option value="' + i +'">' + i + '</option>');
     }
