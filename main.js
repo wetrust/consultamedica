@@ -565,9 +565,9 @@ $(document).ready(function(){
 	});
 
 	$("#audTamizaje").on("keyup", function(){
-
 		var aud = "";
 		if ($("#audTamizaje").val() != ""){
+			aud = $("#audTamizaje").val();
 			aud = aud.toString(); 
 			aud = aud.replace(",", ".");
 			aud = parseFloat(aud);
@@ -575,11 +575,11 @@ $(document).ready(function(){
 		var aui = "";
 
 		if ($("#auiTamizaje").val() != ""){
+			aui = $("#auiTamizaje").val();
 			aui = aui.toString(); 
 			aui = aui.replace(",", ".");
 			aui = parseFloat(aui);
 		}
-
 		if (aud > 1 && aui > 1){
 			var ut = (aud + aui) / 2;
 			$("#aupromTamizaje").val(ut);
