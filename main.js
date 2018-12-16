@@ -563,6 +563,18 @@ $(document).ready(function(){
 			$("#imcTamizaje").val(aplication.imc($("#tallaTamizaje").val(), $("#pesoTamizaje").val()));
 		}
 	});
+
+	$("#audTamizaje").on("keyup", function(){
+		if ($("#audTamizaje").val() > 1 && $("#auiTamizaje").val() > 1){
+			var ut = ($("#audTamizaje").val() + $("#auiTamizaje").val()) / 2;
+			$("#aupromTamizaje").val(pctUtApi(ut));
+			ajustarProgreso($("#aupromTamizaje").val(), "auTamizajePct");
+		}
+		else{
+			$("#aupromTamizaje").val(0);
+			ajustarProgreso($("#aupromTamizaje").val(), "auTamizajePct");
+		}
+	});
 	
 
 
