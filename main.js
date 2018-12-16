@@ -595,6 +595,7 @@ $(document).ready(function(){
 	$("#auiTamizaje").on("keyup", function(){
 		var aud = "";
 		if ($("#audTamizaje").val() != ""){
+			aud = $("#audTamizaje").val();
 			aud = aud.toString(); 
 			aud = aud.replace(",", ".");
 			aud = parseFloat(aud);
@@ -602,6 +603,7 @@ $(document).ready(function(){
 		var aui = "";
 
 		if ($("#auiTamizaje").val() != ""){
+			aui = $("#auiTamizaje").val();
 			aui = aui.toString(); 
 			aui = aui.replace(",", ".");
 			aui = parseFloat(aui);
