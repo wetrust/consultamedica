@@ -580,7 +580,7 @@ $(document).ready(function(){
 			aui = aui.replace(",", ".");
 			aui = parseFloat(aui);
 		}
-		if (aud > 1 && aui > 1){
+		if (aud > 0 && aui > 0){
 			var ut = (aud + aui) / 2;
 			$("#aupromTamizaje").val(ut);
 			ajustarProgreso(pctUtApi(ut), "auTamizajePct");
@@ -607,7 +607,7 @@ $(document).ready(function(){
 			aui = aui.replace(",", ".");
 			aui = parseFloat(aui);
 		}
-		if (aud > 1 && aui > 1){
+		if (aud > 0 && aui > 0){
 			var ut = (aud + aui) / 2;
 			$("#aupromTamizaje").val(ut);
 			ajustarProgreso(pctUtApi(ut), "auTamizajePct");
