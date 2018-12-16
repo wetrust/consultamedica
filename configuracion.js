@@ -8,8 +8,8 @@ function haveDatabase(){
 function checkIntegrity(){
 	let db = JSON.parse(localStorage["configuracion"]);
 	
-	let tables = ['MotivoExamen', 'LugarControlPrenatal', 'profesional', 'ciudad', 'profRef', 'PatologiaObstetrica', 'membrete'];
-	let baseTables = JSON.parse('{"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}');
+	let tables = ['nacionalidad','MotivoExamen', 'LugarControlPrenatal', 'profesional', 'ciudad', 'profRef', 'PatologiaObstetrica', 'membrete'];
+	let baseTables = JSON.parse('{"nacionalidad":[],"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}');
 	
 	for (var j = 0; j < tables.length; j++) {
 		let table = false;
@@ -30,7 +30,7 @@ function checkIntegrity(){
 }
 
 function makeDatabase(){
-	var db = '{"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}';
+	var db = '{"nacionalidad": [], "profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}';
 	localStorage["configuracion"] = db;
 }
 
@@ -100,6 +100,24 @@ function loadDatabase(){
 				});
 				$('#eliminarEcografistaConfig').css("display","block");
 				$('#EcografistaConfigTable tr').on('click',function(){
+					activateTr(this);
+				});
+			}
+
+			$('#nacionalidad').empty();
+			$('#NacionalidadConfigTable').empty();
+			if (configuracion.nacionalidad.length > 0){
+				$.each(configuracion.nacionalidad, function (i, item) {
+				    $('#nacionalidad').append($('<option>', { 
+					value: item.id,
+					text : item.nombre
+				    }));
+					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+					$('#NacionalidadConfigTable').append(fila);
+					
+				});
+				$('#eliminarNacionalidadConfig').css("display","block");
+				$('#NacionalidadConfigTable tr').on('click',function(){
 					activateTr(this);
 				});
 			}
@@ -242,6 +260,28 @@ function saveEcografistaExamenLocalStorage(){
                         	configuracion.profesional.push(aRR);
 			$('#eliminarEcografistaConfig').css("display","block");
 			$('#ecografistaInput').val("");
+			localStorage["configuracion"] = JSON.stringify(configuracion);
+			loadDatabase();
+		}
+	}
+}
+
+function saveNacionalidadConfigLocalStorage(){
+	
+	if (window.localStorage) {
+		if (localStorage.configuracion != null) {
+			var configuracion = JSON.parse(localStorage["configuracion"]);
+			
+			$('#nacionalidadInput').html("");
+			$('#NacionalidadConfigTable').html("");
+		
+				var aRR = {id:0, nombre:"Doe"};
+				aRR["id"] = configuracion.nacionalidad.length +1;
+				aRR["nombre"] = $('#nacionalidadInput').val();
+				
+            configuracion.nacionalidad.push(aRR);
+			$('#eliminarNacionalidadConfig').css("display","block");
+			$('#nacionalidadInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 			loadDatabase();
 		}

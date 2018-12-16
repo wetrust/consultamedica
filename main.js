@@ -911,6 +911,33 @@ $( '#guardarEcografistaConfig').on('click', function() {
 	$("#ecografistaConfig .formulario").hide();
  });
 
+ $( '#nuevoNacionalidadConfig').on('click', function() {
+	$('#nacionalidadConfig .tabla').hide();
+	$('#nuevoNacionalidadConfig').hide();
+	$('#editarNacionalidadConfig').hide();
+	$('#guardarNacionalidadConfig').show();
+	$('#cancelarNacionalidadConfig').show();
+	$('#nacionalidadConfig .formulario').show();
+ });
+
+$( '#cancelarNacionalidadConfig').on('click', function() {
+	$("#nacionalidadConfig .tabla").show();
+	$('#nuevoNacionalidadConfig').show();
+	$('#editarNacionalidadConfig').show();
+	$('#guardarNacionalidadConfig').hide();
+	$('#cancelarNacionalidadConfig').hide();
+	$("#nacionalidadConfig .formulario").hide();
+ });
+
+$( '#guardarNacionalidadConfig').on('click', function() {
+	saveNacionalidadConfigLocalStorage();
+	$("#nacionalidadConfig .tabla").show();
+	$('#nuevoNacionalidadConfig').show();
+	$('#guardarNacionalidadConfig').hide();
+	$('#cancelarNacionalidadConfig').hide();
+	$("#nacionalidadConfig .formulario").hide();
+ });
+
 $( '#nuevoPatologiaObstetricaConfig').on('click', function() {
 	$('#patologiaObstetricaConfig .tabla').hide();
 	$('#nuevoPatologiaObstetricaConfig').hide();
