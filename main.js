@@ -580,7 +580,6 @@ $(document).ready(function(){
 			aui = parseFloat(aui);
 		}
 
-
 		if (aud > 1 && aui > 1){
 			var ut = (aud + aui) / 2;
 			$("#aupromTamizaje").val(ut);
@@ -608,8 +607,6 @@ $(document).ready(function(){
 			aui = aui.replace(",", ".");
 			aui = parseFloat(aui);
 		}
-
-
 		if (aud > 1 && aui > 1){
 			var ut = (aud + aui) / 2;
 			$("#aupromTamizaje").val(ut);
