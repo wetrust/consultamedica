@@ -567,8 +567,8 @@ $(document).ready(function(){
 	$("#audTamizaje").on("keyup", function(){
 		if ($("#audTamizaje").val() > 1 && $("#auiTamizaje").val() > 1){
 			var ut = ($("#audTamizaje").val() + $("#auiTamizaje").val()) / 2;
-			$("#aupromTamizaje").val(pctUtApi(ut));
-			ajustarProgreso($("#aupromTamizaje").val(), "auTamizajePct");
+			$("#aupromTamizaje").val(ut);
+			ajustarProgreso(pctUtApi(ut), "auTamizajePct");
 		}
 		else{
 			$("#aupromTamizaje").val(0);
