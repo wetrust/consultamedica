@@ -583,10 +583,12 @@ $(document).ready(function(){
 		if (aud > 0 && aui > 0){
 			var ut = (aud + aui) / 2;
 			$("#aupromTamizaje").val(ut);
+			$("#aupromTamizajePct").val(pctUtApi(ut));
 			ajustarProgreso(pctUtApi(ut), "auTamizajePct");
 		}
 		else{
 			$("#aupromTamizaje").val(0);
+			$("#aupromTamizajePct").val(0);
 			ajustarProgreso($("#aupromTamizaje").val(), "auTamizajePct");
 		}
 	});
@@ -610,17 +612,15 @@ $(document).ready(function(){
 		if (aud > 0 && aui > 0){
 			var ut = (aud + aui) / 2;
 			$("#aupromTamizaje").val(ut);
+			$("#aupromTamizajePct").val(pctUtApi(ut));
 			ajustarProgreso(pctUtApi(ut), "auTamizajePct");
 		}
 		else{
 			$("#aupromTamizaje").val(0);
+			$("#aupromTamizajePct").val(0);
 			ajustarProgreso($("#aupromTamizaje").val(), "auTamizajePct");
 		}
 	});
-
-
-
-
 
 	$("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
 		var sexoFetal = $('#ecografia\\.segtrim\\.sexo').val();
