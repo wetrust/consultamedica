@@ -511,11 +511,16 @@ $(document).ready(function(){
 			$("#link\\.go\\.ecouno\\.pasodos").addClass("d-none");
 		}
 	});
+
 	$("#link\\.go\\.doppler").on("click",function(){
 		$("#link\\.volver\\.doppler").attr("href","#inicio");
 	});
 
-	$("#psisTamizaje").on("keyup", function(){
+	$("#psisTamizaje").on("keyup", function(e){
+		if ( e.which == 13 ) {
+			event.preventDefault();
+			$("#pdiasTamizaje").fucus();
+		}
 		if ($("#psisTamizaje").val() > 1){
 			var unTercioPSis = $("#psisTamizaje").val() / 3;
 			var unTercioPDias = "";
@@ -533,7 +538,11 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#pdiasTamizaje").on("keyup", function(){
+	$("#pdiasTamizaje").on("keyup", function(e){
+		if ( e.which == 13 ) {
+			event.preventDefault();
+			$("#tallaTamizaje").fucus();
+		}
 		if ($("#psisTamizaje").val() > 1){
 			var unTercioPSis = $("#psisTamizaje").val() / 3;
 			var unTercioPDias = "";
@@ -551,8 +560,25 @@ $(document).ready(function(){
 		}
 	});
 
-	
-	$("#tallaTamizaje").on("keyup", function(){
+	$("#audTamizaje").on("keyup",function(e){
+		if ( e.which == 13 ) {
+			event.preventDefault();
+			$("#auiTamizaje").fucus();
+		}
+	});
+
+	$("#auiTamizaje").on("keyup",function(e){
+		if ( e.which == 13 ) {
+			event.preventDefault();
+			$("#psisTamizaje").fucus();
+		}
+	});
+
+	$("#tallaTamizaje").on("keyup", function(e){
+		if ( e.which == 13 ) {
+			event.preventDefault();
+			$("#pesoTamizaje").fucus();
+		}
 		if ($("#tallaTamizaje").val() > 1 && $("#pesoTamizaje").val() > 1){
 			$("#imcTamizaje").val(aplication.imc($("#tallaTamizaje").val(), $("#pesoTamizaje").val()));
 		}
@@ -572,7 +598,11 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#pesoTamizaje").on("keyup", function(){
+	$("#pesoTamizaje").on("keyup", function(e){
+		if ( e.which == 13 ) {
+			event.preventDefault();
+			$("#primigesta").fucus();
+		}
 		if ($("#tallaTamizaje").val() > 1 && $("#pesoTamizaje").val() > 1){
 			$("#imcTamizaje").val(aplication.imc($("#tallaTamizaje").val(), $("#pesoTamizaje").val()));
 		}
