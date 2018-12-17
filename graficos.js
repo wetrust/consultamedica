@@ -1231,6 +1231,83 @@ $( '#graficoSaco' ).on( 'click', function() {
     $('#popupGraficos').modal('show');
 });
 
+$( '#graficoTamizajeAu' ).on( 'click', function() {
+    $('#graficosTitle').html("Gráfico Promedio Arterias Uterinas");
+    $('#graficosBody').html("<div id='graficoArtUtDerView'></div>");
+    $( '#impEcoObsSegTrim1').remove();
+    $( '#impEcoObsSegTrim2').remove();
+    $( '#impDoppler3').remove();
+    $( '#impDoppler2').remove();
+    $( '#impDoppler1').remove();
+    $('#graficoArtUtDerView').highcharts({
+        title: {
+            text: 'IP Arterias Uterinas',
+            x: -20,
+                style: {
+            fontSize: '10px'
+        }
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'Valor IP' },
+            tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Pct. 5',
+            marker: { enabled: false },
+            data: [1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47]
+        }, {
+            type: "line",
+            name: 'Pct. 95',
+            marker: { enabled: false },
+            data: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
+        }, {
+            type: "line",
+                name: 'Arteria Promedio',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+            data: (function () {
+                    // generate an array of random data
+                    var data = [];
+                    var edadGest = parseInt(localStorage.eg) -1;
+
+                    for (i = 10; i <= edadGest; i ++ ) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    var aud = $("#aupromTamizaje").val();
+                    aud = aud.toString();
+                    aud = aud.replace(",", ".");
+                    aud = parseFloat(aud);
+                    
+                    data.push({
+                            y: aud,
+                        });
+                    for (i = edadGest +1; i <= 39; i ++ ) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+    });
+    $('#popupGraficos').modal('show');
+});
+
+
 $( '#graficoAud' ).on( 'click', function() {
     $('#graficosTitle').html("Gráfico Arteria Uterina Derecha");
     $('#graficosBody').html("<div id='graficoArtUtDerView'></div>");
