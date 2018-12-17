@@ -1465,9 +1465,14 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <div class="form-group">
-                                    <label for="formGroupExampleInput">Translucidez Nucal</label>
-                                    <input type="number" class="form-control" id="translunucal" value="1">
+                                <div class="form-group row">
+                                    <label for="formGroupExampleInput" class="col-12">Translucidez Nucal</label>
+                                    <select class="form-control col-6" id="translucenciaNucal">
+                                        <option value="no procede">No procede</option>
+                                        <option value="no medible">No medible</option>
+                                        <option value="medible">Medible</option>
+                                    </select>
+                                    <input type="number" class="form-control col-6" id="translunucal" value="1">
                                 </div>
                             </div>
                             <div class="col">
@@ -1483,13 +1488,13 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="trisomia" id="examen.eco.primtrim.adicionales.translucencia.trisomia.si" value="true">
                                             <label class="form-check-label" for="examen.eco.primtrim.adicionales.translucencia.trisomia.si">Si</label>
-                                        </div>
+                                        </div> ateroma... 
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col">
+                            <div class="form-group col-6">
                                 <label for="formGroupExampleInput">Hueso Nasal</label>
                                 <select class="form-control" id="huesonasal">
                                     <option value="no procede" selected>No procede</option>
@@ -1497,7 +1502,9 @@
                                     <option value="visible">Visible</option>
                                 </select>
                             </div>
-                            <div class="form-group col">
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-6">
                                 <label for="formGroupExampleInput">Ductus venoso</label>
                                 <select class="form-control" id="ductusvenoso">
                                     <option value="no evaluado" selected>No evaluado</option>
@@ -1506,7 +1513,9 @@
                                     <option value="onda a negativa">Onda A negativa</option>
                                 </select>
                             </div>
-                            <div class="form-group col">
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-6">
                                 <label for="formGroupExampleInput">Reflujo tricuspídeo</label>
                                 <select class="form-control" id="reflujotricuspideo">
                                     <option value="no evaluado" selected>No evaluado</option>

@@ -558,6 +558,22 @@ $(document).ready(function(){
 		}
 	});
 
+	$("#translucenciaNucal").on("change", function(){
+		if ($(this).val() == "no procede" || $(this).val() == "no medible"){
+			$("#translunucal").addClass("d-none");
+			$("#primtrim\\.adicionales\\.translucencia").addClass("d-none");
+			$("#primtrim\\.adicionales\\.translucencia\\.ocultar").addClass("d-none");
+			$("#prob").addClass("d-none");
+			$("#prob2").addClass("d-none");
+		}else{
+			$("#translunucal").removeClass("d-none");
+			$("#primtrim\\.adicionales\\.translucencia").removeClass("d-none");
+			$("#primtrim\\.adicionales\\.translucencia\\.ocultar").removeClass("d-none");
+			$("#prob").removeClass("d-none");
+			$("#prob2").removeClass("d-none");
+		}
+	});
+
 	$("#pesoTamizaje").on("keyup", function(){
 		if ($("#tallaTamizaje").val() > 1 && $("#pesoTamizaje").val() > 1){
 			$("#imcTamizaje").val(aplication.imc($("#tallaTamizaje").val(), $("#pesoTamizaje").val()));
