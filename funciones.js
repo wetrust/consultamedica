@@ -3445,10 +3445,10 @@ function pctUtApi(ut) {
 			var pctUT = '';
 			//truncador de Pct, sobre 100 o bajo 1
 			if (resultado > 99){
-				pctUT = '&gt; 99';
+				pctUT = 'mayor 99';
 			}
 			else if (resultado < 1){
-				pctUT = '&lt; 1';
+				pctUT = 'menor 1';
 			}
 			else{
 				pctUT = resultado;
