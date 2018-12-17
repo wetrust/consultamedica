@@ -518,7 +518,7 @@ $(document).ready(function(){
 
 	$("#psisTamizaje").on("keyup", function(e){
 		if ( e.which == 13 ) {
-			event.preventDefault();
+			e.preventDefault();
 			$("#pdiasTamizaje").fucus();
 		}
 		if ($("#psisTamizaje").val() > 1){
@@ -540,7 +540,7 @@ $(document).ready(function(){
 
 	$("#pdiasTamizaje").on("keyup", function(e){
 		if ( e.which == 13 ) {
-			event.preventDefault();
+			e.preventDefault();
 			$("#tallaTamizaje").fucus();
 		}
 		if ($("#psisTamizaje").val() > 1){
@@ -560,23 +560,9 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#audTamizaje").on("keyup",function(e){
-		if ( e.which == 13 ) {
-			event.preventDefault();
-			$("#auiTamizaje").fucus();
-		}
-	});
-
-	$("#auiTamizaje").on("keyup",function(e){
-		if ( e.which == 13 ) {
-			event.preventDefault();
-			$("#psisTamizaje").fucus();
-		}
-	});
-
 	$("#tallaTamizaje").on("keyup", function(e){
 		if ( e.which == 13 ) {
-			event.preventDefault();
+			e.preventDefault();
 			$("#pesoTamizaje").fucus();
 		}
 		if ($("#tallaTamizaje").val() > 1 && $("#pesoTamizaje").val() > 1){
@@ -600,7 +586,7 @@ $(document).ready(function(){
 
 	$("#pesoTamizaje").on("keyup", function(e){
 		if ( e.which == 13 ) {
-			event.preventDefault();
+			e.preventDefault();
 			$("#primigesta").fucus();
 		}
 		if ($("#tallaTamizaje").val() > 1 && $("#pesoTamizaje").val() > 1){
@@ -608,7 +594,11 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#audTamizaje").on("keyup", function(){
+	$("#audTamizaje").on("keyup", function(e){
+		if ( e.which == 13 ) {
+			e.preventDefault();
+			$("#auiTamizaje").fucus();
+		}
 		var aud = "";
 		if ($("#audTamizaje").val() != ""){
 			aud = $("#audTamizaje").val();
@@ -637,7 +627,11 @@ $(document).ready(function(){
 		}
 	});
 	
-	$("#auiTamizaje").on("keyup", function(){
+	$("#auiTamizaje").on("keyup", function(e){
+		if ( e.which == 13 ) {
+			e.preventDefault();
+			$("#psisTamizaje").fucus();
+		}
 		var aud = "";
 		if ($("#audTamizaje").val() != ""){
 			aud = $("#audTamizaje").val();
