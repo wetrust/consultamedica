@@ -569,8 +569,6 @@ $(document).ready(function(){
 			$("#translunucal").removeClass("d-none");
 			$("#primtrim\\.adicionales\\.translucencia").removeClass("d-none");
 			$("#primtrim\\.adicionales\\.translucencia\\.ocultar").removeClass("d-none");
-			$("#prob").removeClass("d-none");
-			$("#prob2").removeClass("d-none");
 		}
 	});
 
