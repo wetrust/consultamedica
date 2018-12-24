@@ -616,11 +616,11 @@ $( '#graficoSaco' ).on( 'click', function() {
     $( '#impDoppler1').remove();
     $('#graficoSacoView').highcharts({
              title: {
-                 text: 'Promedio Saco Gestacional',
+                 text: '',
                  x: -20
              },
              subtitle: {
-                 text: 'Milimetros (mm)',
+                 text: 'Promedio Saco Gestacional en Milimetros (mm)',
                  x: -20
              },
              plotOptions: {
