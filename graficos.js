@@ -512,7 +512,7 @@ $( '#graficoLcn' ).on( 'click', function() {
     $( '#impDoppler1').remove();
     $('#graficoLcnBaseView').highcharts({
         title: {
-            text: 'LCN 6 a 15 semanas',
+            text: '',
             x: -20 //center
         },
         xAxis: {
