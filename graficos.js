@@ -501,7 +501,7 @@ $( '#graficoCerebelo' ).on( 'click', function() {
 });
 
 $( '#graficoLcn' ).on( 'click', function() {
-    $('#graficosTitle').html("Gráfico de Longitud Cefalo - Nalgas (LCN)");
+    $('#graficosTitle').html("Gráfico de Longitud Cefalo Nalgas (LCN)");
     $('#graficosBody').html("<div class='row'><div class='col'><div id='graficoLcnBaseView'></div></div></div>");
         
     var egLcn = parseFloat($("input[name='eg']").val());
