@@ -1764,18 +1764,22 @@
                 </div>
             </div>
             <div class="col-3">
-                <div class="card mt-5">
-                    <div class="card-block">
-                        <h6 class="text-center my-2">Ver Informes</h6>
-                        <div class="btn-group-vertical d-flex">
-                            <button class="btn btn-outline-consulta" type="button" id="modalPreInfEcoPrimTrim" disabled>Informe 1er. trimestre</button>
-                        </div>
+                <nav>
+                    <div class="nav nav-tabs" id="nav-ecoseg-trim" role="tablist">
+                        <a class="nav-item nav-link active text-white" style="background-color:#6c757d!important" id="nav-informe-ecodos-tab" data-toggle="tab" href="#nav-informe-ecodos" role="tab" aria-controls="nav-informe-ecodos" aria-selected="true">Ver Informe</a>
                     </div>
-                </div>
-                <div class="card mt-3">
-                    <div class="card-block">
-                        <div class="btn-group-vertical d-flex">
-                            <button class="btn btn-default" type="button" id="eco.prim.trim.nuevo">Borrar Datos</button>
+                </nav>
+                <div class="tab-content" id="nav-ecodos-trim-tab">
+                    <div class="tab-pane fade show active" id="nav-informe-ecodos" role="tabpanel" aria-labelledby="nav-informe-ecodos-tab">
+                        <div class="card">
+                            <div class="card-block">
+                                <div class="py-3 btn-group-vertical d-flex">
+                                    <button class="btn btn-outline-consulta" type="button" id="modalPreInfEcoPrimTrim" disabled>Informe 1er. trimestre</button>
+                                </div>
+                                <div class="pt-3 pb-2 btn-group-vertical d-flex">
+                                        <button class="btn btn-default" type="button" id="eco.prim.trim.nuevo">Borrar Datos</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
