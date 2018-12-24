@@ -501,7 +501,7 @@ $( '#graficoCerebelo' ).on( 'click', function() {
 });
 
 $( '#graficoLcn' ).on( 'click', function() {
-    $('#graficosTitle').html("Gráfico de Longitud Cefalo Nalgas (LCN)");
+    $('#graficosTitle').html('<i class="fa fa-square" aria-hidden="true"></i> Médida de Longitud Cefalo Nalgas (LCN) en centímetros');
     $('#graficosBody').html("<div class='row'><div class='col'><div id='graficoLcnBaseView'></div></div></div>");
         
     var egLcn = parseFloat($("input[name='eg']").val());
@@ -520,7 +520,7 @@ $( '#graficoLcn' ).on( 'click', function() {
         },
         yAxis: {
             title: {
-                text: 'Milimetros (mm)'
+                text: 'centímetros (cm)'
             },
             tickPositions: [0.2, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 11]
         },
