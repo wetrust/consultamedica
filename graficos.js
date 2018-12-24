@@ -607,7 +607,7 @@ $( '#graficoLcn' ).on( 'click', function() {
 });
 
 $( '#graficoSaco' ).on( 'click', function() {
-    $('#graficosTitle').html('<i class="fa fa-square" aria-hidden="true"></i> Medida de Saco Gestacional');
+    $('#graficosTitle').html('<i class="fa fa-square" aria-hidden="true"></i> Medida de Saco Gestacional en Milimetros (mm)');
     $('#graficosBody').html("<div id='graficoSacoView'></div>");
     $( '#impEcoObsSegTrim1').remove();
     $( '#impEcoObsSegTrim2').remove();
@@ -620,7 +620,7 @@ $( '#graficoSaco' ).on( 'click', function() {
                  x: -20
              },
              subtitle: {
-                 text: 'Promedio Saco Gestacional en Milimetros (mm)',
+                 text: '',
                  x: -20
              },
              plotOptions: {
