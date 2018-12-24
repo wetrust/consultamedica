@@ -1,7 +1,7 @@
 function construirGraficos() {
         $('#graficolcn').highcharts({
         title: {
-            text: 'Grafico de Longitud Cefalo - Nalgas (LCN)',
+            text: 'Gráfico de Longitud Cefalo - Nalgas (LCN)',
             x: -20 //center
         },
         xAxis: {
@@ -501,7 +501,7 @@ $( '#graficoCerebelo' ).on( 'click', function() {
 });
 
 $( '#graficoLcn' ).on( 'click', function() {
-    $('#graficosTitle').html("Grafico de Longitud Cefalo - Nalgas (LCN)");
+    $('#graficosTitle').html("Gráfico de Longitud Cefalo - Nalgas (LCN)");
     $('#graficosBody').html("<div class='row'><div class='col'><div id='graficoLcnBaseView'></div></div></div>");
         
     var egLcn = parseFloat($("input[name='eg']").val());
