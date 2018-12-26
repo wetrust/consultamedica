@@ -630,7 +630,7 @@ $( '#graficoSaco' ).on( 'click', function() {
              },
              yAxis: {
                  title: { text: '' },
-                 tickPositions: [-10, 10, 25, 40]
+                 tickPositions: [0, 10, 25, 40]
              },
              colors: ['#313131', '#313131', '#313131'],
              xAxis: {
@@ -668,7 +668,7 @@ $( '#graficoSaco' ).on( 'click', function() {
                      var saco = $("#saco").val();
                      saco = saco.toString();
                      saco = saco.replace(",", ".");
-                     saco = parseFloat(saco) / 10;
+                     saco = parseFloat(saco);
                      
                      for (i = 0; i <= 27; i++) {
 
