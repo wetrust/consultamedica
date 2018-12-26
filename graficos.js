@@ -607,7 +607,7 @@ $( '#graficoLcn' ).on( 'click', function() {
 });
 
 $( '#graficoSaco' ).on( 'click', function() {
-    $('#graficosTitle').html('<i class="fa fa-square" aria-hidden="true"></i> Medida de Saco Gestacional en centímetro (cm)');
+    $('#graficosTitle').html('<i class="fa fa-square" aria-hidden="true"></i> Saco Gestacional en milímetros (mm)');
     $('#graficosBody').html("<div id='graficoSacoView'></div>");
     $( '#impEcoObsSegTrim1').remove();
     $( '#impEcoObsSegTrim2').remove();
@@ -630,7 +630,7 @@ $( '#graficoSaco' ).on( 'click', function() {
              },
              yAxis: {
                  title: { text: '' },
-                 tickPositions: [-1, 1, 2.5, 4.0]
+                 tickPositions: [-10, 10, 25, 40]
              },
              colors: ['#313131', '#313131', '#313131'],
              xAxis: {
@@ -641,18 +641,18 @@ $( '#graficoSaco' ).on( 'click', function() {
                  type: "line",
                  name: '-DE',
                  marker: { enabled: false },
-                 data: [0.012,0.101,0.145,0.214,0.293,0.41,0.51,0.61,0.7,0.8,0.9,0.99,1.07,1.15,1.22,1.33,1.39,1.49,1.59,1.67,1.76,1.86,1.94,2.04,2.1,2.2,2.3],
+                 data: [0.12,1.01,1.45,2.14,2.93,4.1,5.1,6.1,7,8,9,9.9,10.7,11.5,12.2,13.3,13.9,14.9,15.9,16.7,17.6,18.6,19.4,20.4,21,22,23],
                  dashStyle: 'shortdot'
              },{
                  type: "line",
                  name: 'media',
                  marker: { enabled: false },
-                 data: [0.4,0.5,0.6,0.7,0.8,0.9,1,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,1.99,2.09,2.18,2.29,2.41,2.5,2.6,2.7,2.8,2.9,3]
+                 data: [4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,19.9,20.9,21.8,22.9,24.1,25,26,27,28,29,30]
              },{
                  type: "line",
                  name: '+DE',
                  marker: { enabled: false },
-                 data: [0.99,1.09,1.16,1.26,1.36,1.51,1.6,1.7,1.8,1.9,1.99,2.11,2.19,2.29,2.41,2.51,2.61,2.7,2.8,2.9,3,3.1,3.2,3.3,3.4,3.5,3.6],
+                 data: [9.9,10.9,11.6,12.6,13.6,15.1,16,17,18,19,19.9,21.1,21.9,22.9,24.1,25.1,26.1,27,28,29,3,31,32,33,34,35,36],
                  dashStyle: 'shortdot'
              }, {
                  type: "line",
