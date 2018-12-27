@@ -630,7 +630,7 @@ $( '#graficoSaco' ).on( 'click', function() {
              },
              yAxis: {
                  title: { text: '' },
-                 tickPositions: [0, 10, 25, 40]
+                 tickPositions: [0, 5, 10, 15, 20, 25, 30, 35, 40]
              },
              colors: ['#313131', '#313131', '#313131'],
              xAxis: {
