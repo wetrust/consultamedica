@@ -512,6 +512,17 @@ $(document).ready(function(){
 		}
 	});
 
+	$("#link\\.go\\.formularios").on("click",function(){
+		if ($("#link\\.go\\.formularios\\.pasouno").hasClass("d-none")){
+			$("#link\\.go\\.formularios\\.pasouno").removeClass("d-none");
+			$("#link\\.go\\.formularios\\.pasodos").removeClass("d-none");
+		}
+		else{
+			$("#link\\.go\\.formularios\\.pasouno").addClass("d-none");
+			$("#link\\.go\\.formularios\\.pasodos").addClass("d-none");
+		}
+	});
+
 	$("#link\\.go\\.doppler").on("click",function(){
 		$("#link\\.volver\\.doppler").attr("href","#inicio");
 	});
