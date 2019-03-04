@@ -239,6 +239,30 @@ $(document).ready(function(){
 		$("#prob").addClass("d-none");
 		$("#prob2").addClass("d-none");
 	});
+
+	$("#interconsulta\\.enviar").on("click", function(){
+		var data = {
+			nombre: $("#interconsulta\\.nombre").val(),
+			rut: $("#interconsulta\\.rut").val(),
+			fecha: $("#interconsulta\\.fecha").val(),
+			eg: $('input[name=interconsulta_eg]:checked').val(),
+			eco: $('input[name=interconsulta_eco]:checked').val(),
+			diagnostico: $("#interconsulta\\.diagnostico").val(),
+			lugar: $("#interconsulta\\.lugar").val(),
+			ciudad: $("#interconsulta\\.ciudad").val(),
+			profesional: $("#interconsulta\\.profesional").val(),
+			nombre: $("#interconsulta\\.profesional.nombre").val(),
+			email: $("#interconsulta\\.email").val(),
+			telefono: $("#interconsulta\\.telefono").val(),
+			para: $("#interconsulta\\.para").val()
+		};
+		
+		$.post("https://administrador.crecimientofetal.cl/api/send", data).done(function(response){
+			if (response.result == false){
+				alert("Usted no puede solicitar interconsulta para este profesional");
+			}
+		});
+	});
 });
 
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
