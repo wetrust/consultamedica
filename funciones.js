@@ -251,12 +251,12 @@ $(document).ready(function(){
 			lugar: $("#interconsulta\\.lugar").val(),
 			ciudad: $("#interconsulta\\.ciudad").val(),
 			profesional: $("#interconsulta\\.profesional").val(),
-			nombre: $("#interconsulta\\.profesional.nombre").val(),
+			nombreprofesional: $("#interconsulta\\.profesional\\.nombre").val(),
 			email: $("#interconsulta\\.email").val(),
 			telefono: $("#interconsulta\\.telefono").val(),
 			para: $("#interconsulta\\.para").val()
 		};
-		
+
 		$.post("https://administrador.crecimientofetal.cl/api/send", data).done(function(response){
 			if (response.result == false){
 				alert("Usted no puede solicitar interconsulta para este profesional");
