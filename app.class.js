@@ -114,6 +114,9 @@ class app {
 		else if (this.hash == "#solicitud"){
 			this.displayElement("solicitud");
 		}
+		else if (this.hash == "#administracion"){
+			this.displayElement("administracion");
+		}
     }
 
 //Funciones para los pacientes
@@ -308,6 +311,7 @@ class app {
 	$('#construccion').hide();
 	$('#ecoObsPrimTrimTrisomia').hide();
 	$('#solicitud').hide();
+	$('#administracion').hide();
 	$('#'+div_id).show();
     }
 	

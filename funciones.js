@@ -271,6 +271,22 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	$("#administracion\\.email").on("keyup",function(){
+		$("#administracion\\.tabla").empty();
+		 var data = {
+			 correo_profesional: $("#administracion\\.email").val()
+		 }
+
+		 $.post("https://administrador.crecimientofetal.cl/api/interconsulta", data).done(function(response){
+			if (Object.keys(response).length > 0) {
+				$.each(response, function(i, val){
+					let fila = '<tr><td>' + val.solicitud_id + '</td><td>' + val.solicitud_nombre+ '</td><td>' + val.solicitud_rut + '</td><td>' + val.solicitud_fecha + '</td><td>' + val.solicitud_diagnostico + '</td><td><button class="btn btn-primary">Responder a la interconsulta</button></td></tr>';
+					$("#administracion\\.tabla").append(fila);
+				});
+			}
+		 });
+	});
 });
 
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
