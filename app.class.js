@@ -332,7 +332,7 @@ class app {
 	$("input[name='fum']").val((day)+"/"+(month)+"/"+this.day.getFullYear());
 	$("input[name='fee']").val((day)+"/"+(month)+"/"+this.day.getFullYear());
 	$('#id-paciente').val((day)+(month)+this.day.getFullYear());
-	$('#interconsulta\\.fecha').val((day)+(month)+this.day.getFullYear());
+	$('#interconsulta\\.fecha').val((day)+"/"+(month)+"/"+this.day.getFullYear());
   }
 
   clearData(){
