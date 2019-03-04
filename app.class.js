@@ -83,7 +83,6 @@ class app {
 		}
 		else if (this.hash=="#postnatal"){
 			this.displayElement("postnatal");
-
 		}
 		else if (this.hash=="#ajustepeso"){
 			this.displayElement("ajustepeso");
@@ -111,6 +110,9 @@ class app {
 		}
 		else if (this.hash=="#ecoObsPrimTrimTrisomia"){
 			this.displayElement("ecoObsPrimTrimTrisomia");
+		}
+		else if (this.hash == "#solicitud"){
+			this.displayElement("solicitud");
 		}
     }
 
@@ -305,6 +307,7 @@ class app {
 	$('#consentimiento').hide();
 	$('#construccion').hide();
 	$('#ecoObsPrimTrimTrisomia').hide();
+	$('#solicitud').hide();
 	$('#'+div_id).show();
     }
 	

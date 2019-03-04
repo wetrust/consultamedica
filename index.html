@@ -310,7 +310,7 @@
                     <div class="card-block">
                         <div role="group">
                             <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1" id="link.go.formularios"><small>Formularios adicionales</small></a>
-                            <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1 ml-3 d-none" id="link.go.formularios.pasouno" href="img/solicitud_interconsulta.pdf"><small>&gt; PDF solicitud de interconsulta</small></a>
+                            <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1 ml-3 d-none" id="link.go.formularios.pasouno" href="#solicitud"><small>&gt; Solicitud de interconsulta</small></a>
                             <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1 ml-3 d-none" id="link.go.formularios.pasodos" href="img/protocolo_manejo_de_rciu.png"><small>&gt; Imagen protocolo manejo de RCIU</small></a>
                         </div>
                     </div>
@@ -3742,6 +3742,95 @@
                     </div>
                 <p class="text-muted" style="float:left">* SOCHIPE: Sociedad Chilena de Pedratría.</p>
                 <p class="text-muted" style="float:right">Artículo de referencia: Rev. Chil. Pediat 2010; 81 (3): 264-274</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="solicitud">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-primary" role="alert">
+                   <h1>Formulario solicitud de interconsulta para evaluación del creciiento fetal<br>Ecografía y Flujometría Doppler materno fetal</h1>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col form-group">
+                <label for="interconsulta.nombre">Nombre</label>
+                <input type="text" class="form-control" id="interconsulta.nombre">
+            </div>
+            <div class="col form-group">
+                <label for="interconsulta.rut">RUT</label>
+                <input type="text" class="form-control" id="interconsulta.rut">
+            </div>
+            <div class="col form-group">
+                <label for="interconsulta.fecha">Fecha</label>
+                <input type="date" class="form-control" id="interconsulta.fecha">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col form-group">
+                <label for="inputEmail4">Ege conocida precozmente</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="interconsulta.eg.si" name="interconsulta_eg" class="custom-control-input">
+                    <label class="custom-control-label" for="interconsulta.eg.si">Si</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="interconsulta.eg.no" name="interconsulta_eg" class="custom-control-input">
+                    <label class="custom-control-label" for="interconsulta.eg.no">No</label>
+                </div>
+            </div>
+            <div class="col form-group">
+                <label for="inputEmail4">Ecografía previa de crecimiento</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="interconsulta.eco.si" name="interconsulta_eco" class="custom-control-input">
+                    <label class="custom-control-label" for="interconsulta.eco.si">Si</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="interconsulta.eco.no" name="interconsulta_eco" class="custom-control-input">
+                    <label class="custom-control-label" for="interconsulta.eco.no">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col form-group">
+                <label for="interconsulta.diagnostico">Diagnóstico de referencia</label>
+                <input type="text" class="form-control" id="interconsulta.diagnostico">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col form-group">
+                <label for="interconsulta.lugar">Lugar de control</label>
+                <input type="text" class="form-control" id="interconsulta.lugar">
+            </div>
+            <div class="col form-group">
+                <label for="interconsulta.ciudad">Ciudad</label>
+                <input type="text" class="form-control" id="interconsulta.ciudad">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col form-group">
+                <label for="interconsulta.profesional">Profesional referente</label>
+                <input type="text" class="form-control" id="interconsulta.profesional">
+            </div>
+            <div class="col form-group">
+                <label for="interconsulta.profesional.nombre">Nombre</label>
+                <input type="text" class="form-control" id="interconsulta.profesional.nombre">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col form-group">
+                <label for="interconsulta.email">Correo electrónico</label>
+                <input type="email" class="form-control" id="interconsulta.email">
+            </div>
+            <div class="col form-group">
+                <label for="interconsulta.telefono">Fono</label>
+                <input type="number" class="form-control" id="interconsulta.telefono">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col form-group">
+                <label for="interconsulta.para">Solicitud enviada a correo electrónico</label>
+                <input type="email" class="form-control" id="interconsulta.para">
             </div>
         </div>
     </div>
