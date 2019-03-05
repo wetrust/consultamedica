@@ -1848,16 +1848,22 @@ function crearInformeEcoPrimTrim(){
         var LINEA7 = $("#exploracion-douglas").val() + ", " + douglasinforme;
 	var LINEA12 = '';
 	var LINEA8 = '';
-        if ($('#lcn').val() > 0){
-	    var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
-	    var LINEA10 = "Exploración anexial derecha " + $("#anexo-derecho").val();
-            var LINEA11 = "Exploración anexial izquierda " + $("#anexo-izquierdo").val();
-        }
+	if ($('#lcn').val() > 0){
+		var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
+		var LINEA10 = "Exploración anexial derecha " + $("#anexo-derecho").val();
+		var LINEA11 = "Exploración anexial izquierda " + $("#anexo-izquierdo").val();
+	} 
+	else if ($('#lcn').val() == "" && $('#lcn').val() == "" && $("#embrion").val() == "no procede"){
+		var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
+		var LINEA10 = "Exploración anexial " + $("#anexo-derecho").val();
+		var LINEA11 = "";
+		LINEA12 = "Embrion no se observa";
+	}
 	else{
-	    var LINEA9 = "Gestación Inicial<br>Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
-	    var LINEA10 = "Exploración anexial " + $("#anexo-derecho").val();
-            var LINEA11 = "";
-	    LINEA12 = "no procede.";
+		var LINEA9 = "Gestación Inicial<br>Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
+		var LINEA10 = "Exploración anexial " + $("#anexo-derecho").val();
+		var LINEA11 = "";
+		LINEA12 = "Embrion no se observa";
 	}
 	
         if (sacogestacionaltxt > 0){
