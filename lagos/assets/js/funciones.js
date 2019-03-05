@@ -2371,7 +2371,7 @@ function crearInformeEcoPrimTrim(){
 	    		var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
 	    		var LINEA10 = "Exploración anexial derecha " + $("#anexo-derecho").val();
           var LINEA11 = "Exploración anexial izquierda " + $("#anexo-izquierdo").val();
-				}
+				} 
 				else if ($('#lcn').val() == "" && $('#lcn').val() == "" && $("#embrion").val() == "no procede"){
 	    		var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
 	    		var LINEA10 = "Exploración anexial " + $("#anexo-derecho").val();
