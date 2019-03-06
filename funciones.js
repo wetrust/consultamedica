@@ -295,7 +295,7 @@ $(document).ready(function(){
 
 						$.get("https://administrador.crecimientofetal.cl/api/eliminar/" + id).done(function(response){
 							$("#administracion\\.email").trigger("keyup");	
-							$('#mensaje\\.dialogo').remove();
+							$('#mensaje\\.dialogo').modal("hide").remove();
 						});
 					});
 
