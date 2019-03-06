@@ -1846,8 +1846,9 @@ function crearInformeEcoPrimTrim(){
         var LINEA5 = $("#anexo-derecho").val();
         var LINEA6 = $("#anexo-izquierdo").val();
         var LINEA7 = $("#exploracion-douglas").val() + ", " + douglasinforme;
-	var LINEA12 = '';
-	var LINEA8 = '';
+				var LINEA12 = '';
+				var LINEA8 = '';
+
 	if ($('#lcn').val() > 0){
 		var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
 		var LINEA10 = "Exploración anexial derecha " + $("#anexo-derecho").val();
