@@ -281,8 +281,27 @@ $(document).ready(function(){
 		 $.post("https://administrador.crecimientofetal.cl/api/interconsulta", data).done(function(response){
 			if (Object.keys(response).length > 0) {
 				$.each(response, function(i, val){
-					let fila = '<tr><td>' + val.solicitud_id + '</td><td>' + val.solicitud_nombre+ '</td><td>' + val.solicitud_rut + '</td><td>' + val.solicitud_fecha + '</td><td>' + val.solicitud_diagnostico + '</td><td><button class="btn btn-primary">Responder a la interconsulta</button></td></tr>';
+					let fila = '<tr><td>' + val.solicitud_id + '</td><td>' + val.solicitud_nombre+ '</td><td>' + val.solicitud_rut + '</td><td>' + val.solicitud_fecha + '</td><td>' + val.solicitud_diagnostico + '</td><td><button class="btn btn-primary">Responder a la interconsulta</button></td><td><button class="btn btn-danger eliminar-interconsulta" data-id="' + val.solicitud_id + '">Eliminar</button></td></tr>';
 					$("#administracion\\.tabla").append(fila);
+				});
+
+				$(".eliminar-interconsulta").on("click", function(){
+					var id = $(this).data("id");
+
+					$('body').append('<div class="modal" tabindex="-1" role="dialog" id="mensaje.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Información</h5></div><div class="modal-body"><p>¿Está seguro de eliminar la interconsulta sin responder a ella?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" id="confirmar.eliminacion" data-id="'+id+'">Eliminar</button><button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+					$('#mensaje\\.dialogo').modal("show");
+					$("#confirmar\\.eliminacion").on("click", function(){
+						var id = $(this).data("id");
+
+						$.get("https://administrador.crecimientofetal.cl/api/eliminar/" + id).done(function(response){
+							$("#administracion\\.email").trigger("keyup");	
+							$('#mensaje\\.dialogo').remove();
+						});
+					});
+
+					$('#mensaje\\.dialogo').on('hidden.bs.modal', function (e) {
+						$(this).remove();
+					});
 				});
 			}
 		 });
