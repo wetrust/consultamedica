@@ -1970,7 +1970,7 @@ function crearInformeEcoPrimTrim(){
 		var LINEA9 = "Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
 		var LINEA10 = "Exploración anexial " + $("#anexo-derecho").val();
 		var LINEA11 = "";
-		LINEA12 = "Embrion no se observa";
+		LINEA12 = "no procede";
 	}
 	else{
 		var LINEA9 = "Gestación Inicial<br>Utero " + $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
