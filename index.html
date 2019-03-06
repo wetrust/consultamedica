@@ -3752,7 +3752,7 @@
         <div class="row">
             <div class="col">
                 <div class="alert g-verde" role="alert">
-                   <h3 class="text-center text-white">Formulario solicitud de interconsulta para evaluación del crecimiento fetal<br>Ecografía y Flujometría Doppler materno fetal</h1>
+                   <h4 class="text-center text-white">Formulario solicitud de interconsulta para evaluación del crecimiento fetal<br>Ecografía y Flujometría Doppler materno fetal</h4>
                 </div>
             </div>
         </div>
@@ -3845,7 +3845,7 @@
         <div class="row">
             <div class="col">
                 <div class="alert g-verde" role="alert">
-                    <h3 class="text-center text-white">Administración de interconsultas</h1>
+                    <h4 class="text-center text-white">Administración de interconsultas</h4>
                 </div>
             </div>
             <div class="col-12">
@@ -3875,6 +3875,99 @@
             </div>
         </div>
     </div>
+    <div class="container" id="respuesta">
+            <div class="row">
+                <div class="col">
+                    <div class="alert g-verde" role="alert">
+                        <h4 class="text-center text-white">Administración de interconsultas</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                    <div class="card-block">
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="interconsulta.nombre">Nombre del paciente</label>
+                        <input type="text" class="form-control" id="interconsulta.nombre.copia" disabled>
+                    </div>
+                    <div class="col form-group">
+                        <label for="interconsulta.rut">RUT del paciente</label>
+                        <input type="text" class="form-control" id="interconsulta.rut.copia" disabled>
+                    </div>
+                    <div class="col form-group">
+                        <label for="interconsulta.fecha">Fecha de solicitud</label>
+                        <input type="date" class="form-control" id="interconsulta.fecha.copia" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="inputEmail4">Ege conocida precozmente</label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.eg.si" value="1" name="interconsulta_eg_copia" class="form-check-input" disabled>
+                            <label class="custom-control-label" for="interconsulta.eg.si">Si</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.eg.no" value="0" name="interconsulta_eg_copia" class="form-check-input" disabled>
+                            <label class="custom-control-label" for="interconsulta.eg.no">No</label>
+                        </div>
+                    </div>
+                    <div class="col form-group">
+                        <label for="inputEmail4">Ecografía previa de crecimiento</label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.eco.si" value="1" name="interconsulta_eco_copia" class="form-check-input" disabled>
+                            <label class="custom-control-label" for="interconsulta.eco.si">Si</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.eco.no" value="0" name="interconsulta_eco_copia" class="form-check-input" disabled>
+                            <label class="custom-control-label" for="interconsulta.eco.no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="interconsulta.diagnostico">Diagnóstico de referencia</label>
+                        <input type="text" class="form-control" id="interconsulta.diagnostico.copia" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="interconsulta.ciudad">Ciudad de procedencia</label>
+                        <input type="text" class="form-control" id="interconsulta.ciudad.copia" disabled>
+                    </div>
+                    <div class="col form-group">
+                        <label for="interconsulta.lugar">Lugar de control</label>
+                        <input type="text" class="form-control" id="interconsulta.lugar.copia" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="interconsulta.profesional">Profesional referente</label>
+                        <input type="text" class="form-control" id="interconsulta.profesional.copia" disabled>
+                    </div>
+                    <div class="col form-group">
+                        <label for="interconsulta.profesional.nombre">Nombre</label>
+                        <input type="text" class="form-control" id="interconsulta.profesional.nombre.copia" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="interconsulta.email">Correo electrónico</label>
+                        <input type="email" class="form-control" id="interconsulta.email.copia" disabled>
+                    </div>
+                    <div class="col form-group">
+                        <label for="interconsulta.telefono">Fono</label>
+                        <input type="number" class="form-control" id="interconsulta.telefono.copia" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="interconsulta.para">Solicitud enviada a correo electrónico</label>
+                        <input type="email" class="form-control" id="interconsulta.para.copia" disabled>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
     <script type="text/javascript">
         $(document).ready(function() {
             Highcharts.chart('grafico', {

@@ -287,7 +287,26 @@ $(document).ready(function(){
 
 				$(".responder-interconsulta").on("click", function(){
 					var id = $(this).data("id");
+
 					document.location.hash = "#respuesta";
+
+					$.get("https://administrador.crecimientofetal.cl/api/obtener/" +id).done(function(response){
+
+						$("#interconsulta\\.nombre\\.copia").val(response.solicitud_nombre);
+						$("#interconsulta\\.rut\\.copia").val(response.solicitud_rut);
+						$("#interconsulta\\.fecha\\.copia").val(response.solicitud_fecha);
+						$("input[name=interconsulta_eg][value=" + response.solicitud_eg_copia + "]").prop('checked', true);
+						$("input[name=interconsulta_eco][value=" + response.solicitud_eco_copia + "]").prop('checked', true);
+						$("#interconsulta\\.diagnostico\\.copia").val(response.solicitud_diagnostico);
+						$("#interconsulta\\.lugar\\.copia").val(response.solicitud_lugar);
+						$("#interconsulta\\.ciudad\\.copia").val(response.solicitud_ciudad);
+						$("#interconsulta\\.profesional\\.copia").val(response.solicitud_profesional);
+						$("#interconsulta\\.profesional\\.nombre\\.copia").val(response.solicitud_nombreprofesional);
+						$("#interconsulta\\.email\\.copia").val(response.solicitud_email);
+						$("#interconsulta\\.telefono\\.copia").val(response.solicitud_telefono);
+						$("#interconsulta\\.para\\.copia").val(response.solicitud_para);
+
+					});
 				});
 
 				$(".eliminar-interconsulta").on("click", function(){
