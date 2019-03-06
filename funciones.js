@@ -291,7 +291,7 @@ $(document).ready(function(){
 					document.location.hash = "#respuesta";
 
 					$.get("https://administrador.crecimientofetal.cl/api/obtener/" +id).done(function(response){
-
+						$("#interconsulta\\.respuesta\\.id").val(response.solicitud_id);
 						$("#interconsulta\\.nombre\\.copia").val(response.solicitud_nombre);
 						$("#interconsulta\\.rut\\.copia").val(response.solicitud_rut);
 						$("#interconsulta\\.fecha\\.copia").val(response.solicitud_fecha);
@@ -304,8 +304,7 @@ $(document).ready(function(){
 						$("#interconsulta\\.profesional\\.nombre\\.copia").val(response.solicitud_nombreprofesional);
 						$("#interconsulta\\.email\\.copia").val(response.solicitud_email);
 						$("#interconsulta\\.telefono\\.copia").val(response.solicitud_telefono);
-						$("#interconsulta\\.para\\.copia").val(response.solicitud_para);
-
+						$("#interconsulta\\.para\\.copia").val(response.solicitud_profesionalemail);
 					});
 				});
 
@@ -329,6 +328,76 @@ $(document).ready(function(){
 				});
 			}
 		 });
+	});
+
+	$("#interconsulta\\.respuesta\\.proceder").on("change", function(){
+		if ($(this).val() == "no"){
+			$("#interconsulta\\.respuesta\\.pfe\\.div").addClass("d-none");
+			$("#interconsulta\\.respuesta\\.liquido\\.div").addClass("d-none");
+			$("#interconsulta\\.respuesta\\.uterinas\\.div").addClass("d-none");
+			$("#interconsulta\\.respuesta\\.umbilical\\.div").addClass("d-none");
+			$("#interconsulta\\.respuesta\\.cm\\.div").addClass("d-none");
+			$("#interconsulta\\.respuesta\\.cmau\\.div").addClass("d-none");
+			$("#interconsulta\\.respuesta\\.hipotesis\\.div").addClass("d-none");
+			$("#interconsulta\\.respuesta\\.rciu\\.div").addClass("d-none");
+			$("#interconsulta\\.respuesta\\.lugar\\.div").addClass("d-none");
+			$("#interconsulta\\.respuesta\\.comentariosexamen\\.div").addClass("d-none");
+		}
+		else if ($(this).val() == "si"){
+			$("#interconsulta\\.respuesta\\.pfe\\.div").removeClass("d-none");
+			$("#interconsulta\\.respuesta\\.liquido\\.div").removeClass("d-none");
+			$("#interconsulta\\.respuesta\\.bvm\\.div").removeClass("d-none");
+			$("#interconsulta\\.respuesta\\.uterinas\\.div").removeClass("d-none");
+			$("#interconsulta\\.respuesta\\.umbilical\\.div").removeClass("d-none");
+			$("#interconsulta\\.respuesta\\.cm\\.div").removeClass("d-none");
+			$("#interconsulta\\.respuesta\\.cmau\\.div").removeClass("d-none");
+			$("#interconsulta\\.respuesta\\.hipotesis\\.div").removeClass("d-none");
+			$("#interconsulta\\.respuesta\\.rciu\\.div").removeClass("d-none");
+			$("#interconsulta\\.respuesta\\.lugar\\.div").removeClass("d-none");
+			$("#interconsulta\\.respuesta\\.comentariosexamen\\.div").removeClass("d-none");
+		}
+	});
+
+	$("#interconsulta\\.enviar\\.respuesta").on("click", function(){
+		var id = $("#interconsulta\\.respuesta\\.id").val();
+
+		var data = {
+			proceder:$("#interconsulta.respuesta.proceder").val(),
+			fecha:$("#interconsulta.respuesta.fecha").val(),
+			fechacitacion:$("#interconsulta.respuesta.fechacitacion").val(),
+			comentarios:$("#interconsulta.respuesta.comentarios").val(),
+			pfe:$("#interconsulta.respuesta.pfe").val(),
+			pfe_percentil:$("#interconsulta.respuesta.pfe.percentil").val(),
+			liquido:$("#interconsulta.respuesta.liquido").val(),
+			bvm:$("#interconsulta.respuesta.bvm").val(),
+			uterinas:$("#interconsulta.respuesta.uterinas").val(),
+			uterinas_percentil:$("#interconsulta.respuesta.uterinas.percentil").val(),
+			umbilical:$("#interconsulta.respuesta.umbilical").val(),
+			umbilical_percentil:$("#interconsulta.respuesta.umbilical.percentil").val(),
+			cm:$("#interconsulta.respuesta.cm").val(),
+			cm_percentil:$("#interconsulta.respuesta.cm.percentil").val(),
+			cmau:$("#interconsulta.respuesta.cmau").val(),
+			cmau_percentil:$("#interconsulta.respuesta.cmau.percentil").val(),
+			hipotesis:$("#interconsulta.respuesta.hipotesis").val(),
+			rciu:$("#interconsulta.respuesta.rciu").val(),
+			lugar:$("#interconsulta.respuesta.lugar").val(),
+			controlfecha:$("#interconsulta.respuesta.controlfecha").val(),
+			comentariosexamen:$("#interconsulta.respuesta.comentariosexamen").val(),
+			ecografista:$("#interconsulta.respuesta.ecografista").val()
+		}
+
+		$.post("https://administrador.crecimientofetal.cl/api/responder/" + id, data).done(function(response){
+			if (Object.keys(response).length > 0) {
+				$('body').append('<div class="modal" tabindex="-1" role="dialog" id="mensaje.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Información</h5></div><div class="modal-body"><p>Respuesta a interconsulta enviada correctamente</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+				$('#mensaje\\.dialogo').modal("show");
+
+				$('#mensaje\\.dialogo').on('hidden.bs.modal', function (e) {
+					$(this).remove();
+				});
+				document.location.hash = "#administracion";
+				$("#administracion\\.email").trigger("keyup");
+			}
+		});
 	});
 });
 
