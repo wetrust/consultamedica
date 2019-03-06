@@ -740,6 +740,12 @@ $(document).ready(function(){
 	    else if ($(this).val() == 'act. card. y Corp. (-)'){
 		$('#lcn-informe').css('display', 'block');
 		$('#lcn-informe').val($('#lcn').val());
+			}
+			else if ($(this).val() == 'no procede'){
+				$('#fcf-primer-trim').css('display', 'block');
+				$('#lcn-informe').css('display', 'block');
+				$('#lcn-informe').val($('#lcn').val());
+				$('#comentarios-eco-uno').val("");
 	    }
 	    else{
 		$('#fcf-primer-trim').css('display', 'block');
