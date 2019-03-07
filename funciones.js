@@ -241,6 +241,7 @@ $(document).ready(function(){
 	});
 
 	$("#interconsulta\\.enviar").on("click", function(){
+		$(this).prop("disabled", true);
 		var data = {
 			nombre: $("#interconsulta\\.nombre").val(),
 			rut: $("#interconsulta\\.rut").val(),
