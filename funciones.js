@@ -248,6 +248,7 @@ $(document).ready(function(){
 			fecha: $("#interconsulta\\.fecha").val(),
 			eg: $('input[name=interconsulta_eg]:checked').val(),
 			eco: $('input[name=interconsulta_eco]:checked').val(),
+			fum: $("#interconsulta\\.fum").val(),
 			diagnostico: $("#interconsulta\\.diagnostico").val(),
 			lugar: $("#interconsulta\\.lugar").val(),
 			ciudad: $("#interconsulta\\.ciudad").val(),
@@ -297,6 +298,7 @@ $(document).ready(function(){
 						$("#interconsulta\\.rut\\.copia").val(response.solicitud_rut);
 						$("#interconsulta\\.fecha\\.copia").val(response.solicitud_fecha);
 						$("input[name=interconsulta_eg][value=" + response.solicitud_eg_copia + "]").prop('checked', true);
+						$("#interconsulta\\.fum\\.copia").val(response.fum),
 						$("input[name=interconsulta_eco][value=" + response.solicitud_eco_copia + "]").prop('checked', true);
 						$("#interconsulta\\.diagnostico\\.copia").val(response.solicitud_diagnostico);
 						$("#interconsulta\\.lugar\\.copia").val(response.solicitud_lugar);
