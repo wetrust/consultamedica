@@ -3844,7 +3844,7 @@
         </div>
         <div class="row">
             <div class="col form-group">
-                <label for="interconsulta.para">Solicitud enviada a correo electrónico de contrarreferencia</label>
+                <label for="interconsulta.para">Correo electrónico de contrarreferencia</label>
                 <input type="email" class="form-control" id="interconsulta.para">
             </div>
         </div>
@@ -3939,33 +3939,40 @@
                         </div>
                     </div>
                     <div class="col form-group">
-                        <label for="interconsulta.diagnostico">Diagnóstico de referencia</label>
+                        <label for="interconsulta.diagnostico">Diagnóstico de referencia para exámen ecográfico</label>
                         <input type="text" class="form-control" id="interconsulta.diagnostico.copia" disabled>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col form-group">
-                        <label for="interconsulta.ciudad">Ciudad de procedencia</label>
+                        <label for="interconsulta.ciudad">Ciudad procedencia de la paciente</label>
                         <input type="text" class="form-control" id="interconsulta.ciudad.copia" disabled>
                     </div>
                     <div class="col form-group">
-                        <label for="interconsulta.lugar">Lugar de control</label>
+                        <label for="interconsulta.lugar">Lugar de control prenatal</label>
                         <input type="text" class="form-control" id="interconsulta.lugar.copia" disabled>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col form-group">
-                        <label for="interconsulta.profesional">Profesional referente</label>
-                        <input type="text" class="form-control" id="interconsulta.profesional.copia" disabled>
+                        <label for="interconsulta.profesional">Profesional referente </label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.profesional.matrona" value="Matrona" name="interconsulta_profesional_copia" class="form-check-input" checked>
+                            <label class="custom-control-label" for="interconsulta.profesional.matrona">Matrona</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.profesional.medico" value="Médico" name="interconsulta_profesional_copia" class="form-check-input">
+                            <label class="custom-control-label" for="interconsulta.profesional.medico">Médico</label>
+                        </div>
                     </div>
                     <div class="col form-group">
-                        <label for="interconsulta.profesional.nombre">Nombre</label>
+                        <label for="interconsulta.profesional.nombre">Nombre del profesional referente</label>
                         <input type="text" class="form-control" id="interconsulta.profesional.nombre.copia" disabled>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col form-group">
-                        <label for="interconsulta.email">Correo electrónico</label>
+                        <label for="interconsulta.email">Correo electrónico de referencia</label>
                         <input type="email" class="form-control" id="interconsulta.email.copia" disabled>
                     </div>
                     <div class="col form-group">
@@ -3975,7 +3982,7 @@
                 </div>
                 <div class="row">
                     <div class="col form-group">
-                        <label for="interconsulta.para">Solicitud enviada a correo electrónico</label>
+                        <label for="interconsulta.para">Correo electrónico de contrarreferencia</label>
                         <input type="email" class="form-control" id="interconsulta.para.copia" disabled>
                     </div>
                 </div>
