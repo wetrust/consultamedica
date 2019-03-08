@@ -303,7 +303,7 @@ $(document).ready(function(){
 						$("#interconsulta\\.diagnostico\\.copia").val(response.solicitud_diagnostico);
 						$("#interconsulta\\.lugar\\.copia").val(response.solicitud_lugar);
 						$("#interconsulta\\.ciudad\\.copia").val(response.solicitud_ciudad);
-						$("#interconsulta\\.profesional\\.copia").val(response.solicitud_profesional);
+						$("input[name=interconsulta_profesional_copia][value=" + response.solicitud_profesional + "]").prop('checked', true);
 						$("#interconsulta\\.profesional\\.nombre\\.copia").val(response.solicitud_nombreprofesional);
 						$("#interconsulta\\.email\\.copia").val(response.solicitud_email);
 						$("#interconsulta\\.telefono\\.copia").val(response.solicitud_telefono);
