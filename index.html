@@ -3814,10 +3814,14 @@
         <div class="row">
             <div class="col form-group">
                 <label for="interconsulta.profesional">Profesional referente </label>
-                <select class="form-control" id="interconsulta.profesional">
-                    <option value="Matrona">Médico</option>
-                    <option value="Médico">Médico</option>
-                </select>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="interconsulta.profesional.matrona" value="Matrona" name="interconsulta_profesional" class="form-check-input" checked>
+                    <label class="custom-control-label" for="interconsulta.profesional.matrona">Matrona</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="interconsulta.profesional.medico" value="Médico" name="interconsulta_profesional" class="form-check-input">
+                    <label class="custom-control-label" for="interconsulta.profesional.medico">Médico</label>
+                </div>
             </div>
             <div class="col form-group">
                 <label for="interconsulta.profesional.nombre">Nombre del profesional referente</label>

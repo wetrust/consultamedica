@@ -251,7 +251,7 @@ $(document).ready(function(){
 			diagnostico: $("#interconsulta\\.diagnostico").val(),
 			lugar: $("#interconsulta\\.lugar").val(),
 			ciudad: $("#interconsulta\\.ciudad").val(),
-			profesional: $("#interconsulta\\.profesional").val(),
+			profesional: $('input[name=interconsulta_profesional]:checked').val(),
 			nombreprofesional: $("#interconsulta\\.profesional\\.nombre").val(),
 			email: $("#interconsulta\\.email").val(),
 			telefono: $("#interconsulta\\.telefono").val(),
