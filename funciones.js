@@ -408,6 +408,31 @@ $(document).ready(function(){
 			$("#comentarios-eco-uno").val("");
 		}
 	});
+
+	$("#administracion\\.interconsultas\\.historic").on("click", function(){
+		if ($(this).html().length > 6){
+			$("#administracion\\.email").addClass("d-none");
+			$(this).html("Volver").removeClass("btn-secondary").addClass("btn-danger");
+			$("#administracion\\.tabla").empty();
+			var data = {
+				correo_profesional: $("#administracion\\.email").val()
+			}
+
+			$.post("https://administrador.crecimientofetal.cl/api/historico", data).done(function(response){
+				if (Object.keys(response).length > 0) {
+					$.each(response, function(i, val){
+						let fila = '<tr><td>' + val.solicitud_id + '</td><td>' + val.solicitud_nombre+ '</td><td>' + val.solicitud_rut + '</td><td>' + val.solicitud_fecha + '</td><td>' + val.solicitud_diagnostico + '</td><td></tr>';
+						$("#administracion\\.tabla").append(fila);
+					});
+				}
+			});
+		}
+		else{
+			$("#administracion\\.email").removeClass("d-none");
+			$(this).html('Ver<br>interconsultas<br>anteriores').removeClass("btn-danger").addClass("btn-secondary");
+			$("#administracion\\.email").trigger("keyup");
+		}
+	});
 });
 
 function isIE() { return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); }
