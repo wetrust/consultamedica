@@ -726,7 +726,7 @@ $(document).ready(function(){
 	});
 
 	$( '#embrion').on("click", function(){
-	    if ($(this).val() == 'no se observa aun' || $(this).val() == 'act. no evidenciable' ){
+	    if ($(this).val() == 'no se observa aun' || $(this).val() == 'act. no evidenciable' || $(this).val() == 'no procede'){
 	        $('#fcf-primer-trim').css('display', 'none');
 		$('#fcf-primer-trim').val('');
 		$('#lcn-informe').css('display', 'none');
