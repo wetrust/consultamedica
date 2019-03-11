@@ -345,6 +345,7 @@ $(document).ready(function(){
 			$("#interconsulta\\.respuesta\\.rciu\\.div").addClass("d-none");
 			$("#interconsulta\\.respuesta\\.lugar\\.div").addClass("d-none");
 			$("#interconsulta\\.respuesta\\.comentariosexamen\\.div").addClass("d-none");
+			$("#interconsulta\\.titulo").addClass("d-none");
 		}
 		else if ($(this).val() == "si"){
 			$("#interconsulta\\.respuesta\\.pfe\\.div").removeClass("d-none");
@@ -358,6 +359,7 @@ $(document).ready(function(){
 			$("#interconsulta\\.respuesta\\.rciu\\.div").removeClass("d-none");
 			$("#interconsulta\\.respuesta\\.lugar\\.div").removeClass("d-none");
 			$("#interconsulta\\.respuesta\\.comentariosexamen\\.div").removeClass("d-none");
+			$("#interconsulta\\.titulo").removeClass("d-none");
 		}
 	});
 
