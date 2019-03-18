@@ -308,6 +308,17 @@ $(document).ready(function(){
 						$("#interconsulta\\.email\\.copia").val(response.solicitud_email);
 						$("#interconsulta\\.telefono\\.copia").val(response.solicitud_telefono);
 						$("#interconsulta\\.para\\.copia").val(response.solicitud_profesionalemail);
+
+						//construir tabla con exámenes previos
+						$("#interconsulta\\.respuesta\\.historico").empty();
+						$.get("https://administrador.crecimientofetal.cl/api/solicitudespaciente/" + response.solicitud_rut).done(function(response){
+							if (Object.keys(response).length > 0) {
+								$.each(response, function(i, val){
+									let fila = '<tr><td>' + val.solicitud_id + '</td><td>' + val.solicitud_fecha+ '</td><td>' + val.solicitud_fum + '</td><td>' + val.pfe + '</td><td>' + val.bvm + '</td><td>' + val.uterinas + '</td><td>' + val.umbilical + '</td><td>' + val.cm + '</td><td>' + val.cmau + '</td></tr>';
+									$("#interconsulta\\.respuesta\\.historico").append(fila);
+								});
+							}
+						});
 					});
 				});
 
