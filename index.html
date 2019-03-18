@@ -3784,12 +3784,6 @@
                 </div>
             </div>
             <div class="col form-group">
-                <label for="interconsulta.fecha">FUM operacional</label>
-                <input type="date" class="form-control" id="interconsulta.fum">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col form-group">
                 <label for="inputEmail4">Ecografía previa de crecimiento</label>
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" id="interconsulta.eco.si" value="1" name="interconsulta_eco" class="form-check-input">
@@ -3800,8 +3794,20 @@
                     <label class="custom-control-label" for="interconsulta.eco.no">No</label>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col form-group">
-                <label for="interconsulta.diagnostico">Diagnóstico de referencia para exámen ecográfico</label>
+                <label for="interconsulta.fecha">FUM operacional</label>
+                <input type="date" class="form-control" id="interconsulta.fum">
+            </div>
+            <div class="col form-group">
+                <label for="interconsulta.fecha">Edad Gestacional</label>
+                <input type="numer" class="form-control" id="interconsulta.egestacional">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <label for="interconsulta.diagnostico">Diagnóstico de referencia</label>
                 <input type="text" class="form-control" id="interconsulta.diagnostico">
             </div>
         </div>
@@ -3834,7 +3840,7 @@
         </div>
         <div class="row">
             <div class="col form-group">
-                <label for="interconsulta.email">Correo electrónico de profesional referencia</label>
+                <label for="interconsulta.email">Correo electrónico profesional de referencia</label>
                 <input type="email" class="form-control" id="interconsulta.email">
             </div>
             <div class="col form-group">
