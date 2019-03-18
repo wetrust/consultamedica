@@ -424,7 +424,7 @@ $(document).ready(function(){
 
 	$("#administracion\\.interconsultas\\.historic").on("click", function(){
 		if ($(this).html().length > 6){
-			$("#administracion\\.email").addClass("d-none");
+			$("#administracion\\.email\\.div").addClass("d-none");
 			$(this).html("Volver").removeClass("btn-secondary").addClass("btn-danger");
 			$("#administracion\\.tabla").empty();
 			var data = {
@@ -434,14 +434,14 @@ $(document).ready(function(){
 			$.post("https://administrador.crecimientofetal.cl/api/historico", data).done(function(response){
 				if (Object.keys(response).length > 0) {
 					$.each(response, function(i, val){
-						let fila = '<tr><td>' + val.solicitud_id + '</td><td>' + val.solicitud_nombre+ '</td><td>' + val.solicitud_rut + '</td><td>' + val.solicitud_fecha + '</td><td>' + val.solicitud_diagnostico + '</td><td></tr>';
+						let fila = '<tr><td>' + val.solicitud_id + '</td><td>' + val.solicitud_nombre+ '</td><td>' + val.solicitud_rut + '</td><td>' + val.solicitud_fecha + '</td><td>' + val.solicitud_diagnostico + '</td><td><button class="btn btn-secondary">Mirar</button></td></tr>';
 						$("#administracion\\.tabla").append(fila);
 					});
 				}
 			});
 		}
 		else{
-			$("#administracion\\.email").removeClass("d-none");
+			$("#administracion\\.email\\.div").removeClass("d-none");
 			$(this).html('Ver<br>interconsultas<br>anteriores').removeClass("btn-danger").addClass("btn-secondary");
 			$("#administracion\\.email").trigger("keyup");
 		}
