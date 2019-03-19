@@ -297,9 +297,7 @@ $(document).ready(function(){
 						$("#interconsulta\\.nombre\\.copia").val(response.solicitud_nombre);
 						$("#interconsulta\\.rut\\.copia").val(response.solicitud_rut);
 						$("#interconsulta\\.fecha\\.copia").val(response.solicitud_fecha);
-						$("input[name=interconsulta_eg_copia][value=" + response.solicitud_eg+ "]").prop('checked', true);
 						$("#interconsulta\\.fum\\.copia").val(response.solicitud_fum),
-						$("input[name=interconsulta_eco_copia][value=" + response.solicitud_eco + "]").prop('checked', true);
 						$("#interconsulta\\.diagnostico\\.copia").val(response.solicitud_diagnostico);
 						$("#interconsulta\\.lugar\\.copia").val(response.solicitud_lugar);
 						$("#interconsulta\\.ciudad\\.copia").val(response.solicitud_ciudad);
