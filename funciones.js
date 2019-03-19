@@ -447,7 +447,7 @@ $(document).ready(function(){
 							$("#mensaje\\.nombre\\.copia").val(response.solicitud_nombre);
 							$("#mensaje\\.rut\\.copia").val(response.solicitud_rut);
 							$("#mensaje\\.fecha\\.copia").val(response.solicitud_fecha);
-							$("#mensaje\\.egestacional\\.copia").val(response.solicitud_egestacional),
+							$("#mensaje\\.egestacional\\.copia").val(response.solicitud_egestacional + " semanas"),
 							$("#mensaje\\.diagnostico\\.copia").val(response.solicitud_diagnostico);
 							$("#mensaje\\.lugar\\.copia").val(response.solicitud_lugar);
 							$("#mensaje\\.ciudad\\.copia").val(response.solicitud_ciudad);
