@@ -252,6 +252,7 @@ $(document).ready(function(){
 			diagnostico: $("#interconsulta\\.diagnostico").val(),
 			lugar: $("#interconsulta\\.lugar").val(),
 			ciudad: $("#interconsulta\\.ciudad").val(),
+			egestacional: $("#interconsulta\\.egestacional").val(),
 			profesional: $('input[name=interconsulta_profesional]:checked').val(),
 			nombreprofesional: $("#interconsulta\\.profesional\\.nombre").val(),
 			email: $("#interconsulta\\.email").val(),
@@ -297,7 +298,7 @@ $(document).ready(function(){
 						$("#interconsulta\\.nombre\\.copia").val(response.solicitud_nombre);
 						$("#interconsulta\\.rut\\.copia").val(response.solicitud_rut);
 						$("#interconsulta\\.fecha\\.copia").val(response.solicitud_fecha);
-						$("#interconsulta\\.fum\\.copia").val(response.solicitud_fum),
+						$("#interconsulta\\.egestacional\\.copia").val(response.solicitud_egestacional),
 						$("#interconsulta\\.diagnostico\\.copia").val(response.solicitud_diagnostico);
 						$("#interconsulta\\.lugar\\.copia").val(response.solicitud_lugar);
 						$("#interconsulta\\.ciudad\\.copia").val(response.solicitud_ciudad);

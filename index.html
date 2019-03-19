@@ -3927,11 +3927,11 @@
                 </div>
                 <div class="row">
                     <div class="col form-group">
-                        <label for="interconsulta.fum.copia">FUM operacional</label>
-                        <input type="date" class="form-control" id="interconsulta.fum.copia">
+                        <label for="interconsulta.fum.copia">Edad Gestacional</label>
+                        <input type="text" class="form-control" id="interconsulta.egestacional.copia" disabled>
                     </div>
                     <div class="col form-group">
-                        <label for="interconsulta.diagnostico">Diagnóstico de referencia para exámen ecográfico</label>
+                        <label for="interconsulta.diagnostico">Diagnóstico de referencia</label>
                         <input type="text" class="form-control" id="interconsulta.diagnostico.copia" disabled>
                     </div>
                 </div>
@@ -3949,12 +3949,12 @@
                     <div class="col form-group">
                         <label for="interconsulta.profesional">Profesional referente </label>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="interconsulta.profesional.matrona" value="Matrona" name="interconsulta_profesional_copia" class="form-check-input" checked>
-                            <label class="custom-control-label" for="interconsulta.profesional.matrona">Matrona</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="interconsulta.profesional.medico" value="Médico" name="interconsulta_profesional_copia" class="form-check-input">
                             <label class="custom-control-label" for="interconsulta.profesional.medico">Médico</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.profesional.matrona" value="Matrona" name="interconsulta_profesional_copia" class="form-check-input" checked>
+                            <label class="custom-control-label" for="interconsulta.profesional.matrona">Matrona</label>
                         </div>
                     </div>
                     <div class="col form-group">
@@ -3964,11 +3964,11 @@
                 </div>
                 <div class="row">
                     <div class="col form-group">
-                        <label for="interconsulta.email">Correo electrónico de referencia</label>
+                        <label for="interconsulta.email">Correo electrónico del referente</label>
                         <input type="email" class="form-control" id="interconsulta.email.copia" disabled>
                     </div>
                     <div class="col form-group">
-                        <label for="interconsulta.telefono">Fono</label>
+                        <label for="interconsulta.telefono">Fono del referente</label>
                         <input type="number" class="form-control" id="interconsulta.telefono.copia" disabled>
                     </div>
                 </div>
@@ -3982,7 +3982,7 @@
             </div>
             <div class="card mb-3">
                 <div class="card-block">
-                    <h6>Responder a solicitud de exámen ecográfico para crecimiento</h6>
+                    <h4 class="text-center">Responder a solicitud de exámen ecográfico para crecimiento</h4>
                     <div class="row">
                         <div class="col-6 form-group">
                             <label for="interconsulta.email">¿Solicitud relacionada con crecimiento fetal?</label>
