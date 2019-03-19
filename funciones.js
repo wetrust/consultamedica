@@ -313,7 +313,7 @@ $(document).ready(function(){
 						$.get("https://administrador.crecimientofetal.cl/api/solicitudespaciente/" + response.solicitud_rut).done(function(response){
 							if (Object.keys(response).length > 0) {
 								$.each(response, function(i, val){
-									let fila = '<tr><td>' + val.solicitud_id + '</td><td>' + val.solicitud_fecha+ '</td><td>' + val.solicitud_fum + '</td><td>' + val.pfe + '</td><td>' + val.bvm + '</td><td>' + val.uterinas + '</td><td>' + val.umbilical + '</td><td>' + val.cm + '</td><td>' + val.cmau + '</td></tr>';
+									let fila = '<tr><td>' + val.solicitud_id + '</td><td>' + val.solicitud_fecha+ '</td><td>' + val.solicitud_fum + '</td><td>' + val.pfe_percentil + '</td><td>' + val.liquido + '</td><td>' + val.uterinas_percentil + '</td><td>' + val.umbilical_percentil + '</td><td>' + val.cm_percentil + '</td><td>' + val.cmau_percentil + '</td></tr>';
 									$("#interconsulta\\.respuesta\\.historico").append(fila);
 								});
 							}
