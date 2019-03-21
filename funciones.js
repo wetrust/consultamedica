@@ -373,7 +373,7 @@ $(document).ready(function(){
 						$("#interconsulta\\.nombre\\.copia").val(response.solicitud_nombre);
 						$("#interconsulta\\.rut\\.copia").val(response.solicitud_rut);
 						$("#interconsulta\\.fecha\\.copia").val(response.solicitud_fecha);
-						$("#interconsulta\\.egestacional\\.copia").val(response.solicitud_egestacional + " semanas"),
+						$("#interconsulta\\.egestacional\\.copia").val(response.solicitud_egestacional),
 						$("#interconsulta\\.diagnostico\\.copia").val(response.solicitud_diagnostico);
 						$("#interconsulta\\.lugar\\.copia").val(response.solicitud_lugar);
 						$("#interconsulta\\.ciudad\\.copia").val(response.solicitud_ciudad);
