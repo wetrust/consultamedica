@@ -359,7 +359,7 @@ $(document).ready(function(){
 						$("#interconsulta\\.email\\.copia").val(response.solicitud_email);
 						$("#interconsulta\\.telefono\\.copia").val(response.solicitud_telefono);
 						$("#interconsulta\\.para\\.copia").val(response.solicitud_profesionalemail);
-						$("#interconsulta\\.fum\\.copia").val(response.solicitud_profesionalemail);
+						$("#interconsulta\\.fum\\.copia").val(response.solicitud_fum);
 
 						//construir tabla con exámenes previos
 						$("#interconsulta\\.respuesta\\.historico").empty();
