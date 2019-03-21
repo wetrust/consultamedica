@@ -3411,10 +3411,10 @@ function pctpfeAdvanced(eg,pfe) {
 		var pctPFE = '';
 
 		if (pctFinal > 99){
-			pctPFE = '&gt; 99';
+			pctPFE = '> 99';
 		}
 		else if (pctFinal < 1){
-			pctPFE = '&lt; 1';
+			pctPFE = '< 1';
 		}
 		else{
 			pctPFE = pctFinal.toFixed();
