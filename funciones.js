@@ -284,44 +284,206 @@ $(document).ready(function(){
 	});
 
 	$("#interconsulta\\.enviar").on("click", function(){
-		$(this).prop("disabled", true);
 
-		var data = {
-			nombre: $("#interconsulta\\.nombre").val(),
-			rut: $("#interconsulta\\.rut").val(),
-			fecha: $("#interconsulta\\.fecha").val(),
-			eg: $('input[name=interconsulta_eg]:checked').val(),
-			eco: $('input[name=interconsulta_eco]:checked').val(),
-			fum: $("#interconsulta\\.fum").val(),
-			diagnostico: $("#interconsulta\\.diagnostico").val(),
-			lugar: $("#interconsulta\\.lugar").val(),
-			ciudad: $("#interconsulta\\.ciudad").val(),
-			egestacional: $("#interconsulta\\.egestacional").val(),
-			profesional: $('input[name=interconsulta_profesional]:checked').val(),
-			nombreprofesional: $("#interconsulta\\.profesional\\.nombre").val(),
-			email: $("#interconsulta\\.email").val(),
-			telefono: $("#interconsulta\\.telefono").val(),
-			para: $("#interconsulta\\.para").val()
-		};
+		var listo = false;
 
-		$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Enviando Interconsulta</h5></div><div class="modal-body"><p>Enviando solicitud de interconsulta, por favor espere</p></div></div></div></div>');
-		$('#cautivo\\.dialogo').modal("show");
+		//revisar si el usuario lleno todas las cajas
+			
+		var nombre = $("#interconsulta\\.nombre").val();
+		var rut = $("#interconsulta\\.rut").val();
+		var fecha = $("#interconsulta\\.fecha").val();
+		var eg = $('input[name=interconsulta_eg]:checked').val();
+		var eco = $('input[name=interconsulta_eco]:checked').val();
+		var fum = $("#interconsulta\\.fum").val();
+		var diagnostico = $("#interconsulta\\.diagnostico").val();
+		var lugar = $("#interconsulta\\.lugar").val();
+		var ciudad = $("#interconsulta\\.ciudad").val();
+		var egestacional = $("#interconsulta\\.egestacional").val();
+		var profesional = $('input[name=interconsulta_profesional]:checked').val();
+		var nombreprofesional = $("#interconsulta\\.profesional\\.nombre").val();
+		var email = $("#interconsulta\\.email").val();
+		var telefono = $("#interconsulta\\.telefono").val();
+		var para = $("#interconsulta\\.para").val();
+		
+		if (String(nombre).length >3){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cómo se llama la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
 
-		$.post("https://administrador.crecimientofetal.cl/api/send", data).done(function(response){
-			if (response.result == false){
-				alert("Usted no puede solicitar interconsulta para este profesional");
-			}
-			else if (response.result == true){
-				$('body').append('<div class="modal" tabindex="-1" role="dialog" id="mensaje.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Información</h5></div><div class="modal-body"><p>Solicitud de interconsulta enviada correctamente</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
-				$('#mensaje\\.dialogo').modal("show");
+		if (String(rut).length >4){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el RUT de la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
 
-				$('#mensaje\\.dialogo').on('hidden.bs.modal', function (e) {
-					$('#cautivo\\.dialogo').modal("hide");
-					$("#cautivo\\.dialogo").remove();
-					$(this).remove();
-				});
-			}
-		});
+		if (String(fecha).length > 4){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es la Fecha de solicitud de la interconsulta?, ¿Hoy?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(eg).length >0){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿La Ege es conocida precozmente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(eco).length  >0){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Tiene una ecografía previa de crecimiento la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(fum).length >4){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es la Fecha de ultima mestruación de la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(diagnostico).length  >0){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el Diagnóstico de referencia?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(ciudad).length >2){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es la ciudad procedencia de la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(lugar).length  >3){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el lugar de control prenatal?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(egestacional).length > 3){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>La fecha de solicitud y la FUM operacional no permiten calcular una edad gestacional, ¿Habrá ingresado mal estas fechas?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(profesional).length  >3){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Quién refiere a la paciente un médico o una matrona?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(nombreprofesional).length >3){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el nombre del profesional que refiere a la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(email).length > 5){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el correo electrónico del profesional que refiere a la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(telefono).length > 4){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el número telefónico del profesional que refiere a la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+
+		if (String(para).length > 5){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿A quien usted solicita la interconsulta?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
+		}
+		else{
+			listo == true;
+		}
+
+		if (listo == true){
+			$(this).prop("disabled", true);
+
+			var data = {
+				nombre: $("#interconsulta\\.nombre").val(),
+				rut: $("#interconsulta\\.rut").val(),
+				fecha: $("#interconsulta\\.fecha").val(),
+				eg: $('input[name=interconsulta_eg]:checked').val(),
+				eco: $('input[name=interconsulta_eco]:checked').val(),
+				fum: $("#interconsulta\\.fum").val(),
+				diagnostico: $("#interconsulta\\.diagnostico").val(),
+				lugar: $("#interconsulta\\.lugar").val(),
+				ciudad: $("#interconsulta\\.ciudad").val(),
+				egestacional: $("#interconsulta\\.egestacional").val(),
+				profesional: $('input[name=interconsulta_profesional]:checked').val(),
+				nombreprofesional: $("#interconsulta\\.profesional\\.nombre").val(),
+				email: $("#interconsulta\\.email").val(),
+				telefono: $("#interconsulta\\.telefono").val(),
+				para: $("#interconsulta\\.para").val()
+			};
+	
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Enviando Interconsulta</h5></div><div class="modal-body"><p>Enviando solicitud de interconsulta, por favor espere</p></div></div></div></div>');
+			$('#cautivo\\.dialogo').modal("show");
+	
+			$.post("https://administrador.crecimientofetal.cl/api/send", data).done(function(response){
+				if (response.result == false){
+					alert("Usted no puede solicitar interconsulta para este profesional");
+				}
+				else if (response.result == true){
+					$('body').append('<div class="modal" tabindex="-1" role="dialog" id="mensaje.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Información</h5></div><div class="modal-body"><p>Solicitud de interconsulta enviada correctamente</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+					$('#mensaje\\.dialogo').modal("show");
+	
+					$('#mensaje\\.dialogo').on('hidden.bs.modal', function (e) {
+						$('#cautivo\\.dialogo').modal("hide");
+						$("#cautivo\\.dialogo").remove();
+						$(this).remove();
+					});
+				}
+			});
+		}
+		
 	});
 
 	$("#interconsulta\\.respuesta\\.fecha").on("change", function(){
