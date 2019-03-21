@@ -316,6 +316,7 @@ $(document).ready(function(){
 				$('#mensaje\\.dialogo').modal("show");
 
 				$('#mensaje\\.dialogo').on('hidden.bs.modal', function (e) {
+					$('#cautivo\\.dialogo').modal("hide");
 					$("#cautivo\\.dialogo").remove();
 					$(this).remove();
 				});
