@@ -227,6 +227,34 @@ $(document).ready(function(){
 		location.hash = '#consentimiento'
 	});
 
+	$("#interconsulta\\.fum").on("click", function(){
+
+		var FExamen, FUM, EdadGestacional;
+		var undia = 1000 * 60 * 60 * 24;
+		var unasemana = undia * 7;
+		 
+		FUM = new Date ($("#interconsulta\\.fum").val());
+		FExamen = new Date ($("#interconsulta\\.fecha").val());
+			 
+		EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
+		var B = new Date();
+		B.setTime(FUM.getTime() + 40 * unasemana);    
+		
+		$("#fppPaciente").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+		$("input[name='fpp']").val(B.getDate()+"/"+(B.getMonth()+1)+"/"+B.getFullYear());
+			 
+		if (FExamen.getTime() < FUM.getTime()) {
+			EdadGestacional = "0 semanas";
+		}
+		else if (((FExamen.getTime() - FUM.getTime()) / unasemana) > 42) {
+			EdadGestacional = "42 semanas";
+		}
+		else {
+			$('#diasEcoGen').val(Math.floor(EdadGestacional) + "." + Math.round((EdadGestacional - Math.floor(EdadGestacional))*7) + " semanas");
+		}
+
+	});
+
 	$("#primtrim\\.adicionales\\.translucencia").on("click", function(event){
 		event.preventDefault();
 			calcularRiesgo();
