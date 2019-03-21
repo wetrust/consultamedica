@@ -276,7 +276,7 @@ $(document).ready(function(){
 
 		if (eg.length > 0){
 
-			eg =  parseFloat(eg).parseFloat();
+			eg =  parseFloat(eg).toFixed();
 			$("#interconsulta\\.respuesta\\.pfe\\.percentil").val(pctpfeAdvanced(eg,pfe));
 
 		}
