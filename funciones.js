@@ -301,14 +301,41 @@ $(document).ready(function(){
 		});
 	});
 
+	$("#interconsulta\\.respuesta\\.fecha").on("change", function(){
+		var FExamen, FUM, EdadGestacional;
+		var undia = 1000 * 60 * 60 * 24;
+		var unasemana = undia * 7;
+
+		FUM = $("#interconsulta\\.fum\\.copia").val();
+		FExamen = $("#interconsulta\\.respuesta\\.fecha").val();
+
+		FUM = new Date (FUM);
+		FExamen = new Date (FExamen);
+
+		EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
+
+		if (FExamen.getTime() < FUM.getTime()) {
+			$('#interconsulta\\.respuesta\\.eg').val("0 semanas");
+		}
+		else if (((FExamen.getTime() - FUM.getTime()) / unasemana) > 42) {
+			$('#interconsulta\\.respuesta\\.eg').val("42 semanas");
+		}
+		else {
+			$('#interconsulta\\.respuesta\\.eg').val(Math.floor(EdadGestacional) + "." + Math.round((EdadGestacional - Math.floor(EdadGestacional))*7) + " semanas");
+		}
+
+	});
+
 	$("#administracion\\.email").on("keyup",function(){
 		$("#administracion\\.tabla").empty();
-		 var data = {
-			 correo_profesional: $("#administracion\\.email").val()
-		 }
 
-		 $.post("https://administrador.crecimientofetal.cl/api/interconsulta", data).done(function(response){
+		var data = {
+			correo_profesional: $("#administracion\\.email").val()
+		}
+
+		$.post("https://administrador.crecimientofetal.cl/api/interconsulta", data).done(function(response){
 			if (Object.keys(response).length > 0) {
+
 				$.each(response, function(i, val){
 					let fila = '<tr><td>' + val.solicitud_id + '</td><td>' + val.solicitud_nombre+ '</td><td>' + val.solicitud_rut + '</td><td>' + val.solicitud_fecha + '</td><td>' + val.solicitud_diagnostico + '</td><td><button class="btn btn-primary responder-interconsulta" data-id="' + val.solicitud_id + '">Responder interconsulta</button></td><td><button class="btn btn-danger eliminar-interconsulta" data-id="' + val.solicitud_id + '">Eliminar</button></td></tr>';
 					$("#administracion\\.tabla").append(fila);
@@ -316,7 +343,6 @@ $(document).ready(function(){
 
 				$(".responder-interconsulta").on("click", function(){
 					var id = $(this).data("id");
-
 					document.location.hash = "#respuesta";
 
 					$.get("https://administrador.crecimientofetal.cl/api/obtener/" +id).done(function(response){
@@ -333,6 +359,7 @@ $(document).ready(function(){
 						$("#interconsulta\\.email\\.copia").val(response.solicitud_email);
 						$("#interconsulta\\.telefono\\.copia").val(response.solicitud_telefono);
 						$("#interconsulta\\.para\\.copia").val(response.solicitud_profesionalemail);
+						$("#interconsulta\\.fum\\.copia").val(response.solicitud_profesionalemail);
 
 						//construir tabla con exámenes previos
 						$("#interconsulta\\.respuesta\\.historico").empty();
