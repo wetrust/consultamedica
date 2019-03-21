@@ -363,6 +363,7 @@ $(document).ready(function(){
 
 						//construir tabla con exámenes previos
 						$("#interconsulta\\.respuesta\\.historico").empty();
+
 						$.get("https://administrador.crecimientofetal.cl/api/solicitudespaciente/" + response.solicitud_rut).done(function(response){
 							if (Object.keys(response).length > 0) {
 								$.each(response, function(i, val){
@@ -371,6 +372,7 @@ $(document).ready(function(){
 								});
 							}
 						});
+
 					});
 				});
 
