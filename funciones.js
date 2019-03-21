@@ -285,6 +285,7 @@ $(document).ready(function(){
 
 	$("#interconsulta\\.enviar").on("click", function(){
 		$(this).prop("disabled", true);
+
 		var data = {
 			nombre: $("#interconsulta\\.nombre").val(),
 			rut: $("#interconsulta\\.rut").val(),
@@ -303,6 +304,9 @@ $(document).ready(function(){
 			para: $("#interconsulta\\.para").val()
 		};
 
+		$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Enviando Interconsulta</h5></div><div class="modal-body"><p>Enviando solicitud de interconsulta, por favor espere</p></div></div></div></div>');
+		$('#cautivo\\.dialogo').modal("show");
+
 		$.post("https://administrador.crecimientofetal.cl/api/send", data).done(function(response){
 			if (response.result == false){
 				alert("Usted no puede solicitar interconsulta para este profesional");
@@ -312,6 +316,7 @@ $(document).ready(function(){
 				$('#mensaje\\.dialogo').modal("show");
 
 				$('#mensaje\\.dialogo').on('hidden.bs.modal', function (e) {
+					$("#cautivo\\.dialogo").remove();
 					$(this).remove();
 				});
 			}
