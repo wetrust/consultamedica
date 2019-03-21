@@ -441,7 +441,7 @@ $(document).ready(function(){
 			return;
 		}
 		else{
-			listo == true;
+			listo = true;
 		}
 
 		if (listo == true){
