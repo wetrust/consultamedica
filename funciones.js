@@ -268,7 +268,7 @@ $(document).ready(function(){
 
 	$("#interconsulta\\.respuesta\\.pfe").on("change", function(){
 
-		var eg = $("#interconsulta\\.respuesta\\.fecha").val();
+		var eg = $("#interconsulta\\.respuesta\\.eg").val();
 		var pfe = $("#interconsulta\\.respuesta\\.pfe").val();
 
 		eg = String(eg);
