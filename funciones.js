@@ -272,6 +272,7 @@ $(document).ready(function(){
 		var pfe = $("#interconsulta\\.respuesta\\.pfe").val();
 
 		eg = String(eg);
+		eg = str.replace("semanas", "");
 
 		if (eg.length > 0){
 
