@@ -238,9 +238,9 @@ $(document).ready(function(){
 
 		FUM = new Date (FUM);
 		FExamen = new Date (FExamen);
-			 
+
 		EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
-			 
+
 		if (FExamen.getTime() < FUM.getTime()) {
 			$('#interconsulta\\.egestacional').val("0 semanas");
 		}
@@ -259,11 +259,27 @@ $(document).ready(function(){
 			$("#prob").removeClass("d-none");
 			$("#prob2").removeClass("d-none");
 	});
-		
+
 	$("#primtrim\\.adicionales\\.translucencia\\.ocultar").on("click", function(event){
 		event.preventDefault();
 		$("#prob").addClass("d-none");
 		$("#prob2").addClass("d-none");
+	});
+
+	$("#interconsulta\\.respuesta\\.pfe").on("change", function(){
+
+		var eg = $("#interconsulta\\.respuesta\\.pfe\\.percentil").val();
+		var pfe = $("#interconsulta\\.respuesta\\.pfe").val();
+
+		eg = String(eg);
+
+		if (eg.length > 0){
+
+			eg =  parseFloat(eg).parseFloat();
+			$("#interconsulta\\.respuesta\\.pfe\\.percentil").val(pctpfeAdvanced(eg,pfe));
+
+		}
+
 	});
 
 	$("#interconsulta\\.enviar").on("click", function(){
@@ -3358,6 +3374,53 @@ function pctpfe() {
 	 $('#pfeRango').val(pct10[eg] + ' - ' +pct90[eg]);
  }
 }
+
+function pctpfeAdvanced(eg,pfe) {
+
+	var pct10 = [];
+	var pct90 = [];
+ 
+	pct10[0] = 97;pct10[1] = 121;pct10[2] = 150;pct10[3] = 185;pct10[4] = 227;pct10[5] = 275;
+	pct10[6] = 331;pct10[7] = 398;pct10[8] = 471;pct10[9] = 556;pct10[10] = 652;pct10[11] = 758;
+	pct10[12] = 876;pct10[13] = 1004;pct10[14] = 1145;pct10[15] = 1294;pct10[16] = 1453;
+	pct10[17] = 1621;pct10[18] = 1794;pct10[19] = 1973;pct10[20] = 2154;pct10[21] = 2335;
+	pct10[22] = 2513; pct10[23] = 2686; pct10[24] = 2851; pct10[25] = 2985;
+ 
+	pct90[0] = 137;pct90[1] = 171;pct90[2] = 212;pct90[3] = 261;pct90[4] = 319;
+	pct90[5] = 387;pct90[6] = 467;pct90[7] = 559;pct90[8] = 665;pct90[9] = 784;
+	pct90[10] = 918;pct90[11] = 1068;pct90[12] = 1234;pct90[13] = 1416;pct90[14] = 1613;
+	pct90[15] = 1824;pct90[16] = 2049;pct90[17] = 2285;pct90[18] = 2530;
+	pct90[19] = 2781;pct90[20] = 3036;pct90[21] = 3291;pct90[22] = 3543;pct90[23] = 3786;
+	pct90[24] = 4019;pct90[25] = 4234;
+ 
+	if (eg < 15) {  
+		return 0;
+	}
+	else if (eg > 40)
+	{
+		return 0;
+	}
+	else {
+		eg = eg - 15;
+		eg = parseInt(eg);
+		var uno = pct90[eg] - pct10[eg];
+		var dos = pfe - pct10[eg];
+		var pctFinal = (80 / (uno) * (dos)) + 10
+
+		var pctPFE = '';
+
+		if (pctFinal > 99){
+			pctPFE = '&gt; 99';
+		}
+		else if (pctFinal < 1){
+			pctPFE = '&lt; 1';
+		}
+		else{
+			pctPFE = pctFinal.toFixed();
+		}
+		return pctPFE;
+	}
+ }
 
 function bvm() {
  var pct5 = [], pct95 = [];
