@@ -396,7 +396,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (eg == 'undefined' || profesional.length  < 1){
+		if (profesional == 'undefined' || profesional.length  < 1){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Quién refiere a la paciente un médico o una matrona?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
