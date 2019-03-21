@@ -232,9 +232,12 @@ $(document).ready(function(){
 		var FExamen, FUM, EdadGestacional;
 		var undia = 1000 * 60 * 60 * 24;
 		var unasemana = undia * 7;
-		 
-		FUM = new Date ($("#interconsulta\\.fum").val());
-		FExamen = new Date ($("#interconsulta\\.fecha").val());
+
+		FUM = $("#interconsulta\\.fum").val();
+		FExamen = $("#interconsulta\\.fecha").val();
+
+		FUM = new Date (FUM);
+		FExamen = new Date (FExamen);
 			 
 		EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
 		var B = new Date();
