@@ -227,7 +227,7 @@ $(document).ready(function(){
 		location.hash = '#consentimiento'
 	});
 
-	$("#interconsulta\\.fum").on("click", function(){
+	$("#interconsulta\\.fum").on("change", function(){
 
 		var FExamen, FUM, EdadGestacional;
 		var undia = 1000 * 60 * 60 * 24;
