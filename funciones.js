@@ -289,23 +289,23 @@ $(document).ready(function(){
 
 		//revisar si el usuario lleno todas las cajas
 			
-		var nombre = $("#interconsulta\\.nombre").val();
-		var rut = $("#interconsulta\\.rut").val();
-		var fecha = $("#interconsulta\\.fecha").val();
-		var eg = $('input[name=interconsulta_eg]:checked').val();
-		var eco = $('input[name=interconsulta_eco]:checked').val();
-		var fum = $("#interconsulta\\.fum").val();
-		var diagnostico = $("#interconsulta\\.diagnostico").val();
-		var lugar = $("#interconsulta\\.lugar").val();
-		var ciudad = $("#interconsulta\\.ciudad").val();
-		var egestacional = $("#interconsulta\\.egestacional").val();
-		var profesional = $('input[name=interconsulta_profesional]:checked').val();
-		var nombreprofesional = $("#interconsulta\\.profesional\\.nombre").val();
-		var email = $("#interconsulta\\.email").val();
-		var telefono = $("#interconsulta\\.telefono").val();
-		var para = $("#interconsulta\\.para").val();
+		var nombre = String($("#interconsulta\\.nombre").val());
+		var rut = String($("#interconsulta\\.rut").val());
+		var fecha = String($("#interconsulta\\.fecha").val());
+		var eg = String($('input[name=interconsulta_eg]:checked').val());
+		var eco = String($('input[name=interconsulta_eco]:checked').val());
+		var fum = String($("#interconsulta\\.fum").val());
+		var diagnostico = String($("#interconsulta\\.diagnostico").val());
+		var lugar = String($("#interconsulta\\.lugar").val());
+		var ciudad = String($("#interconsulta\\.ciudad").val());
+		var egestacional = String($("#interconsulta\\.egestacional").val());
+		var profesional = String($('input[name=interconsulta_profesional]:checked').val());
+		var nombreprofesional = String($("#interconsulta\\.profesional\\.nombre").val());
+		var email = String($("#interconsulta\\.email").val());
+		var telefono = String($("#interconsulta\\.telefono").val());
+		var para = String($("#interconsulta\\.para").val());
 		
-		if (String(nombre).length >3){
+		if (nombre.length >3){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cómo se llama la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -314,7 +314,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(rut).length >4){
+		if (rut.length >4){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el RUT de la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -323,7 +323,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(fecha).length > 4){
+		if (fecha.length > 4){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es la Fecha de solicitud de la interconsulta?, ¿Hoy?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -332,7 +332,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(eg).length >0){
+		if (eg.length >0){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿La Ege es conocida precozmente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -341,7 +341,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(eco).length  >0){
+		if (eco.length  >0){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Tiene una ecografía previa de crecimiento la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -350,7 +350,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(fum).length >4){
+		if (fum.length >4){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es la Fecha de ultima mestruación de la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -359,7 +359,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(diagnostico).length  >0){
+		if (diagnostico.length  >0){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el Diagnóstico de referencia?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -368,7 +368,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(ciudad).length >2){
+		if (ciudad.length >2){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es la ciudad procedencia de la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -377,7 +377,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(lugar).length  >3){
+		if (lugar.length  >3){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el lugar de control prenatal?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -386,7 +386,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(egestacional).length > 3){
+		if (egestacional.length > 3){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>La fecha de solicitud y la FUM operacional no permiten calcular una edad gestacional, ¿Habrá ingresado mal estas fechas?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -395,7 +395,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(profesional).length  >3){
+		if (profesional.length  >3){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Quién refiere a la paciente un médico o una matrona?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -404,7 +404,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(nombreprofesional).length >3){
+		if (nombreprofesional.length >3){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el nombre del profesional que refiere a la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -413,7 +413,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(email).length > 5){
+		if (email.length > 5){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el correo electrónico del profesional que refiere a la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -422,7 +422,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(telefono).length > 4){
+		if (telefono.length > 4){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el número telefónico del profesional que refiere a la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
@@ -431,7 +431,7 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (String(para).length > 5){
+		if (para.length > 5){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿A quien usted solicita la interconsulta?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
