@@ -587,6 +587,7 @@ $(document).ready(function(){
 	$("#interconsulta\\.respuesta\\.proceder").on("change", function(){
 		if ($(this).val() == "no"){
 			$("#interconsulta\\.respuesta\\.pfe\\.div").addClass("d-none");
+			$("#interconsulta\\.respuesta\\.ccca\\.div").addClass("d-none");
 			$("#interconsulta\\.respuesta\\.liquido\\.div").addClass("d-none");
 			$("#interconsulta\\.respuesta\\.uterinas\\.div").addClass("d-none");
 			$("#interconsulta\\.respuesta\\.umbilical\\.div").addClass("d-none");
@@ -600,6 +601,7 @@ $(document).ready(function(){
 		}
 		else if ($(this).val() == "si"){
 			$("#interconsulta\\.respuesta\\.pfe\\.div").removeClass("d-none");
+			$("#interconsulta\\.respuesta\\.ccca\\.div").removeClass("d-none");
 			$("#interconsulta\\.respuesta\\.liquido\\.div").removeClass("d-none");
 			$("#interconsulta\\.respuesta\\.bvm\\.div").removeClass("d-none");
 			$("#interconsulta\\.respuesta\\.uterinas\\.div").removeClass("d-none");
