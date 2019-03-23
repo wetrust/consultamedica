@@ -3824,6 +3824,8 @@
         <div class="row">
             <div class="col form-group">
                 <label for="interconsulta.profesional">Profesional referente </label>
+            </div>
+            <div class="col form-group">
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" id="interconsulta.profesional.medico" value="Médico" name="interconsulta_profesional" class="form-check-input">
                     <label class="custom-control-label" for="interconsulta.profesional.medico">Médico</label>
@@ -3833,27 +3835,27 @@
                     <label class="custom-control-label" for="interconsulta.profesional.matrona">Matrona</label>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col form-group">
                 <label for="interconsulta.profesional.nombre">Nombre del profesional referente</label>
                 <input type="text" class="form-control" id="interconsulta.profesional.nombre">
             </div>
-        </div>
-        <div class="row">
             <div class="col form-group">
                 <label for="interconsulta.email">Correo electrónico profesional referente</label>
                 <input type="email" class="form-control" id="interconsulta.email">
-            </div>
-            <div class="col form-group">
-                <label for="interconsulta.telefono">Fono del referente</label>
-                <input type="number" class="form-control" id="interconsulta.telefono">
             </div>
         </div>
         <div class="row">
             <div class="col form-group">
                 <label for="interconsulta.para"><strong>Correo electrónico profesional de contrarreferencia</strong></label>
+            </div>        
+            <div class="col form-group">
                 <input type="email" class="form-control" id="interconsulta.para">
             </div>
-            <div class="col py-4">
+        </div>
+        <div class="row">
+            <div class="col">
                 <button class="btn btn-primary" id="interconsulta.enviar">Enviar solicitud de exámen ecográfico</button>
             </div>
         </div>

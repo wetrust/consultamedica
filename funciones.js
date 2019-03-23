@@ -701,7 +701,6 @@ $(document).ready(function(){
 							$("input[name=mensaje_profesional_copia][value=" + response.solicitud_profesional + "]").prop('checked', true);
 							$("#mensaje\\.profesional\\.nombre\\.copia").val(response.solicitud_nombreprofesional);
 							$("#mensaje\\.email\\.copia").val(response.solicitud_email);
-							$("#mensaje\\.telefono\\.copia").val(response.solicitud_telefono);
 							$("#mensaje\\.para\\.copia").val(response.solicitud_profesionalemail);
 							$("#mensaje\\.respuesta\\.proceder").val(response.proceder);
 							$("#mensaje\\.respuesta\\.fecha").val(response.fecha);
