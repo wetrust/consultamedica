@@ -3756,8 +3756,8 @@
             </div>
         </div>
         <div class="card mb-3">
-            <div class="card-header bg-primary text-white">
-                Referencia para evaluación ecográfica del crecimiento fetal
+            <div class="card-header bg-primary">
+                <h4 class="text-white text-center">Referencia para evaluación ecográfica del crecimiento fetal</h4>
             </div>
             <div class="card-block">
                 <div class="row">
@@ -3774,96 +3774,101 @@
                         <input type="date" class="form-control" id="interconsulta.fecha">
                     </div>
                 </div>
-        <div class="row">
-            <div class="col form-group">
-                <label for="inputEmail4">Ege conocida precozmente</label>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="interconsulta.eg.si" value="1" name="interconsulta_eg" class="form-check-input">
-                    <label class="custom-control-label" for="interconsulta.eg.si">Si</label>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="inputEmail4">Ege conocida precozmente</label>
+                    </div>
+                    <div class="col form-group">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.eg.si" value="1" name="interconsulta_eg" class="form-check-input">
+                            <label class="custom-control-label" for="interconsulta.eg.si">Si</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.eg.no" value="0" name="interconsulta_eg" class="form-check-input">
+                            <label class="custom-control-label" for="interconsulta.eg.no">No</label>
+                        </div>
+                    </div>
+                    <div class="col form-group">
+                        <label for="inputEmail4">Ecografía previa de crecimiento</label>
+                    </div>
+                    <div class="col form-group">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.eco.si" value="1" name="interconsulta_eco" class="form-check-input">
+                            <label class="custom-control-label" for="interconsulta.eco.si">Si</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.eco.no" value="0" name="interconsulta_eco" class="form-check-input">
+                            <label class="custom-control-label" for="interconsulta.eco.no">No</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="interconsulta.eg.no" value="0" name="interconsulta_eg" class="form-check-input">
-                    <label class="custom-control-label" for="interconsulta.eg.no">No</label>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="interconsulta.fecha">FUM operacional</label>
+                        <input type="date" class="form-control" id="interconsulta.fum">
+                    </div>
+                    <div class="col form-group">
+                        <label for="interconsulta.fecha">Edad Gestacional</label>
+                        <input type="text" class="form-control" id="interconsulta.egestacional" disabled>
+                    </div>
                 </div>
-            </div>
-            <div class="col form-group">
-                <label for="inputEmail4">Ecografía previa de crecimiento</label>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="interconsulta.eco.si" value="1" name="interconsulta_eco" class="form-check-input">
-                    <label class="custom-control-label" for="interconsulta.eco.si">Si</label>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="interconsulta.diagnostico">Diagnóstico de referencia</label>
+                        <input type="text" class="form-control" id="interconsulta.diagnostico">
+                    </div>
                 </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="interconsulta.eco.no" value="0" name="interconsulta_eco" class="form-check-input">
-                    <label class="custom-control-label" for="interconsulta.eco.no">No</label>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="interconsulta.ciudad">Ciudad procedencia de la paciente</label>
+                        <input type="text" class="form-control" id="interconsulta.ciudad">
+                    </div>
+                    <div class="col form-group">
+                        <label for="interconsulta.lugar">Lugar de control prenatal</label>
+                        <input type="text" class="form-control" id="interconsulta.lugar">
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col form-group">
-                <label for="interconsulta.fecha">FUM operacional</label>
-                <input type="date" class="form-control" id="interconsulta.fum">
-            </div>
-            <div class="col form-group">
-                <label for="interconsulta.fecha">Edad Gestacional</label>
-                <input type="text" class="form-control" id="interconsulta.egestacional" disabled>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col form-group">
-                <label for="interconsulta.diagnostico">Diagnóstico de referencia</label>
-                <input type="text" class="form-control" id="interconsulta.diagnostico">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col form-group">
-                <label for="interconsulta.ciudad">Ciudad procedencia de la paciente</label>
-                <input type="text" class="form-control" id="interconsulta.ciudad">
-            </div>
-            <div class="col form-group">
-                <label for="interconsulta.lugar">Lugar de control prenatal</label>
-                <input type="text" class="form-control" id="interconsulta.lugar">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col form-group">
-                <label for="interconsulta.profesional">Profesional referente </label>
-            </div>
-            <div class="col form-group">
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="interconsulta.profesional.medico" value="Médico" name="interconsulta_profesional" class="form-check-input">
-                    <label class="custom-control-label" for="interconsulta.profesional.medico">Médico</label>
+                <br>
+                <div class="row">
+                    <div class="col form-group">
+                        <span class="badge badge-default" for="interconsulta.profesional">Datos del profesional referente</span>
+                    </div>
+                    <div class="col form-group">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.profesional.medico" value="Médico" name="interconsulta_profesional" class="form-check-input">
+                            <label class="custom-control-label" for="interconsulta.profesional.medico">Médico</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="interconsulta.profesional.matrona" value="Matrona" name="interconsulta_profesional" class="form-check-input">
+                            <label class="custom-control-label" for="interconsulta.profesional.matrona">Matrona</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="interconsulta.profesional.matrona" value="Matrona" name="interconsulta_profesional" class="form-check-input">
-                    <label class="custom-control-label" for="interconsulta.profesional.matrona">Matrona</label>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="interconsulta.profesional.nombre">Nombre del profesional referente</label>
+                        <input type="text" class="form-control" id="interconsulta.profesional.nombre">
+                    </div>
+                    <div class="col form-group">
+                        <label for="interconsulta.email">Correo electrónico profesional referente</label>
+                        <input type="email" class="form-control" id="interconsulta.email">
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="interconsulta.para"><strong>Correo electrónico profesional de contrarreferencia</strong></label>
+                    </div>        
+                    <div class="col form-group">
+                        <input type="email" class="form-control" id="interconsulta.para">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary" id="interconsulta.enviar">Enviar solicitud de exámen ecográfico</button>
+                    </div>
+                </div>    
             </div>
         </div>
-        <div class="row">
-            <div class="col form-group">
-                <label for="interconsulta.profesional.nombre">Nombre del profesional referente</label>
-                <input type="text" class="form-control" id="interconsulta.profesional.nombre">
-            </div>
-            <div class="col form-group">
-                <label for="interconsulta.email">Correo electrónico profesional referente</label>
-                <input type="email" class="form-control" id="interconsulta.email">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col form-group">
-                <label for="interconsulta.para"><strong>Correo electrónico profesional de contrarreferencia</strong></label>
-            </div>        
-            <div class="col form-group">
-                <input type="email" class="form-control" id="interconsulta.para">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-primary" id="interconsulta.enviar">Enviar solicitud de exámen ecográfico</button>
-            </div>
-        </div>
-        
-    </div></div>
     </div>
     <div class="container" id="administracion">
         <div class="row">
