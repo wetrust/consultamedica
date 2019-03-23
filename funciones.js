@@ -302,7 +302,6 @@ $(document).ready(function(){
 		var profesional = String($('input[name=interconsulta_profesional]:checked').val());
 		var nombreprofesional = String($("#interconsulta\\.profesional\\.nombre").val());
 		var email = String($("#interconsulta\\.email").val());
-		var telefono = String($("#interconsulta\\.telefono").val());
 		var para = String($("#interconsulta\\.para").val());
 		
 		if (nombre.length < 3){
@@ -423,15 +422,6 @@ $(document).ready(function(){
 			return;
 		}
 
-		if (telefono.length < 4){
-			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cual es el número telefónico del profesional que refiere a la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
-			$('#cautivo\\.dialogo').modal("show");
-			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
-				$(this).remove();
-			});
-			return;
-		}
-
 		if (para.length < 5){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿A quien usted solicita la interconsulta?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
@@ -461,7 +451,6 @@ $(document).ready(function(){
 				profesional: $('input[name=interconsulta_profesional]:checked').val(),
 				nombreprofesional: $("#interconsulta\\.profesional\\.nombre").val(),
 				email: $("#interconsulta\\.email").val(),
-				telefono: $("#interconsulta\\.telefono").val(),
 				para: $("#interconsulta\\.para").val()
 			};
 	
@@ -3831,7 +3820,7 @@ function pctcccaAdvanced(eg,ccca) {
 		eg = parseInt(eg);
 	
 		var uno= pct97[eg] - pct3[eg];
-		var dos=ccca - pct3[eg];
+		var dos= ccca - pct3[eg];
 		var resultado = parseInt(95 / (uno) * (dos) + 3);
 		//truncador de Pct, sobre 100 o bajo 1
 		if (resultado > 99){
