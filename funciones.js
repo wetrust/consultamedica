@@ -667,7 +667,7 @@ $(document).ready(function(){
 		if (eg.length > 0){
 
 			eg =  parseFloat(eg).toFixed();
-			$("#interconsulta\\.respuesta\\.ccca\\.percentil").val(pctpfeAdvanced(eg,ccca));
+			$("#interconsulta\\.respuesta\\.ccca\\.percentil").val(pctcccaAdvanced(eg,ccca));
 
 		}
 	});
