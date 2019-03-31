@@ -1954,7 +1954,8 @@ function crearInformeEcoSegTrim1(){
 	});
 
 	$.post("https://administrador.crecimientofetal.cl/pdf/informe_crecimiento", data).done(function(response){
-		$("#interfaz\\.informe\\.body").append('<iframe src="" height="100%" width="100%" id="interfaz.informe.contenedor.pdf"></iframe>');
+		$("#interfaz\\.informe\\.body").html("");
+		$("#interfaz\\.informe\\.body").append('<iframe src="" height="400px" width="100%" id="interfaz.informe.contenedor.pdf"></iframe>');
 		$("#interfaz\\.informe\\.contenedor\\.pdf").attr("src", "data:application/pdf;base64," + response);	
 	});
 }
