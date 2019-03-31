@@ -1944,13 +1944,10 @@ function crearInformeEcoSegTrim1(){
 		comentario: comentario
 	}
 
-
-	$http.post('https://administrador.crecimientofetal.cl/pdf/informe_crecimiento',{data}, {responseType: 'arraybuffer'})
-   .success(function (data) {
-       var file = new Blob([data], {type: 'application/pdf'});
-       var fileURL = URL.createObjectURL(file);
-       window.open(fileURL);
-});
+	$.post("https://administrador.crecimientofetal.cl/pdf/informe_crecimiento", data).done(function(response){
+		$("body").append('<iframe src="" height="100%" width="100%" id="contenedor.pdf"></iframe>');
+		$("#contenedor\\.pdf").attr("src", "data:application/pdf;base64," + response);	
+	});
 }
 
 function crearInformeEcoSegTrim2(){
