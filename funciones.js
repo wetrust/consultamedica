@@ -453,7 +453,7 @@ $(document).ready(function(){
 				email: $("#interconsulta\\.email").val(),
 				para: $("#interconsulta\\.para").val()
 			};
-	
+
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Enviando Interconsulta</h5></div><div class="modal-body"><p>Enviando solicitud de interconsulta, por favor espere</p></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 	
@@ -1944,9 +1944,18 @@ function crearInformeEcoSegTrim1(){
 		comentario: comentario
 	}
 
+		
+	var modal = '<div class="modal" tabindex="-1" role="dialog" id="interfaz.informe"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Informe de crecimiento fetal</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body" id="interfaz.informe.body"><p>Cargando informe</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>';
+	$("body").append(modal);
+	$("#interfaz\\.informe").modal("show");
+
+	$('#interfaz\\.informe').on('hidden.bs.modal', function (e) {
+		$(this).remove();
+	});
+
 	$.post("https://administrador.crecimientofetal.cl/pdf/informe_crecimiento", data).done(function(response){
-		$("body").append('<iframe src="" height="100%" width="100%" id="contenedor.pdf"></iframe>');
-		$("#contenedor\\.pdf").attr("src", "data:application/pdf;base64," + response);	
+		$("#interfaz\\.informe\\.body").append('<iframe src="" height="100%" width="100%" id="interfaz.informe.contenedor.pdf"></iframe>');
+		$("#interfaz\\.informe\\.contenedor\\.pdf").attr("src", "data:application/pdf;base64," + response);	
 	});
 }
 
