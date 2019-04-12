@@ -444,45 +444,54 @@ $(document).ready(function(){
 			listo = true;
 		}
 
-		if (listo == true){
-			$(this).prop("disabled", true);
 
-			var data = {
-				nombre: $("#interconsulta\\.nombre").val(),
-				rut: $("#interconsulta\\.rut").val(),
-				fecha: $("#interconsulta\\.fecha").val(),
-				eg: $('input[name=interconsulta_eg]:checked').val(),
-				eco: $('input[name=interconsulta_eco]:checked').val(),
-				fum: $("#interconsulta\\.fum").val(),
-				diagnostico: $("#interconsulta\\.diagnostico").val(),
-				lugar: $("#interconsulta\\.lugar").val(),
-				ciudad: $("#interconsulta\\.ciudad").val(),
-				egestacional: $("#interconsulta\\.egestacional").val(),
-				profesional: $('input[name=interconsulta_profesional]:checked').val(),
-				nombreprofesional: $("#interconsulta\\.profesional\\.nombre").val(),
-				email: $("#interconsulta\\.email").val(),
-				para: $("#interconsulta\\.para").val(),
-				nombre_para: $("#interconsulta\\.para\\.nombre").val()
-			};
-	
-			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Enviando Interconsulta</h5></div><div class="modal-body"><p>Enviando solicitud de interconsulta, por favor espere</p></div></div></div></div>');
+		if (listo == true){
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Verificación de datos</h5></div><div class="modal-body"><p>El correo del médico referente (usted)es:</p><p>El correo del médico contrarreferente (al cual usted solicita la interconsulta) es:</p></div><div class="modal-footer"><button type="button" class="btn btn-primary" id="enviar-solicitud-interconsulta">Está correcto, envía la solicitud</button><button type="button" class="btn btn-secondary" data-dismiss="modal">No, dejame corregir.</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
-	
-			$.post("https://administrador.crecimientofetal.cl/api/send", data).done(function(response){
-				if (response.result == false){
-					alert("Usted no puede solicitar interconsulta para este profesional");
-				}
-				else if (response.result == true){
-					$('body').append('<div class="modal" tabindex="-1" role="dialog" id="mensaje.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Información</h5></div><div class="modal-body"><p>Solicitud de interconsulta enviada correctamente</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
-					$('#mensaje\\.dialogo').modal("show");
-	
-					$('#mensaje\\.dialogo').on('hidden.bs.modal', function (e) {
-						$('#cautivo\\.dialogo').modal("hide");
-						$("#cautivo\\.dialogo").remove();
-						$(this).remove();
-					});
-				}
+			$('#enviar-solicitud-interconsulta').on("click", function(){
+				$('#interconsulta\\.enviar').prop("disabled", true);
+
+				var data = {
+					nombre: $("#interconsulta\\.nombre").val(),
+					rut: $("#interconsulta\\.rut").val(),
+					fecha: $("#interconsulta\\.fecha").val(),
+					eg: $('input[name=interconsulta_eg]:checked').val(),
+					eco: $('input[name=interconsulta_eco]:checked').val(),
+					fum: $("#interconsulta\\.fum").val(),
+					diagnostico: $("#interconsulta\\.diagnostico").val(),
+					lugar: $("#interconsulta\\.lugar").val(),
+					ciudad: $("#interconsulta\\.ciudad").val(),
+					egestacional: $("#interconsulta\\.egestacional").val(),
+					profesional: $('input[name=interconsulta_profesional]:checked').val(),
+					nombreprofesional: $("#interconsulta\\.profesional\\.nombre").val(),
+					email: $("#interconsulta\\.email").val(),
+					para: $("#interconsulta\\.para").val(),
+					nombre_para: $("#interconsulta\\.para\\.nombre").val()
+				};
+				$('#cautivo\\.dialogo').modal("hide");
+				$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Enviando Interconsulta</h5></div><div class="modal-body"><p>Enviando solicitud de interconsulta, por favor espere</p></div></div></div></div>');
+				$('#cautivo\\.dialogo').modal("show");
+		
+				$.post("https://administrador.crecimientofetal.cl/api/send", data).done(function(response){
+					if (response.result == false){
+						alert("Usted no puede solicitar interconsulta para este profesional");
+					}
+					else if (response.result == true){
+						$('body').append('<div class="modal" tabindex="-1" role="dialog" id="mensaje.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Información</h5></div><div class="modal-body"><p>Solicitud de interconsulta enviada correctamente</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+						$('#mensaje\\.dialogo').modal("show");
+		
+						$('#mensaje\\.dialogo').on('hidden.bs.modal', function (e) {
+							$('#cautivo\\.dialogo').modal("hide");
+							$("#cautivo\\.dialogo").remove();
+							$(this).remove();
+						});
+					}
+				});
 			});
+			$('#cautivo\\.dialogo').on('hidden.bs.modal', function (e) {
+				$(this).remove();
+			});
+			return;
 		}
 		
 	});
