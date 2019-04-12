@@ -446,7 +446,7 @@ $(document).ready(function(){
 
 
 		if (listo == true){
-			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Verificación de datos</h5></div><div class="modal-body"><p>El correo del médico referente (usted)es:</p><p>El correo del médico contrarreferente (al cual usted solicita la interconsulta) es:</p></div><div class="modal-footer"><button type="button" class="btn btn-primary" id="enviar-solicitud-interconsulta">Está correcto, envía la solicitud</button><button type="button" class="btn btn-secondary" data-dismiss="modal">No, dejame corregir.</button></div></div></div></div>');
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Verificación de datos</h5></div><div class="modal-body"><p>El correo del médico referente (usted)es: ' + email +'</p><p>El correo del médico contrarreferente (al cual usted solicita la interconsulta) es: ' + para +'</p></div><div class="modal-footer"><button type="button" class="btn btn-primary" id="enviar-solicitud-interconsulta">Está correcto, envía la solicitud</button><button type="button" class="btn btn-secondary" data-dismiss="modal">No, dejame corregir.</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#enviar-solicitud-interconsulta').on("click", function(){
 				$('#interconsulta\\.enviar').prop("disabled", true);
