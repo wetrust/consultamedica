@@ -303,6 +303,7 @@ $(document).ready(function(){
 		var nombreprofesional = String($("#interconsulta\\.profesional\\.nombre").val());
 		var email = String($("#interconsulta\\.email").val());
 		var para = String($("#interconsulta\\.para").val());
+		var nombre_para = String($("#interconsulta\\.para\\.nombre").val());
 		
 		if (nombre.length < 3){
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">No está completo el formulario</h5></div><div class="modal-body"><p>¿Cómo se llama la paciente?</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
@@ -451,7 +452,8 @@ $(document).ready(function(){
 				profesional: $('input[name=interconsulta_profesional]:checked').val(),
 				nombreprofesional: $("#interconsulta\\.profesional\\.nombre").val(),
 				email: $("#interconsulta\\.email").val(),
-				para: $("#interconsulta\\.para").val()
+				para: $("#interconsulta\\.para").val(),
+				nombre_para: $("#interconsulta\\.para\\.nombre").val()
 			};
 	
 			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Enviando Interconsulta</h5></div><div class="modal-body"><p>Enviando solicitud de interconsulta, por favor espere</p></div></div></div></div>');
