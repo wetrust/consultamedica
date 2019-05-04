@@ -444,7 +444,7 @@ $(document).ready(function(){
 		}
 
 		if (listo == true){
-			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Verificación de datos</h5></div><div class="modal-body"><ul><li>El correo del profesional referente (usted) es: ' + email +'</li><li>El correo del profesional contrarreferente es: ' + para +'</li></ul><h5 class="mt-3">¿Los correos están correctos?</h5></div><div class="modal-footer"><button type="button" class="btn btn-primary" id="enviar-solicitud-interconsulta">Si</button><button type="button" class="btn btn-secondary" data-dismiss="modal">No</button></div></div></div></div>');
+			$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title text-center"><strong>Verificación de datos</strong></h5></div><div class="modal-body"><ul><li>El correo del profesional referente (usted) es: ' + email +'</li><li>El correo del profesional contrarreferente es: ' + para +'</li></ul><h5 class="mt-3 text-center"><strong>¿Los correos están correctos?</strong></h5></div><div class="modal-footer"><button type="button" class="btn btn-primary" id="enviar-solicitud-interconsulta">Si</button><button type="button" class="btn btn-secondary" data-dismiss="modal">No</button></div></div></div></div>');
 			$('#cautivo\\.dialogo').modal("show");
 			$('#enviar-solicitud-interconsulta').on("click", function(){
 				$('#interconsulta\\.enviar').prop("disabled", true);
