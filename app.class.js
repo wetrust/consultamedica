@@ -119,6 +119,9 @@ class app {
 		else if (this.hash == "#respuesta"){
 			this.displayElement("respuesta");
 		}
+		else if (this.hash == "#servidor"){
+			this.displayElement("servidor");
+		}
     }
 
 //Funciones para los pacientes
@@ -309,6 +312,7 @@ class app {
 	$('#recienacido').hide();
 	$('#hipoglicemia').hide();
 	$('#registro').hide();
+	$('#servidor').hide();
 	$('#consentimiento').hide();
 	$('#construccion').hide();
 	$('#ecoObsPrimTrimTrisomia').hide();
