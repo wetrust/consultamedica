@@ -472,7 +472,15 @@ $(document).ready(function(){
 		
 				$.post("https://administrador.crecimientofetal.cl/api/send", data).done(function(response){
 					if (response.result == false){
-						alert("Usted no puede solicitar interconsulta para este profesional");
+						$('body').append('<div class="modal" tabindex="-1" role="dialog" id="mensaje.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">ERROR</h5></div><div class="modal-body"><p>Usted NO puede solicitar interconsulta para este profesional</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
+						$('#mensaje\\.dialogo').modal("show");
+		
+						$('#mensaje\\.dialogo').on('hidden.bs.modal', function (e) {
+							$('#cautivo\\.dialogo').modal("hide");
+							$("#cautivo\\.dialogo").remove();
+							$(this).remove();
+							$('#interconsulta\\.enviar').prop("disabled", false);
+						});
 					}
 					else if (response.result == true){
 						$('body').append('<div class="modal" tabindex="-1" role="dialog" id="mensaje.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Información</h5></div><div class="modal-body"><p>Solicitud de interconsulta enviada correctamente</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button></div></div></div></div>');
@@ -482,6 +490,7 @@ $(document).ready(function(){
 							$('#cautivo\\.dialogo').modal("hide");
 							$("#cautivo\\.dialogo").remove();
 							$(this).remove();
+							$('#interconsulta\\.enviar').prop("disabled", false);
 						});
 					}
 				});
