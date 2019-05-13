@@ -274,12 +274,9 @@ $(document).ready(function(){
 		eg = eg.replace("semanas", "");
 
 		if (eg.length > 0){
-
 			eg =  parseFloat(eg).toFixed();
 			$("#interconsulta\\.respuesta\\.pfe\\.percentil").val(pctpfeAdvanced(eg,pfe));
-
 		}
-
 	});
 
 	$("#interconsulta\\.enviar").on("click", function(){
@@ -467,7 +464,7 @@ $(document).ready(function(){
 					nombre_para: $("#interconsulta\\.para\\.nombre").val()
 				};
 				$('#cautivo\\.dialogo').modal("hide");
-				$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Enviando Interconsulta</h5></div><div class="modal-body"><p>Enviando solicitud de interconsulta, por favor espere</p></div></div></div></div>');
+				$('body').append('<div class="modal" tabindex="-1" role="dialog" id="cautivo.dialogo"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Enviando Interconsulta</h5></div><div class="modal-body"><p>Enviando solicitud de interconsulta, por favor espere</p><div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div></div></div></div></div>');
 				$('#cautivo\\.dialogo').modal("show");
 		
 				$.post("https://administrador.crecimientofetal.cl/api/send", data).done(function(response){
