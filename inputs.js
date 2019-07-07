@@ -33,10 +33,12 @@ $( document ).ready(function() {
         $("#diasEcoObs").append('<option value="' + i +'">' + i + '</option>');
         $("#diasEcoDopp").append('<option value="' + i +'">' + i + '</option>');
     }
+    $("select[name='edad_materna']").append('<option value="< 10">&lt; 10 años</option>');
     //cargar inputs de edad materna
     for (i = 10; i < 51; i++) {
         $("select[name='edad_materna']").append('<option value="' + i +'">' + i + ' años</option>');
     }
+    $("select[name='edad_materna']").append('<option value="> 10">&gt; 50 años</option>');
     //cargar inputs de Peso
     for (i = 35; i < 130; i++) {
         $("#peso").append('<option value="' + i +'">' + i + ' kg.</option>');
