@@ -211,13 +211,6 @@ $(document).ready(function(){
 		$("#imagen\\.oculta\\.cuatro").delay( 2400 ).fadeIn( 400 ).delay( 3000 ).fadeOut( 400 );
 	});
 
-	$("#imagen\\.oculta\\.home\\.trigger").on("click", function(){
-		$("#imagen\\.oculta\\.home\\.uno").fadeIn( 400 ).delay( 5400 ).fadeOut( 400 );
-		$("#imagen\\.oculta\\.home\\.dos").delay( 800 ).fadeIn( 400 ).delay( 4600 ).fadeOut( 400 );
-		$("#imagen\\.oculta\\.home\\.tres").delay( 1600 ).fadeIn( 400 ).delay( 3800 ).fadeOut( 400 );
-		$("#imagen\\.oculta\\.home\\.cuatro").delay( 2400 ).fadeIn( 400 ).delay( 3000 ).fadeOut( 400 );
-	});
-
 	$("#mostrar\\.pdf\\.registro").on("click", function(){
 		location.hash = '#registro';
 	});
