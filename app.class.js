@@ -304,6 +304,12 @@ class app {
 	$('#construccion').hide();
 	$('#ecoObsPrimTrimTrisomia').hide();
 	$('#'+div_id).show();
+	if (div_id == "home" || div_id == "tipoExamen"){
+		$("#barra\\.verde").removeClass("d-none");
+	}
+	else{
+		$("#barra\\.verde").addClass("d-none");
+	}
     }
 	
    lastLoginDate(date){
