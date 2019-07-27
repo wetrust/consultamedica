@@ -304,7 +304,7 @@ class app {
 	$('#construccion').hide();
 	$('#ecoObsPrimTrimTrisomia').hide();
 	$('#'+div_id).show();
-	if (div_id == "home" || div_id == "tipoExamen"){
+	if (div_id == "home" || div_id == "tipoExamen" || div_id == "about"){
 		$("#barra\\.verde").removeClass("d-none");
 	}
 	else{
