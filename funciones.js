@@ -1946,7 +1946,7 @@ function crearInformeEcoGine(){
 	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
 	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
 
-	var comentario = $("#comentarios-eco-uno").val();
+	var comentario = $("input[name='respuesta_ginecologica_comentarios']").val();
 	if (typeof comentario !== 'undefined'){
 		comentario = comentario.replace(/\r?\n/g, "<br>");
 	}else{
