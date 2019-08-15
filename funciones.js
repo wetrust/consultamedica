@@ -1283,6 +1283,19 @@ $( '#modalPreInfEcoPrimTrim' ).on( 'click', function() {
 	crearInformeEcoPrimTrim();
 });
 
+
+$( '#modalInfEcoGine' ).on( 'click', function() {
+	$('#popupTitle').html("Datos para evaluación ecográfica de primer trimestre");
+	//remueve los botones de imprimir en caso de que estén
+	$( '#impEcoObsSegTrim2').remove();
+	$( '#impEcoObsSegTrim1').remove();
+	$( '#impDoppler3').remove();
+	$( '#impDoppler2').remove();
+	$( '#impDoppler1').remove();
+	$( '#infecoObsSegTrim1Clon').remove();
+	crearInformeEcoGine();
+});
+
 $( '#modalPreInfEcoObsSegTrim1' ).on( 'click', function() {
 	$('#popupTitle').html("Datos para informe");
 	//remueve los botones de imprimir en caso de que estén
@@ -1849,6 +1862,84 @@ function crearInformeEcoPrimTrim(){
                 }
             }
         }
+	
+	var paciente = $( '#nombre-paciente').val();
+	var idpaciente = $( '#id-paciente').val();
+	var motivo = $( '#motivo-examen option:selected').text();
+	var ecografista = $( '#ecografista option:selected').text();
+
+	var fur = $( "input[name='fum']").val();
+	var fexamen = $( "input[name='fee']").val();
+	var eg = $( "input[name='eg']").val();
+	
+	InformeString = InformeString.replace(":PACIENTE", paciente);
+	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
+	InformeString = InformeString.replace(":MOTIVO", motivo);
+	InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
+	
+	var day = ("0" + aplication.day.getDate()).slice(-2);
+	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
+
+	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
+	
+	var comentario = $("#comentarios-eco-uno").val();
+	if (typeof comentario !== 'undefined'){
+		comentario = comentario.replace(/\r?\n/g, "<br>");
+	}
+	else{
+		comentario='';
+	}
+	
+	var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+	var edadmaterna = $( "select[name='edad_materna']").val();
+	
+	InformeString = InformeString.replace(":FUM", fur);
+	InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
+	InformeString = InformeString.replace(":FEXAMEN", fexamen);
+	InformeString = InformeString.replace(":EG", eg);
+	InformeString = InformeString.replace(":LINEA1", LINEA1);
+	InformeString = InformeString.replace(":LINEA2", LINEA2);
+	InformeString = InformeString.replace(":LINEA3", LINEA3);
+	InformeString = InformeString.replace(":LINEA4", LINEA4);
+	InformeString = InformeString.replace(":LINEA5", LINEA5);
+	InformeString = InformeString.replace(":LINEA6", LINEA6);
+	InformeString = InformeString.replace(":LINEA7", LINEA7);
+	InformeString = InformeString.replace(":LINEA8", LINEA8);
+	InformeString = InformeString.replace(":LINEA9", LINEA9);
+	InformeString = InformeString.replace(":LINEA10", LINEA10);
+	InformeString = InformeString.replace(":LINEA11", LINEA11);
+	InformeString = InformeString.replace(":LINEA12", LINEA12);
+	InformeString = InformeString.replace(":LINEA13", LINEA13);
+	InformeString = InformeString.replace(":TITULOBIOMETRIAS", TITULOBIOMETRIAS);
+	InformeString = InformeString.replace(":COMENTARIO", comentario);
+	InformeString = InformeString.replace(":DATEINFORME", dateInf);
+	InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
+	
+	imprInforme(InformeString);
+}
+
+function crearInformeEcoGine(){
+
+	var InformeString = "<div class='container-fluid'> <h3 class='page-header text-center'>Evaluación ecográfica ginecológica u obstétrica de 1° trimestre</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container-fluid'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>ANTECEDENTES</strong> </p><p><strong>FUM: </strong> :FUM <br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p>Cuerpo Uterino :LINEA1 <br>Saco Gestacional :LINEA2 <br>Saco Vitelino :LINEA3 <br>Embrión :LINEA4 <br>Exploración anexial derecha :LINEA5 <br>Exploración anexial izquierda :LINEA6 <br>Exploración de Douglas :LINEA7</p><p></p><p></p><p><strong style='color:#045dab;'>:TITULOBIOMETRIAS</strong> </p><p>:LINEA12 <br>:LINEA13</p><p></p><p></p><p><strong style='color:#045dab;'>HIPÓTESIS DIAGNÓSTICA</strong> </p><p>:LINEA8 :LINEA9 <br>:LINEA10 <br>:LINEA11</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='border-bottom:0;'>Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800 <br>Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992. <br>Referencia Diámetro biparital según gráfica de Hadlock y col. 1984 <br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>";
+
+    var LINEA1 = $("#utero-ubic1").val() + " " + $("#utero-ubic2").val() + ", " + $("#cuerpo-uterino").val() + ".";
+    var LINEA2 = $("#saco-gestacional").val() + sacogestacionaltxt;
+    var LINEA3 = $("#saco-vitelino").val() + sacovitelinotxt;
+    var LINEA4 = $("#embrion").val() + fcftexto;
+    var LINEA5 = $("#anexo-derecho").val();
+    var LINEA6 = $("#anexo-izquierdo").val();
+    var LINEA7 = $("#exploracion-douglas").val() + ", " + douglasinforme;
+	var LINEA12 = '';
+	var LINEA8 = '';
+
+	
+	var LINEA13 = '';
+	
+    if ($('eco1-dbp').val() > 0){
+        LINEA13 = "DBP: " + $("eco1-dbp").val() + "mm";
+    }
+
+	var TITULOBIOMETRIAS = 'BIOMETRÍAS EMBRIO/FETAL';
 	
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
