@@ -70,6 +70,9 @@ class app {
 	else if (this.hash=="#agenda"){
 		this.displayElement("agenda");
 	}
+	else if (this.hash=="#ecoGinecologica"){
+		this.displayElement("ecoGinecologica");
+	}
 	else{
 		this.displayElement("home");
 		this.clearData();
@@ -253,6 +256,7 @@ class app {
 	$('#tamizaje-11').hide();
 	$('#morfologica-22').hide();
 	$('#ecocardio').hide();
+	$('#ecoGinecologica').hide();
         $('#dNeonatales').hide();
 	$('#agenda').hide();
 	if (div_id != 'agenda'){
