@@ -487,14 +487,17 @@ $(document).ready(function(){
 		if ($("#link\\.go\\.ecouno\\.pasouno").hasClass("d-none")){
 			$("#link\\.go\\.ecouno\\.pasouno").removeClass("d-none");
 			$("#link\\.go\\.ecouno\\.pasodos").removeClass("d-none");
+			$("#link\\.go\\.ecouno\\.pasotress").removeClass("d-none");
 		}
 		else{
 			$("#link\\.go\\.ecouno\\.pasouno").addClass("d-none");
 			$("#link\\.go\\.ecouno\\.pasodos").addClass("d-none");
+			$("#link\\.go\\.ecouno\\.pasotress").addClass("d-none");
 		}
 		if ($("#link\\.go\\.ecodos\\.pasouno").hasClass("d-none") == false){
 			$("#link\\.go\\.ecodos\\.pasouno").addClass("d-none");
 			$("#link\\.go\\.ecodos\\.pasodos").addClass("d-none");
+			$("#link\\.go\\.ecouno\\.pasotress").addClass("d-none");
 		}
 	});
 	$("#link\\.go\\.ecodos").on("click",function(){
