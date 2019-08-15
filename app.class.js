@@ -107,6 +107,9 @@ class app {
 		{
 			this.displayElement("construccion");
 		}
+		else if (this.hash=="#ecoGinecologica"){
+			this.displayElement("ecoGinecologica");
+		}
 		else if (this.hash=="#ecoObsPrimTrimTrisomia"){
 			this.displayElement("ecoObsPrimTrimTrisomia");
 		}
@@ -303,6 +306,7 @@ class app {
 	$('#consentimiento').hide();
 	$('#construccion').hide();
 	$('#ecoObsPrimTrimTrisomia').hide();
+	$('#ecoGinecologica').hide();
 	$('#'+div_id).show();
 	if (div_id == "home" || div_id == "tipoExamen" || div_id == "postnatal"){
 		$("#barra\\.verde").removeClass("d-none");
