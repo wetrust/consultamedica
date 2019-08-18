@@ -512,6 +512,7 @@ $(document).ready(function(){
 		if ($("#link\\.go\\.ecouno\\.pasouno").hasClass("d-none") == false){
 			$("#link\\.go\\.ecouno\\.pasouno").addClass("d-none");
 			$("#link\\.go\\.ecouno\\.pasodos").addClass("d-none");
+			$("#link\\.go\\.ecouno\\.pasotress").addClass("d-none");
 		}
 	});
 
