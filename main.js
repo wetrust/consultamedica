@@ -1108,7 +1108,6 @@ $( document ).ready(function() {
 				  $('#infadicionalNoController').on('click', function(){
 					if ($('#infadicionalView').hasClass('d-none') == false){
 						$('#infadicionalView').addClass('d-none');
-						$('#continuarExamenEcografico').removeClass('d-none');
 					}
 				});
 				$("#pdfnacionalview").on("click", function(){
@@ -1121,7 +1120,6 @@ $( document ).ready(function() {
 
 				$('#infadicionalSiController').on('click', function(){
 					$('#infadicionalView').removeClass('d-none');
-					$('#continuarExamenEcografico').addClass('d-none');
 				});
 				
 				$('#infadicionalClinicoNoController').on('click', function(){
