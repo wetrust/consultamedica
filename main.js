@@ -497,7 +497,6 @@ $(document).ready(function(){
 		if ($("#link\\.go\\.ecodos\\.pasouno").hasClass("d-none") == false){
 			$("#link\\.go\\.ecodos\\.pasouno").addClass("d-none");
 			$("#link\\.go\\.ecodos\\.pasodos").addClass("d-none");
-			$("#link\\.go\\.ecouno\\.pasotress").addClass("d-none");
 		}
 	});
 	$("#link\\.go\\.ecodos").on("click",function(){
