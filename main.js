@@ -999,7 +999,31 @@ $( document ).ready(function() {
         //cualEsMiIp();
         //cargarDatosGenerales();
         //activarTooltips();
-        //activarBotones();
+		//activarBotones();
+		
+	$("#fum-ginecologica").on("change", function(){
+		var FExamen,FUM,EdadGestacional;
+		var undia = 1000 * 60 * 60 * 24;
+		FUM = $('#fum-ginecologica').val();
+		FExamen = $('#fee-ginecologica').val();
+		FUM = new Date(FUM);
+		FExamen = new Date(FExamen);
+
+		EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / undia).toFixed(0);
+		$('input[name="diaciclo"]').val(EdadGestacional);
+	});
+
+	$("#fee-ginecologica").on("change", function(){
+		var FExamen,FUM,EdadGestacional;
+		var undia = 1000 * 60 * 60 * 24;
+		FUM = $('#fum-ginecologica').val();
+		FExamen = $('#fee-ginecologica').val();
+		FUM = new Date(FUM);
+		FExamen = new Date(FExamen);
+
+		EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / undia).toFixed(0);
+		$('input[name="diaciclo"]').val(EdadGestacional);
+	});
 
 	if (isIE()){
 		console.log('navegador incompatible')
