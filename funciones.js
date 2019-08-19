@@ -1933,8 +1933,8 @@ function crearInformeEcoGine(){
 	var idpaciente = $( '#id-paciente').val();
 	var motivo = $( '#motivo-examen option:selected').text();
 	var ecografista = $( '#ecografista option:selected').text();
-	var fur = $( "input[name='fum-ginecologica']").val();
-	var fexamen = $( "input[name='fee-ginecologica']").val();
+	var fur = $( "#fum-ginecologica").val();
+	var fexamen = $( "#fee-ginecologica").val();
 
 	InformeString = InformeString.replace(":PACIENTE", paciente);
 	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);

@@ -1060,17 +1060,6 @@ $( document ).ready(function() {
 				  .on('changeDate', function(ev){
 				    $(this).trigger("change");
 				  });
-			$('#fum-ginecologica').datepicker();
-			$('#fum-ginecologica').datepicker()
-				  .on('changeDate', function(ev){
-				    $(this).trigger("change");
-				  });
-
-			$('#fee-ginecologica').datepicker();
-			$('#fee-ginecologica').datepicker()
-				  .on('changeDate', function(ev){
-				    $(this).trigger("change");
-				  });
 
 			$('#fum-cuatro').datepicker();
 			$('#fum-cuatro').datepicker()
