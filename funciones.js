@@ -973,8 +973,11 @@ $( '#semanasTipoEco' ).on( 'change', function() {
 	$("#ecografia\\.uno").removeClass("card-outline-primary");
 	$("#ecografia\\.dos").removeClass("card-outline-primary");
 	$("#ecografia\\.doppler").removeClass("card-outline-primary");
+	$("#ecografia\\.ginecologico").removeClass("card-outline-primary");
 	//determinar a quien le pongo el color
-	if (semanas < 15){
+	if (semanas < 5){
+		$("#ecografia\\.ginecologico").addClass("card-outline-primary");
+	}else if (semanas < 15){
 		$("#ecografia\\.uno").addClass("card-outline-primary");
 	}
 	else{
