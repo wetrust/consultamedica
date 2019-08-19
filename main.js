@@ -483,22 +483,6 @@ $(document).ready(function(){
 		$("#comentarios-eco-dos-inf-dos").val(comentarios);
 	});
 
-	$("#link\\.go\\.ecouno").on("click",function(){
-		if ($("#link\\.go\\.ecouno\\.pasouno").hasClass("d-none")){
-			$("#link\\.go\\.ecouno\\.pasouno").removeClass("d-none");
-			$("#link\\.go\\.ecouno\\.pasodos").removeClass("d-none");
-			$("#link\\.go\\.ecouno\\.pasotress").removeClass("d-none");
-		}
-		else{
-			$("#link\\.go\\.ecouno\\.pasouno").addClass("d-none");
-			$("#link\\.go\\.ecouno\\.pasodos").addClass("d-none");
-			$("#link\\.go\\.ecouno\\.pasotress").addClass("d-none");
-		}
-		if ($("#link\\.go\\.ecodos\\.pasouno").hasClass("d-none") == false){
-			$("#link\\.go\\.ecodos\\.pasouno").addClass("d-none");
-			$("#link\\.go\\.ecodos\\.pasodos").addClass("d-none");
-		}
-	});
 	$("#link\\.go\\.ecodos").on("click",function(){
 		if ($("#link\\.go\\.ecodos\\.pasouno").hasClass("d-none")){
 			$("#link\\.go\\.ecodos\\.pasouno").removeClass("d-none");
@@ -507,11 +491,6 @@ $(document).ready(function(){
 		else{
 			$("#link\\.go\\.ecodos\\.pasouno").addClass("d-none");
 			$("#link\\.go\\.ecodos\\.pasodos").addClass("d-none");
-		}
-		if ($("#link\\.go\\.ecouno\\.pasouno").hasClass("d-none") == false){
-			$("#link\\.go\\.ecouno\\.pasouno").addClass("d-none");
-			$("#link\\.go\\.ecouno\\.pasodos").addClass("d-none");
-			$("#link\\.go\\.ecouno\\.pasotress").addClass("d-none");
 		}
 	});
 
