@@ -94,6 +94,12 @@ $(document).ready(function(){
 
 	$("select[name='edad_materna']").on("change", function(){
 		$("#edadmaternaprimtrim").val($(this).val());
+		$("#edad_materna").val($(this).val());
+	});
+
+	$("#edad_materna").on("change", function(){
+		$("#edadmaternaprimtrim").val($(this).val());
+		$("select[name='edad_materna']").val($(this).val());
 	});
 
 	$("#eco\\.seg\\.trim\\.nuevo").on("click", function(){
