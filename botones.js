@@ -52,7 +52,7 @@ function activarBotones() {
    
    $("input[name='eg']").val(localStorage.eg);
 
-   FUM = localStorage.fum.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+   FUM = localStorage.fum.split(/\//).reverse().join('-'); //convert dd/mm/yyy
    $("#fum-ginecologica").val(FUM).trigger("change");
    
    if (this.id != "fum-dos"){
@@ -107,7 +107,7 @@ function activarBotones() {
    $("input[name='fee']").val(localStorage.fee);
    $("input[name='eg']").val(localStorage.eg);
 
-   fee = localStorage.fee.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+   fee = localStorage.fee.split(/\//).reverse().join('-'); //convert dd/mm/yyy
    $("#fee-ginecologica").val(fee).trigger("change");
 
    if (this.id != "fee-dos"){
