@@ -489,14 +489,45 @@ $(document).ready(function(){
 		$("#comentarios-eco-dos-inf-dos").val(comentarios);
 	});
 
-	$("#link\\.go\\.ecodos").on("click",function(){
-		if ($("#link\\.go\\.ecodos\\.pasouno").hasClass("d-none")){
-			$("#link\\.go\\.ecodos\\.pasouno").removeClass("d-none");
-			$("#link\\.go\\.ecodos\\.pasodos").removeClass("d-none");
+	$("#link\\.modulo\\.activo").on("click",function(){
+
+	});
+
+	$("#link\\.modulo\\.activo").on("click",function(){
+		if ($("#link\\.go\\.ecouno").hasClass("d-none")){
+			$("#link\\.go\\.ecouno").removeClass("d-none");
+			$("#link\\.go\\.ecodos").removeClass("d-none");
+			$("#link\\.go\\.doppler").removeClass("d-none");
+			$("#link\\.go\\.ginecologica").removeClass("d-none");
 		}
 		else{
-			$("#link\\.go\\.ecodos\\.pasouno").addClass("d-none");
-			$("#link\\.go\\.ecodos\\.pasodos").addClass("d-none");
+			$("#link\\.go\\.ecouno").addClass("d-none");
+			$("#link\\.go\\.ecodos").addClass("d-none");
+			$("#link\\.go\\.doppler").addClass("d-none");
+			$("#link\\.go\\.ginecologica").addClass("d-none");
+		}
+
+		if ($("#link\\.go\\.once").hasClass("d-none") == false){
+			$("#link\\.go\\.once").addClass("d-none");
+			$("#link\\.go\\.dosdos").addClass("d-none");
+		};
+	});
+
+	$("#link\\.modulo\\.construccion").on("click",function(){
+		if ($("#link\\.go\\.once").hasClass("d-none")){
+			$("#link\\.go\\.once").removeClass("d-none");
+			$("#link\\.go\\.dosdos").removeClass("d-none");
+		}
+		else{
+			$("#link\\.go\\.once").addClass("d-none");
+			$("#link\\.go\\.dosdos").addClass("d-none");
+		}
+
+		if ($("#link\\.go\\.ecouno").hasClass("d-none") == false){
+			$("#link\\.go\\.ecouno").addClass("d-none");
+			$("#link\\.go\\.ecodos").addClass("d-none");
+			$("#link\\.go\\.doppler").addClass("d-none");
+			$("#link\\.go\\.ginecologica").addClass("d-none");
 		}
 	});
 
