@@ -288,6 +288,7 @@ $(document).ready(function(){
 		$("#motivo-examen").val(1);
 		$("#patologiaObstetricaUno").val(1);
 		$("#ecografista").val(1);
+		$("#ecografista\\.copia").val(1);
 		$("select[name='edad_materna']").val(10);
 		$("#profReferente").val("");
 		$("#procedencia").val("");

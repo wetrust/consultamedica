@@ -1935,7 +1935,7 @@ function crearInformeEcoGine(){
 	var paciente = $( '#nombre-paciente').val();
 	var idpaciente = $( '#id-paciente').val();
 	var motivo = $( '#motivo-examen option:selected').text();
-	var ecografista = $( '#ecografista option:selected').text();
+	var ecografista = $( '#ecografista\\.copia option:selected').text();
 	var fur = $( "#fum-ginecologica").val();
 	var fexamen = $( "#fee-ginecologica").val();
 

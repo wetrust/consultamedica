@@ -93,7 +93,11 @@ function loadDatabase(){
 				    $('#ecografista').append($('<option>', { 
 					value: item.id,
 					text : item.nombre
-				    }));
+					}));
+					$('#ecografista\\.copia').append($('<option>', { 
+						value: item.id,
+						text : item.nombre
+						}));
 					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
 					$('#EcografistaConfigTable').append(fila);
 					
