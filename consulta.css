@@ -281,3 +281,18 @@
 .gris-claro{
     background-color:#868e9652;
 }
+
+
+.text-animado { animation: example 5s infinite; color:#000;}
+
+@keyframes example {
+    0% { color: #BDCE30; }
+    11% { color: #6ABB81; }
+    23% { color: #00B29A; }
+    33% { color: #0099AE; }
+    45% { color: #4F72B8; }
+    54% { color: #A065AA; }
+    66% { color: #EE4D7A; }
+    77% { color: #EF4C45; }
+    89% { color: #F4792B; }
+    100% {color: #FAA634; }}
