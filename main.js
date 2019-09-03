@@ -779,7 +779,7 @@ $(document).ready(function(){
 		FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
 		FUM = new Date (FUM);
 		var B = new Date();
-  		B.setTime(FUM.getTime() + 24 * unasemana);
+  		B.setTime(FUM.getTime() + (24 * unasemana));
 
 		if ($('#lcn').val() < 1){
 			var comentario = "En relación a fecha de ultima menstruación referida;\r\nse sugiere reevaluar más adelante para definir edad gestacional\r\n";
