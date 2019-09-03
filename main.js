@@ -771,11 +771,21 @@ $(document).ready(function(){
 	$("#informe\\.eco\\.prim\\.trim").on("click", function(){
 		var fur = $( "input[name='fum']").val();
 		var fpp = $( "input[name='fpp']").val();
+		
+		var undia = 1000 * 60 * 60 * 24;
+		var unasemana = undia * 7;
+
+		var FUM = $( "input[name='fum']").val();
+		FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+		FUM = new Date (FUM);
+		var B = new Date();
+  		B.setTime(FUM.getTime() + 24 * unasemana);
+
 		if ($('#lcn').val() < 1){
 			var comentario = "En relación a fecha de ultima menstruación referida;\r\nse sugiere reevaluar más adelante para definir edad gestacional\r\n";
 		}
 		else{
-			var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp;
+			var comentario = "Fum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\nFecha recomendada para eco de 24 semanas: " + B.getDate()+"/"+(B.getMonth()+1)+"/"+ B.getFullYear();
 		}
 		$('#comentarios-eco-uno').val(comentario);
 		$('#saco-gestacional-mm').val($('#saco').val());
