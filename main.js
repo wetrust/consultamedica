@@ -771,15 +771,13 @@ $(document).ready(function(){
 	$("#informe\\.eco\\.prim\\.trim").on("click", function(){
 		var fur = $( "input[name='fum']").val();
 		var fpp = $( "input[name='fpp']").val();
-		
-		var undia = 1000 * 60 * 60 * 24;
-		var unasemana = undia * 7;
 
 		var FUM = $( "input[name='fum']").val();
 		FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
 		FUM = new Date (FUM);
+		
 		var B = new Date();
-  		B.setTime(FUM.getTime() + (24 * unasemana));
+		B.setDate(FUM.getDate() + 168);
 
 		if ($('#lcn').val() < 1){
 			var comentario = "En relación a fecha de ultima menstruación referida;\r\nse sugiere reevaluar más adelante para definir edad gestacional\r\n";
