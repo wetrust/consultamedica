@@ -24,6 +24,41 @@ $( document ).ready(function() {
     if (storageAvailable('localStorage')) {
         document.location.hash = "#inicio";
     }
+
+    //controlador de botones inicio
+    $("#menu\\.modulo\\.activo").on("click", function(){
+        var botones = ["menu.modulo.activo.uno", "menu.modulo.activo.dos", "menu.modulo.activo.tres", "menu.modulo.activo.cuatro"];
+        
+        if (document.getElementById(botones[0]).classList.contains("d-none")){
+            botones.forEach(function myFunction(value, index, array) {
+                txt = txt + value + "<br>";
+                document.getElementById(value).classList.remove("d-none");
+            });
+        }
+        else{
+            botones.forEach(function myFunction(value, index, array) {
+                txt = txt + value + "<br>";
+                document.getElementById(value).classList.add("d-none");
+            });
+        }
+    });
+
+    $("#menu\\.modulo\\.construccion").on("click", function(){
+        var botones = ["menu.modulo.construccion.uno", "menu.modulo.construccion.dos"];
+        
+        if (document.getElementById("menu.modulo.construccion.uno").classList.contains("d-none")){
+            botones.forEach(function myFunction(value, index, array) {
+                txt = txt + value + "<br>";
+                document.getElementById(value).classList.remove("d-none");
+            });
+        }
+        else{
+            botones.forEach(function myFunction(value, index, array) {
+                txt = txt + value + "<br>";
+                document.getElementById(value).classList.add("d-none");
+            });
+        }
+    })
 });
 
 $(window).on('hashchange', function(){
@@ -32,6 +67,7 @@ $(window).on('hashchange', function(){
     if (hash=="#inicio" || hash=="#about" || hash=="#tipoExamen" || hash=="#ecoDoppler" || hash=="#ecoObsSegTrim" || hash=="#ecoObsPrimTrim" || hash=="#configuracion" || hash=="#postnatal" || hash=="#recienacido" || hash=="#hipoglicemia" || hash=="#pdfviebox" || hash=="#registro" || hash=="#consentimiento" || hash=="#construccion" || hash=="#ecoGinecologica" || hash=="#ecoObsPrimTrimTrisomia"){
         $(activeHash).addClass("d-none");
         $(hash).removeClass("d-none");
+        activeHash = hash;
 
         if (hash=="#tipoExamen" || hash=="#ecoDoppler" || hash=="#ecoObsSegTrim" || hash=="#ecoObsPrimTrim" || hash=="#construccion" || hash=="#ecoGinecologica" || hash=="#ecoObsPrimTrimTrisomia"){
             document.getElementsByTagName("section")[0].classList.remove("d-none");
