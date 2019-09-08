@@ -34,7 +34,7 @@ $(window).on('hashchange', function(){
         $(hash).removeClass("d-none");
 
         if (hash=="#tipoExamen" || hash=="#ecoDoppler" || hash=="#ecoObsSegTrim" || hash=="#ecoObsPrimTrim" || hash=="#construccion" || hash=="#ecoGinecologica" || hash=="#ecoObsPrimTrimTrisomia"){
-            document.getElementsByTagName("section").classList.remove("d-none");
+            document.getElementsByTagName("section")[0].classList.remove("d-none");
             document.getElementById("titulo").innerHTML = titulos[hash];
         }
         else{
