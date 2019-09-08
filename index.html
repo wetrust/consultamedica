@@ -5,24 +5,24 @@
     <title>Crecimiento Fetal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="consulta.css">
-    <link rel="stylesheet" href="datepicker.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" sizes="96x96" href="img/icon-96x96.png">
     <meta name="theme-color" content="#0275d8">
     <!-- https://www.emailjs.com/ crecimientofetalcl@gmail.com-->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="inputs.js"></script>
-    <script src="funciones.js"></script>
-    <script src="graficos.js"></script>
-    <script src="botones.js"></script>
-    <script src="app.class.js"></script>
-    <script src="configuracion.js"></script>
-    <script src="main.js"></script>
-    <script src="bootstrap-datepicker.js"></script>
-    <script src="select.js"></script>
+    <!-- <script src="inputs.js"></script>-->
+    <!-- <script src="funciones.js"></script>-->
+    <!-- <script src="graficos.js"></script>-->
+    <!-- <script src="botones.js"></script>-->
+    <!-- <script src="app.class.js"></script>-->
+    <!-- <script src="configuracion.js"></script-->>
+    <!-- <script src="main.js"></script>-->
+    <!-- <script src="select.js"></script>-->
+    <!-- <script src="extra.js"></script>-->
+    <script src="app.js"></script>
     <style>
         .g-verde {
             background-color:#009688;
@@ -167,22 +167,22 @@
             <div class="card-body">
             <h5 class="text-center">Formulario solicitud registro de usuarios</h5>
             <div class="row">
-            <div class="form-group col"> <label for="contact-username">Nombre de usuario</label> <input pattern="[a-zA-Z0-9]{2,64}" name="user_name" class="form-control" id="contact-username" type="text"><small class="form-text text-muted">Un nombre para identificar cuenta en la plataforma, sin espacios (ej: drJuan)</small></div>
-            <div class="form-group col"> <label for="contact-name">Nombre, Apellido</label> <input class="form-control" id="contact-name" type="text"><small class="form-text text-muted">Nombre real</small></div>
-            <div class="form-group col"> <label for="contact-id">RUT o DNI</label> <input class="form-control" id="contact-id" type="text"></div>
+            <div class="form-group col"> <label>Nombre de usuario</label> <input pattern="[a-zA-Z0-9]{2,64}" name="user_name" class="form-control" id="contact-username" type="text"><small class="form-text text-muted">Un nombre para identificar cuenta en la plataforma, sin espacios (ej: drJuan)</small></div>
+            <div class="form-group col"> <label>Nombre, Apellido</label> <input class="form-control" id="contact-name" type="text"><small class="form-text text-muted">Nombre real</small></div>
+            <div class="form-group col"> <label>RUT o DNI</label> <input class="form-control" id="contact-id" type="text"></div>
             </div>
             <div class="row">
-            <div class="form-group col"> <label for="contact-country">Nacionalidad</label> <input class="form-control" id="contact-country" type="text"> </div>
-            <div class="form-group col"> <label for="contact-job-location">Pais</label> <input class="form-control" id="contact-job-location" type="text"> </div>
-            <div class="form-group col"> <label for="contact-grade">Año de título profesional</label> <input class="form-control" id="contact-grade" type="text"> </div>
+            <div class="form-group col"> <label>Nacionalidad</label> <input class="form-control" id="contact-country" type="text"> </div>
+            <div class="form-group col"> <label>Pais</label> <input class="form-control" id="contact-job-location" type="text"> </div>
+            <div class="form-group col"> <label>Año de título profesional</label> <input class="form-control" id="contact-grade" type="text"> </div>
             </div>
             <div class="row">
-            <div class="form-group col"> <label for="contact-register">N° de registro profesional</label> <input class="form-control" id="contact-register" type="text"> </div>
-            <div class="form-group col"> <label for="contact-expertise">Años de experiencia en US Obstétrico</label> <input class="form-control" id="contact-expertise" type="text"> </div>
+            <div class="form-group col"> <label>N° de registro profesional</label> <input class="form-control" id="contact-register" type="text"> </div>
+            <div class="form-group col"> <label>Años de experiencia en US Obstétrico</label> <input class="form-control" id="contact-expertise" type="text"> </div>
             </div>
             <div class="row">
             <div class="form-group col">
-            <label for="contact-job">Profesión</label>
+            <label>Profesión</label>
             <select class="form-control" id="contact-job">
                 <option>Médico con especialidad en perinatología</option>
                 <option>Médico con especialidad en gineco-obstetricia</option>
@@ -191,15 +191,15 @@
                 <option>Otros, ultrosonografistas gineco - obstétrico</option>
             </select>
             </div>
-            <div class="form-group col"> <label for="contact-phone">Teléfono de contacto</label> <input class="form-control" id="contact-phone" type="number"> </div>
+            <div class="form-group col"> <label>Teléfono de contacto</label> <input class="form-control" id="contact-phone" type="number"> </div>
             </div>
             <div class="row">
-            <div class="form-group col"> <label for="contact-email">Correo electrónico</label> <input name="user_email" class="form-control" id="contact-email" type="email"> <small class="form-text text-muted">Nunca compartiremos tu correo con terceros</small></div>
-            <div class="form-group col"> <label for="contact-email-dos">Repetir Correo electrónico</label> <input name="user_email_repeat" class="form-control" id="contact-email-dos" type="email"> <small class="form-text text-muted">Para verificar si escribiste bien tu correo</small></div>
+            <div class="form-group col"> <label>Correo electrónico</label> <input name="user_email" class="form-control" id="contact-email" type="email"> <small class="form-text text-muted">Nunca compartiremos tu correo con terceros</small></div>
+            <div class="form-group col"> <label>Repetir Correo electrónico</label> <input name="user_email_repeat" class="form-control" id="contact-email-dos" type="email"> <small class="form-text text-muted">Para verificar si escribiste bien tu correo</small></div>
             </div>
             <div class="row">
-            <div class="form-group col"> <label for="contact-contrasena">Contraseña</label> <input name="user_password_new" class="form-control" id="contact-contrasena" type="password"> <small class="form-text text-muted">Una contraseña para que puedas acceder a tu cuenta</small></div>
-            <div class="form-group col"> <label for="contact-contrasena-dos">Repetir contraseña</label> <input name="user_password_repeat" class="form-control" id="contact-contrasena-dos" type="password"> <small class="form-text text-muted">verifica tu contraseña</small></div>
+            <div class="form-group col"> <label>Contraseña</label> <input name="user_password_new" class="form-control" id="contact-contrasena" type="password"> <small class="form-text text-muted">Una contraseña para que puedas acceder a tu cuenta</small></div>
+            <div class="form-group col"> <label>Repetir contraseña</label> <input name="user_password_repeat" class="form-control" id="contact-contrasena-dos" type="password"> <small class="form-text text-muted">verifica tu contraseña</small></div>
             </div>
             <div class="row">
             <div class="col">
@@ -207,18 +207,18 @@
             </div>
             </div>
             <div class="row">
-            <div class="form-group col"> <label for="contact-city">Ciudad</label> <input class="form-control" id="contact-city" type="text"> </div>
-            <div class="form-group col"> <label for="contact-ss">Servicio de salud / Clínica</label> <input class="form-control" id="contact-ss" type="text"></div>
-             <div class="form-group col"><label for="contact-h">Hospital / Unidad académica</label> <input class="form-control" id="contact-h" type="text"></div>
+            <div class="form-group col"> <label>Ciudad</label> <input class="form-control" id="contact-city" type="text"> </div>
+            <div class="form-group col"> <label>Servicio de salud / Clínica</label> <input class="form-control" id="contact-ss" type="text"></div>
+             <div class="form-group col"><label>Hospital / Unidad académica</label> <input class="form-control" id="contact-h" type="text"></div>
             </div>
             <div class="row">
-            <div class="form-group col"> <label for="contact-consultorio">Consultorio público</label> <input class="form-control" id="contact-consultorio" type="text"> </div>
-            <div class="form-group col"> <label for="contact-private-job">Consulta privada</label> <input class="form-control" id="contact-private-job" type="text"> </div>
+            <div class="form-group col"> <label>Consultorio público</label> <input class="form-control" id="contact-consultorio" type="text"> </div>
+            <div class="form-group col"> <label>Consulta privada</label> <input class="form-control" id="contact-private-job" type="text"> </div>
             </div>
-            <div class="form-group"> <label for="contact-comments">Comentarios y sugerencias</label> <input class="form-control" id="contact-comments" type="text"> </div>
+            <div class="form-group"> <label>Comentarios y sugerencias</label> <input class="form-control" id="contact-comments" type="text"> </div>
             <img id="captcha" class="rounded mx-auto d-block" src="https://servidor.crecimientofetal.cl/register/showCaptcha">
             <a href="#" class="d-block text-center" onclick="document.getElementById('captcha').src = 'https://servidor.crecimientofetal.cl/register/showCaptcha?' + Math.random(); return false">Cambiar imágen</a>
-            <div class="form-group"> <label for="contact-comments" class="text-center">Escriba las palabras y numeros de la imágen</label> <input class="form-control" name="captcha" required="" type="text"> </div>
+            <div class="form-group"> <label class="text-center">Escriba las palabras y numeros de la imágen</label> <input class="form-control" name="captcha" required="" type="text"> </div>
             </div>
             </div>
             </div>
@@ -312,82 +312,25 @@
         <ol class="breadcrumb">
             <li class="float-right"><a href="#inicio"><strong>Volver</strong></a></li>
         </ol>
-        <div class="form-group row">
-            <div class="col">
-                <label>Fecha de última mestruación</label>
-            </div>
-            <div class="col">
-                <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fum" id="fum-cuatro">
-            </div>
-            <div class="col">
-                <label class="col-form-label">Edad Gestacional</label>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col">
-                        <select class="form-control"></select>
-                    </div>
-                    <div class="col">
-                        <select class="form-control"></select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col">
-                <label class="col-form-label">Fecha probable de parto</label>
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="fpp" readonly>
-            </div>
-            <div class="col">
-                <label class="col-form-label">Fecha de exámen (Modificable)</label>
-            </div>
-            <div class="col">
-                <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee" id="fee-cuatro">
-            </div>
-        </div>
-        <hr style="border-color:rgba(0, 0, 0, 0.36);">
     </div>
     <div class="container" id="home" style="display:none;">
-        <div class="row">
-            <div class="col-12 d-block d-sm-none">
-                <ul class="nav flex-column mt-2">
-                    <li class="btn btn-secondary" id="link.go.consulta"><a href="#consulta"><small>Datos iniciales de configuración</small></a></li>
-                    <li class="btn btn-secondary" id="link.go.ecouno"><small>Examen ecográfico de 1° trimestre</small></li>
-                    <li class="btn btn-secondary active d-none" id="link.go.ecouno.pasouno"><a href="#ecoObsPrimTrim"><small>&gt; Ecografía precoz  de urgencia</small></a></li>
-                    <li class="btn btn-secondary active d-none" id="link.go.ecouno.pasodos"><a href="#ecoObsPrimTrimTrisomia"><small>&gt; Tamizaje cromosomopatías y preeclampsia</small></a></li>
-                    <li class="btn btn-secondary" id="link.go.ecodos"><small>Examen ecográfico 2°, 3° trimestre</small></li>
-                    <li class="btn btn-secondary" id="link.go.doppler"><a href="#ecoDoppler"><small>Flujometría Doppler Materno Fetal</small></a></li>
-                    <li class="btn btn-secondary" id="link.go.about"><a href="#about"><small>Acerca de la plataforma y autor</small></a></li>
-                </li>
-                <ul class="nav flex-column mt-2">
-                    <li class="btn rounded text-primary" style="background-color:#c7c7c7;" id="link.go.formularios">Formulario para interconsulta</li>
-                    <li class="btn btn-secondary d-none" id="link.go.formularios.pasocuatro"><a href="img/solicitud_interconsulta.pdf"><small>&gt; Instructivo para referencia y contrarreferencia</small></a></li>
-                    <li class="btn btn-secondary d-none" id="link.go.formularios.pasouno"><a href="#solicitud"><small>A- Solicitud de interconsulta ecográfica (libre)</small></a></li>
-                    <li class="btn btn-secondary d-none" id="link.go.formularios.pasotres"><a href="https://administrador.crecimientofetal.cl"><small>B- Administracion de interconsultas (restringido)</small></a></li>
-                </ul>
-            </div>
-            <div class="col">
-                <p class="mt-0 mb-2 text-center"><small><em>Software obstétrico propiedad intelectual Dr. Rudecindo Lagos,  Maternidad Hospital Regional de Temuco, Facultad de Medicina Universidad de La Frontera Temuco - Chile <img src="https://servidor.crecimientofetal.cl/img/chile.jpg" alt="Chile"></em></small></p>
-            </div>
-        </div>
+        <p class="mt-0 mb-2 text-center"><small><em>Software obstétrico propiedad intelectual Dr. Rudecindo Lagos,  Maternidad Hospital Regional de Temuco, Facultad de Medicina Universidad de La Frontera Temuco - Chile <img src="https://servidor.crecimientofetal.cl/img/chile.jpg" alt="Chile"></em></small></p>
         <div class="row p-2">
             <div class="col-4 hidden-md-down">
                 <div class="card">
                     <div class="card-body">
                         <h5>Ingresar a plataforma</h5>
                         <div role="group">
-                            <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1" id="link.go.consulta" href="#consulta"><small><strong>Datos iniciales de configuración</strong></small><a>
-                            <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1" id="link.modulo.activo"><small><strong>Módulos habilitados</strong></small></a>
-                                <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1 ml-3 d-none" id="link.go.ecouno"href="#ecoObsPrimTrim"><small>&gt; Ecografía obstétrica precoz (&lt; 11 sem.)</small></a>
-                                <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1 ml-3 d-none" id="link.go.ecodos" href="#ecoObsSegTrim"><small>&gt; Evaluación del crecimiento fetal</small></a>
-                                <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1 ml-3 d-none" id="link.go.doppler" href="#ecoDoppler"><small>&gt; Flujometría Doppler materno / fetal</small></a>
-                                <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1 ml-3 d-none" id="link.go.ginecologica" href="#ecoGinecologica"><small>&gt; Ecografía Ginecológica</small></a>
-                            <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1" id="link.modulo.construccion"><small><strong>Módulos en construcción</strong></small></a> 
-                                <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1 ml-3 d-none" id="link.go.once"href="#ecoObsPrimTrimTrisomia"><small>&gt; Ecografía Obstétrica 11 - 14 semanas</small></a>
-                                <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1 ml-3 d-none" id="link.go.dosdos" href="#construccion"><small>&gt; Evaluación morfológica 22 - 24 sem.</small></a>
-                            <a class="btn btn-outline-secondary rounded text-left text-primary w-100 my-1" id="link.go.about" href="#about"><small><strong>Acerca de la plataforma y autor</strong></small></a>
+                            <a class="btn btn-outline-primary rounded text-left w-100 my-1" id="link.go.consulta" href="#consulta"><small><strong>Datos iniciales de configuración</strong></small><a>
+                            <a class="btn btn-outline-primary rounded text-left w-100 my-1" id="link.modulo.activo"><small><strong>Módulos habilitados</strong></small></a>
+                                <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="link.go.ecouno"href="#ecoObsPrimTrim"><small>&gt; Ecografía obstétrica precoz (&lt; 11 sem.)</small></a>
+                                <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="link.go.ecodos" href="#ecoObsSegTrim"><small>&gt; Evaluación del crecimiento fetal</small></a>
+                                <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="link.go.doppler" href="#ecoDoppler"><small>&gt; Flujometría Doppler materno / fetal</small></a>
+                                <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="link.go.ginecologica" href="#ecoGinecologica"><small>&gt; Ecografía Ginecológica</small></a>
+                            <a class="btn btn-outline-primary rounded text-left w-100 my-1" id="link.modulo.construccion"><small><strong>Módulos en construcción</strong></small></a> 
+                                <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="link.go.once"href="#ecoObsPrimTrimTrisomia"><small>&gt; Ecografía Obstétrica 11 - 14 semanas</small></a>
+                                <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="link.go.dosdos" href="#construccion"><small>&gt; Evaluación morfológica 22 - 24 sem.</small></a>
+                            <a class="btn btn-outline-primary rounded text-left w-100 my-1" id="link.go.about" href="#about"><small><strong>Acerca de la plataforma y autor</strong></small></a>
                         </div>
                     </div>
                 </div>
@@ -421,13 +364,13 @@
         </ol>
         <div class="form-group row">
             <div class="col">
-                <label for="fum2">Fecha de última mestruación</label>
+                <label>Fecha de última mestruación</label>
             </div>
             <div class="col">
                 <input class="form-control" type="date" id="fum-ginecologica">
             </div>
             <div class="col">
-                <label for="dbp" class="col-form-label">Día del ciclo mestrual</label>
+                <label class="col-form-label">Día del ciclo mestrual</label>
             </div>
             <div class="col">
                 <input type="text" class="form-control" name="diaciclo" readonly>
@@ -441,7 +384,7 @@
                 <select id="edad_materna" class="form-control gris-claro"><option value="< 10">&lt; 10 años</option><option value="10">10 años</option><option value="11">11 años</option><option value="12">12 años</option><option value="13">13 años</option><option value="14">14 años</option><option value="15">15 años</option><option value="16">16 años</option><option value="17">17 años</option><option value="18">18 años</option><option value="19">19 años</option><option value="20">20 años</option><option value="21">21 años</option><option value="22">22 años</option><option value="23">23 años</option><option value="24">24 años</option><option value="25">25 años</option><option value="26">26 años</option><option value="27">27 años</option><option value="28">28 años</option><option value="29">29 años</option><option value="30">30 años</option><option value="31">31 años</option><option value="32">32 años</option><option value="33">33 años</option><option value="34">34 años</option><option value="35">35 años</option><option value="36">36 años</option><option value="37">37 años</option><option value="38">38 años</option><option value="39">39 años</option><option value="40">40 años</option><option value="41">41 años</option><option value="42">42 años</option><option value="43">43 años</option><option value="44">44 años</option><option value="45">45 años</option><option value="46">46 años</option><option value="47">47 años</option><option value="48">48 años</option><option value="49">49 años</option><option value="50">50 años</option><option value="> 10">&gt; 50 años</option></select>
             </div>
             <div class="col">
-                <label for="fee" class="col-form-label">Fecha de exámen (Modificable)</label>
+                <label class="col-form-label">Fecha de exámen (Modificable)</label>
             </div>
             <div class="col">
                 <input class="form-control" type="date" id="fee-ginecologica">
@@ -455,9 +398,9 @@
             <div class="col-9">
                 <div class="card">
                     <div class="card-body">
-                        <div class="row"> <div class="col form-group"> <label for="interconsulta.respuesta.ecografista">Útero</label> <input type="text" class="form-control" name="respuesta_utero_ginecologica"> </div><div class="col form-group"> <label for="interconsulta.respuesta.ecografista">Endometrio</label> <input type="text" class="form-control" name="respuesta_endometrio"> </div></div><div class="row"> <div class="col form-group"> <label for="interconsulta.respuesta.ecografista">Anexo Izquierdo</label> <input type="text" class="form-control" name="respuesta_anexo_izquierdo_ginecologica"> </div><div class="col form-group"> <label for="interconsulta.respuesta.ecografista">Anexo Derecho</label> <input type="text" class="form-control" name="respuesta_anexo_derecho_ginecologica"> </div></div><div class="row"> <div class="col form-group"> <label for="interconsulta.respuesta.ecografista">Ovario Izquierdo</label> <input type="text" class="form-control" name="respuesta_ovario_izquierdo"> </div><div class="col form-group"> <label for="interconsulta.respuesta.ecografista">Ovario Derecho</label> <input type="text" class="form-control" name="respuesta_ovario_derecho"> </div></div><div class="row"> <div class="col-6 form-group"> <label for="interconsulta.respuesta.ecografista">Douglas</label> <input type="text" class="form-control" name="respuesta_douglas_ginecologica"> </div></div><div class="row"> <div class="col-12 form-group"> <label><strong>Comentarios y observaciones</strong> <span class="text-primary">(Interpretación clínica del profesional ecografista)</span></label> <textarea class="form-control" name="respuesta_ginecologica_comentarios" rows="3"></textarea> </div></div><div class="row mt-2 mb-2">
+                        <div class="row"> <div class="col form-group"> <label>Útero</label> <input type="text" class="form-control" name="respuesta_utero_ginecologica"> </div><div class="col form-group"> <label>Endometrio</label> <input type="text" class="form-control" name="respuesta_endometrio"> </div></div><div class="row"> <div class="col form-group"> <label>Anexo Izquierdo</label> <input type="text" class="form-control" name="respuesta_anexo_izquierdo_ginecologica"> </div><div class="col form-group"> <label>Anexo Derecho</label> <input type="text" class="form-control" name="respuesta_anexo_derecho_ginecologica"> </div></div><div class="row"> <div class="col form-group"> <label>Ovario Izquierdo</label> <input type="text" class="form-control" name="respuesta_ovario_izquierdo"> </div><div class="col form-group"> <label>Ovario Derecho</label> <input type="text" class="form-control" name="respuesta_ovario_derecho"> </div></div><div class="row"> <div class="col-6 form-group"> <label >Douglas</label> <input type="text" class="form-control" name="respuesta_douglas_ginecologica"> </div></div><div class="row"> <div class="col-12 form-group"> <label><strong>Comentarios y observaciones</strong> <span class="text-primary">(Interpretación clínica del profesional ecografista)</span></label> <textarea class="form-control" name="respuesta_ginecologica_comentarios" rows="3"></textarea> </div></div><div class="row mt-2 mb-2">
                             <div class="col-2">
-                                <label for="ecografista" class="col-form-label">Profesional Examinador</label>
+                                <label class="col-form-label">Profesional Examinador</label>
                             </div>
                             <div class="col-4">
                                 <select id="ecografista.copia" class="form-control gris-claro"></select>
@@ -499,41 +442,6 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h6 class="card-title text-primary">Cálculo de edad gestacional</h6>
-                        <div class="form-group row">
-                            <div class="col-4">
-                                <label for="fum2">Fecha de última mestruación</label>
-                            </div>
-                            <div class="col-2">
-                                <input class="form-control" type="text" data-date-format="dd/mm/yyyy" data-weekStart="1" onfocus="blur();" name="fum" id="fum-dos">
-                            </div>
-                            <div class="col">
-                                <label for="dbp" class="col-form-label">Edad Gestacional</label>
-                            </div>
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col">
-                                        <select id="semanasEcoGen" class="form-control"></select>
-                                    </div>
-                                    <div class="col">
-                                        <select id="diasEcoGen" class="form-control"></select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-4">
-                                <label for="dbp" class="col-form-label">Fecha probable de parto</label>
-                            </div>
-                            <div class="col-2">
-                                <input type="text" class="form-control" name="fpp" readonly>
-                            </div>
-                            <div class="col">
-                                <label for="fee" class="col-form-label">Fecha de examen (Modificable)</label>
-                            </div>
-                            <div class="col">
-                                <input class="form-control" type="text" id="fee-dos" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee">
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <p class="bg-faded p-2 text-left"><em>Cálculos  de edad gestacional y fecha probable de parto  (FPP) a partir de fecha referida por la paciente, o a la inversa , calculo de  FUM  y FPP a partir de la edad gestacional referida.  Para evaluación de exámenes anteriores el software dispone de la opción &laquo; fecha de examen modificable &raquo;</em></p>
@@ -543,7 +451,7 @@
                         <h6 class="text-primary">Configuración del sistema y datos de la paciente</h6>
                         <div class="form-group row">
                             <div class="col-4">
-                                <label for="id-paciente" class="col-form-label btn-consulta my-3 p-2">N° de Registro ( RUT / DNI )</label>
+                                <label class="col-form-label btn-consulta my-3 p-2">N° de Registro ( RUT / DNI )</label>
                             </div>
                             <div class="col-2">
                                 <input type="text" class="form-control my-3" id="id-paciente">
@@ -582,13 +490,13 @@
                         <div class="form-group d-none" id="infadicionalView">
                             <div class="row mt-2 mb-2">
                                 <div class="col-2">
-                                    <label for="nombre-paciente" class="col-form-label">Nombre paciente</label>
+                                    <label class="col-form-label">Nombre paciente</label>
                                 </div>
                                 <div class="col-4">
                                     <input class="form-control gris-claro" type="text" id="nombre-paciente" placeholder="Paciente de Prueba">
                                 </div>
                                 <div class="col-2">
-                                    <label for="motivo-examen" class="col-form-label">Motivo del exámen</label>
+                                    <label class="col-form-label">Motivo del exámen</label>
                                 </div>
                                 <div class="col-4">
                                     <select id="motivo-examen" class="form-control gris-claro">
@@ -597,17 +505,10 @@
                             </div>
                             <div class="row mt-2 mb-2">
                                 <div class="col-2">
-                                    <label for="patologiaObstetricaUno" class="col-form-label">Patología Obstétrica Relevante</label>
+                                    <label class="col-form-label">Patología Obstétrica Relevante</label>
                                 </div>
                                 <div class="col-4">
                                     <select id="patologiaObstetricaUno" class="form-control gris-claro">
-                                    </select>
-                                </div>
-                                <div class="col-2">
-                                    <label for="ecografista" class="col-form-label">Profesional Examinador</label>
-                                </div>
-                                <div class="col-4">
-                                    <select id="ecografista" class="form-control gris-claro">
                                     </select>
                                 </div>
                             </div>
@@ -619,8 +520,7 @@
                                     <select name="edad_materna" class="form-control gris-claro"></select>
                                 </div>
                                 <div class="col-2 d-none">
-                                    <label for="ecografista" class="col-form-label">Profesional
-                                        <br>Referente</label>
+                                    <label class="col-form-label">Profesional<br>Referente</label>
                                 </div>
                                 <div class="col-4 d-none">
                                     <select id="profReferente" class="form-control">
@@ -629,14 +529,14 @@
                             </div>
                             <div class="row mt-2 mb-2 d-none">
                                 <div class="col-2">
-                                    <label for="procedencia" class="col-form-label">Procedencia (Ciudad)</label>
+                                    <label class="col-form-label">Procedencia (Ciudad)</label>
                                 </div>
                                 <div class="col-4">
                                     <select id="procedencia" class="form-control">
                                     </select>
                                 </div>
                                 <div class="col-2 d-none">
-                                    <label for="motivo-examen" class="col-form-label">Lugar de control prenatal</label>
+                                    <label class="col-form-label">Lugar de control prenatal</label>
                                 </div>
                                 <div class="col-4 d-none">
                                     <select id="Lugar-examen" class="form-control">
@@ -662,12 +562,12 @@
                     <div class="card-body">
                         <h5 class="card-title">Seleccione un paciente</h5>
                             <div class="form-group">
-                                <label for="buscarpacienteid">Buscar por ID</label>
+                                <label >Buscar por ID</label>
                                 <input class="form-control" type="text" placeholder="12345678-9" id="buscarpacienteid">
                                 <small id="idHelp" class="form-text text-muted">Escriba un ID para buscar.</small>
                             </div>
                             <div class="form-group">
-                                <label for="buscarpacienteapellido">Buscar por apellido</label>
+                                <label>Buscar por apellido</label>
                                 <input class="form-control" type="text" placeholder="Juanita Pérez" id="buscarpacienteapellido">
                                 <small id="apellidoHelp" class="form-text text-muted">Escriba un apellido para buscar.</small>
                             </div>
@@ -729,21 +629,21 @@
                     <div class="card-body">
                         <h5>Datos de Recién Nacido</h5>
                             <div class="form-group row">
-                                <label for="edadGestacional" class="col-4">E. Gestacional</label>
+                                <label class="col-4">E. Gestacional</label>
                                 <div class="input-group col-8">
                                     <select id="edadGestacional" class="form-control" style="font-size: 0.8rem;height: calc(2rem + 2px);"></select>
                                     <div class="input-group-addon p-1">semanas</div>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="pesoRN" class="col-4">Peso RN (gr.)</label>
+                                <label class="col-4">Peso RN (gr.)</label>
                                 <div class="input-group col-8">
                                     <input type="number" class="form-control" id="pesoRN" style="font-size: 0.8rem;height: calc(2rem + 2px);" min="0" max="9999">
                                     <div class="input-group-addon p-1">gr</div>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="tallaRN" class="col-4">Talla RN (mm.)</label>
+                                <label class="col-4">Talla RN (mm.)</label>
                                 <div class="input-group col-8">
                                     <input type="number" class="form-control" id="tallaRN" style="font-size: 0.8rem;height: calc(2rem + 2px);" min="0" max="999" maxlength="3">
                                     <div class="input-group-addon p-1">mm</div>
@@ -751,18 +651,18 @@
                             </div>
                         <h5>Datos de RN calculado</h5>
                             <div class="form-group row">
-                                <label for="IPNRN" class="col-6">IPN <small>((peso / talla)^3)*100</small></label>
+                                <label class="col-6">IPN <small>((peso / talla)^3)*100</small></label>
                                 <div class="col-2"></div>
                                 <input type="number" class="form-control col-3" style="font-size: 0.8rem;height: calc(2rem + 2px);" id="IPNRN" disabled>
                             </div>
                             <div class="form-group row">
-                                <label for="PesoEge" class="col-4">Peso / EG</label>
+                                <label class="col-4">Peso / EG</label>
                                 <input type="text" class="form-control col-2" id="PesoPct" style="font-size: 0.8rem;height: calc(2rem + 2px);" disabled>
                                 <div class="col-2"></div>
                                 <input type="text" class="form-control col-3" id="PesoEge" style="font-size: 0.8rem;height: calc(2rem + 2px);" disabled>
                             </div>
                             <div class="form-group row">
-                                <label for="IpnEge" class="col-4">IPN / Ege</label>
+                                <label class="col-4">IPN / Ege</label>
                                 <input type="text" class="form-control col-2" id="IpnPct" style="font-size: 0.8rem;height: calc(2rem + 2px);" disabled>
                                 <div class="col-2"></div>
                                 <input type="text" class="form-control col-3" id="IpnEge" style="font-size: 0.8rem;height: calc(2rem + 2px);" disabled>
@@ -778,7 +678,7 @@
                 <div class="card">
                     <div class="card-body">
                             <div class="form-group m-0">
-                                <label for="graficoEstandar"><strong>Seleccione Curva</strong></label>
+                                <label><strong>Seleccione Curva</strong></label>
                                 <select class="form-control" id="graficoEstandar" style="font-size: 0.8rem;">
                                     <option value="0">Peso / Edad Gestacional (Curva Nacional SOCHIPE)</option>
                                     <option value="2">IPN / Edad Gestacional (Curva Nacional SOCHIPE)</option>
@@ -809,31 +709,31 @@
                     <div class="card-body">
                         <h4>Recién Nacido</h4>
                             <div class="form-group row">
-                                <label class="col-4" for="edadGestacional">Sexo Neonatal</label>
+                                <label class="col-4">Sexo Neonatal</label>
                                 <select id="sn" class="form-control col-8" style="background-color: #ECEEEF;font-size: 0.8rem;height: 2rem;">
                                     <option value="1" selected>Femeníno</option>
                                     <option value="0" >Masculíno</option>
                                 </select>
                             </div>
                             <div class="form-group row">
-                                <label for="edadGestacional" class="col-4">Paridad Materna</label>
+                                <label class="col-4">Paridad Materna</label>
                                 <select id="pm" class="form-control col-8" style="background-color: #ECEEEF;font-size: 0.8rem;height: 2rem;">
                                     <option value="1" selected>Primípara</option>
                                     <option value="0">Multípara</option>
                                 </select>
                             </div>
                             <div class="form-group row">
-                                <label for="edadGestacional" class="col-3">Talla Materna</label>
+                                <label class="col-3">Talla Materna</label>
                                 <select id="tm" class="form-control col-3" style="background-color: #ECEEEF;font-size: 0.8rem;height: 2rem;"></select>
-                                <label for="edadGestacional" class="col-3">Peso Materno</label>
+                                <label class="col-3">Peso Materno</label>
                                 <select id="pesom" class="form-control col-3" style="font-size: 0.8rem;height: 2rem;"></select>
                             </div>
                             <div class="form-group row">
-                                <label for="edadGestacional" class="col-4">IMC <small>((Peso/Talla)^2)</small></label>
+                                <label class="col-4">IMC <small>((Peso/Talla)^2)</small></label>
                                 <input type="text" class="form-control col-8" style="background-color: #FFF;font-size: 0.8rem;height: 2rem;" id="valorimc" disabled>
                             </div>
                             <div class="form-group row">
-                                <label for="edadGestacional" class="col-4">Estado Nutricional</label>
+                                <label class="col-4">Estado Nutricional</label>
                                 <select id="imc" class="form-control col-8" style="font-size: 0.8rem;height: 2rem;">
                                     <option value="1">Enflaquecida</option>
                                     <option value="2">Normal</option>
@@ -842,7 +742,7 @@
                                 </select>
                             </div>
                             <div class="form-group row">
-                                <label for="edadGestacional" class="col-4">Edad Materna</label>
+                                <label class="col-4">Edad Materna</label>
                                 <select id="em" class="form-control col-8" style="font-size: 0.8rem;height: 2rem;">
                                     <option value="1">&lt; 19</option>
                                     <option value="2">20 - 21</option>
@@ -853,7 +753,7 @@
                                 </select>
                             </div>
                             <div class="form-group row">
-                                <label for="edadGestacional" class="col-4">Etnia Materna</label>
+                                <label class="col-4">Etnia Materna</label>
                                 <select id="apellm" class="form-control col-8" style="font-size: 0.8rem;height: 2rem;">
                                     <option value="0">Ambos Caucásicos</option>
                                     <option value="2">Solo uno Caucásico</option>
@@ -878,9 +778,9 @@
                         <div>
                             <div class="form-group row mb-0">
                                 <p class="col-12 d-none" id="tituloAjusteG"><strong>Peso ajustado para:</strong></p>
-                                <label for="PesoEgeSAj" class="col-4" id="tituloAjusteAlto" style="font-size: 0.8rem;height: 2rem;">Pct. peso sin ajuste</label>
+                                <label class="col-4" id="tituloAjusteAlto" style="font-size: 0.8rem;height: 2rem;">Pct. peso sin ajuste</label>
                                 <input type="text" class="form-control col-2" id="PesoEgeSAj" disabled style="font-size: 0.8rem;height: 2rem;">
-                                <label for="PesoEgeCAj" class="col-4" id="tituloAjusteBajo" style="font-size: 0.8rem;height: 2rem;">Pct. peso con ajuste</label>
+                                <label class="col-4" id="tituloAjusteBajo" style="font-size: 0.8rem;height: 2rem;">Pct. peso con ajuste</label>
                                 <input type="text" class="form-control col-2" id="PesoEgeCAj" disabled style="font-size: 0.8rem;height: 2rem;background-color: #bfe9fb;">
                             </div>
                         </div>
@@ -1421,7 +1321,7 @@
                     <div class="card-body">
                         <div class="form-group row">
                             <div class="col mb-2">
-                                <label for="aud" class="col-form-label">Arteria Uterina Derecha</label>
+                                <label class="col-form-label">Arteria Uterina Derecha</label>
                             </div>
                             <div class="col mb-2">
                                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1430,7 +1330,7 @@
                                 </div>
                             </div>
                             <div class="col mb-2">
-                                <label for="aui" class="col-form-label">Arteria Uterina Izquierda</label>
+                                <label class="col-form-label">Arteria Uterina Izquierda</label>
                             </div>
                             <div class="col mb-2">
                                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1441,7 +1341,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col mb-2">
-                                <label for="auprom" class="col-form-label"><strong>Promedio de Uterinas</strong></label>
+                                <label class="col-form-label"><strong>Promedio de Uterinas</strong></label>
                             </div>
                             <div class="col mb-2">
                                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1472,7 +1372,7 @@
                         <p><strong>Presión arterial materna</strong></p>
                         <div class="form-group row">
                             <div class="col-1 mb-2">
-                                <label for="aud" class="col-form-label">Sistólica</label>
+                                <label class="col-form-label">Sistólica</label>
                             </div>
                             <div class="col-3 mb-2">
                                 <div class="input-group">
@@ -1481,7 +1381,7 @@
                                 </div>
                             </div>
                             <div class="col-1 mb-2">
-                                <label for="aui" class="col-form-label">Diastólica</label>
+                                <label class="col-form-label">Diastólica</label>
                             </div>
                             <div class="col-3 mb-2">
                                 <div class="input-group">
@@ -1490,7 +1390,7 @@
                                 </div>
                             </div>
                             <div class="col-1 mb-2">
-                                <label for="auprom" class="col-form-label"><strong>Media</strong></label>
+                                <label class="col-form-label"><strong>Media</strong></label>
                             </div>
                             <div class="col-3 mb-2">
                                 <div class="input-group">
@@ -1502,7 +1402,7 @@
                         <p><strong>Estado nutricional materno</strong></p>
                         <div class="form-group row">
                             <div class="col-1 mb-2">
-                                <label for="aud" class="col-form-label">Talla</label>
+                                <label class="col-form-label">Talla</label>
                             </div>
                             <div class="col-3 mb-2">
                                 <div class="input-group">
@@ -1511,7 +1411,7 @@
                                 </div>
                             </div>
                             <div class="col-1 mb-2">
-                                <label for="aui" class="col-form-label">Peso</label>
+                                <label class="col-form-label">Peso</label>
                             </div>
                             <div class="col-3 mb-2">
                                 <div class="input-group">
@@ -1520,7 +1420,7 @@
                                 </div>
                             </div>
                             <div class="col-1 mb-2">
-                                <label for="auprom" class="col-form-label"><strong>IMC</strong></label>
+                                <label class="col-form-label"><strong>IMC</strong></label>
                             </div>
                             <div class="col-3 mb-2">
                                 <div class="input-group">
@@ -1532,12 +1432,12 @@
                         <p><strong>Otros antecedentes clínicos</strong></p>
                         <div class="row">
                             <div class="form-group col">
-                                <label for="formGroupExampleInput">Nacionalidad</label>
+                                <label>Nacionalidad</label>
                                 <select class="form-control" id="nacionalidad">
                                 </select>
                             </div>
                             <div class="form-group col">
-                                <label for="formGroupExampleInput">Antecedentes obstétricos</label>
+                                <label>Antecedentes obstétricos</label>
                                 <select class="form-control" id="primigesta">
                                     <option value="si" selected>Primigesta</option>
                                     <option value="no">Feto pequeño previo</option>
@@ -1545,7 +1445,7 @@
                                 </select>
                             </div>
                             <div class="form-group col">
-                                <label for="formGroupExampleInput">Hipertensión previa</label>
+                                <label>Hipertensión previa</label>
                                 <select class="form-control" id="peprevia">
                                     <option value="No hubo" selected>No hubo</option>
                                     <option value="PE previa">PE previa</option>
@@ -1554,7 +1454,7 @@
                                 </select>
                             </div>
                             <div class="form-group col">
-                                <label for="formGroupExampleInput">Antecedentes de SAF</label>
+                                <label>Antecedentes de SAF</label>
                                 <select class="form-control" id="trombofilias">
                                     <option value="si">Si</option>
                                     <option value="no" selected>No</option>
@@ -1564,7 +1464,7 @@
                         </div>
                         <div class="row d-none">           
                             <div class="form-group col">
-                                <label for="formGroupExampleInput">RAC &gt; 30 mg/gr.</label>
+                                <label>RAC &gt; 30 mg/gr.</label>
                                 <select class="form-control" id="rac">
                                     <option value="si">Si</option>
                                     <option value="no" selected>No</option>
@@ -1572,7 +1472,7 @@
                                 </select>
                             </div>
                             <div class="form-group col">
-                                <label for="formGroupExampleInput">Proteinuria &gt; 300 mg/24hrs</label>
+                                <label>Proteinuria &gt; 300 mg/24hrs</label>
                                 <select class="form-control" id="proteinuria">
                                     <option value="si">Si</option>
                                     <option value="no" selected>No</option>
@@ -1596,13 +1496,13 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group row">
-                                    <label for="formGroupExampleInput" class="col-6">Edad Materna</label>
+                                    <label class="col-6">Edad Materna</label>
                                     <select class="form-control col-6" id="edadmaternaprimtrim"></select>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group row">
-                                    <label for="formGroupExampleInput" class="col-6">LCN (45 a 84 mm)</label>
+                                    <label class="col-6">LCN (45 a 84 mm)</label>
                                     <select class="form-control col-6" id="loncefalocaudal"></select>
                                 </div>
                             </div>
@@ -1610,7 +1510,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group row px-3">
-                                    <label for="formGroupExampleInput" class="col-12"><strong>Translucidez Nucal</strong></label>
+                                    <label class="col-12"><strong>Translucidez Nucal</strong></label>
                                     <select class="form-control col-6" id="translucenciaNucal">
                                         <option value="no procede">No procede</option>
                                         <option value="no medible">No medible</option>
@@ -1620,18 +1520,18 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <label for="formGroupExampleInput">¿Ha tenido algun hijo con trisomia 21?</label>
+                                <label>¿Ha tenido algun hijo con trisomia 21?</label>
                                 <div class="row px-4">
                                     <div class="col">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="trisomia" id="examen.eco.primtrim.adicionales.translucencia.trisomia.no" value="false" checked>
-                                            <label class="form-check-label" for="examen.eco.primtrim.adicionales.translucencia.trisomia.no">No</label>
+                                            <label class="form-check-label">No</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="trisomia" id="examen.eco.primtrim.adicionales.translucencia.trisomia.si" value="true">
-                                            <label class="form-check-label" for="examen.eco.primtrim.adicionales.translucencia.trisomia.si">Si</label>
+                                            <label class="form-check-label">Si</label>
                                         </div>
                                     </div>
                                 </div>
@@ -1640,7 +1540,7 @@
                         <div class="row">
                             <div class="form-group col-6">
                                 <div class="row px-3">
-                                    <label for="formGroupExampleInput" class="col-6"><strong>Hueso Nasal</strong></strong></label>
+                                    <label class="col-6"><strong>Hueso Nasal</strong></strong></label>
                                     <select class="form-control col-6" id="huesonasal">
                                         <option value="no procede" selected>No procede</option>
                                         <option value="no visible">No visible</option>
@@ -1648,7 +1548,7 @@
                                     </select>
                                 </div>
                                 <div class="row px-3">
-                                    <label for="formGroupExampleInput" class="col-6"><strong>Ductus venoso</strong></label>
+                                    <label class="col-6"><strong>Ductus venoso</strong></label>
                                     <select class="form-control col-6" id="ductusvenoso">
                                         <option value="no evaluado" selected>No evaluado</option>
                                         <option value="normal">Normal</option>
@@ -1657,7 +1557,7 @@
                                     </select>
                                 </div>
                                 <div class="row px-3">
-                                    <label for="formGroupExampleInput" class="col-6"><strong>Reflujo tricuspídeo</strong></label>
+                                    <label class="col-6"><strong>Reflujo tricuspídeo</strong></label>
                                     <select class="form-control col-6" id="reflujotricuspideo">
                                         <option value="no evaluado" selected>No evaluado</option>
                                         <option value="normal">Normal</option>
@@ -1774,7 +1674,7 @@
                                 <p class="mb-2 text-muted">Hadlock FP. y col. Radiology 152: 497 - 501; 1984. *Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5</p>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="dbp" class="col-form-label">DBP</label>
+                                            <label class="col-form-label">DBP</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1801,7 +1701,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-3 mb-2">
-                                            <label for="dof" class="col-form-label">DOF</label>
+                                            <label class="col-form-label">DOF</label>
                                         </div>
                                         <div class="col-3 mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1831,7 +1731,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="cc" class="col-form-label">CC</label>
+                                            <label class="col-form-label">CC</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1858,7 +1758,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="ca" class="col-form-label">CA</label>
+                                            <label class="col-form-label">CA</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1885,7 +1785,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="lf" class="col-form-label">LF</label>
+                                            <label class="col-form-label">LF</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1912,7 +1812,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="bvm" class="col-form-label">BVM</label>
+                                            <label class="col-form-label">BVM</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1939,7 +1839,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="lh" class="col-form-label">LH</label>
+                                            <label class="col-form-label">LH</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1966,7 +1866,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="cerebelo" class="col-form-label">Diámetro cerebeloso transverso</label>
+                                            <label class="col-form-label">Diámetro cerebeloso transverso</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -1998,7 +1898,7 @@
                                 <h5 class="card-title">CRECIMIENTO INTRAUTERINO  <span class="float-right text-muted d-none" id="cccaController"><small>Opcional CC/CA</small></span></h5>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="pfe" class="col-form-label"><strong>Peso Fetal Estimado</strong> 
+                                            <label class="col-form-label"><strong>Peso Fetal Estimado</strong> 
                                             </label>
                                         </div>
                                         <div class="col mb-2">
@@ -2029,7 +1929,7 @@
                                     </div>
                                     <div class="form-group row d-none" id="cccaView">
                                         <div class="col mb-2">
-                                            <label for="ccca" class="col-form-label">Relación Cráneo Abdómen
+                                            <label class="col-form-label">Relación Cráneo Abdómen
                                                 <br><small class="text-muted">Hadlock FP. y col. Radiology 181: 129 - 133; 1991</small></label>
                                         </div>
                                         <div class="col mb-2">
@@ -2054,7 +1954,7 @@
                                     </div>
                                     <div class="form-group row d-none">
                                         <div class="col mb-2">
-                                            <label for="tallaFetal" class="col-form-label">Talla Fetal Estimada (> 23 sem)
+                                            <label class="col-form-label">Talla Fetal Estimada (> 23 sem)
                                                 <br><small class="text-muted">Referencias neonatales SOCHIPE*</small>
                                             </label>
                                         </div>
@@ -2090,7 +1990,7 @@
                                 <h5 class="card-title">OPCIONAL DETERMINACIÓN DE EDAD GESTACIONAL</h5>
                                 <div class="form-group row">
                                     <div class="col mb-2">
-                                        <label for="egP50" class="col-form-label">Calculo de Edad Gestacional según BP50</label>
+                                        <label class="col-form-label">Calculo de Edad Gestacional según BP50</label>
                                     </div>
                                     <div class="col mb-2">
                                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -2136,7 +2036,7 @@
                                 <h5 class="card-title">Adicional proporcionalidad fetal</h5>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="dof-dbp" class="col-form-label">Indice Cefalico (IC)</label>
+                                            <label class="col-form-label">Indice Cefalico (IC)</label>
                                         </div>
                                         <div class="col mb-2">
                                             <input type="text" class="form-control" id="dof-dbp" readonly>
@@ -2386,7 +2286,7 @@
                                 <p class="mb-2 text-muted">Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32</p>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="aud" class="col-form-label">Arteria Uterina Derecha</label>
+                                            <label class="col-form-label">Arteria Uterina Derecha</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -2413,7 +2313,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="aui" class="col-form-label">Arteria Uterina Izquierda</label>
+                                            <label class="col-form-label">Arteria Uterina Izquierda</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -2440,7 +2340,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="auprom" class="col-form-label"><strong>Promedio de Aterias Uterinas</strong></label>
+                                            <label class="col-form-label"><strong>Promedio de Aterias Uterinas</strong></label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -2473,7 +2373,7 @@
                                 <p class="mb-2 text-muted">Baschat AA, Gembruch U. the cerebroplacental Doppler ratio revisited. Ultrasound Obstet. Ginecol. 2003; 21: 124 - 127</p>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="ipau" class="col-form-label">IP Arteria Umbilical</label>
+                                            <label class="col-form-label">IP Arteria Umbilical</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -2500,7 +2400,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="ipacm" class="col-form-label">IP Arteria C. Media</label>
+                                            <label class="col-form-label">IP Arteria C. Media</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -2527,7 +2427,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="ccp" class="col-form-label">Cuociente Cerebro Placentario</label>
+                                            <label class="col-form-label">Cuociente Cerebro Placentario</label>
                                         </div>
                                         <div class="col mb-2">
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -2559,7 +2459,7 @@
                                 <h4 class="card-title">Flujometrías adicionales <small>(a partir de las 20 semanas)</small></h4>
                                     <div class="form-group row">
                                         <div class="col mb-2">
-                                            <label for="dv" class="col-form-label"><strong>Ductus Venoso</strong> (prematuro)
+                                            <label class="col-form-label"><strong>Ductus Venoso</strong> (prematuro)
                                                 <br><small class="text-muted">Kessler J. y col.: U. Obstet. &amp; Gynecol. 28p 890-b 2006</small>
                                             </label>
                                         </div>
@@ -2588,7 +2488,7 @@
                                     </div>
                                 <div class="form-group row">
                                     <div class="col mb-2">
-                                        <label for="ccp" class="col-form-label"><strong>Pick sistólico máximo de ACM</strong> (Anemia fetal)
+                                        <label class="col-form-label"><strong>Pick sistólico máximo de ACM</strong> (Anemia fetal)
                                             <br><small class="text-muted">De Mari G, Deter RL, Carpenter RL y cols. N Engl J Med 342:9, 2000.</small>
                                         </label>
                                     </div>
@@ -2776,311 +2676,6 @@
             </div>
         </div>
     </div>
-    <div class="container" id="paciente" style="display:none;">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#inicio">Inicio</a>
-            </li>
-            <li class="breadcrumb-item active">Datos de pacientes</li>
-            <li class="float-right"><a href="#inicio"><strong>Volver</strong></a></li>
-        </ol>
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="aplication.nuevoPaciente()"><i class="fa fa-user-plus" aria-hidden="true"></i> Nuevo</a>
-            </li>
-            <li class="nav-item editar-paciente" style="display:none;">
-                <a class="nav-link" href="#" onclick="aplication.guardarPaciente()"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</a>
-            </li>
-            <li class="nav-item guardar-paciente" style="display:none;">
-                <a class="nav-link" href="#" onclick="aplication.guardarPaciente()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-            </li>
-            <li class="nav-item cancelar-paciente" style="display:none;">
-                <a class="nav-link" href="#" onclick="aplication.cancelarPaciente()"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</a>
-            </li>
-            <li class="nav-item eliminar-paciente" style="display:none;">
-                <a class="nav-link" href="#" onclick="aplication.eliminarPaciente()"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-            </li>
-        </ul>
-        <hr>
-        <div class="row" style="display:none;" id="pacientesForm1">
-            <div class="col">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Datos de la paciente</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">(requiere consentimiento informado) se sugiere adicionar formulario impreso</h6>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="idPaciente" class="col-form-label text-primary"><i class="fa fa-id-badge hidden-lg-up" aria-hidden="true"></i> Código de registro</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input type="text" class="form-control" id="idPaciente" readonly>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="nombre" class="col-form-label text-primary"><i class="fa fa-user hidden-lg-up" aria-hidden="true"></i> Nombre</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input type="text" class="form-control" id="nombre" readonly>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="apellido" class="col-form-label text-primary"><i class="fa fa-user hidden-lg-up" aria-hidden="true"></i> Apellido</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input type="text" class="form-control" id="apellido" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="lugarControl" class="col-form-label text-primary"><i class="fa fa-hospital-o hidden-lg-up" aria-hidden="true"></i> Lugar del control prenatal</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input type="text" class="form-control" id="lugarControl" readonly>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="ciudad" class="col-form-label text-primary"><i class="fa fa-map-marker hidden-lg-up" aria-hidden="true"></i> Ciudad</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input type="text" class="form-control" id="ciudad" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="telefono" class="col-form-label text-primary"><i class="fa fa-mobile hidden-lg-up" aria-hidden="true"></i> Teléfono</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input type="number" class="form-control" id="telefono" readonly>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="email" class="col-form-label text-primary"><i class="fa fa-envelope-o hidden-lg-up" aria-hidden="true"></i> EMail</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input type="email" class="form-control" id="email" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="fNacimiento" class="col-form-label text-primary"><i class="fa fa-calendar hidden-lg-up" aria-hidden="true"></i> Fecha Nacimiento</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input class="form-control" type="text" id="fNacimiento" data-date-format="dd/mm/yyyy" onfocus="blur();" readonly>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="edad" class="col-form-label text-primary"><i class="fa fa-calendar hidden-lg-up" aria-hidden="true"></i> Edad</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <input type="text" class="form-control" id="edad" readonly>
-                                        <div class="input-group-addon">años</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="gPrevias" class="col-form-label text-primary"><i class="fa fa-child hidden-lg-up" aria-hidden="true"></i> Gestas Previas</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <select class="form-control" id="gPrevias">
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="pTotales" class="col-form-label text-primary"><i class="fa fa-bed hidden-lg-up" aria-hidden="true"></i> Partos totales</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <select class="form-control" id="pTotales">
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="talla" class="col-form-label text-primary"><i class="fa fa-female hidden-lg-up" aria-hidden="true"></i> Talla</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <select class="form-control" id="talla"></select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="peso" class="col-form-label text-primary"><i class="fa fa-balance-scale hidden-lg-up" aria-hidden="true"></i> Peso</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <select class="form-control" id="peso"></select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="imcW" class="col-form-label text-primary"><i class="fa fa-area-chart hidden-lg-up" aria-hidden="true"></i> IMC</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input type="text" class="form-control" id="imcW" readonly>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="estNutricional" class="col-form-label text-primary"><i class="fa fa-area-chart hidden-lg-up" aria-hidden="true"></i> Estado nutricional</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input type="text" class="form-control" id="estNutricional" readonly>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="display:none;" id="pacientesForm2">
-            <div class="col">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Datos para exámen</h4>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="aud" class="col-form-label text-primary"><i class="fa fa-calendar hidden-lg-up" aria-hidden="true"></i> Fecha de ultima mestruación</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input class="form-control" type="text" name="fum" id="fum" data-date-format="dd/mm/yyyy" onfocus="blur();" readonly>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="aud" class="col-form-label text-primary"><i class="fa fa-child hidden-lg-up" aria-hidden="true"></i> Edad Gestacional</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <input type="text" class="form-control" name="eg" readonly>
-                                        <div class="input-group-addon">semanas</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="fppPaciente" class="col-form-label text-primary"><i class="fa fa-calendar hidden-lg-up" aria-hidden="true"></i> Fecha probable de parto</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <input type="text" class="form-control" id="fppPaciente" readonly>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="motivo" class="col-form-label text-primary"><i class="fa fa-question hidden-lg-up" aria-hidden="true"></i> Motivo de Exámen</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <select class="form-control" id="motivo">
-                                            <option>Eco Confirmación de Embarazo</option>
-                                            <option>Eco. Determinación edad gestacional</option>
-                                            <option>Eco evaluación crecimiento</option>
-                                            <option>Eco. Doppler Materno/Fetal</option>
-                                            <option>Eco. Doppler Materno</option>
-                                            <option>Eco. Doppler Fetal</option>
-                                            <option>otros motivos</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="patologiaC" class="col-form-label text-primary"><i class="fa fa-user-md hidden-lg-up" aria-hidden="true"></i> Patología obstétrica concomitante</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <select class="form-control" id="patologiaC">
-                                            <option>Eco Confirmación de Embarazo</option>
-                                            <option>Eco. Determinación edad gestacional</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="ecografista" class="col-form-label text-primary"><i class="fa fa-user-md hidden-lg-up" aria-hidden="true"></i> Ecografista</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <input type="text" class="form-control" id="ecografista" readonly>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="ecografista" class="col-form-label text-primary"><i class="fa fa-user-md hidden-lg-up" aria-hidden="true"></i> Embarazo</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <select class="form-control" id="patologiaC">
-                                            <option>Único</option>
-                                            <option>Múltiple</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                </div>
-                            </div>
-                            <h4 class="card-title">Consentimiento informado</h4>
-                            <div class="form-group row">
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="ecografista" class="col-form-label text-primary">¿Autoriza la realización del exámen ecográfico?</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" checked="checked" name="examenEco" value="1"> Si
-                                        </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="examenEco" value="0"> No
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <label for="ecografista" class="col-form-label text-primary">¿Autoriza el uso de la información para investigación clínica?</label>
-                                </div>
-                                <div class="col-md-8 col-lg-3">
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" checked="checked" name="examenInvest" value="1"> Si
-                                        </label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="examenInvest" value="0"> No
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="card mb-3" id="tablaPacientes"></div>
-            </div>
-        </div>
-    </div>
     <div class="container" id="configuracion" style="display:none;">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#inicio">Inicio</a>
@@ -3121,7 +2716,7 @@
                     <div class="card-body">
                         <div class="row mt-2 mb-2">
                             <div class="col-2">
-                                <label for="membrete" class="col-form-label">Membrete institucional</label>
+                                <label class="col-form-label">Membrete institucional</label>
                             </div>
                             <div class="col-4 text-center">
                                 <textarea class="form-control" rows="3" id="membrete" style="font-size: 12px;" onkeydown="return limitLines(this, event)"></textarea>
@@ -3171,7 +2766,7 @@
                             <h5>Patología Obstétrica Relevante</h5>
                         </div>
                         <div class="form-group">
-                            <label for="TipoInput">Patologia Obstetrica</label>
+                            <label>Patologia Obstetrica</label>
                             <input type="text" class="form-control" id="PatologiaObstetricaInput" aria-describedby="lugarInputHelp">
                             <small id="lugarInputHelp" class="form-text text-muted">Lugar de control prenatal.</small>
                         </div>
@@ -3216,7 +2811,7 @@
                             <h5>Profesional referente</h5>
                         </div>
                         <div class="form-group">
-                            <label for="profRefInput">Profesional Referente</label>
+                            <label>Profesional Referente</label>
                             <input type="text" class="form-control" id="profRefInput">
                         </div>
                     </div>
@@ -3260,7 +2855,7 @@
                             <h5>Nuevo Lugar</h5>
                         </div>
                         <div class="form-group">
-                            <label for="ciudadInput">lugar</label>
+                            <label>lugar</label>
                             <input type="text" class="form-control" id="LugarInput" aria-describedby="ciudadInputHelp">
                             <small id="ciudadInputHelp" class="form-text text-muted">ciudad o pueblo.</small>
                         </div>
@@ -3305,7 +2900,7 @@
                             <h5>Nuevo motivo de exámen</h5>
                         </div>
                         <div class="form-group">
-                            <label for="motivoInput">Motivo de exámen</label>
+                            <label>Motivo de exámen</label>
                             <input type="text" class="form-control" id="motivoInput" aria-describedby="motivoInputHelp">
                             <small id="motivoInputHelp" class="form-text text-muted">Motivo de exámen o control ecográfico.</small>
                         </div>
@@ -3350,7 +2945,7 @@
                             <h5>Nueva Procedencia (Ciudad)</h5>
                         </div>
                         <div class="form-group">
-                            <label for="CiudadInput">Procedencia (Ciudad)</label>
+                            <label>Procedencia (Ciudad)</label>
                             <input type="text" class="form-control" id="CiudadInput">
                         </div>
                     </div>
@@ -3394,7 +2989,7 @@
                             <h5>Nuevo Ecografista</h5>
                         </div>
                         <div class="form-group">
-                            <label for="ecografistaInput">Ecografista</label>
+                            <label>Ecografista</label>
                             <input type="text" class="form-control" id="ecografistaInput" aria-describedby="ecografistaInputHelp">
                             <small id="ecografistaInputHelp" class="form-text text-muted">Médico ecografista.</small>
                         </div>
@@ -3439,7 +3034,7 @@
                             <h5>Nueva Nacionalidad</h5>
                         </div>
                         <div class="form-group">
-                            <label for="nacionalidadInput">Nacionalidad</label>
+                            <label>Nacionalidad</label>
                             <input type="text" class="form-control" id="nacionalidadInput" aria-describedby="nacionalidadInputHelp">
                             <small id="nacionalidadInputHelp" class="form-text text-muted">nacionalidad.</small>
                         </div>
@@ -3475,13 +3070,13 @@
         </ol>
         <div class="form-group row">
             <div class="col">
-                <label for="fum2">Fecha de última mestruación</label>
+                <label>Fecha de última mestruación</label>
             </div>
             <div class="col">
                 <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fum" id="fum-siete">
             </div>
             <div class="col">
-                <label for="dbp" class="col-form-label">Edad Gestacional</label>
+                <label class="col-form-label">Edad Gestacional</label>
             </div>
             <div class="col">
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -3492,13 +3087,13 @@
         </div>
         <div class="form-group row">
             <div class="col">
-                <label for="dbp" class="col-form-label">Fecha probable de parto</label>
+                <label class="col-form-label">Fecha probable de parto</label>
             </div>
             <div class="col">
                 <input type="text" class="form-control" name="fpp" readonly>
             </div>
             <div class="col">
-                <label for="fee" class="col-form-label">Fecha de exámen (Modificable)</label>
+                <label class="col-form-label">Fecha de exámen (Modificable)</label>
             </div>
             <div class="col">
                 <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee">
@@ -3533,7 +3128,7 @@
         </ol>
             <div class="form-group row">
                 <div class="col">
-                    <label for="dbp" class="col-form-label">Edad Gestacional</label>
+                    <label class="col-form-label">Edad Gestacional</label>
                 </div>
                 <div class="col">
                     <input type="text" class="form-control" name="eg" readonly>
@@ -3570,13 +3165,13 @@
         </ol>
         <div class="form-group row">
             <div class="col">
-                <label for="fum2">Fecha de última mestruación</label>
+                <label>Fecha de última mestruación</label>
             </div>
             <div class="col">
                 <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fum" id="fum-ocho">
             </div>
             <div class="col">
-                <label for="dbp" class="col-form-label">Edad Gestacional</label>
+                <label class="col-form-label">Edad Gestacional</label>
             </div>
             <div class="col">
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -3587,13 +3182,13 @@
         </div>
         <div class="form-group row">
             <div class="col">
-                <label for="dbp" class="col-form-label">Fecha probable de parto</label>
+                <label class="col-form-label">Fecha probable de parto</label>
             </div>
             <div class="col">
                 <input type="text" class="form-control" name="fpp" readonly>
             </div>
             <div class="col">
-                <label for="fee" class="col-form-label">Fecha de exámen (Modificable)</label>
+                <label class="col-form-label">Fecha de exámen (Modificable)</label>
             </div>
             <div class="col">
                 <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee">
@@ -3628,7 +3223,7 @@
         </ol>
             <div class="form-group row">
                 <div class="col">
-                    <label for="dbp" class="col-form-label">Edad Gestacional</label>
+                    <label class="col-form-label">Edad Gestacional</label>
                 </div>
                 <div class="col">
                     <input type="text" class="form-control" name="eg" readonly>
@@ -3642,7 +3237,7 @@
                 <h5 class="card-title">Tablas de crecimiento</h5>
                     <div class="form-group row">
                         <div class="col-md-6 col-lg-3 mb-2">
-                            <label for="pfe" class="col-form-label"><strong>Índice Ponderal Neonatal</strong> (IPN)
+                            <label class="col-form-label"><strong>Índice Ponderal Neonatal</strong> (IPN)
                                 <br><small class="text-muted">Referencias neonatales SOCHIPE*</small>
                             </label>
                         </div>
@@ -3666,7 +3261,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-6 col-lg-3 mb-2">
-                            <label for="pfe" class="col-form-label"><strong>Gráficas Talla/Eg - Peso/Eg</strong>
+                            <label class="col-form-label"><strong>Gráficas Talla/Eg - Peso/Eg</strong>
                                 <br><small class="text-muted">Referencias neonatales SOCHIPE*</small>
                             </label>
                         </div>
@@ -3684,932 +3279,5 @@
         </div>
     </div>
     <div class="g-verde fixed-bottom" style="height: 5vh;" id="barra.verde"></div>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            Highcharts.chart('grafico', {
-
-                title: {
-                    text: 'M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274',
-                    align: "left",
-                    style: {
-                        "font-size": "12px"
-                    }
-                },
-                credits: {
-                    enabled: false
-                },
-                yAxis: {
-                    title: {
-                        text: 'Gramos'
-                    },
-                    tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540]
-                },
-                legend: {
-                    layout: 'vertical',
-                    align: 'right',
-                    verticalAlign: 'middle'
-                },
-
-                plotOptions: {
-                    series: {
-                        pointStart: 24
-                    }
-                },
-                colors: ['#ff3300', '#ff3300', '#000000'],
-                series: [{
-                    name: 'Pct. 10',
-                    data: [640.6, 666, 728.2, 822.9, 945.7, 1092.2, 1258.2, 1439.2, 1630.8, 1828.7, 2028.6, 2226, 2416.7, 2596.2, 2760.2, 2904.2, 3024.1, 3115.3, 3173.5]
-                }, {
-                    name: 'Pct. 90',
-                    data: [897.9, 963.3, 1070.6, 1214.6, 1390.1, 1592, 1815, 2053.8, 2303.4, 2558.5, 2813.9, 3064.4, 3304.7, 3529.8, 3734.4, 3913.2, 4061.2, 4173, 4243.5]
-                }]
-            });
-        });
-        $("#graficoEstandar").on('click', function() {
-            RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val());
-            if ($("#pesoRN").val() > 1) {
-
-                if ($("#graficoEstandar").val() == 1) {
-                    $("#PesoPct").val("Pct. " + RN.pesoTemuco());
-                    $("#PesoEge").val(RN.pesoTemucoCondicion());
-                } else {
-                    $("#PesoPct").val("Pct. " + RN.pesoChile());
-                    $("#PesoEge").val(RN.pesoChileCondicion());
-                }
-            }
-
-            if ($("#tallaRN").val() > 1) {
-                if ($("#graficoEstandar").val() == 3) {
-                    $("#IpnPct").val("Pct. " + RN.ipnTemuco());
-                    $("#IpnEge").val(RN.ipnTemucoCondicion());
-                } else {
-                    $("#IpnPct").val("Pct. " + RN.ipnChile());
-                    $("#IpnEge").val(RN.ipnChileCondicion());
-                }
-            }
-
-            if (this.value == 0) {
-                Highcharts.chart('grafico', {
-                    title: {
-                        text: 'M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274',
-                        align: "left",
-                        style: {
-                            "font-size": "12px"
-                        }
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Gramos'
-                        },
-                        tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540]
-                    },
-                    legend: {
-                        layout: 'vertical',
-                        align: 'right',
-                        verticalAlign: 'middle'
-                    },
-                    plotOptions: {
-                        series: {
-                            pointStart: 24
-                        }
-                    },
-                    colors: ['#ff3300', '#ff3300', '#000000'],
-                    series: [{
-                        name: 'Pct. 10',
-                        data: [640.6, 666, 728.2, 822.9, 945.7, 1092.2, 1258.2, 1439.2, 1630.8, 1828.7, 2028.6, 2226, 2416.7, 2596.2, 2760.2, 2904.2, 3024.1, 3115.3, 3173.5]
-                    }, {
-                        name: 'Pct. 90',
-                        data: [897.9, 963.3, 1070.6, 1214.6, 1390.1, 1592, 1815, 2053.8, 2303.4, 2558.5, 2813.9, 3064.4, 3304.7, 3529.8, 3734.4, 3913.2, 4061.2, 4173, 4243.5]
-                    }, {
-                        type: "line",
-                        name: 'Peso',
-                        dashStyle: "Dot",
-                        marker: {
-                            symbol: 'square'
-                        },
-                        lineWidth: 0,
-                        data: (function() {
-                            var data = [];
-                            var eg = $("#edadGestacional").val();
-                            var peso = $("#pesoRN").val();
-
-                            if (eg > 24) {
-                                for (i = 24; i <= (eg - 1); i++) {
-                                    data.push({
-                                        y: 0,
-                                    });
-                                }
-                                data.push({
-                                    y: parseInt(peso),
-                                });
-                                for (i = eg + 1; i <= 39; i++) {
-                                    data.push({
-                                        y: 0,
-                                    });
-                                }
-                            }
-                            return data;
-                        }())
-                    }]
-                });
-            } else if (this.value == 1) {
-                Highcharts.chart('grafico', {
-                    title: {
-                        text: 'Lagos y col. Rev. Chilena Obtet. Ginecol. 2009; 74(4)',
-                        align: "left",
-                        style: {
-                            "font-size": "12px"
-                        }
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Gramos'
-                        },
-                        tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540]
-                    },
-                    legend: {
-                        layout: 'vertical',
-                        align: 'right',
-                        verticalAlign: 'middle'
-                    },
-                    plotOptions: {
-                        series: {
-                            pointStart: 24
-                        }
-                    },
-                    colors: ['#ff3300', '#ff3300', '#000000'],
-                    series: [{
-                        name: 'Pct. 10',
-                        data: [600, 662, 739, 830, 938, 1064, 1208, 1373, 1565, 1756, 1970, 2192, 2415, 2628, 2820, 2978, 3089, 3120, 3123]
-                    }, {
-                        name: 'Pct. 90',
-                        data: [800, 960, 1139, 1337, 1551, 1781, 2022, 2272, 2527, 2781, 3031, 3270, 3494, 3699, 3878, 4030, 4150, 4236, 4287]
-                    }, {
-                        type: "line",
-                        name: 'Peso',
-                        dashStyle: "Dot",
-                        marker: {
-                            symbol: 'square'
-                        },
-                        lineWidth: 0,
-                        data: (function() {
-                            var data = [];
-                            var eg = $("#edadGestacional").val();
-                            var peso = $("#pesoRN").val();
-                            if (eg > 24) {
-                                for (i = 24; i <= (eg - 1); i++) {
-                                    data.push({
-                                        y: 0,
-                                    });
-                                }
-                                data.push({
-                                    y: parseInt(peso),
-                                });
-                                for (i = eg + 1; i <= 39; i++) {
-                                    data.push({
-                                        y: 0,
-                                    });
-                                }
-                            }
-                            return data;
-                        }())
-                    }]
-                });
-            } else if (this.value == 2) {
-                Highcharts.setOptions({
-                    lang: {
-                        numericSymbols: ["k", "M", "G", "T", "P", "E"]
-                    }
-                });
-                Highcharts.chart('grafico', {
-                    title: {
-                        text: 'M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274',
-                        align: "left",
-                        style: {
-                            "font-size": "14px"
-                        }
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    yAxis: {
-                        title: {
-                            text: '((peso / talla)^3)*100'
-                        },
-                        tickPositions: [1, 1.6, 2.2, 2.8, 3.4, 4],
-                    },
-                    legend: {
-                        layout: 'vertical',
-                        align: 'right',
-                        verticalAlign: 'middle'
-                    },
-                    colors: ['#ff3300', '#ff3300', '#000000'],
-                    plotOptions: {
-                        series: {
-                            pointStart: 24
-                        }
-                    },
-                    series: [{
-                        name: 'Pct. 10',
-                        data: [1.79, 1.83, 1.87, 1.91, 1.95, 1.99, 2.04, 2.08, 2.12, 2.16, 2.2, 2.25, 2.29, 2.33, 2.37, 2.41, 2.45, 2.5, 2.54]
-                    }, {
-                        name: 'Pct. 90',
-                        data: [2.54, 2.57, 2.59, 2.62, 2.65, 2.68, 2.71, 2.74, 2.77, 2.8, 2.83, 2.86, 2.89, 2.92, 2.95, 2.98, 3.01, 3.04, 3.07]
-                    }, {
-                        type: "line",
-                        name: 'IPN',
-                        dashStyle: "Dot",
-                        marker: {
-                            symbol: 'square'
-                        },
-                        lineWidth: 0,
-                        data: (function() {
-                            var data = [];
-                            var eg = $("#edadGestacional").val();
-                            var ipn = $("#IPNRN").val();
-
-                            if (eg > 24) {
-                                for (i = 24; i <= (eg - 1); i++) {
-                                    data.push({
-                                        y: 0,
-                                    });
-                                }
-                                data.push({
-                                    y: parseFloat(ipn),
-                                });
-                                for (i = eg + 1; i <= 43; i++) {
-                                    data.push({
-                                        y: 0,
-                                    });
-                                }
-                            }
-                            return data;
-                        }())
-                    }]
-                });
-            } else if (this.value == 3) {
-                Highcharts.setOptions({
-                    lang: {
-                        numericSymbols: ["k", "M", "G", "T", "P", "E"]
-                    }
-                });
-                Highcharts.chart('grafico', {
-                    title: {
-                        text: 'Lagos y col. Rev. Chilena Obtet. Ginecol. 2009; 74(4)',
-                        align: "left",
-                        style: {
-                            "font-size": "12px"
-                        }
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    yAxis: {
-                        title: {
-                            text: '((peso / talla)^3)*100'
-                        },
-                        tickPositions: [1, 1.6, 2.2, 2.8, 3.4, 4],
-                    },
-                    legend: {
-                        layout: 'vertical',
-                        align: 'right',
-                        verticalAlign: 'middle'
-                    },
-                    colors: ['#ff3300', '#ff3300', '#000000'],
-                    plotOptions: {
-                        series: {
-                            pointStart: 24
-                        }
-                    },
-                    series: [{
-                        name: 'Pct. 10',
-                        data: [1.95, 1.93, 1.92, 1.92, 1.94, 1.97, 2.01, 2.06, 2.11, 2.17, 2.23, 2.28, 2.33, 2.38, 2.41, 2.44, 2.44, 2.42, 2.39]
-                    }, {
-                        name: 'Pct. 90',
-                        data: [2.43, 2.44, 2.46, 2.49, 2.53, 2.57, 2.62, 2.68, 2.74, 2.79, 2.85, 2.9, 2.95, 2.99, 3.02, 3.04, 3.05, 3.04, 3.01]
-                    }, {
-                        type: "line",
-                        name: 'IPN',
-                        dashStyle: "Dot",
-                        marker: {
-                            symbol: 'square'
-                        },
-                        lineWidth: 0,
-                        data: (function() {
-                            var data = [];
-                            var eg = $("#edadGestacional").val();
-                            var ipn = $("#IPNRN").val();
-
-                            if (eg > 24) {
-                                for (i = 24; i <= (eg - 1); i++) {
-                                    data.push({
-                                        y: 0,
-                                    });
-                                }
-                                data.push({
-                                    y: parseFloat(ipn),
-                                });
-                                for (i = eg + 1; i <= 43; i++) {
-                                    data.push({
-                                        y: 0,
-                                    });
-                                }
-                            }
-                            return data;
-                        }())
-                    }]
-                });
-            }
-        });
-        $("#edadGestacional").change(function() {
-            var max = parseInt($(this).attr('max'));
-            var min = parseInt($(this).attr('min'));
-            if ($(this).val() > max) {
-                $(this).val(max);
-            } else if ($(this).val() < min) {
-                $(this).val(min);
-            }
-            $("#graficoEstandar").trigger("click");
-        });
-
-        $("#pesoRN").change(function() {
-            var max = parseInt($(this).attr('max'));
-            var min = parseInt($(this).attr('min'));
-            if ($(this).val() > max) {
-                $(this).val(max);
-            } else if ($(this).val() < min) {
-                $(this).val(min);
-            }
-
-            if ($("#tallaRN").val() > 1) {
-                var valor = $(this).val() / (Math.pow($("#tallaRN").val(), 3));
-                valor = valor * 100000;
-                $("#IPNRN").val(valor.toFixed(2));
-            }
-            $("#graficoEstandar").trigger("click");
-        });
-
-        $("#tallaRN").change(function() {
-            var max = parseInt($(this).attr('max'));
-            var min = parseInt($(this).attr('min'));
-            if ($(this).val() > max) {
-                $(this).val(max);
-            } else if ($(this).val() < min) {
-                $(this).val(min);
-            }
-
-            if ($("#pesoRN").val() > 1) {
-                var valor = $("#pesoRN").val() / (Math.pow($("#tallaRN").val(), 3));
-                valor = valor * 100000;
-                $("#IPNRN").val(valor.toFixed(2));
-            }
-            $("#graficoEstandar").trigger("click");
-        });
-
-        function verGraficoAjustePeso() {
-            RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val());
-            $('#opt1').trigger("click");
-            $('#g3').trigger("click");
-        };
-
-        var RN = 0;
-        var Tablas = 0;
-        var varMama = 0;
-        var p90Pso = [];
-        var p10Pso = [];
-
-        $('#g3').click(function() {
-            tipografico = 0;
-            var apell = 0;
-            if ($("#apellm").val() == 2) {
-                apell = 1;
-            } else {
-                apell = $("#apellm").val();
-            }
-            varMama.edad = $("#em").val();
-            varMama.apellido = apell;
-            varMama.paridad = $("#pm").val();
-            RN.sexo = $("#sn").val();
-            var p90 = [0.2418159, -0.0038925, 0.0000168, -0.0130562, -0.0127872, -0.0034632, 0.0117179, 0.0021092, -0.9260631];
-            var p10 = [-0.2639902, 0.0110356, -0.0001265, -0.0146183, -0.0134044, -0.0020684, 0.0092266, 0.0009001, 4.474501];
-            for (i = 24; i < 43; i++) {
-                x = i - 24;
-                p90Pso[x] = Math.pow(10, ((i * p90[0]) + (Math.pow(i, 2) * p90[1]) + (Math.pow(i, 3) * p90[2]) + (p90[3] * $("#pm").val()) + (p90[4] * $("#sn").val()) + (p90[5] * apell) + (p90[6] * $("#imc").val()) + (p90[7] * $("#em").val()) + p90[8]));
-                p10Pso[x] = Math.pow(10, ((i * p10[0]) + (Math.pow(i, 2) * p10[1]) + (Math.pow(i, 3) * p10[2]) + (p10[3] * $("#pm").val()) + (p10[4] * $("#sn").val()) + (p10[5] * apell) + (p10[6] * $("#imc").val()) + (p10[7] * $("#em").val()) + p10[8]));;
-            }
-            $("#PesoEgeSAj").val(RN.pesoTemuco());
-            eg = RN.eg - 24;
-            var tablas = new Tabla;
-            var uno, dos, tres;
-            uno = p90Pso[eg] - p10Pso[eg];
-            dos = RN.peso - p10Pso[eg];
-            tres = parseInt((80 / (uno)) * (dos)) + 10;
-            $("#PesoEgeCAj").val(tres);
-            $("#tituloAjusteG").addClass("d-none");
-            $("#tituloAjusteAlto").html("Pct Peso sin ajuste");
-            $("#tituloAjusteBajo").html("Pct. Peso con ajuste");
-            Highcharts.chart('graficoAjustado', {
-                title: {
-                    text: 'Curva regional peso/eg ajustada por variables',
-                    style: {
-                        "color": "#337ab7",
-                        "fontSize": "14px"
-                    }
-                },
-                chart: {
-                    backgroundColor: "rgba(0, 0, 0, 0)"
-                },
-                yAxis: {
-                    title: {
-                        text: ''
-                    },
-                    tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540, 4980],
-                    tickColor: "#337ab7",
-                    labels: {
-                        enabled: true,
-                        style: {
-                            color: '#337ab7',
-                        }
-                    }
-                },
-                colors: ['#ff3300', '#ff3300', '#ff3300'],
-                xAxis: {
-                    categories: ['24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42'],
-                    labels: {
-                        enabled: true,
-                        style: {
-                            color: '#337ab7',
-                        }
-                    }
-                },
-                credits: {
-                    enabled: false
-                },
-                series: [{
-                    type: "line",
-                    name: 'Pct. 10',
-                    marker: {
-                        enabled: false
-                    },
-                    dashStyle: (function() {
-                        var estilo = 'solid';
-                        if (RN.ajustePequeno == true) {
-                            estilo = 'Dash';
-                        }
-                        return estilo;
-                    }()),
-                    color: (function() {
-                        var color = '#ff3300';
-
-                        if (RN.ajustePequeno == true) {
-                            color = '#003d99';
-                        }
-                        return color;
-                    }()),
-                    data: (function() {
-                        var data = [];
-                        for (i = 24; i < 43; i++) {
-                            x = i - 24;
-                            data.push({
-                                y: p10Pso[x],
-                            });
-                        }
-                        return data;
-                    }())
-                }, {
-                    type: "line",
-                    name: 'Pct. 90',
-                    marker: {
-                        enabled: false
-                    },
-                    dashStyle: (function() {
-                        var estilo = 'solid';
-
-                        if (RN.ajustePequeno == true) {
-                            estilo = 'Dash';
-                        }
-
-                        return estilo;
-                    }()),
-                    color: (function() {
-                        var color = '#ff3300';
-
-                        if (RN.ajustePequeno == true) {
-                            color = '#003d99';
-                        }
-                        return color;
-                    }()),
-                    data: (function() {
-                        var data = [];
-                        for (i = 24; i < 43; i++) {
-                            x = i - 24;
-                            data.push({
-                                y: p90Pso[x],
-                            });
-                        }
-                        return data;
-                    }())
-                }, {
-                    type: "line",
-                    name: 'Peso',
-                    dashStyle: "Dot",
-                    marker: {
-                        symbol: 'square'
-                    },
-                    lineWidth: 0,
-                    data: (function() {
-                        var data = [];
-
-                        for (i = 24; i <= (RN.eg - 1); i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
-                        data.push({
-                            y: parseInt(RN.peso),
-                        });
-                        for (i = RN.eg + 1; i <= 39; i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
-                        return data;
-                    }())
-                }]
-            });
-        });
-
-        $('#tm').change(function() {
-            varMama = new Mama($("#tm").val(), $("#pesom").val(), $("#em").val(), $('#apellm').val());
-            $('#valorimc').val(varMama.imc());
-            $('#imc').val(varMama.imcCondicion());
-            $('#g3').trigger("click");
-        });
-
-        $('#pesom').change(function() {
-            varMama = new Mama($("#tm").val(), $("#pesom").val(), $("#em").val(), $('#apellm').val());
-            $('#valorimc').val(varMama.imc());
-            $('#imc').val(varMama.imcCondicion());
-            $('#g3').trigger("click");
-        });
-
-        $('#sn').change(function() {
-            $('#g3').trigger("click");
-        });
-        $('#pm').change(function() {
-            $('#g3').trigger("click");
-        });
-        $('#imc').change(function() {
-            $('#g3').trigger("click");
-        });
-        $('#em').change(function() {
-            $('#g3').trigger("click");
-        });
-        $('#apellm').change(function() {
-            $('#g3').trigger("click");
-        });
-
-        $('#opt1').click(function() {
-            $('#pm').val("1");
-            $('#sn').val("1");
-            $('#tm').val("149");
-            $('#pesom').val("70");
-            $('#em').val("6");
-            $('#apellm').val("1");
-            varMama = new Mama('149', '70', $("#em").val(), $('#apellm').val());
-            varMama.talla = '149';
-            varMama.peso = '70';
-            $('#valorimc').val(varMama.imc());
-            $('#imc').val(varMama.imcCondicion());
-            RN.ajustePequeno = false;
-            $('#g3').trigger("click");
-            $("#tituloAjusteG").addClass("d-none");
-            $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
-            $("#tituloAjusteBajo").html("Pct. de peso con ajuste");
-        });
-
-        $('#opt2').click(function() {
-            $('#pm').val("0");
-            $('#sn').val("0");
-            $('#tm').val("170");
-            $('#pesom').val("91");
-            $('#em').val("6");
-            $('#apellm').val("0");
-            $('#tm').change();
-            varMama = new Mama('170', '91', $("#em").val(), $('#apellm').val());
-            varMama.talla = '170';
-            varMama.peso = '91';
-            $('#valorimc').val(varMama.imc());
-            $('#imc').val(varMama.imcCondicion());
-            RN.ajustePequeno = false;
-            $('#g3').trigger("click");
-            $("#tituloAjusteG").addClass("d-none");
-            $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
-            $("#tituloAjusteBajo").html("Pct. peso con ajuste");
-        });
-
-        $('#opt3').click(function() {
-            $('#sn').val("1");
-            $('#pm').val("1");
-            $('#tm').val("149");
-            $('#pesom').val("44");
-            $('#em').val("1");
-            $('#apellm').val("1");
-            $('#tm').change();
-            varMama = new Mama('149', '44', $("#em").val(), $('#apellm').val());
-            varMama.talla = '149';
-            varMama.peso = '44';
-            $('#valorimc').val(varMama.imc());
-            $('#imc').val(varMama.imcCondicion());
-            RN.ajustePequeno = true;
-            $('#g3').trigger("click");
-            $("#tituloAjusteG").addClass("d-none");
-            $("#tituloAjusteAlto").html("Pct.peso sin ajuste");
-            $("#tituloAjusteBajo").html("Pct. peso con ajuste");
-        });
-
-        $("#opt4").click(function() {
-            var chart = Highcharts.chart('graficoAjustado', {
-                title: {
-                    text: 'Visión simultanea curvas para condiciones extremas',
-                    style: {
-                        "color": "#337ab7",
-                        "fontSize": "14px"
-                    }
-                },
-                chart: {
-                    backgroundColor: "rgba(0, 0, 0, 0)"
-                },
-                yAxis: {
-                    title: {
-                        text: ''
-                    },
-                    tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540, 4980],
-                    tickColor: "#337ab7",
-                    labels: {
-                        enabled: true,
-                        style: {
-                            color: '#337ab7',
-                        }
-                    }
-                },
-                colors: ['#ff3300', '#ff3300', '#ff3300'],
-                xAxis: {
-                    categories: ['24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42'],
-                    labels: {
-                        enabled: true,
-                        style: {
-                            color: '#337ab7',
-                        }
-                    }
-                },
-                credits: {
-                    enabled: false
-                },
-                series: [{
-                    type: "line",
-                    name: 'Pct. 10',
-                    marker: {
-                        enabled: false
-                    },
-                    dashStyle: (function() {
-                        estilo = 'Dash';
-                        return estilo;
-                    }()),
-                    color: (function() {
-                        color = '#003d99';
-                        return color;
-                    }())
-                }, {
-                    type: "line",
-                    name: 'Pct. 90',
-                    marker: {
-                        enabled: false
-                    },
-                    dashStyle: (function() {
-                        estilo = 'Dash';
-                        return estilo;
-                    }()),
-                    color: (function() {
-                        color = '#003d99';
-                        return color;
-                    }())
-                }, {
-                    type: "line",
-                    name: 'Peso',
-                    dashStyle: "Dot",
-                    marker: {
-                        symbol: 'square'
-                    },
-                    lineWidth: 0,
-                    data: (function() {
-                        var data = [];
-                        for (i = 24; i <= (RN.eg - 1); i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
-                        data.push({
-                            y: parseInt(RN.peso),
-                        });
-                        for (i = RN.eg + 1; i <= 39; i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
-                        return data;
-                    }())
-                }, {
-                    type: "line",
-                    name: 'Pct. 10',
-                    marker: {
-                        enabled: false
-                    },
-                    dashStyle: (function() {
-                        estilo = 'solid';
-                        return estilo;
-                    }()),
-                    color: (function() {
-                        color = '#ff3300';
-                        return color;
-                    }())
-                }, {
-                    type: "line",
-                    name: 'Pct. 90',
-                    marker: {
-                        enabled: false
-                    },
-                    dashStyle: (function() {
-                        estilo = 'solid';
-                        return estilo;
-                    }()),
-                    color: (function() {
-                        color = '#ff3300';
-                        return color;
-                    }())
-                }]
-            });
-
-            chart.series[3].setData([614.911761594748, 688.2409351621351, 775.8261252713739, 879.2765685663702, 1000.14921864602, 1139.7859521609507, 1299.0982567628794, 1478.2976958841446, 1676.578914688683, 1891.7742075463264, 2120.0143470672206, 2355.4478861757852, 2590.0872856319534, 2813.8600915466154, 3014.940876697811, 3180.418712251241, 3297.311672544965, 3353.875214095742, 3341.073271117301]);
-            chart.series[4].setData([845.6847516567528, 1019.8791186895171, 1215.1332367429115, 1430.6549439464502, 1664.8783277732855, 1915.435357904167, 2179.1679353682594, 2452.1831280795927, 2729.951302092218, 3007.4436584447762, 3279.3026501881805, 3540.0361747837806, 3784.224559989481, 4006.728359825368, 4202.884932894939, 4368.682671927062, 4500.903482341126, 4597.226484532643, 4656.288703467283]);
-            chart.series[0].setData([532.7720094718462, 596.3058912325178, 672.1914745777674, 761.8230347419276, 866.5495478697786, 987.5336430802754, 1125.5650517432623, 1280.827076703167, 1452.6219422120837, 1639.0715041903895, 1836.8233856299587, 2040.8077742235917, 2244.1041041316807, 2437.985397218539, 2612.205863734485, 2755.5792133386753, 2856.8576426002764, 2905.8654410796826, 2894.7735782926065]);
-            chart.series[1].setData([711.5447194612854, 858.108887467441, 1022.3923706232943, 1203.7286574482926, 1400.800215862748, 1611.6146255636006, 1833.5147159659111, 2063.2250404407005, 2296.9344422785457, 2530.4117758437037, 2759.1492925532416, 2978.526031047196, 3183.981971581188, 3371.1928720061205, 3536.235665413285, 3675.7350538979554, 3786.9833875928784, 3868.0279180018288, 3917.721861188435]);
-
-            $("#tituloAjusteG").removeClass("d-none");
-            $("#tituloAjusteAlto").html("potencial de crecimiento alto");
-            $("#tituloAjusteBajo").html("potencial de crecimiento bajo");
-
-            var p90x = [845.6847516567528, 1019.8791186895171, 1215.1332367429115, 1430.6549439464502, 1664.8783277732855, 1915.435357904167, 2179.1679353682594, 2452.1831280795927, 2729.951302092218, 3007.4436584447762, 3279.3026501881805, 3540.0361747837806, 3784.224559989481, 4006.728359825368, 4202.884932894939, 4368.682671927062, 4500.903482341126, 4597.226484532643, 4656.288703467283];
-            var p10x = [614.911761594748, 688.2409351621351, 775.8261252713739, 879.2765685663702, 1000.14921864602, 1139.7859521609507, 1299.0982567628794, 1478.2976958841446, 1676.578914688683, 1891.7742075463264, 2120.0143470672206, 2355.4478861757852, 2590.0872856319534, 2813.8600915466154, 3014.940876697811, 3180.418712251241, 3297.311672544965, 3353.875214095742, 3341.073271117301];
-
-            var p90 = [711.5447194612854, 858.108887467441, 1022.3923706232943, 1203.7286574482926, 1400.800215862748, 1611.6146255636006, 1833.5147159659111, 2063.2250404407005, 2296.9344422785457, 2530.4117758437037, 2759.1492925532416, 2978.526031047196, 3183.981971581188, 3371.1928720061205, 3536.235665413285, 3675.7350538979554, 3786.9833875928784, 3868.0279180018288, 3917.721861188435];
-            var p10 = [532.7720094718462, 596.3058912325178, 672.1914745777674, 761.8230347419276, 866.5495478697786, 987.5336430802754, 1125.5650517432623, 1280.827076703167, 1452.6219422120837, 1639.0715041903895, 1836.8233856299587, 2040.8077742235917, 2244.1041041316807, 2437.985397218539, 2612.205863734485, 2755.5792133386753, 2856.8576426002764, 2905.8654410796826, 2894.7735782926065];
-
-            var uno, dos, tres;
-
-            uno = p90x[eg] - p10x[eg];
-            dos = RN.peso - p10x[eg];
-            tres = parseInt((80 / (uno)) * (dos)) + 10;
-            $("#PesoEgeSAj").val(tres);
-
-            uno = p90[eg] - p10[eg];
-            dos = RN.peso - p10[eg];
-            tres = parseInt((80 / (uno)) * (dos)) + 10;
-            $("#PesoEgeCAj").val(tres);
-        });
-
-        function RecienNacido(peso = 0, talla = 0, eg = 40) {
-            this.peso = peso;
-            this.talla = talla;
-            this.eg = eg;
-            this.ipn = function ipn() {
-                var valor = this.peso / (Math.pow(this.talla, 3));
-                valor = valor * 100000;
-                return valor.toFixed(1);
-            };
-            this.pesoChile = function pesoChile() {
-                eg = this.eg - 24;
-                var tablas = new Tabla;
-                var uno = tablas.pct90PesoNacional[eg] - tablas.pct10PesoNacional[eg];
-                var dos = this.peso - tablas.pct10PesoNacional[eg];
-                return parseInt((80 / (uno)) * (dos)) + 10;
-            };
-            this.pesoTemuco = function pesoTemuco() {
-                eg = this.eg - 24;
-                var tablas = new Tabla;
-                var uno = tablas.pct90PesoTemuco[eg] - tablas.pct10PesoTemuco[eg];
-                var dos = this.peso - tablas.pct10PesoTemuco[eg];
-                return parseInt((80 / (uno)) * (dos)) + 10;
-            };
-            this.pesoAjustado = 0;
-            this.pesoChileCondicion = function pesoChileC() {
-                eg = this.eg - 24;
-                var tablas = new Tabla;
-                if (this.peso < tablas.pct10PesoNacional[eg]) {
-                    return "Pequeño";
-                } else if (this.peso <= tablas.pct90PesoNacional[eg]) {
-                    return "Adecuado";
-                } else if (this.peso > tablas.pct90PesoNacional[eg]) {
-                    return "Grande";
-                }
-            };
-            this.pesoTemucoCondicion = function pesoTemucoC() {
-                eg = this.eg - 24;
-                var tablas = new Tabla;
-
-                if (this.peso < tablas.pct10PesoTemuco[eg]) {
-                    return "Pequeño";
-                } else if (this.peso <= tablas.pct90PesoTemuco[eg]) {
-                    return "Adecuado";
-                } else if (this.peso > tablas.pct90PesoTemuco[eg]) {
-                    return "Grande";
-                }
-            };
-            this.pesoAjutadoCondicion = '';
-            this.ipnChile = function ipnChile() {
-                var eg = this.eg - 24;
-                var tablas = new Tabla;
-                var uno = tablas.pct90IpnNacional[eg] - tablas.pct10IpnNacional[eg];
-                var dos = this.ipn() - tablas.pct10IpnNacional[eg];
-                return parseInt((80 / (uno)) * (dos)) + 10;
-            };
-            this.ipnTemuco = function ipnTemuco() {
-                var eg = this.eg - 24;
-                var tablas = new Tabla;
-                var uno = tablas.pct90IpnTemuco[eg] - tablas.pct10IpnTemuco[eg];
-                var dos = this.ipn() - tablas.pct10IpnTemuco[eg];
-                return parseInt((80 / (uno)) * (dos)) + 10;
-            };
-            this.ipnChileCondicion = function ipnChileC() {
-                var eg = this.eg - 24;
-                var tablas = new Tabla;
-
-                if (this.ipn() < tablas.pct10IpnNacional[eg]) {
-                    return "Enflaquecido";
-                } else if (this.ipn() <= tablas.pct90IpnNacional[eg]) {
-                    return "Eutrófico";
-                } else if (this.ipn() > tablas.pct90IpnNacional[eg]) {
-                    return "RN Obeso";
-                }
-            };
-            this.ipnTemucoCondicion = function ipnTemucoC() {
-                var eg = this.eg - 24;
-                var tablas = new Tabla;
-
-                if (this.ipn() < tablas.pct10IpnTemuco[eg]) {
-                    return "Enflaquecido";
-                } else if (this.ipn() <= tablas.pct90IpnTemuco[eg]) {
-                    return "Eutrófico";
-                } else if (this.ipn() > tablas.pct90IpnTemuco[eg]) {
-                    return "RN Obeso";
-                }
-            };
-            this.sexo = '';
-            this.ajustePequeno = false;
-        };
-
-        function Tabla(plataforma) {
-            this.plataforma = plataforma;
-            this.pct10IpnNacional = [1.79, 1.83, 1.87, 1.91, 1.95, 1.99, 2.04, 2.08, 2.12, 2.16, 2.2, 2.25, 2.29, 2.33, 2.37, 2.41, 2.45, 2.5, 2.54];
-            this.pct90IpnNacional = [2.54, 2.57, 2.59, 2.62, 2.65, 2.68, 2.71, 2.74, 2.77, 2.8, 2.83, 2.86, 2.89, 2.92, 2.95, 2.98, 3.01, 3.04, 3.07];
-            this.pct10PesoNacional = [640.6, 666, 728.2, 822.9, 945.7, 1092.2, 1258.2, 1439.2, 1630.8, 1828.7, 2028.6, 2226, 2416.7, 2596.2, 2760.2, 2904.2, 3024.1, 3115.3, 3173.5];
-            this.pct90PesoNacional = [897.9, 963.3, 1070.6, 1214.6, 1390.1, 1592, 1815, 2053.8, 2303.4, 2558.5, 2813.9, 3064.4, 3304.7, 3529.8, 3734.4, 3913.2, 4061.2, 4173, 4243.5];
-            this.pct10IpnTemuco = [1.95, 1.93, 1.92, 1.92, 1.94, 1.97, 2.01, 2.06, 2.11, 2.17, 2.23, 2.28, 2.33, 2.38, 2.41, 2.44, 2.44, 2.42, 2.39];
-            this.pct90IpnTemuco = [2.43, 2.44, 2.46, 2.49, 2.53, 2.57, 2.62, 2.68, 2.74, 2.79, 2.85, 2.9, 2.95, 2.99, 3.02, 3.04, 3.05, 3.04, 3.01];
-            this.pct10PesoTemuco = [600, 662, 739, 830, 938, 1064, 1208, 1373, 1565, 1756, 1970, 2192, 2415, 2628, 2820, 2978, 3089, 3120, 3123];
-            this.pct90PesoTemuco = [800, 960, 1139, 1337, 1551, 1781, 2022, 2272, 2527, 2781, 3031, 3270, 3494, 3699, 3878, 4030, 4150, 4236, 4287];
-            this.pct10PesoAjustado = [];
-            this.pct90PesoAjustado = [];
-        };
-
-        function Mama(talla, peso, edad, apellido) {
-            this.paridad = 0
-            this.talla = talla;
-            this.peso = peso;
-            this.edad = edad;
-            this.apellido = apellido;
-            this.imc = function imc() {
-                var valor = ((this.peso / (Math.pow(this.talla, 2))) * 10000);
-                return valor.toFixed(1);
-            };
-            this.imcCondicion = function imcC() {
-                if (this.imc() < 20) {
-                    return 1
-                } else if (this.imc() < 25) {
-                    return 2
-                } else if (this.imc() <= 30) {
-                    return 3
-                } else if (this.imc() > 30) {
-                    return 4
-                }
-            };
-        };
-    </script>
 </body>
 </html>
