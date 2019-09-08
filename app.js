@@ -31,13 +31,11 @@ $( document ).ready(function() {
         
         if (document.getElementById(botones[0]).classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
-                txt = txt + value + "<br>";
                 document.getElementById(value).classList.remove("d-none");
             });
         }
         else{
             botones.forEach(function myFunction(value, index, array) {
-                txt = txt + value + "<br>";
                 document.getElementById(value).classList.add("d-none");
             });
         }
