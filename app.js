@@ -16,6 +16,7 @@ var titulos ={
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
 }
 
+document.location.hash = "";
 
 $( document ).ready(function() {
     $("p[name='fechaHora']").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear());
