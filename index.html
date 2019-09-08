@@ -51,47 +51,46 @@
             </div>
         </div>
     </header>
-    <div class="container" id="header.fecha" style="display:none;">
-        <h5 class="my-2 text-primary"><em>Ecografía obstétrica precoz</em></h5>
-        <ol class="breadcrumb">
-            <li class="float-right"><a href="#consulta"><strong>Volver</strong></a></li>
-        </ol>
-        <div class="form-group row">
-            <div class="col">
-                <label for="fum2">Fecha de última mestruación</label>
-            </div>
-            <div class="col">
-                <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fum" id="fum-cuatro">
-            </div>
-            <div class="col">
-                <label for="dbp" class="col-form-label">Edad Gestacional</label>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col">
-                        <select id="semanasEcoPrim" class="form-control"></select>
+    <section class="container d-none">
+        <div class="d-flex justify-content-between align-items-center rounded my-2 px-3 py-1">
+            <h5 class="text-primary mb-0"><em id="titulo"></em></h5>
+            <a href="#consulta" id="volver"><strong>Volver</strong></a>
+        </div>
+        <div class="card">
+            <div class="card-body row py-2">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Fecha de última mestruación</label>
+                        <input class="form-control" type="date" id="fum">
                     </div>
-                    <div class="col">
-                        <select id="diasEcoPrim" class="form-control"></select>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label class="col-form-label">Edad Gestacional</label>
+                        <div class="row">
+                            <div class="col">
+                                <select id="semanas" class="form-control"></select>
+                            </div>
+                            <div class="col">
+                                <select id="dias" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Fecha probable de parto</label>
+                        <input type="date" class="form-control" id="fpp" readonly>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Fecha de exámen (Modificable)</label>
+                        <input class="form-control" type="date" id="fee">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="form-group row">
-            <div class="col">
-                <label for="dbp" class="col-form-label">Fecha probable de parto</label>
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="fpp" readonly>
-            </div>
-            <div class="col">
-                <label for="fee" class="col-form-label">Fecha de exámen (Modificable)</label>
-            </div>
-            <div class="col">
-                <input class="form-control" type="text" data-date-format="dd/mm/yyyy" onfocus="blur();" name="fee" id="fee-cuatro">
-            </div>
-        </div>
-        <hr style="border-color:rgba(0, 0, 0, 0.36);">
     </div>
     <div class="container" id="about" style="display:none;">
         <ol class="breadcrumb">
