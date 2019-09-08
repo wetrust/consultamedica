@@ -698,7 +698,7 @@ $(document).ready(function(){
         else if ($(this).val() == 2){
 			var fur = $( "input[name='fum']").val();
 			var fpp = $( "input[name='fpp']").val();
-            var comentario = 'Sexo Fetal ' + sexoFetal + "\r\nFum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n";
+            var comentario = "Según edad gestacional obtenida de biometría fetal promedio\r\nFum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n";
             $('#comentarios-eco-dos-inf-dos').val(comentario);
         }
 	});
