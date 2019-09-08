@@ -38,7 +38,7 @@ $(window).on('hashchange', function(){
             document.getElementById("titulo").innerHTML = titulos[hash];
         }
         else{
-            document.getElementsByTagName("section").classList.add("d-none");
+            document.getElementsByTagName("section")[0].classList.add("d-none");
         }
     }
     else if (this.hash=="#consulta"){
