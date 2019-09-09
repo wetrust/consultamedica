@@ -20,7 +20,8 @@ document.location.hash = "";
 
 $( document ).ready(function() {
     $("p[name='fechaHora']").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear());
-
+    document.getElementById("fum").value = today;
+    
     if (storageAvailable('localStorage')) {
         document.location.hash = "#inicio";
     }
@@ -46,13 +47,11 @@ $( document ).ready(function() {
         
         if (document.getElementById("menu.modulo.construccion.uno").classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
-                txt = txt + value + "<br>";
                 document.getElementById(value).classList.remove("d-none");
             });
         }
         else{
             botones.forEach(function myFunction(value, index, array) {
-                txt = txt + value + "<br>";
                 document.getElementById(value).classList.add("d-none");
             });
         }
@@ -62,7 +61,7 @@ $( document ).ready(function() {
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
 
-    if (hash=="#inicio" || hash=="#about" || hash=="#tipoExamen" || hash=="#ecoDoppler" || hash=="#ecoObsSegTrim" || hash=="#ecoObsPrimTrim" || hash=="#configuracion" || hash=="#postnatal" || hash=="#recienacido" || hash=="#hipoglicemia" || hash=="#pdfviebox" || hash=="#registro" || hash=="#consentimiento" || hash=="#construccion" || hash=="#ecoGinecologica" || hash=="#ecoObsPrimTrimTrisomia"){
+    if (hash=="#inicio" || hash =="#consulta" || hash=="#ajustepeso" || hash=="#about" || hash=="#tipoExamen" || hash=="#ecoDoppler" || hash=="#ecoObsSegTrim" || hash=="#ecoObsPrimTrim" || hash=="#configuracion" || hash=="#postnatal" || hash=="#recienacido" || hash=="#hipoglicemia" || hash=="#pdfviebox" || hash=="#registro" || hash=="#consentimiento" || hash=="#construccion" || hash=="#ecoGinecologica" || hash=="#ecoObsPrimTrimTrisomia"){
         $(activeHash).addClass("d-none");
         $(hash).removeClass("d-none");
         activeHash = hash;
@@ -75,13 +74,9 @@ $(window).on('hashchange', function(){
             document.getElementsByTagName("section")[0].classList.add("d-none");
         }
     }
-    else if (this.hash=="#consulta"){
-        this.displayElement("consulta");
-        $("#link\\.volver\\.ecouno").attr("href","#tipoExamen");
-    }
-    else if (this.hash=="#ajustepeso"){
-        this.displayElement("ajustepeso");
-        verGraficoAjustePeso();
+    else{
+        $(activeHash).addClass("d-none");
+        $("#inicio").removeClass("d-none");
     }
 });
 
