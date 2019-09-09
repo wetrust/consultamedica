@@ -7,7 +7,7 @@ var month = ("0" + (dayHoy.getMonth() + 1)).slice(-2);
 var activeHash = "#browser";
 
 var titulos ={
-    "#consulta": "Cálculo de edad gestacional",
+    "#consulta": "Datos iniciales de configuración",
     "#tipoExamen": "Módulos de la aplicación",
     "#ecoDoppler": "Flujometría Doppler materno / fetal",
     "#ecoObsSegTrim": "Evaluación del crecimiento fetal",
