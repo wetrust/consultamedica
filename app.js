@@ -20,7 +20,25 @@ document.location.hash = "";
 
 $( document ).ready(function() {
     $("p[name='fechaHora']").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear());
-    document.getElementById("fum").value = today;
+    document.getElementById("fum").value = getDate();
+    document.getElementById("fee").value = getDate();
+
+    //cargar select semana y dias
+    for (var i = 0; i < 43; i++) {
+        let semanas = document.getElementById("semanas");
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode(i) );
+        opt.value = i; 
+        semanas.appendChild(opt); 
+    }
+
+    for (var i = 0; i < 7; i++) {
+        let dias = document.getElementById("dias");
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode(i) );
+        opt.value = i; 
+        dias.appendChild(opt); 
+    }
     
     if (storageAvailable('localStorage')) {
         document.location.hash = "#inicio";
@@ -55,7 +73,56 @@ $( document ).ready(function() {
                 document.getElementById(value).classList.add("d-none");
             });
         }
-    })
+    });
+
+
+    //controlador al cambiar input de edad gestacional
+    $("#fum").on("change", function(){
+        let fum = dayHoy;
+        fum.setTime(Date.parse(document.getElementById("fum").value));
+        fum.setDate(fum.getDate() + 240);
+        document.getElementById("fpp").value = getDate(fum);
+
+        fum.setDate(fum.getDate() - 240);
+        fum = fum.getTime();
+        let fee = dayHoy;
+        fee.setTime(Date.parse(document.getElementById("fee").value));
+        fee = fee.getTime();
+
+        let diff = fee - fum;
+
+        if (diff > 0){
+            let dias = diff/(1000*60*60*24);
+            let semanas = Math.trunc(dias / 7);
+            dias = Math.trunc(dias - (semanas * 7));
+
+            document.getElementById("semanas").value = semanas;
+            document.getElementById("dias").value = dias;
+        }
+        console.log(diff/(1000*60*60*24) );
+        // (1000*60*60*24) --> milisegundos -> segundos -> minutos -> horas -> días
+
+    }).trigger("change");
+
+    $("#fee").on("change", function(){
+        let fum = dayHoy;
+        fum.setTime(Date.parse(document.getElementById("fum").value));
+        fum = fum.getTime();
+        let fee = dayHoy;
+        fee.setTime(Date.parse(document.getElementById("fee").value));
+        fee = fee.getTime();
+
+        let diff = fee - fum;
+
+        if (diff > 0){
+            let dias = diff/(1000*60*60*24);
+            let semanas = Math.trunc(dias / 7);
+            dias = Math.trunc(dias - (semanas * 7));
+
+            document.getElementById("semanas").value = semanas;
+            document.getElementById("dias").value = dias;
+        }
+    });
 });
 
 $(window).on('hashchange', function(){
@@ -79,6 +146,28 @@ $(window).on('hashchange', function(){
         $("#inicio").removeClass("d-none");
     }
 });
+
+
+function getDate(today) {
+    if (typeof today === typeof undefined){
+        today = dayHoy;
+    }
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+  
+    if(dd<10) {
+        dd = '0'+dd
+    } 
+  
+    if(mm<10) {
+        mm = '0'+mm
+    } 
+  
+    today = yyyy + '-' + mm + '-' + dd;
+    return today;
+  }
+  
 
 function storageAvailable(type) {
     var storage;
