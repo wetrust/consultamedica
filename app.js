@@ -94,6 +94,9 @@ $( document ).ready(function() {
         if (diff > 0){
             let dias = diff/(1000*60*60*24);
             let semanas = Math.trunc(dias / 7);
+            
+            document.getElementById("diaciclo").value = dias;
+            
             dias = Math.trunc(dias - (semanas * 7));
 
             document.getElementById("semanas").value = semanas;
@@ -117,6 +120,9 @@ $( document ).ready(function() {
         if (diff > 0){
             let dias = diff/(1000*60*60*24);
             let semanas = Math.trunc(dias / 7);
+            
+            document.getElementById("diaciclo").value = dias;
+
             dias = Math.trunc(dias - (semanas * 7));
 
             document.getElementById("semanas").value = semanas;
@@ -127,23 +133,36 @@ $( document ).ready(function() {
 
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
+    var div = ["#inicio","#consulta","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia"];
+    var div_fecha = ["#consulta","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia"];
+    let d = "d-none";
 
-    if (hash=="#inicio" || hash =="#consulta" || hash=="#ajustepeso" || hash=="#about" || hash=="#tipoExamen" || hash=="#ecoDoppler" || hash=="#ecoObsSegTrim" || hash=="#ecoObsPrimTrim" || hash=="#configuracion" || hash=="#postnatal" || hash=="#recienacido" || hash=="#hipoglicemia" || hash=="#pdfviebox" || hash=="#registro" || hash=="#consentimiento" || hash=="#construccion" || hash=="#ecoGinecologica" || hash=="#ecoObsPrimTrimTrisomia"){
-        $(activeHash).addClass("d-none");
-        $(hash).removeClass("d-none");
+    if (div.includes(hash)){
+        $(activeHash).addClass(d);
+        $(hash).removeClass(d);
         activeHash = hash;
 
-        if (hash=="#tipoExamen" || hash=="#ecoDoppler" || hash=="#ecoObsSegTrim" || hash=="#ecoObsPrimTrim" || hash=="#construccion" || hash=="#ecoGinecologica" || hash=="#ecoObsPrimTrimTrisomia"){
-            document.getElementsByTagName("section")[0].classList.remove("d-none");
+        if (div_fecha.includes(hash)){
+            document.getElementsByTagName("section")[0].classList.remove(d);
             document.getElementById("titulo").innerHTML = titulos[hash];
+
+            if (hash == "#ecoGinecologica"){
+                document.getElementById("semanas").parentElement.parentElement.parentElement.parentElement.classList.add(d);
+                document.getElementById("fpp").parentElement.parentElement.classList.add(d);
+                document.getElementById("diaciclo").parentElement.parentElement.classList.remove(d);
+            }else{
+                document.getElementById("diaciclo").parentElement.parentElement.classList.add(d);
+                document.getElementById("semanas").parentElement.parentElement.parentElement.parentElement.classList.remove(d);
+                document.getElementById("fpp").parentElement.parentElement.classList.remove(d);
+            }
         }
         else{
-            document.getElementsByTagName("section")[0].classList.add("d-none");
+            document.getElementsByTagName("section")[0].classList.add(d);
         }
     }
     else{
-        $(activeHash).addClass("d-none");
-        $("#inicio").removeClass("d-none");
+        $(activeHash).addClass(d);
+        document.getElementById("inicio").classList.remove(d);
     }
 });
 

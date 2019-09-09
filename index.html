@@ -39,7 +39,7 @@
     </style>
 </head>
 <body>
-    <header class="g-verde py-sm-1">
+    <header class="g-verde py-sm-1 shadow">
         <div class="container row mx-auto text-white">
             <div class="col-1">
                 <img class="img-fluid w-100" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
@@ -82,6 +82,12 @@
                                 <select id="dias" class="form-control"></select>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col d-none">
+                    <div class="form-group">
+                        <label>Día del ciclo mestrual</label>
+                        <input type="text" class="form-control" id="diaciclo" readonly>
                     </div>
                 </div>
                 <div class="col">
@@ -356,24 +362,6 @@
         </div>
     </div>
     <div class="container d-none" id="ecoGinecologica">
-        <h5 class="my-2 text-primary"><em>Ecografía Ginecológica</em></h5>
-        <ol class="breadcrumb">
-            <li class="float-right"><a href="#inicio"><strong>Volver</strong></a></li>
-        </ol>
-        <div class="form-group row">
-            <div class="col">
-                <label>Fecha de última mestruación</label>
-            </div>
-            <div class="col">
-                <input class="form-control" type="date" id="fum-ginecologica">
-            </div>
-            <div class="col">
-                <label class="col-form-label">Día del ciclo mestrual</label>
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" name="diaciclo" readonly>
-            </div>
-        </div>
         <div class="form-group row">
             <div class="col-2">
                 <label class="col-form-label">Edad materna</label>
