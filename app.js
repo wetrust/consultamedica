@@ -2,7 +2,7 @@ var daysES=["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "S�
 var monthsES=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
 var dayHoy = new Date();
-var day = ("0" + dayHoy.getDate()).slice(-2);
+var day = ("0" + dayHoy.getUTCDate()).slice(-2);
 var month = ("0" + (dayHoy.getMonth() + 1)).slice(-2);
 var activeHash = "#browser";
 
@@ -20,7 +20,7 @@ var titulos ={
 document.location.hash = "";
 
 $( document ).ready(function() {
-    $("p[name='fechaHora']").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear());
+    $("p[name='fechaHora']").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear());
     document.getElementById("fum").value = getDate();
     document.getElementById("fee").value = getDate();
 
@@ -81,10 +81,10 @@ $( document ).ready(function() {
     $("#fum").on("change", function(){
         let fum = dayHoy;
         fum.setTime(Date.parse(document.getElementById("fum").value));
-        fum.setDate(fum.getDate() + 240);
+        fum.setDate(fum.getUTCDate() + 240);
         document.getElementById("fpp").value = getDate(fum);
 
-        fum.setDate(fum.getDate() - 240);
+        fum.setDate(fum.getUTCDate() - 240);
         fum = fum.getTime();
         let fee = dayHoy;
         fee.setTime(Date.parse(document.getElementById("fee").value));
@@ -103,13 +103,17 @@ $( document ).ready(function() {
             document.getElementById("semanas").value = semanas;
             document.getElementById("dias").value = dias;
         }
+        else{
+            document.getElementById("semanas").value = 0;
+            document.getElementById("dias").value = 0;
+        }
         console.log(diff/(1000*60*60*24) );
         // (1000*60*60*24) --> milisegundos -> segundos -> minutos -> horas -> días
 
     }).trigger("change");
 
     $("#fee").on("change", function(){
-        let fum = dayHoy;
+        let fum = dayHoy; 
         fum.setTime(Date.parse(document.getElementById("fum").value));
         fum = fum.getTime();
         let fee = dayHoy;
@@ -129,6 +133,23 @@ $( document ).ready(function() {
             document.getElementById("semanas").value = semanas;
             document.getElementById("dias").value = dias;
         }
+        else{
+            document.getElementById("semanas").value = 0;
+            document.getElementById("dias").value = 0;
+        }
+    });
+
+    $("#semanas, #dias").on("change", function(){
+        let semanas = parseInt(document.getElementById("semanas").value);
+        let dias = parseInt(document.getElementById("dias").value);
+
+        semanas = 7 * semanas;
+
+        let fee = new Date(document.getElementById("fee").value);
+        fee.setDate(fee.getUTCDate() - (semanas + dias));
+
+        document.getElementById("fum").value = getDate(fee);
+        $("#fum").trigger("change");
     });
 });
 
