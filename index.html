@@ -59,21 +59,21 @@
         </div>
     </div>
     <section class="container d-none">
-        <div class="d-flex justify-content-between align-items-center rounded my-2 px-3 py-1" style="background-color: #e9ecef">
+        <div class="d-flex justify-content-between align-items-center rounded my-2 px-3 py-1 shadow-sm" style="background-color: #e9ecef">
             <h5 class="text-primary mb-0"><em id="titulo"></em></h5>
             <a href="#inicio" id="volver"><strong>Volver</strong></a>
         </div>
-        <div class="card">
+        <div class="card shadow-sm">
             <div class="card-body row py-2">
                 <div class="col">
                     <div class="form-group">
-                        <label>Fecha de última mestruación</label>
-                        <input class="form-control" type="date" id="fum">
+                        <label class="text-secondary">Fecha de última mestruación</label>
+                        <input class="form-control bg-secondary text-white" type="date" id="fum">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label>Edad Gestacional</label>
+                        <label class="text-secondary">Edad Gestacional</label>
                         <div class="row">
                             <div class="col">
                                 <select id="semanas" class="form-control"></select>
@@ -86,20 +86,20 @@
                 </div>
                 <div class="col d-none">
                     <div class="form-group">
-                        <label>Día del ciclo mestrual</label>
+                        <label class="text-secondary">Día del ciclo mestrual</label>
                         <input type="text" class="form-control" id="diaciclo" readonly>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label>Fecha probable de parto</label>
-                        <input type="date" class="form-control" id="fpp" readonly>
+                        <label class="text-secondary">Fecha probable de parto</label>
+                        <input type="date" class="form-control bg-white" id="fpp" readonly>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label>Fecha de exámen (Modificable)</label>
-                        <input class="form-control" type="date" id="fee">
+                        <label class="text-secondary">Fecha de exámen (Modificable)</label>
+                        <input class="form-control bg-secondary text-white" type="date" id="fee">
                     </div>
                 </div>
             </div>
@@ -419,16 +419,9 @@
         </div>
     </div>
     <div class="container d-none" id="consulta">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card mb-3">
+                <div class="card my-3 shadow-sm">
                     <div class="card-body">
-                        <h6 class="card-title text-primary">Cálculo de edad gestacional</h6>
-                        <div class="row">
-                            <div class="col-12 mt-3">
-                                <p class="bg-faded p-2 text-left"><em>Cálculos  de edad gestacional y fecha probable de parto  (FPP) a partir de fecha referida por la paciente, o a la inversa , calculo de  FUM  y FPP a partir de la edad gestacional referida.  Para evaluación de exámenes anteriores el software dispone de la opción &laquo; fecha de examen modificable &raquo;</em></p>
-                            </div>
-                        </div>
+                        <p class="bg-faded p-2 text-left"><em>Cálculos  de edad gestacional y fecha probable de parto  (FPP) a partir de fecha referida por la paciente, o a la inversa , calculo de  FUM  y FPP a partir de la edad gestacional referida.  Para evaluación de exámenes anteriores el software dispone de la opción &laquo; fecha de examen modificable &raquo;</em></p>
                         <hr class="btn-consulta">
                         <h6 class="text-primary">Configuración del sistema y datos de la paciente</h6>
                         <div class="form-group row">
@@ -459,7 +452,7 @@
                                 <h6 class="card-title text-primary text-left mt-2 mb-4 ml-4"> - Información útil para <strong>reporte</strong> de informe y / o graficas (Opcional)</h6>
                             </div>
                             <div class="col-3">
-                                <div class="btn-group" data-toggle="buttons">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-consulta active" id="infadicionalNoController" data-value="0">
                                         <input type="radio" value="0" checked=""> NO
                                     </label>
@@ -538,26 +531,6 @@
                         <hr class="btn-consulta">
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12" style="display:none;">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Seleccione un paciente</h5>
-                            <div class="form-group">
-                                <label >Buscar por ID</label>
-                                <input class="form-control" type="text" placeholder="12345678-9" id="buscarpacienteid">
-                                <small id="idHelp" class="form-text text-muted">Escriba un ID para buscar.</small>
-                            </div>
-                            <div class="form-group">
-                                <label>Buscar por apellido</label>
-                                <input class="form-control" type="text" placeholder="Juanita Pérez" id="buscarpacienteapellido">
-                                <small id="apellidoHelp" class="form-text text-muted">Escriba un apellido para buscar.</small>
-                            </div>
-                            <a class="btn btn-primary" id="loadPacienteSelect" href="#">Continuar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="container d-none" id="postnatal">
         <ol class="breadcrumb">
@@ -792,13 +765,6 @@
         </div>
     </div>
     <div class="container d-none" id="tipoExamen">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#inicio">Inicio</a></li>
-            <li class="breadcrumb-item"><a href="#consulta">Nuevo exámen</a></li>
-            <li class="breadcrumb-item active">Elija tipo de exámen ecográfico</li>
-            <li class="float-right"><a href="#consulta"><strong>Volver</strong></a></li>
-        </ol>
-        <h6 class="text-primary">Módulos de la aplicación</h6>
         <div class="row">
             <div class="col">
                 <div class="card mb-3 card-outline-primary" id="ecografia.ginecologico">
