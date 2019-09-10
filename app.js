@@ -40,6 +40,28 @@ $( document ).ready(function() {
         opt.value = i; 
         dias.appendChild(opt); 
     }
+
+    //cargar frecuencia cardiaca fetal primer trimestre
+    let dias = document.getElementById("fcf-prim");
+    let opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("(+) inicial") );
+    opt.value = "(+) inicial"; 
+    dias.appendChild(opt); 
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("< 90") );
+    opt.value = "< 90"; 
+    dias.appendChild(opt);
+
+    for (var i = 90; i < 171; i++) {
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode(i) );
+        opt.value = i; 
+        dias.appendChild(opt); 
+    }
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("> 170") );
+    opt.value = "> 170"; 
+    dias.appendChild(opt);
     
     if (storageAvailable('localStorage')) {
         document.location.hash = "#inicio";
@@ -150,6 +172,47 @@ $( document ).ready(function() {
 
         document.getElementById("fum").value = getDate(fee);
         $("#fum").trigger("change");
+    });
+
+    //controlador de ecografía de primer trimestre
+    $("#saco-gestacional").on("change", function(){
+        if (document.getElementById("saco-gestacional").value == "no se observa"){
+            document.getElementById("saco.clon").parentElement.parentElement.classList.add("d-none");
+            document.getElementById("saco").parentElement.parentElement.parentElement.classList.add("d-none");
+            document.getElementById("saco").value = 0;
+            $("#saco").trigger("change");
+        }
+        else{
+            document.getElementById("saco.clon").parentElement.parentElement.classList.remove("d-none");
+            document.getElementById("saco").parentElement.parentElement.parentElement.classList.remove("d-none");
+        }
+    });
+
+    $("#embrion").on("change", function(){
+        let optiones = ["no se observa aun", "act. no evidenciable", "no procede"];
+        let embrion = document.getElementById("embrion").value;
+
+        if (optiones.includes(embrion)){
+            document.getElementById("lcn.clon").parentElement.parentElement.classList.add("d-none");
+            document.getElementById("lcn").parentElement.parentElement.parentElement.classList.add("d-none");
+            document.getElementById("lcn").value = 0;
+            $("#lcn").trigger("change");
+        }
+        else{
+            document.getElementById("lcn.clon").parentElement.parentElement.classList.remove("d-none");
+            document.getElementById("lcn").parentElement.parentElement.parentElement.classList.remove("d-none");
+        }
+    });
+});
+
+//controlador de input clones
+//si se escribe en uno, se refleja en otro
+$( document ).ready(function() {
+    $("#lcn").on("change", function(){
+        document.getElementById("lcn.clon").value = document.getElementById("lcn").value;
+    });
+    $("#saco").on("change", function(){
+        document.getElementById("saco.clon").value = document.getElementById("saco").value;
     });
 });
 
