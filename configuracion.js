@@ -234,7 +234,6 @@ $(document).ready(function() {
     $('#nuevoMotivoConfig').on('click', function() {
         $('#motivoConfig .tabla').hide();
         $('#nuevoMotivoConfig').hide();
-        $('#editarMotivoConfig').hide();
         $('#guardarMotivoConfig').show();
         $('#cancelarMotivoConfig').show();
         $('#motivoConfig .formulario').show();
@@ -252,7 +251,6 @@ $(document).ready(function() {
     $('#cancelarMotivoConfig').on('click', function() {
         $("#motivoConfig .tabla").show();
         $('#nuevoMotivoConfig').show();
-        $('#editarMotivoConfig').show();
         $('#guardarMotivoConfig').hide();
         $('#cancelarMotivoConfig').hide();
         $("#motivoConfig .formulario").hide();
@@ -298,7 +296,6 @@ $(document).ready(function() {
     $('#nuevoEcografistaConfig').on('click', function() {
         $('#ecografistaConfig .tabla').hide();
         $('#nuevoEcografistaConfig').hide();
-        $('#editarEcografistaConfig').hide();
         $('#guardarEcografistaConfig').show();
         $('#cancelarEcografistaConfig').show();
         $('#ecografistaConfig .formulario').show();
@@ -307,7 +304,6 @@ $(document).ready(function() {
     $('#cancelarEcografistaConfig').on('click', function() {
         $("#ecografistaConfig .tabla").show();
         $('#nuevoEcografistaConfig').show();
-        $('#editarEcografistaConfig').show();
         $('#guardarEcografistaConfig').hide();
         $('#cancelarEcografistaConfig').hide();
         $("#ecografistaConfig .formulario").hide();
@@ -362,7 +358,6 @@ $(document).ready(function() {
     $('#nuevoNacionalidadConfig').on('click', function() {
         $('#nacionalidadConfig .tabla').hide();
         $('#nuevoNacionalidadConfig').hide();
-        $('#editarNacionalidadConfig').hide();
         $('#guardarNacionalidadConfig').show();
         $('#cancelarNacionalidadConfig').show();
         $('#nacionalidadConfig .formulario').show();
@@ -371,7 +366,6 @@ $(document).ready(function() {
     $('#cancelarNacionalidadConfig').on('click', function() {
         $("#nacionalidadConfig .tabla").show();
         $('#nuevoNacionalidadConfig').show();
-        $('#editarNacionalidadConfig').show();
         $('#guardarNacionalidadConfig').hide();
         $('#cancelarNacionalidadConfig').hide();
         $("#nacionalidadConfig .formulario").hide();
@@ -389,7 +383,6 @@ $(document).ready(function() {
     $('#nuevoPatologiaObstetricaConfig').on('click', function() {
         $('#patologiaObstetricaConfig .tabla').hide();
         $('#nuevoPatologiaObstetricaConfig').hide();
-        $('#editarPatologiaObstetricaConfig').hide();
         $('#guardarPatologiaObstetricaConfig').show();
         $('#cancelarPatologiaObstetricaConfig').show();
         $('#patologiaObstetricaConfig .formulario').show();
@@ -398,7 +391,6 @@ $(document).ready(function() {
     $('#cancelarPatologiaObstetricaConfig').on('click', function() {
         $("#patologiaObstetricaConfig .tabla").show();
         $('#nuevoPatologiaObstetricaConfig').show();
-        $('#editarPatologiaObstetricaConfig').show();
         $('#guardarPatologiaObstetricaConfig').hide();
         $('#cancelarPatologiaObstetricaConfig').hide();
         $("#patologiaObstetricaConfig .formulario").hide();
