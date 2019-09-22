@@ -65,6 +65,8 @@ $( document ).ready(function() {
     
     if (storageAvailable('localStorage')) {
         document.location.hash = "#inicio";
+        checkDatabase();
+		loadDatabase();
     }
 
     //controlador de botones inicio
@@ -177,6 +179,19 @@ $( document ).ready(function() {
     //controlador de ecografía de primer trimestre
     $("#saco-gestacional").on("change", function(){
         if (document.getElementById("saco-gestacional").value == "no se observa"){
+            document.getElementById("saco.clon").parentElement.parentElement.classList.add("d-none");
+            document.getElementById("saco").parentElement.parentElement.parentElement.classList.add("d-none");
+            document.getElementById("saco").value = 0;
+            $("#saco").trigger("change");
+        }
+        else{
+            document.getElementById("saco.clon").parentElement.parentElement.classList.remove("d-none");
+            document.getElementById("saco").parentElement.parentElement.parentElement.classList.remove("d-none");
+        }
+    });
+
+    $("#saco-vitelino").on("change", function(){
+        if (document.getElementById("saco-vitelino").value == "no se observa"){
             document.getElementById("saco.clon").parentElement.parentElement.classList.add("d-none");
             document.getElementById("saco").parentElement.parentElement.parentElement.classList.add("d-none");
             document.getElementById("saco").value = 0;

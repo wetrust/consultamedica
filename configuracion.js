@@ -8,8 +8,8 @@ function haveDatabase(){
 function checkIntegrity(){
 	let db = JSON.parse(localStorage["configuracion"]);
 	
-	let tables = ['nacionalidad','MotivoExamen', 'LugarControlPrenatal', 'profesional', 'ciudad', 'profRef', 'PatologiaObstetrica', 'membrete'];
-	let baseTables = JSON.parse('{"nacionalidad":[],"profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}');
+	let tables = ['nacionalidad','MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete'];
+	let baseTables = JSON.parse('{"nacionalidad":[],"MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}');
 	
 	for (var j = 0; j < tables.length; j++) {
 		let table = false;
@@ -25,26 +25,21 @@ function checkIntegrity(){
 		}
 	}
 	
-	localStorage["configuracion"] = JSON.stringify(db);
-	
+	localStorage["configuracion"] = JSON.stringify(db);	
 }
 
 function makeDatabase(){
-	var db = '{"nacionalidad": [], "profRef":[],"ciudad":[],"MotivoExamen":[],"LugarControlPrenatal":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}';
+	var db = '{"nacionalidad": [], "MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}';
 	localStorage["configuracion"] = db;
 }
 
 function checkDatabase(){
-	if (window.localStorage) {
-		if (haveDatabase() == true){
-			checkIntegrity();
-		}
-		else{
-			makeDatabase();
-		}
-		return true;
+	if (haveDatabase() == true){
+		checkIntegrity();
 	}
-	return false;
+	else{
+		makeDatabase();
+	}
 }
 
 function loadDatabase(){
@@ -68,24 +63,6 @@ function loadDatabase(){
 				});
 			}
 			
-			$('#Lugar-examen').empty();
-			$('#LugarConfigTable').empty();
-			if (configuracion.LugarControlPrenatal.length > 0){
-				$.each(configuracion.LugarControlPrenatal, function (i, item) {
-				    $('#Lugar-examen').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#LugarConfigTable').append(fila);
-					
-				});
-				$('#eliminarLugarConfig').css("display","block");
-				//manejador de click sobre las tablas de configuración
-				$('#LugarConfigTable tr').on('click',function(){
-					activateTr(this);
-				});
-			}
 			$('#ecografista').empty();
 			$('#EcografistaConfigTable').empty();
 			if (configuracion.profesional.length > 0){
@@ -126,42 +103,6 @@ function loadDatabase(){
 				});
 			}
 			
-			$('#procedencia').empty();
-			$('#CiudadConfigTable').empty();
-			if (configuracion.ciudad.length > 0){
-				$.each(configuracion.ciudad, function (i, item) {
-				    $('#procedencia').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#CiudadConfigTable').append(fila);
-					
-				});
-				$('#eliminarCiudadConfig').css("display","block");
-				$('#CiudadConfigTable tr').on('click',function(){
-					activateTr(this);
-				});
-			}
-			
-			$('#profReferente').empty();
-			$('#profRefConfigTable').empty();
-			if (configuracion.profRef.length > 0){
-				$.each(configuracion.profRef, function (i, item) {
-				    $('#profReferente').append($('<option>', { 
-					value: item.id,
-					text : item.nombre
-				    }));
-					var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-					$('#profRefConfigTable').append(fila);
-					
-				});
-				$('#eliminarprofRefConfig').css("display","block");
-				$('#profRefConfigTable tr').on('click',function(){
-					activateTr(this);
-				});
-			}
-			
 			$('#patologiaObstetricaUno').empty();
 			$('#PatologiaObstetricaConfigTable').empty();
 			if (configuracion.PatologiaObstetrica.length > 0){
@@ -198,50 +139,6 @@ function saveMotivoExamenLocalStorage(){
                         	configuracion.MotivoExamen.push(aRR);
 			$('#eliminarMotivoConfig').css("display","block");
 			$('#motivoInput').val("");
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-			loadDatabase();
-		}
-	}
-}
-
-function saveprofRefLocalStorage(){
-
-		if (window.localStorage) {
-		if (localStorage.configuracion != null) {
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			$('#profReferente').html("");
-			$('#profRefConfigTable').html("");
-		
-				var aRR = {id:0, nombre:"Doe"};
-				aRR["id"] = configuracion.profRef.length +1;
-				aRR["nombre"] = $('#profRefInput').val();
-				
-                        	configuracion.profRef.push(aRR);
-			$('#eliminarprofRefConfig').css("display","block");
-			$('#profRefInput').val("");
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-			loadDatabase();
-		}
-	}
-}
-
-function saveLugarExamenLocalStorage(){
-	
-	if (window.localStorage) {
-		if (localStorage.configuracion != null) {
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			$('#Lugar-examen').html("");
-			$('#LugarConfigTable').html("");
-		
-				var aRR = {id:0, nombre:"Doe"};
-				aRR["id"] = configuracion.LugarControlPrenatal.length +1;
-				aRR["nombre"] = $('#LugarInput').val();
-				
-                        	configuracion.LugarControlPrenatal.push(aRR);
-			$('#eliminarLugarConfig').css("display","block");
-			$('#LugarInput').val("");
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 			loadDatabase();
 		}
@@ -292,28 +189,6 @@ function saveNacionalidadConfigLocalStorage(){
 	}
 }
 
-function saveCiudadExamenLocalStorage(){
-	
-	if (window.localStorage) {
-		if (localStorage.configuracion != null) {
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			$('#procedencia').html("");
-			$('#CiudadConfigTable').html("");
-		
-				var aRR = {id:0, nombre:"Doe"};
-				aRR["id"] = configuracion.ciudad.length +1;
-				aRR["nombre"] = $('#CiudadInput').val();
-				
-                        	configuracion.ciudad.push(aRR);
-			$('#eliminarCiudadConfig').css("display","block");
-			$('#CiudadInput').val("");
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-			loadDatabase();
-		}
-	}
-}
-
 function savePatologiaObstetricaExamenLocalStorage(){
 	
 	if (window.localStorage) {
@@ -345,143 +220,183 @@ function activateTr(element){
 
 //manejadore de botones
 $(document).ready(function(){
-$( '#eliminarMotivoConfig').on('click', function() {
-	var getElement = false;
-	var contador = 0
-	$.each( $('#MotivoConfigTable').children(), function( i, val ) {
-		if ($( val ).hasClass( 'table-active') == true){
-			getElement = true;
-			var nombre = $(val).children('td').html();
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			//construir un nuevo array de objetos
-			var MotivoExamen = [];
-			$.each(configuracion.MotivoExamen, function (i, item) {	
-				if (item.nombre != nombre){
-					var aRR = {id:0, nombre:"Doe"};
-					aRR["id"] =contador +1;
-					aRR["nombre"] = item.nombre;
-				
-                        		MotivoExamen.push(aRR);
-					contador++;
-				}
-			});
-			
-			configuracion.MotivoExamen = MotivoExamen;
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-		}
+	$( '#nuevoMotivoConfig').on('click', function() {
+		$('#motivoConfig .tabla').hide();
+		$('#nuevoMotivoConfig').hide();
+		$('#editarMotivoConfig').hide();
+		$('#guardarMotivoConfig').show();
+		$('#cancelarMotivoConfig').show();
+		$('#motivoConfig .formulario').show();
+	 });
+	
+	$('#guardarMotivoConfig').on('click', function(){
+		saveMotivoExamenLocalStorage();
+		$("#motivoConfig .tabla").show();
+		$('#nuevoMotivoConfig').show();
+		$('#guardarMotivoConfig').hide();
+		$('#cancelarMotivoConfig').hide();
+		$("#motivoConfig .formulario").hide();
 	});
 	
-	if (getElement == false){
-		window.alert("haga click sobre un elemento para eliminar");
-	}
-	else{
-		loadDatabase();
-	}
- });
-$( '#eliminarLugarConfig').on('click', function() {
-	var getElement = false;
-	var contador = 0
-	$.each( $('#LugarConfigTable').children(), function( i, val ) {
-		if ($( val ).hasClass( 'table-active') == true){
-			getElement = true;
-			var nombre = $(val).children('td').html();
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			//construir un nuevo array de objetos
-			var LugarControlPrenatal = [];
-			$.each(configuracion.LugarControlPrenatal, function (i, item) {	
-				if (item.nombre != nombre){
-					var aRR = {id:0, nombre:"Doe"};
-					aRR["id"] =contador +1;
-					aRR["nombre"] = item.nombre;
-				
-                        		LugarControlPrenatal.push(aRR);
-					contador++;
-				}
-			});
-			
-			configuracion.LugarControlPrenatal = LugarControlPrenatal;
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-		}
-	});
-	
-	if (getElement == false){
-		window.alert("haga click sobre un elemento para eliminar");
-	}
-	else{
-		loadDatabase();
-	}
- });
-$( '#eliminarEcografistaConfig').on('click', function() {
-	var getElement = false;
-	var contador = 0
-	$.each( $('#EcografistaConfigTable').children(), function( i, val ) {
-		if ($( val ).hasClass( 'table-active') == true){
-			getElement = true;
-			var nombre = $(val).children('td').html();
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			//construir un nuevo array de objetos
-			var profesional = [];
-			$.each(configuracion.profesional, function (i, item) {	
-				if (item.nombre != nombre){
-					var aRR = {id:0, nombre:"Doe"};
-					aRR["id"] =contador +1;
-					aRR["nombre"] = item.nombre;
-				
-                        		profesional.push(aRR);
-					contador++;
-				}
-			});
-			
-			configuracion.profesional = profesional;
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-		}
-	});
-	
-	if (getElement == false){
-		window.alert("haga click sobre un elemento para eliminar");
-	}
-	else{
-		loadDatabase();
-	}
- });
+	$( '#cancelarMotivoConfig').on('click', function() {
+		$("#motivoConfig .tabla").show();
+		$('#nuevoMotivoConfig').show();
+		$('#editarMotivoConfig').show();
+		$('#guardarMotivoConfig').hide();
+		$('#cancelarMotivoConfig').hide();
+		$("#motivoConfig .formulario").hide();
+	 });
 
-$( '#eliminarCiudadConfig').on('click', function() {
-	var getElement = false;
-	var contador = 0
-	$.each( $('#CiudadConfigTable').children(), function( i, val ) {
-		if ($( val ).hasClass( 'table-active') == true){
-			getElement = true;
-			var nombre = $(val).children('td').html();
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			//construir un nuevo array de objetos
-			var ciudad = [];
-			$.each(configuracion.ciudad, function (i, item) {	
-				if (item.nombre != nombre){
-					var aRR = {id:0, nombre:"Doe"};
-					aRR["id"] =contador +1;
-					aRR["nombre"] = item.nombre;
+	 $( '#eliminarMotivoConfig').on('click', function() {
+		var getElement = false;
+		var contador = 0
+		$.each( $('#MotivoConfigTable').children(), function( i, val ) {
+			if ($( val ).hasClass( 'table-active') == true){
+				getElement = true;
+				var nombre = $(val).children('td').html();
+				var configuracion = JSON.parse(localStorage["configuracion"]);
 				
-                        		ciudad.push(aRR);
-					contador++;
-				}
-			});
-			
-			configuracion.ciudad = ciudad;
-			localStorage["configuracion"] = JSON.stringify(configuracion);
+				//construir un nuevo array de objetos
+				var MotivoExamen = [];
+				$.each(configuracion.MotivoExamen, function (i, item) {	
+					if (item.nombre != nombre){
+						var aRR = {id:0, nombre:"Doe"};
+						aRR["id"] =contador +1;
+						aRR["nombre"] = item.nombre;
+					
+									MotivoExamen.push(aRR);
+						contador++;
+					}
+				});
+				
+				configuracion.MotivoExamen = MotivoExamen;
+				localStorage["configuracion"] = JSON.stringify(configuracion);
+			}
+		});
+		
+		if (getElement == false){
+			window.alert("haga click sobre un elemento para eliminar");
 		}
-	});
+		else{
+			loadDatabase();
+		}
+	 });
 	
-	if (getElement == false){
-		window.alert("haga click sobre un elemento para eliminar");
-	}
-	else{
-		loadDatabase();
-	}
- });
+	$( '#nuevoEcografistaConfig').on('click', function() {
+		$('#ecografistaConfig .tabla').hide();
+		$('#nuevoEcografistaConfig').hide();
+		$('#editarEcografistaConfig').hide();
+		$('#guardarEcografistaConfig').show();
+		$('#cancelarEcografistaConfig').show();
+		$('#ecografistaConfig .formulario').show();
+	 });
+	
+	$( '#cancelarEcografistaConfig').on('click', function() {
+		$("#ecografistaConfig .tabla").show();
+		$('#nuevoEcografistaConfig').show();
+		$('#editarEcografistaConfig').show();
+		$('#guardarEcografistaConfig').hide();
+		$('#cancelarEcografistaConfig').hide();
+		$("#ecografistaConfig .formulario").hide();
+	 });
+	
+	$( '#guardarEcografistaConfig').on('click', function() {
+		saveEcografistaExamenLocalStorage();
+		$("#ecografistaConfig .tabla").show();
+		$('#nuevoEcografistaConfig').show();
+		$('#guardarEcografistaConfig').hide();
+		$('#cancelarEcografistaConfig').hide();
+		$("#ecografistaConfig .formulario").hide();
+	 });
+
+	 $( '#eliminarEcografistaConfig').on('click', function() {
+		var getElement = false;
+		var contador = 0
+		$.each( $('#EcografistaConfigTable').children(), function( i, val ) {
+			if ($( val ).hasClass( 'table-active') == true){
+				getElement = true;
+				var nombre = $(val).children('td').html();
+				var configuracion = JSON.parse(localStorage["configuracion"]);
+				
+				//construir un nuevo array de objetos
+				var profesional = [];
+				$.each(configuracion.profesional, function (i, item) {	
+					if (item.nombre != nombre){
+						var aRR = {id:0, nombre:"Doe"};
+						aRR["id"] =contador +1;
+						aRR["nombre"] = item.nombre;
+					
+									profesional.push(aRR);
+						contador++;
+					}
+				});
+				
+				configuracion.profesional = profesional;
+				localStorage["configuracion"] = JSON.stringify(configuracion);
+			}
+		});
+		
+		if (getElement == false){
+			window.alert("haga click sobre un elemento para eliminar");
+		}
+		else{
+			loadDatabase();
+		}
+	 });
+	
+	 $( '#nuevoNacionalidadConfig').on('click', function() {
+		$('#nacionalidadConfig .tabla').hide();
+		$('#nuevoNacionalidadConfig').hide();
+		$('#editarNacionalidadConfig').hide();
+		$('#guardarNacionalidadConfig').show();
+		$('#cancelarNacionalidadConfig').show();
+		$('#nacionalidadConfig .formulario').show();
+	 });
+	
+	$( '#cancelarNacionalidadConfig').on('click', function() {
+		$("#nacionalidadConfig .tabla").show();
+		$('#nuevoNacionalidadConfig').show();
+		$('#editarNacionalidadConfig').show();
+		$('#guardarNacionalidadConfig').hide();
+		$('#cancelarNacionalidadConfig').hide();
+		$("#nacionalidadConfig .formulario").hide();
+	 });
+	
+	$( '#guardarNacionalidadConfig').on('click', function() {
+		saveNacionalidadConfigLocalStorage();
+		$("#nacionalidadConfig .tabla").show();
+		$('#nuevoNacionalidadConfig').show();
+		$('#guardarNacionalidadConfig').hide();
+		$('#cancelarNacionalidadConfig').hide();
+		$("#nacionalidadConfig .formulario").hide();
+	 });
+	
+	$( '#nuevoPatologiaObstetricaConfig').on('click', function() {
+		$('#patologiaObstetricaConfig .tabla').hide();
+		$('#nuevoPatologiaObstetricaConfig').hide();
+		$('#editarPatologiaObstetricaConfig').hide();
+		$('#guardarPatologiaObstetricaConfig').show();
+		$('#cancelarPatologiaObstetricaConfig').show();
+		$('#patologiaObstetricaConfig .formulario').show();
+	 });
+	
+	$( '#cancelarPatologiaObstetricaConfig').on('click', function() {
+		$("#patologiaObstetricaConfig .tabla").show();
+		$('#nuevoPatologiaObstetricaConfig').show();
+		$('#editarPatologiaObstetricaConfig').show();
+		$('#guardarPatologiaObstetricaConfig').hide();
+		$('#cancelarPatologiaObstetricaConfig').hide();
+		$("#patologiaObstetricaConfig .formulario").hide();
+	 });
+	
+	$( '#guardarPatologiaObstetricaConfig').on('click', function() {
+		savePatologiaObstetricaExamenLocalStorage();
+		$("#patologiaObstetricaConfig .tabla").show();
+		$('#nuevoPatologiaObstetricaConfig').show();
+		$('#guardarPatologiaObstetricaConfig').hide();
+		$('#cancelarPatologiaObstetricaConfig').hide();
+		$("#patologiaObstetricaConfig .formulario").hide();
+	 });
 
 $( '#eliminarPatologiaObstetricaConfig').on('click', function() {
 	var getElement = false;
@@ -506,41 +421,6 @@ $( '#eliminarPatologiaObstetricaConfig').on('click', function() {
 			});
 			
 			configuracion.PatologiaObstetrica = PatologiaObstetrica;
-			localStorage["configuracion"] = JSON.stringify(configuracion);
-		}
-	});
-	
-	if (getElement == false){
-		window.alert("haga click sobre un elemento para eliminar");
-	}
-	else{
-		loadDatabase();
-	}
- });
-
-$( '#eliminarprofRefConfig').on('click', function() {
-	var getElement = false;
-	var contador = 0
-	$.each( $('#profRefConfigTable').children(), function( i, val ) {
-		if ($( val ).hasClass( 'table-active') == true){
-			getElement = true;
-			var nombre = $(val).children('td').html();
-			var configuracion = JSON.parse(localStorage["configuracion"]);
-			
-			//construir un nuevo array de objetos
-			var profRef = [];
-			$.each(configuracion.profRef, function (i, item) {	
-				if (item.nombre != nombre){
-					var aRR = {id:0, nombre:"Doe"};
-					aRR["id"] =contador +1;
-					aRR["nombre"] = item.nombre;
-				
-                        		profRef.push(aRR);
-					contador++;
-				}
-			});
-			
-			configuracion.profRef = profRef;
 			localStorage["configuracion"] = JSON.stringify(configuracion);
 		}
 	});
