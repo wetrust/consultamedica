@@ -2465,32 +2465,29 @@
         </div>
     </div>
     <div class="container d-none" id="configuracion">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#inicio">Inicio</a>
-            </li>
-            <li class="breadcrumb-item active">Configuración</li>
-            <li class="float-right"><a href="#consulta"><strong>Volver</strong></a></li>
-        </ol>
-        <hr>
-        <ul class="nav nav-tabs" role="tablist" id="configTab">
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#membreteConfig" role="tab"><strong>Membrete Institucional</strong></a>
+        <div class="d-flex justify-content-between align-items-center rounded my-2 px-3 py-1 shadow-sm" style="background-color: #e9ecef">
+            <h5 class="text-primary mb-0"><em>Configuración</em></h5>
+            <a href="#consulta"><strong>Volver</strong></a>
+        </div>
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item ml-sm-3">
+                <a class="nav-link bg-gris text-white active" data-toggle="tab" href="#membreteConfig" role="tab">Membrete Institucional</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#motivoConfig" role="tab"><strong>Motivo Exámen</strong></a>
+                <a class="nav-link bg-gris text-white" data-toggle="tab" href="#motivoConfig" role="tab">Motivo Exámen</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#patologiaObstetricaConfig" role="tab"><strong>Patología Obstétrica Relevante</strong></a>
+                <a class="nav-link bg-gris text-white" data-toggle="tab" href="#patologiaObstetricaConfig" role="tab">Patología Obstétrica Relevante</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#nacionalidadConfig" role="tab"><strong>Nacionalidad</strong></a>
+                <a class="nav-link bg-gris text-white" data-toggle="tab" href="#nacionalidadConfig" role="tab">Nacionalidad</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#ecografistaConfig" role="tab"><strong>Profesional Examinador</strong></a>
+                <a class="nav-link bg-gris text-white" data-toggle="tab" href="#ecografistaConfig" role="tab">Profesional Examinador</a>
             </li>
         </ul>
-        <div class="tab-content" id="configTabContent">
-            <div class="tab-pane fade show active pt-2" id="membreteConfig" role="tabpanel">
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="membreteConfig" role="tabpanel">
                 <div class="card tabla">
                     <div class="card-body">
                         <div class="row mt-2 mb-2">
@@ -2507,52 +2504,52 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade pt-2" id="patologiaObstetricaConfig" role="tabpanel">
-                <ul class="nav m-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="nuevoPatologiaObstetricaConfig">Nuevo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="editarPatologiaObstetricaConfig" style="display:none;"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="guardarPatologiaObstetricaConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="cancelarPatologiaObstetricaConfig" style="display:none;"> Cancelar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="eliminarPatologiaObstetricaConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                    </li>
-                </ul>
-                <div class="card tabla">
+            <div class="tab-pane fade" id="patologiaObstetricaConfig" role="tabpanel">
+                <div class="card">
                     <div class="card-body">
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th style="width: 200px;">#</th>
-                                    <th>Patología Obstétrica Relevante</th>
-                                </tr>
-                            </thead>
-                            <tbody id="PatologiaObstetricaConfigTable">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card formulario" style="display:none;">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <h5>Patología Obstétrica Relevante</h5>
+                        <ul class="nav m-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="nuevoPatologiaObstetricaConfig">Nuevo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="editarPatologiaObstetricaConfig" style="display:none;"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="guardarPatologiaObstetricaConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="cancelarPatologiaObstetricaConfig" style="display:none;"> Cancelar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="eliminarPatologiaObstetricaConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
+                            </li>
+                        </ul>
+                        <div class="tabla">
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 200px;">#</th>
+                                        <th>Patología Obstétrica Relevante</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="PatologiaObstetricaConfigTable">
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="form-group">
-                            <label>Patologia Obstetrica</label>
-                            <input type="text" class="form-control" id="PatologiaObstetricaInput" aria-describedby="lugarInputHelp">
-                            <small id="lugarInputHelp" class="form-text text-muted">Lugar de control prenatal.</small>
+                        <div class="formulario" style="display:none;">
+                            <div class="form-group">
+                                <h5>Patología Obstétrica Relevante</h5>
+                            </div>
+                            <div class="form-group">
+                                <label>Patologia Obstetrica</label>
+                                <input type="text" class="form-control" id="PatologiaObstetricaInput" aria-describedby="lugarInputHelp">
+                                <small id="lugarInputHelp" class="form-text text-muted">Lugar de control prenatal.</small>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade pt-2" id="motivoConfig" role="tabpanel">
+            <div class="tab-pane fade" id="motivoConfig" role="tabpanel">
                 <ul class="nav m-3">
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="nuevoMotivoConfig">Nuevo</a>
@@ -2597,7 +2594,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade pt-2" id="ecografistaConfig" role="tabpanel">
+            <div class="tab-pane fade" id="ecografistaConfig" role="tabpanel">
                 <ul class="nav m-3">
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="nuevoEcografistaConfig">Nuevo</a>
@@ -2642,7 +2639,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade pt-2" id="nacionalidadConfig" role="tabpanel">
+            <div class="tab-pane fade" id="nacionalidadConfig" role="tabpanel">
                 <ul class="nav m-3">
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="nuevoNacionalidadConfig">Nuevo</a>
