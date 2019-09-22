@@ -176,6 +176,15 @@ $( document ).ready(function() {
         $("#fum").trigger("change");
     });
 
+    //controlador de botones para ver la configuración
+    $('#configSiController').on('click', function(){
+        document.location.hash = "configuracion";
+    });
+    
+    $('#configSiController').on('focusout', function(){
+        $('#configNoController').button('toggle');
+    });
+
     //controlador de ecografía de primer trimestre
     $("#saco-gestacional").on("change", function(){
         if (document.getElementById("saco-gestacional").value == "no se observa"){
