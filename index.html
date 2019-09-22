@@ -440,67 +440,40 @@
                             </div>
                         </div>
                 <div class="accordion" id="consulta-acordeon">
-                    <div class="card">
+                    <div class="card border mb-3">
                         <div class="card-header" id="acordeonOne">
                             <h2 class="mb-0"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#acordeonContenedorOne" aria-expanded="true" aria-controls="acordeonContenedorOne">Información útil para <strong>reporte</strong> de informe y / o graficas (Opcional)</button></h2>
                         </div>      
-                        <div id="acordeonContenedorOne" class="collapse show" aria-labelledby="acordeonOne" data-parent="#consulta-acordeon">
+                        <div id="acordeonContenedorOne" class="collapse" aria-labelledby="acordeonOne" data-parent="#consulta-acordeon">
                             <div class="card-body">
                                 <div class="row mt-2 mb-2">
                                     <div class="col-2">
-                                        <label >Nombre paciente</label>
+                                        <label>Nombre paciente</label>
                                     </div>
-                                            <div class="col-4">
-                                                <input class="form-control gris-claro" type="text" id="nombre-paciente" placeholder="Paciente de Prueba">
-                                            </div>
-                                            <div class="col-2">
-                                                <label >Motivo del exámen</label>
-                                            </div>
-                                            <div class="col-4">
-                                                <select id="motivo-examen" class="form-control gris-claro">
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-2 mb-2">
-                                            <div class="col-2">
-                                                <label >Patología Obstétrica Relevante</label>
-                                            </div>
-                                            <div class="col-4">
-                                                <select id="patologiaObstetricaUno" class="form-control gris-claro">
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-2 mb-2">
-                                            <div class="col-2">
-                                                <label >Edad materna</label>
-                                            </div>
-                                            <div class="col-4">
-                                                <select name="edad_materna" class="form-control gris-claro"></select>
-                                            </div>
-                                            <div class="col-2 d-none">
-                                                <label >Profesional<br>Referente</label>
-                                            </div>
-                                            <div class="col-4 d-none">
-                                                <select id="profReferente" class="form-control">
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-2 mb-2 d-none">
-                                            <div class="col-2">
-                                                <label >Procedencia (Ciudad)</label>
-                                            </div>
-                                            <div class="col-4">
-                                                <select id="procedencia" class="form-control">
-                                                </select>
-                                            </div>
-                                            <div class="col-2 d-none">
-                                                <label >Lugar de control prenatal</label>
-                                            </div>
-                                            <div class="col-4 d-none">
-                                                <select id="Lugar-examen" class="form-control">
-                                                </select>
-                                            </div>
-                                        </div>
+                                    <div class="col-4">
+                                        <input class="form-control gris-claro" type="text" id="nombre-paciente" placeholder="Paciente de Prueba">
+                                    </div>
+                                    <div class="col-2">
+                                        <label>Motivo del exámen</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <select id="motivo-examen" class="form-control gris-claro"></select>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                    <div class="col-2">
+                                        <label>Patología Obstétrica Relevante</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <select id="patologiaObstetricaUno" class="form-control gris-claro"></select>
+                                    </div>
+                                    <div class="col-2">
+                                        <label >Edad materna</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <select name="edad_materna" class="form-control gris-claro"></select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2515,15 +2488,6 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#ecografistaConfig" role="tab"><strong>Profesional Examinador</strong></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link d-none" data-toggle="tab" href="#profRefConfig" role="tab">Profesional Referente</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link d-none" data-toggle="tab" href="#ciudadConfig" role="tab">Procedencia (Ciudad)</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link d-none" data-toggle="tab" href="#LugarConfig" role="tab">Lugar Control Prenatal</a>
-            </li>
         </ul>
         <div class="tab-content" id="configTabContent">
             <div class="tab-pane fade show active pt-2" id="membreteConfig" role="tabpanel">
@@ -2588,95 +2552,6 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade pt-2" id="profRefConfig" role="tabpanel">
-                <ul class="nav m-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="nuevoprofRefConfig">Nuevo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="editarprofRefConfig" style="display:none;"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="guardarprofRefConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="cancelarprofRefConfig" style="display:none;"> Cancelar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="eliminarprofRefConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                    </li>
-                </ul>
-                <div class="card tabla">
-                    <div class="card-body">
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th style="width: 285px;">#</th>
-                                    <th>Profesional referente a exámen</th>
-                                </tr>
-                            </thead>
-                            <tbody id="profRefConfigTable">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card formulario" style="display:none;">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <h5>Profesional referente</h5>
-                        </div>
-                        <div class="form-group">
-                            <label>Profesional Referente</label>
-                            <input type="text" class="form-control" id="profRefInput">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade pt-2" id="LugarConfig" role="tabpanel">
-                <ul class="nav m-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="nuevoLugarConfig">Nuevo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="editarLugarConfig" style="display:none;"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="guardarLugarConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="cancelarLugarConfig" style="display:none;"> Cancelar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="eliminarLugarConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                    </li>
-                </ul>
-                <div class="card tabla">
-                    <div class="card-body">
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th style="width: 220px;">#</th>
-                                    <th>Lugar de control prenatal</th>
-                                </tr>
-                            </thead>
-                            <tbody id="LugarConfigTable">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card formulario" style="display:none;">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <h5>Nuevo Lugar</h5>
-                        </div>
-                        <div class="form-group">
-                            <label>lugar</label>
-                            <input type="text" class="form-control" id="LugarInput" aria-describedby="ciudadInputHelp">
-                            <small id="ciudadInputHelp" class="form-text text-muted">ciudad o pueblo.</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="tab-pane fade pt-2" id="motivoConfig" role="tabpanel">
                 <ul class="nav m-3">
                     <li class="nav-item">
@@ -2718,50 +2593,6 @@
                             <label>Motivo de exámen</label>
                             <input type="text" class="form-control" id="motivoInput" aria-describedby="motivoInputHelp">
                             <small id="motivoInputHelp" class="form-text text-muted">Motivo de exámen o control ecográfico.</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade pt-2" id="ciudadConfig" role="tabpanel">
-                <ul class="nav m-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="nuevoCiudadConfig">Nuevo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="editarCiudadConfig" style="display:none;"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="guardarCiudadConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="cancelarCiudadConfig" style="display:none;"> Cancelar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="eliminarCiudadConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                    </li>
-                </ul>
-                <div class="card tabla">
-                    <div class="card-body">
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th style="width: 116px;">#</th>
-                                    <th>Procedencia (Ciudad)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="CiudadConfigTable">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card formulario" style="display:none;">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <h5>Nueva Procedencia (Ciudad)</h5>
-                        </div>
-                        <div class="form-group">
-                            <label>Procedencia (Ciudad)</label>
-                            <input type="text" class="form-control" id="CiudadInput">
                         </div>
                     </div>
                 </div>
