@@ -2539,127 +2539,103 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="motivoConfig" role="tabpanel">
-                <ul class="nav m-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="nuevoMotivoConfig">Nuevo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="guardarMotivoConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="cancelarMotivoConfig" style="display:none;"> Cancelar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="eliminarMotivoConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                    </li>
-                </ul>
-                <div class="card tabla">
+                <div class="card">
                     <div class="card-body">
-                        <table class="table table-hover table-bordered">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th style="width: 100px;">#</th>
-                                    <th>Motivo de exámen ecográfico</th>
-                                </tr>
-                            </thead>
-                            <tbody id="MotivoConfigTable">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card formulario" style="display:none;">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <h5>Nuevo motivo de exámen</h5>
+                        <div class="btn-group mb-3" role="group">
+                            <button type="button" class="btn btn-primary" id="nuevoMotivoConfig">Nuevo</button>
+                            <button type="button" class="btn btn-primary" id="guardarMotivoConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
+                            <button type="button" class="btn btn-secondary" id="cancelarMotivoConfig" style="display:none;"> Cancelar</button>
+                            <button type="button" class="btn btn-secondary" id="eliminarMotivoConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</button>
                         </div>
-                        <div class="form-group">
-                            <label>Motivo de exámen</label>
-                            <input type="text" class="form-control" id="motivoInput" aria-describedby="motivoInputHelp">
-                            <small id="motivoInputHelp" class="form-text text-muted">Motivo de exámen o control ecográfico.</small>
+                        <div class="tabla">
+                            <table class="table table-hover table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th style="width: 100px;">#</th>
+                                        <th>Motivo de exámen ecográfico</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="MotivoConfigTable">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="formulario" style="display:none;">
+                            <div class="form-group">
+                                <h5>Nuevo motivo de exámen</h5>
+                            </div>
+                            <div class="form-group">
+                                <label>Motivo de exámen</label>
+                                <input type="text" class="form-control" id="motivoInput" aria-describedby="motivoInputHelp">
+                                <small id="motivoInputHelp" class="form-text text-muted">Motivo de exámen o control ecográfico.</small>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="tab-pane fade" id="ecografistaConfig" role="tabpanel">
-                <ul class="nav m-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="nuevoEcografistaConfig">Nuevo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="guardarEcografistaConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="cancelarEcografistaConfig" style="display:none;"> Cancelar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="eliminarEcografistaConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                    </li>
-                </ul>
-                <div class="card tabla">
+                <div class="card">
                     <div class="card-body">
-                        <table class="table table-hover table-bordered">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th style="width: 400px;">#</th>
-                                    <th>Profesional Examinador (Ecografista)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="EcografistaConfigTable">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card formulario" style="display:none;">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <h5>Nuevo Ecografista</h5>
+                        <div class="btn-group mb-3" role="group">
+                            <button type="button" class="btn btn-primary" id="nuevoEcografistaConfig">Nuevo</button>
+                            <button type="button" class="btn btn-primary" id="guardarEcografistaConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
+                            <button type="button" class="btn btn-secondary" id="cancelarEcografistaConfig" style="display:none;"> Cancelar</button>
+                            <button type="button" class="btn btn-secondary" id="eliminarEcografistaConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</button>
                         </div>
-                        <div class="form-group">
-                            <label>Ecografista</label>
-                            <input type="text" class="form-control" id="ecografistaInput" aria-describedby="ecografistaInputHelp">
-                            <small id="ecografistaInputHelp" class="form-text text-muted">Médico ecografista.</small>
+                        <div class="tabla">
+                            <table class="table table-hover table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th style="width: 400px;">#</th>
+                                        <th>Profesional Examinador (Ecografista)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="EcografistaConfigTable">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="formulario" style="display:none;">
+                            <div class="form-group">
+                                <h5>Nuevo Ecografista</h5>
+                            </div>
+                            <div class="form-group">
+                                <label>Ecografista</label>
+                                <input type="text" class="form-control" id="ecografistaInput" aria-describedby="ecografistaInputHelp">
+                                <small id="ecografistaInputHelp" class="form-text text-muted">Médico ecografista.</small>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="tab-pane fade" id="nacionalidadConfig" role="tabpanel">
-                <ul class="nav m-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="nuevoNacionalidadConfig">Nuevo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="guardarNacionalidadConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="cancelarNacionalidadConfig" style="display:none;"> Cancelar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="eliminarNacionalidadConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</a>
-                    </li>
-                </ul>
-                <div class="card tabla">
+                <div class="card">
                     <div class="card-body">
-                        <table class="table table-hover table-bordered">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th style="width: 300px;">#</th>
-                                    <th>Nacionalidad</th>
-                                </tr>
-                            </thead>
-                            <tbody id="NacionalidadConfigTable">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card formulario" style="display:none;">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <h5>Nueva Nacionalidad</h5>
+                        <div class="btn-group mb-3" role="group">
+                            <button type="button" class="btn btn-primary" id="nuevoNacionalidadConfig">Nuevo</button>
+                            <button type="button" class="btn btn-primary" id="guardarNacionalidadConfig" style="display:none;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
+                            <button type="button" class="btn btn-secondary" id="cancelarNacionalidadConfig" style="display:none;"> Cancelar</button>
+                            <button type="button" class="btn btn-secondary" id="eliminarNacionalidadConfig" style="display:none;"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</button>
                         </div>
-                        <div class="form-group">
-                            <label>Nacionalidad</label>
-                            <input type="text" class="form-control" id="nacionalidadInput" aria-describedby="nacionalidadInputHelp">
-                            <small id="nacionalidadInputHelp" class="form-text text-muted">nacionalidad.</small>
+                        <div class="tabla">
+                            <table class="table table-hover table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th style="width: 300px;">#</th>
+                                        <th>Nacionalidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="NacionalidadConfigTable">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="formulario" style="display:none;">
+                            <div class="form-group">
+                                <h5>Nueva Nacionalidad</h5>
+                            </div>
+                            <div class="form-group">
+                                <label>Nacionalidad</label>
+                                <input type="text" class="form-control" id="nacionalidadInput" aria-describedby="nacionalidadInputHelp">
+                                <small id="nacionalidadInputHelp" class="form-text text-muted">nacionalidad.</small>
+                            </div>
                         </div>
                     </div>
                 </div>
