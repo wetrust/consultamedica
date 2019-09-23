@@ -77,8 +77,8 @@ $( document ).ready(function() {
     opt.value = "< 12"; 
     edad.appendChild(opt); 
     for (var i = 12; i < 61; i++) {
-        let edad = document.getElementsByName("edad_materna")[0];
-        let opt = document.createElement('option');
+        edad = document.getElementsByName("edad_materna")[0];
+        opt = document.createElement('option');
         opt.appendChild( document.createTextNode(i) );
         opt.value = i; 
         edad.appendChild(opt); 
