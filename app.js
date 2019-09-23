@@ -62,7 +62,7 @@ $( document ).ready(function() {
     opt.appendChild( document.createTextNode("> 170") );
     opt.value = "> 170"; 
     dias.appendChild(opt);
-    
+
     if (storageAvailable('localStorage')) {
         document.location.hash = "#inicio";
         checkDatabase();
@@ -100,7 +100,6 @@ $( document ).ready(function() {
         }
     });
 
-
     //controlador al cambiar input de edad gestacional
     $("#fum").on("change", function(){
         let fum = dayHoy;
@@ -130,6 +129,7 @@ $( document ).ready(function() {
         else{
             document.getElementById("semanas").value = 0;
             document.getElementById("dias").value = 0;
+            document.getElementById("diaciclo").value = 0;
         }
         console.log(diff/(1000*60*60*24) );
         // (1000*60*60*24) --> milisegundos -> segundos -> minutos -> horas -> días
@@ -160,6 +160,7 @@ $( document ).ready(function() {
         else{
             document.getElementById("semanas").value = 0;
             document.getElementById("dias").value = 0;
+            document.getElementById("diaciclo").value = 0;
         }
     });
 
@@ -180,7 +181,7 @@ $( document ).ready(function() {
     $('#configSiController').on('click', function(){
         document.location.hash = "configuracion";
     });
-    
+
     $('#configSiController').on('focusout', function(){
         $('#configNoController').button('toggle');
     });
@@ -243,11 +244,12 @@ $( document ).ready(function() {
         var modal = makeModal("Si");
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         document.getElementById(modal.titulo).innerText = "Borrar datos de exámen ginecológico";
-        document.getElementById(modal.contenido).innerHTML = '<h1 class="text-danger">¿Está seguro de borrar los datos?</h1>';
+        document.getElementById(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
         });
+
         $("#"+modal.button).on("click", function(){
             let modal =  $(this).data("modal");
             document.getElementById("utero.ginecologica").value = "";
@@ -302,7 +304,6 @@ $(window).on('hashchange', function(){
     }
 });
 
-
 function getDate(today) {
     if (typeof today === typeof undefined){
         today = dayHoy;
@@ -322,8 +323,6 @@ function getDate(today) {
     today = yyyy + '-' + mm + '-' + dd;
     return today;
 }
-  
-
 function storageAvailable(type) {
     var storage;
     try {
@@ -348,7 +347,6 @@ function storageAvailable(type) {
             (storage && storage.length !== 0);
         }
 }
-
 function makeModal(button){
     let id = uuidv4();
     let titulo = uuidv4();
@@ -370,7 +368,6 @@ function makeModal(button){
         
     return resultado;
 }
-
 //crea id random para los modales
 function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
