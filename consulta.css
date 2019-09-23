@@ -4,7 +4,7 @@
 	background-size:cover;
 }
 .bg-verde{
-  background-color: #009688;
+  background-color: #009688 !important;
 }
 .alert-gris{
 	background: #ccd4d8; /* For browsers that do not support gradients */
