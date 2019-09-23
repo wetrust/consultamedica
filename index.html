@@ -356,12 +356,35 @@
     <div class="container pt-2 d-none" id="ecoGinecologica">
         <div class="row">
             <div class="col-9">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row"> <div class="col form-group"> <label>Útero</label> <input type="text" class="form-control" name="respuesta_utero_ginecologica"> </div><div class="col form-group"> <label>Endometrio</label> <input type="text" class="form-control" name="respuesta_endometrio"> </div></div><div class="row"> <div class="col form-group"> <label>Anexo Izquierdo</label> <input type="text" class="form-control" name="respuesta_anexo_izquierdo_ginecologica"> </div><div class="col form-group"> <label>Anexo Derecho</label> <input type="text" class="form-control" name="respuesta_anexo_derecho_ginecologica"> </div></div><div class="row"> <div class="col form-group"> <label>Ovario Izquierdo</label> <input type="text" class="form-control" name="respuesta_ovario_izquierdo"> </div><div class="col form-group"> <label>Ovario Derecho</label> <input type="text" class="form-control" name="respuesta_ovario_derecho"> </div></div><div class="row"> <div class="col-6 form-group"> <label >Douglas</label> <input type="text" class="form-control" name="respuesta_douglas_ginecologica"> </div></div><div class="row"> <div class="col-8 form-group"> <label><strong>Comentarios y observaciones</strong> <span class="text-primary">(Interpretación clínica del examinador)</span></label> <textarea class="form-control" name="respuesta_ginecologica_comentarios" rows="3"></textarea> </div><div class="col-4">
-                                <label>Profesional Examinador</label>
-                                <select id="ecografista.copia" class="form-control gris-claro"></select>
-                            </div></div>
+                <div class="card shadow-sm">
+                    <div class="card-body row">
+                        <div class="col-12 col-sm-6 form-group">
+                            <label class="text-secondary">Útero</label>
+                            <input type="text" class="form-control" id="utero.ginecologica"> </div>
+                        <div class="col-12 col-sm-6 form-group">
+                            <label class="text-secondary">Endometrio</label>
+                            <input type="text" class="form-control" id="endometrio.ginecologica"> </div>
+                        <div class="col-12 col-sm-6 form-group">
+                            <label class="text-secondary">Anexo Izquierdo</label>
+                            <input type="text" class="form-control" id="anexo.izquierdo.ginecologica"> </div>
+                        <div class="col-12 col-sm-6 form-group">
+                            <label class="text-secondary">Anexo Derecho</label>
+                            <input type="text" class="form-control" id="anexo.derecho.ginecologica"> </div>
+                        <div class="col-12 col-sm-6 form-group">
+                            <label class="text-secondary">Ovario Izquierdo</label>
+                            <input type="text" class="form-control" id="ovario.izquierdo.ginecologica"> </div>
+                        <div class="col-12 col-sm-6 form-group">
+                            <label class="text-secondary">Ovario Derecho</label>
+                            <input type="text" class="form-control" id="ovario.derecho.ginecologica"> </div>
+                        <div class="col-12 col-sm-6 form-group">
+                            <label class="text-secondary">Douglas</label>
+                            <input type="text" class="form-control" id="douglas.ginecologica"> </div>
+                        <div class="col-12 col-sm-8 form-group">
+                            <label class="text-secondary"><strong>Comentarios y observaciones</strong> <span class="text-primary">(Interpretación clínica del examinador)</span></label>
+                            <textarea class="form-control" id="comentario.ginecologica" rows="3"></textarea></div>
+                        <div class="col-12 col-sm-4 form-group">
+                            <label class="text-secondary">Profesional Examinador</label>
+                            <select class="form-control" id="ecografista.copia"></select></div>
                     </div>
                 </div>
             </div>
@@ -370,6 +393,9 @@
                     <div class="card-body">
                         <div class="py-3 btn-group-vertical d-flex">
                             <button class="btn btn-default text-white bg-gris" id="modalInfEcoGine">Inf. Ginecologico</button>
+                        </div>
+                        <div class="pt-3 pb-2 btn-group-vertical d-flex">
+                            <button class="btn btn-default text-white bg-gris" id="btn.erase.ginecologica">Borrar Datos</button>
                         </div>
                     </div>
                 </div>
@@ -970,7 +996,7 @@
                                     </div>
                                 </div>
                                 <div class='row'>
-                                    <div class='col-5'>
+                                    <div class='col-6'>
                                         <div class='form-group'>
                                             <label class="text-secondary">Saco vitelino</label>
                                             <select id='saco-vitelino' class='form-control'>
