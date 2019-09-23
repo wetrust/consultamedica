@@ -237,6 +237,36 @@ $( document ).ready(function() {
     });
 });
 
+//controlador de botones reset
+$( document ).ready(function() {
+    $("#btn\\.erase\\.ginecologica").on("click", function(){
+        var modal = makeModal("Si");
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Borrar datos de exámen ginecológico";
+        document.getElementById(modal.contenido).innerHTML = '<h1 class="text-danger">¿Está seguro de borrar los datos?</h1>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+        $("#"+modal.button).on("click", function(){
+            let modal =  $(this).data("modal");
+            document.getElementById("utero.ginecologica").value = "";
+            document.getElementById("endometrio.ginecologica").value = "";
+            document.getElementById("anexo.izquierdo.ginecologica").value = "";
+            document.getElementById("anexo.derecho.ginecologica").value = "";
+            document.getElementById("ovario.izquierdo.ginecologica").value = "";
+            document.getElementById("ovario.derecho.ginecologica").value = "";
+            document.getElementById("douglas.ginecologica").value = "";
+            document.getElementById("comentario.ginecologica").value = "";
+            document.getElementById("ecografista.copia").selectedIndex = 0;
+            document.getElementById("fum").value = getDate();
+            document.getElementById("fee").value = getDate();
+            $("#fum").trigger("change");
+            $('#'+modal).modal("hide");
+        });
+    });
+});
+
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
     var div = ["#inicio","#consulta","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia"];
@@ -318,3 +348,25 @@ function storageAvailable(type) {
             (storage && storage.length !== 0);
         }
     }
+
+function makeModal(button){
+    let id = uuidv4();
+    let titulo = uuidv4();
+    let contenido = uuidv4();
+    let _button = uuidv4();
+    let button_string = "";
+    
+    if (typeof button !== typeof undefined){
+        button_string = '<button type="button" class="btn btn-primary" id="'+_button+'" data-modal="'+id+'">'+button+'</button>';
+    }
+    
+    let resultado ={
+        id:id,
+        titulo:titulo,
+        contenido:contenido,
+        button:_button,
+        modal:'<div class="modal fade" tabindex="-1" role="dialog" id="'+id+'"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="'+titulo+'">Modal title</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body" id="'+contenido+'"></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>'+ button_string+'</div></div></div></div>'
+    }
+        
+    return resultado;
+}
