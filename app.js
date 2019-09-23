@@ -72,7 +72,7 @@ $( document ).ready(function() {
 
     //cargar edad materna
     let edad = document.getElementsByName("edad_materna")[0];
-    let opt = document.createElement('option');
+    opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 12") );
     opt.value = "< 12"; 
     edad.appendChild(opt); 
