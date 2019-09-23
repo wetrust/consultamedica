@@ -111,6 +111,7 @@ $( document ).ready(function() {
         fum = fum.getTime();
         let fee = dayHoy;
         fee.setTime(Date.parse(document.getElementById("fee").value));
+        fee.setDate(fee.getUTCDate());
         fee = fee.getTime();
 
         //la fecha de mestruación si puede ser antes de la fecha de exámen
