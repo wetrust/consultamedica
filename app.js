@@ -113,7 +113,8 @@ $( document ).ready(function() {
         fee.setTime(Date.parse(document.getElementById("fee").value));
         fee = fee.getTime();
 
-        let diff = fee - fum;
+        //la fecha de mestruación si puede ser antes de la fecha de exámen
+        let diff = Math.abs(fee - fum);
 
         if (diff > 0){
             let dias = Math.abs(diff/(1000*60*60*24));
@@ -144,10 +145,11 @@ $( document ).ready(function() {
         fee.setTime(Date.parse(document.getElementById("fee").value));
         fee = fee.getTime();
 
+        //la fecha de exámen no puede ser anterior a la fecha de última regla
         let diff = fee - fum;
 
         if (diff > 0){
-            let dias = Math.abs(diff/(1000*60*60*24));
+            let dias = diff/(1000*60*60*24);
             let semanas = Math.trunc(dias / 7);
             
             document.getElementById("diaciclo").value = dias;
