@@ -114,7 +114,7 @@ $( document ).ready(function() {
         fee = fee.getTime();
 
         //la fecha de mestruación si puede ser antes de la fecha de exámen
-        let diff = Math.abs(fee - fum);
+        let diff = fee - fum;
 
         if (diff > 0){
             let dias = Math.abs(diff/(1000*60*60*24));
