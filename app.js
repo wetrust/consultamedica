@@ -321,7 +321,7 @@ function getDate(today) {
   
     today = yyyy + '-' + mm + '-' + dd;
     return today;
-  }
+}
   
 
 function storageAvailable(type) {
@@ -347,7 +347,7 @@ function storageAvailable(type) {
             // acknowledge QuotaExceededError only if there's something already stored
             (storage && storage.length !== 0);
         }
-    }
+}
 
 function makeModal(button){
     let id = uuidv4();
@@ -369,4 +369,11 @@ function makeModal(button){
     }
         
     return resultado;
+}
+
+//crea id random para los modales
+function uuidv4() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    )
 }
