@@ -103,14 +103,14 @@ $( document ).ready(function() {
     //controlador al cambiar input de edad gestacional
     $("#fum").on("change", function(){
         let fum = dayHoy;
-        fum.setTime(Date.parse(document.getElementById("fum").value + "T00:00:00Z"));
-        fum.setDate(fum.getUTCDate() + 240);
+        fum.setTime(Date.parse(document.getElementById("fum").value));
+        fum.setTime(fum.getTime() + (1000*60*60*24*240));
         document.getElementById("fpp").value = getDate(fum);
 
-        fum.setDate(fum.getUTCDate() - 240);
+        fum.setTime(fum.getTime() - (1000*60*60*24*240));
         fum = fum.getTime();
         let fee = dayHoy;
-        fee.setTime(Date.parse(document.getElementById("fee").value + "T00:00:00Z"));
+        fee.setTime(Date.parse(document.getElementById("fee").value));
         fee.setDate(fee.getUTCDate());
         fee = fee.getTime();
 
