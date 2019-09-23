@@ -201,14 +201,11 @@ $( document ).ready(function() {
 
     $("#saco-vitelino").on("change", function(){
         if (document.getElementById("saco-vitelino").value == "no se observa"){
-            document.getElementById("saco.clon").parentElement.parentElement.classList.add("d-none");
-            document.getElementById("saco").parentElement.parentElement.parentElement.classList.add("d-none");
-            document.getElementById("saco").value = 0;
-            $("#saco").trigger("change");
+            document.getElementById("valor-saco-vitelino").parentElement.classList.add("d-none");
+            document.getElementById("saco-vitelino-mm").value = 0;
         }
         else{
-            document.getElementById("saco.clon").parentElement.parentElement.classList.remove("d-none");
-            document.getElementById("saco").parentElement.parentElement.parentElement.classList.remove("d-none");
+            document.getElementById("valor-saco-vitelino").parentElement.classList.remove("d-none");
         }
     });
 
