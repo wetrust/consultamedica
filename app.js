@@ -19,6 +19,7 @@ var titulos ={
 
 document.location.hash = "";
 
+//controlador de funciones base cuando se carga la pagina
 $( document ).ready(function() {
     $("p[name='fechaHora']").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear());
     document.getElementById("fum").value = getDate();
@@ -240,6 +241,58 @@ $( document ).ready(function() {
     });
 });
 
+//controlador de los informes
+$( document ).ready(function() {
+    $("#utero\\.ginecologica").on("click",function( e ) {
+        'use strict';
+	    let informe = "<div class='container-fluid'> <h3 class='page-header text-center'>ECOGRAFÍA GINECOLÓGICA</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container-fluid'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE</p><p><strong>Edad Materna: </strong> :EDADMATERNA años.</p><p><strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE</p><p><strong> Motivo de exámen: </strong> :MOTIVO</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>ANTECEDENTES</strong> </p><p><strong>FUM: </strong> :FUM</p><p><strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p><strong>Fecha de exámen </strong>:LINEA1 <br><strong>Útero </strong>:LINEA2 <br><strong>Endometrio </strong>:LINEA3</p><p><strong>Anexo Izquierdo </strong>:LINEA4 <br><strong>Ovario Izquierdo </strong>:LINEA5 <br><strong>Anexo Derecho </strong>:LINEA6 <br><strong>Ovario Derecho </strong>:LINEA7</p><p><strong>Douglas </strong>:LINEA8</p><p></p><p></p><p></p><p></p></div><div class='container-fluid'> <p class='mb-4'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='border-bottom:0;'>Informe generado desde software crecimientofetal.cl, el objetivo de este es favorecer análisis preeliminar de los datos, la interpretación de los resultados es responsabilidad fundamentalmente del profesional referente a exámen ecográfico. Profesional quien finalmente evaluará clínicamente la información contenida en este exámen.</p></div>";
+    
+        let LINEA2 = document.getElementById("utero.ginecologica").value;
+        let LINEA3 = document.getElementById("endometrio.ginecologica").value;
+        let LINEA4 = document.getElementById("anexo.izquierdo.ginecologica").value;
+        let LINEA6 = document.getElementById("anexo.derecho.ginecologica").value;
+        let LINEA5 = document.getElementById("ovario.izquierdo.ginecologica").value;
+        let LINEA7 = document.getElementById("ovario.derecho.ginecologica").value;
+        let LINEA8 = document.getElementById("douglas.ginecologica").value;
+
+        let paciente = $( '#nombre-paciente').val();
+        let idpaciente = $( '#id-paciente').val();
+        let motivo = $( '#motivo-examen option:selected').text();
+        let ecografista = document.getElementById("ecografista.copia").value;
+        let fur = $( "#fum-ginecologica").val();
+        let fexamen = $( "#fee-ginecologica").val();
+
+        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+
+        let comentario = document.getElementById("comentario.ginecologica").value;
+        comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
+
+        let patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+        let edadmaterna = $( "select[name='edad_materna']").val();
+
+        informe = informe.replace(":PACIENTE", paciente);
+        informe = informe.replace(":IDPACIENTE", idpaciente);
+        informe = informe.replace(":MOTIVO", motivo);
+        informe = informe.replace(":ECOGRAFISTA", ecografista);
+        informe = informe.replace(":FUM", fur);
+        informe = informe.replace(":EDADMATERNA", edadmaterna);
+        informe = informe.replace(":FEXAMEN", fexamen);
+        informe = informe.replace(":LINEA1", fexamen);
+        informe = informe.replace(":LINEA2", LINEA2);
+        informe = informe.replace(":LINEA3", LINEA3);
+        informe = informe.replace(":LINEA4", LINEA4);
+        informe = informe.replace(":LINEA5", LINEA5);
+        informe = informe.replace(":LINEA6", LINEA6);
+        informe = informe.replace(":LINEA7", LINEA7);
+        informe = informe.replace(":LINEA8", LINEA8);
+        informe = informe.replace(":COMENTARIO", comentario);
+        informe = informe.replace(":DATEINFORME", dateInf);
+        informe = informe.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
+
+        imprInforme(informe);
+    });
+});
+
 //controlador de botones reset
 $( document ).ready(function() {
     $("#btn\\.erase\\.ginecologica").on("click", function(){
@@ -270,6 +323,53 @@ $( document ).ready(function() {
         });
     });
 });
+
+//controlador de los keypress
+$( document ).ready(function() {
+    $("#utero\\.ginecologica").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+           e.preventDefault();
+           $("#endometrio\\.ginecologica").focus();
+        }
+    });
+    $("#endometrio\\.ginecologica").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+           e.preventDefault();
+           $("#anexo\\.izquierdo\\.ginecologica").focus();
+        }
+    });
+    $("#anexo\\.izquierdo\\.ginecologica").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+           e.preventDefault();
+           $("#anexo\\.derecho\\.ginecologica").focus();
+        }
+    });
+    $("#anexo\\.derecho\\.ginecologica").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+           e.preventDefault();
+           $("#ovario\\.izquierdo\\.ginecologica").focus();
+        }
+    });
+    $("#ovario\\.izquierdo\\.ginecologica").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+           e.preventDefault();
+           $("#ovario\\.derecho\\.ginecologica").focus();
+        }
+    });
+    $("#ovario\\.derecho\\.ginecologica").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+           e.preventDefault();
+           $("#douglas\\.ginecologica").focus();
+        }
+    });
+    $("#douglas\\.ginecologica").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+           e.preventDefault();
+           $("#comentario\\.ginecologica").focus();
+        }
+    });
+});
+
 
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
@@ -375,4 +475,21 @@ function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
       (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
     )
+}
+
+function imprInforme(datos)
+{
+	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container"><div style="width:35%;text-align:center;" class="membrete">:MEMBRETE</div></div><div class="container" style="margin-top:50px !important;">:DATOS</div>:FUNCION</body></html>';
+	var ventimp = window.open(" ","popimpr");
+	var estilo = '<style>@media print{*{margin:0;padding:0;border:0}p,th,td{font-size:11px;line-height:17px;margin-bottom:7px}th,td{margin:0 !important;padding:0 !important}.pie-pagina{font-size:9px}.pie-pagina-dos{font-size:10px}#lineclear{clear:both}h3{font-size:130%;text-align:center}h3::first-letter{font-size:100%}.membrete::first-letter{font-size:14px;}.membrete::first-line{font-size:14px;}.membrete{font-size:10px;}}</style>';
+	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
+	var membrete = $("#membrete").val().replace(/\r\n|\r|\n/g,"<br />");
+	document = document.replace(":DATOS", datos);
+	document = document.replace(":ESTILO", estilo);
+	document = document.replace(":FUNCION", funcion);
+	document = document.replace(new RegExp('invisible', 'g'), "");
+	document = document.replace(":MEMBRETE", membrete);
+	ventimp.document.write(document);
+	ventimp.document.close();
+	ventimp.show();
 }
