@@ -116,7 +116,7 @@ $( document ).ready(function() {
         let diff = fee - fum;
 
         if (diff > 0){
-            let dias = diff/(1000*60*60*24);
+            let dias = Math.abs(diff/(1000*60*60*24));
             let semanas = Math.trunc(dias / 7);
             
             document.getElementById("diaciclo").value = dias;
@@ -147,7 +147,7 @@ $( document ).ready(function() {
         let diff = fee - fum;
 
         if (diff > 0){
-            let dias = diff/(1000*60*60*24);
+            let dias = Math.abs(diff/(1000*60*60*24));
             let semanas = Math.trunc(dias / 7);
             
             document.getElementById("diaciclo").value = dias;
