@@ -70,6 +70,25 @@ $( document ).ready(function() {
 		loadDatabase();
     }
 
+    //cargar edad materna
+    let edad = document.getElementsByName("edad_materna")[0];
+    let opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("< 12") );
+    opt.value = "< 12"; 
+    edad.appendChild(opt); 
+    for (var i = 12; i < 61; i++) {
+        let edad = document.getElementsByName("edad_materna")[0];
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode(i) );
+        opt.value = i; 
+        edad.appendChild(opt); 
+    }
+    edad = document.getElementsByName("edad_materna")[0];
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("> 60") );
+    opt.value = "> 60"; 
+    edad.appendChild(opt); 
+
     //controlador de botones inicio
     $("#menu\\.modulo\\.activo").on("click", function(){
         var botones = ["menu.modulo.activo.uno", "menu.modulo.activo.dos", "menu.modulo.activo.tres", "menu.modulo.activo.cuatro"];
@@ -259,8 +278,8 @@ $( document ).ready(function() {
         let idpaciente = $( '#id-paciente').val();
         let motivo = $( '#motivo-examen option:selected').text();
         let ecografista = document.getElementById("ecografista.copia").value;
-        let fur = $( "#fum-ginecologica").val();
-        let fexamen = $( "#fee-ginecologica").val();
+        let fur = document.getElementById("fum").value;
+        let fexamen = document.getElementById("fee").value;
 
         let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
 
