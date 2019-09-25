@@ -370,7 +370,7 @@ $( document ).ready(function() {
             document.getElementById("cuerpo-uterino").selectedIndex = 0;
             document.getElementById("saco-gestacional").selectedIndex = 0;
             document.getElementById("saco-vitelino").selectedIndex = 1;
-            document.getElementById("fcf-prim").selectedIndex = 1;
+            document.getElementById("fcf-prim").selectedIndex = 0;
             document.getElementById("anexo-derecho").selectedIndex = 0;
 
             document.getElementById("anexo-derecho").selectedIndex = 0;
