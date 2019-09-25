@@ -981,8 +981,7 @@ function eglcn(lcn) {
 	    }
 	    else {
 		    lcn = lcn / 10;
-
-		    for (i = 1; i <= 63; i ++ ) {
+		    for (let i = 1; i <= 63; i ++ ) {
                 if (a[0][i] >= lcn) {
                     return a[1][i];
                 }
