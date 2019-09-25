@@ -266,6 +266,9 @@ $( document ).ready(function() {
 
 //controlador de los informes
 $( document ).ready(function() {
+    
+    //modalPreInfEcoPrimTrim
+
     $("#btn\\.informe\\.ginecologica").on("click",function( e ) {
         'use strict';
 	    let informe = "<div class='container-fluid'> <h3 class='page-header text-center'>ECOGRAFÍA GINECOLÓGICA</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container-fluid'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE</p><p><strong>Edad Materna: </strong> :EDADMATERNA años.</p><p><strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE</p><p><strong> Motivo de exámen: </strong> :MOTIVO</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>ANTECEDENTES</strong> </p><p><strong>FUM: </strong> :FUM</p><p><strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p><strong>Fecha de exámen </strong>:LINEA1 <br><strong>Útero </strong>:LINEA2 <br><strong>Endometrio </strong>:LINEA3</p><p><strong>Anexo Izquierdo </strong>:LINEA4 <br><strong>Ovario Izquierdo </strong>:LINEA5 <br><strong>Anexo Derecho </strong>:LINEA6 <br><strong>Ovario Derecho </strong>:LINEA7</p><p><strong>Douglas </strong>:LINEA8</p><p></p><p></p><p></p><p></p></div><div class='container-fluid'> <p class='mb-4'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='border-bottom:0;'>Informe generado desde software crecimientofetal.cl, el objetivo de este es favorecer análisis preeliminar de los datos, la interpretación de los resultados es responsabilidad fundamentalmente del profesional referente a exámen ecográfico. Profesional quien finalmente evaluará clínicamente la información contenida en este exámen.</p></div>";
@@ -385,6 +388,81 @@ $( document ).ready(function() {
 
 //controlador de los keypress
 $( document ).ready(function() {
+
+    $("#saco").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+            e.preventDefault();
+            document.getElementById("embrion").focus();
+        }
+    });
+
+    $("#lcn").on("keypress",function( e ) {
+        if (e.which == 13) {
+            e.preventDefault();
+            document.getElementById("btn.informe.preco").focus();
+        }
+    });
+    $("#utero-ubic1").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+            e.preventDefault();
+            document.getElementById("utero-ubic2").focus();
+        }
+    });
+    $("#utero-ubic2").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+            e.preventDefault();
+            document.getElementById("cuerpo-uterino").focus();
+        }
+    });
+    $("#cuerpo-uterino").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+            e.preventDefault();
+            document.getElementById("saco-gestacional").focus();
+        }
+    });
+    $("#saco-gestacional").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+            e.preventDefault();
+            document.getElementById("saco-vitelino").focus();
+        }
+    });
+    $("#saco-vitelino").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+            e.preventDefault();
+            document.getElementById("fcf-prim").focus();
+        }
+    });
+    $("#fcf-prim").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+            e.preventDefault();
+            document.getElementById("anexo-derecho").focus();
+        }
+    });
+    $("#anexo-derecho").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+            e.preventDefault();
+            document.getElementById("anexo-derecho").focus();
+        }
+    });
+    $("#anexo-derecho").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+            e.preventDefault();
+            document.getElementById("anexo-izquierdo").focus();
+        }
+    });
+    $("#anexo-izquierdo").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+            e.preventDefault();
+            document.getElementById("exploracion-douglas").focus();
+        }
+    });
+    $("#exploracion-douglas").on("keypress",function( e ) {
+        if ( e.which == 13 ) {
+            e.preventDefault();
+            document.getElementById("comentarios-eco-uno").focus();
+        }
+    });
+
     $("#utero\\.ginecologica").on("keypress",function( e ) {
         if ( e.which == 13 ) {
            e.preventDefault();
