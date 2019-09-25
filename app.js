@@ -258,6 +258,10 @@ $( document ).ready(function() {
     $("#saco").on("change", function(){
         document.getElementById("saco.clon").value = document.getElementById("saco").value;
     });
+
+    $("#embrion").on("change", function(){
+        document.getElementById("embrion.clon").value = document.getElementById("embrion").value;
+    });
 });
 
 //controlador de los informes
