@@ -226,8 +226,12 @@ $( document ).ready(function() {
         }
     });
 
+    $("#lcn").on("change", function(){
+        document.getElementById("lcnPct").value = eglcn(this.value);
+    })
+
     $("#saco-vitelino").on("change", function(){
-        if (document.getElementById("saco-vitelino").value == "no se observa"){
+        if (this.value == "no se observa"){
             document.getElementById("valor-saco-vitelino").parentElement.classList.add("d-none");
             document.getElementById("saco-vitelino-mm").value = 0;
         }
@@ -374,6 +378,7 @@ $( document ).ready(function() {
             document.getElementById("cuerpo-uterino").selectedIndex = 0;
             document.getElementById("saco-gestacional").selectedIndex = 0;
             document.getElementById("saco-vitelino").selectedIndex = 1;
+            $("#saco-vitelino").trigger("change");
             document.getElementById("fcf-prim").selectedIndex = 0;
             document.getElementById("anexo-derecho").selectedIndex = 0;
 
@@ -832,5 +837,35 @@ function egSaco(saco) {
     }
     else {
         return a[saco];
+    }
+};
+
+function eglcn(lcn) {
+	'use strict';
+	let a = [[],[]];
+
+    a[0][0] = 0.09; a[0][1] = 0.2; a[0][2] = 0.37; a[0][3] = 0.57; a[0][4] = 0.7; a[0][5] = 0.8; a[0][6] = 0.9; a[0][7] = 1; a[0][8] = 1.1; a[0][9] = 1.12; a[0][10] = 1.13; a[0][11] = 1.18; a[0][12] = 1.27; a[0][13] = 1.38; a[0][14] = 1.47; a[0][15] = 1.58; a[0][16] = 1.65; a[0][17] = 1.72; a[0][18] = 1.87; a[0][19] = 1.96; a[0][20] = 2.05; a[0][21] = 2.18; a[0][22] = 2.25; a[0][23] = 2.35; a[0][24] = 2.54; a[0][25] = 2.62; a[0][26] = 2.7; a[0][27] = 2.9; a[0][28] = 3.08; a[0][29] = 3.16; a[0][30] = 3.4; a[0][31] = 3.51; a[0][32] = 3.57; a[0][33] = 3.76; a[0][34] = 3.85; a[0][35] = 4.05; a[0][36] = 4.18; a[0][37] = 4.46; a[0][38] = 4.55; a[0][39] = 4.66; a[0][40] = 4.88; a[0][41] = 5.07; a[0][42] = 5.29; a[0][43] = 5.46; a[0][44] = 5.66; a[0][45] = 5.87; a[0][46] = 6.01; a[0][47] = 6.27; a[0][48] = 6.37; a[0][49] = 6.65; a[0][50] = 6.77; a[0][51] = 7.08; a[0][52] = 7.19; a[0][53] = 7.39; a[0][54] = 7.57; a[0][55] = 7.68; a[0][56] = 7.98; a[0][57] = 8.09; a[0][58] = 8.35; a[0][59] = 8.48; a[0][60] = 8.56; a[0][61] = 8.76; a[0][62] = 8.88; a[0][63] = 9.09;
+    a[1][0] = 0; a[1][1] = 5.5; a[1][2] = 6; a[1][3] = 6.2; a[1][4] = 6.4; a[1][5] = 6.5; a[1][6] = 6.6; a[1][7] = 7.1; a[1][8] = 7.1; a[1][9] = 7.1; a[1][10] = 7.2; a[1][11] = 7.3; a[1][12] = 7.4; a[1][13] = 7.5; a[1][14] = 7.6; a[1][15] = 8; a[1][16] = 8.1; a[1][17] = 8.2; a[1][18] = 8.3; a[1][19] = 8.4; a[1][20] = 8.5; a[1][21] = 8.6; a[1][22] = 9; a[1][23] = 9.1; a[1][24] = 9.2; a[1][25] = 9.3; a[1][26] = 9.4; a[1][27] = 9.5; a[1][28] = 10; a[1][29] = 10.1; a[1][30] = 10.2; a[1][31] = 10.3; a[1][32] = 10.4; a[1][33] = 10.5; a[1][34] = 10.6; a[1][35] = 11; a[1][36] = 11.1; a[1][37] = 11.2; a[1][38] = 11.3; a[1][39] = 11.4; a[1][40] = 11.5; a[1][41] = 11.6; a[1][42] = 12; a[1][43] = 12.1; a[1][44] = 12.2; a[1][45] = 12.3; a[1][46] = 12.4; a[1][47] = 12.5; a[1][48] = 12.6; a[1][49] = 13; a[1][50] = 13.1; a[1][51] = 13.2; a[1][52] = 13.3; a[1][53] = 13.4; a[1][54] = 13.5; a[1][55] = 13.6; a[1][56] = 14; a[1][57] = 14.1; a[1][58] = 14.2; a[1][59] = 14.3; a[1][60] = 14.4; a[1][61] = 14.5; a[1][62] = 14.6; a[1][63] = 15;
+
+    lcn = lcn.toString();
+    lcn = lcn.replace(",", ".");
+    lcn = parseFloat(lcn);
+
+    if (isNaN(lcn) != true){
+	    if (lcn > 90 || lcn < 1){
+	    	return 0;
+	    }
+	    else {
+		    lcn = lcn / 10;
+
+		    for (i = 1; i <= 63; i ++ ) {
+                if (a[0][i] >= lcn) {
+                    return a[1][i];
+                }
+		    }
+	    }
+    }
+    else{
+        return 0;
     }
 };
