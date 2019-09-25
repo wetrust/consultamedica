@@ -570,7 +570,7 @@ $( document ).ready(function() {
                 data: (function () {
                     var data = [];
                     var categories = [4.2,4.3,4.4,4.5,4.6,5,5.1,5.2,5.3,5.4,5.5,5.6,6,6.1,6.2,6.3,6.4,6.5,6.6,7,7.1,7.2,7.3,7.4,7.5,7.6,8];
-                    var edadGest = document.getElementById("semanas").value;
+                    var edadGest = document.getElementById("semanas").value +"."+document.getElementById("dias").value;
     
                     var saco = $("#saco").val();
                     saco = saco.toString();
