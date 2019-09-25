@@ -831,6 +831,6 @@ function egSaco(saco) {
         return 0;
     }
     else {
-        return a[prs];
+        return a[saco];
     }
 };
