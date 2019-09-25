@@ -279,7 +279,7 @@ $( document ).ready(function() {
 	
         let sacovitelinotxt = (document.getElementById("saco-vitelino").value == "no se observa") ? "." : " de diametro " + document.getElementById("saco-vitelino-mm").value + " mm.";
 
-        let sacogestacionaltxt = document.getElementById("saco-gestacional-mm").value;
+        let sacogestacionaltxt = document.getElementById("saco").value;
         sacogestacionaltxt = (sacogestacionaltxt > 0) ? " diametro promedio " + sacogestacionaltxt + " mm." : ".";
             
         //si solo tiena saco
