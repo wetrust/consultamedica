@@ -209,6 +209,10 @@ $( document ).ready(function() {
     });
 
     //controlador de ecografía de primer trimestre
+    $("#saco").on("change", function(){
+        document.getElementById("sacoPct").value = egSaco(this.value);
+    })
+
     $("#saco-gestacional").on("change", function(){
         if (document.getElementById("saco-gestacional").value == "no se observa"){
             document.getElementById("saco.clon").parentElement.parentElement.classList.add("d-none");
@@ -510,8 +514,8 @@ $( document ).ready(function() {
 //controlador de los gráficos
 $( document ).ready(function() {
 
-    $( '#graficoSaco' ).on( 'click', function() {
-        var modal = makeModal("Si");
+    $("#graficoSaco").on( 'click', function() {
+        var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         document.getElementById(modal.titulo).innerText = "Saco Gestacional promedio en milímetros (mm)";
         document.getElementById(modal.contenido).innerHTML = '<div id="graficoSacoView"></div>';
@@ -566,7 +570,7 @@ $( document ).ready(function() {
                 data: (function () {
                     var data = [];
                     var categories = [4.2,4.3,4.4,4.5,4.6,5,5.1,5.2,5.3,5.4,5.5,5.6,6,6.1,6.2,6.3,6.4,6.5,6.6,7,7.1,7.2,7.3,7.4,7.5,7.6,8];
-                    var edadGest = parseInt(localStorage.eg);
+                    var edadGest = document.getElementById("semanas").value;
     
                     var saco = $("#saco").val();
                     saco = saco.toString();
@@ -588,6 +592,105 @@ $( document ).ready(function() {
         });
     });
 
+    $("#graficoLcn").on( 'click', function() {
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Longitud Cefalo Nalgas (LCN) en milimetros";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoLcnBaseView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoLcnBaseView').highcharts({
+            title: {text: '',x: -20},
+            xAxis: {
+                categories: ['6', '7', '8', '9', '10',  '11', '12', '13', '14', '15']
+            },
+            yAxis: {
+                title: {
+                    text: 'milimetros (mm)'
+                },
+                tickPositions: [2, 11, 22, 33, 44, 55, 66, 77, 88, 99, 110]
+            },
+            credits: {enabled:false},
+            colors: ['#313131', '#313131', '#313131'],
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+             },
+            series: [{
+                name: '(-) 2DE',
+                type: "line",
+                marker: { enabled: false },
+                data: [2.6, 7.7, 14, 20.5, 26.2,35.5, 46.8, 58.2, 69.8, 80.2],
+                dashStyle: 'shortdot'
+            }, {
+                name: 'Media',
+                type: "line",
+                marker: { enabled: false },
+                data: [3.8, 8.9, 15.4, 22.5, 29.5,40.5, 52.9, 66.5, 79.0, 90.1]
+            }, {
+                name: '(+) 2DE',
+                type: "line",
+                marker: { enabled: false },
+                data: [5.3, 10.4, 17.1, 24.9, 33.2,46.4, 60.8, 75.7, 89.1, 100.1],
+                dashStyle: 'shortdot'
+            }, {
+                type: "line",
+                name: 'LCN (Hadlock y col. Radiology 182. 501, 1992)',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    // generate an array of random data
+                    var data = [];
+                    var egLcn2 = document.getElementById("semanas").value;
+                    var lcn = $("#lcn").val();
+                    lcn = lcn.toString();
+                    lcn = lcn.replace(",", ".");
+                    lcn = parseFloat(lcn);
+    
+                    var lcnegx = [];
+                    var flag = false;
+    
+                    lcnegx[1] = 6;
+                    lcnegx[2] = 7;
+                    lcnegx[3] = 8;
+                    lcnegx[4] = 9;
+                    lcnegx[5] = 10;
+                    lcnegx[6] = 11;
+                    lcnegx[7] = 12;
+                    lcnegx[8] = 13;
+                    lcnegx[9] = 14;
+                    lcnegx[10] = 14;
+    
+                    for (i = 1; i <= 10; i++) {
+                        if (lcnegx[i] >= egLcn2) {
+                            if (flag == false) {
+                            data.push({
+                                y: lcn,
+                            });
+                            flag = true;
+                            }
+                            else {
+                             data.push({
+                                y:0,
+                             });
+                            }
+                        }
+                        else {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                    }
+                    return data;
+                }())
+            }]
+        });
+    });
 });
 
 
@@ -713,3 +816,21 @@ function imprInforme(datos)
 	ventimp.document.close();
 	ventimp.show();
 }
+
+
+//funciones para cálculos
+function egSaco(saco) {
+	'use strict';
+	let a = [];
+    a[5] =4.2; a[6] =4.3; a[7] =4.4; a[8] =4.5; a[9] =4.6; a[10] =5; a[11] =5.1; a[12] =5.2; a[13] =5.3; a[14] =5.4; a[15] =5.5; a[16] =5.6; a[17] =6; a[18] =6.1; a[19] =6.2; a[20] =6.3; a[21] =6.4; a[22] =6.5; a[23] =6.6; a[24] =7; a[25] =7.1; a[26] =7.2; a[27] =7.3; a[28] =7.4; a[29] =7.5; a[30] =7.6; a[31] =8; a[32] =8.1; a[33] =8.2; a[34] =8.3; a[35] =8.4; a[36] =8.5; a[37] =8.6; a[38] =9; a[39] =9.1; a[40] =9.2; a[41] =9.3; a[42] =9.4; a[43] =9.5; a[44] =9.6; a[45] =9.6; a[46] =10; a[47] =10.1; a[48] =10.2; a[49] =10.3; a[50] =10.4; a[51] =10.5; a[52] =11; a[53] =11.1; a[54] =11.2; a[55] =11.3; a[56] =11.4; a[57] =11.5; a[58] =11.6; a[59] =12; a[60] =12.1; a[61] =12.2;
+	
+    saco = saco.replace(",", ".");
+    saco = parseInt(saco);
+
+    if (saco < 5 || saco > 61) {
+        return 0;
+    }
+    else {
+        return a[prs];
+    }
+};
