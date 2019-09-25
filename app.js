@@ -345,6 +345,42 @@ $( document ).ready(function() {
             $('#'+modal).modal("hide");
         });
     });
+
+    $("#btn\\.erase\\.precoz").on("click", function(){
+        var modal = makeModal("Si");
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Borrar datos de ecografía obstétrica precoz";
+        document.getElementById(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $("#"+modal.button).on("click", function(){
+            let modal =  $(this).data("modal");
+            document.getElementById("saco").value = "";
+            $("#saco").trigger("change");
+            document.getElementById("embrion").selectedIndex = 0;
+            $("#embrion").trigger("change");
+            document.getElementById("utero-ubic1").selectedIndex = 0;
+            document.getElementById("utero-ubic2").selectedIndex = 0;
+            document.getElementById("cuerpo-uterino").selectedIndex = 0;
+            document.getElementById("saco-gestacional").selectedIndex = 0;
+            document.getElementById("saco-vitelino").selectedIndex = 1;
+            document.getElementById("fcf-prim").selectedIndex = 1;
+            document.getElementById("anexo-derecho").selectedIndex = 0;
+
+            document.getElementById("anexo-derecho").selectedIndex = 0;
+            document.getElementById("anexo-izquierdo").selectedIndex = 0;
+            document.getElementById("exploracion-douglas").selectedIndex = 0;
+            document.getElementById("comentarios-eco-uno").value = "";
+
+            document.getElementById("fum").value = getDate();
+            document.getElementById("fee").value = getDate();
+            $("#fum").trigger("change");
+            $('#'+modal).modal("hide");
+        });
+    });
 });
 
 //controlador de los keypress
