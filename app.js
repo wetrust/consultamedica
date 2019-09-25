@@ -399,7 +399,7 @@ $( document ).ready(function() {
     $("#lcn").on("keypress",function( e ) {
         if (e.which == 13) {
             e.preventDefault();
-            document.getElementById("btn.informe.preco").focus();
+            document.getElementById("btn.informe.precoz").focus();
         }
     });
     $("#utero-ubic1").on("keypress",function( e ) {
