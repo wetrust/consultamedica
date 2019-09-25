@@ -57,3 +57,14 @@
     77% { color: #EF4C45; }
     89% { color: #F4792B; }
     100% {color: #FAA634; }}
+
+.internal-shadow{
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.bg-gris {
+    background-color:#6c757d!important
+}
+body{
+    background-image:url('img/cream_pixels.png');
+}
