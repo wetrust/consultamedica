@@ -285,10 +285,9 @@ $( document ).ready(function() {
     });
 
     $("#menu\\.modulo\\.prim\\.trim\\.si").on("click", function(){
-        document.getElementById("fee").value = document.getElementById("furAjustada").value;
         document.getElementById("semanas").value = document.getElementById("semanasAjustada").value;
         document.getElementById("dias").value = document.getElementById("diasAjustada").value;
-        document.getElementById("fpp").value = document.getElementById("fppAjustada").value;
+        $("#semanas").trigger("change");
     });
 });
 
