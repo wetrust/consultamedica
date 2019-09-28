@@ -234,6 +234,7 @@ $( document ).ready(function() {
         if (isNaN(this.value) | this.value < 1 | isNaN(eg) | eg < 1) {
             $('#diferenciaEcoPrimTrim').html('0');
             $('#preguntaAjusteEcoPrimTrim').hide();
+            $('#resultadoAjusteEcoPrimTrim').hide();
         } else {
             var eg1 = new Number((Math.trunc(EGLCN) * 7) + Math.trunc((EGLCN - Math.trunc(EGLCN))* 10));
             var eg2 = parseInt(semanas * 7) +  dias;
