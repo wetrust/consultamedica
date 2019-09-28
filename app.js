@@ -228,6 +228,40 @@ $( document ).ready(function() {
 
     $("#lcn").on("change", function(){
         document.getElementById("lcnPct").value = eglcn(this.value);
+
+        var eg = parseFloat(document.getElementById("semanas").value + "." +document.getElementById("dias").value);
+        let semanas = parseInt(document.getElementById("semanas").value);
+        let dias = parseInt(document.getElementById("dias").value);
+        var EGLCN = document.getElementById("lcnPct").value;
+
+        if (isNaN(this.value) | this.value < 0 | isNaN(eg) | eg < 1) {
+            $('#diferenciaEcoPrimTrim').html('Días de diferencia observado entre edad gestacional por FUR referida y exámen ecográfico es de 0 días.');
+            $('#preguntaAjusteEcoPrimTrim').hide();
+        } else {
+            var eg1 = new Number((Math.trunc(EGLCN) * 7) + Math.trunc((EGLCN - Math.trunc(EGLCN))* 10));
+            var eg2 = parseInt(semanas * 7) +  dias;
+            var diferencia = Math.abs(Math.trunc(eg2 - eg1));
+            $('#diferenciaEcoPrimTrim').html('Días de diferencia observado entre edad gestacional por FUR referida y exámen ecográfico es de ' + diferencia + ' días.');
+            $('#preguntaAjusteEcoPrimTrim').show();
+            $('#resultadoAjusteEcoPrimTrim').show();
+
+            var diferencia = (Math.trunc(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.trunc(eg2 - eg1)) * 7));
+            var undia = 1000 * 60 * 60 * 24;
+            diferencia = diferencia * undia;
+            FUM = FUM.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+            FUM = new Date(FUM);
+            var B = new Date();
+            B.setTime(FUM.getTime() + diferencia);
+            $('#furAjustada').val(B.getDate() + "/" + (B.getMonth() + 1) + "/" + B.getFullYear());
+            var unasemana = undia * 7;
+            FExamen = FExamen.split(/\//).reverse().join('/'); //convert dd/mm/yyy
+            FExamen = new Date(FExamen);
+            var EdadGestacional = ((FExamen.getTime() - B.getTime()) / unasemana).toFixed(1);
+            $('#egAjustada').val(EdadGestacional);
+            var C = new Date();
+            C.setTime(B.getTime() + (40 * unasemana));
+            $('#fppAjustada').val(C.getDate() + "/" + (C.getMonth() + 1) + "/" + C.getFullYear());
+        }
     })
 
     $("#saco-vitelino").on("change", function(){
