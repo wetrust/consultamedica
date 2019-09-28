@@ -211,7 +211,7 @@ $( document ).ready(function() {
     //controlador de ecografía de primer trimestre
     $("#saco").on("change", function(){
         document.getElementById("sacoPct").value = egSaco(this.value);
-    })
+    });
 
     $("#saco-gestacional").on("change", function(){
         if (this.value == "no se observa"){
@@ -256,7 +256,7 @@ $( document ).ready(function() {
             fee.setTime(fee.getTime() + (1000*60*60*24*240));
             document.getElementById("fppAjustada").value = getDate(fee);
         }
-    })
+    });
 
     $("#saco-vitelino").on("change", function(){
         if (this.value == "no se observa"){
@@ -282,6 +282,13 @@ $( document ).ready(function() {
             document.getElementById("lcn.clon").parentElement.parentElement.classList.remove("d-none");
             document.getElementById("lcn").parentElement.parentElement.parentElement.classList.remove("d-none");
         }
+    });
+
+    $("#menu\\.modulo\\.prim\\.trim\\.si").on("click", function(){
+        document.getElementById("fee").value = document.getElementById("furAjustada").value;
+        document.getElementById("semanas").value = document.getElementById("semanasAjustada").value;
+        document.getElementById("dias").value = document.getElementById("diasAjustada").value;
+        document.getElementById("fpp").value = document.getElementById("fppAjustada").value;
     });
 });
 
@@ -542,6 +549,8 @@ $( document ).ready(function() {
             document.getElementById("fum").value = getDate();
             document.getElementById("fee").value = getDate();
             $("#fum").trigger("change");
+
+            $("#menu\\.modulo\\.prim\\.trim\\.no").button("toggle");
             $('#'+modal).modal("hide");
         });
     });
