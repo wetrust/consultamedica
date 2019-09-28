@@ -408,7 +408,7 @@ $( document ).ready(function() {
         var motivo = $( '#motivo-examen option:selected').text();
         var ecografista = $( '#ecografista option:selected').text();
     
-        let fur = new date(Date.parse(document.getElementById("fum").value));
+        let fur = new Date(Date.parse(document.getElementById("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
 
         let fexamen = document.getElementById("fee").value;
