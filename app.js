@@ -408,7 +408,7 @@ $( document ).ready(function() {
         var motivo = $( '#motivo-examen option:selected').text();
         var ecografista = $( '#ecografista option:selected').text();
     
-        let fur = document.getElementById("fum").value;
+        let fur = getDate(new date(Date.parse(document.getElementById("fum").value)));
         let fexamen = document.getElementById("fee").value;
         var eg = $( "input[name='eg']").val();
         
