@@ -880,10 +880,10 @@
                                                     <label class="text-white">Edad Gestacional</label>
                                                     <div class="row">
                                                         <div class="col">
-                                                            <input class="form-control bg-verde text-white" type="text" id="egAjustada" disabled>
+                                                            <input class="form-control bg-verde text-white" type="text" id="semanasAjustada" disabled>
                                                         </div>
                                                         <div class="col">
-                                                            <input class="form-control bg-verde text-white" type="text" id="egAjustada" disabled>
+                                                            <input class="form-control bg-verde text-white" type="text" id="diasAjustada" disabled>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -897,12 +897,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <p><span id="diferenciaEcoPrimTrim">Días de diferencia observado entre edad gestacional por FUR referida y exámen ecográfico es de 0 días.</span></p>
+                                        <p>Diferencia con edad referida <span id="diferenciaEcoPrimTrim" class="border border-dark p-2"></span> Días.</p>
                                     </div>
                                     <div class="col-12">
-                                        <div class="alert alert-info" role="alert">
-                                            <p class="mb-0"> Para semanas 8 a 10, el rango de diferencia clínica aceptable, entre FUM referida y calculada es ± 3 días.</p>
-                                        </div>
+                                        <p class="mb-0 text-primary">Para semanas 7 a 10, el rango de diferencia clínica aceptable, entre FUM referida y calculada es ± 3 días.</p>
                                     </div>
                                 </div>
                                 <div class="form-group row p-2 rounded" id="preguntaAjusteEcoPrimTrim" style="display:none;">
@@ -911,7 +909,7 @@
                                     </div>
                                     <div class="col-1" style="background-color: #6c757d !important;"></div>
                                     <div class="col-3 text-right">
-                                        <div class="btn-group" data-toggle="buttons">
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                             <label class="btn btn-outline-primary active" id="eco.prim.trim.no.label">
                                                 <input type="radio" name="ajustarEcoPrimTrim" value="0" checked="">
                                                 NO</label>
