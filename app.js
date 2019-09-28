@@ -124,10 +124,10 @@ $( document ).ready(function() {
     $("#fum").on("change", function(){
         let fum = dayHoy;
         fum.setTime(Date.parse(document.getElementById("fum").value));
-        fum.setTime(fum.getTime() + (1000*60*60*24*280));
+        fum.setTime(fum.getTime() + (1000*60*60*24*282));
         document.getElementById("fpp").value = getDate(fum);
 
-        fum.setTime(fum.getTime() - (1000*60*60*24*280));
+        fum.setTime(fum.getTime() - (1000*60*60*24*282));
         fum = fum.getTime();
         let fee = dayHoy;
         fee.setTime(Date.parse(document.getElementById("fee").value));
@@ -253,7 +253,7 @@ $( document ).ready(function() {
             document.getElementById("semanasAjustada").value = Math.trunc(EGLCN);
             document.getElementById("diasAjustada").value = Math.trunc((EGLCN - Math.trunc(EGLCN))* 10);
 
-            fee.setTime(fee.getTime() + (1000*60*60*24*280));
+            fee.setTime(fee.getTime() + (1000*60*60*24*282));
             document.getElementById("fppAjustada").value = getDate(fee);
         }
     });
