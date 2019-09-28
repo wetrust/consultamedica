@@ -124,10 +124,10 @@ $( document ).ready(function() {
     $("#fum").on("change", function(){
         let fum = dayHoy;
         fum.setTime(Date.parse(document.getElementById("fum").value));
-        fum.setTime(fum.getTime() + (1000*60*60*24*240));
+        fum.setTime(fum.getTime() + (1000*60*60*24*280));
         document.getElementById("fpp").value = getDate(fum);
 
-        fum.setTime(fum.getTime() - (1000*60*60*24*240));
+        fum.setTime(fum.getTime() - (1000*60*60*24*280));
         fum = fum.getTime();
         let fee = dayHoy;
         fee.setTime(Date.parse(document.getElementById("fee").value));
@@ -246,14 +246,14 @@ $( document ).ready(function() {
             $('#resultadoAjusteEcoPrimTrim').show();
 
             let fee = new Date(document.getElementById("fee").value);
-            fee.setDate(fee.getUTCDate() - eg1);
+            fee.setTime(fee.getTime() - (1000*60*60*24*eg1));
 
             document.getElementById("furAjustada").value = getDate(fee);
 
             document.getElementById("semanasAjustada").value = Math.trunc(EGLCN);
             document.getElementById("diasAjustada").value = Math.trunc((EGLCN - Math.trunc(EGLCN))* 10);
 
-            fee.setTime(fee.getTime() + (1000*60*60*24*240));
+            fee.setTime(fee.getTime() + (1000*60*60*24*280));
             document.getElementById("fppAjustada").value = getDate(fee);
         }
     });
