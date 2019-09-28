@@ -246,7 +246,7 @@ $( document ).ready(function() {
             $('#resultadoAjusteEcoPrimTrim').show();
 
             let fee = new Date(document.getElementById("fee").value);
-            fee.setDate(fee.getUTCDate() - diferencia);
+            fee.setDate(fee.getUTCDate() - eg1);
 
             document.getElementById("furAjustada").value = getDate(fee);
 
