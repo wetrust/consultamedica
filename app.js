@@ -400,25 +400,25 @@ $( document ).ready(function() {
                 TITULOBIOMETRIAS = '';
             }
         }
-        
+
         var paciente = $( '#nombre-paciente').val();
         var idpaciente = $( '#id-paciente').val();
         var motivo = $( '#motivo-examen option:selected').text();
         var ecografista = $( '#ecografista option:selected').text();
-    
+
         let fur = new Date(Date.parse(document.getElementById("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
 
         let fexamen = document.getElementById("fee").value;
         var eg = $document.getElementById("semanas").value + "." + document.getElementById("dias").value;;
-        
+
         InformeString = InformeString.replace(":PACIENTE", paciente);
         InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
         InformeString = InformeString.replace(":MOTIVO", motivo);
         InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
-        
+
         let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
-        
+
         var comentario = $("#comentarios-eco-uno").val();
         comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
         
