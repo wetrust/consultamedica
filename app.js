@@ -544,6 +544,8 @@ $( document ).ready(function() {
             $("#saco").trigger("change");
             document.getElementById("embrion").selectedIndex = 0;
             $("#embrion").trigger("change");
+            document.getElementById("lcn").value = 0;
+            $("#lcn").trigger("change");
             document.getElementById("utero-ubic1").selectedIndex = 0;
             document.getElementById("utero-ubic2").selectedIndex = 0;
             document.getElementById("cuerpo-uterino").selectedIndex = 0;
