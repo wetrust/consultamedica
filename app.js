@@ -421,7 +421,7 @@ $( document ).ready(function() {
 
         let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value + " semanas.";
 
-        comentario = "Edad gestacional calculada: "+eg+"<br>FUR operacional: "+ fur +"<br>Fecha probable de parto: " + fpp + "<br>" + comentario;
+        comentario = "Para edad gestacional calculada: "+eg+" corresponde:<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>" + comentario;
 
         var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
         var edadmaterna = $( "select[name='edad_materna']").val();
