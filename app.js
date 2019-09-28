@@ -414,15 +414,17 @@ $( document ).ready(function() {
         var comentario = $("#comentarios-eco-uno").val();
         comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-        let fur = new Date(Date.parse(document.getElementById("fum").value));
-        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-
-        let fpp = new Date(Date.parse(document.getElementById("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
-
-        let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value + " semanas.";
-
-        comentario = "Para edad gestacional calculada: "+eg+" corresponde:<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>" + comentario;
+        if (document.getElementById("saco").value && document.getElementById("embrion").value == "no se observa aun"){
+            comentario = "Calculo inicial de edad según saco gestacional: "+document.getElementById("sacoPct").value+" semanas<br>Agendar próximo control para determinar edad gestacional por LCN<br>" + comentario;
+        }
+        else{
+            let fur = new Date(Date.parse(document.getElementById("fum").value));
+            fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+            let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+            fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
+            let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value + " semanas.";
+            comentario = "Para edad gestacional calculada: "+eg+" corresponde:<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>" + comentario;
+        }
 
         var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
         var edadmaterna = $( "select[name='edad_materna']").val();
