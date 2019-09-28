@@ -410,7 +410,7 @@ $( document ).ready(function() {
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
 
         let fexamen = document.getElementById("fee").value;
-        var eg = $document.getElementById("semanas").value + "." + document.getElementById("dias").value;;
+        var eg = document.getElementById("semanas").value + "." + document.getElementById("dias").value;;
 
         InformeString = InformeString.replace(":PACIENTE", paciente);
         InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
