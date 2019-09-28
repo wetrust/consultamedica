@@ -268,6 +268,7 @@ $( document ).ready(function() {
 
     $("#embrion").on("change", function(){
         let optiones = ["no se observa aun", "act. no evidenciable"];
+        let cardio = ["con act. cardiaca (+)", "act. cardiaca evidenciable", "act. card. y Corp.(+)"];
         let embrion = document.getElementById("embrion").value;
 
         if (optiones.includes(embrion)){
@@ -275,10 +276,19 @@ $( document ).ready(function() {
             document.getElementById("lcn").parentElement.parentElement.parentElement.classList.add("d-none");
             document.getElementById("lcn").value = 0;
             $("#lcn").trigger("change");
+            $("#lcn").trigger("change");
         }
         else{
             document.getElementById("lcn.clon").parentElement.parentElement.classList.remove("d-none");
             document.getElementById("lcn").parentElement.parentElement.parentElement.classList.remove("d-none");
+        }
+
+        if (cardio.includes(embrion)){
+            document.getElementById("fcf-primer-trim").classList.remove("d-none");
+            document.getElementById("embrion").value = (embrion == "act. cardiaca evidenciable") ? "(+) inicial": 140;
+        }
+        else{
+            document.getElementById("fcf-primer-trim").classList.add("d-none");
         }
     });
 
