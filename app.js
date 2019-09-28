@@ -343,7 +343,10 @@ $( document ).ready(function() {
     
         let fcftexto = document.getElementById("embrion").value;
     
-        if (fcftexto == 'no se observa aun' || fcftexto == 'act. no evidenciable'){
+
+        let optiones = ["no se observa aun","act. no evidenciable","act. card. y Corp. (-)"];
+
+        if (optiones.includes(fcftexto)){
             fcftexto = ".";
         }
         else{
