@@ -266,7 +266,7 @@ $( document ).ready(function() {
         }
     });
 
-    $("#embrion").on("change", function(){
+    $("#embrion, #embrion\\.clon").on("change", function(){
         let optiones = ["no se observa aun", "act. no evidenciable"];
         let cardio = ["con act. cardiaca (+)", "act. cardiaca evidenciable", "act. card. y Corp.(+)"];
         let embrion = document.getElementById("embrion").value;
@@ -276,7 +276,6 @@ $( document ).ready(function() {
             document.getElementById("lcn").parentElement.parentElement.parentElement.classList.add("d-none");
             document.getElementById("lcn").value = 0;
             $("#lcn").trigger("change");
-            $("#lcn").trigger("change");
         }
         else{
             document.getElementById("lcn.clon").parentElement.parentElement.classList.remove("d-none");
@@ -285,7 +284,7 @@ $( document ).ready(function() {
 
         if (cardio.includes(embrion)){
             document.getElementById("fcf-primer-trim").classList.remove("d-none");
-            document.getElementById("fcf-primer-trim").value = (embrion == "act. cardiaca evidenciable") ? "(+) inicial": 140;
+            document.getElementById("fcf-prim").value = (embrion == "act. cardiaca evidenciable") ? "(+) inicial": 150;
         }
         else{
             document.getElementById("fcf-primer-trim").classList.add("d-none");
@@ -312,11 +311,15 @@ $( document ).ready(function() {
     $("#embrion").on("change", function(){
         document.getElementById("embrion.clon").value = document.getElementById("embrion").value;
     });
+
+    $("#embrion\\.clon").on("change", function(){
+        document.getElementById("embrion").value = document.getElementById("embrion.clon").value;
+    });
+    
 });
 
 //controlador de los informes
 $( document ).ready(function() {
-    
     $("#btn\\.informe\\.precoz").on("click", function (){
 	
         let sacovitelinotxt = (document.getElementById("saco-vitelino").value == "no se observa") ? "." : " de diametro " + document.getElementById("saco-vitelino-mm").value + " mm.";
@@ -565,7 +568,6 @@ $( document ).ready(function() {
 
 //controlador de los keypress
 $( document ).ready(function() {
-
     $("#saco").on("keypress",function( e ) {
         if ( e.which == 13 ) {
             e.preventDefault();
@@ -686,7 +688,6 @@ $( document ).ready(function() {
 
 //controlador de los gráficos
 $( document ).ready(function() {
-
     $("#graficoSaco").on( 'click', function() {
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
