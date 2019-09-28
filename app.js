@@ -285,7 +285,7 @@ $( document ).ready(function() {
 
         if (cardio.includes(embrion)){
             document.getElementById("fcf-primer-trim").classList.remove("d-none");
-            document.getElementById("embrion").value = (embrion == "act. cardiaca evidenciable") ? "(+) inicial": 140;
+            document.getElementById("fcf-primer-trim").value = (embrion == "act. cardiaca evidenciable") ? "(+) inicial": 140;
         }
         else{
             document.getElementById("fcf-primer-trim").classList.add("d-none");
