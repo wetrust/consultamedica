@@ -267,7 +267,7 @@ $( document ).ready(function() {
     });
 
     $("#embrion").on("change", function(){
-        let optiones = ["no se observa aun", "act. no evidenciable", "no procede"];
+        let optiones = ["no se observa aun", "act. no evidenciable"];
         let embrion = document.getElementById("embrion").value;
 
         if (optiones.includes(embrion)){
