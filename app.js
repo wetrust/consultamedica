@@ -419,7 +419,7 @@ $( document ).ready(function() {
         let fpp = new Date(Date.parse(document.getElementById("fpp").value));
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
 
-        let eg = document.getElementById("semanas").value +  document.getElementById("dias").value + " semanas.";
+        let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value + " semanas.";
 
         comentario = "Edad gestacional calculada: "+eg+"<br>FUR operacional: "+ fur +"<br>Fecha probable de parto: " + fpp + "<br>" + comentario;
 
