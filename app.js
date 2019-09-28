@@ -231,7 +231,7 @@ $( document ).ready(function() {
         let dias = parseInt(document.getElementById("dias").value);
         var EGLCN = document.getElementById("lcnPct").value;
 
-        if (isNaN(this.value) | this.value < 0 | isNaN(eg) | eg < 1) {
+        if (isNaN(this.value) | this.value < 1 | isNaN(eg) | eg < 1) {
             $('#diferenciaEcoPrimTrim').html('0');
             $('#preguntaAjusteEcoPrimTrim').hide();
         } else {
