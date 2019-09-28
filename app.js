@@ -321,7 +321,6 @@ $( document ).ready(function() {
 //controlador de los informes
 $( document ).ready(function() {
     $("#btn\\.informe\\.precoz").on("click", function (){
-	
         let sacovitelinotxt = (document.getElementById("saco-vitelino").value == "no se observa") ? "." : " de diametro " + document.getElementById("saco-vitelino-mm").value + " mm.";
 
         let sacogestacionaltxt = document.getElementById("saco").value;
@@ -343,7 +342,6 @@ $( document ).ready(function() {
     
         let fcftexto = document.getElementById("embrion").value;
     
-
         let optiones = ["no se observa aun","act. no evidenciable","act. card. y Corp. (-)"];
 
         if (optiones.includes(fcftexto)){
@@ -412,7 +410,7 @@ $( document ).ready(function() {
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
 
         let fexamen = document.getElementById("fee").value;
-        var eg = $( "input[name='eg']").val();
+        var eg = $document.getElementById("semanas").value + "." + document.getElementById("dias").value;;
         
         InformeString = InformeString.replace(":PACIENTE", paciente);
         InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
