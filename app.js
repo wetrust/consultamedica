@@ -152,9 +152,6 @@ $( document ).ready(function() {
             document.getElementById("dias").value = 0;
             document.getElementById("diaciclo").value = 0;
         }
-        console.log(diff/(1000*60*60*24) );
-        // (1000*60*60*24) --> milisegundos -> segundos -> minutos -> horas -> días
-
     }).trigger("change");
 
     $("#fee").on("change", function(){
@@ -245,7 +242,8 @@ $( document ).ready(function() {
             $('#preguntaAjusteEcoPrimTrim').show();
             $('#resultadoAjusteEcoPrimTrim').show();
 
-            let fee = new Date(document.getElementById("fee").value);
+            let fee = new Date();
+            fee.setTime(Date.parse(document.getElementById("fee").value));
             fee.setTime(fee.getTime() - (1000*60*60*24*eg1));
 
             document.getElementById("furAjustada").value = getDate(fee);
