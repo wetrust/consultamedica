@@ -414,7 +414,7 @@ $( document ).ready(function() {
         comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
         if (document.getElementById("saco").value && document.getElementById("embrion").value == "no se observa aun"){
-            comentario = "Calculo inicial de edad según saco gestacional: "+document.getElementById("sacoPct").value+" semanas<br>Agendar próximo control para determinar edad gestacional por LCN<br>" + comentario;
+            comentario = "Calculo inicial de edad según saco gestacional: "+document.getElementById("sacoPct").value+" semanas<br>Agendar próxima ecografía para determinar edad gestacional por LCN<br>" + comentario;
         }
         else{
             let fur = new Date(Date.parse(document.getElementById("fum").value));

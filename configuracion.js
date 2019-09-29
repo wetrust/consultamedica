@@ -9,7 +9,6 @@ function checkIntegrity() {
     let db = JSON.parse(localStorage["configuracion"]);
 
     let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete'];
-    let baseTables = JSON.parse('{"nacionalidad":[],"MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}');
 
     for (var j = 0; j < tables.length; j++) {
         let table = false;
@@ -56,7 +55,7 @@ function loadDatabase() {
             $('#MotivoConfigTable').append(fila);
 
         });
-        $('#eliminarMotivoConfig').css("display", "block");
+        $('#eliminarMotivoConfig').removeClass("d-none");
         $('#MotivoConfigTable tr').on('click', function() {
             activateTr(this);
         });
@@ -78,7 +77,7 @@ function loadDatabase() {
             $('#EcografistaConfigTable').append(fila);
 
         });
-        $('#eliminarEcografistaConfig').css("display", "block");
+        $('#eliminarEcografistaConfig').removeClass("d-none");
         $('#EcografistaConfigTable tr').on('click', function() {
             activateTr(this);
         });
@@ -96,7 +95,7 @@ function loadDatabase() {
             $('#NacionalidadConfigTable').append(fila);
 
         });
-        $('#eliminarNacionalidadConfig').css("display", "block");
+        $('#eliminarNacionalidadConfig').removeClass("d-none");
         $('#NacionalidadConfigTable tr').on('click', function() {
             activateTr(this);
         });
@@ -114,7 +113,7 @@ function loadDatabase() {
             $('#PatologiaObstetricaConfigTable').append(fila);
 
         });
-        $('#eliminarPatologiaObstetricaConfig').css("display", "block");
+        $('#eliminarPatologiaObstetricaConfig').removeClass("d-none");
         $('#PatologiaObstetricaConfigTable tr').on('click', function() {
             activateTr(this);
         });
@@ -130,16 +129,12 @@ function saveMotivoExamenLocalStorage() {
 
             $('#motivo-examen').html("");
             $('#MotivoConfigTable').html("");
-
-            var aRR = {
-                id: 0,
-                nombre: "Doe"
-            };
+            var aRR = {id: 0, nombre: "Doe"};
             aRR["id"] = configuracion.MotivoExamen.length + 1;
             aRR["nombre"] = $('#motivoInput').val();
 
             configuracion.MotivoExamen.push(aRR);
-            $('#eliminarMotivoConfig').css("display", "block");
+            $('#eliminarMotivoConfig').removeClass("d-none");
             $('#motivoInput').val("");
             localStorage["configuracion"] = JSON.stringify(configuracion);
             loadDatabase();
@@ -155,16 +150,12 @@ function saveEcografistaExamenLocalStorage() {
 
             $('#ecografista').html("");
             $('#EcografistaConfigTable').html("");
-
-            var aRR = {
-                id: 0,
-                nombre: "Doe"
-            };
+            var aRR = {id: 0, nombre: "Doe"};
             aRR["id"] = configuracion.profesional.length + 1;
             aRR["nombre"] = $('#ecografistaInput').val();
 
             configuracion.profesional.push(aRR);
-            $('#eliminarEcografistaConfig').css("display", "block");
+            $('#eliminarEcografistaConfig').removeClass("d-none");
             $('#ecografistaInput').val("");
             localStorage["configuracion"] = JSON.stringify(configuracion);
             loadDatabase();
@@ -180,16 +171,12 @@ function saveNacionalidadConfigLocalStorage() {
 
             $('#nacionalidadInput').html("");
             $('#NacionalidadConfigTable').html("");
-
-            var aRR = {
-                id: 0,
-                nombre: "Doe"
-            };
+            var aRR = {id: 0, nombre: "Doe"};
             aRR["id"] = configuracion.nacionalidad.length + 1;
             aRR["nombre"] = $('#nacionalidadInput').val();
 
             configuracion.nacionalidad.push(aRR);
-            $('#eliminarNacionalidadConfig').css("display", "block");
+            $('#eliminarNacionalidadConfig').removeClass("d-none");
             $('#nacionalidadInput').val("");
             localStorage["configuracion"] = JSON.stringify(configuracion);
             loadDatabase();
@@ -206,15 +193,12 @@ function savePatologiaObstetricaExamenLocalStorage() {
             $('#patologiaObstetricaUno').html("");
             $('#PatologiaObstetricaConfigTable').html("");
 
-            var aRR = {
-                id: 0,
-                nombre: "Doe"
-            };
+            var aRR = {id: 0, nombre: "Doe"};
             aRR["id"] = configuracion.PatologiaObstetrica.length + 1;
             aRR["nombre"] = $('#PatologiaObstetricaInput').val();
 
             configuracion.PatologiaObstetrica.push(aRR);
-            $('#eliminarPatologiaObstetricaConfig').css("display", "block");
+            $('#eliminarPatologiaObstetricaConfig').removeClass("d-none");
             $('#PatologiaObstetricaInput').val("");
             localStorage["configuracion"] = JSON.stringify(configuracion);
             loadDatabase();
@@ -232,28 +216,28 @@ function activateTr(element) {
 //manejadore de botones
 $(document).ready(function() {
     $('#nuevoMotivoConfig').on('click', function() {
-        $('#motivoConfig .tabla').hide();
-        $('#nuevoMotivoConfig').hide();
-        $('#guardarMotivoConfig').show();
-        $('#cancelarMotivoConfig').show();
-        $('#motivoConfig .formulario').show();
+        $('#motivoConfig .tabla').addClass("d-none");
+        $('#nuevoMotivoConfig').addClass("d-none");
+        $('#guardarMotivoConfig').removeClass("d-none");
+        $('#cancelarMotivoConfig').removeClass("d-none");
+        $('#motivoConfig .formulario').removeClass("d-none");
     });
 
     $('#guardarMotivoConfig').on('click', function() {
         saveMotivoExamenLocalStorage();
-        $("#motivoConfig .tabla").show();
-        $('#nuevoMotivoConfig').show();
-        $('#guardarMotivoConfig').hide();
-        $('#cancelarMotivoConfig').hide();
-        $("#motivoConfig .formulario").hide();
+        $("#motivoConfig .tabla").removeClass("d-none");
+        $('#nuevoMotivoConfig').removeClass("d-none");
+        $('#guardarMotivoConfig').addClass("d-none");
+        $('#cancelarMotivoConfig').addClass("d-none");
+        $("#motivoConfig .formulario").addClass("d-none");
     });
 
     $('#cancelarMotivoConfig').on('click', function() {
-        $("#motivoConfig .tabla").show();
-        $('#nuevoMotivoConfig').show();
-        $('#guardarMotivoConfig').hide();
-        $('#cancelarMotivoConfig').hide();
-        $("#motivoConfig .formulario").hide();
+        $("#motivoConfig .tabla").removeClass("d-none");
+        $('#nuevoMotivoConfig').removeClass("d-none");
+        $('#guardarMotivoConfig').addClass("d-none");
+        $('#cancelarMotivoConfig').addClass("d-none");
+        $("#motivoConfig .formulario").addClass("d-none");
     });
 
     $('#eliminarMotivoConfig').on('click', function() {
@@ -269,10 +253,7 @@ $(document).ready(function() {
                 var MotivoExamen = [];
                 $.each(configuracion.MotivoExamen, function(i, item) {
                     if (item.nombre != nombre) {
-                        var aRR = {
-                            id: 0,
-                            nombre: "Doe"
-                        };
+                        var aRR = {id: 0, nombre: "Doe"};
                         aRR["id"] = contador + 1;
                         aRR["nombre"] = item.nombre;
 
@@ -294,28 +275,28 @@ $(document).ready(function() {
     });
 
     $('#nuevoEcografistaConfig').on('click', function() {
-        $('#ecografistaConfig .tabla').hide();
-        $('#nuevoEcografistaConfig').hide();
-        $('#guardarEcografistaConfig').show();
-        $('#cancelarEcografistaConfig').show();
-        $('#ecografistaConfig .formulario').show();
+        $('#ecografistaConfig .tabla').addClass("d-none");
+        $('#nuevoEcografistaConfig').addClass("d-none");
+        $('#guardarEcografistaConfig').removeClass("d-none");
+        $('#cancelarEcografistaConfig').removeClass("d-none");
+        $('#ecografistaConfig .formulario').removeClass("d-none");
     });
 
     $('#cancelarEcografistaConfig').on('click', function() {
-        $("#ecografistaConfig .tabla").show();
-        $('#nuevoEcografistaConfig').show();
-        $('#guardarEcografistaConfig').hide();
-        $('#cancelarEcografistaConfig').hide();
-        $("#ecografistaConfig .formulario").hide();
+        $("#ecografistaConfig .tabla").removeClass("d-none");
+        $('#nuevoEcografistaConfig').removeClass("d-none");
+        $('#guardarEcografistaConfig').addClass("d-none");
+        $('#cancelarEcografistaConfig').addClass("d-none");
+        $("#ecografistaConfig .formulario").addClass("d-none");
     });
 
     $('#guardarEcografistaConfig').on('click', function() {
         saveEcografistaExamenLocalStorage();
-        $("#ecografistaConfig .tabla").show();
-        $('#nuevoEcografistaConfig').show();
-        $('#guardarEcografistaConfig').hide();
-        $('#cancelarEcografistaConfig').hide();
-        $("#ecografistaConfig .formulario").hide();
+        $("#ecografistaConfig .tabla").removeClass("d-none");
+        $('#nuevoEcografistaConfig').removeClass("d-none");
+        $('#guardarEcografistaConfig').addClass("d-none");
+        $('#cancelarEcografistaConfig').addClass("d-none");
+        $("#ecografistaConfig .formulario").addClass("d-none");
     });
 
     $('#eliminarEcografistaConfig').on('click', function() {
@@ -331,10 +312,7 @@ $(document).ready(function() {
                 var profesional = [];
                 $.each(configuracion.profesional, function(i, item) {
                     if (item.nombre != nombre) {
-                        var aRR = {
-                            id: 0,
-                            nombre: "Doe"
-                        };
+                        var aRR = {id: 0, nombre: "Doe"};
                         aRR["id"] = contador + 1;
                         aRR["nombre"] = item.nombre;
 
@@ -345,6 +323,10 @@ $(document).ready(function() {
 
                 configuracion.profesional = profesional;
                 localStorage["configuracion"] = JSON.stringify(configuracion);
+
+                if (profesional.length == 0){
+                    $('#eliminarEcografistaConfig').addClass("d-none");
+                }
             }
         });
 
@@ -356,53 +338,53 @@ $(document).ready(function() {
     });
 
     $('#nuevoNacionalidadConfig').on('click', function() {
-        $('#nacionalidadConfig .tabla').hide();
-        $('#nuevoNacionalidadConfig').hide();
-        $('#guardarNacionalidadConfig').show();
-        $('#cancelarNacionalidadConfig').show();
-        $('#nacionalidadConfig .formulario').show();
+        $('#nacionalidadConfig .tabla').addClass("d-none");
+        $('#nuevoNacionalidadConfig').addClass("d-none");
+        $('#guardarNacionalidadConfig').removeClass("d-none");
+        $('#cancelarNacionalidadConfig').removeClass("d-none");
+        $('#nacionalidadConfig .formulario').removeClass("d-none");
     });
 
     $('#cancelarNacionalidadConfig').on('click', function() {
-        $("#nacionalidadConfig .tabla").show();
-        $('#nuevoNacionalidadConfig').show();
-        $('#guardarNacionalidadConfig').hide();
-        $('#cancelarNacionalidadConfig').hide();
-        $("#nacionalidadConfig .formulario").hide();
+        $("#nacionalidadConfig .tabla").removeClass("d-none");
+        $('#nuevoNacionalidadConfig').removeClass("d-none");
+        $('#guardarNacionalidadConfig').addClass("d-none");
+        $('#cancelarNacionalidadConfig').addClass("d-none");
+        $("#nacionalidadConfig .formulario").addClass("d-none");
     });
 
     $('#guardarNacionalidadConfig').on('click', function() {
         saveNacionalidadConfigLocalStorage();
-        $("#nacionalidadConfig .tabla").show();
-        $('#nuevoNacionalidadConfig').show();
-        $('#guardarNacionalidadConfig').hide();
-        $('#cancelarNacionalidadConfig').hide();
-        $("#nacionalidadConfig .formulario").hide();
+        $("#nacionalidadConfig .tabla").removeClass("d-none");
+        $('#nuevoNacionalidadConfig').removeClass("d-none");
+        $('#guardarNacionalidadConfig').addClass("d-none");
+        $('#cancelarNacionalidadConfig').addClass("d-none");
+        $("#nacionalidadConfig .formulario").addClass("d-none");
     });
 
     $('#nuevoPatologiaObstetricaConfig').on('click', function() {
-        $('#patologiaObstetricaConfig .tabla').hide();
-        $('#nuevoPatologiaObstetricaConfig').hide();
-        $('#guardarPatologiaObstetricaConfig').show();
-        $('#cancelarPatologiaObstetricaConfig').show();
-        $('#patologiaObstetricaConfig .formulario').show();
+        $('#patologiaObstetricaConfig .tabla').addClass("d-none");
+        $('#nuevoPatologiaObstetricaConfig').addClass("d-none");
+        $('#guardarPatologiaObstetricaConfig').removeClass("d-none");
+        $('#cancelarPatologiaObstetricaConfig').removeClass("d-none");
+        $('#patologiaObstetricaConfig .formulario').removeClass("d-none");
     });
 
     $('#cancelarPatologiaObstetricaConfig').on('click', function() {
-        $("#patologiaObstetricaConfig .tabla").show();
-        $('#nuevoPatologiaObstetricaConfig').show();
-        $('#guardarPatologiaObstetricaConfig').hide();
-        $('#cancelarPatologiaObstetricaConfig').hide();
-        $("#patologiaObstetricaConfig .formulario").hide();
+        $("#patologiaObstetricaConfig .tabla").removeClass("d-none");
+        $('#nuevoPatologiaObstetricaConfig').removeClass("d-none");
+        $('#guardarPatologiaObstetricaConfig').addClass("d-none");
+        $('#cancelarPatologiaObstetricaConfig').addClass("d-none");
+        $("#patologiaObstetricaConfig .formulario").addClass("d-none");
     });
 
     $('#guardarPatologiaObstetricaConfig').on('click', function() {
         savePatologiaObstetricaExamenLocalStorage();
-        $("#patologiaObstetricaConfig .tabla").show();
-        $('#nuevoPatologiaObstetricaConfig').show();
-        $('#guardarPatologiaObstetricaConfig').hide();
-        $('#cancelarPatologiaObstetricaConfig').hide();
-        $("#patologiaObstetricaConfig .formulario").hide();
+        $("#patologiaObstetricaConfig .tabla").removeClass("d-none");
+        $('#nuevoPatologiaObstetricaConfig').removeClass("d-none");
+        $('#guardarPatologiaObstetricaConfig').addClass("d-none");
+        $('#cancelarPatologiaObstetricaConfig').addClass("d-none");
+        $("#patologiaObstetricaConfig .formulario").addClass("d-none");
     });
 
     $('#eliminarPatologiaObstetricaConfig').on('click', function() {
@@ -418,10 +400,7 @@ $(document).ready(function() {
                 var PatologiaObstetrica = [];
                 $.each(configuracion.PatologiaObstetrica, function(i, item) {
                     if (item.nombre != nombre) {
-                        var aRR = {
-                            id: 0,
-                            nombre: "Doe"
-                        };
+                        var aRR = {id: 0, nombre: "Doe"};
                         aRR["id"] = contador + 1;
                         aRR["nombre"] = item.nombre;
 
