@@ -6,6 +6,9 @@
 .bg-verde{
   background-color: #009688 !important;
 }
+.bg-verde-claro{
+    background-color: #05c4b2 !important;
+}
 .alert-gris{
 	background: #ccd4d8; /* For browsers that do not support gradients */
 	background: -webkit-linear-gradient(left, #ccd4d8, #eceeef); /* For Safari 5.1 to 6.0 */
