@@ -1081,7 +1081,7 @@ $( document ).ready(function() {
                         data.push({
                                 y: aud,
                             });
-                        for (i = edadGest +1; i <= 39; i ++ ) {
+                        for (i = (edadGest +1); i <= 39; i ++ ) {
                             data.push({
                                 y: 0,
                             });
