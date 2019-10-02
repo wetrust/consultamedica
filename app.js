@@ -401,7 +401,8 @@ $( document ).ready(function() {
         var motivo = $( '#motivo-examen option:selected').text();
         var ecografista = $( '#ecografista option:selected').text();
 
-        let fexamen = document.getElementById("fee").value;
+        let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()+1] + " " + fexamen.getFullYear();
 
         InformeString = InformeString.replace(":PACIENTE", paciente);
         InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
