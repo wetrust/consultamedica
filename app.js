@@ -1017,6 +1017,13 @@ $( document ).ready(function() {
     });
 
     $("#graficoAud").on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 10){
+            alert("Edad Gestacional inferior a 10 semanas");
+            return false;
+        }
+        
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         document.getElementById(modal.titulo).innerText = "Gráfico Arteria Uterina Derecha";
@@ -1093,6 +1100,13 @@ $( document ).ready(function() {
     });
 
     $("#graficoAui").on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 10){
+            alert("Edad Gestacional inferior a 10 semanas");
+            return false;
+        }
+
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         document.getElementById(modal.titulo).innerText = "Gráfico Arteria Uterina Izquierda";
@@ -1171,6 +1185,13 @@ $( document ).ready(function() {
     });
 
     $("#graficoAu").on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 10){
+            alert("Edad Gestacional inferior a 10 semanas");
+            return false;
+        }
+
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         document.getElementById(modal.titulo).innerText = "Gráfico Promedio Arteria Uterinas";
