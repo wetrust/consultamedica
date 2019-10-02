@@ -408,7 +408,7 @@ $( document ).ready(function() {
         InformeString = InformeString.replace(":MOTIVO", motivo);
         InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
 
-        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()+1] + " " + dayHoy.getFullYear();
 
         var comentario = $("#comentarios-eco-uno").val();
         comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
@@ -418,7 +418,7 @@ $( document ).ready(function() {
         }
         else{
             let fur = new Date(Date.parse(document.getElementById("fum").value));
-            fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+            fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()+1] + " " + fur.getFullYear();
             let fpp = new Date(Date.parse(document.getElementById("fpp").value));
             fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
             let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value + " semanas.";
@@ -565,10 +565,12 @@ $( document ).ready(function() {
         let idpaciente = $( '#id-paciente').val();
         let motivo = $( '#motivo-examen option:selected').text();
         let ecografista = document.getElementById("ecografista.copia").value;
-        let fur = document.getElementById("fum").value;
-        let fexamen = document.getElementById("fee").value;
+        let fur = new Date(Date.parse(document.getElementById("fum").value));
+        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()+1] + " " + fur.getFullYear();
+        let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()+1] + " " + fexamen.getFullYear();
 
-        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()+1] + " " + dayHoy.getFullYear();
 
         let comentario = document.getElementById("comentario.ginecologica").value;
         comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
