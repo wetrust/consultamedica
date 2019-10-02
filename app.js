@@ -1436,6 +1436,88 @@ $( document ).ready(function() {
              }]
         });
     });
+
+    $("#graficoCcp").on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 20){
+            alert("Edad Gestacional inferior a 20 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico Cuociente Cerebro Placentario";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoCcpView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoCcpView').highcharts({
+            title: {
+                text: 'IP de CCP (Indice ACM / AU) **',
+                x: -20 //center
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Valor IP' },
+                tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories:
+                ['20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+            },
+            credits: { enabled: false },
+            series: [{
+                type: "line",
+                name: 'Pct. 5',
+                marker: { enabled: false },
+                data: [0.78,0.87,0.95,1.02,1.09,1.15,1.2,1.24,1.28,1.31,1.33,1.35,1.36,1.36,1.36,1.34,1.32,1.3,1.26,1.22,1.18]
+            }, {
+                type: "line",
+                name: 'Pct. 95',
+                marker: { enabled: false },
+                data: [1.68,1.88,2.06,2.22,2.36,2.49,2.6,2.7,2.78,2.84,2.89,2.92,2.93,2.93,2.91,2.87,2.82,2.75,2.67,2.57,2.45]
+            }, {
+                type: "line",
+                name: 'Cuociente',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    // generate an array of random data
+                    var data = [];
+                    var edadGest = document.getElementById("semanas").value;
+   
+                    for (i = 20; i <= edadGest; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    var ccp = $("#ccp").val();
+                    ccp = ccp.toString();
+                    ccp = ccp.replace(",", ".");
+                    ccp = parseFloat(ccp);
+                    
+                    data.push({
+                        y: ccp,
+                    });
+                    for (i = edadGest + 1; i <= 38; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+       });
+    });
 });
 
 $(window).on('hashchange', function(){
