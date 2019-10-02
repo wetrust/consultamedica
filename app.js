@@ -1023,7 +1023,7 @@ $( document ).ready(function() {
             alert("Edad Gestacional inferior a 10 semanas");
             return false;
         }
-        
+
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         document.getElementById(modal.titulo).innerText = "Gráfico Arteria Uterina Derecha";
@@ -1265,6 +1265,175 @@ $( document ).ready(function() {
                         return data;
                     }())
                 }]
+        });
+    });
+
+    $("#graficoIpau").on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 20){
+            alert("Edad Gestacional inferior a 20 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico IP Arteria Umbilical";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoIpauView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoIpauView').highcharts({
+            title: {
+                text: 'IP Arteria Umbilical **',
+                x: -20, //center
+                    style: {
+               fontSize: '10px'
+           }
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Valor IP' },
+                tickPositions: [0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories:['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            },
+            credits: { enabled: false },
+            series: [{
+                type: "line",
+                name: 'Pct. 5',
+                marker: { enabled: false },
+                data: [0.97,0.95,0.94,0.92,0.9,0.89,0.87,0.85,0.82,0.8,0.78,0.75,0.73,0.7,0.67,0.65,0.62,0.58,0.55,0.52,0.49]
+            }, {
+                type: "line",
+                name: 'Pct. 95',
+                marker: { enabled: false },
+                data: [1.6,1.56,1.53,1.5,1.46,1.43,1.4,1.37,1.35,1.32,1.29,1.27,1.25,1.22,1.2,1.18,1.16,1.14,1.13,1.11,1.09]
+            }, {
+                type: "line",
+                name: 'Arteria',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    var data = [];
+                    var edadGest = document.getElementById("semanas").value;
+   
+                    for (i = 20; i <= edadGest; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    var ipau = $("#ipau").val();
+                    ipau = ipau.toString();
+                    ipau = ipau.replace(",", ".");
+                    ipau = parseFloat(ipau);
+                    
+                    data.push({
+                        y: ipau,
+                    });
+                    for (i = edadGest + 1; i <= 39; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+       });
+    });
+
+    $("#graficoIpacm").on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 20){
+            alert("Edad Gestacional inferior a 20 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico IP Arteria C. Media";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoIpacmView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoIpacmView').highcharts({
+            title: {
+                 text: 'IP Arteria Cerebral Media **',
+                 x: -20,
+                    style: {
+                fontSize: '10px'
+            }
+             },
+             plotOptions: {
+                 series: {
+                     enableMouseTracking: false
+                 }
+             },
+             yAxis: {
+                 title: { text: 'Valor IP' },
+                 tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
+             },
+             colors: ['#313131', '#313131', '#313131'],
+             xAxis: {
+                 categories: ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+             },
+             credits: {
+                 enabled: false
+             },
+             series: [{
+                 type: "line",
+                 name: 'Pct. 5',
+                 marker: { enabled: false },
+                 data: [1.24,1.29,1.34,1.37,1.4,1.43,1.44,1.45,1.45,1.44,1.43,1.41,1.38,1.34,1.3,1.25,1.19,1.13,1.05,0.98,0.89]
+             }, {
+                 type: "line",
+                 name: 'Pct. 95',
+                 marker: { enabled: false },
+                 data: [1.98,2.12,2.25,2.36,2.45,2.53,2.59,2.63,2.66,2.67,2.67,2.65,2.62,2.56,2.5,2.41,2.31,2.2,2.07,1.92,1.76]
+             }, {
+                 type: "line",
+                 name: 'Arteria',
+                 dashStyle: "Dot",
+                 marker: { symbol: 'square' },
+                 lineWidth: 0,
+                 data: (function () {
+                     var data = [];
+                     var edadGest = document.getElementById("semanas").value;
+    
+                     for (i = 20; i <= edadGest; i++) {
+                         data.push({
+                             y: 0,
+                         });
+                     }
+                         
+                     var ipacm = $("#ipacm").val();
+                     ipacm = ipacm.toString();
+                     ipacm = ipacm.replace(",", ".");
+                     ipacm = parseFloat(ipacm);
+                         
+                     data.push({
+                         y: ipacm,
+                     });
+                     for (i = edadGest + 1; i <= 39; i++) {
+                         data.push({
+                             y: 0,
+                         });
+                     }
+                     return data;
+                 }())
+             }]
         });
     });
 });
