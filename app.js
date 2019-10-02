@@ -1518,6 +1518,169 @@ $( document ).ready(function() {
             }]
        });
     });
+
+    $("#graficoDv").on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 20){
+            alert("Edad Gestacional inferior a 20 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico Ductus Venoso";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoDvView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoDvView').highcharts({
+            title: {
+                text: 'Ductus Venoso',
+                x: -20 //center
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Valor IP' },
+                tickPositions: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories: 
+                ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            },
+            credits: { enabled: false },
+            series: [{
+                type: "line",
+                name: 'Pct. 5',
+                marker: { enabled: false },
+                data: [0.32,0.32,0.32,0.32,0.32,0.32,0.31,0.31,0.31,0.3,0.29,0.28,0.28,0.27,0.26,0.25,0.24,0.23,0.22,0.21,0.2]
+            }, {
+                type: "line",
+                name: 'Pct. 95',
+                marker: { enabled: false },
+                data: [0.83,0.83,0.83,0.83,0.83,0.83,0.82,0.82,0.81,0.81,0.8,0.79,0.78,0.77,0.76,0.75,0.74,0.73,0.72,0.71,0.7]
+            }, {
+                type: "line",
+                    name: 'Ductus Venoso',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                data: (function () {
+                        var data = [];
+                        var edadGest = document.getElementById("semanas").value;
+    
+                        for (i = 20; i <= edadGest; i ++ ) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        var dv = $("#dv").val();
+                        dv = dv.toString();
+                        dv = dv.replace(",", ".");
+                        dv = parseFloat(dv);
+                        
+                        data.push({
+                                y: dv,
+                            });
+                        for (i = edadGest +1; i <= 39; i ++ ) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        return data;
+                    }())
+                }]
+        });
+    });
+
+    $("#graficopsmACM").on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 18){
+            alert("Edad Gestacional inferior a 18 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico Pick sistólico máximo de ACM";
+        document.getElementById(modal.contenido).innerHTML = '<div id="viewGraficopsmACM"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+                                
+        $('#viewGraficopsmACM').highcharts({
+        title: {
+            text: 'Pick sistólico máximo de ACM',
+            x: -20 //center
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'cm/s' },
+            tickPositions: [20, 40, 60, 80, 100]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories: ['18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Valor de la Media',
+            marker: { enabled: false },  
+            data:  [23.2,24.3,25.5,26.7,27.9,29.3,30.7,32.1,33.6,35.2,36.9,38.7,40.5,42.4,44.4,46.5,48.7,51.1,53.5,56,58.7,61.5,64.4]
+        }, {
+            type: "line",
+            name: 'Anemia leve',
+            marker: { enabled: false },
+            data: [29.9, 31.1, 32.8,34.5,36,37.8,39.5,41.5,43.3,45.6,47.6,50.4,52.2,55,57.3,60.1,62.9,66,69,72.8,75.7,79.8,83] 
+        }, {
+            type: "line",
+            name: 'Anemia moderada',
+            marker: { enabled: false },
+            data: [34.8,36.5,38.2,39.7,41.9,44,46,48,50.4,53,55.4,58,60.9,63.5,66.6,70,73.1,76.5,80.2,84,88,92.5,96.6]
+        }, {
+            type: "line",
+            name: 'Pick sistólico máximo de ACM',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (function () {
+                // generate an array of random data
+                var data = [];
+                var edadGest = document.getElementById("semanas").value;
+                var medida = parseFloat(document.getElementById("psmACM").value);
+
+                for (i = 18; i <= edadGest; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                data.push({
+                    y: medida,
+                });
+                for (i = edadGest + 1; i <= 39; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                return data;
+            }())
+        }]
+        });
+    });
 });
 
 $(window).on('hashchange', function(){
