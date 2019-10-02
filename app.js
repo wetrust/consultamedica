@@ -460,11 +460,11 @@ $( document ).ready(function() {
         var ecografista = $( '#ecografista option:selected').text();
 
         let fur = new Date(Date.parse(document.getElementById("fum").value));
-        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()+1] + " " + fur.getFullYear();
         let fexamen = new Date(Date.parse(document.getElementById("fee").value));
-        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()+1] + " " + fexamen.getFullYear();
         let fpp = new Date(Date.parse(document.getElementById("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
+        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
         let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
         
         var bvm = $('#bvmDoppler').val();
@@ -502,7 +502,7 @@ $( document ).ready(function() {
         var presentacion = $("#presentacion-doppler").val();
         var edadmaterna = $( "select[name='edad_materna']").val();
         
-        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth() +1] + " " + dayHoy.getFullYear();
 
         var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
         
