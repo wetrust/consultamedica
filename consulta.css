@@ -72,6 +72,12 @@ body{
     background-image:url('img/cream_pixels.png');
 }
 
+.progress{
+    background-image: url(img/bg-progress.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .progress-consulta{
     display: -ms-flexbox;
     display: flex;
@@ -83,9 +89,6 @@ body{
     text-align: center;
     white-space: nowrap;
     transition: width .6s ease;
-    background-image: url(img/bg-progress.png);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .progress-consulta::after {
     content: "X";
