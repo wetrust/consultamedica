@@ -2125,3 +2125,8 @@ function pctacm() {
 		}
 	}
 }
+
+function ajustarProgreso(valor, objeto){
+	valor = valor + "%";
+	$("#"+objeto + " > .progress-consulta").css({"width": valor});
+}

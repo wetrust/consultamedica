@@ -71,3 +71,22 @@
 body{
     background-image:url('img/cream_pixels.png');
 }
+
+.progress-consulta{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    transition: width .6s ease;
+}
+.progress-bar::after {
+    content: "X";
+    margin-right: -5px;
+    text-align: right;
+    color: black;
+}
