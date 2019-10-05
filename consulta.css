@@ -83,6 +83,9 @@ body{
     text-align: center;
     white-space: nowrap;
     transition: width .6s ease;
+    background-image: url(img/bg-progress.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .progress-consulta::after {
     content: "X";
