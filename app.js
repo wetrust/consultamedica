@@ -297,6 +297,12 @@ $( document ).ready(function() {
         document.getElementById("dias").value = document.getElementById("diasAjustada").value;
         $("#semanas").trigger("change");
     });
+
+    $("#aud").change( pctut);
+    $("#aui").change( pctut);
+    $("#dv").change( pctdv);
+    $("#ipau").change( pctau);
+    $("#ipacm").change( pctacm);
 });
 
 //controlador de input clones
@@ -1850,3 +1856,272 @@ function eglcn(lcn) {
         return 0;
     }
 };
+
+
+function pctut() {
+    'use strict';
+    let a = [];
+    let b = [];
+	a[0]=1.23; a[1]=1.18; a[2]=1.11; a[3]=1.05;a[4]=0.99; a[5]=0.94; a[6]=0.89; a[7]=0.85; a[8]=0.81; a[9]=0.78; a[10]=0.74; a[11]=0.71; a[12]=0.69; a[13]=0.66; a[14]=0.64; a[15]=0.62; a[16]=0.6; a[17]=0.58; a[18]=0.56; a[19]=0.55; a[20]=0.54; a[21]=0.52; a[22]=0.51; a[23]=0.51; a[24]=0.51; a[25]=0.49; a[26]=0.48; a[27]=0.48; a[28]=0.47; a[29]=0.47; a[30]=0.47;
+	b[0]=2.84; b[1]=2.71; b[2]=2.53; b[3]=2.38;b[4]=2.24; b[5]=2.11; b[6]=1.99; b[7]=1.88;b[8]=1.79; b[9]=1.71; b[10]=1.61; b[11]=1.54;b[12]=1.47; b[13]=1.41; b[14]=1.35; b[15]=1.3;b[16]=1.25; b[17]=1.21;b[18]=1.17; b[19]=1.13;b[20]=1.11; b[21]=1.06;b[22]=1.04; b[23]=1.01; b[24]=0.99; b[25]=0.97;b[26]=0.95; b[27]=0.94;b[28]=0.92; b[29]=0.91; b[30]=0.91;
+    
+    let eg = document.getElementById("semanas").value;
+
+	let utd = document.getElementById("aud").value;
+	utd = utd.toString(); 
+ 	utd = utd.replace(",", ".");
+ 	utd = parseFloat(utd);
+	let uti = document.getElementById("aui").value;
+	uti = uti.toString();
+ 	uti = uti.replace(",", ".");
+ 	uti = parseFloat(uti);
+	
+    let utprom = ((uti + utd) / 2);
+    document.getElementById("auprom").value = utprom.toFixed(2);
+
+	if (eg < 10 || eg > 40) {  
+		$("#audPct").val('0');
+		$("#auiPct").val('0');
+		$("#auPct").val('0');
+	 }
+	 else {
+		eg = eg - 10;
+		var uno=0;
+		var dos=0;
+		 var resultado = '';
+		if (utd > 0){
+			eg = parseInt(eg);
+			uno=b[eg] - a[eg];
+			dos=utd - a[eg];
+			resultado = parseInt(90 / (uno) * (dos) + 5);
+			ajustarProgreso(resultado, "audPct");
+			var pctUTD = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctUTD = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctUTD = '&lt; 1';
+			}
+			else{
+				pctUTD = resultado;
+			}
+			$("#audPctTxt").val(pctUTD);
+            $("#audRngo").val(a[eg] + " - " + b[eg]);
+		}
+		if (uti > 0){
+			eg = parseInt(eg);
+			uno=b[eg] - a[eg];
+			dos=uti - a[eg];
+			$('#auiPct').val(parseInt(90 / (uno) * (dos) + 5));
+			resultado = parseInt(90 / (uno) * (dos) + 5);
+			ajustarProgreso(resultado, "auiPct");
+			var pctUTI = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctUTI = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctUTI = '&lt; 1';
+			}
+			else{
+				pctUTI = resultado;
+			}
+			$("#auiPctTxt").val(pctUTI);
+                        $("#auiRngo").val(a[eg] + " - " + b[eg]);
+		}
+		if ($("#aud").val() && $("#aui").val()){
+			uno = b[eg] - a[eg];
+			dos = utprom - a[eg];
+			$('#auPct').val(parseInt(90 / (uno) * (dos) + 5));
+			resultado = parseInt(90 / (uno) * (dos) + 5);
+			ajustarProgreso(resultado, "auPct");
+			var pctAUD = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctAUD = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctAUD = '&lt; 1';
+			}
+			else{
+				pctAUD = resultado;
+			}
+			$("#auPctTxt").val(pctAUD);
+                        $("#auRngo").val(a[eg] + " - " + b[eg]);
+		}
+	 }
+}
+
+function pctdv() {
+    'use strict';
+    let a = [];
+    let b = [];
+   
+    a[0]=0.32; a[1]=0.32; a[2]=0.32; a[3]=0.32; a[4]=0.32; a[5]=0.32; a[6]=0.31; a[7]=0.31; a[8]=0.31; a[9]=0.3; a[10]=0.29; a[11]=0.28; a[12]=0.28; a[13]=0.27; a[14]=0.26; a[15]=0.25; a[16]=0.24; a[17]=0.23; a[18]=0.22; a[19]=0.21; a[20]=0.2;
+    b[0]=0.83; b[1]=0.83; b[2]=0.83; b[3]=0.83; b[4]=0.83; b[5]=0.83; b[6]=0.82; b[7]=0.82; b[8]=0.81; b[9]=0.81; b[10]=0.8; b[11]=0.79; b[12]=0.78; b[13]=0.77; b[14]=0.76; b[15]=0.75; b[16]=0.74; b[17]=0.73; b[18]=0.72; b[19]=0.71; b[20]=0.7;
+   
+    let eg = document.getElementById("semanas").value;
+    var dv = document.getElementById("dv").value;
+   dv = dv.toString();
+    dv = dv.replace(",", ".");
+    dv = parseFloat(dv);
+       
+    if (eg < 20 || eg > 40)
+    {
+      $("#dvPct").val("0");
+    }
+    else {
+         eg = eg - 20;
+         eg = parseInt(eg);
+         var uno=b[eg] - a[eg];
+         var dos=dv - a[eg];
+        var resultado = parseInt(90 / (uno) * (dos) + 5);
+        var pctDV = '';
+               //truncador de Pct, sobre 100 o bajo 1
+               if (resultado > 99){
+                   pctDV = '&gt; 99';
+               }
+               else if (resultado < 1){
+                   pctDV = '&lt; 1';
+               }
+               else{
+                   pctDV = resultado;
+               }
+         ajustarProgreso(resultado, "dvPct");
+         $("#dvPctTxt").val(pctDV);
+         $("#dvRngo").val( a[eg] + " - " + b[eg]);
+    }
+}
+
+function pctau() {
+	let a = [],b = [],c = [],d = [];
+
+    a[0]=0.97;a[1]=0.95;a[2]=0.94;a[3]=0.92;a[4]=0.9;a[5]=0.89;a[6]=0.87;a[7]=0.85;a[8]=0.82;a[9]=0.8;a[10]=0.78; a[11]=0.75;a[12]=0.73; a[13]=0.7;a[14]=0.67; a[15]=0.65;a[16]=0.62; a[17]=0.58;a[18]=0.55; a[19]=0.52;a[20]=0.49;
+    b[0]=1.6;b[1]=1.56;b[2]=1.53; b[3]=1.5;b[4]=1.46; b[5]=1.43;b[6]=1.4;b[7]=1.37;b[8]=1.35; b[9]=1.32;b[10]=1.29; b[11]=1.27;b[12]=1.25; b[13]=1.22;b[14]=1.2; b[15]=1.18;b[16]=1.16; b[17]=1.14;b[18]=1.13; b[19]=1.11;b[20]=1.09;
+    c[20]=0.78; c[21]=0.87; c[22]=0.95; c[23]=1.02;c[24]=1.09; c[25]=1.15; c[26]=1.2; c[27]=1.24;c[28]=1.28; c[29]=1.31; c[30]=1.33; c[31]=1.35;c[32]=1.36; c[33]=1.36; c[34]=1.36; c[35]=1.34;c[36]=1.32; c[37]=1.3; c[38]=1.26; c[39]=1.22;c[40]=1.18;
+    d[20]=1.68; d[21]=1.88; d[22]=2.06; d[23]=2.22;d[24]=2.36; d[25]=2.49; d[26]=2.6;d[27]=2.7;d[28]=2.78; d[29]=2.84; d[30]=2.89; d[31]=2.92;d[32]=2.93; d[33]=2.93; d[34]=2.91; d[35]=2.87;d[36]=2.82; d[37]=2.75; d[38]=2.67; d[39]=2.57;
+	
+    let eg = document.getElementById("semanas").value;
+ 	var aumb = $('#ipau').val();
+	aumb = aumb.toString();
+ 	aumb = aumb.replace(",", ".");
+ 	aumb = parseFloat(aumb);
+ 
+	if (eg < 20 || eg > 40)
+	{
+		$('#ipauPct').val('0');
+	}
+	else {
+		eg = eg - 20;
+		eg = parseInt(eg);
+		var uno=b[eg] - a[eg];
+		var dos=aumb - a[eg];
+		var resultado = parseInt(90 / (uno) * (dos) + 5);
+		ajustarProgreso(resultado, "ipauPct");
+		var pctAUMB = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctAUMB = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctAUMB = '&lt; 1';
+			}
+			else{
+				pctAUMB = resultado;
+			}
+		$("#ipauPctTxt").val(pctAUMB);
+                $("#ipauRngo").val(a[eg] + " - " + b[eg]);
+		if ($('#ipacm').val()){
+			var ccp = ($('#ipacm').val() / $('#ipau').val());
+			$('#ccp').val(ccp.toFixed(2));
+
+			eg = eg + 20;
+			uno = d[eg] - c[eg];
+			dos = ccp - c[eg];
+			resultado = parseInt(90 / (uno) * (dos) + 5);
+			ajustarProgreso(resultado, "ccpPct");
+			var pctCCP = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctCCP = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctCCP = '&lt; 1';
+			}
+			else{
+				pctCCP = resultado;
+			}
+			$("#ccpPctTxt").val(pctCCP);
+                        $("#ccpRngo").val(c[eg] + " - " + d[eg]);
+		}
+	}
+}
+function pctacm() {
+
+	var a = [],b = [],c = [],d = [];
+
+    a[0]=1.24;a[1]=1.29;a[2]=1.34;a[3]=1.37;a[4]=1.4;a[5]=1.43;a[6]=1.44;a[7]=1.45;a[8]=1.45;a[9]=1.44;a[10]=1.43;a[11]=1.41;a[12]=1.38;a[13]=1.34;a[14]=1.3;a[15]=1.25;a[16]=1.19;a[17]=1.13;a[18]=1.05;a[19]=0.98;a[20]=0.89;
+    b[0]=1.98;b[1]=2.12;b[2]=2.25;b[3]=2.36;b[4]=2.45;b[5]=2.53;b[6]=2.59;b[7]=2.63;b[8]=2.66;b[9]=2.67;b[10]=2.67;b[11]=2.65;b[12]=2.62;b[13]=2.56;b[14]=2.5;b[15]=2.41;b[16]=2.31;b[17]=2.2;b[18]=2.07;b[19]=1.92;b[20]=1.76;
+    c[20]=0.78;c[21]=0.87;c[22]=0.95;c[23]=1.02;c[24]=1.09;c[25]=1.15;c[26]=1.2;c[27]=1.24;c[28]=1.28;c[29]=1.31;c[30]=1.33;c[31]=1.35;c[32]=1.36;c[33]=1.36;c[34]=1.36;c[35]=1.34;c[36]=1.32;c[37]=1.3;c[38]=1.26;c[39]=1.22;c[40]=1.18;
+    d[20]=1.68;d[21]=1.88;d[22]=2.06;d[23]=2.22;d[24]=2.36;d[25]=2.49;d[26]=2.6;d[27]=2.7;d[28]=2.78;d[29]=2.84;d[30]=2.89;d[31]=2.92;d[32]=2.93;d[33]=2.93;d[34]=2.91;d[35]=2.87;d[36]=2.82;d[37]=2.75;d[38]=2.67;d[39]=2.57;
+
+    let eg = document.getElementById("semanas").value;
+	var acm = $('#ipacm').val();
+	acm = acm.toString();
+ 	acm = acm.replace(",", ".");
+ 	acm = parseFloat(acm);
+
+	if (eg < 20 || eg > 40)
+	{
+		$('#ipacmPct').val('0');
+		$('#ccp').val('');
+		$('#ccpPct').val('');
+	}
+	else {
+		eg = eg - 20;
+		eg = parseInt(eg);
+		var uno = b[eg] - a[eg];
+		var dos = acm - a[eg];
+ 		var resultado = parseInt(90 / (uno) * (dos) + 5);
+		ajustarProgreso(resultado, "ipacmPct");
+		var pctACM = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctACM = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctACM = '&lt; 1';
+			}
+			else{
+				pctACM = resultado;
+			}
+		$("#ipacmPctTxt").val(pctACM);
+                $("#ipacmRngo").val(a[eg] + " - " + b[eg]);
+
+		if ($('#ipau').val()){
+			var ccp = (acm / $('#ipau').val());
+
+			$('#ccp').val(ccp.toFixed(2));
+
+			eg = eg + 20;
+			uno = d[eg] - c[eg];
+			dos = ccp - c[eg];
+			resultado = parseInt(90 / (uno) * (dos) + 5);
+			ajustarProgreso(resultado, "ccpPct");
+			var pctCCP = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctCCP = '&gt; 99';
+			}
+			else if (resultado < 1){
+				pctCCP = '&lt; 1';
+			}
+			else{
+				pctCCP = resultado;
+			}
+			$("#ccpPctTxt").val(pctCCP);
+                        $("#ccpRngo").val(c[eg] + " - " + d[eg]);
+		}
+	}
+}
