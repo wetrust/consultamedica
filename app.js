@@ -1733,8 +1733,8 @@ $( document ).ready(function() {
 
         $("#"+modal.button).on("click", function(){
             let modal =  $(this).data("modal");
-            imprSelec("graficosBody");
-        });
+            imprSelec(modal);
+        }).data("id", modal.contenido);
 
         graficoUno = Highcharts.chart('graficoIpArtUtView', {
                 chart: {
@@ -2487,4 +2487,26 @@ function pctacm() {
 function ajustarProgreso(valor, objeto){
 	valor = valor + "%";
 	$("#"+objeto + " > .progress-consulta").css({"width": valor});
+}
+
+function imprSelec(muestra)
+{
+	var ficha=$("#"+muestra).html();
+	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container"><div style="width:35%;text-align:center;" class="membrete">:MEMBRETE</div></div><div class="container" style="margin-top:50px !important;">:DATOS</div>:FUNCION</body></html>';
+	var ventimp= window.open(" ","popimpr");
+	var estilo = '<style>@media print {.col{width:40%; height:30% float:left;}.text-center{text-align:center;}.pie-pagina{font-size:9px;}.pie-pagina-dos{font-size:10px;}#lineclear{clear:both;}h4{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}.membrete::first-letter{font-size:14px;}.membrete::first-line {font-size: 14px;}.membrete {font-size: 10px;}}</style>';
+	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
+	var membrete = $("#membrete").val().replace(/\r\n|\r|\n/g,"<br />");
+	var day = ("0" + aplication.day.getDate()).slice(-2);
+	var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
+	var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
+	document = document.replace(":DATOS", ficha);
+	document = document.replace(":DATEINFORME", dateInf);
+	document = document.replace(":ESTILO", estilo);
+	document = document.replace(":FUNCION", funcion);
+	document = document.replace(new RegExp('d-none', 'g'), "");
+	document = document.replace(":MEMBRETE", membrete);
+	ventimp.document.write(document);
+	ventimp.document.close();
+	ventimp.show();
 }
