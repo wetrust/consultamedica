@@ -495,21 +495,9 @@ $( document ).ready(function() {
                 if (elem[i].checked) {
                         movCorp = elem[i].value;
                 }
-    
-        if (actCard = 0){
-                actCard = "sin actividad cardiaca";
-        }
-        else
-        {
-                actCard = "con actividad cardiaca";
-        }
-        if (movCorp = 0){
-                movCorp = "sin movimientos corporales";
-        }
-        else
-        {
-                movCorp = "con movimientos corporales";
-        }
+
+        actCard = (actCard == 0) ? "sin actividad cardiaca": "con actividad cardiaca";
+        movCorp = (movCorp == 0) ? "sin movimientos corporales": "con movimientos corporales";
         
         var linea1 = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
         var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
@@ -527,35 +515,39 @@ $( document ).ready(function() {
         var linea4 = "<strong>Placenta</strong> inserción " + document.getElementById("incersion").value + " y de ubicación " + document.getElementById("ubicacion").value + ", grado " + document.getElementById("grado-placenta").value;
         var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
         var linea6 = "<strong>Líquido amniótico **</strong>" + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
-    
-        var fur = $( "input[name='fum']").val();
-        var fexamen = $( "input[name='fee']").val();
-        var eg = $( "input[name='eg']").val();
-        var fpp = $( "input[name='fpp']").val();
-        var dbp = $( '#dbp').val() + ' mm';
-        var dbpPct = $( '#dbpPct').val();
+
+        let fur = new Date(Date.parse(document.getElementById("fum").value));
+        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+        let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+        let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
+        let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
+
+        var dbp = document.getElementById("dbp").value + ' mm';
+        var dbpPct = document.getElementById("dbpPct").value;
         var dbpRango = '( ' + $( '#dbpRango').val() + ' )';
         var dof = $( '#dof').val() + ' mm';
-        var dofPct = $( '#dofPctRpt').val();
+        var dofPct = document.getElementById("dofPctRpt").value;
         var dofRango = '( ' + $( '#dofRango').val() + ' )';
-        var cc = $( '#cc').val() + ' mm';
+        var cc = document.getElementById("cc").value + ' mm';
         var ccPct = $( '#ccPctRpt').val();
         var ccRango = '( ' + $( '#ccRango').val() + ' )';
-        var ca = $( '#ca').val() + ' mm';
-        var caPct = $( '#caPctRpt').val();
+        var ca = document.getElementById("ca").value + ' mm';
+        var caPct = document.getElementById("caPctRpt").value;
         var caRango = '( ' + $( '#caRango').val() + ' )';
         var lf = $( '#lf').val() + ' mm';
-        var lfPct = $( '#lfPctRpt').val();
+        var lfPct = document.getElementById("lfPctRpt").value;
         var lfRango = '( ' + $( '#lfRango').val() + ' )';
-        var ccca = $( '#ccca').val();
-        var cccaPctVal = $( '#cccaPctVal').val();
+        var ccca = document.getElementById("ccca").value;
+        var cccaPctVal = document.getElementById("cccaPctVal").value;
         var cccaRango = '( ' + $( '#cccaRango').val() + ' )';
         var pfe = '<strong>' + $( '#pfe').val() + ' Gr.' + '</strong>';
-        var percentilPeso = $('#pfePctRpt').val();
+        var percentilPeso = document.getElementById("pfePctRpt").value;
         percentilPeso = percentilPeso.replace('&lt;','<').replace('&gt;', '>');
         var pfePct = '<strong>' + percentilPeso + '</strong>';
         var pfeRango = '<strong>' + $( '#pfeRango').val() + ' *</strong>';
-        var ic = $( '#dof-dbp').val();
+        var ic = document.getElementById("dof-dbp").value;
         var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     
         var paciente = document.getElementById("nombre-paciente").value;
