@@ -394,7 +394,8 @@ $( document ).ready(function() {
     
         var TITULOBIOMETRIAS = 'BIOMETRÍAS EMBRIO/FETAL';
         
-        if ($('#lcn').val() < 1) {
+        
+        if (document.getElementById("lcn").value < 1) {
             if (sacogestacionaltxt < 1){
                 LINEA12 = '';
                 LINEA8 = '';
@@ -402,8 +403,8 @@ $( document ).ready(function() {
             }
         }
 
-        var paciente = $( '#nombre-paciente').val();
-        var idpaciente = $( '#id-paciente').val();
+        var paciente = document.getElementById("nombre-paciente").value;
+        var idpaciente = document.getElementById("id-paciente").value;
         var motivo = $( '#motivo-examen option:selected').text();
         var ecografista = $( '#ecografista option:selected').text();
 
@@ -417,7 +418,7 @@ $( document ).ready(function() {
 
         let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
 
-        var comentario = $("#comentarios-eco-uno").val();
+        var comentario = document.getElementById("comentarios-eco-uno").value;
         comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
         if (document.getElementById("saco").value && document.getElementById("embrion").value == "no se observa aun"){
@@ -461,8 +462,8 @@ $( document ).ready(function() {
 
         var InformeString = "<div class='container'> <h3>Evaluación de flujometria doppler materno fetal</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p><strong>FUM: </strong> :FUM <br><strong>Ege: </strong> :EG semanas <br><strong>FPP: </strong> :FPP</p></div><div class='container'> <p><strong style='color:#045dab;'>ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small> </p><p>Motivo del exámen: :MOTIVODOPPLER <br>Antecedentes Obstétricos: :ANTECEDENTES <br>Feto en Presentación: :PRESENTACION <br>Motilidad Fetal: :MOTILIDAD <br>Ubicación Placentaria: :UBICACION <br>Líquido Amniótico***: :LIQUIDO <br>Medida única de BVM***: :BVM</p></div><div class='container'> <table class='table'> <thead> <tr> <th style='color:#045dab;'>FLUJOMETRIA DOPPLER</th> <th style='text-align:center;'>IP Observado</th> <th style='text-align:center;'>Percentiles de IP</th> <th style='text-align:center;'>Referencia para Edad</th> </tr></thead> <tbody> <tr> <td>Arteria Uterina Derecha*</td><td style='text-align:center;'>:UD</td><td style='text-align:center;'>:UDTXT</td><td style='text-align:center;'>:UDRGO</td></tr><tr> <td>Arteria Uterina Izquierda*</td><td style='text-align:center;'>:UI</td><td style='text-align:center;'>:UITXT</td><td style='text-align:center;'>:UIRGO</td></tr><tr> <td style='border-top: 1px dashed #045dab;'>Promedio Arterias Uterinas*</td><td style='text-align:center;border-top: 1px dashed #045dab;'>:UPROM</td><td style='text-align:center;border-top: 1px dashed #045dab;'>:UPROMTXT</td><td style='text-align:center;border-top: 1px dashed #045dab;'>:UPROMRGO</td></tr><tr> <td style='padding-top: 15px !important;border-top: 1px dashed #045dab;'>Arteria Umbilical**</td><td style='text-align:center;padding-top: 15px !important;border-top: 1px dashed #045dab;'>:AU</td><td style='text-align:center;padding-top: 15px !important;border-top: 1px dashed #045dab;'>:AUTXT</td><td style='text-align:center;padding-top: 15px !important;border-top: 1px dashed #045dab;'>:AURGO</td></tr><tr> <td style='padding-bottom: 15px !important;'>Arteria Cerebral Media**</td><td style='text-align:center;padding-bottom: 15px !important;'>:ACM</td><td style='text-align:center;padding-bottom: 15px !important;'>:ACMTXT</td><td style='text-align:center;padding-bottom: 15px !important;'>:ACMRGO</td></tr><tr> <td style='border-top: 1px dashed #045dab;'>Cuociente Cerebro Placentario ( CCP )**</td><td style='text-align:center;border-top: 1px dashed #045dab;'>:CCP</td><td style='text-align:center;border-top: 1px dashed #045dab;'>:CCPTXT</td><td style='text-align:center;border-top: 1px dashed #045dab;'>:CCPRGO</td></tr><tr> <td style='border-top: 1px dashed #045dab;'></td><td style='border-top: 1px dashed #045dab;'></td><td style='border-top: 1px dashed #045dab;'></td><td style='border-top: 1px dashed #045dab;'></td></tr></tbody> </table></div><div class='container'> <p style='padding-bottom:0px;margin-bottom:0px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container'> <p class='text-right top40' style='margin-right:100px;'>Ecografista Dr(a): :ECOGRAFISTA</p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina'>* Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32 <br>** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127 <br>*** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p class='pie-pagina-dos'>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>";
 
-        var paciente = $( '#nombre-paciente').val();
-        var idpaciente = $( '#id-paciente').val();
+        var paciente = document.getElementById("nombre-paciente").value;
+        var idpaciente = document.getElementById("id-paciente").value;
         var motivo = $( '#motivo-examen option:selected').text();
         var ecografista = $( '#ecografista option:selected').text();
 
@@ -474,39 +475,34 @@ $( document ).ready(function() {
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
         let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
         
-        var bvm = $('#bvmDoppler').val();
-        var comentario = $("#comentarios-doppler").val();
-        if (typeof comentario !== 'undefined'){
-            comentario = comentario.replace(/\r?\n/g, "<br>");
-        }
-        else{
-            comentario='';
-        }
+        var bvm = document.getElementById("bvmDoppler").value;
+        var comentario = document.getElementById("comentarios-doppler").value;
+        comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
         
-        var motivoDoppler = $( '#motivo-doppler').val();
-        var antecedentes = $( '#antecedentes-doppler').val();
-        var motilidad = $( '#motilidad-doppler').val();
-        var ubicacion = $( '#ubicacion-doppler').val();
-        var liquido = $( '#liqAmnioDoppler').val();
-        var ud = $( '#aud').val();
-        var udTxt = $( '#audPctTxt').val();
-        var udRgo = '( ' + $( '#audRngo').val() + ' )';
-        var ui = $( '#aui').val();
-        var uiTxt = $( '#auiPctTxt').val();
-        var uiRgo = '( ' + $( '#auiRngo').val() + ' )';
-        var uprom = '<strong>' + $( '#auprom').val() + '</strong>';
-        var upromTxt = '<strong>' + $( '#auPctTxt').val() + '</strong>';
-        var upromRgo = '<strong>( ' + $( '#auRngo').val() + ' )</strong>';
-        var au = $( '#ipau').val();
-        var auTxt = $( '#ipauPctTxt').val();
-        var auRgo = '( ' + $( '#ipauRngo').val() + ' )';
-        var acm = $( '#ipacm').val();
-        var acmTxt = $( '#ipacmPctTxt').val();
-        var acmRgo = '( ' + $( '#ipacmRngo').val() + ' )';
-        var ccp = '<strong>' + $( '#ccp').val() + '</strong>';
-        var ccpTxt = '<strong>' + $( '#ccpPctTxt').val() + '</strong>';
-        var ccpRgo = '<strong>( ' + $( '#ccpRngo').val() + ' )</strong>';
-        var presentacion = $("#presentacion-doppler").val();
+        var motivoDoppler = document.getElementById("motivo-doppler").value;
+        var antecedentes = document.getElementById("antecedentes-doppler").value;
+        var motilidad = document.getElementById("motilidad-doppler").value;
+        var ubicacion = document.getElementById("ubicacion-doppler").value;
+        var liquido = document.getElementById("liqAmnioDoppler").value;
+        var ud = document.getElementById("aud").value;
+        var udTxt = document.getElementById("audPctTxt").value;
+        var udRgo = '( ' + document.getElementById("audRngo").value + ' )';
+        var ui = document.getElementById("aui").value;
+        var uiTxt = document.getElementById("auiPctTxt").value;
+        var uiRgo = '( ' + document.getElementById("auiRngo").value + ' )';
+        var uprom = '<strong>' + document.getElementById("auprom").value + '</strong>';
+        var upromTxt = '<strong>' + document.getElementById("auPctTxt").value + '</strong>';
+        var upromRgo = '<strong>( ' + document.getElementById("auRngo").value + ' )</strong>';
+        var au = document.getElementById("ipau").value;
+        var auTxt = document.getElementById("ipauPctTxt").value;
+        var auRgo = '( ' + document.getElementById("ipauRngo").value + ' )';
+        var acm =document.getElementById("ipacm").value;
+        var acmTxt = document.getElementById("ipacmPctTxt").value;
+        var acmRgo = '( ' + document.getElementById("ipacmRngo").value + ' )'; 
+        var ccp = '<strong>' + document.getElementById("ccp").value + '</strong>';
+        var ccpTxt = '<strong>' + document.getElementById("ccpPctTxt").value + '</strong>';
+        var ccpRgo = '<strong>( ' + document.getElementById("ccpRngo").value + ' )</strong>';
+        var presentacion = document.getElementById("presentacion-doppler").value;
         var edadmaterna = $( "select[name='edad_materna']").val();
         
         let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
@@ -1021,6 +1017,613 @@ $( document ).ready(function() {
             }]
         });
     });
+
+    $( '#graficoDbp' ).on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 12){
+            alert("Edad Gestacional inferior a 12 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico DBP";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoDbpView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoDbpView').highcharts({
+           title: {
+               text: 'DBP',
+               x: -20
+           },
+           subtitle: {
+               text: 'Milimetros (mm)',
+               x: -20
+           },
+           plotOptions: {
+               series: {
+                   enableMouseTracking: false
+               }
+           },
+           yAxis: {
+               title: { text: 'Milimetros (mm)' },
+               tickPositions: [10,30, 50, 72, 90, 114]
+           },
+           colors: ['#313131', '#313131', '#313131'],
+           xAxis: {
+               categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+           },
+           credits: {enabled: false},
+           series: [{
+               type: "line",
+               name: '(-) 2DE',
+               marker: {enabled: false},
+               data: [14,17,19,25,29,33,34,38,41,43,46,49,52,54,57,61,63,65,69,69,74,74,77,78,80,83,85,87]
+           }, {
+               type: "line",
+               name: 'DE',
+               marker: { enabled: false },
+               data: [20,23,26,30,35,38,40,44,46,49,52,56,59,62,64,68,70,73,76,78,81,83,85,86,87,90,91,94]
+           }, {
+                type: "line",
+                name: '(+) 2DE',
+                marker: { enabled: false },
+                data: [25,29,33,35,41,42,46,50,52,56,59,63,66,70,71,75,77,81,83,87,88,91,94,95,97,99,102,104]        
+           }, {
+               type: "line",
+               name: 'DBP',
+               dashStyle: "Dot",
+               marker: { symbol: 'square' },
+               lineWidth: 0,
+               data: (function () {
+                   var data = [];
+                   var edadGest = document.getElementById("semanas").value;
+    
+                   for (i = 12; i <= edadGest; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+                   var dbp = $("#dbp").val();
+                   dbp = dbp.toString();
+                   dbp = dbp.replace(",", ".");
+                   dbp = parseFloat(dbp);
+                       
+                   data.push({
+                       y: dbp,
+                   });
+                   for (i = edadGest + 1; i <= 39; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+                   return data;
+               }())
+           }]
+       });
+    });
+
+    $( '#graficoCc' ).on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 12){
+            alert("Edad Gestacional inferior a 12 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico CC";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoCcView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoCcView').highcharts({
+           title: {
+               text: 'Circunferencia de Cráneo',
+               x: -20
+           },
+           subtitle: {
+               text: 'Milimetros (mm)',
+               x: -20
+           },
+           plotOptions: {
+               series: {
+                   enableMouseTracking: false
+               }
+           },
+           yAxis: {
+               title: { text: 'Milimetros (mm)' },
+               tickPositions: [30, 72, 114, 156, 198, 240, 282, 324, 366, 408]
+           },
+           colors: ['#313131', '#313131', '#313131'],
+           xAxis: {
+               categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+           },
+           credits: {enabled: false},
+           series: [{
+               type: "line",
+               name: 'Pct. 3',
+               marker: {enabled: false},
+               data: [70, 80, 90, 100, 113, 126, 137, 149, 161, 172, 183, 194, 204, 214, 224, 233, 242, 250, 258, 267, 274, 280, 287, 293, 299, 303, 308, 311, 315]
+           }, {
+               type: "line",
+               name: 'Pct. 97',
+               marker: {enabled: false},
+               data: [90,100,111,124,136,150,165,179,193,206,219,232,243,256,268,279,290,300,310,319,328,336,343,351,358,363,368,373,377]
+           }, {
+               type: "line",
+               name: 'CC',
+               dashStyle: "Dot",
+               marker: { symbol: 'square' },
+               lineWidth: 0,
+               data: (function () {
+                   var data = [];
+                   var edadGest = document.getElementById("semanas").value;
+    
+                   for (i = 12; i <= edadGest; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+    
+                   var cc = $("#cc").val();
+                   cc = cc.toString();
+                   cc = cc.replace(",", ".");
+                   cc = parseFloat(cc);
+    
+                   data.push({
+                       y: cc,
+                   });
+                   for (i = edadGest + 1; i <= 39; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+                   return data;
+               }())
+           }]
+       });
+    });
+
+    $( '#graficoCa' ).on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 12){
+            alert("Edad Gestacional inferior a 12 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico CA";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoCaView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoCaView').highcharts({
+           title: {
+               text: 'CA**',
+               x: -20
+           },
+           subtitle: {
+               text: 'Milimetros (mm)',
+               x: -20
+           },
+           plotOptions: {
+               series: {
+                   enableMouseTracking: false
+               }
+           },
+           yAxis: {
+               title: { text: 'Milimetros (mm)' },
+               tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
+           },
+           colors: ['#313131', '#313131', '#313131'],
+           xAxis: {
+               categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+           },
+           credits: { enabled: false },
+           series: [{
+               type: "line",
+               name: 'Pct. 3',
+               marker: { enabled: false },
+               data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
+           }, {
+               type: "line",
+               name: 'Pct 97',
+               marker: { enabled: false },
+               data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
+           }, {
+               type: "line",
+               name: 'CA',
+               dashStyle: "Dot",
+               marker: { symbol: 'square' },
+               lineWidth: 0,
+               data: (function () {
+                   var data = [];
+                   var edadGest = document.getElementById("semanas").value;
+    
+                   for (i = 12; i <= edadGest; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+    
+                   var ca = $("#ca").val();
+                   ca = ca.toString();
+                   ca = ca.replace(",", ".");
+                   ca = parseFloat(ca);
+    
+                   data.push({
+                       y:ca,
+                   });
+                   for (i = edadGest + 1; i <= 39; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+                   return data;
+               }())
+           }]
+       });
+    });
+
+    $( '#graficoLf' ).on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 12){
+            alert("Edad Gestacional inferior a 12 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico LF";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoLfView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoLfView').highcharts({
+           title: {
+               text: 'Largo Femoral',
+               x: -20
+           },
+           subtitle: {
+               text: 'Milimetros (mm)',
+               x: -20
+           },
+           plotOptions: {
+               series: {
+                   enableMouseTracking: false
+               }
+           },
+           yAxis: {
+               title: { text: 'Milimetros (mm)' },
+               tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+           },
+           colors: ['#313131', '#313131', '#313131'],
+           xAxis: {
+               categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+           },
+           credits: { enabled: false },
+           series: [{
+               type: "line",
+               name: 'Pct. 3',
+               marker: { enabled: false },
+               data: [6,9,12,14,17,20,22,25,27,30,32,35,37,40,42,45,47,49,52,54,56,58,59,61,62,64,65,66,67]
+           }, {
+               type: "line",
+               name: 'Pct. 97',
+               marker: { enabled: false },
+               data: [12,15,18,21,24,28,31,34,38,41,44,47,50,53,55,57,60,62,65,67,70,71,73,75,77,79,80,81,82]
+           }, {
+               type: "line",
+               name: 'LF',
+               dashStyle: "Dot",
+               marker: { symbol: 'square' },
+               lineWidth: 0,
+               data: (function () {
+                   var data = [];
+                   var edadGest = document.getElementById("semanas").value;
+    
+                   for (i = 12; i <= edadGest; i++) {
+                       data.push({ y: 0, });
+                   }
+                   
+                   var lf = $("#lf").val();
+                   lf = lf.toString();
+                   lf = lf.replace(",", ".");
+                   lf = parseFloat(lf);
+                   data.push({
+                       y: lf,
+                   });
+                   for (i = edadGest + 1; i <= 39; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+                   return data;
+               }())
+           }]
+       });
+    });
+
+    $( '#graficoLh' ).on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 12){
+            alert("Edad Gestacional inferior a 12 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico LH";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoLhView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoLhView').highcharts({
+                title: {
+                    text: 'Largo Humeral',
+                    x: -20
+                },
+                subtitle: {
+                    text: 'Milimetros (mm)',
+                    x: -20
+                },
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
+                    }
+                },
+                yAxis: {
+                    title: { text: 'Milimetros (mm)' },
+                    tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80]
+                },
+                colors: ['#313131', '#313131', '#313131'],
+                xAxis: {
+                    categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+                },
+                credits: { enabled: false },
+                series: [{
+                    type: "line",
+                    name: 'Pct. 5',
+                    marker: { enabled: false },
+                    data: [4.8, 7.6, 10.3, 13.1, 15.8, 18.5, 21.2, 23.8, 26.3, 28.8, 31.2, 33.5, 35.7, 37.9, 39.9, 41.9, 43.7, 45.5, 47.2, 48.9, 50.4, 52.1, 53.4, 54.8, 56.2, 57.6, 59.8, 60.4, 61.9]
+                }, {
+                    type: "line",
+                    name: 'Pct. 95',
+                    marker: { enabled: false },
+                    data: [12.3, 15.1, 17.9, 20.7, 23.5, 26.3, 29.1, 31.6, 34.2, 36.7, 39.2, 41.6, 43.9, 46.1, 48.1, 50.1, 52.1, 53.9, 55.6, 57.3, 58.9, 60.5, 62.1, 63.5, 64.9, 66.4, 67.8, 69.3, 70.8]
+                }, {
+                    type: "line",
+                    name: 'Humero',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                    data: (function () {
+                        var data = [];
+                        var edadGest = document.getElementById("semanas").value;
+    
+                        for (i = 12; i <= edadGest; i++) {
+                            data.push({ y: 0, });
+                        }
+     
+                        var lh = $("#lh").val();
+                        lh = lh.toString();
+                        lh = lh.replace(",", ".");
+                        lh = parseFloat(lh);
+                            
+                        data.push({
+                            y: lh,
+                        });
+                        for (i = edadGest + 1; i <= 39; i++) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        return data;
+                    }())
+                }]
+            });
+    });
+
+    $( '#graficoCerebelo' ).on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 15){
+            alert("Edad Gestacional inferior a 15 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico Cerebelo";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoCerebeloView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoCerebeloView').highcharts({
+                title: {
+                    text: 'Diámetro de Cerebelo',
+                    x: -20
+                },
+                subtitle: {
+                    text: 'Milimetros (mm)',
+                    x: -20
+                },
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
+                    }
+                },
+                yAxis: {
+                    title: { text: 'Milimetros (mm)' },
+                    tickPositions: [5, 10,20,30,40,50,60,70]
+                },
+                colors: ['#313131', '#313131', '#313131'],
+                xAxis: {
+                    categories:['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+                },
+                credits: {enabled: false},
+                series: [{
+                    type: "line",
+                    name: '-2DE',
+                    marker: {enabled: false},
+                    data: [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
+                }, {
+                    type: "line",
+                    name: 'media',
+                    marker: {enabled: false},
+                    data: [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
+                }, {
+                    type: "line",
+                    name: '+2DE',
+                    marker: {enabled: false},
+                    data: [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
+                }, {
+                    type: "line",
+                    name: 'Cerebelo',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                    data: (function () {
+                        var data = [];
+                        var edadGest = document.getElementById("semanas").value;
+    
+                        for (i = 15; i <= edadGest; i++) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+    
+                       var cerebelo = $("#cerebelo").val();
+                       cerebelo = cerebelo.toString();
+                       cerebelo = cerebelo.replace(",", ".");
+                       cerebelo = parseFloat(cerebelo);
+    
+                        data.push({
+                            y: cerebelo,
+                        });
+                        for (i = edadGest + 1; i <= 39; i++) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        return data;
+                    }())
+                }]
+            });
+    });
+
+    $( '#graficoPFE' ).on( 'click', function() {
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 16){
+            alert("Edad Gestacional inferior a 16 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico Peso Fetal Estimado";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoPesoView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoPesoView').highcharts({
+           title: {
+               text: 'Peso Fetal Estimado *',
+               x: -20 //center
+           },
+           subtitle: {
+               text: 'Kilogramos',
+               x: -20
+           },
+           plotOptions: {
+               series: {
+                   enableMouseTracking: false,
+                   pointInterval: 1
+               }
+           },
+           yAxis: {
+               title: { text: 'Kilogramos' },
+               tickPositions: [100, 560, 1020, 1480, 1940, 2400, 2860, 3320, 3780, 4340, 4900]
+           },
+           colors: ['#313131', '#313131', '#313131'],
+           xAxis: {
+               categories: ['16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+           },
+           credits: {enabled: false},
+           series: [{
+               type: "line",
+               name: 'Pct 3',
+               dashStyle: "Dot",
+               marker: {enabled: false},
+               data: [110,136,167,205,248,299,359,426,503,589,685,791,908,1034,1169,1313,1465,1622,1783,1946,2110,2271,2427,2576,2714]
+           }, {
+               type: "line",
+               name: 'Pct 10',
+               marker: { enabled: false },
+               data: [121,150,185,227,275,331,398,471,556,652,758,876,1004,1145,1294,1453,1621,1794,1973,2154,2335,2513,2686,2851,2985]
+           }, {
+               type: "line",
+               name: 'Pct 90',
+               marker: { enabled: false },
+               data: [171,212,261,319,387,467,559,665,784,918,1068,1234,1416,1613,1824,2049,2285,2530,2781,3036,3291,3543,3786,4019,4234]
+           }, {
+               type: "line",
+               name: 'Pct 97',
+               dashStyle: "Dot",
+               marker: { enabled: false, },
+               data: [183,226,279,341,414,499,598,710,838,981,1141,1319,1513,1724,1949,2189,2441,2703,2971,3244,3516,3785,4045,4294,4474]
+           }, {
+               type: "line",
+               name: 'Peso',
+               dashStyle: "Dot",
+               marker: {symbol:'square'},
+               lineWidth: 0,
+               data: (function () {
+                   var data = [];
+                   var edadGest = document.getElementById("semanas").value;
+    
+                   for (i = 16; i <= edadGest; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+                   data.push({
+                       y: parseFloat($('#pfe').val()),
+                   });
+                   for (i = edadGest + 1; i <= 39; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+                   return data;
+               }())
+           }]
+        });
+    });
+
 
     $("#graficoAud").on( 'click', function() {
         var edadGestacional = document.getElementById("semanas").value;
@@ -2489,8 +3092,7 @@ function ajustarProgreso(valor, objeto){
 	$("#"+objeto + " > .progress-consulta").css({"width": valor});
 }
 
-function imprSelec(muestra)
-{
+function imprSelec(muestra){
 	var ficha=$("#"+muestra).html();
 	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container"><div style="width:35%;text-align:center;" class="membrete">:MEMBRETE</div></div><div class="container" style="margin-top:50px !important;">:DATOS</div>:FUNCION</body></html>';
 	var ventimp= window.open(" ","popimpr");
