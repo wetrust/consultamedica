@@ -3783,4 +3783,62 @@ function p50() {
      }
      egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
      $('#egP50').val(egbio);
+}
+
+function psohdlk() {
+
+    let CC = parseFloat($("#cc").val());
+    let CA = parseInt($("#ca").val());
+	
+    if ($("#cc").val() && $("#cc").val()) {
+        var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA))
+        
+        $("#pfe").val(psoP.toFixed(0));
+        pctpfe();
     }
+}
+
+function pctpfe() {
+    'use strict';
+	let a = [], b = [];
+   
+    a[0]=97;a[1]=121;a[2]=150;a[3]=185;a[4]=227;a[5]=275; a[6]=331;a[7]=398;a[8]=471;a[9]=556;a[10]=652;a[11]=758; a[12]=876;a[13]=1004;a[14]=1145;a[15]=1294;a[16]=1453; a[17]=1621;a[18]=1794;a[19]=1973;a[20]=2154;a[21]=2335; a[22]=2513; a[23]=2686; a[24]=2851; a[25]=2985;
+    b[0]=137;b[1]=171;b[2]=212;b[3]=261;b[4]=319; b[5]=387;b[6]=467;b[7]=559;b[8]=665;b[9]=784; b[10]=918;b[11]=1068;b[12]=1234;b[13]=1416;b[14]=1613; b[15]=1824;b[16]=2049;b[17]=2285;b[18]=2530; b[19]=2781;b[20]=3036;b[21]=3291;b[22]=3543;b[23]=3786; b[24]=4019;b[25]=4234;   
+
+    let eg = document.getElementById("semanas").value;
+    let pfe=parseInt($("#pfe").val());
+   
+    if (eg < 15) {  
+      $("#pfePct").val('0');
+    }
+    else if (eg > 40)
+    {
+      $("#pfePct").val('0');
+    }
+    else {
+     eg = eg - 15;
+     eg = parseInt(eg);
+     var uno=b[eg] - a[eg];
+     var dos=pfe - a[eg];
+     var pctFinal = (80 / (uno) * (dos)) + 10
+     ajustarProgreso(pctFinal, "pfePct");
+        var pctPFE = '';
+               //truncador de Pct, sobre 100 o bajo 1
+               if (pctFinal > 99){
+                   pctPFE = '&gt; 99';
+               }
+               else if (pctFinal < 1){
+                   pctPFE = '&lt; 1';
+               }
+               else{
+                   pctPFE = pctFinal.toFixed();
+               }
+        $('#pfePctRpt').val(pctPFE);
+        $('#pfeRango').val(a[eg] + ' - ' +b[eg]);
+    }
+}
+
+function valCC(dof,dbp){
+    var delta = parseFloat(1.60);
+    return Math.round((parseInt(dof) + parseInt(dbp)) * delta);
+}
