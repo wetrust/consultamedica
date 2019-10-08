@@ -325,6 +325,17 @@ $( document ).ready(function() {
     $("#dv").change( pctdv);
     $("#ipau").change( pctau);
     $("#ipacm").change( pctacm);
+
+    $( '#dbp' ).change( deDBP);
+    $( '#cc' ).change( pctcc);
+    $( '#ca' ).change( pctca);
+    $( '#lf' ).change( pctlf);
+    $( '#cerebelo' ).change( pctcb);
+
+    $( '#saco' ).change( egsaco); 
+    $( '#lcn' ).change( eglcn);
+    $( '#lh').change( pctlh);
+    $( '#dof').change( calcdof);
 });
 
 //controlador de input clones
@@ -498,19 +509,18 @@ $( document ).ready(function() {
 
         actCard = (actCard == 0) ? "sin actividad cardiaca": "con actividad cardiaca";
         movCorp = (movCorp == 0) ? "sin movimientos corporales": "con movimientos corporales";
-        
+    
         var linea1 = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
         var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
-    
+
         var anatomiaFetal = $('#ev-morfo').val();
         var anatomiaFetalString = "";
-    
-        for(i=0;i<anatomiaFetal.length;i++)
-        {
+
+        for(i=0;i<anatomiaFetal.length;i++){
             anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i];
             anatomiaFetalString = anatomiaFetalString + " <br>";
         }
-    
+
         var linea3 = "<strong>Anatomía fetal ***</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
         var linea4 = "<strong>Placenta</strong> inserción " + document.getElementById("incersion").value + " y de ubicación " + document.getElementById("ubicacion").value + ", grado " + document.getElementById("grado-placenta").value;
         var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
@@ -549,7 +559,7 @@ $( document ).ready(function() {
         var pfeRango = '<strong>' + $( '#pfeRango').val() + ' *</strong>';
         var ic = document.getElementById("dof-dbp").value;
         var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-    
+
         var paciente = document.getElementById("nombre-paciente").value;
         var idpaciente = document.getElementById("id-paciente").value;
         var motivo = $( '#motivo-examen option:selected').text();
@@ -557,10 +567,10 @@ $( document ).ready(function() {
 
         var comentario = document.getElementById("comentarios-eco-dos-inf-dos").value;
         comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
-    
+
         var edadmaterna = $( "select[name='edad_materna']").val();
         var InformeString = "<div class='container'> <h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p><strong>FUM: </strong>:FUR <br><strong>Ege: </strong>:EG semanas <br><strong>FPP: </strong>:FPP</p></div><div class='container'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p style='margin-bottom:0;'>:LINEA1 <br>:LINEA2</p><p style='margin-bottom:0; word-wrap: break-word;'>:LINEA3</p><p>:LINEA4 <br>:LINEA5 <br>:LINEA6</p><p></p><p></p></div><div class='container'> <table class='table'> <tbody> <tr> <th style='color:#045dab;'>BIOMETRÍA FETAL</th> <th style='text-align:center;'>Valor observado</th> <th class='text-center'>Pct de Crecimiento</th> <th class='text-center'>Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style='text-align:center;'>:DBP</td><td class='text-center'>:DBPPCT</td><td class='text-center'>:DBPRANGO</td></tr><tr> <td>DOF (Jeanty):</td><td style='text-align:center;'>:DOF</td><td class='text-center'>:DOFPCT</td><td class='text-center'>:DOFRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style='text-align:center;'>:CC</td><td class='text-center'>:CCPCT</td><td class='text-center'>:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style='text-align:center;'>:CA</td><td class='text-center'>:CAPCT</td><td class='text-center'>:CARANGO</td></tr><tr> <td style='padding-bottom: 15px !important;'>LF (Hadlock):</td><td style='text-align:center;padding-bottom: 15px !important;'>:LF</td><td style='text-align:center;padding-bottom: 15px !important;'>:LFPCT</td><td style='text-align:center;padding-bottom: 15px !important;'>:LFRANGO</td></tr><tr> <td style='border-top:1px dashed #045dab;'><strong>Peso Fetal Estimado según fórmula de Hadlock (DBP-CC-CA-LF)</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:PFE</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:PFEPCT</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:PFERANGO</strong> </td></tr><tr> <td style='border-top:1px dashed #045dab;'>Relación CC / CA (Hadlock)</td><td class='text-center' style='border-top:1px dashed #045dab;'>:CCCA</td><td class='text-center' style='border-top:1px dashed #045dab;'>:CCCAPCTVAL</td><td class='text-center' style='border-top:1px dashed #045dab;'>:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style='text-align:center;'>:IC</td><td></td><td class='text-center'>( 70% - 86% )</td></tr><tr> <td></td><td></td><td></td><td></td></tr></tbody> </table></div><div class='container'> <p style='margin-bottom;0px;padding-bottom:0px;margin-bottom:0px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style='max-width: 700px;text-align: justify;margin-top:0px;padding-top:0px;'>:COMENTARIO</p></div><div class='container'> <p class='text-right top40' style='margin-right:100px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='margin-bottom:0;'>* Evaluación de crecimiento fetal (Gráfica), según referencia propuesta por Hadlock y col. Radiology 181: 129 - 133; 1991 (Normalidad Pct 10 a 90) <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 <br><strong>*** Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015</strong> <br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf</p><p style='margin-bottom:0 !important;' class='pie-pagina-dos'>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>";
-        
+
         InformeString = InformeString.replace(":PACIENTE", paciente);
         InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
         InformeString = InformeString.replace(":MOTIVO", motivo);
@@ -2619,10 +2629,11 @@ $( document ).ready(function() {
             $(this).remove();
         });
 
+        document.getElementById(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  $(this).data("modal");
             imprSelec(modal);
-        }).data("id", modal.contenido);
+        });
 
         graficoUno = Highcharts.chart('graficoIpArtUtView', {
                 chart: {
@@ -3241,6 +3252,7 @@ function pctdv() {
 }
 
 function pctau() {
+    'use strict';
 	let a = [],b = [],c = [],d = [];
 
     a[0]=0.97;a[1]=0.95;a[2]=0.94;a[3]=0.92;a[4]=0.9;a[5]=0.89;a[6]=0.87;a[7]=0.85;a[8]=0.82;a[9]=0.8;a[10]=0.78; a[11]=0.75;a[12]=0.73; a[13]=0.7;a[14]=0.67; a[15]=0.65;a[16]=0.62; a[17]=0.58;a[18]=0.55; a[19]=0.52;a[20]=0.49;
@@ -3304,7 +3316,7 @@ function pctau() {
 	}
 }
 function pctacm() {
-
+    'use strict';
 	var a = [],b = [],c = [],d = [];
 
     a[0]=1.24;a[1]=1.29;a[2]=1.34;a[3]=1.37;a[4]=1.4;a[5]=1.43;a[6]=1.44;a[7]=1.45;a[8]=1.45;a[9]=1.44;a[10]=1.43;a[11]=1.41;a[12]=1.38;a[13]=1.34;a[14]=1.3;a[15]=1.25;a[16]=1.19;a[17]=1.13;a[18]=1.05;a[19]=0.98;a[20]=0.89;
@@ -3395,3 +3407,286 @@ function imprSelec(muestra){
 	ventimp.document.close();
 	ventimp.show();
 }
+
+function deDBP() {
+    'use strict';
+	let a = [], b = [];
+
+    a[0]=14;a[1]=17;a[2]=19;a[3]=25;a[4]=29;a[5]=33;a[6]=34;a[7]=38;a[8]=41;a[9]=43;a[10]=46;a[11]=49;a[12]=52;a[13]=54;a[14]=57;a[15]=61;a[16]=63;a[17]=65;a[18]=69;a[19]=69;a[20]=74;a[21]=74;a[22]=77;a[23]=78;a[24]=78;a[25]=81;a[26]=85;a[27]=88;
+	b[0]=25;b[1]=29;b[2]=33;b[3]=35;b[4]=41;b[5]=42;b[6]=46;b[7]=50;b[8]=52;b[9]=56;b[10]=59;b[11]=63;b[12]=66;b[13]=70;b[14]=71;b[15]=75;b[16]=77;b[17]=81;b[18]=83;b[19]=87;b[20]=88;b[21]=91;b[22]=94;b[23]=95;b[24]=97;b[25]=99;b[26]=97;b[27]=106;
+
+	let eg = document.getElementById("semanas").value;
+	let dbp = $("#dbp").val();
+    let dof = $("#dof").val();
+    
+	dbp = dbp.toString();
+    dbp = dbp.replace(",", ".");
+	dbp = parseFloat(dbp);
+
+	if (eg < 12 || eg > 40){
+		$("#dbpDE").val('0');
+		$('#dbpPct').val('0');
+	}
+	else {
+		eg = eg - 12;
+		eg = parseInt(eg);
+
+		var uno = b[eg] - a[eg];
+		var dos = dbp - a[eg];
+		var resultado = (parseInt(95 / (uno) * (dos) + 3));
+		ajustarProgreso(resultado, "dbpDE");
+		var pctDBP = '';
+		//truncador de Pct, sobre 100 o bajo 1
+		if (resultado > 99){
+			pctDBP = '&gt; 99';
+		}
+		else if (resultado < 1){
+			pctDBP = '&lt; 1';
+		}
+		else{
+			pctDBP = resultado;
+		}
+		
+		$('#dbpPct').val(pctDBP);
+		$('#dbpRango').val(a[eg] + ' - ' + b[eg] );
+		p50();
+	}
+	
+	if (dbp > 0 && dof > 0){
+		var valor = ((dbp/dof)*100);
+		$('#dof-dbp').val(valor.toFixed(0) + "%");
+		$('#ic').val(valor.toFixed(0) + "%");
+	}
+	else{
+		$('#dof-dbp').val("0");
+		$('#ic').val("0");
+	}
+}
+
+function calcdof(){
+    'use strict';
+	let a = [], b = [];
+	let dof = $("#dof").val();
+
+    a[10]=7;a[11]=11; a[12]=16; a[13]=20;a[14]=24; a[15]=29; a[16]=33; a[17]=37;a[18]=41; a[19]=46; a[20]=50; a[21]=54;a[22]=58; a[23]=62; a[24]=65; a[25]=69;a[26]=73; a[27]=76; a[28]=80; a[29]=83;a[30]=86; a[31]=89; a[32]=92; a[33]=95;a[34]=97; a[35]=99; a[36]=102; a[37]=104;a[38]=105; a[39]=107; a[40]=108;
+    b[10]=21; b[11]=25; b[12]=30; b[13]=34;b[14]=38; b[15]=43; b[16]=47; b[17]=51;b[18]=55; b[19]=60; b[20]=64; b[21]=68;b[22]=72; b[23]=76; b[24]=79; b[25]=83;b[26]=87; b[27]=90; b[28]=94; b[29]=97;b[30]=100; b[31]=103; b[32]=106; b[33]=108;b[34]=111; b[35]=113; b[36]=116; b[37]=118;b[38]=119; b[39]=121; b[40]=122;
+    
+    let eg = document.getElementById("semanas").value;
+	
+	if (eg > 9 && dof > 0){
+		var uno = b[eg] - a[eg];
+		var dos = dof - a[eg];
+		var resultado = (parseInt(95 / (uno) * (dos) + 3));
+		ajustarProgreso(resultado, "dofPct");
+		var pctDOF = '';
+		//truncador de Pct, sobre 100 o bajo 1
+		if (resultado > 99){
+			pctDOF = '&gt; 99';
+		}
+		else if (resultado < 1){
+			pctDOF = '&lt; 1';
+		}
+		else{
+			pctDOF = resultado;
+		}
+		$('#dofPctRpt').val(pctDOF);
+		$('#dofRango').val(a[eg] + ' - '+ b[eg]);
+
+		var dbp = $("#dbp").val();
+
+		if (dbp > 0){
+			var valor = ((dbp/dof)*100);
+				
+			$('#dof-dbp').val(valor.toFixed(0) + "%");
+			$('#ic').val(valor.toFixed(0) + "%");
+			$('#cc').val(valCC(dof,dbp)).trigger('change');
+		}
+		else{
+			$('#dof-dbp').val("0");
+			$('#ic').val("0");
+		}
+	}
+	else{
+		ajustarProgreso(0, "dofPct");
+		$('#dofRango').val(0);
+		$('#dofPctRpt').val(0);
+		$('#dof-dbp').val("0");
+		$('#ic').val("0");
+	}
+}
+
+function pctcc() {
+    'use strict';
+	let a = [], b = [];
+    a[0]=64;a[1]=74;a[2]=88;a[3]=100;a[4]=113;a[5]=126; a[6]=137;a[7]=149;a[8]=161;a[9]=172;a[10]=183; a[11]=194;a[12]=204;a[13]=214;a[14]=224;a[15]=233; a[16]=242;a[17]=250;a[18]=258;a[19]=267;a[20]=274; a[21]=280;a[22]=287;a[23]=293;a[24]=299;a[25]=303; a[26]=308;a[27]=311;a[28]=315;
+    b[0]=81;b[1]=94;b[2]=106;b[3]=120;b[4]=135; b[5]=150;b[6]=165;b[7]=179;b[8]=193;b[9]=206; b[10]=219;b[11]=232;b[12]=243;b[13]=256;b[14]=268; b[15]=279;b[16]=290;b[17]=300;b[18]=310;b[19]=319; b[20]=328;b[21]=336;b[22]=343;b[23]=351;b[24]=358; b[25]=363;b[26]=368;b[27]=373;b[28]=377;
+   
+    let eg = document.getElementById("semanas").value;
+    let cc = parseInt(document.getElementById("cc").value);
+   
+    if (eg < 12 || eg > 40){ 
+        $("#ccPct").val("");
+        $('#ccPctRpt').val("");
+    }
+    else {
+        eg = eg - 12;
+        eg = parseInt(eg);
+        var uno=b[eg] - a[eg];
+        var dos=cc - a[eg];
+        ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "ccPct");
+        var resultado = parseInt(95 / (uno) * (dos) + 3);
+        var pctCC = '';
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 99){
+            pctCC = '&gt; 99';
+        }
+        else if (resultado < 1){
+            pctCC = '&lt; 1';
+        }
+        else{
+            pctCC = resultado;
+        }
+        
+        $('#ccPctRpt').val(pctCC);
+        $('#ccRango').val(a[eg] + ' - ' + b[eg]);
+        psohdlk();
+        p50();
+    }
+};
+
+function pctca() {
+    'use strict';
+	let a = [], b = [];
+    a[0]=42;a[1]=52;a[2]=64;a[3]=75;a[4]=86; a[5]=97;a[6]=109;a[7]=119;a[8]=131;a[9]=141; a[10]=151;a[11]=161;a[12]=171;a[13]=181; a[14]=191;a[15]=200;a[16]=209;a[17]=218;a[18]=227; a[19]=236;a[20]=245;a[21]=253;a[22]=261;a[23]=269; a[24]=277;a[25]=285;a[26]=292;a[27]=299;a[28]=307;
+    b[0]=71;b[1]=79;b[2]=92;b[3]=102;b[4]=113; b[5]=127;b[6]=141;b[7]=155;b[8]=170; b[9]=183;b[10]=192;b[11]=209;b[12]=223; b[13]=235;b[14]=248;b[15]=260;b[16]=271;b[17]=284; b[18]=295;b[19]=306;b[20]=318;b[21]=329;b[22]=339; b[23]=349;b[24]=359;b[25]=370;b[26]=380;b[27]=389; b[28]=399;
+   
+    let eg = document.getElementById("semanas").value;
+    let ca = parseInt(document.getElementById("ca").value);
+   
+    if (eg < 12 || eg > 40){ 
+            $("#caPct").val("0");
+        $('#caPctRpt').val("0");
+    }
+    else {
+        eg = eg - 12;
+        eg = parseInt(eg);
+        var uno=b[eg] - a[eg];
+        var dos=ca - a[eg];
+        var resultado = parseInt(95 / (uno) * (dos) + 3);
+        ajustarProgreso(resultado, "caPct");
+        var pctCA = '';
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 99){
+            pctCA = '&gt; 99';
+        }
+        else if (resultado < 1){
+            pctCA = '&lt; 1';
+        }
+        else{
+            pctCA = resultado;
+        }
+        $('#caPctRpt').val(pctCA);
+        $('#caRango').val(a[eg] + ' - ' + b[eg]);
+        psohdlk();
+        p50();
+    }
+};
+
+function pctlf() {
+    'use strict';
+	let a = [], b = [];
+   
+    a[0]=7;a[1]=9;a[2]=12;a[3]=15;a[4]=17;a[5]=21; a[6]=23;a[7]=26;a[8]=28;a[9]=30;a[10]=33;a[11]=35; a[12]=38;a[13]=40;a[14]=42;a[15]=44;a[16]=46; a[17]=48;a[18]=50;a[19]=52;a[20]=53;a[21]=55; a[22]=57;a[23]=59;a[24]=60;a[25]=62;a[26]=64; a[27]=65;a[28]=66;
+    b[0]=12;b[1]=14;b[2]=17;b[3]=20;b[4]=23;b[5]=27; b[6]=31;b[7]=34;b[8]=38;b[9]=40;b[10]=43;b[11]=47; b[12]=50;b[13]=52;b[14]=56;b[15]=58;b[16]=62; b[17]=64;b[18]=66;b[19]=68;b[20]=71;b[21]=73; b[22]=75;b[23]=78;b[24]=80;b[25]=82;b[26]=84; b[27]=86;b[28]=88;
+   
+    let eg = document.getElementById("semanas").value;
+    let lf=parseInt(document.getElementById("lf").value);
+   
+    if (eg < 12 || eg > 40){ 
+            $("#lfPct").val("0");
+        $('#lfPctRpt').val("0");
+    }
+    else {
+     eg = eg - 12;
+     eg = parseInt(eg);
+     var uno=b[eg] - a[eg];
+     var dos=lf - a[eg];
+        var resultado = parseInt(95 / (uno) * (dos) + 3);
+        ajustarProgreso(resultado, "lfPct");
+        var pctLF = '';
+               //truncador de Pct, sobre 100 o bajo 1
+               if (resultado > 99){
+                   pctLF = '&gt; 99';
+               }
+               else if (resultado < 1){
+                   pctLF = '&lt; 1';
+               }
+               else{
+                   pctLF = resultado;
+               }
+        $('#lfPctRpt').val(pctLF);
+        $('#lfRango').val(a[eg] + ' - ' + b[eg]);
+        p50();
+    }
+};
+
+function pctcb() {
+
+    //cerebelo segun Hill
+    var pct2ds = [];
+    var pctmedia = [];
+    var pct2dsmas = [];
+    
+     pct2ds[0] = 12;pct2ds[1] = 14;pct2ds[2] = 15;pct2ds[3] = 16;pct2ds[4] = 17;pct2ds[5] = 18;
+     pct2ds[6] = 19;pct2ds[7] = 20;pct2ds[8] = 21;pct2ds[9] = 22;pct2ds[10] = 24;
+     pct2ds[11] = 26;pct2ds[12] = 27;pct2ds[13] = 29;pct2ds[14] = 30;pct2ds[15] = 31;
+     pct2ds[16] = 33;pct2ds[17] = 36;pct2ds[18] = 37;pct2ds[19] = 38;pct2ds[20] = 40;
+     pct2ds[21] = 40;pct2ds[22] = 40;pct2ds[23] = 41;pct2ds[24] = 42;pct2ds[25] = 44;
+    
+     pctmedia[0] = 15;pctmedia[1] = 16;pctmedia[2] = 17;pctmedia[3] = 18;pctmedia[4] = 20;
+     pctmedia[5] = 20;pctmedia[6] = 22;pctmedia[7] = 23;pctmedia[8] = 24;pctmedia[9] = 26;
+     pctmedia[10] = 28;pctmedia[11] = 30;pctmedia[12] = 31;pctmedia[13] = 33;pctmedia[14] = 34;
+     pctmedia[15] = 37;pctmedia[16] = 39;pctmedia[17] = 41;pctmedia[18] = 43;pctmedia[19] = 46;
+     pctmedia[20] = 47;pctmedia[21] = 49;pctmedia[22] = 51;pctmedia[23] = 51;pctmedia[24] = 52;
+     pctmedia[25] = 52
+    
+     pct2dsmas[0] = 18;pct2dsmas[1] = 18;pct2dsmas[2] = 19;pct2dsmas[3] = 20;pct2dsmas[4] = 22;
+     pct2dsmas[5] = 23;pct2dsmas[6] = 25;pct2dsmas[7] = 26;pct2dsmas[8] = 27;pct2dsmas[9] = 30;
+     pct2dsmas[10] = 32;pct2dsmas[11] = 34;pct2dsmas[12] = 34;pct2dsmas[13] = 37;pct2dsmas[14] = 38;
+     pct2dsmas[15] = 41;pct2dsmas[16] = 43;pct2dsmas[17] = 46;pct2dsmas[18] = 48;pct2dsmas[19] = 53;
+     pct2dsmas[20] = 56;pct2dsmas[21] = 58;pct2dsmas[22] = 60;pct2dsmas[23] = 62;pct2dsmas[24] = 62;
+     pct2dsmas[25] = 62;
+    
+    
+     var eg=0;
+     var cb=0;
+     let eg = document.getElementById("semanas").value;
+     cb=parseInt(document.getElementById("cerebelo").value);
+    
+     if (eg < 15) {$("#cbPct").val("0");$('#cerebeloPctRpt').val("0")}
+     else if (eg > 40){$("#cbPct").val("0");$('#cerebeloPctRpt').val("0");}
+     else {
+    
+      eg = eg - 15;
+      eg = parseInt(eg);
+      var uno=pct2dsmas[eg] - pct2ds[eg];
+      var dos=cb - pct2ds[eg];
+         var resultado = parseInt(95 / (uno) * (dos));
+         var pctCB = '';
+                //truncador de Pct, sobre 100 o bajo 1
+                if (resultado > 99){
+                    pctCB = '&gt; 99';
+                }
+                else if (resultado < 1){
+                    pctCB = '&lt; 1';
+                }
+                else{
+                    pctCB = resultado;
+                }
+         $('#cerebeloPctRpt').val(pctCB);
+         $('#cerebeloRango').val(pct2ds[eg] + ' - ' + pct2dsmas[eg]);
+         ajustarProgreso(resultado, "cerebeloPct");
+         
+         p50();
+     }
+    };
