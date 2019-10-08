@@ -331,9 +331,7 @@ $( document ).ready(function() {
     $( '#ca' ).change( pctca);
     $( '#lf' ).change( pctlf);
     $( '#cerebelo' ).change( pctcb);
-
-    $( '#saco' ).change( egsaco); 
-    $( '#lcn' ).change( eglcn);
+ 
     $( '#lh').change( pctlh);
     $( '#dof').change( calcdof);
 });
@@ -3687,4 +3685,101 @@ function pctcb() {
          
          p50();
      }
-    };
+};
+
+function pctlh() {
+    'use strict';
+	let a = [], b = [];
+   
+    a[12] = 4.8;   b[12] = 12.3; a[13] = 7.6;   b[13] = 15.1;
+    a[14] = 10.3;  b[14] = 17.9; a[15] = 13.1;  b[15] = 20.7;
+    a[16] = 15.8;  b[16] = 23.5; a[17] = 18.5;  b[17] = 26.3;
+    a[18] = 21.2;  b[18] = 29.1; a[19] = 23.8;  b[19] = 31.6;
+    a[20] = 26.3;  b[20] = 34.2; a[21] = 28.8;  b[21] = 36.7;
+    a[22] = 31.2;  b[22] = 39.2; a[23] = 33.5;  b[23] = 41.6;
+    a[24] = 35.7;  b[24] = 43.9; a[25] = 37.9;  b[25] = 46.1;
+    a[26] = 39.9;  b[26] = 48.1; a[27] = 41.9;  b[27] = 50.1;
+    a[28] = 43.7;  b[28] = 52.1; a[29] = 45.5;  b[29] = 53.9;
+    a[30] = 47.2;  b[30] = 55.6; a[31] = 48.9;  b[31] = 57.3;
+    a[32] = 50.4;  b[32] = 58.9; a[33] = 52.1;  b[33] = 60.5;
+    a[34] = 53.4;  b[34] = 62.1; a[35] = 54.8;  b[35] = 63.5;
+    a[36] = 56.2;  b[36] = 64.9; a[37] = 57.6;  b[37] = 66.4;
+    a[38] = 59.8;  b[38] = 67.8; a[39] = 60.4;  b[39] = 69.3;
+    a[40] = 61.9;  b[40] = 70.8;
+       
+        let eg = document.getElementById("semanas").value;
+        var lh=parseInt($("#lh").val());
+   
+           if (eg < 12 || eg > 40) {
+               $("#lhPct").val('0');
+           $('#lhPctRpt').val('0');
+           }
+           else {
+               eg = parseInt(eg);
+           var uno = b[eg] - a[eg];
+           var dos = lh - a[eg];
+           var resultado = (parseInt(95 / (uno) * (dos) + 5));
+           var pctLH = '';
+               //truncador de Pct, sobre 100 o bajo 1
+               if (resultado > 99){
+                   pctLH = '&gt; 99';
+               }
+               else if (resultado < 1){
+                   pctLH = '&lt; 1';
+               }
+               else{
+                   pctLH = resultado;
+               }
+           $('#lhPctRpt').val(pctLH);
+           $('#lhRango').val(a[eg] + ' - ' + b[eg]);
+            ajustarProgreso(resultado, "lhPct");
+           p50();
+       }
+}
+
+function p50() {
+    'use strict';
+	let a = [];
+    //calcular dbp
+    const N7 = new Number(9.468544279);
+    const N8 = new Number(1.015432196);
+    var dbp= $('#dbp').val();
+    var N = new Number(N7 * Math.pow(N8, dbp));
+    dbp = Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
+    var c1 = new Number(9.413641651);
+    var c2 = new Number(1.004137705);
+    var cc = $('#cc').val();
+    N = new Number(c1 * Math.pow(c2, cc));
+    cc =  Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
+    c1 = new Number(11.20178254);
+    c2 = new Number(1.01704237);
+    var lf = $('#lf').val();
+    N = new Number(c1 * Math.pow(c2, lf));
+    lf =  Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
+    
+    a[10]=12.4;a[11]=12.6;a[12]=13.1;a[13]=13.4; a[14]=13.6;a[15]=14.1;a[16]=14.4;a[17]=14.6; a[18]=15.1;a[19]=15.4;a[20]=15.6;a[21]=16.2; a[22]=16.5;a[23]=17.1;a[24]=17.3;a[25]=17.6; a[26]=18.1;a[27]=18.4;a[28]=19;a[29]=19.3; a[30]=19.6;a[31]=20.2;a[32]=20.5;a[33]=21.1; a[34]=21.4;a[35]=22;a[36]=22.4;a[37]=22.6; a[38]=23.3;a[39]=23.6;a[40]=24.2;a[41]=24.6; a[42]=25.2;a[43]=25.5;a[44]=26.1;a[45]=26.5; a[46]=27.1;a[47]=27.5;a[48]=28.1;a[49]=28.6; a[50]=29.2;a[51]=29.6;a[52]=30.2;a[53]=30.6; a[54]=31.3;a[55]=32;a[56]=32.4;a[57]=33.1; a[58]=33.4;a[59]=34.1;a[60]=34.6;a[61]=35.2; a[62]=35.6;a[63]=36.4;a[64]=37.1;a[65]=37.5; a[66]=38.2;a[67]=38.6;a[68]=39.4;a[69]=40.1;
+
+    var dbpdias = (Math.floor(dbp) * 7) + ((dbp - Math.floor(dbp)) * 10);
+    var ccdias = (Math.floor(cc) * 7) + ((cc - Math.floor(cc)) * 10);
+    var lfdias = (Math.floor(lf) * 7) + ((lf - Math.floor(lf)) * 10);
+    var cb = $('#cerebelo').val();
+    if (cb > 0) {
+        cb = cb / 10;
+        var egHill = 6.37+(5.4*cb)+(0.78*Math.pow(cb,2))-(0.13*Math.pow(cb,3));
+        //añadir mayor presicion, ya se suma 1 dia
+        cb = Math.round( egHill * 10 ) / 10;
+        var cbdias = (Math.floor(cb) * 7) + ((cb - Math.floor(cb)) * 10);
+        egbio = (ccdias + lfdias + cbdias) /3;
+     }
+     else {
+        egbio = (dbpdias + ccdias + lfdias) /3;
+     }
+     var lh = parseInt($('#lh').val());
+     if (lh > 0) {
+	lh =  a[lh];
+        var lhdias = (Math.floor(lh) * 7) + ((lh - Math.floor(lh)) * 10);
+        egbio = (lhdias + egbio) /2;
+     }
+     egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
+     $('#egP50').val(egbio);
+    }
