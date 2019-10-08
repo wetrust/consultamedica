@@ -3763,6 +3763,7 @@ function p50() {
     var ccdias = (Math.floor(cc) * 7) + ((cc - Math.floor(cc)) * 10);
     var lfdias = (Math.floor(lf) * 7) + ((lf - Math.floor(lf)) * 10);
     var cb = $('#cerebelo').val();
+    let egbio = "";
     if (cb > 0) {
         cb = cb / 10;
         var egHill = 6.37+(5.4*cb)+(0.78*Math.pow(cb,2))-(0.13*Math.pow(cb,3));
