@@ -3657,8 +3657,6 @@ function pctcb() {
      pct2dsmas[20] = 56;pct2dsmas[21] = 58;pct2dsmas[22] = 60;pct2dsmas[23] = 62;pct2dsmas[24] = 62;
      pct2dsmas[25] = 62;
     
-    
-     var eg=0;
      var cb=0;
      let eg = document.getElementById("semanas").value;
      cb=parseInt(document.getElementById("cerebelo").value);
