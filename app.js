@@ -491,6 +491,33 @@ $( document ).ready(function() {
         imprInforme(InformeString);
     });
 
+    $("#modalPreInfEcoObsSegTrim2").on("click", function(){
+        var cb = parseInt($('#cerebelo').val());
+        var lh = parseInt($('#lh').val());
+        
+        if (isNaN(cb) || isNaN(lh)){
+            var modal = makeModal();
+            document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+            document.getElementById(modal.titulo).innerText = "Información";
+            document.getElementById(modal.contenido).innerHTML = "<p><strong>Actualmente la Edad gestacional se calculará solo por biometrías de Cráneo y Fémur (Excluido CA).<br>Para mayor exactitud es recomendable ingresar mediciones de Humero y Cerebelo.</strong><br>¿Desea ingresar biometrías de Humero y Cerebelo?</p><div class='btn-group' data-toggle='buttons'><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verNO' aria-pressed='true'><input type='radio' value='0' checked=''> NO</label><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verSi' aria-pressed='true' data-modal='"+modal.id+"'><input type='radio' value='1'> SI</label></div>";
+    
+            $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+                $(this).remove();
+            });
+
+            $( "#infEcoObsSegTrim2verNO").on("click", function(){
+                crearInformeEcoSegTrim2();
+            });
+            $( "#infEcoObsSegTrim2verSi").on("click", function(){
+                $('#'+this.dataset.modal).modal('hide');
+                $('#lh').focus();
+                $("html, body").animate({ scrollTop: 100 }, "slow");
+            });
+            return;
+        }
+        crearInformeEcoSegTrim2();
+    });
+
     $("#modalPreInfEcoObsSegTrim1").on("click", function() {
         var actCard;
         var movCorp;
@@ -3862,4 +3889,128 @@ function bvm() {
         ajustarProgreso(resultado, "bvmPct");
         $("#bvmPct").val(resultado);
     }
+}
+
+function crearInformeEcoSegTrim2(){
+
+	var actCard;
+        var movCorp;
+
+        elem=document.getElementsByName('accard');
+        for(i=0;i<elem.length;i++)
+            if (elem[i].checked) {
+                actCard = elem[i].value;
+            }
+
+        elem=document.getElementsByName('movfet');
+        for(i=0;i<elem.length;i++)
+            if (elem[i].checked) {
+                movCorp = elem[i].value;
+            }
+
+        if (actCard = 0){
+            actCard = "sin actividad cardiaca";
+        }
+        else
+        {
+            actCard = "con actividad cardiaca";
+        }
+        if (movCorp = 0){
+            movCorp = "sin movimientos corporales";
+        }
+        else
+        {
+            movCorp = "con movimientos corporales";
+        }
+
+	var p50 = $('#egP50').val() + ' semanas';
+	var lh =  $( '#lh').val() + ' mm';
+	var lhRango =  '( ' + $( '#lhRango').val() + ' )';
+	var fur = $( "input[name='fum']").val();
+	var fexamen = $( "input[name='fee']").val();
+	var eg = $( "input[name='eg']").val();
+	var fpp = $( "input[name='fpp']").val();
+	var dbp = $( '#dbp').val() + ' mm';
+	var dbpRango = '( ' + $( '#dbpRango').val() + ' )';
+	var dof = $( '#dof').val() + ' mm';
+	var dofRango = '( ' + $( '#dofRango').val() + ' )';
+	var cc = $( '#cc').val() + ' mm';
+	var ccRango = '( ' + $( '#ccRango').val() + ' )';
+	var ca = $( '#ca').val() + ' mm';
+	var caRango = '( ' + $( '#caRango').val() + ' )';
+	var lf = $( '#lf').val() + ' mm';
+	var lfRango = '( ' + $( '#lfRango').val() + ' )';
+	var ic = $( '#dof-dbp').val();
+	var cb = $('#cerebelo').val() + ' mm';
+	var cbRango = '( ' + $('#cerebeloRango').val() + ' )';
+	
+	var paciente = document.getElementById("nombre-paciente").value;
+        var idpaciente = document.getElementById("id-paciente").value;
+        var motivo = $( '#motivo-examen option:selected').text();
+        var ecografista = $( '#ecografista option:selected').text();
+        var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+        var edadmaterna = $( "select[name='edad_materna']").val();
+	
+        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+
+	var linea1 = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
+        var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
+        
+	var anatomiaFetal = $('#ev-morfo').val();
+	var anatomiaFetalString = "";
+	
+	for(i=0;i<anatomiaFetal.length;i++)
+        {
+		anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i];
+		anatomiaFetalString = anatomiaFetalString + " <br>";
+        }
+	
+	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
+        var linea4 = "<strong>Placenta</strong> inserción " + document.getElementById("incersion").value + " y de ubicación " + document.getElementById("ubicacion").value + ", grado " + document.getElementById("grado-placenta").value;
+        var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
+        var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
+	
+	var InformeString = "<div class='container'> <h3>Determinación Ecográfica <small>(Tardía)</small> de la Edad Gestacional</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p><strong>FUM: </strong> :FUR <br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p style='margin-bottom:0;'>:LINEA1 <br>:LINEA2</p><p style='margin-bottom:0; word-wrap: break-word;'>:LINEA3</p><p>:LINEA4 <br>:LINEA5 <br>:LINEA6</p><p></p><p></p></div><div class='container-fluid'> <table class='table'> <tbody> <tr> <th style='line-height:15px !important;color:#045dab;'>BIOMETRIA FETAL</th> <th style='text-align:center;'>Valor observado</th> <th style='text-align:center;'>Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style='text-align:center;'>:DBP</td><td style='text-align:center;'>:DBPRANGO</td></tr><tr> <td>DOF (Jeanty):</td><td style='text-align:center;'>:DOF</td><td style='text-align:center;'>:DOFRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style='text-align:center;'>:CC</td><td style='text-align:center;'>:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style='text-align:center;'>:CA</td><td style='text-align:center;'>:CARANGO</td></tr><tr> <td>LF (Hadlock):</td><td style='text-align:center;'>:LF</td><td style='text-align:center;'>:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style='text-align:center;'>:LH</td><td style='text-align:center;'>:LHRANGO</td></tr><tr> <td>Cerebelo (Diámetro transverso) (Hill):</td><td style='text-align:center;'>:CB</td><td style='text-align:center;'>:CBRANGO</td></tr><tr> <td style='padding-bottom: 15px !important;'>Indice Cefálico (DBP / DOF)</td><td style='text-align:center;padding-bottom: 15px !important;'>:IC</td><td style='text-align:center;padding-bottom: 15px !important;'>( 70% - 86% )</td></tr><tr> <td style='border-top:1px dashed #045dab;'><strong>Edad gestacional ecográfica (Bp50)</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:P50</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>(Para el cálculo de Bp50, se excluye CA.)</strong> </td></tr><tr> <td style='border-top:1px dashed #045dab;'></td><td style='border-top:1px dashed #045dab;'></td><td style='border-top:1px dashed #045dab;'></td></tr></tbody> </table></div><div class='container-fluid'> <p style='padding-bottom:0px;margin-bottom:0px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40' style='margin-right:100px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='margin-bottom:0;'><strong>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015</strong> <br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p style='margin-bottom:0 !important;' class='pie-pagina-dos'>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>";
+
+	var comentario = $('#comentarios-eco-dos-inf-dos').val()
+	comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : '';
+	
+	InformeString = InformeString.replace(":PACIENTE", paciente);
+	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
+	InformeString = InformeString.replace(":MOTIVO", motivo);
+	InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
+	InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
+
+	InformeString = InformeString.replace(":FUR", fur);
+	InformeString = InformeString.replace(":FEXAMEN", fexamen);
+	InformeString = InformeString.replace(":EG", eg);
+	InformeString = InformeString.replace(":FPP", fpp);
+	InformeString = InformeString.replace(":DBP", dbp);
+	InformeString = InformeString.replace(":DBPRANGO", dbpRango);
+	InformeString = InformeString.replace(":DOF", dof);
+	InformeString = InformeString.replace(":DOFRANGO", dofRango);
+	InformeString = InformeString.replace(":CC", cc);
+	InformeString = InformeString.replace(":CCRANGO", ccRango);
+	InformeString = InformeString.replace(":CA", ca);
+	InformeString = InformeString.replace(":CARANGO", caRango);
+	InformeString = InformeString.replace(":LF", lf);
+	InformeString = InformeString.replace(":LFRANGO", lfRango);
+	InformeString = InformeString.replace(":LH", lh);
+	InformeString = InformeString.replace(":LHRANGO", lhRango);
+	InformeString = InformeString.replace(":IC", ic);
+	InformeString = InformeString.replace(":CB", cb);
+	InformeString = InformeString.replace(":CBRANGO", cbRango);
+	InformeString = InformeString.replace(":COMENTARIO", comentario);
+	InformeString = InformeString.replace(":P50", p50);
+	
+	InformeString = InformeString.replace(":LINEA1", linea1);
+	InformeString = InformeString.replace(":LINEA2", linea2);
+	InformeString = InformeString.replace(":LINEA3", linea3);
+	InformeString = InformeString.replace(":LINEA4", linea4);
+	InformeString = InformeString.replace(":LINEA5", linea5);
+	InformeString = InformeString.replace(":LINEA6", linea6);
+	InformeString = InformeString.replace(":DATEINFORME", dateInf);
+	InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
+	
+	imprInforme(InformeString);
 }
