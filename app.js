@@ -1802,7 +1802,6 @@ $( document ).ready(function() {
     });
 
     $( '#infecoObsSegTrim1' ).on( 'click', function() {
-
         var edadGestacional = document.getElementById("semanas").value;
 
         if (edadGestacional < 16){
@@ -1823,10 +1822,12 @@ $( document ).ready(function() {
         comentarios = (typeof comentarios == 'undefined') ? 'Crecimiento (peso) percentil ' + parseInt($('#pfePctRpt').val()) + ', para gráfica de peso fetal Hadlock*<br />Bolsillo vertical mayor de ' + document.getElementById("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
         stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
 
-        var paciente = $( '#nombre-paciente').val();
-        var idpaciente = $( '#id-paciente').val();
-        var fexamen = $( "input[name='fee']").val();
+        var paciente = document.getElementById("nombre-paciente").value;
+        var idpaciente = document.getElementById("id-paciente").value;
         var ecografista = $( '#ecografista option:selected').text();
+        let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+
         stringGraficos = stringGraficos.replace(":ECOGRAFISTA", ecografista);
         stringGraficos = stringGraficos.replace(":PACIENTE", paciente);
         stringGraficos = stringGraficos.replace(":IDPACIENTE", idpaciente);
@@ -1902,7 +1903,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = parseInt(localStorage.eg) -1;
+                   var edadGest = document.getElementById("semanas").value;
     
                    for (i = 16; i <= edadGest; i++) {
                        data.push({
@@ -1976,7 +1977,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = parseInt(localStorage.eg) - 1;
+                   var edadGest = document.getElementById("semanas").value;
     
                    for (i = 12; i <= edadGest; i++) {
                        data.push({
@@ -2053,7 +2054,7 @@ $( document ).ready(function() {
                  data: (
                      function () {
                          var data = [];
-                         var edadGest = parseInt(localStorage.eg) -1;
+                         var edadGest = document.getElementById("semanas").value;
      
                          for (i = 16; i <= edadGest; i ++ ) {
                              data.push({
@@ -2075,41 +2076,50 @@ $( document ).ready(function() {
     });
     
     $( '#infecoObsSegTrim2' ).on( 'click', function() {
-        $('#graficosTitle').html("Gráfica Determinación Ecográfica (Tardía) de la Edad Gestacional");
-        $( '#impEcoObsSegTrim2').remove();
-        $( '#infecoObsSegTrim1Clon').remove();
-        $('#graficosFooter').prepend("<button type='button' class='btn btn-outline-info' id='impEcoObsSegTrim2'>Ver Impresion</button>");
+
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 15){
+            alert("Edad Gestacional inferior a 15 semanas");
+            return false;
+        }
+
+        var modal = makeModal("Ver Impresion");
+
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfica Determinación Ecográfica (Tardía) de la Edad Gestacional";
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
         var stringGraficos = "<div class='container'><div style='width:100px;text-align:center;'></div></div><h4 class='text-center d-none'>Gráfica evaluación ecográfica del crecimiento fetal</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none mt-2'></span><div class='row d-none mt-2'> <div class='col-5'><p style='font-size:10px;'><strong>Paciente Sra. (Srta.): </strong>:PACIENTE </p></div><div class='col-3'><p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'><p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row mt-2'> <div class='col'><div id='graficoCcView'></div></div><div class='col'><div id='graficoCerebeloView'></div></div></div><div class='row'><div class='col'><div id='graficoLfView'></div></div><div class='col'><div id='graficoLhView'></div></div></div><div class='row' id='lineclear'><div class='col'><p class='d-none' style='font-size:12px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;' class='d-none'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015<br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf<br>** Referencias: CC y LF Hadlock y col. 1984; LH Jeanty y col.<br>*** Diámetro cerebeloso transverso Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
-        var fur = $( "input[name='fum']").val();
-        var fpp = $( "input[name='fpp']").val();
-    
-        var comentarios = $("#comentarios-eco-dos-inf-dos").val();
-        var paciente = $( '#nombre-paciente').val();
-        var idpaciente = $( '#id-paciente').val();
-        var fexamen = $( "input[name='fee']").val();
+        let fur = new Date(Date.parse(document.getElementById("fum").value));
+        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+        let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
+
+        var paciente = document.getElementById("nombre-paciente").value;
+        var idpaciente = document.getElementById("id-paciente").value;
         var ecografista = $( '#ecografista option:selected').text();
+        let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+        var comentarios = $("#comentarios-eco-dos-inf-dos").val();
+
         stringGraficos = stringGraficos.replace(":ECOGRAFISTA", ecografista);
         stringGraficos = stringGraficos.replace(":PACIENTE", paciente);
         stringGraficos = stringGraficos.replace(":IDPACIENTE", idpaciente);
         stringGraficos = stringGraficos.replace(":FEXAMEN", fexamen);
-    
-        if(typeof comentarios == 'undefined'){
-            comentarios = "Fum operacional: " + fur + "<br>Fecha probable de parto: " + fpp + "<br>" + $('#comentarios-eco-dos-generico').val().replace(/\r\n|\r|\n/g,"<br />");
-        }
-        else{
-        comentarios = $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
-        }
-    
+
+        comentarios = (typeof comentarios == 'undefined') ? "Fum operacional: " + fur + "<br>Fecha probable de parto: " + fpp + "<br>" + $('#comentarios-eco-dos-generico').val().replace(/\r\n|\r|\n/g,"<br />") : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
         stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
-            
-        $('#graficosBody').html(stringGraficos);
-        $( '#impEcoObsSegTrim2').on("click", function(){
-          imprSelec("graficosBody");
+
+        document.getElementById(modal.contenido).innerHTML = stringGraficos;
+        document.getElementById(modal.button).dataset.id = modal.contenido;
+        $("#"+modal.button).on("click", function(){
+            let modal =  this.dataset.id;
+            imprSelec(modal);
         });
-        $( '#impEcoObsSegTrim1').remove();
-        $( '#impDoppler3').remove();
-        $( '#impDoppler2').remove();
-        $( '#impDoppler1').remove();
+
         $('#graficoCcView').highcharts({
                 chart: {
                 height: 250
@@ -2307,7 +2317,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = parseInt(localStorage.eg) - 1;
+                   var edadGest = document.getElementById("semanas").value;
     
                    for (i = 12; i <= edadGest; i++) {
                        data.push({ y: 0, });
@@ -2375,7 +2385,7 @@ $( document ).ready(function() {
                     lineWidth: 0,
                     data: (function () {
                         var data = [];
-                        var edadGest = parseInt(localStorage.eg) - 1;
+                        var edadGest = document.getElementById("semanas").value;
     
                         for (i = 12; i <= edadGest; i++) {
                             data.push({ y: 0, });
@@ -2392,7 +2402,6 @@ $( document ).ready(function() {
                     }())
                 }]
         });
-        $('#popupGraficos').modal('show');
     });
 
 
