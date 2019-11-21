@@ -1913,7 +1913,7 @@ $( document ).ready(function() {
                    data.push({
                        y: parseFloat($('#pfe').val()),
                    });
-                   for (i = edadGest + 1; i <= 39; i++) {
+                   for (i = edadGest + 1; i < 40; i++) {
                        data.push({
                            y: 0,
                        });
@@ -1993,7 +1993,7 @@ $( document ).ready(function() {
                    data.push({
                        y:ca,
                    });
-                   for (i = edadGest + 1; i <= 39; i++) {
+                   for (i = edadGest + 1; i < 40; i++) {
                        data.push({
                            y: 0,
                        });
@@ -2056,7 +2056,7 @@ $( document ).ready(function() {
                          var data = [];
                          var edadGest = document.getElementById("semanas").value;
      
-                         for (i = 16; i <= edadGest; i ++ ) {
+                         for (i = 16; i < edadGest; i ++ ) {
                              data.push({
                                  y: 0,
                              });
@@ -2064,7 +2064,7 @@ $( document ).ready(function() {
                          data.push({
                                  y: parseFloat($('#bvm').val()),
                              });
-                         for (i = edadGest +1; i <= 39; i ++ ) {
+                         for (i = edadGest +1; i < 40; i ++ ) {
                              data.push({
                                  y: 0,
                              });
