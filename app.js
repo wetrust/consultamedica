@@ -17,6 +17,8 @@ var titulos ={
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
 }
 
+
+
 document.location.hash = "";
 
 //controlador de funciones base cuando se carga la pagina
@@ -910,164 +912,20 @@ $( document ).ready(function() {
 
 //controlador de los keypress
 $( document ).ready(function() {
-    $("#saco").on("keypress",function( e ) {
+    $("input").on("keypress",function( e ) {
+        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof","cc", "ca", "lf", "bvm", "lh", "cerebelo", "modalPreInfEcoObsSegTrim1","aud","aui","ipau","ipacm","dv","psmACM","modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica"];
+
         if ( e.which == 13 ) {
-            e.preventDefault();
-            document.getElementById("embrion").focus();
+           e.preventDefault();
+           if (key_enter.includes(this.id)== true){
+                pos = key_enter.indexOf(this.id);
+                document.getElementById(key_enter[pos+1]).focus();
+           }
         }
     });
 
-    $("#lcn").on("keypress",function( e ) {
-        if (e.which == 13) {
-            e.preventDefault();
-            document.getElementById("btn.informe.precoz").focus();
-        }
-    });
-    $("#utero-ubic1").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-            e.preventDefault();
-            document.getElementById("utero-ubic2").focus();
-        }
-    });
-    $("#utero-ubic2").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-            e.preventDefault();
-            document.getElementById("cuerpo-uterino").focus();
-        }
-    });
-    $("#cuerpo-uterino").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-            e.preventDefault();
-            document.getElementById("saco-gestacional").focus();
-        }
-    });
-    $("#saco-gestacional").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-            e.preventDefault();
-            document.getElementById("saco-vitelino").focus();
-        }
-    });
-    $("#saco-vitelino").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-            e.preventDefault();
-            document.getElementById("fcf-prim").focus();
-        }
-    });
-    $("#fcf-prim").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-            e.preventDefault();
-            document.getElementById("anexo-derecho").focus();
-        }
-    });
-    $("#anexo-derecho").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-            e.preventDefault();
-            document.getElementById("anexo-derecho").focus();
-        }
-    });
-    $("#anexo-derecho").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-            e.preventDefault();
-            document.getElementById("anexo-izquierdo").focus();
-        }
-    });
-    $("#anexo-izquierdo").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-            e.preventDefault();
-            document.getElementById("exploracion-douglas").focus();
-        }
-    });
-    $("#exploracion-douglas").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-            e.preventDefault();
-            document.getElementById("comentarios-eco-uno").focus();
-        }
-    });
 
-    $("#utero\\.ginecologica").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#endometrio\\.ginecologica").focus();
-        }
-    });
-    $("#endometrio\\.ginecologica").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#anexo\\.izquierdo\\.ginecologica").focus();
-        }
-    });
-    $("#anexo\\.izquierdo\\.ginecologica").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#anexo\\.derecho\\.ginecologica").focus();
-        }
-    });
-    $("#anexo\\.derecho\\.ginecologica").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#ovario\\.izquierdo\\.ginecologica").focus();
-        }
-    });
-    $("#ovario\\.izquierdo\\.ginecologica").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#ovario\\.derecho\\.ginecologica").focus();
-        }
-    });
-    $("#ovario\\.derecho\\.ginecologica").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#douglas\\.ginecologica").focus();
-        }
-    });
-    $("#douglas\\.ginecologica").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#comentario\\.ginecologica").focus();
-        }
-    });
-
-    $("#aud").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#aui").focus();
-        }
-    });
-
-    $("#aui").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#ipau").focus();
-        }
-    });
-
-    $("#ipau").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#ipacm").focus();
-        }
-    });
-
-    $("#ipacm").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#dv").focus();
-        }
-    });
-
-    $("#dv").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#psmACM").focus();
-        }
-    });
     
-    $("#psmACM").on("keypress",function( e ) {
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#modalPreInfEcoDoppler").focus();
-        }
-    });
 });
 
 //controlador de los gráficos
