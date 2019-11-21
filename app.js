@@ -1515,7 +1515,7 @@ $( document ).ready(function() {
                  data: (
                      function () {
                          var data = [];
-                         var edadGest = parseInt(localStorage.eg) -1;
+                         var edadGest = document.getElementById("semanas").value;
      
                          for (i = 16; i <= edadGest; i ++ ) {
                              data.push({
