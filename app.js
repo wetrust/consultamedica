@@ -1905,7 +1905,7 @@ $( document ).ready(function() {
                    var data = [];
                    var edadGest = document.getElementById("semanas").value;
     
-                   for (i = 16; i <= edadGest; i++) {
+                   for (i = 16; i < edadGest; i++) {
                        data.push({
                            y: 0,
                        });
@@ -1979,7 +1979,7 @@ $( document ).ready(function() {
                    var data = [];
                    var edadGest = document.getElementById("semanas").value;
     
-                   for (i = 12; i <= edadGest; i++) {
+                   for (i = 12; i < edadGest; i++) {
                        data.push({
                            y: 0,
                        });
@@ -2171,9 +2171,9 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = parseInt(localStorage.eg) - 1;
+                   var edadGest = document.getElementById("semanas").value;
     
-                   for (i = 12; i <= edadGest; i++) {
+                   for (i = 12; i < edadGest; i++) {
                        data.push({
                            y: 0,
                        });
@@ -2181,7 +2181,7 @@ $( document ).ready(function() {
                    data.push({
                        y: parseInt(document.getElementById("cc").value),
                    });
-                   for (i = edadGest + 1; i <= 39; i++) {
+                   for (i = edadGest + 1; i < 40; i++) {
                        data.push({
                            y: 0,
                        });
@@ -2247,9 +2247,9 @@ $( document ).ready(function() {
                     lineWidth: 0,
                     data: (function () {
                         var data = [];
-                        var edadGest = parseInt(localStorage.eg) - 1;
+                        var edadGest = document.getElementById("semanas").value;
     
-                        for (i = 15; i <= edadGest; i++) {
+                        for (i = 15; i < edadGest; i++) {
                             data.push({
                                 y: 0,
                             });
@@ -2257,7 +2257,7 @@ $( document ).ready(function() {
                         data.push({
                             y: parseInt(document.getElementById("cerebelo").value),
                         });
-                        for (i = edadGest + 1; i <= 39; i++) {
+                        for (i = edadGest + 1; i < 40; i++) {
                             data.push({
                                 y: 0,
                             });
@@ -2319,13 +2319,13 @@ $( document ).ready(function() {
                    var data = [];
                    var edadGest = document.getElementById("semanas").value;
     
-                   for (i = 12; i <= edadGest; i++) {
+                   for (i = 12; i < edadGest; i++) {
                        data.push({ y: 0, });
                    }
                    data.push({
                        y: parseInt(document.getElementById("lf").value),
                    });
-                   for (i = edadGest + 1; i <= 39; i++) {
+                   for (i = edadGest + 1; i < 40; i++) {
                        data.push({
                            y: 0,
                        });
@@ -2387,13 +2387,13 @@ $( document ).ready(function() {
                         var data = [];
                         var edadGest = document.getElementById("semanas").value;
     
-                        for (i = 12; i <= edadGest; i++) {
+                        for (i = 12; i < edadGest; i++) {
                             data.push({ y: 0, });
                         }
                         data.push({
                             y: parseInt(document.getElementById("lh").value),
                         });
-                        for (i = edadGest + 1; i <= 39; i++) {
+                        for (i = edadGest + 1; i < 40; i++) {
                             data.push({
                                 y: 0,
                             });
@@ -2464,7 +2464,7 @@ $( document ).ready(function() {
                         // generate an array of random data
                         var data = [];
                         var edadGest = document.getElementById("semanas").value;
-                        for (i = 10; i <= edadGest; i ++ ) {
+                        for (i = 10; i < edadGest; i ++ ) {
                             data.push({
                                 y: 0,
                             });
@@ -2477,7 +2477,7 @@ $( document ).ready(function() {
                         data.push({
                                 y: aud,
                             });
-                        for (i = (edadGest +1); i <= 39; i ++ ) {
+                        for (i = (edadGest +1); i < 39; i ++ ) {
                             data.push({
                                 y: 0,
                             });
@@ -2548,7 +2548,7 @@ $( document ).ready(function() {
                         var data = [];
                         var edadGest = document.getElementById("semanas").value;
     
-                        for (i = 10; i <= edadGest; i ++ ) {
+                        for (i = 10; i < edadGest; i ++ ) {
                             data.push({
                                 y: 0,
                             });
@@ -2562,7 +2562,7 @@ $( document ).ready(function() {
                         data.push({
                                 y: aui,
                             });
-                        for (i = (edadGest +1); i <= 39; i ++ ) {
+                        for (i = (edadGest +1); i < 40; i ++ ) {
                             data.push({
                                 y: 0,
                             });
