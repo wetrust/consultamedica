@@ -2128,7 +2128,7 @@ $( document ).ready(function() {
                                     y: 0,
                                 });
                             }
-                            var aud = $("#auprom").val();
+                            var aud = $("#respuesta_uterina_promedio").val();
                             aud = aud.toString();
                             aud = aud.replace(",", ".");
                             aud = parseFloat(aud);
@@ -2388,7 +2388,7 @@ $( document ).ready(function() {
                             y: 0,
                         });
                     }
-                    var aud = $("#auprom").val();
+                    var aud = $("#respuesta_uterina_promedio").val();
                     aud = aud.toString();
                     aud = aud.replace(",", ".");
                     aud = parseFloat(aud);
