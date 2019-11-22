@@ -17,8 +17,6 @@ var titulos ={
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
 }
 
-
-
 document.location.hash = "";
 
 //controlador de funciones base cuando se carga la pagina
@@ -323,8 +321,42 @@ $( document ).ready(function() {
         $("#semanas").trigger("change");
     });
 
-    $("#aud").change( pctut);
-    $("#aui").change( pctut);
+    $("#aud").on("change",function(){
+        let ut = pctut(this.value);
+        $("#audPct").val(ut.pct);
+        $("#audPctTxt").val(ut.pct);
+        $("#audRngo").val(ut.rango.min + " - " + ut.rango.max);
+        ajustarProgreso(ut.pct, "audPct");
+
+        aui = parseFloat($("#aui").val());
+        aud = parseFloat(this.value);
+        let utprom = ((aui + aud) / 2);
+        document.getElementById("auprom").value = utprom.toFixed(2);
+        $("#auprom").trigger("change");
+    });
+
+    $("#aui").on("change",function(){
+        let ut = pctut(this.value);
+        $("#auiPct").val(ut.pct);
+        $("#auiPctTxt").val(ut.pct);
+        $("#auiRngo").val(ut.rango.min + " - " + ut.rango.max);
+        ajustarProgreso(ut.pct, "auiPct");
+
+        aui = parseFloat(this.value);
+        aud = parseFloat($("#aud").val());
+        let utprom = ((aui + aud) / 2);
+        document.getElementById("auprom").value = utprom.toFixed(2);
+        $("#auprom").trigger("change");
+    });
+
+    $("#auprom").on("change",function(){
+        let ut = pctut(this.value);
+        $("#auPct").val(ut.pct);
+        $("#auPctTxt").val(ut.pct);
+        $("#auRngo").val(ut.rango.min + " - " + ut.rango.max);
+        ajustarProgreso(ut.pct, "auPct");
+    });
+
     $("#dv").change( pctdv);
     $("#ipau").change( pctau);
     $("#ipacm").change( pctacm);
@@ -338,6 +370,42 @@ $( document ).ready(function() {
  
     $( '#lh').change( pctlh);
     $( '#dof').change( calcdof);
+
+    $("#art\\.ut").on("click", function(){
+        if (this.checked == true){
+            document.getElementById("art.ut.div").classList.remove("d-none");
+            document.getElementById("respuesta_uterina_derecha").focus();
+        }else{
+            document.getElementById("art.ut.div").classList.add("d-none");
+        }
+    });
+
+    $("#respuesta_uterina_derecha").on("change",function(){
+        let ut = pctut(this.value);
+        $("#respuesta_uterina_derecha_percentil").html(ut.pct);
+
+        aui = parseFloat($("#respuesta_uterina_izquierda").val());
+        aud = parseFloat(this.value);
+        let utprom = ((aui + aud) / 2);
+        document.getElementById("respuesta_uterina_promedio").value = utprom.toFixed(2);
+        $("#respuesta_uterina_promedio").trigger("change");
+    });
+
+    $("#respuesta_uterina_izquierda").on("change",function(){
+        let ut = pctut(this.value);
+        $("#respuesta_uterina_izquierda_percentil").html(ut.pct);
+
+        aui = parseFloat(this.value);
+        aud = parseFloat($("#respuesta_uterina_derecha").val());
+        let utprom = ((aui + aud) / 2);
+        document.getElementById("respuesta_uterina_promedio").value = utprom.toFixed(2);
+        $("#respuesta_uterina_promedio").trigger("change");
+    });
+
+    $("#respuesta_uterina_promedio").on("change",function(){
+        let ut = pctut(this.value);
+        $("#respuesta_uterina_promedio_percentil").html(ut.pct);
+    });
 });
 
 //controlador de input clones
@@ -913,7 +981,7 @@ $( document ).ready(function() {
 //controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof","cc", "ca", "lf", "bvm", "lh", "cerebelo", "modalPreInfEcoObsSegTrim1","aud","aui","ipau","ipacm","dv","psmACM","modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica"];
+        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof","cc", "ca", "lf", "bvm", "lh", "cerebelo", "modalPreInfEcoObsSegTrim1", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "modalPreInfEcoObsSegTrim1","aud","aui","ipau","ipacm","dv","psmACM","modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -2001,78 +2069,155 @@ $( document ).ready(function() {
                    return data;
                }())
            }]
-       });          
-       $('#graficoBVMView').highcharts({
-                 chart: {
-                 height: 250
-             },
-             title: {
-                 text: 'BVM de Líquido Amniótico ***',
-                 x: -20,
-                     style: {
-                 fontSize: '14px'
-             }
-             },
-             plotOptions: {
-                 series: {
-                     enableMouseTracking: false
-                 }
-             },
-                 legend: {
-                 itemStyle: {
-                     fontSize: '10px',
-                     fontWeight:'normal'
-                 }
-             },
-             yAxis: {
-                 title: { text: 'Milimetros (mm)' },
-                 tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
-             },
-             colors: ['#313131','#313131','#313131'],
-             xAxis: {
-                 categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
-             },
-             credits: {enabled:false},
-             series: [{
-                 type: "line",
-                 name: 'Pct. 5',
-                 dashStyle: "Dot",
-                 marker: {enabled:false},
-                 data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
-             }, {
-                 type: "line",
-                 name: 'Pct. 95',
-                 dashStyle: "Dot",
-                 marker: { enabled: false },
-                 data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
-             }, {
-                 type: "line",
-                 name: 'BVM',
-                 dashStyle: "Dot",
-                 marker: { symbol: 'square' },
-                 lineWidth: 0,
-                 data: (
-                     function () {
-                         var data = [];
-                         var edadGest = document.getElementById("semanas").value;
-     
-                         for (i = 16; i < edadGest; i ++ ) {
-                             data.push({
-                                 y: 0,
-                             });
-                         }
-                         data.push({
-                                 y: parseFloat($('#bvm').val()),
-                             });
-                         for (i = edadGest +1; i < 40; i ++ ) {
-                             data.push({
-                                 y: 0,
-                             });
-                         }
-                         return data;
-                     }())
-                 }]
-         });
+       }); 
+       
+       let uterinasData = {
+           min:[1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47],
+           max: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
+       }
+            if (document.getElementById("art.ut").checked == true){
+                $('#graficoBVMView').highcharts({
+                    chart: {
+                        height: 250
+                    },
+                    title: {
+                        text: 'IP Promedio Arterias Uterinas',
+                        x: -20,
+                        style: {
+                            fontSize: '14px'
+                        }
+                    },
+                    plotOptions: {
+                        series: {
+                            enableMouseTracking: false
+                        }
+                    },
+                    yAxis: {
+                        title: { text: 'Valor IP' },
+                        tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
+                    },
+                    colors: ['#313131', '#313131', '#313131'],
+                    xAxis: {
+                        categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
+                    },
+                    credits: { enabled: false },
+                    series: [{
+                        type: "line",
+                        name: 'Pct. 5',
+                        dashStyle: "Dot",
+                        marker: { enabled: false },
+                        data: uterinasData.min
+                    }, {
+                        type: "line",
+                        name: 'Pct. 95',
+                        dashStyle: "Dot",
+                        marker: { enabled: false },
+                        data: uterinasData.max
+                    }, {
+                        type: "line",
+                        name: 'Arteria Promedio',
+                        dashStyle: "Dot",
+                        marker: { symbol: 'square' },
+                        lineWidth: 0,
+                        data: (function () {
+                            // generate an array of random data
+                            var data = [];
+                            var edadGest = document.getElementById("semanas").value;
+                            for (i = 10; i < edadGest; i ++ ) {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                            var aud = $("#auprom").val();
+                            aud = aud.toString();
+                            aud = aud.replace(",", ".");
+                            aud = parseFloat(aud);
+                                
+                            data.push({
+                                y: aud,
+                            });
+                            for (i = (edadGest +1); i < 39; i ++ ) {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                            return data;
+                        }())
+                    }]
+                });
+            }else{
+                $('#graficoBVMView').highcharts({
+                    chart: {
+                    height: 250
+                },
+                title: {
+                    text: 'BVM de Líquido Amniótico ***',
+                    x: -20,
+                        style: {
+                    fontSize: '14px'
+                }
+                },
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
+                    }
+                },
+                    legend: {
+                    itemStyle: {
+                        fontSize: '10px',
+                        fontWeight:'normal'
+                    }
+                },
+                yAxis: {
+                    title: { text: 'Milimetros (mm)' },
+                    tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
+                },
+                colors: ['#313131','#313131','#313131'],
+                xAxis: {
+                    categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+                },
+                credits: {enabled:false},
+                series: [{
+                    type: "line",
+                    name: 'Pct. 5',
+                    dashStyle: "Dot",
+                    marker: {enabled:false},
+                    data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
+                }, {
+                    type: "line",
+                    name: 'Pct. 95',
+                    dashStyle: "Dot",
+                    marker: { enabled: false },
+                    data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
+                }, {
+                    type: "line",
+                    name: 'BVM',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                    data: (
+                        function () {
+                            var data = [];
+                            var edadGest = document.getElementById("semanas").value;
+        
+                            for (i = 16; i < edadGest; i ++ ) {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                            data.push({
+                                    y: parseFloat($('#bvm').val()),
+                                });
+                            for (i = edadGest +1; i < 40; i ++ ) {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                            return data;
+                        }())
+                    }]
+                });
+            }
     });
     
     $( '#infecoObsSegTrim2' ).on( 'click', function() {
@@ -2190,82 +2335,154 @@ $( document ).ready(function() {
                }())
            }]
        });
-       $('#graficoCerebeloView').highcharts({
-               chart: {
+       if (document.getElementById("art.ut").checked == true){
+        $('#graficoCerebeloView').highcharts({
+            chart: {
                 height: 250
             },
-                title: {
-                    text: 'Diámetro de Cerebelo',
-                    x: -20,
-                        style: {
-                fontSize: '14px'
-            }
-                },
-                plotOptions: {
-                    series: {
-                        enableMouseTracking: false
-                    }
-                },
-                yAxis: {
-                    title: { text: 'Milimetros (mm)' },
-                    tickPositions: [5, 10,20,30,40,50,60,70]
-                },
-               legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight:'normal'
+            title: {
+                text: 'IP Promedio Arterias Uterinas',
+                x: -20,
+                style: {
+                    fontSize: '14px'
                 }
             },
-                colors: ['#313131', '#313131', '#313131'],
-                xAxis: {
-                    categories:['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
-                },
-                credits: {enabled: false},
-                series: [{
-                    type: "line",
-                    name: '-2DE',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
-                }, {
-                    type: "line",
-                    name: 'media',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
-                }, {
-                    type: "line",
-                    name: '+2DE',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
-                }, {
-                    type: "line",
-                    name: 'Cerebelo',
-                    dashStyle: "Dot",
-                    marker: { symbol: 'square' },
-                    lineWidth: 0,
-                    data: (function () {
-                        var data = [];
-                        var edadGest = document.getElementById("semanas").value;
-    
-                        for (i = 15; i < edadGest; i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Valor IP' },
+                tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
+            },
+            credits: { enabled: false },
+            series: [{
+                type: "line",
+                name: 'Pct. 5',
+                dashStyle: "Dot",
+                marker: { enabled: false },
+                data: [1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47]
+            }, {
+                type: "line",
+                name: 'Pct. 95',
+                dashStyle: "Dot",
+                marker: { enabled: false },
+                data: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
+            }, {
+                type: "line",
+                name: 'Arteria Promedio',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    // generate an array of random data
+                    var data = [];
+                    var edadGest = document.getElementById("semanas").value;
+                    for (i = 10; i < edadGest; i ++ ) {
                         data.push({
-                            y: parseInt(document.getElementById("cerebelo").value),
+                            y: 0,
                         });
-                        for (i = edadGest + 1; i < 40; i++) {
-                            data.push({
-                                y: 0,
-                            });
+                    }
+                    var aud = $("#auprom").val();
+                    aud = aud.toString();
+                    aud = aud.replace(",", ".");
+                    aud = parseFloat(aud);
+                        
+                    data.push({
+                        y: aud,
+                    });
+                    for (i = (edadGest +1); i < 39; i ++ ) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+        });
+        }else{
+            $('#graficoCerebeloView').highcharts({
+                    chart: {
+                        height: 250
+                    },
+                        title: {
+                            text: 'Diámetro de Cerebelo',
+                            x: -20,
+                                style: {
+                        fontSize: '14px'
+                    }
+                        },
+                        plotOptions: {
+                            series: {
+                                enableMouseTracking: false
+                            }
+                        },
+                        yAxis: {
+                            title: { text: 'Milimetros (mm)' },
+                            tickPositions: [5, 10,20,30,40,50,60,70]
+                        },
+                    legend: {
+                        itemStyle: {
+                            fontSize: '10px',
+                            fontWeight:'normal'
                         }
-                        return data;
-                    }())
-                }]
+                    },
+                        colors: ['#313131', '#313131', '#313131'],
+                        xAxis: {
+                            categories:['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+                        },
+                        credits: {enabled: false},
+                        series: [{
+                            type: "line",
+                            name: '-2DE',
+                            dashStyle: "Dot",
+                            marker: {enabled: false},
+                            data: [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
+                        }, {
+                            type: "line",
+                            name: 'media',
+                            dashStyle: "Dot",
+                            marker: {enabled: false},
+                            data: [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
+                        }, {
+                            type: "line",
+                            name: '+2DE',
+                            dashStyle: "Dot",
+                            marker: {enabled: false},
+                            data: [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
+                        }, {
+                            type: "line",
+                            name: 'Cerebelo',
+                            dashStyle: "Dot",
+                            marker: { symbol: 'square' },
+                            lineWidth: 0,
+                            data: (function () {
+                                var data = [];
+                                var edadGest = document.getElementById("semanas").value;
+            
+                                for (i = 15; i < edadGest; i++) {
+                                    data.push({
+                                        y: 0,
+                                    });
+                                }
+                                data.push({
+                                    y: parseInt(document.getElementById("cerebelo").value),
+                                });
+                                for (i = edadGest + 1; i < 40; i++) {
+                                    data.push({
+                                        y: 0,
+                                    });
+                                }
+                                return data;
+                            }())
+                        }]
             });
+        }
         $('#graficoLfView').highcharts({
                 chart: {
                 height: 250
@@ -2404,7 +2621,6 @@ $( document ).ready(function() {
         });
     });
 
-
     $("#graficoAud").on( 'click', function() {
         var edadGestacional = document.getElementById("semanas").value;
 
@@ -2427,8 +2643,8 @@ $( document ).ready(function() {
                 text: 'IP Arterias Uterinas Derecha',
                 x: -20,
                     style: {
-                fontSize: '10px'
-            }
+                    fontSize: '10px'
+                }
             },
             plotOptions: {
                 series: {
@@ -3600,7 +3816,7 @@ function eglcn(lcn) {
 };
 
 
-function pctut() {
+function pctut(uterina) {
     'use strict';
     let a = [];
     let b = [];
@@ -3608,91 +3824,43 @@ function pctut() {
 	b[0]=2.84; b[1]=2.71; b[2]=2.53; b[3]=2.38;b[4]=2.24; b[5]=2.11; b[6]=1.99; b[7]=1.88;b[8]=1.79; b[9]=1.71; b[10]=1.61; b[11]=1.54;b[12]=1.47; b[13]=1.41; b[14]=1.35; b[15]=1.3;b[16]=1.25; b[17]=1.21;b[18]=1.17; b[19]=1.13;b[20]=1.11; b[21]=1.06;b[22]=1.04; b[23]=1.01; b[24]=0.99; b[25]=0.97;b[26]=0.95; b[27]=0.94;b[28]=0.92; b[29]=0.91; b[30]=0.91;
     
     let eg = document.getElementById("semanas").value;
+	uterina = uterina.toString(); 
+    uterina = uterina.replace(",", ".");
+    uterina = parseFloat(uterina);
 
-	let utd = document.getElementById("aud").value;
-	utd = utd.toString(); 
- 	utd = utd.replace(",", ".");
- 	utd = parseFloat(utd);
-	let uti = document.getElementById("aui").value;
-	uti = uti.toString();
- 	uti = uti.replace(",", ".");
- 	uti = parseFloat(uti);
-	
-    let utprom = ((uti + utd) / 2);
-    document.getElementById("auprom").value = utprom.toFixed(2);
+    let respuesta = {
+        pct: 0,
+        rango: {
+            min:0,
+            max:0
+        }
+    }
 
-	if (eg < 10 || eg > 40) {  
-		$("#audPct").val('0');
-		$("#auiPct").val('0');
-		$("#auPct").val('0');
-	 }
-	 else {
+    if (eg < 10 || eg > 40) {
+        return respuesta;
+	}
+	else {
 		eg = eg - 10;
-		var uno=0;
-		var dos=0;
-		 var resultado = '';
-		if (utd > 0){
+        let uno = 0, dos = 0;
+        
+		if (uterina > 0){
 			eg = parseInt(eg);
-			uno=b[eg] - a[eg];
-			dos=utd - a[eg];
-			resultado = parseInt(90 / (uno) * (dos) + 5);
-			ajustarProgreso(resultado, "audPct");
-			var pctUTD = '';
-			//truncador de Pct, sobre 100 o bajo 1
-			if (resultado > 99){
-				pctUTD = '&gt; 99';
-			}
-			else if (resultado < 1){
-				pctUTD = '&lt; 1';
-			}
-			else{
-				pctUTD = resultado;
-			}
-			$("#audPctTxt").val(pctUTD);
-            $("#audRngo").val(a[eg] + " - " + b[eg]);
-		}
-		if (uti > 0){
-			eg = parseInt(eg);
-			uno=b[eg] - a[eg];
-			dos=uti - a[eg];
-			$('#auiPct').val(parseInt(90 / (uno) * (dos) + 5));
-			resultado = parseInt(90 / (uno) * (dos) + 5);
-			ajustarProgreso(resultado, "auiPct");
-			var pctUTI = '';
-			//truncador de Pct, sobre 100 o bajo 1
-			if (resultado > 99){
-				pctUTI = '&gt; 99';
-			}
-			else if (resultado < 1){
-				pctUTI = '&lt; 1';
-			}
-			else{
-				pctUTI = resultado;
-			}
-			$("#auiPctTxt").val(pctUTI);
-                        $("#auiRngo").val(a[eg] + " - " + b[eg]);
-		}
-		if ($("#aud").val() && $("#aui").val()){
 			uno = b[eg] - a[eg];
-			dos = utprom - a[eg];
-			$('#auPct').val(parseInt(90 / (uno) * (dos) + 5));
-			resultado = parseInt(90 / (uno) * (dos) + 5);
-			ajustarProgreso(resultado, "auPct");
-			var pctAUD = '';
-			//truncador de Pct, sobre 100 o bajo 1
-			if (resultado > 99){
-				pctAUD = '&gt; 99';
+			dos = uterina - a[eg];
+			uterina = parseInt(90 / (uno) * (dos) + 5);
+
+			if (uterina > 99){
+				uterina = '&gt; 99';
 			}
-			else if (resultado < 1){
-				pctAUD = '&lt; 1';
-			}
-			else{
-				pctAUD = resultado;
-			}
-			$("#auPctTxt").val(pctAUD);
-                        $("#auRngo").val(a[eg] + " - " + b[eg]);
-		}
-	 }
+			else if (uterina < 1){
+				uterina = '&lt; 1';
+            }
+            respuesta.pct = uterina;
+            respuesta.rango.min = a[eg];
+            respuesta.rango.max = b[eg];
+            return respuesta;
+        }
+    }
 }
 
 function pctdv() {
@@ -3870,6 +4038,7 @@ function pctacm() {
 }
 
 function ajustarProgreso(valor, objeto){
+    valor = (isNaN(valor)== true) ? 0 : valor;
 	valor = valor + "%";
 	$("#"+objeto + " > .progress-consulta").css({"width": valor});
 }
