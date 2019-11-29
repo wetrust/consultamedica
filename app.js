@@ -4289,6 +4289,7 @@ function pctlf() {
                }
         $('#lfPctRpt').val(pctLF);
         $('#lfRango').val(a[eg] + ' - ' + b[eg]);
+        psohdlk();
         p50();
     }
 };
@@ -4454,11 +4455,22 @@ function psohdlk() {
 
     let CC = parseFloat($("#cc").val());
     let CA = parseInt($("#ca").val());
+    let LF = parseInt($("#lf").val());
+
+    let CC = CC / 10;
+    let CA = CA / 10;
+    let LF = LF / 10;
 	
-    if ($("#cc").val() && $("#cc").val()) {
-        var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA))
-        
-        $("#pfe").val(psoP.toFixed(0));
+    //var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA))
+
+    var psoP = Math.pow(10, (1.326 + 0.0107 * CC + 0.0438 * CA + 0.158 * LF - 0.00326 * CA * LF));
+
+    if (isNaN(psoP) != true) {
+        $("#pfe").val(Math.trunc(psoP));
+        pctpfe();
+    }
+    else{
+        $("#pfe").val(0);
         pctpfe();
     }
 }
