@@ -2199,7 +2199,7 @@ $( document ).ready(function() {
                         data: uterinasData.max
                     }, {
                         type: "line",
-                        name: 'Arteria Promedio',
+                        name: 'IP Promedio',
                         dashStyle: "Dot",
                         marker: { symbol: 'square' },
                         lineWidth: 0,
