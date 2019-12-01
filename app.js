@@ -2231,7 +2231,10 @@ $( document ).ready(function() {
                     },
                     title: {
                         text: 'Cc / Ca',
-                        x: -20 //center
+                        x: -20,
+                        style: {
+                            fontSize: '14px'
+                        }
                     },
                     subtitle: {
                         text: '',
@@ -2254,11 +2257,13 @@ $( document ).ready(function() {
                     series: [{
                         type: "line",
                         name: 'Pct. 3',
+                        dashStyle: "Dot",
                         marker: { enabled: false },
                         data: [1.1,1.09,1.08,1.07,1.06,1.06,1.05,1.04,1.03,1.02,1.01,1,1,0.99,0.98,0.97,0.96,0.95,0.95,0.94,0.93,0.92,0.91,0.9,0.89,0.89]
                     }, {
                         type: "line",
                         name: 'Pct. 97',
+                        dashStyle: "Dot",
                         marker: { enabled: false },
                         data: [1.29,1.28,1.27,1.26,1.25,1.24,1.24,1.23,1.22,1.21,1.2,1.19,1.18,1.18,1.17,1.17,1.16,1.15,1.14,1.13,1.12,1.11,1.1,1.09,1.08,1.08]
                     }, {
