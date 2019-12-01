@@ -2224,13 +2224,15 @@ $( document ).ready(function() {
                         x: -20,
                         style: {fontSize: '14px'}
                     },
-                    subtitle: {
-                        text: '',
-                        x: -20
-                    },
                     plotOptions: {
                         series: {
                             enableMouseTracking: false
+                        }
+                    },
+                    legend: {
+                        itemStyle: {
+                            fontSize: '10px',
+                            fontWeight:'normal'
                         }
                     },
                     yAxis: {
