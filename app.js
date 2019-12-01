@@ -1950,12 +1950,6 @@ $( document ).ready(function() {
            credits: {enabled: false},
            series: [{
                type: "line",
-               name: 'Pct 3',
-               dashStyle: "Dot",
-               marker: {enabled: false},
-               data: [110,136,167,205,248,299,359,426,503,589,685,791,908,1034,1169,1313,1465,1622,1783,1946,2110,2271,2427,2576,2714]
-           }, {
-               type: "line",
                name: 'Pct 10',
                marker: { enabled: false },
                data: [121,150,185,227,275,331,398,471,556,652,758,876,1004,1145,1294,1453,1621,1794,1973,2154,2335,2513,2686,2851,2985]
@@ -1964,12 +1958,6 @@ $( document ).ready(function() {
                name: 'Pct 90',
                marker: { enabled: false },
                data: [171,212,261,319,387,467,559,665,784,918,1068,1234,1416,1613,1824,2049,2285,2530,2781,3036,3291,3543,3786,4019,4234]
-           }, {
-               type: "line",
-               name: 'Pct 97',
-               dashStyle: "Dot",
-               marker: { enabled: false, },
-               data: [183,226,279,341,414,499,598,710,838,981,1141,1319,1513,1724,1949,2189,2441,2703,2971,3244,3516,3785,4045,4294,4474]
            }, {
                type: "line",
                name: 'Peso',
@@ -2083,7 +2071,7 @@ $( document ).ready(function() {
         height: 250
     },
     title: {
-        text: 'BVM de Líquido Amniótico ***',
+        text: 'Profundidad del bolsillo mayor (Liq. Amniótico)',
         x: -20,
             style: {
         fontSize: '14px'
