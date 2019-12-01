@@ -2220,11 +2220,9 @@ $( document ).ready(function() {
                         height: 250
                     },
                     title: {
-                        text: 'Relación Cc / Ca',
+                        text: 'Relación Craneo / Abdómen',
                         x: -20,
-                        style: {
-                            fontSize: '14px'
-                        }
+                        style: {fontSize: '14px'}
                     },
                     subtitle: {
                         text: '',
