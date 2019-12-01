@@ -2218,7 +2218,7 @@ $( document ).ready(function() {
                         height: 250
                     },
                     title: {
-                        text: 'Cc / Ca',
+                        text: 'Relación Cc / Ca',
                         x: -20,
                         style: {
                             fontSize: '14px'
