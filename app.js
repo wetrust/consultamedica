@@ -1969,6 +1969,7 @@ $( document ).ready(function() {
                data: (function () {
                    var data = [];
                    var edadGest = document.getElementById("semanas").value;
+                   edadGest = parseInt(edadGest);
     
                    for (i = 16; i < edadGest; i++) {
                        data.push({
@@ -2043,7 +2044,7 @@ $( document ).ready(function() {
                data: (function () {
                    var data = [];
                    var edadGest = document.getElementById("semanas").value;
-    
+                   edadGest = parseInt(edadGest);
                    for (i = 12; i < edadGest; i++) {
                        data.push({
                            y: 0,
@@ -2121,7 +2122,7 @@ $( document ).ready(function() {
             function () {
                 var data = [];
                 var edadGest = document.getElementById("semanas").value;
-
+                edadGest = parseInt(edadGest);
                 for (i = 16; i < edadGest; i ++ ) {
                     data.push({
                         y: 0,
@@ -2130,7 +2131,7 @@ $( document ).ready(function() {
                 data.push({
                         y: parseFloat($('#bvm').val()),
                     });
-                for (i = edadGest +1; i < 40; i ++ ) {
+                for (i = (edadGest +1); i < 40; i ++ ) {
                     data.push({
                         y: 0,
                     });
@@ -2192,6 +2193,7 @@ $( document ).ready(function() {
                             // generate an array of random data
                             var data = [];
                             var edadGest = document.getElementById("semanas").value;
+                            edadGest = parseInt(edadGest);
                             for (i = 10; i < edadGest; i ++ ) {
                                 data.push({
                                     y: 0,
@@ -2261,7 +2263,8 @@ $( document ).ready(function() {
                         data: (function () {
                             var data = [];
                             var edadGest = document.getElementById("semanas").value;
-             
+                            edadGest = parseInt(edadGest);
+
                             for (i = 16; i <= edadGest; i++) {
                                 data.push({
                                     y: 0,
@@ -2269,11 +2272,12 @@ $( document ).ready(function() {
                             }
                             var ccca = parseInt($('#cc').val()) / parseInt($('#ca').val());
                             ccca = ccca.toFixed(2);
+                            ccca = parseFloat(ccca);
 
                             data.push({
                                 y: ccca,
                             });
-                            for (i = edadGest + 1; i <= 39; i++) {
+                            for (i = (edadGest + 1); i <= 39; i++) {
                                 data.push({
                                     y: 0,
                                 });
