@@ -2224,11 +2224,7 @@ $( document ).ready(function() {
                         x: -20,
                         style: {fontSize: '14px'}
                     },
-                    plotOptions: {
-                        series: {
-                            enableMouseTracking: false
-                        }
-                    },
+                    plotOptions: { series: { enableMouseTracking: false }},
                     legend: {
                         itemStyle: {
                             fontSize: '10px',
