@@ -540,27 +540,31 @@
                 <div class="card">
                     <div class="card-body">
                         <h5>Datos de Recién Nacido</h5>
-                            <div class="form-group row">
-                                <label class="col-4">E. Gestacional</label>
-                                <div class="input-group col-8">
-                                    <select id="edadGestacional" class="form-control" style="font-size: 0.8rem;height: calc(2rem + 2px);"></select>
-                                    <div class="input-group-addon p-1">semanas</div>
+                        <div class="form-group row">
+                            <label class="col-4">E. Gestacional</label>
+                            <div class="input-group col-8">
+                                <select id="edadGestacional" class="form-control" style="font-size: 0.8rem;height: calc(2rem + 2px);"></select>
+                                <div class="input-group-addon p-1">semanas</div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-4">Peso RN (gr.)</label>
+                            <div class="input-group mb-2 col-8">
+                                <input type="number" class="form-control" id="pesoRN" style="font-size: 0.8rem;height: calc(2rem + 2px);" min="0" max="9999" maxlength="4">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">gr</div>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label class="col-4">Peso RN (gr.)</label>
-                                <div class="input-group col-8">
-                                    <input type="number" class="form-control" id="pesoRN" style="font-size: 0.8rem;height: calc(2rem + 2px);" min="0" max="9999">
-                                    <div class="input-group-addon p-1">gr</div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-4">Talla RN (mm.)</label>
+                            <div class="input-group mb-2 col-8">
+                                <input type="number" class="form-control" id="tallaRN" style="font-size: 0.8rem;height: calc(2rem + 2px);" min="0" max="9999" maxlength="3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">mm</div>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label class="col-4">Talla RN (mm.)</label>
-                                <div class="input-group col-8">
-                                    <input type="number" class="form-control" id="tallaRN" style="font-size: 0.8rem;height: calc(2rem + 2px);" min="0" max="999" maxlength="3">
-                                    <div class="input-group-addon p-1">mm</div>
-                                </div>
-                            </div>
+                        </div>
                         <h5>Datos de RN calculado</h5>
                             <div class="form-group row">
                                 <label class="col-6">IPN <small>((peso / talla)^3)*100</small></label>

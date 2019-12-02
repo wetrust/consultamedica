@@ -34,6 +34,16 @@ $( document ).ready(function() {
         semanas.appendChild(opt); 
     }
 
+    for (var i = 25; i < 43; i++) {
+        let semanas = document.getElementById("edadGestacional");
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode(i) );
+        opt.value = i;
+        semanas.appendChild(opt);
+    }
+
+    $('#edadGestacional option[value="40"]').prop('selected', true);
+    
     for (var i = 0; i < 7; i++) {
         let dias = document.getElementById("dias");
         let opt = document.createElement('option');
