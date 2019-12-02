@@ -642,15 +642,19 @@ $('#pesom').change(function() {
 $('#sn').change(function() {
     $('#g3').trigger("click");
 });
+
 $('#pm').change(function() {
     $('#g3').trigger("click");
 });
+
 $('#imc').change(function() {
     $('#g3').trigger("click");
 });
+
 $('#em').change(function() {
     $('#g3').trigger("click");
 });
+
 $('#apellm').change(function() {
     $('#g3').trigger("click");
 });
@@ -864,6 +868,17 @@ $("#opt4").click(function() {
     $("#PesoEgeCAj").val(tres);
 });
 
+//cargar inputs de talla
+for (i = 135; i < 190; i++) {
+    $("#tm").append('<option value="' + i +'">' + i + ' cms.</option>');
+    $('#tm option[value="149"]').prop('selected', true);
+}
+
+    //cargar inputs de peso materno
+    for (i = 35; i < 140; i++) {
+        $("#pesom").append('<option value="' + i +'">' + i + ' kg</option>');
+        $('#pesom option[value="70"]').prop('selected', true);
+    }
 });
 
 
