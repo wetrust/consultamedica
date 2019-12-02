@@ -428,7 +428,7 @@ $( document ).ready(function() {
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gnacional.pdf");
     });
     
-    $("#pdfregionalview").on("click", function(){
+    $("#pdfregionalview, #pdfregionalviewA").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
     });
 });
