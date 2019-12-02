@@ -1,4 +1,127 @@
 $(document).ready(function() {
+    $("#pesoRN").on("keydown", function(e){
+        var text = $(this).val();
+        
+        switch (e.which) {
+            case 48:
+            case 49:
+            case 50:
+            case 51:
+            case 52:
+            case 53:
+            case 54:
+            case 55:
+            case 56:
+            case 57:
+            case 96:
+            case 97:
+            case 98:
+            case 99:
+            case 100:
+            case 101:
+            case 102:
+            case 103:
+            case 104:
+            case 105:
+                if (text.toString().length > 3){
+                    return false;
+                }
+                break;
+            case 13:
+            case 8:
+            case 37:
+            case 39:
+                break;
+            default:
+                return false;
+        }
+    });
+
+    $("#tallaRN").on("keydown", function(e){
+        var text = $(this).val();
+
+        switch (e.which) {
+            case 48:
+            case 49:
+            case 50:
+            case 51:
+            case 52:
+            case 53:
+            case 54:
+            case 55:
+            case 56:
+            case 57:
+            case 96:
+            case 97:
+            case 98:
+            case 99:
+            case 100:
+            case 101:
+            case 102:
+            case 103:
+            case 104:
+            case 105:
+                if (text.toString().length > 2){
+                    return false;
+                }
+                break;
+            case 13:
+            case 8:
+            case 37:
+            case 39:
+                break;
+            default:
+                return false;
+        }
+    });
+
+    $("#edadGestacional").change(function() {
+        var max = parseInt($(this).attr('max'));
+        var min = parseInt($(this).attr('min'));
+        if ($(this).val() > max) {
+            $(this).val(max);
+        } else if ($(this).val() < min) {
+            $(this).val(min);
+        }
+        $("#graficoEstandar").trigger("click");
+    });
+    
+    $("#pesoRN").change(function() {
+        var max = parseInt($(this).attr('max'));
+        var min = parseInt($(this).attr('min'));
+        if ($(this).val() > max) {
+            $(this).val(max);
+        } else if ($(this).val() < min) {
+            $(this).val(min);
+        }
+    
+        if ($("#tallaRN").val() > 1) {
+            var valor = $(this).val() / (Math.pow($("#tallaRN").val(), 3));
+            valor = valor * 100000;
+            $("#IPNRN").val(valor.toFixed(2));
+        }
+        $("#graficoEstandar").trigger("click");
+    });
+    
+    $("#tallaRN").change(function() {
+        var max = parseInt($(this).attr('max'));
+        var min = parseInt($(this).attr('min'));
+        if ($(this).val() > max) {
+            $(this).val(max);
+        } else if ($(this).val() < min) {
+            $(this).val(min);
+        }
+    
+        if ($("#pesoRN").val() > 1) {
+            var valor = $("#pesoRN").val() / (Math.pow($("#tallaRN").val(), 3));
+            valor = valor * 100000;
+            $("#IPNRN").val(valor.toFixed(2));
+        }
+        $("#graficoEstandar").trigger("click");
+    });
+
+
+
     Highcharts.chart('grafico', {
 
         title: {
@@ -37,7 +160,7 @@ $(document).ready(function() {
             data: [897.9, 963.3, 1070.6, 1214.6, 1390.1, 1592, 1815, 2053.8, 2303.4, 2558.5, 2813.9, 3064.4, 3304.7, 3529.8, 3734.4, 3913.2, 4061.2, 4173, 4243.5]
         }]
     });
-});
+
 $("#graficoEstandar").on('click', function() {
     RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val());
     if ($("#pesoRN").val() > 1) {
@@ -340,62 +463,6 @@ $("#graficoEstandar").on('click', function() {
         });
     }
 });
-$("#edadGestacional").change(function() {
-    var max = parseInt($(this).attr('max'));
-    var min = parseInt($(this).attr('min'));
-    if ($(this).val() > max) {
-        $(this).val(max);
-    } else if ($(this).val() < min) {
-        $(this).val(min);
-    }
-    $("#graficoEstandar").trigger("click");
-});
-
-$("#pesoRN").change(function() {
-    var max = parseInt($(this).attr('max'));
-    var min = parseInt($(this).attr('min'));
-    if ($(this).val() > max) {
-        $(this).val(max);
-    } else if ($(this).val() < min) {
-        $(this).val(min);
-    }
-
-    if ($("#tallaRN").val() > 1) {
-        var valor = $(this).val() / (Math.pow($("#tallaRN").val(), 3));
-        valor = valor * 100000;
-        $("#IPNRN").val(valor.toFixed(2));
-    }
-    $("#graficoEstandar").trigger("click");
-});
-
-$("#tallaRN").change(function() {
-    var max = parseInt($(this).attr('max'));
-    var min = parseInt($(this).attr('min'));
-    if ($(this).val() > max) {
-        $(this).val(max);
-    } else if ($(this).val() < min) {
-        $(this).val(min);
-    }
-
-    if ($("#pesoRN").val() > 1) {
-        var valor = $("#pesoRN").val() / (Math.pow($("#tallaRN").val(), 3));
-        valor = valor * 100000;
-        $("#IPNRN").val(valor.toFixed(2));
-    }
-    $("#graficoEstandar").trigger("click");
-});
-
-function verGraficoAjustePeso() {
-    RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val());
-    $('#opt1').trigger("click");
-    $('#g3').trigger("click");
-};
-
-var RN = 0;
-var Tablas = 0;
-var varMama = 0;
-var p90Pso = [];
-var p10Pso = [];
 
 $('#g3').click(function() {
     tipografico = 0;
@@ -796,6 +863,23 @@ $("#opt4").click(function() {
     tres = parseInt((80 / (uno)) * (dos)) + 10;
     $("#PesoEgeCAj").val(tres);
 });
+
+});
+
+
+function verGraficoAjustePeso() {
+    RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val());
+    $('#opt1').trigger("click");
+    $('#g3').trigger("click");
+};
+
+var RN = 0;
+var Tablas = 0;
+var varMama = 0;
+var p90Pso = [];
+var p10Pso = [];
+
+
 
 function RecienNacido(peso = 0, talla = 0, eg = 40) {
     this.peso = peso;
