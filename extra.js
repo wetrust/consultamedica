@@ -26,7 +26,7 @@ $(document).ready(function() {
                 if (text.toString().length > 3){
                     return false;
                 }
-                $("#pesoclon").html("Peso observado del rn: " + this.value+ " grs.")
+                $("#pesoclon").html("Peso observado del RN: " + this.value+ " grs.");
                 break;
             case 13:
             case 8:
@@ -102,6 +102,7 @@ $(document).ready(function() {
             $("#IPNRN").val(valor.toFixed(2));
         }
         $("#graficoEstandar").trigger("click");
+        $("#pesoclon").html("Peso observado del RN: " + this.value+ " grs.");
     });
     
     $("#tallaRN").change(function() {
