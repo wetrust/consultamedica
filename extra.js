@@ -26,6 +26,7 @@ $(document).ready(function() {
                 if (text.toString().length > 3){
                     return false;
                 }
+                $("#pesoclon").html("Peso observado del rn: " + this.value+ " grs.")
                 break;
             case 13:
             case 8:
