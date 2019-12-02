@@ -423,6 +423,14 @@ $( document ).ready(function() {
         $("#respuesta_uterina_promedio_percentil").html(ut.pct);
         $("#respuesta_uterina_promedio_rango").val(ut.rango.min + " - " + ut.rango.max);
     });
+
+    $("#pdfnacionalview").on("click", function(){
+        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gnacional.pdf");
+    });
+    
+    $("#pdfregionalview").on("click", function(){
+        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
+    });
 });
 
 //controlador de input clones
