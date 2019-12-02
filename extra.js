@@ -120,8 +120,6 @@ $(document).ready(function() {
         $("#graficoEstandar").trigger("click");
     });
 
-
-
     Highcharts.chart('grafico', {
 
         title: {
@@ -483,6 +481,7 @@ $('#g3').click(function() {
         p90Pso[x] = Math.pow(10, ((i * p90[0]) + (Math.pow(i, 2) * p90[1]) + (Math.pow(i, 3) * p90[2]) + (p90[3] * $("#pm").val()) + (p90[4] * $("#sn").val()) + (p90[5] * apell) + (p90[6] * $("#imc").val()) + (p90[7] * $("#em").val()) + p90[8]));
         p10Pso[x] = Math.pow(10, ((i * p10[0]) + (Math.pow(i, 2) * p10[1]) + (Math.pow(i, 3) * p10[2]) + (p10[3] * $("#pm").val()) + (p10[4] * $("#sn").val()) + (p10[5] * apell) + (p10[6] * $("#imc").val()) + (p10[7] * $("#em").val()) + p10[8]));;
     }
+    tablaPercentilesView(p10Pso,p90Pso);
     $("#PesoEgeSAj").val(RN.pesoTemuco());
     eg = RN.eg - 24;
     var tablas = new Tabla;
@@ -490,6 +489,10 @@ $('#g3').click(function() {
     uno = p90Pso[eg] - p10Pso[eg];
     dos = RN.peso - p10Pso[eg];
     tres = parseInt((80 / (uno)) * (dos)) + 10;
+
+    
+
+
     $("#PesoEgeCAj").val(tres);
     $("#tituloAjusteG").addClass("d-none");
     $("#tituloAjusteAlto").html("Pct Peso sin ajuste");
@@ -866,6 +869,8 @@ $("#opt4").click(function() {
     dos = RN.peso - p10[eg];
     tres = parseInt((80 / (uno)) * (dos)) + 10;
     $("#PesoEgeCAj").val(tres);
+
+    $("#table\\.percentiles\\.ajustado").empty();
 });
 
 //cargar inputs de talla
@@ -1022,3 +1027,12 @@ function Mama(talla, peso, edad, apellido) {
         }
     };
 };
+
+function tablaPercentilesView(p10Pso,p90Pso){
+    $("#table\\.percentiles\\.ajustado").empty();
+    for (i = 24; i < 43; i++) {
+        x = i - 24;
+        let tabla = "<tr><td>"+i+"</td><td>"+p10Pso[x]+"</td><td>"+p90Pso[x]+"</td></tr>";
+        $("#table\\.percentiles\\.ajustado").append(tabla);
+    }
+}
