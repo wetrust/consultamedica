@@ -1831,7 +1831,7 @@ $( document ).ready(function() {
 
         $('#graficoPesoView').highcharts({
            title: {
-               text: 'Peso Fetal Estimado *',
+               text: 'Peso Fetal Estimado grs. *',
                x: -20 //center
            },
            subtitle: {
@@ -1946,33 +1946,31 @@ $( document ).ready(function() {
 
         $('#graficoInfecoObsSegTrimPFEView').highcharts({
             chart: { height: 250 },
-           title: {
-               text: 'Peso Fetal Estimado *',
-               x: -20, //center
-                   style: {
-                fontSize: '12px'
-            }
-           },
-                legend: {
+            title: {
+                text: 'Peso Fetal Estimado grs. *',
+                x: -20,
+                style: { fontSize: '12px' }
+            },
+            legend: {
                 itemStyle: {
                     fontSize: '10px',
                     fontWeight:'normal'
                 }
             },
-           plotOptions: {
-               series: {
-                   enableMouseTracking: false,
-                   pointInterval: 1
-               }
-           },
-           yAxis: {
-               title: { text: 'Kilogramos' },
-               tickPositions: [100, 560, 1020, 1480, 1940, 2400, 2860, 3320, 3780, 4340, 4900]
-           },
-           colors: ['#313131', '#313131', '#313131'],
-           xAxis: {
-               categories: ['16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
-           },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false,
+                    pointInterval: 1
+                }
+            },
+            yAxis: {
+                title: { text: 'Kilogramos' },
+                tickPositions: [100, 560, 1020, 1480, 1940, 2400, 2860, 3320, 3780, 4340, 4500]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories: ['16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+            },
            credits: {enabled: false},
            series: [{
                type: "line",
@@ -3436,9 +3434,7 @@ $( document ).ready(function() {
             title: {
                 text: 'IP Promedio Arteria Uterinas *',
                 x: -20,
-                     style: {
-                fontSize: '14px'
-            }
+                style: { fontSize: '12px' }
             },
             plotOptions: {
                 series: {
@@ -3512,10 +3508,8 @@ $( document ).ready(function() {
             },
              title: {
                  text: 'IP Arteria Umbilical **',
-                 x: -20, //center
-                      style: {
-                fontSize: '14px'
-            }
+                 x: -20,
+                 style: { fontSize: '12px' }
              },
              plotOptions: {
                  series: {
@@ -3589,9 +3583,7 @@ $( document ).ready(function() {
             title: {
                  text: 'IP Arteria Cerebral Media **',
                  x: -20,
-                     style: {
-                fontSize: '14px'
-            }
+                 style: { fontSize: '12px' }
              },
              plotOptions: {
                  series: {
@@ -3662,38 +3654,33 @@ $( document ).ready(function() {
         });
         //$('#graficoIpCCPView').highcharts({
         graficoCuatro = Highcharts.chart('graficoIpCCPView', {
-                chart: {
-                height: 250
+            chart: { height: 250 },
+            title: {
+                text: 'IP de CCP (Indice ACM / AU) **',
+                x: -20,
+                style: { fontSize: '12px' }
             },
-             title: {
-                 text: 'IP de CCP (Indice ACM / AU) **',
-                 x: -20, //center
-                      style: {
-                fontSize: '14px'
-            }
-             },
-             plotOptions: {
-                 series: {
-                     enableMouseTracking: false
-                 }
-             },
-             yAxis: {
-                 title: { text: 'Valor IP' },
-                 tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
-             },
-             legend: {
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Valor IP' },
+                tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
+            },
+            legend: {
                 itemStyle: {
                     fontSize: '10px',
                     fontWeight:'normal'
                 }
             },
-             colors: ['#313131', '#313131', '#313131'],
-             xAxis: {
-                 categories:
-                 ['20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
-             },
-             credits: { enabled: false },
-             series: [{
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories:['20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+            },
+            credits: { enabled: false },
+            series: [{
                  type: "line",
                  name: 'Pct. 5',
                  marker: { enabled: false },
