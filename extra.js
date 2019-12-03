@@ -498,10 +498,10 @@ $('#g3').click(function() {
     $("#tituloAjusteBajo").html("Pct. Peso con ajuste");
     Highcharts.chart('graficoAjustado', {
         title: {
-            text: 'Peso/eg ajustada por variables **',
+            text: 'Peso/Edad gestacional ajustada por variables **',
             style: {
                 "color": "#337ab7",
-                "fontSize": "14px"
+                "fontSize": "12px"
             }
         },
         chart: {
