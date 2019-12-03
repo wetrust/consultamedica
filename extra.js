@@ -492,9 +492,6 @@ $('#g3').click(function() {
     dos = RN.peso - p10Pso[eg];
     tres = parseInt((80 / (uno)) * (dos)) + 10;
 
-    
-
-
     $("#PesoEgeCAj").val(tres);
     $("#tituloAjusteG").addClass("d-none");
     $("#tituloAjusteAlto").html("Pct Peso sin ajuste");
@@ -550,10 +547,10 @@ $('#g3').click(function() {
                 return estilo;
             }()),
             color: (function() {
-                var color = '#ff3300';
+                var color = '#003d99';
 
                 if (RN.ajustePequeno == true) {
-                    color = '#003d99';
+                    color = '#ff3300';
                 }
                 return color;
             }()),
@@ -583,10 +580,10 @@ $('#g3').click(function() {
                 return estilo;
             }()),
             color: (function() {
-                var color = '#ff3300';
+                var color = '#003d99';
 
                 if (RN.ajustePequeno == true) {
-                    color = '#003d99';
+                    color = '#ff3300';
                 }
                 return color;
             }()),
