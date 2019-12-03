@@ -3428,7 +3428,7 @@ $( document ).ready(function() {
         });
 
         graficoUno = Highcharts.chart('graficoIpArtUtView', {
-                chart: {
+            chart: {
                 height: 250
             },
             title: {
@@ -3459,11 +3459,13 @@ $( document ).ready(function() {
             series: [{
                 type: "line",
                 name: 'Pct. 5',
+                dashStyle: "Dot",
                 marker: { enabled: false },
                 data: [1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47]
             }, {
                 type: "line",
                 name: 'Pct. 95',
+                dashStyle: "Dot",
                 marker: { enabled: false },
                 data: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
             }, {
@@ -3683,11 +3685,13 @@ $( document ).ready(function() {
             series: [{
                  type: "line",
                  name: 'Pct. 5',
+                 dashStyle: "Dot",
                  marker: { enabled: false },
                  data: [0.78,0.87,0.95,1.02,1.09,1.15,1.2,1.24,1.28,1.31,1.33,1.35,1.36,1.36,1.36,1.34,1.32,1.3,1.26,1.22,1.18]
              }, {
                  type: "line",
                  name: 'Pct. 95',
+                 dashStyle: "Dot",
                  marker: { enabled: false },
                  data: [1.68,1.88,2.06,2.22,2.36,2.49,2.6,2.7,2.78,2.84,2.89,2.92,2.93,2.93,2.91,2.87,2.82,2.75,2.67,2.57,2.45]
              }, {
