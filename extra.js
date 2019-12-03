@@ -530,9 +530,7 @@ $('#g3').click(function() {
                 }
             }
         },
-        credits: {
-            enabled: false
-        },
+        credits: { enabled: false },
         series: [{
             type: "line",
             name: 'Pct. 10',
@@ -541,7 +539,7 @@ $('#g3').click(function() {
             },
             dashStyle: (function() {
                 var estilo = 'solid';
-                if (RN.ajustePequeno == true) {
+                if (RN.ajustePequeno == true || RN.ajusteAlto == true) {
                     estilo = 'Dash';
                 }
                 return estilo;
@@ -549,7 +547,7 @@ $('#g3').click(function() {
             color: (function() {
                 var color = '#003d99';
 
-                if (RN.ajustePequeno == true) {
+                if (RN.ajusteAlto == true) {
                     color = '#ff3300';
                 }
                 return color;
@@ -573,7 +571,7 @@ $('#g3').click(function() {
             dashStyle: (function() {
                 var estilo = 'solid';
 
-                if (RN.ajustePequeno == true) {
+                if (RN.ajustePequeno == true || RN.ajusteAlto == true) {
                     estilo = 'Dash';
                 }
 
@@ -582,7 +580,7 @@ $('#g3').click(function() {
             color: (function() {
                 var color = '#003d99';
 
-                if (RN.ajustePequeno == true) {
+                if (RN.ajusteAlto == true) {
                     color = '#ff3300';
                 }
                 return color;
@@ -674,6 +672,7 @@ $('#opt1').click(function() {
     $('#valorimc').val(varMama.imc());
     $('#imc').val(varMama.imcCondicion());
     RN.ajustePequeno = false;
+    RN.ajusteAlto = false;
     $('#g3').trigger("click");
     $("#tituloAjusteG").addClass("d-none");
     $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
@@ -694,6 +693,7 @@ $('#opt2').click(function() {
     $('#valorimc').val(varMama.imc());
     $('#imc').val(varMama.imcCondicion());
     RN.ajustePequeno = false;
+    RN.ajusteAlto = true;
     $('#g3').trigger("click");
     $("#tituloAjusteG").addClass("d-none");
     $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
@@ -714,17 +714,18 @@ $('#opt3').click(function() {
     $('#valorimc').val(varMama.imc());
     $('#imc').val(varMama.imcCondicion());
     RN.ajustePequeno = true;
+    RN.ajusteAlto = false;
     $('#g3').trigger("click");
     $("#tituloAjusteG").addClass("d-none");
     $("#tituloAjusteAlto").html("Pct.peso sin ajuste");
     $("#tituloAjusteBajo").html("Pct. peso con ajuste");
 });
 
-//cargar inputs de talla
-for (i = 135; i < 190; i++) {
-    $("#tm").append('<option value="' + i +'">' + i + ' cms.</option>');
-    $('#tm option[value="149"]').prop('selected', true);
-}
+    //cargar inputs de talla
+    for (i = 135; i < 190; i++) {
+        $("#tm").append('<option value="' + i +'">' + i + ' cms.</option>');
+        $('#tm option[value="149"]').prop('selected', true);
+    }
 
     //cargar inputs de peso materno
     for (i = 35; i < 140; i++) {
@@ -836,6 +837,7 @@ function RecienNacido(peso = 0, talla = 0, eg = 40) {
     };
     this.sexo = '';
     this.ajustePequeno = false;
+    this.ajusteAlto = false;
 };
 
 function Tabla(plataforma) {
