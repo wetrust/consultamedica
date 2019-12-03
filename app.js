@@ -1965,7 +1965,7 @@ $( document ).ready(function() {
             },
             yAxis: {
                 title: { text: 'Kilogramos' },
-                tickPositions: [100, 560, 1020, 1480, 1940, 2400, 2860, 3320, 3780, 4340, 4500]
+                tickPositions: [100, 560, 1020, 1940, 2400, 2860, 3320, 3780, 4500]
             },
             colors: ['#313131', '#313131', '#313131'],
             xAxis: {
