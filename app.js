@@ -1950,7 +1950,7 @@ $( document ).ready(function() {
                text: 'Peso Fetal Estimado *',
                x: -20, //center
                    style: {
-                fontSize: '14px'
+                fontSize: '12px'
             }
            },
                 legend: {
@@ -2015,31 +2015,23 @@ $( document ).ready(function() {
            }]
         });
         $('#graficoCaView').highcharts({
-                chart: {
-                height: 250
+            chart: { height: 250 },
+            title: {
+                text: 'Circunferencia Abdominal **',
+                x: -20,
+                style: {fontSize: '12px'}
             },
-           title: {
-               text: 'Circunferencia Abdominal **',
-               x: -20, //center
-                   style: {
-                fontSize: '14px'
-            }
-           },
-           subtitle: {
-               text: 'Milimetros (mm)',
-               x: -20
-           },
-                legend: {
+            legend: {
                 itemStyle: {
                     fontSize: '10px',
                     fontWeight:'normal'
                 }
             },
-           plotOptions: {
-               series: {
-                   enableMouseTracking: false
-               }
-           },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
            yAxis: {
                title: { text: 'Milimetros (mm)' },
                tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
@@ -2103,7 +2095,7 @@ $( document ).ready(function() {
         text: 'Profundidad del bolsillo mayor (Liq. Amniótico)',
         x: -20,
             style: {
-        fontSize: '14px'
+        fontSize: '12px'
     }
     },
     plotOptions: {
@@ -2180,7 +2172,7 @@ $( document ).ready(function() {
                         text: 'IP Promedio Arterias Uterinas',
                         x: -20,
                         style: {
-                            fontSize: '14px'
+                            fontSize: '12px'
                         }
                     },
                     plotOptions: {
@@ -2256,7 +2248,7 @@ $( document ).ready(function() {
                     title: {
                         text: 'Relación Craneo / Abdómen',
                         x: -20,
-                        style: {fontSize: '14px'}
+                        style: {fontSize: '12px'}
                     },
                     plotOptions: { series: { enableMouseTracking: false }},
                     legend: {
@@ -2374,7 +2366,7 @@ $( document ).ready(function() {
                text: 'Circunferencia de Cráneo',
                x: -20,
                    style: {
-                fontSize: '14px'
+                fontSize: '12px'
             }
            },
            plotOptions: {
@@ -2445,7 +2437,7 @@ $( document ).ready(function() {
                 text: 'IP Promedio Arterias Uterinas',
                 x: -20,
                 style: {
-                    fontSize: '14px'
+                    fontSize: '12px'
                 }
             },
             plotOptions: {
@@ -2515,7 +2507,7 @@ $( document ).ready(function() {
                             text: 'Diámetro de Cerebelo',
                             x: -20,
                                 style: {
-                        fontSize: '14px'
+                        fontSize: '12px'
                     }
                         },
                         plotOptions: {
@@ -2592,7 +2584,7 @@ $( document ).ready(function() {
                text: 'Largo Femoral',
                x: -20,
                    style: {
-                fontSize: '14px'
+                fontSize: '12px'
             }
            },
            plotOptions: {
@@ -2660,7 +2652,7 @@ $( document ).ready(function() {
                     text: 'Largo Humeral',
                     x: -20,
                         style: {
-                fontSize: '14px'
+                fontSize: '12px'
             }
                 },
                 plotOptions: {
