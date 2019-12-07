@@ -442,12 +442,22 @@ $( document ).ready(function() {
 
     $("#pdfnacionalview").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gnacional.pdf");
-        ("#pdfviebox").children("ol").children().children().attr("href","#recienacido");
+        $("#pdfviebox").children("ol").children().children().attr("href","#recienacido");
     });
 
     $("#pdfregionalview, #pdfregionalviewA").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
-        ("#pdfviebox").children("ol").children().children().attr("href","#recienacido");
+        $("#pdfviebox").children("ol").children().children().attr("href","#recienacido");
+    });
+
+    $("#pdfnacional").on("click", function(){
+        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gnacional.pdf");
+        $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
+    });
+
+    $("#pdfregional").on("click", function(){
+        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
+        $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
     });
 
     $("#pdfuno").on("click", function(){
