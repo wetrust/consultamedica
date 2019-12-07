@@ -442,20 +442,25 @@ $( document ).ready(function() {
 
     $("#pdfnacionalview").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gnacional.pdf");
+        ("#pdfviebox").children("ol").children().children().attr("href","#recienacido");
     });
 
     $("#pdfregionalview, #pdfregionalviewA").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
+        ("#pdfviebox").children("ol").children().children().attr("href","#recienacido");
     });
 
     $("#pdfuno").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf");
+        $("#pdfviebox").children("ol").children().children().attr("href","#pdfobstetrica");
     });
     $("#pdfdos").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf");
+        $("#pdfviebox").children("ol").children().children().attr("href","#pdfobstetrica");
     });
     $("#pdftres").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/3_Flujograma_Protocolo_Eco-Barcelona_2019.pdf");
+        $("#pdfviebox").children("ol").children().children().attr("href","#pdfobstetrica");
     });
 });
 
