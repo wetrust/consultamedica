@@ -123,7 +123,23 @@ $( document ).ready(function() {
 
     //controlador de botones inicio
     $("#menu\\.modulo\\.activo").on("click", function(){
-        var botones = ["menu.modulo.activo.uno", "menu.modulo.activo.dos", "menu.modulo.activo.tres", "menu.modulo.activo.cuatro"];
+        var botones = ["menu.modulo.activo.uno", "menu.modulo.activo.dos", "menu.modulo.activo.tres", "menu.modulo.activo.cuatro", "menu.modulo.activo.cinco"];
+        
+        if (document.getElementById(botones[0]).classList.contains("d-none")){
+            botones.forEach(function myFunction(value, index, array) {
+                document.getElementById(value).classList.remove("d-none");
+            });
+        }
+        else{
+            botones.push("menu.modulo.activo.cinco.uno", "menu.modulo.activo.cinco.dos");
+            botones.forEach(function myFunction(value, index, array) {
+                document.getElementById(value).classList.add("d-none");
+            });
+        }
+    });
+
+    $("#menu\\.modulo\\.activo\\.cinco").on("click", function(){
+        var botones = ["menu.modulo.activo.cinco.uno", "menu.modulo.activo.cinco.dos"];
         
         if (document.getElementById(botones[0]).classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
@@ -3733,7 +3749,7 @@ $( document ).ready(function() {
 
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
-    var div = ["#inicio","#consulta","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia"];
+    var div = ["#inicio","#consulta","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#pdfobstetrica", "#pdfneonatal"];
     var div_fecha = ["#consulta","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia"];
     let d = "d-none";
 
