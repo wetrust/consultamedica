@@ -447,6 +447,16 @@ $( document ).ready(function() {
     $("#pdfregionalview, #pdfregionalviewA").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
     });
+
+    $("#pdfuno").on("click", function(){
+        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf");
+    });
+    $("#pdfdos").on("click", function(){
+        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf");
+    });
+    $("#pdftres").on("click", function(){
+        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/3_Flujograma_Protocolo_Eco-Barcelona_2019.pdf");
+    });
 });
 
 //controlador de input clones
