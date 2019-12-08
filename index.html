@@ -323,7 +323,7 @@
                             <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.construccion.uno"href="#ecoObsPrimTrimTrisomia"><small>&gt; Ecografía Obstétrica 11 - 14 semanas</small></a>
                             <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.construccion.dos" href="#construccion"><small>&gt; Evaluación morfológica 22 - 24 sem.</small></a>
                             <a class="btn btn-outline-dark rounded text-left w-100 my-1" href="#about"><small>Acerca de la plataforma y autor</small></a>
-                            <a class="btn btn-outline-dark rounded text-left w-100 my-1" id="menu.modulo.activo.cinco" ><small>Bibliografía relacionados ver PDF</small></a>
+                            <a class="btn btn-outline-dark rounded text-left w-100 my-1" id="menu.modulo.activo.cinco" ><small>Bibliografías relacionadas ver PDF</small></a>
                             <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cinco.uno" href="#pdfobstetrica"><small>&gt; Referencias Obstétricas</small></a>
                             <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cinco.dos" href="#pdfneonatal"><small>&gt; Referencias Neonatales</small></a>
                         </div>
@@ -409,91 +409,96 @@
     <div class="container d-none" id="consulta">
         <div class="card my-3 shadow-sm">
             <div class="card-body">
-                <p class="bg-faded p-2 text-left"><em>Cálculos  de edad gestacional y fecha probable de parto  (FPP) a partir de fecha referida por la paciente, o a la inversa , calculo de  FUM  y FPP a partir de la edad gestacional referida.  Para evaluación de exámenes anteriores el software dispone de la opción &laquo; fecha de examen modificable &raquo;</em></p>
-                <hr class="btn-consulta">
-                <h6 class="text-primary">Configuración del sistema y datos de la paciente</h6>
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label class="col-form-label btn-consulta my-3 p-2">N° de Registro ( RUT / DNI )</label>
+            <p class="bg-faded p-2 text-left"><em>Cálculos  de edad gestacional y fecha probable de parto  (FPP) a partir de fecha referida por la paciente, o a la inversa , calculo de  FUM  y FPP a partir de la edad gestacional referida.  Para evaluación de exámenes anteriores el software dispone de la opción &laquo; fecha de examen modificable &raquo;</em></p>
+            <hr class="btn-consulta">
+            <div class="card mx-5" style="background-color:#e1ecf5;">
+                <div class="card-body">
+                    <h6 class="text-primary">Configuración del sistema y datos de la paciente</h6>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label class="col-form-label btn-consulta my-3 p-2">N° de Registro ( RUT / DNI )</label>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control my-3" id="id-paciente">
+                        </div>
                     </div>
-                    <div class="col-2">
-                        <input type="text" class="form-control my-3" id="id-paciente">
+                    <div class="row mb-3">
+                        <div class="col-9">
+                            <h6 class="card-title text-primary text-left mt-2 mb-4 ml-4"> - Configuración de datos para variable de uso  habitual (Opcional)</h6>
+                        </div>
+                        <div class="col-3">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-outline-consulta active" id="configNoController" data-value="0">
+                                    <input type="radio" value="0" autocomplete="off" checked> NO
+                                </label>
+                                <label class="btn btn-outline-consulta" id="configSiController" data-value="1">
+                                    <input type="radio" value="1" autocomplete="off"> SI
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion" id="consulta-acordeon">
+                        <div class="card border mb-3">
+                            <div class="card-header" id="acordeonOne">
+                                <h2 class="mb-0"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#acordeonContenedorOne" aria-expanded="true" aria-controls="acordeonContenedorOne">Información útil para <strong>reporte</strong> de informe y / o graficas (Opcional)</button></h2>
+                            </div>      
+                            <div id="acordeonContenedorOne" class="collapse" aria-labelledby="acordeonOne" data-parent="#consulta-acordeon">
+                                <div class="card-body">
+                                    <div class="row mt-2 mb-2">
+                                        <div class="col-2">
+                                            <label>Nombre paciente</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <input class="form-control gris-claro" type="text" id="nombre-paciente" placeholder="Paciente de Prueba">
+                                        </div>
+                                        <div class="col-2">
+                                            <label>Motivo del exámen</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <select id="motivo-examen" class="form-control gris-claro"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 mb-2">
+                                        <div class="col-2">
+                                            <label>Patología Obstétrica Relevante</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <select id="patologiaObstetricaUno" class="form-control gris-claro"></select>
+                                        </div>
+                                        <div class="col-2">
+                                            <label >Edad materna</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <select name="edad_materna" class="form-control gris-claro"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 mb-2">
+                                        <div class="col-2">
+                                            <label>Ecografista</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <select class="form-control" id="ecografista"></select></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                    <div class="row">
+                        <div class="col-6 text-right"></div>
+                        <div class="col-6 text-right">
+                            <a class="btn btn-consulta" href="#tipoExamen">CONTINUAR A EXÁMEN ECOGRÁFICO</a>
+                        </div>
                     </div>
                 </div>
-                        <div class="row mb-3">
-                            <div class="col-9">
-                                <h6 class="card-title text-primary text-left mt-2 mb-4 ml-4"> - Configuración de datos para variable de uso  habitual (Opcional)</h6>
-                            </div>
-                            <div class="col-3">
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-outline-consulta active" id="configNoController" data-value="0">
-                                        <input type="radio" value="0" autocomplete="off" checked> NO
-                                    </label>
-                                    <label class="btn btn-outline-consulta" id="configSiController" data-value="1">
-                                        <input type="radio" value="1" autocomplete="off"> SI
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                <div class="accordion" id="consulta-acordeon">
-                    <div class="card border mb-3">
-                        <div class="card-header" id="acordeonOne">
-                            <h2 class="mb-0"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#acordeonContenedorOne" aria-expanded="true" aria-controls="acordeonContenedorOne">Información útil para <strong>reporte</strong> de informe y / o graficas (Opcional)</button></h2>
-                        </div>      
-                        <div id="acordeonContenedorOne" class="collapse" aria-labelledby="acordeonOne" data-parent="#consulta-acordeon">
-                            <div class="card-body">
-                                <div class="row mt-2 mb-2">
-                                    <div class="col-2">
-                                        <label>Nombre paciente</label>
-                                    </div>
-                                    <div class="col-4">
-                                        <input class="form-control gris-claro" type="text" id="nombre-paciente" placeholder="Paciente de Prueba">
-                                    </div>
-                                    <div class="col-2">
-                                        <label>Motivo del exámen</label>
-                                    </div>
-                                    <div class="col-4">
-                                        <select id="motivo-examen" class="form-control gris-claro"></select>
-                                    </div>
-                                </div>
-                                <div class="row mt-2 mb-2">
-                                    <div class="col-2">
-                                        <label>Patología Obstétrica Relevante</label>
-                                    </div>
-                                    <div class="col-4">
-                                        <select id="patologiaObstetricaUno" class="form-control gris-claro"></select>
-                                    </div>
-                                    <div class="col-2">
-                                        <label >Edad materna</label>
-                                    </div>
-                                    <div class="col-4">
-                                        <select name="edad_materna" class="form-control gris-claro"></select>
-                                    </div>
-                                </div>
-                                <div class="row mt-2 mb-2">
-                                    <div class="col-2">
-                                        <label>Ecografista</label>
-                                    </div>
-                                    <div class="col-4">
-                                        <select class="form-control" id="ecografista"></select></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            </div> 
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <p class="bg-faded p-2 text-center h6"><em>En esta versión, la información registrada solo será almacenada temporalmente, a efectos de obtener reporte de informes y / o gráficas de los exámenes ecográficos realizados.</em></p>
                 </div>
-                            
-                        <div class="row">
-                            <div class="col-6 text-right"></div>
-                            <div class="col-6 text-right">
-                                <a class="btn btn-consulta" href="#tipoExamen">CONTINUAR A EXÁMEN ECOGRÁFICO</a>
-                            </div>
-                            <div class="col-12 mt-3">
-                                <p class="bg-faded p-2 text-center h6"><em>En esta versión, la información registrada solo será almacenada temporalmente, a efectos de obtener reporte de informes y / o gráficas de los exámenes ecográficos realizados.</em></p>
-                            </div>
-                        </div>
-                        <hr class="btn-consulta">
-                    </div>
+            </div>    
+            <hr class="btn-consulta">
+        </div>
     </div>
     </div>
     <div class="container d-none" id="postnatal">
