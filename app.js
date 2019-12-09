@@ -262,6 +262,18 @@ $( document ).ready(function() {
         $('#informacionPacienteNo').button('toggle');
     });
 
+    $('#ajusteDosSi').on('click', function(){
+        egP50 = String(document.getElementById("egP50").value);
+        if (egP50 != ""){
+            egP50 = egP50.split(".");
+            document.getElementById("semanas").value = egP50[0];
+            if (egP50.length >1){
+                document.getElementById("dias").value = egP50[1];
+            }
+            document.getElementById("semanas").change();
+        }
+    });
+
     //controlador de ecografía de primer trimestre
     $("#saco").on("change", function(){
         document.getElementById("sacoPct").value = egSaco(this.value);
@@ -4572,7 +4584,6 @@ function p50() {
 }
 
 function psohdlk() {
-
     let CC = parseFloat($("#cc").val());
     let CA = parseInt($("#ca").val());
     let LF = parseInt($("#lf").val());
