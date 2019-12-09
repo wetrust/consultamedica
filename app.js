@@ -8,6 +8,7 @@ var activeHash = "#browser";
 
 var titulos ={
     "#consulta": "Datos iniciales de configuración",
+    "#paciente": "Información útil para reporte de informe y / o graficas (Opcional)",
     "#tipoExamen": "Módulos de la aplicación",
     "#ecoDoppler": "Flujometría Doppler materno / fetal",
     "#ecoObsSegTrim": "Evaluación del crecimiento fetal",
