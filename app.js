@@ -270,7 +270,7 @@ $( document ).ready(function() {
             if (egP50.length >1){
                 document.getElementById("dias").value = egP50[1];
             }
-            document.getElementById("semanas").change();
+            document.getElementById("semanas").onchange();
         }
     });
 
