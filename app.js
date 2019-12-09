@@ -4704,12 +4704,18 @@ function crearInformeEcoSegTrim2(){
 
 	var p50 = $('#egP50').val() + ' semanas';
 	var lh =  $( '#lh').val() + ' mm';
-	var lhRango =  '( ' + $( '#lhRango').val() + ' )';
-	var fur = $( "input[name='fum']").val();
-	var fexamen = $( "input[name='fee']").val();
-	var eg = $( "input[name='eg']").val();
-	var fpp = $( "input[name='fpp']").val();
-	var dbp = $( '#dbp').val() + ' mm';
+    var lhRango =  '( ' + $( '#lhRango').val() + ' )';
+    
+
+    let fur = new Date(Date.parse(document.getElementById("fum").value));
+    fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+    let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+    let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
+    let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
+    
+    var dbp = $( '#dbp').val() + ' mm';
 	var dbpRango = '( ' + $( '#dbpRango').val() + ' )';
 	var dof = $( '#dof').val() + ' mm';
 	var dofRango = '( ' + $( '#dofRango').val() + ' )';
