@@ -613,7 +613,7 @@ $( document ).ready(function() {
             let fur = new Date(Date.parse(document.getElementById("fum").value));
             fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
             let fpp = new Date(Date.parse(document.getElementById("fpp").value));
-            fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
+            fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
             let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value + " semanas.";
             comentario = "Para edad gestacional calculada: "+eg+" corresponde:<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>" + comentario;
         }
@@ -710,7 +710,7 @@ $( document ).ready(function() {
         let fexamen = new Date(Date.parse(document.getElementById("fee").value));
         fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
         let fpp = new Date(Date.parse(document.getElementById("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
+        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
         let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
 
         var dbp = document.getElementById("dbp").value + ' mm';
@@ -823,7 +823,7 @@ $( document ).ready(function() {
         let fexamen = new Date(Date.parse(document.getElementById("fee").value));
         fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
         let fpp = new Date(Date.parse(document.getElementById("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
+        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
         let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
         
         var bvm = document.getElementById("bvmDoppler").value;
@@ -2389,7 +2389,7 @@ $( document ).ready(function() {
         let fur = new Date(Date.parse(document.getElementById("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
         let fpp = new Date(Date.parse(document.getElementById("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
+        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
 
         var paciente = document.getElementById("nombre-paciente").value;
         var idpaciente = document.getElementById("id-paciente").value;
@@ -4712,7 +4712,7 @@ function crearInformeEcoSegTrim2(){
     let fexamen = new Date(Date.parse(document.getElementById("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
     let fpp = new Date(Date.parse(document.getElementById("fpp").value));
-    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()] + " " + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
     let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
     
     var dbp = $( '#dbp').val() + ' mm';
