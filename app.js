@@ -253,6 +253,14 @@ $( document ).ready(function() {
         $('#configNoController').button('toggle');
     });
 
+    $('#informacionPacienteSi').on('click', function(){
+        document.location.hash = "paciente";
+    });
+
+    $('#informacionPacienteSi').on('focusout', function(){
+        $('#informacionPacienteNo').button('toggle');
+    });
+
     //controlador de ecografía de primer trimestre
     $("#saco").on("change", function(){
         document.getElementById("sacoPct").value = egSaco(this.value);
@@ -3769,8 +3777,8 @@ $( document ).ready(function() {
 
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
-    var div = ["#inicio","#consulta","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#pdfobstetrica", "#pdfneonatal"];
-    var div_fecha = ["#consulta","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia"];
+    var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#pdfobstetrica", "#pdfneonatal"];
+    var div_fecha = ["#consulta","#paciente", "#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia"];
     let d = "d-none";
 
     if (div.includes(hash)){

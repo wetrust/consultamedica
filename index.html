@@ -413,15 +413,6 @@
             <hr class="btn-consulta">
             <div class="card mx-5" style="background-color:#e1ecf5;">
                 <div class="card-body">
-                    <h6 class="text-primary">Configuración del sistema y datos de la paciente</h6>
-                    <div class="form-group row">
-                        <div class="col-4">
-                            <label class="col-form-label btn-consulta my-3 p-2">N° de Registro ( RUT / DNI )</label>
-                        </div>
-                        <div class="col-2">
-                            <input type="text" class="form-control my-3" id="id-paciente">
-                        </div>
-                    </div>
                     <div class="row mb-3">
                         <div class="col-9">
                             <h6 class="card-title text-primary text-left mt-2 mb-4 ml-4"> - Configuración de datos para variable de uso  habitual (Opcional)</h6>
@@ -437,50 +428,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion" id="consulta-acordeon">
-                        <div class="card border mb-3">
-                            <div class="card-header" id="acordeonOne">
-                                <h2 class="mb-0"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#acordeonContenedorOne" aria-expanded="true" aria-controls="acordeonContenedorOne">Información útil para <strong>reporte</strong> de informe y / o graficas (Opcional)</button></h2>
-                            </div>      
-                            <div id="acordeonContenedorOne" class="collapse" aria-labelledby="acordeonOne" data-parent="#consulta-acordeon">
-                                <div class="card-body">
-                                    <div class="row mt-2 mb-2">
-                                        <div class="col-2">
-                                            <label>Nombre paciente</label>
-                                        </div>
-                                        <div class="col-4">
-                                            <input class="form-control gris-claro" type="text" id="nombre-paciente" placeholder="Paciente de Prueba">
-                                        </div>
-                                        <div class="col-2">
-                                            <label>Motivo del exámen</label>
-                                        </div>
-                                        <div class="col-4">
-                                            <select id="motivo-examen" class="form-control gris-claro"></select>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2 mb-2">
-                                        <div class="col-2">
-                                            <label>Patología Obstétrica Relevante</label>
-                                        </div>
-                                        <div class="col-4">
-                                            <select id="patologiaObstetricaUno" class="form-control gris-claro"></select>
-                                        </div>
-                                        <div class="col-2">
-                                            <label >Edad materna</label>
-                                        </div>
-                                        <div class="col-4">
-                                            <select name="edad_materna" class="form-control gris-claro"></select>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2 mb-2">
-                                        <div class="col-2">
-                                            <label>Ecografista</label>
-                                        </div>
-                                        <div class="col-4">
-                                            <select class="form-control" id="ecografista"></select></div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="row mb-3">
+                        <div class="col-9">
+                            <h6 class="card-title text-primary text-left mt-2 mb-4 ml-4"> Información útil para <strong>reporte</strong> de informe y / o graficas (Opcional)</h6>
+                        </div>
+                        <div class="col-3">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-outline-consulta active" id="informacionPacienteNo" data-value="0">
+                                    <input type="radio" value="0" autocomplete="off" checked> NO
+                                </label>
+                                <label class="btn btn-outline-consulta" id="informacionPacienteSi" data-value="1">
+                                    <input type="radio" value="1" autocomplete="off"> SI
+                                </label>
                             </div>
                         </div>
                     </div>   
@@ -2560,6 +2519,54 @@
             <div class="card-body">
                 <p>Curva Nacional Chilena: M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274. <a id="pdfnacional" href="#pdfviebox">Ver PDF</a></p>
                 <p>Curva Regional Araucanía - Chile: Lagos y col. Rev. Chilena Obtet. Ginecol. 2009; 74(4). <a id="pdfregional" href="#pdfviebox">Ver PDF</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="container pt-2 d-none" id="paciente">
+        <div class="card">
+            <div class="card-body">
+                <div class="row mt-2 mb-2">
+                    <div class="col-2">
+                        <label>Nombre paciente</label>
+                    </div>
+                    <div class="col-4">
+                        <input class="form-control gris-claro" type="text" id="nombre-paciente" placeholder="Paciente de Prueba">
+                    </div>
+                    <div class="col-2">
+                        <label class="col-form-label btn-consulta my-3 p-2">N° de Registro ( RUT / DNI )</label>
+                    </div>
+                    <div class="col-4">
+                       <input type="text" class="form-control my-3" id="id-paciente">
+                    </div>
+                    <div class="col-2">
+                        <label>Motivo del exámen</label>
+                    </div>
+                    <div class="col-4">
+                        <select id="motivo-examen" class="form-control gris-claro"></select>
+                    </div>
+                </div>
+                        <div class="row mt-2 mb-2">
+                            <div class="col-2">
+                                <label>Patología Obstétrica Relevante</label>
+                            </div>
+                            <div class="col-4">
+                                <select id="patologiaObstetricaUno" class="form-control gris-claro"></select>
+                            </div>
+                            <div class="col-2">
+                                <label >Edad materna</label>
+                            </div>
+                            <div class="col-4">
+                                <select name="edad_materna" class="form-control gris-claro"></select>
+                            </div>
+                        </div>
+                        <div class="row mt-2 mb-2">
+                            <div class="col-2">
+                                <label>Ecografista</label>
+                            </div>
+                            <div class="col-4">
+                                <select class="form-control" id="ecografista"></select></div>
+                            </div>
+                        </div>
             </div>
         </div>
     </div>
