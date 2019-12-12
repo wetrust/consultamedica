@@ -139,7 +139,7 @@ $( document ).ready(function() {
     });
 
     $("#menu\\.modulo\\.activo\\.cinco").on("click", function(){
-        var botones = ["menu.modulo.activo.cinco.uno", "menu.modulo.activo.cinco.dos"];
+        var botones = ["menu.modulo.activo.cinco.uno", "menu.modulo.activo.cinco.dos","menu.modulo.activo.cinco.tres"];
         
         if (document.getElementById(botones[0]).classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
@@ -3773,13 +3773,9 @@ $( document ).ready(function() {
                      ccp = ccp.replace(",", ".");
                      ccp = parseFloat(ccp);
     
-                     data.push({
-                         y: ccp,
-                     });
+                     data.push({y: ccp});
                      for (i = edadGest + 1; i <= 38; i++) {
-                         data.push({
-                             y: 0,
-                         });
+                         data.push({y: 0});
                      }
                      return data;
                  }())
@@ -3790,7 +3786,7 @@ $( document ).ready(function() {
 
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
-    var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#pdfobstetrica", "#pdfneonatal"];
+    var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#pdfobstetrica", "#pdfneonatal", "#pdfisuog"];
     var div_fecha = ["#consulta","#paciente", "#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia"];
     let d = "d-none";
 
@@ -4591,9 +4587,6 @@ function psohdlk() {
     CC = CC / 10;
     CA = CA / 10;
     LF = LF / 10;
-	
-    //var psoP =  Math.pow(10, (1.182 + 0.00273 * CC + 0.007057 * CA - 0.0000063 *  Math.pow(CA, 2) - 0.000002184 * CC * CA))
-
     var psoP = Math.pow(10, (1.326 + 0.0107 * CC + 0.0438 * CA + 0.158 * LF - 0.00326 * CA * LF));
 
     if (isNaN(psoP) != true) {
