@@ -482,11 +482,11 @@ $( document ).ready(function() {
 
     $("#pdfuno").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf");
-        $("#pdfviebox").children("ol").children().children().attr("href","#pdfobstetrica");
+        $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
     });
     $("#pdfdos").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf");
-        $("#pdfviebox").children("ol").children().children().attr("href","#pdfobstetrica");
+        $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
     });
 });
 
@@ -3786,7 +3786,7 @@ $( document ).ready(function() {
 
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
-    var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#pdfobstetrica", "#pdfneonatal"];
+    var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#pdfneonatal"];
     var div_fecha = ["#consulta","#paciente", "#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia"];
     let d = "d-none";
 
