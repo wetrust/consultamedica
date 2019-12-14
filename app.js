@@ -432,6 +432,14 @@ $( document ).ready(function() {
         }
     });
 
+    $("#ver\\.ref").on("click", function(){
+        if (this.checked == true){
+            document.getElementById("ver.ref.div").classList.remove("d-none");
+        }else{
+            document.getElementById("ver.ref.div").classList.add("d-none");
+        }
+    });
+
     $("#respuesta_uterina_derecha").on("change",function(){
         let ut = pctut(this.value);
         $("#respuesta_uterina_derecha_percentil").html(ut.pct);
