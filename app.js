@@ -1338,7 +1338,7 @@ $( document ).ready(function() {
                    var data = [];
                    var edadGest = document.getElementById("semanas").value;
     
-                   for (i = 12; i <= edadGest; i++) {
+                   for (i = 12; i < edadGest; i++) {
                        data.push({
                            y: 0,
                        });
@@ -1422,7 +1422,7 @@ $( document ).ready(function() {
                    var data = [];
                    var edadGest = document.getElementById("semanas").value;
     
-                   for (i = 12; i <= edadGest; i++) {
+                   for (i = 12; i < edadGest; i++) {
                        data.push({
                            y: 0,
                        });
@@ -1507,7 +1507,7 @@ $( document ).ready(function() {
                    var data = [];
                    var edadGest = document.getElementById("semanas").value;
     
-                   for (i = 12; i <= edadGest; i++) {
+                   for (i = 12; i < edadGest; i++) {
                        data.push({
                            y: 0,
                        });
@@ -1592,7 +1592,7 @@ $( document ).ready(function() {
                    var data = [];
                    var edadGest = document.getElementById("semanas").value;
     
-                   for (i = 12; i <= edadGest; i++) {
+                   for (i = 12; i < edadGest; i++) {
                        data.push({ y: 0, });
                    }
                    
@@ -1685,7 +1685,7 @@ $( document ).ready(function() {
                          var data = [];
                          var edadGest = document.getElementById("semanas").value;
      
-                         for (i = 16; i <= edadGest; i ++ ) {
+                         for (i = 16; i < edadGest; i ++ ) {
                              data.push({
                                  y: 0,
                              });
@@ -1764,7 +1764,7 @@ $( document ).ready(function() {
                         var data = [];
                         var edadGest = document.getElementById("semanas").value;
     
-                        for (i = 12; i <= edadGest; i++) {
+                        for (i = 12; i < edadGest; i++) {
                             data.push({ y: 0, });
                         }
      
@@ -1852,7 +1852,7 @@ $( document ).ready(function() {
                         var data = [];
                         var edadGest = document.getElementById("semanas").value;
     
-                        for (i = 15; i <= edadGest; i++) {
+                        for (i = 15; i < edadGest; i++) {
                             data.push({
                                 y: 0,
                             });
@@ -1880,19 +1880,14 @@ $( document ).ready(function() {
     $( '#graficoPFE' ).on( 'click', function() {
         var edadGestacional = document.getElementById("semanas").value;
 
-        if (edadGestacional < 16){
-            alert("Edad Gestacional inferior a 16 semanas");
-            return false;
-        }
+        if (edadGestacional < 16){ alert("Edad Gestacional inferior a 16 semanas"); return false;}
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         document.getElementById(modal.titulo).innerText = "Gráfico Peso Fetal Estimado";
         document.getElementById(modal.contenido).innerHTML = '<div id="graficoPesoView"></div>';
 
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
         $('#graficoPesoView').highcharts({
            title: {
@@ -1950,7 +1945,7 @@ $( document ).ready(function() {
                    var data = [];
                    var edadGest = document.getElementById("semanas").value;
     
-                   for (i = 16; i <= edadGest; i++) {
+                   for (i = 16; i < edadGest; i++) {
                        data.push({
                            y: 0,
                        });
@@ -2352,7 +2347,7 @@ $( document ).ready(function() {
                             var edadGest = document.getElementById("semanas").value;
                             edadGest = parseInt(edadGest);
 
-                            for (i = 16; i <= edadGest; i++) {
+                            for (i = 16; i < edadGest; i++) {
                                 data.push({
                                     y: 0,
                                 });
@@ -3005,7 +3000,7 @@ $( document ).ready(function() {
                         var data = [];
                         var edadGest = document.getElementById("semanas").value;
     
-                        for (i = 10; i <= edadGest; i ++ ) {
+                        for (i = 10; i < edadGest; i ++ ) {
                             data.push({
                                 y: 0,
                             });
@@ -3088,7 +3083,7 @@ $( document ).ready(function() {
                     var data = [];
                     var edadGest = document.getElementById("semanas").value;
    
-                    for (i = 20; i <= edadGest; i++) {
+                    for (i = 20; i < edadGest; i++) {
                         data.push({
                             y: 0,
                         });
@@ -3173,7 +3168,7 @@ $( document ).ready(function() {
                      var data = [];
                      var edadGest = document.getElementById("semanas").value;
     
-                     for (i = 20; i <= edadGest; i++) {
+                     for (i = 20; i < edadGest; i++) {
                          data.push({
                              y: 0,
                          });
@@ -3256,7 +3251,7 @@ $( document ).ready(function() {
                     var data = [];
                     var edadGest = document.getElementById("semanas").value;
    
-                    for (i = 20; i <= edadGest; i++) {
+                    for (i = 20; i < edadGest; i++) {
                         data.push({
                             y: 0,
                         });
@@ -3337,7 +3332,7 @@ $( document ).ready(function() {
                         var data = [];
                         var edadGest = document.getElementById("semanas").value;
     
-                        for (i = 20; i <= edadGest; i ++ ) {
+                        for (i = 20; i < edadGest; i ++ ) {
                             data.push({
                                 y: 0,
                             });
@@ -3424,7 +3419,7 @@ $( document ).ready(function() {
                 var edadGest = document.getElementById("semanas").value;
                 var medida = parseFloat(document.getElementById("psmACM").value);
 
-                for (i = 18; i <= edadGest; i++) {
+                for (i = 18; i < edadGest; i++) {
                     data.push({
                         y: 0,
                     });
@@ -3544,7 +3539,7 @@ $( document ).ready(function() {
                         var data = [];
                         var edadGest = document.getElementById("semanas").value;
     
-                        for (i = 10; i <= edadGest; i ++ ) {
+                        for (i = 10; i < edadGest; i ++ ) {
                             data.push({
                                 y: 0,
                             });
@@ -3620,7 +3615,7 @@ $( document ).ready(function() {
                      var data = [];
                      var edadGest = document.getElementById("semanas").value;
     
-                     for (i = 20; i <= edadGest; i++) {
+                     for (i = 20; i < edadGest; i++) {
                          data.push({
                              y: 0,
                          });
@@ -3696,7 +3691,7 @@ $( document ).ready(function() {
                      var data = [];
                      var edadGest = document.getElementById("semanas").value;
     
-                     for (i = 20; i <= edadGest; i++) {
+                     for (i = 20; i < edadGest; i++) {
                          data.push({
                              y: 0,
                          });
@@ -3770,7 +3765,7 @@ $( document ).ready(function() {
                      var data = [];
                      var edadGest = document.getElementById("semanas").value;
     
-                     for (i = 20; i <= edadGest; i++) {
+                     for (i = 20; i < edadGest; i++) {
                          data.push({
                              y: 0,
                          });
