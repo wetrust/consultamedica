@@ -501,12 +501,12 @@ $('#g3').click(function() {
             text: 'Peso/Edad gestacional ajustada por variables **',
             style: {
                 "color": "#337ab7",
-                "fontSize": "12px"
+                "fontSize": "14px"
             }
         },
         chart: {
             backgroundColor: "rgba(0, 0, 0, 0)",
-            width: "300"
+            height: "300"
         },
         yAxis: {
             title: {
