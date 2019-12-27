@@ -758,8 +758,6 @@ var varMama = 0;
 var p90Pso = [];
 var p10Pso = [];
 
-
-
 function RecienNacido(peso = 0, talla = 0, eg = 40) {
     this.peso = peso;
     this.talla = talla;
