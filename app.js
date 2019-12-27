@@ -473,9 +473,13 @@ $( document ).ready(function() {
         $("#pdfviebox").children("ol").children().children().attr("href","#recienacido");
     });
 
-    $("#pdfregionalview, #pdfregionalviewA").on("click", function(){
+    $("#pdfregionalview").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
         $("#pdfviebox").children("ol").children().children().attr("href","#recienacido");
+    });
+    $("#pdfregionalviewA").on("click", function(){
+        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
+        $("#pdfviebox").children("ol").children().children().attr("href","#ajustepeso");
     });
 
     $("#pdfnacional").on("click", function(){
