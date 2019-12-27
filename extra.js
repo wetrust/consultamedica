@@ -774,14 +774,14 @@ function RecienNacido(peso = 0, talla = 0, eg = 40) {
         var tablas = new Tabla;
         var uno = tablas.pct90PesoNacional[eg] - tablas.pct10PesoNacional[eg];
         var dos = this.peso - tablas.pct10PesoNacional[eg];
-        return parseInt((80 / (uno)) * (dos)) + 10;
+        return Math.trunc((80 / (uno)) * (dos)) + 10;
     };
     this.pesoTemuco = function pesoTemuco() {
         eg = this.eg - 24;
         var tablas = new Tabla;
         var uno = tablas.pct90PesoTemuco[eg] - tablas.pct10PesoTemuco[eg];
         var dos = this.peso - tablas.pct10PesoTemuco[eg];
-        return parseInt((80 / (uno)) * (dos)) + 10;
+        return Math.trunc((80 / (uno)) * (dos)) + 10;
     };
     this.pesoAjustado = 0;
     this.pesoChileCondicion = function pesoChileC() {
