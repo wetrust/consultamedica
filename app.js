@@ -3902,6 +3902,10 @@ $(window).on('hashchange', function(){
         }
         else{
             document.getElementsByTagName("section")[0].classList.add(d);
+            //especial
+            if (hash == "#recienacido"){
+                $("#graficoEstandar").trigger("click");
+            }
         }
     }
     else{
