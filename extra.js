@@ -505,7 +505,8 @@ $('#g3').click(function() {
             }
         },
         chart: {
-            backgroundColor: "rgba(0, 0, 0, 0)"
+            backgroundColor: "rgba(0, 0, 0, 0)",
+            width: "300"
         },
         yAxis: {
             title: {
@@ -597,7 +598,7 @@ $('#g3').click(function() {
             }())
         }, {
             type: "line",
-            name: 'Peso',
+            name: 'Pct. peso ajustado',
             dashStyle: "Dot",
             marker: {
                 symbol: 'square'
