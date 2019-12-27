@@ -485,6 +485,7 @@ $('#g3').click(function() {
     }
     tablaPercentilesView(p10Pso,p90Pso);
     $("#PesoEgeSAj").val(RN.pesoTemuco());
+    $("#PesoEgeSAjCat").val(RN.pesoTemucoCondicion());
     eg = RN.eg - 24;
     var tablas = new Tabla;
     var uno, dos, tres;
@@ -493,6 +494,15 @@ $('#g3').click(function() {
     tres = parseInt((80 / (uno)) * (dos)) + 10;
 
     $("#PesoEgeCAj").val(tres);
+
+    if (RN.peso < p10Pso[eg]) {
+        $("#PesoEgeCAjCat").val("Pequeño");
+    } else if (RN.peso <= p90Pso[eg]) {
+        $("#PesoEgeCAjCat").val("Adecuado");
+    } else if (RN.peso > p90Pso[eg]) {
+        $("#PesoEgeCAjCat").val("Grande");
+    }
+
     $("#tituloAjusteG").addClass("d-none");
     $("#tituloAjusteAlto").html("Pct Peso sin ajuste");
     $("#tituloAjusteBajo").html("Pct. Peso con ajuste");
