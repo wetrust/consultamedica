@@ -779,7 +779,7 @@ function RecienNacido(peso = 0, talla = 0, eg = 40) {
         var tablas = new Tabla;
         var uno = tablas.pct90PesoTemuco[eg] - tablas.pct10PesoTemuco[eg];
         var dos = this.peso - tablas.pct10PesoTemuco[eg];
-        return Math.trunc((80 / (uno)) * (dos)) + 10;
+        return ((80 / (uno)) * (dos)) + 10;
     };
     this.pesoAjustado = 0;
     this.pesoChileCondicion = function pesoChileC() {
