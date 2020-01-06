@@ -123,12 +123,12 @@ $( document ).ready(function() {
     edad.appendChild(opt); 
 
     //funcion rara
-    $("#acercadebutton").on("focusout", function(){
+    $("#acercadebutton").focusout(function(){
         if (document.getElementById("acercadebutton").classList.contains("btn-dark")){
             document.getElementById("acercadebutton").classList.remove("btn-dark");
             document.getElementById("acercadebutton").classList.add("btn-outline-dark");
         }
-    })
+    });
 
     //controlador de botones inicio
     $("#menu\\.modulo\\.activo").on("click", function(){
