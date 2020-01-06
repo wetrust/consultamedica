@@ -122,6 +122,14 @@ $( document ).ready(function() {
     opt.value = "> 60"; 
     edad.appendChild(opt); 
 
+    //funcion rara
+    $("#acercadebutton").on("focusout", function(){
+        if (document.getElementById("acercadebutton").classList.contains("btn-dark")){
+            document.getElementById("acercadebutton").classList.remove("btn-dark");
+            document.getElementById("acercadebutton").classList.add("btn-outline-dark");
+        }
+    })
+
     //controlador de botones inicio
     $("#menu\\.modulo\\.activo").on("click", function(){
         var botones = ["menu.modulo.activo.uno", "menu.modulo.activo.dos", "menu.modulo.activo.tres", "menu.modulo.activo.cuatro"];
