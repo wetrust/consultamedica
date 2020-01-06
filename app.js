@@ -123,7 +123,7 @@ $( document ).ready(function() {
     edad.appendChild(opt); 
 
     //funcion rara
-    $("#acercadebutton").focusout(function(){
+    $("#acercadebutton").mouseout(function(){
         if (document.getElementById("acercadebutton").classList.contains("btn-dark")){
             document.getElementById("acercadebutton").classList.remove("btn-dark");
             document.getElementById("acercadebutton").classList.add("btn-outline-dark");
