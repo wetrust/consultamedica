@@ -147,7 +147,7 @@ $( document ).ready(function() {
     });
 
     $("#menu\\.modulo\\.activo\\.cinco").on("click", function(){
-        var botones = ["menu.modulo.activo.cinco.uno", "menu.modulo.activo.cinco.dos","menu.modulo.activo.cinco.tres","menu.modulo.activo.cinco.cuatro"];
+        var botones = ["menu.modulo.activo.cinco.uno", "menu.modulo.activo.cinco.dos","menu.modulo.activo.cinco.tres"];
         
         if (document.getElementById(botones[0]).classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
