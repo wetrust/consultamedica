@@ -728,7 +728,7 @@ $('#opt3').click(function() {
     RN.ajusteAlto = false;
     $('#g3').trigger("click");
     $("#tituloAjusteG").addClass("d-none");
-    $("#tituloAjusteAlto").html("Pct.peso sin ajuste");
+    $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
     $("#tituloAjusteBajo").html("Pct. peso con ajuste");
 });
 
