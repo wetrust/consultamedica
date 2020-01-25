@@ -687,7 +687,7 @@ $('#opt1').click(function() {
     $('#g3').trigger("click");
     $("#tituloAjusteG").addClass("d-none");
     $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
-    $("#tituloAjusteBajo").html("Pct. de peso con ajuste");
+    $("#tituloAjusteBajo").html("Pct. peso con ajuste");
 });
 
 $('#opt2').click(function() {
