@@ -77,15 +77,8 @@ $(document).ready(function() {
     });
 
     $("#edadGestacional").change(function() {
-        var max = parseInt($(this).attr('max'));
-        var min = parseInt($(this).attr('min'));
-        if ($(this).val() > max) {
-            $(this).val(max);
-        } else if ($(this).val() < min) {
-            $(this).val(min);
-        }
         $("#graficoEstandar").trigger("click");
-        $("#edadClon").html("Edad " + this[0].value + " semanas")
+        $("#edadClon").html("Edad " + (parseInt(this[0].value)+15) + " semanas")
     });
     
     $("#pesoRN").change(function() {
