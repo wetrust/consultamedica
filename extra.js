@@ -728,13 +728,13 @@ $('#opt3').click(function() {
 
     //cargar inputs de talla
     for (i = 135; i < 190; i++) {
-        $("#tm").append('<option value="' + i +'">' + i + ' cms.</option>');
+        $("#tm").append('<option value="' + i +'">' + i + '</option>');
         $('#tm option[value="149"]').prop('selected', true);
     }
 
     //cargar inputs de peso materno
     for (i = 35; i < 140; i++) {
-        $("#pesom").append('<option value="' + i +'">' + i + ' kg</option>');
+        $("#pesom").append('<option value="' + i +'">' + i + '</option>');
         $('#pesom option[value="70"]').prop('selected', true);
     }
 });
