@@ -28,6 +28,8 @@
     </style>
     <style>
         .btn-outline-dark{ background-color:#ebefff;}
+        .celeste{  background-color:#d4edeb; }
+        .celeste-oscuro{ background-color: #bfe9fb; }
     </style>
 </style>
 </head>
@@ -588,45 +590,45 @@
         </ol>
         <div class="row mt-1">
             <div class="col-5">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 id="pesoclon">Peso observado del RN: 3089 grs.</h5>
+                <div class="card shadow">
+                    <div class="card-header celeste-oscuro">
+                        <div class="row"><div class="col-12 col-sm-6"><p id="pesoclon">Peso al nacer</p></div>
+                        <div class="col-12 col-sm-6"><p id="edadClon">Edad</p></div>
+                        <div class="col-12 col-sm-6"><p id="PesoEgeSAj" class="mb-0">Pct. Peso/edad</p></div>
+                        <div class="col-12 col-sm-6"><p id="PesoEgeSAjCat" class="mb-0">Categoria</p></div></div>
+                    </div>
+                    <div class="card-header celeste">Variable para ajuste al peso / edad gestacional</div>
+                        <div class="card-body">
                             <div class="form-group row">
                                 <label class="col-3">Talla Materna</label>
-                                <select id="tm" class="form-control col-3" style="background-color: #FFF;font-size: 0.8rem;height: 2rem;"></select>
+                                <select id="tm" class="form-control col-3 celeste" style="background-color: #FFF;font-size: 0.8rem;height: 2rem;"></select>
                                 <label class="col-3">Peso Materno</label>
                                 <select id="pesom" class="form-control col-3" style="font-size: 0.8rem;height: 2rem;"></select>
                             </div>
                             <div class="form-group row">
                                 <label class="col-6">IMC <small>((Peso/Talla)^2)</small></label>
-                                <input type="text" class="form-control col-6" style="background-color: #FFF;font-size: 0.8rem;height: 2rem;" id="valorimc" disabled>
+                                <input type="text" class="form-control col-6 celeste" style="font-size: 0.8rem;height: 2rem;" id="valorimc" disabled>
                             </div>
                             <div class="form-group row">
-                                <label class="col-4">Estado Nutricional</label>
-                                <select id="imc" class="form-control col-8" style="background-color: #bfe9fb;font-size: 0.8rem;height: 2rem;">
+                                <label class="col-5">1.- Estado Nutricional</label>
+                                <select id="imc" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
                                     <option value="1">Enflaquecida</option>
                                     <option value="2">Normal</option>
                                     <option value="3">SobrePeso</option>
                                     <option value="4" selected>Obesidad</option>
                                 </select>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-4">Paridad Materna</label>
-                                <select id="pm" class="form-control col-8" style="background-color: #bfe9fb;font-size: 0.8rem;height: 2rem;">
+                                <label class="col-5">2.- Paridad Materna</label>
+                                <select id="pm" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
                                     <option value="1" selected>Primípara</option>
                                     <option value="0">Multípara</option>
                                 </select>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-4">Sexo Neonatal</label>
-                                <select id="sn" class="form-control col-8" style="background-color: #bfe9fb;font-size: 0.8rem;height: 2rem;">
+                                <label class="col-5">3.- Sexo Neonatal</label>
+                                <select id="sn" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
                                     <option value="1" selected>Femeníno</option>
                                     <option value="0" >Masculíno</option>
                                 </select>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-4">Edad Materna</label>
-                                <select id="em" class="form-control col-8" style="background-color: #bfe9fb;font-size: 0.8rem;height: 2rem;">
+                                <label class="col-5">4.- Edad Materna</label>
+                                <select id="em" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
                                     <option value="1">&lt; 19</option>
                                     <option value="2">20 - 21</option>
                                     <option value="3">22 - 23</option>
@@ -634,10 +636,8 @@
                                     <option value="5">26 - 27</option>
                                     <option value="6" selected>&gt; 27</option>
                                 </select>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-4">Etnia Materna</label>
-                                <select id="apellm" class="form-control col-8" style="background-color: #bfe9fb;font-size: 0.8rem;height: 2rem;">
+                                <label class="col-5">5.- Etnia Materna</label>
+                                <select id="apellm" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
                                     <option value="0">Ambos Caucásicos</option>
                                     <option value="2">Solo uno Caucásico</option>
                                     <option value="1" selected>Ninguno Caucásico</option>
@@ -654,15 +654,11 @@
                 </div>
             </div>
             <div class="col-5">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-body">
                         <div id="graficoAjustado"></div>
                         <p class="text-left mt-2" style="font-size: 70%;">** Curva Regional: Lagos y col. Rev. Chilena Obtet. Ginecol. 2009; 74(4). <a id="pdfregionalviewA" href="#pdfviebox">Ver PDF</a></p>
                         <div class="form-group row mb-0">
-                            <p class="col-12 d-none" id="tituloAjusteG"><strong>Peso ajustado para:</strong></p>
-                            <label class="col-4" id="tituloAjusteAlto" style="font-size: 0.8rem;height: 2rem;">Pct peso inicial</label>
-                            <input type="text" class="form-control col-2" id="PesoEgeSAj" disabled style="font-size: 0.8rem;height: 2rem;">
-                            <input type="text" class="form-control col-3 mx-2" id="PesoEgeSAjCat" disabled style="font-size: 0.8rem;height: 2rem;">
                             <label class="col-4" id="tituloAjusteBajo" style="font-size: 0.8rem;height: 2rem;">Pct. peso ajustado</label>
                             <input type="text" class="form-control col-2" id="PesoEgeCAj" disabled style="font-size: 0.8rem;height: 2rem;background-color: #bfe9fb;">
                             <input type="text" class="form-control col-3 mx-2" id="PesoEgeCAjCat" disabled style="font-size: 0.8rem;height: 2rem;background-color: #bfe9fb;">

@@ -26,7 +26,7 @@ $(document).ready(function() {
                 if (text.toString().length > 3){
                     return false;
                 }
-                $("#pesoclon").html("Peso observado del RN: " + this.value+ " grs.");
+                $("#pesoclon").html("Peso al nacer: " + this.value+ " grs.");
                 break;
             case 13:
             case 8:
@@ -85,6 +85,7 @@ $(document).ready(function() {
             $(this).val(min);
         }
         $("#graficoEstandar").trigger("click");
+        $("#edadClon").html("Edad " + this[0].value + " semanas")
     });
     
     $("#pesoRN").change(function() {
@@ -102,7 +103,7 @@ $(document).ready(function() {
             $("#IPNRN").val(valor.toFixed(2));
         }
         $("#graficoEstandar").trigger("click");
-        $("#pesoclon").html("Peso observado del RN: " + this.value+ " grs.");
+        $("#pesoclon").html("Peso al nacer: " + this.value+ " grs.");
     });
     
     $("#tallaRN").change(function() {
@@ -484,8 +485,8 @@ $('#g3').click(function() {
         p10Pso[x] = Math.pow(10, ((i * p10[0]) + (Math.pow(i, 2) * p10[1]) + (Math.pow(i, 3) * p10[2]) + (p10[3] * $("#pm").val()) + (p10[4] * $("#sn").val()) + (p10[5] * apell) + (p10[6] * $("#imc").val()) + (p10[7] * $("#em").val()) + p10[8]));;
     }
     tablaPercentilesView(p10Pso,p90Pso);
-    $("#PesoEgeSAj").val(RN.pesoTemuco());
-    $("#PesoEgeSAjCat").val(RN.pesoTemucoCondicion());
+    $("#PesoEgeSAj").html("Pct. Peso/edad " + RN.pesoTemuco());
+    $("#PesoEgeSAjCat").html("Categoria " + RN.pesoTemucoCondicion());
     eg = RN.eg - 24;
     var tablas = new Tabla;
     var uno, dos, tres;
