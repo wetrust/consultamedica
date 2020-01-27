@@ -884,7 +884,7 @@ function tablaPercentilesView(p10Pso,p90Pso){
     $("#table\\.percentiles\\.ajustado").empty();
     for (i = 24; i < 43; i++) {
         x = i - 24;
-        let tabla = '<tr><td style="background-color: #bfe9fb;">'+i+'</td><td>'+Math.trunc(p10Pso[x])+'</td><td>'+Math.trunc(p90Pso[x])+'</td></tr>';
+        let tabla = '<tr><td class="celeste">'+i+'</td><td>'+Math.trunc(p10Pso[x])+'</td><td>'+Math.trunc(p90Pso[x])+'</td></tr>';
         $("#table\\.percentiles\\.ajustado").append(tabla);
     }
 }
