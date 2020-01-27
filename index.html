@@ -598,58 +598,54 @@
                         <div class="col-12 col-sm-6"><p id="PesoEgeSAjCat" class="mb-0">Categoria</p></div></div>
                     </div>
                     <div class="card-header celeste">Variable para ajuste al peso / edad gestacional</div>
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-5"><small>Talla Materna</small></label>
-                                <select id="tm" class="form-control col-4 celeste"></select>
-                                <label class="col-3"><small>centímetros</small></label>
-                                <label class="col-5"><small>Peso Materno</small></label>
-                                <select id="pesom" class="form-control col-4"></select>
-                                <label class="col-3"><small>kilos</small></label>
-                                <label class="col-5"><small>IMC materno</small></label>
-                                <input type="text" class="form-control col-4 celeste" id="valorimc" disabled>
-                                <label class="col-3"><small>Peso/talla 2</small></label>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-5"><small>1.- Estado Nutricional</small></label>
-                                <select id="imc" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
-                                    <option value="1">Enflaquecida</option>
-                                    <option value="2">Normal</option>
-                                    <option value="3">SobrePeso</option>
-                                    <option value="4" selected>Obesidad</option>
-                                </select>
-                                <label class="col-5"><small>2.- Paridad Materna</small></label>
-                                <select id="pm" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
-                                    <option value="1" selected>Primípara</option>
-                                    <option value="0">Multípara</option>
-                                </select>
-                                <label class="col-5"><small>3.- Sexo Neonatal</small></label>
-                                <select id="sn" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
-                                    <option value="1" selected>Femeníno</option>
-                                    <option value="0" >Masculíno</option>
-                                </select>
-                                <label class="col-5"><small>4.- Edad Materna</small></label>
-                                <select id="em" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
-                                    <option value="1">&lt; 19</option>
-                                    <option value="2">20 - 21</option>
-                                    <option value="3">22 - 23</option>
-                                    <option value="4">24 - 25</option>
-                                    <option value="5">26 - 27</option>
-                                    <option value="6" selected>&gt; 27</option>
-                                </select>
-                                <label class="col-5"><small>5.- Etnia Materna</small></label>
-                                <select id="apellm" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
-                                    <option value="0">Ambos Caucásicos</option>
-                                    <option value="2">Solo uno Caucásico</option>
-                                    <option value="1" selected>Ninguno Caucásico</option>
-                                </select>
-                            </div>
-                            <p class="text-left mt-2"><small><strong>Ejemplos para valorar potencial individual de crecimiento</strong></small></p>
-                        <div class="btn-group" role="group" aria-label="Default button group">
-                            <button class="btn btn-outline-primary" id="opt1">Cond. Neutra</button>
-                            <button class="btn btn-outline-primary" id="opt3">Potencial bajo</button>
-                            <button class="btn btn-outline-primary" id="opt2">Potencial alto</button>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label class="col-5"><small>Talla Materna</small></label>
+                            <select id="tm" class="form-control col-4"></select>
+                            <label class="col-3"><small>centímetros</small></label>
+                            <label class="col-5"><small>Peso Materno</small></label>
+                            <select id="pesom" class="form-control col-4"></select>
+                            <label class="col-3"><small>kilos</small></label>
+                            <label class="col-5"><small>IMC materno</small></label>
+                            <input type="text" class="form-control col-4 celeste" id="valorimc" disabled>
+                            <label class="col-3"><small>Peso/talla 2</small></label>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-5"><small>1.- Estado Nutricional</small></label>
+                            <select id="imc" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
+                                <option value="1">Enflaquecida</option>
+                                <option value="2">Normal</option>
+                                <option value="3">SobrePeso</option>
+                                <option value="4" selected>Obesidad</option>
+                            </select>
+                            <label class="col-5"><small>2.- Paridad Materna</small></label>
+                            <select id="pm" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
+                                <option value="1" selected>Primípara</option>
+                                <option value="0">Multípara</option>
+                            </select>
+                            <label class="col-5"><small>3.- Sexo Neonatal</small></label>
+                            <select id="sn" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
+                                <option value="1" selected>Femeníno</option>
+                                <option value="0" >Masculíno</option>
+                            </select>
+                            <label class="col-5"><small>4.- Edad Materna</small></label>
+                            <select id="em" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
+                                <option value="1">&lt; 19</option>
+                                <option value="2">20 - 21</option>
+                                <option value="3">22 - 23</option>
+                                <option value="4">24 - 25</option>
+                                <option value="5">26 - 27</option>
+                                <option value="6" selected>&gt; 27</option>
+                            </select>
+                            <label class="col-5"><small>5.- Etnia Materna</small></label>
+                            <select id="apellm" class="form-control col-7 celeste" style="font-size: 0.8rem;height: 2rem;">
+                                <option value="0">Ambos Caucásicos</option>
+                                <option value="2">Solo uno Caucásico</option>
+                                <option value="1" selected>Ninguno Caucásico</option>
+                            </select>
+                        </div>
+                        <p class="text-left mt-2"><small><strong>Ejemplos para valorar potencial individual de crecimiento</strong></small></p>
+                        <div class="row"><div class="col-4"><button id="opt1" class="btn btn-outline-light text-dark shadow"><small>Cond. Neutra</small></button></div><div class="col-4"><button id="opt3" class="btn btn-outline-light text-dark shadow"><small>Potencial bajo</small></button></div><div class="col-4"><button id="opt2" class="btn btn-outline-light text-dark shadow"><small>Potencial alto</small></button></div></div>
                         <button class="btn btn-outline-info d-none" id="g3">Graficar percentil ajustado</button>
                     </div>
                 </div>
