@@ -487,19 +487,19 @@ $('#g3').click(function() {
     dos = RN.peso - p10Pso[eg];
     tres = parseInt((80 / (uno)) * (dos)) + 10;
 
-    $("#PesoEgeCAj").val(tres);
+    $("#PesoEgeCAj").html(tres);
 
     if (RN.peso < p10Pso[eg]) {
-        $("#PesoEgeCAjCat").val("Pequeño");
+        $("#PesoEgeCAjCat").html("Pequeño");
     } else if (RN.peso <= p90Pso[eg]) {
-        $("#PesoEgeCAjCat").val("Adecuado");
+        $("#PesoEgeCAjCat").html("Adecuado");
     } else if (RN.peso > p90Pso[eg]) {
-        $("#PesoEgeCAjCat").val("Grande");
+        $("#PesoEgeCAjCat").html("Grande");
     }
 
     $("#tituloAjusteG").addClass("d-none");
     $("#tituloAjusteAlto").html("Pct Peso sin ajuste");
-    $("#tituloAjusteBajo").html("Pct. Peso con ajuste");
+    $("#tituloAjusteBajo").html("Pct. Peso ajustado");
     Highcharts.chart('graficoAjustado', {
         title: {
             text: 'Peso/Edad gestacional ajustada por variables **',
@@ -681,7 +681,7 @@ $('#opt1').click(function() {
     $('#g3').trigger("click");
     $("#tituloAjusteG").addClass("d-none");
     $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
-    $("#tituloAjusteBajo").html("Pct. peso con ajuste");
+    $("#tituloAjusteBajo").html("Pct. Peso ajustado");
 });
 
 $('#opt2').click(function() {
@@ -702,7 +702,7 @@ $('#opt2').click(function() {
     $('#g3').trigger("click");
     $("#tituloAjusteG").addClass("d-none");
     $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
-    $("#tituloAjusteBajo").html("Pct. peso con ajuste");
+    $("#tituloAjusteBajo").html("Pct. Peso ajustado");
 });
 
 $('#opt3').click(function() {
@@ -723,7 +723,7 @@ $('#opt3').click(function() {
     $('#g3').trigger("click");
     $("#tituloAjusteG").addClass("d-none");
     $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
-    $("#tituloAjusteBajo").html("Pct. peso con ajuste");
+    $("#tituloAjusteBajo").html("Pct. Peso ajustado");
 });
 
     //cargar inputs de talla
