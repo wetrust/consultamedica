@@ -156,6 +156,19 @@ $(document).ready(function(){
 			$("#aupromTamizajePct").val(0);
 			ajustarProgreso($("#aupromTamizaje").val(), "auTamizajePct");
 		}
+    });
+    
+    $("#primtrim\\.adicionales\\.translucencia").on("click", function(event){
+		event.preventDefault();
+			calcularRiesgo();
+			$("#prob").removeClass("d-none");
+			$("#prob2").removeClass("d-none");
+	});
+
+	$("#primtrim\\.adicionales\\.translucencia\\.ocultar").on("click", function(event){
+		event.preventDefault();
+		$("#prob").addClass("d-none");
+		$("#prob2").addClass("d-none");
 	});
     
 });
@@ -181,7 +194,7 @@ function pctUtApi(ut) {
 	pct95[28] = 0.92; pct95[29] = 0.91;	pct95[30] = 0.91;
 	
 	var eg=0;
-	eg=parseFloat(localStorage.eg);
+	eg=parseFloat(document.getElementById("semanas").value);
 	ut = ut.toString(); 
  	ut = ut.replace(",", ".");
  	ut = parseFloat(ut);
@@ -227,4 +240,193 @@ function imc(talla, peso){
     var IMC = tallapeso * 10000;
     
     return IMC.toFixed(1);
+}
+
+//funciones para calcular riesgo de trisonomía
+function cacularGA(CRL){
+    ga=(23.53 + 8.052 * Math.sqrt(1.037 * CRL))
+    ga=(ga/7)
+    return ga
+}
+
+function calcularProbabilidad(estMean,estSTD,logNT){
+    factor1=estSTD*estSTD*2;
+    factor2=logNT-estMean;
+    factor3=(-1*factor2*factor2)/factor1;
+    factor4=Math.exp(factor3);
+    factor5=estSTD*estSTD*Math.PI*2;
+    factor6=Math.sqrt(factor5);
+    factor7=1/factor6;
+    factor8=factor4*factor7;
+    return factor8;
+    
+}
+
+function crlIndependant(nt){
+    var NT=nt;
+    var STD=0.1945;
+    var op_std_dev=0.0289;
+    var estMean= 0.3019;
+    var estSTD=( Math.pow((STD *STD + op_std_dev * op_std_dev ) , 0.5)  ) ;
+    var logNT= Math.log10(NT);
+    return probFinal=calcularProbabilidad(estMean,estSTD,logNT);
+}
+
+function crlDependant(nt,crl){
+    var PI=3.14;
+    var NT=   nt;
+    var op_std_dev=0.0289;
+    var CRL=crl;
+    var STD=0.079;
+    var estMean=(-1*0.8951 + (0.0294 * CRL)  -(0.0001812 *CRL  * CRL) );
+    var estSTD=( Math.pow((STD *STD + op_std_dev * op_std_dev ) , 0.5)  ) ;
+    var logNT= Math.log10(NT);
+    var medianNT=Math.pow(10,estMean);
+    var NTMoM=logNT/medianNT;
+    var probabilidadFinal=calcularProbabilidad(estMean,estSTD,logNT);
+ 
+    var independantProb=crlIndependant(NT);
+    var factor9=-0.3319 - (0.0379 * CRL  )
+    var proportion=1/(1+Math.exp(-1*(factor9)))
+    var Nproportion=1-proportion;
+
+    var mixtureModel=(proportion*independantProb)+(Nproportion*probabilidadFinal);
+    return ([probabilidadFinal,mixtureModel]);
+}
+
+function relPrev(gestation){
+    var a,b,c,d,e;
+
+    A4=gestation;
+    a=0.2718;
+    b=Math.pow(Math.log10(A4),2);
+    c=1.023*Math.log10(A4)*-1;
+    d=a*b;
+    e=0.9425;
+    f=d+c+e;
+    g=Math.pow(10,f);
+    h=(1/g);
+    return (h)
+}
+
+function riskPriori(age,gestation){
+
+    var factorG = relPrev(gestation)
+    a=0.0006305;
+    b=-16.60785;
+
+    c=0.2993735;
+    g=c*age;
+    d=0.286;
+  
+    risk=1/(a+Math.exp(b+(g)) );
+    riskFinal=risk*factorG
+    return (riskFinal)
+}
+function crlIndependantT21(nt,risk){
+    var NT=nt;
+    var STD=0.2093;
+    var op_std_dev=0.0289;
+    var estMean= 0.533;
+    var estSTD=( Math.pow((STD *STD + op_std_dev * op_std_dev ) , 0.5)  ) ;
+    var logNT= Math.log10(NT);
+    var probComponent=0.9406;
+    var NprobComponent=1-probComponent;
+    var probabilidadFinal=calcularProbabilidad(estMean,estSTD,logNT);
+    console.log(probabilidadFinal);
+    console.log("probabilida 21 arriba");
+    var mixtureModel=probabilidadFinal*probComponent + risk*NprobComponent;
+    return mixtureModel;
+}
+
+function crlIndependantT18(nt,risk){
+    var NT=nt;
+    var STD=0.1658;
+    var op_std_dev=0.0289;
+    var estMean= 0.7439;
+    var estSTD=( Math.pow((STD *STD + op_std_dev * op_std_dev ) , 0.5)  ) ;
+    var logNT= Math.log10(NT);
+    var probComponent=0.7096;
+    var NprobComponent=1-probComponent;
+    var probabilidadFinal=calcularProbabilidad(estMean,estSTD,logNT);
+    
+    var mixtureModel=probabilidadFinal*probComponent + risk*NprobComponent;
+    return mixtureModel;
+}
+
+function crlIndependantT13(nt,risk){
+    var NT=nt;
+    var STD=0.2032;
+    var op_std_dev=0.0289;
+    var estMean= 0.6018;
+    var estSTD=( Math.pow((STD *STD + op_std_dev * op_std_dev ) , 0.5)  ) ;
+    var logNT= Math.log10(NT);
+    var probComponent=0.8376;
+    var NprobComponent=1-probComponent;
+    var probabilidadFinal=calcularProbabilidad(estMean,estSTD,logNT);
+    
+    var mixtureModel=probabilidadFinal*probComponent + risk*NprobComponent;
+    return mixtureModel;
+}
+
+function cacularLR(mixModCRL,mixModTris){
+    return (mixModTris/mixModCRL);
+}
+
+function calcularRiesgo(){
+
+    var compr = parseInt($("#loncefalocaudal").val());
+    var trasl = parseInt($("#translunucal").val());
+    var age = $("#edadmaternaprimtrim").val(); 
+        
+    if( age!== null  && !Number.isNaN(compr)  ){ 
+
+        NT = Number(trasl)
+
+        var gestationalAge = cacularGA(Number(compr))
+
+        lista = crlDependant(NT,compr);
+        
+        var risk = lista[0];
+        
+        riskT21 = riskPriori(age,gestationalAge);
+        riskT18 = (1/0.62)*riskT21;
+        riskT13 = (1/0.2)*riskT21;
+
+        var mixtureModelCRL=lista[1];
+    
+        mixMod21=crlIndependantT21(NT,risk);
+       
+        mixMod18=crlIndependantT18(NT,risk);
+        mixMod13=crlIndependantT13(NT,risk);
+        LR21=cacularLR(mixtureModelCRL,mixMod21);
+        LR18=cacularLR(mixtureModelCRL,mixMod18);
+        LR13=cacularLR(mixtureModelCRL,mixMod13);
+        factor=relPrev();
+        risk=riskPriori();
+         
+        riskT21=Math.round(riskT21);
+
+        var sDownRepetido = $('#examen\\.eco\\.primtrim\\.adicionales\\.translucencia\\.trisomia\\.si').is(':checked');
+
+        console.log(sDownRepetido); 
+
+        if(sDownRepetido){
+            riskT21=(1/riskT21);
+            riskT21=riskT21+0.52;
+            riskT21=(100/riskT21);
+        }
+
+        $("#trisomia\\.priori\\.veintiuno").html("1 en " + Math.round(riskT21));
+        $("#trisomia\\.priori\\.diesiocho").html("1 en " + Math.round(riskT18));
+        $("#trisomia\\.priori\\.trece").html("1 en " + Math.round(riskT13));
+        $("#trisomia\\.translucidez\\.veintiuno").html("1 en " + Math.round(riskT21*(1/LR21)));
+        $("#trisomia\\.translucidez\\.diesiocho").html("1 en " + Math.round(riskT18*(1/LR18))) ;
+        $("#trisomia\\.translucidez\\.trece").html("1 en " + Math.round( riskT13*(1/LR13)));
+    }
+    else{
+        $('#popupTitle').html("Información");
+        $('#popupBody').html("<p>Debe seleccionar una edad y una Longitud cefalo caudal</p>");
+        $('#popupGenerico').modal('show');
+    }
 }
