@@ -13,14 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <!-- <script src="inputs.js"></script>-->
-    <!-- <script src="funciones.js"></script>-->
-    <!-- <script src="graficos.js"></script>-->
-    <!-- <script src="botones.js"></script>-->
-    <!-- <script src="app.class.js"></script>-->
     <script src="configuracion.js"></script>
-    <!-- <script src="main.js"></script>-->
-    <!-- <script src="select.js"></script>-->
     <script src="extra.js"></script>
     <script src="construccion.js"></script>
     <script src="app.js"></script>
@@ -47,10 +40,75 @@
             </div>
         </div>
     </header>
-    <div class="container" id="browser">
-        <div class="row">
+    <div class="container">
+        <div class="row" id="browser">
             <div class="col">
                 <div class="alert alert-danger" role="alert">Tu navegador no es compatible con la plataforma</div>
+            </div>
+        </div>
+        <div class="d-none" id="about">
+            <ol class="breadcrumb">
+                <li class="ml-auto"><a href="#inicio"><strong>Volver</strong></a></li>
+            </ol>
+            <div class="row p-2">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                    <h4>Acerca de la plataforma</h4>
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-justify mb-0"><small><strong>Consta de tres módulo para la evaluación del crecimiento intrauterino:</strong></small></p>
+                            <ul class="mb-0">
+                                <li><small>Determinación oportuna de edad gestacional.</small></li>
+                                <li><small>Valoración ecográfica del crecimiento fetal.</small></li>
+                                <li><small>Evaluación de flujometria Doppler materno/fetal.</small></li>
+                            </ul>
+                            <p class="text-justify mb-0"><small><strong>Dispone de dos herramientas informáticas (web y apps) para facilitar calculos:</strong></small></p>
+                            <ul>
+                                <li><small>Plataforma web para evaluación protocolizada. <a href="https://crecimientofetal.cl">crecimientofetal.cl</a> </small></li>
+                                <li><small>Aplicación para smartphone Android e iOS. <a href="https://play.google.com/store/apps/details?id=cl.wetrust.calculadorecografico">calculador ecográfico</a></small></li>
+                            </ul>
+                            <p class="text-justify mb-0"><small><strong>Proyecto a realizar, evaluación postnatal del crecimiento intrauterino</strong></small></p>
+                            <ul>
+                                <li><small>Curvas de peso customizadas, valorar efecto modulador de variables biológicas materno/fetales en la categorización del peso al nacer.  <a href="https://play.google.com/store/apps/details?id=cl.wetrust.ajustepesorn">Ajuste al Peso RN</a></small></li>
+                                <li><small>Validación clínica modelo customizado.</small></li>
+                            </ul>
+                        </div>
+                    </div></div></div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                    <h4>Acerca del autor</h4>
+                    <div class="row">
+                        <div class="col-2">
+                            <img class="d-block mx-auto img-fluid" src="https://servidor.crecimientofetal.cl/img/Dr_Lagos_copia.jpg" alt="logo">
+                        </div>
+                        <div class="col-10">
+                            <p><strong>Dr. Rudecindo Lagos Sandoval</strong></p>
+                            <p class="text-justify mb-0"><small>Médico cirujano, especialista en Ginecología y Obstetricia, docente de pre y postgrado. Profesor adscrito al Departamento de Obstetricia y Ginecología, Facultad de Medicina, Universidad de La Frontera, y Centro de Excelencia <a href="https://www.ciges.cl/index.php/quienes-somos/personal/academico/17-ciges-personas/ciges-academicos/47-dr-rudecindo-lagos-sandoval">CIGES</a>. Unidad de Ultrasonografía Gineco-Obstétrica de hospital base Hernán Hernríquez Aravena ciudad de Temuco, Región de La Arauncanía - Chile. <img src="https://servidor.crecimientofetal.cl/img/chile.jpg" alt="Chile"></small></p>
+                            <p><small>Línea de interés:</small></p>
+                            <ul class="mb-0">
+                                <li><small>Valoración del crecimiento intrauterino mediante exámen ultrasonográfico y flujometría Doppler.</small></li>
+                                <li><small>Valoración clinica del recién nacido. <a href="#postnatal">ver proyecto</a></small></li>
+                            </ul>
+                        </div>
+                    </div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card"><div class="card-body">
+                    <p class="text-center pb-0 mb-0"><small><em>Herramientas informáticas (aplicación web y apps para smartphone), tienen como objetivo principal favorecer cálculo y análisis preliminar de <strong>DATOS</strong> ecográfico obtenidos en el examen. Datos procesados en referencia a estándares internacionales de uso habitual, que de forma protocolizada son convertidos en <strong>INFORMACIÓN</strong> clínica. El uso de esta información es de exclusiva responsabilidad de quien realiza y certifica el examen y dependerá del <strong>JUICIO CLÍNICO</strong> del ecografista.</em></small></p>
+                </div></div></div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-1 text-center"><i id="imagen.oculta.trigger" class="fa fa-video-camera fa-3x" aria-hidden="true"></i></div>
+                <div class="col-3" id="imagen.oculta.uno" style="display: none;"><img class="img-fluid" src="https://crecimientofetal.cl/img/arrow1.png"></div>
+                <div class="col-3" id="imagen.oculta.dos" style="display: none;"><img class="img-fluid" src="https://crecimientofetal.cl/img/arrow2.png"></div>
+                <div class="col-3" id="imagen.oculta.tres" style="display: none;"><img class="img-fluid" src="https://crecimientofetal.cl/img/arrow3.png"></div>
+                <div class="col-2" id="imagen.oculta.cuatro" style="display: none;"><img class="img-fluid h-25" src="https://crecimientofetal.cl/img/emoji.png"></div>
             </div>
         </div>
     </div>
@@ -101,71 +159,6 @@
         </div>
         </div>
     </section>
-    <div class="container d-none" id="about">
-        <ol class="breadcrumb">
-            <li class="ml-auto"><a href="#inicio"><strong>Volver</strong></a></li>
-        </ol>
-        <div class="row p-2">
-            <div class="col-6">
-                <div class="card">
-                    <div class="card-body">
-                <h4>Acerca de la plataforma</h4>
-                <div class="row">
-                    <div class="col">
-                        <p class="text-justify mb-0"><small><strong>Consta de tres módulo para la evaluación del crecimiento intrauterino:</strong></small></p>
-                        <ul class="mb-0">
-                            <li><small>Determinación oportuna de edad gestacional.</small></li>
-                            <li><small>Valoración ecográfica del crecimiento fetal.</small></li>
-                            <li><small>Evaluación de flujometria Doppler materno/fetal.</small></li>
-                        </ul>
-                        <p class="text-justify mb-0"><small><strong>Dispone de dos herramientas informáticas (web y apps) para facilitar calculos:</strong></small></p>
-                        <ul>
-                            <li><small>Plataforma web para evaluación protocolizada. <a href="https://crecimientofetal.cl">crecimientofetal.cl</a> </small></li>
-                            <li><small>Aplicación para smartphone Android e iOS. <a href="https://play.google.com/store/apps/details?id=cl.wetrust.calculadorecografico">calculador ecográfico</a></small></li>
-                        </ul>
-                        <p class="text-justify mb-0"><small><strong>Proyecto a realizar, evaluación postnatal del crecimiento intrauterino</strong></small></p>
-                        <ul>
-                            <li><small>Curvas de peso customizadas, valorar efecto modulador de variables biológicas materno/fetales en la categorización del peso al nacer.  <a href="https://play.google.com/store/apps/details?id=cl.wetrust.ajustepesorn">Ajuste al Peso RN</a></small></li>
-                            <li><small>Validación clínica modelo customizado.</small></li>
-                        </ul>
-                    </div>
-                </div></div></div>
-            </div>
-            <div class="col-6">
-                <div class="card">
-                    <div class="card-body">
-                <h4>Acerca del autor</h4>
-                <div class="row">
-                    <div class="col-2">
-                        <img class="d-block mx-auto img-fluid" src="https://servidor.crecimientofetal.cl/img/Dr_Lagos_copia.jpg" alt="logo">
-                    </div>
-                    <div class="col-10">
-                        <p><strong>Dr. Rudecindo Lagos Sandoval</strong></p>
-                        <p class="text-justify mb-0"><small>Médico cirujano, especialista en Ginecología y Obstetricia, docente de pre y postgrado. Profesor adscrito al Departamento de Obstetricia y Ginecología, Facultad de Medicina, Universidad de La Frontera, y Centro de Excelencia <a href="https://www.ciges.cl/index.php/quienes-somos/personal/academico/17-ciges-personas/ciges-academicos/47-dr-rudecindo-lagos-sandoval">CIGES</a>. Unidad de Ultrasonografía Gineco-Obstétrica de hospital base Hernán Hernríquez Aravena ciudad de Temuco, Región de La Arauncanía - Chile. <img src="https://servidor.crecimientofetal.cl/img/chile.jpg" alt="Chile"></small></p>
-                        <p><small>Línea de interés:</small></p>
-                        <ul class="mb-0">
-                            <li><small>Valoración del crecimiento intrauterino mediante exámen ultrasonográfico y flujometría Doppler.</small></li>
-                            <li><small>Valoración clinica del recién nacido. <a href="#postnatal">ver proyecto</a></small></li>
-                        </ul>
-                    </div>
-                </div></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="card"><div class="card-body">
-                <p class="text-center pb-0 mb-0"><small><em>Herramientas informáticas (aplicación web y apps para smartphone), tienen como objetivo principal favorecer cálculo y análisis preliminar de <strong>DATOS</strong> ecográfico obtenidos en el examen. Datos procesados en referencia a estándares internacionales de uso habitual, que de forma protocolizada son convertidos en <strong>INFORMACIÓN</strong> clínica. El uso de esta información es de exclusiva responsabilidad de quien realiza y certifica el examen y dependerá del <strong>JUICIO CLÍNICO</strong> del ecografista.</em></small></p>
-            </div></div></div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-1 text-center"><i id="imagen.oculta.trigger" class="fa fa-video-camera fa-3x" aria-hidden="true"></i></div>
-            <div class="col-3" id="imagen.oculta.uno" style="display: none;"><img class="img-fluid" src="https://crecimientofetal.cl/img/arrow1.png"></div>
-            <div class="col-3" id="imagen.oculta.dos" style="display: none;"><img class="img-fluid" src="https://crecimientofetal.cl/img/arrow2.png"></div>
-            <div class="col-3" id="imagen.oculta.tres" style="display: none;"><img class="img-fluid" src="https://crecimientofetal.cl/img/arrow3.png"></div>
-            <div class="col-2" id="imagen.oculta.cuatro" style="display: none;"><img class="img-fluid h-25" src="https://crecimientofetal.cl/img/emoji.png"></div>
-        </div>
-    </div>
     <div class="container d-none" id="registro">
         <ol class="breadcrumb">
             <li class="float-right"><a href="#consulta"><strong>Volver</strong></a></li>
