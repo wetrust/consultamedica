@@ -938,7 +938,7 @@ $( document ).ready(function() {
         let paciente = $( '#nombre-paciente').val();
         let idpaciente = $( '#id-paciente').val();
         let motivo = $( '#motivo-examen option:selected').text();
-        let ecografista = document.getElementById("ecografista.copia").value;
+        let ecografista = $( '#ecografista\\.copia option:selected').text();
         let fur = new Date(Date.parse(document.getElementById("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
         let fexamen = new Date(Date.parse(document.getElementById("fee").value));
