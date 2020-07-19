@@ -780,6 +780,12 @@ $( document ).ready(function() {
             InformeString = InformeString.replace(":ARTUTRANGO", $("#respuesta_uterina_promedio_rango").val());
         }
 
+        var LINEA13 = '';
+
+        if (document.getElementById("largo\\.cervical\\.segundo").value < 1) {
+            LINEA13 = "Largo cervical de " + document.getElementById("largo\\.cervical\\.segundo").value + " mm."
+        }
+
         InformeString = InformeString.replace(":PACIENTE", paciente);
         InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
         InformeString = InformeString.replace(":MOTIVO", motivo);
@@ -4862,7 +4868,13 @@ function crearInformeEcoSegTrim2(){
 
 	var comentario = $('#comentarios-eco-dos-inf-dos').val()
 	comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : '';
-	
+    
+    var LINEA13 = '';
+
+    if (document.getElementById("largo\\.cervical\\.segundo").value < 1) {
+        LINEA13 = "Largo cervical de " + document.getElementById("largo\\.cervical\\.segundo").value + " mm."
+    }
+
 	InformeString = InformeString.replace(":PACIENTE", paciente);
 	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
 	InformeString = InformeString.replace(":MOTIVO", motivo);
