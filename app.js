@@ -440,6 +440,15 @@ $( document ).ready(function() {
         }
     });
 
+    $("#larg\\.cerv").on("click", function(){
+        if (this.checked == true){
+            document.getElementById("larg.cerv.div").classList.remove("d-none");
+            document.getElementById("largo.cervical.segundo").focus();
+        }else{
+            document.getElementById("larg.cerv.div").classList.add("d-none");
+        }
+    });
+
     $("#ver\\.ref").on("click", function(){
         if (this.checked == true){
             document.getElementById("ver.ref.div").classList.remove("d-none");
@@ -4868,12 +4877,6 @@ function crearInformeEcoSegTrim2(){
 
 	var comentario = $('#comentarios-eco-dos-inf-dos').val()
 	comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : '';
-    
-    var LINEA13 = '';
-
-    if (document.getElementById("largo.cervical.segundo").value < 1) {
-        LINEA13 = "Largo cervical de " + document.getElementById("largo.cervical.segundo").value + " mm."
-    }
 
 	InformeString = InformeString.replace(":PACIENTE", paciente);
 	InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
