@@ -782,8 +782,8 @@ $( document ).ready(function() {
 
         var LINEA13 = '';
 
-        if (document.getElementById("largo\\.cervical\\.segundo").value < 1) {
-            LINEA13 = "Largo cervical de " + document.getElementById("largo\\.cervical\\.segundo").value + " mm."
+        if (document.getElementById("largo.cervical.segundo").value < 1) {
+            LINEA13 = "Largo cervical de " + document.getElementById("largo.cervical.segundo").value + " mm."
         }
 
         InformeString = InformeString.replace(":PACIENTE", paciente);
