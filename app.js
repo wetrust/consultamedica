@@ -4885,7 +4885,7 @@ function crearInformeEcoSegTrim2(){
     }
 
     if (document.getElementById("larg.cerv").checked == true){
-        InformeString += "<tr> <tdstyle='padding-bottom: 15px !important;'>Largo Cervical</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERV mm</td><td style='text-align:center;padding-bottom: 15px !important;'></td><td style='text-align:center;padding-bottom: 15px !important;'></td></tr>"
+        InformeString += "<tr> <td style='padding-bottom: 15px !important;'>Largo Cervical</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERV mm</td><td style='text-align:center;padding-bottom: 15px !important;'></td><td style='text-align:center;padding-bottom: 15px !important;'></td></tr>"
     
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
     }
