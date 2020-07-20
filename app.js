@@ -4302,6 +4302,7 @@ function pctacm() {
 }
 
 function ajustarProgreso(valor, objeto){
+    valor = (valor == "&gt; 99") ? 99 : valor; // si es mayor a 99
     valor = (isNaN(valor)== true) ? 0 : valor;
 	valor = valor + "%";
 	$("#"+objeto + " > .progress-consulta").css({"width": valor});
