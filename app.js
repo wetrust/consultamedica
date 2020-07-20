@@ -161,6 +161,21 @@ $( document ).ready(function() {
         }
     });
 
+    $("#menu\\.modulo\\.activo\\.seis").on("click", function(){
+        var botones = ["menu.modulo.activo.seis.uno", "menu.modulo.activo.seis.dos","menu.modulo.activo.seis.tres"];
+        
+        if (document.getElementById(botones[0]).classList.contains("d-none")){
+            botones.forEach(function myFunction(value, index, array) {
+                document.getElementById(value).classList.remove("d-none");
+            });
+        }
+        else{
+            botones.forEach(function myFunction(value, index, array) {
+                document.getElementById(value).classList.add("d-none");
+            });
+        }
+    });
+
     $("#menu\\.modulo\\.construccion").on("click", function(){
         var botones = ["menu.modulo.construccion.uno", "menu.modulo.construccion.dos"];
         
@@ -4296,7 +4311,7 @@ function pctacm() {
 				pctCCP = resultado;
 			}
 			$("#ccpPctTxt").val(pctCCP);
-                        $("#ccpRngo").val(c[eg] + " - " + d[eg]);
+            $("#ccpRngo").val(c[eg] + " - " + d[eg]);
 		}
 	}
 }
