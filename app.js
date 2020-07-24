@@ -3875,7 +3875,8 @@ $( document ).ready(function() {
                 chart: { height: 250 },
                 title: {
                     text: 'Ductus Venoso',
-                    x: -20 //center
+                    x: -20, //center
+                    style: { fontSize: '12px' }
                 },
                 plotOptions: {
                     series: {
@@ -3886,6 +3887,12 @@ $( document ).ready(function() {
                     title: { text: 'Valor IP' },
                     tickPositions: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
                 },
+                legend: {
+                    itemStyle: {
+                        fontSize: '10px',
+                        fontWeight:'normal'
+                    }
+                },
                 colors: ['#313131', '#313131', '#313131'],
                 xAxis: {
                     categories: 
@@ -3895,11 +3902,13 @@ $( document ).ready(function() {
                 series: [{
                     type: "line",
                     name: 'Pct. 5',
+                    dashStyle: "Dot",
                     marker: { enabled: false },
                     data: [0.32,0.32,0.32,0.32,0.32,0.32,0.31,0.31,0.31,0.3,0.29,0.28,0.28,0.27,0.26,0.25,0.24,0.23,0.22,0.21,0.2]
                 }, {
                     type: "line",
                     name: 'Pct. 95',
+                    dashStyle: "Dot",
                     marker: { enabled: false },
                     data: [0.83,0.83,0.83,0.83,0.83,0.83,0.82,0.82,0.81,0.81,0.8,0.79,0.78,0.77,0.76,0.75,0.74,0.73,0.72,0.71,0.7]
                 }, {
