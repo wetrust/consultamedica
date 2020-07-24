@@ -532,6 +532,11 @@ $( document ).ready(function() {
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf");
         $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
     });
+
+    $("#pdfbarcelona").on("click", function(){
+        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf");
+        $("#pdfviebox").children("ol").children().children().attr("href","#ecoDoppler");
+    });
 });
 
 //controlador de input clones
