@@ -3874,7 +3874,7 @@ $( document ).ready(function() {
             graficoCuatro = Highcharts.chart('graficoIpCCPView', {
                 chart: { height: 250 },
                 title: {
-                    text: 'Ductus Venoso',
+                    text: 'IP Ductus Venoso',
                     x: -20, //center
                     style: { fontSize: '12px' }
                 },
