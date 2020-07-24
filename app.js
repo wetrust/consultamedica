@@ -3867,75 +3867,144 @@ $( document ).ready(function() {
              }]
         });
         //$('#graficoIpCCPView').highcharts({
-        graficoCuatro = Highcharts.chart('graficoIpCCPView', {
-            chart: { height: 250 },
-            title: {
-                text: 'IP de CCP (Indice ACM / AU) **',
-                x: -20,
-                style: { fontSize: '12px' }
-            },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false
-                }
-            },
-            yAxis: {
-                title: { text: 'Valor IP' },
-                tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
-            },
-            legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight:'normal'
-                }
-            },
-            colors: ['#313131', '#313131', '#313131'],
-            xAxis: {
-                categories:['20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
-            },
-            credits: { enabled: false },
-            series: [{
-                 type: "line",
-                 name: 'Pct. 5',
-                 dashStyle: "Dot",
-                 marker: { enabled: false },
-                 data: [0.78,0.87,0.95,1.02,1.09,1.15,1.2,1.24,1.28,1.31,1.33,1.35,1.36,1.36,1.36,1.34,1.32,1.3,1.26,1.22,1.18]
-             }, {
-                 type: "line",
-                 name: 'Pct. 95',
-                 dashStyle: "Dot",
-                 marker: { enabled: false },
-                 data: [1.68,1.88,2.06,2.22,2.36,2.49,2.6,2.7,2.78,2.84,2.89,2.92,2.93,2.93,2.91,2.87,2.82,2.75,2.67,2.57,2.45]
-             }, {
-                 type: "line",
-                 name: 'Cuociente CP.',
-                 dashStyle: "Dot",
-                 marker: { symbol: 'square' },
-                 lineWidth: 0,
-                 data: (function () {
-                     // generate an array of random data
-                     var data = [];
-                     var edadGest = document.getElementById("semanas").value;
-    
-                     for (i = 20; i < edadGest; i++) {
-                         data.push({
-                             y: 0,
-                         });
-                     }
-    
-                     var ccp = $("#ccp").val();
-                     ccp = ccp.toString();
-                     ccp = ccp.replace(",", ".");
-                     ccp = parseFloat(ccp);
-    
-                     data.push({y: ccp});
-                     for (i = edadGest + 1; i <= 38; i++) {
-                         data.push({y: 0});
-                     }
-                     return data;
-                 }())
-             }]
-        });
+
+        var dvp = document.getElementById("dv").value;
+
+        if (dvp != ""){
+            graficoCuatro = Highcharts.chart('graficoIpCCPView', {
+                chart: { height: 250 },
+                title: {
+                    text: 'Ductus Venoso',
+                    x: -20 //center
+                },
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
+                    }
+                },
+                yAxis: {
+                    title: { text: 'Valor IP' },
+                    tickPositions: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+                },
+                colors: ['#313131', '#313131', '#313131'],
+                xAxis: {
+                    categories: 
+                    ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+                },
+                credits: { enabled: false },
+                series: [{
+                    type: "line",
+                    name: 'Pct. 5',
+                    marker: { enabled: false },
+                    data: [0.32,0.32,0.32,0.32,0.32,0.32,0.31,0.31,0.31,0.3,0.29,0.28,0.28,0.27,0.26,0.25,0.24,0.23,0.22,0.21,0.2]
+                }, {
+                    type: "line",
+                    name: 'Pct. 95',
+                    marker: { enabled: false },
+                    data: [0.83,0.83,0.83,0.83,0.83,0.83,0.82,0.82,0.81,0.81,0.8,0.79,0.78,0.77,0.76,0.75,0.74,0.73,0.72,0.71,0.7]
+                }, {
+                    type: "line",
+                        name: 'Ductus Venoso',
+                        dashStyle: "Dot",
+                        marker: { symbol: 'square' },
+                        lineWidth: 0,
+                    data: (function () {
+                            var data = [];
+                            var edadGest = document.getElementById("semanas").value;
+        
+                            for (i = 20; i < edadGest; i ++ ) {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                            var dv = $("#dv").val();
+                            dv = dv.toString();
+                            dv = dv.replace(",", ".");
+                            dv = parseFloat(dv);
+                            
+                            data.push({
+                                    y: dv,
+                                });
+                            for (i = edadGest +1; i <= 39; i ++ ) {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                            return data;
+                        }())
+                }]
+            });
+        }else{
+            graficoCuatro = Highcharts.chart('graficoIpCCPView', {
+                chart: { height: 250 },
+                title: {
+                    text: 'IP de CCP (Indice ACM / AU) **',
+                    x: -20,
+                    style: { fontSize: '12px' }
+                },
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
+                    }
+                },
+                yAxis: {
+                    title: { text: 'Valor IP' },
+                    tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
+                },
+                legend: {
+                    itemStyle: {
+                        fontSize: '10px',
+                        fontWeight:'normal'
+                    }
+                },
+                colors: ['#313131', '#313131', '#313131'],
+                xAxis: {
+                    categories:['20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+                },
+                credits: { enabled: false },
+                series: [{
+                     type: "line",
+                     name: 'Pct. 5',
+                     dashStyle: "Dot",
+                     marker: { enabled: false },
+                     data: [0.78,0.87,0.95,1.02,1.09,1.15,1.2,1.24,1.28,1.31,1.33,1.35,1.36,1.36,1.36,1.34,1.32,1.3,1.26,1.22,1.18]
+                 }, {
+                     type: "line",
+                     name: 'Pct. 95',
+                     dashStyle: "Dot",
+                     marker: { enabled: false },
+                     data: [1.68,1.88,2.06,2.22,2.36,2.49,2.6,2.7,2.78,2.84,2.89,2.92,2.93,2.93,2.91,2.87,2.82,2.75,2.67,2.57,2.45]
+                 }, {
+                     type: "line",
+                     name: 'Cuociente CP.',
+                     dashStyle: "Dot",
+                     marker: { symbol: 'square' },
+                     lineWidth: 0,
+                     data: (function () {
+                         // generate an array of random data
+                         var data = [];
+                         var edadGest = document.getElementById("semanas").value;
+        
+                         for (i = 20; i < edadGest; i++) {
+                             data.push({
+                                 y: 0,
+                             });
+                         }
+        
+                         var ccp = $("#ccp").val();
+                         ccp = ccp.toString();
+                         ccp = ccp.replace(",", ".");
+                         ccp = parseFloat(ccp);
+        
+                         data.push({y: ccp});
+                         for (i = edadGest + 1; i <= 38; i++) {
+                             data.push({y: 0});
+                         }
+                         return data;
+                     }())
+                 }]
+            });
+        }
     });
 });
 
