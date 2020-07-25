@@ -2017,11 +2017,7 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-12">
-                        <div class="card mt-3">
-                            <div class="card-body" style="background-color:#eceeef;">
-                                <p><small>Cuando fue establecida fecha probable de parto por ecografía temprana confiable, las ecografías posteriores NO DEBERÍAN utilizarse para recalcular edad gestacional.</small></p>
-                            </div>
-                        </div>
+                        <p><small>Cuando fue establecida fecha probable de parto por ecografía temprana confiable, las ecografías posteriores NO DEBERÍAN utilizarse para recalcular edad gestacional.</small></p>
                         <img src="img/Snoopy4.png" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
                         <img src="img/snoopy.png" class="w-50 mt-2 d-block mx-auto" alt="snoopy">
                     </div>
@@ -2422,6 +2418,9 @@
             <li class="nav-item">
                 <a class="nav-link bg-gris text-white" data-toggle="tab" href="#ecografistaConfig" role="tab">Profesional Examinador</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link bg-gris text-white" data-toggle="tab" href="#correosConfig" role="tab">Correos habituales</a>
+            </li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade show active" id="membreteConfig" role="tabpanel">
@@ -2568,6 +2567,54 @@
                             <div class="form-group">
                                 <label>Nacionalidad</label>
                                 <input type="text" class="form-control" id="nacionalidadInput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="correosConfig" role="tabpanel">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="btn-group mb-3" role="group">
+                            <button type="button" class="btn btn-primary" id="nuevoCorreoConfig">Nuevo</button>
+                            <button type="button" class="btn btn-primary d-none" id="guardarCorreoConfig"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
+                            <button type="button" class="btn btn-secondary d-none" id="cancelarCorreoConfig"> Cancelar</button>
+                            <button type="button" class="btn btn-secondary d-none" id="eliminarCorreoConfig"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</button>
+                        </div>
+                        <div class="tabla">
+                            <table class="table table-hover table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th style="width: 300px;">#</th>
+                                        <th>Nombre</th>
+                                        <th>Profesion</th>
+                                        <th>Ciudad</th>
+                                        <th>Correo</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="CorreoConfigTable">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="formulario d-none">
+                            <div class="form-group">
+                                <h5>Nuevo Correo</h5>
+                            </div>
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control" id="nombreCorreoInput">
+                            </div>
+                            <div class="form-group">
+                                <label>Profesion</label>
+                                <input type="text" class="form-control" id="profesionCorreoInput">
+                            </div>
+                            <div class="form-group">
+                                <label>Ciudad</label>
+                                <input type="text" class="form-control" id="ciudadCorreoInput">
+                            </div>
+                            <div class="form-group">
+                                <label>Correo</label>
+                                <input type="email" class="form-control" id="correoCorreoInput">
                             </div>
                         </div>
                     </div>

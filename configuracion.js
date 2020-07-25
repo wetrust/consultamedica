@@ -8,7 +8,7 @@ function haveDatabase() {
 function checkIntegrity() {
     let db = JSON.parse(localStorage["configuracion"]);
 
-    let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete'];
+    let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete', 'correos'];
 
     for (var j = 0; j < tables.length; j++) {
         let table = false;
@@ -28,7 +28,7 @@ function checkIntegrity() {
 }
 
 function makeDatabase() {
-    var db = '{"nacionalidad": [], "MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":""}';
+    var db = '{"nacionalidad": [], "MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":"", "correos":[]}';
     localStorage["configuracion"] = db;
 }
 
@@ -119,6 +119,21 @@ function loadDatabase() {
         });
     }
     $("#membrete").val(configuracion.membrete);
+
+    $('#CorreoConfigTable').empty();
+    if (configuracion.correos.length > 0) {
+
+        $.each(configuracion.correos, function(i, item) {
+            var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td><td>' + item.profesion + '</td><td>' + item.ciudad + '</td><td>' + item.correo + '</td></tr>';
+            $('#CorreoConfigTable').append(fila);
+        });
+
+        $('#eliminarCorreoConfig').removeClass("d-none");
+
+        $('#CorreoConfigTable tr').on('click', function() {
+            activateTr(this);
+        });
+    }
 }
 
 function saveMotivoExamenLocalStorage() {
@@ -200,6 +215,32 @@ function savePatologiaObstetricaExamenLocalStorage() {
             configuracion.PatologiaObstetrica.push(aRR);
             $('#eliminarPatologiaObstetricaConfig').removeClass("d-none");
             $('#PatologiaObstetricaInput').val("");
+            localStorage["configuracion"] = JSON.stringify(configuracion);
+            loadDatabase();
+        }
+    }
+}
+
+function saveCorreoConfigLocalStorage(){
+    if (window.localStorage) {
+        if (localStorage.configuracion != null) {
+            var configuracion = JSON.parse(localStorage["configuracion"]);
+
+            $('#CorreoConfigTable').html("");
+
+            var aRR = {id: 0, nombre: "Doe", profesion: "Doe", ciudad: "Doe", correo: "Doe"};
+            aRR["id"] = configuracion.correos.length + 1;
+            aRR["nombre"] = $('#nombreCorreoInput').val();
+            aRR["profesion"] = $('#profesionCorreoInput').val();
+            aRR["ciudad"] = $('#ciudadCorreoInput').val();
+            aRR["correo"] = $('#correoCorreoInput').val();
+
+            configuracion.correos.push(aRR);
+            $('#eliminarCorreoConfig').removeClass("d-none");
+            $('#nombreCorreoInput').val("");
+            $('#profesionCorreoInput').val("");
+            $('#ciudadCorreoInput').val("");
+            $('#correoCorreoInput').val("");
             localStorage["configuracion"] = JSON.stringify(configuracion);
             loadDatabase();
         }
@@ -447,5 +488,65 @@ $(document).ready(function() {
 		configuracion.membrete = membrete;
 		
 		localStorage["configuracion"] = JSON.stringify(configuracion);
+    });
+    
+
+    $('#nuevoCorreoConfig').on('click', function() {
+        $('#correosConfig .tabla').addClass("d-none");
+        $('#nuevoCorreoConfig').addClass("d-none");
+        $('#guardarCorreoConfig').removeClass("d-none");
+        $('#cancelarCorreoConfig').removeClass("d-none");
+        $('#correosConfig .formulario').removeClass("d-none");
+    });
+
+    $('#cancelarCorreoConfig').on('click', function() {
+        $("#correosConfig .tabla").removeClass("d-none");
+        $('#nuevoCorreoConfig').removeClass("d-none");
+        $('#guardarCorreoConfig').addClass("d-none");
+        $('#cancelarCorreoConfig').addClass("d-none");
+        $("#correosConfig .formulario").addClass("d-none");
+    });
+
+    $('#guardarCorreoConfig').on('click', function() {
+        saveCorreoConfigLocalStorage();
+        $("#correosConfig .tabla").removeClass("d-none");
+        $('#nuevoCorreoConfig').removeClass("d-none");
+        $('#guardarCorreoConfig').addClass("d-none");
+        $('#cancelarCorreoConfig').addClass("d-none");
+        $("#correosConfig .formulario").addClass("d-none");
+    });
+
+    $('#eliminarCorreoConfig').on('click', function() {
+        var getElement = false;
+        var contador = 0
+        $.each($('#CorreoConfigTable').children(), function(i, val) {
+            if ($(val).hasClass('table-active') == true) {
+                getElement = true;
+                var nombre = $(val).children('td').html();
+                var configuracion = JSON.parse(localStorage["configuracion"]);
+
+                //construir un nuevo array de objetos
+                var correos = [];
+                $.each(configuracion.correos, function(i, item) {
+                    if (item.nombre != nombre) {
+                        var aRR = {id: 0, nombre: "Doe"};
+                        aRR["id"] = contador + 1;
+                        aRR["nombre"] = item.nombre;
+
+                        correos.push(aRR);
+                        contador++;
+                    }
+                });
+
+                configuracion.correos = correos;
+                localStorage["configuracion"] = JSON.stringify(configuracion);
+            }
+        });
+
+        if (getElement == false) {
+            window.alert("haga click sobre un elemento para eliminar");
+        } else {
+            loadDatabase();
+        }
 	});
 });
