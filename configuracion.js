@@ -124,7 +124,7 @@ function loadDatabase() {
     if (configuracion.correos.length > 0) {
 
         $.each(configuracion.correos, function(i, item) {
-            var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td><td>' + item.profesion + '</td><td>' + item.ciudad + '</td><td>' + item.correo + '</td></tr>';
+            var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td><td>' + item.profesion + '</td><td>' + item.ciudad + '</td><td>' + item.correo + '</td><td>' + item.telefono +'</td></tr>';
             $('#CorreoConfigTable').append(fila);
         });
 
@@ -228,12 +228,13 @@ function saveCorreoConfigLocalStorage(){
 
             $('#CorreoConfigTable').html("");
 
-            var aRR = {id: 0, nombre: "Doe", profesion: "Doe", ciudad: "Doe", correo: "Doe"};
+            var aRR = {id: 0, nombre: "Doe", profesion: "Doe", ciudad: "Doe", correo: "Doe", telefono: 1234};
             aRR["id"] = configuracion.correos.length + 1;
             aRR["nombre"] = $('#nombreCorreoInput').val();
             aRR["profesion"] = $('#profesionCorreoInput').val();
             aRR["ciudad"] = $('#ciudadCorreoInput').val();
             aRR["correo"] = $('#correoCorreoInput').val();
+            aRR["telefono"] = +$('#telefonoCorreoInput').val();
 
             configuracion.correos.push(aRR);
             $('#eliminarCorreoConfig').removeClass("d-none");
@@ -241,6 +242,7 @@ function saveCorreoConfigLocalStorage(){
             $('#profesionCorreoInput').val("");
             $('#ciudadCorreoInput').val("");
             $('#correoCorreoInput').val("");
+            $('#telefonoCorreoInput').val("0");
             localStorage["configuracion"] = JSON.stringify(configuracion);
             loadDatabase();
         }
