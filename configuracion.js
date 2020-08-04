@@ -8,7 +8,7 @@ function haveDatabase() {
 function checkIntegrity() {
     let db = JSON.parse(localStorage["configuracion"]);
 
-    let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete', 'correos'];
+    let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete', 'correos', 'licencia'];
 
     for (var j = 0; j < tables.length; j++) {
         let table = false;
@@ -28,7 +28,7 @@ function checkIntegrity() {
 }
 
 function makeDatabase() {
-    var db = '{"nacionalidad": [], "MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":"", "correos":[]}';
+    var db = '{"nacionalidad": [], "MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":"", "correos":[], "licencia": ""}';
     localStorage["configuracion"] = db;
 }
 
@@ -120,6 +120,8 @@ function loadDatabase() {
     }
     $("#membrete").val(configuracion.membrete);
 
+    $("#licencia").val(configuracion.licencia);
+
     $('#CorreoConfigTable').empty();
     if (configuracion.correos.length > 0) {
 
@@ -153,6 +155,20 @@ function saveMotivoExamenLocalStorage() {
             $('#motivoInput').val("");
             localStorage["configuracion"] = JSON.stringify(configuracion);
             loadDatabase();
+        }
+    }
+}
+
+function saveLicenciaLocalStorage() {
+
+    if (window.localStorage) {
+        if (localStorage.configuracion != null) {
+            event.preventDefault();
+            var configuracion = JSON.parse(localStorage["configuracion"]);
+            var licencia = $('#licencia').val();
+            configuracion.licencia = licencia;
+                
+            localStorage["configuracion"] = JSON.stringify(configuracion);
         }
     }
 }
@@ -483,13 +499,17 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#saveMebrete").on("click", function(event){
+    $("#saveMebrete").on("click", function(event){
 		event.preventDefault();
 		var configuracion = JSON.parse(localStorage["configuracion"]);
 		var membrete = $('#membrete').val();
 		configuracion.membrete = membrete;
 		
 		localStorage["configuracion"] = JSON.stringify(configuracion);
+    });
+
+	$("#saveLicencia").on("click", function(event){
+        saveLicenciaLocalStorage();
     });
     
 
