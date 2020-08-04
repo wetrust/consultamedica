@@ -739,12 +739,12 @@ $( document ).ready(function() {
 
             _email = uuidv4();
             _imprimir = uuidv4();
-            let _contenido = '<div class="row"><div class="col-6"><button type="button" id='+_email+'>Enviar por E-Mail</button></div><div class="col-6"><button type="button" id='+_imprimir+'>Imprimir</button></div></div>'
+            let _contenido = '<div class="row"><div class="col-6"><button type="button" id='+_email+' class="btn btn-primary">Enviar por E-Mail</button></div><div class="col-6"><button type="button" id='+_imprimir+' class="btn btn-primary">Imprimir</button></div></div>'
 
             document.getElementById(_modal.contenido).innerHTML = _contenido;
             document.getElementById(_modal.id).children[0].classList.remove("modal-lg");
 
-            $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+            $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
             $('#'+_email).on("click", function(){
                 var InformeString = InfEcoObsSegTrim1();
@@ -754,6 +754,24 @@ $( document ).ready(function() {
                 data.append("informe" , 2);
                 data.append("data" , InformeString);
                 var xhr = new XMLHttpRequest();
+
+                xhr.onload = function(){
+                    if (this.status == 200) {
+                        blob = new Blob([xhr.response], { type: 'application/pdf' });
+            
+                        var link = document.createElement('a');
+            
+                        link.href = window.URL.createObjectURL(blob);
+                        link.download = "document.pdf";
+            
+                        link.click();
+            
+                        //alert("Nice!");
+                    } else {
+                        //alert("Error. Estatus " + this.status + ".");
+                    }
+                };
+
                 xhr.open( 'post', 'https://servidor.crecimientofetal.cl/crecimiento/informe', true ); //Post to php Script to save to server
                 xhr.send(data);
             });
