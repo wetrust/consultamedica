@@ -412,6 +412,44 @@ $(document).ready(function() {
         $("#nacionalidadConfig .formulario").addClass("d-none");
     });
 
+    $('#eliminarNacionalidadConfig').on('click', function() {
+        var getElement = false;
+        var contador = 0
+        $.each($('#NacionalidadConfigTable').children(), function(i, val) {
+            if ($(val).hasClass('table-active') == true) {
+                getElement = true;
+                var nombre = $(val).children('td').html();
+                var configuracion = JSON.parse(localStorage["configuracion"]);
+
+                //construir un nuevo array de objetos
+                var nacionalidad = [];
+                $.each(configuracion.nacionalidad, function(i, item) {
+                    if (item.nombre != nombre) {
+                        var aRR = {id: 0, nombre: "Doe"};
+                        aRR["id"] = contador + 1;
+                        aRR["nombre"] = item.nombre;
+
+                        nacionalidad.push(aRR);
+                        contador++;
+                    }
+                });
+
+                configuracion.nacionalidad = nacionalidad;
+                localStorage["configuracion"] = JSON.stringify(configuracion);
+
+                if (nacionalidad.length == 0){
+                    $('#eliminarNacionalidadConfig').addClass("d-none");
+                }
+            }
+        });
+
+        if (getElement == false) {
+            window.alert("haga click sobre un elemento para eliminar");
+        } else {
+            loadDatabase();
+        }
+    });
+
     $('#guardarNacionalidadConfig').on('click', function() {
         saveNacionalidadConfigLocalStorage();
         $("#nacionalidadConfig .tabla").removeClass("d-none");
