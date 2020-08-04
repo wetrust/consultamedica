@@ -537,6 +537,14 @@ $( document ).ready(function() {
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf");
         $("#pdfviebox").children("ol").children().children().attr("href","#ecoDoppler");
     });
+
+    $('#ev-morfo').on('change', function() {
+        if ($(this).val() == "Descripcion general detallando distintos segmentos") {
+            $("#comentarios-anatomia-informe-eg-texto").val("Evaluación anatómica general de aspecto normal; cráneo y estructura internas de aspecto normal, cara cuello normal, labio superior integro, Tórax y abdomen de aspecto normal, corazón cuatro cámaras, tractos de salida de aspecto normal, cámara gástrica y vejiga visibles, riñón derecho e izquierdo de aspecto normal, pared abdominal integra, columna visible en toda su extensión, extremidades con movilidad y tono de aspecto normal, sexo fetal masculino.");
+        } else {
+            $("#comentarios-anatomia-informe-eg-texto").val('');
+        }
+    });
 });
 
 //controlador de input clones
