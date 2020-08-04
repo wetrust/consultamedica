@@ -728,157 +728,41 @@ $( document ).ready(function() {
     });
 
     $("#modalPreInfEcoObsSegTrim1").on("click", function() {
-        var actCard;
-        var movCorp;
-    
-        elem=document.getElementsByName('accard');
-        for(i=0;i<elem.length;i++)
-                if (elem[i].checked) {
-                        actCard = elem[i].value;
-                }
-    
-        elem=document.getElementsByName('movfet');
-        for(i=0;i<elem.length;i++)
-                if (elem[i].checked) {
-                        movCorp = elem[i].value;
-                }
-
-        actCard = (actCard == 0) ? "sin actividad cardiaca": "con actividad cardiaca";
-        movCorp = (movCorp == 0) ? "sin movimientos corporales": "con movimientos corporales";
-    
-        var linea1 = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
-        var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
-
-        var anatomiaFetal = $('#ev-morfo').val();
-        var anatomiaFetalString = "";
-
-        for(i=0;i<anatomiaFetal.length;i++){
-            anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i];
-            anatomiaFetalString = anatomiaFetalString + " <br>";
-        }
-
-        var linea3 = "<strong>Anatomía fetal ***</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
-        var linea4 = "<strong>Placenta</strong> " + document.getElementById("grado-placenta").value + ", inserción " + document.getElementById("incersion").value + ", de ubicación " + document.getElementById("ubicacion").value + ".";
-        var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
-        var linea6 = "<strong>Líquido amniótico **</strong>" + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
-
-        let fur = new Date(Date.parse(document.getElementById("fum").value));
-        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-        let fexamen = new Date(Date.parse(document.getElementById("fee").value));
-        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
-        let fpp = new Date(Date.parse(document.getElementById("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
-        let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
-
-        var dbp = document.getElementById("dbp").value + ' mm';
-        var dbpPct = document.getElementById("dbpPct").value;
-        var dbpRango = '( ' + $( '#dbpRango').val() + ' )';
-        var dof = $( '#dof').val() + ' mm';
-        var dofPct = document.getElementById("dofPctRpt").value;
-        var dofRango = '( ' + $( '#dofRango').val() + ' )';
-        var cc = document.getElementById("cc").value + ' mm';
-        var ccPct = $( '#ccPctRpt').val();
-        var ccRango = '( ' + $( '#ccRango').val() + ' )';
-        var ca = document.getElementById("ca").value + ' mm';
-        var caPct = document.getElementById("caPctRpt").value;
-        var caRango = '( ' + $( '#caRango').val() + ' )';
-        var lf = $( '#lf').val() + ' mm';
-        var lfPct = document.getElementById("lfPctRpt").value;
-        var lfRango = '( ' + $( '#lfRango').val() + ' )';
-
-
-        var ccca = document.getElementById("ccca").value;
-        var cccaPctVal = document.getElementById("cccaPctVal").value;
-        var cccaRango = '( ' + $( '#cccaRango').val() + ' )';
-        var pfe = '<strong>' + $( '#pfe').val() + ' Gr.' + '</strong>';
-        var percentilPeso = document.getElementById("pfePctRpt").value;
-        percentilPeso = percentilPeso.replace('&lt;','<').replace('&gt;', '>');
-        var pfePct = '<strong>' + percentilPeso + '</strong>';
-        var pfeRango = '<strong>' + $( '#pfeRango').val() + ' *</strong>';
-        var ic = document.getElementById("dof-dbp").value;
-        var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-
-        var paciente = document.getElementById("nombre-paciente").value;
-        var idpaciente = document.getElementById("id-paciente").value;
-        var motivo = $( '#motivo-examen option:selected').text();
-        var ecografista = $( '#ecografista option:selected').text();
-
-        var comentario = document.getElementById("comentarios-eco-dos-inf-dos").value;
-        comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
-
-        var edadmaterna = $( "select[name='edad_materna']").val();
-        var InformeString = "<div class='container'> <h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p><strong>FUM: </strong>:FUR <br><strong>Ege: </strong>:EG semanas <br><strong>FPP: </strong>:FPP</p></div><div class='container'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p style='margin-bottom:0;'>:LINEA1 <br>:LINEA2</p><p style='margin-bottom:0; word-wrap: break-word;'>:LINEA3</p><p>:LINEA4 <br>:LINEA5 <br>:LINEA6</p><p></p><p></p></div><div class='container'> <table class='table'> <tbody> <tr> <th style='color:#045dab;'>BIOMETRÍA FETAL</th> <th style='text-align:center;'>Valor observado</th> <th class='text-center'>Pct de Crecimiento</th> <th class='text-center'>Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style='text-align:center;'>:DBP</td><td class='text-center'>:DBPPCT</td><td class='text-center'>:DBPRANGO</td></tr><tr> <td>DOF (Jeanty):</td><td style='text-align:center;'>:DOF</td><td class='text-center'>:DOFPCT</td><td class='text-center'>:DOFRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style='text-align:center;'>:CC</td><td class='text-center'>:CCPCT</td><td class='text-center'>:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style='text-align:center;'>:CA</td><td class='text-center'>:CAPCT</td><td class='text-center'>:CARANGO</td></tr><tr> <td style='padding-bottom: 15px !important;'>LF (Hadlock):</td><td style='text-align:center;padding-bottom: 15px !important;'>:LF</td><td style='text-align:center;padding-bottom: 15px !important;'>:LFPCT</td><td style='text-align:center;padding-bottom: 15px !important;'>:LFRANGO</td></tr><tr> <td style='border-top:1px dashed #045dab;'><strong>Peso Fetal Estimado según fórmula de Hadlock 3(CC-CA-LF)</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:PFE</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:PFEPCT</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:PFERANGO</strong> </td></tr><tr> <td style='border-top:1px dashed #045dab;'>Relación CC / CA (Hadlock)</td><td class='text-center' style='border-top:1px dashed #045dab;'>:CCCA</td><td class='text-center' style='border-top:1px dashed #045dab;'>:CCCAPCTVAL</td><td class='text-center' style='border-top:1px dashed #045dab;'>:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style='text-align:center;'>:IC</td><td></td><td class='text-center'>( 70% - 86% )</td></tr>";
-
-        var contadorOpcional = 0;
-        if (document.getElementById("art.ut").checked == true){
-            InformeString += "<tr> <td>IP Promedio Arterias Uterinas</td><td style='text-align:center;'>:ARTUT</td><td class='text-center' style='border-top:1px dashed #045dab;'>:ARTUTPCTVAL</td><td class='text-center' style='border-top:1px dashed #045dab;'>:ARTUTRANGO</td></tr>"
         
-            InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
-            InformeString = InformeString.replace(":ARTUTPCTVAL", $("#respuesta_uterina_promedio_percentil").html());
-            InformeString = InformeString.replace(":ARTUTRANGO", $("#respuesta_uterina_promedio_rango").val());
-            contadorOpcional++;
+        if ($("#licencia").val() != ""){
+            let _modal = modal();
+
+            document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+            document.getElementById(_modal.titulo).innerHTML = "Exportar a ...";
+            document.getElementById(_modal.titulo).classList.add("mx-auto");
+            document.getElementById(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
+
+            _email = uuidv4();
+            _imprimir = uuidv4();
+            let _contenido = '<div class="row"><div class="col-6"><button type="button" id='+_email+'>Enviar por E-Mail</button></div><div class="col-6"><button type="button" id='+_imprimir+'>Imprimir</button></div></div>'
+
+            document.getElementById(_modal.contenido).innerHTML = _contenido;
+            document.getElementById(_modal.id).children[0].classList.remove("modal-lg");
+
+            $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+            $('#'+_email).on("click", function(){
+                var InformeString = InfEcoObsSegTrim1();
+                
+                var data = new FormData();
+                data.append("licencia" , "");
+                data.append("informe" , 2);
+                data.append("data" , InformeString);
+                var xhr = new XMLHttpRequest();
+                xhr.open( 'post', 'https://servidor.crecimientofetal.cl/crecimiento/informe', true ); //Post to php Script to save to server
+                xhr.send(data);
+            });
+
+            $('#'+_imprimir).on("click", function(){
+                var InformeString = InfEcoObsSegTrim1();
+                imprInforme(InformeString);
+            });
         }
-
-        if (document.getElementById("larg.cerv").checked == true){
-            InformeString += "<tr> <td>Largo Cervical</td><td style='text-align:center;'>:LARGCERV mm</td><td class='text-center' style='border-top:1px dashed #045dab;'></td><td class='text-center' style='border-top:1px dashed #045dab;'></td></tr>"
-        
-            InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
-            contadorOpcional++;
-        }
-
-        if (contadorOpcional == 1){
-            InformeString += "<tr> <td></td><td></td><td></td><td></td>";
-        }
-
-        InformeString += "</tbody> </table></div><div class='container'> <p style='margin-bottom;0px;padding-bottom:0px;margin-bottom:0px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style='max-width: 700px;text-align: justify;margin-top:0px;padding-top:0px;'>:COMENTARIO</p></div><div class='container'> <p class='text-right top40' style='margin-right:100px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='margin-bottom:0;'>* Evaluación de crecimiento fetal (Gráfica), según referencia propuesta por Hadlock y col. Radiology 181: 129 - 133; 1991 (Normalidad Pct 10 a 90) <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 <br><strong>*** Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015</strong> <br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf</p><p style='margin-bottom:0 !important;' class='pie-pagina-dos'>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>";
-
-        InformeString = InformeString.replace(":PACIENTE", paciente);
-        InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
-        InformeString = InformeString.replace(":MOTIVO", motivo);
-        InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
-        InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
-    
-        InformeString = InformeString.replace(":FUR", fur);
-        InformeString = InformeString.replace(":FEXAMEN", fexamen);
-        InformeString = InformeString.replace(":EG", eg);
-        InformeString = InformeString.replace(":FPP", fpp);
-        InformeString = InformeString.replace(":DBP", dbp);
-        InformeString = InformeString.replace(":DBPPCT", dbpPct);
-        InformeString = InformeString.replace(":DBPRANGO", dbpRango);
-        InformeString = InformeString.replace(":DOF", dof);
-        InformeString = InformeString.replace(":DOFPCT", dofPct);
-        InformeString = InformeString.replace(":DOFRANGO", dofRango);
-        InformeString = InformeString.replace(":CC", cc);
-        InformeString = InformeString.replace(":CCPCT", ccPct);
-        InformeString = InformeString.replace(":CCRANGO", ccRango);
-        InformeString = InformeString.replace(":CA", ca);
-        InformeString = InformeString.replace(":CAPCT", caPct);
-        InformeString = InformeString.replace(":CARANGO", caRango);
-        InformeString = InformeString.replace(":CCCA", ccca);
-        InformeString = InformeString.replace(":CCCAPCTVAL", cccaPctVal);
-        InformeString = InformeString.replace(":CCCARANGO", cccaRango);
-        InformeString = InformeString.replace(":LF", lf);
-        InformeString = InformeString.replace(":LFPCT", lfPct);
-        InformeString = InformeString.replace(":LFRANGO", lfRango);
-        InformeString = InformeString.replace(":PFE", pfe);
-        InformeString = InformeString.replace(":PFEPCT", pfePct);
-        InformeString = InformeString.replace(":PFERANGO", pfeRango);
-        InformeString = InformeString.replace(":IC", ic);
-    
-        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
-        
-        InformeString = InformeString.replace(":DATEINFORME", dateInf);
-        
-        InformeString = InformeString.replace(":LINEA1", linea1);
-        InformeString = InformeString.replace(":LINEA2", linea2);
-        InformeString = InformeString.replace(":LINEA3", linea3);
-        InformeString = InformeString.replace(":LINEA4", linea4);
-        InformeString = InformeString.replace(":LINEA5", linea5);
-        InformeString = InformeString.replace(":LINEA6", linea6);
-        InformeString = InformeString.replace(":COMENTARIO", comentario);
-        InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
-    
-        imprInforme(InformeString);
     });
 
     $("#modalPreInfEcoDoppler").on("click", function(){
@@ -4069,6 +3953,160 @@ $(window).on('hashchange', function(){
     }
 });
 
+function InfEcoObsSegTrim1(){
+    var actCard;
+    var movCorp;
+
+    elem=document.getElementsByName('accard');
+    for(i=0;i<elem.length;i++)
+            if (elem[i].checked) {
+                    actCard = elem[i].value;
+            }
+
+    elem=document.getElementsByName('movfet');
+    for(i=0;i<elem.length;i++)
+            if (elem[i].checked) {
+                    movCorp = elem[i].value;
+            }
+
+    actCard = (actCard == 0) ? "sin actividad cardiaca": "con actividad cardiaca";
+    movCorp = (movCorp == 0) ? "sin movimientos corporales": "con movimientos corporales";
+
+    var linea1 = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
+    var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
+
+    var anatomiaFetal = $('#ev-morfo').val();
+    var anatomiaFetalString = "";
+
+    for(i=0;i<anatomiaFetal.length;i++){
+        anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i];
+        anatomiaFetalString = anatomiaFetalString + " <br>";
+    }
+
+    var linea3 = "<strong>Anatomía fetal ***</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
+    var linea4 = "<strong>Placenta</strong> " + document.getElementById("grado-placenta").value + ", inserción " + document.getElementById("incersion").value + ", de ubicación " + document.getElementById("ubicacion").value + ".";
+    var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
+    var linea6 = "<strong>Líquido amniótico **</strong>" + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
+
+    let fur = new Date(Date.parse(document.getElementById("fum").value));
+    fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+    let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+    let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
+    let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
+
+    var dbp = document.getElementById("dbp").value + ' mm';
+    var dbpPct = document.getElementById("dbpPct").value;
+    var dbpRango = '( ' + $( '#dbpRango').val() + ' )';
+    var dof = $( '#dof').val() + ' mm';
+    var dofPct = document.getElementById("dofPctRpt").value;
+    var dofRango = '( ' + $( '#dofRango').val() + ' )';
+    var cc = document.getElementById("cc").value + ' mm';
+    var ccPct = $( '#ccPctRpt').val();
+    var ccRango = '( ' + $( '#ccRango').val() + ' )';
+    var ca = document.getElementById("ca").value + ' mm';
+    var caPct = document.getElementById("caPctRpt").value;
+    var caRango = '( ' + $( '#caRango').val() + ' )';
+    var lf = $( '#lf').val() + ' mm';
+    var lfPct = document.getElementById("lfPctRpt").value;
+    var lfRango = '( ' + $( '#lfRango').val() + ' )';
+
+
+    var ccca = document.getElementById("ccca").value;
+    var cccaPctVal = document.getElementById("cccaPctVal").value;
+    var cccaRango = '( ' + $( '#cccaRango').val() + ' )';
+    var pfe = '<strong>' + $( '#pfe').val() + ' Gr.' + '</strong>';
+    var percentilPeso = document.getElementById("pfePctRpt").value;
+    percentilPeso = percentilPeso.replace('&lt;','<').replace('&gt;', '>');
+    var pfePct = '<strong>' + percentilPeso + '</strong>';
+    var pfeRango = '<strong>' + $( '#pfeRango').val() + ' *</strong>';
+    var ic = document.getElementById("dof-dbp").value;
+    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+
+    var paciente = document.getElementById("nombre-paciente").value;
+    var idpaciente = document.getElementById("id-paciente").value;
+    var motivo = $( '#motivo-examen option:selected').text();
+    var ecografista = $( '#ecografista option:selected').text();
+
+    var comentario = document.getElementById("comentarios-eco-dos-inf-dos").value;
+    comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
+
+    var edadmaterna = $( "select[name='edad_materna']").val();
+    var InformeString = "<div class='container'> <h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p><strong>FUM: </strong>:FUR <br><strong>Ege: </strong>:EG semanas <br><strong>FPP: </strong>:FPP</p></div><div class='container'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p style='margin-bottom:0;'>:LINEA1 <br>:LINEA2</p><p style='margin-bottom:0; word-wrap: break-word;'>:LINEA3</p><p>:LINEA4 <br>:LINEA5 <br>:LINEA6</p><p></p><p></p></div><div class='container'> <table class='table'> <tbody> <tr> <th style='color:#045dab;'>BIOMETRÍA FETAL</th> <th style='text-align:center;'>Valor observado</th> <th class='text-center'>Pct de Crecimiento</th> <th class='text-center'>Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style='text-align:center;'>:DBP</td><td class='text-center'>:DBPPCT</td><td class='text-center'>:DBPRANGO</td></tr><tr> <td>DOF (Jeanty):</td><td style='text-align:center;'>:DOF</td><td class='text-center'>:DOFPCT</td><td class='text-center'>:DOFRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style='text-align:center;'>:CC</td><td class='text-center'>:CCPCT</td><td class='text-center'>:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style='text-align:center;'>:CA</td><td class='text-center'>:CAPCT</td><td class='text-center'>:CARANGO</td></tr><tr> <td style='padding-bottom: 15px !important;'>LF (Hadlock):</td><td style='text-align:center;padding-bottom: 15px !important;'>:LF</td><td style='text-align:center;padding-bottom: 15px !important;'>:LFPCT</td><td style='text-align:center;padding-bottom: 15px !important;'>:LFRANGO</td></tr><tr> <td style='border-top:1px dashed #045dab;'><strong>Peso Fetal Estimado según fórmula de Hadlock 3(CC-CA-LF)</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:PFE</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:PFEPCT</strong> </td><td style='text-align:center;border-top:1px dashed #045dab;'><strong>:PFERANGO</strong> </td></tr><tr> <td style='border-top:1px dashed #045dab;'>Relación CC / CA (Hadlock)</td><td class='text-center' style='border-top:1px dashed #045dab;'>:CCCA</td><td class='text-center' style='border-top:1px dashed #045dab;'>:CCCAPCTVAL</td><td class='text-center' style='border-top:1px dashed #045dab;'>:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style='text-align:center;'>:IC</td><td></td><td class='text-center'>( 70% - 86% )</td></tr>";
+
+    var contadorOpcional = 0;
+    if (document.getElementById("art.ut").checked == true){
+        InformeString += "<tr> <td>IP Promedio Arterias Uterinas</td><td style='text-align:center;'>:ARTUT</td><td class='text-center' style='border-top:1px dashed #045dab;'>:ARTUTPCTVAL</td><td class='text-center' style='border-top:1px dashed #045dab;'>:ARTUTRANGO</td></tr>"
+    
+        InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
+        InformeString = InformeString.replace(":ARTUTPCTVAL", $("#respuesta_uterina_promedio_percentil").html());
+        InformeString = InformeString.replace(":ARTUTRANGO", $("#respuesta_uterina_promedio_rango").val());
+        contadorOpcional++;
+    }
+
+    if (document.getElementById("larg.cerv").checked == true){
+        InformeString += "<tr> <td>Largo Cervical</td><td style='text-align:center;'>:LARGCERV mm</td><td class='text-center' style='border-top:1px dashed #045dab;'></td><td class='text-center' style='border-top:1px dashed #045dab;'></td></tr>"
+    
+        InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
+        contadorOpcional++;
+    }
+
+    if (contadorOpcional == 1){
+        InformeString += "<tr> <td></td><td></td><td></td><td></td>";
+    }
+
+    InformeString += "</tbody> </table></div><div class='container'> <p style='margin-bottom;0px;padding-bottom:0px;margin-bottom:0px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style='max-width: 700px;text-align: justify;margin-top:0px;padding-top:0px;'>:COMENTARIO</p></div><div class='container'> <p class='text-right top40' style='margin-right:100px;'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='margin-bottom:0;'>* Evaluación de crecimiento fetal (Gráfica), según referencia propuesta por Hadlock y col. Radiology 181: 129 - 133; 1991 (Normalidad Pct 10 a 90) <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 <br><strong>*** Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015</strong> <br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf</p><p style='margin-bottom:0 !important;' class='pie-pagina-dos'>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>";
+
+    InformeString = InformeString.replace(":PACIENTE", paciente);
+    InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
+    InformeString = InformeString.replace(":MOTIVO", motivo);
+    InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
+    InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
+
+    InformeString = InformeString.replace(":FUR", fur);
+    InformeString = InformeString.replace(":FEXAMEN", fexamen);
+    InformeString = InformeString.replace(":EG", eg);
+    InformeString = InformeString.replace(":FPP", fpp);
+    InformeString = InformeString.replace(":DBP", dbp);
+    InformeString = InformeString.replace(":DBPPCT", dbpPct);
+    InformeString = InformeString.replace(":DBPRANGO", dbpRango);
+    InformeString = InformeString.replace(":DOF", dof);
+    InformeString = InformeString.replace(":DOFPCT", dofPct);
+    InformeString = InformeString.replace(":DOFRANGO", dofRango);
+    InformeString = InformeString.replace(":CC", cc);
+    InformeString = InformeString.replace(":CCPCT", ccPct);
+    InformeString = InformeString.replace(":CCRANGO", ccRango);
+    InformeString = InformeString.replace(":CA", ca);
+    InformeString = InformeString.replace(":CAPCT", caPct);
+    InformeString = InformeString.replace(":CARANGO", caRango);
+    InformeString = InformeString.replace(":CCCA", ccca);
+    InformeString = InformeString.replace(":CCCAPCTVAL", cccaPctVal);
+    InformeString = InformeString.replace(":CCCARANGO", cccaRango);
+    InformeString = InformeString.replace(":LF", lf);
+    InformeString = InformeString.replace(":LFPCT", lfPct);
+    InformeString = InformeString.replace(":LFRANGO", lfRango);
+    InformeString = InformeString.replace(":PFE", pfe);
+    InformeString = InformeString.replace(":PFEPCT", pfePct);
+    InformeString = InformeString.replace(":PFERANGO", pfeRango);
+    InformeString = InformeString.replace(":IC", ic);
+
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+    
+    InformeString = InformeString.replace(":DATEINFORME", dateInf);
+    
+    InformeString = InformeString.replace(":LINEA1", linea1);
+    InformeString = InformeString.replace(":LINEA2", linea2);
+    InformeString = InformeString.replace(":LINEA3", linea3);
+    InformeString = InformeString.replace(":LINEA4", linea4);
+    InformeString = InformeString.replace(":LINEA5", linea5);
+    InformeString = InformeString.replace(":LINEA6", linea6);
+    InformeString = InformeString.replace(":COMENTARIO", comentario);
+    InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
+
+    return InformeString;
+}
+
 function getDate(today) {
     if (typeof today === typeof undefined){
         today = dayHoy;
@@ -5109,4 +5147,35 @@ function valccca() {
             $("#cccaRango").val(pct3[eg] + ' - ' + pct97[eg]);
         }
     }
+}
+
+
+//destruir
+
+function modal(button){
+    let id = uuidv4();
+    let titulo = uuidv4();
+    let contenido = uuidv4();
+    let _button = uuidv4();
+    let button_string = "";
+    
+    if (typeof button !== typeof undefined){
+        button_string = '<button type="button" class="btn btn-primary" id="'+_button+'" data-modal="'+id+'">'+button+'</button>';
+    }
+    
+    let resultado ={
+        id:id,
+        titulo:titulo,
+        contenido:contenido,
+        button:_button,
+        modal:'<div class="modal fade" tabindex="-1" role="dialog" id="'+id+'"><div class="modal-dialog modal-lg modal-dialog-scrollable" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="'+titulo+'">Modal title</h5></div><div class="modal-body" id="'+contenido+'"></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>'+ button_string+'</div></div></div></div>'
+    }
+        
+    return resultado;
+}
+
+function uuidv4() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    )
 }
