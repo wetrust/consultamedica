@@ -758,7 +758,7 @@ $( document ).ready(function() {
                 xhr.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
 
-                        blob = new Blob([this.response], { type: 'application/pdf' });
+                        blob = new Blob([this.responseText], { type: 'application/pdf' });
             
                         var link = document.createElement('a');
             
@@ -766,7 +766,6 @@ $( document ).ready(function() {
                         link.download = "document.pdf";
             
                         link.click();
-
                    }
                 };
 
