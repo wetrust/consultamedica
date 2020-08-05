@@ -769,6 +769,9 @@ $( document ).ready(function() {
                 var InformeString = InfEcoObsSegTrim1();
                 imprInforme(InformeString);
             });
+        }else{
+            var InformeString = InfEcoObsSegTrim1();
+            imprInforme(InformeString);
         }
     });
 
