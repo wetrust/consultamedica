@@ -755,7 +755,6 @@ $( document ).ready(function() {
                 data.append("data" , InformeString);
 
                 fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
-                    var blob = new Blob(response.blob(), {type: 'application/pdf'});
                     link.href = window.URL.createObjectURL(response.blob());
                     link.download = "document.pdf";
         
