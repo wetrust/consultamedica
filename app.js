@@ -755,18 +755,18 @@ $( document ).ready(function() {
                 data.append("data" , InformeString);
                 var xhr = new XMLHttpRequest();
 
-                xhr.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
+                xhr.onload = function(e) {
+                    if (this['status'] == 200) {          
+                      var blob = new Blob([this['response']], {type: 'application/pdf'});
+                      var url = URL.createObjectURL(blob);
 
-                        blob = new Blob([this.responseText], { type: 'application/pdf' });
+                      var link = document.createElement('a');
             
-                        var link = document.createElement('a');
-            
-                        link.href = window.URL.createObjectURL(blob);
-                        link.download = "document.pdf";
-            
-                        link.click();
-                   }
+                      link.href = window.URL.createObjectURL(blob);
+                      link.download = "document.pdf";
+          
+                      link.click();
+                    }
                 };
 
                 xhr.open( 'post', 'https://servidor.crecimientofetal.cl/crecimiento/informe', true ); //Post to php Script to save to server
