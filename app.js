@@ -753,24 +753,16 @@ $( document ).ready(function() {
                 data.append("licencia" , "");
                 data.append("informe" , 2);
                 data.append("data" , InformeString);
-                var xhr = new XMLHttpRequest();
 
-                xhr.onload = function(e) {
-                    if (this['status'] == 200) {          
-                      var blob = new Blob([this['response']], {type: 'application/pdf'});
-                      var url = URL.createObjectURL(blob);
-
-                      var link = document.createElement('a');
-            
-                      link.href = window.URL.createObjectURL(blob);
-                      link.download = "document.pdf";
-          
-                      link.click();
-                    }
-                };
-
-                xhr.open( 'post', 'https://servidor.crecimientofetal.cl/crecimiento/informe', true ); //Post to php Script to save to server
-                xhr.send(data);
+                $http.post('https://servidor.crecimientofetal.cl/crecimiento/informe',{data}, {responseType: 'arraybuffer'})
+                .success(function (data) {
+                    var file = new Blob([data], {type: 'application/pdf'});
+                    var fileURL = URL.createObjectURL(file);
+                    link.href = window.URL.createObjectURL(blob);
+                    link.download = "document.pdf";
+        
+                    link.click();
+                });
             });
 
             $('#'+_imprimir).on("click", function(){
