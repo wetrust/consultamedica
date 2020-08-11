@@ -300,6 +300,12 @@ $( document ).ready(function() {
     //controlador de ecografía de primer trimestre
     $("#saco").on("change", function(){
         document.getElementById("sacoPct").value = egSaco(this.value);
+        if (+this.value > 0){
+            $("#mensajeSaco").hide();
+        }
+        else{
+            $("#mensajeSaco").show();
+        }
     });
 
     $("#saco-gestacional").on("change", function(){
