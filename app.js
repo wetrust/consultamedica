@@ -123,10 +123,10 @@ $( document ).ready(function() {
     edad.appendChild(opt); 
 
     //funcion rara
-    $("#acercadebutton").mouseout(function(){
-        if (document.getElementById("acercadebutton").classList.contains("btn-dark")){
-            document.getElementById("acercadebutton").classList.remove("btn-dark");
-            document.getElementById("acercadebutton").classList.add("btn-outline-dark");
+    $("#menu\\.modulo\\.activo").mouseout(function(){
+        if (document.getElementById("menu.modulo.activo").classList.contains("btn-dark")){
+            document.getElementById("menu.modulo.activo").classList.remove("btn-dark");
+            document.getElementById("menu.modulo.activo").classList.add("btn-outline-dark");
         }
     });
 
@@ -763,7 +763,6 @@ $( document ).ready(function() {
     
                         link.click();
                     });
-
                 });
             });
 
