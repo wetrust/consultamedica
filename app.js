@@ -302,9 +302,13 @@ $( document ).ready(function() {
         document.getElementById("sacoPct").value = egSaco(this.value);
         if (+this.value > 0){
             $("#mensajeSaco").hide();
+            $("#sacoFlecha").hide();
+            $("#sacoModulo").hide();
         }
         else{
             $("#mensajeSaco").show();
+            $("#sacoFlecha").show();
+            $("#sacoModulo").show();
         }
     });
 
