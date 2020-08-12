@@ -210,11 +210,8 @@ $( document ).ready(function() {
         if (diff > 0){
             let dias = Math.abs(diff/(1000*60*60*24));
             let semanas = Math.trunc(dias / 7);
-            
             document.getElementById("diaciclo").value = dias;
-            
             dias = Math.trunc(dias - (semanas * 7));
-
             document.getElementById("semanas").value = semanas;
             document.getElementById("dias").value = dias;
         }
@@ -239,11 +236,8 @@ $( document ).ready(function() {
         if (diff > 0){
             let dias = diff/(1000*60*60*24);
             let semanas = Math.trunc(dias / 7);
-            
             document.getElementById("diaciclo").value = dias;
-
             dias = Math.trunc(dias - (semanas * 7));
-
             document.getElementById("semanas").value = semanas;
             document.getElementById("dias").value = dias;
         }
@@ -257,9 +251,7 @@ $( document ).ready(function() {
     $("#semanas, #dias").on("change", function(){
         let semanas = parseInt(document.getElementById("semanas").value);
         let dias = parseInt(document.getElementById("dias").value);
-
         semanas = 7 * semanas;
-
 		let fee = new Date(document.getElementById("fee").value);
 		dias = (semanas + dias-1)*(1000*60*60*24);
         fee.setTime(fee.getTime() - dias);
@@ -929,38 +921,36 @@ $( document ).ready(function() {
             $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
             $('#'+_email).on("click", function(){
-                var InformeString = InfEcoObsSegTrim1();
-                
-                var data = {};
+                var informe = [];
 
-                data.linea2 = document.getElementById("utero.ginecologica").value;
-                data.LINEA3 = document.getElementById("endometrio.ginecologica").value;
-                data.LINEA4 = document.getElementById("anexo.izquierdo.ginecologica").value;
-                data.LINEA6 = document.getElementById("anexo.derecho.ginecologica").value;
-                data.LINEA5 = document.getElementById("ovario.izquierdo.ginecologica").value;
-                data.LINEA7 = document.getElementById("ovario.derecho.ginecologica").value;
-                data.LINEA8 = document.getElementById("douglas.ginecologica").value;
-                data.paciente = $( '#nombre-paciente').val();
-                data.idpaciente = $( '#id-paciente').val();
-                data.motivo = $( '#motivo-examen option:selected').text();
-                data.ecografista = $( '#ecografista\\.copia option:selected').text();
+                informe.linea2 = document.getElementById("utero.ginecologica").value;
+                informe.LINEA3 = document.getElementById("endometrio.ginecologica").value;
+                informe.LINEA4 = document.getElementById("anexo.izquierdo.ginecologica").value;
+                informe.LINEA6 = document.getElementById("anexo.derecho.ginecologica").value;
+                informe.LINEA5 = document.getElementById("ovario.izquierdo.ginecologica").value;
+                informe.LINEA7 = document.getElementById("ovario.derecho.ginecologica").value;
+                informe.LINEA8 = document.getElementById("douglas.ginecologica").value;
+                informe.paciente = $( '#nombre-paciente').val();
+                informe.idpaciente = $( '#id-paciente').val();
+                informe.motivo = $( '#motivo-examen option:selected').text();
+                informe.ecografista = $( '#ecografista\\.copia option:selected').text();
+
                 let fur = new Date(Date.parse(document.getElementById("fum").value));
-                data.fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-                let fexamen = new Date(Date.parse(document.getElementById("fee").value));
-                data.fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+                informe.fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
 
-                data.dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+                let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+                informe.fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+                informe.dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
 
                 let comentario = document.getElementById("comentario.ginecologica").value;
-                data.comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
-
-                data.patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-                data.edadmaterna = $( "select[name='edad_materna']").val();
+                informe.comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
+                informe.patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+                informe.edadmaterna = $( "select[name='edad_materna']").val();
 
                 var data = new FormData();
                 data.append("licencia" , "medicina");
                 data.append("informe" , 5);
-                data.append("data" , data);
+                data.append("data" , informe);
 
                 fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
                     response.blob().then((successMessage) => {
@@ -979,7 +969,6 @@ $( document ).ready(function() {
                 imprInforme(InformeString);
             });
         }else{
-            
             informe = informeGinecologico();
             imprInforme(informe);
         }
@@ -4297,7 +4286,6 @@ function eglcn(lcn) {
         return 0;
     }
 };
-
 
 function pctut(uterina) {
     'use strict';
