@@ -1104,7 +1104,7 @@ $( document ).ready(function() {
 //controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "cerebelo", "modalPreInfEcoObsSegTrim1", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "modalPreInfEcoObsSegTrim1","aud","aui","ipau","ipacm","dv","psmACM","modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica"];
+        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "lh", "cerebelo", "bvm", "modalPreInfEcoObsSegTrim1", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "modalPreInfEcoObsSegTrim1","aud","aui","ipau","ipacm","dv","psmACM","modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
