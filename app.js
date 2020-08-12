@@ -392,7 +392,7 @@ $( document ).ready(function() {
             $("#lcn").trigger("change");
         }
         else{
-            document.getElementById("lcn.clon").parentElement.parentElement.classList.remove("d-none");
+            document.getElementById("lcn.clon").parentElement.parentElement.parentElement.classList.remove("d-none");
             document.getElementById("lcn").parentElement.parentElement.parentElement.classList.remove("d-none");
         }
 
