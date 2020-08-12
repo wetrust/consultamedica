@@ -899,53 +899,79 @@ $( document ).ready(function() {
 
     $("#btn\\.informe\\.ginecologica").on("click",function() {
         'use strict';
-	    let informe = "<div class='container-fluid'> <h3 class='page-header text-center'>ECOGRAFÍA GINECOLÓGICA</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container-fluid'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE</p><p><strong>Edad Materna: </strong> :EDADMATERNA años.</p><p><strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE</p><p><strong> Motivo de exámen: </strong> :MOTIVO</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>ANTECEDENTES</strong> </p><p><strong>FUM: </strong> :FUM</p><p><strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p><strong>Fecha de exámen </strong>:LINEA1 <br><strong>Útero </strong>:LINEA2 <br><strong>Endometrio </strong>:LINEA3</p><p><strong>Anexo Izquierdo </strong>:LINEA4 <br><strong>Ovario Izquierdo </strong>:LINEA5 <br><strong>Anexo Derecho </strong>:LINEA6 <br><strong>Ovario Derecho </strong>:LINEA7</p><p><strong>Douglas </strong>:LINEA8</p><p></p><p></p><p></p><p></p></div><div class='container-fluid'> <p class='mb-4'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='border-bottom:0;'>Informe generado desde software crecimientofetal.cl, el objetivo de este es favorecer análisis preeliminar de los datos, la interpretación de los resultados es responsabilidad fundamentalmente del profesional referente a exámen ecográfico. Profesional quien finalmente evaluará clínicamente la información contenida en este exámen.</p></div>";
 
-        let LINEA2 = document.getElementById("utero.ginecologica").value;
-        let LINEA3 = document.getElementById("endometrio.ginecologica").value;
-        let LINEA4 = document.getElementById("anexo.izquierdo.ginecologica").value;
-        let LINEA6 = document.getElementById("anexo.derecho.ginecologica").value;
-        let LINEA5 = document.getElementById("ovario.izquierdo.ginecologica").value;
-        let LINEA7 = document.getElementById("ovario.derecho.ginecologica").value;
-        let LINEA8 = document.getElementById("douglas.ginecologica").value;
+        if ($("#licencia").val() != ""){
+            let _modal = modal();
 
-        let paciente = $( '#nombre-paciente').val();
-        let idpaciente = $( '#id-paciente').val();
-        let motivo = $( '#motivo-examen option:selected').text();
-        let ecografista = $( '#ecografista\\.copia option:selected').text();
-        let fur = new Date(Date.parse(document.getElementById("fum").value));
-        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-        let fexamen = new Date(Date.parse(document.getElementById("fee").value));
-        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+            document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+            document.getElementById(_modal.titulo).innerHTML = "Exportar a ...";
+            document.getElementById(_modal.titulo).classList.add("mx-auto");
+            document.getElementById(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
 
-        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+            _email = uuidv4();
+            _imprimir = uuidv4();
+            let _contenido = '<div class="row"><div class="col-6"><button type="button" id='+_email+' class="btn btn-primary">Enviar por E-Mail</button></div><div class="col-6"><button type="button" id='+_imprimir+' class="btn btn-primary">Imprimir</button></div></div>'
 
-        let comentario = document.getElementById("comentario.ginecologica").value;
-        comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
+            document.getElementById(_modal.contenido).innerHTML = _contenido;
+            document.getElementById(_modal.id).children[0].classList.remove("modal-lg");
 
-        let patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-        let edadmaterna = $( "select[name='edad_materna']").val();
+            $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
-        informe = informe.replace(":PACIENTE", paciente);
-        informe = informe.replace(":IDPACIENTE", idpaciente);
-        informe = informe.replace(":MOTIVO", motivo);
-        informe = informe.replace(":ECOGRAFISTA", ecografista);
-        informe = informe.replace(":FUM", fur);
-        informe = informe.replace(":EDADMATERNA", edadmaterna);
-        informe = informe.replace(":FEXAMEN", fexamen);
-        informe = informe.replace(":LINEA1", fexamen);
-        informe = informe.replace(":LINEA2", LINEA2);
-        informe = informe.replace(":LINEA3", LINEA3);
-        informe = informe.replace(":LINEA4", LINEA4);
-        informe = informe.replace(":LINEA5", LINEA5);
-        informe = informe.replace(":LINEA6", LINEA6);
-        informe = informe.replace(":LINEA7", LINEA7);
-        informe = informe.replace(":LINEA8", LINEA8);
-        informe = informe.replace(":COMENTARIO", comentario);
-        informe = informe.replace(":DATEINFORME", dateInf);
-        informe = informe.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
+            $('#'+_email).on("click", function(){
+                var InformeString = InfEcoObsSegTrim1();
+                
+                var data = {};
 
-        imprInforme(informe);
+                data.linea2 = document.getElementById("utero.ginecologica").value;
+                data.LINEA3 = document.getElementById("endometrio.ginecologica").value;
+                data.LINEA4 = document.getElementById("anexo.izquierdo.ginecologica").value;
+                data.LINEA6 = document.getElementById("anexo.derecho.ginecologica").value;
+                data.LINEA5 = document.getElementById("ovario.izquierdo.ginecologica").value;
+                data.LINEA7 = document.getElementById("ovario.derecho.ginecologica").value;
+                data.LINEA8 = document.getElementById("douglas.ginecologica").value;
+                data.paciente = $( '#nombre-paciente').val();
+                data.idpaciente = $( '#id-paciente').val();
+                data.motivo = $( '#motivo-examen option:selected').text();
+                data.ecografista = $( '#ecografista\\.copia option:selected').text();
+                let fur = new Date(Date.parse(document.getElementById("fum").value));
+                data.fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+                let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+                data.fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+
+                data.dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+
+                let comentario = document.getElementById("comentario.ginecologica").value;
+                data.comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
+
+                data.patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+                data.edadmaterna = $( "select[name='edad_materna']").val();
+
+                var data = new FormData();
+                data.append("licencia" , "");
+                data.append("informe" , 5);
+                data.append("data" , data);
+
+                fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+                    response.blob().then((successMessage) => {
+                        var link = document.createElement('a');
+
+                        link.href = window.URL.createObjectURL(successMessage);
+                        link.download = "document.pdf";
+    
+                        link.click();
+                    });
+                });
+            });
+
+            $('#'+_imprimir).on("click", function(){
+                var InformeString = informeGinecologico();
+                imprInforme(InformeString);
+            });
+        }else{
+            
+            informe = informeGinecologico();
+            imprInforme(informe);
+        }
     });
 });
 
@@ -5170,6 +5196,53 @@ function valccca() {
     }
 }
 
+function informeGinecologico(){
+    let informe = "<div class='container-fluid'> <h3 class='page-header text-center'>ECOGRAFÍA GINECOLÓGICA</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container-fluid'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE</p><p><strong>Edad Materna: </strong> :EDADMATERNA años.</p><p><strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE</p><p><strong> Motivo de exámen: </strong> :MOTIVO</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>ANTECEDENTES</strong> </p><p><strong>FUM: </strong> :FUM</p><p><strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p><strong>Fecha de exámen </strong>:LINEA1 <br><strong>Útero </strong>:LINEA2 <br><strong>Endometrio </strong>:LINEA3</p><p><strong>Anexo Izquierdo </strong>:LINEA4 <br><strong>Ovario Izquierdo </strong>:LINEA5 <br><strong>Anexo Derecho </strong>:LINEA6 <br><strong>Ovario Derecho </strong>:LINEA7</p><p><strong>Douglas </strong>:LINEA8</p><p></p><p></p><p></p><p></p></div><div class='container-fluid'> <p class='mb-4'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='border-bottom:0;'>Informe generado desde software crecimientofetal.cl, el objetivo de este es favorecer análisis preeliminar de los datos, la interpretación de los resultados es responsabilidad fundamentalmente del profesional referente a exámen ecográfico. Profesional quien finalmente evaluará clínicamente la información contenida en este exámen.</p></div>";
+    let LINEA2 = document.getElementById("utero.ginecologica").value;
+    let LINEA3 = document.getElementById("endometrio.ginecologica").value;
+    let LINEA4 = document.getElementById("anexo.izquierdo.ginecologica").value;
+    let LINEA6 = document.getElementById("anexo.derecho.ginecologica").value;
+    let LINEA5 = document.getElementById("ovario.izquierdo.ginecologica").value;
+    let LINEA7 = document.getElementById("ovario.derecho.ginecologica").value;
+    let LINEA8 = document.getElementById("douglas.ginecologica").value;
+    let paciente = $( '#nombre-paciente').val();
+    let idpaciente = $( '#id-paciente').val();
+    let motivo = $( '#motivo-examen option:selected').text();
+    let ecografista = $( '#ecografista\\.copia option:selected').text();
+    let fur = new Date(Date.parse(document.getElementById("fum").value));
+    fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+    let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+
+    let comentario = document.getElementById("comentario.ginecologica").value;
+    comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
+
+    let patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    let edadmaterna = $( "select[name='edad_materna']").val();
+
+    informe = informe.replace(":PACIENTE", paciente);
+    informe = informe.replace(":IDPACIENTE", idpaciente);
+    informe = informe.replace(":MOTIVO", motivo);
+    informe = informe.replace(":ECOGRAFISTA", ecografista);
+    informe = informe.replace(":FUM", fur);
+    informe = informe.replace(":EDADMATERNA", edadmaterna);
+    informe = informe.replace(":FEXAMEN", fexamen);
+    informe = informe.replace(":LINEA1", fexamen);
+    informe = informe.replace(":LINEA2", LINEA2);
+    informe = informe.replace(":LINEA3", LINEA3);
+    informe = informe.replace(":LINEA4", LINEA4);
+    informe = informe.replace(":LINEA5", LINEA5);
+    informe = informe.replace(":LINEA6", LINEA6);
+    informe = informe.replace(":LINEA7", LINEA7);
+    informe = informe.replace(":LINEA8", LINEA8);
+    informe = informe.replace(":COMENTARIO", comentario);
+    informe = informe.replace(":DATEINFORME", dateInf);
+    informe = informe.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
+
+    return informe;
+}
 
 //destruir
 
