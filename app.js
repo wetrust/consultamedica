@@ -386,7 +386,7 @@ $( document ).ready(function() {
         let embrion = document.getElementById("embrion").value;
 
         if (optiones.includes(embrion)){
-            document.getElementById("lcn.clon").parentElement.parentElement.classList.add("d-none");
+            document.getElementById("lcn.clon").parentElement.parentElement.parentElement.classList.add("d-none");
             document.getElementById("lcn").parentElement.parentElement.parentElement.classList.add("d-none");
             document.getElementById("lcn").value = 0;
             $("#lcn").trigger("change");
