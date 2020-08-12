@@ -14,7 +14,7 @@ var titulos ={
     "#ecoObsSegTrim": "Evaluación del crecimiento fetal",
     "#ecoObsPrimTrim": "Ecografía obstétrica precoz",
     "#construccion": 'Ecografía 22 - 24 semanas para evaluación detallada de morfología fetal <span class="text-animado"><strong>(Módulo en construcción)</strong></span>',
-    "#ecoGinecologica": "Ecografía Ginecológica",
+    "#ecoGinecologica": "Informe ecográfico ginecológico",
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
 }
 
@@ -338,7 +338,7 @@ $( document ).ready(function() {
             $("#sacoFlecha").show();
             $("#sacoModulo").show();
         }
-        
+
         var eg = parseFloat(document.getElementById("semanas").value + "." +document.getElementById("dias").value);
         let semanas = parseInt(document.getElementById("semanas").value);
         let dias = parseInt(document.getElementById("dias").value);
@@ -958,7 +958,7 @@ $( document ).ready(function() {
                 data.edadmaterna = $( "select[name='edad_materna']").val();
 
                 var data = new FormData();
-                data.append("licencia" , "");
+                data.append("licencia" , "medicina");
                 data.append("informe" , 5);
                 data.append("data" , data);
 
