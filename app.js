@@ -908,8 +908,8 @@ $( document ).ready(function() {
             document.getElementById(_modal.titulo).classList.add("mx-auto");
             document.getElementById(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
 
-            _email = uuidv4();
-            _imprimir = uuidv4();
+            let _email = uuidv4();
+            let _imprimir = uuidv4();
             let _contenido = '<div class="row"><div class="col-6"><button type="button" id='+_email+' class="btn btn-primary">Enviar por E-Mail</button></div><div class="col-6"><button type="button" id='+_imprimir+' class="btn btn-primary">Imprimir</button></div></div>'
 
             document.getElementById(_modal.contenido).innerHTML = _contenido;
