@@ -328,6 +328,17 @@ $( document ).ready(function() {
     $("#lcn").on("change", function(){
         document.getElementById("lcnPct").value = eglcn(this.value);
 
+        if (+this.value > 0){
+            $("#mensajeSaco").hide();
+            $("#sacoFlecha").hide();
+            $("#sacoModulo").hide();
+        }
+        else{
+            $("#mensajeSaco").show();
+            $("#sacoFlecha").show();
+            $("#sacoModulo").show();
+        }
+        
         var eg = parseFloat(document.getElementById("semanas").value + "." +document.getElementById("dias").value);
         let semanas = parseInt(document.getElementById("semanas").value);
         let dias = parseInt(document.getElementById("dias").value);
