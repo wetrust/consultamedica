@@ -950,7 +950,7 @@ $( document ).ready(function() {
                 var data = new FormData();
                 data.append("licencia" , "medicina");
                 data.append("informe" , 5);
-                data.append("data" , informe);
+                data.append("data" , JSON.stringify(informe));
 
                 fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
                     response.blob().then((successMessage) => {
