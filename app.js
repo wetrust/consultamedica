@@ -995,7 +995,7 @@ $( document ).ready(function() {
                 });
             });
         }else{
-            informe = informeGinecologico();
+            let informe = informeGinecologico();
             imprInforme(informe);
         }
     });
