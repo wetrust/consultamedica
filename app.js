@@ -943,8 +943,7 @@ $( document ).ready(function() {
                 informe.fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
                 informe.dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
 
-                let comentario = document.getElementById("comentario.ginecologica").value;
-                informe.comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
+                informe.comentario = document.getElementById("comentario.ginecologica").value;
                 informe.patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
                 informe.edadmaterna = $( "select[name='edad_materna']").val();
                 informe = JSON.stringify(informe);
