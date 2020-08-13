@@ -934,6 +934,7 @@ $( document ).ready(function() {
                 informe.idpaciente = $( '#id-paciente').val();
                 informe.motivo = $( '#motivo-examen option:selected').text();
                 informe.ecografista = $( '#ecografista\\.copia option:selected').text();
+                informe.diaciclo = $('#diaciclo').val();
 
                 let fur = new Date(Date.parse(document.getElementById("fum").value));
                 informe.fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
