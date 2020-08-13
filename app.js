@@ -921,37 +921,37 @@ $( document ).ready(function() {
             $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
             $('#'+_email).on("click", function(){
-                var informe = [];
+                var informe = {};
 
-                informe["linea2"] = document.getElementById("utero.ginecologica").value;
-                informe["LINEA3"] = document.getElementById("endometrio.ginecologica").value;
-                informe["LINEA4"] = document.getElementById("anexo.izquierdo.ginecologica").value;
-                informe["LINEA6"] = document.getElementById("anexo.derecho.ginecologica").value;
-                informe["LINEA5"] = document.getElementById("ovario.izquierdo.ginecologica").value;
-                informe["LINEA7"] = document.getElementById("ovario.derecho.ginecologica").value;
-                informe["LINEA8"] = document.getElementById("douglas.ginecologica").value;
-                informe["paciente"] = $( '#nombre-paciente').val();
-                informe["idpaciente"] = $( '#id-paciente').val();
-                informe["motivo"] = $( '#motivo-examen option:selected').text();
-                informe["ecografista"] = $( '#ecografista\\.copia option:selected').text();
+                informe.linea2 = document.getElementById("utero.ginecologica").value;
+                informe.LINEA3 = document.getElementById("endometrio.ginecologica").value;
+                informe.LINEA4 = document.getElementById("anexo.izquierdo.ginecologica").value;
+                informe.LINEA6 = document.getElementById("anexo.derecho.ginecologica").value;
+                informe.LINEA5 = document.getElementById("ovario.izquierdo.ginecologica").value;
+                informe.LINEA7 = document.getElementById("ovario.derecho.ginecologica").value;
+                informe.LINEA8 = document.getElementById("douglas.ginecologica").value;
+                informe.paciente = $( '#nombre-paciente').val();
+                informe.idpaciente = $( '#id-paciente').val();
+                informe.motivo = $( '#motivo-examen option:selected').text();
+                informe.ecografista = $( '#ecografista\\.copia option:selected').text();
 
                 let fur = new Date(Date.parse(document.getElementById("fum").value));
-                informe["fur"] = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+                informe.fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
 
                 let fexamen = new Date(Date.parse(document.getElementById("fee").value));
-                informe["fexamen"] = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
-                informe["dateInf"] = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+                informe.fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+                informe.dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
 
                 let comentario = document.getElementById("comentario.ginecologica").value;
-                informe["comentario"] = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
-                informe["patologiaObstetrica"] = $( '#patologiaObstetricaUno option:selected').text();
-                informe["edadmaterna"] = $( "select[name='edad_materna']").val();
+                informe.comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
+                informe.patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+                informe.edadmaterna = $( "select[name='edad_materna']").val();
                 informe = JSON.stringify(informe);
 
                 var data = new FormData();
                 data.append("licencia" , "medicina");
                 data.append("informe" , 5);
-                data.append("data" , JSON.stringify(informe));
+                data.append("data" , informe);
 
                 fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
                     response.blob().then((successMessage) => {
