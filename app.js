@@ -946,6 +946,7 @@ $( document ).ready(function() {
                 informe["comentario"] = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
                 informe["patologiaObstetrica"] = $( '#patologiaObstetricaUno option:selected').text();
                 informe["edadmaterna"] = $( "select[name='edad_materna']").val();
+                informe = JSON.stringify(informe);
 
                 var data = new FormData();
                 data.append("licencia" , "medicina");
