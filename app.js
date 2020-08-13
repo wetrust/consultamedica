@@ -12,9 +12,9 @@ var titulos ={
     "#tipoExamen": "Módulos de la aplicación",
     "#ecoDoppler": "Flujometría Doppler materno / fetal",
     "#ecoObsSegTrim": "Evaluación del crecimiento fetal",
-    "#ecoObsPrimTrim": "Ecografía obstétrica precoz",
+    "#ecoObsPrimTrim": "Ecografía obstétrica precoz < 11 semanas",
     "#construccion": 'Ecografía 22 - 24 semanas para evaluación detallada de morfología fetal <span class="text-animado"><strong>(Módulo en construcción)</strong></span>',
-    "#ecoGinecologica": "Informe ecográfico ginecológico",
+    "#ecoGinecologica": "Informe ecográfico ginecológico (Adicional al exámen ecográfico obstétrico)",
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
 }
 
@@ -921,6 +921,22 @@ $( document ).ready(function() {
             $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
             $('#'+_email).on("click", function(){
+
+                let _modal = modal();
+
+                document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+                document.getElementById(_modal.titulo).innerHTML = "Error";
+                document.getElementById(_modal.titulo).classList.add("mx-auto");
+                document.getElementById(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
+
+                let _contenido = '<p class="text-center">No Disponible</p>';
+                document.getElementById(_modal.contenido).innerHTML = _contenido;
+                document.getElementById(_modal.id).children[0].classList.remove("modal-lg");
+
+                $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+            });
+
+            $('#'+_imprimir).on("click", function(){
                 var informe = {};
 
                 informe.linea2 = document.getElementById("utero.ginecologica").value;
@@ -963,11 +979,6 @@ $( document ).ready(function() {
                         link.click();
                     });
                 });
-            });
-
-            $('#'+_imprimir).on("click", function(){
-                var InformeString = informeGinecologico();
-                imprInforme(InformeString);
             });
         }else{
             informe = informeGinecologico();
