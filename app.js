@@ -482,10 +482,10 @@ $( document ).ready(function() {
         if (cV == NaN){
             document.getElementById("info.cervix").innerHTML = "";
             document.getElementById("info.cervix").classList.add("d-none");
-        }else if (cv < 25){
+        }else if (cV < 25){
             document.getElementById("info.cervix").innerHTML ='<p class="mb-0">Cérvix corto</p>';
             document.getElementById("info.cervix").classList.remove("d-none");
-        }else if(cv > 24){
+        }else if(cV > 24){
             document.getElementById("info.cervix").innerHTML ='<p class="mb-0">Cérvix normal</p>';
             document.getElementById("info.cervix").classList.remove("d-none");
         }
