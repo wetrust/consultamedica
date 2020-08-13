@@ -477,8 +477,8 @@ $( document ).ready(function() {
         }
     });
 
-    $("#largo\\.cervical\\.segundo").on("click", function(){
-        cV = +this.value;
+    $("#largo\\.cervical\\.segundo").on("change", function(){
+        let cV = +this.value;
         if (cV == NaN){
             document.getElementById("info.cervix").innerHTML = "";
             document.getElementById("info.cervix").classList.add("d-none");
