@@ -573,7 +573,6 @@ $( document ).ready(function() {
         }
     });
 });
-
 //controlador de input clones
 //si se escribe en uno, se refleja en otro
 $( document ).ready(function() {
@@ -593,7 +592,6 @@ $( document ).ready(function() {
     });
     
 });
-
 //controlador de los informes
 $( document ).ready(function() {
     $("#btn\\.informe\\.precoz").on("click", function (){
@@ -1000,7 +998,6 @@ $( document ).ready(function() {
         }
     });
 });
-
 //controlador de botones reset
 $( document ).ready(function() {
     $("#btn\\.erase\\.ginecologica").on("click", function(){
@@ -1115,7 +1112,6 @@ $( document ).ready(function() {
         });
     });
 });
-
 //controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
@@ -1130,7 +1126,6 @@ $( document ).ready(function() {
         }
     });  
 });
-
 //controlador de los gráficos
 $( document ).ready(function() {
     $("#graficoSaco").on( 'click', function() {
@@ -3986,7 +3981,6 @@ $( document ).ready(function() {
         }
     });
 });
-
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
     var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#pdfneonatal"];
@@ -4025,7 +4019,6 @@ $(window).on('hashchange', function(){
         document.getElementById("inicio").classList.remove(d);
     }
 });
-
 function InfEcoObsSegTrim1(){
     var actCard;
     var movCorp;
@@ -4179,7 +4172,6 @@ function InfEcoObsSegTrim1(){
 
     return InformeString;
 }
-
 function getDate(today) {
     if (typeof today === typeof undefined){
         today = dayHoy;
@@ -4250,7 +4242,6 @@ function uuidv4() {
       (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
     )
 }
-
 function imprInforme(datos){
 	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container"><div style="width:35%;text-align:center;" class="membrete">:MEMBRETE</div></div><div class="container" style="margin-top:50px !important;">:DATOS</div>:FUNCION</body></html>';
 	var ventimp = window.open(" ","popimpr");
@@ -4266,7 +4257,6 @@ function imprInforme(datos){
 	ventimp.document.close();
 	ventimp.show();
 }
-
 //funciones para cálculos
 function egSaco(saco) {
 	'use strict';
@@ -4283,7 +4273,6 @@ function egSaco(saco) {
         return a[saco];
     }
 };
-
 function eglcn(lcn) {
 	'use strict';
 	let a = [[],[]];
@@ -4312,7 +4301,6 @@ function eglcn(lcn) {
         return 0;
     }
 };
-
 function pctut(uterina) {
     'use strict';
     let a = [];
@@ -4359,7 +4347,6 @@ function pctut(uterina) {
         }
     }
 }
-
 function pctdv() {
     'use strict';
     let a = [];
@@ -4400,7 +4387,6 @@ function pctdv() {
          $("#dvRngo").val( a[eg] + " - " + b[eg]);
     }
 }
-
 function pctau() {
     'use strict';
 	let a = [],b = [],c = [],d = [];
@@ -4533,14 +4519,12 @@ function pctacm() {
 		}
 	}
 }
-
 function ajustarProgreso(valor, objeto){
     valor = (valor == "&gt; 99") ? 99 : valor; // si es mayor a 99
     valor = (isNaN(valor)== true) ? 0 : valor;
 	valor = valor + "%";
 	$("#"+objeto + " > .progress-consulta").css({"width": valor});
 }
-
 function imprSelec(muestra){
 	var ficha=$("#"+muestra).html();
 	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container"><div style="width:35%;text-align:center;" class="membrete">:MEMBRETE</div></div><div class="container" style="margin-top:50px !important;">:DATOS</div>:FUNCION</body></html>';
@@ -4559,7 +4543,6 @@ function imprSelec(muestra){
 	ventimp.document.close();
 	//ventimp.show();
 }
-
 function deDBP() {
     'use strict';
 	let a = [], b = [];
@@ -4614,7 +4597,6 @@ function deDBP() {
 		$('#ic').val("0");
 	}
 }
-
 function calcdof(){
     'use strict';
 	let a = [], b = [];
@@ -4666,7 +4648,6 @@ function calcdof(){
 		$('#ic').val("0");
 	}
 }
-
 function pctcc() {
     'use strict';
 	let a = [], b = [];
@@ -4705,7 +4686,6 @@ function pctcc() {
         p50();
     }
 };
-
 function pctca() {
     'use strict';
 	let a = [], b = [];
@@ -4743,7 +4723,6 @@ function pctca() {
         p50();
     }
 };
-
 function pctlf() {
     'use strict';
 	let a = [], b = [];
@@ -4782,7 +4761,6 @@ function pctlf() {
         p50();
     }
 };
-
 function pctcb() {
 
     //cerebelo segun Hill
@@ -4841,7 +4819,6 @@ function pctcb() {
          p50();
      }
 };
-
 function pctlh() {
     'use strict';
 	let a = [], b = [];
@@ -4891,7 +4868,6 @@ function pctlh() {
            p50();
        }
 }
-
 function p50() {
     'use strict';
 	let a = [];
@@ -4939,7 +4915,6 @@ function p50() {
      egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
      $('#egP50').val(egbio);
 }
-
 function psohdlk() {
     let CC = parseFloat($("#cc").val());
     let CA = parseInt($("#ca").val());
@@ -4959,7 +4934,6 @@ function psohdlk() {
         pctpfe();
     }
 }
-
 function pctpfe() {
     'use strict';
 	let a = [], b = [];
@@ -4999,12 +4973,10 @@ function pctpfe() {
         $('#pfeRango').val(a[eg] + ' - ' +b[eg]);
     }
 }
-
 function valCC(dof,dbp){
     var delta = parseFloat(1.60);
     return Math.round((parseInt(dof) + parseInt(dbp)) * delta);
 }
-
 function bvm() {
     'use strict';
 	let a = [], b = [];
@@ -5023,7 +4995,6 @@ function bvm() {
         $("#bvmPct").val(resultado);
     }
 }
-
 function crearInformeEcoSegTrim2(){
 
 	var actCard;
@@ -5168,7 +5139,6 @@ function crearInformeEcoSegTrim2(){
 	
 	imprInforme(InformeString);
 }
-
 function valccca() {
     var cc=parseInt($("#cc").val());
     var ca=parseInt($("#ca").val());
@@ -5220,7 +5190,6 @@ function valccca() {
         }
     }
 }
-
 function informeGinecologico(){
     let informe = '<div class="container-fluid"><h3 class="page-header text-center">ECOGRAFÍA GINECOLÓGICA</h3></div><div class="container-fluid"><p><strong>Datos generales</strong></p><table class="table"><tbody><tr><td>Nombre de paciente</td><td>: :PACIENTE</td></tr></tbody></table><table class="table"><tbody><tr><td>Edad Materna</td><td>: :EDADMATERNA años.</td></tr></tbody></table><table class="table"><tbody><tr><td>RUT (DNI)</td><td>: :IDPACIENTE</td></tr></tbody></table><table class="table"><tbody><tr><td>Fecha de Exámen</td><td>: :FEXAMEN</td></tr></tbody></table></div><div class="container-fluid"><p><strong><em>Antecedentes</em></strong></p><table class="table"><tbody><tr><td>FUR referida</td><td>: :FUM</td></tr></tbody></table><table class="table"><tbody><tr><td>Días del ciclo mestrual</td><td>: :EDADMATERNA años.</td></tr></tbody></table><table class="table"><tbody><tr><td>Motivo de exámen</td><td>: :MOTIVO</td></tr></tbody></table></div><div class="container-fluid"><table class="table"><tbody><tr><td><strong>Útero</strong></td><td>: :LINEA2</td></tr></tbody></table><table class="table"><tbody><tr><td><strong>Endometrio</strong></td><td>: :LINEA3</td></tr></tbody></table><table class="table"><tbody><tr><td><strong>Anexo Izquierdo</strong></td><td>: :LINEA4</td></tr></tbody></table><table class="table"><tbody><tr><td><strong>Ovario Izquierdo</strong></td><td>: :LINEA5</td></tr></tbody></table><table class="table"><tbody><tr><td><strong>Anexo Derecho</strong></td><td>: :LINEA6</td></tr></tbody></table><table class="table"><tbody><tr><td><strong>Ovario Derecho</strong></td><td>: :LINEA7</td></tr></tbody></table><table class="table"><tbody><tr><td><strong>Douglas</strong></td><td>: :LINEA8</td></tr></tbody></table></div><div class="container-fluid"><table class="table"><tbody><tr><td><strong>Comentarios y observaciones:</strong></td><td>: :COMENTARIO</td></tr></tbody></table></div><div class="container-fluid"><p class="text-right top40">Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style="border-top: 1px solid #000;width: 100% !important;display: block;"></span><p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000;width: 100% !important;display: block;"></span><p class="pie-pagina" style="border-bottom:0;">Informe  generado  desde  software  crecimientofetal.cl,  el  objetivo  de  este  es  favorecer  análisis  preeliminar  de  los  datos,  la interpretación de los resultados de este informe, es responsabilidad fundamentalmente del profesional referente a exámen ecográfico. Profesional quien finalmente evaluará clínicamente la información contenida en este informe.</p></div>';
 
@@ -5269,9 +5238,7 @@ function informeGinecologico(){
 
     return informe;
 }
-
 //destruir
-
 function modal(button){
     let id = uuidv4();
     let titulo = uuidv4();
@@ -5293,7 +5260,6 @@ function modal(button){
         
     return resultado;
 }
-
 function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
       (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
