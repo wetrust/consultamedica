@@ -5224,24 +5224,24 @@ function informeGinecologico(){
     let patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     let edadmaterna = $( "select[name='edad_materna']").val();
 
-    informe = informe.replace(":PACIENTE", paciente);
-    informe = informe.replace(":IDPACIENTE", idpaciente);
-    informe = informe.replace(":MOTIVO", motivo);
-    informe = informe.replace(":ECOGRAFISTA", ecografista);
-    informe = informe.replace(":FUM", fur);
-    informe = informe.replace(":EDADMATERNA", edadmaterna);
-    informe = informe.replace(":FEXAMEN", fexamen);
-    informe = informe.replace(":LINEA1", fexamen);
-    informe = informe.replace(":LINEA2", LINEA2);
-    informe = informe.replace(":LINEA3", LINEA3);
-    informe = informe.replace(":LINEA4", LINEA4);
-    informe = informe.replace(":LINEA5", LINEA5);
-    informe = informe.replace(":LINEA6", LINEA6);
-    informe = informe.replace(":LINEA7", LINEA7);
-    informe = informe.replace(":LINEA8", LINEA8);
-    informe = informe.replace(":COMENTARIO", comentario);
-    informe = informe.replace(":DATEINFORME", dateInf);
-    informe = informe.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
+    informe = informe.replace(':PACIENTE', paciente);
+    informe = informe.replace(':IDPACIENTE', idpaciente);
+    informe = informe.replace(':MOTIVO', motivo);
+    informe = informe.replace(':ECOGRAFISTA', ecografista);
+    informe = informe.replace(':FUM', fur);
+    informe = informe.replace(':EDADMATERNA', edadmaterna);
+    informe = informe.replace(':FEXAMEN', fexamen);
+    informe = informe.replace(':LINEA1', fexamen);
+    informe = informe.replace(':LINEA2', LINEA2);
+    informe = informe.replace(':LINEA3', LINEA3);
+    informe = informe.replace(':LINEA4', LINEA4);
+    informe = informe.replace(':LINEA5', LINEA5);
+    informe = informe.replace(':LINEA6', LINEA6);
+    informe = informe.replace(':LINEA7', LINEA7);
+    informe = informe.replace(':LINEA8', LINEA8);
+    informe = informe.replace(':COMENTARIO', comentario);
+    informe = informe.replace(':DATEINFORME', dateInf);
+    informe = informe.replace(':PATOLOGIAOBSTETRICA', patologiaObstetrica);
 
     return informe;
 }
