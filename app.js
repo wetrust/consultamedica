@@ -4557,7 +4557,7 @@ function imprSelec(muestra){
 	document = document.replace(":MEMBRETE", membrete);
 	ventimp.document.write(document);
 	ventimp.document.close();
-	ventimp.show();
+	//ventimp.show();
 }
 
 function deDBP() {
