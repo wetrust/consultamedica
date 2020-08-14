@@ -573,6 +573,7 @@ $( document ).ready(function() {
         }
     });
 });
+
 //controlador de input clones
 //si se escribe en uno, se refleja en otro
 $( document ).ready(function() {
@@ -998,6 +999,7 @@ $( document ).ready(function() {
         }
     });
 });
+
 //controlador de botones reset
 $( document ).ready(function() {
     $("#btn\\.erase\\.ginecologica").on("click", function(){
@@ -1112,6 +1114,7 @@ $( document ).ready(function() {
         });
     });
 });
+
 //controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
@@ -1126,6 +1129,7 @@ $( document ).ready(function() {
         }
     });  
 });
+
 //controlador de los gráficos
 $( document ).ready(function() {
     $("#graficoSaco").on( 'click', function() {
@@ -3981,6 +3985,7 @@ $( document ).ready(function() {
         }
     });
 });
+
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
     var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#pdfneonatal"];
@@ -4236,6 +4241,7 @@ function makeModal(button){
         
     return resultado;
 }
+
 //crea id random para los modales
 function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
@@ -4257,6 +4263,7 @@ function imprInforme(datos){
 	ventimp.document.close();
 	ventimp.show();
 }
+
 //funciones para cálculos
 function egSaco(saco) {
 	'use strict';
@@ -5238,6 +5245,7 @@ function informeGinecologico(){
 
     return informe;
 }
+
 //destruir
 function modal(button){
     let id = uuidv4();
