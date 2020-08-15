@@ -540,6 +540,10 @@ $( document ).ready(function() {
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
         $("#pdfviebox").children("ol").children().children().attr("href","#ajustepeso");
     });
+    $("#pdfnuevo").on("click", function(){
+        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/uso_ecografia_doppler_obstetrcia.pdf");
+        $("#pdfviebox").children("ol").children().children().attr("href","#ajustepeso");
+    });
 
     $("#pdfnacional").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gnacional.pdf");
