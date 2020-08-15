@@ -4543,7 +4543,7 @@ function imprSelec(muestra){
 	document = document.replace(":DATOS", ficha);
 	document = document.replace(":DATEINFORME", dateInf);
 	document = document.replace(":ESTILO", estilo);
-	document = document.replace(":FUNCION", funcion);
+	document = document.replace(/:FUNCION/g, funcion);
 	document = document.replace(new RegExp('d-none', 'g'), "");
 	document = document.replace(":MEMBRETE", membrete);
 	ventimp.document.write(document);
