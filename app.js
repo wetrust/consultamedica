@@ -4261,7 +4261,6 @@ function imprInforme(datos){
 	document = document.replace(":MEMBRETE", membrete);
 	ventimp.document.write(document);
 	ventimp.document.close();
-	ventimp.show();
 }
 
 //funciones para cálculos
@@ -4548,7 +4547,6 @@ function imprSelec(muestra){
 	document = document.replace(":MEMBRETE", membrete);
 	ventimp.document.write(document);
 	ventimp.document.close();
-	ventimp.show();
 }
 function deDBP() {
     'use strict';
