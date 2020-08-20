@@ -578,7 +578,7 @@ $( document ).ready(function() {
         }
     });
 
-    $('#liquido\\.ila\\.uno\\.morfologia #liquido\\.ila\\.dos\\.morfologia #liquido\\.ila\\.tres\\.morfologia #liquido\\.ila\\.cuatro\\.morfologia').on("keyup", function(){
+    $('#liquido\\.ila\\.uno\\.morfologia, #liquido\\.ila\\.dos\\.morfologia, #liquido\\.ila\\.tres\\.morfologia, #liquido\\.ila\\.cuatro\\.morfologia').on("keyup", function(){
         var uno = $("#liquido\\.ila\\.uno\\.morfologia ").val();
         var dos = $("#liquido\\.ila\\.dos\\.morfologia ").val();
         var tres = $("#liquido\\.ila\\.tres\\.morfologia").val();
