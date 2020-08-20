@@ -315,62 +315,68 @@
                 <div class="card">
                     <div class="card-body">
                         <h3>Evaluación general</h3>
-                        <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-2 col-form-label">Actividad cardiaca</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" id="actividad.cardiaca.morfologia">
-                                    <option>Presente</option>
-                                    <option>Ausente</option>
-                                </select>
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group row">
+                                    <label for="actividad.cardiaca.morfologia" class="col-sm-2 col-form-label">Actividad cardiaca</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="actividad.cardiaca.morfologia">
+                                            <option>Presente</option>
+                                            <option>Ausente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="presentacion.morfologia" class="col-sm-2 col-form-label">Presentación</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="presentacion.morfologia">
+                                            <option>Cefálica</option>
+                                            <option>Podálica</option>
+                                            <option>Transversa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="liquido.cualitativo.morfologia" class="col-sm-2 col-form-label">Liquido amniótico Cualitativo</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="liquido.cualitativo.morfologia">
+                                            <option>Normal</option>
+                                            <option>Aumentado</option>
+                                            <option>Disminuido</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="movimientos.fetales.morfologia" class="col-sm-2 col-form-label">Movimientos fetales</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" id="movimientos.fetales.morfologia">
-                                    <option>Presente</option>
-                                    <option>Ausente</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="presentacion.morfologia" class="col-sm-2 col-form-label">Presentación</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" id="presentacion.morfologia">
-                                    <option>Cefálica</option>
-                                    <option>Podálica</option>
-                                    <option>Transversa</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="placenta.ubicacion" class="col-sm-2 col-form-label">Placenta ubicación</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" id="placenta.ubicacion">
-                                    <option>Anterior</option>
-                                    <option>Posterior</option>
-                                    <option>Fondo</option>
-                                    <option>Previa</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="liquido.cualitativo.morfologia" class="col-sm-2 col-form-label">Liquido amniótico Cualitativo</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" id="liquido.cualitativo.morfologia">
-                                    <option>Normal</option>
-                                    <option>Aumentado</option>
-                                    <option>Disminuido</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="liquido.semi.morfologia" class="col-sm-2 col-form-label">Liquido amniótico Semi-cuantitativo BVM</label>
-                            <div class="col-sm-10">
-                                <div class="input-group mb-2">
-                                    <input type="number" class="form-control" id="liquido.semi.morfologia">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">mm</div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group row">
+                                    <label for="movimientos.fetales.morfologia" class="col-sm-2 col-form-label">Movimientos fetales</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="movimientos.fetales.morfologia">
+                                            <option>Presente</option>
+                                            <option>Ausente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="placenta.ubicacion" class="col-sm-2 col-form-label">Placenta ubicación</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="placenta.ubicacion">
+                                            <option>Anterior</option>
+                                            <option>Posterior</option>
+                                            <option>Fondo</option>
+                                            <option>Previa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="liquido.semi.morfologia" class="col-sm-2 col-form-label">Liquido amniótico Semi-cuantitativo BVM</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group mb-2">
+                                            <input type="number" class="form-control" id="liquido.semi.morfologia">
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">mm</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -506,24 +512,30 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Cerebro</h5>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">V. Lateral proximal</label>
-                            <div class="col-sm-10">
-                                <div class="input-group mb-2">
-                                    <input type="number" class="form-control" id="vlp.morfologia">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">mm</div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">V. Lateral proximal</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group mb-2">
+                                            <input type="number" class="form-control" id="vlp.morfologia">
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">mm</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">V. Lateral distal</label>
-                            <div class="col-sm-10">
-                                <div class="input-group mb-2">
-                                    <input type="number" class="form-control" id="vld.morfologia">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">mm</div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">V. Lateral distal</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group mb-2">
+                                            <input type="number" class="form-control" id="vld.morfologia">
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">mm</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -533,10 +545,10 @@
                             <div class="col-sm-10">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-secondary active">
-                                      <input type="radio" name="cspp.morfologia" id="option1"> Si
+                                      <input type="radio" name="cspp.morfologia" id="option1" checked> Si
                                     </label>
                                     <label class="btn btn-secondary">
-                                      <input type="radio" name="cspp.morfologia" id="option2" checked> No
+                                      <input type="radio" name="cspp.morfologia" id="option2"> No
                                     </label>
                                 </div>
                             </div>
@@ -546,10 +558,10 @@
                             <div class="col-sm-10">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-secondary active">
-                                      <input type="radio" name="ccv.morfologia" id="option1"> Si
+                                      <input type="radio" name="ccv.morfologia" id="option1" checked> Si
                                     </label>
                                     <label class="btn btn-secondary">
-                                      <input type="radio" name="ccv.morfologia" id="option2" checked> No
+                                      <input type="radio" name="ccv.morfologia" id="option2"> No
                                     </label>
                                 </div>
                             </div>
@@ -557,20 +569,164 @@
                         <h5 class="card-title">Cuello normal</h5>
                         Labio nariz normal
                         <h5 class="card-title">Corazón</h5>
-                        4 cámaras visible
-                        Tracto de salida  pulmonar normal
-                        Tracto salida Aórtico normal
-                        3 vasos tráquea visible
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">4 cámaras visible</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="cv.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="cv.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Tracto de salida  pulmonar normal</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="tspn.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="tspn.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Tracto salida Aórtico normal</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="tsan.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="tsan.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">3 vasos tráquea visible</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="vtv.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="vtv.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <h5 class="card-title">Tórax Normal</h5>
                         <h5 class="card-title">Abdomen</h5>
-                        Pared normal
-                        Estómago visible
-                        Riñones visibles
-                        Vejiga visible
-                        <h5 class="card-title">Columna normal</h5>
-                        <h5 class="card-title">Extremidades superiores normales</h5>
-                        <h5 class="card-title">Extremidades inferiores normales</h5>
-                        <h5 class="card-title">Genitales</h5>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Pared normal</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="pn.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="pn.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Estómago visible</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="ev.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="ev.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Riñones visibles</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="rv.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="rv.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Vejiga visible</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="vv.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="vv.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Columna normal</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="cn.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="cn.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Extremidades superiores normales</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="cn.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="cn.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Extremidades inferiores normales</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="cn.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="cn.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Genitales</label>
+                            <div class="col-sm-10">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="cn.morfologia" id="option1" checked> M
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="cn.morfologia" id="option2"> F
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
