@@ -515,8 +515,8 @@
                         <div class="row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">V. Lateral proximal</label>
-                                    <div class="col-sm-10">
+                                    <label class="col-sm-4 col-form-label">V. Lateral proximal</label>
+                                    <div class="col-sm-8">
                                         <div class="input-group mb-2">
                                             <input type="number" class="form-control" id="vlp.morfologia">
                                             <div class="input-group-append">
@@ -528,8 +528,8 @@
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">V. Lateral distal</label>
-                                    <div class="col-sm-10">
+                                    <label class="col-sm-4 col-form-label">V. Lateral distal</label>
+                                    <div class="col-sm-8">
                                         <div class="input-group mb-2">
                                             <input type="number" class="form-control" id="vld.morfologia">
                                             <div class="input-group-append">
@@ -566,8 +566,32 @@
                                 </div>
                             </div>
                         </div>
-                        <h5 class="card-title">Cuello normal</h5>
-                        Labio nariz normal
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Cuello normal</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="cn.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="cn.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Labio nariz normal</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="lnn.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="lnn.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <h5 class="card-title">Corazón</h5>
                         <div class="form-group row">
                             <label class="col-sm-4 col-form-label">4 cámaras visible</label>
@@ -621,8 +645,32 @@
                                 </div>
                             </div>
                         </div>
-                        <h5 class="card-title">Tórax Normal</h5>
-                        <h5 class="card-title">Abdomen</h5>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Tórax Normal</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="tn.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="tn.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Abdomen</label>
+                            <div class="col-sm-8">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="cspp.morfologia" id="option1" checked> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="cspp.morfologia" id="option2"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label class="col-sm-4 col-form-label">Pared normal</label>
                             <div class="col-sm-8">
@@ -693,10 +741,10 @@
                             <div class="col-sm-8">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-secondary active">
-                                      <input type="radio" name="cn.morfologia" id="option1" checked> Si
+                                      <input type="radio" name="esn.morfologia" id="option1" checked> Si
                                     </label>
                                     <label class="btn btn-secondary">
-                                      <input type="radio" name="cn.morfologia" id="option2"> No
+                                      <input type="radio" name="esn.morfologia" id="option2"> No
                                     </label>
                                 </div>
                             </div>
@@ -706,10 +754,10 @@
                             <div class="col-sm-8">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-secondary active">
-                                      <input type="radio" name="cn.morfologia" id="option1" checked> Si
+                                      <input type="radio" name="ein.morfologia" id="option1" checked> Si
                                     </label>
                                     <label class="btn btn-secondary">
-                                      <input type="radio" name="cn.morfologia" id="option2"> No
+                                      <input type="radio" name="ein.morfologia" id="option2"> No
                                     </label>
                                 </div>
                             </div>
@@ -719,10 +767,10 @@
                             <div class="col-sm-8">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-secondary active">
-                                      <input type="radio" name="cn.morfologia" id="option1" checked> M
+                                      <input type="radio" name="gen.morfologia" id="option1" checked> M
                                     </label>
                                     <label class="btn btn-secondary">
-                                      <input type="radio" name="cn.morfologia" id="option2"> F
+                                      <input type="radio" name="gen.morfologia" id="option2"> F
                                     </label>
                                 </div>
                             </div>
