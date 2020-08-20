@@ -578,6 +578,11 @@ $( document ).ready(function() {
         }
     });
 
+    ////////////////////////////
+    ///////////////////////////////
+    /////////////////////////////
+    /////////////////////////////
+    //MORFOLOGIA
     $('#liquido\\.ila\\.uno\\.morfologia, #liquido\\.ila\\.dos\\.morfologia, #liquido\\.ila\\.tres\\.morfologia, #liquido\\.ila\\.cuatro\\.morfologia').on("keyup", function(){
         var uno = $("#liquido\\.ila\\.uno\\.morfologia ").val();
         var dos = $("#liquido\\.ila\\.dos\\.morfologia ").val();
@@ -589,9 +594,172 @@ $( document ).ready(function() {
         tres = (tres.length > 0) ? +tres : 0;
         cuatro = (cuatro.length > 0) ? +cuatro : 0;
 
-        var suma = uno + dos + tres + cuatro;
-        $("liquido\\.ila\\.suma\\.morfologia").val(suma);
+        var suma = (uno + dos + tres + cuatro) / 4;
+        $("#liquido\\.ila\\.suma\\.morfologia").val(suma);
+
+        let a = [], b = [];
+        a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
+        b[0]=59; b[1]=62; b[2]=64; b[3]=66; b[4]=67; b[5]=68; b[6]=68; b[7]=68; b[8]=68; b[9]=68; b[10]=68; b[11]=69; b[12]=69; b[13]=69; b[14]=69; b[15]=70; b[16]=71; b[17]=72; b[18]=72; b[19]=72; b[20]=71; b[21]=70; b[22]=68; b[23]=66; b[24]=62;
+    
+        let eg = document.getElementById("semanas").value;
+        let bvm = suma;
+        if (eg > 15 || eg < 41){
+            eg = eg - 16;
+            eg = parseInt(eg);
+            var uno = b[eg] - a[eg];
+            var dos = bvm - a[eg];
+            var resultado = parseInt(90 / (uno) * (dos) + 5);
+            $("#liquido\\.ila\\.percentil\\.morfologia").val(resultado);
+        }
+    });
+
+    $('#dbp\\.morfologia').on("keyup", function(){
+        let a = [], b = [];
+
+        a[0]=14;a[1]=17;a[2]=19;a[3]=25;a[4]=29;a[5]=33;a[6]=34;a[7]=38;a[8]=41;a[9]=43;a[10]=46;a[11]=49;a[12]=52;a[13]=54;a[14]=57;a[15]=61;a[16]=63;a[17]=65;a[18]=69;a[19]=69;a[20]=74;a[21]=74;a[22]=77;a[23]=78;a[24]=78;a[25]=81;a[26]=85;a[27]=88;
+        b[0]=25;b[1]=29;b[2]=33;b[3]=35;b[4]=41;b[5]=42;b[6]=46;b[7]=50;b[8]=52;b[9]=56;b[10]=59;b[11]=63;b[12]=66;b[13]=70;b[14]=71;b[15]=75;b[16]=77;b[17]=81;b[18]=83;b[19]=87;b[20]=88;b[21]=91;b[22]=94;b[23]=95;b[24]=97;b[25]=99;b[26]=97;b[27]=106;
+    
+        let eg = document.getElementById("semanas").value;
+        let dbp = this.value;
         
+        dbp = dbp.toString();
+        dbp = dbp.replace(",", ".");
+        dbp = parseFloat(dbp);
+    
+        if (eg < 12 || eg > 40){
+            $("#dbp\\.pct\\.morfologia").val('0');
+        }
+        else {
+            eg = eg - 12;
+            eg = parseInt(eg);
+    
+            var uno = b[eg] - a[eg];
+            var dos = dbp - a[eg];
+            var resultado = (parseInt(95 / (uno) * (dos) + 3));
+
+            var pctDBP = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctDBP = '&gt; 99';
+            }
+            else if (resultado < 1){
+                pctDBP = '&lt; 1';
+            }
+            else{
+                pctDBP = resultado;
+            }
+            
+            $('#dbp\\.pct\\.morfologia').val(pctDBP);
+        }
+    })
+
+    $('#dof\\.morfologia').on("keyup", function(){
+        let a = [], b = [];
+        let dof = this.value;
+    
+        a[10]=7;a[11]=11; a[12]=16; a[13]=20;a[14]=24; a[15]=29; a[16]=33; a[17]=37;a[18]=41; a[19]=46; a[20]=50; a[21]=54;a[22]=58; a[23]=62; a[24]=65; a[25]=69;a[26]=73; a[27]=76; a[28]=80; a[29]=83;a[30]=86; a[31]=89; a[32]=92; a[33]=95;a[34]=97; a[35]=99; a[36]=102; a[37]=104;a[38]=105; a[39]=107; a[40]=108;
+        b[10]=21; b[11]=25; b[12]=30; b[13]=34;b[14]=38; b[15]=43; b[16]=47; b[17]=51;b[18]=55; b[19]=60; b[20]=64; b[21]=68;b[22]=72; b[23]=76; b[24]=79; b[25]=83;b[26]=87; b[27]=90; b[28]=94; b[29]=97;b[30]=100; b[31]=103; b[32]=106; b[33]=108;b[34]=111; b[35]=113; b[36]=116; b[37]=118;b[38]=119; b[39]=121; b[40]=122;
+        
+        let eg = document.getElementById("semanas").value;
+        
+        if (eg > 9 && dof > 0){
+            var uno = b[eg] - a[eg];
+            var dos = dof - a[eg];
+            var resultado = (parseInt(95 / (uno) * (dos) + 3));
+            var pctDOF = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctDOF = '&gt; 99';
+            }
+            else if (resultado < 1){
+                pctDOF = '&lt; 1';
+            }
+            else{
+                pctDOF = resultado;
+            }
+            $('#dof\\.pct\\.morfologia').val(pctDOF);
+        }else{
+            $('#dof\\.pct\\.morfologia').val('0');
+        }
+    })
+
+    $("#femur\\.morfologia").on("keyup", function(){
+        let a = [], b = [];
+   
+        a[0]=7;a[1]=9;a[2]=12;a[3]=15;a[4]=17;a[5]=21; a[6]=23;a[7]=26;a[8]=28;a[9]=30;a[10]=33;a[11]=35; a[12]=38;a[13]=40;a[14]=42;a[15]=44;a[16]=46; a[17]=48;a[18]=50;a[19]=52;a[20]=53;a[21]=55; a[22]=57;a[23]=59;a[24]=60;a[25]=62;a[26]=64; a[27]=65;a[28]=66;
+        b[0]=12;b[1]=14;b[2]=17;b[3]=20;b[4]=23;b[5]=27; b[6]=31;b[7]=34;b[8]=38;b[9]=40;b[10]=43;b[11]=47; b[12]=50;b[13]=52;b[14]=56;b[15]=58;b[16]=62; b[17]=64;b[18]=66;b[19]=68;b[20]=71;b[21]=73; b[22]=75;b[23]=78;b[24]=80;b[25]=82;b[26]=84; b[27]=86;b[28]=88;
+   
+        let eg = document.getElementById("semanas").value;
+        let lf=parseInt(this.value);
+   
+        if (eg < 12 || eg > 40){ 
+            $("#femur\\.pct\\.morfologia").val("0");
+        }
+        else {
+            eg = eg - 12;
+            eg = parseInt(eg);
+            var uno=b[eg] - a[eg];
+            var dos=lf - a[eg];
+            var resultado = parseInt(95 / (uno) * (dos) + 3);
+            ajustarProgreso(resultado, "lfPct");
+            var pctLF = '';
+                //truncador de Pct, sobre 100 o bajo 1
+                if (resultado > 99){
+                    pctLF = '&gt; 99';
+                }
+                else if (resultado < 1){
+                    pctLF = '&lt; 1';
+                }
+                else{
+                    pctLF = resultado;
+                }
+            $('#femur\\.pct\\.morfologia').val(pctLF);
+        }
+    })
+
+    $("#humero\\.morfologia").on("keyup", function(){
+        let a = [], b = [];
+   
+        a[12] = 4.8;   b[12] = 12.3; a[13] = 7.6;   b[13] = 15.1;
+        a[14] = 10.3;  b[14] = 17.9; a[15] = 13.1;  b[15] = 20.7;
+        a[16] = 15.8;  b[16] = 23.5; a[17] = 18.5;  b[17] = 26.3;
+        a[18] = 21.2;  b[18] = 29.1; a[19] = 23.8;  b[19] = 31.6;
+        a[20] = 26.3;  b[20] = 34.2; a[21] = 28.8;  b[21] = 36.7;
+        a[22] = 31.2;  b[22] = 39.2; a[23] = 33.5;  b[23] = 41.6;
+        a[24] = 35.7;  b[24] = 43.9; a[25] = 37.9;  b[25] = 46.1;
+        a[26] = 39.9;  b[26] = 48.1; a[27] = 41.9;  b[27] = 50.1;
+        a[28] = 43.7;  b[28] = 52.1; a[29] = 45.5;  b[29] = 53.9;
+        a[30] = 47.2;  b[30] = 55.6; a[31] = 48.9;  b[31] = 57.3;
+        a[32] = 50.4;  b[32] = 58.9; a[33] = 52.1;  b[33] = 60.5;
+        a[34] = 53.4;  b[34] = 62.1; a[35] = 54.8;  b[35] = 63.5;
+        a[36] = 56.2;  b[36] = 64.9; a[37] = 57.6;  b[37] = 66.4;
+        a[38] = 59.8;  b[38] = 67.8; a[39] = 60.4;  b[39] = 69.3;
+        a[40] = 61.9;  b[40] = 70.8;
+       
+        let eg = document.getElementById("semanas").value;
+        var lh=parseInt(this.value);
+   
+        if (eg < 12 || eg > 40) {
+            $("#humero\\.pct\\.morfologia").val('0');
+        }
+        else {
+            eg = parseInt(eg);
+            var uno = b[eg] - a[eg];
+            var dos = lh - a[eg];
+            var resultado = (parseInt(95 / (uno) * (dos) + 5));
+            var pctLH = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctLH = '&gt; 99';
+            }
+            else if (resultado < 1){
+                pctLH = '&lt; 1';
+            }
+            else{
+               pctLH = resultado;
+            }
+            $('#humero\\.pct\\.morfologia').val(pctLH);
+        }
     })
 });
 
