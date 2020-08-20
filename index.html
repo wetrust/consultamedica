@@ -314,7 +314,7 @@
             <div class="tab-pane fade show active" id="morfologia-general" role="tabpanel" aria-labelledby="morfologia-general-tab">
                 <div class="card">
                     <div class="card-body">
-                        <h3>Evaluación general</h3>
+                        <h3 class="mb-3">Evaluación general</h3>
                         <div class="row">
                             <div class="col-12 col-sm-5">
                                 <div class="form-group row">
@@ -385,34 +385,35 @@
                             </div>
                         </div>
                         <div class="d-flex flex-row mb-3">
-                            <div class="flex-fill">
+                            <div class="flex-fill mx-2">
                                 <label>LA Semi-cuantitativo ILA</label>
                             </div>
-                            <div class="flex-fill">
+                            <div class="flex-fill mx-2">
                                 <input type="number" class="form-control" id="liquido.ila.uno.morfologia">
                             </div>
-                            <div class="flex-fill">
+                            <div class="flex-fill mx-2">
                                 <input type="number" class="form-control" id="liquido.ila.dos.morfologia">
                             </div>
-                            <div class="flex-fill">
+                            <div class="flex-fill mx-2">
                                 <input type="number" class="form-control" id="liquido.ila.tres.morfologia">
                             </div>
-                            <div class="flex-fill">
+                            <div class="flex-fill mx-2">
                                 <input type="number" class="form-control" id="liquido.ila.cuatro.morfologia">
                             </div>
-                            <div class="flex-fill">
+                            <div class="flex-fill mx-2">
                                 <input type="number" class="form-control" id="liquido.ila.suma.morfologia">
                             </div>
-                            <div class="flex-fill">
+                            <div class="flex-fill mx-2">
                                 <input type="number" class="form-control" id="liquido.ila.percentil.morfologia">
                             </div>
                         </div>
+                        <p>*LA (Líquido amniótico) Semi-cuantitativo ILA sumatoria de 4 cuadrantes</p>
                         <h3>Biometría</h3>
                         <div class="row">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">DBP</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-6">
                                         <div class="input-group mb-2">
                                             <input type="number" class="form-control" id="dbp.morfologia">
                                             <div class="input-group-append">
@@ -420,10 +421,13 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="dbp.pct.morfologia">
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">DOF</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-6">
                                         <div class="input-group mb-2">
                                             <input type="number" class="form-control" id="dof.morfologia">
                                             <div class="input-group-append">
@@ -431,10 +435,13 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="dof.pct.morfologia">
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">PC</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-6">
                                         <div class="input-group mb-2">
                                             <input type="number" class="form-control" id="pc.morfologia">
                                             <div class="input-group-append">
@@ -442,10 +449,13 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="pc.pct.morfologia">
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">PA</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-6">
                                         <div class="input-group mb-2">
                                             <input type="number" class="form-control" id="pa.morfologia">
                                             <div class="input-group-append">
@@ -453,10 +463,13 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="pa.pct.morfologia">
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">FEMUR</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-6">
                                         <div class="input-group mb-2">
                                             <input type="number" class="form-control" id="femur.morfologia">
                                             <div class="input-group-append">
@@ -464,10 +477,13 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="femur.pct.morfologia">
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">HUMERO</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-6">
                                         <div class="input-group mb-2">
                                             <input type="number" class="form-control" id="humero.morfologia">
                                             <div class="input-group-append">
@@ -475,12 +491,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="humero.pct.morfologia">
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Transverso cerebeloso</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-6">
                                         <div class="input-group mb-2">
                                             <input type="number" class="form-control" id="tc.morfologia">
                                             <div class="input-group-append">
@@ -488,10 +507,13 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="tc.pct.morfologia">
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Cisterna magna</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-6">
                                         <div class="input-group mb-2">
                                             <input type="number" class="form-control" id="cm.morfologia">
                                             <div class="input-group-append">
@@ -499,16 +521,22 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="cm.pct.morfologia">
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Peso Fetal estimado</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-6">
                                         <div class="input-group mb-2">
                                             <input type="number" class="form-control" id="pfe.morfologia">
                                             <div class="input-group-append">
                                                 <div class="input-group-text">gramos</div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="pfe.pct.morfologia">
                                     </div>
                                 </div>
                             </div>

@@ -577,6 +577,22 @@ $( document ).ready(function() {
             $("#comentarios-anatomia-informe-eg-texto").val('');
         }
     });
+
+    $('#liquido\\.ila\\.uno\\.morfologia #liquido\\.ila\\.dos\\.morfologia #liquido\\.ila\\.tres\\.morfologia #liquido\\.ila\\.cuatro\\.morfologia').on("keyup", function(){
+        var uno = $("#liquido\\.ila\\.uno\\.morfologia ").val();
+        var dos = $("#liquido\\.ila\\.dos\\.morfologia ").val();
+        var tres = $("#liquido\\.ila\\.tres\\.morfologia").val();
+        var cuatro = $("#liquido\\.ila\\.cuatro\\.morfologia").val();
+
+        uno = (uno.length > 0) ? +uno : 0;
+        dos = (dos.length > 0) ? +dos : 0;
+        tres = (tres.length > 0) ? +tres : 0;
+        cuatro = (cuatro.length > 0) ? +cuatro : 0;
+
+        var suma = uno + dos + tres + cuatro;
+        $("liquido\\.ila\\.suma\\.morfologia").val(suma);
+        
+    })
 });
 
 //controlador de input clones
