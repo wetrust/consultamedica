@@ -761,6 +761,73 @@ $( document ).ready(function() {
             $('#humero\\.pct\\.morfologia').val(pctLH);
         }
     })
+
+    $("#pc\\.morfologia").on("keyup", function(){
+        let a = [], b = [];
+        a[0]=64;a[1]=74;a[2]=88;a[3]=100;a[4]=113;a[5]=126; a[6]=137;a[7]=149;a[8]=161;a[9]=172;a[10]=183; a[11]=194;a[12]=204;a[13]=214;a[14]=224;a[15]=233; a[16]=242;a[17]=250;a[18]=258;a[19]=267;a[20]=274; a[21]=280;a[22]=287;a[23]=293;a[24]=299;a[25]=303; a[26]=308;a[27]=311;a[28]=315;
+        b[0]=81;b[1]=94;b[2]=106;b[3]=120;b[4]=135; b[5]=150;b[6]=165;b[7]=179;b[8]=193;b[9]=206; b[10]=219;b[11]=232;b[12]=243;b[13]=256;b[14]=268; b[15]=279;b[16]=290;b[17]=300;b[18]=310;b[19]=319; b[20]=328;b[21]=336;b[22]=343;b[23]=351;b[24]=358; b[25]=363;b[26]=368;b[27]=373;b[28]=377;
+       
+        let eg = document.getElementById("semanas").value;
+        let cc = parseInt(this.value);
+       
+        if (eg < 12 || eg > 40){ 
+            $("#pc\\.pct\\.morfologia").val("");
+        }
+        else {
+            eg = eg - 12;
+            eg = parseInt(eg);
+            var uno=b[eg] - a[eg];
+            var dos=cc - a[eg];
+            ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "ccPct");
+            var resultado = parseInt(95 / (uno) * (dos) + 3);
+            var pctCC = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctCC = '&gt; 99';
+            }
+            else if (resultado < 1){
+                pctCC = '&lt; 1';
+            }
+            else{
+                pctCC = resultado;
+            }
+            
+            $("#pc\\.pct\\.morfologia").val(pctCC);
+        }
+    })
+
+    $("#pa\\.morfologia").on("keyup", function(){
+        let a = [], b = [];
+        a[0]=42;a[1]=52;a[2]=64;a[3]=75;a[4]=86; a[5]=97;a[6]=109;a[7]=119;a[8]=131;a[9]=141; a[10]=151;a[11]=161;a[12]=171;a[13]=181; a[14]=191;a[15]=200;a[16]=209;a[17]=218;a[18]=227; a[19]=236;a[20]=245;a[21]=253;a[22]=261;a[23]=269; a[24]=277;a[25]=285;a[26]=292;a[27]=299;a[28]=307;
+        b[0]=71;b[1]=79;b[2]=92;b[3]=102;b[4]=113; b[5]=127;b[6]=141;b[7]=155;b[8]=170; b[9]=183;b[10]=192;b[11]=209;b[12]=223; b[13]=235;b[14]=248;b[15]=260;b[16]=271;b[17]=284; b[18]=295;b[19]=306;b[20]=318;b[21]=329;b[22]=339; b[23]=349;b[24]=359;b[25]=370;b[26]=380;b[27]=389; b[28]=399;
+       
+        let eg = document.getElementById("semanas").value;
+        let ca = parseInt(this.value);
+       
+        if (eg < 12 || eg > 40){ 
+                $("#pa\\.pct\\.morfologia").val("0");
+        }
+        else {
+            eg = eg - 12;
+            eg = parseInt(eg);
+            var uno=b[eg] - a[eg];
+            var dos=ca - a[eg];
+            var resultado = parseInt(95 / (uno) * (dos) + 3);
+            ajustarProgreso(resultado, "caPct");
+            var pctCA = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctCA = '&gt; 99';
+            }
+            else if (resultado < 1){
+                pctCA = '&lt; 1';
+            }
+            else{
+                pctCA = resultado;
+            }
+            $('#pa\\.pct\\.morfologia').val(pctCA);
+        }
+    })
 });
 
 //controlador de input clones
