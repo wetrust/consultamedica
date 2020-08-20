@@ -302,6 +302,210 @@
             </div>
     </div>
     <div class="container d-none" id="construccion"></div>
+    <div class="container d-none" id="morfologiafet">
+        <nav>
+            <div class="nav nav-tabs" role="tablist">
+              <a class="nav-link active" id="morfologia-general-tab" data-toggle="tab" href="#morfologia-general" role="tab" aria-controls="morfologia-general" aria-selected="true">Modulo 1 general y biometría</a>
+              <a class="nav-link" id="morfologia-morfologia-tab" data-toggle="tab" href="#morfologia-morfologia" role="tab" aria-controls="morfologia-morfologia" aria-selected="false">Modulo 2 Morfología</a>
+              <a class="nav-link" id="morfologia-flujometria-tab" data-toggle="tab" href="#morfologia-flujometria" role="tab" aria-controls="morfologia-flujometria" aria-selected="false">Modulo 3 Flujometría</a>
+            </div>
+          </nav>
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="morfologia-general" role="tabpanel" aria-labelledby="morfologia-general-tab">
+                <h3>Evaluación general</h3>
+                <div class="form-group row">
+                    <label for="actividad.cardiaca.morfologia" class="col-sm-2 col-form-label">Actividad cardiaca</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="actividad.cardiaca.morfologia">
+                            <option>Presente</option>
+                            <option>Ausente</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="movimientos.fetales.morfologia" class="col-sm-2 col-form-label">Movimientos fetales</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="movimientos.fetales.morfologia">
+                            <option>Presente</option>
+                            <option>Ausente</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="presentacion.morfologia" class="col-sm-2 col-form-label">Presentación</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="presentacion.morfologia">
+                            <option>Cefálica</option>
+                            <option>Podálica</option>
+                            <option>Transversa</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="placenta.ubicacion" class="col-sm-2 col-form-label">Placenta ubicación</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="placenta.ubicacion">
+                            <option>Anterior</option>
+                            <option>Posterior</option>
+                            <option>Fondo</option>
+                            <option>Previa</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="liquido.cualitativo.morfologia" class="col-sm-2 col-form-label">Liquido amniótico Cualitativo</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="liquido.cualitativo.morfologia">
+                            <option>Normal</option>
+                            <option>Aumentado</option>
+                            <option>Disminuido</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="liquido.semi.morfologia" class="col-sm-2 col-form-label">Liquido amniótico Semi-cuantitativo BVM</label>
+                    <div class="col-sm-10">
+                        <div class="input-group mb-2">
+                            <input type="number" class="form-control" id="liquido.semi.morfologia">
+                            <div class="input-group-append">
+                                <div class="input-group-text">mm</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Liquido amniótico Semi-cuantitativo ILA</label>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" id="liquido.ila.uno.morfologia">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" id="liquido.ila.dos.morfologia">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" id="liquido.ila.tres.morfologia">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" id="liquido.ila.cuatro.morfologia">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control-plaintext" id="liquido.ila.suma.morfologia">
+                    </div>
+                </div>
+                <h3>Biometría</h3>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">DBP</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-2">
+                                    <input type="number" class="form-control" id="dbp.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">DOF</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-2">
+                                    <input type="number" class="form-control" id="dof.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">PC</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-2">
+                                    <input type="number" class="form-control" id="pc.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">PA</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-2">
+                                    <input type="number" class="form-control" id="pa.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">FEMUR</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-2">
+                                    <input type="number" class="form-control" id="femur.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">HUMERO</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-2">
+                                    <input type="number" class="form-control" id="humero.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Transverso cerebeloso</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-2">
+                                    <input type="number" class="form-control" id="tc.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Cisterna magna</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-2">
+                                    <input type="number" class="form-control" id="cm.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Peso Fetal estimado</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-2">
+                                    <input type="number" class="form-control" id="pfe.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">gramos</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="morfologia-morfologia" role="tabpanel" aria-labelledby="morfologia-morfologia-tab">
+
+            </div>
+            <div class="tab-pane fade" id="morfologia-flujometria" role="tabpanel" aria-labelledby="morfologia-flujometria-tab">
+
+            </div>
+          </div>
+    </div>
     <div class="container d-none" id="inicio">
         <p class="mt-0 mb-2 text-center"><small><em>Software obstétrico propiedad intelectual Dr. Rudecindo Lagos,  Maternidad Hospital Regional de Temuco, Facultad de Medicina Universidad de La Frontera Temuco - Chile <img src="https://servidor.crecimientofetal.cl/img/chile.jpg" alt="Chile"></em></small></p>
         <div class="row p-2">
@@ -318,7 +522,7 @@
                             <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cuatro" href="#ecoGinecologica"><small>&gt; Ecografía Ginecológica</small></a>
                             <a class="btn btn-outline-dark rounded text-left w-100 my-1" id="menu.modulo.construccion"><small>Módulos en construcción</small></a> 
                             <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.construccion.uno"href="#ecoObsPrimTrimTrisomia"><small>&gt; Ecografía Obstétrica 11 - 14 semanas</small></a>
-                            <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.construccion.dos" href="#construccion"><small>&gt; Evaluación morfológica 22 - 24 sem.</small></a>
+                            <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.construccion.dos" href="#morfologiafet"><small>&gt; Evaluación morfológica 22 - 24 sem.</small></a>
                             <a class="btn btn-outline-dark rounded text-left w-100 my-1" href="#about"><small>Acerca de la plataforma y autor</small></a>
                             <a class="btn btn-outline-dark rounded text-left w-100 my-1" id="menu.modulo.activo.cinco" ><small>Ver guías clínicas relacionadas</small></a>
                             <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cinco.tres" href="https://www.isuog.org/clinical-resources/isuog-guidelines/translations/spanish.html"><small>&gt; Guías clínicas ISUOG, en español</small></a>

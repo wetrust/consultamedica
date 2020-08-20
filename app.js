@@ -13,7 +13,8 @@ var titulos ={
     "#ecoDoppler": "Flujometría Doppler materno / fetal",
     "#ecoObsSegTrim": "Evaluación del crecimiento fetal",
     "#ecoObsPrimTrim": "Ecografía obstétrica precoz < 11 semanas",
-    "#construccion": 'Ecografía 22 - 24 semanas para evaluación detallada de morfología fetal <span class="text-animado"><strong>(Módulo en construcción)</strong></span>',
+    "#morfologiafet": 'Ecografía 22 - 24 semanas para evaluación detallada de morfología fetal <span class="text-animado"><strong>(Módulo en construcción)</strong></span>',
+    "#construccion": 'Módulo en construcción',
     "#ecoGinecologica": "Informe ecográfico ginecológico (Adicional al exámen ecográfico obstétrico)",
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
 }
@@ -859,7 +860,7 @@ $( document ).ready(function() {
             var dvPctTxt = document.getElementById("dvPctTxt").value;
             var dvRngo = document.getElementById("dvRngo").value;
 
-            InformeString += ' <tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Ductus Venoso (prematuro)</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVP</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVPTXT</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVPRGO</td></tr><tr><td></td><td></td><td></td><td></td></tr>';
+            InformeString += ' <tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Ductus Venoso</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVP</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVPTXT</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVPRGO</td></tr><tr><td></td><td></td><td></td><td></td></tr>';
         
             InformeString = InformeString.replace(":DVP", dvp);
             InformeString = InformeString.replace(":DVPTXT", dvPctTxt);
