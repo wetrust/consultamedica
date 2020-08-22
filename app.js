@@ -578,256 +578,6 @@ $( document ).ready(function() {
         }
     });
 
-    ////////////////////////////
-    ///////////////////////////////
-    /////////////////////////////
-    /////////////////////////////
-    //MORFOLOGIA
-    $('#liquido\\.ila\\.uno\\.morfologia, #liquido\\.ila\\.dos\\.morfologia, #liquido\\.ila\\.tres\\.morfologia, #liquido\\.ila\\.cuatro\\.morfologia').on("keyup", function(){
-        var uno = $("#liquido\\.ila\\.uno\\.morfologia ").val();
-        var dos = $("#liquido\\.ila\\.dos\\.morfologia ").val();
-        var tres = $("#liquido\\.ila\\.tres\\.morfologia").val();
-        var cuatro = $("#liquido\\.ila\\.cuatro\\.morfologia").val();
-
-        uno = (uno.length > 0) ? +uno : 0;
-        dos = (dos.length > 0) ? +dos : 0;
-        tres = (tres.length > 0) ? +tres : 0;
-        cuatro = (cuatro.length > 0) ? +cuatro : 0;
-
-        var suma = (uno + dos + tres + cuatro) / 4;
-        $("#liquido\\.ila\\.suma\\.morfologia").val(suma);
-
-        let a = [], b = [];
-        a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
-        b[0]=59; b[1]=62; b[2]=64; b[3]=66; b[4]=67; b[5]=68; b[6]=68; b[7]=68; b[8]=68; b[9]=68; b[10]=68; b[11]=69; b[12]=69; b[13]=69; b[14]=69; b[15]=70; b[16]=71; b[17]=72; b[18]=72; b[19]=72; b[20]=71; b[21]=70; b[22]=68; b[23]=66; b[24]=62;
-    
-        let eg = document.getElementById("semanas").value;
-        let bvm = suma;
-        if (eg > 15 || eg < 41){
-            eg = eg - 16;
-            eg = parseInt(eg);
-            var uno = b[eg] - a[eg];
-            var dos = bvm - a[eg];
-            var resultado = parseInt(90 / (uno) * (dos) + 5);
-            $("#liquido\\.ila\\.percentil\\.morfologia").val(resultado);
-        }
-    });
-
-    $('#dbp\\.morfologia').on("keyup", function(){
-        let a = [], b = [];
-
-        a[0]=14;a[1]=17;a[2]=19;a[3]=25;a[4]=29;a[5]=33;a[6]=34;a[7]=38;a[8]=41;a[9]=43;a[10]=46;a[11]=49;a[12]=52;a[13]=54;a[14]=57;a[15]=61;a[16]=63;a[17]=65;a[18]=69;a[19]=69;a[20]=74;a[21]=74;a[22]=77;a[23]=78;a[24]=78;a[25]=81;a[26]=85;a[27]=88;
-        b[0]=25;b[1]=29;b[2]=33;b[3]=35;b[4]=41;b[5]=42;b[6]=46;b[7]=50;b[8]=52;b[9]=56;b[10]=59;b[11]=63;b[12]=66;b[13]=70;b[14]=71;b[15]=75;b[16]=77;b[17]=81;b[18]=83;b[19]=87;b[20]=88;b[21]=91;b[22]=94;b[23]=95;b[24]=97;b[25]=99;b[26]=97;b[27]=106;
-    
-        let eg = document.getElementById("semanas").value;
-        let dbp = this.value;
-        
-        dbp = dbp.toString();
-        dbp = dbp.replace(",", ".");
-        dbp = parseFloat(dbp);
-    
-        if (eg < 12 || eg > 40){
-            $("#dbp\\.pct\\.morfologia").val('0');
-        }
-        else {
-            eg = eg - 12;
-            eg = parseInt(eg);
-    
-            var uno = b[eg] - a[eg];
-            var dos = dbp - a[eg];
-            var resultado = (parseInt(95 / (uno) * (dos) + 3));
-
-            var pctDBP = '';
-            //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctDBP = '&gt; 99';
-            }
-            else if (resultado < 1){
-                pctDBP = '&lt; 1';
-            }
-            else{
-                pctDBP = resultado;
-            }
-            
-            $('#dbp\\.pct\\.morfologia').val(pctDBP);
-        }
-    })
-
-    $('#dof\\.morfologia').on("keyup", function(){
-        let a = [], b = [];
-        let dof = this.value;
-    
-        a[10]=7;a[11]=11; a[12]=16; a[13]=20;a[14]=24; a[15]=29; a[16]=33; a[17]=37;a[18]=41; a[19]=46; a[20]=50; a[21]=54;a[22]=58; a[23]=62; a[24]=65; a[25]=69;a[26]=73; a[27]=76; a[28]=80; a[29]=83;a[30]=86; a[31]=89; a[32]=92; a[33]=95;a[34]=97; a[35]=99; a[36]=102; a[37]=104;a[38]=105; a[39]=107; a[40]=108;
-        b[10]=21; b[11]=25; b[12]=30; b[13]=34;b[14]=38; b[15]=43; b[16]=47; b[17]=51;b[18]=55; b[19]=60; b[20]=64; b[21]=68;b[22]=72; b[23]=76; b[24]=79; b[25]=83;b[26]=87; b[27]=90; b[28]=94; b[29]=97;b[30]=100; b[31]=103; b[32]=106; b[33]=108;b[34]=111; b[35]=113; b[36]=116; b[37]=118;b[38]=119; b[39]=121; b[40]=122;
-        
-        let eg = document.getElementById("semanas").value;
-        
-        if (eg > 9 && dof > 0){
-            var uno = b[eg] - a[eg];
-            var dos = dof - a[eg];
-            var resultado = (parseInt(95 / (uno) * (dos) + 3));
-            var pctDOF = '';
-            //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctDOF = '&gt; 99';
-            }
-            else if (resultado < 1){
-                pctDOF = '&lt; 1';
-            }
-            else{
-                pctDOF = resultado;
-            }
-            $('#dof\\.pct\\.morfologia').val(pctDOF);
-        }else{
-            $('#dof\\.pct\\.morfologia').val('0');
-        }
-    })
-
-    $("#femur\\.morfologia").on("keyup", function(){
-        let a = [], b = [];
-   
-        a[0]=7;a[1]=9;a[2]=12;a[3]=15;a[4]=17;a[5]=21; a[6]=23;a[7]=26;a[8]=28;a[9]=30;a[10]=33;a[11]=35; a[12]=38;a[13]=40;a[14]=42;a[15]=44;a[16]=46; a[17]=48;a[18]=50;a[19]=52;a[20]=53;a[21]=55; a[22]=57;a[23]=59;a[24]=60;a[25]=62;a[26]=64; a[27]=65;a[28]=66;
-        b[0]=12;b[1]=14;b[2]=17;b[3]=20;b[4]=23;b[5]=27; b[6]=31;b[7]=34;b[8]=38;b[9]=40;b[10]=43;b[11]=47; b[12]=50;b[13]=52;b[14]=56;b[15]=58;b[16]=62; b[17]=64;b[18]=66;b[19]=68;b[20]=71;b[21]=73; b[22]=75;b[23]=78;b[24]=80;b[25]=82;b[26]=84; b[27]=86;b[28]=88;
-   
-        let eg = document.getElementById("semanas").value;
-        let lf=parseInt(this.value);
-   
-        if (eg < 12 || eg > 40){ 
-            $("#femur\\.pct\\.morfologia").val("0");
-        }
-        else {
-            eg = eg - 12;
-            eg = parseInt(eg);
-            var uno=b[eg] - a[eg];
-            var dos=lf - a[eg];
-            var resultado = parseInt(95 / (uno) * (dos) + 3);
-            ajustarProgreso(resultado, "lfPct");
-            var pctLF = '';
-                //truncador de Pct, sobre 100 o bajo 1
-                if (resultado > 99){
-                    pctLF = '&gt; 99';
-                }
-                else if (resultado < 1){
-                    pctLF = '&lt; 1';
-                }
-                else{
-                    pctLF = resultado;
-                }
-            $('#femur\\.pct\\.morfologia').val(pctLF);
-        }
-    })
-
-    $("#humero\\.morfologia").on("keyup", function(){
-        let a = [], b = [];
-   
-        a[12] = 4.8;   b[12] = 12.3; a[13] = 7.6;   b[13] = 15.1;
-        a[14] = 10.3;  b[14] = 17.9; a[15] = 13.1;  b[15] = 20.7;
-        a[16] = 15.8;  b[16] = 23.5; a[17] = 18.5;  b[17] = 26.3;
-        a[18] = 21.2;  b[18] = 29.1; a[19] = 23.8;  b[19] = 31.6;
-        a[20] = 26.3;  b[20] = 34.2; a[21] = 28.8;  b[21] = 36.7;
-        a[22] = 31.2;  b[22] = 39.2; a[23] = 33.5;  b[23] = 41.6;
-        a[24] = 35.7;  b[24] = 43.9; a[25] = 37.9;  b[25] = 46.1;
-        a[26] = 39.9;  b[26] = 48.1; a[27] = 41.9;  b[27] = 50.1;
-        a[28] = 43.7;  b[28] = 52.1; a[29] = 45.5;  b[29] = 53.9;
-        a[30] = 47.2;  b[30] = 55.6; a[31] = 48.9;  b[31] = 57.3;
-        a[32] = 50.4;  b[32] = 58.9; a[33] = 52.1;  b[33] = 60.5;
-        a[34] = 53.4;  b[34] = 62.1; a[35] = 54.8;  b[35] = 63.5;
-        a[36] = 56.2;  b[36] = 64.9; a[37] = 57.6;  b[37] = 66.4;
-        a[38] = 59.8;  b[38] = 67.8; a[39] = 60.4;  b[39] = 69.3;
-        a[40] = 61.9;  b[40] = 70.8;
-       
-        let eg = document.getElementById("semanas").value;
-        var lh=parseInt(this.value);
-   
-        if (eg < 12 || eg > 40) {
-            $("#humero\\.pct\\.morfologia").val('0');
-        }
-        else {
-            eg = parseInt(eg);
-            var uno = b[eg] - a[eg];
-            var dos = lh - a[eg];
-            var resultado = (parseInt(95 / (uno) * (dos) + 5));
-            var pctLH = '';
-            //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctLH = '&gt; 99';
-            }
-            else if (resultado < 1){
-                pctLH = '&lt; 1';
-            }
-            else{
-               pctLH = resultado;
-            }
-            $('#humero\\.pct\\.morfologia').val(pctLH);
-        }
-    })
-
-    $("#pc\\.morfologia").on("keyup", function(){
-        let a = [], b = [];
-        a[0]=64;a[1]=74;a[2]=88;a[3]=100;a[4]=113;a[5]=126; a[6]=137;a[7]=149;a[8]=161;a[9]=172;a[10]=183; a[11]=194;a[12]=204;a[13]=214;a[14]=224;a[15]=233; a[16]=242;a[17]=250;a[18]=258;a[19]=267;a[20]=274; a[21]=280;a[22]=287;a[23]=293;a[24]=299;a[25]=303; a[26]=308;a[27]=311;a[28]=315;
-        b[0]=81;b[1]=94;b[2]=106;b[3]=120;b[4]=135; b[5]=150;b[6]=165;b[7]=179;b[8]=193;b[9]=206; b[10]=219;b[11]=232;b[12]=243;b[13]=256;b[14]=268; b[15]=279;b[16]=290;b[17]=300;b[18]=310;b[19]=319; b[20]=328;b[21]=336;b[22]=343;b[23]=351;b[24]=358; b[25]=363;b[26]=368;b[27]=373;b[28]=377;
-       
-        let eg = document.getElementById("semanas").value;
-        let cc = parseInt(this.value);
-       
-        if (eg < 12 || eg > 40){ 
-            $("#pc\\.pct\\.morfologia").val("");
-        }
-        else {
-            eg = eg - 12;
-            eg = parseInt(eg);
-            var uno=b[eg] - a[eg];
-            var dos=cc - a[eg];
-            ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "ccPct");
-            var resultado = parseInt(95 / (uno) * (dos) + 3);
-            var pctCC = '';
-            //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctCC = '&gt; 99';
-            }
-            else if (resultado < 1){
-                pctCC = '&lt; 1';
-            }
-            else{
-                pctCC = resultado;
-            }
-            
-            $("#pc\\.pct\\.morfologia").val(pctCC);
-        }
-    })
-
-    $("#pa\\.morfologia").on("keyup", function(){
-        let a = [], b = [];
-        a[0]=42;a[1]=52;a[2]=64;a[3]=75;a[4]=86; a[5]=97;a[6]=109;a[7]=119;a[8]=131;a[9]=141; a[10]=151;a[11]=161;a[12]=171;a[13]=181; a[14]=191;a[15]=200;a[16]=209;a[17]=218;a[18]=227; a[19]=236;a[20]=245;a[21]=253;a[22]=261;a[23]=269; a[24]=277;a[25]=285;a[26]=292;a[27]=299;a[28]=307;
-        b[0]=71;b[1]=79;b[2]=92;b[3]=102;b[4]=113; b[5]=127;b[6]=141;b[7]=155;b[8]=170; b[9]=183;b[10]=192;b[11]=209;b[12]=223; b[13]=235;b[14]=248;b[15]=260;b[16]=271;b[17]=284; b[18]=295;b[19]=306;b[20]=318;b[21]=329;b[22]=339; b[23]=349;b[24]=359;b[25]=370;b[26]=380;b[27]=389; b[28]=399;
-       
-        let eg = document.getElementById("semanas").value;
-        let ca = parseInt(this.value);
-       
-        if (eg < 12 || eg > 40){ 
-                $("#pa\\.pct\\.morfologia").val("0");
-        }
-        else {
-            eg = eg - 12;
-            eg = parseInt(eg);
-            var uno=b[eg] - a[eg];
-            var dos=ca - a[eg];
-            var resultado = parseInt(95 / (uno) * (dos) + 3);
-            ajustarProgreso(resultado, "caPct");
-            var pctCA = '';
-            //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctCA = '&gt; 99';
-            }
-            else if (resultado < 1){
-                pctCA = '&lt; 1';
-            }
-            else{
-                pctCA = resultado;
-            }
-            $('#pa\\.pct\\.morfologia').val(pctCA);
-        }
-    })
 });
 
 //controlador de input clones
@@ -1372,7 +1122,7 @@ $( document ).ready(function() {
 //controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "lh", "cerebelo", "bvm", "modalPreInfEcoObsSegTrim1", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "modalPreInfEcoObsSegTrim1","aud","aui","ipau","ipacm","dv","psmACM","modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica"];
+        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "lh", "cerebelo", "bvm", "modalPreInfEcoObsSegTrim1", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "modalPreInfEcoObsSegTrim1","aud","aui","ipau","ipacm","dv","psmACM","modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "pc.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -4240,6 +3990,470 @@ $( document ).ready(function() {
     });
 });
 
+//controlador de morfología
+$(document).ready(function(){
+    $('#liquido\\.ila\\.uno\\.morfologia, #liquido\\.ila\\.dos\\.morfologia, #liquido\\.ila\\.tres\\.morfologia, #liquido\\.ila\\.cuatro\\.morfologia').on("keyup", function(){
+        var uno = $("#liquido\\.ila\\.uno\\.morfologia ").val();
+        var dos = $("#liquido\\.ila\\.dos\\.morfologia ").val();
+        var tres = $("#liquido\\.ila\\.tres\\.morfologia").val();
+        var cuatro = $("#liquido\\.ila\\.cuatro\\.morfologia").val();
+
+        uno = (uno.length > 0) ? +uno : 0;
+        dos = (dos.length > 0) ? +dos : 0;
+        tres = (tres.length > 0) ? +tres : 0;
+        cuatro = (cuatro.length > 0) ? +cuatro : 0;
+
+        var suma = (uno + dos + tres + cuatro) / 4;
+        $("#liquido\\.ila\\.suma\\.morfologia").val(suma);
+
+        let a = [], b = [];
+        a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
+        b[0]=59; b[1]=62; b[2]=64; b[3]=66; b[4]=67; b[5]=68; b[6]=68; b[7]=68; b[8]=68; b[9]=68; b[10]=68; b[11]=69; b[12]=69; b[13]=69; b[14]=69; b[15]=70; b[16]=71; b[17]=72; b[18]=72; b[19]=72; b[20]=71; b[21]=70; b[22]=68; b[23]=66; b[24]=62;
+    
+        let eg = document.getElementById("semanas").value;
+        let bvm = suma;
+        document.getElementById("liquido.ila.percentil.morfologia").classList.remove("is-valid", "is-invalid");
+        if (eg > 15 || eg < 41){
+            eg = eg - 16;
+            eg = parseInt(eg);
+            var uno = b[eg] - a[eg];
+            var dos = bvm - a[eg];
+            var resultado = parseInt(90 / (uno) * (dos) + 5);
+            $("#liquido\\.ila\\.percentil\\.morfologia").val(resultado);
+
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("liquido.ila.percentil.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("liquido.ila.percentil.morfologia").classList.add("is-valid");
+            }
+        }
+    });
+
+    $('#dbp\\.morfologia').on("keyup", function(){
+        let a = [], b = [];
+
+        a[0]=14;a[1]=17;a[2]=19;a[3]=25;a[4]=29;a[5]=33;a[6]=34;a[7]=38;a[8]=41;a[9]=43;a[10]=46;a[11]=49;a[12]=52;a[13]=54;a[14]=57;a[15]=61;a[16]=63;a[17]=65;a[18]=69;a[19]=69;a[20]=74;a[21]=74;a[22]=77;a[23]=78;a[24]=78;a[25]=81;a[26]=85;a[27]=88;
+        b[0]=25;b[1]=29;b[2]=33;b[3]=35;b[4]=41;b[5]=42;b[6]=46;b[7]=50;b[8]=52;b[9]=56;b[10]=59;b[11]=63;b[12]=66;b[13]=70;b[14]=71;b[15]=75;b[16]=77;b[17]=81;b[18]=83;b[19]=87;b[20]=88;b[21]=91;b[22]=94;b[23]=95;b[24]=97;b[25]=99;b[26]=97;b[27]=106;
+    
+        let eg = document.getElementById("semanas").value;
+        let dbp = this.value;
+        
+        dbp = dbp.toString();
+        dbp = dbp.replace(",", ".");
+        dbp = parseFloat(dbp);
+    
+        document.getElementById("dbp.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+        if (eg < 12 || eg > 40){
+            $("#dbp\\.pct\\.morfologia").val('0');
+        }
+        else {
+            eg = eg - 12;
+            eg = parseInt(eg);
+    
+            var uno = b[eg] - a[eg];
+            var dos = dbp - a[eg];
+            var resultado = (parseInt(95 / (uno) * (dos) + 3));
+            ajustarProgreso(resultado, "dbpMorfologia");
+            var pctDBP = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctDBP = '> 99';
+            }
+            else if (resultado < 1){
+                pctDBP = '< 1';
+            }
+            else{
+                pctDBP = resultado;
+            }
+            
+            $('#dbp\\.pct\\.morfologia').val(pctDBP);
+
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("dbp.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("dbp.pct.morfologia").classList.add("is-valid");
+            }
+        }
+    })
+
+    $('#dof\\.morfologia').on("keyup", function(){
+        let a = [], b = [];
+        let dof = this.value;
+    
+        a[10]=7;a[11]=11; a[12]=16; a[13]=20;a[14]=24; a[15]=29; a[16]=33; a[17]=37;a[18]=41; a[19]=46; a[20]=50; a[21]=54;a[22]=58; a[23]=62; a[24]=65; a[25]=69;a[26]=73; a[27]=76; a[28]=80; a[29]=83;a[30]=86; a[31]=89; a[32]=92; a[33]=95;a[34]=97; a[35]=99; a[36]=102; a[37]=104;a[38]=105; a[39]=107; a[40]=108;
+        b[10]=21; b[11]=25; b[12]=30; b[13]=34;b[14]=38; b[15]=43; b[16]=47; b[17]=51;b[18]=55; b[19]=60; b[20]=64; b[21]=68;b[22]=72; b[23]=76; b[24]=79; b[25]=83;b[26]=87; b[27]=90; b[28]=94; b[29]=97;b[30]=100; b[31]=103; b[32]=106; b[33]=108;b[34]=111; b[35]=113; b[36]=116; b[37]=118;b[38]=119; b[39]=121; b[40]=122;
+        
+        let eg = document.getElementById("semanas").value;
+        
+        document.getElementById("dof.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+        if (eg > 9 && dof > 0){
+            var uno = b[eg] - a[eg];
+            var dos = dof - a[eg];
+            var resultado = (parseInt(95 / (uno) * (dos) + 3));
+            ajustarProgreso(resultado, "dofMorfologia");
+            var pctDOF = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctDOF = '> 99';
+            }
+            else if (resultado < 1){
+                pctDOF = '< 1';
+            }
+            else{
+                pctDOF = resultado;
+            }
+            $('#dof\\.pct\\.morfologia').val(pctDOF);
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("dof.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("dof.pct.morfologia").classList.add("is-valid");
+            }
+        }else{
+            $('#dof\\.pct\\.morfologia').val('0');
+        }
+    })
+
+    $("#pc\\.morfologia").on("keyup", function(){
+        let a = [], b = [];
+        a[0]=64;a[1]=74;a[2]=88;a[3]=100;a[4]=113;a[5]=126; a[6]=137;a[7]=149;a[8]=161;a[9]=172;a[10]=183; a[11]=194;a[12]=204;a[13]=214;a[14]=224;a[15]=233; a[16]=242;a[17]=250;a[18]=258;a[19]=267;a[20]=274; a[21]=280;a[22]=287;a[23]=293;a[24]=299;a[25]=303; a[26]=308;a[27]=311;a[28]=315;
+        b[0]=81;b[1]=94;b[2]=106;b[3]=120;b[4]=135; b[5]=150;b[6]=165;b[7]=179;b[8]=193;b[9]=206; b[10]=219;b[11]=232;b[12]=243;b[13]=256;b[14]=268; b[15]=279;b[16]=290;b[17]=300;b[18]=310;b[19]=319; b[20]=328;b[21]=336;b[22]=343;b[23]=351;b[24]=358; b[25]=363;b[26]=368;b[27]=373;b[28]=377;
+       
+        let eg = document.getElementById("semanas").value;
+        let cc = parseInt(this.value);
+       
+        document.getElementById("pc.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+        if (eg < 12 || eg > 40){ 
+            $("#pc\\.pct\\.morfologia").val("");
+        }
+        else {
+            eg = eg - 12;
+            eg = parseInt(eg);
+            var uno=b[eg] - a[eg];
+            var dos=cc - a[eg];
+            ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "pcMorfologia");
+            var resultado = parseInt(95 / (uno) * (dos) + 3);
+            var pctCC = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctCC = '> 99';
+            }
+            else if (resultado < 1){
+                pctCC = '< 1';
+            }
+            else{
+                pctCC = resultado;
+            }
+            psohdlkMorfologia();
+            $("#pc\\.pct\\.morfologia").val(pctCC);
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("pc.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("pc.pct.morfologia").classList.add("is-valid");
+            }
+        }
+    })
+
+    $("#pa\\.morfologia").on("keyup", function(){
+        let a = [], b = [];
+        a[0]=42;a[1]=52;a[2]=64;a[3]=75;a[4]=86; a[5]=97;a[6]=109;a[7]=119;a[8]=131;a[9]=141; a[10]=151;a[11]=161;a[12]=171;a[13]=181; a[14]=191;a[15]=200;a[16]=209;a[17]=218;a[18]=227; a[19]=236;a[20]=245;a[21]=253;a[22]=261;a[23]=269; a[24]=277;a[25]=285;a[26]=292;a[27]=299;a[28]=307;
+        b[0]=71;b[1]=79;b[2]=92;b[3]=102;b[4]=113; b[5]=127;b[6]=141;b[7]=155;b[8]=170; b[9]=183;b[10]=192;b[11]=209;b[12]=223; b[13]=235;b[14]=248;b[15]=260;b[16]=271;b[17]=284; b[18]=295;b[19]=306;b[20]=318;b[21]=329;b[22]=339; b[23]=349;b[24]=359;b[25]=370;b[26]=380;b[27]=389; b[28]=399;
+       
+        let eg = document.getElementById("semanas").value;
+        let ca = parseInt(this.value);
+       
+        document.getElementById("pa.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+        if (eg < 12 || eg > 40){ 
+                $("#pa\\.pct\\.morfologia").val("0");
+        }
+        else {
+            eg = eg - 12;
+            eg = parseInt(eg);
+            var uno=b[eg] - a[eg];
+            var dos=ca - a[eg];
+            var resultado = parseInt(95 / (uno) * (dos) + 3);
+            ajustarProgreso(resultado, "paMorfologia");
+            var pctCA = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctCA = '> 99';
+            }
+            else if (resultado < 1){
+                pctCA = '< 1';
+            }
+            else{
+                pctCA = resultado;
+            }
+            psohdlkMorfologia();
+            $('#pa\\.pct\\.morfologia').val(pctCA);
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("pa.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("pa.pct.morfologia").classList.add("is-valid");
+            }
+        }
+    })
+
+    $("#femur\\.morfologia").on("keyup", function(){
+        let a = [], b = [];
+   
+        a[0]=7;a[1]=9;a[2]=12;a[3]=15;a[4]=17;a[5]=21; a[6]=23;a[7]=26;a[8]=28;a[9]=30;a[10]=33;a[11]=35; a[12]=38;a[13]=40;a[14]=42;a[15]=44;a[16]=46; a[17]=48;a[18]=50;a[19]=52;a[20]=53;a[21]=55; a[22]=57;a[23]=59;a[24]=60;a[25]=62;a[26]=64; a[27]=65;a[28]=66;
+        b[0]=12;b[1]=14;b[2]=17;b[3]=20;b[4]=23;b[5]=27; b[6]=31;b[7]=34;b[8]=38;b[9]=40;b[10]=43;b[11]=47; b[12]=50;b[13]=52;b[14]=56;b[15]=58;b[16]=62; b[17]=64;b[18]=66;b[19]=68;b[20]=71;b[21]=73; b[22]=75;b[23]=78;b[24]=80;b[25]=82;b[26]=84; b[27]=86;b[28]=88;
+   
+        let eg = document.getElementById("semanas").value;
+        let lf=parseInt(this.value);
+   
+        document.getElementById("femur.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+        if (eg < 12 || eg > 40){ 
+            $("#femur\\.pct\\.morfologia").val("0");
+        }
+        else {
+            eg = eg - 12;
+            eg = parseInt(eg);
+            var uno=b[eg] - a[eg];
+            var dos=lf - a[eg];
+            var resultado = parseInt(95 / (uno) * (dos) + 3);
+            ajustarProgreso(resultado, "femurMorfologia");
+            var pctLF = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctLF = '> 99';
+            }
+            else if (resultado < 1){
+                pctLF = '< 1';
+            }
+            else{
+                pctLF = resultado;
+            }
+            
+            psohdlkMorfologia()
+            $('#femur\\.pct\\.morfologia').val(pctLF);
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("femur.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("femur.pct.morfologia").classList.add("is-valid");
+            }
+        }
+    })
+
+    $("#humero\\.morfologia").on("keyup", function(){
+        let a = [], b = [];
+   
+        a[12] = 4.8;   b[12] = 12.3; a[13] = 7.6;   b[13] = 15.1;
+        a[14] = 10.3;  b[14] = 17.9; a[15] = 13.1;  b[15] = 20.7;
+        a[16] = 15.8;  b[16] = 23.5; a[17] = 18.5;  b[17] = 26.3;
+        a[18] = 21.2;  b[18] = 29.1; a[19] = 23.8;  b[19] = 31.6;
+        a[20] = 26.3;  b[20] = 34.2; a[21] = 28.8;  b[21] = 36.7;
+        a[22] = 31.2;  b[22] = 39.2; a[23] = 33.5;  b[23] = 41.6;
+        a[24] = 35.7;  b[24] = 43.9; a[25] = 37.9;  b[25] = 46.1;
+        a[26] = 39.9;  b[26] = 48.1; a[27] = 41.9;  b[27] = 50.1;
+        a[28] = 43.7;  b[28] = 52.1; a[29] = 45.5;  b[29] = 53.9;
+        a[30] = 47.2;  b[30] = 55.6; a[31] = 48.9;  b[31] = 57.3;
+        a[32] = 50.4;  b[32] = 58.9; a[33] = 52.1;  b[33] = 60.5;
+        a[34] = 53.4;  b[34] = 62.1; a[35] = 54.8;  b[35] = 63.5;
+        a[36] = 56.2;  b[36] = 64.9; a[37] = 57.6;  b[37] = 66.4;
+        a[38] = 59.8;  b[38] = 67.8; a[39] = 60.4;  b[39] = 69.3;
+        a[40] = 61.9;  b[40] = 70.8;
+       
+        let eg = document.getElementById("semanas").value;
+        var lh=parseInt(this.value);
+   
+        document.getElementById("humero.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        if (eg < 12 || eg > 40) {
+            $("#humero\\.pct\\.morfologia").val('0');
+        }
+        else {
+            eg = parseInt(eg);
+            var uno = b[eg] - a[eg];
+            var dos = lh - a[eg];
+            var resultado = (parseInt(95 / (uno) * (dos) + 5));
+            ajustarProgreso(resultado, "humeroMorfologia");
+            var pctLH = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctLH = '> 99';
+            }
+            else if (resultado < 1){
+                pctLH = '< 1';
+            }
+            else{
+               pctLH = resultado;
+            }
+            $('#humero\\.pct\\.morfologia').val(pctLH);
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("humero.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("humero.pct.morfologia").classList.add("is-valid");
+            }
+        }
+    })
+
+    $("#tc\\.morfologia").on("keyup", function(){
+
+        //cerebelo segun Hill
+        var pct2ds = [];
+        var pctmedia = [];
+        var pct2dsmas = [];
+    
+        pct2ds[0] = 12;pct2ds[1] = 14;pct2ds[2] = 15;pct2ds[3] = 16;pct2ds[4] = 17;pct2ds[5] = 18;
+        pct2ds[6] = 19;pct2ds[7] = 20;pct2ds[8] = 21;pct2ds[9] = 22;pct2ds[10] = 24;
+        pct2ds[11] = 26;pct2ds[12] = 27;pct2ds[13] = 29;pct2ds[14] = 30;pct2ds[15] = 31;
+        pct2ds[16] = 33;pct2ds[17] = 36;pct2ds[18] = 37;pct2ds[19] = 38;pct2ds[20] = 40;
+        pct2ds[21] = 40;pct2ds[22] = 40;pct2ds[23] = 41;pct2ds[24] = 42;pct2ds[25] = 44;
+        
+        pctmedia[0] = 15;pctmedia[1] = 16;pctmedia[2] = 17;pctmedia[3] = 18;pctmedia[4] = 20;
+        pctmedia[5] = 20;pctmedia[6] = 22;pctmedia[7] = 23;pctmedia[8] = 24;pctmedia[9] = 26;
+        pctmedia[10] = 28;pctmedia[11] = 30;pctmedia[12] = 31;pctmedia[13] = 33;pctmedia[14] = 34;
+        pctmedia[15] = 37;pctmedia[16] = 39;pctmedia[17] = 41;pctmedia[18] = 43;pctmedia[19] = 46;
+        pctmedia[20] = 47;pctmedia[21] = 49;pctmedia[22] = 51;pctmedia[23] = 51;pctmedia[24] = 52;
+        pctmedia[25] = 52
+        
+        pct2dsmas[0] = 18;pct2dsmas[1] = 18;pct2dsmas[2] = 19;pct2dsmas[3] = 20;pct2dsmas[4] = 22;
+        pct2dsmas[5] = 23;pct2dsmas[6] = 25;pct2dsmas[7] = 26;pct2dsmas[8] = 27;pct2dsmas[9] = 30;
+        pct2dsmas[10] = 32;pct2dsmas[11] = 34;pct2dsmas[12] = 34;pct2dsmas[13] = 37;pct2dsmas[14] = 38;
+        pct2dsmas[15] = 41;pct2dsmas[16] = 43;pct2dsmas[17] = 46;pct2dsmas[18] = 48;pct2dsmas[19] = 53;
+        pct2dsmas[20] = 56;pct2dsmas[21] = 58;pct2dsmas[22] = 60;pct2dsmas[23] = 62;pct2dsmas[24] = 62;
+        pct2dsmas[25] = 62;
+    
+        var cb=0;
+        let eg = document.getElementById("semanas").value;
+        cb=parseInt(document.getElementById("tc.morfologia").value);
+    
+        document.getElementById("tc.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+        if (eg < 15 ||eg > 40) {
+            document.getElementById("tc.pct.morfologia").value = 0
+        }else {
+            eg = eg - 15;
+            eg = parseInt(eg);
+            var uno=pct2dsmas[eg] - pct2ds[eg];
+            var dos=cb - pct2ds[eg];
+            var resultado = parseInt(95 / (uno) * (dos));
+            var pctCB = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctCB = '> 99';
+            }
+            else if (resultado < 1){
+                pctCB = '< 1';
+            }
+            else{
+                pctCB = resultado;
+            }
+
+            $('#tc\\.pct\\.morfologia').val(pctCB);
+            ajustarProgreso(resultado, "tcMorfologia");
+
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("tc.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("tc.pct.morfologia").classList.add("is-valid");
+            }
+        }
+    })
+
+    $("#cm\\.morfologia").on("keyup", function(){
+        var cisM10 = [];
+        var cisM90 = [];
+
+        cisM10[14] = 16.9; cisM10[15] = 21; cisM10[16] = 24; cisM10[17] = 26;
+        cisM10[18] = 28; cisM10[19] = 31; cisM10[20] = 33; cisM10[21] = 35;
+        cisM10[22] = 37; cisM10[23] = 39; cisM10[24] = 41; cisM10[25] = 43;
+        cisM10[26] = 44; cisM10[27] = 46; cisM10[28] = 47; cisM10[29] = 49;
+        cisM10[30] = 50; cisM10[31] = 51; cisM10[32] = 52; cisM10[33] = 53;
+        cisM10[34] = 53; cisM10[35] = 54; cisM10[36] = 54; cisM10[37] = 54;
+        cisM10[38] = 55; cisM10[39] = 55;
+
+        cisM90[14] = 53; cisM90[15] = 57; cisM90[16] = 60; cisM90[17] = 63;
+        cisM90[18] = 66; cisM90[19] = 69; cisM90[20] = 72; cisM90[21] = 75;
+        cisM90[22] = 77; cisM90[23] = 80; cisM90[24] = 82; cisM90[25] = 85;
+        cisM90[26] = 87; cisM90[27] = 89; cisM90[28] = 91; cisM90[29] = 93;
+        cisM90[30] = 94; cisM90[31] = 96; cisM90[32] = 97; cisM90[33] = 98;
+        cisM90[34] = 99; cisM90[35] = 100; cisM90[36] = 100; cisM90[37] = 101;
+        cisM90[38] = 101; cisM90[39] = 101;
+        
+        var cm = 0;
+        let eg = document.getElementById("semanas").value;
+        cm = parseInt(document.getElementById("cm.morfologia").value);
+    
+        document.getElementById("cm.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+        if (eg < 14 ||eg > 39) {
+            document.getElementById("cm.pct.morfologia").value = 0
+        }else {
+            eg = parseInt(eg);
+            var uno = cisM90[eg] - cisM10[eg];
+            var dos = cm - cisM10[eg];
+            var resultado = parseInt(95 / (uno) * (dos));
+            var pctCISM = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctCISM = '> 99';
+            }
+            else if (resultado < 1){
+                pctCISM = '< 1';
+            }
+            else{
+                pctCISM = resultado;
+            }
+
+            $('#cm\\.pct\\.morfologia').val(pctCISM);
+            ajustarProgreso(resultado, "cmMorfologia");
+
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("cm.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("cm.pct.morfologia").classList.add("is-valid");
+            }
+        }
+    })
+
+    $("#liquido\\.semi\\.morfologia").on("keyup", function(){
+        let a = [], b = [];
+        a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
+        b[0]=59; b[1]=62; b[2]=64; b[3]=66; b[4]=67; b[5]=68; b[6]=68; b[7]=68; b[8]=68; b[9]=68; b[10]=68; b[11]=69; b[12]=69; b[13]=69; b[14]=69; b[15]=70; b[16]=71; b[17]=72; b[18]=72; b[19]=72; b[20]=71; b[21]=70; b[22]=68; b[23]=66; b[24]=62;
+
+        let eg = document.getElementById("semanas").value;
+        let bvm = parseInt(document.getElementById("liquido.semi.morfologia").value);
+
+
+        document.getElementById("liquido.semi.morfologia").classList.remove("is-valid", "is-invalid");
+        
+        if (eg > 15 || eg < 41){
+            eg = eg - 16;
+            eg = parseInt(eg);
+            var uno = b[eg] - a[eg];
+            var dos = bvm - a[eg];
+            var resultado = parseInt(90 / (uno) * (dos) + 5);
+            var pctCISM = 0;
+
+            if (resultado > 99){
+                pctCISM = '> 99';
+            }
+            else if (resultado < 1){
+                pctCISM = '< 1';
+            }
+            else{
+                pctCISM = resultado;
+            }
+
+            $('#liquido\\.semi\\.pct\\.morfologia').val(pctCISM);
+
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("liquido.semi.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("liquido.semi.pct.morfologia").classList.add("is-valid");
+            }
+        }else{
+            document.getElementById("liquido.semi.pct.morfologia").value = 0
+        }
+    })
+})
+
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
     var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet", "#pdfneonatal"];
@@ -4532,6 +4746,7 @@ function egSaco(saco) {
         return a[saco];
     }
 };
+
 function eglcn(lcn) {
 	'use strict';
 	let a = [[],[]];
@@ -4560,6 +4775,7 @@ function eglcn(lcn) {
         return 0;
     }
 };
+
 function pctut(uterina) {
     'use strict';
     let a = [];
@@ -4606,6 +4822,7 @@ function pctut(uterina) {
         }
     }
 }
+
 function pctdv() {
     'use strict';
     let a = [];
@@ -4646,6 +4863,7 @@ function pctdv() {
          $("#dvRngo").val( a[eg] + " - " + b[eg]);
     }
 }
+
 function pctau() {
     'use strict';
 	let a = [],b = [],c = [],d = [];
@@ -4710,6 +4928,7 @@ function pctau() {
 		}
 	}
 }
+
 function pctacm() {
     'use strict';
 	var a = [],b = [],c = [],d = [];
@@ -4778,12 +4997,14 @@ function pctacm() {
 		}
 	}
 }
+
 function ajustarProgreso(valor, objeto){
     valor = (valor == "&gt; 99") ? 99 : valor; // si es mayor a 99
     valor = (isNaN(valor)== true) ? 0 : valor;
 	valor = valor + "%";
 	$("#"+objeto + " > .progress-consulta").css({"width": valor});
 }
+
 function imprSelec(muestra){
 	var ficha=$("#"+muestra).html();
 	var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container"><div style="width:35%;text-align:center;" class="membrete"> :MEMBRETE </div></div><div class="container" style="margin-top:50px !important;"> :DATOS </div> :FUNCION </body></html>';
@@ -4801,6 +5022,7 @@ function imprSelec(muestra){
 	ventimp.document.write(document);
 	ventimp.document.close();
 }
+
 function deDBP() {
     'use strict';
 	let a = [], b = [];
@@ -4855,6 +5077,7 @@ function deDBP() {
 		$('#ic').val("0");
 	}
 }
+
 function calcdof(){
     'use strict';
 	let a = [], b = [];
@@ -4906,6 +5129,7 @@ function calcdof(){
 		$('#ic').val("0");
 	}
 }
+
 function pctcc() {
     'use strict';
 	let a = [], b = [];
@@ -4944,6 +5168,7 @@ function pctcc() {
         p50();
     }
 };
+
 function pctca() {
     'use strict';
 	let a = [], b = [];
@@ -4981,6 +5206,7 @@ function pctca() {
         p50();
     }
 };
+
 function pctlf() {
     'use strict';
 	let a = [], b = [];
@@ -5019,6 +5245,7 @@ function pctlf() {
         p50();
     }
 };
+
 function pctcb() {
 
     //cerebelo segun Hill
@@ -5126,6 +5353,7 @@ function pctlh() {
            p50();
        }
 }
+
 function p50() {
     'use strict';
 	let a = [];
@@ -5173,6 +5401,7 @@ function p50() {
      egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
      $('#egP50').val(egbio);
 }
+
 function psohdlk() {
     let CC = parseFloat($("#cc").val());
     let CA = parseInt($("#ca").val());
@@ -5192,6 +5421,27 @@ function psohdlk() {
         pctpfe();
     }
 }
+
+function psohdlkMorfologia() {
+    let CC = document.getElementById("pc.morfologia").value;
+    let CA = document.getElementById("pa.morfologia").value;
+    let LF = document.getElementById("femur.morfologia").value;
+
+    CC = CC / 10;
+    CA = CA / 10;
+    LF = LF / 10;
+    var psoP = Math.pow(10, (1.326 + 0.0107 * CC + 0.0438 * CA + 0.158 * LF - 0.00326 * CA * LF));
+
+    if (isNaN(psoP) != true) {
+        document.getElementById("pfe.morfologia").value = Math.trunc(psoP);
+        pctpfe();
+    }
+    else{
+        document.getElementById("pfe.morfologia").value = 0;
+        pctpfe();
+    }
+}
+
 function pctpfe() {
     'use strict';
 	let a = [], b = [];
@@ -5231,10 +5481,12 @@ function pctpfe() {
         $('#pfeRango').val(a[eg] + ' - ' +b[eg]);
     }
 }
+
 function valCC(dof,dbp){
     var delta = parseFloat(1.60);
     return Math.round((parseInt(dof) + parseInt(dbp)) * delta);
 }
+
 function bvm() {
     'use strict';
 	let a = [], b = [];
@@ -5253,6 +5505,7 @@ function bvm() {
         $("#bvmPct").val(resultado);
     }
 }
+
 function crearInformeEcoSegTrim2(){
 	var actCard;
         var movCorp;
