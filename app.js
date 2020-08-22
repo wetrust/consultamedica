@@ -4003,21 +4003,38 @@ $(document).ready(function(){
         tres = (tres.length > 0) ? +tres : 0;
         cuatro = (cuatro.length > 0) ? +cuatro : 0;
 
-        var suma = (uno + dos + tres + cuatro) / 4;
+        var suma = (uno + dos + tres + cuatro);
         $("#liquido\\.ila\\.suma\\.morfologia").val(suma);
 
-        let a = [], b = [];
-        a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
-        b[0]=59; b[1]=62; b[2]=64; b[3]=66; b[4]=67; b[5]=68; b[6]=68; b[7]=68; b[8]=68; b[9]=68; b[10]=68; b[11]=69; b[12]=69; b[13]=69; b[14]=69; b[15]=70; b[16]=71; b[17]=72; b[18]=72; b[19]=72; b[20]=71; b[21]=70; b[22]=68; b[23]=66; b[24]=62;
+        let pct5ILA = [], pct95ILA = [];
+
+        pct5ILA[16] = 79; pct5ILA[17] = 83; pct5ILA[18] = 87;
+        pct5ILA[19] = 90; pct5ILA[20] = 93; pct5ILA[21] = 95;
+        pct5ILA[22] = 97; pct5ILA[23] = 98; pct5ILA[24] = 98;
+        pct5ILA[25] = 97; pct5ILA[26] = 97; pct5ILA[27] = 95;
+        pct5ILA[28] = 94; pct5ILA[29] = 92; pct5ILA[30] = 90;
+        pct5ILA[31] = 88; pct5ILA[32] = 86; pct5ILA[33] = 83;
+        pct5ILA[34] = 81; pct5ILA[35] = 79; pct5ILA[36] = 77;
+        pct5ILA[37] = 75; pct5ILA[38] = 73; pct5ILA[39] = 72;
+        pct5ILA[40] = 71; pct5ILA[41] = 70; pct5ILA[42] = 72;
+
+        pct95ILA[16] = 185; pct95ILA[17] = 194; pct95ILA[18] = 200;
+        pct95ILA[19] = 204; pct95ILA[20] = 208; pct95ILA[21] = 212;
+        pct95ILA[22] = 214; pct95ILA[23] = 217; pct95ILA[24] = 218;
+        pct95ILA[25] = 221; pct95ILA[26] = 223; pct95ILA[27] = 226;
+        pct95ILA[28] = 228; pct95ILA[29] = 231; pct95ILA[30] = 234;
+        pct95ILA[31] = 238; pct95ILA[32] = 242; pct95ILA[33] = 245;
+        pct95ILA[34] = 248; pct95ILA[35] = 249; pct95ILA[36] = 249;
+        pct95ILA[37] = 244; pct95ILA[38] = 239; pct95ILA[39] = 226;
+        pct95ILA[40] = 214; pct95ILA[41] = 194; pct95ILA[42] = 179;
     
         let eg = document.getElementById("semanas").value;
-        let bvm = suma;
+        let ila = suma;
         document.getElementById("liquido.ila.percentil.morfologia").classList.remove("is-valid", "is-invalid");
         if (eg > 15 || eg < 41){
-            eg = eg - 16;
             eg = parseInt(eg);
-            var uno = b[eg] - a[eg];
-            var dos = bvm - a[eg];
+            var uno = pct95ILA[eg] - pct5ILA[eg];
+            var dos = ila - pct5ILA[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             $("#liquido\\.ila\\.percentil\\.morfologia").val(resultado);
 
@@ -5437,11 +5454,11 @@ function psohdlkMorfologia() {
 
     if (isNaN(psoP) != true) {
         document.getElementById("pfe.morfologia").value = Math.trunc(psoP);
-        pctpfe();
+        pctpfeMorfologia();
     }
     else{
         document.getElementById("pfe.morfologia").value = 0;
-        pctpfe();
+        pctpfeMorfologia();
     }
 }
 
@@ -5482,6 +5499,43 @@ function pctpfe() {
                }
         $('#pfePctRpt').val(pctPFE);
         $('#pfeRango').val(a[eg] + ' - ' +b[eg]);
+    }
+}
+
+function pctpfeMorfologia() {
+    'use strict';
+	let a = [], b = [];
+   
+    a[0]=97;a[1]=121;a[2]=150;a[3]=185;a[4]=227;a[5]=275; a[6]=331;a[7]=398;a[8]=471;a[9]=556;a[10]=652;a[11]=758; a[12]=876;a[13]=1004;a[14]=1145;a[15]=1294;a[16]=1453; a[17]=1621;a[18]=1794;a[19]=1973;a[20]=2154;a[21]=2335; a[22]=2513; a[23]=2686; a[24]=2851; a[25]=2985;
+    b[0]=137;b[1]=171;b[2]=212;b[3]=261;b[4]=319; b[5]=387;b[6]=467;b[7]=559;b[8]=665;b[9]=784; b[10]=918;b[11]=1068;b[12]=1234;b[13]=1416;b[14]=1613; b[15]=1824;b[16]=2049;b[17]=2285;b[18]=2530; b[19]=2781;b[20]=3036;b[21]=3291;b[22]=3543;b[23]=3786; b[24]=4019;b[25]=4234;   
+
+    let eg = document.getElementById("semanas").value;
+    let pfe= document.getElementById("pfe.morfologia").value;
+   
+    if (eg < 15 || eg > 40) {  
+        document.getElementById("pfe.pct.morfologia").value = 0;
+    } else {
+        eg = eg - 15;
+        eg = parseInt(eg);
+
+        var uno=b[eg] - a[eg];
+        var dos=pfe - a[eg];
+        var pctFinal = (80 / (uno) * (dos)) + 10
+
+        ajustarProgreso(pctFinal, "pfeMorfologia");
+
+        var pctPFE = '';
+        //truncador de Pct, sobre 100 o bajo 1
+        if (pctFinal > 99){
+            pctPFE = '> 99';
+        }
+        else if (pctFinal < 1){
+            pctPFE = '< 1';
+        } else{
+            pctPFE = pctFinal.toFixed();
+        }
+
+        document.getElementById("pfe.pct.morfologia").value = pctPFE;
     }
 }
 

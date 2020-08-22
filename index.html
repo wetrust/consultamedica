@@ -326,6 +326,21 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group row">
+                                    <label for="movimientos.fetales.morfologia" class="col-12 col-form-label">Movimientos fetales</label>
+                                    <div class="col-12">
+                                        <select class="form-control shadow" id="movimientos.fetales.morfologia">
+                                            <option>Presente</option>
+                                            <option>Ausente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <label for="presentacion.morfologia" class="col-12 col-form-label">Presentación</label>
                                     <div class="col-12">
@@ -336,6 +351,38 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group row">
+                                    <label for="presentacion.morfologia" class="col-12 col-form-label">Dorso fetal</label>
+                                    <div class="col-12">
+                                        <select class="form-control shadow" id="dorso.morfologia">
+                                            <option>Anterior</option>
+                                            <option>Posterior</option>
+                                            <option>Lat. izquierdo</option>
+                                            <option>Lat. derecho</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group row">
+                                    <label for="placenta.ubicacion" class="col-12 col-form-label">Placenta ubicación</label>
+                                    <div class="col-12">
+                                        <select class="form-control shadow" id="placenta.ubicacion">
+                                            <option>Anterior</option>
+                                            <option>Posterior</option>
+                                            <option>Fondo</option>
+                                            <option>Previa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
                                 <div class="form-group row">
                                     <label for="liquido.cualitativo.morfologia" class="col-12 col-form-label">LA Cualitativo</label>
                                     <div class="col-12">
@@ -348,26 +395,6 @@
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <div class="form-group row">
-                                    <label for="movimientos.fetales.morfologia" class="col-12 col-form-label">Movimientos fetales</label>
-                                    <div class="col-12">
-                                        <select class="form-control shadow" id="movimientos.fetales.morfologia">
-                                            <option>Presente</option>
-                                            <option>Ausente</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="placenta.ubicacion" class="col-12 col-form-label">Placenta ubicación</label>
-                                    <div class="col-12">
-                                        <select class="form-control shadow" id="placenta.ubicacion">
-                                            <option>Anterior</option>
-                                            <option>Posterior</option>
-                                            <option>Fondo</option>
-                                            <option>Previa</option>
-                                        </select>
-                                    </div>
-                                </div>
                                 <div class="form-group row">
                                     <label for="liquido.semi.morfologia" class="col-12 col-form-label">LA Semi-cuantitativo BVM</label>
                                     <div class="col-sm-6">
@@ -443,7 +470,7 @@
                             <div class="col-12 col-sm-6">
                                 <div class="form-group row">
                                     <label class="col-12 col-lg-3 col-form-label">DBP</label>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow">
                                             <input type="number" class="form-control" id="dbp.morfologia">
                                             <div class="input-group-append">
@@ -451,10 +478,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-2 px-lg-1">
                                         <input type="text" class="form-control" id="dbp.pct.morfologia" disabled>
                                     </div>
-                                    <div class="col-12 col-lg-3">
+                                    <div class="col-12 col-lg-4 px-lg-1">
                                         <div class="progress my-3 border" id="dbpMorfologia">
                                             <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
@@ -462,7 +489,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-12 col-lg-3 col-form-label">DOF</label>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow">
                                             <input type="number" class="form-control" id="dof.morfologia">
                                             <div class="input-group-append">
@@ -470,10 +497,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-2 px-lg-1">
                                         <input type="text" class="form-control" id="dof.pct.morfologia" disabled>
                                     </div>
-                                    <div class="col-12 col-lg-3">
+                                    <div class="col-12 col-lg-4 px-lg-1">
                                         <div class="progress my-3 border" id="dofMorfologia">
                                             <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
@@ -481,7 +508,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-12 col-lg-3 col-form-label">CC</label>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow">
                                             <input type="number" class="form-control" id="pc.morfologia">
                                             <div class="input-group-append">
@@ -489,10 +516,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-2 px-lg-1">
                                         <input type="text" class="form-control" id="pc.pct.morfologia" disabled>
                                     </div>
-                                    <div class="col-12 col-lg-3">
+                                    <div class="col-12 col-lg-4 px-lg-1">
                                         <div class="progress my-3 border" id="pcMorfologia">
                                             <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
@@ -500,7 +527,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-12 col-lg-3 col-form-label">CA</label>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow">
                                             <input type="number" class="form-control" id="pa.morfologia">
                                             <div class="input-group-append">
@@ -508,10 +535,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-2 px-lg-1">
                                         <input type="text" class="form-control" id="pa.pct.morfologia" disabled>
                                     </div>
-                                    <div class="col-12 col-lg-3">
+                                    <div class="col-12 col-lg-4 px-lg-1">
                                         <div class="progress my-3 border" id="paMorfologia">
                                             <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
@@ -519,7 +546,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-12 col-lg-3 col-form-label">Femur</label>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow">
                                             <input type="number" class="form-control" id="femur.morfologia">
                                             <div class="input-group-append">
@@ -527,10 +554,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-2 px-lg-1">
                                         <input type="text" class="form-control" id="femur.pct.morfologia" disabled>
                                     </div>
-                                    <div class="col-12 col-lg-3">
+                                    <div class="col-12 col-lg-4 px-lg-1">
                                         <div class="progress my-3 border" id="femurMorfologia">
                                             <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
@@ -538,7 +565,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-12 col-lg-3 col-form-label">Humero</label>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow">
                                             <input type="number" class="form-control" id="humero.morfologia">
                                             <div class="input-group-append">
@@ -546,10 +573,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-2 px-lg-1">
                                         <input type="text" class="form-control" id="humero.pct.morfologia" disabled>
                                     </div>
-                                    <div class="col-12 col-lg-3">
+                                    <div class="col-12 col-lg-4 px-lg-1">
                                         <div class="progress my-3 border" id="humeroMorfologia">
                                             <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
@@ -559,7 +586,7 @@
                             <div class="col-12 col-sm-6">
                                 <div class="form-group row">
                                     <label class="col-12 col-lg-3 col-form-label">Transverso cerebeloso</label>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow">
                                             <input type="number" class="form-control" id="tc.morfologia">
                                             <div class="input-group-append">
@@ -567,10 +594,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-2 px-lg-1">
                                         <input type="text" class="form-control" id="tc.pct.morfologia" disabled>
                                     </div>
-                                    <div class="col-12 col-lg-3">
+                                    <div class="col-12 col-lg-4 px-lg-1">
                                         <div class="progress my-3 border" id="tcMorfologia">
                                             <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
@@ -578,7 +605,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-12 col-lg-3 col-form-label">Cisterna magna</label>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow">
                                             <input type="text" class="form-control" id="cm.morfologia">
                                             <div class="input-group-append">
@@ -586,10 +613,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-2 px-lg-1">
                                         <input type="text" class="form-control" id="cm.pct.morfologia" disabled>
                                     </div>
-                                    <div class="col-12 col-lg-3">
+                                    <div class="col-12 col-lg-4 px-lg-1">
                                         <div class="progress my-3 border" id="cmMorfologia">
                                             <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
@@ -597,7 +624,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-12 col-lg-3 col-form-label">Peso Fetal estimado</label>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow">
                                             <input type="number" class="form-control" id="pfe.morfologia" disabled>
                                             <div class="input-group-append">
@@ -605,10 +632,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6 col-lg-2 px-lg-1">
                                         <input type="text" class="form-control" id="pfe.pct.morfologia" disabled>
                                     </div>
-                                    <div class="col-12 col-lg-3">
+                                    <div class="col-12 col-lg-4 px-lg-1">
                                         <div class="progress my-3 border" id="pfeMorfologia">
                                             <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
