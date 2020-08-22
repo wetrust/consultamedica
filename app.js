@@ -4360,25 +4360,28 @@ $(document).ready(function(){
         var cisM10 = [];
         var cisM90 = [];
 
-        cisM10[14] = 16.9; cisM10[15] = 21; cisM10[16] = 24; cisM10[17] = 26;
-        cisM10[18] = 28; cisM10[19] = 31; cisM10[20] = 33; cisM10[21] = 35;
-        cisM10[22] = 37; cisM10[23] = 39; cisM10[24] = 41; cisM10[25] = 43;
-        cisM10[26] = 44; cisM10[27] = 46; cisM10[28] = 47; cisM10[29] = 49;
-        cisM10[30] = 50; cisM10[31] = 51; cisM10[32] = 52; cisM10[33] = 53;
-        cisM10[34] = 53; cisM10[35] = 54; cisM10[36] = 54; cisM10[37] = 54;
-        cisM10[38] = 55; cisM10[39] = 55;
+        cisM10[14] = 1.69; cisM10[15] = 2.1; cisM10[16] = 2.4; cisM10[17] = 2.6;
+        cisM10[18] = 2.8; cisM10[19] = 3.1; cisM10[20] = 3.3; cisM10[21] = 3.5;
+        cisM10[22] = 3.7; cisM10[23] = 3.9; cisM10[24] = 4.1; cisM10[25] = 4.3;
+        cisM10[26] = 4.4; cisM10[27] = 4.6; cisM10[28] = 4.7; cisM10[29] = 4.9;
+        cisM10[30] = 5.0; cisM10[31] = 5.1; cisM10[32] = 5.2; cisM10[33] = 5.3;
+        cisM10[34] = 5.3; cisM10[35] = 5.4; cisM10[36] = 5.4; cisM10[37] = 5.4;
+        cisM10[38] = 5.5; cisM10[39] = 5.5;
 
-        cisM90[14] = 53; cisM90[15] = 57; cisM90[16] = 60; cisM90[17] = 63;
-        cisM90[18] = 66; cisM90[19] = 69; cisM90[20] = 72; cisM90[21] = 75;
-        cisM90[22] = 77; cisM90[23] = 80; cisM90[24] = 82; cisM90[25] = 85;
-        cisM90[26] = 87; cisM90[27] = 89; cisM90[28] = 91; cisM90[29] = 93;
-        cisM90[30] = 94; cisM90[31] = 96; cisM90[32] = 97; cisM90[33] = 98;
-        cisM90[34] = 99; cisM90[35] = 100; cisM90[36] = 100; cisM90[37] = 101;
-        cisM90[38] = 101; cisM90[39] = 101;
+        cisM90[14] = 5.3; cisM90[15] = 5.7; cisM90[16] = 6; cisM90[17] = 6.3;
+        cisM90[18] = 6.6; cisM90[19] = 6.9; cisM90[20] = 7.2; cisM90[21] = 7.5;
+        cisM90[22] = 7.7; cisM90[23] = 8; cisM90[24] = 8.2; cisM90[25] = 8.5;
+        cisM90[26] = 8.7; cisM90[27] = 8.9; cisM90[28] = 9.1; cisM90[29] = 9.3;
+        cisM90[30] = 9.4; cisM90[31] = 9.6; cisM90[32] = 9.7; cisM90[33] = 9.8;
+        cisM90[34] = 9.9; cisM90[35] = 10; cisM90[36] = 10; cisM90[37] = 10.1;
+        cisM90[38] = 10.1; cisM90[39] = 10.1;
         
-        var cm = 0;
         let eg = document.getElementById("semanas").value;
-        cm = parseInt(document.getElementById("cm.morfologia").value);
+        let cm = this.value;
+        
+        cm = cm.toString();
+        cm = cm.replace(",", ".");
+        cm = parseFloat(cm);
     
         document.getElementById("cm.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
