@@ -1122,7 +1122,7 @@ $( document ).ready(function() {
 //controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "lh", "cerebelo", "bvm", "modalPreInfEcoObsSegTrim1", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "modalPreInfEcoObsSegTrim1","aud","aui","ipau","ipacm","dv","psmACM","modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "pc.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia"];
+        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "lh", "cerebelo", "bvm", "modalPreInfEcoObsSegTrim1", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "modalPreInfEcoObsSegTrim1","aud","aui","ipau","ipacm","dv","psmACM","modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia","pc.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -4110,22 +4110,21 @@ $(document).ready(function(){
             var dos = dof - a[eg];
             var resultado = (parseInt(95 / (uno) * (dos) + 3));
             ajustarProgreso(resultado, "dofMorfologia");
-            var pctDOF = '';
-            //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctDOF = '> 99';
-            }
-            else if (resultado < 1){
-                pctDOF = '< 1';
+
+            let dbp = document.getElementById("dbp.morfologia").value;
+
+            if (dbp > 0){
+                var valor = ((dbp/dof)*100);
+                    
+                $('#dof\\.pct\\.morfologia').val(valor.toFixed(0) + "%");
+                if (valor < 76 || valor > 84){
+                    document.getElementById("dof.pct.morfologia").classList.add("is-invalid");
+                }else{
+                    document.getElementById("dof.pct.morfologia").classList.add("is-valid");
+                }
             }
             else{
-                pctDOF = resultado;
-            }
-            $('#dof\\.pct\\.morfologia').val(pctDOF);
-            if (resultado < 10 || resultado > 90){
-                document.getElementById("dof.pct.morfologia").classList.add("is-invalid");
-            }else{
-                document.getElementById("dof.pct.morfologia").classList.add("is-valid");
+                $('#dof\\.pct\\.morfologia').val(0);
             }
         }else{
             $('#dof\\.pct\\.morfologia').val('0');
@@ -4441,7 +4440,7 @@ $(document).ready(function(){
         let bvm = parseInt(document.getElementById("liquido.semi.morfologia").value);
 
 
-        document.getElementById("liquido.semi.morfologia").classList.remove("is-valid", "is-invalid");
+        document.getElementById("liquido.semi.pct.morfologia").classList.remove("is-valid", "is-invalid");
         
         if (eg > 15 || eg < 41){
             eg = eg - 16;
@@ -4450,7 +4449,8 @@ $(document).ready(function(){
             var dos = bvm - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             var pctCISM = 0;
-
+            ajustarProgreso(resultado, "bvmMorfologia");
+            
             if (resultado > 99){
                 pctCISM = '> 99';
             }

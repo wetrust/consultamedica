@@ -314,24 +314,31 @@
             <div class="tab-pane fade show active" id="morfologia-general" role="tabpanel" aria-labelledby="morfologia-general-tab">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="mb-3 text-verde">Evaluación general</h3>
-                        <div class="row">
-                            <div class="col-12 col-sm-6">
+                        <div class="row my-3">
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group row">
+                                    <label for="actividad.cardiaca.morfologia" class="col-12 col-form-label">Nombre paciente</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control shadow border-0" id="nombre.morfologia" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <label for="actividad.cardiaca.morfologia" class="col-12 col-form-label">Actividad cardiaca</label>
                                     <div class="col-12">
-                                        <select class="form-control shadow" id="actividad.cardiaca.morfologia">
+                                        <select class="form-control shadow border-0" id="actividad.cardiaca.morfologia">
                                             <option>Presente</option>
                                             <option>Ausente</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-6">
+                            <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <label for="movimientos.fetales.morfologia" class="col-12 col-form-label">Movimientos fetales</label>
                                     <div class="col-12">
-                                        <select class="form-control shadow" id="movimientos.fetales.morfologia">
+                                        <select class="form-control shadow border-0" id="movimientos.fetales.morfologia">
                                             <option>Presente</option>
                                             <option>Ausente</option>
                                         </select>
@@ -339,12 +346,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row my-3">
                             <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <label for="presentacion.morfologia" class="col-12 col-form-label">Presentación</label>
                                     <div class="col-12">
-                                        <select class="form-control shadow" id="presentacion.morfologia">
+                                        <select class="form-control shadow border-0" id="presentacion.morfologia">
                                             <option>Cefálica</option>
                                             <option>Podálica</option>
                                             <option>Transversa</option>
@@ -352,12 +359,11 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <label for="presentacion.morfologia" class="col-12 col-form-label">Dorso fetal</label>
                                     <div class="col-12">
-                                        <select class="form-control shadow" id="dorso.morfologia">
+                                        <select class="form-control shadow border-0" id="dorso.morfologia">
                                             <option>Anterior</option>
                                             <option>Posterior</option>
                                             <option>Lat. izquierdo</option>
@@ -365,13 +371,12 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                            
+                            </div>                       
                             <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <label for="placenta.ubicacion" class="col-12 col-form-label">Placenta ubicación</label>
                                     <div class="col-12">
-                                        <select class="form-control shadow" id="placenta.ubicacion">
+                                        <select class="form-control shadow border-0" id="placenta.ubicacion">
                                             <option>Anterior</option>
                                             <option>Posterior</option>
                                             <option>Fondo</option>
@@ -381,12 +386,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row my-3">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group row">
                                     <label for="liquido.cualitativo.morfologia" class="col-12 col-form-label">LA Cualitativo</label>
                                     <div class="col-12">
-                                        <select class="form-control shadow" id="liquido.cualitativo.morfologia">
+                                        <select class="form-control shadow border-0" id="liquido.cualitativo.morfologia">
                                             <option>Normal</option>
                                             <option>Aumentado</option>
                                             <option>Disminuido</option>
@@ -396,54 +401,59 @@
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group row">
-                                    <label for="liquido.semi.morfologia" class="col-12 col-form-label">LA Semi-cuantitativo BVM</label>
-                                    <div class="col-sm-6">
-                                        <div class="input-group mb-2 shadow">
-                                            <input type="number" class="form-control" id="liquido.semi.morfologia">
+                                    <label for="liquido.semi.morfologia" class="col-12 col-form-label">LA Medicion Única Bolsillo Mayor</label>
+                                    <div class="col-6 col-lg-4">
+                                        <div class="input-group mb-2 shadow rounded">
+                                            <input type="number" class="form-control border-0" id="liquido.semi.morfologia">
                                             <div class="input-group-append">
-                                                <div class="input-group-text">mm</div>
+                                                <div class="input-group-text border-0">mm</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-6 col-lg-3">
                                         <input type="text" class="form-control" id="liquido.semi.pct.morfologia" disabled>
+                                    </div>
+                                    <div class="col-12 col-lg-5">
+                                        <div class="progress my-3 border" id="bvmMorfologia">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row my-3">
                             <div class="col-12">
-                                <label>LA Semi-cuantitativo ILA</label>
+                                <label>LA Semi-cuantitativo ILA <small>*LA (Líquido amniótico) Semi-cuantitativo ILA sumatoria de 4 cuadrantes</small></label>
                             </div>
                             <div class="col-3 col-lg-2">
-                                <div class="input-group mb-3 shadow">
-                                    <input type="number" class="form-control" id="liquido.ila.uno.morfologia">
+                                <div class="input-group mb-3 shadow rounded">
+                                    <input type="number" class="form-control border-0" id="liquido.ila.uno.morfologia">
                                     <div class="input-group-append">
-                                        <div class="input-group-text">mm</div>
+                                        <div class="input-group-text border-0">mm</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-3 col-lg-2">
-                                <div class="input-group mb-3 shadow">
-                                    <input type="number" class="form-control" id="liquido.ila.dos.morfologia">
+                                <div class="input-group mb-3 shadow rounded">
+                                    <input type="number" class="form-control border-0" id="liquido.ila.dos.morfologia">
                                     <div class="input-group-append">
-                                        <div class="input-group-text">mm</div>
+                                        <div class="input-group-text border-0">mm</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-3 col-lg-2">
-                                <div class="input-group mb-3 shadow">
-                                    <input type="number" class="form-control" id="liquido.ila.tres.morfologia">
+                                <div class="input-group mb-3 shadow rounded">
+                                    <input type="number" class="form-control border-0" id="liquido.ila.tres.morfologia">
                                     <div class="input-group-append">
-                                        <div class="input-group-text">mm</div>
+                                        <div class="input-group-text border-0">mm</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-3 col-lg-2">
-                                <div class="input-group mb-3 shadow">
-                                    <input type="number" class="form-control" id="liquido.ila.cuatro.morfologia">
+                                <div class="input-group mb-3 shadow rounded">
+                                    <input type="number" class="form-control border-0" id="liquido.ila.cuatro.morfologia">
                                     <div class="input-group-append">
-                                        <div class="input-group-text">mm</div>
+                                        <div class="input-group-text border-0">mm</div>
                                     </div>
                                 </div>
                             </div>
@@ -464,17 +474,16 @@
                                 </div>
                             </div>
                         </div>
-                        <p><small>*LA (Líquido amniótico) Semi-cuantitativo ILA sumatoria de 4 cuadrantes</small></p>
                         <h3 class="my-3 text-verde">Biometría</h3>
                         <div class="row">
                             <div class="col-12 col-sm-6">
-                                <div class="form-group row">
+                                <div class="form-group row mb-3">
                                     <label class="col-12 col-lg-3 col-form-label">DBP</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
-                                        <div class="input-group mb-2 shadow">
-                                            <input type="number" class="form-control" id="dbp.morfologia">
+                                        <div class="input-group mb-2 shadow rounded">
+                                            <input type="number" class="form-control border-0" id="dbp.morfologia">
                                             <div class="input-group-append">
-                                                <div class="input-group-text">mm</div>
+                                                <div class="input-group-text border-0">mm</div>
                                             </div>
                                         </div>
                                     </div>
@@ -487,13 +496,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row my-3">
                                     <label class="col-12 col-lg-3 col-form-label">DOF</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
-                                        <div class="input-group mb-2 shadow">
-                                            <input type="number" class="form-control" id="dof.morfologia">
+                                        <div class="input-group mb-2 shadow rounded">
+                                            <input type="number" class="form-control border-0" id="dof.morfologia">
                                             <div class="input-group-append">
-                                                <div class="input-group-text">mm</div>
+                                                <div class="input-group-text border-0">mm</div>
                                             </div>
                                         </div>
                                     </div>
@@ -506,13 +515,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row my-3">
                                     <label class="col-sm-12 col-lg-3 col-form-label">CC</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
-                                        <div class="input-group mb-2 shadow">
-                                            <input type="number" class="form-control" id="pc.morfologia">
+                                        <div class="input-group mb-2 shadow rounded">
+                                            <input type="number" class="form-control border-0" id="pc.morfologia">
                                             <div class="input-group-append">
-                                                <div class="input-group-text">mm</div>
+                                                <div class="input-group-text border-0">mm</div>
                                             </div>
                                         </div>
                                     </div>
@@ -525,13 +534,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row my-3">
                                     <label class="col-12 col-lg-3 col-form-label">CA</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
-                                        <div class="input-group mb-2 shadow">
-                                            <input type="number" class="form-control" id="pa.morfologia">
+                                        <div class="input-group mb-2 shadow rounded">
+                                            <input type="number" class="form-control border-0" id="pa.morfologia">
                                             <div class="input-group-append">
-                                                <div class="input-group-text">mm</div>
+                                                <div class="input-group-text border-0">mm</div>
                                             </div>
                                         </div>
                                     </div>
@@ -544,13 +553,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row my-3">
                                     <label class="col-12 col-lg-3 col-form-label">Femur</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
-                                        <div class="input-group mb-2 shadow">
-                                            <input type="number" class="form-control" id="femur.morfologia">
+                                        <div class="input-group mb-2 shadow rounded">
+                                            <input type="number" class="form-control border-0" id="femur.morfologia">
                                             <div class="input-group-append">
-                                                <div class="input-group-text">mm</div>
+                                                <div class="input-group-text border-0">mm</div>
                                             </div>
                                         </div>
                                     </div>
@@ -563,13 +572,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row my-3">
                                     <label class="col-12 col-lg-3 col-form-label">Humero</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
-                                        <div class="input-group mb-2 shadow">
-                                            <input type="number" class="form-control" id="humero.morfologia">
+                                        <div class="input-group mb-2 shadow rounded">
+                                            <input type="number" class="form-control border-0" id="humero.morfologia">
                                             <div class="input-group-append">
-                                                <div class="input-group-text">mm</div>
+                                                <div class="input-group-text border-0">mm</div>
                                             </div>
                                         </div>
                                     </div>
@@ -584,13 +593,13 @@
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <div class="form-group row">
+                                <div class="form-group row my-3">
                                     <label class="col-12 col-lg-3 col-form-label">Transverso cerebeloso</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
-                                        <div class="input-group mb-2 shadow">
-                                            <input type="number" class="form-control" id="tc.morfologia">
+                                        <div class="input-group mb-2 shadow rounded">
+                                            <input type="number" class="form-control border-0" id="tc.morfologia">
                                             <div class="input-group-append">
-                                                <div class="input-group-text">mm</div>
+                                                <div class="input-group-text border-0">mm</div>
                                             </div>
                                         </div>
                                     </div>
@@ -603,13 +612,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row my-3">
                                     <label class="col-12 col-lg-3 col-form-label">Cisterna magna</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
-                                        <div class="input-group mb-2 shadow">
-                                            <input type="text" class="form-control" id="cm.morfologia">
+                                        <div class="input-group mb-2 shadow rounded">
+                                            <input type="text" class="form-control border-0" id="cm.morfologia">
                                             <div class="input-group-append">
-                                                <div class="input-group-text">mm</div>
+                                                <div class="input-group-text border-0">mm</div>
                                             </div>
                                         </div>
                                     </div>
@@ -622,13 +631,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row my-3">
                                     <label class="col-12 col-lg-3 col-form-label">Peso Fetal estimado</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
-                                        <div class="input-group mb-2 shadow">
-                                            <input type="number" class="form-control" id="pfe.morfologia" disabled>
+                                        <div class="input-group mb-2 shadow rounded">
+                                            <input type="number" class="form-control border-0" id="pfe.morfologia" disabled>
                                             <div class="input-group-append">
-                                                <div class="input-group-text">grs</div>
+                                                <div class="input-group-text border-0">grs</div>
                                             </div>
                                         </div>
                                     </div>
