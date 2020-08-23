@@ -4472,6 +4472,94 @@ $(document).ready(function(){
             document.getElementById("liquido.semi.pct.morfologia").value = 0
         }
     })
+
+    $("#art\\.ut\\.d\\.morfologia").on("keyup", function(){
+        let ut = pctut(this.value);
+        document.getElementById("art.ut.d.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+        document.getElementById("art.ut.d.pct.morfologia").value = ut.pct
+        ajustarProgreso(ut.raw, "artUtDMorfologia");
+        
+        if (ut.raw < 10 || ut.raw > 90){
+            document.getElementById("art.ut.d.pct.morfologia").classList.add("is-invalid");
+        }else{
+            document.getElementById("art.ut.d.pct.morfologia").classList.add("is-valid");
+        }
+
+        aui = document.getElementById("art.ut.i.morfologia").value;
+        aud = document.getElementById("art.ut.d.morfologia").value;
+
+        aui = aui.toString(); 
+        aui = aui.replace(",", ".");
+        aui = parseFloat(aui);
+
+        aud = aud.toString(); 
+        aud = aud.replace(",", ".");
+        aud = parseFloat(aud);
+
+        if (aui > 0 && aud > 0){
+            let utprom = ((aui + aud) / 2);
+
+            document.getElementById("art.ut.prom.pct.morfologia").classList.remove("is-valid", "is-invalid");
+            document.getElementById("art.ut.prom.morfologia").value = utprom.toFixed(2);
+
+            utprom = pctut(utprom);
+
+            document.getElementById("art.ut.prom.pct.morfologia").value = utprom.pct;
+            ajustarProgreso(utprom.raw, "artUtPromMorfologia");
+
+            if (utprom.raw < 10 || utprom.raw > 90){
+                document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-valid");
+            }
+        }
+
+    })
+
+    $("#art\\.ut\\.i\\.morfologia").on("keyup", function(){
+        let ut = pctut(this.value);
+        document.getElementById("art.ut.i.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+        document.getElementById("art.ut.i.pct.morfologia").value = ut.pct
+        ajustarProgreso(ut.raw, "artUtIMorfologia");
+        
+        if (ut.raw < 10 || ut.raw > 90){
+            document.getElementById("art.ut.i.pct.morfologia").classList.add("is-invalid");
+        }else{
+            document.getElementById("art.ut.i.pct.morfologia").classList.add("is-valid");
+        }
+
+        aui = document.getElementById("art.ut.i.morfologia").value;
+        aud = document.getElementById("art.ut.d.morfologia").value;
+
+        aui = aui.toString(); 
+        aui = aui.replace(",", ".");
+        aui = parseFloat(aui);
+
+        aud = aud.toString(); 
+        aud = aud.replace(",", ".");
+        aud = parseFloat(aud);
+
+        if (aui > 0 && aud > 0){
+            let utprom = ((aui + aud) / 2);
+
+            document.getElementById("art.ut.prom.pct.morfologia").classList.remove("is-valid", "is-invalid");
+            document.getElementById("art.ut.prom.morfologia").value = utprom.toFixed(2);
+
+            utprom = pctut(utprom);
+
+            document.getElementById("art.ut.prom.pct.morfologia").value = utprom.pct;
+            ajustarProgreso(utprom.raw, "artUtPromMorfologia");
+
+            if (utprom.raw < 10 || utprom.raw > 90){
+                document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-valid");
+            }
+        }
+
+    })
 })
 
 $(window).on('hashchange', function(){
@@ -4810,6 +4898,7 @@ function pctut(uterina) {
 
     let respuesta = {
         pct: 0,
+        raw: 0,
         rango: {
             min:0,
             max:0
@@ -4829,12 +4918,15 @@ function pctut(uterina) {
 			dos = uterina - a[eg];
 			uterina = parseInt(90 / (uno) * (dos) + 5);
 
+            respuesta.raw = uterina;
+
 			if (uterina > 99){
-				uterina = '&gt; 99';
+				uterina = '> 99';
 			}
 			else if (uterina < 1){
-				uterina = '&lt; 1';
+				uterina = '< 1';
             }
+
             respuesta.pct = uterina;
             respuesta.rango.min = a[eg];
             respuesta.rango.max = b[eg];

@@ -309,43 +309,47 @@
               <a class="nav-link bg-secondary text-white" id="morfologia-morfologia-tab" data-toggle="tab" href="#morfologia-morfologia" role="tab" aria-controls="morfologia-morfologia" aria-selected="false">Modulo 2 | Morfología</a>
               <a class="nav-link bg-secondary text-white" id="morfologia-flujometria-tab" data-toggle="tab" href="#morfologia-flujometria" role="tab" aria-controls="morfologia-flujometria" aria-selected="false">Modulo 3 | Flujometría</a>
             </div>
-          </nav>
+        </nav>
+        <div class="card mb-2">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group row">
+                            <label for="actividad.cardiaca.morfologia" class="col-12 col-form-label">Nombre paciente</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control shadow border-0" id="nombre.morfologia" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group row">
+                            <label for="actividad.cardiaca.morfologia" class="col-12 col-form-label">Actividad cardiaca</label>
+                            <div class="col-12">
+                                <select class="form-control shadow border-0" id="actividad.cardiaca.morfologia">
+                                    <option>Presente</option>
+                                    <option>Ausente</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group row">
+                            <label for="movimientos.fetales.morfologia" class="col-12 col-form-label">Movimientos fetales</label>
+                            <div class="col-12">
+                                <select class="form-control shadow border-0" id="movimientos.fetales.morfologia">
+                                    <option>Presente</option>
+                                    <option>Ausente</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
           <div class="tab-content mb-5 pb-3">
             <div class="tab-pane fade show active" id="morfologia-general" role="tabpanel" aria-labelledby="morfologia-general-tab">
                 <div class="card">
                     <div class="card-body">
-                        <div class="row my-3">
-                            <div class="col-12 col-sm-4">
-                                <div class="form-group row">
-                                    <label for="actividad.cardiaca.morfologia" class="col-12 col-form-label">Nombre paciente</label>
-                                    <div class="col-12">
-                                        <input type="text" class="form-control shadow border-0" id="nombre.morfologia" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4">
-                                <div class="form-group row">
-                                    <label for="actividad.cardiaca.morfologia" class="col-12 col-form-label">Actividad cardiaca</label>
-                                    <div class="col-12">
-                                        <select class="form-control shadow border-0" id="actividad.cardiaca.morfologia">
-                                            <option>Presente</option>
-                                            <option>Ausente</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4">
-                                <div class="form-group row">
-                                    <label for="movimientos.fetales.morfologia" class="col-12 col-form-label">Movimientos fetales</label>
-                                    <div class="col-12">
-                                        <select class="form-control shadow border-0" id="movimientos.fetales.morfologia">
-                                            <option>Presente</option>
-                                            <option>Ausente</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row my-3">
                             <div class="col-12 col-sm-4">
                                 <div class="form-group row">
@@ -389,7 +393,7 @@
                         <div class="row my-3">
                             <div class="col-12 col-sm-6">
                                 <div class="form-group row">
-                                    <label for="liquido.cualitativo.morfologia" class="col-12 col-form-label">LA Cualitativo</label>
+                                    <label for="liquido.cualitativo.morfologia" class="col-12 col-form-label">Liquido Amniótico Cualitativo</label>
                                     <div class="col-12">
                                         <select class="form-control shadow border-0" id="liquido.cualitativo.morfologia">
                                             <option>Normal</option>
@@ -401,7 +405,7 @@
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group row">
-                                    <label for="liquido.semi.morfologia" class="col-12 col-form-label">LA Medicion Única Bolsillo Mayor</label>
+                                    <label for="liquido.semi.morfologia" class="col-12 col-form-label">Liquido Amniótico Medicion Única Bolsillo Mayor</label>
                                     <div class="col-6 col-lg-4">
                                         <div class="input-group mb-2 shadow rounded">
                                             <input type="number" class="form-control border-0" id="liquido.semi.morfologia">
@@ -423,7 +427,7 @@
                         </div>
                         <div class="row my-3">
                             <div class="col-12">
-                                <label>LA Semi-cuantitativo ILA <small>*LA (Líquido amniótico) Semi-cuantitativo ILA sumatoria de 4 cuadrantes</small></label>
+                                <label>Liquido Amniótico Semi-cuantitativo ILA <small>*ILA = sumatoria de 4 cuadrantes</small></label>
                             </div>
                             <div class="col-3 col-lg-2">
                                 <div class="input-group mb-3 shadow rounded">
@@ -593,7 +597,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <div class="form-group row my-3">
+                                <div class="form-group row mb-3">
                                     <label class="col-12 col-lg-3 col-form-label">Transverso cerebeloso</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow rounded">
@@ -928,87 +932,194 @@
             <div class="tab-pane fade" id="morfologia-flujometria" role="tabpanel" aria-labelledby="morfologia-flujometria-tab">
                 <div class="card">
                     <div class="card-body">
-                        <h3>Evaluación general</h3>
+                        <h3 class="my-3 text-verde">Evaluación general</h3>
                         <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">IP Arteria uterina derecha</label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="pc.morfologia">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">IP Arteria uterina izquierda</label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="pc.morfologia">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">IP Arteria uterinas promedio</label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="pc.morfologia">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">IP Arteria Umbilical</label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="pc.morfologia">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">IP Arteria cerebral media</label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="pc.morfologia">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">Peak sistólico</label>
-                            <div class="col-sm-8">
-                                <div class="input-group mb-2">
-                                    <input type="number" class="form-control" id="pfe.morfologia">
+                            <label for="art.ut.d" class="col-sm-3 col-form-label">IP Arteria uterina derecha</label>
+                            <div class="col-6 col-lg-3">
+                                <div class="input-group mb-2 shadow rounded">
+                                    <input type="text" class="form-control border-0" id="art.ut.d.morfologia">
                                     <div class="input-group-append">
-                                        <div class="input-group-text">Cm/seg</div>
+                                        <div class="input-group-text border-0">mm</div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2">
+                                <input type="text" class="form-control" id="art.ut.d.pct.morfologia" disabled>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="progress my-3 border" id="artUtDMorfologia">
+                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">IP Índice cerebro placentario</label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="pc.morfologia">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">Ductus venoso</label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="pc.morfologia">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">Largo cervical</label>
-                            <div class="col-sm-8">
-                                <div class="input-group mb-2">
-                                    <input type="number" class="form-control" id="pfe.morfologia">
+                            <label for="art.ut.i.morfologia" class="col-sm-3 col-form-label">IP Arteria uterina izquierda</label>
+                            <div class="col-6 col-lg-3">
+                                <div class="input-group mb-2 shadow rounded">
+                                    <input type="text" class="form-control border-0" id="art.ut.i.morfologia">
                                     <div class="input-group-append">
-                                        <div class="input-group-text">mm</div>
+                                        <div class="input-group-text border-0">mm</div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2">
+                                <input type="text" class="form-control" id="art.ut.i.pct.morfologia" disabled>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="progress my-3 border" id="artUtIMorfologia">
+                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">Conclusión</label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="pc.morfologia">
+                            <label for="art.ut.prom.morfologia" class="col-sm-3 col-form-label">IP Arteria uterinas promedio</label>
+                            <div class="col-6 col-lg-3">
+                                <div class="input-group mb-2 shadow rounded">
+                                    <input type="text" class="form-control border-0" id="art.ut.prom.morfologia" disabled>
+                                    <div class="input-group-append">
+                                        <div class="input-group-text border-0">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2">
+                                <input type="text" class="form-control" id="art.ut.prom.pct.morfologia" disabled>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="progress my-3 border" id="artUtPromMorfologia">
+                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">Seguimiento</label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="pc.morfologia">
+                            <label for="art.umb.morfologia" class="col-sm-3 col-form-label">IP Arteria Umbilical</label>
+                            <div class="col-6 col-lg-3">
+                                <div class="input-group mb-2 shadow rounded">
+                                    <input type="text" class="form-control border-0" id="art.umb.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text border-0">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2">
+                                <input type="text" class="form-control" id="art.umb.pct.morfologia" disabled>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="progress my-3 border" id="artUmbMorfologia">
+                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="actividad.cardiaca.morfologia" class="col-sm-3 col-form-label">Ecografista</label>
+                            <label for="art.cm.morfologia" class="col-sm-3 col-form-label">IP Arteria cerebral media</label>
+                            <div class="col-6 col-lg-3">
+                                <div class="input-group mb-2 shadow rounded">
+                                    <input type="text" class="form-control border-0" id="art.cm.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text border-0">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2">
+                                <input type="text" class="form-control" id="art.cm.pct.morfologia" disabled>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="progress my-3 border" id="artCmMorfologia">
+                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="p.sis.morfologia" class="col-sm-3 col-form-label">Peak sistólico</label>
+                            <div class="col-6 col-lg-3">
+                                <div class="input-group mb-2 shadow rounded">
+                                    <input type="text" class="form-control border-0" id="p.sis.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text border-0">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2">
+                                <input type="text" class="form-control" id="p.sis.pct.morfologia" disabled>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="progress my-3 border" id="pSisMorfologia">
+                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="ind.cp.morfologia" class="col-sm-3 col-form-label">IP Índice cerebro placentario</label>
+                            <div class="col-6 col-lg-3">
+                                <div class="input-group mb-2 shadow rounded">
+                                    <input type="text" class="form-control border-0" id="ind.cp.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text border-0">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2">
+                                <input type="text" class="form-control" id="ind.cp.pct.morfologia" disabled>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="progress my-3 border" id="indCpMorfologia">
+                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="dv.morfologia" class="col-sm-3 col-form-label">Ductus venoso</label>
+                            <div class="col-6 col-lg-3">
+                                <div class="input-group mb-2 shadow rounded">
+                                    <input type="text" class="form-control border-0" id="dv.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text border-0">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2">
+                                <input type="text" class="form-control" id="dv.pct.morfologia" disabled>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="progress my-3 border" id="dvMorfologia">
+                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lc.morfologia" class="col-sm-3 col-form-label">Largo cervical</label>
+                            <div class="col-6 col-lg-3">
+                                <div class="input-group mb-2 shadow rounded">
+                                    <input type="text" class="form-control border-0" id="lc.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text border-0">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2">
+                                <input type="text" class="form-control" id="lc.pct.morfologia" disabled>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="progress my-3 border" id="lCMorfologia">
+                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="conclusion.morfologia" class="col-sm-3 col-form-label">Conclusión</label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" id="pc.morfologia">
+                                <input type="number" class="form-control" id="conclusion.morfologia">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="seguimiento.morfologia" class="col-sm-3 col-form-label">Seguimiento</label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" id="seguimiento.morfologia">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="ecografista.morfologia" class="col-sm-3 col-form-label">Ecografista</label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" id="ecografista.morfologia">
                             </div>
                         </div>
                     </div>
