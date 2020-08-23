@@ -4060,6 +4060,7 @@ $(document).ready(function(){
         dbp = parseFloat(dbp);
     
         document.getElementById("dbp.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        document.getElementById("dof.ic.morfologia").classList.remove("is-valid", "is-invalid");
 
         if (eg < 12 || eg > 40){
             $("#dbp\\.pct\\.morfologia").val('0');
@@ -4091,6 +4092,22 @@ $(document).ready(function(){
             }else{
                 document.getElementById("dbp.pct.morfologia").classList.add("is-valid");
             }
+
+            let dof = document.getElementById("dof.morfologia").value;
+
+            if (dbp > 0){
+                var valor = ((dbp/dof)*100);
+                    
+                $('#dof\\.ic\\.morfologia').val(valor.toFixed(0) + "%");
+                if (valor < 76 || valor > 84){
+                    document.getElementById("dof.ic.morfologia").classList.add("is-invalid");
+                }else{
+                    document.getElementById("dof.ic.morfologia").classList.add("is-valid");
+                }
+            }
+            else{
+                $('#dof\\.ic\\.morfologia').val(0);
+            }
         }
     })
 
@@ -4104,6 +4121,7 @@ $(document).ready(function(){
         let eg = document.getElementById("semanas").value;
         
         document.getElementById("dof.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        document.getElementById("dof.ic.morfologia").classList.remove("is-valid", "is-invalid");
 
         if (eg > 9 && dof > 0){
             var uno = b[eg] - a[eg];
@@ -4111,23 +4129,44 @@ $(document).ready(function(){
             var resultado = (parseInt(95 / (uno) * (dos) + 3));
             ajustarProgreso(resultado, "dofMorfologia");
 
+            var pctDOF = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctDOF = '> 99';
+            }
+            else if (resultado < 1){
+                pctDOF = '< 1';
+            }
+            else{
+                pctDOF = resultado;
+            }
+            
+            $('#dof\\.pct\\.morfologia').val(pctDOF);
+
             let dbp = document.getElementById("dbp.morfologia").value;
 
             if (dbp > 0){
                 var valor = ((dbp/dof)*100);
                     
-                $('#dof\\.pct\\.morfologia').val(valor.toFixed(0) + "%");
+                $('#dof\\.ic\\.morfologia').val(valor.toFixed(0) + "%");
                 if (valor < 76 || valor > 84){
-                    document.getElementById("dof.pct.morfologia").classList.add("is-invalid");
+                    document.getElementById("dof.ic.morfologia").classList.add("is-invalid");
                 }else{
-                    document.getElementById("dof.pct.morfologia").classList.add("is-valid");
+                    document.getElementById("dof.ic.morfologia").classList.add("is-valid");
                 }
             }
             else{
-                $('#dof\\.pct\\.morfologia').val(0);
+                $('#dof\\.ic\\.morfologia').val(0);
+            }
+
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("dof.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("dof.pct.morfologia").classList.add("is-valid");
             }
         }else{
             $('#dof\\.pct\\.morfologia').val('0');
+            $('#dof\\.ic\\.morfologia').val('0');
         }
     })
 
@@ -4559,6 +4598,189 @@ $(document).ready(function(){
             }
         }
 
+    })
+
+    $("#art\\.umb\\.morfologia").on("keyup", function(){
+        'use strict';
+        let a = [],b = [],c = [],d = [];
+
+        a[0]=0.97;a[1]=0.95;a[2]=0.94;a[3]=0.92;a[4]=0.9;a[5]=0.89;a[6]=0.87;a[7]=0.85;a[8]=0.82;a[9]=0.8;a[10]=0.78; a[11]=0.75;a[12]=0.73; a[13]=0.7;a[14]=0.67; a[15]=0.65;a[16]=0.62; a[17]=0.58;a[18]=0.55; a[19]=0.52;a[20]=0.49;
+        b[0]=1.6;b[1]=1.56;b[2]=1.53; b[3]=1.5;b[4]=1.46; b[5]=1.43;b[6]=1.4;b[7]=1.37;b[8]=1.35; b[9]=1.32;b[10]=1.29; b[11]=1.27;b[12]=1.25; b[13]=1.22;b[14]=1.2; b[15]=1.18;b[16]=1.16; b[17]=1.14;b[18]=1.13; b[19]=1.11;b[20]=1.09;
+        c[20]=0.78; c[21]=0.87; c[22]=0.95; c[23]=1.02;c[24]=1.09; c[25]=1.15; c[26]=1.2; c[27]=1.24;c[28]=1.28; c[29]=1.31; c[30]=1.33; c[31]=1.35;c[32]=1.36; c[33]=1.36; c[34]=1.36; c[35]=1.34;c[36]=1.32; c[37]=1.3; c[38]=1.26; c[39]=1.22;c[40]=1.18;
+        d[20]=1.68; d[21]=1.88; d[22]=2.06; d[23]=2.22;d[24]=2.36; d[25]=2.49; d[26]=2.6;d[27]=2.7;d[28]=2.78; d[29]=2.84; d[30]=2.89; d[31]=2.92;d[32]=2.93; d[33]=2.93; d[34]=2.91; d[35]=2.87;d[36]=2.82; d[37]=2.75; d[38]=2.67; d[39]=2.57;
+
+        let eg = document.getElementById("semanas").value;
+ 	    var aumb = this.value;
+	    aumb = aumb.toString();
+ 	    aumb = aumb.replace(",", ".");
+ 	    aumb = parseFloat(aumb);
+ 
+        document.getElementById("art.umb.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+	    if (eg < 20 || eg > 40){
+            document.getElementById("art.umb.pct.morfologia").value = 0;
+            ajustarProgreso(0, "artUmbMorfologia");
+            document.getElementById("ind.cp.morfologia").value = 0
+            document.getElementById("ind.cp.pct.morfologia").value = 0
+            ajustarProgreso(0, "indCpMorfologia");
+	    }else {
+		    eg = eg - 20;
+		    eg = parseInt(eg);
+
+            var uno=b[eg] - a[eg];
+		    var dos=aumb - a[eg];
+		    var resultado = parseInt(90 / (uno) * (dos) + 5);
+            ajustarProgreso(resultado, "artUmbMorfologia");
+
+		    var pctAUMB = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctAUMB = '> 99';
+			}
+			else if (resultado < 1){
+				pctAUMB = '< 1';
+			}
+			else{
+				pctAUMB = resultado;
+            }
+
+            $("#art\\.umb\\.pct\\.morfologia").val(pctAUMB);
+
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("art.umb.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("art.umb.pct.morfologia").classList.add("is-valid");
+            }
+
+		    if ($('#art\\.cm\\.morfologia').val()){
+                var cm = $('#art\\.cm\\.morfologia').val();
+                cm = cm.toString();
+                cm = cm.replace(",", ".");
+                cm = parseFloat(cm);
+
+                var ccp = (cm / aumb);
+                
+                $('#ind\\.cp\\.morfologia').val(ccp.toFixed(2));
+                document.getElementById("ind.cp.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+			    eg = eg + 20;
+			    uno = d[eg] - c[eg];
+			    dos = ccp - c[eg];
+			    resultado = parseInt(90 / (uno) * (dos) + 5);
+			    ajustarProgreso(resultado, "indCpMorfologia");
+
+                var pctCCP = '';
+			    //truncador de Pct, sobre 100 o bajo 1
+			    if (resultado > 99){
+				    pctCCP = '> 99';
+			    }else if (resultado < 1){
+				    pctCCP = '< 1';
+			    }else{
+				    pctCCP = resultado;
+			    }
+
+                document.getElementById("ind.cp.pct.morfologia").value = pctCCP;
+
+                if (resultado < 10 || resultado > 90){
+                    document.getElementById("ind.cp.pct.morfologia").classList.add("is-invalid");
+                }else{
+                    document.getElementById("ind.cp.pct.morfologia").classList.add("is-valid");
+                }
+
+		    }
+	    }
+    })
+
+    $("#art\\.cm\\.morfologia").on("keyup", function(){
+        'use strict';
+	    var a = [],b = [],c = [],d = [];
+
+        a[0]=1.24;a[1]=1.29;a[2]=1.34;a[3]=1.37;a[4]=1.4;a[5]=1.43;a[6]=1.44;a[7]=1.45;a[8]=1.45;a[9]=1.44;a[10]=1.43;a[11]=1.41;a[12]=1.38;a[13]=1.34;a[14]=1.3;a[15]=1.25;a[16]=1.19;a[17]=1.13;a[18]=1.05;a[19]=0.98;a[20]=0.89;
+        b[0]=1.98;b[1]=2.12;b[2]=2.25;b[3]=2.36;b[4]=2.45;b[5]=2.53;b[6]=2.59;b[7]=2.63;b[8]=2.66;b[9]=2.67;b[10]=2.67;b[11]=2.65;b[12]=2.62;b[13]=2.56;b[14]=2.5;b[15]=2.41;b[16]=2.31;b[17]=2.2;b[18]=2.07;b[19]=1.92;b[20]=1.76;
+        c[20]=0.78;c[21]=0.87;c[22]=0.95;c[23]=1.02;c[24]=1.09;c[25]=1.15;c[26]=1.2;c[27]=1.24;c[28]=1.28;c[29]=1.31;c[30]=1.33;c[31]=1.35;c[32]=1.36;c[33]=1.36;c[34]=1.36;c[35]=1.34;c[36]=1.32;c[37]=1.3;c[38]=1.26;c[39]=1.22;c[40]=1.18;
+        d[20]=1.68;d[21]=1.88;d[22]=2.06;d[23]=2.22;d[24]=2.36;d[25]=2.49;d[26]=2.6;d[27]=2.7;d[28]=2.78;d[29]=2.84;d[30]=2.89;d[31]=2.92;d[32]=2.93;d[33]=2.93;d[34]=2.91;d[35]=2.87;d[36]=2.82;d[37]=2.75;d[38]=2.67;d[39]=2.57;
+
+        let eg = document.getElementById("semanas").value;
+	    var acm = $('#art\\.cm\\.morfologia').val();
+	    acm = acm.toString();
+ 	    acm = acm.replace(",", ".");
+        acm = parseFloat(acm);
+         
+        document.getElementById("art.cm.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+	    if (eg < 20 || eg > 40){
+            document.getElementById("art.cm.pct.morfologia").value = 0;
+            ajustarProgreso(0, "artCmMorfologia");
+            document.getElementById("ind.cp.morfologia").value = 0
+            document.getElementById("ind.cp.pct.morfologia").value = 0
+            ajustarProgreso(0, "indCpMorfologia");
+        } else {
+            eg = eg - 20;
+            eg = parseInt(eg);
+            var uno = b[eg] - a[eg];
+            var dos = acm - a[eg];
+            var resultado = parseInt(90 / (uno) * (dos) + 5);
+            ajustarProgreso(resultado, "artCmMorfologia");
+
+            var pctACM = '';
+			//truncador de Pct, sobre 100 o bajo 1
+			if (resultado > 99){
+				pctACM = '> 99';
+			}
+			else if (resultado < 1){
+				pctACM = '< 1';
+			}
+			else{
+				pctACM = resultado;
+            }
+            
+            document.getElementById("art.cm.pct.morfologia").value = pctACM;
+            
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("art.cm.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("art.cm.pct.morfologia").classList.add("is-valid");
+            }
+
+		    if ($('#art\\.umb\\.morfologia').val()){
+                var aumb = $('#art\\.umb\\.morfologia').val();
+                aumb = aumb.toString();
+                aumb = aumb.replace(",", ".");
+                aumb = parseFloat(aumb);
+
+                var ccp = (acm / aumb);
+
+                $('#ind\\.cp\\.morfologia').val(ccp.toFixed(2));
+                document.getElementById("ind.cp.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+                eg = eg + 20;
+                uno = d[eg] - c[eg];
+                dos = ccp - c[eg];
+                resultado = parseInt(90 / (uno) * (dos) + 5);
+                ajustarProgreso(resultado, "artCmMorfologia");
+
+                var pctCCP = '';
+                //truncador de Pct, sobre 100 o bajo 1
+                if (resultado > 99){
+                    pctCCP = '> 99';
+                }
+                else if (resultado < 1){
+                    pctCCP = '< 1';
+                }
+                else{
+                    pctCCP = resultado;
+                }
+
+
+                document.getElementById("ind.cp.pct.morfologia").value = pctCCP;
+
+                if (resultado < 10 || resultado > 90){
+                    document.getElementById("ind.cp.pct.morfologia").classList.add("is-invalid");
+                }else{
+                    document.getElementById("ind.cp.pct.morfologia").classList.add("is-valid");
+                }
+		    }
+	    }
     })
 })
 
