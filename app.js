@@ -1122,7 +1122,7 @@ $( document ).ready(function() {
 //controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "lh", "cerebelo", "bvm", "modalPreInfEcoObsSegTrim1", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "modalPreInfEcoObsSegTrim1","aud","aui","ipau","ipacm","dv","psmACM","modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia","pc.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia"];
+        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "lh", "cerebelo", "bvm", "modalPreInfEcoObsSegTrim1", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "modalPreInfEcoObsSegTrim1","aud","aui","ipau","ipacm","dv","psmACM","modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","art.umb.morfologia","art.cm.morfologia","p.sis.morfologia"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -4104,6 +4104,10 @@ $(document).ready(function(){
                 }else{
                     document.getElementById("dof.ic.morfologia").classList.add("is-valid");
                 }
+
+                document.getElementById("pc.morfologia").value = valCC(dof,dbp);
+                let ev = new KeyboardEvent('keyup', {keyCode: 13});
+                document.getElementById("pc.morfologia").dispatchEvent(ev);
             }
             else{
                 $('#dof\\.ic\\.morfologia').val(0);
@@ -4143,6 +4147,12 @@ $(document).ready(function(){
             
             $('#dof\\.pct\\.morfologia').val(pctDOF);
 
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("dof.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("dof.pct.morfologia").classList.add("is-valid");
+            }
+
             let dbp = document.getElementById("dbp.morfologia").value;
 
             if (dbp > 0){
@@ -4154,16 +4164,15 @@ $(document).ready(function(){
                 }else{
                     document.getElementById("dof.ic.morfologia").classList.add("is-valid");
                 }
+
+                document.getElementById("pc.morfologia").value = valCC(dof,dbp);
+                let ev = new KeyboardEvent('keyup', {keyCode: 13});
+                document.getElementById("pc.morfologia").dispatchEvent(ev);
             }
             else{
                 $('#dof\\.ic\\.morfologia').val(0);
             }
 
-            if (resultado < 10 || resultado > 90){
-                document.getElementById("dof.pct.morfologia").classList.add("is-invalid");
-            }else{
-                document.getElementById("dof.pct.morfologia").classList.add("is-valid");
-            }
         }else{
             $('#dof\\.pct\\.morfologia').val('0');
             $('#dof\\.ic\\.morfologia').val('0');
@@ -4757,7 +4766,7 @@ $(document).ready(function(){
                 uno = d[eg] - c[eg];
                 dos = ccp - c[eg];
                 resultado = parseInt(90 / (uno) * (dos) + 5);
-                ajustarProgreso(resultado, "artCmMorfologia");
+                ajustarProgreso(resultado, "indCpMorfologia");
 
                 var pctCCP = '';
                 //truncador de Pct, sobre 100 o bajo 1
@@ -4770,7 +4779,6 @@ $(document).ready(function(){
                 else{
                     pctCCP = resultado;
                 }
-
 
                 document.getElementById("ind.cp.pct.morfologia").value = pctCCP;
 
