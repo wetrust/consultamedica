@@ -2438,53 +2438,6 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-12 mb-2">
-                                            <a class="btn btn-secondary" id="pdfunoInternal" href="#pdfviebox">Guía práctica ISUOG: Evaluación ecográfica de la biometría y el crecimiento fetal</a>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label>LH</label>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="lh">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="lhPctRpt">
-                                            <input type="hidden" id="lhRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoLh">Ver Gráficas</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label>Diámetro cerebeloso transverso</label>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="cerebelo">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cerebeloPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="cerebeloPctRpt">
-                                            <input type="hidden" id="cerebeloRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoCerebelo">Ver Gráficas</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
                                         <div class="col mb-2">
                                             <label>Líquido Amniótico<br><small>Medición de bolsillo mayor</small></label>
                                         </div>
@@ -2505,29 +2458,6 @@
                                             <button class="btn btn-outline-info" id="graficoBVM">Ver Gráficas</button>
                                         </div>
                                     </div>
-                                    <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="art.ut"> <label class="form-check-label" for="art.ut">Opcional Doppler arterias uterinas</label> </div>
-                                    <div class="row d-none pt-2" id="art.ut.div"> <div class="col form-group"> <label>IP. Uterina derecha</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_derecha"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterina izquierda</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div></div>
-                                    <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="larg.cerv"> <label class="form-check-label" for="larg.cerv">Opcional Largo Cervical</label> </div>
-                                    <div class="form-group row d-none pt-2" id="larg.cerv.div">
-                                        <div class="col mb-2">
-                                            <label>Largo Cervical</label>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="number" class="form-control" id="largo.cervical.segundo" min="1" max="999">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="alert text-info border-info mb-0 p-2 d-none" id="info.cervix"></div>
-                                        </div>
-                                        <div class="col mb-2">
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-body">
                                     <div class="form-group row">
                                         <div class="col mb-2">
                                             <label ><strong>Peso Fetal Estimado</strong> 
@@ -2598,6 +2528,72 @@
                                     </div>
                                     <p class="text-muted d-none" style="float:left">* SOCHIPE: Sociedad Chilena de Pedratría.</p>
                                     <p class="text-muted d-none" style="float:right">Artículo de referencia: Rev. Chil. Pediat 2010; 81 (3): 264-274</p>
+                                    <div class="form-group row">
+                                        <div class="col-12 my-2">
+                                            <a class="btn btn-secondary" id="pdfunoInternal" href="#pdfviebox">Guía práctica ISUOG: Evaluación ecográfica de la biometría y el crecimiento fetal</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-2">
+                                            <label>Adicional Largo Humeral</label>
+                                        </div>
+                                        <div class="col mb-2">
+                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                <input type="text" class="form-control" id="lh">
+                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                            </div>
+                                        </div>
+                                        <div class="col mb-2">
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhPct">
+                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <input type="hidden" id="lhPctRpt">
+                                            <input type="hidden" id="lhRango">
+                                        </div>
+                                        <div class="col mb-2">
+                                            <button class="btn btn-outline-info" id="graficoLh">Ver Gráficas</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-2">
+                                            <label>Diámetro cerebeloso transverso</label>
+                                        </div>
+                                        <div class="col mb-2">
+                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                <input type="text" class="form-control" id="cerebelo">
+                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                            </div>
+                                        </div>
+                                        <div class="col mb-2">
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cerebeloPct">
+                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <input type="hidden" id="cerebeloPctRpt">
+                                            <input type="hidden" id="cerebeloRango">
+                                        </div>
+                                        <div class="col mb-2">
+                                            <button class="btn btn-outline-info" id="graficoCerebelo">Ver Gráficas</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="art.ut"> <label class="form-check-label" for="art.ut">Opcional Doppler arterias uterinas</label> </div>
+                                    <div class="row d-none pt-2" id="art.ut.div"> <div class="col form-group"> <label>IP. Uterina derecha</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_derecha"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterina izquierda</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div></div>
+                                    <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="larg.cerv"> <label class="form-check-label" for="larg.cerv">Opcional Largo Cervical</label> </div>
+                                    <div class="form-group row d-none pt-2" id="larg.cerv.div">
+                                        <div class="col mb-2">
+                                            <label>Largo Cervical</label>
+                                        </div>
+                                        <div class="col mb-2">
+                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                <input type="number" class="form-control" id="largo.cervical.segundo" min="1" max="999">
+                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                            </div>
+                                        </div>
+                                        <div class="col mb-2">
+                                            <div class="alert text-info border-info mb-0 p-2 d-none" id="info.cervix"></div>
+                                        </div>
+                                        <div class="col mb-2">
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                         <div class="card mb-5">
