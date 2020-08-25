@@ -4861,7 +4861,7 @@ function InfEcoObsSegTrim1(){
     }
 
     var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
-    var linea4 = '<strong>Placenta</strong> ' + document.getElementById("grado-placenta").value + ', inserción ' + document.getElementById("incersion").value + ', de ubicación ' + document.getElementById("ubicacion").value + '.';
+    var linea4 = '<strong>Placenta</strong> inserción ' + document.getElementById("incersion").value + ', de ubicación ' + document.getElementById("ubicacion").value + '.';
     var linea5 = '<strong>Cordón umbilical</strong> ' + document.getElementById("cordon").value + ', identificandose '+ document.getElementById("vasos").value +' vasos.';
     var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + document.getElementById("bvmEcoDos").value + ' mm.';
 
@@ -5965,7 +5965,7 @@ function crearInformeEcoSegTrim2(){
         }
 	
 	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
-        var linea4 = "<strong>Placenta</strong> inserción " + document.getElementById("incersion").value + " y de ubicación " + document.getElementById("ubicacion").value + ", grado " + document.getElementById("grado-placenta").value;
+        var linea4 = "<strong>Placenta</strong> inserción " + document.getElementById("incersion").value + " y de ubicación " + document.getElementById("ubicacion").value + ".";
         var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
         var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
 	
