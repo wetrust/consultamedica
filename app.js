@@ -560,6 +560,12 @@ $( document ).ready(function() {
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf");
         $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
     });
+
+    $("#pdfunoInternal").on("click", function(){
+        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf");
+        $("#pdfviebox").children("ol").children().children().attr("href","#ecoObsSegTrim");
+    });
+
     $("#pdfdos").on("click", function(){
         $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf");
         $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
