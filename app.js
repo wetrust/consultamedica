@@ -5109,6 +5109,10 @@ function InfEcoObsSegTrim1(){
 
     var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
     
+    if (anatomiaFetalString == "no evaluada dirigidamente, pero el aspecto morfológico general es normal"){
+        linea3 += "<br>Atrio posterior " + document.getElementById("atrio.ecoDosTres").value + " mm, Diámetro cerebeloso transverso "+ document.getElementById("cerebelo").value +" mm, Cisterna magna "+ document.getElementById("cm.ecoDosTres").value;
+    }
+    
     var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', ' + document.getElementById("incersion").value + '.';
     
     var linea5 = '<strong>Cordón umbilical</strong> ' + document.getElementById("cordon").value + ', identificandose '+ document.getElementById("vasos").value +' vasos.';
