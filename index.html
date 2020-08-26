@@ -2357,253 +2357,252 @@
                         <div class="card mb-3">
                             <div class="card-body">
                                 <h5 class="card-title">BIOMETRÍA FETAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>( 12 a 42 semanas )</small></h5>
-                                <h6 class="card-subtitle mb-2 text-muted"><small>Hadlock FP. y col. Radiology 152: 497 - 501; 1984. *Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5</small></h6>
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label>DBP</label>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="dbp">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dbpDE">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="dbpPct">
-                                            <input type="hidden" id="dbpRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoDbp">Ver Gráficas</button>
+                                <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="ver.ref"> <label class="form-check-label" for="art.ut">Ver referencias <small>(Estimación y categorización de peso)</small></label> </div>
+                                <div class="row d-none" id="ver.ref.div">
+                                    <small class="text-muted">Hadlock FP. y col. Radiology 152: 497 - 501; 1984. *Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>Peso fetal estimado por formula que incluye: CC, CA, LF; Hadlock FP, et. al.  Am J Obstet Gynecol. 1985 Feb 1;151(3):333-7.<br>Gráfica de referencia para categorizar peso fetal por curva de Hadlock FP. y col. Radiology 181: 129 - 133; 1991<br> Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-2">
+                                        <label>DBP</label>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="dbp">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-3 mb-2">
-                                            <label>DOF</label>
+                                    <div class="col mb-2">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dbpDE">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <div class="col-3 mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="dof">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dofPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="dofPctRpt">
-                                            <input type="hidden" id="dofRango">
-                                        </div>
-                                        <div class="col-2 mb-2">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend"><div class="input-group-text">IC</div></div>
-                                                <input type="text" class="form-control" id="ic" readonly="">
-                                            </div>
+                                        <input type="hidden" id="dbpPct">
+                                        <input type="hidden" id="dbpRango">
+                                    </div>
+                                    <div class="col mb-2">
+                                        <button class="btn btn-outline-info" id="graficoDbp">Ver Gráficas</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-3 mb-2">
+                                        <label>DOF</label>
+                                    </div>
+                                    <div class="col-3 mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="dof">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label>CC</label>
+                                    <div class="col-3 mb-2">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dofPct">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="cc">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ccPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="ccPctRpt">
-                                            <input type="hidden" id="ccRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoCc">Ver Gráficas</button>
+                                        <input type="hidden" id="dofPctRpt">
+                                        <input type="hidden" id="dofRango">
+                                    </div>
+                                    <div class="col-2 mb-2">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><div class="input-group-text">IC</div></div>
+                                            <input type="text" class="form-control" id="ic" readonly="">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label>CA</label>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="ca">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="caPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="caPctRpt">
-                                            <input type="hidden" id="caRango">
-                                        </div>
-                                        <div class="col">
-                                            <button class="btn btn-outline-info" id="graficoCa">Ver Gráficas</button>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-2">
+                                        <label>CC</label>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="cc">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label>LF</label>
+                                    <div class="col mb-2">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ccPct">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="lf">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lfPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="lfPctRpt">
-                                            <input type="hidden" id="lfRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoLf">Ver Gráficas</button>
+                                        <input type="hidden" id="ccPctRpt">
+                                        <input type="hidden" id="ccRango">
+                                    </div>
+                                    <div class="col mb-2">
+                                        <button class="btn btn-outline-info" id="graficoCc">Ver Gráficas</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-2">
+                                        <label>CA</label>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="ca">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label>Líquido Amniótico<br><small>Medición de bolsillo mayor</small></label>
+                                    <div class="col mb-2">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="caPct">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="bvm">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="bvmPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="bvmPct">
-                                            <input type="hidden" id="bvmRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoBVM">Ver Gráficas</button>
+                                        <input type="hidden" id="caPctRpt">
+                                        <input type="hidden" id="caRango">
+                                    </div>
+                                    <div class="col">
+                                        <button class="btn btn-outline-info" id="graficoCa">Ver Gráficas</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-2">
+                                        <label>LF</label>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="lf">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label ><strong>Peso Fetal Estimado</strong> 
-                                            </label>
+                                    <div class="col mb-2">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lfPct">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="pfe" readonly>
-                                                <div class="input-group-append"><div class="input-group-text">kgr</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="pfePct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="pfePctRpt">
-                                            <input type="hidden" id="pfeRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoPFE">Ver Gráficas</button>
+                                        <input type="hidden" id="lfPctRpt">
+                                        <input type="hidden" id="lfRango">
+                                    </div>
+                                    <div class="col mb-2">
+                                        <button class="btn btn-outline-info" id="graficoLf">Ver Gráficas</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-2">
+                                        <label>LH</label>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="lh">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
                                         </div>
                                     </div>
-                                    <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="ver.ref"> <label class="form-check-label" for="art.ut">Ver referencias <small>(Estimación y categorización de peso)</small></label> </div>
-                                    <div class="row d-none" id="ver.ref.div">
-                                        <small class="text-muted">Peso fetal estimado por formula que incluye: CC, CA, LF; Hadlock FP, et. al.  Am J Obstet Gynecol. 1985 Feb 1;151(3):333-7.<br>Gráfica de referencia para categorizar peso fetal por curva de Hadlock FP. y col. Radiology 181: 129 - 133; 1991</small>
+                                    <div class="col mb-2">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhPct">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <input type="hidden" id="lhPctRpt">
+                                        <input type="hidden" id="lhRango">
                                     </div>
-                                    <div class="form-group row d-none" id="cccaView">
-                                        <div class="col mb-2">
-                                            <label >Relación Cráneo Abdómen
-                                                <br><small class="text-muted">Hadlock FP. y col. Radiology 181: 129 - 133; 1991</small></label>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <input type="text" class="form-control" id="ccca" readonly>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cccaPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="cccaPctVal">
-                                            <input type="hidden" id="cccaRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoCCCA">Ver Gráficas</button>
+                                    <div class="col mb-2">
+                                        <button class="btn btn-outline-info" id="graficoLh">Ver Gráficas</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-2">
+                                        <label>Líquido Amniótico<br><small>Medición de bolsillo mayor</small></label>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="bvm">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
                                         </div>
                                     </div>
-                                    <div class="form-group row d-none">
-                                        <div class="col mb-2">
-                                            <label >Talla Fetal Estimada (> 23 sem)
-                                                <br><small class="text-muted">Referencias neonatales SOCHIPE*</small>
-                                            </label>
+                                    <div class="col mb-2">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="bvmPct">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="number" class="form-control" id="tallaFetal" readonly>
-                                                <div class="input-group-append"><div class="input-group-text">cm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="tallaPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="tallaPctRpt">
-                                            <input type="hidden" id="tallaRango">
-                                        </div>
-                                        <div class="col">
-                                            <button class="btn btn-outline-info" id="graficoTalla">Ver Gráfica</button>
+                                        <input type="hidden" id="bvmPct">
+                                        <input type="hidden" id="bvmRango">
+                                    </div>
+                                    <div class="col mb-2">
+                                        <button class="btn btn-outline-info" id="graficoBVM">Ver Gráficas</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-2">
+                                        <label ><strong>Peso Fetal Estimado</strong> 
+                                        </label>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="pfe" readonly>
+                                            <div class="input-group-append"><div class="input-group-text">kgr</div></div>
                                         </div>
                                     </div>
-                                    <p class="text-muted d-none" style="float:left">* SOCHIPE: Sociedad Chilena de Pedratría.</p>
-                                    <p class="text-muted d-none" style="float:right">Artículo de referencia: Rev. Chil. Pediat 2010; 81 (3): 264-274</p>
-                                    <div class="form-group row">
-                                        <div class="col-12 my-2 text-right">
-                                            <a class="btn btn-secondary" id="pdfunoInternal" href="#pdfviebox">Guía práctica ISUOG: Evaluación ecográfica de la biometría y el crecimiento fetal</a>
+                                    <div class="col mb-2">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="pfePct">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <input type="hidden" id="pfePctRpt">
+                                        <input type="hidden" id="pfeRango">
+                                    </div>
+                                    <div class="col mb-2">
+                                        <button class="btn btn-outline-info" id="graficoPFE">Ver Gráficas</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row d-none" id="cccaView">
+                                    <div class="col mb-2">
+                                        <label >Relación Cráneo Abdómen
+                                            <br><small class="text-muted">Hadlock FP. y col. Radiology 181: 129 - 133; 1991</small></label>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <input type="text" class="form-control" id="ccca" readonly>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cccaPct">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <input type="hidden" id="cccaPctVal">
+                                        <input type="hidden" id="cccaRango">
+                                    </div>
+                                    <div class="col mb-2">
+                                        <button class="btn btn-outline-info" id="graficoCCCA">Ver Gráficas</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row d-none">
+                                    <div class="col mb-2">
+                                        <label >Talla Fetal Estimada (> 23 sem)
+                                            <br><small class="text-muted">Referencias neonatales SOCHIPE*</small>
+                                        </label>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="number" class="form-control" id="tallaFetal" readonly>
+                                            <div class="input-group-append"><div class="input-group-text">cm</div></div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label>Adicional Largo Humeral</label>
+                                    <div class="col">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="tallaPct">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="lh">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="lhPctRpt">
-                                            <input type="hidden" id="lhRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoLh">Ver Gráficas</button>
+                                        <input type="hidden" id="tallaPctRpt">
+                                        <input type="hidden" id="tallaRango">
+                                    </div>
+                                    <div class="col">
+                                        <button class="btn btn-outline-info" id="graficoTalla">Ver Gráfica</button>
+                                    </div>
+                                </div>
+                                <p class="text-muted d-none" style="float:left">* SOCHIPE: Sociedad Chilena de Pedratría.</p>
+                                <p class="text-muted d-none" style="float:right">Artículo de referencia: Rev. Chil. Pediat 2010; 81 (3): 264-274</p>
+                                <div class="form-group row">
+                                    <div class="col-12 my-2 text-right">
+                                        <a class="btn btn-secondary" id="pdfunoInternal" href="#pdfviebox">Guía práctica ISUOG: Evaluación ecográfica de la biometría y el crecimiento fetal</a>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col mb-2">
+                                        <label>Diámetro cerebeloso transverso</label>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="cerebelo">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label>Diámetro cerebeloso transverso</label>
+                                    <div class="col mb-2">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cerebeloPct">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="cerebelo">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cerebeloPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="cerebeloPctRpt">
-                                            <input type="hidden" id="cerebeloRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoCerebelo">Ver Gráficas</button>
-                                        </div>
+                                        <input type="hidden" id="cerebeloPctRpt">
+                                        <input type="hidden" id="cerebeloRango">
                                     </div>
+                                    <div class="col mb-2">
+                                        <button class="btn btn-outline-info" id="graficoCerebelo">Ver Gráficas</button>
+                                    </div>
+                                </div>
                                     <div class="form-group row">
                                         <label class="col col-form-label">Cisterna magna</label>
                                         <div class="col">
