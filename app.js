@@ -2582,11 +2582,6 @@ $( document ).ready(function() {
 
         var edadGestacional = document.getElementById("semanas").value;
 
-        if (edadGestacional < 15){
-            alert("Edad Gestacional inferior a 15 semanas");
-            return false;
-        }
-
         var modal = makeModal("Ver Impresion");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
@@ -2763,8 +2758,8 @@ $( document ).ready(function() {
                 }())
             }]
         });
-        }else{
-            $('#graficoCerebeloView').highcharts({
+        }else if (edadGestacional > 14){
+                $('#graficoCerebeloView').highcharts({
                     chart: {
                         height: 250
                     },
@@ -2841,6 +2836,7 @@ $( document ).ready(function() {
                         }]
             });
         }
+        
         $('#graficoLfView').highcharts({
                 chart: {
                 height: 250
