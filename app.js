@@ -634,6 +634,22 @@ $( document ).ready(function() {
             ajustarProgreso(resultado, "cmEcoDosTres");
         }
     })
+
+
+    $("#atrio\\.ecoDosTres").on("keyup", function(){
+        atrio = this.value;
+        atrio = atrio.toString();
+        atrio = atrio.replace(",", ".");
+        atrio = parseFloat(atrio);
+
+        if (atrio < 10){
+            document.getElementById("atrio.desc.ecoDosTres").value = "Normal"
+        }else if (atrio < 16){
+            document.getElementById("atrio.desc.ecoDosTres").value = "ventriculomegalia Leve"
+        }else{
+            document.getElementById("atrio.desc.ecoDosTres").value = "ventriculomegalia severa"
+        }
+    })
 });
 
 //controlador de input clones
