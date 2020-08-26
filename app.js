@@ -584,6 +584,56 @@ $( document ).ready(function() {
         }
     });
 
+    $("#cm\\.ecoDosTres").on("keyup", function(){
+        var cisM10 = [];
+        var cisM90 = [];
+
+        cisM10[14] = 1.69; cisM10[15] = 2.1; cisM10[16] = 2.4; cisM10[17] = 2.6;
+        cisM10[18] = 2.8; cisM10[19] = 3.1; cisM10[20] = 3.3; cisM10[21] = 3.5;
+        cisM10[22] = 3.7; cisM10[23] = 3.9; cisM10[24] = 4.1; cisM10[25] = 4.3;
+        cisM10[26] = 4.4; cisM10[27] = 4.6; cisM10[28] = 4.7; cisM10[29] = 4.9;
+        cisM10[30] = 5.0; cisM10[31] = 5.1; cisM10[32] = 5.2; cisM10[33] = 5.3;
+        cisM10[34] = 5.3; cisM10[35] = 5.4; cisM10[36] = 5.4; cisM10[37] = 5.4;
+        cisM10[38] = 5.5; cisM10[39] = 5.5;
+
+        cisM90[14] = 5.3; cisM90[15] = 5.7; cisM90[16] = 6; cisM90[17] = 6.3;
+        cisM90[18] = 6.6; cisM90[19] = 6.9; cisM90[20] = 7.2; cisM90[21] = 7.5;
+        cisM90[22] = 7.7; cisM90[23] = 8; cisM90[24] = 8.2; cisM90[25] = 8.5;
+        cisM90[26] = 8.7; cisM90[27] = 8.9; cisM90[28] = 9.1; cisM90[29] = 9.3;
+        cisM90[30] = 9.4; cisM90[31] = 9.6; cisM90[32] = 9.7; cisM90[33] = 9.8;
+        cisM90[34] = 9.9; cisM90[35] = 10; cisM90[36] = 10; cisM90[37] = 10.1;
+        cisM90[38] = 10.1; cisM90[39] = 10.1;
+        
+        let eg = document.getElementById("semanas").value;
+        let cm = this.value;
+        
+        cm = cm.toString();
+        cm = cm.replace(",", ".");
+        cm = parseFloat(cm);
+
+        if (eg < 14 ||eg > 39) {
+            document.getElementById("cm.pct.ecoDosTres").value = 0
+        }else {
+            eg = parseInt(eg);
+            var uno = cisM90[eg] - cisM10[eg];
+            var dos = cm - cisM10[eg];
+            var resultado = parseInt(95 / (uno) * (dos));
+            var pctCISM = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctCISM = '> 99';
+            }
+            else if (resultado < 1){
+                pctCISM = '< 1';
+            }
+            else{
+                pctCISM = resultado;
+            }
+
+            $('#cm\\.pct\\.ecoDosTres').val(pctCISM);
+            ajustarProgreso(resultado, "cmEcoDosTres");
+        }
+    })
 });
 
 //controlador de input clones
