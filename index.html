@@ -24,6 +24,16 @@
         .btn-outline-dark{ background-color:#ebefff;}
         .celeste{  background-color:#d4edeb; }
         .celeste-oscuro{ background-color: #bfe9fb; }
+        .btn-otro{
+            color: #000;
+            background-color: #e9ecef;
+            border-color: #e9ecef;
+        }
+        .btn-otro:hover{
+            color: #FFF;
+            background-color: #5a6268;
+            border-color: #5a6268;
+        }
     </style>
 </style>
 </head>
@@ -2357,9 +2367,11 @@
                         <div class="card mb-3">
                             <div class="card-body">
                                 <h5 class="card-title">BIOMETRÍA FETAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>( 12 a 42 semanas )</small></h5>
-                                <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="ver.ref"> <label class="form-check-label" for="art.ut">Ver cuatro referencias <small>(Biometrías, Estimación y categorización de peso mas valoración líquido amniótico)</small></label> </div>
+                                <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="ver.ref"> <label class="form-check-label" for="art.ut">Ver cuatro referencias <small>(Biometrías, Estimación y categorización de peso mas valoración de líquido amniótico)</small></label> </div>
                                 <div class="row d-none" id="ver.ref.div">
-                                    <small class="text-muted">-Biometría: Hadlock FP. y col. Radiology 152: 497 - 501; 1984. *Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>-Peso fetal estimado por formula que incluye: CC, CA, LF; Hadlock FP, et. al.  Am J Obstet Gynecol. 1985 Feb 1;151(3):333-7.<br>-Gráfica de referencia para categorizar peso fetal por curva de Hadlock FP. y col. Radiology 181: 129 - 133; 1991<br>-Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small>
+                                    <div class="col-12">
+                                        <p><small class="text-muted">- Biometría: Hadlock FP. y col. Radiology 152: 497 - 501; 1984. *Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>- Peso fetal estimado por formula que incluye: CC, CA, LF; Hadlock FP, et. al.  Am J Obstet Gynecol. 1985 Feb 1;151(3):333-7.<br>- Gráfica de referencia para categorizar peso fetal por curva de Hadlock FP. y col. Radiology 181: 129 - 133; 1991<br>- Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p>
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col mb-2">
@@ -2579,10 +2591,10 @@
                                 <p class="text-muted d-none" style="float:right">Artículo de referencia: Rev. Chil. Pediat 2010; 81 (3): 264-274</p>
                                 <div class="form-group row">
                                     <div class="col-12 my-2 text-right">
-                                        <a class="btn btn-secondary" id="pdfunoInternal" href="#pdfviebox">Guía práctica ISUOG: Evaluación ecográfica de la biometría y el crecimiento fetal</a>
+                                        <a class="btn btn-otro" id="pdfunoInternal" href="#pdfviebox">Ver PDF guía práctica ISUOG: Evaluación ecográfica de la biometría y el crecimiento fetal</a>
                                     </div>
                                 </div>
-                                <p class="my-3">Adicional evaluación cráneo</p>
+                                <p class="my-3"><strong>Adicional evaluación de cráneo</strong></p>
                                 <div class="form-group row">
                                     <div class="col mb-2">
                                         <label>- Diámetro cerebeloso transverso</label>
