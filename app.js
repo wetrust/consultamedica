@@ -5104,7 +5104,7 @@ function InfEcoObsSegTrim1(){
     var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
 
     if (anatomiaFetal == "no evaluada dirigidamente, pero el aspecto morfológico general es normal"){
-        linea3 += "<br>Atrio posterior " + document.getElementById("atrio.ecoDosTres").value + " mm, Diámetro cerebeloso transverso "+ document.getElementById("cerebelo").value +" mm, Cisterna magna "+ document.getElementById("cm.ecoDosTres").value;
+        linea3 += "<br>atrio posterior " + document.getElementById("atrio.ecoDosTres").value + " mm, diámetro cerebeloso transverso "+ document.getElementById("cerebelo").value +" mm, cisterna magna "+ document.getElementById("cm.ecoDosTres").value + " mm, sexo fetal " + $("#ecografia\\.segtrim\\.sexo").val() + ".";
     }else{
         linea3 += " <br>";
     }
@@ -6206,15 +6206,15 @@ function crearInformeEcoSegTrim2(){
         var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
         
 	var anatomiaFetal = $('#ev-morfo').val();
-	var anatomiaFetalString = "";
 	
-	for(i=0;i<anatomiaFetal.length;i++)
-        {
-		anatomiaFetalString = anatomiaFetalString + anatomiaFetal[i];
-		anatomiaFetalString = anatomiaFetalString + " <br>";
-        }
-	
-	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
+	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
+    
+    if (anatomiaFetal == "no evaluada dirigidamente, pero el aspecto morfológico general es normal"){
+        linea3 += "<br>atrio posterior " + document.getElementById("atrio.ecoDosTres").value + " mm, diámetro cerebeloso transverso "+ document.getElementById("cerebelo").value +" mm, cisterna magna "+ document.getElementById("cm.ecoDosTres").value + " mm, sexo fetal " + $("#ecografia\\.segtrim\\.sexo").val() + ".";
+    }else{
+        linea3 += " <br>";
+    }
+
     var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', ' + document.getElementById("incersion").value + '.';
         var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
         var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
