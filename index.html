@@ -352,6 +352,17 @@
                         <div class="row my-3">
                             <div class="col-12 col-sm-4">
                                 <div class="form-group row">
+                                    <label for="placenta.ubicacion" class="col-12 col-form-label">Embarazo</label>
+                                    <div class="col-12">
+                                        <select class="form-control shadow border-0" id="embarazo.morfologica">
+                                            <option>Único</option>
+                                            <option>Multiple</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group row">
                                     <label for="presentacion.morfologia" class="col-12 col-form-label">Presentación</label>
                                     <div class="col-12">
                                         <select class="form-control shadow border-0" id="presentacion.morfologia">
@@ -374,18 +385,39 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>                       
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-12 col-sm-4">
-                                <div class="form-group row">
-                                    <label for="placenta.ubicacion" class="col-12 col-form-label">Placenta ubicación</label>
-                                    <div class="col-12">
-                                        <select class="form-control shadow border-0" id="placenta.ubicacion">
-                                            <option>Anterior</option>
-                                            <option>Posterior</option>
-                                            <option>Fondo</option>
-                                            <option>Previa</option>
-                                        </select>
-                                    </div>
+                                <div class="form-group">
+                                    <label>Antecedentes Cesárea previa?</label>
+                                    <select class="form-control shadow border-0" id="antecedentes.cesarea.morfologia">
+                                        <option value="sin cesárea previa">Sin cesárea previa</option>
+                                        <option value="una cesárea anterior">Una cesárea anterior</option>
+                                        <option value="doble cesárea">Doble cesárea</option>
+                                        <option value="triple cesárea">Triple cesárea</option>
+                                        <option value="cuadruple">Cuadruple</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group">
+                                    <label>Placenta Ubicaci&oacute;n</label>
+                                    <select class="form-control shadow border-0" id="placenta.ubicacion.morfologia" >
+                                        <option value="normal alta anterior">normal alta anterior</option>
+                                        <option value="normal alta posterior">normal alta posterior</option>
+                                        <option value="baja">baja (< 30 mm de OCI)</option>
+                                        <option value="previa">previa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group">
+                                    <label>Placenta inserción</label>
+                                    <select class="form-control shadow border-0" id="placenta.insercion.morfologia">
+                                        <option value="normo inserta">normo inserta</option>
+                                        <option value="sospecha de acretismo">sospecha de acretismo</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -1051,6 +1083,7 @@
                                 </div>
                             </div>
                         </div>
+                        <p>Flujometrías adicionales</p>
                         <div class="form-group row">
                             <label for="p.sis.morfologia" class="col-sm-3 col-form-label">Peak sistólico de ACM</label>
                             <div class="col-6 col-lg-3">
@@ -1085,7 +1118,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="lc.morfologia" class="col-sm-3 col-form-label">Largo cervical</label>
+                            <label for="lc.morfologia" class="col-sm-3 col-form-label strong"><strong>Largo cervical</strong></label>
                             <div class="col-6 col-lg-3">
                                 <div class="input-group mb-2 shadow rounded">
                                     <input type="text" class="form-control border-0" id="lc.morfologia">
