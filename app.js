@@ -645,9 +645,9 @@ $( document ).ready(function() {
         if (atrio < 10){
             document.getElementById("atrio.desc.ecoDosTres").value = "Normal"
         }else if (atrio < 16){
-            document.getElementById("atrio.desc.ecoDosTres").value = "ventriculomegalia Leve"
+            document.getElementById("atrio.desc.ecoDosTres").value = "Ventriculomegalia Leve"
         }else{
-            document.getElementById("atrio.desc.ecoDosTres").value = "ventriculomegalia severa"
+            document.getElementById("atrio.desc.ecoDosTres").value = "Ventriculomegalia severa"
         }
     })
 });
