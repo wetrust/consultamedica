@@ -4054,6 +4054,88 @@ $( document ).ready(function() {
             });
         }
     });
+
+    $("#graficoCisterna").on("click", function(){
+        var edadGestacional = document.getElementById("semanas").value;
+
+        if (edadGestacional < 14){
+            alert("Edad Gestacional inferior a 14 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Gráfico Cisterna Magna";
+        document.getElementById(modal.contenido).innerHTML = '<div id="graficoCMView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoCMView').highcharts({
+           title: {
+               text: 'Cisterna Magna',
+               x: -20
+           },
+           subtitle: {
+               text: 'Milimetros (mm)',
+               x: -20
+           },
+           plotOptions: {
+               series: {
+                   enableMouseTracking: false
+               }
+           },
+           yAxis: {
+               title: { text: 'Milimetros (mm)' },
+               tickPositions: [1, 3, 5, 7, 9, 11, 13]
+           },
+           colors: ['#313131', '#313131', '#313131'],
+           xAxis: {
+               categories:['14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+           },
+           credits: { enabled: false },
+           series: [{
+               type: "line",
+               name: 'Pct. 5',
+               marker: { enabled: false },
+               data: [1.69, 2.1, 2.4, 2.6,2.8, 3.1, 3.3, 3.5,3.7, 3.9, 4.1, 4.3,4.4, 4.6, 4.7, 4.9,5.0, 5.1, 5.2, 5.3,5.3, 5.4, 5.4, 5.4,5.5, 5.5]
+           }, {
+               type: "line",
+               name: 'Pct. 95',
+               marker: { enabled: false },
+               data: [5.3, 5.7, 6, 6.3,6.6, 6.9, 7.2, 7.5,7.7, 8, 8.2, 8.5,8.7, 8.9, 9.1, 9.3,9.4, 9.6, 9.7, 9.8,9.9, 10, 10, 10.1,10.1, 10.1]
+           }, {
+               type: "line",
+               name: 'LF',
+               dashStyle: "Dot",
+               marker: { symbol: 'square' },
+               lineWidth: 0,
+               data: (function () {
+                   var data = [];
+                   var edadGest = document.getElementById("semanas").value;
+    
+                   for (i = 14; i < edadGest; i++) {
+                       data.push({ y: 0, });
+                   }
+                   
+                   var lf = $("#cm\\.ecoDosTres").val();
+                   lf = lf.toString();
+                   lf = lf.replace(",", ".");
+                   lf = parseFloat(lf);
+                   data.push({
+                       y: lf,
+                   });
+                   for (i = edadGest + 1; i <= 39; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+                   return data;
+               }())
+           }]
+       });
+    })
 });
 
 //controlador de morfología
@@ -4487,6 +4569,7 @@ $(document).ready(function(){
     })
 
     $("#cm\\.morfologia").on("keyup", function(){
+        /* esta es 5 95 corregir el algoritmo de calculo de porcentaje*/
         var cisM10 = [];
         var cisM90 = [];
 
@@ -4927,7 +5010,9 @@ function InfEcoObsSegTrim1(){
     }
 
     var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
-    var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', inserción ' + document.getElementById("incersion").value + '.';
+    
+    var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', ' + document.getElementById("incersion").value + '.';
+    
     var linea5 = '<strong>Cordón umbilical</strong> ' + document.getElementById("cordon").value + ', identificandose '+ document.getElementById("vasos").value +' vasos.';
     var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + document.getElementById("bvmEcoDos").value + ' mm.';
 
@@ -6031,7 +6116,7 @@ function crearInformeEcoSegTrim2(){
         }
 	
 	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetalString + $('#comentarios-anatomia-informe-eg-texto').val();
-    var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', inserción ' + document.getElementById("incersion").value + '.';
+    var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', ' + document.getElementById("incersion").value + '.';
         var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
         var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
 	
