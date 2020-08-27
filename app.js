@@ -5037,6 +5037,14 @@ $(document).ready(function(){
 		    }
 	    }
     })
+
+    $("input[type='radio']").on("change",function() {
+        if (this.value == "si"){
+            this.parentElement.parentElement.parentElement.parentElement.children[2].classList.add("d-none");
+        }else if (this.value == "no"){
+            this.parentElement.parentElement.parentElement.parentElement.children[2].classList.remove("d-none");
+        }
+    });  
 })
 
 $(window).on('hashchange', function(){
