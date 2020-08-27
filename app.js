@@ -635,7 +635,6 @@ $( document ).ready(function() {
         }
     })
 
-
     $("#atrio\\.ecoDosTres").on("keyup", function(){
         atrio = this.value;
         atrio = atrio.toString();
@@ -649,6 +648,10 @@ $( document ).ready(function() {
         }else{
             document.getElementById("atrio.desc.ecoDosTres").value = "Ventriculomegalia severa"
         }
+    })
+
+    $("#id-paciente").on("change", function(){
+        document.getElementById("nombre.morfologia").value = this.value;
     })
 });
 
@@ -5036,6 +5039,68 @@ $(document).ready(function(){
                 }
 		    }
 	    }
+    })
+
+    $("#lc\\.morfologia").on("keyup", function(){
+        atrio = this.value;
+        atrio = atrio.toString();
+        atrio = atrio.replace(",", ".");
+        atrio = parseFloat(atrio);
+
+        if (atrio < 10){
+            document.getElementById("lc.pct.morfologia").value = "Normal"
+        }else if (atrio < 16){
+            document.getElementById("lc.pct.morfologia").value = "Ventriculomegalia Leve"
+        }else{
+            document.getElementById("lc.pct.morfologia").value = "Ventriculomegalia severa"
+        }
+    })
+
+    $("#dv\\.morfologia").on("keyup", function(){
+        'use strict';
+        let a = [];
+        let b = [];
+
+        a[0]=0.32; a[1]=0.32; a[2]=0.32; a[3]=0.32; a[4]=0.32; a[5]=0.32; a[6]=0.31; a[7]=0.31; a[8]=0.31; a[9]=0.3; a[10]=0.29; a[11]=0.28; a[12]=0.28; a[13]=0.27; a[14]=0.26; a[15]=0.25; a[16]=0.24; a[17]=0.23; a[18]=0.22; a[19]=0.21; a[20]=0.2;
+        b[0]=0.83; b[1]=0.83; b[2]=0.83; b[3]=0.83; b[4]=0.83; b[5]=0.83; b[6]=0.82; b[7]=0.82; b[8]=0.81; b[9]=0.81; b[10]=0.8; b[11]=0.79; b[12]=0.78; b[13]=0.77; b[14]=0.76; b[15]=0.75; b[16]=0.74; b[17]=0.73; b[18]=0.72; b[19]=0.71; b[20]=0.7;
+
+        let eg = document.getElementById("semanas").value;
+        var dv = this.value;
+
+        document.getElementById("dv.pct.morfologia").classList.remove("is-valid", "is-invalid");
+
+        dv = dv.toString();
+        dv = dv.replace(",", ".");
+        dv = parseFloat(dv);
+
+        if (eg < 20 || eg > 40){
+            document.getElementById("dv.pct.morfologia").value = 0
+        }else {
+            eg = eg - 20;
+            eg = parseInt(eg);
+
+            var uno=b[eg] - a[eg];
+            var dos= dv - a[eg];
+            var resultado = parseInt(90 / (uno) * (dos) + 5);
+            var pctDV = '';
+            //truncador de Pct, sobre 100 o bajo 1
+            if (resultado > 99){
+                pctDV = '> 99';
+            }else if (resultado < 1){
+                pctDV = '< 1';
+            }else{
+                pctDV = resultado;
+            }
+            ajustarProgreso(resultado, "dvMorfologia");
+
+            document.getElementById("dv.pct.morfologia").value = pctDV;
+
+            if (resultado < 10 || resultado > 90){
+                document.getElementById("dv.pct.morfologia").classList.add("is-invalid");
+            }else{
+                document.getElementById("dv.pct.morfologia").classList.add("is-valid");
+            }
+        }
     })
 
     $("input[type='radio']").on("change",function() {
