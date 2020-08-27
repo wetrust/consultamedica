@@ -5805,6 +5805,7 @@ function calcdof(){
 }
 
 function pctcc() {
+    /* 3 97 */
     'use strict';
 	let a = [], b = [];
     a[0]=64;a[1]=74;a[2]=88;a[3]=100;a[4]=113;a[5]=126; a[6]=137;a[7]=149;a[8]=161;a[9]=172;a[10]=183; a[11]=194;a[12]=204;a[13]=214;a[14]=224;a[15]=233; a[16]=242;a[17]=250;a[18]=258;a[19]=267;a[20]=274; a[21]=280;a[22]=287;a[23]=293;a[24]=299;a[25]=303; a[26]=308;a[27]=311;a[28]=315;
@@ -5826,11 +5827,11 @@ function pctcc() {
         var resultado = parseInt(95 / (uno) * (dos) + 3);
         var pctCC = '';
         //truncador de Pct, sobre 100 o bajo 1
-        if (resultado > 99){
-            pctCC = '&gt; 99';
+        if (resultado > 97){
+            pctCC = '&gt; 97';
         }
-        else if (resultado < 1){
-            pctCC = '&lt; 1';
+        else if (resultado < 3){
+            pctCC = '&lt; 3';
         }
         else{
             pctCC = resultado;
@@ -5844,6 +5845,7 @@ function pctcc() {
 };
 
 function pctca() {
+    /* 3 97 */
     'use strict';
 	let a = [], b = [];
     a[0]=42;a[1]=52;a[2]=64;a[3]=75;a[4]=86; a[5]=97;a[6]=109;a[7]=119;a[8]=131;a[9]=141; a[10]=151;a[11]=161;a[12]=171;a[13]=181; a[14]=191;a[15]=200;a[16]=209;a[17]=218;a[18]=227; a[19]=236;a[20]=245;a[21]=253;a[22]=261;a[23]=269; a[24]=277;a[25]=285;a[26]=292;a[27]=299;a[28]=307;
@@ -5865,11 +5867,11 @@ function pctca() {
         ajustarProgreso(resultado, "caPct");
         var pctCA = '';
         //truncador de Pct, sobre 100 o bajo 1
-        if (resultado > 99){
-            pctCA = '&gt; 99';
+        if (resultado > 97){
+            pctCA = '&gt; 97';
         }
-        else if (resultado < 1){
-            pctCA = '&lt; 1';
+        else if (resultado < 3){
+            pctCA = '&lt; 3';
         }
         else{
             pctCA = resultado;
@@ -5882,6 +5884,7 @@ function pctca() {
 };
 
 function pctlf() {
+    /* 3 97 */
     'use strict';
 	let a = [], b = [];
    
@@ -5892,27 +5895,24 @@ function pctlf() {
     let lf=parseInt(document.getElementById("lf").value);
    
     if (eg < 12 || eg > 40){ 
-            $("#lfPct").val("0");
+        $("#lfPct").val("0");
         $('#lfPctRpt').val("0");
-    }
-    else {
-     eg = eg - 12;
-     eg = parseInt(eg);
-     var uno=b[eg] - a[eg];
-     var dos=lf - a[eg];
+    }else {
+        eg = eg - 12;
+        eg = parseInt(eg);
+        var uno=b[eg] - a[eg];
+        var dos=lf - a[eg];
         var resultado = parseInt(95 / (uno) * (dos) + 3);
         ajustarProgreso(resultado, "lfPct");
         var pctLF = '';
-               //truncador de Pct, sobre 100 o bajo 1
-               if (resultado > 99){
-                   pctLF = '&gt; 99';
-               }
-               else if (resultado < 1){
-                   pctLF = '&lt; 1';
-               }
-               else{
-                   pctLF = resultado;
-               }
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 97){
+            pctLF = '&gt; 97';
+        }else if (resultado < 3){
+            pctLF = '&lt; 3';
+        }else{
+            pctLF = resultado;
+        }
         $('#lfPctRpt').val(pctLF);
         $('#lfRango').val(a[eg] + ' - ' + b[eg]);
         psohdlk();
@@ -5921,65 +5921,64 @@ function pctlf() {
 };
 
 function pctcb() {
-
+    /* 3 97 desvio estandar, no percentil*/ 
     //cerebelo segun Hill
     var pct2ds = [];
     var pctmedia = [];
     var pct2dsmas = [];
     
-     pct2ds[0] = 12;pct2ds[1] = 14;pct2ds[2] = 15;pct2ds[3] = 16;pct2ds[4] = 17;pct2ds[5] = 18;
-     pct2ds[6] = 19;pct2ds[7] = 20;pct2ds[8] = 21;pct2ds[9] = 22;pct2ds[10] = 24;
-     pct2ds[11] = 26;pct2ds[12] = 27;pct2ds[13] = 29;pct2ds[14] = 30;pct2ds[15] = 31;
-     pct2ds[16] = 33;pct2ds[17] = 36;pct2ds[18] = 37;pct2ds[19] = 38;pct2ds[20] = 40;
-     pct2ds[21] = 40;pct2ds[22] = 40;pct2ds[23] = 41;pct2ds[24] = 42;pct2ds[25] = 44;
+    pct2ds[0] = 12;pct2ds[1] = 14;pct2ds[2] = 15;pct2ds[3] = 16;pct2ds[4] = 17;pct2ds[5] = 18;
+    pct2ds[6] = 19;pct2ds[7] = 20;pct2ds[8] = 21;pct2ds[9] = 22;pct2ds[10] = 24;
+    pct2ds[11] = 26;pct2ds[12] = 27;pct2ds[13] = 29;pct2ds[14] = 30;pct2ds[15] = 31;
+    pct2ds[16] = 33;pct2ds[17] = 36;pct2ds[18] = 37;pct2ds[19] = 38;pct2ds[20] = 40;
+    pct2ds[21] = 40;pct2ds[22] = 40;pct2ds[23] = 41;pct2ds[24] = 42;pct2ds[25] = 44;
     
-     pctmedia[0] = 15;pctmedia[1] = 16;pctmedia[2] = 17;pctmedia[3] = 18;pctmedia[4] = 20;
-     pctmedia[5] = 20;pctmedia[6] = 22;pctmedia[7] = 23;pctmedia[8] = 24;pctmedia[9] = 26;
-     pctmedia[10] = 28;pctmedia[11] = 30;pctmedia[12] = 31;pctmedia[13] = 33;pctmedia[14] = 34;
-     pctmedia[15] = 37;pctmedia[16] = 39;pctmedia[17] = 41;pctmedia[18] = 43;pctmedia[19] = 46;
-     pctmedia[20] = 47;pctmedia[21] = 49;pctmedia[22] = 51;pctmedia[23] = 51;pctmedia[24] = 52;
-     pctmedia[25] = 52
+    pctmedia[0] = 15;pctmedia[1] = 16;pctmedia[2] = 17;pctmedia[3] = 18;pctmedia[4] = 20;
+    pctmedia[5] = 20;pctmedia[6] = 22;pctmedia[7] = 23;pctmedia[8] = 24;pctmedia[9] = 26;
+    pctmedia[10] = 28;pctmedia[11] = 30;pctmedia[12] = 31;pctmedia[13] = 33;pctmedia[14] = 34;
+    pctmedia[15] = 37;pctmedia[16] = 39;pctmedia[17] = 41;pctmedia[18] = 43;pctmedia[19] = 46;
+    pctmedia[20] = 47;pctmedia[21] = 49;pctmedia[22] = 51;pctmedia[23] = 51;pctmedia[24] = 52;
+    pctmedia[25] = 52
     
-     pct2dsmas[0] = 18;pct2dsmas[1] = 18;pct2dsmas[2] = 19;pct2dsmas[3] = 20;pct2dsmas[4] = 22;
-     pct2dsmas[5] = 23;pct2dsmas[6] = 25;pct2dsmas[7] = 26;pct2dsmas[8] = 27;pct2dsmas[9] = 30;
-     pct2dsmas[10] = 32;pct2dsmas[11] = 34;pct2dsmas[12] = 34;pct2dsmas[13] = 37;pct2dsmas[14] = 38;
-     pct2dsmas[15] = 41;pct2dsmas[16] = 43;pct2dsmas[17] = 46;pct2dsmas[18] = 48;pct2dsmas[19] = 53;
-     pct2dsmas[20] = 56;pct2dsmas[21] = 58;pct2dsmas[22] = 60;pct2dsmas[23] = 62;pct2dsmas[24] = 62;
-     pct2dsmas[25] = 62;
+    pct2dsmas[0] = 18;pct2dsmas[1] = 18;pct2dsmas[2] = 19;pct2dsmas[3] = 20;pct2dsmas[4] = 22;
+    pct2dsmas[5] = 23;pct2dsmas[6] = 25;pct2dsmas[7] = 26;pct2dsmas[8] = 27;pct2dsmas[9] = 30;
+    pct2dsmas[10] = 32;pct2dsmas[11] = 34;pct2dsmas[12] = 34;pct2dsmas[13] = 37;pct2dsmas[14] = 38;
+    pct2dsmas[15] = 41;pct2dsmas[16] = 43;pct2dsmas[17] = 46;pct2dsmas[18] = 48;pct2dsmas[19] = 53;
+    pct2dsmas[20] = 56;pct2dsmas[21] = 58;pct2dsmas[22] = 60;pct2dsmas[23] = 62;pct2dsmas[24] = 62;
+    pct2dsmas[25] = 62;
     
-     var cb=0;
-     let eg = document.getElementById("semanas").value;
-     cb=parseInt(document.getElementById("cerebelo").value);
+    var cb=0;
+    let eg = document.getElementById("semanas").value;
+    cb=parseInt(document.getElementById("cerebelo").value);
     
-     if (eg < 15) {$("#cbPct").val("0");$('#cerebeloPctRpt').val("0")}
-     else if (eg > 40){$("#cbPct").val("0");$('#cerebeloPctRpt').val("0");}
-     else {
-    
-      eg = eg - 15;
-      eg = parseInt(eg);
-      var uno=pct2dsmas[eg] - pct2ds[eg];
-      var dos=cb - pct2ds[eg];
-         var resultado = parseInt(95 / (uno) * (dos));
-         var pctCB = '';
-                //truncador de Pct, sobre 100 o bajo 1
-                if (resultado > 99){
-                    pctCB = '&gt; 99';
-                }
-                else if (resultado < 1){
-                    pctCB = '&lt; 1';
-                }
-                else{
-                    pctCB = resultado;
-                }
-         $('#cerebeloPctRpt').val(pctCB);
-         $('#cerebeloRango').val(pct2ds[eg] + ' - ' + pct2dsmas[eg]);
-         ajustarProgreso(resultado, "cerebeloPct");
+    if (eg < 15 || eg > 40) {
+        $("#cbPct").val("0");
+        $('#cerebeloPctRpt').val("0")
+    }else {
+        eg = eg - 15;
+        eg = parseInt(eg);
+        var uno=pct2dsmas[eg] - pct2ds[eg];
+        var dos=cb - pct2ds[eg];
+        var resultado = parseInt(95 / (uno) * (dos));
+        var pctCB = '';
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 97){
+            pctCB = '&gt; 97';
+        }else if (resultado < 3){
+            pctCB = '&lt; 3';
+        }else{
+            pctCB = resultado;
+        }
+        $('#cerebeloPctRpt').val(pctCB);
+        $('#cerebeloRango').val(pct2ds[eg] + ' - ' + pct2dsmas[eg]);
+        ajustarProgreso(resultado, "cerebeloPct");
          
-         p50();
-     }
+        p50();
+    }
 };
 
 function pctlh() {
+    /* 5 95 */
     'use strict';
 	let a = [], b = [];
    
@@ -5999,34 +5998,31 @@ function pctlh() {
     a[38] = 59.8;  b[38] = 67.8; a[39] = 60.4;  b[39] = 69.3;
     a[40] = 61.9;  b[40] = 70.8;
        
-        let eg = document.getElementById("semanas").value;
-        var lh=parseInt($("#lh").val());
+    let eg = document.getElementById("semanas").value;
+    var lh=parseInt($("#lh").val());
    
-           if (eg < 12 || eg > 40) {
-               $("#lhPct").val('0');
-           $('#lhPctRpt').val('0');
-           }
-           else {
-               eg = parseInt(eg);
-           var uno = b[eg] - a[eg];
-           var dos = lh - a[eg];
-           var resultado = (parseInt(95 / (uno) * (dos) + 5));
-           var pctLH = '';
-               //truncador de Pct, sobre 100 o bajo 1
-               if (resultado > 99){
-                   pctLH = '&gt; 99';
-               }
-               else if (resultado < 1){
-                   pctLH = '&lt; 1';
-               }
-               else{
-                   pctLH = resultado;
-               }
-           $('#lhPctRpt').val(pctLH);
-           $('#lhRango').val(a[eg] + ' - ' + b[eg]);
-            ajustarProgreso(resultado, "lhPct");
-           p50();
-       }
+    if (eg < 12 || eg > 40) {
+        $("#lhPct").val('0');
+        $('#lhPctRpt').val('0');
+    }else {
+        eg = parseInt(eg);
+        var uno = b[eg] - a[eg];
+        var dos = lh - a[eg];
+        var resultado = (parseInt(95 / (uno) * (dos) + 5));
+        var pctLH = '';
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 95){
+            pctLH = '&gt; 95';
+        }else if (resultado < 5){
+            pctLH = '&lt; 5';
+        }else{
+            pctLH = resultado;
+        }
+        $('#lhPctRpt').val(pctLH);
+        $('#lhRango').val(a[eg] + ' - ' + b[eg]);
+        ajustarProgreso(resultado, "lhPct");
+        p50();
+    }
 }
 
 function p50() {
@@ -6063,18 +6059,18 @@ function p50() {
         cb = Math.round( egHill * 10 ) / 10;
         var cbdias = (Math.floor(cb) * 7) + ((cb - Math.floor(cb)) * 10);
         egbio = (ccdias + lfdias + cbdias) /3;
-     }
-     else {
+    } else {
         egbio = (dbpdias + ccdias + lfdias) /3;
-     }
-     var lh = parseInt($('#lh').val());
-     if (lh > 0) {
-	lh =  a[lh];
+    }
+    var lh = parseInt($('#lh').val());
+    if (lh > 0) {
+	    lh =  a[lh];
         var lhdias = (Math.floor(lh) * 7) + ((lh - Math.floor(lh)) * 10);
         egbio = (lhdias + egbio) /2;
-     }
-     egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
-     $('#egP50').val(egbio);
+    }
+
+    egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
+    $('#egP50').val(egbio);
 }
 
 function psohdlk() {
@@ -6119,6 +6115,7 @@ function psohdlkMorfologia() {
 
 function pctpfe() {
     'use strict';
+    /* 10 90 */
 	let a = [], b = [];
    
     a[0]=97;a[1]=121;a[2]=150;a[3]=185;a[4]=227;a[5]=275; a[6]=331;a[7]=398;a[8]=471;a[9]=556;a[10]=652;a[11]=758; a[12]=876;a[13]=1004;a[14]=1145;a[15]=1294;a[16]=1453; a[17]=1621;a[18]=1794;a[19]=1973;a[20]=2154;a[21]=2335; a[22]=2513; a[23]=2686; a[24]=2851; a[25]=2985;
@@ -6127,31 +6124,26 @@ function pctpfe() {
     let eg = document.getElementById("semanas").value;
     let pfe=parseInt($("#pfe").val());
    
-    if (eg < 15) {  
-      $("#pfePct").val('0');
-    }
-    else if (eg > 40)
-    {
-      $("#pfePct").val('0');
-    }
-    else {
-     eg = eg - 15;
-     eg = parseInt(eg);
-     var uno=b[eg] - a[eg];
-     var dos=pfe - a[eg];
-     var pctFinal = (80 / (uno) * (dos)) + 10
-     ajustarProgreso(pctFinal, "pfePct");
+    if (eg < 15 || eg > 40) {  
+        $("#pfePct").val('0');
+    }else {
+        eg = eg - 15;
+        eg = parseInt(eg);
+        var uno=b[eg] - a[eg];
+        var dos=pfe - a[eg];
+        var pctFinal = (80 / (uno) * (dos)) + 10
+        ajustarProgreso(pctFinal, "pfePct");
         var pctPFE = '';
-               //truncador de Pct, sobre 100 o bajo 1
-               if (pctFinal > 99){
-                   pctPFE = '&gt; 99';
-               }
-               else if (pctFinal < 1){
-                   pctPFE = '&lt; 1';
-               }
-               else{
-                   pctPFE = pctFinal.toFixed();
-               }
+        //truncador de Pct, sobre 100 o bajo 1
+        if (pctFinal > 90){
+            pctPFE = '&gt; 90';
+        }
+        else if (pctFinal < 10){
+            pctPFE = '&lt; 10';
+        }
+        else{
+            pctPFE = pctFinal.toFixed();
+        }
         $('#pfePctRpt').val(pctPFE);
         $('#pfeRango').val(a[eg] + ' - ' +b[eg]);
     }
@@ -6208,6 +6200,7 @@ function valCC(dof,dbp){
 }
 
 function bvm() {
+    /* 5 95*/
     'use strict';
 	let a = [], b = [];
     a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
@@ -6369,6 +6362,7 @@ function crearInformeEcoSegTrim2(){
 	imprInforme(InformeString);
 }
 function valccca() {
+    /* 3 97*/
     var cc=parseInt($("#cc").val());
     var ca=parseInt($("#ca").val());
     if (cc > 0 && ca >0 ) {
@@ -6405,11 +6399,11 @@ function valccca() {
             ajustarProgreso(resultado, "cccaPct");
             var pctCCCA = '';
             //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctCCCA = '&gt; 99';
+            if (resultado > 97){
+                pctCCCA = '&gt; 97';
             }
-            else if (resultado < 1){
-                pctCCCA = '&lt; 1';
+            else if (resultado < 3){
+                pctCCCA = '&lt; 3';
             }
             else{
                 pctCCCA = resultado;
