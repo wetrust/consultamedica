@@ -4296,6 +4296,7 @@ $(document).ready(function(){
     });
 
     $('#dbp\\.morfologia').on("keyup", function(){
+        /* 3 97*/
         let a = [], b = [];
 
         a[0]=14;a[1]=17;a[2]=19;a[3]=25;a[4]=29;a[5]=33;a[6]=34;a[7]=38;a[8]=41;a[9]=43;a[10]=46;a[11]=49;a[12]=52;a[13]=54;a[14]=57;a[15]=61;a[16]=63;a[17]=65;a[18]=69;a[19]=69;a[20]=74;a[21]=74;a[22]=77;a[23]=78;a[24]=78;a[25]=81;a[26]=85;a[27]=88;
@@ -4324,11 +4325,11 @@ $(document).ready(function(){
             ajustarProgreso(resultado, "dbpMorfologia");
             var pctDBP = '';
             //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctDBP = '> 99';
+            if (resultado > 97){
+                pctDBP = '> 97';
             }
-            else if (resultado < 1){
-                pctDBP = '< 1';
+            else if (resultado < 3){
+                pctDBP = '< 3';
             }
             else{
                 pctDBP = resultado;
@@ -4336,7 +4337,7 @@ $(document).ready(function(){
             
             $('#dbp\\.pct\\.morfologia').val(pctDBP);
 
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 3 || resultado > 97){
                 document.getElementById("dbp.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("dbp.pct.morfologia").classList.add("is-valid");
@@ -4365,6 +4366,7 @@ $(document).ready(function(){
     })
 
     $('#dof\\.morfologia').on("keyup", function(){
+        /* 3 97*/
         let a = [], b = [];
         let dof = this.value;
     
@@ -4384,11 +4386,11 @@ $(document).ready(function(){
 
             var pctDOF = '';
             //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctDOF = '> 99';
+            if (resultado > 97){
+                pctDOF = '> 97';
             }
-            else if (resultado < 1){
-                pctDOF = '< 1';
+            else if (resultado < 3){
+                pctDOF = '< 3';
             }
             else{
                 pctDOF = resultado;
@@ -4396,7 +4398,7 @@ $(document).ready(function(){
             
             $('#dof\\.pct\\.morfologia').val(pctDOF);
 
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 3 || resultado > 97){
                 document.getElementById("dof.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("dof.pct.morfologia").classList.add("is-valid");
@@ -4429,6 +4431,7 @@ $(document).ready(function(){
     })
 
     $("#pc\\.morfologia").on("keyup", function(){
+        /* 3 97*/
         let a = [], b = [];
         a[0]=64;a[1]=74;a[2]=88;a[3]=100;a[4]=113;a[5]=126; a[6]=137;a[7]=149;a[8]=161;a[9]=172;a[10]=183; a[11]=194;a[12]=204;a[13]=214;a[14]=224;a[15]=233; a[16]=242;a[17]=250;a[18]=258;a[19]=267;a[20]=274; a[21]=280;a[22]=287;a[23]=293;a[24]=299;a[25]=303; a[26]=308;a[27]=311;a[28]=315;
         b[0]=81;b[1]=94;b[2]=106;b[3]=120;b[4]=135; b[5]=150;b[6]=165;b[7]=179;b[8]=193;b[9]=206; b[10]=219;b[11]=232;b[12]=243;b[13]=256;b[14]=268; b[15]=279;b[16]=290;b[17]=300;b[18]=310;b[19]=319; b[20]=328;b[21]=336;b[22]=343;b[23]=351;b[24]=358; b[25]=363;b[26]=368;b[27]=373;b[28]=377;
@@ -4450,18 +4453,18 @@ $(document).ready(function(){
             var resultado = parseInt(95 / (uno) * (dos) + 3);
             var pctCC = '';
             //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctCC = '> 99';
+            if (resultado > 97){
+                pctCC = '> 97';
             }
-            else if (resultado < 1){
-                pctCC = '< 1';
+            else if (resultado < 3){
+                pctCC = '< 3';
             }
             else{
                 pctCC = resultado;
             }
             psohdlkMorfologia();
             $("#pc\\.pct\\.morfologia").val(pctCC);
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 3 || resultado > 3){
                 document.getElementById("pc.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("pc.pct.morfologia").classList.add("is-valid");
@@ -4470,6 +4473,7 @@ $(document).ready(function(){
     })
 
     $("#pa\\.morfologia").on("keyup", function(){
+        /* 3 97*/
         let a = [], b = [];
         a[0]=42;a[1]=52;a[2]=64;a[3]=75;a[4]=86; a[5]=97;a[6]=109;a[7]=119;a[8]=131;a[9]=141; a[10]=151;a[11]=161;a[12]=171;a[13]=181; a[14]=191;a[15]=200;a[16]=209;a[17]=218;a[18]=227; a[19]=236;a[20]=245;a[21]=253;a[22]=261;a[23]=269; a[24]=277;a[25]=285;a[26]=292;a[27]=299;a[28]=307;
         b[0]=71;b[1]=79;b[2]=92;b[3]=102;b[4]=113; b[5]=127;b[6]=141;b[7]=155;b[8]=170; b[9]=183;b[10]=192;b[11]=209;b[12]=223; b[13]=235;b[14]=248;b[15]=260;b[16]=271;b[17]=284; b[18]=295;b[19]=306;b[20]=318;b[21]=329;b[22]=339; b[23]=349;b[24]=359;b[25]=370;b[26]=380;b[27]=389; b[28]=399;
@@ -4491,18 +4495,18 @@ $(document).ready(function(){
             ajustarProgreso(resultado, "paMorfologia");
             var pctCA = '';
             //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctCA = '> 99';
+            if (resultado > 97){
+                pctCA = '> 97';
             }
-            else if (resultado < 1){
-                pctCA = '< 1';
+            else if (resultado < 3){
+                pctCA = '< 3';
             }
             else{
                 pctCA = resultado;
             }
             psohdlkMorfologia();
             $('#pa\\.pct\\.morfologia').val(pctCA);
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 3 || resultado > 97){
                 document.getElementById("pa.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("pa.pct.morfologia").classList.add("is-valid");
@@ -4511,6 +4515,7 @@ $(document).ready(function(){
     })
 
     $("#femur\\.morfologia").on("keyup", function(){
+        /* 3 97*/
         let a = [], b = [];
    
         a[0]=7;a[1]=9;a[2]=12;a[3]=15;a[4]=17;a[5]=21; a[6]=23;a[7]=26;a[8]=28;a[9]=30;a[10]=33;a[11]=35; a[12]=38;a[13]=40;a[14]=42;a[15]=44;a[16]=46; a[17]=48;a[18]=50;a[19]=52;a[20]=53;a[21]=55; a[22]=57;a[23]=59;a[24]=60;a[25]=62;a[26]=64; a[27]=65;a[28]=66;
@@ -4533,11 +4538,11 @@ $(document).ready(function(){
             ajustarProgreso(resultado, "femurMorfologia");
             var pctLF = '';
             //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctLF = '> 99';
+            if (resultado > 97){
+                pctLF = '> 97';
             }
-            else if (resultado < 1){
-                pctLF = '< 1';
+            else if (resultado < 3){
+                pctLF = '< 3';
             }
             else{
                 pctLF = resultado;
@@ -4545,7 +4550,7 @@ $(document).ready(function(){
             
             psohdlkMorfologia()
             $('#femur\\.pct\\.morfologia').val(pctLF);
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 3 || resultado > 97){
                 document.getElementById("femur.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("femur.pct.morfologia").classList.add("is-valid");
@@ -4554,6 +4559,7 @@ $(document).ready(function(){
     })
 
     $("#humero\\.morfologia").on("keyup", function(){
+        /* 5 95*/
         let a = [], b = [];
    
         a[12] = 4.8;   b[12] = 12.3; a[13] = 7.6;   b[13] = 15.1;
@@ -4583,21 +4589,21 @@ $(document).ready(function(){
             eg = parseInt(eg);
             var uno = b[eg] - a[eg];
             var dos = lh - a[eg];
-            var resultado = (parseInt(95 / (uno) * (dos) + 5));
+            var resultado = (parseInt(90 / (uno) * (dos) + 5));
             ajustarProgreso(resultado, "humeroMorfologia");
             var pctLH = '';
             //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctLH = '> 99';
+            if (resultado > 95){
+                pctLH = '> 95';
             }
-            else if (resultado < 1){
-                pctLH = '< 1';
+            else if (resultado < 5){
+                pctLH = '< 5';
             }
             else{
                pctLH = resultado;
             }
             $('#humero\\.pct\\.morfologia').val(pctLH);
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 5 || resultado > 95){
                 document.getElementById("humero.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("humero.pct.morfologia").classList.add("is-valid");
@@ -4606,7 +4612,7 @@ $(document).ready(function(){
     })
 
     $("#tc\\.morfologia").on("keyup", function(){
-
+        /* 3 97*/
         //cerebelo segun Hill
         var pct2ds = [];
         var pctmedia = [];
@@ -4645,14 +4651,14 @@ $(document).ready(function(){
             eg = parseInt(eg);
             var uno=pct2dsmas[eg] - pct2ds[eg];
             var dos=cb - pct2ds[eg];
-            var resultado = parseInt(95 / (uno) * (dos));
+            var resultado = parseInt(95 / (uno) * (dos) + 3);
             var pctCB = '';
             //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctCB = '> 99';
+            if (resultado > 97){
+                pctCB = '> 97';
             }
-            else if (resultado < 1){
-                pctCB = '< 1';
+            else if (resultado < 3){
+                pctCB = '< 3';
             }
             else{
                 pctCB = resultado;
@@ -4661,7 +4667,7 @@ $(document).ready(function(){
             $('#tc\\.pct\\.morfologia').val(pctCB);
             ajustarProgreso(resultado, "tcMorfologia");
 
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 3 || resultado > 97){
                 document.getElementById("tc.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("tc.pct.morfologia").classList.add("is-valid");
@@ -4705,14 +4711,14 @@ $(document).ready(function(){
             eg = parseInt(eg);
             var uno = cisM90[eg] - cisM10[eg];
             var dos = cm - cisM10[eg];
-            var resultado = parseInt(95 / (uno) * (dos));
+            var resultado = (parseInt(90 / (uno) * (dos) + 5));
             var pctCISM = '';
             //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctCISM = '> 99';
+            if (resultado > 95){
+                pctCISM = '> 95';
             }
-            else if (resultado < 1){
-                pctCISM = '< 1';
+            else if (resultado < 5){
+                pctCISM = '< 5';
             }
             else{
                 pctCISM = resultado;
@@ -4721,7 +4727,7 @@ $(document).ready(function(){
             $('#cm\\.pct\\.morfologia').val(pctCISM);
             ajustarProgreso(resultado, "cmMorfologia");
 
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 5 || resultado > 95){
                 document.getElementById("cm.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("cm.pct.morfologia").classList.add("is-valid");
@@ -4730,6 +4736,7 @@ $(document).ready(function(){
     })
 
     $("#liquido\\.semi\\.morfologia").on("keyup", function(){
+         /* 5 95*/
         let a = [], b = [];
         a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
         b[0]=59; b[1]=62; b[2]=64; b[3]=66; b[4]=67; b[5]=68; b[6]=68; b[7]=68; b[8]=68; b[9]=68; b[10]=68; b[11]=69; b[12]=69; b[13]=69; b[14]=69; b[15]=70; b[16]=71; b[17]=72; b[18]=72; b[19]=72; b[20]=71; b[21]=70; b[22]=68; b[23]=66; b[24]=62;
@@ -4749,11 +4756,11 @@ $(document).ready(function(){
             var pctCISM = 0;
             ajustarProgreso(resultado, "bvmMorfologia");
             
-            if (resultado > 99){
-                pctCISM = '> 99';
+            if (resultado > 95){
+                pctCISM = '> 95';
             }
-            else if (resultado < 1){
-                pctCISM = '< 1';
+            else if (resultado < 5){
+                pctCISM = '< 5';
             }
             else{
                 pctCISM = resultado;
@@ -4761,7 +4768,7 @@ $(document).ready(function(){
 
             $('#liquido\\.semi\\.pct\\.morfologia').val(pctCISM);
 
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 5 || resultado > 95){
                 document.getElementById("liquido.semi.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("liquido.semi.pct.morfologia").classList.add("is-valid");
@@ -4772,13 +4779,14 @@ $(document).ready(function(){
     })
 
     $("#art\\.ut\\.d\\.morfologia").on("keyup", function(){
+        /* 5 95*/
         let ut = pctut(this.value);
         document.getElementById("art.ut.d.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
         document.getElementById("art.ut.d.pct.morfologia").value = ut.pct
         ajustarProgreso(ut.raw, "artUtDMorfologia");
         
-        if (ut.raw < 10 || ut.raw > 90){
+        if (ut.raw < 5 || ut.raw > 95){
             document.getElementById("art.ut.d.pct.morfologia").classList.add("is-invalid");
         }else{
             document.getElementById("art.ut.d.pct.morfologia").classList.add("is-valid");
@@ -4806,7 +4814,7 @@ $(document).ready(function(){
             document.getElementById("art.ut.prom.pct.morfologia").value = utprom.pct;
             ajustarProgreso(utprom.raw, "artUtPromMorfologia");
 
-            if (utprom.raw < 10 || utprom.raw > 90){
+            if (utprom.raw < 5 || utprom.raw > 95){
                 document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-valid");
@@ -4816,13 +4824,14 @@ $(document).ready(function(){
     })
 
     $("#art\\.ut\\.i\\.morfologia").on("keyup", function(){
+        /* 5 95*/
         let ut = pctut(this.value);
         document.getElementById("art.ut.i.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
         document.getElementById("art.ut.i.pct.morfologia").value = ut.pct
         ajustarProgreso(ut.raw, "artUtIMorfologia");
         
-        if (ut.raw < 10 || ut.raw > 90){
+        if (ut.raw < 5 || ut.raw > 95){
             document.getElementById("art.ut.i.pct.morfologia").classList.add("is-invalid");
         }else{
             document.getElementById("art.ut.i.pct.morfologia").classList.add("is-valid");
@@ -4850,7 +4859,7 @@ $(document).ready(function(){
             document.getElementById("art.ut.prom.pct.morfologia").value = utprom.pct;
             ajustarProgreso(utprom.raw, "artUtPromMorfologia");
 
-            if (utprom.raw < 10 || utprom.raw > 90){
+            if (utprom.raw < 5 || utprom.raw > 95){
                 document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-valid");
@@ -4860,6 +4869,7 @@ $(document).ready(function(){
     })
 
     $("#art\\.umb\\.morfologia").on("keyup", function(){
+        /* 5 95*/
         'use strict';
         let a = [],b = [],c = [],d = [];
 
@@ -4893,11 +4903,11 @@ $(document).ready(function(){
 
 		    var pctAUMB = '';
 			//truncador de Pct, sobre 100 o bajo 1
-			if (resultado > 99){
-				pctAUMB = '> 99';
+			if (resultado > 95){
+				pctAUMB = '> 95';
 			}
-			else if (resultado < 1){
-				pctAUMB = '< 1';
+			else if (resultado < 5){
+				pctAUMB = '< 5';
 			}
 			else{
 				pctAUMB = resultado;
@@ -4905,13 +4915,14 @@ $(document).ready(function(){
 
             $("#art\\.umb\\.pct\\.morfologia").val(pctAUMB);
 
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 5 || resultado > 95){
                 document.getElementById("art.umb.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("art.umb.pct.morfologia").classList.add("is-valid");
             }
 
 		    if ($('#art\\.cm\\.morfologia').val()){
+                /* 5 95*/
                 var cm = $('#art\\.cm\\.morfologia').val();
                 cm = cm.toString();
                 cm = cm.replace(",", ".");
@@ -4930,17 +4941,17 @@ $(document).ready(function(){
 
                 var pctCCP = '';
 			    //truncador de Pct, sobre 100 o bajo 1
-			    if (resultado > 99){
-				    pctCCP = '> 99';
-			    }else if (resultado < 1){
-				    pctCCP = '< 1';
+			    if (resultado > 95){
+				    pctCCP = '> 95';
+			    }else if (resultado < 5){
+				    pctCCP = '< 5';
 			    }else{
 				    pctCCP = resultado;
 			    }
 
                 document.getElementById("ind.cp.pct.morfologia").value = pctCCP;
 
-                if (resultado < 10 || resultado > 90){
+                if (resultado < 5 || resultado > 95){
                     document.getElementById("ind.cp.pct.morfologia").classList.add("is-invalid");
                 }else{
                     document.getElementById("ind.cp.pct.morfologia").classList.add("is-valid");
@@ -4952,6 +4963,7 @@ $(document).ready(function(){
 
     $("#art\\.cm\\.morfologia").on("keyup", function(){
         'use strict';
+        /* 5 95*/
 	    var a = [],b = [],c = [],d = [];
 
         a[0]=1.24;a[1]=1.29;a[2]=1.34;a[3]=1.37;a[4]=1.4;a[5]=1.43;a[6]=1.44;a[7]=1.45;a[8]=1.45;a[9]=1.44;a[10]=1.43;a[11]=1.41;a[12]=1.38;a[13]=1.34;a[14]=1.3;a[15]=1.25;a[16]=1.19;a[17]=1.13;a[18]=1.05;a[19]=0.98;a[20]=0.89;
@@ -4983,11 +4995,11 @@ $(document).ready(function(){
 
             var pctACM = '';
 			//truncador de Pct, sobre 100 o bajo 1
-			if (resultado > 99){
-				pctACM = '> 99';
+			if (resultado > 95){
+				pctACM = '> 95';
 			}
-			else if (resultado < 1){
-				pctACM = '< 1';
+			else if (resultado < 5){
+				pctACM = '< 5';
 			}
 			else{
 				pctACM = resultado;
@@ -4995,13 +5007,14 @@ $(document).ready(function(){
             
             document.getElementById("art.cm.pct.morfologia").value = pctACM;
             
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 5 || resultado > 95){
                 document.getElementById("art.cm.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("art.cm.pct.morfologia").classList.add("is-valid");
             }
 
 		    if ($('#art\\.umb\\.morfologia').val()){
+                /* 5 95*/
                 var aumb = $('#art\\.umb\\.morfologia').val();
                 aumb = aumb.toString();
                 aumb = aumb.replace(",", ".");
@@ -5020,11 +5033,11 @@ $(document).ready(function(){
 
                 var pctCCP = '';
                 //truncador de Pct, sobre 100 o bajo 1
-                if (resultado > 99){
-                    pctCCP = '> 99';
+                if (resultado > 95){
+                    pctCCP = '> 95';
                 }
-                else if (resultado < 1){
-                    pctCCP = '< 1';
+                else if (resultado < 5){
+                    pctCCP = '< 5';
                 }
                 else{
                     pctCCP = resultado;
@@ -5032,7 +5045,7 @@ $(document).ready(function(){
 
                 document.getElementById("ind.cp.pct.morfologia").value = pctCCP;
 
-                if (resultado < 10 || resultado > 90){
+                if (resultado < 5 || resultado > 95){
                     document.getElementById("ind.cp.pct.morfologia").classList.add("is-invalid");
                 }else{
                     document.getElementById("ind.cp.pct.morfologia").classList.add("is-valid");
@@ -5054,6 +5067,7 @@ $(document).ready(function(){
 
     $("#dv\\.morfologia").on("keyup", function(){
         'use strict';
+        /* 5 95*/
         let a = [];
         let b = [];
 
@@ -5080,10 +5094,10 @@ $(document).ready(function(){
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             var pctDV = '';
             //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 99){
-                pctDV = '> 99';
-            }else if (resultado < 1){
-                pctDV = '< 1';
+            if (resultado > 95){
+                pctDV = '> 95';
+            }else if (resultado < 5){
+                pctDV = '< 5';
             }else{
                 pctDV = resultado;
             }
@@ -5091,7 +5105,7 @@ $(document).ready(function(){
 
             document.getElementById("dv.pct.morfologia").value = pctDV;
 
-            if (resultado < 10 || resultado > 90){
+            if (resultado < 5 || resultado > 95){
                 document.getElementById("dv.pct.morfologia").classList.add("is-invalid");
             }else{
                 document.getElementById("dv.pct.morfologia").classList.add("is-valid");
@@ -5468,11 +5482,11 @@ function pctut(uterina) {
 
             respuesta.raw = uterina;
 
-			if (uterina > 99){
-				uterina = '> 99';
+			if (uterina > 95){
+				uterina = '> 95';
 			}
-			else if (uterina < 1){
-				uterina = '< 1';
+			else if (uterina < 5){
+				uterina = '< 5';
             }
 
             respuesta.pct = uterina;
@@ -6144,6 +6158,7 @@ function pctpfe() {
 }
 
 function pctpfeMorfologia() {
+    /* 10 90*/
     'use strict';
 	let a = [], b = [];
    
@@ -6152,6 +6167,7 @@ function pctpfeMorfologia() {
 
     let eg = document.getElementById("semanas").value;
     let pfe= document.getElementById("pfe.morfologia").value;
+    document.getElementById("pfe.pct.morfologia").classList.remove("is-valid", "is-invalid");
    
     if (eg < 15 || eg > 40) {  
         document.getElementById("pfe.pct.morfologia").value = 0;
@@ -6167,16 +6183,22 @@ function pctpfeMorfologia() {
 
         var pctPFE = '';
         //truncador de Pct, sobre 100 o bajo 1
-        if (pctFinal > 99){
-            pctPFE = '> 99';
+        if (pctFinal > 90){
+            pctPFE = '> 90';
         }
-        else if (pctFinal < 1){
-            pctPFE = '< 1';
+        else if (pctFinal < 10){
+            pctPFE = '< 10';
         } else{
             pctPFE = pctFinal.toFixed();
         }
 
         document.getElementById("pfe.pct.morfologia").value = pctPFE;
+        
+        if (resultado < 10 || resultado > 90){
+            document.getElementById("pfe.pct.morfologia").classList.add("is-invalid");
+        }else{
+            document.getElementById("pfe.pct.morfologia").classList.add("is-valid");
+        }
     }
 }
 
