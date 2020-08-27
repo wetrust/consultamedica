@@ -650,7 +650,7 @@ $( document ).ready(function() {
         }
     })
 
-    $("#id-paciente").on("change", function(){
+    $("#nombre-paciente").on("change", function(){
         document.getElementById("nombre.morfologia").value = this.value;
     })
 });
@@ -5042,17 +5042,13 @@ $(document).ready(function(){
     })
 
     $("#lc\\.morfologia").on("keyup", function(){
-        atrio = this.value;
-        atrio = atrio.toString();
-        atrio = atrio.replace(",", ".");
-        atrio = parseFloat(atrio);
-
-        if (atrio < 10){
-            document.getElementById("lc.pct.morfologia").value = "Normal"
-        }else if (atrio < 16){
-            document.getElementById("lc.pct.morfologia").value = "Ventriculomegalia Leve"
-        }else{
-            document.getElementById("lc.pct.morfologia").value = "Ventriculomegalia severa"
+        let cV = +this.value;
+        if (cV == NaN){
+            document.getElementById("lc.pct.morfologia").value = "";
+        }else if (cV < 25){
+            document.getElementById("lc.pct.morfologia").value ="Cérvix corto";
+        }else if(cV > 24){
+            document.getElementById("lc.pct.morfologia").value ="Cérvix normal";
         }
     })
 
