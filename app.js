@@ -5207,31 +5207,82 @@ function InfEcoObsSegTrim1(){
 
     var dbp = document.getElementById("dbp").value + ' mm';
     var dbpPct = document.getElementById("dbpPct").value;
-    var dbpRango = '( ' + $( '#dbpRango').val() + ' )';
+
+    let tmpData = "";
+
+    if (dbpPct == "&gt; 99" || dbpPct == "&lt; 1"){
+        tmpData = 0;
+    }else{
+        tmpData = dbpPct;
+    }
+
+    var dbpRango = oldProgress(tmpData);
     
     var lh = $( '#lh').val() + ' mm';
     var lhPct = document.getElementById("lhPctRpt").value;
-    var lhRango = '( ' + $( '#lhRango').val() + ' )';
+    
+    if (lhPct == "&gt; 95" || lhPct == "&lt; 5"){
+        tmpData = 0;
+    }else{
+        tmpData = lhPct;
+    }
+
+    var lhRango = oldProgress(tmpData);
 
     var cc = document.getElementById("cc").value + ' mm';
     var ccPct = $( '#ccPctRpt').val();
-    var ccRango = '( ' + $( '#ccRango').val() + ' )';
+    if (ccPct == "&gt; 97" || ccPct == "&lt; 3"){
+        tmpData = 0;
+    }else{
+        tmpData = ccPct;
+    }
+
+    var ccRango = oldProgress(tmpData);
+
     var ca = document.getElementById("ca").value + ' mm';
     var caPct = document.getElementById("caPctRpt").value;
-    var caRango = '( ' + $( '#caRango').val() + ' )';
+    if (caPct == "&gt; 97" || caPct == "&lt; 3"){
+        tmpData = 0;
+    }else{
+        tmpData = caPct;
+    }
+
+    var caRango = oldProgress(tmpData);
+
     var lf = $( '#lf').val() + ' mm';
     var lfPct = document.getElementById("lfPctRpt").value;
-    var lfRango = '( ' + $( '#lfRango').val() + ' )';
+    if (lfPct == "&gt; 97" || lfPct == "&lt; 3"){
+        tmpData = 0;
+    }else{
+        tmpData = lfPct;
+    }
+
+    var lfRango = oldProgress(tmpData);
 
 
     var ccca = document.getElementById("ccca").value;
     var cccaPctVal = document.getElementById("cccaPctVal").value;
-    var cccaRango = '( ' + $( '#cccaRango').val() + ' )';
+    if (cccaPctVal == "&gt; 97" || cccaPctVal == "&lt; 3"){
+        tmpData = 0;
+    }else{
+        tmpData = cccaPctVal;
+    }
+
+    var cccaRango = oldProgress(tmpData);
+
     var pfe = '<strong>' + $( '#pfe').val() + ' Gr.' + '</strong>';
     var percentilPeso = document.getElementById("pfePctRpt").value;
     percentilPeso = percentilPeso.replace('&lt;','<').replace('&gt;', '>');
     var pfePct = '<strong>' + percentilPeso + '</strong>';
-    var pfeRango = '<strong>' + $( '#pfeRango').val() + ' *</strong>';
+
+    if (percentilPeso == "> 90" || percentilPeso == "< 10"){
+        tmpData = 0;
+    }else{
+        tmpData = percentilPeso;
+    }
+
+    var pfeRango = oldProgress(tmpData);
+
     var ic = document.getElementById("dof-dbp").value;
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
 
@@ -5244,7 +5295,8 @@ function InfEcoObsSegTrim1(){
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
     var edadmaterna = $( "select[name='edad_materna']").val();
-    var InformeString = '<div class="container"><h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP </p></div><div class="container"> <p><strong style="color: #045dab;">DESCRIPCIÓN</strong></p><p style="margin-bottom: 0;"> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA5 <br/> :LINEA6 </p><p></p><p></p></div><div class="container"> <table class="table"> <tbody> <tr> <th style="color: #045dab;">BIOMETRÍA FETAL</th> <th style="text-align: center;">Valor observado</th> <th class="text-center">Pct de Crecimiento</th> <th class="text-center">Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td class="text-center">:DBPPCT</td><td class="text-center">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td class="text-center">:CCPCT</td><td class="text-center">:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style="text-align: center;">:CA</td><td class="text-center">:CAPCT</td><td class="text-center">:CARANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">LF (Hadlock):</td><td style="text-align: center; padding-bottom: 15px !important;">:LF</td><td style="text-align: center; padding-bottom: 15px !important;">:LFPCT</td><td style="text-align: center; padding-bottom: 15px !important;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td class="text-center">:LHPCT</td><td class="text-center">:LHRANGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;"><strong>Peso Fetal Estimado según fórmula de Hadlock 3(CC-CA-LF)</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFE</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFEPCT</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFERANGO</strong></td></tr><tr> <td style="border-top: 1px dashed #045dab;">Relación CC / CA (Hadlock)</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCA</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCAPCTVAL</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style="text-align: center;">:IC</td><td></td><td class="text-center">( 70% - 86% )</td></tr></tbody> </table></div>';
+
+    var InformeString = '<div class="container"><h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP </p></div><div class="container"> <p><strong style="color: #045dab;">DESCRIPCIÓN</strong></p><p style="margin-bottom: 0;"> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA5 <br/> :LINEA6 </p><p></p><p></p></div><div class="container"> <table class="table"> <tbody> <tr> <th style="color: #045dab;">BIOMETRÍA FETAL</th> <th style="text-align: center;">Valor observado</th> <th class="text-center">Pct de Crecimiento</th> <th class="text-center">Rango percentilar</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td class="text-center">:DBPPCT</td><td class="text-center">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td class="text-center">:CCPCT</td><td class="text-center">[----------|----------]</td></tr><tr> <td>CA (Hadlock):</td><td style="text-align: center;">:CA</td><td class="text-center">:CAPCT</td><td class="text-center">:CARANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">LF (Hadlock):</td><td style="text-align: center; padding-bottom: 15px !important;">:LF</td><td style="text-align: center; padding-bottom: 15px !important;">:LFPCT</td><td style="text-align: center; padding-bottom: 15px !important;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td class="text-center">:LHPCT</td><td class="text-center">:LHRANGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;"><strong>Peso Fetal Estimado según fórmula de Hadlock 3(CC-CA-LF)</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFE</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFEPCT</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFERANGO</strong></td></tr><tr> <td style="border-top: 1px dashed #045dab;">Relación CC / CA (Hadlock)</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCA</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCAPCTVAL</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style="text-align: center;">:IC</td><td></td><td class="text-center">( 70% - 86% )</td></tr></tbody> </table></div>';
 
     var contadorOpcional = 0;
     if (document.getElementById("art.ut").checked == true){
@@ -6492,4 +6544,34 @@ function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
       (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
     )
+}
+
+function oldProgress(value){
+    let step = [0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100]
+
+    let result = "[";
+    let footer = "]"
+
+    step.forEach(element => {
+        if (element < 50 || (element > 50 && element < 100)){
+            if (value > element && value < (element +5) || (value == (element + 5) && value != 50 && value != 100)){
+                result += "x";
+
+            }else{
+                result += "-";
+            }
+
+        }else if (element == 50){
+            if (value >= element && value <= (element +5)){
+                result += "x";
+            }else{
+                result += "|";
+            }
+
+        }else if (element == 100){
+            result += footer;
+        }
+    })
+
+    return result;
 }
