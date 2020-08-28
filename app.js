@@ -409,7 +409,7 @@ $( document ).ready(function() {
         $("#audPct").val(ut.pct);
         $("#audPctTxt").val(ut.pct);
         $("#audRngo").val(ut.rango.min + " - " + ut.rango.max);
-        ajustarProgreso(ut.pct, "audPct");
+        ajustarProgreso(ut.raw, "audPct");
 
         aui = parseFloat($("#aui").val());
         aud = parseFloat(this.value);
@@ -423,7 +423,7 @@ $( document ).ready(function() {
         $("#auiPct").val(ut.pct);
         $("#auiPctTxt").val(ut.pct);
         $("#auiRngo").val(ut.rango.min + " - " + ut.rango.max);
-        ajustarProgreso(ut.pct, "auiPct");
+        ajustarProgreso(ut.raw, "auiPct");
 
         aui = parseFloat(this.value);
         aud = parseFloat($("#aud").val());
@@ -437,7 +437,7 @@ $( document ).ready(function() {
         $("#auPct").val(ut.pct);
         $("#auPctTxt").val(ut.pct);
         $("#auRngo").val(ut.rango.min + " - " + ut.rango.max);
-        ajustarProgreso(ut.pct, "auPct");
+        ajustarProgreso(ut.raw, "auPct");
     });
 
     $("#dv").change( pctdv);
