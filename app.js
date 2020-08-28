@@ -5166,22 +5166,21 @@ function InfEcoObsSegTrim1(){
 
     elem=document.getElementsByName('accard');
     for(i=0;i<elem.length;i++)
-            if (elem[i].checked) {
-                    actCard = elem[i].value;
-            }
+        if (elem[i].checked) {
+            actCard = elem[i].value;
+        }
 
     elem=document.getElementsByName('movfet');
     for(i=0;i<elem.length;i++)
-            if (elem[i].checked) {
-                    movCorp = elem[i].value;
-            }
+        if (elem[i].checked) {
+            movCorp = elem[i].value;
+        }
 
     actCard = (actCard == 0) ? 'sin actividad cardiaca': 'con actividad cardiaca';
     movCorp = (movCorp == 0) ? 'sin movimientos corporales': 'con movimientos corporales';
 
     var linea1 = 'Feto en presentación ' + document.getElementById("presentacion").value + ', dorso ' + document.getElementById("dorso").value + ', ' + actCard + ' y ' + movCorp + '.';
     var linea2 = 'Frecuencia cardiaca fetal de ' + document.getElementById("fcf").value + ' x minuto.';
-
     var anatomiaFetal = $('#ev-morfo').val();
 
     var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
@@ -5193,7 +5192,6 @@ function InfEcoObsSegTrim1(){
     }
 
     var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', ' + document.getElementById("incersion").value + '.';
-
     var linea5 = '<strong>Cordón umbilical</strong> ' + document.getElementById("cordon").value + ', identificandose '+ document.getElementById("vasos").value +' vasos.';
     var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + document.getElementById("bvmEcoDos").value + ' mm.';
 
@@ -5215,22 +5213,20 @@ function InfEcoObsSegTrim1(){
     }else{
         tmpData = dbpPct;
     }
-
     var dbpRango = oldProgress(tmpData);
-    
+
     var lh = $( '#lh').val() + ' mm';
     var lhPct = document.getElementById("lhPctRpt").value;
-    
+
     if (lhPct == "&gt; 95" || lhPct == "&lt; 5"){
         tmpData = 0;
     }else{
         tmpData = lhPct;
     }
-
     var lhRango = oldProgress(tmpData);
 
     var cc = document.getElementById("cc").value + ' mm';
-    var ccPct = $( '#ccPctRpt').val();
+    var ccPct = $('#ccPctRpt').val();
     if (ccPct == "&gt; 97" || ccPct == "&lt; 3"){
         tmpData = 0;
     }else{
@@ -5246,7 +5242,6 @@ function InfEcoObsSegTrim1(){
     }else{
         tmpData = caPct;
     }
-
     var caRango = oldProgress(tmpData);
 
     var lf = $( '#lf').val() + ' mm';
@@ -5256,9 +5251,7 @@ function InfEcoObsSegTrim1(){
     }else{
         tmpData = lfPct;
     }
-
     var lfRango = oldProgress(tmpData);
-
 
     var ccca = document.getElementById("ccca").value;
     var cccaPctVal = document.getElementById("cccaPctVal").value;
@@ -5267,7 +5260,6 @@ function InfEcoObsSegTrim1(){
     }else{
         tmpData = cccaPctVal;
     }
-
     var cccaRango = oldProgress(tmpData);
 
     var pfe = '<strong>' + $( '#pfe').val() + ' Gr.' + '</strong>';
@@ -5280,7 +5272,6 @@ function InfEcoObsSegTrim1(){
     }else{
         tmpData = percentilPeso;
     }
-
     var pfeRango = oldProgress(tmpData);
 
     var ic = document.getElementById("dof-dbp").value;
@@ -5296,7 +5287,7 @@ function InfEcoObsSegTrim1(){
 
     var edadmaterna = $( "select[name='edad_materna']").val();
 
-    var InformeString = '<div class="container"><h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP </p></div><div class="container"> <p><strong style="color: #045dab;">DESCRIPCIÓN</strong></p><p style="margin-bottom: 0;"> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA5 <br/> :LINEA6 </p><p></p><p></p></div><div class="container"> <table class="table"> <tbody> <tr> <th style="color: #045dab;">BIOMETRÍA FETAL</th> <th style="text-align: center;">Valor observado</th> <th class="text-center">Pct de Crecimiento</th> <th class="text-center">Rango percentilar</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td class="text-center">:DBPPCT</td><td class="text-center">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td class="text-center">:CCPCT</td><td class="text-center">[----------|----------]</td></tr><tr> <td>CA (Hadlock):</td><td style="text-align: center;">:CA</td><td class="text-center">:CAPCT</td><td class="text-center">:CARANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">LF (Hadlock):</td><td style="text-align: center; padding-bottom: 15px !important;">:LF</td><td style="text-align: center; padding-bottom: 15px !important;">:LFPCT</td><td style="text-align: center; padding-bottom: 15px !important;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td class="text-center">:LHPCT</td><td class="text-center">:LHRANGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;"><strong>Peso Fetal Estimado según fórmula de Hadlock 3(CC-CA-LF)</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFE</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFEPCT</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFERANGO</strong></td></tr><tr> <td style="border-top: 1px dashed #045dab;">Relación CC / CA (Hadlock)</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCA</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCAPCTVAL</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style="text-align: center;">:IC</td><td></td><td class="text-center">( 70% - 86% )</td></tr></tbody> </table></div>';
+    var InformeString = '<div class="container"><h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP </p></div><div class="container"> <p><strong style="color: #045dab;">DESCRIPCIÓN</strong></p><p style="margin-bottom: 0;"> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA5 <br/> :LINEA6 </p><p></p><p></p></div><div class="container"> <table class="table"> <tbody> <tr> <th style="color: #045dab;">BIOMETRÍA FETAL</th> <th style="text-align: center;">Valor observado</th> <th class="text-center">Pct de Crecimiento</th> <th class="text-center">Rango percentilar</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td class="text-center">:DBPPCT</td><td class="text-center">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td class="text-center">:CCPCT</td><td class="text-center">:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style="text-align: center;">:CA</td><td class="text-center">:CAPCT</td><td class="text-center">:CARANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">LF (Hadlock):</td><td style="text-align: center; padding-bottom: 15px !important;">:LF</td><td style="text-align: center; padding-bottom: 15px !important;">:LFPCT</td><td style="text-align: center; padding-bottom: 15px !important;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td class="text-center">:LHPCT</td><td class="text-center">:LHRANGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;"><strong>Peso Fetal Estimado según fórmula de Hadlock 3(CC-CA-LF)</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFE</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFEPCT</strong></td><td style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFERANGO</strong></td></tr><tr> <td style="border-top: 1px dashed #045dab;">Relación CC / CA (Hadlock)</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCA</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCAPCTVAL</td><td class="text-center" style="border-top: 1px dashed #045dab;">:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style="text-align: center;">:IC</td><td></td><td class="text-center">( 70% - 86% )</td></tr></tbody> </table></div>';
 
     var contadorOpcional = 0;
     if (document.getElementById("art.ut").checked == true){
