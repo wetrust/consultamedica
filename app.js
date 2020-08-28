@@ -909,7 +909,7 @@ $( document ).ready(function() {
 
     $("#modalPreInfEcoDoppler").on("click", function(){
 
-        var InformeString = '<div class="container"><h3>Evaluación de flujometria doppler materno fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p> <strong>FUM: </strong> :FUM <br/> <strong>Ege: </strong> :EG semanas <br/> <strong>FPP: </strong> :FPP </p></div><div class="container"> <p><strong style="color: #045dab;">ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small></p><p> Motivo del exámen: :MOTIVODOPPLER <br/> Antecedentes Obstétricos: :ANTECEDENTES <br/> Feto en Presentación: :PRESENTACION <br/> Motilidad Fetal: :MOTILIDAD <br/> Ubicación Placentaria: :UBICACION <br/> Líquido Amniótico***: :LIQUIDO <br/> Medida única de BVM***: :BVM </p></div><div class="container"> <table class="table"> <thead> <tr> <th style="color: #045dab;">FLUJOMETRIA DOPPLER</th> <th style="text-align: center;">IP Observado</th> <th style="text-align: center;">Percentiles de IP</th> <th style="text-align: center;">Referencia para Edad</th> </tr></thead> <tbody> <tr> <td>Arteria Uterina Derecha*</td><td style="text-align: center;">:UD</td><td style="text-align: center;">:UDTXT</td><td style="text-align: center;">:UDRGO</td></tr><tr> <td>Arteria Uterina Izquierda*</td><td style="text-align: center;">:UI</td><td style="text-align: center;">:UITXT</td><td style="text-align: center;">:UIRGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Promedio Arterias Uterinas*</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROM</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROMTXT</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROMRGO</td></tr><tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Arteria Umbilical**</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AU</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AUTXT</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AURGO</td></tr><tr> <td style="padding-bottom: 15px !important;">Arteria Cerebral Media**</td><td style="text-align: center; padding-bottom: 15px !important;">:ACM</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMTXT</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMRGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Cuociente Cerebro Placentario ( CCP )**</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCP</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCPTXT</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCPRGO</td></tr>';
+        var InformeString = '<div class="container"><h3>Evaluación de flujometria doppler materno fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p> <strong>FUM: </strong> :FUM <br/> <strong>Ege: </strong> :EG semanas <br/> <strong>FPP: </strong> :FPP </p></div><div class="container"> <p><strong style="color: #045dab;">ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small></p><p> Motivo del exámen: :MOTIVODOPPLER <br/> Antecedentes Obstétricos: :ANTECEDENTES <br/> Feto en Presentación: :PRESENTACION <br/> Motilidad Fetal: :MOTILIDAD <br/> Ubicación Placentaria: :UBICACION <br/> Líquido Amniótico***: :LIQUIDO <br/> Medida única de BVM***: :BVM </p></div><div class="container"> <table class="table"> <thead> <tr> <th style="color: #045dab;">FLUJOMETRIA DOPPLER</th> <th style="text-align: center;">IP Observado</th> <th style="text-align: center;">Percentiles de IP</th> <th style="text-align: center;">Rango percentilar</th> </tr></thead> <tbody> <tr> <td>Arteria Uterina Derecha*</td><td style="text-align: center;">:UD</td><td style="text-align: center;">:UDTXT</td><td style="text-align: center;">:UDRGO</td></tr><tr> <td>Arteria Uterina Izquierda*</td><td style="text-align: center;">:UI</td><td style="text-align: center;">:UITXT</td><td style="text-align: center;">:UIRGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Promedio Arterias Uterinas*</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROM</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROMTXT</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROMRGO</td></tr><tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Arteria Umbilical**</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AU</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AUTXT</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AURGO</td></tr><tr> <td style="padding-bottom: 15px !important;">Arteria Cerebral Media**</td><td style="text-align: center; padding-bottom: 15px !important;">:ACM</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMTXT</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMRGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Cuociente Cerebro Placentario ( CCP )**</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCP</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCPTXT</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCPRGO</td></tr>';
 
         var paciente = document.getElementById("nombre-paciente").value;
         var idpaciente = document.getElementById("id-paciente").value;
@@ -935,22 +935,61 @@ $( document ).ready(function() {
         var liquido = document.getElementById("liqAmnioDoppler").value;
         var ud = document.getElementById("aud").value;
         var udTxt = document.getElementById("audPctTxt").value;
-        var udRgo = '( ' + document.getElementById("audRngo").value + ' )';
+
+        let tmpData = "";
+
+        if (udTxt == "&gt; 95" || udTxt == "&lt; 5"){
+            tmpData = 0;
+        }else{
+            tmpData = udTxt;
+        }
+        var udRgo = oldProgress(tmpData);
+
         var ui = document.getElementById("aui").value;
         var uiTxt = document.getElementById("auiPctTxt").value;
-        var uiRgo = '( ' + document.getElementById("auiRngo").value + ' )';
+        if (uiTxt == "&gt; 95" || uiTxt == "&lt; 5"){
+            tmpData = 0;
+        }else{
+            tmpData = uiTxt;
+        }
+        var uiRgo = oldProgress(tmpData);
+
         var uprom = '<strong>' + document.getElementById("auprom").value + '</strong>';
         var upromTxt = '<strong>' + document.getElementById("auPctTxt").value + '</strong>';
-        var upromRgo = '<strong>( ' + document.getElementById("auRngo").value + ' )</strong>';
+        if (document.getElementById("auPctTxt").value == "&gt; 95" || document.getElementById("auPctTxt").value == "&lt; 5"){
+            tmpData = 0;
+        }else{
+            tmpData = document.getElementById("auPctTxt").value;
+        }
+        var upromRgo = oldProgress(tmpData);
+
         var au = document.getElementById("ipau").value;
         var auTxt = document.getElementById("ipauPctTxt").value;
-        var auRgo = '( ' + document.getElementById("ipauRngo").value + ' )';
+        if (auTxt == "&gt; 95" || auTxt == "&lt; 5"){
+            tmpData = 0;
+        }else{
+            tmpData = +auTxt;
+        }
+        var auRgo = oldProgress(tmpData);
+
         var acm =document.getElementById("ipacm").value;
         var acmTxt = document.getElementById("ipacmPctTxt").value;
-        var acmRgo = '( ' + document.getElementById("ipacmRngo").value + ' )'; 
+        if (acmTxt == "&gt; 95" || acmTxt == "&lt; 5"){
+            tmpData = 0;
+        }else{
+            tmpData = acmTxt;
+        }
+        var acmRgo = oldProgress(tmpData);
+
         var ccp = '<strong>' + document.getElementById("ccp").value + '</strong>';
         var ccpTxt = '<strong>' + document.getElementById("ccpPctTxt").value + '</strong>';
-        var ccpRgo = '<strong>( ' + document.getElementById("ccpRngo").value + ' )</strong>';
+        if (document.getElementById("ccpPctTxt").value == "&gt; 95" || document.getElementById("ccpPctTxt").value == "&lt; 5"){
+            tmpData = 0;
+        }else{
+            tmpData = +document.getElementById("ccpPctTxt").value;
+        }
+        var ccpRgo = oldProgress(tmpData);
+
         var presentacion = document.getElementById("presentacion-doppler").value;
         var edadmaterna = $( "select[name='edad_materna']").val();
         
@@ -962,7 +1001,12 @@ $( document ).ready(function() {
 
         if (dvp != ""){
             var dvPctTxt = document.getElementById("dvPctTxt").value;
-            var dvRngo = document.getElementById("dvRngo").value;
+            if (dvPctTxt == "&gt; 95" || dvPctTxt == "&lt; 5"){
+                tmpData = 0;
+            }else{
+                tmpData = dvPctTxt;
+            }
+            var dvRngo = oldProgress(tmpData);
 
             InformeString += ' <tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Ductus Venoso</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVP</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVPTXT</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVPRGO</td></tr><tr><td></td><td></td><td></td><td></td></tr>';
         
@@ -5610,6 +5654,7 @@ function pctdv() {
 }
 
 function pctau() {
+    /* 5 95 */
     'use strict';
 	let a = [],b = [],c = [],d = [];
 
@@ -5637,11 +5682,11 @@ function pctau() {
 		ajustarProgreso(resultado, "ipauPct");
 		var pctAUMB = '';
 			//truncador de Pct, sobre 100 o bajo 1
-			if (resultado > 99){
-				pctAUMB = '&gt; 99';
+			if (resultado > 95){
+				pctAUMB = '&gt; 95';
 			}
-			else if (resultado < 1){
-				pctAUMB = '&lt; 1';
+			else if (resultado < 5){
+				pctAUMB = '&lt; 5';
 			}
 			else{
 				pctAUMB = resultado;
@@ -5659,11 +5704,11 @@ function pctau() {
 			ajustarProgreso(resultado, "ccpPct");
 			var pctCCP = '';
 			//truncador de Pct, sobre 100 o bajo 1
-			if (resultado > 99){
-				pctCCP = '&gt; 99';
+			if (resultado > 95){
+				pctCCP = '&gt; 95';
 			}
-			else if (resultado < 1){
-				pctCCP = '&lt; 1';
+			else if (resultado < 5){
+				pctCCP = '&lt; 5';
 			}
 			else{
 				pctCCP = resultado;
@@ -5675,6 +5720,7 @@ function pctau() {
 }
 
 function pctacm() {
+    /* 5 95 */
     'use strict';
 	var a = [],b = [],c = [],d = [];
 
@@ -5704,11 +5750,11 @@ function pctacm() {
 		ajustarProgreso(resultado, "ipacmPct");
 		var pctACM = '';
 			//truncador de Pct, sobre 100 o bajo 1
-			if (resultado > 99){
-				pctACM = '&gt; 99';
+			if (resultado > 95){
+				pctACM = '&gt; 95';
 			}
-			else if (resultado < 1){
-				pctACM = '&lt; 1';
+			else if (resultado < 5){
+				pctACM = '&lt; 5';
 			}
 			else{
 				pctACM = resultado;
@@ -5728,11 +5774,11 @@ function pctacm() {
 			ajustarProgreso(resultado, "ccpPct");
 			var pctCCP = '';
 			//truncador de Pct, sobre 100 o bajo 1
-			if (resultado > 99){
-				pctCCP = '&gt; 99';
+			if (resultado > 95){
+				pctCCP = '&gt; 95';
 			}
-			else if (resultado < 1){
-				pctCCP = '&lt; 1';
+			else if (resultado < 5){
+				pctCCP = '&lt; 5';
 			}
 			else{
 				pctCCP = resultado;
