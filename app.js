@@ -5220,6 +5220,7 @@ $(window).on('hashchange', function(){
         document.getElementById("inicio").classList.remove(d);
     }
 });
+
 function InfEcoObsSegTrim1(){
     var actCard;
     var movCorp;
@@ -5430,6 +5431,7 @@ function InfEcoObsSegTrim1(){
 
     return InformeString;
 }
+
 function getDate(today) {
     if (typeof today === typeof undefined){
         today = dayHoy;
@@ -5449,6 +5451,7 @@ function getDate(today) {
     today = yyyy + '-' + mm + '-' + dd;
     return today;
 }
+
 function storageAvailable(type) {
     var storage;
     try {
@@ -5473,6 +5476,7 @@ function storageAvailable(type) {
             (storage && storage.length !== 0);
         }
 }
+
 function makeModal(button){
     let id = uuidv4();
     let titulo = uuidv4();
@@ -6352,24 +6356,29 @@ function crearInformeEcoSegTrim2(){
                 movCorp = elem[i].value;
             }
 
-        if (actCard = 0){
-            actCard = "sin actividad cardiaca";
-        }
-        else
-        {
-            actCard = "con actividad cardiaca";
-        }
-        if (movCorp = 0){
-            movCorp = "sin movimientos corporales";
-        }
-        else
-        {
-            movCorp = "con movimientos corporales";
-        }
+    if (actCard = 0){
+        actCard = "sin actividad cardiaca";
+    } else {
+        actCard = "con actividad cardiaca";
+    }
+    
+    if (movCorp = 0){
+        movCorp = "sin movimientos corporales";
+    } else {
+        movCorp = "con movimientos corporales";
+    }
 
 	var p50 = $('#egP50').val() + ' semanas';
-	var lh =  $( '#lh').val() + ' mm';
-    var lhRango =  '( ' + $( '#lhRango').val() + ' )';
+    var lh =  $( '#lh').val() + ' mm';
+    var lhPct = document.getElementById("lhPctRpt").value;
+    var tmpData = "";
+
+    if (lhPct == "&gt; 95" || lhPct == "&lt; 5"){
+        tmpData = 0;
+    }else{
+        tmpData = lhPct;
+    }
+    var lhRango = oldProgress(tmpData);
     
     let fur = new Date(Date.parse(document.getElementById("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
@@ -6380,30 +6389,72 @@ function crearInformeEcoSegTrim2(){
     let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
     
     var dbp = $( '#dbp').val() + ' mm';
-	var dbpRango = '( ' + $( '#dbpRango').val() + ' )';
-	var dof = $( '#dof').val() + ' mm';
-	var dofRango = '( ' + $( '#dofRango').val() + ' )';
-	var cc = $( '#cc').val() + ' mm';
-	var ccRango = '( ' + $( '#ccRango').val() + ' )';
-	var ca = $( '#ca').val() + ' mm';
-	var caRango = '( ' + $( '#caRango').val() + ' )';
-	var lf = $( '#lf').val() + ' mm';
-	var lfRango = '( ' + $( '#lfRango').val() + ' )';
+    var dbpPct = document.getElementById("dbpPct").value;
+
+    if (dbpPct == "&gt; 99" || dbpPct == "&lt; 1"){
+        tmpData = 0;
+    }else{
+        tmpData = dbpPct;
+    }
+    var dbpRango = oldProgress(tmpData);
+
+    var dof = $( '#dof').val() + ' mm';
+    var dofPctRpt = $('#dofPctRpt').val();
+    if (dofPctRpt == "&gt; 99" || dofPctRpt == "&lt; 1"){
+        tmpData = 0;
+    }else{
+        tmpData = dofPctRpt;
+    }
+    var dofRango = oldProgress(tmpData);
+
+    var cc = $( '#cc').val() + ' mm';
+    var ccPct = $('#ccPctRpt').val();
+    if (ccPct == "&gt; 97" || ccPct == "&lt; 3"){
+        tmpData = 0;
+    }else{
+        tmpData = ccPct;
+    }
+    var ccRango = oldProgress(tmpData);
+
+    var ca = $( '#ca').val() + ' mm';
+    var caPct = document.getElementById("caPctRpt").value;
+    if (caPct == "&gt; 97" || caPct == "&lt; 3"){
+        tmpData = 0;
+    }else{
+        tmpData = caPct;
+    }
+    var caRango = oldProgress(tmpData);
+
+    var lf = $( '#lf').val() + ' mm';
+    var lfPct = document.getElementById("lfPctRpt").value;
+    if (lfPct == "&gt; 97" || lfPct == "&lt; 3"){
+        tmpData = 0;
+    }else{
+        tmpData = lfPct;
+    }
+    var lfRango = oldProgress(tmpData);
+
 	var ic = $( '#dof-dbp').val();
-	var cb = $('#cerebelo').val() + ' mm';
-	var cbRango = '( ' + $('#cerebeloRango').val() + ' )';
+    var cb = $('#cerebelo').val() + ' mm';
+    var cerebeloPctRpt = document.getElementById("cerebeloPctRpt").value;
+    if (cerebeloPctRpt == "&gt; 97" || cerebeloPctRpt == "&lt; 3"){
+        tmpData = 0;
+    }else{
+        tmpData = cerebeloPctRpt;
+    }
+    var cbRango = oldProgress(tmpData);
 	
 	var paciente = document.getElementById("nombre-paciente").value;
-        var idpaciente = document.getElementById("id-paciente").value;
-        var motivo = $( '#motivo-examen option:selected').text();
-        var ecografista = $( '#ecografista option:selected').text();
-        var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-        var edadmaterna = $( "select[name='edad_materna']").val();
+    var idpaciente = document.getElementById("id-paciente").value;
+    var motivo = $( '#motivo-examen option:selected').text();
+    var ecografista = $( '#ecografista option:selected').text();
+    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var edadmaterna = $( "select[name='edad_materna']").val();
 	
-        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
 
 	var linea1 = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
-        var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
+    var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
         
 	var anatomiaFetal = $('#ev-morfo').val();
 	
@@ -6416,21 +6467,19 @@ function crearInformeEcoSegTrim2(){
     }
 
     var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', ' + document.getElementById("incersion").value + '.';
-        var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
-        var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
+    var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
+    var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
 	
     var InformeString = "<div class='container'> <h3>Determinación Ecográfica <small>(Tardía)</small> de la Edad Gestacional</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p><strong>FUM: </strong> :FUR <br><strong>EG (UPM): </strong> :EG semanas<br><strong>FPP: </strong> :FPP</p></div><div class='container'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p style='margin-bottom:0;'>:LINEA1 <br>:LINEA2</p><p style='margin-bottom:0; word-wrap: break-word;'>:LINEA3</p><p>:LINEA4 <br>:LINEA5 <br>:LINEA6</p><p></p><p></p></div><div class='container-fluid'> <table class='table'> <tbody> <tr> <th style='line-height:15px !important;color:#045dab;'>BIOMETRIA FETAL</th> <th style='text-align:center;'>Valor observado</th> <th style='text-align:center;'>Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style='text-align:center;'>:DBP</td><td style='text-align:center;'>:DBPRANGO</td></tr><tr> <td>DOF (Jeanty):</td><td style='text-align:center;'>:DOF</td><td style='text-align:center;'>:DOFRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style='text-align:center;'>:CC</td><td style='text-align:center;'>:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style='text-align:center;'>:CA</td><td style='text-align:center;'>:CARANGO</td></tr><tr> <td>LF (Hadlock):</td><td style='text-align:center;'>:LF</td><td style='text-align:center;'>:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style='text-align:center;'>:LH</td><td style='text-align:center;'>:LHRANGO</td></tr><tr> <td>Cerebelo (Diámetro transverso) (Hill):</td><td style='text-align:center;'>:CB</td><td style='text-align:center;'>:CBRANGO</td></tr><tr><td style='padding-bottom: 15px !important;'>Indice Cefálico (DBP / DOF)</td><td style='text-align:center;padding-bottom: 15px !important;'>:IC</td><td style='text-align:center;padding-bottom: 15px !important;'>( 70% - 86% )</td></tr>";
 
     if (document.getElementById("art.ut").checked == true){
         InformeString += "<tr> <td style='padding-bottom: 15px !important;'>IP Promedio Arterias Uterinas:</td><td style='text-align:center;padding-bottom: 15px !important;'>:ARTUT</td><td style='text-align:center;padding-bottom: 15px !important;'>:ARTUTRANGO</td></tr>";
-
         InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
         InformeString = InformeString.replace(":ARTUTRANGO", $("#respuesta_uterina_promedio_rango").val());
     }
 
     if (document.getElementById("larg.cerv").checked == true){
         InformeString += "<tr> <td style='padding-bottom: 15px !important;'>Largo Cervical</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERV mm</td><td style='text-align:center;padding-bottom: 15px !important;'></td><td style='text-align:center;padding-bottom: 15px !important;'></td></tr>"
-    
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
     }
 
