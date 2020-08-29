@@ -516,7 +516,7 @@ $( document ).ready(function() {
         }
     });
 
-    $("#respuesta_uterina_derecha").on("change",function(){
+    $("#respuesta_uterina_derecha").on("keyup",function(){
         let ut = pctut(this.value);
         $("#respuesta_uterina_derecha_percentil").html(ut.pct);
 
@@ -527,7 +527,7 @@ $( document ).ready(function() {
         $("#respuesta_uterina_promedio").trigger("change");
     });
 
-    $("#respuesta_uterina_izquierda").on("change",function(){
+    $("#respuesta_uterina_izquierda").on("keyup",function(){
         let ut = pctut(this.value);
         $("#respuesta_uterina_izquierda_percentil").html(ut.pct);
 
