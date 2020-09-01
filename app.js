@@ -23,7 +23,7 @@ document.location.hash = "";
 
 //controlador de funciones base cuando se carga la pagina
 $( document ).ready(function() {
-    $("p[name='fechaHora']").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear());
+    $("#fechaHora").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear());
     document.getElementById("fum").value = getDate();
     document.getElementById("fee").value = getDate();
 
@@ -545,50 +545,50 @@ $( document ).ready(function() {
     });
 
     $("#pdfnacionalview").on("click", function(){
-        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gnacional.pdf");
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/gnacional.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#recienacido");
     });
 
     $("#pdfregionalview").on("click", function(){
-        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/gregional.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#recienacido");
     });
     $("#pdfregionalviewA").on("click", function(){
-        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/gregional.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#ajustepeso");
     });
     $("#pdfnuevo").on("click", function(){
-        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/uso_ecografia_doppler_obstetrcia.pdf");
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/uso_ecografia_doppler_obstetrcia.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#ajustepeso");
     });
 
     $("#pdfnacional").on("click", function(){
-        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gnacional.pdf");
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/gnacional.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
     });
 
     $("#pdfregional").on("click", function(){
-        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/gregional.pdf");
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/gregional.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
     });
 
     $("#pdfuno").on("click", function(){
-        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf");
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
     });
 
     $("#pdfunoInternal").on("click", function(){
-        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf");
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#ecoObsSegTrim");
     });
 
     $("#pdfdos").on("click", function(){
-        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf");
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
     });
 
     $("#pdfbarcelona").on("click", function(){
-        $("#pdfview").attr('src', "https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf");
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#ecoDoppler");
     });
 
@@ -832,6 +832,151 @@ $( document ).ready(function() {
         imprInforme(InformeString);
     });
 
+    $("#informe\\.morfologia").on("click", function(){
+        InformeString = '<div class="container-fluid" style="margin-top: 5rem;"> <h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <p><strong>Paciente Sra. (Srta.):</strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Edad Materna:</strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Fecha de Exámen:</strong>:FEXAMEN</p><p><strong> ID Paciente:</strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Motivo de exámen:</strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Patología Obstétrica:</strong>:PATOLOGIAOBSTETRICA</p><p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">BIOMETRÍA</strong></p><p> Actividad cardíaca: :ACTCAR <br/> Movimientos fetales: :MOVFET <br/> Embarazo: :EMB <br/> Presentación: :PRESENT <br/> Dorso fetal: :DORSOFET <br/> Antecedentes Cesárea previa?: :ANTECESA <br/> Placenta Ubicación: :PLAUB <br/> Placenta inserción: :PLAIN <br/> Liquido amniótico Medicion cualitativa: :BVMCUA <br/> Liquido Amniótico Medicion Única Bolsillo Mayor (BVM): :BVMMED <br/> </p><p>Liquido Amniótico Sumatoria de 4 cuadrantes (ILA): :ILA</p><p> DBP: :DBP <br/> DOF: :DOF <br/> CC: :CC <br/> CA: :CA <br/> Femur: :FEMUR <br/> Humero: :HUMERO <br/> Índice Cefálico: :INDCEF <br/> Transverso cerebeloso: :TRANSCERE <br/> Cisterna magna: :CISMAG <br/> Peso Fetal estimado: :PFE </p><p><strong style="color: #045dab;">MORFOLOGÍA</strong></p><p> Cerebro Ventrículo Lateral proximal: :CEREVLP <br/> Cerebro Ventrículo Lateral distal: :CEREVLD <br/> Cavum SP presente: :CAVUM <br/> Cuerpo calloso visible: :CCV <br/> Cuello normal: :CUELLO <br/> Labio nariz normal: :LNN <br/> Corazón 4 cámaras visible: :CORACV <br/> Corazón Tracto de salida pulmonar normal: :CORATSPN <br/> Corazón Tracto salida Aórtico normal: :CORATSAN <br/> Corazón 3 vasos tráquea visible: :CORAVTV </p><p> Tórax Normal: :TN <br/> Abdomen: :ABDO <br/> Pared normal: :PARNOR <br/> Estómago visible: :ESTOV <br/> Riñones visibles: :RINOV <br/> Vejiga visible: :VEJIV <br/> Columna normal: :COLUMN <br/> Extremidades superiores normales: :EXSUP <br/> Extremidades inferiores normales: :EXINF <br/> Genitales: :GEN </p><p>&nbsp;</p><p>&nbsp;</p><p></p><p><strong style="color: #045dab;">FLUJOMETRÍA</strong></p><p> IP Arteria uterina derecha: :AUD <br/> IP Arteria uterina izquierda: :AUI <br/> IP Arteria uterinas promedio: :AUP <br/> IP Arteria Umbilical: :AU <br/> IP Arteria cerebral media: :CM <br/> IP Índice cerebro placentario: :ICEREP <br/> Peak sistólico de ACM: :PACM <br/> Ductus venoso: :DUCV <br/> Largo cervical: :LARCERV </p><p>Indicaciones (seguimiento): :INDI</p></div><div class="container-fluid"> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 5rem;"> <p class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block; margin-top: 5rem;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p></div>';
+
+        let fur = new Date(Date.parse(document.getElementById("fum").value));
+        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+        let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+        let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
+        let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
+        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+
+        var paciente = document.getElementById("nombre-paciente").value;
+        var idpaciente = document.getElementById("id-paciente").value;
+        var motivo = $( '#motivo-examen option:selected').text();
+        var ecografista = $( '#ecografista\\.morfologia').val();
+        var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+        var edadmaterna = $( "select[name='edad_materna']").val();
+
+        var ACTCAR = document.getElementById("actividad.cardiaca.morfologia").value;
+        var MOVFET = document.getElementById("movimientos.fetales.morfologia").value;
+        var EMB = document.getElementById("embarazo.morfologica").value;
+        var PRESENT = document.getElementById("presentacion.morfologia").value;
+        var DORSOFET = document.getElementById("dorso.morfologia").value;
+        var ANTECESA = document.getElementById("antecedentes.cesarea.morfologia").value;
+        var PLAUB = document.getElementById("placenta.ubicacion.morfologia").value;
+        var PLAIN = document.getElementById("placenta.insercion.morfologia").value;
+        var BVMCUA = document.getElementById("liquido.cualitativo.morfologia").value;
+        var BVMMED = document.getElementById("liquido.semi.morfologia").value;
+        var ILA = document.getElementById("liquido.ila.suma.morfologia").value;
+        var DBP = document.getElementById("dbp.morfologia").value;
+        var DOF = document.getElementById("dof.morfologia").value;
+        var CC = document.getElementById("pc.morfologia").value;
+        var CA = document.getElementById("pa.morfologia").value;
+        var FEMUR = document.getElementById("femur.morfologia").value;
+        var HUMERO = document.getElementById("humero.morfologia").value;
+        var INDCEF = document.getElementById("dof.ic.morfologia").value;
+        var TRANSCERE = document.getElementById("tc.morfologia").value;
+        var CISMAG = document.getElementById("cm.morfologia").value;
+        var PFE = document.getElementById("pfe.morfologia").value;
+
+        var CEREVLP = document.getElementById("vlp.morfologia").value;
+        var CEREVLD = document.getElementById("vld.morfologia").value;
+        var CAVUM = document.querySelector('input[name="cspp.morfologia"]:checked').value;
+        var CCV = document.querySelector('input[name="ccv.morfologia"]:checked').value;
+        var CUELLO = document.querySelector('input[name="cn.morfologia"]:checked').value;
+        var LNN = document.querySelector('input[name="lnn.morfologia"]:checked').value;
+        var CORACV = document.querySelector('input[name="cv.morfologia"]:checked').value;
+        var CORATSPN = document.querySelector('input[name="tspn.morfologia"]:checked').value;
+        var CORATSAN = document.querySelector('input[name="tsan.morfologia"]:checked').value;
+        var CORAVTV = document.querySelector('input[name="vtv.morfologia"]:checked').value;
+        var TN = document.querySelector('input[name="tn.morfologia"]:checked').value;
+        var ABDO = document.querySelector('input[name="abdo.morfologia"]:checked').value;
+        var PARNOR = document.querySelector('input[name="pn.morfologia"]:checked').value;
+        var ESTOV = document.querySelector('input[name="ev.morfologia"]:checked').value;
+        var RINOV = document.querySelector('input[name="rv.morfologia"]:checked').value;
+        var VEJIV = document.querySelector('input[name="vv.morfologia"]:checked').value;
+        var COLUMN = document.querySelector('input[name="cn.morfologia"]:checked').value;
+        var EXSUP = document.querySelector('input[name="esn.morfologia"]:checked').value;
+        var EXINF = document.querySelector('input[name="ein.morfologia"]:checked').value;
+        var GEN = document.querySelector('input[name="gen.morfologia"]:checked').value;
+        var AUD = document.getElementById("art.ut.d.morfologia").value;
+        var AUI = document.getElementById("art.ut.i.morfologia").value;
+        var AUP = document.getElementById("art.ut.prom.morfologia").value;
+        var AU = document.getElementById("art.umb.morfologia").value;
+        var CM = document.getElementById("art.cm.morfologia").value;
+        var ICEREP = document.getElementById("ind.cp.morfologia").value;
+        var PACM = document.getElementById("p.sis.morfologia").value;
+        var DUCV = document.getElementById("dv.morfologia").value;
+        var LARCERV = document.getElementById("lc.morfologia").value;
+        var INDI = document.getElementById("seguimiento.morfologia").value;
+        var COMENTARIO = document.getElementById("biometria.comentario.morfologia").value +  document.getElementById("morfologia.comentario.morfologia").value +  document.getElementById("conclusion.morfologia").value;
+
+        InformeString = InformeString.replace(":FUR", fur);
+        InformeString = InformeString.replace(":EG", eg);
+        InformeString = InformeString.replace(":FPP", fpp);
+        InformeString = InformeString.replace(":DATEINFORME", dateInf);
+
+        InformeString = InformeString.replace(":PACIENTE", paciente);
+        InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
+        InformeString = InformeString.replace(":FEXAMEN", fexamen);
+        InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
+        InformeString = InformeString.replace(":MOTIVO", motivo);
+        InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
+        InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
+
+
+        InformeString = InformeString.replace(":ACTCAR", ACTCAR);
+        InformeString = InformeString.replace(":MOVFET", MOVFET);
+        InformeString = InformeString.replace(":EMB", EMB);
+        InformeString = InformeString.replace(":PRESENT", PRESENT);
+        InformeString = InformeString.replace(":DORSOFET", DORSOFET);
+        InformeString = InformeString.replace(":ANTECESA", ANTECESA);
+        InformeString = InformeString.replace(":PLAUB", PLAUB);
+        InformeString = InformeString.replace(":PLAIN", PLAIN);
+        InformeString = InformeString.replace(":BVMCUA", BVMCUA);
+        InformeString = InformeString.replace(":BVMMED", BVMMED);
+        InformeString = InformeString.replace(":ILA", ILA);
+        InformeString = InformeString.replace(":DBP", DBP);
+        InformeString = InformeString.replace(":DOF", DOF);
+        InformeString = InformeString.replace(":CC", CC);
+        InformeString = InformeString.replace(":CA", CA);
+        InformeString = InformeString.replace(":FEMUR", FEMUR);
+        InformeString = InformeString.replace(":HUMERO", HUMERO);
+        InformeString = InformeString.replace(":INDCEF", INDCEF);
+        InformeString = InformeString.replace(":TRANSCERE", TRANSCERE);
+        InformeString = InformeString.replace(":CISMAG", CISMAG);
+        InformeString = InformeString.replace(":PFE", PFE);
+        InformeString = InformeString.replace(":CEREVLP", CEREVLP);
+        InformeString = InformeString.replace(":CEREVLD", CEREVLD);
+        InformeString = InformeString.replace(":CAVUM", CAVUM);
+        InformeString = InformeString.replace(":CCV", CCV);
+        InformeString = InformeString.replace(":CUELLO", CUELLO);
+        InformeString = InformeString.replace(":LNN", LNN);
+        InformeString = InformeString.replace(":CORACV", CORACV);
+        InformeString = InformeString.replace(":CORATSPN", CORATSPN);
+        InformeString = InformeString.replace(":CORATSAN", CORATSAN);
+
+        InformeString = InformeString.replace(":CORAVTV", CORAVTV);
+        InformeString = InformeString.replace(":TN", TN);
+        InformeString = InformeString.replace(":ABDO", ABDO);
+        InformeString = InformeString.replace(":PARNOR", PARNOR);
+        InformeString = InformeString.replace(":ESTOV", ESTOV);
+        InformeString = InformeString.replace(":RINOV", RINOV);
+        InformeString = InformeString.replace(":VEJIV", VEJIV);
+        InformeString = InformeString.replace(":COLUMN", COLUMN);
+        InformeString = InformeString.replace(":EXSUP", EXSUP);
+        InformeString = InformeString.replace(":EXINF", EXINF);
+        InformeString = InformeString.replace(":GEN", GEN);
+        InformeString = InformeString.replace(":AUD", AUD);
+        InformeString = InformeString.replace(":AUI", AUI);
+        InformeString = InformeString.replace(":AUP", AUP);
+        InformeString = InformeString.replace(":AU", AU);
+        InformeString = InformeString.replace(":CM", CM);
+        InformeString = InformeString.replace(":ICEREP", ICEREP);
+
+        InformeString = InformeString.replace(":PACM", PACM);
+        InformeString = InformeString.replace(":DUCV", DUCV);
+        InformeString = InformeString.replace(":LARCERV", LARCERV);
+        InformeString = InformeString.replace(":INDI", INDI);
+        InformeString = InformeString.replace(":COMENTARIO", COMENTARIO);
+
+        imprInforme(InformeString);
+    })
+
     $("#modalPreInfEcoObsSegTrim2").on("click", function(){
         var cb = parseInt($('#cerebelo').val());
         var lh = parseInt($('#lh').val());
@@ -923,11 +1068,11 @@ $( document ).ready(function() {
         let fpp = new Date(Date.parse(document.getElementById("fpp").value));
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
         let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
-        
+
         var bvm = document.getElementById("bvmDoppler").value;
         var comentario = document.getElementById("comentarios-doppler").value;
         comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
-        
+
         var motivoDoppler = document.getElementById("motivo-doppler").value;
         var antecedentes = document.getElementById("antecedentes-doppler").value;
         var motilidad = document.getElementById("motilidad-doppler").value;
@@ -1016,9 +1161,9 @@ $( document ).ready(function() {
         }else{
             InformeString += '<tr> <td style="border-top: 1px dashed #045dab;"></td><td style="border-top: 1px dashed #045dab;"></td><td style="border-top: 1px dashed #045dab;"></td><td style="border-top: 1px dashed #045dab;"></td></tr>';
         }
-        
+
         InformeString += '</tbody></table></div><div class="container"> <p style="padding-bottom: 0px; margin-bottom: 0px;"><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container"> <p class="text-right top40" style="margin-right: 100px;">Ecografista: :ECOGRAFISTA</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p class="pie-pagina"> * Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32 <br/> ** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127 <br/> *** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 </p><p class="pie-pagina-dos"> Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br/> <strong> El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
-        
+
         InformeString = InformeString.replace(":PACIENTE", paciente);
         InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
         InformeString = InformeString.replace(":MOTIVO", motivo);
@@ -6336,7 +6481,7 @@ function bvm() {
         var dos = bvm - a[eg];
         var resultado = parseInt(90 / (uno) * (dos) + 5);
         ajustarProgreso(resultado, "bvmPct");
-        $("#bvmPct").val(resultado);
+        $("#bvmPctRpt").val(resultado);
     }
 }
 
