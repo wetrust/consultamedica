@@ -116,13 +116,13 @@
         <div class="row py-2">
                 <div class="col">
                     <div class="form-group mb-0">
-                        <label class="text-white">Fecha de última mestruación</label>
+                        <label class="text-white">A) Fecha de última mestruación</label>
                         <input class="form-control bg-verde text-white" type="date" id="fum">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group mb-0">
-                        <label class="text-white">Edad Gestacional</label>
+                        <label class="text-white">B) Edad gestacional</label>
                         <div class="row">
                             <div class="col">
                                 <select id="semanas" class="form-control bg-verde text-white"></select>
@@ -141,14 +141,14 @@
                 </div>
                 <div class="col">
                     <div class="form-group mb-0">
-                        <label class="text-white">Fecha probable de parto</label>
-                        <input type="date" class="form-control bg-verde text-white" id="fpp" readonly>
+                        <label class="text-white">C) Fecha probable de parto</label>
+                        <input type="date" class="form-control bg-claro text-white" id="fpp" readonly>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group mb-0">
-                        <label class="text-white">Fecha de exámen (Modificable)</label>
-                        <input class="form-control bg-verde-claro text-white" type="date" id="fee">
+                        <label class="text-white">C) Fecha de exámen (Modificable)</label>
+                        <input class="form-control bg-verde-verde text-white" type="date" id="fee">
                     </div>
                 </div>
         </div>
@@ -1296,14 +1296,14 @@
     <div class="container d-none" id="consulta">
         <div class="card my-3 shadow-sm">
             <div class="card-body">
-            <p><strong>Instructivo cálculos de edad gestacional:</strong></p>
-            <p class="bg-faded text-left">a) <em>Cálculos de edad gestacional y fecha probable de parto (FPP) a partir de fecha referida por la paciente.<br>b) De forma inversa, obtener fecha de ultima mestruación (FUM) y FPP a partir de edad gestacional referida.<br>C) Para evaluación de exámenes anteriores, el software dispone de la opción &laquo; fecha de examen modificable &raquo;</em></p>
+            <p><strong>Instructivo cálculo de edad gestacional:</strong></p>
+            <p class="bg-faded text-left ml-5">a) <em>Cálculo de edad gestacional y fecha probable de parto (FPP) según fecha última mestruación (FUM) referida.<br>b) De forma inversa, obtener FUM y FPP a partir de edad gestacional referida (ya determinada por ecografía).<br>c) Para evaluación de exámenes anteriores, el software dispone de la opción &laquo; fecha de examen modificable &raquo;</em></p>
             <hr class="btn-consulta">
             <div class="card mx-5" style="background-color:#ebefff;">
                 <div class="card-body">
                     <div class="row mb-3">
                         <div class="col-9">
-                            <h6 class="card-title text-dark text-left mt-2 mb-4 ml-4">- Configuración datos propios de cada unidad ultrasonográficas.</h6>
+                            <h6 class="card-title text-dark text-left mt-2 mb-4 ml-4">- Configuración datos propios de cada unidad ultrasonográfica.</h6>
                         </div>
                         <div class="col-3">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
