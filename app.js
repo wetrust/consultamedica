@@ -833,7 +833,7 @@ $( document ).ready(function() {
     });
 
     $("#informe\\.morfologia").on("click", function(){
-        InformeString = '<div class="container-fluid" style="margin-top: 5rem;"> <h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <p><strong>Paciente Sra. (Srta.):</strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Edad Materna:</strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Fecha de Exámen:</strong>:FEXAMEN</p><p><strong> ID Paciente:</strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Motivo de exámen:</strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Patología Obstétrica:</strong>:PATOLOGIAOBSTETRICA</p><p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">BIOMETRÍA</strong></p><p> Actividad cardíaca: :ACTCAR <br/> Movimientos fetales: :MOVFET <br/> Embarazo: :EMB <br/> Presentación: :PRESENT <br/> Dorso fetal: :DORSOFET <br/> Antecedentes Cesárea previa?: :ANTECESA <br/> Placenta Ubicación: :PLAUB <br/> Placenta inserción: :PLAIN <br/> Liquido amniótico Medicion cualitativa: :BVMCUA <br/> Liquido Amniótico Medicion Única Bolsillo Mayor (BVM): :BVMMED <br/> </p><p>Liquido Amniótico Sumatoria de 4 cuadrantes (ILA): :ILA</p><p> DBP: :DBP <br/> DOF: :DOF <br/> CC: :CC <br/> CA: :CA <br/> Femur: :FEMUR <br/> Humero: :HUMERO <br/> Índice Cefálico: :INDCEF <br/> Transverso cerebeloso: :TRANSCERE <br/> Cisterna magna: :CISMAG <br/> Peso Fetal estimado: :PFE </p><p><strong style="color: #045dab;">MORFOLOGÍA</strong></p><p> Cerebro Ventrículo Lateral proximal: :CEREVLP <br/> Cerebro Ventrículo Lateral distal: :CEREVLD <br/> Cavum SP presente: :CAVUM <br/> Cuerpo calloso visible: :CCV <br/> Cuello normal: :CUELLO <br/> Labio nariz normal: :LNN <br/> Corazón 4 cámaras visible: :CORACV <br/> Corazón Tracto de salida pulmonar normal: :CORATSPN <br/> Corazón Tracto salida Aórtico normal: :CORATSAN <br/> Corazón 3 vasos tráquea visible: :CORAVTV </p><p> Tórax Normal: :TN <br/> Abdomen: :ABDO <br/> Pared normal: :PARNOR <br/> Estómago visible: :ESTOV <br/> Riñones visibles: :RINOV <br/> Vejiga visible: :VEJIV <br/> Columna normal: :COLUMN <br/> Extremidades superiores normales: :EXSUP <br/> Extremidades inferiores normales: :EXINF <br/> Genitales: :GEN </p><p>&nbsp;</p><p>&nbsp;</p><p></p><p><strong style="color: #045dab;">FLUJOMETRÍA</strong></p><p> IP Arteria uterina derecha: :AUD <br/> IP Arteria uterina izquierda: :AUI <br/> IP Arteria uterinas promedio: :AUP <br/> IP Arteria Umbilical: :AU <br/> IP Arteria cerebral media: :CM <br/> IP Índice cerebro placentario: :ICEREP <br/> Peak sistólico de ACM: :PACM <br/> Ductus venoso: :DUCV <br/> Largo cervical: :LARCERV </p><p>Indicaciones (seguimiento): :INDI</p></div><div class="container-fluid"> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 5rem;"> <p class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block; margin-top: 5rem;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p></div>';
+        InformeString = '<div class="container-fluid" style="margin-top: 5rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <p><strong>Paciente Sra. (Srta.):</strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Edad Materna:</strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Fecha de Exámen:</strong>:FEXAMEN</p><p><strong> ID Paciente:</strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Motivo de exámen:</strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Patología Obstétrica:</strong>:PATOLOGIAOBSTETRICA</p><p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">BIOMETRÍA</strong></p><p> Actividad cardíaca: :ACTCAR , Movimientos fetales: :MOVFET , Embarazo: :EMB <br/> Presentación: :PRESENT , Dorso fetal: :DORSOFET , Antecedentes Cesárea previa?: :ANTECESA <br/> Placenta Ubicación: :PLAUB , Placenta inserción: :PLAIN <br/> Liquido amniótico Medicion cualitativa: :BVMCUA ,Liquido Amniótico Medicion Única Bolsillo Mayor (BVM): :BVMMED <br/> Liquido Amniótico Sumatoria de 4 cuadrantes (ILA): :ILA</p><table class="table"> <tbody> <tr> <th style="color: #045dab;">BIOMETRÍA FETAL</th> <th style="text-align: center;">Valor observado</th> <th class="text-center">Pct de Crecimiento</th> <th class="text-center">Rango percentilar</th> </tr><tr> <td class="p-0 pl-3">DBP (Hadlock):</td><td class="p-0 pl-3 text-center">:DBP</td><td class="p-0 pl-3 text-center">:DBPPCT</td><td class="p-0 pl-3 text-center">:DBPRANGO</td></tr><tr> <td class="p-0 pl-3">DOF:</td><td class="p-0 pl-3 text-center">:DOF</td><td class="p-0 pl-3 text-center">:DOFPCT</td><td class="p-0 pl-3 text-center">:DOFRANGO</td></tr><tr> <td class="p-0 pl-3">CC (Hadlock):</td><td class="p-0 pl-3 text-center">:CC</td><td class="p-0 pl-3 text-center">:CCPCT</td><td class="p-0 pl-3 text-center">:CCRANGO</td></tr><tr> <td class="p-0 pl-3">CA (Hadlock):</td><td class="p-0 pl-3 text-center">:CA</td><td class="p-0 pl-3 text-center">:CAPCT</td><td class="p-0 pl-3 text-center">:CARANGO</td></tr><tr> <td class="p-0 pl-3">Femur (Hadlock):</td><td class="p-0 pl-3 text-center">:FEMUR</td><td class="p-0 pl-3 text-center">:FEMURPCT</td><td class="p-0 pl-3 text-center">:FEMURRANGO</td></tr><tr> <td class="p-0 pl-3">Humero (Jeanty):</td><td class="p-0 pl-3 text-center">:HUMERO</td><td class="p-0 pl-3 text-center">:HUMEROPCT</td><td class="p-0 pl-3 text-center">:HUMERORANGO</td></tr><tr> <td class="p-0 pl-3">Índice Cefálico:</td><td class="p-0 pl-3 text-center">:INDCEF</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3">Transverso cerebeloso:</td><td class="p-0 pl-3 text-center">:TRANSCERE</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3">Cisterna magna:</td><td class="p-0 pl-3 text-center">:CISMAG</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3" style="border-top: 1px dashed #045dab;"><strong>Peso Fetal Estimado según fórmula de Hadlock 3(CC-CA-LF)</strong></td><td class="p-0 pl-3" style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFE</strong></td><td class="p-0 pl-3" style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFEPCT</strong></td><td class="p-0 pl-3" style="text-align: center; border-top: 1px dashed #045dab;"><strong>:PFERANGO</strong></td></tr><tr> <th class="p-0 pl-3" style="color: #045dab;">FLUJOMETRÍA</th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> </tr><tr> <td class="p-0 pl-3">IP Arteria uterina derecha:</td><td class="p-0 pl-3 text-center">:AUD</td><td class="p-0 pl-3 text-center">:DBPPCT</td><td class="p-0 pl-3 text-center">:DBPRANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria uterina izquierda:</td><td class="p-0 pl-3 text-center">:AUI</td><td class="p-0 pl-3 text-center">:DOFPCT</td><td class="p-0 pl-3 text-center">:DOFRANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria uterinas promedio:</td><td class="p-0 pl-3 text-center">:AUP</td><td class="p-0 pl-3 text-center">:CCPCT</td><td class="p-0 pl-3 text-center">:CCRANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria Umbilical:</td><td class="p-0 pl-3 text-center">:AU</td><td class="p-0 pl-3 text-center">:CAPCT</td><td class="p-0 pl-3 text-center">:CARANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria cerebral media:</td><td class="p-0 pl-3 text-center">:CM</td><td class="p-0 pl-3 text-center">:HUMEROPCT</td><td class="p-0 pl-3 text-center">:HUMERORANGO</td></tr><tr> <td class="p-0 pl-3">IP Índice cerebro placentario:</td><td class="p-0 pl-3 text-center">:ICEREP</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3">Peak sistólico de ACM:</td><td class="p-0 pl-3 text-center">:PACM</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3">Ductus venoso:</td><td class="p-0 pl-3 text-center">:DUCV</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3">Largo cervical:</td><td class="p-0 pl-3 text-center">:LARCERV</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr></tbody> </table> <p>Indicaciones (seguimiento): :INDI</p><div class="newpage"> <p><strong style="color: #045dab;">MORFOLOGÍA</strong></p><p> Cerebro Ventrículo Lateral proximal: :CEREVLP <br/> Cerebro Ventrículo Lateral distal: :CEREVLD <br/> Cavum SP presente: :CAVUM <br/> Cuerpo calloso visible: :CCV <br/> Cuello normal: :CUELLO <br/> Labio nariz normal: :LNN <br/> Corazón 4 cámaras visible: :CORACV <br/> Corazón Tracto de salida pulmonar normal: :CORATSPN <br/> Corazón Tracto salida Aórtico normal: :CORATSAN <br/> Corazón 3 vasos tráquea visible: :CORAVTV </p><p> Tórax Normal: :TN <br/> Abdomen: :ABDO <br/> Pared normal: :PARNOR <br/> Estómago visible: :ESTOV <br/> Riñones visibles: :RINOV <br/> Vejiga visible: :VEJIV <br/> Columna normal: :COLUMN <br/> Extremidades superiores normales: :EXSUP <br/> Extremidades inferiores normales: :EXINF <br/> Genitales: :GEN </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 5rem;"> <p class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block; margin-top: 5rem;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p></div>';
 
         let fur = new Date(Date.parse(document.getElementById("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
@@ -851,23 +851,42 @@ $( document ).ready(function() {
         var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
         var edadmaterna = $( "select[name='edad_materna']").val();
 
-        var ACTCAR = document.getElementById("actividad.cardiaca.morfologia").value;
-        var MOVFET = document.getElementById("movimientos.fetales.morfologia").value;
-        var EMB = document.getElementById("embarazo.morfologica").value;
-        var PRESENT = document.getElementById("presentacion.morfologia").value;
-        var DORSOFET = document.getElementById("dorso.morfologia").value;
-        var ANTECESA = document.getElementById("antecedentes.cesarea.morfologia").value;
-        var PLAUB = document.getElementById("placenta.ubicacion.morfologia").value;
+        var ACTCAR = the("actividad.cardiaca.morfologia").value;
+        var MOVFET = the("movimientos.fetales.morfologia").value;
+        var EMB = the("embarazo.morfologica").value;
+        var PRESENT = the("presentacion.morfologia").value;
+        var DORSOFET = the("dorso.morfologia").value;
+        var ANTECESA = the("antecedentes.cesarea.morfologia").value;
+        var PLAUB = the("placenta.ubicacion.morfologia").value;
         var PLAIN = document.getElementById("placenta.insercion.morfologia").value;
         var BVMCUA = document.getElementById("liquido.cualitativo.morfologia").value;
         var BVMMED = document.getElementById("liquido.semi.morfologia").value;
         var ILA = document.getElementById("liquido.ila.suma.morfologia").value;
+
         var DBP = document.getElementById("dbp.morfologia").value;
+        var DBPPCT = document.getElementById("dbp.pct.morfologia").value;
+        var DBPRANGO = oldProgress(document.getElementById("dbp.pct.real.morfologia").value);
+
         var DOF = document.getElementById("dof.morfologia").value;
+        var DOFPCT = document.getElementById("dof.pct.morfologia").value;
+        var DOFRANGO = oldProgress(document.getElementById("dof.pct.real.morfologia").value);
+
         var CC = document.getElementById("pc.morfologia").value;
+        var CCPCT = document.getElementById("pc.pct.morfologia").value;
+        var CCRANGO = oldProgress(document.getElementById("pc.pct.real.morfologia").value);
+
         var CA = document.getElementById("pa.morfologia").value;
+        var CAPCT = document.getElementById("pa.pct.morfologia").value;
+        var CARANGO = oldProgress(document.getElementById("pa.pct.real.morfologia").value);
+
         var FEMUR = document.getElementById("femur.morfologia").value;
+        var FEMURPCT = document.getElementById("femur.pct.morfologia").value;
+        var FEMURRANGO = oldProgress(document.getElementById("femur.pct.real.morfologia").value);
+
         var HUMERO = document.getElementById("humero.morfologia").value;
+        var HUMEROPCT = document.getElementById("humero.pct.morfologia").value;
+        var HUMERORANGO = oldProgress(document.getElementById("humero.pct.real.morfologia").value);
+
         var INDCEF = document.getElementById("dof.ic.morfologia").value;
         var TRANSCERE = document.getElementById("tc.morfologia").value;
         var CISMAG = document.getElementById("cm.morfologia").value;
@@ -918,7 +937,6 @@ $( document ).ready(function() {
         InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
         InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
 
-
         InformeString = InformeString.replace(":ACTCAR", ACTCAR);
         InformeString = InformeString.replace(":MOVFET", MOVFET);
         InformeString = InformeString.replace(":EMB", EMB);
@@ -930,12 +948,27 @@ $( document ).ready(function() {
         InformeString = InformeString.replace(":BVMCUA", BVMCUA);
         InformeString = InformeString.replace(":BVMMED", BVMMED);
         InformeString = InformeString.replace(":ILA", ILA);
+
         InformeString = InformeString.replace(":DBP", DBP);
+        InformeString = InformeString.replace(":DBPPCT", DBPPCT);
+        InformeString = InformeString.replace(":DBPRANGO", DBPRANGO);
+
         InformeString = InformeString.replace(":DOF", DOF);
+        InformeString = InformeString.replace(":DOFPCT", DOFPCT);
+        InformeString = InformeString.replace(":DOFRANGO", DOFRANGO);
         InformeString = InformeString.replace(":CC", CC);
+        InformeString = InformeString.replace(":CCPCT", CCPCT);
+        InformeString = InformeString.replace(":CCRANGO", CCRANGO);
         InformeString = InformeString.replace(":CA", CA);
+        InformeString = InformeString.replace(":CAPCT", CAPCT);
+        InformeString = InformeString.replace(":CARANGO", CARANGO);
         InformeString = InformeString.replace(":FEMUR", FEMUR);
+        InformeString = InformeString.replace(":FEMURPCT", FEMURPCT);
+        InformeString = InformeString.replace(":FEMURRANGO", FEMURRANGO);
         InformeString = InformeString.replace(":HUMERO", HUMERO);
+        InformeString = InformeString.replace(":HUMEROPCT", HUMEROPCT);
+        InformeString = InformeString.replace(":HUMERORANGO", HUMERORANGO);
+
         InformeString = InformeString.replace(":INDCEF", INDCEF);
         InformeString = InformeString.replace(":TRANSCERE", TRANSCERE);
         InformeString = InformeString.replace(":CISMAG", CISMAG);
@@ -4527,6 +4560,9 @@ $(document).ready(function(){
             var uno = b[eg] - a[eg];
             var dos = dbp - a[eg];
             var resultado = (parseInt(95 / (uno) * (dos) + 3));
+
+            document.getElementById("dbp.pct.real.morfologia").value = resultado;
+
             ajustarProgreso(resultado, "dbpMorfologia");
             var pctDBP = '';
             //truncador de Pct, sobre 100 o bajo 1
@@ -4587,6 +4623,8 @@ $(document).ready(function(){
             var uno = b[eg] - a[eg];
             var dos = dof - a[eg];
             var resultado = (parseInt(95 / (uno) * (dos) + 3));
+
+            document.getElementById("dof.pct.real.morfologia").value = resultado;
             ajustarProgreso(resultado, "dofMorfologia");
 
             var pctDOF = '';
@@ -4697,6 +4735,9 @@ $(document).ready(function(){
             var uno=b[eg] - a[eg];
             var dos=ca - a[eg];
             var resultado = parseInt(95 / (uno) * (dos) + 3);
+
+            document.getElementById("pa.pct.real.morfologia").value = resultado;
+
             ajustarProgreso(resultado, "paMorfologia");
             var pctCA = '';
             //truncador de Pct, sobre 100 o bajo 1
@@ -4740,6 +4781,9 @@ $(document).ready(function(){
             var uno=b[eg] - a[eg];
             var dos=lf - a[eg];
             var resultado = parseInt(95 / (uno) * (dos) + 3);
+
+            document.getElementById("femur.pct.real.morfologia").value = resultado;
+
             ajustarProgreso(resultado, "femurMorfologia");
             var pctLF = '';
             //truncador de Pct, sobre 100 o bajo 1
@@ -4795,6 +4839,9 @@ $(document).ready(function(){
             var uno = b[eg] - a[eg];
             var dos = lh - a[eg];
             var resultado = (parseInt(90 / (uno) * (dos) + 5));
+
+            document.getElementById("humero.pct.real.morfologia").value = resultado;
+
             ajustarProgreso(resultado, "humeroMorfologia");
             var pctLH = '';
             //truncador de Pct, sobre 100 o bajo 1
@@ -4858,6 +4905,8 @@ $(document).ready(function(){
             var dos=cb - pct2ds[eg];
             var resultado = parseInt(95 / (uno) * (dos) + 3);
             var pctCB = '';
+
+            document.getElementById("tc.pct.real.morfologia").value = resultado;
             //truncador de Pct, sobre 100 o bajo 1
             if (resultado > 97){
                 pctCB = '> 97';
@@ -4917,6 +4966,9 @@ $(document).ready(function(){
             var uno = cisM90[eg] - cisM10[eg];
             var dos = cm - cisM10[eg];
             var resultado = (parseInt(90 / (uno) * (dos) + 5));
+
+            document.getElementById("cm.pct.real.morfologia").value = resultado;
+
             var pctCISM = '';
             //truncador de Pct, sobre 100 o bajo 1
             if (resultado > 95){
@@ -5653,12 +5705,12 @@ function uuidv4() {
 function imprInforme(datos){
 	var document = '<!DOCTYPE html><html lang="es-CL"> <head> <meta charset="utf-8"/> <title>Impresión de Gráficos</title> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/> <link rel="stylesheet" href="consulta.css"/> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/> :ESTILO </head> <body> <div class="container"><div style="width: 45%; text-align: center;" class="membrete">:MEMBRETE</div></div><div class="container" style="margin-top: 50px !important;">:DATOS</div>:FUNCION </body></html>';
 	var ventimp = window.open(" ","popimpr");
-	var estilo = '<style>@media print{.pie-pagina{font-size:0.9rem;}.pie-pagina-dos{font-size:1rem;}*, ::after, ::before{box-sizing: border-box;}body{margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529; background-color: #fff; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent;}[tabindex="-1"]:focus:not(:focus-visible){outline: 0 !important;}hr{margin: 1rem 0; color: inherit; background-color: currentColor; border: 0; opacity: 0.25;}hr:not([size]){height: 1px;}h1, h2, h3, h4, h5, h6{margin-top: 0; margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2;}h1{font-size: calc(1.375rem + 1.5vw);}h2{font-size: calc(1.325rem + 0.9vw);}h3{font-size: calc(1.3rem + 0.6vw);}h4{font-size: calc(1.275rem + 0.3vw);}h5{font-size: 1.25rem;}h6{font-size: 1rem;}p{margin-top: 0; margin-bottom: 1rem;}ol, ul{padding-left: 2rem;}dl, ol, ul{margin-top: 0; margin-bottom: 1rem;}ol ol, ol ul, ul ol, ul ul{margin-bottom: 0;}b, strong{font-weight: bolder;}small{font-size: 0.875em;}mark{padding: 0.2em; background-color: #fcf8e3;}sub, sup{position: relative; font-size: 0.75em; line-height: 0; vertical-align: baseline;}sub{bottom: -0.25em;}sup{top: -0.5em;}a{color: #0d6efd; text-decoration: underline;}a:hover{color: #024dbc;}a:not([href]):not([class]), a:not([href]):not([class]):hover{color: inherit; text-decoration: none;}code, kbd, pre, samp{font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 1em;}pre{display: block; margin-top: 0; margin-bottom: 1rem; overflow: auto; font-size: 0.875em; -ms-overflow-style: scrollbar;}pre code{font-size: inherit; color: inherit; word-break: normal;}code{font-size: 0.875em; color: #d63384; word-wrap: break-word;}a > code{color: inherit;}.membrete::first-letter{font-size: 1.3rem;}.membrete::first-line{font-size: 1.3rem;}table{caption-side: bottom; border-collapse: collapse;}caption{padding-top: 0.5rem; padding-bottom: 0.5rem; color: #6c757d; text-align: left;}th{text-align: inherit; text-align: -webkit-match-parent;}tbody, td, tfoot, th, thead, tr{border-color: inherit; border-style: solid; border-width: 0;}label{display: inline-block;}[hidden]{display: none !important;}.pie-pagina-dos{font-size: 10px;}#lineclear{clear: both;}.table{--bs-table-bg: transparent; --bs-table-accent-bg: transparent; --bs-table-striped-color: #212529; --bs-table-striped-bg: rgba(0, 0, 0, 0.05); --bs-table-active-color: #212529; --bs-table-active-bg: rgba(0, 0, 0, 0.1); --bs-table-hover-color: #212529; --bs-table-hover-bg: rgba(0, 0, 0, 0.075); width: 100%; margin-bottom: 1rem; color: #212529; vertical-align: top; border-color: #dee2e6;}.table > :not(caption) > * > *{padding: 0.5rem 0.5rem; background-color: var(--bs-table-bg); background-image: linear-gradient(var(--bs-table-accent-bg), var(--bs-table-accent-bg)); border-bottom-width: 1px;}.table > tbody{vertical-align: inherit;}.table > thead{vertical-align: bottom;}.table > :not(:last-child) > :last-child > *{border-bottom-color: currentColor;}.caption-top{caption-side: top;}.table-sm > :not(caption) > * > *{padding: 0.25rem 0.25rem;}.table-bordered > :not(caption) > *{border-width: 1px 0;}.table-bordered > :not(caption) > * > *{border-width: 0 1px;}.table-borderless > :not(caption) > * > *{border-bottom-width: 0;}.table-striped > tbody > tr:nth-of-type(odd){--bs-table-accent-bg: var(--bs-table-striped-bg); color: var(--bs-table-striped-color);}.table-active{--bs-table-accent-bg: var(--bs-table-active-bg); color: var(--bs-table-active-color);}.table-hover > tbody > tr:hover{--bs-table-accent-bg: var(--bs-table-hover-bg); color: var(--bs-table-hover-color);}.table-primary{--bs-table-bg: #bbd6fe; --bs-table-striped-bg: #b3cdf3; --bs-table-striped-color: #212529; --bs-table-active-bg: #acc4e9; --bs-table-active-color: #212529; --bs-table-hover-bg: #afc9ee; --bs-table-hover-color: #212529; color: #212529; border-color: #acc4e9;}.table-secondary{--bs-table-bg: #d6d8db; --bs-table-striped-bg: #cdcfd2; --bs-table-striped-color: #212529; --bs-table-active-bg: #c4c6c9; --bs-table-active-color: #212529; --bs-table-hover-bg: #c8cbce; --bs-table-hover-color: #212529; color: #212529; border-color: #c4c6c9;}.table-success{--bs-table-bg: #c3e6cb; --bs-table-striped-bg: #bbdcc3; --bs-table-striped-color: #212529; --bs-table-active-bg: #b3d3bb; --bs-table-active-color: #212529; --bs-table-hover-bg: #b7d8bf; --bs-table-hover-color: #212529; color: #212529; border-color: #b3d3bb;}.table-info{--bs-table-bg: #bee5eb; --bs-table-striped-bg: #b6dbe1; --bs-table-striped-color: #212529; --bs-table-active-bg: #aed2d8; --bs-table-active-color: #212529; --bs-table-hover-bg: #b2d7dc; --bs-table-hover-color: #212529; color: #212529; border-color: #aed2d8;}.table-warning{--bs-table-bg: #ffeeba; --bs-table-striped-bg: #f4e4b3; --bs-table-striped-color: #212529; --bs-table-active-bg: #e9daac; --bs-table-active-color: #212529; --bs-table-hover-bg: #eedfaf; --bs-table-hover-color: #212529; color: #212529; border-color: #e9daac;}.table-danger{--bs-table-bg: #f5c6cb; --bs-table-striped-bg: #eabec3; --bs-table-striped-color: #212529; --bs-table-active-bg: #e0b6bb; --bs-table-active-color: #212529; --bs-table-hover-bg: #e5babf; --bs-table-hover-color: #212529; color: #212529; border-color: #e0b6bb;}.table-light{--bs-table-bg: #f8f9fa; --bs-table-striped-bg: #edeef0; --bs-table-striped-color: #212529; --bs-table-active-bg: #e3e4e5; --bs-table-active-color: #212529; --bs-table-hover-bg: #e8e9ea; --bs-table-hover-color: #212529; color: #212529; border-color: #e3e4e5;}.table-dark{--bs-table-bg: #343a40; --bs-table-striped-bg: #3e444a; --bs-table-striped-color: #fff; --bs-table-active-bg: #484e53; --bs-table-active-color: #fff; --bs-table-hover-bg: #43494e; --bs-table-hover-color: #fff; color: #fff; border-color: #484e53;}.table-responsive{overflow-x: auto; -webkit-overflow-scrolling: touch;}}</style>';
+	var estilo = '<style>@media print{.newpage{ page-break-before: always }.pie-pagina{font-size:0.9rem;}.pie-pagina-dos{font-size:1rem;}*, ::after, ::before{box-sizing: border-box;}body{margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529; background-color: #fff; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent;}[tabindex="-1"]:focus:not(:focus-visible){outline: 0 !important;}hr{margin: 1rem 0; color: inherit; background-color: currentColor; border: 0; opacity: 0.25;}hr:not([size]){height: 1px;}h1, h2, h3, h4, h5, h6{margin-top: 0; margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2;}h1{font-size: calc(1.375rem + 1.5vw);}h2{font-size: calc(1.325rem + 0.9vw);}h3{font-size: calc(1.3rem + 0.6vw);}h4{font-size: calc(1.275rem + 0.3vw);}h5{font-size: 1.25rem;}h6{font-size: 1rem;}p{margin-top: 0; margin-bottom: 1rem;}ol, ul{padding-left: 2rem;}dl, ol, ul{margin-top: 0; margin-bottom: 1rem;}ol ol, ol ul, ul ol, ul ul{margin-bottom: 0;}b, strong{font-weight: bolder;}small{font-size: 0.875em;}mark{padding: 0.2em; background-color: #fcf8e3;}sub, sup{position: relative; font-size: 0.75em; line-height: 0; vertical-align: baseline;}sub{bottom: -0.25em;}sup{top: -0.5em;}a{color: #0d6efd; text-decoration: underline;}a:hover{color: #024dbc;}a:not([href]):not([class]), a:not([href]):not([class]):hover{color: inherit; text-decoration: none;}code, kbd, pre, samp{font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 1em;}pre{display: block; margin-top: 0; margin-bottom: 1rem; overflow: auto; font-size: 0.875em; -ms-overflow-style: scrollbar;}pre code{font-size: inherit; color: inherit; word-break: normal;}code{font-size: 0.875em; color: #d63384; word-wrap: break-word;}a > code{color: inherit;}.membrete::first-letter{font-size: 1.3rem;}.membrete::first-line{font-size: 1.3rem;}table{caption-side: bottom; border-collapse: collapse;}caption{padding-top: 0.5rem; padding-bottom: 0.5rem; color: #6c757d; text-align: left;}th{text-align: inherit; text-align: -webkit-match-parent;}tbody, td, tfoot, th, thead, tr{border-color: inherit; border-style: solid; border-width: 0;}label{display: inline-block;}[hidden]{display: none !important;}.pie-pagina-dos{font-size: 10px;}#lineclear{clear: both;}.table{--bs-table-bg: transparent; --bs-table-accent-bg: transparent; --bs-table-striped-color: #212529; --bs-table-striped-bg: rgba(0, 0, 0, 0.05); --bs-table-active-color: #212529; --bs-table-active-bg: rgba(0, 0, 0, 0.1); --bs-table-hover-color: #212529; --bs-table-hover-bg: rgba(0, 0, 0, 0.075); width: 100%; margin-bottom: 1rem; color: #212529; vertical-align: top; border-color: #dee2e6;}.table > :not(caption) > * > *{padding: 0.5rem 0.5rem; background-color: var(--bs-table-bg); background-image: linear-gradient(var(--bs-table-accent-bg), var(--bs-table-accent-bg)); border-bottom-width: 1px;}.table > tbody{vertical-align: inherit;}.table > thead{vertical-align: bottom;}.table > :not(:last-child) > :last-child > *{border-bottom-color: currentColor;}.caption-top{caption-side: top;}.table-sm > :not(caption) > * > *{padding: 0.25rem 0.25rem;}.table-bordered > :not(caption) > *{border-width: 1px 0;}.table-bordered > :not(caption) > * > *{border-width: 0 1px;}.table-borderless > :not(caption) > * > *{border-bottom-width: 0;}.table-striped > tbody > tr:nth-of-type(odd){--bs-table-accent-bg: var(--bs-table-striped-bg); color: var(--bs-table-striped-color);}.table-active{--bs-table-accent-bg: var(--bs-table-active-bg); color: var(--bs-table-active-color);}.table-hover > tbody > tr:hover{--bs-table-accent-bg: var(--bs-table-hover-bg); color: var(--bs-table-hover-color);}.table-primary{--bs-table-bg: #bbd6fe; --bs-table-striped-bg: #b3cdf3; --bs-table-striped-color: #212529; --bs-table-active-bg: #acc4e9; --bs-table-active-color: #212529; --bs-table-hover-bg: #afc9ee; --bs-table-hover-color: #212529; color: #212529; border-color: #acc4e9;}.table-secondary{--bs-table-bg: #d6d8db; --bs-table-striped-bg: #cdcfd2; --bs-table-striped-color: #212529; --bs-table-active-bg: #c4c6c9; --bs-table-active-color: #212529; --bs-table-hover-bg: #c8cbce; --bs-table-hover-color: #212529; color: #212529; border-color: #c4c6c9;}.table-success{--bs-table-bg: #c3e6cb; --bs-table-striped-bg: #bbdcc3; --bs-table-striped-color: #212529; --bs-table-active-bg: #b3d3bb; --bs-table-active-color: #212529; --bs-table-hover-bg: #b7d8bf; --bs-table-hover-color: #212529; color: #212529; border-color: #b3d3bb;}.table-info{--bs-table-bg: #bee5eb; --bs-table-striped-bg: #b6dbe1; --bs-table-striped-color: #212529; --bs-table-active-bg: #aed2d8; --bs-table-active-color: #212529; --bs-table-hover-bg: #b2d7dc; --bs-table-hover-color: #212529; color: #212529; border-color: #aed2d8;}.table-warning{--bs-table-bg: #ffeeba; --bs-table-striped-bg: #f4e4b3; --bs-table-striped-color: #212529; --bs-table-active-bg: #e9daac; --bs-table-active-color: #212529; --bs-table-hover-bg: #eedfaf; --bs-table-hover-color: #212529; color: #212529; border-color: #e9daac;}.table-danger{--bs-table-bg: #f5c6cb; --bs-table-striped-bg: #eabec3; --bs-table-striped-color: #212529; --bs-table-active-bg: #e0b6bb; --bs-table-active-color: #212529; --bs-table-hover-bg: #e5babf; --bs-table-hover-color: #212529; color: #212529; border-color: #e0b6bb;}.table-light{--bs-table-bg: #f8f9fa; --bs-table-striped-bg: #edeef0; --bs-table-striped-color: #212529; --bs-table-active-bg: #e3e4e5; --bs-table-active-color: #212529; --bs-table-hover-bg: #e8e9ea; --bs-table-hover-color: #212529; color: #212529; border-color: #e3e4e5;}.table-dark{--bs-table-bg: #343a40; --bs-table-striped-bg: #3e444a; --bs-table-striped-color: #fff; --bs-table-active-bg: #484e53; --bs-table-active-color: #fff; --bs-table-hover-bg: #43494e; --bs-table-hover-color: #fff; color: #fff; border-color: #484e53;}.table-responsive{overflow-x: auto; -webkit-overflow-scrolling: touch;}}</style>';
 	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
 	var membrete = $("#membrete").val().replace(/\r\n|\r|\n/g,"<br />");
 	document = document.replace(/:DATOS/g, datos);
 	document = document.replace(/:ESTILO/g, estilo);
-	document = document.replace(/:FUNCION/g, funcion);
+	/* document = document.replace(/:FUNCION/g, funcion); */
 	document = document.replace(new RegExp('invisible', 'g'), "");
 	document = document.replace(":MEMBRETE", membrete);
 	ventimp.document.write(document);
@@ -6672,6 +6724,7 @@ function crearInformeEcoSegTrim2(){
 	
 	imprInforme(InformeString);
 }
+
 function valccca() {
     /* 3 97*/
     var cc=parseInt($("#cc").val());
@@ -6775,6 +6828,7 @@ function informeGinecologico(){
 
     return informe;
 }
+
 //destruir
 function modal(button){
     let id = uuidv4();
@@ -6797,6 +6851,7 @@ function modal(button){
         
     return resultado;
 }
+
 function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
       (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
@@ -6831,4 +6886,8 @@ function oldProgress(value){
     })
 
     return result;
+}
+
+function the(id){
+    return document.getElementById(id);
 }
