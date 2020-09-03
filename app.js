@@ -500,6 +500,14 @@ $( document ).ready(function() {
         }
     });
 
+    $("#ver\\.ecoPrimTrim, #ver\\.ecoPrimTrim\\.snoopy, #ver\\.ecoObsSegTrim\\.snoopy, #ver\\.ecoDoppler\\.snoopy").on("click", function(){
+        if (this.checked == true){
+            this.parentElement.parentElement.children[1].classList.remove("d-none");
+        }else{
+            this.parentElement.parentElement.children[1].classList.add("d-none");
+        }
+    });
+
     $("#ver\\.ref\\.morfologia").on("click", function(){
         if (this.checked == true){
             document.getElementById("ver.ref.div.morfologia").classList.remove("d-none");

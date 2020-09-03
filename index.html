@@ -139,16 +139,15 @@
                         <input type="text" class="form-control bg-verde text-white" id="diaciclo" readonly>
                     </div>
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group mb-0">
-                        <label class="text-white">Fecha probable parto</label>
+                        <label class="text-white">Fecha probable de parto</label>
                         <input type="date" class="form-control bg-verde text-white" id="fpp" readonly>
                     </div>
                 </div>
-                <div class="col-1"></div>
                 <div class="col-4">
                     <div class="form-group mb-0">
-                        <label class="text-white text-left">c) ADICIONAL Modificar Fecha de exámen</label>
+                        <label class="text-white text-left">c) Fecha de exámen modificable</label>
                         <input class="form-control bg-verde-claro text-white" type="date" id="fee">
                     </div>
                 </div>
@@ -1299,7 +1298,7 @@
         <div class="card my-3 shadow-sm">
             <div class="card-body">
             <p><strong>Instructivo cálculo de edad gestacional:</strong></p>
-            <p class="bg-faded text-left ml-5">a) <em>Cálculo de edad gestacional y fecha probable de parto (FPP) según fecha última mestruación (FUM) referida.<br>b) De forma inversa, obtener FUM y FPP a partir de edad gestacional referida (ya determinada por ecografía).<br>c) Para evaluación de exámenes anteriores, el software dispone de la opción &laquo; fecha de examen modificable &raquo;</em></p>
+            <p class="bg-faded text-left ml-5">a) <em>Cálculo de edad gestacional y fecha probable de parto (FPP) según fecha última mestruación (FUM) referida.<br>b) De forma inversa, obtener FUM y FPP a partir de edad gestacional referida, determinada previamente.<br>c) Para evaluación de exámenes anteriores, el software dispone de la opción &laquo; fecha de examen modificable &raquo;</em></p>
             <hr class="btn-consulta">
             <div class="card mx-5" style="background-color:#ebefff;">
                 <div class="card-body">
@@ -1343,7 +1342,7 @@
             </div> 
             <div class="row">
                 <div class="col-12 mt-3">
-                    <p class="bg-faded p-2 text-center"><em>La información registrada solo será almacenada temporalmente, a efectos de obtener reporte de informes y / o gráficas de los exámenes ecográficos realizados. Pudiendo además almacenar PDF respectivos en carpeta de su computadora.</em></p>
+                    <p class="bg-faded p-2 text-center"><em>Información registrada solo será almacenada temporalmente, a efectos de obtener reporte de informes y / o gráficas de los exámenes ecográficos.</em></p>
                 </div>
             </div>    
             <hr class="btn-consulta">
@@ -1816,6 +1815,16 @@
                                         <h6 class="bg-gris text-white p-2 rounded text-center">Si no observa saco gestacional, ir a módulo informe <a class="text-white" href="#ecoGinecologica">ecográfico ginecológico</a></h6>
                                     </div>
                                 </div>
+                                <div>
+                                    <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="ver.ecoPrimTrim"> <label class="form-check-label" for="ver.ecoPrimTrim">Principales indicaciones de exámen ecografico precoz (&lt; 11 semanas)</label> </div>
+                                    <ul class="d-none">
+                                        <li style="background-color: #e9ecef"><small>Confirmar embarazo.</small></li>
+                                        <li style="background-color: #e9ecef"><small>Identificar localización del saco gestacional.</small></li>
+                                        <li style="background-color: #e9ecef"><small>Confirmar vitalidad embrionaria.</small></li>
+                                        <li style="background-color: #e9ecef"><small>Determinar corionicidad en gemelar.</small></li>
+                                        <li style="background-color: #e9ecef"><small>Determinación ecográfica de edad gestacional.</small></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1990,16 +1999,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="card mt-3">
-                    <div class="card-body" style="background-color:#eceeef;">
-                        <p>Principales indicaciones de “ecografía precoz” (&lt; 11 S.)</p>
-                        <ul>
-                            <li><small>Confirmación de embarazo.</small></li>
-                            <li><small>Localización intrauterina del saco gestacional.</small></li>
-                            <li><small>Confirmación de vitalidad embrio/fetal.</small></li>
-                            <li><small>Determinar si es embarazo único o múltiple.</small></li>
-                            <li><small>Valoración de edad gestacional ecográfica.</small></li>
-                        </ul>
+                <div class="mx-2">
+                    <div class="form-group form-check text-center"> <input type="checkbox" class="form-check-input" id="ver.ecoPrimTrim.snoopy"> <label class="form-check-label" for="ver.ecoPrimTrim.snoopy">Importante</label> </div>
+                    <div class="row mt-2 d-none">
+                        <div class="col-12">
+                            <img src="img/Snoopy4.png" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
+                            <img src="img/snoopy.png" class="w-50 mt-2 d-block mx-auto" alt="snoopy">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2934,13 +2940,15 @@
                         <div class="btn-group-vertical d-flex my-2">
                             <button class="btn btn-default text-white bg-gris" id="infecoObsSegTrim2"><small>Gráficas edad gestacional</small></button>
                         </div>
-                        <p><small>Cuando fue establecida fecha probable de parto por ecografía temprana confiable, las ecografías posteriores NO DEBERÍAN utilizarse para recalcular edad gestacional.</small></p>
                     </div>
                 </div>
-                <div class="row mt-2">
-                    <div class="col-12">
-                        <img src="img/Snoopy4.png" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
-                        <img src="img/snoopy.png" class="w-50 mt-2 d-block mx-auto" alt="snoopy">
+                <div class="mx-2">
+                    <div class="form-group form-check text-center"> <input type="checkbox" class="form-check-input" id="ver.ecoObsSegTrim.snoopy"> <label class="form-check-label" for="ver.ecoObsSegTrim.snoopy">Importante</label> </div>
+                    <div class="row mt-2 d-none">
+                        <div class="col-12">
+                            <img src="img/Snoopy4.png" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
+                            <img src="img/snoopy.png" class="w-50 mt-2 d-block mx-auto" alt="snoopy">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3273,11 +3281,13 @@
                         </div>
                     </div>
                 </div>
-                <p class="mt-3"><strong>Importante</strong><br><small>Cuociente cerebro placentario de gran utilidad en valoración de la RCF tardía.<br>Ductus venoso, en cambio es fundamental para el manejo de la RCF precoz.</small></p>
-                <div class="row mt-2">
-                    <div class="col-12">
-                        <img src="img/Snoopy4.png" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
-                        <img src="img/snoopy.png" class="w-50 mt-2 d-block mx-auto" alt="snoopy">
+                <div class="mx-2">
+                    <div class="form-group form-check text-center"> <input type="checkbox" class="form-check-input" id="ver.ecoDoppler.snoopy"> <label class="form-check-label" for="ver.ecoDoppler.snoopy">Importante</label> </div>
+                    <div class="row mt-2 d-none">
+                        <div class="col-12">
+                            <img src="img/Snoopy4.png" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
+                            <img src="img/snoopy.png" class="w-50 mt-2 d-block mx-auto" alt="snoopy">
+                        </div>
                     </div>
                 </div>
             </div>
