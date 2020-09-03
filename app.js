@@ -5172,7 +5172,7 @@ $(document).ready(function(){
             utprom = pctut(utprom);
 
             document.getElementById("art.ut.prom.pct.morfologia").value = utprom.pct;
-            document.getElementById("art.ut.prom.pct.real.morfologia").value = ut.raw
+            document.getElementById("art.ut.prom.pct.real.morfologia").value = utprom.raw
             ajustarProgreso(utprom.raw, "artUtPromMorfologia");
 
             if (utprom.raw < 5 || utprom.raw > 95){
@@ -5219,7 +5219,7 @@ $(document).ready(function(){
             utprom = pctut(utprom);
 
             document.getElementById("art.ut.prom.pct.morfologia").value = utprom.pct;
-            document.getElementById("art.ut.prom.pct.real.morfologia").value = ut.raw
+            document.getElementById("art.ut.prom.pct.real.morfologia").value = utprom.raw
             ajustarProgreso(utprom.raw, "artUtPromMorfologia");
 
             if (utprom.raw < 5 || utprom.raw > 95){
