@@ -234,9 +234,9 @@
             <div class="nav nav-tabs d-flex justify-content-between" role="tablist">
               <a class="nav-link bg-secondary text-white active" id="morfologia-general-tab" data-toggle="tab" href="#morfologia-general" role="tab" aria-controls="morfologia-general" aria-selected="true">Modulo 1 | Biometría</a>
               <img class="img-fluid w-100" src="img/bidirectional-arrow.png" alt="flecha" style="max-width: 60px;">
-              <a class="nav-link bg-secondary text-white" id="morfologia-morfologia-tab" data-toggle="tab" href="#morfologia-morfologia" role="tab" aria-controls="morfologia-morfologia" aria-selected="false">Modulo 2 | Morfología</a>
+              <a class="nav-link bg-secondary text-white" id="morfologia-flujometria-tab" data-toggle="tab" href="#morfologia-flujometria" role="tab" aria-controls="morfologia-flujometria" aria-selected="false">Modulo 2 | Flujometría</a>
               <img class="img-fluid w-100" src="img/bidirectional-arrow.png" alt="flecha" style="max-width: 60px;">
-              <a class="nav-link bg-secondary text-white" id="morfologia-flujometria-tab" data-toggle="tab" href="#morfologia-flujometria" role="tab" aria-controls="morfologia-flujometria" aria-selected="false">Modulo 3 | Flujometría</a>
+              <a class="nav-link bg-secondary text-white" id="morfologia-morfologia-tab" data-toggle="tab" href="#morfologia-morfologia" role="tab" aria-controls="morfologia-morfologia" aria-selected="false">Modulo 3 | Morfología</a>
             </div>
         </nav>
         <div class="card mb-2">
@@ -958,20 +958,34 @@
                         <div class="form-group row">
                             <label class="col-sm-4 col-form-label">Genitales</label>
                             <div class="col-sm-2">
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-secondary active">
-                                      <input type="radio" name="gen.morfologia" value="Masculino" checked> M
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                      <input type="radio" name="gen.morfologia" value="Femenino"> F
-                                    </label>
-                                </div>
+                                <select class="form-control shadow border-0" id="gen.morfologia">
+                                    <option value="masculino" selected>Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="no identificable">No identificable</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-4 col-form-label"><strong>Comentarios Morfología</strong></label>
                             <div class="col-sm-8">
                                 <textarea class="form-control" id="morfologia.comentario.morfologia" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="seguimiento.morfologia" class="col-sm-4 col-form-label"><strong>Indicaciones (seguimiento)</strong></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="seguimiento.morfologia">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="ecografista.morfologia" class="col-sm-4 col-form-label">Profesional ecografista</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="ecografista.morfologia">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-4">
+                                <button type="button" class="btn btn-secondary" id="informe.morfologia">Ver Informe</button>
                             </div>
                         </div>
                     </div>
@@ -989,6 +1003,7 @@
                                 <p><small class="text-muted">- Flujometría uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32<br>- Flujometría fetal: Baschat AA, Gembruch U. the cerebroplacental Doppler ratio revisited. Ultrasound Obstet. Ginecol. 2003; 21: 124 - 127<br>- Ductus venoso: Kessler J. y col.: U. Obstet. & Gynecol. 28p 890-b 2006<br>- Peack sistolico de ACM: De Mari G, Deter RL, Carpenter RL y cols. N Engl J Med 342:9, 2000.</small></p>
                             </div>
                         </div>
+                        <p><strong>A) Uterinas y cervix</strong></p>
                         <div class="form-group row">
                             <label for="art.ut.d.morfologia" class="col-sm-3 col-form-label">IP Arteria uterina derecha</label>
                             <div class="col-6 col-lg-3">
@@ -1050,6 +1065,21 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="lc.morfologia" class="col-sm-3 col-form-label strong">Largo cervical</label>
+                            <div class="col-6 col-lg-2">
+                                <div class="input-group mb-2 shadow rounded">
+                                    <input type="number" class="form-control border-0" id="lc.morfologia">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text border-0">mm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <input type="text" class="form-control" id="lc.pct.morfologia" disabled>
+                            </div>
+                        </div>
+                        <p><strong>B) Adicional Dopper fetal</strong></p>
+                        <div class="form-group row">
                             <label for="art.umb.morfologia" class="col-sm-3 col-form-label">IP Arteria Umbilical</label>
                             <div class="col-6 col-lg-3">
                                 <div class="input-group mb-2 shadow rounded">
@@ -1109,21 +1139,6 @@
                                 </div>
                             </div>
                         </div>
-                        <p><strong>Flujometrías adicionales</strong></p>
-                        <div class="form-group row">
-                            <label for="p.sis.morfologia" class="col-sm-3 col-form-label">Peak sistólico de ACM</label>
-                            <div class="col-6 col-lg-3">
-                                <div class="input-group mb-2 shadow rounded">
-                                    <input type="text" class="form-control border-0" id="p.sis.morfologia">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text border-0">MCA-PSV (cm/s)</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2">
-                                <button type="button" class="btn btn-secondary" id="p.sis.grafica.morfologia">Ver gráfica</button>
-                            </div>
-                        </div>
                         <div class="form-group row">
                             <label for="dv.morfologia" class="col-sm-3 col-form-label">Ductus venoso</label>
                             <div class="col-6 col-lg-3">
@@ -1145,40 +1160,23 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="lc.morfologia" class="col-sm-3 col-form-label strong"><strong>Largo cervical</strong></label>
-                            <div class="col-6 col-lg-2">
+                            <label for="p.sis.morfologia" class="col-sm-3 col-form-label">Peak sistólico de ACM</label>
+                            <div class="col-6 col-lg-3">
                                 <div class="input-group mb-2 shadow rounded">
-                                    <input type="number" class="form-control border-0" id="lc.morfologia">
+                                    <input type="text" class="form-control border-0" id="p.sis.morfologia">
                                     <div class="input-group-append">
-                                        <div class="input-group-text border-0">mm</div>
+                                        <div class="input-group-text border-0">MCA-PSV (cm/s)</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-lg-3">
-                                <input type="text" class="form-control" id="lc.pct.morfologia" disabled>
+                            <div class="col-6 col-lg-2">
+                                <button type="button" class="btn btn-secondary" id="p.sis.grafica.morfologia">Ver gráfica</button>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="conclusion.morfologia" class="col-sm-3 col-form-label">Comentarios Flujometría</label>
+                            <label for="conclusion.morfologia" class="col-sm-3 col-form-label"><strong>Comentarios Flujometría</strong></label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="conclusion.morfologia">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="seguimiento.morfologia" class="col-sm-3 col-form-label"><strong>Indicaciones (seguimiento)</strong></label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="seguimiento.morfologia">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="ecografista.morfologia" class="col-sm-3 col-form-label">Profesional ecografista</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="ecografista.morfologia">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-12 col-sm-3">
-                                <button type="button" class="btn btn-secondary" id="informe.morfologia">Ver Informe</button>
                             </div>
                         </div>
                     </div>
