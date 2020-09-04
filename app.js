@@ -993,7 +993,7 @@ $( document ).ready(function() {
         var LARCERVTXT = document.getElementById("lc.pct.morfologia").value;
 
         var INDI = document.getElementById("seguimiento.morfologia").value;
-        var COMENTARIO = document.getElementById("biometria.comentario.morfologia").value + "<br>" + document.getElementById("morfologia.comentario.morfologia").value + "<br>" + document.getElementById("conclusion.morfologia").value;
+        var COMENTARIO = document.getElementById("biometria.comentario.morfologia").value +  "<br>" + document.getElementById("conclusion.morfologia").value + "<br>" + document.getElementById("morfologia.comentario.morfologia").value;
 
         InformeString = InformeString.replace(":FUR", fur);
         InformeString = InformeString.replace(":EG", eg);
