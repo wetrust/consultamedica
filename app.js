@@ -13,7 +13,7 @@ var titulos ={
     "#ecoDoppler": "Flujometría Doppler materno / fetal",
     "#ecoObsSegTrim": "Evaluación del crecimiento fetal",
     "#ecoObsPrimTrim": "Ecografía obstétrica precoz < 11 semanas",
-    "#morfologiafet": 'Ecografía 22 - 24 semanas para evaluación de morfología fetal <span class="text-animado"><strong>(Gentileza Dr. Edgardo Corral)</strong></span>',
+    "#morfologiafet": 'Ecografía 22 - 24 semanas para evaluación de morfología fetal <span class="text-animado"><strong>(Gentileza Dr. Edgardo Corral y equipo de trabajo)</strong></span>',
     "#construccion": 'Módulo en construcción',
     "#ecoGinecologica": "Informe ecográfico ginecológico (Adicional al exámen ecográfico obstétrico)",
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
@@ -674,12 +674,9 @@ $( document ).ready(function() {
         }
     })
 
-    $("#nombre-paciente").on("change", function(){
-        document.getElementById("nombre.morfologia").value = this.value;
-    })
+    $("#nombre-paciente").on("change", function(){ document.getElementById("nombre.morfologia").value = this.value; })
 
     $("#ecografista").on("change", function(){
-
         var nombre = this.options[this.selectedIndex].text
         document.getElementById("ecografista.morfologia").value = nombre;
     })
