@@ -3917,7 +3917,7 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Pick sistólico máximo de ACM";
+        document.getElementById(modal.titulo).innerText = "Gráfico Peak sistólico máximo de ACM";
         document.getElementById(modal.contenido).innerHTML = '<div id="viewGraficopsmACM"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
@@ -3926,7 +3926,7 @@ $( document ).ready(function() {
                                 
         $('#viewGraficopsmACM').highcharts({
         title: {
-            text: 'Pick sistólico máximo de ACM',
+            text: 'Peak sistólico máximo de ACM',
             x: -20 //center
         },
         plotOptions: {
@@ -3960,7 +3960,7 @@ $( document ).ready(function() {
             data: [34.8,36.5,38.2,39.7,41.9,44,46,48,50.4,53,55.4,58,60.9,63.5,66.6,70,73.1,76.5,80.2,84,88,92.5,96.6]
         }, {
             type: "line",
-            name: 'Pick sistólico máximo de ACM',
+            name: 'Peak sistólico máximo de ACM',
             dashStyle: "Dot",
             marker: { symbol: 'square' },
             lineWidth: 0,
