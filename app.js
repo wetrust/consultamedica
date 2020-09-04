@@ -679,11 +679,16 @@ $( document ).ready(function() {
     })
 
     $("#ecografista").on("change", function(){
-        document.getElementById("ecografista.morfologia").value = this.value;
+
+        var nombre = this.options[this.selectedIndex].text
+        document.getElementById("ecografista.morfologia").value = nombre;
     })
 
     $("#morfologia-morfologia-tab").on("click", function(){
-        document.getElementById("ecografista.morfologia").value = document.getElementById("ecografista").value;
+        var elemento = document.getElementById("ecografista");
+        var nombre = elemento.options[elemento.selectedIndex].text
+
+        document.getElementById("ecografista.morfologia").value = nombre;
     })
 });
 
