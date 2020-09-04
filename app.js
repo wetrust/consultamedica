@@ -668,9 +668,9 @@ $( document ).ready(function() {
         if (atrio < 10){
             document.getElementById("atrio.desc.ecoDosTres").value = "Normal"
         }else if (atrio < 16){
-            document.getElementById("atrio.desc.ecoDosTres").value = "Ventriculomegalia Leve"
+            document.getElementById("atrio.desc.ecoDosTres").value = "Ventriculomegalia"
         }else{
-            document.getElementById("atrio.desc.ecoDosTres").value = "Ventriculomegalia severa"
+            document.getElementById("atrio.desc.ecoDosTres").value = "Hidrocefalia"
         }
     })
 
@@ -5487,6 +5487,36 @@ $(document).ready(function(){
             }else{
                 document.getElementById("dv.pct.morfologia").classList.add("is-valid");
             }
+        }
+    })
+
+    $("#vlp\\.morfologia").on("keyup", function(){
+        atrio = this.value;
+        atrio = atrio.toString();
+        atrio = atrio.replace(",", ".");
+        atrio = parseFloat(atrio);
+
+        if (atrio < 10){
+            document.getElementById("vlp.txt.morfologia").value = "Normal"
+        }else if (atrio < 16){
+            document.getElementById("vlp.txt.morfologia").value = "Ventriculomegalia"
+        }else{
+            document.getElementById("vlp.txt.morfologia").value = "Hidrocefalia"
+        }
+    })
+
+    $("#vld\\.morfologia").on("keyup", function(){
+        atrio = this.value;
+        atrio = atrio.toString();
+        atrio = atrio.replace(",", ".");
+        atrio = parseFloat(atrio);
+
+        if (atrio < 10){
+            document.getElementById("vld.txt.morfologia").value = "Normal"
+        }else if (atrio < 16){
+            document.getElementById("vld.txt.morfologia").value = "Ventriculomegalia"
+        }else{
+            document.getElementById("vld.txt.morfologia").value = "Hidrocefalia"
         }
     })
 
