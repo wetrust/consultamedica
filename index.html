@@ -1285,8 +1285,15 @@
                         <img src="img/genitalesInternos.jpg" class="img-fluid w-50" alt="Utero y ovarios">
                     </div>
                 </div>
-                <img src="img/Snoopy4.png" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
-                <img src="img/snoopy.png" class="w-50 mt-2 d-block mx-auto" alt="snoopy">
+                <div class="mx-2">
+                    <div class="form-group form-check text-center"> <input type="checkbox" class="form-check-input" id="ver.ecoGinecologica.snoopy"> <label class="form-check-label" for="ver.ecoObsSegTrim.snoopy">Importante</label> </div>
+                    <div class="row mt-2 d-none">
+                        <div class="col-12">
+                            <img src="img/Snoopy4.png" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
+                            <img src="img/snoopy.png" class="w-50 mt-2 d-block mx-auto" alt="snoopy">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1812,14 +1819,16 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="ver.ecoPrimTrim"> <label class="form-check-label" for="ver.ecoPrimTrim">Principales indicaciones de exámen ecografico precoz (&lt; 11 semanas)</label> </div>
-                                    <ul class="d-none">
-                                        <li style="background-color: #e9ecef"><small>Confirmar embarazo.</small></li>
-                                        <li style="background-color: #e9ecef"><small>Identificar localización del saco gestacional.</small></li>
-                                        <li style="background-color: #e9ecef"><small>Confirmar vitalidad embrionaria.</small></li>
-                                        <li style="background-color: #e9ecef"><small>Determinar corionicidad en gemelar.</small></li>
-                                        <li style="background-color: #e9ecef"><small>Determinación ecográfica de edad gestacional.</small></li>
-                                    </ul>
+                                    <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="ver.ecoPrimTrim"> <label class="form-check-label" for="ver.ecoPrimTrim">Principales indicaciones para ecografía obstétrica precoz (&lt; 11 semanas)</label> </div>
+                                    <div class="d-none p-1 w-50 mx-auto" style="background-color: #e9ecef">
+                                        <ul>
+                                            <li><small>Confirmar embarazo.</small></li>
+                                            <li><small>Identificar localización del saco gestacional.</small></li>
+                                            <li><small>Confirmar vitalidad embrionaria.</small></li>
+                                            <li><small>Determinar corionicidad en gemelar.</small></li>
+                                            <li><small>Determinación ecográfica de edad gestacional.</small></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2607,6 +2616,20 @@
                                 </div>
                                 <p class="my-3"><strong>Adicional evaluación de cráneo</strong></p>
                                 <div class="form-group row">
+                                    <label class="col-12 col-lg-3 col-form-label">- Atrio posterior</label>
+                                    <div class="col-6 col-lg-3">
+                                        <div class="input-group mb-2">
+                                            <input type="number" class="form-control" id="atrio.ecoDosTres">
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">mm</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-4">
+                                        <input type="text" class="form-control" id="atrio.desc.ecoDosTres" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <div class="col mb-2">
                                         <label>- Diámetro cerebeloso transverso</label>
                                     </div>
@@ -2645,20 +2668,6 @@
                                     </div>
                                     <div class="col mb-2">
                                         <button class="btn btn-outline-info" id="graficoCisterna">Ver Gráficas</button>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-12 col-lg-3 col-form-label">- Atrio posterior</label>
-                                    <div class="col-6 col-lg-3">
-                                        <div class="input-group mb-2">
-                                            <input type="number" class="form-control" id="atrio.ecoDosTres">
-                                            <div class="input-group-append">
-                                                <div class="input-group-text">mm</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-lg-4">
-                                        <input type="text" class="form-control" id="atrio.desc.ecoDosTres" disabled>
                                     </div>
                                 </div>
                                 <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="art.ut"> <label class="form-check-label" for="art.ut">Opcional Doppler arterias uterinas</label> </div>
@@ -2770,8 +2779,7 @@
                                         <label>Actividada Cardiaca</label>
                                         <div class="form-group">
                                             <div class="form-check form-check-inline">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" checked="checked" name="accard" value="1"> Si</label>
+                                                <label class="form-check-label"><input class="form-check-input" type="radio" checked="checked" name="accard" value="1" id="accardSi"> Si</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
@@ -2783,8 +2791,7 @@
                                         <label>Mov. Fetales</label>
                                         <div class="form-group">
                                             <div class="form-check form-check-inline">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" checked="checked" name="movfet" value="1"> Si</label>
+                                                <label class="form-check-label"><input class="form-check-input" type="radio" checked="checked" name="movfet" value="1" id="movfetSi"> Si</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
