@@ -683,7 +683,7 @@ $( document ).ready(function() {
     })
 
     $("#morfologia-morfologia-tab").on("click", function(){
-        document.getElementById("ecografista.morfologia").value = this.value;
+        document.getElementById("ecografista.morfologia").value = document.getElementById("ecografista").value;
     })
 });
 
