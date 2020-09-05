@@ -1570,6 +1570,38 @@ $( document ).ready(function() {
             $('#'+modal).modal("hide");
         });
     });
+
+    $("#eco\\.doppler\\.nuevo").on("click", function(){
+        var modal = makeModal("Si");
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementById(modal.titulo).innerText = "Borrar datos Doppler";
+        document.getElementById(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $("#"+modal.button).on("click", function(){
+            let modal =  $(this).data("modal");
+            document.getElementById("aud").value = "";
+            document.getElementById("aui").value = "";
+            document.getElementById("auprom").value = "";
+            document.getElementById("ipau").value = "";
+            document.getElementById("ipacm").value = "";
+            document.getElementById("ccp").value = "";
+            document.getElementById("dv").value = "";
+            document.getElementById("psmACM").value = "";
+            the("liqAmnioDoppler").selectedIndex = 0;
+            document.getElementById("bvmDoppler").value = "";
+            the("liqAmnioDoppler").selectedIndex = 12;
+            the("antecedentes-doppler").selectedIndex = 0;
+            the("presentacion-doppler").selectedIndex = 0;
+            the("motilidad-doppler").selectedIndex = 0;
+            the("ubicacion-doppler").selectedIndex = 0;
+            document.getElementById("comentarios-doppler").value = "";
+            $('#'+modal).modal("hide");
+        });
+    })
 });
 
 //controlador de los keypress
