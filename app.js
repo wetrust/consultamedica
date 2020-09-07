@@ -5851,14 +5851,14 @@ function getDate(today) {
 }
 
 function resetDate(){
-    let fechaHoy = "";
+    dayHoy = new Date();
+    day = ("0" + dayHoy.getUTCDate()).slice(-2);
+    month = ("0" + (dayHoy.getMonth() + 1)).slice(-2);
 
-    fechaHoy = dayHoy.getFullYear() + "-" + dayHoy.getMonth()  + "-" + dayHoy.getUTCDate();
-
-    document.getElementById("fee").value = fechaHoy;
-    document.getElementById("fum").value = fechaHoy;
     document.getElementById("semanas").value = 0;
     document.getElementById("dias").value = 0;
+    document.getElementById("fum").value = getDate();
+    document.getElementById("fee").value = getDate();
 
     $("#fum").trigger("change");
 }
