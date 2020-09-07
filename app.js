@@ -691,6 +691,12 @@ $( document ).ready(function() {
 
     $("#goto\\.morfologia").on("click", function(){
         $("#morfologia-morfologia-tab").trigger("click");
+        window.scrollTo(0, 0)
+    })
+
+    $("#goto\\.doppler").on("click", function(){
+        $("#morfologia-flujometria-tab").trigger("click");
+        window.scrollTo(0, 0)
     })
 });
 
