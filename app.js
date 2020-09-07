@@ -1,5 +1,5 @@
 var daysES=["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-var monthsES=["","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+var monthsES=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
 var dayHoy = new Date();
 var day = ("0" + dayHoy.getUTCDate()).slice(-2);
@@ -1472,11 +1472,7 @@ $( document ).ready(function() {
             document.getElementById("douglas.ginecologica").value = "";
             document.getElementById("comentario.ginecologica").value = "";
             document.getElementById("ecografista.copia").selectedIndex = 0;
-            document.getElementById("fee").value = getDate();
-            document.getElementById("fum").value = getDate();
-            document.getElementById("semanas").value = 0;
-            document.getElementById("dias").value = 0;
-            $("#fum").trigger("change");
+            resetDate();
             $('#'+modal).modal("hide");
         });
     });
@@ -1512,12 +1508,7 @@ $( document ).ready(function() {
             document.getElementById("anexo-izquierdo").selectedIndex = 0;
             document.getElementById("exploracion-douglas").selectedIndex = 0;
             document.getElementById("comentarios-eco-uno").value = "";
-            document.getElementById("fee").value = getDate();
-            document.getElementById("fum").value = getDate();
-            document.getElementById("semanas").value = 0;
-            document.getElementById("dias").value = 0;
-            $("#fum").trigger("change");
-
+            resetDate();
             $("#menu\\.modulo\\.prim\\.trim\\.no").button("toggle");
             $('#'+modal).modal("hide");
         });
@@ -1567,11 +1558,7 @@ $( document ).ready(function() {
             document.getElementById("comentarios-anatomia-informe-eg-texto").value = "";
             document.getElementById("eco.seg.trim.select.comentario").selectedIndex = 0;
             document.getElementById("comentarios-eco-dos-inf-dos").value = "";
-            document.getElementById("fee").value = getDate();
-            document.getElementById("fum").value = getDate();
-            document.getElementById("semanas").value = 0;
-            document.getElementById("dias").value = 0;
-            $("#fum").trigger("change");
+            resetDate();
             $('#'+modal).modal("hide");
         });
     });
@@ -5847,13 +5834,33 @@ function getDate(today) {
     if (typeof today === typeof undefined){
         today = dayHoy;
     }
-
-    var dd = ("0" + today.getUTCDate()).slice(-2);
-    var mm = ("0" + (today.getMonth() + 1)).slice(-2);
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
     var yyyy = today.getFullYear();
+  
+    if(dd<10) {
+        dd = '0'+dd
+    } 
+  
+    if(mm<10) {
+        mm = '0'+mm
+    } 
   
     today = yyyy + '-' + mm + '-' + dd;
     return today;
+}
+
+function resetDate(){
+    let fechaHoy = "";
+
+    fechaHoy = dayHoy.getFullYear() + "-" + dayHoy.getMonth()  + "-" + dayHoy.getUTCDate();
+
+    document.getElementById("fee").value = fechaHoy;
+    document.getElementById("fum").value = fechaHoy;
+    document.getElementById("semanas").value = 0;
+    document.getElementById("dias").value = 0;
+
+    $("#fum").trigger("change");
 }
 
 function storageAvailable(type) {
