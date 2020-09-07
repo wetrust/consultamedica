@@ -500,7 +500,7 @@ $( document ).ready(function() {
         }
     });
 
-    $("#ver\\.ecoPrimTrim, #ver\\.ecoPrimTrim\\.snoopy, #ver\\.ecoObsSegTrim\\.snoopy, #ver\\.ecoDoppler\\.snoopy, #ver\\.ecoGinecologica\\.snoopy").on("click", function(){
+    $("#ver\\.ecoPrimTrim, #ver\\.ecoPrimTrim\\.snoopy, #ver\\.ecoObsSegTrim\\.snoopy, #ver\\.ecoDoppler\\.snoopy, #ver\\.ecoGinecologica\\.snoopy, #ver\\.ecoPrimTrim\\.new").on("click", function(){
         if (this.checked == true){
             this.parentElement.parentElement.children[1].classList.remove("d-none");
         }else{
@@ -686,8 +686,18 @@ $( document ).ready(function() {
         var elemento = the("ecografista");
         var nombre = (the("ecografista").options.length == 0) ? "" : elemento.options[elemento.selectedIndex].text
         the("ecografista.morfologia").value = nombre;
-        the("art.ut.d.morfologia").focus
     })
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        //e.target  newly activated tab
+        //e.relatedTarget  previous active tab
+        if (e.target.id == "morfologia-morfologia-tab"){
+            the("vlp.morfologia").focus()
+        }else if (e.target.id == "morfologia-flujometria-tab"){
+            the("art.ut.d.morfologia").focus()
+        }
+
+      })
 
     $("#goto\\.morfologia").on("click", function(){
         $("#morfologia-morfologia-tab").trigger("click");
@@ -697,7 +707,6 @@ $( document ).ready(function() {
     $("#goto\\.doppler").on("click", function(){
         $("#morfologia-flujometria-tab").trigger("click");
         window.scrollTo(0, 0)
-        the("vlp.morfologia").focus
     })
 });
 
@@ -7122,3 +7131,12 @@ function oldProgress(value){
 function the(id){
     return document.getElementById(id);
 }
+
+function setCursor(id) { 
+    if (typeof the(id).createTextRange != "undefined") {
+        the(id).focus({preventScroll:true});
+        var range = the(id).createTextRange();
+        range.collapse(false);
+        range.select();
+    }
+} 

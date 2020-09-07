@@ -1718,6 +1718,28 @@
                     <div class="tab-pane fade show active" id="medidas-eco-prim" role="tabpanel">
                         <div class="card mb-3 shadow-sm">
                             <div class="card-body">
+                                <div>
+                                    <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="ver.ecoPrimTrim.new"> <label class="form-check-label" for="ver.ecoPrimTrim.new">Para ecografía &lt; 11 semanas, 3 alternativas (módulos) de informes según hallazgos clínicos:</label> </div>
+                                    <div class="d-none p-1 w-50 mx-auto" style="background-color: #e9ecef">
+                                        <ol type="a">
+                                            <li><small>Visualización de saco gestacional.</small></li>
+                                            <li><small>Visualización embrionaria (LCN).</small></li>
+                                            <li><small>Ausencia de embrión y saco gestacional.</small></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="ver.ecoPrimTrim"> <label class="form-check-label" for="ver.ecoPrimTrim">Indicaciones para ecografía obstétrica precoz (&lt; 11 semanas), en gestantes asintomáticas</label> </div>
+                                    <div class="d-none p-1 w-50 mx-auto" style="background-color: #e9ecef">
+                                        <ul>
+                                            <li><small>Confirmar embarazo.</small></li>
+                                            <li><small>Identificar localización del saco gestacional.</small></li>
+                                            <li><small>Confirmar vitalidad embrionaria.</small></li>
+                                            <li><small>Determinar corionicidad en gemelar.</small></li>
+                                            <li><small>Determinación ecográfica de edad gestacional.</small></li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-12 col-lg-3">
                                         <p class="text-secondary">Promedio Saco Gestacional</p>
@@ -1738,23 +1760,6 @@
                                         <button class="btn btn-outline-info" id="graficoSaco">Ver Gráficas</button>
                                     </div>
                                 </div>
-                                <div class='row'>
-                                    <div class="col-md-12 col-lg-3">
-                                        <label class="text-secondary"><strong>Visualizar embrión</strong></label>
-                                    </div>
-                                    <div class='col-12 col-sm-6'>
-                                        <div class='form-group'>
-                                            <select id='embrion' class='form-control'>
-                                                <option value='no se observa aun' selected>no se observa aun</option>
-                                                <option value='act. no evidenciable'>act. no evidenciable</option>
-                                                <option value='act. cardiaca evidenciable'>act. cardiaca evidenciable</option>
-                                                <option value='con act. cardiaca (+)'>con act. cardiaca (+)</option>
-                                                <option value='act. card. y Corp.(+)'>act. card. y Corp.(+)</option>
-                                                <option value='act. card. y Corp. (-)'>act. card. y Corp. (-)</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="row d-none">
                                     <div class="col-md-12 col-lg-3">
                                         <p class="text-secondary">Medida del embrión</p>
@@ -1773,6 +1778,23 @@
                                     </div>
                                     <div class="col">
                                         <button class="btn btn-outline-info" id="graficoLcn">Ver Gráficas</button>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class="col-md-12 col-lg-3">
+                                        <label class="text-secondary"><strong>Actividad embrionaria</strong></label>
+                                    </div>
+                                    <div class='col-12 col-sm-6'>
+                                        <div class='form-group'>
+                                            <select id='embrion' class='form-control'>
+                                                <option value='no se observa aun' selected>no se observa aun</option>
+                                                <option value='act. no evidenciable'>act. no evidenciable</option>
+                                                <option value='act. cardiaca evidenciable'>act. cardiaca evidenciable</option>
+                                                <option value='con act. cardiaca (+)'>con act. cardiaca (+)</option>
+                                                <option value='act. card. y Corp.(+)'>act. card. y Corp.(+)</option>
+                                                <option value='act. card. y Corp. (-)'>act. card. y Corp. (-)</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row mt-3" id="resultadoAjusteEcoPrimTrim" style="display:none;">
@@ -1825,18 +1847,6 @@
                                 <div class="row" id="mensajeSaco">
                                     <div class="col-12">
                                         <h6 class="bg-gris text-white p-2 rounded text-center">Si no observa saco gestacional, ir a módulo informe <a class="text-white" href="#ecoGinecologica">ecográfico ginecológico</a></h6>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="ver.ecoPrimTrim"> <label class="form-check-label" for="ver.ecoPrimTrim">Indicaciones para ecografía obstétrica precoz (&lt; 11 semanas), en gestantes asintomáticas</label> </div>
-                                    <div class="d-none p-1 w-50 mx-auto" style="background-color: #e9ecef">
-                                        <ul>
-                                            <li><small>Confirmar embarazo.</small></li>
-                                            <li><small>Identificar localización del saco gestacional.</small></li>
-                                            <li><small>Confirmar vitalidad embrionaria.</small></li>
-                                            <li><small>Determinar corionicidad en gemelar.</small></li>
-                                            <li><small>Determinación ecográfica de edad gestacional.</small></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
