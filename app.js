@@ -1472,8 +1472,10 @@ $( document ).ready(function() {
             document.getElementById("douglas.ginecologica").value = "";
             document.getElementById("comentario.ginecologica").value = "";
             document.getElementById("ecografista.copia").selectedIndex = 0;
-            document.getElementById("fum").value = getDate();
             document.getElementById("fee").value = getDate();
+            document.getElementById("fum").value = getDate();
+            document.getElementById("semanas").value = 0;
+            document.getElementById("dias").value = 0;
             $("#fum").trigger("change");
             $('#'+modal).modal("hide");
         });
@@ -1510,9 +1512,10 @@ $( document ).ready(function() {
             document.getElementById("anexo-izquierdo").selectedIndex = 0;
             document.getElementById("exploracion-douglas").selectedIndex = 0;
             document.getElementById("comentarios-eco-uno").value = "";
-
-            document.getElementById("fum").value = getDate();
             document.getElementById("fee").value = getDate();
+            document.getElementById("fum").value = getDate();
+            document.getElementById("semanas").value = 0;
+            document.getElementById("dias").value = 0;
             $("#fum").trigger("change");
 
             $("#menu\\.modulo\\.prim\\.trim\\.no").button("toggle");
@@ -1564,8 +1567,10 @@ $( document ).ready(function() {
             document.getElementById("comentarios-anatomia-informe-eg-texto").value = "";
             document.getElementById("eco.seg.trim.select.comentario").selectedIndex = 0;
             document.getElementById("comentarios-eco-dos-inf-dos").value = "";
-            document.getElementById("fum").value = getDate();
             document.getElementById("fee").value = getDate();
+            document.getElementById("fum").value = getDate();
+            document.getElementById("semanas").value = 0;
+            document.getElementById("dias").value = 0;
             $("#fum").trigger("change");
             $('#'+modal).modal("hide");
         });
@@ -1599,9 +1604,10 @@ $( document ).ready(function() {
             the("motilidad-doppler").selectedIndex = 0;
             the("ubicacion-doppler").selectedIndex = 0;
             document.getElementById("comentarios-doppler").value = "";
-            document.getElementById("fum").value = getDate();
             document.getElementById("fee").value = getDate();
-            $("#fum").trigger("change");
+            document.getElementById("fum").value = getDate();
+            document.getElementById("semanas").value = 0;
+            document.getElementById("dias").value = 0;
             $('#'+modal).modal("hide");
         });
     })
@@ -5841,17 +5847,10 @@ function getDate(today) {
     if (typeof today === typeof undefined){
         today = dayHoy;
     }
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; //January is 0!
+
+    var dd = ("0" + today.getUTCDate()).slice(-2);
+    var mm = ("0" + (today.getMonth() + 1)).slice(-2);
     var yyyy = today.getFullYear();
-  
-    if(dd<10) {
-        dd = '0'+dd
-    } 
-  
-    if(mm<10) {
-        mm = '0'+mm
-    } 
   
     today = yyyy + '-' + mm + '-' + dd;
     return today;
