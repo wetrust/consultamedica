@@ -565,6 +565,7 @@ $( document ).ready(function() {
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/gregional.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#ajustepeso");
     });
+
     $("#pdfnuevo").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/uso_ecografia_doppler_obstetrcia.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#ajustepeso");
@@ -1603,7 +1604,7 @@ $( document ).ready(function() {
 //controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "atrio.ecoDosTres", "cerebelo", "cm.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","art.umb.morfologia","art.cm.morfologia","p.sis.morfologia"];
+        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","art.umb.morfologia","art.cm.morfologia","p.sis.morfologia"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -5721,10 +5722,10 @@ function InfEcoObsSegTrim1(){
     }
     var cccaRango = oldProgress(tmpData);
 
-    var pfe = '<strong>' + $( '#pfe').val() + ' Gr.' + '</strong>';
+    var pfe = $( '#pfe').val() + ' gr.';
     var percentilPeso = document.getElementById("pfePctRpt").value;
     percentilPeso = percentilPeso.replace('&lt;','<').replace('&gt;', '>');
-    var pfePct = '<strong>' + percentilPeso + '</strong>';
+    var pfePct = percentilPeso;
 
     if (percentilPeso == "> 90" || percentilPeso == "< 10"){
         tmpData = 0;
