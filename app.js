@@ -1599,6 +1599,9 @@ $( document ).ready(function() {
             the("motilidad-doppler").selectedIndex = 0;
             the("ubicacion-doppler").selectedIndex = 0;
             document.getElementById("comentarios-doppler").value = "";
+            document.getElementById("fum").value = getDate();
+            document.getElementById("fee").value = getDate();
+            $("#fum").trigger("change");
             $('#'+modal).modal("hide");
         });
     })
