@@ -683,10 +683,10 @@ $( document ).ready(function() {
     })
 
     $("#morfologia-morfologia-tab").on("click", function(){
-        var elemento = document.getElementById("ecografista");
-        var nombre = (document.getElementById("ecografista").options.length == 0) ? "" : elemento.options[elemento.selectedIndex].text
-
-        document.getElementById("ecografista.morfologia").value = nombre;
+        var elemento = the("ecografista");
+        var nombre = (the("ecografista").options.length == 0) ? "" : elemento.options[elemento.selectedIndex].text
+        the("ecografista.morfologia").value = nombre;
+        the("art.ut.d.morfologia").focus
     })
 
     $("#goto\\.morfologia").on("click", function(){
@@ -697,6 +697,7 @@ $( document ).ready(function() {
     $("#goto\\.doppler").on("click", function(){
         $("#morfologia-flujometria-tab").trigger("click");
         window.scrollTo(0, 0)
+        the("vlp.morfologia").focus
     })
 });
 
