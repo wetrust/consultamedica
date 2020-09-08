@@ -841,7 +841,7 @@ $( document ).ready(function() {
             fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
             let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value + " semanas.";
             comentario = "Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>" + comentario;
-            comentario += "<br>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
+            comentario += "<br><br>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
         }
 
         var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
