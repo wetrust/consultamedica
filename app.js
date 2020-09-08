@@ -706,6 +706,13 @@ $( document ).ready(function() {
         $("#morfologia-flujometria-tab").trigger("click");
         window.scrollTo(0, 0)
     })
+
+    $("#goto\\.ginecol").on("click", function(){
+        //si va de primer trimestre a ginecologico, cambiar el volver para que regrese a
+        //primer trimestre
+
+        $("#volver").attr("href", "#ecoObsPrimTrim");
+    })
 });
 
 //controlador de input clones
@@ -5630,6 +5637,11 @@ $(window).on('hashchange', function(){
             if (hash == "#recienacido"){
                 $("#graficoEstandar").trigger("click");
             }
+        }
+
+        //especial
+        if (hash == "#ecoObsPrimTrim"){
+            $("#volver").attr("href", "#inicio");
         }
     }
     else{
