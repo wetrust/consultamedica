@@ -835,9 +835,6 @@ $( document ).ready(function() {
         if (document.getElementById("saco").value && document.getElementById("embrion").value == "no se observa aun"){
             comentario = "Calculo inicial de edad según saco gestacional: "+document.getElementById("sacoPct").value+" semanas<br>Agendar próxima ecografía para determinar edad gestacional por LCN<br>" + comentario;
         }
-        else if (document.getElementById("embrion").value == "con act. cardiaca (+)" || document.getElementById("embrion").value == "act. card. y Corp.(+)"){
-            comentario = "se sugiere agendar próxima ecografía para evaluación 11 14 semanas";
-        }
         else{
             let fur = new Date(Date.parse(document.getElementById("fum").value));
             fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
@@ -845,6 +842,7 @@ $( document ).ready(function() {
             fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
             let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value + " semanas.";
             comentario = "Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>" + comentario;
+            comentario += "se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
         }
 
         var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
