@@ -754,9 +754,9 @@ $( document ).ready(function() {
         else{
             fcftexto = (document.getElementById("fcf-prim").value == '(+) inicial') ? " frecuencia cardiaca fetal " + document.getElementById("fcf-prim").value : " frecuencia cardiaca fetal de " + document.getElementById("fcf-prim").value +" x min.";
         }
-        
+
         let douglasinforme = (document.getElementById("exploracion-douglas").value == 'ocupado') ? document.getElementById("comentarios-douglas-informe").value : ".";
-    
+
         var LINEA1 = document.getElementById("utero-ubic1").value + " " + document.getElementById("utero-ubic2").value+ ", " + document.getElementById("cuerpo-uterino").value + ".";
         var LINEA2 = document.getElementById("saco-gestacional").value + sacogestacionaltxt;
         var LINEA3 = document.getElementById("saco-vitelino").value + sacovitelinotxt;
@@ -766,7 +766,7 @@ $( document ).ready(function() {
         var LINEA7 = document.getElementById("exploracion-douglas").value + ", " + douglasinforme;
         var LINEA12 = '';
         var LINEA8 = '';
-    
+
         if (document.getElementById("lcn").value > 0){
             var LINEA9 = "Utero " + document.getElementById("utero-ubic1").value + " " + document.getElementById("utero-ubic2").value + ", " + document.getElementById("cuerpo-uterino").value + ".";
             var LINEA10 = "Exploración anexial derecha " + document.getElementById("anexo-derecho").value;
@@ -777,24 +777,23 @@ $( document ).ready(function() {
             var LINEA10 = "Exploración anexial " + document.getElementById("anexo-derecho").value;
             var LINEA11 = "";
             LINEA12 = "no procede";
-        }
-        else{
+        }else{
             var LINEA9 = "Gestación Inicial<br>Utero " + document.getElementById("utero-ubic1").value + " " + document.getElementById("utero-ubic2").value + ", " + document.getElementById("cuerpo-uterino").value + ".";
             var LINEA10 = "Exploración anexial " + document.getElementById("anexo-derecho").value;
             var LINEA11 = "";
             LINEA12 = "Embrion no se observa";
         }
-        
+
         if (sacogestacionaltxt > 0){
             LINEA12 = "Saco gestacional diámetro promedio de " + sacogestacionaltxt +" mm.<br>";
             LINEA8 = "Edad gestacional estimada " + document.getElementById("sacoPct").value + " por saco gestacional.<br>";
         }
-    
+
         if (document.getElementById("lcn").value > 0) {
             LINEA12 = "Largo embrionario máximo de " + document.getElementById("lcn").value + " mm.";
             LINEA8 = "Edad gestacional estimada " + document.getElementById("lcnPct").value + " semanas por LCN.<br>";
         }
-    
+
         var TITULOBIOMETRIAS = 'BIOMETRÍAS EMBRIO/FETAL';
 
         if (document.getElementById("lcn").value < 1) {
@@ -847,7 +846,7 @@ $( document ).ready(function() {
 
         var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
         var edadmaterna = $( "select[name='edad_materna']").val();
-        
+
         InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
         InformeString = InformeString.replace(":FEXAMEN", fexamen);
         InformeString = InformeString.replace(":LINEA1", LINEA1);
@@ -866,7 +865,7 @@ $( document ).ready(function() {
         InformeString = InformeString.replace(":COMENTARIO", comentario);
         InformeString = InformeString.replace(":DATEINFORME", dateInf);
         InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
-        
+
         imprInforme(InformeString);
     });
 
