@@ -61,19 +61,19 @@ $( document ).ready(function() {
     opt.value = "(+) inicial"; 
     dias.appendChild(opt); 
     opt = document.createElement('option');
-    opt.appendChild( document.createTextNode("< 90") );
-    opt.value = "< 90"; 
+    opt.appendChild( document.createTextNode("< 80") );
+    opt.value = "< 80"; 
     dias.appendChild(opt);
 
-    for (var i = 90; i < 171; i++) {
+    for (var i = 90; i < 181; i++) {
         let opt = document.createElement('option');
         opt.appendChild( document.createTextNode(i) );
         opt.value = i; 
         dias.appendChild(opt); 
     }
     opt = document.createElement('option');
-    opt.appendChild( document.createTextNode("> 170") );
-    opt.value = "> 170"; 
+    opt.appendChild( document.createTextNode("> 180") );
+    opt.value = "> 180"; 
     dias.appendChild(opt);
 
     //cargar la frecuencia cardiaca fetal para segundo trimestre
