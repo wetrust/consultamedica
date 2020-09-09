@@ -1207,21 +1207,52 @@ $( document ).ready(function() {
             $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
             $('#'+_email).on("click", function(){
-                var InformeString = InfEcoObsSegTrim1();
+                let _modal = modal("Enviar");
+
+                document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+                document.getElementById(_modal.titulo).innerHTML = "Seleccionar E-Mail";
+                document.getElementById(_modal.titulo).classList.add("mx-auto");
+                document.getElementById(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
+
+                var _correo = uuidv4();
+                let _contenido = '<div class="row"><div class="col-12"><div class="form-group col"><label>Seleccionar E-Mail</label><select id="'+_correo+'" class="form-control"></select></div></div></div>'
+
+                document.getElementById(_modal.contenido).innerHTML = _contenido;
+                document.getElementById(_modal.id).children[0].classList.remove("modal-lg");
+
+                the(_modal.button).dataset.email = _correo;
+                $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+                let configuracion = JSON.parse(localStorage["configuracion"]);
+                if (configuracion.correos.length > 0) {
+
+                    for (var i = 0; i < configuracion.correos.length; i++) {
+                        let elemento = document.getElementById(_correo);
+                        let opt = document.createElement('option');
+                        opt.appendChild( document.createTextNode(configuracion.correos[i].profesion + ", " + configuracion.correos[i].nombre + " - " + configuracion.correos[i].ciudad) );
+                        opt.value = configuracion.correos[i].correo; 
+                        elemento.appendChild(opt); 
+                    }
+                }
+
+                $('#'+_modal.button).on("click", function(){
+                    var InformeString = InfEcoObsSegTrim1();
                 
-                var data = new FormData();
-                data.append("licencia" , "");
-                data.append("informe" , 2);
-                data.append("data" , InformeString);
-
-                fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
-                    response.blob().then((successMessage) => {
-                        var link = document.createElement('a');
-
-                        link.href = window.URL.createObjectURL(successMessage);
-                        link.download = "document.pdf";
+                    var data = new FormData();
+                    data.append("licencia" , "");
+                    data.append("informe" , 2);
+                    data.append("data" , InformeString);
+                    data.append("email" , the(this.dataset.email).value);
     
-                        link.click();
+                    fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+                        response.blob().then((successMessage) => {
+                            var link = document.createElement('a');
+    
+                            link.href = window.URL.createObjectURL(successMessage);
+                            link.download = "document.pdf";
+        
+                            link.click();
+                        });
                     });
                 });
             });
