@@ -498,7 +498,15 @@ $( document ).ready(function() {
         }
     });
 
-    $("#ver\\.ecoPrimTrim, #ver\\.ecoPrimTrim\\.snoopy, #ver\\.ecoObsSegTrim\\.snoopy, #ver\\.ecoDoppler\\.snoopy, #ver\\.ecoGinecologica\\.snoopy, #ver\\.ecoPrimTrim\\.new").on("click", function(){
+    $("#ver\\.auto").on("click", function(){
+        if (document.getElementById("auto").classList.contains("d-none") == true){
+            document.getElementById("auto").classList.remove("d-none");
+        }else{
+            document.getElementById("auto").classList.add("d-none");
+        }
+    });
+
+    $("#ver\\.ecoPrimTrim, #ver\\.ecoPrimTrim\\.snoopy, #ver\\.ecoObsSegTrim\\.snoopy, #ver\\.ecoDoppler\\.snoopy, #ver\\.ecoGinecologica\\.snoopy, #ver\\.ecoPrimTrim\\.new, #ver\\.consulta").on("click", function(){
         if (this.checked == true){
             this.parentElement.parentElement.children[1].classList.remove("d-none");
         }else{
