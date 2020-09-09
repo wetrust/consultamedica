@@ -1239,7 +1239,7 @@ $( document ).ready(function() {
                     var InformeString = InfEcoObsSegTrim1();
                 
                     var data = new FormData();
-                    data.append("licencia" , "");
+                    data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
                     data.append("email" , the(this.dataset.email).value);
