@@ -1245,14 +1245,15 @@ $( document ).ready(function() {
                     data.append("email" , the(this.dataset.email).value);
     
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
-                        response.blob().then((successMessage) => {
-                            var link = document.createElement('a');
+                        console.log(response);
+                        //response.blob().then((successMessage) => {
+                        //    var link = document.createElement('a');
     
-                            link.href = window.URL.createObjectURL(successMessage);
-                            link.download = "document.pdf";
+                        //    link.href = window.URL.createObjectURL(successMessage);
+                        //    link.download = "document.pdf";
         
-                            link.click();
-                        });
+                        //    link.click();
+                        //});
                     });
                 });
             });
