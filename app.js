@@ -915,7 +915,7 @@ $( document ).ready(function() {
         var BVMMED = document.getElementById("liquido.semi.morfologia").value;
         
         if (the("ver.ila.morfologia").checked == true){
-            InformeString += ' <tr> <td class="p-0"></td><td class="p-0">Sumatoria de 4 cuadrantes (ILA): :ILA mm</td></tr>';
+            InformeString += ' <tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Sumatoria de 4 cuadrantes (ILA): :ILA mm</td></tr>';
             var ILA = document.getElementById("liquido.ila.suma.morfologia").value;
             InformeString = InformeString.replace(":ILA", ILA);
         }
