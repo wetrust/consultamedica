@@ -83,20 +83,20 @@ function checkDatabase() {
 function loadDatabase() {
     var configuracion = JSON.parse(localStorage["configuracion"]);
 
-    $('#motivo-examen').empty();
-    $('#MotivoConfigTable').empty();
-    if (configuracion.MotivoExamen.length > 0) {
-        $.each(configuracion.MotivoExamen, function(i, item) {
-            $('#motivo-examen').append($('<option>', {
+    $('#ecografista').empty();
+    $('#EcografistaConfigTable').empty();
+    if (configuracion.profesional.length > 0) {
+        $.each(configuracion.profesional, function(i, item) {
+            $('#ecografista').append($('<option>', {
                 value: item.id,
                 text: item.nombre
             }));
             var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-            $('#MotivoConfigTable').append(fila);
+            $('#EcografistaConfigTable').append(fila);
 
         });
-        $('#eliminarMotivoConfig').removeClass("d-none");
-        $('#MotivoConfigTable tr').on('click', function() {
+        $('#eliminarEcografistaConfig').removeClass("d-none");
+        $('#EcografistaConfigTable tr').on('click', function() {
             activateTr(this);
         });
     }
