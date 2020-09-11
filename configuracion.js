@@ -1,3 +1,43 @@
+var config = JSON.parse('{"name":"configuración", "backurl":"#volver", "backend":"", "localstorage":true, "usehash":true, "config":[{"name":"membrete", "table":"membrete", "desc":"", "input":[{"name":"membrete", "type":"textarea", "row":3, "limit":40, "help":""}]},{"name":"ciudad", "table":"ciudad", "desc":"", "input":[{"name":"Nombre de la ciudad", "type":"text", "limit":40, "help":""}]},{"name":"Lugar de control", "table":"lcontrol", "desc":"", "input":[{"name":"Lugar de control", "type":"text", "limit":40, "help":""}]},{"name":"Motivo exámen", "table":"motivo", "desc":"", "input":[{"name":"Nombre del motivo", "type":"text", "limit":40, "help":""}]},{"name":"Patología obstétrica", "table":"pobst", "desc":"", "input":[{"name":"Nombre de la patología", "type":"text", "limit":40, "help":""}]},{"name":"Profesional examinador", "table":"profex", "desc":"", "input":[{"name":"Nombre de la patología", "type":"text", "limit":40, "help":""}]},{"name":"Email", "table":"email", "desc":"", "input":[{"name":"Nombre", "type":"text", "limit":40, "help":""},{"name":"profesión", "type":"text", "limit":40, "help":""},{"name":"Ciudad", "type":"text", "limit":40, "help":""},{"name":"teléfono", "type":"text", "limit":40, "help":""}]},{"name":"Activación", "table":"activacion", "desc":"", "input":[{"name":"Activar licencia personalizada", "type":"text", "limit":40, "help":""}]}]}');
+
+
+
+function createTabs(config){
+    var navID = uuidv4();
+    var tabID = uuidv4();
+    var capsuleHeader = '<div class="row">';
+    var capsuleFooter = '</div>';
+    var navHeader = '<div class="col-12 col-lg-3"><div class="nav flex-column nav-pills" id="'+navID+'" role="tablist" aria-orientation="vertical">';
+    var navFooter = '</div></div>';
+    var tabHeader = '<div class="col-12 col-lg-3"><div class="tab-content" id="'+ tabID+'">';
+    var tabFooter = '</div></div>';
+
+    var resultado = "";
+    
+    resultado += capsuleHeader;
+    resultado += navHeader;
+    for (var z = 0; z < config.config.length; z++){
+        let id = uuidv4();
+        let tab = uuidv4();
+
+        resultado += '<a class="nav-link" id="'+id+'" data-toggle="pill" href="#'+tab+'" role="tab" aria-controls="'+tab+'" aria-selected="true">'+config.config[z].name+'</a>';
+    
+        config.config[z].id = id;
+        config.config[z].tab = tab;
+    }
+    resultado += navFooter;
+
+    resultado += tabHeader;
+    for (var z = 0; z < config.config.length; z++){
+        resultado += '<div class="tab-pane fade" id="'+config.config[z].tab+'" role="tabpanel" aria-labelledby="'+config.config[z].id+'">'+config.config[z].name+'</div>';
+    }
+    resultado += tabFooter;
+    resultado += capsuleFooter;
+
+    return resultado;
+
+}
+
 function haveDatabase() {
     if (localStorage.configuracion != null) {
         return true;
@@ -8,7 +48,7 @@ function haveDatabase() {
 function checkIntegrity() {
     let db = JSON.parse(localStorage["configuracion"]);
 
-    let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete', 'correos', 'licencia'];
+    let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete', 'correos', 'licencia', 'lcontrol'];
 
     for (var j = 0; j < tables.length; j++) {
         let table = false;
@@ -28,7 +68,7 @@ function checkIntegrity() {
 }
 
 function makeDatabase() {
-    var db = '{"nacionalidad": [], "MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":"", "correos":[], "licencia": ""}';
+    var db = '{"nacionalidad": [], "MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":"", "correos":[], "licencia": "", "lcontrol": []}';
     localStorage["configuracion"] = db;
 }
 
@@ -61,33 +101,52 @@ function loadDatabase() {
         });
     }
 
-    $('#ecografista').empty();
-    $('#EcografistaConfigTable').empty();
-    if (configuracion.profesional.length > 0) {
-        $.each(configuracion.profesional, function(i, item) {
-            $('#ecografista').append($('<option>', {
-                value: item.id,
-                text: item.nombre
-            }));
-            $('#ecografista\\.copia').append($('<option>', {
+    $('#motivo-examen').empty();
+    $('#MotivoConfigTable').empty();
+    if (configuracion.MotivoExamen.length > 0) {
+        $.each(configuracion.MotivoExamen, function(i, item) {
+            $('#motivo-examen').append($('<option>', {
                 value: item.id,
                 text: item.nombre
             }));
             var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-            $('#EcografistaConfigTable').append(fila);
+            $('#MotivoConfigTable').append(fila);
 
         });
-        $('#eliminarEcografistaConfig').removeClass("d-none");
-        $('#EcografistaConfigTable tr').on('click', function() {
+        $('#eliminarMotivoConfig').removeClass("d-none");
+        $('#MotivoConfigTable tr').on('click', function() {
+            activateTr(this);
+        });
+    }
+
+    $('#LcontrolConfigTable').empty();
+    $('#lcontrolpaciente').empty();
+    if (configuracion.lcontrol.length > 0) {
+        $.each(configuracion.lcontrol, function(i, item) {
+            $('#lcontrolpaciente').append($('<option>', {
+                value: item.id,
+                text: item.nombre
+            }));
+            var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
+            $('#LcontrolConfigTable').append(fila);
+
+        });
+        $('#eliminarLcontrolConfig').removeClass("d-none");
+        $('#LcontrolConfigTable tr').on('click', function() {
             activateTr(this);
         });
     }
 
     $('#nacionalidad').empty();
+    $('#ciudadpaciente').empty();
     $('#NacionalidadConfigTable').empty();
     if (configuracion.nacionalidad.length > 0) {
         $.each(configuracion.nacionalidad, function(i, item) {
             $('#nacionalidad').append($('<option>', {
+                value: item.id,
+                text: item.nombre
+            }));
+            $('#ciudadpaciente').append($('<option>', {
                 value: item.id,
                 text: item.nombre
             }));
@@ -194,6 +253,27 @@ function saveEcografistaExamenLocalStorage() {
     }
 }
 
+function saveLcontrolConfigLocalStorage() {
+
+    if (window.localStorage) {
+        if (localStorage.configuracion != null) {
+            var configuracion = JSON.parse(localStorage["configuracion"]);
+
+            $('#LcontrolConfigTable').html("");
+            $('#LcontrolConfigTable').html("");
+            var aRR = {id: 0, nombre: "Doe"};
+            aRR["id"] = configuracion.lcontrol.length + 1;
+            aRR["nombre"] = $('#lcontrolInput').val();
+
+            configuracion.lcontrol.push(aRR);
+            $('#eliminarLcontrolConfig').removeClass("d-none");
+            $('#lcontrolInput').val("");
+            localStorage["configuracion"] = JSON.stringify(configuracion);
+            loadDatabase();
+        }
+    }
+}
+
 function saveNacionalidadConfigLocalStorage() {
 
     if (window.localStorage) {
@@ -275,11 +355,36 @@ function activateTr(element) {
 //manejadore de botones
 $(document).ready(function() {
     $('#nuevoMotivoConfig').on('click', function() {
-        $('#motivoConfig .tabla').addClass("d-none");
+        $('#lcontrol .tabla').addClass("d-none");
         $('#nuevoMotivoConfig').addClass("d-none");
         $('#guardarMotivoConfig').removeClass("d-none");
         $('#cancelarMotivoConfig').removeClass("d-none");
-        $('#motivoConfig .formulario').removeClass("d-none");
+        $('#lcontrol .formulario').removeClass("d-none");
+    });
+
+    $('#nuevoLcontrolConfig').on('click', function() {
+        $('#lcontrol .tabla').addClass("d-none");
+        $('#nuevoLcontrolConfig').addClass("d-none");
+        $('#guardarLcontrolConfig').removeClass("d-none");
+        $('#cancelarLcontrolConfig').removeClass("d-none");
+        $('#lcontrol .formulario').removeClass("d-none");
+    });
+
+    $('#guardarLcontrolConfig').on('click', function() {
+        saveLcontrolConfigLocalStorage();
+        $("#lcontrol .tabla").removeClass("d-none");
+        $('#nuevoLcontrolConfig').removeClass("d-none");
+        $('#guardarLcontrolConfig').addClass("d-none");
+        $('#cancelarLcontrolConfig').addClass("d-none");
+        $("#lcontrol .formulario").addClass("d-none");
+    });
+
+    $('#cancelarLcontrolConfig').on('click', function() {
+        $("#lcontrol .tabla").removeClass("d-none");
+        $('#nuevoLcontrolConfig').removeClass("d-none");
+        $('#guardarLcontrolConfig').addClass("d-none");
+        $('#cancelarLcontrolConfig').addClass("d-none");
+        $("#lcontrol .formulario").addClass("d-none");
     });
 
     $('#guardarMotivoConfig').on('click', function() {
@@ -289,6 +394,40 @@ $(document).ready(function() {
         $('#guardarMotivoConfig').addClass("d-none");
         $('#cancelarMotivoConfig').addClass("d-none");
         $("#motivoConfig .formulario").addClass("d-none");
+    });
+
+    $('#eliminarLcontrolConfig').on('click', function() {
+        var getElement = false;
+        var contador = 0
+        $.each($('#LcontrolConfigTable').children(), function(i, val) {
+            if ($(val).hasClass('table-active') == true) {
+                getElement = true;
+                var nombre = $(val).children('td').html();
+                var configuracion = JSON.parse(localStorage["configuracion"]);
+
+                //construir un nuevo array de objetos
+                var MotivoExamen = [];
+                $.each(configuracion.lcontrol, function(i, item) {
+                    if (item.nombre != nombre) {
+                        var aRR = {id: 0, nombre: "Doe"};
+                        aRR["id"] = contador + 1;
+                        aRR["nombre"] = item.nombre;
+
+                        MotivoExamen.push(aRR);
+                        contador++;
+                    }
+                });
+
+                configuracion.lcontrol = MotivoExamen;
+                localStorage["configuracion"] = JSON.stringify(configuracion);
+            }
+        });
+
+        if (getElement == false) {
+            window.alert("haga click sobre un elemento para eliminar");
+        } else {
+            loadDatabase();
+        }
     });
 
     $('#cancelarMotivoConfig').on('click', function() {

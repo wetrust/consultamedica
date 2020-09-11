@@ -101,7 +101,10 @@ $( document ).ready(function() {
     if (storageAvailable('localStorage')) {
         document.location.hash = "#inicio";
         checkDatabase();
-		loadDatabase();
+        loadDatabase();
+        
+        //let cf = createTabs(config);
+        //document.getElementById("cf").innerHTML = cf;
     }
 
     //cargar edad materna
@@ -885,7 +888,7 @@ $( document ).ready(function() {
     });
 
     $("#informe\\.morfologia").on("click", function(){
-        InformeString = '<div class="container-fluid" style="margin-top: 5rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <p><strong>Paciente Sra. (Srta.):</strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Edad Materna:</strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Fecha de Exámen:</strong>:FEXAMEN</p><p><strong> ID Paciente:</strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Motivo de exámen:</strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Patología Obstétrica:</strong>:PATOLOGIAOBSTETRICA</p><p><strong>Ciudad de procedencia:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Lugar de control:</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p class="mb-0"> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa:</strong> :ANTECESA </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">BIOMETRÍA</strong></p><p> <strong>Actividad cardíaca:</strong> :ACTCAR , <strong>Movimientos fetales:</strong> :MOVFET , Embarazo: :EMB <br/> <strong>Presentación:</strong> :PRESENT , <strong>Dorso fetal:</strong> :DORSOFET <br/> <strong>Placenta</strong> Ubicación: :PLAUB , Placenta inserción: :PLAIN </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Liquido amniótico</strong></td><td class="p-0">Medicion cualitativa: :BVMCUA .</td></tr><tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Bolsillo Vertical Mayor (BVM): :BVMMED mm</td></tr>';
+        InformeString = '<div class="container-fluid" style="margin-top: 5rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <p><strong>Paciente Sra. (Srta.):</strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Edad Materna:</strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Fecha de Exámen:</strong>:FEXAMEN</p><p><strong> ID Paciente:</strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Motivo de exámen:</strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Patología Obstétrica:</strong>:PATOLOGIAOBSTETRICA</p><p><strong>Ciudad de procedencia:</strong>:CIUDAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Lugar de control:</strong>:LCONTROL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p class="mb-0"> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa:</strong> :ANTECESA </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">BIOMETRÍA</strong></p><p> <strong>Actividad cardíaca:</strong> :ACTCAR , <strong>Movimientos fetales:</strong> :MOVFET , Embarazo: :EMB <br/> <strong>Presentación:</strong> :PRESENT , <strong>Dorso fetal:</strong> :DORSOFET <br/> <strong>Placenta</strong> Ubicación: :PLAUB , Placenta inserción: :PLAIN </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Liquido amniótico</strong></td><td class="p-0">Medicion cualitativa: :BVMCUA .</td></tr><tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Bolsillo Vertical Mayor (BVM): :BVMMED mm</td></tr>';
 
         let fur = new Date(Date.parse(document.getElementById("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
@@ -1036,10 +1039,16 @@ $( document ).ready(function() {
         var INDI = document.getElementById("seguimiento.morfologia").value;
         var COMENTARIO = document.getElementById("biometria.comentario.morfologia").value +  "<br>" + document.getElementById("conclusion.morfologia").value + "<br>" + document.getElementById("morfologia.comentario.morfologia").value;
 
+        var CIUDAD =  $( '#ciudadpaciente option:selected').text();
+        var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
+
         InformeString = InformeString.replace(":FUR", fur);
         InformeString = InformeString.replace(":EG", eg);
         InformeString = InformeString.replace(":FPP", fpp);
         InformeString = InformeString.replace(":DATEINFORME", dateInf);
+
+        InformeString = InformeString.replace(":CIUDAD", CIUDAD);
+        InformeString = InformeString.replace(":LCONTROL", LCONTROL);
 
         InformeString = InformeString.replace(":PACIENTE", paciente);
         InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
@@ -5729,7 +5738,7 @@ function InfEcoObsSegTrim1(){
 
     var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', ' + document.getElementById("incersion").value + '.';
     var linea5 = '<strong>Cordón umbilical</strong> ' + document.getElementById("cordon").value + ', identificandose '+ document.getElementById("vasos").value +' vasos.';
-    var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + document.getElementById("bvmEcoDos").value + ' mm.';
+    var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + document.getElementById("bvm").value + ' mm.';
 
     let fur = new Date(Date.parse(document.getElementById("fum").value));
     fur = fur.getUTCDate() + ' de '+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
@@ -6961,7 +6970,7 @@ function crearInformeEcoSegTrim2(){
 
     var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', ' + document.getElementById("incersion").value + '.';
     var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
-    var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
+    var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm.";
 	
     var InformeString = "<div class='container'> <h3>Determinación Ecográfica <small>(Tardía)</small> de la Edad Gestacional</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p><strong>FUM: </strong> :FUR <br><strong>EG (UPM): </strong> :EG semanas<br><strong>FPP: </strong> :FPP</p></div><div class='container'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p style='margin-bottom:0;'>:LINEA1 <br>:LINEA2</p><p style='margin-bottom:0; word-wrap: break-word;'>:LINEA3</p><p>:LINEA4 <br>:LINEA5 <br>:LINEA6</p><p></p><p></p></div><div class='container-fluid'> <table class='table'> <tbody> <tr> <th style='line-height:15px !important;color:#045dab;'>BIOMETRIA FETAL</th> <th style='text-align:center;'>Valor observado</th> <th style='text-align:center;'>Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style='text-align:center;'>:DBP</td><td style='text-align:center;'>:DBPRANGO</td></tr><tr> <td>DOF (Jeanty):</td><td style='text-align:center;'>:DOF</td><td style='text-align:center;'>:DOFRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style='text-align:center;'>:CC</td><td style='text-align:center;'>:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style='text-align:center;'>:CA</td><td style='text-align:center;'>:CARANGO</td></tr><tr> <td>LF (Hadlock):</td><td style='text-align:center;'>:LF</td><td style='text-align:center;'>:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style='text-align:center;'>:LH</td><td style='text-align:center;'>:LHRANGO</td></tr><tr> <td>Cerebelo (Diámetro transverso) (Hill):</td><td style='text-align:center;'>:CB</td><td style='text-align:center;'>:CBRANGO</td></tr><tr><td style='padding-bottom: 15px !important;'>Indice Cefálico (DBP / DOF)</td><td style='text-align:center;padding-bottom: 15px !important;'>:IC</td><td style='text-align:center;padding-bottom: 15px !important;'>( 70% - 86% )</td></tr>";
 

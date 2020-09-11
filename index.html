@@ -3375,7 +3375,7 @@
                 <a class="nav-link bg-gris text-white" data-toggle="tab" href="#nacionalidadConfig" role="tab">Ciudad</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link bg-gris text-white" data-toggle="tab" role="tab">Lugar de control</a>
+                <a class="nav-link bg-gris text-white" data-toggle="tab" href="#lcontrol" role="tab">Lugar de control</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link bg-gris text-white" data-toggle="tab" href="#motivoConfig" role="tab">Motivo Exámen</a>
@@ -3394,6 +3394,39 @@
             </li>
         </ul>
         <div class="tab-content">
+            <div class="tab-pane fade" id="lcontrol" role="tabpanel">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="btn-group mb-3" role="group">
+                            <button type="button" class="btn btn-primary" id="nuevoLcontrolConfig">Nuevo</button>
+                            <button type="button" class="btn btn-primary d-none" id="guardarLcontrolConfig"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
+                            <button type="button" class="btn btn-secondary d-none" id="cancelarLcontrolConfig"> Cancelar</button>
+                            <button type="button" class="btn btn-secondary d-none" id="eliminarLcontrolConfig"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</button>
+                        </div>
+                        <div class="tabla">
+                            <table class="table table-hover table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th style="width: 100px;">#</th>
+                                        <th>Lugar de control</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="LcontrolConfigTable">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="formulario d-none">
+                            <div class="form-group">
+                                <h5>Nuevo lugar de control</h5>
+                            </div>
+                            <div class="form-group">
+                                <label>Lugar de control</label>
+                                <input type="text" class="form-control" id="lcontrolInput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="tab-pane fade show active" id="membreteConfig" role="tabpanel">
                 <div class="card tabla">
                     <div class="card-body">
@@ -3614,6 +3647,7 @@
                 </div>
             </div>
         </div>
+        <div id="cf"></div>
     </div>
     <div class="container pt-2 d-none" id="pdfneonatal">
         <ol class="breadcrumb">
@@ -3671,6 +3705,18 @@
                     </div>
                     <div class="col-4">
                         <select class="form-control" id="ecografista"></select>
+                    </div>
+                    <div class="col-2">
+                        <label >Ciudad</label>
+                    </div>
+                    <div class="col-4">
+                        <select id="ciudadpaciente" class="form-control gris-claro"></select>
+                    </div>
+                    <div class="col-2">
+                        <label>Lugar de control</label>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-control" id="lcontrolpaciente"></select>
                     </div>
                 </div>
                 <a class="btn btn-consulta text-white" href="#inicio">CONTINUAR A EXÁMEN ECOGRÁFICO</a>
