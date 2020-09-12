@@ -71,6 +71,9 @@
 .bg-gris {
     background-color:#6c757d!important
 }
+.bg-gris.active {
+    background-color:#b4b4b4!important
+}
 body{
     background-image:url('img/cream_pixels.png');
 }

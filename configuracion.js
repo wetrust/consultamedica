@@ -177,13 +177,12 @@ function loadDatabase() {
             activateTr(this);
         });
     }
+
     $("#membrete").val(configuracion.membrete);
-
     $("#licencia").val(configuracion.licencia);
-
     $('#CorreoConfigTable').empty();
-    if (configuracion.correos.length > 0) {
 
+    if (configuracion.correos.length > 0) {
         $.each(configuracion.correos, function(i, item) {
             var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td><td>' + item.profesion + '</td><td>' + item.ciudad + '</td><td>' + item.correo + '</td><td>' + item.telefono +'</td></tr>';
             $('#CorreoConfigTable').append(fila);
@@ -354,20 +353,13 @@ function activateTr(element) {
 
 //manejadore de botones
 $(document).ready(function() {
-    $('#nuevoMotivoConfig').on('click', function() {
-        $('#lcontrol .tabla').addClass("d-none");
-        $('#nuevoMotivoConfig').addClass("d-none");
-        $('#guardarMotivoConfig').removeClass("d-none");
-        $('#cancelarMotivoConfig').removeClass("d-none");
-        $('#lcontrol .formulario').removeClass("d-none");
-    });
-
     $('#nuevoLcontrolConfig').on('click', function() {
         $('#lcontrol .tabla').addClass("d-none");
         $('#nuevoLcontrolConfig').addClass("d-none");
         $('#guardarLcontrolConfig').removeClass("d-none");
         $('#cancelarLcontrolConfig').removeClass("d-none");
         $('#lcontrol .formulario').removeClass("d-none");
+        $("#eliminarLcontrolConfig").addClass("d-none");
     });
 
     $('#guardarLcontrolConfig').on('click', function() {
@@ -377,6 +369,7 @@ $(document).ready(function() {
         $('#guardarLcontrolConfig').addClass("d-none");
         $('#cancelarLcontrolConfig').addClass("d-none");
         $("#lcontrol .formulario").addClass("d-none");
+        $("#eliminarLcontrolConfig").removeClass("d-none");
     });
 
     $('#cancelarLcontrolConfig').on('click', function() {
@@ -385,15 +378,10 @@ $(document).ready(function() {
         $('#guardarLcontrolConfig').addClass("d-none");
         $('#cancelarLcontrolConfig').addClass("d-none");
         $("#lcontrol .formulario").addClass("d-none");
-    });
 
-    $('#guardarMotivoConfig').on('click', function() {
-        saveMotivoExamenLocalStorage();
-        $("#motivoConfig .tabla").removeClass("d-none");
-        $('#nuevoMotivoConfig').removeClass("d-none");
-        $('#guardarMotivoConfig').addClass("d-none");
-        $('#cancelarMotivoConfig').addClass("d-none");
-        $("#motivoConfig .formulario").addClass("d-none");
+        if (the("LcontrolConfigTable").childElementCount > 0){
+            $("#eliminarLcontrolConfig").removeClass("d-none");
+        }
     });
 
     $('#eliminarLcontrolConfig').on('click', function() {
@@ -430,12 +418,33 @@ $(document).ready(function() {
         }
     });
 
+    $('#nuevoMotivoConfig').on('click', function() {
+        $('#motivoConfig .tabla').addClass("d-none");
+        $('#nuevoMotivoConfig').addClass("d-none");
+        $('#guardarMotivoConfig').removeClass("d-none");
+        $('#cancelarMotivoConfig').removeClass("d-none");
+        $('#motivoConfig .formulario').removeClass("d-none");
+        $("#eliminarMotivoConfig").addClass("d-none");
+    });
+
+    $('#guardarMotivoConfig').on('click', function() {
+        saveMotivoExamenLocalStorage();
+        $("#motivoConfig .tabla").removeClass("d-none");
+        $('#nuevoMotivoConfig').removeClass("d-none");
+        $('#guardarMotivoConfig').addClass("d-none");
+        $('#cancelarMotivoConfig').addClass("d-none");
+        $("#motivoConfig .formulario").addClass("d-none");
+    });
+
     $('#cancelarMotivoConfig').on('click', function() {
         $("#motivoConfig .tabla").removeClass("d-none");
         $('#nuevoMotivoConfig').removeClass("d-none");
         $('#guardarMotivoConfig').addClass("d-none");
         $('#cancelarMotivoConfig').addClass("d-none");
         $("#motivoConfig .formulario").addClass("d-none");
+        if (the("MotivoConfigTable").childElementCount > 0){
+            $("#eliminarMotivoConfig").removeClass("d-none");
+        }
     });
 
     $('#eliminarMotivoConfig').on('click', function() {
@@ -459,17 +468,12 @@ $(document).ready(function() {
                         contador++;
                     }
                 });
-
                 configuracion.MotivoExamen = MotivoExamen;
                 localStorage["configuracion"] = JSON.stringify(configuracion);
             }
         });
 
-        if (getElement == false) {
-            window.alert("haga click sobre un elemento para eliminar");
-        } else {
-            loadDatabase();
-        }
+        if (getElement == false) { window.alert("haga click sobre un elemento para eliminar"); } else { loadDatabase(); }
     });
 
     $('#nuevoEcografistaConfig').on('click', function() {
@@ -478,6 +482,7 @@ $(document).ready(function() {
         $('#guardarEcografistaConfig').removeClass("d-none");
         $('#cancelarEcografistaConfig').removeClass("d-none");
         $('#ecografistaConfig .formulario').removeClass("d-none");
+        $("#eliminarEcografistaConfig").addClass("d-none");
     });
 
     $('#cancelarEcografistaConfig').on('click', function() {
@@ -486,6 +491,9 @@ $(document).ready(function() {
         $('#guardarEcografistaConfig').addClass("d-none");
         $('#cancelarEcografistaConfig').addClass("d-none");
         $("#ecografistaConfig .formulario").addClass("d-none");
+        if (the("EcografistaConfigTable").childElementCount > 0){
+            $("#eliminarEcografistaConfig").removeClass("d-none");
+        }
     });
 
     $('#guardarEcografistaConfig').on('click', function() {
@@ -541,6 +549,7 @@ $(document).ready(function() {
         $('#guardarNacionalidadConfig').removeClass("d-none");
         $('#cancelarNacionalidadConfig').removeClass("d-none");
         $('#nacionalidadConfig .formulario').removeClass("d-none");
+        $("#eliminarNacionalidadConfig").addClass("d-none");
     });
 
     $('#cancelarNacionalidadConfig').on('click', function() {
@@ -549,6 +558,9 @@ $(document).ready(function() {
         $('#guardarNacionalidadConfig').addClass("d-none");
         $('#cancelarNacionalidadConfig').addClass("d-none");
         $("#nacionalidadConfig .formulario").addClass("d-none");
+        if (the("NacionalidadConfigTable").childElementCount > 0){
+            $("#eliminarNacionalidadConfig").removeClass("d-none");
+        }
     });
 
     $('#eliminarNacionalidadConfig').on('click', function() {
@@ -604,6 +616,7 @@ $(document).ready(function() {
         $('#guardarPatologiaObstetricaConfig').removeClass("d-none");
         $('#cancelarPatologiaObstetricaConfig').removeClass("d-none");
         $('#patologiaObstetricaConfig .formulario').removeClass("d-none");
+        $("#eliminarPatologiaObstetricaConfig").addClass("d-none");
     });
 
     $('#cancelarPatologiaObstetricaConfig').on('click', function() {
@@ -612,6 +625,9 @@ $(document).ready(function() {
         $('#guardarPatologiaObstetricaConfig').addClass("d-none");
         $('#cancelarPatologiaObstetricaConfig').addClass("d-none");
         $("#patologiaObstetricaConfig .formulario").addClass("d-none");
+        if (the("PatologiaObstetricaConfigTable").childElementCount > 0){
+            $("#eliminarPatologiaObstetricaConfig").removeClass("d-none");
+        }
     });
 
     $('#guardarPatologiaObstetricaConfig').on('click', function() {
@@ -688,7 +704,6 @@ $(document).ready(function() {
 	$("#saveLicencia").on("click", function(event){
         saveLicenciaLocalStorage();
     });
-    
 
     $('#nuevoCorreoConfig').on('click', function() {
         $('#correosConfig .tabla').addClass("d-none");
@@ -696,6 +711,7 @@ $(document).ready(function() {
         $('#guardarCorreoConfig').removeClass("d-none");
         $('#cancelarCorreoConfig').removeClass("d-none");
         $('#correosConfig .formulario').removeClass("d-none");
+        $("#eliminarCorreoConfig").removeClass("d-none");
     });
 
     $('#cancelarCorreoConfig').on('click', function() {
@@ -704,6 +720,9 @@ $(document).ready(function() {
         $('#guardarCorreoConfig').addClass("d-none");
         $('#cancelarCorreoConfig').addClass("d-none");
         $("#correosConfig .formulario").addClass("d-none");
+        if (the("CorreoConfigTable").childElementCount > 0){
+            $("#eliminarCorreoConfig").removeClass("d-none");
+        }
     });
 
     $('#guardarCorreoConfig').on('click', function() {
