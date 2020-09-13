@@ -1315,15 +1315,12 @@
             <div class="card-body">
                 <div class="mb-3">
                     <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="ver.consulta"><label class="form-check-label text-primary" for="ver.consulta"><small>Instructivo para él modulo determinación de edad gestacional</small></label></div>
-                    <div class="row d-none p-1">
-                        <div class="col-10">
-                            <ul  style="background-color: #e9ecef">
-                                <li class="text-primary">Cálculo de edad gestacional y fecha probable de parto (FPP) según fecha última mestruación (FUM) referida.</li>
-                                <li class="text-primary">De forma inversa, obtener FUM y FPP a partir de edad gestacional referida, determinada previamente.</li>
-                                <li class="text-primary">Para evaluación de exámenes anteriores, el software dispone de la opción &laquo; fecha de examen modificable &raquo;</li>
-                            </ul>
-                        </div>
-                        <img src="img/volver_al_futuro.png" alt="Volver al futuro" class="img-fluid col-2 d-none" id="auto">
+                    <div class="d-none p-1 w-50 mx-auto" style="background-color: #e9ecef">
+                        <ul type="a">
+                            <li>Cálculo de edad gestacional y fecha probable de parto (FPP) según fecha última mestruación (FUM) referida.</li>
+                            <li>De forma inversa, obtener FUM y FPP a partir de edad gestacional referida, determinada previamente.</li>
+                            <li>Para evaluación de exámenes anteriores, el software dispone de la opción &laquo; fecha de examen modificable &raquo;</li>
+                        </ul>
                     </div>
                 </div>
             <hr class="btn-consulta">
@@ -1361,7 +1358,9 @@
                         </div>
                     </div>   
                     <div class="row">
-                        <div class="col-6 text-right"></div>
+                        <div class="col-6 text-right">
+                            <img src="img/volver_al_futuro.png" alt="Volver al futuro" class="img-fluid col-2 d-none" id="auto">
+                        </div>
                         <div class="col-6 text-right">
                             <a class="btn btn-secondary text-white" href="#inicio">CONTINUAR A EXÁMEN ECOGRÁFICO</a>
                             <p id="ver.auto" class="text-center">.</p>
