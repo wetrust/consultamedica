@@ -1227,7 +1227,11 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-7">
-                                <p class="text-justify text-azul"><small><em>Sitio web diseñado para profesionales de la salud vinculados con la vigilancia del control prenatal.<br>El objetivo de esta aplicación es facilitar a educandos y profesionales en formación, valoración de datos obstétricos ecográficos relacionados con la vigilancia del crecimiento fetal.<br><br>La información registrada solo será almacenada temporalmente para reporte de informe y/o gráficas pudiendo además almacenar archivos PDF respectivos en carpeta de su ordenador electrónico.<br>Recuerde, el acopio de información biomédica con fines de investigación requiere consentimiento informado.</em></small></p>
+                                <h5>&nbsp;</h5>
+                                <ul>
+                                    <li class="text-justify text-azul mb-3"><em>Sitio web diseñado para profesionales de la salud vinculados con la vigilancia del control prenatal.</em></li>
+                                    <li class="text-justify text-azul"><em>El objetivo de esta aplicación es facilitar a educandos y profesionales en formación, valoración de datos obstétricos ecográficos relacionados con la vigilancia del crecimiento fetal.</em></li>
+                                </ul>
                             </div>
                             <div class="col-5">
                                 <img src="https://servidor.crecimientofetal.cl/img/feto-computador.png" class="img-fluid" alt="Logo Crecimientofetal">
@@ -1313,7 +1317,7 @@
                     <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="ver.consulta"><label class="form-check-label text-primary" for="ver.consulta"><small>Instructivo para él modulo determinación de edad gestacional</small></label></div>
                     <div class="row d-none p-1">
                         <div class="col-10">
-                            <ul>
+                            <ul  style="background-color: #e9ecef">
                                 <li class="text-primary">Cálculo de edad gestacional y fecha probable de parto (FPP) según fecha última mestruación (FUM) referida.</li>
                                 <li class="text-primary">De forma inversa, obtener FUM y FPP a partir de edad gestacional referida, determinada previamente.</li>
                                 <li class="text-primary">Para evaluación de exámenes anteriores, el software dispone de la opción &laquo; fecha de examen modificable &raquo;</li>
@@ -1332,10 +1336,10 @@
                         </div>
                         <div class="col-3">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-outline-consulta active" id="configNoController" data-value="0">
+                                <label class="btn btn-outline-secondary active" id="configNoController" data-value="0">
                                     <input type="radio" value="0" checked> NO
                                 </label>
-                                <label class="btn btn-outline-consulta" id="configSiController" data-value="1">
+                                <label class="btn btn-outline-secondary" id="configSiController" data-value="1">
                                     <input type="radio" value="1"> SI
                                 </label>
                             </div>
@@ -1347,10 +1351,10 @@
                         </div>
                         <div class="col-3">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-outline-consulta active" id="informacionPacienteNo" data-value="0">
+                                <label class="btn btn-outline-secondary active" id="informacionPacienteNo" data-value="0">
                                     <input type="radio" value="0" checked> NO
                                 </label>
-                                <label class="btn btn-outline-consulta" id="informacionPacienteSi" data-value="1">
+                                <label class="btn btn-outline-secondary" id="informacionPacienteSi" data-value="1">
                                     <input type="radio" value="1"> SI
                                 </label>
                             </div>
@@ -1359,7 +1363,7 @@
                     <div class="row">
                         <div class="col-6 text-right"></div>
                         <div class="col-6 text-right">
-                            <a class="btn btn-consulta text-white" href="#inicio">CONTINUAR A EXÁMEN ECOGRÁFICO</a>
+                            <a class="btn btn-secondary text-white" href="#inicio">CONTINUAR A EXÁMEN ECOGRÁFICO</a>
                             <p id="ver.auto" class="text-center">.</p>
                         </div>
                     </div>
@@ -3706,16 +3710,16 @@
                     <div class="col-4">
                         <select class="form-control" id="ecografista"></select>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 mt-3">
                         <label >Ciudad de procedencia</label>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 mt-3">
                         <select id="ciudadpaciente" class="form-control gris-claro"></select>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 mt-3">
                         <label>Lugar de control</label>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 mt-3">
                         <select class="form-control" id="lcontrolpaciente"></select>
                     </div>
                 </div>
