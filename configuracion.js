@@ -1,7 +1,5 @@
 var config = JSON.parse('{"name":"configuración", "backurl":"#volver", "backend":"", "localstorage":true, "usehash":true, "config":[{"name":"membrete", "table":"membrete", "desc":"", "input":[{"name":"membrete", "type":"textarea", "row":3, "limit":40, "help":""}]},{"name":"ciudad", "table":"ciudad", "desc":"", "input":[{"name":"Nombre de la ciudad", "type":"text", "limit":40, "help":""}]},{"name":"Lugar de control", "table":"lcontrol", "desc":"", "input":[{"name":"Lugar de control", "type":"text", "limit":40, "help":""}]},{"name":"Motivo exámen", "table":"motivo", "desc":"", "input":[{"name":"Nombre del motivo", "type":"text", "limit":40, "help":""}]},{"name":"Patología obstétrica", "table":"pobst", "desc":"", "input":[{"name":"Nombre de la patología", "type":"text", "limit":40, "help":""}]},{"name":"Profesional examinador", "table":"profex", "desc":"", "input":[{"name":"Nombre de la patología", "type":"text", "limit":40, "help":""}]},{"name":"Email", "table":"email", "desc":"", "input":[{"name":"Nombre", "type":"text", "limit":40, "help":""},{"name":"profesión", "type":"text", "limit":40, "help":""},{"name":"Ciudad", "type":"text", "limit":40, "help":""},{"name":"teléfono", "type":"text", "limit":40, "help":""}]},{"name":"Activación", "table":"activacion", "desc":"", "input":[{"name":"Activar licencia personalizada", "type":"text", "limit":40, "help":""}]}]}');
 
-
-
 function createTabs(config){
     var navID = uuidv4();
     var tabID = uuidv4();
@@ -92,15 +90,8 @@ function loadDatabase() {
                 text: item.nombre
             }));
 
-            $('#ecografista\\.copia').append($('<option>', {
-                value: item.id,
-                text: item.nombre
-            }));
-
-            
             var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
             $('#EcografistaConfigTable').append(fila);
-
         });
         $('#eliminarEcografistaConfig').removeClass("d-none");
         $('#EcografistaConfigTable tr').on('click', function() {

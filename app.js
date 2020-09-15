@@ -760,8 +760,84 @@ $( document ).ready(function() {
 //controlador de los informes
 $( document ).ready(function() {
     $("#btn\\.informe\\.precoz").on("click", function (){
-        var InformeString = infPrecoz();
-        imprInforme(InformeString);
+        if ($("#licencia").val() != ""){
+            let _modal = modal();
+
+            document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+            document.getElementById(_modal.titulo).innerHTML = "Exportar a ...";
+            document.getElementById(_modal.titulo).classList.add("mx-auto");
+            document.getElementById(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
+
+            _email = uuidv4();
+            _imprimir = uuidv4();
+            let _contenido = '<div class="row"><div class="col-6"><button type="button" id='+_email+' class="btn btn-primary">Enviar por E-Mail</button></div><div class="col-6"><button type="button" id='+_imprimir+' class="btn btn-primary">Imprimir</button></div></div>'
+
+            document.getElementById(_modal.contenido).innerHTML = _contenido;
+            document.getElementById(_modal.id).children[0].classList.remove("modal-lg");
+
+            $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+            $('#'+_email).on("click", function(){
+                let _modal = modal("Enviar");
+
+                document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+                document.getElementById(_modal.titulo).innerHTML = "Seleccionar E-Mail";
+                document.getElementById(_modal.titulo).classList.add("mx-auto");
+                document.getElementById(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
+
+                var _correo = uuidv4();
+                let _contenido = '<div class="row"><div class="col-12"><div class="form-group col"><label>Seleccionar E-Mail</label><select id="'+_correo+'" class="form-control"></select></div></div></div>'
+
+                document.getElementById(_modal.contenido).innerHTML = _contenido;
+                document.getElementById(_modal.id).children[0].classList.remove("modal-lg");
+
+                the(_modal.button).dataset.email = _correo;
+                $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+                let configuracion = JSON.parse(localStorage["configuracion"]);
+                if (configuracion.correos.length > 0) {
+
+                    for (var i = 0; i < configuracion.correos.length; i++) {
+                        let elemento = document.getElementById(_correo);
+                        let opt = document.createElement('option');
+                        opt.appendChild( document.createTextNode(configuracion.correos[i].profesion + ", " + configuracion.correos[i].nombre + " - " + configuracion.correos[i].ciudad) );
+                        opt.value = configuracion.correos[i].correo; 
+                        elemento.appendChild(opt); 
+                    }
+                }
+
+                $('#'+_modal.button).on("click", function(){
+                    var InformeString = infPrecoz();
+                
+                    var data = new FormData();
+                    data.append("licencia" , the("licencia").value);
+                    data.append("informe" , 2);
+                    data.append("data" , InformeString);
+                    data.append("email" , the(this.dataset.email).value);
+    
+                    fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+                        console.log(response);
+                        //response.blob().then((successMessage) => {
+                        //    var link = document.createElement('a');
+    
+                        //    link.href = window.URL.createObjectURL(successMessage);
+                        //    link.download = "document.pdf";
+        
+                        //    link.click();
+                        //});
+                    });
+                });
+            });
+
+            $('#'+_imprimir).on("click", function(){
+                var InformeString = infPrecoz();
+                imprInforme(InformeString);
+            });
+
+        }else{
+            var InformeString = infPrecoz();
+            imprInforme(InformeString);
+        }
     });
 
     $("#informe\\.morfologia").on("click", function(){
@@ -1393,7 +1469,6 @@ $( document ).ready(function() {
             document.getElementById("ovario.derecho.ginecologica").value = "";
             document.getElementById("douglas.ginecologica").value = "";
             document.getElementById("comentario.ginecologica").value = "";
-            document.getElementById("ecografista.copia").selectedIndex = 0;
             resetDate();
             $('#'+modal).modal("hide");
         });
@@ -7092,7 +7167,7 @@ function informeGinecologico(){
     let paciente = $( '#nombre-paciente').val();
     let idpaciente = $( '#id-paciente').val();
     let motivo = $( '#motivo-examen option:selected').text();
-    let ecografista = $( '#ecografista\\.copia option:selected').text();
+    let ecografista = $( '#ecografista option:selected').text();
     let fur = new Date(Date.parse(document.getElementById("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
     let fexamen = new Date(Date.parse(document.getElementById("fee").value));
