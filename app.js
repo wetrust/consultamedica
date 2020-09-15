@@ -786,13 +786,33 @@ $( document ).ready(function() {
                 document.getElementById(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
 
                 var _correo = uuidv4();
-                let _contenido = '<div class="row"><div class="col-12"><div class="form-group col"><label>Seleccionar E-Mail</label><select id="'+_correo+'" class="form-control"></select></div></div></div>'
+                var _correoe = uuidv4();
+                let _contenido = '<div class="row"> <div class="col-12"><div class="form-check"> <input class="form-check-input" type="radio" name="emalRadios" id="seleccionar" value="sel" checked> <label class="form-check-label" for="seleccionar"> Seleccionar E-Mail </label></div><div class="form-group"><select id="'+_correo+'" class="form-control"></select></div></div><div class="col-12"> <div class="form-check"> <input class="form-check-input" type="radio" name="emalRadios" id="escribir" value="esc" > <label class="form-check-label" for="escribir"> Escribir E-Mail </label></div><div class="form-group"><input id="'+_correoe+'" class="form-control  d-none" type="email"></div></div></div>'
 
                 document.getElementById(_modal.contenido).innerHTML = _contenido;
                 document.getElementById(_modal.id).children[0].classList.remove("modal-lg");
 
                 the(_modal.button).dataset.email = _correo;
+                the(_modal.button).dataset.emaile = _correoe;
+                the("seleccionar").dataset.email = _correo;
+                the("seleccionar").dataset.emaile = _correoe;
+                the("escribir").dataset.email = _correo;
+                the("escribir").dataset.emaile = _correoe;
                 $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+                $("#seleccionar").on("change",function() {
+                    if (this.checked == true){
+                        the(this.dataset.email).classList.remove("d-none");
+                        the(this.dataset.emaile).classList.add("d-none");
+                    }
+                });
+
+                $("#escribir").on("change",function() {
+                    if (this.checked == true){
+                        the(this.dataset.email).classList.add("d-none");
+                        the(this.dataset.emaile).classList.remove("d-none");
+                    }
+                }); 
 
                 let configuracion = JSON.parse(localStorage["configuracion"]);
                 if (configuracion.correos.length > 0) {
