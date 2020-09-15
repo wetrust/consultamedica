@@ -1045,15 +1045,15 @@ $( document ).ready(function() {
 
                 $('#'+_modal.button).on("click", function(){
                     var InformeString = InfEcoObsSegTrim1();
-                
+
                     var data = new FormData();
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
                     data.append("email" , the(this.dataset.email).value);
-    
+
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
-                        console.log(response);
+                        //console.log(response);
                         //response.blob().then((successMessage) => {
                         //    var link = document.createElement('a');
     
@@ -1062,6 +1062,20 @@ $( document ).ready(function() {
         
                         //    link.click();
                         //});
+                    }).catch(function(error) {
+                        let _modal = modal();
+
+                        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+                        the(_modal.titulo).innerHTML = "ERROR";
+                        the(_modal.titulo).classList.add("mx-auto");
+                        the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
+
+                        let _contenido = '<p class="text-center">Sin conexión a internet<br>No es posible enviar el informe</p>'
+
+                        the(_modal.contenido).innerHTML = _contenido;
+                        the(_modal.id).children[0].classList.remove("modal-lg");
+
+                        $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
                     });
                 });
             });
