@@ -775,7 +775,11 @@ $( document ).ready(function() {
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
-                    data.append("email" , the(this.dataset.email).value);
+                    verifyEmailSend(this,data);
+                    if (data.get("email") == null){return false}
+
+
+                    //determinar si el email es seleccionado o escrito
 
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
                         //console.log(response);
@@ -820,7 +824,8 @@ $( document ).ready(function() {
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
-                    data.append("email" , the(this.dataset.email).value);
+                    verifyEmailSend(this,data);
+                    if (data.get("email") == null){return false}
     
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
                         //console.log(response);
@@ -879,7 +884,8 @@ $( document ).ready(function() {
                             data.append("licencia" , the("licencia").value);
                             data.append("informe" , 2);
                             data.append("data" , InformeString);
-                            data.append("email" , the(this.dataset.email).value);
+                            verifyEmailSend(this,data);
+                            if (data.get("email") == null){return false}
         
                             fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
                                 //console.log(response);
@@ -935,7 +941,8 @@ $( document ).ready(function() {
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
-                    data.append("email" , the(this.dataset.email).value);
+                    verifyEmailSend(this,data);
+                    if (data.get("email") == null){return false}
 
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
                         //console.log(response);
@@ -979,7 +986,8 @@ $( document ).ready(function() {
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
-                    data.append("email" , the(this.dataset.email).value);
+                    verifyEmailSend(this,data);
+                    if (data.get("email") == null){return false}
 
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
                         //console.log(response);
@@ -1024,7 +1032,8 @@ $( document ).ready(function() {
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
-                    data.append("email" , the(this.dataset.email).value);
+                    verifyEmailSend(this,data);
+                    if (data.get("email") == null){return false}
 
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
                         //console.log(response);
@@ -7429,6 +7438,57 @@ function makeModalError(){
     the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
 
     let _contenido = '<p class="text-center">Sin conexión a internet<br>No es posible enviar el informe</p>'
+
+    the(_modal.contenido).innerHTML = _contenido;
+    the(_modal.id).children[0].classList.remove("modal-lg");
+
+    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+}
+
+function verifyEmailSend(_this,data){
+    if (the("seleccionar").checked == true){
+        //verificar si escribió emails en configuración
+        if (the(_this.dataset.email).options.length == 0){
+            makeModalNoEMailSelected();
+        } else{
+            data.append("email" , the(_this.dataset.email).value);
+        }
+    }else{
+        //verificar si escribió un correo electrónico
+
+        if (the(_this.dataset.emaile).value == ""){
+            makeModalNoEMail();
+        }else{
+            data.append("email" , the(_this.dataset.emaile).value); 
+        }
+    }
+}
+
+function makeModalNoEMail(){
+    let _modal = modal();
+            
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+    the(_modal.titulo).innerHTML = "ERROR";
+    the(_modal.titulo).classList.add("mx-auto");
+    the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
+
+    let _contenido = '<p class="text-center">No ha escrito un correo electrónico</p>'
+
+    the(_modal.contenido).innerHTML = _contenido;
+    the(_modal.id).children[0].classList.remove("modal-lg");
+
+    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+}
+
+function makeModalNoEMailSelected(){
+    let _modal = modal();
+            
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+    the(_modal.titulo).innerHTML = "ERROR";
+    the(_modal.titulo).classList.add("mx-auto");
+    the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
+
+    let _contenido = '<p class="text-center">No ha seleccionado un correo electrónico</p><p class="text-center"><strong>Agregue un correo electrónico en configuración</strong></p>'
 
     the(_modal.contenido).innerHTML = _contenido;
     the(_modal.id).children[0].classList.remove("modal-lg");
