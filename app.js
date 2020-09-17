@@ -826,6 +826,8 @@ $( document ).ready(function() {
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
+                    var membrete = "<p>"+$("#membrete").val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
+                    data.append("header" , membrete);
                     verifyEmailSend(this,data);
                     if (data.get("email") == null){return false}
     
@@ -886,6 +888,8 @@ $( document ).ready(function() {
                             data.append("licencia" , the("licencia").value);
                             data.append("informe" , 2);
                             data.append("data" , InformeString);
+                            var membrete = "<p>"+$("#membrete").val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
+                            data.append("header" , membrete);
                             verifyEmailSend(this,data);
                             if (data.get("email") == null){return false}
         
@@ -943,6 +947,8 @@ $( document ).ready(function() {
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
+                    var membrete = "<p>"+$("#membrete").val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
+                    data.append("header" , membrete);
                     verifyEmailSend(this,data);
                     if (data.get("email") == null){return false}
 
@@ -988,6 +994,8 @@ $( document ).ready(function() {
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
+                    var membrete = "<p>"+$("#membrete").val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
+                    data.append("header" , membrete);
                     verifyEmailSend(this,data);
                     if (data.get("email") == null){return false}
 
@@ -1034,6 +1042,8 @@ $( document ).ready(function() {
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
+                    var membrete = "<p>"+$("#membrete").val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
+                    data.append("header" , membrete);
                     verifyEmailSend(this,data);
                     if (data.get("email") == null){return false}
 
