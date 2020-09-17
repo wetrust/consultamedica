@@ -775,6 +775,8 @@ $( document ).ready(function() {
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
+                    var membrete = "<p>"+$("#membrete").val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
+                    data.append("header" , membrete);
                     verifyEmailSend(this,data);
                     if (data.get("email") == null){return false}
 
@@ -1216,7 +1218,7 @@ $( document ).ready(function() {
 //controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia","p.sis.morfologia"];
+        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia","p.sis.morfologia", "", "vlp.morfologia", "vld.morfologia"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -7363,7 +7365,7 @@ function makeModalLicencia(){
 
     _modal.email = uuidv4();
     _modal.imprimir = uuidv4();
-    let _contenido = '<div class="row"><div class="col-6"><button type="button" id='+_modal.email+' class="btn btn-primary">Enviar por E-Mail</button></div><div class="col-6"><button type="button" id='+_modal.imprimir+' class="btn btn-primary">Imprimir</button></div></div>'
+    let _contenido = '<div class="row"><div class="col-6"><button type="button" id='+_modal.email+' class="btn btn-primary">Enviar por E-Mail</button></div><div class="col-6"><button type="button" id='+_modal.imprimir+' class="btn btn-primary">Ver Informe</button></div></div>'
 
     the(_modal.contenido).innerHTML = _contenido;
     the(_modal.id).children[0].classList.remove("modal-lg");
