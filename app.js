@@ -65,7 +65,7 @@ $( document ).ready(function() {
     opt.value = "< 80"; 
     dias.appendChild(opt);
 
-    for (var i = 90; i < 181; i++) {
+    for (var i = 80; i < 181; i++) {
         let opt = document.createElement('option');
         opt.appendChild( document.createTextNode(i) );
         opt.value = i; 
