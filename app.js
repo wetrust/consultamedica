@@ -7542,9 +7542,9 @@ function bvmTxt(valor){
     if (eg > 15 || eg < 41){
         eg = eg - 16;
 
-        if (valor < a(eg)) {
+        if (valor < a[eg]) {
             return "disminuido";
-        } else if (valor > b(eg)){
+        } else if (valor > b[eg]){
             return "aumentado"
         } else{
             return "normal"
