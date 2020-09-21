@@ -736,17 +736,17 @@ $( document ).ready(function() {
         $("#volver").attr("href", "#ecoObsPrimTrim");
     })
 
-    $("#bvmEcoDos").on("click", function(){
+    $("#bvmEcoDos").on("keyup", function(){
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
     })
 
-    $("#bvmDoppler").on("click", function(){
+    $("#bvmDoppler").on("keyup", function(){
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liqAmnioDoppler").value = txt;
     })
 
-    $("#liquido\\.semi\\.morfologia").on("click", function(){
+    $("#liquido\\.semi\\.morfologia").on("keyup", function(){
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liquido.cualitativo.morfologia").value = txt;
     })
