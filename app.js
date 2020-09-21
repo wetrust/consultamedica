@@ -735,6 +735,21 @@ $( document ).ready(function() {
 
         $("#volver").attr("href", "#ecoObsPrimTrim");
     })
+
+    $("#bvmEcoDos").on("click", function(){
+        let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
+        the("liq-cualitativo-eco").value = txt;
+    })
+
+    $("#bvmDoppler").on("click", function(){
+        let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
+        the("liqAmnioDoppler").value = txt;
+    })
+
+    $("#liquido\\.semi\\.morfologia").on("click", function(){
+        let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
+        the("liquido.cualitativo.morfologia").value = txt;
+    })
 });
 
 //controlador de input clones
@@ -7372,7 +7387,6 @@ function informeDoppler(){
     return InformeString;
 }
 
-
 //crear modal si tiene licencia
 function makeModalLicencia(){
     let _modal = modal();
@@ -7515,4 +7529,29 @@ function makeModalNoEMailSelected(){
     the(_modal.id).children[0].classList.remove("modal-lg");
 
     $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+}
+
+function bvmTxt(valor){
+    'use strict';
+    let eg = +document.getElementById("semanas").value;
+
+	let a = [], b = [];
+    a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
+    b[0]=59; b[1]=62; b[2]=64; b[3]=66; b[4]=67; b[5]=68; b[6]=68; b[7]=68; b[8]=68; b[9]=68; b[10]=68; b[11]=69; b[12]=69; b[13]=69; b[14]=69; b[15]=70; b[16]=71; b[17]=72; b[18]=72; b[19]=72; b[20]=71; b[21]=70; b[22]=68; b[23]=66; b[24]=62;
+
+    if (eg > 15 || eg < 41){
+        eg = eg - 16;
+
+        if (valor < a(eg)) {
+            return "disminuido";
+        } else if (valor > b(eg)){
+            return "aumentado"
+        } else{
+            return "normal"
+        }
+    }
+}
+
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
 }
