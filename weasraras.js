@@ -37,6 +37,7 @@ $(document).ready(function(){
             ocultarPrincipal();
             the("mensaje.tres").classList.remove("d-none");
             the("imagen.tres").classList.remove("d-none");
+            the("referencia.tres").classList.remove("d-none");
         }else{
             reiniciaPuntitos();
         }
@@ -50,6 +51,11 @@ $(document).ready(function(){
             this.classList.add("active");
             ocultarPrincipal();
             the("mensaje.cuatro").classList.remove("d-none");
+
+            the("caja.final").classList.remove("d-none");
+            the("caja.final").classList.add("d-flex");
+
+            the("imagen.cuatro").classList.remove("d-none");
         }else{
             reiniciaPuntitos();
         }
@@ -63,6 +69,11 @@ $(document).ready(function(){
             this.classList.add("active");
             ocultarPrincipal();
             the("mensaje.cinco").classList.remove("d-none");
+
+            the("caja.final").classList.remove("d-none");
+            the("caja.final").classList.add("d-flex");
+
+            the("imagen.cinco").classList.remove("d-none");
         }else{
             reiniciaPuntitos();
         }
@@ -97,6 +108,11 @@ function reiniciarMensajes(){
 
     the("imagen.dos").classList.add("d-none");
     the("imagen.tres").classList.add("d-none");
+    the("imagen.cuatro").classList.add("d-none");
+    the("imagen.cinco").classList.add("d-none");
+    the("referencia.tres").classList.add("d-none");
+    the("caja.final").classList.add("d-none");
+    the("caja.final").classList.remove("d-flex");
 }
 
 function ocultarPrincipal(){
