@@ -456,7 +456,9 @@ $( document ).ready(function() {
     });
     $( '#lf' ).change( pctlf);
     $( '#cerebelo' ).change( pctcb);
-    $( "#bvm" ).change(bvm);
+    $( "#bvm" ).change(bvm).on("keyup", function(){
+        the("bvmEcoDos").value = this.value
+    });
  
     $( '#lh').change( pctlh);
     $( '#dof').change( calcdof);
@@ -739,6 +741,8 @@ $( document ).ready(function() {
     $("#bvmEcoDos").on("keyup", function(){
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
+
+        the("bvm").value = (isNumeric(this.value) == true) ? this.value : 0;
     })
 
     $("#bvmDoppler").on("keyup", function(){
