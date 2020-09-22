@@ -458,6 +458,9 @@ $( document ).ready(function() {
     $( '#cerebelo' ).change( pctcb);
     $( "#bvm" ).change(bvm).on("keyup", function(){
         the("bvmEcoDos").value = this.value
+
+        let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
+        the("liq-cualitativo-eco").value = txt;
     });
  
     $( '#lh').change( pctlh);
