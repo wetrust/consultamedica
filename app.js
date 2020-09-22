@@ -23,6 +23,9 @@ document.location.hash = "";
 
 //controlador de funciones base cuando se carga la pagina
 $( document ).ready(function() {
+    //detalle extraño
+    the("problematico").checked = true
+
     $("#fechaHora").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear());
     document.getElementById("fum").value = getDate();
     document.getElementById("fee").value = getDate();
