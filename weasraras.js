@@ -110,7 +110,6 @@ function reiniciarMensajes(){
     the("imagen.tres").classList.add("d-none");
     the("imagen.cuatro").classList.add("d-none");
     the("imagen.cinco").classList.add("d-none");
-    the("referencia.tres").classList.add("d-none");
     the("caja.final").classList.add("d-none");
     the("caja.final").classList.remove("d-flex");
 }
