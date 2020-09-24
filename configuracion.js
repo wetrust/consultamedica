@@ -181,6 +181,9 @@ function loadDatabase() {
     if (configuracion.licencia == "medicina"){
         the("licencia").parentElement.classList.add("active");
         the("licencia.no").parentElement.classList.remove("active");
+        the("mensaje.licencia").innerHTML =  "Licencia activada";
+    } else {
+        the("mensaje.licencia").innerHTML =  "Licencia desactivada";
     }
     
     $('#CorreoConfigTable').empty();
@@ -698,6 +701,7 @@ $(document).ready(function() {
                 configuracion.licencia = licencia;
                     
                 localStorage["configuracion"] = JSON.stringify(configuracion);
+                the("mensaje.licencia").innerHTML =  "Licencia activada";
             }
         }
     });
@@ -710,6 +714,8 @@ $(document).ready(function() {
                 configuracion.licencia = licencia;
                     
                 localStorage["configuracion"] = JSON.stringify(configuracion);
+
+                the("mensaje.licencia").innerHTML =  "Licencia desactivada";
             }
         }
     });
