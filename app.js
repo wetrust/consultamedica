@@ -785,7 +785,8 @@ $( document ).ready(function() {
 //controlador de los informes
 $( document ).ready(function() {
     $("#btn\\.informe\\.precoz").on("click", function (){
-        if ($("#licencia").val() != ""){
+
+        if (document.getElementById("licencia").parentElement.classList.contains("active")){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -836,7 +837,7 @@ $( document ).ready(function() {
     });
 
     $("#informe\\.morfologia").on("click", function(){
-        if ($("#licencia").val() != ""){
+        if (document.getElementById("licencia").parentElement.classList.contains("active")){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -898,7 +899,7 @@ $( document ).ready(function() {
 
             $( "#infEcoObsSegTrim2verNO").on("click", function(){
                 $('#'+this.dataset.modal).modal('hide');
-                if ($("#licencia").val() != ""){
+                if (document.getElementById("licencia").parentElement.classList.contains("active")){
                     let licencia = makeModalLicencia();
         
                     $('#'+licencia.email).on("click", function(){
@@ -957,7 +958,7 @@ $( document ).ready(function() {
     });
 
     $("#modalPreInfEcoObsSegTrim1").on("click", function() {
-        if ($("#licencia").val() != ""){
+        if (document.getElementById("licencia").parentElement.classList.contains("active")){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -1004,7 +1005,7 @@ $( document ).ready(function() {
     });
 
     $("#modalPreInfEcoDoppler").on("click", function(){
-        if ($("#licencia").val() != ""){
+        if (document.getElementById("licencia").parentElement.classList.contains("active")){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -1052,7 +1053,7 @@ $( document ).ready(function() {
     });
 
     $("#btn\\.informe\\.ginecologica").on("click",function() {
-        if ($("#licencia").val() != ""){
+        if (document.getElementById("licencia").parentElement.classList.contains("active")){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){

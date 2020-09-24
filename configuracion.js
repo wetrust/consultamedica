@@ -177,7 +177,12 @@ function loadDatabase() {
     }
 
     $("#membrete").val(configuracion.membrete);
-    $("#licencia").val(configuracion.licencia);
+
+    if (configuracion.licencia == "medicina"){
+        the("licencia").parentElement.classList.add("active");
+        the("licencia.no").parentElement.classList.remove("active");
+    }
+    
     $('#CorreoConfigTable').empty();
 
     if (configuracion.correos.length > 0) {
@@ -211,20 +216,6 @@ function saveMotivoExamenLocalStorage() {
             $('#motivoInput').val("");
             localStorage["configuracion"] = JSON.stringify(configuracion);
             loadDatabase();
-        }
-    }
-}
-
-function saveLicenciaLocalStorage() {
-
-    if (window.localStorage) {
-        if (localStorage.configuracion != null) {
-            event.preventDefault();
-            var configuracion = JSON.parse(localStorage["configuracion"]);
-            var licencia = $('#licencia').val();
-            configuracion.licencia = licencia;
-                
-            localStorage["configuracion"] = JSON.stringify(configuracion);
         }
     }
 }
@@ -699,8 +690,28 @@ $(document).ready(function() {
 		localStorage["configuracion"] = JSON.stringify(configuracion);
     });
 
-	$("#saveLicencia").on("click", function(event){
-        saveLicenciaLocalStorage();
+	$("#licencia\\.button").on("click", function(){
+        if (window.localStorage) {
+            if (localStorage.configuracion != null) {
+                var configuracion = JSON.parse(localStorage["configuracion"]);
+                var licencia = "medicina";
+                configuracion.licencia = licencia;
+                    
+                localStorage["configuracion"] = JSON.stringify(configuracion);
+            }
+        }
+    });
+
+    $("#licencia\\.no\\.button").on("click", function(){
+        if (window.localStorage) {
+            if (localStorage.configuracion != null) {
+                var configuracion = JSON.parse(localStorage["configuracion"]);
+                var licencia = "x";
+                configuracion.licencia = licencia;
+                    
+                localStorage["configuracion"] = JSON.stringify(configuracion);
+            }
+        }
     });
 
     $('#nuevoCorreoConfig').on('click', function() {

@@ -3680,16 +3680,20 @@
             <div class="tab-pane fade" id="activacionConfig" role="tabpanel">
                 <div class="card tabla">
                     <div class="card-body">
-                        <div class="row mt-2 mb-2">
-                            <div class="col-2">
-                                <label>Activar licencia personalizada*</label>
-                                <p class="text-right">* <small>medicina</small></p>
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Envíar informes por E-Mail</label>
+                            <div class="col-sm-2">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active" id="licencia.no.button">
+                                      <input type="radio" name="check.licencia" id="licencia.no" value="" checked="checked"> No
+                                    </label>
+                                    <label class="btn btn-secondary" id="licencia.button">
+                                      <input type="radio" name="check.licencia" id="licencia" value="medicina"> Si
+                                    </label>
+                                </div>
                             </div>
-                            <div class="col-4 text-center">
-                                <input class="form-control" type="text" id="licencia">
-                            </div>
-                            <div class="col-2">
-                                <button class="btn btn-danger my-2" id="saveLicencia"><small><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</small></button>
+                            <div class="col-12 col-lg-6 d-none">
                             </div>
                         </div>
                     </div>
