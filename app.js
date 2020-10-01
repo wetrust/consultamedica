@@ -846,14 +846,14 @@ $( document ).ready(function() {
                 the(email.button).dataset.parentmodal = this.dataset.modal;
 
                 $('#'+email.button).on("click", function(){
-                    var InformeString = informeMorfologia();
+                    var InformeString = informeMorfologiaClon();
                 
                     var data = new FormData();
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
                     var membrete = "<p>"+$("#membrete").val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
-                    data.append("header" , membrete);
+                    data.append("header" , "");
                     verifyEmailSend(this,data);
                     if (data.get("email") == null){return false}
     
@@ -6981,6 +6981,302 @@ function informeMorfologia(){
     }
 
     InformeString += ' </tbody> </table> <table class="table"> <tbody> <tr> <th style="color: #045dab;">EVALUACIÓN BIOMETRÍA FETAL (mm)</th> <th style="text-align: center;">Valor observado</th> <th class="text-center" style="text-align: center;">Pct de Crecimiento</th> <th class="text-center" style="text-align: center;">Rango percentilar</th> </tr><tr> <td class="p-0 pl-3">DBP (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPRANGO</td></tr><tr> <td class="p-0 pl-3">DOF:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOF</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFRANGO</td></tr><tr> <td class="p-0 pl-3">CC (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CC</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCRANGO</td></tr><tr> <td class="p-0 pl-3">CA (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CA</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CAPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CARANGO</td></tr><tr> <td class="p-0 pl-3">Femur (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMUR</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFEPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFERANGO</td></tr><tr> <td class="p-0 pl-3">Humero (Jeanty):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERO</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMEROPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERORANGO</td></tr><tr> <td class="p-0 pl-3">Índice Cefálico:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:INDCEF</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">Transverso cerebeloso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCEREPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERERANGO</td></tr><tr> <td class="p-0 pl-3">Cisterna magna:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAG</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGRANGO</td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td></tr><tr> <th class="p-0 pl-3" style="color: #045dab;">FLUJOMETRÍA DE UTERINAS Y CERVIX</th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> </tr><tr> <td class="p-0 pl-3">IP Arteria uterina derecha:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUD</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDRANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria uterina izquierda:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUI</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>IP Arteria uterinas promedio:</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Largo cervical (mm):</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERVTXT</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td></tr><tr> <td class="p-0 pl-3" style="color: #045dab;">ADICIONAL DOPPLER FETAL</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3">IP Arteria Umbilical:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AU</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AURANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria cerebral media:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CM</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMRANGO</td></tr><tr> <td class="p-0 pl-3">IP Índice cerebro placentario:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPRANGO</td></tr><tr> <td class="p-0 pl-3">Ductus venoso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVRANGO</td></tr><tr> <td class="p-0 pl-3">Peak sistólico de ACM, PSV (cm/s):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PACM</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr></tbody></table><div class="newpage" pagebreak="true"></div><p style="margin-top: 5rem;">&nbsp;</p><p style="margin-top: 5rem;">&nbsp;</p><p style="color: #045dab; margin-top: 5rem;"><strong>EVALUACIÓN MORFOLOGÍA FETAL</strong></p><table class="table"> <tbody> <tr> <td class="p-0 pl-3" style="width: 360px;">Cerebro Ventrículo Lateral proximal: :CEREVLP mm</td><td class="p-0 pl-3">:CEREVLPTXT</td></tr><tr> <td class="p-0 pl-3">Cerebro Ventrículo Lateral distal: :CEREVLD mm</td><td class="p-0 pl-3">:CEREVLDTXT</td></tr><tr> <td class="p-0 pl-3">Cavum SP presente: :CAVUM</td><td class="p-0 pl-3">:CAVUMTXT</td></tr><tr> <td class="p-0 pl-3">Cuerpo calloso visible: :CCV</td><td class="p-0 pl-3">:CCVTXT</td></tr><tr> <td class="p-0 pl-3">Cuello normal: :CUELLO</td><td class="p-0 pl-3">:CUELLOTXT</td></tr><tr> <td class="p-0 pl-3">Labio nariz normal: :LNN</td><td class="p-0 pl-3">:LNNTXT</td></tr><tr> <td class="p-0 pl-3">Corazón 4 cámaras visible: :CORACV</td><td class="p-0 pl-3">:CORACVTXT</td></tr><tr> <td class="p-0 pl-3">Corazón Tracto de salida pulmonar normal: :CORATSPN</td><td class="p-0 pl-3">:CORATSPNTXT</td></tr><tr> <td class="p-0 pl-3">Corazón Tracto salida Aórtico normal: :CORATSAN</td><td class="p-0 pl-3">:CORATSANTXT</td></tr><tr> <td class="p-0 pl-3">Corazón 3 vasos tráquea visible: :CORAVTV</td><td class="p-0 pl-3">:CORAVTVTXT</td></tr><tr> <td class="p-0 pl-3">Tórax Normal: :TN</td><td class="p-0 pl-3">:TNTXT</td></tr><tr> <td class="p-0 pl-3">Abdomen: :ABDO</td><td class="p-0 pl-3">:ABDOTXT</td></tr><tr> <td class="p-0 pl-3">Pared normal: :PARNOR</td><td class="p-0 pl-3">:PARNORTXT</td></tr><tr> <td class="p-0 pl-3">Estómago visible: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr><tr> <td class="p-0 pl-3">Riñones visibles: :RINOV</td><td class="p-0 pl-3">:RINOVTXT</td></tr><tr> <td class="p-0 pl-3">Vejiga visible: :VEJIV</td><td class="p-0 pl-3">:VEJIVTXT</td></tr><tr> <td class="p-0 pl-3">Columna normal: :COLUMN</td><td class="p-0 pl-3">:COLUMNTXT</td></tr><tr> <td class="p-0 pl-3">Extremidades superiores normales: :EXSUP</td><td class="p-0 pl-3">:EXSUPTXT</td></tr><tr> <td class="p-0 pl-3">Extremidades inferiores normales: :EXINF</td><td class="p-0 pl-3">:EXINFTXT</td></tr><tr> <td class="p-0 pl-3">Sexo fetal:</td><td class="p-0 pl-3">:GEN</td></tr></tbody></table> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong></p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><p><strong style="color: #045dab;">INDICACIONES (seguimiento)</strong>:</p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:INDI</p></div><div class="container-fluid" style="margin-top: 5rem;"> <p class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block; margin-top: 5rem;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p></div></div>';
+
+    var DBP = document.getElementById("dbp.morfologia").value;
+    var DBPPCT = document.getElementById("dbp.pct.morfologia").value;
+    var DBPRANGO = oldProgress(document.getElementById("dbp.pct.real.morfologia").value);
+
+    var DOF = document.getElementById("dof.morfologia").value;
+    var DOFPCT = document.getElementById("dof.pct.morfologia").value;
+    var DOFRANGO = oldProgress(document.getElementById("dof.pct.real.morfologia").value);
+
+    var CC = document.getElementById("pc.morfologia").value;
+    var CCPCT = document.getElementById("pc.pct.morfologia").value;
+    var CCRANGO = oldProgress(document.getElementById("pc.pct.real.morfologia").value);
+
+    var CA = document.getElementById("pa.morfologia").value;
+    var CAPCT = document.getElementById("pa.pct.morfologia").value;
+    var CARANGO = oldProgress(document.getElementById("pa.pct.real.morfologia").value);
+
+    var FEMUR = document.getElementById("femur.morfologia").value;
+    var FEMURPCT = document.getElementById("femur.pct.morfologia").value;
+    var FEMURRANGO = oldProgress(document.getElementById("femur.pct.real.morfologia").value);
+
+    var HUMERO = document.getElementById("humero.morfologia").value;
+    var HUMEROPCT = document.getElementById("humero.pct.morfologia").value;
+    var HUMERORANGO = oldProgress(document.getElementById("humero.pct.real.morfologia").value);
+
+    var INDCEF = document.getElementById("dof.ic.morfologia").value;
+    var TRANSCERE = document.getElementById("tc.morfologia").value;
+    var TRANSCEREPCT = document.getElementById("tc.pct.morfologia").value;
+    var TRANSCERERANGO = oldProgress(document.getElementById("tc.pct.real.morfologia").value);
+
+    var CISMAG = document.getElementById("cm.morfologia").value;
+    var CISMAGPCT = document.getElementById("cm.pct.morfologia").value;
+    var CISMAGRANGO = oldProgress(document.getElementById("cm.pct.real.morfologia").value);
+
+    var PFE = document.getElementById("pfe.morfologia").value;
+    var PFEPCT = document.getElementById("pfe.pct.morfologia").value;
+    var PFERANGO = oldProgress(document.getElementById("pfe.pct.real.morfologia").value);
+
+    var CEREVLP = document.getElementById("vlp.morfologia").value;
+    var CEREVLD = document.getElementById("vld.morfologia").value;
+    var CAVUM = document.querySelector('input[name="cspp.morfologia"]:checked').value;
+    var CCV = document.querySelector('input[name="ccv.morfologia"]:checked').value;
+    var CUELLO = document.querySelector('input[name="cn.morfologia"]:checked').value;
+    var LNN = document.querySelector('input[name="lnn.morfologia"]:checked').value;
+    var CORACV = document.querySelector('input[name="cv.morfologia"]:checked').value;
+    var CORATSPN = document.querySelector('input[name="tspn.morfologia"]:checked').value;
+    var CORATSAN = document.querySelector('input[name="tsan.morfologia"]:checked').value;
+    var CORAVTV = document.querySelector('input[name="vtv.morfologia"]:checked').value;
+    var TN = document.querySelector('input[name="tn.morfologia"]:checked').value;
+    var ABDO = document.querySelector('input[name="abdo.morfologia"]:checked').value;
+    var PARNOR = document.querySelector('input[name="pn.morfologia"]:checked').value;
+    var ESTOV = document.querySelector('input[name="ev.morfologia"]:checked').value;
+    var RINOV = document.querySelector('input[name="rv.morfologia"]:checked').value;
+    var VEJIV = document.querySelector('input[name="vv.morfologia"]:checked').value;
+    var COLUMN = document.querySelector('input[name="cn.morfologia"]:checked').value;
+    var EXSUP = document.querySelector('input[name="esn.morfologia"]:checked').value;
+    var EXINF = document.querySelector('input[name="ein.morfologia"]:checked').value;
+    var GEN = the("gen.morfologia").value;
+
+    var CEREVLPTXT = document.getElementById("vlp.txt.morfologia").value;
+    var CEREVLDTXT = document.getElementById("vld.txt.morfologia").value;
+    var CAVUMTXT = document.querySelector('input[name="cspp.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var CCVTXT = document.querySelector('input[name="ccv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var CUELLOTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var LNNTXT = document.querySelector('input[name="lnn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var CORACVTXT = document.querySelector('input[name="cv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var CORATSPNTXT = document.querySelector('input[name="tspn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var CORATSANTXT = document.querySelector('input[name="tsan.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var CORAVTVTXT = document.querySelector('input[name="vtv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var TNTXT = document.querySelector('input[name="tn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var ABDOTXT = document.querySelector('input[name="abdo.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var PARNORTXT = document.querySelector('input[name="pn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var ESTOVTXT = document.querySelector('input[name="ev.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var RINOVTXT = document.querySelector('input[name="rv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var VEJIVTXT = document.querySelector('input[name="vv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var COLUMNTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var EXSUPTXT = document.querySelector('input[name="esn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    var EXINFTXT = document.querySelector('input[name="ein.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+
+    var AUD = document.getElementById("art.ut.d.morfologia").value;
+    var AUDPCT = document.getElementById("art.ut.d.pct.morfologia").value;
+    var AUDRANGO = oldProgress(document.getElementById("art.ut.d.pct.real.morfologia").value);
+
+    var AUI = document.getElementById("art.ut.i.morfologia").value;
+    var AUIPCT = document.getElementById("art.ut.i.pct.morfologia").value;
+    var AUIRANGO = oldProgress(document.getElementById("art.ut.i.pct.real.morfologia").value);
+
+    var AUP = document.getElementById("art.ut.prom.morfologia").value;
+    var AUPPCT = document.getElementById("art.ut.prom.pct.morfologia").value;
+    var AUPRANGO = oldProgress(document.getElementById("art.ut.prom.pct.real.morfologia").value);
+
+    var AU = document.getElementById("art.umb.morfologia").value;
+    var AUPCT = document.getElementById("art.umb.pct.morfologia").value;
+    var AURANGO = oldProgress(document.getElementById("art.umb.pct.real.morfologia").value);
+
+    var CM = document.getElementById("art.cm.morfologia").value;
+    var CMPCT = document.getElementById("art.cm.pct.morfologia").value;
+    var CMRANGO = oldProgress(document.getElementById("art.cm.pct.real.morfologia").value);
+
+    var ICEREP = document.getElementById("ind.cp.morfologia").value;
+    var ICEREPPCT = document.getElementById("ind.cp.pct.morfologia").value;
+    var ICEREPRANGO = oldProgress(document.getElementById("ind.cp.pct.real.morfologia").value);
+
+    var PACM = document.getElementById("p.sis.morfologia").value;
+
+    var DUCV = document.getElementById("dv.morfologia").value;
+    var DUCVPCT = document.getElementById("dv.pct.morfologia").value;
+    var DUCVRANGO = oldProgress(document.getElementById("dv.pct.real.morfologia").value);
+
+    var LARCERV = document.getElementById("lc.morfologia").value;
+    var LARCERVTXT = document.getElementById("lc.pct.morfologia").value;
+
+    var INDI = document.getElementById("seguimiento.morfologia").value;
+    var COMENTARIO = document.getElementById("biometria.comentario.morfologia").value +  "<br>" + document.getElementById("conclusion.morfologia").value + "<br>" + document.getElementById("morfologia.comentario.morfologia").value;
+
+    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
+    var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
+
+    InformeString = InformeString.replace(":FUR", fur);
+    InformeString = InformeString.replace(":EG", eg);
+    InformeString = InformeString.replace(":FPP", fpp);
+    InformeString = InformeString.replace(":DATEINFORME", dateInf);
+
+    InformeString = InformeString.replace(":CIUDAD", CIUDAD);
+    InformeString = InformeString.replace(":LCONTROL", LCONTROL);
+
+    InformeString = InformeString.replace(":PACIENTE", paciente);
+    InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
+    InformeString = InformeString.replace(":FEXAMEN", fexamen);
+    InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
+    InformeString = InformeString.replace(":MOTIVO", motivo);
+    InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
+    InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
+
+    InformeString = InformeString.replace(":ACTCAR", ACTCAR);
+    InformeString = InformeString.replace(":MOVFET", MOVFET);
+    InformeString = InformeString.replace(":EMB", EMB);
+    InformeString = InformeString.replace(":PRESENT", PRESENT);
+    InformeString = InformeString.replace(":DORSOFET", DORSOFET);
+    InformeString = InformeString.replace(":ANTECESA", ANTECESA);
+    InformeString = InformeString.replace(":PLAUB", PLAUB);
+    InformeString = InformeString.replace(":PLAIN", PLAIN);
+    InformeString = InformeString.replace(":BVMCUA", BVMCUA);
+    InformeString = InformeString.replace(":BVMMED", BVMMED);
+
+    InformeString = InformeString.replace(":DBP", DBP);
+    InformeString = InformeString.replace(":DBPPCT", DBPPCT);
+    InformeString = InformeString.replace(":DBPRANGO", DBPRANGO);
+
+    InformeString = InformeString.replace(":DOF", DOF);
+    InformeString = InformeString.replace(":DOFPCT", DOFPCT);
+    InformeString = InformeString.replace(":DOFRANGO", DOFRANGO);
+    InformeString = InformeString.replace(":CC", CC);
+    InformeString = InformeString.replace(":CCPCT", CCPCT);
+    InformeString = InformeString.replace(":CCRANGO", CCRANGO);
+    InformeString = InformeString.replace(":CA", CA);
+    InformeString = InformeString.replace(":CAPCT", CAPCT);
+    InformeString = InformeString.replace(":CARANGO", CARANGO);
+    InformeString = InformeString.replace(":FEMUR", FEMUR);
+    InformeString = InformeString.replace(":FEMURPCT", FEMURPCT);
+    InformeString = InformeString.replace(":FEMURRANGO", FEMURRANGO);
+    InformeString = InformeString.replace(":HUMERO", HUMERO);
+    InformeString = InformeString.replace(":HUMEROPCT", HUMEROPCT);
+    InformeString = InformeString.replace(":HUMERORANGO", HUMERORANGO);
+
+    InformeString = InformeString.replace(":INDCEF", INDCEF);
+
+    InformeString = InformeString.replace(":TRANSCERE", TRANSCERE);
+    InformeString = InformeString.replace(":TRANSCEREPCT", TRANSCEREPCT);
+    InformeString = InformeString.replace(":TRANSCERERANGO", TRANSCERERANGO);
+
+    InformeString = InformeString.replace(":CISMAG", CISMAG);
+    InformeString = InformeString.replace(":CISMAGPCT", CISMAGPCT);
+    InformeString = InformeString.replace(":CISMAGRANGO", CISMAGRANGO);
+
+    InformeString = InformeString.replace(":PFE", PFE);
+    InformeString = InformeString.replace(":PFEPCT", PFEPCT);
+    InformeString = InformeString.replace(":PFERANGO", PFERANGO);
+
+    InformeString = InformeString.replace(":CEREVLP", CEREVLP);
+    InformeString = InformeString.replace(":CEREVLD", CEREVLD);
+    InformeString = InformeString.replace(":CAVUM", CAVUM);
+    InformeString = InformeString.replace(":CCV", CCV);
+    InformeString = InformeString.replace(":CUELLO", CUELLO);
+    InformeString = InformeString.replace(":LNN", LNN);
+    InformeString = InformeString.replace(":CORACV", CORACV);
+    InformeString = InformeString.replace(":CORATSPN", CORATSPN);
+    InformeString = InformeString.replace(":CORATSAN", CORATSAN);
+
+    InformeString = InformeString.replace(":CORAVTV", CORAVTV);
+    InformeString = InformeString.replace(":TN", TN);
+    InformeString = InformeString.replace(":ABDO", ABDO);
+    InformeString = InformeString.replace(":PARNOR", PARNOR);
+    InformeString = InformeString.replace(":ESTOV", ESTOV);
+    InformeString = InformeString.replace(":RINOV", RINOV);
+    InformeString = InformeString.replace(":VEJIV", VEJIV);
+    InformeString = InformeString.replace(":COLUMN", COLUMN);
+    InformeString = InformeString.replace(":EXSUP", EXSUP);
+    InformeString = InformeString.replace(":EXINF", EXINF);
+    InformeString = InformeString.replace(":GEN", GEN);
+    InformeString = InformeString.replace(":AUD", AUD);
+    InformeString = InformeString.replace(":AUDPCT", AUDPCT);
+    InformeString = InformeString.replace(":AUDRANGO", AUDRANGO);
+    InformeString = InformeString.replace(":AUI", AUI);
+    InformeString = InformeString.replace(":AUIPCT", AUIPCT);
+    InformeString = InformeString.replace(":AUIRANGO", AUIRANGO);
+    InformeString = InformeString.replace(":AUP", AUP);
+    InformeString = InformeString.replace(":AUPPCT", AUPPCT);
+    InformeString = InformeString.replace(":AUPRANGO", AUPRANGO);
+    InformeString = InformeString.replace(":AU", AU);
+    InformeString = InformeString.replace(":AUPCT", AUPCT);
+    InformeString = InformeString.replace(":AURANGO", AURANGO);
+    InformeString = InformeString.replace(":CM", CM);
+    InformeString = InformeString.replace(":CMPCT", CMPCT);
+    InformeString = InformeString.replace(":CMRANGO", CMRANGO);
+    InformeString = InformeString.replace(":ICEREP", ICEREP);
+    InformeString = InformeString.replace(":ICEREPPCT", ICEREPPCT);
+    InformeString = InformeString.replace(":ICEREPRANGO", ICEREPRANGO);
+
+    InformeString = InformeString.replace(":CEREVLPTXT", CEREVLPTXT);
+    InformeString = InformeString.replace(":CEREVLDTXT", CEREVLDTXT);
+    InformeString = InformeString.replace(":CAVUMTXT", CAVUMTXT);
+    InformeString = InformeString.replace(":CCVTXT", CCVTXT);
+    InformeString = InformeString.replace(":CUELLOTXT", CUELLOTXT);
+    InformeString = InformeString.replace(":LNNTXT", LNNTXT);
+    InformeString = InformeString.replace(":CORACVTXT", CORACVTXT);
+    InformeString = InformeString.replace(":CORATSPNTXT", CORATSPNTXT);
+    InformeString = InformeString.replace(":CORATSANTXT", CORATSANTXT);
+    InformeString = InformeString.replace(":CORAVTVTXT", CORAVTVTXT);
+    InformeString = InformeString.replace(":TNTXT", TNTXT);
+    InformeString = InformeString.replace(":ABDOTXT", ABDOTXT);
+    InformeString = InformeString.replace(":PARNORTXT", PARNORTXT);
+    InformeString = InformeString.replace(":ESTOVTXT", ESTOVTXT);
+    InformeString = InformeString.replace(":RINOVTXT", RINOVTXT);
+    InformeString = InformeString.replace(":VEJIVTXT", VEJIVTXT);
+    InformeString = InformeString.replace(":COLUMNTXT", COLUMNTXT);
+    InformeString = InformeString.replace(":EXSUPTXT", EXSUPTXT);
+    InformeString = InformeString.replace(":EXINFTXT", EXINFTXT);
+
+    InformeString = InformeString.replace(":PACM", PACM);
+    InformeString = InformeString.replace(":DUCV", DUCV);
+    InformeString = InformeString.replace(":DUCVPCT", DUCVPCT);
+    InformeString = InformeString.replace(":DUCVRANGO", DUCVRANGO);
+
+    InformeString = InformeString.replace(":LARCERV", LARCERV);
+    InformeString = InformeString.replace(":LARCERVTXT", LARCERVTXT);
+    InformeString = InformeString.replace(":INDI", INDI);
+    InformeString = InformeString.replace(":COMENTARIO", COMENTARIO);
+
+    return InformeString;
+}
+
+function informeMorfologiaClon(){
+
+    var membrete = "<p>"+$("#membrete").val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
+    InformeString = membrete;
+    InformeString += '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table> <p class="mb-0"> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa:</strong> :ANTECESA </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">BIOMETRÍA</strong></p><p> <strong>Actividad cardíaca:</strong> :ACTCAR , <strong>Movimientos fetales:</strong> :MOVFET , Embarazo: :EMB <br/> <strong>Presentación:</strong> :PRESENT , <strong>Dorso fetal:</strong> :DORSOFET <br/> <strong>Placenta</strong> Ubicación: :PLAUB , Placenta inserción: :PLAIN </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Liquido amniótico</strong></td><td class="p-0">Medicion cualitativa: :BVMCUA .</td></tr><tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Bolsillo Vertical Mayor (BVM): :BVMMED mm</td></tr></tbody> </table></div>';
+
+    let fur = new Date(Date.parse(document.getElementById("fum").value));
+    fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+    let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+    let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
+    let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
+
+    dayHoy = new Date();
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+
+    var paciente = document.getElementById("nombre-paciente").value;
+    var idpaciente = document.getElementById("id-paciente").value;
+    var motivo = $( '#motivo-examen option:selected').text();
+    var ecografista = $( '#ecografista\\.morfologia').val();
+    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var edadmaterna = $( "select[name='edad_materna']").val();
+
+    var ACTCAR = the("actividad.cardiaca.morfologia").value;
+    var MOVFET = the("movimientos.fetales.morfologia").value;
+    var EMB = the("embarazo.morfologica").value;
+    var PRESENT = the("presentacion.morfologia").value;
+    var DORSOFET = the("dorso.morfologia").value;
+    var ANTECESA = the("antecedentes.cesarea.morfologia").value;
+    var PLAUB = the("placenta.ubicacion.morfologia").value;
+    var PLAIN = document.getElementById("placenta.insercion.morfologia").value;
+    var BVMCUA = document.getElementById("liquido.cualitativo.morfologia").value;
+    var BVMMED = document.getElementById("liquido.semi.morfologia").value;
+
+    if (the("ver.ila.morfologia").checked == true){
+        InformeString += ' <tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Sumatoria de 4 cuadrantes (ILA): :ILA mm</td></tr>';
+        var ILA = document.getElementById("liquido.ila.suma.morfologia").value;
+        InformeString = InformeString.replace(":ILA", ILA);
+    }
+
+    InformeString += ' </tbody> </table> <table class="table"> <tbody> <tr> <th style="color: #045dab;">EVALUACIÓN BIOMETRÍA FETAL (mm)</th> <th style="text-align: center;">Valor observado</th> <th class="text-center" style="text-align: center;">Pct de Crecimiento</th> <th class="text-center" style="text-align: center;">Rango percentilar</th> </tr><tr> <td class="p-0 pl-3">DBP (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPRANGO</td></tr><tr> <td class="p-0 pl-3">DOF:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOF</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFRANGO</td></tr><tr> <td class="p-0 pl-3">CC (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CC</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCRANGO</td></tr><tr> <td class="p-0 pl-3">CA (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CA</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CAPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CARANGO</td></tr><tr> <td class="p-0 pl-3">Femur (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMUR</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFEPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFERANGO</td></tr><tr> <td class="p-0 pl-3">Humero (Jeanty):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERO</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMEROPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERORANGO</td></tr><tr> <td class="p-0 pl-3">Índice Cefálico:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:INDCEF</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">Transverso cerebeloso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCEREPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERERANGO</td></tr><tr> <td class="p-0 pl-3">Cisterna magna:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAG</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGRANGO</td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td></tr><tr> <th class="p-0 pl-3" style="color: #045dab;">FLUJOMETRÍA DE UTERINAS Y CERVIX</th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> </tr><tr> <td class="p-0 pl-3">IP Arteria uterina derecha:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUD</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDRANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria uterina izquierda:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUI</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>IP Arteria uterinas promedio:</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Largo cervical (mm):</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERVTXT</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td></tr><tr> <td class="p-0 pl-3" style="color: #045dab;">ADICIONAL DOPPLER FETAL</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3">IP Arteria Umbilical:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AU</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AURANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria cerebral media:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CM</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMRANGO</td></tr><tr> <td class="p-0 pl-3">IP Índice cerebro placentario:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPRANGO</td></tr><tr> <td class="p-0 pl-3">Ductus venoso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVRANGO</td></tr><tr> <td class="p-0 pl-3">Peak sistólico de ACM, PSV (cm/s):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PACM</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr></tbody></table><div class="newpage" pagebreak="true"></div>';
+    InformeString += membrete;
+    InformeString += '<p style="margin-top: 5rem;">&nbsp;</p><p style="margin-top: 5rem;">&nbsp;</p><p style="color: #045dab; margin-top: 5rem;"><strong>EVALUACIÓN MORFOLOGÍA FETAL</strong></p><table class="table"> <tbody> <tr> <td class="p-0 pl-3" style="width: 360px;">Cerebro Ventrículo Lateral proximal: :CEREVLP mm</td><td class="p-0 pl-3">:CEREVLPTXT</td></tr><tr> <td class="p-0 pl-3">Cerebro Ventrículo Lateral distal: :CEREVLD mm</td><td class="p-0 pl-3">:CEREVLDTXT</td></tr><tr> <td class="p-0 pl-3">Cavum SP presente: :CAVUM</td><td class="p-0 pl-3">:CAVUMTXT</td></tr><tr> <td class="p-0 pl-3">Cuerpo calloso visible: :CCV</td><td class="p-0 pl-3">:CCVTXT</td></tr><tr> <td class="p-0 pl-3">Cuello normal: :CUELLO</td><td class="p-0 pl-3">:CUELLOTXT</td></tr><tr> <td class="p-0 pl-3">Labio nariz normal: :LNN</td><td class="p-0 pl-3">:LNNTXT</td></tr><tr> <td class="p-0 pl-3">Corazón 4 cámaras visible: :CORACV</td><td class="p-0 pl-3">:CORACVTXT</td></tr><tr> <td class="p-0 pl-3">Corazón Tracto de salida pulmonar normal: :CORATSPN</td><td class="p-0 pl-3">:CORATSPNTXT</td></tr><tr> <td class="p-0 pl-3">Corazón Tracto salida Aórtico normal: :CORATSAN</td><td class="p-0 pl-3">:CORATSANTXT</td></tr><tr> <td class="p-0 pl-3">Corazón 3 vasos tráquea visible: :CORAVTV</td><td class="p-0 pl-3">:CORAVTVTXT</td></tr><tr> <td class="p-0 pl-3">Tórax Normal: :TN</td><td class="p-0 pl-3">:TNTXT</td></tr><tr> <td class="p-0 pl-3">Abdomen: :ABDO</td><td class="p-0 pl-3">:ABDOTXT</td></tr><tr> <td class="p-0 pl-3">Pared normal: :PARNOR</td><td class="p-0 pl-3">:PARNORTXT</td></tr><tr> <td class="p-0 pl-3">Estómago visible: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr><tr> <td class="p-0 pl-3">Riñones visibles: :RINOV</td><td class="p-0 pl-3">:RINOVTXT</td></tr><tr> <td class="p-0 pl-3">Vejiga visible: :VEJIV</td><td class="p-0 pl-3">:VEJIVTXT</td></tr><tr> <td class="p-0 pl-3">Columna normal: :COLUMN</td><td class="p-0 pl-3">:COLUMNTXT</td></tr><tr> <td class="p-0 pl-3">Extremidades superiores normales: :EXSUP</td><td class="p-0 pl-3">:EXSUPTXT</td></tr><tr> <td class="p-0 pl-3">Extremidades inferiores normales: :EXINF</td><td class="p-0 pl-3">:EXINFTXT</td></tr><tr> <td class="p-0 pl-3">Sexo fetal:</td><td class="p-0 pl-3">:GEN</td></tr></tbody></table> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong></p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><p><strong style="color: #045dab;">INDICACIONES (seguimiento)</strong>:</p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:INDI</p></div><div class="container-fluid" style="margin-top: 5rem;"> <p class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block; margin-top: 5rem;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p></div></div>';
 
     var DBP = document.getElementById("dbp.morfologia").value;
     var DBPPCT = document.getElementById("dbp.pct.morfologia").value;
