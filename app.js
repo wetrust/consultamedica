@@ -27,12 +27,12 @@ $( document ).ready(function() {
     the("problematico").checked = true
 
     $("#fechaHora").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear());
-    document.getElementById("fum").value = getDate();
-    document.getElementById("fee").value = getDate();
+    the("fum").value = getDate();
+    the("fee").value = getDate();
 
     //cargar select semana y dias
     for (var i = 0; i < 43; i++) {
-        let semanas = document.getElementById("semanas");
+        let semanas = the("semanas");
         let opt = document.createElement('option');
         opt.appendChild( document.createTextNode(i) );
         opt.value = i; 
@@ -40,7 +40,7 @@ $( document ).ready(function() {
     }
 
     for (var i = 25; i < 43; i++) {
-        let semanas = document.getElementById("edadGestacional");
+        let semanas = the("edadGestacional");
         let opt = document.createElement('option');
         opt.appendChild( document.createTextNode(i) );
         opt.value = i;
@@ -50,7 +50,7 @@ $( document ).ready(function() {
     $('#edadGestacional option[value="40"]').prop('selected', true);
     
     for (var i = 0; i < 7; i++) {
-        let dias = document.getElementById("dias");
+        let dias = the("dias");
         let opt = document.createElement('option');
         opt.appendChild( document.createTextNode(i) );
         opt.value = i; 
@@ -58,7 +58,7 @@ $( document ).ready(function() {
     }
 
     //cargar frecuencia cardiaca fetal primer trimestre
-    let dias = document.getElementById("fcf-prim");
+    let dias = the("fcf-prim");
     let opt = document.createElement('option');
     opt.appendChild( document.createTextNode("(+) inicial") );
     opt.value = "(+) inicial"; 
@@ -80,7 +80,7 @@ $( document ).ready(function() {
     dias.appendChild(opt);
 
     //cargar la frecuencia cardiaca fetal para segundo trimestre
-    dias = document.getElementById("fcf");
+    dias = the("fcf");
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("(+) inicial") );
     opt.value = "(+) inicial"; 
@@ -107,7 +107,7 @@ $( document ).ready(function() {
         loadDatabase();
         
         //let cf = createTabs(config);
-        //document.getElementById("cf").innerHTML = cf;
+        //the("cf").innerHTML = cf;
     }
 
     //cargar edad materna
@@ -131,9 +131,9 @@ $( document ).ready(function() {
 
     //funcion rara
     $("#menu\\.modulo\\.activo").mouseout(function(){
-        if (document.getElementById("menu.modulo.activo").classList.contains("btn-dark")){
-            document.getElementById("menu.modulo.activo").classList.remove("btn-dark");
-            document.getElementById("menu.modulo.activo").classList.add("btn-outline-dark");
+        if (the("menu.modulo.activo").classList.contains("btn-dark")){
+            the("menu.modulo.activo").classList.remove("btn-dark");
+            the("menu.modulo.activo").classList.add("btn-outline-dark");
         }
     });
 
@@ -141,14 +141,14 @@ $( document ).ready(function() {
     $("#menu\\.modulo\\.activo").on("click", function(){
         var botones = ["menu.modulo.activo.uno", "menu.modulo.activo.dos", "menu.modulo.activo.tres", "menu.modulo.activo.cuatro"];
         
-        if (document.getElementById(botones[0]).classList.contains("d-none")){
+        if (the(botones[0]).classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
-                document.getElementById(value).classList.remove("d-none");
+                the(value).classList.remove("d-none");
             });
         }
         else{
             botones.forEach(function myFunction(value, index, array) {
-                document.getElementById(value).classList.add("d-none");
+                the(value).classList.add("d-none");
             });
         }
     });
@@ -156,14 +156,14 @@ $( document ).ready(function() {
     $("#menu\\.modulo\\.activo\\.cinco").on("click", function(){
         var botones = ["menu.modulo.activo.cinco.uno", "menu.modulo.activo.cinco.dos","menu.modulo.activo.cinco.tres"];
         
-        if (document.getElementById(botones[0]).classList.contains("d-none")){
+        if (the(botones[0]).classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
-                document.getElementById(value).classList.remove("d-none");
+                the(value).classList.remove("d-none");
             });
         }
         else{
             botones.forEach(function myFunction(value, index, array) {
-                document.getElementById(value).classList.add("d-none");
+                the(value).classList.add("d-none");
             });
         }
     });
@@ -171,14 +171,14 @@ $( document ).ready(function() {
     $("#menu\\.modulo\\.activo\\.seis").on("click", function(){
         var botones = ["menu.modulo.activo.seis.uno", "menu.modulo.activo.seis.dos","menu.modulo.activo.seis.tres"];
         
-        if (document.getElementById(botones[0]).classList.contains("d-none")){
+        if (the(botones[0]).classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
-                document.getElementById(value).classList.remove("d-none");
+                the(value).classList.remove("d-none");
             });
         }
         else{
             botones.forEach(function myFunction(value, index, array) {
-                document.getElementById(value).classList.add("d-none");
+                the(value).classList.add("d-none");
             });
         }
     });
@@ -186,14 +186,14 @@ $( document ).ready(function() {
     $("#menu\\.modulo\\.construccion").on("click", function(){
         var botones = ["menu.modulo.construccion.uno", "menu.modulo.construccion.dos"];
         
-        if (document.getElementById("menu.modulo.construccion.uno").classList.contains("d-none")){
+        if (the("menu.modulo.construccion.uno").classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
-                document.getElementById(value).classList.remove("d-none");
+                the(value).classList.remove("d-none");
             });
         }
         else{
             botones.forEach(function myFunction(value, index, array) {
-                document.getElementById(value).classList.add("d-none");
+                the(value).classList.add("d-none");
             });
         }
     });
@@ -201,14 +201,14 @@ $( document ).ready(function() {
     //controlador al cambiar input de edad gestacional
     $("#fum").on("change", function(){
         let fum = dayHoy;
-        fum.setTime(Date.parse(document.getElementById("fum").value));
+        fum.setTime(Date.parse(the("fum").value));
         fum.setTime(fum.getTime() + (1000*60*60*24*282));
-        document.getElementById("fpp").value = getDate(fum);
+        the("fpp").value = getDate(fum);
 
         fum.setTime(fum.getTime() - (1000*60*60*24*282));
         fum = fum.getTime();
         let fee = dayHoy;
-        fee.setTime(Date.parse(document.getElementById("fee").value));
+        fee.setTime(Date.parse(the("fee").value));
         fee = fee.getTime();
 
         //la fecha de mestruación si puede ser antes de la fecha de exámen
@@ -217,24 +217,24 @@ $( document ).ready(function() {
         if (diff > 0){
             let dias = Math.abs(diff/(1000*60*60*24));
             let semanas = Math.trunc(dias / 7);
-            document.getElementById("diaciclo").value = dias;
+            the("diaciclo").value = dias;
             dias = Math.trunc(dias - (semanas * 7));
-            document.getElementById("semanas").value = semanas;
-            document.getElementById("dias").value = dias;
+            the("semanas").value = semanas;
+            the("dias").value = dias;
         }
         else{
-            document.getElementById("semanas").value = 0;
-            document.getElementById("dias").value = 0;
-            document.getElementById("diaciclo").value = 0;
+            the("semanas").value = 0;
+            the("dias").value = 0;
+            the("diaciclo").value = 0;
         }
     }).trigger("change");
 
     $("#fee").on("change", function(){
         let fum = dayHoy; 
-        fum.setTime(Date.parse(document.getElementById("fum").value));
+        fum.setTime(Date.parse(the("fum").value));
         fum = fum.getTime();
         let fee = dayHoy;
-        fee.setTime(Date.parse(document.getElementById("fee").value));
+        fee.setTime(Date.parse(the("fee").value));
         fee = fee.getTime();
 
         //la fecha de exámen no puede ser anterior a la fecha de última regla
@@ -243,27 +243,27 @@ $( document ).ready(function() {
         if (diff > 0){
             let dias = diff/(1000*60*60*24);
             let semanas = Math.trunc(dias / 7);
-            document.getElementById("diaciclo").value = dias;
+            the("diaciclo").value = dias;
             dias = Math.trunc(dias - (semanas * 7));
-            document.getElementById("semanas").value = semanas;
-            document.getElementById("dias").value = dias;
+            the("semanas").value = semanas;
+            the("dias").value = dias;
         }
         else{
-            document.getElementById("semanas").value = 0;
-            document.getElementById("dias").value = 0;
-            document.getElementById("diaciclo").value = 0;
+            the("semanas").value = 0;
+            the("dias").value = 0;
+            the("diaciclo").value = 0;
         }
     });
 
     $("#semanas, #dias").on("change", function(){
-        let semanas = parseInt(document.getElementById("semanas").value);
-        let dias = parseInt(document.getElementById("dias").value);
+        let semanas = parseInt(the("semanas").value);
+        let dias = parseInt(the("dias").value);
         semanas = 7 * semanas;
-		let fee = new Date(document.getElementById("fee").value);
+		let fee = new Date(the("fee").value);
 		dias = (semanas + dias-1)*(1000*60*60*24);
         fee.setTime(fee.getTime() - dias);
 
-        document.getElementById("fum").value = getDate(fee);
+        the("fum").value = getDate(fee);
         $("#fum").trigger("change");
     });
 
@@ -285,12 +285,12 @@ $( document ).ready(function() {
     });
 
     $('#ajusteDosSi').on('click', function(){
-        egP50 = String(document.getElementById("egP50").value);
+        egP50 = String(the("egP50").value);
         if (egP50 != ""){
             egP50 = egP50.split(".");
-            document.getElementById("semanas").value = egP50[0];
+            the("semanas").value = egP50[0];
             if (egP50.length >1){
-                document.getElementById("dias").value = egP50[1];
+                the("dias").value = egP50[1];
             }
             $("#semanas").trigger("change");
         }
@@ -298,7 +298,7 @@ $( document ).ready(function() {
 
     //controlador de ecografía de primer trimestre
     $("#saco").on("change", function(){
-        document.getElementById("sacoPct").value = egSaco(this.value);
+        the("sacoPct").value = egSaco(this.value);
         if (+this.value > 0){
             $("#sacoFlecha").hide();
             $("#sacoModulo").hide();
@@ -311,19 +311,19 @@ $( document ).ready(function() {
 
     $("#saco-gestacional").on("change", function(){
         if (this.value == "no se observa"){
-            document.getElementById("saco.clon").parentElement.parentElement.classList.add("d-none");
-            document.getElementById("saco").parentElement.parentElement.parentElement.classList.add("d-none");
-            document.getElementById("saco").value = 0;
+            the("saco.clon").parentElement.parentElement.classList.add("d-none");
+            the("saco").parentElement.parentElement.parentElement.classList.add("d-none");
+            the("saco").value = 0;
             $("#saco").trigger("change");
         }
         else{
-            document.getElementById("saco.clon").parentElement.parentElement.classList.remove("d-none");
-            document.getElementById("saco").parentElement.parentElement.parentElement.classList.remove("d-none");
+            the("saco.clon").parentElement.parentElement.classList.remove("d-none");
+            the("saco").parentElement.parentElement.parentElement.classList.remove("d-none");
         }
     });
 
     $("#lcn").on("change", function(){
-        document.getElementById("lcnPct").value = eglcn(this.value);
+        the("lcnPct").value = eglcn(this.value);
 
         if (+this.value > 0){
             $("#mensajeSaco").hide();
@@ -336,10 +336,10 @@ $( document ).ready(function() {
             $("#sacoModulo").show();
         }
 
-        var eg = parseFloat(document.getElementById("semanas").value + "." +document.getElementById("dias").value);
-        let semanas = parseInt(document.getElementById("semanas").value);
-        let dias = parseInt(document.getElementById("dias").value);
-        var EGLCN = document.getElementById("lcnPct").value;
+        var eg = parseFloat(the("semanas").value + "." +the("dias").value);
+        let semanas = parseInt(the("semanas").value);
+        let dias = parseInt(the("dias").value);
+        var EGLCN = the("lcnPct").value;
 
         if (isNaN(this.value) | this.value < 1 | isNaN(eg) | eg < 1) {
             $('#diferenciaEcoPrimTrim').html('0');
@@ -354,57 +354,57 @@ $( document ).ready(function() {
             $('#resultadoAjusteEcoPrimTrim').show();
 
             let fee = new Date();
-            fee.setTime(Date.parse(document.getElementById("fee").value));
+            fee.setTime(Date.parse(the("fee").value));
             fee.setTime(fee.getTime() - (1000*60*60*24*eg1));
 
-            document.getElementById("furAjustada").value = getDate(fee);
+            the("furAjustada").value = getDate(fee);
 
-            document.getElementById("semanasAjustada").value = Math.trunc(EGLCN);
-            document.getElementById("diasAjustada").value = Math.trunc((EGLCN - Math.trunc(EGLCN))* 10);
+            the("semanasAjustada").value = Math.trunc(EGLCN);
+            the("diasAjustada").value = Math.trunc((EGLCN - Math.trunc(EGLCN))* 10);
 
             fee.setTime(fee.getTime() + (1000*60*60*24*282));
-            document.getElementById("fppAjustada").value = getDate(fee);
+            the("fppAjustada").value = getDate(fee);
         }
     });
 
     $("#saco-vitelino").on("change", function(){
         if (this.value == "no se observa"){
-            document.getElementById("valor-saco-vitelino").parentElement.classList.add("d-none");
-            document.getElementById("saco-vitelino-mm").value = 0;
+            the("valor-saco-vitelino").parentElement.classList.add("d-none");
+            the("saco-vitelino-mm").value = 0;
         }
         else{
-            document.getElementById("valor-saco-vitelino").parentElement.classList.remove("d-none");
+            the("valor-saco-vitelino").parentElement.classList.remove("d-none");
         }
     });
 
     $("#embrion, #embrion\\.clon").on("change", function(){
         let optiones = ["no se observa aun"];
         let cardio = ["con act. cardiaca (+)", "act. cardiaca evidenciable", "act. card. y Corp.(+)"];
-        let embrion = document.getElementById("embrion").value;
+        let embrion = the("embrion").value;
 
         if (optiones.includes(embrion)){
-            document.getElementById("lcn.clon").parentElement.parentElement.parentElement.classList.add("d-none");
-            document.getElementById("lcn").parentElement.parentElement.parentElement.classList.add("d-none");
-            document.getElementById("lcn").value = 0;
+            the("lcn.clon").parentElement.parentElement.parentElement.classList.add("d-none");
+            the("lcn").parentElement.parentElement.parentElement.classList.add("d-none");
+            the("lcn").value = 0;
             $("#lcn").trigger("change");
         }
         else{
-            document.getElementById("lcn.clon").parentElement.parentElement.parentElement.classList.remove("d-none");
-            document.getElementById("lcn").parentElement.parentElement.parentElement.classList.remove("d-none");
+            the("lcn.clon").parentElement.parentElement.parentElement.classList.remove("d-none");
+            the("lcn").parentElement.parentElement.parentElement.classList.remove("d-none");
         }
 
         if (cardio.includes(embrion)){
-            document.getElementById("fcf-primer-trim").classList.remove("d-none");
-            document.getElementById("fcf-prim").value = (embrion == "act. cardiaca evidenciable") ? "(+) inicial": 150;
+            the("fcf-primer-trim").classList.remove("d-none");
+            the("fcf-prim").value = (embrion == "act. cardiaca evidenciable") ? "(+) inicial": 150;
         }
         else{
-            document.getElementById("fcf-primer-trim").classList.add("d-none");
+            the("fcf-primer-trim").classList.add("d-none");
         }
     });
 
     $("#menu\\.modulo\\.prim\\.trim\\.si").on("click", function(){
-        document.getElementById("semanas").value = document.getElementById("semanasAjustada").value;
-        document.getElementById("dias").value = document.getElementById("diasAjustada").value;
+        the("semanas").value = the("semanasAjustada").value;
+        the("dias").value = the("diasAjustada").value;
         $("#semanas").trigger("change");
     });
 
@@ -418,7 +418,7 @@ $( document ).ready(function() {
         aui = parseFloat($("#aui").val());
         aud = parseFloat(this.value);
         let utprom = ((aui + aud) / 2);
-        document.getElementById("auprom").value = utprom.toFixed(2);
+        the("auprom").value = utprom.toFixed(2);
         $("#auprom").trigger("change");
     });
 
@@ -432,7 +432,7 @@ $( document ).ready(function() {
         aui = parseFloat(this.value);
         aud = parseFloat($("#aud").val());
         let utprom = ((aui + aud) / 2);
-        document.getElementById("auprom").value = utprom.toFixed(2);
+        the("auprom").value = utprom.toFixed(2);
         $("#auprom").trigger("change");
     });
 
@@ -471,49 +471,49 @@ $( document ).ready(function() {
 
     $("#art\\.ut").on("click", function(){
         if (this.checked == true){
-            document.getElementById("art.ut.div").classList.remove("d-none");
-            document.getElementById("respuesta_uterina_derecha").focus();
+            the("art.ut.div").classList.remove("d-none");
+            the("respuesta_uterina_derecha").focus();
         }else{
-            document.getElementById("art.ut.div").classList.add("d-none");
+            the("art.ut.div").classList.add("d-none");
         }
     });
 
     $("#larg\\.cerv").on("click", function(){
         if (this.checked == true){
-            document.getElementById("larg.cerv.div").classList.remove("d-none");
-            document.getElementById("largo.cervical.segundo").focus();
+            the("larg.cerv.div").classList.remove("d-none");
+            the("largo.cervical.segundo").focus();
         }else{
-            document.getElementById("larg.cerv.div").classList.add("d-none");
+            the("larg.cerv.div").classList.add("d-none");
         }
     });
 
     $("#largo\\.cervical\\.segundo").on("keyup", function(){
         let cV = +this.value;
         if (cV == NaN){
-            document.getElementById("info.cervix").innerHTML = "";
-            document.getElementById("info.cervix").classList.add("d-none");
+            the("info.cervix").innerHTML = "";
+            the("info.cervix").classList.add("d-none");
         }else if (cV < 25){
-            document.getElementById("info.cervix").innerHTML ='<p class="mb-0">Cérvix corto</p>';
-            document.getElementById("info.cervix").classList.remove("d-none");
+            the("info.cervix").innerHTML ='<p class="mb-0">Cérvix corto</p>';
+            the("info.cervix").classList.remove("d-none");
         }else if(cV > 24){
-            document.getElementById("info.cervix").innerHTML ='<p class="mb-0">Cérvix normal</p>';
-            document.getElementById("info.cervix").classList.remove("d-none");
+            the("info.cervix").innerHTML ='<p class="mb-0">Cérvix normal</p>';
+            the("info.cervix").classList.remove("d-none");
         }
     })
 
     $("#ver\\.ref").on("click", function(){
         if (this.checked == true){
-            document.getElementById("ver.ref.div").classList.remove("d-none");
+            the("ver.ref.div").classList.remove("d-none");
         }else{
-            document.getElementById("ver.ref.div").classList.add("d-none");
+            the("ver.ref.div").classList.add("d-none");
         }
     });
 
     $("#ver\\.auto").on("click", function(){
-        if (document.getElementById("auto").classList.contains("d-none") == true){
-            document.getElementById("auto").classList.remove("d-none");
+        if (the("auto").classList.contains("d-none") == true){
+            the("auto").classList.remove("d-none");
         }else{
-            document.getElementById("auto").classList.add("d-none");
+            the("auto").classList.add("d-none");
         }
     });
 
@@ -537,17 +537,17 @@ $( document ).ready(function() {
 
     $("#ver\\.ref\\.morfologia").on("click", function(){
         if (this.checked == true){
-            document.getElementById("ver.ref.div.morfologia").classList.remove("d-none");
+            the("ver.ref.div.morfologia").classList.remove("d-none");
         }else{
-            document.getElementById("ver.ref.div.morfologia").classList.add("d-none");
+            the("ver.ref.div.morfologia").classList.add("d-none");
         }
     });
 
     $("#ver\\.ref\\.doppler\\.morfologia").on("click", function(){
         if (this.checked == true){
-            document.getElementById("ver.ref.div.doppler.morfologia").classList.remove("d-none");
+            the("ver.ref.div.doppler.morfologia").classList.remove("d-none");
         }else{
-            document.getElementById("ver.ref.div.doppler.morfologia").classList.add("d-none");
+            the("ver.ref.div.doppler.morfologia").classList.add("d-none");
         }
     });
 
@@ -558,7 +558,7 @@ $( document ).ready(function() {
         aui = parseFloat($("#respuesta_uterina_izquierda").val());
         aud = parseFloat(this.value);
         let utprom = ((aui + aud) / 2);
-        document.getElementById("respuesta_uterina_promedio").value = utprom.toFixed(2);
+        the("respuesta_uterina_promedio").value = utprom.toFixed(2);
         $("#respuesta_uterina_promedio").trigger("change");
     });
 
@@ -569,7 +569,7 @@ $( document ).ready(function() {
         aui = parseFloat(this.value);
         aud = parseFloat($("#respuesta_uterina_derecha").val());
         let utprom = ((aui + aud) / 2);
-        document.getElementById("respuesta_uterina_promedio").value = utprom.toFixed(2);
+        the("respuesta_uterina_promedio").value = utprom.toFixed(2);
         $("#respuesta_uterina_promedio").trigger("change");
     });
 
@@ -657,7 +657,7 @@ $( document ).ready(function() {
         cisM90[34] = 9.9; cisM90[35] = 10; cisM90[36] = 10; cisM90[37] = 10.1;
         cisM90[38] = 10.1; cisM90[39] = 10.1;
         
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
         let cm = this.value;
         
         cm = cm.toString();
@@ -665,7 +665,7 @@ $( document ).ready(function() {
         cm = parseFloat(cm);
 
         if (eg < 14 ||eg > 39) {
-            document.getElementById("cm.pct.ecoDosTres").value = 0
+            the("cm.pct.ecoDosTres").value = 0
         }else {
             eg = parseInt(eg);
             var uno = cisM90[eg] - cisM10[eg];
@@ -695,19 +695,19 @@ $( document ).ready(function() {
         atrio = parseFloat(atrio);
 
         if (atrio < 10){
-            document.getElementById("atrio.desc.ecoDosTres").value = "Normal"
+            the("atrio.desc.ecoDosTres").value = "Normal"
         }else if (atrio < 16){
-            document.getElementById("atrio.desc.ecoDosTres").value = "Ventriculomegalia"
+            the("atrio.desc.ecoDosTres").value = "Ventriculomegalia"
         }else{
-            document.getElementById("atrio.desc.ecoDosTres").value = "Hidrocefalia"
+            the("atrio.desc.ecoDosTres").value = "Hidrocefalia"
         }
     })
 
-    $("#nombre-paciente").on("change", function(){ document.getElementById("nombre.morfologia").value = this.value; })
+    $("#nombre-paciente").on("change", function(){ the("nombre.morfologia").value = this.value; })
 
     $("#ecografista").on("change", function(){
         var nombre = this.options[this.selectedIndex].text
-        document.getElementById("ecografista.morfologia").value = nombre;
+        the("ecografista.morfologia").value = nombre;
     })
 
     $("#morfologia-morfologia-tab").on("click", function(){
@@ -766,18 +766,18 @@ $( document ).ready(function() {
 //si se escribe en uno, se refleja en otro
 $( document ).ready(function() {
     $("#lcn").on("change", function(){
-        document.getElementById("lcn.clon").value = document.getElementById("lcn").value;
+        the("lcn.clon").value = the("lcn").value;
     });
     $("#saco").on("change", function(){
-        document.getElementById("saco.clon").value = document.getElementById("saco").value;
+        the("saco.clon").value = the("saco").value;
     });
 
     $("#embrion").on("change", function(){
-        document.getElementById("embrion.clon").value = document.getElementById("embrion").value;
+        the("embrion.clon").value = the("embrion").value;
     });
 
     $("#embrion\\.clon").on("change", function(){
-        document.getElementById("embrion").value = document.getElementById("embrion.clon").value;
+        the("embrion").value = the("embrion.clon").value;
     });
     
 });
@@ -786,7 +786,7 @@ $( document ).ready(function() {
 $( document ).ready(function() {
     $("#btn\\.informe\\.precoz").on("click", function (){
 
-        if (document.getElementById("licencia").parentElement.classList.contains("active")){
+        if (the("licencia").parentElement.classList.contains("active")){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -837,7 +837,7 @@ $( document ).ready(function() {
     });
 
     $("#informe\\.morfologia").on("click", function(){
-        if (document.getElementById("licencia").parentElement.classList.contains("active")){
+        if (the("licencia").parentElement.classList.contains("active")){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -892,14 +892,14 @@ $( document ).ready(function() {
         if (isNaN(cb) || isNaN(lh)){
             var modal = makeModal();
             document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-            document.getElementById(modal.titulo).innerText = "Información";
-            document.getElementById(modal.contenido).innerHTML = "<p><strong>Actualmente la Edad gestacional se calculará solo por biometrías de Cráneo y Fémur (Excluido CA).<br>Para mayor exactitud es recomendable ingresar mediciones de Humero y Cerebelo.</strong><br>¿Desea ingresar biometrías de Humero y Cerebelo?</p><div class='btn-group btn-group-toggle' data-toggle='buttons'><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verNO' aria-pressed='true' data-modal='"+modal.id+"'><input type='radio' value='0' checked=''> NO</label><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verSi' aria-pressed='true' data-modal='"+modal.id+"'><input type='radio' value='1'> SI</label></div>";
+            the(modal.titulo).innerText = "Información";
+            the(modal.contenido).innerHTML = "<p><strong>Actualmente la Edad gestacional se calculará solo por biometrías de Cráneo y Fémur (Excluido CA).<br>Para mayor exactitud es recomendable ingresar mediciones de Humero y Cerebelo.</strong><br>¿Desea ingresar biometrías de Humero y Cerebelo?</p><div class='btn-group btn-group-toggle' data-toggle='buttons'><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verNO' aria-pressed='true' data-modal='"+modal.id+"'><input type='radio' value='0' checked=''> NO</label><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verSi' aria-pressed='true' data-modal='"+modal.id+"'><input type='radio' value='1'> SI</label></div>";
     
             $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {$(this).remove();});
 
             $( "#infEcoObsSegTrim2verNO").on("click", function(){
                 $('#'+this.dataset.modal).modal('hide');
-                if (document.getElementById("licencia").parentElement.classList.contains("active")){
+                if (the("licencia").parentElement.classList.contains("active")){
                     let licencia = makeModalLicencia();
         
                     $('#'+licencia.email).on("click", function(){
@@ -958,7 +958,7 @@ $( document ).ready(function() {
     });
 
     $("#modalPreInfEcoObsSegTrim1").on("click", function() {
-        if (document.getElementById("licencia").parentElement.classList.contains("active")){
+        if (the("licencia").parentElement.classList.contains("active")){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -1005,7 +1005,7 @@ $( document ).ready(function() {
     });
 
     $("#modalPreInfEcoDoppler").on("click", function(){
-        if (document.getElementById("licencia").parentElement.classList.contains("active")){
+        if (the("licencia").parentElement.classList.contains("active")){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -1053,7 +1053,7 @@ $( document ).ready(function() {
     });
 
     $("#btn\\.informe\\.ginecologica").on("click",function() {
-        if (document.getElementById("licencia").parentElement.classList.contains("active")){
+        if (the("licencia").parentElement.classList.contains("active")){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -1106,8 +1106,8 @@ $( document ).ready(function() {
     $("#btn\\.erase\\.ginecologica").on("click", function(){
         var modal = makeModal("Si");
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Borrar datos de exámen ginecológico";
-        document.getElementById(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
+        the(modal.titulo).innerText = "Borrar datos de exámen ginecológico";
+        the(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1115,14 +1115,14 @@ $( document ).ready(function() {
 
         $("#"+modal.button).on("click", function(){
             let modal =  $(this).data("modal");
-            document.getElementById("utero.ginecologica").value = "";
-            document.getElementById("endometrio.ginecologica").value = "";
-            document.getElementById("anexo.izquierdo.ginecologica").value = "";
-            document.getElementById("anexo.derecho.ginecologica").value = "";
-            document.getElementById("ovario.izquierdo.ginecologica").value = "";
-            document.getElementById("ovario.derecho.ginecologica").value = "";
-            document.getElementById("douglas.ginecologica").value = "";
-            document.getElementById("comentario.ginecologica").value = "";
+            the("utero.ginecologica").value = "";
+            the("endometrio.ginecologica").value = "";
+            the("anexo.izquierdo.ginecologica").value = "";
+            the("anexo.derecho.ginecologica").value = "";
+            the("ovario.izquierdo.ginecologica").value = "";
+            the("ovario.derecho.ginecologica").value = "";
+            the("douglas.ginecologica").value = "";
+            the("comentario.ginecologica").value = "";
             resetDate();
             $('#'+modal).modal("hide");
         });
@@ -1131,8 +1131,8 @@ $( document ).ready(function() {
     $("#btn\\.erase\\.precoz").on("click", function(){
         var modal = makeModal("Si");
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Borrar datos de ecografía obstétrica precoz";
-        document.getElementById(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
+        the(modal.titulo).innerText = "Borrar datos de ecografía obstétrica precoz";
+        the(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1140,25 +1140,25 @@ $( document ).ready(function() {
 
         $("#"+modal.button).on("click", function(){
             let modal =  $(this).data("modal");
-            document.getElementById("saco").value = "";
+            the("saco").value = "";
             $("#saco").trigger("change");
-            document.getElementById("embrion").selectedIndex = 0;
+            the("embrion").selectedIndex = 0;
             $("#embrion").trigger("change");
-            document.getElementById("lcn").value = 0;
+            the("lcn").value = 0;
             $("#lcn").trigger("change");
-            document.getElementById("utero-ubic1").selectedIndex = 0;
-            document.getElementById("utero-ubic2").selectedIndex = 0;
-            document.getElementById("cuerpo-uterino").selectedIndex = 0;
-            document.getElementById("saco-gestacional").selectedIndex = 0;
-            document.getElementById("saco-vitelino").selectedIndex = 1;
+            the("utero-ubic1").selectedIndex = 0;
+            the("utero-ubic2").selectedIndex = 0;
+            the("cuerpo-uterino").selectedIndex = 0;
+            the("saco-gestacional").selectedIndex = 0;
+            the("saco-vitelino").selectedIndex = 1;
             $("#saco-vitelino").trigger("change");
-            document.getElementById("fcf-prim").selectedIndex = 0;
-            document.getElementById("anexo-derecho").selectedIndex = 0;
+            the("fcf-prim").selectedIndex = 0;
+            the("anexo-derecho").selectedIndex = 0;
 
-            document.getElementById("anexo-derecho").selectedIndex = 0;
-            document.getElementById("anexo-izquierdo").selectedIndex = 0;
-            document.getElementById("exploracion-douglas").selectedIndex = 0;
-            document.getElementById("comentarios-eco-uno").value = "";
+            the("anexo-derecho").selectedIndex = 0;
+            the("anexo-izquierdo").selectedIndex = 0;
+            the("exploracion-douglas").selectedIndex = 0;
+            the("comentarios-eco-uno").value = "";
             resetDate();
             $("#menu\\.modulo\\.prim\\.trim\\.no").button("toggle");
             $('#'+modal).modal("hide");
@@ -1168,8 +1168,8 @@ $( document ).ready(function() {
     $("#btn\\.erase\\.seg\\.trim").on("click", function(){
         var modal = makeModal("Si");
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Borrar datos de evaluación del crecimiento fetal";
-        document.getElementById(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
+        the(modal.titulo).innerText = "Borrar datos de evaluación del crecimiento fetal";
+        the(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1177,19 +1177,19 @@ $( document ).ready(function() {
 
         $("#"+modal.button).on("click", function(){
             let modal =  $(this).data("modal");
-            document.getElementById("dbp").value = "";
-            document.getElementById("dof").value = "";
-            document.getElementById("cc").value = "";
-            document.getElementById("ca").value = "";
-            document.getElementById("lf").value = "";
-            document.getElementById("lh").value = "";
-            document.getElementById("bvm").value = "";
-            document.getElementById("pfe").value = "";
-            document.getElementById("atrio.ecoDosTres").value = "";
-            document.getElementById("cerebelo").value = "";
-            document.getElementById("cm.ecoDosTres").selectedIndex = 0;
-            document.getElementById("respuesta_uterina_derecha").value = "";
-            document.getElementById("respuesta_uterina_izquierda").value = "";
+            the("dbp").value = "";
+            the("dof").value = "";
+            the("cc").value = "";
+            the("ca").value = "";
+            the("lf").value = "";
+            the("lh").value = "";
+            the("bvm").value = "";
+            the("pfe").value = "";
+            the("atrio.ecoDosTres").value = "";
+            the("cerebelo").value = "";
+            the("cm.ecoDosTres").selectedIndex = 0;
+            the("respuesta_uterina_derecha").value = "";
+            the("respuesta_uterina_izquierda").value = "";
             the("largo.cervical.segundo").value = ""
             the("egP50").value = ""
             the("presentacion").selectedIndex = 0;
@@ -1197,18 +1197,18 @@ $( document ).ready(function() {
             the("fcf").selectedIndex = 0;
             the("accardSi").checked = true;
             the("movfetSi").checked = true;
-            document.getElementById("ecografia.segtrim.sexo").selectedIndex = 2;
+            the("ecografia.segtrim.sexo").selectedIndex = 2;
             the("grado-placenta").selectedIndex = 0
-            document.getElementById("ubicacion").selectedIndex = 0;
-            document.getElementById("incersion").selectedIndex = 0;
-            document.getElementById("liq-cualitativo-eco").selectedIndex = 0;
-            document.getElementById("bvmEcoDos").value = "";
-            document.getElementById("cordon").selectedIndex = 0;
-            document.getElementById("vasos").selectedIndex = 0;
-            document.getElementById("ev-morfo").selectedIndex = 0;
-            document.getElementById("comentarios-anatomia-informe-eg-texto").value = "";
-            document.getElementById("eco.seg.trim.select.comentario").selectedIndex = 0;
-            document.getElementById("comentarios-eco-dos-inf-dos").value = "";
+            the("ubicacion").selectedIndex = 0;
+            the("incersion").selectedIndex = 0;
+            the("liq-cualitativo-eco").selectedIndex = 0;
+            the("bvmEcoDos").value = "";
+            the("cordon").selectedIndex = 0;
+            the("vasos").selectedIndex = 0;
+            the("ev-morfo").selectedIndex = 0;
+            the("comentarios-anatomia-informe-eg-texto").value = "";
+            the("eco.seg.trim.select.comentario").selectedIndex = 0;
+            the("comentarios-eco-dos-inf-dos").value = "";
             resetDate();
             $('#'+modal).modal("hide");
         });
@@ -1217,8 +1217,8 @@ $( document ).ready(function() {
     $("#eco\\.doppler\\.nuevo").on("click", function(){
         var modal = makeModal("Si");
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Borrar datos Doppler";
-        document.getElementById(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
+        the(modal.titulo).innerText = "Borrar datos Doppler";
+        the(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1226,26 +1226,26 @@ $( document ).ready(function() {
 
         $("#"+modal.button).on("click", function(){
             let modal =  $(this).data("modal");
-            document.getElementById("aud").value = "";
-            document.getElementById("aui").value = "";
-            document.getElementById("auprom").value = "";
-            document.getElementById("ipau").value = "";
-            document.getElementById("ipacm").value = "";
-            document.getElementById("ccp").value = "";
-            document.getElementById("dv").value = "";
-            document.getElementById("psmACM").value = "";
+            the("aud").value = "";
+            the("aui").value = "";
+            the("auprom").value = "";
+            the("ipau").value = "";
+            the("ipacm").value = "";
+            the("ccp").value = "";
+            the("dv").value = "";
+            the("psmACM").value = "";
             the("liqAmnioDoppler").selectedIndex = 0;
-            document.getElementById("bvmDoppler").value = "";
+            the("bvmDoppler").value = "";
             the("liqAmnioDoppler").selectedIndex = 12;
             the("antecedentes-doppler").selectedIndex = 0;
             the("presentacion-doppler").selectedIndex = 0;
             the("motilidad-doppler").selectedIndex = 0;
             the("ubicacion-doppler").selectedIndex = 0;
-            document.getElementById("comentarios-doppler").value = "";
-            document.getElementById("fee").value = getDate();
-            document.getElementById("fum").value = getDate();
-            document.getElementById("semanas").value = 0;
-            document.getElementById("dias").value = 0;
+            the("comentarios-doppler").value = "";
+            the("fee").value = getDate();
+            the("fum").value = getDate();
+            the("semanas").value = 0;
+            the("dias").value = 0;
             $('#'+modal).modal("hide");
         });
     })
@@ -1260,7 +1260,7 @@ $( document ).ready(function() {
            e.preventDefault();
            if (key_enter.includes(this.id)== true){
                 pos = key_enter.indexOf(this.id);
-                document.getElementById(key_enter[pos+1]).focus();
+                the(key_enter[pos+1]).focus();
            }
         }
     });  
@@ -1271,8 +1271,8 @@ $( document ).ready(function() {
     $("#graficoSaco").on( 'click', function() {
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Saco Gestacional promedio en milímetros (mm)";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoSacoView"></div>';
+        the(modal.titulo).innerText = "Saco Gestacional promedio en milímetros (mm)";
+        the(modal.contenido).innerHTML = '<div id="graficoSacoView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1324,7 +1324,7 @@ $( document ).ready(function() {
                 data: (function () {
                     var data = [];
                     var categories = [4.2,4.3,4.4,4.5,4.6,5,5.1,5.2,5.3,5.4,5.5,5.6,6,6.1,6.2,6.3,6.4,6.5,6.6,7,7.1,7.2,7.3,7.4,7.5,7.6,8];
-                    var edadGest = document.getElementById("semanas").value +"."+document.getElementById("dias").value;
+                    var edadGest = the("semanas").value +"."+the("dias").value;
     
                     var saco = $("#saco").val();
                     saco = saco.toString();
@@ -1349,8 +1349,8 @@ $( document ).ready(function() {
     $("#graficoLcn").on( 'click', function() {
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Longitud Cefalo Nalgas (LCN) en milimetros";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoLcnBaseView"></div>';
+        the(modal.titulo).innerText = "Longitud Cefalo Nalgas (LCN) en milimetros";
+        the(modal.contenido).innerHTML = '<div id="graficoLcnBaseView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1400,7 +1400,7 @@ $( document ).ready(function() {
                 data: (function () {
                     // generate an array of random data
                     var data = [];
-                    var egLcn2 = document.getElementById("semanas").value;
+                    var egLcn2 = the("semanas").value;
                     var lcn = $("#lcn").val();
                     lcn = lcn.toString();
                     lcn = lcn.replace(",", ".");
@@ -1447,7 +1447,7 @@ $( document ).ready(function() {
     });
 
     $( '#graficoDbp' ).on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 12){
             alert("Edad Gestacional inferior a 12 semanas");
@@ -1456,8 +1456,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico DBP";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoDbpView"></div>';
+        the(modal.titulo).innerText = "Gráfico DBP";
+        the(modal.contenido).innerHTML = '<div id="graficoDbpView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1509,7 +1509,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = document.getElementById("semanas").value;
+                   var edadGest = the("semanas").value;
     
                    for (i = 12; i < edadGest; i++) {
                        data.push({
@@ -1536,7 +1536,7 @@ $( document ).ready(function() {
     });
 
     $( '#graficoCc' ).on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 12){
             alert("Edad Gestacional inferior a 12 semanas");
@@ -1545,8 +1545,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico CC";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoCcView"></div>';
+        the(modal.titulo).innerText = "Gráfico CC";
+        the(modal.contenido).innerHTML = '<div id="graficoCcView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1593,7 +1593,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = document.getElementById("semanas").value;
+                   var edadGest = the("semanas").value;
     
                    for (i = 12; i < edadGest; i++) {
                        data.push({
@@ -1621,7 +1621,7 @@ $( document ).ready(function() {
     });
 
     $( '#graficoCa' ).on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 12){
             alert("Edad Gestacional inferior a 12 semanas");
@@ -1630,8 +1630,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico CA";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoCaView"></div>';
+        the(modal.titulo).innerText = "Gráfico CA";
+        the(modal.contenido).innerHTML = '<div id="graficoCaView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1678,7 +1678,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = document.getElementById("semanas").value;
+                   var edadGest = the("semanas").value;
     
                    for (i = 12; i < edadGest; i++) {
                        data.push({
@@ -1706,7 +1706,7 @@ $( document ).ready(function() {
     });
 
     $( '#graficoLf' ).on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 12){
             alert("Edad Gestacional inferior a 12 semanas");
@@ -1715,8 +1715,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico LF";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoLfView"></div>';
+        the(modal.titulo).innerText = "Gráfico LF";
+        the(modal.contenido).innerHTML = '<div id="graficoLfView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1763,7 +1763,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = document.getElementById("semanas").value;
+                   var edadGest = the("semanas").value;
     
                    for (i = 12; i < edadGest; i++) {
                        data.push({ y: 0, });
@@ -1788,7 +1788,7 @@ $( document ).ready(function() {
     });
 
     $( '#graficoBVM' ).on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 16){
             alert("Edad Gestacional inferior a 16 semanas");
@@ -1797,8 +1797,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico BVM";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoBVMView"></div>';
+        the(modal.titulo).innerText = "Gráfico BVM";
+        the(modal.contenido).innerHTML = '<div id="graficoBVMView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1856,7 +1856,7 @@ $( document ).ready(function() {
                  data: (
                      function () {
                          var data = [];
-                         var edadGest = document.getElementById("semanas").value;
+                         var edadGest = the("semanas").value;
      
                          for (i = 16; i < edadGest; i ++ ) {
                              data.push({
@@ -1878,7 +1878,7 @@ $( document ).ready(function() {
     });
 
     $( '#graficoLh' ).on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 12){
             alert("Edad Gestacional inferior a 12 semanas");
@@ -1887,8 +1887,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico LH";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoLhView"></div>';
+        the(modal.titulo).innerText = "Gráfico LH";
+        the(modal.contenido).innerHTML = '<div id="graficoLhView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -1935,7 +1935,7 @@ $( document ).ready(function() {
                     lineWidth: 0,
                     data: (function () {
                         var data = [];
-                        var edadGest = document.getElementById("semanas").value;
+                        var edadGest = the("semanas").value;
     
                         for (i = 12; i < edadGest; i++) {
                             data.push({ y: 0, });
@@ -1961,7 +1961,7 @@ $( document ).ready(function() {
     });
 
     $( '#graficoCerebelo' ).on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 15){
             alert("Edad Gestacional inferior a 15 semanas");
@@ -1970,8 +1970,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Cerebelo";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoCerebeloView"></div>';
+        the(modal.titulo).innerText = "Gráfico Cerebelo";
+        the(modal.contenido).innerHTML = '<div id="graficoCerebeloView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -2023,7 +2023,7 @@ $( document ).ready(function() {
                     lineWidth: 0,
                     data: (function () {
                         var data = [];
-                        var edadGest = document.getElementById("semanas").value;
+                        var edadGest = the("semanas").value;
     
                         for (i = 15; i < edadGest; i++) {
                             data.push({
@@ -2052,7 +2052,7 @@ $( document ).ready(function() {
 
     //Grafico Prom Art. UT. en Exm. seg Terc. Trim
     $('#graficoUterinasCrecimiento').on("click", function(){
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 10){
             alert("Edad Gestacional inferior a 10 semanas");
@@ -2061,8 +2061,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Promedio Arterias Uterinas";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoArtUtDerView"></div>';
+        the(modal.titulo).innerText = "Gráfico Promedio Arterias Uterinas";
+        the(modal.contenido).innerHTML = '<div id="graficoArtUtDerView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -2109,13 +2109,13 @@ $( document ).ready(function() {
                 data: (function () {
                         // generate an array of random data
                         var data = [];
-                        var edadGest = document.getElementById("semanas").value;
+                        var edadGest = the("semanas").value;
                         for (i = 10; i < edadGest; i ++ ) {
                             data.push({
                                 y: 0,
                             });
                         }
-                        var aud = document.getElementById("respuesta_uterina_promedio").value;
+                        var aud = the("respuesta_uterina_promedio").value;
                         aud = aud.toString();
                         aud = aud.replace(",", ".");
                         aud = parseFloat(aud);
@@ -2135,14 +2135,14 @@ $( document ).ready(function() {
     });
 
     $( '#graficoPFE' ).on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 16){ alert("Edad Gestacional inferior a 16 semanas"); return false;}
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Peso Fetal Estimado";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoPesoView"></div>';
+        the(modal.titulo).innerText = "Gráfico Peso Fetal Estimado";
+        the(modal.contenido).innerHTML = '<div id="graficoPesoView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
@@ -2200,7 +2200,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = document.getElementById("semanas").value;
+                   var edadGest = the("semanas").value;
     
                    for (i = 16; i < edadGest; i++) {
                        data.push({
@@ -2222,7 +2222,7 @@ $( document ).ready(function() {
     });
 
     $( '#infecoObsSegTrim1' ).on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 16){
             alert("Edad Gestacional inferior a 16 semanas");
@@ -2232,20 +2232,20 @@ $( document ).ready(function() {
         var modal = makeModal("Ver Impresion");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfica evaluación ecográfica del crecimiento fetal";
+        the(modal.titulo).innerText = "Gráfica evaluación ecográfica del crecimiento fetal";
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
         });
         
         var stringGraficos = "<div class='container'> <div style='width:100px;text-align:center;'></div></div><h4 class='text-center d-none'>Gráfica evaluación ecográfica del crecimiento fetal</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none mt-2'></span><div class='row d-none mt-2'> <div class='col-5'> <p style='font-size:10px;'><strong>Nombre: </strong>:PACIENTE </p></div><div class='col-3'> <p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'> <p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row'> <div class='col'> <div id='graficoInfecoObsSegTrimPFEView'></div><div class='row'> <div class='col-12'> <div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col-12'> <div id='graficoBVMView'></div></div></div></div><div class='col'> <div class='row'> <div class='col-12'> <div id='graficoCaView'></div></div><div class='col-12'> <div id='graficoCcCaView'></div></div></div></div></div><div class='row' id='lineclear'> <div class='col'> <p class='d-none' style='font-size:10px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;'>Ecografista: <strong>:ECOGRAFISTA</strong> </p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina d-none'>* Evaluación del crecimiento fetal, según referencia propuesta por Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90) <br>** Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97) <br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 <br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil. <br><strong>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
-        comentarios = (typeof comentarios == 'undefined') ? 'Crecimiento (peso) percentil ' + parseInt($('#pfePctRpt').val()) + ', para gráfica de peso fetal Hadlock*<br />Bolsillo vertical mayor de ' + document.getElementById("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
+        comentarios = (typeof comentarios == 'undefined') ? 'Crecimiento (peso) percentil ' + parseInt($('#pfePctRpt').val()) + ', para gráfica de peso fetal Hadlock*<br />Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
         stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
 
-        var paciente = document.getElementById("nombre-paciente").value;
-        var idpaciente = document.getElementById("id-paciente").value;
+        var paciente = the("nombre-paciente").value;
+        var idpaciente = the("id-paciente").value;
         var ecografista = $( '#ecografista option:selected').text();
-        let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+        let fexamen = new Date(Date.parse(the("fee").value));
         fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
 
         stringGraficos = stringGraficos.replace(":ECOGRAFISTA", ecografista);
@@ -2253,8 +2253,8 @@ $( document ).ready(function() {
         stringGraficos = stringGraficos.replace(":IDPACIENTE", idpaciente);
         stringGraficos = stringGraficos.replace(":FEXAMEN", fexamen);
         
-        document.getElementById(modal.contenido).innerHTML = stringGraficos;
-        document.getElementById(modal.button).dataset.id = modal.contenido;
+        the(modal.contenido).innerHTML = stringGraficos;
+        the(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
             imprSelec(modal);
@@ -2309,7 +2309,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = document.getElementById("semanas").value;
+                   var edadGest = the("semanas").value;
                    edadGest = parseInt(edadGest);
     
                    for (i = 16; i < edadGest; i++) {
@@ -2376,7 +2376,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = document.getElementById("semanas").value;
+                   var edadGest = the("semanas").value;
                    edadGest = parseInt(edadGest);
                    for (i = 12; i < edadGest; i++) {
                        data.push({
@@ -2454,7 +2454,7 @@ $( document ).ready(function() {
         data: (
             function () {
                 var data = [];
-                var edadGest = document.getElementById("semanas").value;
+                var edadGest = the("semanas").value;
                 edadGest = parseInt(edadGest);
                 for (i = 16; i < edadGest; i ++ ) {
                     data.push({
@@ -2478,7 +2478,7 @@ $( document ).ready(function() {
            min:[1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47],
            max: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
        }
-            if (document.getElementById("art.ut").checked == true){
+            if (the("art.ut").checked == true){
                 $('#graficoCcCaView').highcharts({
                     chart: {
                         height: 250
@@ -2531,7 +2531,7 @@ $( document ).ready(function() {
                         data: (function () {
                             // generate an array of random data
                             var data = [];
-                            var edadGest = document.getElementById("semanas").value;
+                            var edadGest = the("semanas").value;
                             edadGest = parseInt(edadGest);
                             for (i = 10; i < edadGest; i ++ ) {
                                 data.push({
@@ -2601,7 +2601,7 @@ $( document ).ready(function() {
                         lineWidth: 0,
                         data: (function () {
                             var data = [];
-                            var edadGest = document.getElementById("semanas").value;
+                            var edadGest = the("semanas").value;
                             edadGest = parseInt(edadGest);
 
                             for (i = 16; i < edadGest; i++) {
@@ -2630,26 +2630,26 @@ $( document ).ready(function() {
     
     $( '#infecoObsSegTrim2' ).on( 'click', function() {
 
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         var modal = makeModal("Ver Impresion");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfica Determinación Ecográfica (Tardía) de la Edad Gestacional";
+        the(modal.titulo).innerText = "Gráfica Determinación Ecográfica (Tardía) de la Edad Gestacional";
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
         });
 
         var stringGraficos = "<div class='container'><div style='width:100px;text-align:center;'></div></div><h4 class='text-center d-none'>Gráfica evaluación ecográfica del crecimiento fetal</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none mt-2'></span><div class='row d-none mt-2'> <div class='col-5'><p style='font-size:10px;'><strong>Nombre: </strong>:PACIENTE </p></div><div class='col-3'><p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'><p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row mt-2'> <div class='col'><div id='graficoCcView'></div></div><div class='col'><div id='graficoCerebeloView'></div></div></div><div class='row'><div class='col'><div id='graficoLfView'></div></div><div class='col'><div id='graficoLhView'></div></div></div><div class='row' id='lineclear'><div class='col'><p class='d-none' style='font-size:12px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;'>Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;' class='d-none'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015<br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf<br>** Referencias: CC y LF Hadlock y col. 1984; LH Jeanty y col.<br>*** Diámetro cerebeloso transverso Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
-        let fur = new Date(Date.parse(document.getElementById("fum").value));
+        let fur = new Date(Date.parse(the("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-        let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+        let fpp = new Date(Date.parse(the("fpp").value));
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
 
-        var paciente = document.getElementById("nombre-paciente").value;
-        var idpaciente = document.getElementById("id-paciente").value;
+        var paciente = the("nombre-paciente").value;
+        var idpaciente = the("id-paciente").value;
         var ecografista = $( '#ecografista option:selected').text();
-        let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+        let fexamen = new Date(Date.parse(the("fee").value));
         fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
 
@@ -2661,8 +2661,8 @@ $( document ).ready(function() {
         comentarios = (typeof comentarios == 'undefined') ? "Fum operacional: " + fur + "<br>Fecha probable de parto: " + fpp + "<br>" + $('#comentarios-eco-dos-generico').val().replace(/\r\n|\r|\n/g,"<br />") : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
         stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
 
-        document.getElementById(modal.contenido).innerHTML = stringGraficos;
-        document.getElementById(modal.button).dataset.id = modal.contenido;
+        the(modal.contenido).innerHTML = stringGraficos;
+        the(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
             imprSelec(modal);
@@ -2719,7 +2719,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = document.getElementById("semanas").value;
+                   var edadGest = the("semanas").value;
     
                    for (i = 12; i < edadGest; i++) {
                        data.push({
@@ -2727,7 +2727,7 @@ $( document ).ready(function() {
                        });
                    }
                    data.push({
-                       y: parseInt(document.getElementById("cc").value),
+                       y: parseInt(the("cc").value),
                    });
                    for (i = edadGest + 1; i < 40; i++) {
                        data.push({
@@ -2738,7 +2738,7 @@ $( document ).ready(function() {
                }())
            }]
        });
-       if (document.getElementById("art.ut").checked == true){
+       if (the("art.ut").checked == true){
         $('#graficoCerebeloView').highcharts({
             chart: {
                 height: 250
@@ -2785,7 +2785,7 @@ $( document ).ready(function() {
                 data: (function () {
                     // generate an array of random data
                     var data = [];
-                    var edadGest = document.getElementById("semanas").value;
+                    var edadGest = the("semanas").value;
                     for (i = 10; i < edadGest; i ++ ) {
                         data.push({
                             y: 0,
@@ -2866,7 +2866,7 @@ $( document ).ready(function() {
                             lineWidth: 0,
                             data: (function () {
                                 var data = [];
-                                var edadGest = document.getElementById("semanas").value;
+                                var edadGest = the("semanas").value;
             
                                 for (i = 15; i < edadGest; i++) {
                                     data.push({
@@ -2874,7 +2874,7 @@ $( document ).ready(function() {
                                     });
                                 }
                                 data.push({
-                                    y: parseInt(document.getElementById("cerebelo").value),
+                                    y: parseInt(the("cerebelo").value),
                                 });
                                 for (i = edadGest + 1; i < 40; i++) {
                                     data.push({
@@ -2938,13 +2938,13 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = document.getElementById("semanas").value;
+                   var edadGest = the("semanas").value;
     
                    for (i = 12; i < edadGest; i++) {
                        data.push({ y: 0, });
                    }
                    data.push({
-                       y: parseInt(document.getElementById("lf").value),
+                       y: parseInt(the("lf").value),
                    });
                    for (i = edadGest + 1; i < 40; i++) {
                        data.push({
@@ -3006,13 +3006,13 @@ $( document ).ready(function() {
                     lineWidth: 0,
                     data: (function () {
                         var data = [];
-                        var edadGest = document.getElementById("semanas").value;
+                        var edadGest = the("semanas").value;
     
                         for (i = 12; i < edadGest; i++) {
                             data.push({ y: 0, });
                         }
                         data.push({
-                            y: parseInt(document.getElementById("lh").value),
+                            y: parseInt(the("lh").value),
                         });
                         for (i = edadGest + 1; i < 40; i++) {
                             data.push({
@@ -3026,7 +3026,7 @@ $( document ).ready(function() {
     });
 
     $("#graficoAud").on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 10){
             alert("Edad Gestacional inferior a 10 semanas");
@@ -3035,8 +3035,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Arteria Uterina Derecha";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoArtUtDerView"></div>';
+        the(modal.titulo).innerText = "Gráfico Arteria Uterina Derecha";
+        the(modal.contenido).innerHTML = '<div id="graficoArtUtDerView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -3083,7 +3083,7 @@ $( document ).ready(function() {
                 data: (function () {
                         // generate an array of random data
                         var data = [];
-                        var edadGest = document.getElementById("semanas").value;
+                        var edadGest = the("semanas").value;
                         for (i = 10; i < edadGest; i ++ ) {
                             data.push({
                                 y: 0,
@@ -3109,7 +3109,7 @@ $( document ).ready(function() {
     });
 
     $("#graficoAui").on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 10){
             alert("Edad Gestacional inferior a 10 semanas");
@@ -3118,8 +3118,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Arteria Uterina Izquierda";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoArtUtIzqView"></div>';
+        the(modal.titulo).innerText = "Gráfico Arteria Uterina Izquierda";
+        the(modal.contenido).innerHTML = '<div id="graficoArtUtIzqView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -3166,7 +3166,7 @@ $( document ).ready(function() {
                 data: (function () {
                         // generate an array of random data
                         var data = [];
-                        var edadGest = document.getElementById("semanas").value;
+                        var edadGest = the("semanas").value;
     
                         for (i = 10; i < edadGest; i ++ ) {
                             data.push({
@@ -3194,7 +3194,7 @@ $( document ).ready(function() {
     });
 
     $("#graficoAu").on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 10){
             alert("Edad Gestacional inferior a 10 semanas");
@@ -3203,8 +3203,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Promedio Arteria Uterinas";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoArtUtView"></div>';
+        the(modal.titulo).innerText = "Gráfico Promedio Arteria Uterinas";
+        the(modal.contenido).innerHTML = '<div id="graficoArtUtView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -3251,7 +3251,7 @@ $( document ).ready(function() {
                 data: (function () {
                         // generate an array of random data
                         var data = [];
-                        var edadGest = document.getElementById("semanas").value;
+                        var edadGest = the("semanas").value;
     
                         for (i = 10; i < edadGest; i ++ ) {
                             data.push({
@@ -3278,7 +3278,7 @@ $( document ).ready(function() {
     });
 
     $("#graficoIpau").on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 20){
             alert("Edad Gestacional inferior a 20 semanas");
@@ -3287,8 +3287,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico IP Arteria Umbilical";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoIpauView"></div>';
+        the(modal.titulo).innerText = "Gráfico IP Arteria Umbilical";
+        the(modal.contenido).innerHTML = '<div id="graficoIpauView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -3334,7 +3334,7 @@ $( document ).ready(function() {
                 lineWidth: 0,
                 data: (function () {
                     var data = [];
-                    var edadGest = document.getElementById("semanas").value;
+                    var edadGest = the("semanas").value;
    
                     for (i = 20; i < edadGest; i++) {
                         data.push({
@@ -3361,7 +3361,7 @@ $( document ).ready(function() {
     });
 
     $("#graficoIpacm").on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 20){
             alert("Edad Gestacional inferior a 20 semanas");
@@ -3370,8 +3370,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico IP Arteria C. Media";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoIpacmView"></div>';
+        the(modal.titulo).innerText = "Gráfico IP Arteria C. Media";
+        the(modal.contenido).innerHTML = '<div id="graficoIpacmView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -3419,7 +3419,7 @@ $( document ).ready(function() {
                  lineWidth: 0,
                  data: (function () {
                      var data = [];
-                     var edadGest = document.getElementById("semanas").value;
+                     var edadGest = the("semanas").value;
     
                      for (i = 20; i < edadGest; i++) {
                          data.push({
@@ -3447,7 +3447,7 @@ $( document ).ready(function() {
     });
 
     $("#graficoCcp").on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 20){
             alert("Edad Gestacional inferior a 20 semanas");
@@ -3456,8 +3456,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Cuociente Cerebro Placentario";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoCcpView"></div>';
+        the(modal.titulo).innerText = "Gráfico Cuociente Cerebro Placentario";
+        the(modal.contenido).innerHTML = '<div id="graficoCcpView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -3502,7 +3502,7 @@ $( document ).ready(function() {
                 data: (function () {
                     // generate an array of random data
                     var data = [];
-                    var edadGest = document.getElementById("semanas").value;
+                    var edadGest = the("semanas").value;
    
                     for (i = 20; i < edadGest; i++) {
                         data.push({
@@ -3529,7 +3529,7 @@ $( document ).ready(function() {
     });
 
     $("#graficoDv").on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 20){
             alert("Edad Gestacional inferior a 20 semanas");
@@ -3538,8 +3538,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Ductus Venoso";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoDvView"></div>';
+        the(modal.titulo).innerText = "Gráfico Ductus Venoso";
+        the(modal.contenido).innerHTML = '<div id="graficoDvView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -3583,7 +3583,7 @@ $( document ).ready(function() {
                     lineWidth: 0,
                 data: (function () {
                         var data = [];
-                        var edadGest = document.getElementById("semanas").value;
+                        var edadGest = the("semanas").value;
     
                         for (i = 20; i < edadGest; i ++ ) {
                             data.push({
@@ -3610,7 +3610,7 @@ $( document ).ready(function() {
     });
 
     $("#graficopsmACM").on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 18){
             alert("Edad Gestacional inferior a 18 semanas");
@@ -3619,8 +3619,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Peak sistólico máximo de ACM";
-        document.getElementById(modal.contenido).innerHTML = '<div id="viewGraficopsmACM"></div>';
+        the(modal.titulo).innerText = "Gráfico Peak sistólico máximo de ACM";
+        the(modal.contenido).innerHTML = '<div id="viewGraficopsmACM"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -3669,8 +3669,8 @@ $( document ).ready(function() {
             data: (function () {
                 // generate an array of random data
                 var data = [];
-                var edadGest = document.getElementById("semanas").value;
-                var medida = parseFloat(document.getElementById("psmACM").value);
+                var edadGest = the("semanas").value;
+                var medida = parseFloat(the("psmACM").value);
 
                 for (i = 18; i < edadGest; i++) {
                     data.push({
@@ -3692,7 +3692,7 @@ $( document ).ready(function() {
     });
 
     $( '#infDoppler1' ).on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 20){
             alert("Edad Gestacional inferior a 20 semanas");
@@ -3701,7 +3701,7 @@ $( document ).ready(function() {
 
         var modal = makeModal("Ver Impresion");
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfica para evaluación de la flujometría doppler materno fetal básica";
+        the(modal.titulo).innerText = "Gráfica para evaluación de la flujometría doppler materno fetal básica";
         
         var stringGraficos = "<h4 class='text-center d-none mt-2'>Gráfica para evaluación de la flujometría doppler materno fetal básica</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none'></span><div class='row d-none mt-2'> <div class='col-5'><p style='font-size:10px;'><strong>Nombre: </strong>:PACIENTE </p></div><div class='col-3'><p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'><p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row'><div class='col'><div id='graficoIpArtUtView'></div></div><div class='col'><div id='graficoIpArtUmbView'></div></div></div><div class='row'><div class='col'><div id='graficoIpArtCMView'></div></div><div class='col'><div id='graficoIpCCPView'></div></div></div><div class='row' id='lineclear'><div class='col'><p class='d-none' style='font-size:12px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;'>Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;' class='d-none'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32<br>** Referencia para Doppler de arteria umbilical, C Media y CCP Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
         var comentarios = $("#comentarios-doppler").val();
@@ -3728,13 +3728,13 @@ $( document ).ready(function() {
         }
         stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
         
-        document.getElementById(modal.contenido).innerHTML = stringGraficos;
+        the(modal.contenido).innerHTML = stringGraficos;
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
         });
 
-        document.getElementById(modal.button).dataset.id = modal.contenido;
+        the(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
             imprSelec(modal);
@@ -3790,7 +3790,7 @@ $( document ).ready(function() {
                 data: (function () {
                         // generate an array of random data
                         var data = [];
-                        var edadGest = document.getElementById("semanas").value;
+                        var edadGest = the("semanas").value;
     
                         for (i = 10; i < edadGest; i ++ ) {
                             data.push({
@@ -3866,7 +3866,7 @@ $( document ).ready(function() {
                  lineWidth: 0,
                  data: (function () {
                      var data = [];
-                     var edadGest = document.getElementById("semanas").value;
+                     var edadGest = the("semanas").value;
     
                      for (i = 20; i < edadGest; i++) {
                          data.push({
@@ -3942,7 +3942,7 @@ $( document ).ready(function() {
                  lineWidth: 0,
                  data: (function () {
                      var data = [];
-                     var edadGest = document.getElementById("semanas").value;
+                     var edadGest = the("semanas").value;
     
                      for (i = 20; i < edadGest; i++) {
                          data.push({
@@ -3969,7 +3969,7 @@ $( document ).ready(function() {
         });
         //$('#graficoIpCCPView').highcharts({
 
-        var dvp = document.getElementById("dv").value;
+        var dvp = the("dv").value;
 
         if (dvp != ""){
             graficoCuatro = Highcharts.chart('graficoIpCCPView', {
@@ -4020,7 +4020,7 @@ $( document ).ready(function() {
                         lineWidth: 0,
                     data: (function () {
                             var data = [];
-                            var edadGest = document.getElementById("semanas").value;
+                            var edadGest = the("semanas").value;
         
                             for (i = 20; i < edadGest; i ++ ) {
                                 data.push({
@@ -4093,7 +4093,7 @@ $( document ).ready(function() {
                      data: (function () {
                          // generate an array of random data
                          var data = [];
-                         var edadGest = document.getElementById("semanas").value;
+                         var edadGest = the("semanas").value;
         
                          for (i = 20; i < edadGest; i++) {
                              data.push({
@@ -4118,7 +4118,7 @@ $( document ).ready(function() {
     });
 
     $("#graficoCisterna").on("click", function(){
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 14){
             alert("Edad Gestacional inferior a 14 semanas");
@@ -4127,8 +4127,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Cisterna Magna";
-        document.getElementById(modal.contenido).innerHTML = '<div id="graficoCMView"></div>';
+        the(modal.titulo).innerText = "Gráfico Cisterna Magna";
+        the(modal.contenido).innerHTML = '<div id="graficoCMView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -4175,7 +4175,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = document.getElementById("semanas").value;
+                   var edadGest = the("semanas").value;
     
                    for (i = 14; i < edadGest; i++) {
                        data.push({ y: 0, });
@@ -4200,7 +4200,7 @@ $( document ).ready(function() {
     })
 
     $("#p\\.sis\\.grafica\\.morfologia").on( 'click', function() {
-        var edadGestacional = document.getElementById("semanas").value;
+        var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 18){
             alert("Edad Gestacional inferior a 18 semanas");
@@ -4209,8 +4209,8 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        document.getElementById(modal.titulo).innerText = "Gráfico Peak sistólico máximo de ACM";
-        document.getElementById(modal.contenido).innerHTML = '<div id="viewGraficopsmACM"></div>';
+        the(modal.titulo).innerText = "Gráfico Peak sistólico máximo de ACM";
+        the(modal.contenido).innerHTML = '<div id="viewGraficopsmACM"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
@@ -4259,7 +4259,7 @@ $( document ).ready(function() {
             data: (function () {
                 // generate an array of random data
                 var data = [];
-                var edadGest = document.getElementById("semanas").value;
+                var edadGest = the("semanas").value;
 
                 var medida = $("#p\\.sis\\.morfologia").val();
                 medida = medida.toString();
@@ -4324,9 +4324,9 @@ $(document).ready(function(){
         pct95ILA[37] = 244; pct95ILA[38] = 239; pct95ILA[39] = 226;
         pct95ILA[40] = 214; pct95ILA[41] = 194; pct95ILA[42] = 179;
     
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
         let ila = suma;
-        document.getElementById("liquido.ila.percentil.morfologia").classList.remove("is-valid", "is-invalid");
+        the("liquido.ila.percentil.morfologia").classList.remove("is-valid", "is-invalid");
         if (eg > 15 || eg < 41){
             eg = parseInt(eg);
             var uno = pct95ILA[eg] - pct5ILA[eg];
@@ -4335,9 +4335,9 @@ $(document).ready(function(){
             $("#liquido\\.ila\\.percentil\\.morfologia").val(resultado);
 
             if (resultado < 10 || resultado > 90){
-                document.getElementById("liquido.ila.percentil.morfologia").classList.add("is-invalid");
+                the("liquido.ila.percentil.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("liquido.ila.percentil.morfologia").classList.add("is-valid");
+                the("liquido.ila.percentil.morfologia").classList.add("is-valid");
             }
         }
     });
@@ -4349,15 +4349,15 @@ $(document).ready(function(){
         a[0]=14;a[1]=17;a[2]=19;a[3]=25;a[4]=29;a[5]=33;a[6]=34;a[7]=38;a[8]=41;a[9]=43;a[10]=46;a[11]=49;a[12]=52;a[13]=54;a[14]=57;a[15]=61;a[16]=63;a[17]=65;a[18]=69;a[19]=69;a[20]=74;a[21]=74;a[22]=77;a[23]=78;a[24]=78;a[25]=81;a[26]=85;a[27]=88;
         b[0]=25;b[1]=29;b[2]=33;b[3]=35;b[4]=41;b[5]=42;b[6]=46;b[7]=50;b[8]=52;b[9]=56;b[10]=59;b[11]=63;b[12]=66;b[13]=70;b[14]=71;b[15]=75;b[16]=77;b[17]=81;b[18]=83;b[19]=87;b[20]=88;b[21]=91;b[22]=94;b[23]=95;b[24]=97;b[25]=99;b[26]=97;b[27]=106;
     
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
         let dbp = this.value;
         
         dbp = dbp.toString();
         dbp = dbp.replace(",", ".");
         dbp = parseFloat(dbp);
     
-        document.getElementById("dbp.pct.morfologia").classList.remove("is-valid", "is-invalid");
-        document.getElementById("dof.ic.morfologia").classList.remove("is-valid", "is-invalid");
+        the("dbp.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("dof.ic.morfologia").classList.remove("is-valid", "is-invalid");
 
         if (eg < 12 || eg > 40){
             $("#dbp\\.pct\\.morfologia").val('0');
@@ -4370,7 +4370,7 @@ $(document).ready(function(){
             var dos = dbp - a[eg];
             var resultado = (parseInt(95 / (uno) * (dos) + 3));
 
-            document.getElementById("dbp.pct.real.morfologia").value = resultado;
+            the("dbp.pct.real.morfologia").value = resultado;
 
             ajustarProgreso(resultado, "dbpMorfologia");
             var pctDBP = '';
@@ -4388,26 +4388,26 @@ $(document).ready(function(){
             $('#dbp\\.pct\\.morfologia').val(pctDBP);
 
             if (resultado < 3 || resultado > 97){
-                document.getElementById("dbp.pct.morfologia").classList.add("is-invalid");
+                the("dbp.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("dbp.pct.morfologia").classList.add("is-valid");
+                the("dbp.pct.morfologia").classList.add("is-valid");
             }
 
-            let dof = document.getElementById("dof.morfologia").value;
+            let dof = the("dof.morfologia").value;
 
             if (dbp > 0){
                 var valor = ((dbp/dof)*100);
                     
                 $('#dof\\.ic\\.morfologia').val(valor.toFixed(0) + "%");
                 if (valor < 76 || valor > 84){
-                    document.getElementById("dof.ic.morfologia").classList.add("is-invalid");
+                    the("dof.ic.morfologia").classList.add("is-invalid");
                 }else{
-                    document.getElementById("dof.ic.morfologia").classList.add("is-valid");
+                    the("dof.ic.morfologia").classList.add("is-valid");
                 }
 
-                document.getElementById("pc.morfologia").value = valCC(dof,dbp);
+                the("pc.morfologia").value = valCC(dof,dbp);
                 let ev = new KeyboardEvent('keyup', {keyCode: 13});
-                document.getElementById("pc.morfologia").dispatchEvent(ev);
+                the("pc.morfologia").dispatchEvent(ev);
             }
             else{
                 $('#dof\\.ic\\.morfologia').val(0);
@@ -4423,17 +4423,17 @@ $(document).ready(function(){
         a[10]=7;a[11]=11; a[12]=16; a[13]=20;a[14]=24; a[15]=29; a[16]=33; a[17]=37;a[18]=41; a[19]=46; a[20]=50; a[21]=54;a[22]=58; a[23]=62; a[24]=65; a[25]=69;a[26]=73; a[27]=76; a[28]=80; a[29]=83;a[30]=86; a[31]=89; a[32]=92; a[33]=95;a[34]=97; a[35]=99; a[36]=102; a[37]=104;a[38]=105; a[39]=107; a[40]=108;
         b[10]=21; b[11]=25; b[12]=30; b[13]=34;b[14]=38; b[15]=43; b[16]=47; b[17]=51;b[18]=55; b[19]=60; b[20]=64; b[21]=68;b[22]=72; b[23]=76; b[24]=79; b[25]=83;b[26]=87; b[27]=90; b[28]=94; b[29]=97;b[30]=100; b[31]=103; b[32]=106; b[33]=108;b[34]=111; b[35]=113; b[36]=116; b[37]=118;b[38]=119; b[39]=121; b[40]=122;
         
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
         
-        document.getElementById("dof.pct.morfologia").classList.remove("is-valid", "is-invalid");
-        document.getElementById("dof.ic.morfologia").classList.remove("is-valid", "is-invalid");
+        the("dof.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("dof.ic.morfologia").classList.remove("is-valid", "is-invalid");
 
         if (eg > 9 && dof > 0){
             var uno = b[eg] - a[eg];
             var dos = dof - a[eg];
             var resultado = (parseInt(95 / (uno) * (dos) + 3));
 
-            document.getElementById("dof.pct.real.morfologia").value = resultado;
+            the("dof.pct.real.morfologia").value = resultado;
             ajustarProgreso(resultado, "dofMorfologia");
 
             var pctDOF = '';
@@ -4451,26 +4451,26 @@ $(document).ready(function(){
             $('#dof\\.pct\\.morfologia').val(pctDOF);
 
             if (resultado < 3 || resultado > 97){
-                document.getElementById("dof.pct.morfologia").classList.add("is-invalid");
+                the("dof.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("dof.pct.morfologia").classList.add("is-valid");
+                the("dof.pct.morfologia").classList.add("is-valid");
             }
 
-            let dbp = document.getElementById("dbp.morfologia").value;
+            let dbp = the("dbp.morfologia").value;
 
             if (dbp > 0){
                 var valor = ((dbp/dof)*100);
                     
                 $('#dof\\.ic\\.morfologia').val(valor.toFixed(0) + "%");
                 if (valor < 76 || valor > 84){
-                    document.getElementById("dof.ic.morfologia").classList.add("is-invalid");
+                    the("dof.ic.morfologia").classList.add("is-invalid");
                 }else{
-                    document.getElementById("dof.ic.morfologia").classList.add("is-valid");
+                    the("dof.ic.morfologia").classList.add("is-valid");
                 }
 
-                document.getElementById("pc.morfologia").value = valCC(dof,dbp);
+                the("pc.morfologia").value = valCC(dof,dbp);
                 let ev = new KeyboardEvent('keyup', {keyCode: 13});
-                document.getElementById("pc.morfologia").dispatchEvent(ev);
+                the("pc.morfologia").dispatchEvent(ev);
             }
             else{
                 $('#dof\\.ic\\.morfologia').val(0);
@@ -4488,10 +4488,10 @@ $(document).ready(function(){
         a[0]=64;a[1]=74;a[2]=88;a[3]=100;a[4]=113;a[5]=126; a[6]=137;a[7]=149;a[8]=161;a[9]=172;a[10]=183; a[11]=194;a[12]=204;a[13]=214;a[14]=224;a[15]=233; a[16]=242;a[17]=250;a[18]=258;a[19]=267;a[20]=274; a[21]=280;a[22]=287;a[23]=293;a[24]=299;a[25]=303; a[26]=308;a[27]=311;a[28]=315;
         b[0]=81;b[1]=94;b[2]=106;b[3]=120;b[4]=135; b[5]=150;b[6]=165;b[7]=179;b[8]=193;b[9]=206; b[10]=219;b[11]=232;b[12]=243;b[13]=256;b[14]=268; b[15]=279;b[16]=290;b[17]=300;b[18]=310;b[19]=319; b[20]=328;b[21]=336;b[22]=343;b[23]=351;b[24]=358; b[25]=363;b[26]=368;b[27]=373;b[28]=377;
        
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
         let cc = parseInt(this.value);
        
-        document.getElementById("pc.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("pc.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
         if (eg < 12 || eg > 40){ 
             $("#pc\\.pct\\.morfologia").val("");
@@ -4503,7 +4503,7 @@ $(document).ready(function(){
             var dos=cc - a[eg];
             var resultado = parseInt(95 / (uno) * (dos) + 3);
 
-            document.getElementById("pc.pct.real.morfologia").value = resultado
+            the("pc.pct.real.morfologia").value = resultado
             ajustarProgreso(resultado, "pcMorfologia");
             var pctCC = '';
             //truncador de Pct, sobre 100 o bajo 1
@@ -4518,12 +4518,12 @@ $(document).ready(function(){
             }
             psohdlkMorfologia();
 
-            document.getElementById("pc.pct.morfologia").value = pctCC
+            the("pc.pct.morfologia").value = pctCC
 
             if (resultado < 3 || resultado > 97){
-                document.getElementById("pc.pct.morfologia").classList.add("is-invalid");
+                the("pc.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("pc.pct.morfologia").classList.add("is-valid");
+                the("pc.pct.morfologia").classList.add("is-valid");
             }
         }
     })
@@ -4534,10 +4534,10 @@ $(document).ready(function(){
         a[0]=42;a[1]=52;a[2]=64;a[3]=75;a[4]=86; a[5]=97;a[6]=109;a[7]=119;a[8]=131;a[9]=141; a[10]=151;a[11]=161;a[12]=171;a[13]=181; a[14]=191;a[15]=200;a[16]=209;a[17]=218;a[18]=227; a[19]=236;a[20]=245;a[21]=253;a[22]=261;a[23]=269; a[24]=277;a[25]=285;a[26]=292;a[27]=299;a[28]=307;
         b[0]=71;b[1]=79;b[2]=92;b[3]=102;b[4]=113; b[5]=127;b[6]=141;b[7]=155;b[8]=170; b[9]=183;b[10]=192;b[11]=209;b[12]=223; b[13]=235;b[14]=248;b[15]=260;b[16]=271;b[17]=284; b[18]=295;b[19]=306;b[20]=318;b[21]=329;b[22]=339; b[23]=349;b[24]=359;b[25]=370;b[26]=380;b[27]=389; b[28]=399;
 
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
         let ca = parseInt(this.value);
 
-        document.getElementById("pa.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("pa.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
         if (eg < 12 || eg > 40){ 
             $("#pa\\.pct\\.morfologia").val("0");
@@ -4548,7 +4548,7 @@ $(document).ready(function(){
             var dos=ca - a[eg];
             var resultado = parseInt(95 / (uno) * (dos) + 3);
 
-            document.getElementById("pa.pct.real.morfologia").value = resultado;
+            the("pa.pct.real.morfologia").value = resultado;
 
             ajustarProgreso(resultado, "paMorfologia");
             var pctCA = '';
@@ -4562,7 +4562,7 @@ $(document).ready(function(){
             }
             psohdlkMorfologia();
 
-            document.getElementById("pa.pct.morfologia").value = pctCA;
+            the("pa.pct.morfologia").value = pctCA;
 
             if (resultado < 3 || resultado > 97){
                 the("pa.pct.morfologia").classList.add("is-invalid");
@@ -4579,10 +4579,10 @@ $(document).ready(function(){
         a[0]=7;a[1]=9;a[2]=12;a[3]=15;a[4]=17;a[5]=21; a[6]=23;a[7]=26;a[8]=28;a[9]=30;a[10]=33;a[11]=35; a[12]=38;a[13]=40;a[14]=42;a[15]=44;a[16]=46; a[17]=48;a[18]=50;a[19]=52;a[20]=53;a[21]=55; a[22]=57;a[23]=59;a[24]=60;a[25]=62;a[26]=64; a[27]=65;a[28]=66;
         b[0]=12;b[1]=14;b[2]=17;b[3]=20;b[4]=23;b[5]=27; b[6]=31;b[7]=34;b[8]=38;b[9]=40;b[10]=43;b[11]=47; b[12]=50;b[13]=52;b[14]=56;b[15]=58;b[16]=62; b[17]=64;b[18]=66;b[19]=68;b[20]=71;b[21]=73; b[22]=75;b[23]=78;b[24]=80;b[25]=82;b[26]=84; b[27]=86;b[28]=88;
    
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
         let lf=parseInt(this.value);
    
-        document.getElementById("femur.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("femur.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
         if (eg < 12 || eg > 40){ 
             $("#femur\\.pct\\.morfologia").val("0");
@@ -4594,7 +4594,7 @@ $(document).ready(function(){
             var dos=lf - a[eg];
             var resultado = parseInt(95 / (uno) * (dos) + 3);
 
-            document.getElementById("femur.pct.real.morfologia").value = resultado;
+            the("femur.pct.real.morfologia").value = resultado;
 
             ajustarProgreso(resultado, "femurMorfologia");
             var pctLF = '';
@@ -4612,9 +4612,9 @@ $(document).ready(function(){
             psohdlkMorfologia()
             $('#femur\\.pct\\.morfologia').val(pctLF);
             if (resultado < 3 || resultado > 97){
-                document.getElementById("femur.pct.morfologia").classList.add("is-invalid");
+                the("femur.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("femur.pct.morfologia").classList.add("is-valid");
+                the("femur.pct.morfologia").classList.add("is-valid");
             }
         }
     })
@@ -4639,10 +4639,10 @@ $(document).ready(function(){
         a[38] = 59.8;  b[38] = 67.8; a[39] = 60.4;  b[39] = 69.3;
         a[40] = 61.9;  b[40] = 70.8;
        
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
         var lh=parseInt(this.value);
    
-        document.getElementById("humero.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("humero.pct.morfologia").classList.remove("is-valid", "is-invalid");
         if (eg < 12 || eg > 40) {
             $("#humero\\.pct\\.morfologia").val('0');
         }
@@ -4652,7 +4652,7 @@ $(document).ready(function(){
             var dos = lh - a[eg];
             var resultado = (parseInt(90 / (uno) * (dos) + 5));
 
-            document.getElementById("humero.pct.real.morfologia").value = resultado;
+            the("humero.pct.real.morfologia").value = resultado;
 
             ajustarProgreso(resultado, "humeroMorfologia");
             var pctLH = '';
@@ -4668,9 +4668,9 @@ $(document).ready(function(){
             }
             $('#humero\\.pct\\.morfologia').val(pctLH);
             if (resultado < 5 || resultado > 95){
-                document.getElementById("humero.pct.morfologia").classList.add("is-invalid");
+                the("humero.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("humero.pct.morfologia").classList.add("is-valid");
+                the("humero.pct.morfologia").classList.add("is-valid");
             }
         }
     })
@@ -4703,13 +4703,13 @@ $(document).ready(function(){
         pct2dsmas[25] = 62;
     
         var cb=0;
-        let eg = document.getElementById("semanas").value;
-        cb=parseInt(document.getElementById("tc.morfologia").value);
+        let eg = the("semanas").value;
+        cb=parseInt(the("tc.morfologia").value);
     
-        document.getElementById("tc.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("tc.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
         if (eg < 15 ||eg > 40) {
-            document.getElementById("tc.pct.morfologia").value = 0
+            the("tc.pct.morfologia").value = 0
         }else {
             eg = eg - 15;
             eg = parseInt(eg);
@@ -4718,7 +4718,7 @@ $(document).ready(function(){
             var resultado = parseInt(95 / (uno) * (dos) + 3);
             var pctCB = '';
 
-            document.getElementById("tc.pct.real.morfologia").value = resultado;
+            the("tc.pct.real.morfologia").value = resultado;
             //truncador de Pct, sobre 100 o bajo 1
             if (resultado > 97){
                 pctCB = '> 97';
@@ -4734,9 +4734,9 @@ $(document).ready(function(){
             ajustarProgreso(resultado, "tcMorfologia");
 
             if (resultado < 3 || resultado > 97){
-                document.getElementById("tc.pct.morfologia").classList.add("is-invalid");
+                the("tc.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("tc.pct.morfologia").classList.add("is-valid");
+                the("tc.pct.morfologia").classList.add("is-valid");
             }
         }
     })
@@ -4762,24 +4762,24 @@ $(document).ready(function(){
         cisM90[34] = 9.9; cisM90[35] = 10; cisM90[36] = 10; cisM90[37] = 10.1;
         cisM90[38] = 10.1; cisM90[39] = 10.1;
         
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
         let cm = this.value;
         
         cm = cm.toString();
         cm = cm.replace(",", ".");
         cm = parseFloat(cm);
     
-        document.getElementById("cm.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("cm.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
         if (eg < 14 ||eg > 39) {
-            document.getElementById("cm.pct.morfologia").value = 0
+            the("cm.pct.morfologia").value = 0
         }else {
             eg = parseInt(eg);
             var uno = cisM90[eg] - cisM10[eg];
             var dos = cm - cisM10[eg];
             var resultado = (parseInt(90 / (uno) * (dos) + 5));
 
-            document.getElementById("cm.pct.real.morfologia").value = resultado;
+            the("cm.pct.real.morfologia").value = resultado;
 
             var pctCISM = '';
             //truncador de Pct, sobre 100 o bajo 1
@@ -4797,9 +4797,9 @@ $(document).ready(function(){
             ajustarProgreso(resultado, "cmMorfologia");
 
             if (resultado < 5 || resultado > 95){
-                document.getElementById("cm.pct.morfologia").classList.add("is-invalid");
+                the("cm.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("cm.pct.morfologia").classList.add("is-valid");
+                the("cm.pct.morfologia").classList.add("is-valid");
             }
         }
     })
@@ -4810,11 +4810,11 @@ $(document).ready(function(){
         a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
         b[0]=59; b[1]=62; b[2]=64; b[3]=66; b[4]=67; b[5]=68; b[6]=68; b[7]=68; b[8]=68; b[9]=68; b[10]=68; b[11]=69; b[12]=69; b[13]=69; b[14]=69; b[15]=70; b[16]=71; b[17]=72; b[18]=72; b[19]=72; b[20]=71; b[21]=70; b[22]=68; b[23]=66; b[24]=62;
 
-        let eg = document.getElementById("semanas").value;
-        let bvm = parseInt(document.getElementById("liquido.semi.morfologia").value);
+        let eg = the("semanas").value;
+        let bvm = parseInt(the("liquido.semi.morfologia").value);
 
 
-        document.getElementById("liquido.semi.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("liquido.semi.pct.morfologia").classList.remove("is-valid", "is-invalid");
         
         if (eg > 15 || eg < 41){
             eg = eg - 16;
@@ -4838,32 +4838,32 @@ $(document).ready(function(){
             $('#liquido\\.semi\\.pct\\.morfologia').val(pctCISM);
 
             if (resultado < 5 || resultado > 95){
-                document.getElementById("liquido.semi.pct.morfologia").classList.add("is-invalid");
+                the("liquido.semi.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("liquido.semi.pct.morfologia").classList.add("is-valid");
+                the("liquido.semi.pct.morfologia").classList.add("is-valid");
             }
         }else{
-            document.getElementById("liquido.semi.pct.morfologia").value = 0
+            the("liquido.semi.pct.morfologia").value = 0
         }
     })
 
     $("#art\\.ut\\.d\\.morfologia").on("keyup", function(){
         /* 5 95*/
         let ut = pctut(this.value);
-        document.getElementById("art.ut.d.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("art.ut.d.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
-        document.getElementById("art.ut.d.pct.morfologia").value = ut.pct
-        document.getElementById("art.ut.d.pct.real.morfologia").value = ut.raw
+        the("art.ut.d.pct.morfologia").value = ut.pct
+        the("art.ut.d.pct.real.morfologia").value = ut.raw
         ajustarProgreso(ut.raw, "artUtDMorfologia");
         
         if (ut.raw < 5 || ut.raw > 95){
-            document.getElementById("art.ut.d.pct.morfologia").classList.add("is-invalid");
+            the("art.ut.d.pct.morfologia").classList.add("is-invalid");
         }else{
-            document.getElementById("art.ut.d.pct.morfologia").classList.add("is-valid");
+            the("art.ut.d.pct.morfologia").classList.add("is-valid");
         }
 
-        aui = document.getElementById("art.ut.i.morfologia").value;
-        aud = document.getElementById("art.ut.d.morfologia").value;
+        aui = the("art.ut.i.morfologia").value;
+        aud = the("art.ut.d.morfologia").value;
 
         aui = aui.toString(); 
         aui = aui.replace(",", ".");
@@ -4876,19 +4876,19 @@ $(document).ready(function(){
         if (aui > 0 && aud > 0){
             let utprom = ((aui + aud) / 2);
 
-            document.getElementById("art.ut.prom.pct.morfologia").classList.remove("is-valid", "is-invalid");
-            document.getElementById("art.ut.prom.morfologia").value = utprom.toFixed(2);
+            the("art.ut.prom.pct.morfologia").classList.remove("is-valid", "is-invalid");
+            the("art.ut.prom.morfologia").value = utprom.toFixed(2);
 
             utprom = pctut(utprom);
 
-            document.getElementById("art.ut.prom.pct.morfologia").value = utprom.pct;
-            document.getElementById("art.ut.prom.pct.real.morfologia").value = utprom.raw
+            the("art.ut.prom.pct.morfologia").value = utprom.pct;
+            the("art.ut.prom.pct.real.morfologia").value = utprom.raw
             ajustarProgreso(utprom.raw, "artUtPromMorfologia");
 
             if (utprom.raw < 5 || utprom.raw > 95){
-                document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-invalid");
+                the("art.ut.prom.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-valid");
+                the("art.ut.prom.pct.morfologia").classList.add("is-valid");
             }
         }
 
@@ -4897,20 +4897,20 @@ $(document).ready(function(){
     $("#art\\.ut\\.i\\.morfologia").on("keyup", function(){
         /* 5 95*/
         let ut = pctut(this.value);
-        document.getElementById("art.ut.i.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("art.ut.i.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
-        document.getElementById("art.ut.i.pct.morfologia").value = ut.pct
-        document.getElementById("art.ut.i.pct.real.morfologia").value = ut.raw
+        the("art.ut.i.pct.morfologia").value = ut.pct
+        the("art.ut.i.pct.real.morfologia").value = ut.raw
         ajustarProgreso(ut.raw, "artUtIMorfologia");
         
         if (ut.raw < 5 || ut.raw > 95){
-            document.getElementById("art.ut.i.pct.morfologia").classList.add("is-invalid");
+            the("art.ut.i.pct.morfologia").classList.add("is-invalid");
         }else{
-            document.getElementById("art.ut.i.pct.morfologia").classList.add("is-valid");
+            the("art.ut.i.pct.morfologia").classList.add("is-valid");
         }
 
-        aui = document.getElementById("art.ut.i.morfologia").value;
-        aud = document.getElementById("art.ut.d.morfologia").value;
+        aui = the("art.ut.i.morfologia").value;
+        aud = the("art.ut.d.morfologia").value;
 
         aui = aui.toString(); 
         aui = aui.replace(",", ".");
@@ -4923,19 +4923,19 @@ $(document).ready(function(){
         if (aui > 0 && aud > 0){
             let utprom = ((aui + aud) / 2);
 
-            document.getElementById("art.ut.prom.pct.morfologia").classList.remove("is-valid", "is-invalid");
-            document.getElementById("art.ut.prom.morfologia").value = utprom.toFixed(2);
+            the("art.ut.prom.pct.morfologia").classList.remove("is-valid", "is-invalid");
+            the("art.ut.prom.morfologia").value = utprom.toFixed(2);
 
             utprom = pctut(utprom);
 
-            document.getElementById("art.ut.prom.pct.morfologia").value = utprom.pct;
-            document.getElementById("art.ut.prom.pct.real.morfologia").value = utprom.raw
+            the("art.ut.prom.pct.morfologia").value = utprom.pct;
+            the("art.ut.prom.pct.real.morfologia").value = utprom.raw
             ajustarProgreso(utprom.raw, "artUtPromMorfologia");
 
             if (utprom.raw < 5 || utprom.raw > 95){
-                document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-invalid");
+                the("art.ut.prom.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("art.ut.prom.pct.morfologia").classList.add("is-valid");
+                the("art.ut.prom.pct.morfologia").classList.add("is-valid");
             }
         }
 
@@ -4951,19 +4951,19 @@ $(document).ready(function(){
         c[20]=0.78; c[21]=0.87; c[22]=0.95; c[23]=1.02;c[24]=1.09; c[25]=1.15; c[26]=1.2; c[27]=1.24;c[28]=1.28; c[29]=1.31; c[30]=1.33; c[31]=1.35;c[32]=1.36; c[33]=1.36; c[34]=1.36; c[35]=1.34;c[36]=1.32; c[37]=1.3; c[38]=1.26; c[39]=1.22;c[40]=1.18;
         d[20]=1.68; d[21]=1.88; d[22]=2.06; d[23]=2.22;d[24]=2.36; d[25]=2.49; d[26]=2.6;d[27]=2.7;d[28]=2.78; d[29]=2.84; d[30]=2.89; d[31]=2.92;d[32]=2.93; d[33]=2.93; d[34]=2.91; d[35]=2.87;d[36]=2.82; d[37]=2.75; d[38]=2.67; d[39]=2.57;
 
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
  	    var aumb = this.value;
 	    aumb = aumb.toString();
  	    aumb = aumb.replace(",", ".");
  	    aumb = parseFloat(aumb);
  
-        document.getElementById("art.umb.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("art.umb.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
 	    if (eg < 20 || eg > 40){
-            document.getElementById("art.umb.pct.morfologia").value = 0;
+            the("art.umb.pct.morfologia").value = 0;
             ajustarProgreso(0, "artUmbMorfologia");
-            document.getElementById("ind.cp.morfologia").value = 0
-            document.getElementById("ind.cp.pct.morfologia").value = 0
+            the("ind.cp.morfologia").value = 0
+            the("ind.cp.pct.morfologia").value = 0
             ajustarProgreso(0, "indCpMorfologia");
 	    }else {
 		    eg = eg - 20;
@@ -4972,7 +4972,7 @@ $(document).ready(function(){
             var uno=b[eg] - a[eg];
 		    var dos=aumb - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
-            document.getElementById("art.umb.pct.real.morfologia").value = resultado
+            the("art.umb.pct.real.morfologia").value = resultado
             ajustarProgreso(resultado, "artUmbMorfologia");
 
 		    var pctAUMB = '';
@@ -4990,9 +4990,9 @@ $(document).ready(function(){
             $("#art\\.umb\\.pct\\.morfologia").val(pctAUMB);
 
             if (resultado < 5 || resultado > 95){
-                document.getElementById("art.umb.pct.morfologia").classList.add("is-invalid");
+                the("art.umb.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("art.umb.pct.morfologia").classList.add("is-valid");
+                the("art.umb.pct.morfologia").classList.add("is-valid");
             }
 
 		    if ($('#art\\.cm\\.morfologia').val()){
@@ -5005,13 +5005,13 @@ $(document).ready(function(){
                 var ccp = (cm / aumb);
                 
                 $('#ind\\.cp\\.morfologia').val(ccp.toFixed(2));
-                document.getElementById("ind.cp.pct.morfologia").classList.remove("is-valid", "is-invalid");
+                the("ind.cp.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
 			    eg = eg + 20;
 			    uno = d[eg] - c[eg];
 			    dos = ccp - c[eg];
                 resultado = parseInt(90 / (uno) * (dos) + 5);
-                document.getElementById("ind.cp.pct.real.morfologia").value = resultado
+                the("ind.cp.pct.real.morfologia").value = resultado
 			    ajustarProgreso(resultado, "indCpMorfologia");
 
                 var pctCCP = '';
@@ -5024,12 +5024,12 @@ $(document).ready(function(){
 				    pctCCP = resultado;
 			    }
 
-                document.getElementById("ind.cp.pct.morfologia").value = pctCCP;
+                the("ind.cp.pct.morfologia").value = pctCCP;
 
                 if (resultado < 5 || resultado > 95){
-                    document.getElementById("ind.cp.pct.morfologia").classList.add("is-invalid");
+                    the("ind.cp.pct.morfologia").classList.add("is-invalid");
                 }else{
-                    document.getElementById("ind.cp.pct.morfologia").classList.add("is-valid");
+                    the("ind.cp.pct.morfologia").classList.add("is-valid");
                 }
 
 		    }
@@ -5046,19 +5046,19 @@ $(document).ready(function(){
         c[20]=0.78;c[21]=0.87;c[22]=0.95;c[23]=1.02;c[24]=1.09;c[25]=1.15;c[26]=1.2;c[27]=1.24;c[28]=1.28;c[29]=1.31;c[30]=1.33;c[31]=1.35;c[32]=1.36;c[33]=1.36;c[34]=1.36;c[35]=1.34;c[36]=1.32;c[37]=1.3;c[38]=1.26;c[39]=1.22;c[40]=1.18;
         d[20]=1.68;d[21]=1.88;d[22]=2.06;d[23]=2.22;d[24]=2.36;d[25]=2.49;d[26]=2.6;d[27]=2.7;d[28]=2.78;d[29]=2.84;d[30]=2.89;d[31]=2.92;d[32]=2.93;d[33]=2.93;d[34]=2.91;d[35]=2.87;d[36]=2.82;d[37]=2.75;d[38]=2.67;d[39]=2.57;
 
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
 	    var acm = $('#art\\.cm\\.morfologia').val();
 	    acm = acm.toString();
  	    acm = acm.replace(",", ".");
         acm = parseFloat(acm);
          
-        document.getElementById("art.cm.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("art.cm.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
 	    if (eg < 20 || eg > 40){
-            document.getElementById("art.cm.pct.morfologia").value = 0;
+            the("art.cm.pct.morfologia").value = 0;
             ajustarProgreso(0, "artCmMorfologia");
-            document.getElementById("ind.cp.morfologia").value = 0
-            document.getElementById("ind.cp.pct.morfologia").value = 0
+            the("ind.cp.morfologia").value = 0
+            the("ind.cp.pct.morfologia").value = 0
             ajustarProgreso(0, "indCpMorfologia");
         } else {
             eg = eg - 20;
@@ -5066,7 +5066,7 @@ $(document).ready(function(){
             var uno = b[eg] - a[eg];
             var dos = acm - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
-            document.getElementById("art.cm.pct.real.morfologia").value = resultado
+            the("art.cm.pct.real.morfologia").value = resultado
             ajustarProgreso(resultado, "artCmMorfologia");
 
             var pctACM = '';
@@ -5081,12 +5081,12 @@ $(document).ready(function(){
 				pctACM = resultado;
             }
             
-            document.getElementById("art.cm.pct.morfologia").value = pctACM;
+            the("art.cm.pct.morfologia").value = pctACM;
             
             if (resultado < 5 || resultado > 95){
-                document.getElementById("art.cm.pct.morfologia").classList.add("is-invalid");
+                the("art.cm.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("art.cm.pct.morfologia").classList.add("is-valid");
+                the("art.cm.pct.morfologia").classList.add("is-valid");
             }
 
 		    if ($('#art\\.umb\\.morfologia').val()){
@@ -5099,13 +5099,13 @@ $(document).ready(function(){
                 var ccp = (acm / aumb);
 
                 $('#ind\\.cp\\.morfologia').val(ccp.toFixed(2));
-                document.getElementById("ind.cp.pct.morfologia").classList.remove("is-valid", "is-invalid");
+                the("ind.cp.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
                 eg = eg + 20;
                 uno = d[eg] - c[eg];
                 dos = ccp - c[eg];
                 resultado = parseInt(90 / (uno) * (dos) + 5);
-                document.getElementById("ind.cp.pct.real.morfologia").value = resultado
+                the("ind.cp.pct.real.morfologia").value = resultado
                 ajustarProgreso(resultado, "indCpMorfologia");
 
                 var pctCCP = '';
@@ -5120,12 +5120,12 @@ $(document).ready(function(){
                     pctCCP = resultado;
                 }
 
-                document.getElementById("ind.cp.pct.morfologia").value = pctCCP;
+                the("ind.cp.pct.morfologia").value = pctCCP;
 
                 if (resultado < 5 || resultado > 95){
-                    document.getElementById("ind.cp.pct.morfologia").classList.add("is-invalid");
+                    the("ind.cp.pct.morfologia").classList.add("is-invalid");
                 }else{
-                    document.getElementById("ind.cp.pct.morfologia").classList.add("is-valid");
+                    the("ind.cp.pct.morfologia").classList.add("is-valid");
                 }
 		    }
 	    }
@@ -5134,11 +5134,11 @@ $(document).ready(function(){
     $("#lc\\.morfologia").on("keyup", function(){
         let cV = +this.value;
         if (cV == NaN){
-            document.getElementById("lc.pct.morfologia").value = "";
+            the("lc.pct.morfologia").value = "";
         }else if (cV < 25){
-            document.getElementById("lc.pct.morfologia").value ="Cérvix corto";
+            the("lc.pct.morfologia").value ="Cérvix corto";
         }else if(cV > 24){
-            document.getElementById("lc.pct.morfologia").value ="Cérvix normal";
+            the("lc.pct.morfologia").value ="Cérvix normal";
         }
     })
 
@@ -5151,17 +5151,17 @@ $(document).ready(function(){
         a[0]=0.32; a[1]=0.32; a[2]=0.32; a[3]=0.32; a[4]=0.32; a[5]=0.32; a[6]=0.31; a[7]=0.31; a[8]=0.31; a[9]=0.3; a[10]=0.29; a[11]=0.28; a[12]=0.28; a[13]=0.27; a[14]=0.26; a[15]=0.25; a[16]=0.24; a[17]=0.23; a[18]=0.22; a[19]=0.21; a[20]=0.2;
         b[0]=0.83; b[1]=0.83; b[2]=0.83; b[3]=0.83; b[4]=0.83; b[5]=0.83; b[6]=0.82; b[7]=0.82; b[8]=0.81; b[9]=0.81; b[10]=0.8; b[11]=0.79; b[12]=0.78; b[13]=0.77; b[14]=0.76; b[15]=0.75; b[16]=0.74; b[17]=0.73; b[18]=0.72; b[19]=0.71; b[20]=0.7;
 
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
         var dv = this.value;
 
-        document.getElementById("dv.pct.morfologia").classList.remove("is-valid", "is-invalid");
+        the("dv.pct.morfologia").classList.remove("is-valid", "is-invalid");
 
         dv = dv.toString();
         dv = dv.replace(",", ".");
         dv = parseFloat(dv);
 
         if (eg < 20 || eg > 40){
-            document.getElementById("dv.pct.morfologia").value = 0
+            the("dv.pct.morfologia").value = 0
         }else {
             eg = eg - 20;
             eg = parseInt(eg);
@@ -5170,7 +5170,7 @@ $(document).ready(function(){
             var dos= dv - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
 
-            document.getElementById("dv.pct.real.morfologia").value = resultado;
+            the("dv.pct.real.morfologia").value = resultado;
             var pctDV = '';
             //truncador de Pct, sobre 100 o bajo 1
             if (resultado > 95){
@@ -5182,12 +5182,12 @@ $(document).ready(function(){
             }
             ajustarProgreso(resultado, "dvMorfologia");
 
-            document.getElementById("dv.pct.morfologia").value = pctDV;
+            the("dv.pct.morfologia").value = pctDV;
 
             if (resultado < 5 || resultado > 95){
-                document.getElementById("dv.pct.morfologia").classList.add("is-invalid");
+                the("dv.pct.morfologia").classList.add("is-invalid");
             }else{
-                document.getElementById("dv.pct.morfologia").classList.add("is-valid");
+                the("dv.pct.morfologia").classList.add("is-valid");
             }
         }
     })
@@ -5199,11 +5199,11 @@ $(document).ready(function(){
         atrio = parseFloat(atrio);
 
         if (atrio < 10){
-            document.getElementById("vlp.txt.morfologia").value = "Normal"
+            the("vlp.txt.morfologia").value = "Normal"
         }else if (atrio < 16){
-            document.getElementById("vlp.txt.morfologia").value = "Ventriculomegalia"
+            the("vlp.txt.morfologia").value = "Ventriculomegalia"
         }else{
-            document.getElementById("vlp.txt.morfologia").value = "Hidrocefalia"
+            the("vlp.txt.morfologia").value = "Hidrocefalia"
         }
     })
 
@@ -5214,11 +5214,11 @@ $(document).ready(function(){
         atrio = parseFloat(atrio);
 
         if (atrio < 10){
-            document.getElementById("vld.txt.morfologia").value = "Normal"
+            the("vld.txt.morfologia").value = "Normal"
         }else if (atrio < 16){
-            document.getElementById("vld.txt.morfologia").value = "Ventriculomegalia"
+            the("vld.txt.morfologia").value = "Ventriculomegalia"
         }else{
-            document.getElementById("vld.txt.morfologia").value = "Hidrocefalia"
+            the("vld.txt.morfologia").value = "Hidrocefalia"
         }
     })
 
@@ -5244,16 +5244,16 @@ $(window).on('hashchange', function(){
 
         if (div_fecha.includes(hash)){
             document.getElementsByTagName("section")[0].classList.remove(d);
-            document.getElementById("titulo").innerHTML = titulos[hash];
+            the("titulo").innerHTML = titulos[hash];
 
             if (hash == "#ecoGinecologica"){
-                document.getElementById("semanas").parentElement.parentElement.parentElement.parentElement.classList.add(d);
-                document.getElementById("fpp").parentElement.parentElement.classList.add(d);
-                document.getElementById("diaciclo").parentElement.parentElement.classList.remove(d);
+                the("semanas").parentElement.parentElement.parentElement.parentElement.classList.add(d);
+                the("fpp").parentElement.parentElement.classList.add(d);
+                the("diaciclo").parentElement.parentElement.classList.remove(d);
             }else{
-                document.getElementById("diaciclo").parentElement.parentElement.classList.add(d);
-                document.getElementById("semanas").parentElement.parentElement.parentElement.parentElement.classList.remove(d);
-                document.getElementById("fpp").parentElement.parentElement.classList.remove(d);
+                the("diaciclo").parentElement.parentElement.classList.add(d);
+                the("semanas").parentElement.parentElement.parentElement.parentElement.classList.remove(d);
+                the("fpp").parentElement.parentElement.classList.remove(d);
             }
         }
         else{
@@ -5271,78 +5271,78 @@ $(window).on('hashchange', function(){
     }
     else{
         $(activeHash).addClass(d);
-        document.getElementById("inicio").classList.remove(d);
+        the("inicio").classList.remove(d);
     }
 });
 
 function infPrecoz(){
-    let sacovitelinotxt = (document.getElementById("saco-vitelino").value == "no se observa") ? "." : " de diametro " + document.getElementById("saco-vitelino-mm").value + " mm.";
-    let sacogestacionaltxt = document.getElementById("saco").value;
+    let sacovitelinotxt = (the("saco-vitelino").value == "no se observa") ? "." : " de diametro " + the("saco-vitelino-mm").value + " mm.";
+    let sacogestacionaltxt = the("saco").value;
     sacogestacionaltxt = (sacogestacionaltxt > 0) ? " diametro promedio " + sacogestacionaltxt + " mm." : ".";
 
     //si solo tiena saco
     var InformeString = "";
 
-    if (document.getElementById("lcn").value < 1 && document.getElementById("saco").value > 1){
+    if (the("lcn").value < 1 && the("saco").value > 1){
         InformeString = '<div class="container-fluid" style="margin-top: 5rem;"><h4 class="page-header text-center">Evaluación ecográfica obstétrica precoz (edades menores a 11 semanas)</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table> <p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">DESCRIPCIÓN</strong></p><p> Cuerpo Uterino :LINEA1 <br/> Saco Gestacional :LINEA2 <br/> Saco Vitelino :LINEA3 <br/> Embrión :LINEA4 <br/> Exploración anexial derecha :LINEA5 <br/> Exploración anexial izquierda :LINEA6 <br/> Exploración de Douglas :LINEA7 </p><p></p><p></p><p><strong style="color: #045dab;">:TITULOBIOMETRIAS</strong></p><p>:LINEA12</p><p></p><p></p></div><div class="container-fluid"> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong><span style="color: #045dab;"> (Adicionar comentarios del examinador)</span></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 5rem;"> <p class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block; margin-top: 5rem;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;margin-top:10px"> Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800 <br/> Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992. <br/> Referencia Diámetro biparital según gráfica de Hadlock y col. 1984 <br/> Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil. <br/> <strong> El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
-    }else if (document.getElementById("lcn").value < 1 && document.getElementById("saco").value < 1 && sacogestacionaltxt == "."){
+    }else if (the("lcn").value < 1 && the("saco").value < 1 && sacogestacionaltxt == "."){
         InformeString = '<div class="container-fluid" style="margin-top: 5rem;"><h4 class="page-header text-center">Evaluación ecográfica obstétrica precoz (edades menores a 11 semanas)</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table><p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">DESCRIPCIÓN</strong></p><p> Cuerpo Uterino :LINEA1 <br/> Exploración anexial derecha :LINEA5 <br/> Exploración anexial izquierda :LINEA6 <br/> Exploración de Douglas :LINEA7 </p><p></p><p></p><p><strong style="color: #045dab;">:TITULOBIOMETRIAS</strong></p><p>:LINEA12</p><p></p><p></p><p><strong style="color: #045dab;">HIPÓTESIS DIAGNÓSTICA</strong></p><p> :LINEA8 :LINEA9 <br/> :LINEA10 <br/> :LINEA11 </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 5rem;"> <p class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block; margin-top: 5rem;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"> Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800 <br/> Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992. <br/> Referencia Diámetro biparital según gráfica de Hadlock y col. 1984 <br/> Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil. <br/> <strong> El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
     }else{
         InformeString = '<div class="container-fluid" style="margin-top: 5rem;"><h4 class="page-header text-center">Evaluación ecográfica obstétrica precoz (edades menores a 11 semanas)</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table><p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">DESCRIPCIÓN</strong></p><p> Cuerpo Uterino :LINEA1 <br/> Saco Gestacional :LINEA2 <br/> Saco Vitelino :LINEA3 <br/> Embrión :LINEA4 <br/> Exploración anexial derecha :LINEA5 <br/> Exploración anexial izquierda :LINEA6 <br/> Exploración de Douglas :LINEA7 </p><p></p><p></p><p><strong style="color: #045dab;">:TITULOBIOMETRIAS</strong></p><p>:LINEA12</p><p></p><p></p><p><strong style="color: #045dab;">HIPÓTESIS DIAGNÓSTICA</strong></p><p> :LINEA8 :LINEA9 <br/> :LINEA10 <br/> :LINEA11 </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 5rem;"> <p class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block; margin-top: 5rem;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"> Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800 <br/> Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992. <br/> Referencia Diámetro biparital según gráfica de Hadlock y col. 1984 <br/> Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil. <br/> <strong> El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
     }
 
-    let fcftexto = document.getElementById("embrion").value;
+    let fcftexto = the("embrion").value;
     let optiones = ["no se observa aun","act. no evidenciable","act. card. y Corp. (-)"];
 
     if (optiones.includes(fcftexto)){
         fcftexto = ".";
     }
     else{
-        fcftexto = (document.getElementById("fcf-prim").value == '(+) inicial') ? " frecuencia cardiaca fetal " + document.getElementById("fcf-prim").value : " frecuencia cardiaca fetal de " + document.getElementById("fcf-prim").value +" x min.";
+        fcftexto = (the("fcf-prim").value == '(+) inicial') ? " frecuencia cardiaca fetal " + the("fcf-prim").value : " frecuencia cardiaca fetal de " + the("fcf-prim").value +" x min.";
     }
 
-    let douglasinforme = (document.getElementById("exploracion-douglas").value == 'ocupado') ? document.getElementById("comentarios-douglas-informe").value : ".";
+    let douglasinforme = (the("exploracion-douglas").value == 'ocupado') ? the("comentarios-douglas-informe").value : ".";
 
-    var LINEA1 = document.getElementById("utero-ubic1").value + " " + document.getElementById("utero-ubic2").value+ ", " + document.getElementById("cuerpo-uterino").value + ".";
-    var LINEA2 = document.getElementById("saco-gestacional").value + sacogestacionaltxt;
-    var LINEA3 = document.getElementById("saco-vitelino").value + sacovitelinotxt;
-    var LINEA4 = document.getElementById("embrion").value + fcftexto;
-    var LINEA5 = document.getElementById("anexo-derecho").value;
-    var LINEA6 = document.getElementById("anexo-izquierdo").value;
-    var LINEA7 = document.getElementById("exploracion-douglas").value + ", " + douglasinforme;
+    var LINEA1 = the("utero-ubic1").value + " " + the("utero-ubic2").value+ ", " + the("cuerpo-uterino").value + ".";
+    var LINEA2 = the("saco-gestacional").value + sacogestacionaltxt;
+    var LINEA3 = the("saco-vitelino").value + sacovitelinotxt;
+    var LINEA4 = the("embrion").value + fcftexto;
+    var LINEA5 = the("anexo-derecho").value;
+    var LINEA6 = the("anexo-izquierdo").value;
+    var LINEA7 = the("exploracion-douglas").value + ", " + douglasinforme;
     var LINEA12 = '';
     var LINEA8 = '';
 
-    if (document.getElementById("lcn").value > 0){
-        var LINEA9 = "Utero " + document.getElementById("utero-ubic1").value + " " + document.getElementById("utero-ubic2").value + ", " + document.getElementById("cuerpo-uterino").value + ".";
-        var LINEA10 = "Exploración anexial derecha " + document.getElementById("anexo-derecho").value;
-        var LINEA11 = "Exploración anexial izquierda " + document.getElementById("anexo-izquierdo").value;
+    if (the("lcn").value > 0){
+        var LINEA9 = "Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
+        var LINEA10 = "Exploración anexial derecha " + the("anexo-derecho").value;
+        var LINEA11 = "Exploración anexial izquierda " + the("anexo-izquierdo").value;
     } 
-    else if (document.getElementById("lcn").value == "" && document.getElementById("embrion").value == "no procede"){
-        var LINEA9 = "Utero " + document.getElementById("utero-ubic1").value + " " + document.getElementById("utero-ubic2").value + ", " + document.getElementById("cuerpo-uterino").value + ".";
-        var LINEA10 = "Exploración anexial " + document.getElementById("anexo-derecho").value;
+    else if (the("lcn").value == "" && the("embrion").value == "no procede"){
+        var LINEA9 = "Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
+        var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
         var LINEA11 = "";
         LINEA12 = "no procede";
     }else{
-        var LINEA9 = "Gestación Inicial<br>Utero " + document.getElementById("utero-ubic1").value + " " + document.getElementById("utero-ubic2").value + ", " + document.getElementById("cuerpo-uterino").value + ".";
-        var LINEA10 = "Exploración anexial " + document.getElementById("anexo-derecho").value;
+        var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
+        var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
         var LINEA11 = "";
         LINEA12 = "Embrion no se observa";
     }
 
     if (sacogestacionaltxt > 0){
         LINEA12 = "Saco gestacional diámetro promedio de " + sacogestacionaltxt +" mm.<br>";
-        LINEA8 = "Edad gestacional estimada " + document.getElementById("sacoPct").value + " por saco gestacional.<br>";
+        LINEA8 = "Edad gestacional estimada " + the("sacoPct").value + " por saco gestacional.<br>";
     }
 
-    if (document.getElementById("lcn").value > 0) {
-        LINEA12 = "Largo embrionario máximo de " + document.getElementById("lcn").value + " mm.";
-        LINEA8 = "Edad gestacional estimada " + document.getElementById("lcnPct").value + " semanas por LCN.<br>";
+    if (the("lcn").value > 0) {
+        LINEA12 = "Largo embrionario máximo de " + the("lcn").value + " mm.";
+        LINEA8 = "Edad gestacional estimada " + the("lcnPct").value + " semanas por LCN.<br>";
     }
 
     var TITULOBIOMETRIAS = 'BIOMETRÍAS EMBRIO/FETAL';
 
-    if (document.getElementById("lcn").value < 1) {
+    if (the("lcn").value < 1) {
         if (sacogestacionaltxt < 1){
             LINEA12 = '';
             LINEA8 = '';
@@ -5350,12 +5350,12 @@ function infPrecoz(){
         }
     }
 
-    var paciente = document.getElementById("nombre-paciente").value;
-    var idpaciente = document.getElementById("id-paciente").value;
+    var paciente = the("nombre-paciente").value;
+    var idpaciente = the("id-paciente").value;
     var motivo = $( '#motivo-examen option:selected').text();
     var ecografista = $( '#ecografista option:selected').text();
 
-    let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+    let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
 
     InformeString = InformeString.replace(":PACIENTE", paciente);
@@ -5363,11 +5363,11 @@ function infPrecoz(){
     InformeString = InformeString.replace(":MOTIVO", motivo);
     InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
 
-    let fur = new Date(Date.parse(document.getElementById("fum").value));
+    let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + ' de '+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-    let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+    let fpp = new Date(Date.parse(the("fpp").value));
     fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getMonth()+1] + ' ' + fpp.getFullYear();
-    let eg = document.getElementById("semanas").value + '.'+ document.getElementById("dias").value;
+    let eg = the("semanas").value + '.'+ the("dias").value;
     InformeString = InformeString.replace(":FUR", fur);
     InformeString = InformeString.replace(":EG", eg);
     InformeString = InformeString.replace(":FPP", fpp);
@@ -5375,18 +5375,19 @@ function infPrecoz(){
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
 
-    var comentario = document.getElementById("comentarios-eco-uno").value;
+    var comentario = the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    if (document.getElementById("saco").value && document.getElementById("embrion").value == "no se observa aun"){
-        comentario = "Calculo inicial de edad según saco gestacional: "+document.getElementById("sacoPct").value+" semanas<br>Se sugiere agendar próxima ecografía para determinar edad gestacional por LCN<br>" + comentario;
+    if (the("saco").value && the("embrion").value == "no se observa aun"){
+        comentario = "Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>Se sugiere agendar próxima ecografía para determinar edad gestacional por LCN<br>" + comentario;
     }
-    else{
-        let fur = new Date(Date.parse(document.getElementById("fum").value));
+    else if (the("embrion").value != "act. card. y Corp. (-)"){
+
+        let fur = new Date(Date.parse(the("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-        let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+        let fpp = new Date(Date.parse(the("fpp").value));
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
-        let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value + " semanas.";
+        let eg = the("semanas").value + "."+ the("dias").value + " semanas.";
         comentario = "Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>" + comentario;
         comentario += "<br><br>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
     }
@@ -5440,34 +5441,34 @@ function InfEcoObsSegTrim1(){
     actCard = (actCard == 0) ? 'sin actividad cardiaca': 'con actividad cardiaca';
     movCorp = (movCorp == 0) ? 'sin movimientos corporales': 'con movimientos corporales';
 
-    var linea1 = 'Feto en presentación ' + document.getElementById("presentacion").value + ', dorso ' + document.getElementById("dorso").value + ', ' + actCard + ' y ' + movCorp + '.';
-    var linea2 = 'Frecuencia cardiaca fetal de ' + document.getElementById("fcf").value + ' x minuto.';
+    var linea1 = 'Feto en presentación ' + the("presentacion").value + ', dorso ' + the("dorso").value + ', ' + actCard + ' y ' + movCorp + '.';
+    var linea2 = 'Frecuencia cardiaca fetal de ' + the("fcf").value + ' x minuto.';
     var anatomiaFetal = $('#ev-morfo').val();
 
     var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
 
     if (anatomiaFetal == "no evaluada dirigidamente, pero el aspecto morfológico general es normal"){
-        linea3 += "<br>atrio posterior " + document.getElementById("atrio.ecoDosTres").value + " mm ( " + the("atrio.desc.ecoDosTres").value + " ), diámetro cerebeloso transverso "+ document.getElementById("cerebelo").value +" mm, cisterna magna "+ document.getElementById("cm.ecoDosTres").value + " mm, sexo fetal " + $("#ecografia\\.segtrim\\.sexo").val() + ".";
+        linea3 += "<br>atrio posterior " + the("atrio.ecoDosTres").value + " mm ( " + the("atrio.desc.ecoDosTres").value + " ), diámetro cerebeloso transverso "+ the("cerebelo").value +" mm, cisterna magna "+ the("cm.ecoDosTres").value + " mm, sexo fetal " + $("#ecografia\\.segtrim\\.sexo").val() + ".";
     }else{
         linea3 += " <br>";
     }
 
-    var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', ' + document.getElementById("incersion").value + '.';
-    var linea5 = '<strong>Cordón umbilical</strong> ' + document.getElementById("cordon").value + ', identificandose '+ document.getElementById("vasos").value +' vasos.';
-    var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + document.getElementById("bvm").value + ' mm.';
+    var linea4 = '<strong>Placenta</strong> de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '.';
+    var linea5 = '<strong>Cordón umbilical</strong> ' + the("cordon").value + ', identificandose '+ the("vasos").value +' vasos.';
+    var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + the("bvm").value + ' mm.';
 
-    let fur = new Date(Date.parse(document.getElementById("fum").value));
+    let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + ' de '+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
     
-    let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+    let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + ' de '+ monthsES[fexamen.getMonth()] + ' ' + fexamen.getFullYear();
 
-    let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+    let fpp = new Date(Date.parse(the("fpp").value));
     fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getMonth()+1] + ' ' + fpp.getFullYear();
-    let eg = document.getElementById("semanas").value + '.'+ document.getElementById("dias").value;
+    let eg = the("semanas").value + '.'+ the("dias").value;
 
-    var dbp = document.getElementById("dbp").value + ' mm';
-    var dbpPct = document.getElementById("dbpPct").value;
+    var dbp = the("dbp").value + ' mm';
+    var dbpPct = the("dbpPct").value;
 
     let tmpData = "";
 
@@ -5479,7 +5480,7 @@ function InfEcoObsSegTrim1(){
     var dbpRango = oldProgress(tmpData);
 
     var lh = $( '#lh').val() + ' mm';
-    var lhPct = document.getElementById("lhPctRpt").value;
+    var lhPct = the("lhPctRpt").value;
 
     if (lhPct == "&gt; 95" || lhPct == "&lt; 5"){
         tmpData = 0;
@@ -5488,7 +5489,7 @@ function InfEcoObsSegTrim1(){
     }
     var lhRango = oldProgress(tmpData);
 
-    var cc = document.getElementById("cc").value + ' mm';
+    var cc = the("cc").value + ' mm';
     var ccPct = $('#ccPctRpt').val();
     if (ccPct == "&gt; 97" || ccPct == "&lt; 3"){
         tmpData = 0;
@@ -5498,8 +5499,8 @@ function InfEcoObsSegTrim1(){
 
     var ccRango = oldProgress(tmpData);
 
-    var ca = document.getElementById("ca").value + ' mm';
-    var caPct = document.getElementById("caPctRpt").value;
+    var ca = the("ca").value + ' mm';
+    var caPct = the("caPctRpt").value;
     if (caPct == "&gt; 97" || caPct == "&lt; 3"){
         tmpData = 0;
     }else{
@@ -5508,7 +5509,7 @@ function InfEcoObsSegTrim1(){
     var caRango = oldProgress(tmpData);
 
     var lf = $( '#lf').val() + ' mm';
-    var lfPct = document.getElementById("lfPctRpt").value;
+    var lfPct = the("lfPctRpt").value;
     if (lfPct == "&gt; 97" || lfPct == "&lt; 3"){
         tmpData = 0;
     }else{
@@ -5516,8 +5517,8 @@ function InfEcoObsSegTrim1(){
     }
     var lfRango = oldProgress(tmpData);
 
-    var ccca = document.getElementById("ccca").value;
-    var cccaPctVal = document.getElementById("cccaPctVal").value;
+    var ccca = the("ccca").value;
+    var cccaPctVal = the("cccaPctVal").value;
     if (cccaPctVal == "&gt; 97" || cccaPctVal == "&lt; 3"){
         tmpData = 0;
     }else{
@@ -5526,7 +5527,7 @@ function InfEcoObsSegTrim1(){
     var cccaRango = oldProgress(tmpData);
 
     var pfe = $( '#pfe').val() + ' gr.';
-    var percentilPeso = document.getElementById("pfePctRpt").value;
+    var percentilPeso = the("pfePctRpt").value;
     percentilPeso = percentilPeso.replace('&lt;','<').replace('&gt;', '>');
     var pfePct = percentilPeso;
 
@@ -5537,15 +5538,15 @@ function InfEcoObsSegTrim1(){
     }
     var pfeRango = oldProgress(tmpData);
 
-    var ic = document.getElementById("dof-dbp").value;
+    var ic = the("dof-dbp").value;
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
 
-    var paciente = document.getElementById("nombre-paciente").value;
-    var idpaciente = document.getElementById("id-paciente").value;
+    var paciente = the("nombre-paciente").value;
+    var idpaciente = the("id-paciente").value;
     var motivo = $( '#motivo-examen option:selected').text();
     var ecografista = $( '#ecografista option:selected').text();
 
-    var comentario = document.getElementById("comentarios-eco-dos-inf-dos").value;
+    var comentario = the("comentarios-eco-dos-inf-dos").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
     var edadmaterna = $( "select[name='edad_materna']").val();
@@ -5555,7 +5556,7 @@ function InfEcoObsSegTrim1(){
     InformeString = InformeString.replace(":CESAPREV", CESAPREV);
 
     var contadorOpcional = 0;
-    if (document.getElementById("art.ut").checked == true){
+    if (the("art.ut").checked == true){
         InformeString += '<tr> <td><strong>IP Promedio Arterias Uterinas</strong></td><td style="text-align:center;">:ARTUT</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTPCTVAL</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTRANGO</td></tr>';
     
         InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
@@ -5574,7 +5575,7 @@ function InfEcoObsSegTrim1(){
         contadorOpcional++;
     }
 
-    if (document.getElementById("larg.cerv").checked == true){
+    if (the("larg.cerv").checked == true){
         InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td class="text-center" style="border-top:1px dashed #045dab;">:LARGCERVTXT</td><td class="text-center" style="border-top:1px dashed #045dab;"></td></tr>';
     
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
@@ -5668,10 +5669,10 @@ function resetDate(){
     day = ("0" + dayHoy.getUTCDate()).slice(-2);
     month = ("0" + (dayHoy.getMonth() + 1)).slice(-2);
 
-    document.getElementById("semanas").value = 0;
-    document.getElementById("dias").value = 0;
-    document.getElementById("fum").value = getDate();
-    document.getElementById("fee").value = getDate();
+    the("semanas").value = 0;
+    the("dias").value = 0;
+    the("fum").value = getDate();
+    the("fee").value = getDate();
 
     $("#fum").trigger("change");
 }
@@ -5814,7 +5815,7 @@ function pctut(uterina) {
 	a[0]=1.23; a[1]=1.18; a[2]=1.11; a[3]=1.05;a[4]=0.99; a[5]=0.94; a[6]=0.89; a[7]=0.85; a[8]=0.81; a[9]=0.78; a[10]=0.74; a[11]=0.71; a[12]=0.69; a[13]=0.66; a[14]=0.64; a[15]=0.62; a[16]=0.6; a[17]=0.58; a[18]=0.56; a[19]=0.55; a[20]=0.54; a[21]=0.52; a[22]=0.51; a[23]=0.51; a[24]=0.51; a[25]=0.49; a[26]=0.48; a[27]=0.48; a[28]=0.47; a[29]=0.47; a[30]=0.47;
 	b[0]=2.84; b[1]=2.71; b[2]=2.53; b[3]=2.38;b[4]=2.24; b[5]=2.11; b[6]=1.99; b[7]=1.88;b[8]=1.79; b[9]=1.71; b[10]=1.61; b[11]=1.54;b[12]=1.47; b[13]=1.41; b[14]=1.35; b[15]=1.3;b[16]=1.25; b[17]=1.21;b[18]=1.17; b[19]=1.13;b[20]=1.11; b[21]=1.06;b[22]=1.04; b[23]=1.01; b[24]=0.99; b[25]=0.97;b[26]=0.95; b[27]=0.94;b[28]=0.92; b[29]=0.91; b[30]=0.91;
     
-    let eg = document.getElementById("semanas").value;
+    let eg = the("semanas").value;
 	uterina = uterina.toString(); 
     uterina = uterina.replace(",", ".");
     uterina = parseFloat(uterina);
@@ -5866,8 +5867,8 @@ function pctdv() {
     a[0]=0.32; a[1]=0.32; a[2]=0.32; a[3]=0.32; a[4]=0.32; a[5]=0.32; a[6]=0.31; a[7]=0.31; a[8]=0.31; a[9]=0.3; a[10]=0.29; a[11]=0.28; a[12]=0.28; a[13]=0.27; a[14]=0.26; a[15]=0.25; a[16]=0.24; a[17]=0.23; a[18]=0.22; a[19]=0.21; a[20]=0.2;
     b[0]=0.83; b[1]=0.83; b[2]=0.83; b[3]=0.83; b[4]=0.83; b[5]=0.83; b[6]=0.82; b[7]=0.82; b[8]=0.81; b[9]=0.81; b[10]=0.8; b[11]=0.79; b[12]=0.78; b[13]=0.77; b[14]=0.76; b[15]=0.75; b[16]=0.74; b[17]=0.73; b[18]=0.72; b[19]=0.71; b[20]=0.7;
    
-    let eg = document.getElementById("semanas").value;
-    var dv = document.getElementById("dv").value;
+    let eg = the("semanas").value;
+    var dv = the("dv").value;
    dv = dv.toString();
     dv = dv.replace(",", ".");
     dv = parseFloat(dv);
@@ -5909,7 +5910,7 @@ function pctau() {
     c[20]=0.78; c[21]=0.87; c[22]=0.95; c[23]=1.02;c[24]=1.09; c[25]=1.15; c[26]=1.2; c[27]=1.24;c[28]=1.28; c[29]=1.31; c[30]=1.33; c[31]=1.35;c[32]=1.36; c[33]=1.36; c[34]=1.36; c[35]=1.34;c[36]=1.32; c[37]=1.3; c[38]=1.26; c[39]=1.22;c[40]=1.18;
     d[20]=1.68; d[21]=1.88; d[22]=2.06; d[23]=2.22;d[24]=2.36; d[25]=2.49; d[26]=2.6;d[27]=2.7;d[28]=2.78; d[29]=2.84; d[30]=2.89; d[31]=2.92;d[32]=2.93; d[33]=2.93; d[34]=2.91; d[35]=2.87;d[36]=2.82; d[37]=2.75; d[38]=2.67; d[39]=2.57;
 	
-    let eg = document.getElementById("semanas").value;
+    let eg = the("semanas").value;
  	var aumb = $('#ipau').val();
 	aumb = aumb.toString();
  	aumb = aumb.replace(",", ".");
@@ -5975,7 +5976,7 @@ function pctacm() {
     c[20]=0.78;c[21]=0.87;c[22]=0.95;c[23]=1.02;c[24]=1.09;c[25]=1.15;c[26]=1.2;c[27]=1.24;c[28]=1.28;c[29]=1.31;c[30]=1.33;c[31]=1.35;c[32]=1.36;c[33]=1.36;c[34]=1.36;c[35]=1.34;c[36]=1.32;c[37]=1.3;c[38]=1.26;c[39]=1.22;c[40]=1.18;
     d[20]=1.68;d[21]=1.88;d[22]=2.06;d[23]=2.22;d[24]=2.36;d[25]=2.49;d[26]=2.6;d[27]=2.7;d[28]=2.78;d[29]=2.84;d[30]=2.89;d[31]=2.92;d[32]=2.93;d[33]=2.93;d[34]=2.91;d[35]=2.87;d[36]=2.82;d[37]=2.75;d[38]=2.67;d[39]=2.57;
 
-    let eg = document.getElementById("semanas").value;
+    let eg = the("semanas").value;
 	var acm = $('#ipacm').val();
 	acm = acm.toString();
  	acm = acm.replace(",", ".");
@@ -6067,7 +6068,7 @@ function deDBP() {
     a[0]=14;a[1]=17;a[2]=19;a[3]=25;a[4]=29;a[5]=33;a[6]=34;a[7]=38;a[8]=41;a[9]=43;a[10]=46;a[11]=49;a[12]=52;a[13]=54;a[14]=57;a[15]=61;a[16]=63;a[17]=65;a[18]=69;a[19]=69;a[20]=74;a[21]=74;a[22]=77;a[23]=78;a[24]=78;a[25]=81;a[26]=85;a[27]=88;
 	b[0]=25;b[1]=29;b[2]=33;b[3]=35;b[4]=41;b[5]=42;b[6]=46;b[7]=50;b[8]=52;b[9]=56;b[10]=59;b[11]=63;b[12]=66;b[13]=70;b[14]=71;b[15]=75;b[16]=77;b[17]=81;b[18]=83;b[19]=87;b[20]=88;b[21]=91;b[22]=94;b[23]=95;b[24]=97;b[25]=99;b[26]=97;b[27]=106;
 
-	let eg = document.getElementById("semanas").value;
+	let eg = the("semanas").value;
 	let dbp = $("#dbp").val();
     let dof = $("#dof").val();
     
@@ -6123,7 +6124,7 @@ function calcdof(){
     a[10]=7;a[11]=11; a[12]=16; a[13]=20;a[14]=24; a[15]=29; a[16]=33; a[17]=37;a[18]=41; a[19]=46; a[20]=50; a[21]=54;a[22]=58; a[23]=62; a[24]=65; a[25]=69;a[26]=73; a[27]=76; a[28]=80; a[29]=83;a[30]=86; a[31]=89; a[32]=92; a[33]=95;a[34]=97; a[35]=99; a[36]=102; a[37]=104;a[38]=105; a[39]=107; a[40]=108;
     b[10]=21; b[11]=25; b[12]=30; b[13]=34;b[14]=38; b[15]=43; b[16]=47; b[17]=51;b[18]=55; b[19]=60; b[20]=64; b[21]=68;b[22]=72; b[23]=76; b[24]=79; b[25]=83;b[26]=87; b[27]=90; b[28]=94; b[29]=97;b[30]=100; b[31]=103; b[32]=106; b[33]=108;b[34]=111; b[35]=113; b[36]=116; b[37]=118;b[38]=119; b[39]=121; b[40]=122;
     
-    let eg = document.getElementById("semanas").value;
+    let eg = the("semanas").value;
 	
 	if (eg > 9 && dof > 0){
 		var uno = b[eg] - a[eg];
@@ -6174,8 +6175,8 @@ function pctcc() {
     a[0]=64;a[1]=74;a[2]=88;a[3]=100;a[4]=113;a[5]=126; a[6]=137;a[7]=149;a[8]=161;a[9]=172;a[10]=183; a[11]=194;a[12]=204;a[13]=214;a[14]=224;a[15]=233; a[16]=242;a[17]=250;a[18]=258;a[19]=267;a[20]=274; a[21]=280;a[22]=287;a[23]=293;a[24]=299;a[25]=303; a[26]=308;a[27]=311;a[28]=315;
     b[0]=81;b[1]=94;b[2]=106;b[3]=120;b[4]=135; b[5]=150;b[6]=165;b[7]=179;b[8]=193;b[9]=206; b[10]=219;b[11]=232;b[12]=243;b[13]=256;b[14]=268; b[15]=279;b[16]=290;b[17]=300;b[18]=310;b[19]=319; b[20]=328;b[21]=336;b[22]=343;b[23]=351;b[24]=358; b[25]=363;b[26]=368;b[27]=373;b[28]=377;
    
-    let eg = document.getElementById("semanas").value;
-    let cc = parseInt(document.getElementById("cc").value);
+    let eg = the("semanas").value;
+    let cc = parseInt(the("cc").value);
    
     if (eg < 12 || eg > 40){ 
         $("#ccPct").val("");
@@ -6214,8 +6215,8 @@ function pctca() {
     a[0]=42;a[1]=52;a[2]=64;a[3]=75;a[4]=86; a[5]=97;a[6]=109;a[7]=119;a[8]=131;a[9]=141; a[10]=151;a[11]=161;a[12]=171;a[13]=181; a[14]=191;a[15]=200;a[16]=209;a[17]=218;a[18]=227; a[19]=236;a[20]=245;a[21]=253;a[22]=261;a[23]=269; a[24]=277;a[25]=285;a[26]=292;a[27]=299;a[28]=307;
     b[0]=71;b[1]=79;b[2]=92;b[3]=102;b[4]=113; b[5]=127;b[6]=141;b[7]=155;b[8]=170; b[9]=183;b[10]=192;b[11]=209;b[12]=223; b[13]=235;b[14]=248;b[15]=260;b[16]=271;b[17]=284; b[18]=295;b[19]=306;b[20]=318;b[21]=329;b[22]=339; b[23]=349;b[24]=359;b[25]=370;b[26]=380;b[27]=389; b[28]=399;
    
-    let eg = document.getElementById("semanas").value;
-    let ca = parseInt(document.getElementById("ca").value);
+    let eg = the("semanas").value;
+    let ca = parseInt(the("ca").value);
    
     if (eg < 12 || eg > 40){ 
             $("#caPct").val("0");
@@ -6254,8 +6255,8 @@ function pctlf() {
     a[0]=7;a[1]=9;a[2]=12;a[3]=15;a[4]=17;a[5]=21; a[6]=23;a[7]=26;a[8]=28;a[9]=30;a[10]=33;a[11]=35; a[12]=38;a[13]=40;a[14]=42;a[15]=44;a[16]=46; a[17]=48;a[18]=50;a[19]=52;a[20]=53;a[21]=55; a[22]=57;a[23]=59;a[24]=60;a[25]=62;a[26]=64; a[27]=65;a[28]=66;
     b[0]=12;b[1]=14;b[2]=17;b[3]=20;b[4]=23;b[5]=27; b[6]=31;b[7]=34;b[8]=38;b[9]=40;b[10]=43;b[11]=47; b[12]=50;b[13]=52;b[14]=56;b[15]=58;b[16]=62; b[17]=64;b[18]=66;b[19]=68;b[20]=71;b[21]=73; b[22]=75;b[23]=78;b[24]=80;b[25]=82;b[26]=84; b[27]=86;b[28]=88;
    
-    let eg = document.getElementById("semanas").value;
-    let lf=parseInt(document.getElementById("lf").value);
+    let eg = the("semanas").value;
+    let lf=parseInt(the("lf").value);
    
     if (eg < 12 || eg > 40){ 
         $("#lfPct").val("0");
@@ -6311,8 +6312,8 @@ function pctcb() {
     pct2dsmas[25] = 62;
     
     var cb=0;
-    let eg = document.getElementById("semanas").value;
-    cb=parseInt(document.getElementById("cerebelo").value);
+    let eg = the("semanas").value;
+    cb=parseInt(the("cerebelo").value);
     
     if (eg < 15 || eg > 40) {
         $("#cbPct").val("0");
@@ -6361,7 +6362,7 @@ function pctlh() {
     a[38] = 59.8;  b[38] = 67.8; a[39] = 60.4;  b[39] = 69.3;
     a[40] = 61.9;  b[40] = 70.8;
        
-    let eg = document.getElementById("semanas").value;
+    let eg = the("semanas").value;
     var lh=parseInt($("#lh").val());
    
     if (eg < 12 || eg > 40) {
@@ -6457,9 +6458,9 @@ function psohdlk() {
 }
 
 function psohdlkMorfologia() {
-    let CC = document.getElementById("pc.morfologia").value;
-    let CA = document.getElementById("pa.morfologia").value;
-    let LF = document.getElementById("femur.morfologia").value;
+    let CC = the("pc.morfologia").value;
+    let CA = the("pa.morfologia").value;
+    let LF = the("femur.morfologia").value;
 
     CC = CC / 10;
     CA = CA / 10;
@@ -6467,11 +6468,11 @@ function psohdlkMorfologia() {
     var psoP = Math.pow(10, (1.326 + 0.0107 * CC + 0.0438 * CA + 0.158 * LF - 0.00326 * CA * LF));
 
     if (isNaN(psoP) != true) {
-        document.getElementById("pfe.morfologia").value = Math.trunc(psoP);
+        the("pfe.morfologia").value = Math.trunc(psoP);
         pctpfeMorfologia();
     }
     else{
-        document.getElementById("pfe.morfologia").value = 0;
+        the("pfe.morfologia").value = 0;
         pctpfeMorfologia();
     }
 }
@@ -6484,7 +6485,7 @@ function pctpfe() {
     a[0]=97;a[1]=121;a[2]=150;a[3]=185;a[4]=227;a[5]=275; a[6]=331;a[7]=398;a[8]=471;a[9]=556;a[10]=652;a[11]=758; a[12]=876;a[13]=1004;a[14]=1145;a[15]=1294;a[16]=1453; a[17]=1621;a[18]=1794;a[19]=1973;a[20]=2154;a[21]=2335; a[22]=2513; a[23]=2686; a[24]=2851; a[25]=2985;
     b[0]=137;b[1]=171;b[2]=212;b[3]=261;b[4]=319; b[5]=387;b[6]=467;b[7]=559;b[8]=665;b[9]=784; b[10]=918;b[11]=1068;b[12]=1234;b[13]=1416;b[14]=1613; b[15]=1824;b[16]=2049;b[17]=2285;b[18]=2530; b[19]=2781;b[20]=3036;b[21]=3291;b[22]=3543;b[23]=3786; b[24]=4019;b[25]=4234;   
 
-    let eg = document.getElementById("semanas").value;
+    let eg = the("semanas").value;
     let pfe=parseInt($("#pfe").val());
    
     if (eg < 15 || eg > 40) {  
@@ -6520,12 +6521,12 @@ function pctpfeMorfologia() {
     a[0]=97;a[1]=121;a[2]=150;a[3]=185;a[4]=227;a[5]=275; a[6]=331;a[7]=398;a[8]=471;a[9]=556;a[10]=652;a[11]=758; a[12]=876;a[13]=1004;a[14]=1145;a[15]=1294;a[16]=1453; a[17]=1621;a[18]=1794;a[19]=1973;a[20]=2154;a[21]=2335; a[22]=2513; a[23]=2686; a[24]=2851; a[25]=2985;
     b[0]=137;b[1]=171;b[2]=212;b[3]=261;b[4]=319; b[5]=387;b[6]=467;b[7]=559;b[8]=665;b[9]=784; b[10]=918;b[11]=1068;b[12]=1234;b[13]=1416;b[14]=1613; b[15]=1824;b[16]=2049;b[17]=2285;b[18]=2530; b[19]=2781;b[20]=3036;b[21]=3291;b[22]=3543;b[23]=3786; b[24]=4019;b[25]=4234;   
 
-    let eg = document.getElementById("semanas").value;
-    let pfe= document.getElementById("pfe.morfologia").value;
-    document.getElementById("pfe.pct.morfologia").classList.remove("is-valid", "is-invalid");
+    let eg = the("semanas").value;
+    let pfe= the("pfe.morfologia").value;
+    the("pfe.pct.morfologia").classList.remove("is-valid", "is-invalid");
    
     if (eg < 15 || eg > 40) {  
-        document.getElementById("pfe.pct.morfologia").value = 0;
+        the("pfe.pct.morfologia").value = 0;
     } else {
         eg = eg - 15;
         eg = parseInt(eg);
@@ -6533,7 +6534,7 @@ function pctpfeMorfologia() {
         var uno=b[eg] - a[eg];
         var dos=pfe - a[eg];
         var pctFinal = (80 / (uno) * (dos)) + 10
-        document.getElementById("pfe.pct.real.morfologia").value = pctFinal
+        the("pfe.pct.real.morfologia").value = pctFinal
         ajustarProgreso(pctFinal, "pfeMorfologia");
 
         var pctPFE = '';
@@ -6547,12 +6548,12 @@ function pctpfeMorfologia() {
             pctPFE = pctFinal.toFixed();
         }
 
-        document.getElementById("pfe.pct.morfologia").value = pctPFE;
+        the("pfe.pct.morfologia").value = pctPFE;
         
         if (pctFinal < 10 || pctFinal > 90){
-            document.getElementById("pfe.pct.morfologia").classList.add("is-invalid");
+            the("pfe.pct.morfologia").classList.add("is-invalid");
         }else{
-            document.getElementById("pfe.pct.morfologia").classList.add("is-valid");
+            the("pfe.pct.morfologia").classList.add("is-valid");
         }
     }
 }
@@ -6569,7 +6570,7 @@ function bvm() {
     a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
     b[0]=59; b[1]=62; b[2]=64; b[3]=66; b[4]=67; b[5]=68; b[6]=68; b[7]=68; b[8]=68; b[9]=68; b[10]=68; b[11]=69; b[12]=69; b[13]=69; b[14]=69; b[15]=70; b[16]=71; b[17]=72; b[18]=72; b[19]=72; b[20]=71; b[21]=70; b[22]=68; b[23]=66; b[24]=62;
 
-    let eg = document.getElementById("semanas").value;
+    let eg = the("semanas").value;
     let bvm = parseInt($("#bvm").val());
     if (eg > 15 || eg < 41){
         eg = eg - 16;
@@ -6612,7 +6613,7 @@ function crearInformeEcoSegTrim2(){
 
 	var p50 = $('#egP50').val() + ' semanas';
     var lh =  $( '#lh').val() + ' mm';
-    var lhPct = document.getElementById("lhPctRpt").value;
+    var lhPct = the("lhPctRpt").value;
     var tmpData = "";
 
     if (lhPct == "&gt; 95" || lhPct == "&lt; 5"){
@@ -6622,16 +6623,16 @@ function crearInformeEcoSegTrim2(){
     }
     var lhRango = oldProgress(tmpData);
     
-    let fur = new Date(Date.parse(document.getElementById("fum").value));
+    let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-    let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+    let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
-    let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+    let fpp = new Date(Date.parse(the("fpp").value));
     fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
-    let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
+    let eg = the("semanas").value + "."+ the("dias").value;
     
     var dbp = $( '#dbp').val() + ' mm';
-    var dbpPct = document.getElementById("dbpPct").value;
+    var dbpPct = the("dbpPct").value;
 
     if (dbpPct == "&gt; 99" || dbpPct == "&lt; 1"){
         tmpData = 0;
@@ -6659,7 +6660,7 @@ function crearInformeEcoSegTrim2(){
     var ccRango = oldProgress(tmpData);
 
     var ca = $( '#ca').val() + ' mm';
-    var caPct = document.getElementById("caPctRpt").value;
+    var caPct = the("caPctRpt").value;
     if (caPct == "&gt; 97" || caPct == "&lt; 3"){
         tmpData = 0;
     }else{
@@ -6668,7 +6669,7 @@ function crearInformeEcoSegTrim2(){
     var caRango = oldProgress(tmpData);
 
     var lf = $( '#lf').val() + ' mm';
-    var lfPct = document.getElementById("lfPctRpt").value;
+    var lfPct = the("lfPctRpt").value;
     if (lfPct == "&gt; 97" || lfPct == "&lt; 3"){
         tmpData = 0;
     }else{
@@ -6678,7 +6679,7 @@ function crearInformeEcoSegTrim2(){
 
 	var ic = $( '#dof-dbp').val();
     var cb = $('#cerebelo').val() + ' mm';
-    var cerebeloPctRpt = document.getElementById("cerebeloPctRpt").value;
+    var cerebeloPctRpt = the("cerebeloPctRpt").value;
     if (cerebeloPctRpt == "&gt; 97" || cerebeloPctRpt == "&lt; 3"){
         tmpData = 0;
     }else{
@@ -6686,8 +6687,8 @@ function crearInformeEcoSegTrim2(){
     }
     var cbRango = oldProgress(tmpData);
 	
-	var paciente = document.getElementById("nombre-paciente").value;
-    var idpaciente = document.getElementById("id-paciente").value;
+	var paciente = the("nombre-paciente").value;
+    var idpaciente = the("id-paciente").value;
     var motivo = $( '#motivo-examen option:selected').text();
     var ecografista = $( '#ecografista option:selected').text();
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
@@ -6696,32 +6697,32 @@ function crearInformeEcoSegTrim2(){
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
 
-	var linea1 = "Feto en presentación " + document.getElementById("presentacion").value + ", dorso " + document.getElementById("dorso").value + ", " + actCard + " y " + movCorp + ".";
-    var linea2 = "Frecuencia cardiaca fetal de " + document.getElementById("fcf").value + " x minuto.";
+	var linea1 = "Feto en presentación " + the("presentacion").value + ", dorso " + the("dorso").value + ", " + actCard + " y " + movCorp + ".";
+    var linea2 = "Frecuencia cardiaca fetal de " + the("fcf").value + " x minuto.";
         
 	var anatomiaFetal = $('#ev-morfo').val();
 	
 	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
     
     if (anatomiaFetal == "no evaluada dirigidamente, pero el aspecto morfológico general es normal"){
-        linea3 += "<br>atrio posterior " + document.getElementById("atrio.ecoDosTres").value + " mm ( " + the("atrio.desc.ecoDosTres").value + " ), diámetro cerebeloso transverso "+ document.getElementById("cerebelo").value +" mm, cisterna magna "+ document.getElementById("cm.ecoDosTres").value + " mm, sexo fetal " + $("#ecografia\\.segtrim\\.sexo").val() + ".";
+        linea3 += "<br>atrio posterior " + the("atrio.ecoDosTres").value + " mm ( " + the("atrio.desc.ecoDosTres").value + " ), diámetro cerebeloso transverso "+ the("cerebelo").value +" mm, cisterna magna "+ the("cm.ecoDosTres").value + " mm, sexo fetal " + $("#ecografia\\.segtrim\\.sexo").val() + ".";
     }else{
         linea3 += " <br>";
     }
 
-    var linea4 = '<strong>Placenta</strong> de ubicación ' + document.getElementById("ubicacion").value + ', ' + document.getElementById("incersion").value + '.';
-    var linea5 = "<strong>Cordón umbilical</strong> " + document.getElementById("cordon").value + ", identificandose "+ document.getElementById("vasos").value +" vasos.";
-    var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvm").value + " mm.";
+    var linea4 = '<strong>Placenta</strong> de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '.';
+    var linea5 = "<strong>Cordón umbilical</strong> " + the("cordon").value + ", identificandose "+ the("vasos").value +" vasos.";
+    var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + the("bvm").value + " mm.";
 	
     var InformeString = '<div class="container"> <h3>Determinación Ecográfica <small>(Tardía)</small> de la Edad Gestacional</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table> <p> <strong>FUM: </strong> :FUR <br/> <strong>EG (UPM): </strong> :EG semanas<br/> <strong>FPP: </strong> :FPP </p></div><div class="container"> <p><strong style="color: #045dab;">DESCRIPCIÓN</strong></p><p style="margin-bottom: 0;"> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA5 <br/> :LINEA6 </p><p></p><p></p></div><div class="container-fluid"> <table class="table"> <tbody> <tr> <th style="line-height: 15px !important; color: #045dab;">BIOMETRIA FETAL</th> <th style="text-align: center;">Valor observado</th> <th style="text-align: center;">Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td style="text-align: center;">:DBPRANGO</td></tr><tr> <td>DOF (Jeanty):</td><td style="text-align: center;">:DOF</td><td style="text-align: center;">:DOFRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td style="text-align: center;">:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style="text-align: center;">:CA</td><td style="text-align: center;">:CARANGO</td></tr><tr> <td>LF (Hadlock):</td><td style="text-align: center;">:LF</td><td style="text-align: center;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td style="text-align: center;">:LHRANGO</td></tr><tr> <td>Cerebelo (Diámetro transverso) (Hill):</td><td style="text-align: center;">:CB</td><td style="text-align: center;">:CBRANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">Indice Cefálico (DBP / DOF)</td><td style="text-align: center; padding-bottom: 15px !important;">:IC</td><td style="text-align: center; padding-bottom: 15px !important;">( 70% - 86% )</td></tr></tbody> </table></div>';
 
-    if (document.getElementById("art.ut").checked == true){
+    if (the("art.ut").checked == true){
         InformeString += "<tr> <td style='padding-bottom: 15px !important;'>IP Promedio Arterias Uterinas:</td><td style='text-align:center;padding-bottom: 15px !important;'>:ARTUT</td><td style='text-align:center;padding-bottom: 15px !important;'>:ARTUTRANGO</td></tr>";
         InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
         InformeString = InformeString.replace(":ARTUTRANGO", $("#respuesta_uterina_promedio_rango").val());
     }
 
-    if (document.getElementById("larg.cerv").checked == true){
+    if (the("larg.cerv").checked == true){
         InformeString += "<tr> <td style='padding-bottom: 15px !important;'>Largo Cervical</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERV mm</td><td style='text-align:center;padding-bottom: 15px !important;'></td><td style='text-align:center;padding-bottom: 15px !important;'></td></tr>"
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
     }
@@ -6800,7 +6801,7 @@ function valccca() {
         pct97[20] = 1.12;pct97[21] = 1.11;pct97[22] = 1.1;pct97[23] = 1.09;pct97[24] = 1.08;
         pct97[25] = 1.08;
    
-        let eg = document.getElementById("semanas").value;
+        let eg = the("semanas").value;
     
         if (eg < 15 || eg > 40) {
             $("#ccca").val('0');
@@ -6832,31 +6833,31 @@ function valccca() {
 function informeGinecologico(){
     let informe = '<div class="container-fluid"><h4 class="page-header text-center">INFORME ECOGRÁFICO GINECOLÓGICO ALTERNATIVO</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid" style="margin-top: 1rem;"> <p> <strong><em>Datos generales</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0">Nombre de paciente:</td><td class="p-0">:PACIENTE</td><td class="p-0">Edad Materna:</td><td class="p-0">:EDADMATERNA años.</td></tr><tr> <td class="p-0">RUT (DNI):</td><td class="p-0">:IDPACIENTE</td><td class="p-0">Fecha de Exámen:</td><td class="p-0">:FEXAMEN</td></tr><tr> <td class="p-0">Ciudad de procedencia:</td><td class="p-0">:CIUDAD</td><td class="p-0">Lugar de control:</td><td class="p-0">:LCONTROL</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Antecedentes clínicos</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="w-50 p-0">FUR referida:</td><td class="p-0">:FUM</td></tr><tr> <td class="w-50 p-0">Días del ciclo mestrual:</td><td class="p-0">:DIACICLO días.</td></tr><tr> <td class="w-50 p-0">Motivo de exámen:</td><td class="p-0">:MOTIVO</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Descripción</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td>Cuerpo uterino:</td><td>:LINEA2</td></tr><tr> <td>Contenido endouterino (endometrio):</td><td>:LINEA3</td></tr><tr> <td>Anexo Izquierdo:</td><td>:LINEA4</td></tr><tr> <td>Ovario Izquierdo:</td><td>:LINEA5</td></tr><tr> <td>Anexo Derecho:</td><td>:LINEA6</td></tr><tr> <td>Ovario Derecho:</td><td>:LINEA7</td></tr><tr> <td>Espacio retro-uterino (Douglas):</td><td>:LINEA8</td></tr><tr> <td><strong>Comentarios y observaciones:</strong></td><td>:COMENTARIO</td></tr></tbody> </table></div><div class="container-fluid" style="margin-top: 7rem;"> <p class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="margin-top: 2rem; border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"> Informe generado desde software crecimientofetal.cl, el objetivo de este es favorecer análisis preeliminar de los datos, la interpretación de los resultados de este informe, es responsabilidad fundamentalmente del profesional referente a exámen ecográfico. Profesional quien finalmente evaluará clínicamente la información contenida en este informe. </p></div>';
 
-    let LINEA2 = document.getElementById("utero.ginecologica").value;
-    let LINEA3 = document.getElementById("endometrio.ginecologica").value;
-    let LINEA4 = document.getElementById("anexo.izquierdo.ginecologica").value;
-    let LINEA6 = document.getElementById("anexo.derecho.ginecologica").value;
-    let LINEA5 = document.getElementById("ovario.izquierdo.ginecologica").value;
-    let LINEA7 = document.getElementById("ovario.derecho.ginecologica").value;
-    let LINEA8 = document.getElementById("douglas.ginecologica").value;
+    let LINEA2 = the("utero.ginecologica").value;
+    let LINEA3 = the("endometrio.ginecologica").value;
+    let LINEA4 = the("anexo.izquierdo.ginecologica").value;
+    let LINEA6 = the("anexo.derecho.ginecologica").value;
+    let LINEA5 = the("ovario.izquierdo.ginecologica").value;
+    let LINEA7 = the("ovario.derecho.ginecologica").value;
+    let LINEA8 = the("douglas.ginecologica").value;
     let paciente = $( '#nombre-paciente').val();
     let idpaciente = $( '#id-paciente').val();
     let motivo = $( '#motivo-examen option:selected').text();
     let ecografista = $( '#ecografista option:selected').text();
-    let fur = new Date(Date.parse(document.getElementById("fum").value));
+    let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-    let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+    let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
 
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
 
-    let comentario = document.getElementById("comentario.ginecologica").value;
+    let comentario = the("comentario.ginecologica").value;
     comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
 
     let patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     let edadmaterna = $( "select[name='edad_materna']").val();
-    let diaciclo = document.getElementById("diaciclo").value;
+    let diaciclo = the("diaciclo").value;
 
     informe = informe.replace(/:PACIENTE/g, paciente);
     informe = informe.replace(/:IDPACIENTE/g, idpaciente);
@@ -6961,19 +6962,19 @@ function setCursor(id) {
 function informeMorfologia(){
     InformeString = '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table> <p class="mb-0"> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa:</strong> :ANTECESA </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">BIOMETRÍA</strong></p><p> <strong>Actividad cardíaca:</strong> :ACTCAR , <strong>Movimientos fetales:</strong> :MOVFET , Embarazo: :EMB <br/> <strong>Presentación:</strong> :PRESENT , <strong>Dorso fetal:</strong> :DORSOFET <br/> <strong>Placenta</strong> Ubicación: :PLAUB , Placenta inserción: :PLAIN </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Liquido amniótico</strong></td><td class="p-0">Medicion cualitativa: :BVMCUA .</td></tr><tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Bolsillo Vertical Mayor (BVM): :BVMMED mm</td></tr></tbody> </table></div>';
 
-    let fur = new Date(Date.parse(document.getElementById("fum").value));
+    let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-    let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+    let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
-    let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+    let fpp = new Date(Date.parse(the("fpp").value));
     fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
-    let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
+    let eg = the("semanas").value + "."+ the("dias").value;
 
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
 
-    var paciente = document.getElementById("nombre-paciente").value;
-    var idpaciente = document.getElementById("id-paciente").value;
+    var paciente = the("nombre-paciente").value;
+    var idpaciente = the("id-paciente").value;
     var motivo = $( '#motivo-examen option:selected').text();
     var ecografista = $( '#ecografista\\.morfologia').val();
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
@@ -6986,57 +6987,57 @@ function informeMorfologia(){
     var DORSOFET = the("dorso.morfologia").value;
     var ANTECESA = the("antecedentes.cesarea.morfologia").value;
     var PLAUB = the("placenta.ubicacion.morfologia").value;
-    var PLAIN = document.getElementById("placenta.insercion.morfologia").value;
-    var BVMCUA = document.getElementById("liquido.cualitativo.morfologia").value;
-    var BVMMED = document.getElementById("liquido.semi.morfologia").value;
+    var PLAIN = the("placenta.insercion.morfologia").value;
+    var BVMCUA = the("liquido.cualitativo.morfologia").value;
+    var BVMMED = the("liquido.semi.morfologia").value;
 
     if (the("ver.ila.morfologia").checked == true){
         InformeString += ' <tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Sumatoria de 4 cuadrantes (ILA): :ILA mm</td></tr>';
-        var ILA = document.getElementById("liquido.ila.suma.morfologia").value;
+        var ILA = the("liquido.ila.suma.morfologia").value;
         InformeString = InformeString.replace(":ILA", ILA);
     }
 
     InformeString += ' </tbody> </table> <table class="table"> <tbody> <tr> <th style="color: #045dab;">EVALUACIÓN BIOMETRÍA FETAL (mm)</th> <th style="text-align: center;">Valor observado</th> <th class="text-center" style="text-align: center;">Pct de Crecimiento</th> <th class="text-center" style="text-align: center;">Rango percentilar</th> </tr><tr> <td class="p-0 pl-3">DBP (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPRANGO</td></tr><tr> <td class="p-0 pl-3">DOF:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOF</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFRANGO</td></tr><tr> <td class="p-0 pl-3">CC (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CC</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCRANGO</td></tr><tr> <td class="p-0 pl-3">CA (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CA</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CAPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CARANGO</td></tr><tr> <td class="p-0 pl-3">Femur (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMUR</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFEPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFERANGO</td></tr><tr> <td class="p-0 pl-3">Humero (Jeanty):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERO</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMEROPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERORANGO</td></tr><tr> <td class="p-0 pl-3">Índice Cefálico:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:INDCEF</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">Transverso cerebeloso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCEREPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERERANGO</td></tr><tr> <td class="p-0 pl-3">Cisterna magna:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAG</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGRANGO</td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td></tr><tr> <th class="p-0 pl-3" style="color: #045dab;">FLUJOMETRÍA DE UTERINAS Y CERVIX</th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> </tr><tr> <td class="p-0 pl-3">IP Arteria uterina derecha:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUD</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDRANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria uterina izquierda:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUI</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>IP Arteria uterinas promedio:</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Largo cervical (mm):</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERVTXT</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td></tr><tr> <td class="p-0 pl-3" style="color: #045dab;">ADICIONAL DOPPLER FETAL</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3">IP Arteria Umbilical:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AU</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AURANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria cerebral media:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CM</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMRANGO</td></tr><tr> <td class="p-0 pl-3">IP Índice cerebro placentario:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPRANGO</td></tr><tr> <td class="p-0 pl-3">Ductus venoso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVRANGO</td></tr><tr> <td class="p-0 pl-3">Peak sistólico de ACM, PSV (cm/s):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PACM</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr></tbody></table><div class="newpage" pagebreak="true"></div><p style="margin-top: 5rem;">&nbsp;</p><p style="margin-top: 5rem;">&nbsp;</p><p style="color: #045dab; margin-top: 5rem;"><strong>EVALUACIÓN MORFOLOGÍA FETAL</strong></p><table class="table"> <tbody> <tr> <td class="p-0 pl-3" style="width: 360px;">Cerebro Ventrículo Lateral proximal: :CEREVLP mm</td><td class="p-0 pl-3">:CEREVLPTXT</td></tr><tr> <td class="p-0 pl-3">Cerebro Ventrículo Lateral distal: :CEREVLD mm</td><td class="p-0 pl-3">:CEREVLDTXT</td></tr><tr> <td class="p-0 pl-3">Cavum SP presente: :CAVUM</td><td class="p-0 pl-3">:CAVUMTXT</td></tr><tr> <td class="p-0 pl-3">Cuerpo calloso visible: :CCV</td><td class="p-0 pl-3">:CCVTXT</td></tr><tr> <td class="p-0 pl-3">Cuello normal: :CUELLO</td><td class="p-0 pl-3">:CUELLOTXT</td></tr><tr> <td class="p-0 pl-3">Labio nariz normal: :LNN</td><td class="p-0 pl-3">:LNNTXT</td></tr><tr> <td class="p-0 pl-3">Corazón 4 cámaras visible: :CORACV</td><td class="p-0 pl-3">:CORACVTXT</td></tr><tr> <td class="p-0 pl-3">Corazón Tracto de salida pulmonar normal: :CORATSPN</td><td class="p-0 pl-3">:CORATSPNTXT</td></tr><tr> <td class="p-0 pl-3">Corazón Tracto salida Aórtico normal: :CORATSAN</td><td class="p-0 pl-3">:CORATSANTXT</td></tr><tr> <td class="p-0 pl-3">Corazón 3 vasos tráquea visible: :CORAVTV</td><td class="p-0 pl-3">:CORAVTVTXT</td></tr><tr> <td class="p-0 pl-3">Tórax Normal: :TN</td><td class="p-0 pl-3">:TNTXT</td></tr><tr> <td class="p-0 pl-3">Abdomen: :ABDO</td><td class="p-0 pl-3">:ABDOTXT</td></tr><tr> <td class="p-0 pl-3">Pared normal: :PARNOR</td><td class="p-0 pl-3">:PARNORTXT</td></tr><tr> <td class="p-0 pl-3">Estómago visible: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr><tr> <td class="p-0 pl-3">Riñones visibles: :RINOV</td><td class="p-0 pl-3">:RINOVTXT</td></tr><tr> <td class="p-0 pl-3">Vejiga visible: :VEJIV</td><td class="p-0 pl-3">:VEJIVTXT</td></tr><tr> <td class="p-0 pl-3">Columna normal: :COLUMN</td><td class="p-0 pl-3">:COLUMNTXT</td></tr><tr> <td class="p-0 pl-3">Extremidades superiores normales: :EXSUP</td><td class="p-0 pl-3">:EXSUPTXT</td></tr><tr> <td class="p-0 pl-3">Extremidades inferiores normales: :EXINF</td><td class="p-0 pl-3">:EXINFTXT</td></tr><tr> <td class="p-0 pl-3">Sexo fetal:</td><td class="p-0 pl-3">:GEN</td></tr></tbody></table> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong></p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><p><strong style="color: #045dab;">INDICACIONES (seguimiento)</strong>:</p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:INDI</p></div><div class="container-fluid" style="margin-top: 5rem;"> <p class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block; margin-top: 5rem;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p></div></div>';
 
-    var DBP = document.getElementById("dbp.morfologia").value;
-    var DBPPCT = document.getElementById("dbp.pct.morfologia").value;
-    var DBPRANGO = oldProgress(document.getElementById("dbp.pct.real.morfologia").value);
+    var DBP = the("dbp.morfologia").value;
+    var DBPPCT = the("dbp.pct.morfologia").value;
+    var DBPRANGO = oldProgress(the("dbp.pct.real.morfologia").value);
 
-    var DOF = document.getElementById("dof.morfologia").value;
-    var DOFPCT = document.getElementById("dof.pct.morfologia").value;
-    var DOFRANGO = oldProgress(document.getElementById("dof.pct.real.morfologia").value);
+    var DOF = the("dof.morfologia").value;
+    var DOFPCT = the("dof.pct.morfologia").value;
+    var DOFRANGO = oldProgress(the("dof.pct.real.morfologia").value);
 
-    var CC = document.getElementById("pc.morfologia").value;
-    var CCPCT = document.getElementById("pc.pct.morfologia").value;
-    var CCRANGO = oldProgress(document.getElementById("pc.pct.real.morfologia").value);
+    var CC = the("pc.morfologia").value;
+    var CCPCT = the("pc.pct.morfologia").value;
+    var CCRANGO = oldProgress(the("pc.pct.real.morfologia").value);
 
-    var CA = document.getElementById("pa.morfologia").value;
-    var CAPCT = document.getElementById("pa.pct.morfologia").value;
-    var CARANGO = oldProgress(document.getElementById("pa.pct.real.morfologia").value);
+    var CA = the("pa.morfologia").value;
+    var CAPCT = the("pa.pct.morfologia").value;
+    var CARANGO = oldProgress(the("pa.pct.real.morfologia").value);
 
-    var FEMUR = document.getElementById("femur.morfologia").value;
-    var FEMURPCT = document.getElementById("femur.pct.morfologia").value;
-    var FEMURRANGO = oldProgress(document.getElementById("femur.pct.real.morfologia").value);
+    var FEMUR = the("femur.morfologia").value;
+    var FEMURPCT = the("femur.pct.morfologia").value;
+    var FEMURRANGO = oldProgress(the("femur.pct.real.morfologia").value);
 
-    var HUMERO = document.getElementById("humero.morfologia").value;
-    var HUMEROPCT = document.getElementById("humero.pct.morfologia").value;
-    var HUMERORANGO = oldProgress(document.getElementById("humero.pct.real.morfologia").value);
+    var HUMERO = the("humero.morfologia").value;
+    var HUMEROPCT = the("humero.pct.morfologia").value;
+    var HUMERORANGO = oldProgress(the("humero.pct.real.morfologia").value);
 
-    var INDCEF = document.getElementById("dof.ic.morfologia").value;
-    var TRANSCERE = document.getElementById("tc.morfologia").value;
-    var TRANSCEREPCT = document.getElementById("tc.pct.morfologia").value;
-    var TRANSCERERANGO = oldProgress(document.getElementById("tc.pct.real.morfologia").value);
+    var INDCEF = the("dof.ic.morfologia").value;
+    var TRANSCERE = the("tc.morfologia").value;
+    var TRANSCEREPCT = the("tc.pct.morfologia").value;
+    var TRANSCERERANGO = oldProgress(the("tc.pct.real.morfologia").value);
 
-    var CISMAG = document.getElementById("cm.morfologia").value;
-    var CISMAGPCT = document.getElementById("cm.pct.morfologia").value;
-    var CISMAGRANGO = oldProgress(document.getElementById("cm.pct.real.morfologia").value);
+    var CISMAG = the("cm.morfologia").value;
+    var CISMAGPCT = the("cm.pct.morfologia").value;
+    var CISMAGRANGO = oldProgress(the("cm.pct.real.morfologia").value);
 
-    var PFE = document.getElementById("pfe.morfologia").value;
-    var PFEPCT = document.getElementById("pfe.pct.morfologia").value;
-    var PFERANGO = oldProgress(document.getElementById("pfe.pct.real.morfologia").value);
+    var PFE = the("pfe.morfologia").value;
+    var PFEPCT = the("pfe.pct.morfologia").value;
+    var PFERANGO = oldProgress(the("pfe.pct.real.morfologia").value);
 
-    var CEREVLP = document.getElementById("vlp.morfologia").value;
-    var CEREVLD = document.getElementById("vld.morfologia").value;
+    var CEREVLP = the("vlp.morfologia").value;
+    var CEREVLD = the("vld.morfologia").value;
     var CAVUM = document.querySelector('input[name="cspp.morfologia"]:checked').value;
     var CCV = document.querySelector('input[name="ccv.morfologia"]:checked').value;
     var CUELLO = document.querySelector('input[name="cn.morfologia"]:checked').value;
@@ -7056,8 +7057,8 @@ function informeMorfologia(){
     var EXINF = document.querySelector('input[name="ein.morfologia"]:checked').value;
     var GEN = the("gen.morfologia").value;
 
-    var CEREVLPTXT = document.getElementById("vlp.txt.morfologia").value;
-    var CEREVLDTXT = document.getElementById("vld.txt.morfologia").value;
+    var CEREVLPTXT = the("vlp.txt.morfologia").value;
+    var CEREVLDTXT = the("vld.txt.morfologia").value;
     var CAVUMTXT = document.querySelector('input[name="cspp.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
     var CCVTXT = document.querySelector('input[name="ccv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
     var CUELLOTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
@@ -7076,41 +7077,41 @@ function informeMorfologia(){
     var EXSUPTXT = document.querySelector('input[name="esn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
     var EXINFTXT = document.querySelector('input[name="ein.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
 
-    var AUD = document.getElementById("art.ut.d.morfologia").value;
-    var AUDPCT = document.getElementById("art.ut.d.pct.morfologia").value;
-    var AUDRANGO = oldProgress(document.getElementById("art.ut.d.pct.real.morfologia").value);
+    var AUD = the("art.ut.d.morfologia").value;
+    var AUDPCT = the("art.ut.d.pct.morfologia").value;
+    var AUDRANGO = oldProgress(the("art.ut.d.pct.real.morfologia").value);
 
-    var AUI = document.getElementById("art.ut.i.morfologia").value;
-    var AUIPCT = document.getElementById("art.ut.i.pct.morfologia").value;
-    var AUIRANGO = oldProgress(document.getElementById("art.ut.i.pct.real.morfologia").value);
+    var AUI = the("art.ut.i.morfologia").value;
+    var AUIPCT = the("art.ut.i.pct.morfologia").value;
+    var AUIRANGO = oldProgress(the("art.ut.i.pct.real.morfologia").value);
 
-    var AUP = document.getElementById("art.ut.prom.morfologia").value;
-    var AUPPCT = document.getElementById("art.ut.prom.pct.morfologia").value;
-    var AUPRANGO = oldProgress(document.getElementById("art.ut.prom.pct.real.morfologia").value);
+    var AUP = the("art.ut.prom.morfologia").value;
+    var AUPPCT = the("art.ut.prom.pct.morfologia").value;
+    var AUPRANGO = oldProgress(the("art.ut.prom.pct.real.morfologia").value);
 
-    var AU = document.getElementById("art.umb.morfologia").value;
-    var AUPCT = document.getElementById("art.umb.pct.morfologia").value;
-    var AURANGO = oldProgress(document.getElementById("art.umb.pct.real.morfologia").value);
+    var AU = the("art.umb.morfologia").value;
+    var AUPCT = the("art.umb.pct.morfologia").value;
+    var AURANGO = oldProgress(the("art.umb.pct.real.morfologia").value);
 
-    var CM = document.getElementById("art.cm.morfologia").value;
-    var CMPCT = document.getElementById("art.cm.pct.morfologia").value;
-    var CMRANGO = oldProgress(document.getElementById("art.cm.pct.real.morfologia").value);
+    var CM = the("art.cm.morfologia").value;
+    var CMPCT = the("art.cm.pct.morfologia").value;
+    var CMRANGO = oldProgress(the("art.cm.pct.real.morfologia").value);
 
-    var ICEREP = document.getElementById("ind.cp.morfologia").value;
-    var ICEREPPCT = document.getElementById("ind.cp.pct.morfologia").value;
-    var ICEREPRANGO = oldProgress(document.getElementById("ind.cp.pct.real.morfologia").value);
+    var ICEREP = the("ind.cp.morfologia").value;
+    var ICEREPPCT = the("ind.cp.pct.morfologia").value;
+    var ICEREPRANGO = oldProgress(the("ind.cp.pct.real.morfologia").value);
 
-    var PACM = document.getElementById("p.sis.morfologia").value;
+    var PACM = the("p.sis.morfologia").value;
 
-    var DUCV = document.getElementById("dv.morfologia").value;
-    var DUCVPCT = document.getElementById("dv.pct.morfologia").value;
-    var DUCVRANGO = oldProgress(document.getElementById("dv.pct.real.morfologia").value);
+    var DUCV = the("dv.morfologia").value;
+    var DUCVPCT = the("dv.pct.morfologia").value;
+    var DUCVRANGO = oldProgress(the("dv.pct.real.morfologia").value);
 
-    var LARCERV = document.getElementById("lc.morfologia").value;
-    var LARCERVTXT = document.getElementById("lc.pct.morfologia").value;
+    var LARCERV = the("lc.morfologia").value;
+    var LARCERVTXT = the("lc.pct.morfologia").value;
 
-    var INDI = document.getElementById("seguimiento.morfologia").value;
-    var COMENTARIO = document.getElementById("biometria.comentario.morfologia").value +  "<br>" + document.getElementById("conclusion.morfologia").value + "<br>" + document.getElementById("morfologia.comentario.morfologia").value;
+    var INDI = the("seguimiento.morfologia").value;
+    var COMENTARIO = the("biometria.comentario.morfologia").value +  "<br>" + the("conclusion.morfologia").value + "<br>" + the("morfologia.comentario.morfologia").value;
 
     var CIUDAD =  $( '#ciudadpaciente option:selected').text();
     var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
@@ -7255,19 +7256,19 @@ function informeMorfologiaClon(){
     InformeString = membrete;
     InformeString += '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table> <p class="mb-0"> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa:</strong> :ANTECESA </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">BIOMETRÍA</strong></p><p> <strong>Actividad cardíaca:</strong> :ACTCAR , <strong>Movimientos fetales:</strong> :MOVFET , Embarazo: :EMB <br/> <strong>Presentación:</strong> :PRESENT , <strong>Dorso fetal:</strong> :DORSOFET <br/> <strong>Placenta</strong> Ubicación: :PLAUB , Placenta inserción: :PLAIN </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Liquido amniótico</strong></td><td class="p-0">Medicion cualitativa: :BVMCUA .</td></tr><tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Bolsillo Vertical Mayor (BVM): :BVMMED mm</td></tr></tbody> </table></div>';
 
-    let fur = new Date(Date.parse(document.getElementById("fum").value));
+    let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-    let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+    let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
-    let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+    let fpp = new Date(Date.parse(the("fpp").value));
     fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
-    let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
+    let eg = the("semanas").value + "."+ the("dias").value;
 
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
 
-    var paciente = document.getElementById("nombre-paciente").value;
-    var idpaciente = document.getElementById("id-paciente").value;
+    var paciente = the("nombre-paciente").value;
+    var idpaciente = the("id-paciente").value;
     var motivo = $( '#motivo-examen option:selected').text();
     var ecografista = $( '#ecografista\\.morfologia').val();
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
@@ -7280,13 +7281,13 @@ function informeMorfologiaClon(){
     var DORSOFET = the("dorso.morfologia").value;
     var ANTECESA = the("antecedentes.cesarea.morfologia").value;
     var PLAUB = the("placenta.ubicacion.morfologia").value;
-    var PLAIN = document.getElementById("placenta.insercion.morfologia").value;
-    var BVMCUA = document.getElementById("liquido.cualitativo.morfologia").value;
-    var BVMMED = document.getElementById("liquido.semi.morfologia").value;
+    var PLAIN = the("placenta.insercion.morfologia").value;
+    var BVMCUA = the("liquido.cualitativo.morfologia").value;
+    var BVMMED = the("liquido.semi.morfologia").value;
 
     if (the("ver.ila.morfologia").checked == true){
         InformeString += ' <tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Sumatoria de 4 cuadrantes (ILA): :ILA mm</td></tr>';
-        var ILA = document.getElementById("liquido.ila.suma.morfologia").value;
+        var ILA = the("liquido.ila.suma.morfologia").value;
         InformeString = InformeString.replace(":ILA", ILA);
     }
 
@@ -7294,45 +7295,45 @@ function informeMorfologiaClon(){
     InformeString += membrete;
     InformeString += '<p style="margin-top: 7rem;">&nbsp;</p><p style="margin-top: 5rem;">&nbsp;</p><p style="color: #045dab; margin-top: 5rem;"><strong>EVALUACIÓN MORFOLOGÍA FETAL</strong></p><table class="table"> <tbody> <tr> <td class="p-0 pl-3" style="width: 360px;">Cerebro Ventrículo Lateral proximal: :CEREVLP mm</td><td class="p-0 pl-3">:CEREVLPTXT</td></tr><tr> <td class="p-0 pl-3">Cerebro Ventrículo Lateral distal: :CEREVLD mm</td><td class="p-0 pl-3">:CEREVLDTXT</td></tr><tr> <td class="p-0 pl-3">Cavum SP presente: :CAVUM</td><td class="p-0 pl-3">:CAVUMTXT</td></tr><tr> <td class="p-0 pl-3">Cuerpo calloso visible: :CCV</td><td class="p-0 pl-3">:CCVTXT</td></tr><tr> <td class="p-0 pl-3">Cuello normal: :CUELLO</td><td class="p-0 pl-3">:CUELLOTXT</td></tr><tr> <td class="p-0 pl-3">Labio nariz normal: :LNN</td><td class="p-0 pl-3">:LNNTXT</td></tr><tr> <td class="p-0 pl-3">Corazón 4 cámaras visible: :CORACV</td><td class="p-0 pl-3">:CORACVTXT</td></tr><tr> <td class="p-0 pl-3">Corazón Tracto de salida pulmonar normal: :CORATSPN</td><td class="p-0 pl-3">:CORATSPNTXT</td></tr><tr> <td class="p-0 pl-3">Corazón Tracto salida Aórtico normal: :CORATSAN</td><td class="p-0 pl-3">:CORATSANTXT</td></tr><tr> <td class="p-0 pl-3">Corazón 3 vasos tráquea visible: :CORAVTV</td><td class="p-0 pl-3">:CORAVTVTXT</td></tr><tr> <td class="p-0 pl-3">Tórax Normal: :TN</td><td class="p-0 pl-3">:TNTXT</td></tr><tr> <td class="p-0 pl-3">Abdomen: :ABDO</td><td class="p-0 pl-3">:ABDOTXT</td></tr><tr> <td class="p-0 pl-3">Pared normal: :PARNOR</td><td class="p-0 pl-3">:PARNORTXT</td></tr><tr> <td class="p-0 pl-3">Estómago visible: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr><tr> <td class="p-0 pl-3">Riñones visibles: :RINOV</td><td class="p-0 pl-3">:RINOVTXT</td></tr><tr> <td class="p-0 pl-3">Vejiga visible: :VEJIV</td><td class="p-0 pl-3">:VEJIVTXT</td></tr><tr> <td class="p-0 pl-3">Columna normal: :COLUMN</td><td class="p-0 pl-3">:COLUMNTXT</td></tr><tr> <td class="p-0 pl-3">Extremidades superiores normales: :EXSUP</td><td class="p-0 pl-3">:EXSUPTXT</td></tr><tr> <td class="p-0 pl-3">Extremidades inferiores normales: :EXINF</td><td class="p-0 pl-3">:EXINFTXT</td></tr><tr> <td class="p-0 pl-3">Sexo fetal:</td><td class="p-0 pl-3">:GEN</td></tr></tbody></table> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong></p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><p><strong style="color: #045dab;">INDICACIONES (seguimiento)</strong>:</p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:INDI</p></div><div class="container-fluid" style="margin-top: 5rem;"> <p class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block; margin-top: 5rem;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p></div></div>';
 
-    var DBP = document.getElementById("dbp.morfologia").value;
-    var DBPPCT = document.getElementById("dbp.pct.morfologia").value;
-    var DBPRANGO = oldProgress(document.getElementById("dbp.pct.real.morfologia").value);
+    var DBP = the("dbp.morfologia").value;
+    var DBPPCT = the("dbp.pct.morfologia").value;
+    var DBPRANGO = oldProgress(the("dbp.pct.real.morfologia").value);
 
-    var DOF = document.getElementById("dof.morfologia").value;
-    var DOFPCT = document.getElementById("dof.pct.morfologia").value;
-    var DOFRANGO = oldProgress(document.getElementById("dof.pct.real.morfologia").value);
+    var DOF = the("dof.morfologia").value;
+    var DOFPCT = the("dof.pct.morfologia").value;
+    var DOFRANGO = oldProgress(the("dof.pct.real.morfologia").value);
 
-    var CC = document.getElementById("pc.morfologia").value;
-    var CCPCT = document.getElementById("pc.pct.morfologia").value;
-    var CCRANGO = oldProgress(document.getElementById("pc.pct.real.morfologia").value);
+    var CC = the("pc.morfologia").value;
+    var CCPCT = the("pc.pct.morfologia").value;
+    var CCRANGO = oldProgress(the("pc.pct.real.morfologia").value);
 
-    var CA = document.getElementById("pa.morfologia").value;
-    var CAPCT = document.getElementById("pa.pct.morfologia").value;
-    var CARANGO = oldProgress(document.getElementById("pa.pct.real.morfologia").value);
+    var CA = the("pa.morfologia").value;
+    var CAPCT = the("pa.pct.morfologia").value;
+    var CARANGO = oldProgress(the("pa.pct.real.morfologia").value);
 
-    var FEMUR = document.getElementById("femur.morfologia").value;
-    var FEMURPCT = document.getElementById("femur.pct.morfologia").value;
-    var FEMURRANGO = oldProgress(document.getElementById("femur.pct.real.morfologia").value);
+    var FEMUR = the("femur.morfologia").value;
+    var FEMURPCT = the("femur.pct.morfologia").value;
+    var FEMURRANGO = oldProgress(the("femur.pct.real.morfologia").value);
 
-    var HUMERO = document.getElementById("humero.morfologia").value;
-    var HUMEROPCT = document.getElementById("humero.pct.morfologia").value;
-    var HUMERORANGO = oldProgress(document.getElementById("humero.pct.real.morfologia").value);
+    var HUMERO = the("humero.morfologia").value;
+    var HUMEROPCT = the("humero.pct.morfologia").value;
+    var HUMERORANGO = oldProgress(the("humero.pct.real.morfologia").value);
 
-    var INDCEF = document.getElementById("dof.ic.morfologia").value;
-    var TRANSCERE = document.getElementById("tc.morfologia").value;
-    var TRANSCEREPCT = document.getElementById("tc.pct.morfologia").value;
-    var TRANSCERERANGO = oldProgress(document.getElementById("tc.pct.real.morfologia").value);
+    var INDCEF = the("dof.ic.morfologia").value;
+    var TRANSCERE = the("tc.morfologia").value;
+    var TRANSCEREPCT = the("tc.pct.morfologia").value;
+    var TRANSCERERANGO = oldProgress(the("tc.pct.real.morfologia").value);
 
-    var CISMAG = document.getElementById("cm.morfologia").value;
-    var CISMAGPCT = document.getElementById("cm.pct.morfologia").value;
-    var CISMAGRANGO = oldProgress(document.getElementById("cm.pct.real.morfologia").value);
+    var CISMAG = the("cm.morfologia").value;
+    var CISMAGPCT = the("cm.pct.morfologia").value;
+    var CISMAGRANGO = oldProgress(the("cm.pct.real.morfologia").value);
 
-    var PFE = document.getElementById("pfe.morfologia").value;
-    var PFEPCT = document.getElementById("pfe.pct.morfologia").value;
-    var PFERANGO = oldProgress(document.getElementById("pfe.pct.real.morfologia").value);
+    var PFE = the("pfe.morfologia").value;
+    var PFEPCT = the("pfe.pct.morfologia").value;
+    var PFERANGO = oldProgress(the("pfe.pct.real.morfologia").value);
 
-    var CEREVLP = document.getElementById("vlp.morfologia").value;
-    var CEREVLD = document.getElementById("vld.morfologia").value;
+    var CEREVLP = the("vlp.morfologia").value;
+    var CEREVLD = the("vld.morfologia").value;
     var CAVUM = document.querySelector('input[name="cspp.morfologia"]:checked').value;
     var CCV = document.querySelector('input[name="ccv.morfologia"]:checked').value;
     var CUELLO = document.querySelector('input[name="cn.morfologia"]:checked').value;
@@ -7352,8 +7353,8 @@ function informeMorfologiaClon(){
     var EXINF = document.querySelector('input[name="ein.morfologia"]:checked').value;
     var GEN = the("gen.morfologia").value;
 
-    var CEREVLPTXT = document.getElementById("vlp.txt.morfologia").value;
-    var CEREVLDTXT = document.getElementById("vld.txt.morfologia").value;
+    var CEREVLPTXT = the("vlp.txt.morfologia").value;
+    var CEREVLDTXT = the("vld.txt.morfologia").value;
     var CAVUMTXT = document.querySelector('input[name="cspp.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
     var CCVTXT = document.querySelector('input[name="ccv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
     var CUELLOTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
@@ -7372,41 +7373,41 @@ function informeMorfologiaClon(){
     var EXSUPTXT = document.querySelector('input[name="esn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
     var EXINFTXT = document.querySelector('input[name="ein.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
 
-    var AUD = document.getElementById("art.ut.d.morfologia").value;
-    var AUDPCT = document.getElementById("art.ut.d.pct.morfologia").value;
-    var AUDRANGO = oldProgress(document.getElementById("art.ut.d.pct.real.morfologia").value);
+    var AUD = the("art.ut.d.morfologia").value;
+    var AUDPCT = the("art.ut.d.pct.morfologia").value;
+    var AUDRANGO = oldProgress(the("art.ut.d.pct.real.morfologia").value);
 
-    var AUI = document.getElementById("art.ut.i.morfologia").value;
-    var AUIPCT = document.getElementById("art.ut.i.pct.morfologia").value;
-    var AUIRANGO = oldProgress(document.getElementById("art.ut.i.pct.real.morfologia").value);
+    var AUI = the("art.ut.i.morfologia").value;
+    var AUIPCT = the("art.ut.i.pct.morfologia").value;
+    var AUIRANGO = oldProgress(the("art.ut.i.pct.real.morfologia").value);
 
-    var AUP = document.getElementById("art.ut.prom.morfologia").value;
-    var AUPPCT = document.getElementById("art.ut.prom.pct.morfologia").value;
-    var AUPRANGO = oldProgress(document.getElementById("art.ut.prom.pct.real.morfologia").value);
+    var AUP = the("art.ut.prom.morfologia").value;
+    var AUPPCT = the("art.ut.prom.pct.morfologia").value;
+    var AUPRANGO = oldProgress(the("art.ut.prom.pct.real.morfologia").value);
 
-    var AU = document.getElementById("art.umb.morfologia").value;
-    var AUPCT = document.getElementById("art.umb.pct.morfologia").value;
-    var AURANGO = oldProgress(document.getElementById("art.umb.pct.real.morfologia").value);
+    var AU = the("art.umb.morfologia").value;
+    var AUPCT = the("art.umb.pct.morfologia").value;
+    var AURANGO = oldProgress(the("art.umb.pct.real.morfologia").value);
 
-    var CM = document.getElementById("art.cm.morfologia").value;
-    var CMPCT = document.getElementById("art.cm.pct.morfologia").value;
-    var CMRANGO = oldProgress(document.getElementById("art.cm.pct.real.morfologia").value);
+    var CM = the("art.cm.morfologia").value;
+    var CMPCT = the("art.cm.pct.morfologia").value;
+    var CMRANGO = oldProgress(the("art.cm.pct.real.morfologia").value);
 
-    var ICEREP = document.getElementById("ind.cp.morfologia").value;
-    var ICEREPPCT = document.getElementById("ind.cp.pct.morfologia").value;
-    var ICEREPRANGO = oldProgress(document.getElementById("ind.cp.pct.real.morfologia").value);
+    var ICEREP = the("ind.cp.morfologia").value;
+    var ICEREPPCT = the("ind.cp.pct.morfologia").value;
+    var ICEREPRANGO = oldProgress(the("ind.cp.pct.real.morfologia").value);
 
-    var PACM = document.getElementById("p.sis.morfologia").value;
+    var PACM = the("p.sis.morfologia").value;
 
-    var DUCV = document.getElementById("dv.morfologia").value;
-    var DUCVPCT = document.getElementById("dv.pct.morfologia").value;
-    var DUCVRANGO = oldProgress(document.getElementById("dv.pct.real.morfologia").value);
+    var DUCV = the("dv.morfologia").value;
+    var DUCVPCT = the("dv.pct.morfologia").value;
+    var DUCVRANGO = oldProgress(the("dv.pct.real.morfologia").value);
 
-    var LARCERV = document.getElementById("lc.morfologia").value;
-    var LARCERVTXT = document.getElementById("lc.pct.morfologia").value;
+    var LARCERV = the("lc.morfologia").value;
+    var LARCERVTXT = the("lc.pct.morfologia").value;
 
-    var INDI = document.getElementById("seguimiento.morfologia").value;
-    var COMENTARIO = document.getElementById("biometria.comentario.morfologia").value +  "<br>" + document.getElementById("conclusion.morfologia").value + "<br>" + document.getElementById("morfologia.comentario.morfologia").value;
+    var INDI = the("seguimiento.morfologia").value;
+    var COMENTARIO = the("biometria.comentario.morfologia").value +  "<br>" + the("conclusion.morfologia").value + "<br>" + the("morfologia.comentario.morfologia").value;
 
     var CIUDAD =  $( '#ciudadpaciente option:selected').text();
     var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
@@ -7548,30 +7549,30 @@ function informeMorfologiaClon(){
 function informeDoppler(){
     var InformeString = '<div class="container"><h3>Evaluación de flujometria doppler materno fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table><p> <strong>FUM: </strong> :FUM <br/> <strong>Ege: </strong> :EG semanas <br/> <strong>FPP: </strong> :FPP </p></div><div class="container"> <p><strong style="color: #045dab;">ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small></p><p> Motivo del exámen: :MOTIVODOPPLER <br/> Antecedentes Obstétricos: :ANTECEDENTES <br/> Feto en Presentación: :PRESENTACION <br/> Motilidad Fetal: :MOTILIDAD <br/> Ubicación Placentaria: :UBICACION <br/> Líquido Amniótico***: :LIQUIDO <br/> Medida única de BVM***: :BVM </p></div><div class="container"> <table class="table"> <thead> <tr> <th style="color: #045dab;">FLUJOMETRIA DOPPLER</th> <th style="text-align: center;">IP Observado</th> <th style="text-align: center;">Percentiles de IP</th> <th style="text-align: center;">Rango percentilar</th> </tr></thead> <tbody> <tr> <td>Arteria Uterina Derecha*</td><td style="text-align: center;">:UD</td><td style="text-align: center;">:UDTXT</td><td style="text-align: center;">:UDRGO</td></tr><tr> <td>Arteria Uterina Izquierda*</td><td style="text-align: center;">:UI</td><td style="text-align: center;">:UITXT</td><td style="text-align: center;">:UIRGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Promedio Arterias Uterinas*</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROM</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROMTXT</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROMRGO</td></tr><tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Arteria Umbilical**</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AU</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AUTXT</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AURGO</td></tr><tr> <td style="padding-bottom: 15px !important;">Arteria Cerebral Media**</td><td style="text-align: center; padding-bottom: 15px !important;">:ACM</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMTXT</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMRGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Cuociente Cerebro Placentario ( CCP )**</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCP</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCPTXT</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCPRGO</td></tr>';
 
-        var paciente = document.getElementById("nombre-paciente").value;
-        var idpaciente = document.getElementById("id-paciente").value;
+        var paciente = the("nombre-paciente").value;
+        var idpaciente = the("id-paciente").value;
         var motivo = $( '#motivo-examen option:selected').text();
         var ecografista = $( '#ecografista option:selected').text();
 
-        let fur = new Date(Date.parse(document.getElementById("fum").value));
+        let fur = new Date(Date.parse(the("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
-        let fexamen = new Date(Date.parse(document.getElementById("fee").value));
+        let fexamen = new Date(Date.parse(the("fee").value));
         fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
-        let fpp = new Date(Date.parse(document.getElementById("fpp").value));
+        let fpp = new Date(Date.parse(the("fpp").value));
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
-        let eg = document.getElementById("semanas").value + "."+ document.getElementById("dias").value;
+        let eg = the("semanas").value + "."+ the("dias").value;
 
-        var bvm = document.getElementById("bvmDoppler").value;
-        var comentario = document.getElementById("comentarios-doppler").value;
+        var bvm = the("bvmDoppler").value;
+        var comentario = the("comentarios-doppler").value;
         comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-        var motivoDoppler = document.getElementById("motivo-doppler").value;
-        var antecedentes = document.getElementById("antecedentes-doppler").value;
-        var motilidad = document.getElementById("motilidad-doppler").value;
-        var ubicacion = document.getElementById("ubicacion-doppler").value;
-        var liquido = document.getElementById("liqAmnioDoppler").value;
-        var ud = document.getElementById("aud").value;
-        var udTxt = document.getElementById("audPctTxt").value;
+        var motivoDoppler = the("motivo-doppler").value;
+        var antecedentes = the("antecedentes-doppler").value;
+        var motilidad = the("motilidad-doppler").value;
+        var ubicacion = the("ubicacion-doppler").value;
+        var liquido = the("liqAmnioDoppler").value;
+        var ud = the("aud").value;
+        var udTxt = the("audPctTxt").value;
 
         let tmpData = "";
 
@@ -7582,8 +7583,8 @@ function informeDoppler(){
         }
         var udRgo = oldProgress(tmpData);
 
-        var ui = document.getElementById("aui").value;
-        var uiTxt = document.getElementById("auiPctTxt").value;
+        var ui = the("aui").value;
+        var uiTxt = the("auiPctTxt").value;
         if (uiTxt == "&gt; 95" || uiTxt == "&lt; 5"){
             tmpData = 0;
         }else{
@@ -7591,17 +7592,17 @@ function informeDoppler(){
         }
         var uiRgo = oldProgress(tmpData);
 
-        var uprom = '<strong>' + document.getElementById("auprom").value + '</strong>';
-        var upromTxt = '<strong>' + document.getElementById("auPctTxt").value + '</strong>';
-        if (document.getElementById("auPctTxt").value == "&gt; 95" || document.getElementById("auPctTxt").value == "&lt; 5"){
+        var uprom = '<strong>' + the("auprom").value + '</strong>';
+        var upromTxt = '<strong>' + the("auPctTxt").value + '</strong>';
+        if (the("auPctTxt").value == "&gt; 95" || the("auPctTxt").value == "&lt; 5"){
             tmpData = 0;
         }else{
-            tmpData = document.getElementById("auPctTxt").value;
+            tmpData = the("auPctTxt").value;
         }
         var upromRgo = oldProgress(tmpData);
 
-        var au = document.getElementById("ipau").value;
-        var auTxt = document.getElementById("ipauPctTxt").value;
+        var au = the("ipau").value;
+        var auTxt = the("ipauPctTxt").value;
         if (auTxt == "&gt; 95" || auTxt == "&lt; 5"){
             tmpData = 0;
         }else{
@@ -7609,8 +7610,8 @@ function informeDoppler(){
         }
         var auRgo = oldProgress(tmpData);
 
-        var acm =document.getElementById("ipacm").value;
-        var acmTxt = document.getElementById("ipacmPctTxt").value;
+        var acm =the("ipacm").value;
+        var acmTxt = the("ipacmPctTxt").value;
         if (acmTxt == "&gt; 95" || acmTxt == "&lt; 5"){
             tmpData = 0;
         }else{
@@ -7618,16 +7619,16 @@ function informeDoppler(){
         }
         var acmRgo = oldProgress(tmpData);
 
-        var ccp = '<strong>' + document.getElementById("ccp").value + '</strong>';
-        var ccpTxt = '<strong>' + document.getElementById("ccpPctTxt").value + '</strong>';
-        if (document.getElementById("ccpPctTxt").value == "&gt; 95" || document.getElementById("ccpPctTxt").value == "&lt; 5"){
+        var ccp = '<strong>' + the("ccp").value + '</strong>';
+        var ccpTxt = '<strong>' + the("ccpPctTxt").value + '</strong>';
+        if (the("ccpPctTxt").value == "&gt; 95" || the("ccpPctTxt").value == "&lt; 5"){
             tmpData = 0;
         }else{
-            tmpData = +document.getElementById("ccpPctTxt").value;
+            tmpData = +the("ccpPctTxt").value;
         }
         var ccpRgo = oldProgress(tmpData);
 
-        var presentacion = document.getElementById("presentacion-doppler").value;
+        var presentacion = the("presentacion-doppler").value;
         var edadmaterna = $( "select[name='edad_materna']").val();
         
         dayHoy = new Date();
@@ -7635,10 +7636,10 @@ function informeDoppler(){
 
         var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
 
-        var dvp = document.getElementById("dv").value;
+        var dvp = the("dv").value;
 
         if (dvp != ""){
-            var dvPctTxt = document.getElementById("dvPctTxt").value;
+            var dvPctTxt = the("dvPctTxt").value;
             if (dvPctTxt == "&gt; 95" || dvPctTxt == "&lt; 5"){
                 tmpData = 0;
             }else{
@@ -7653,7 +7654,7 @@ function informeDoppler(){
             InformeString = InformeString.replace(":DVPRGO", dvRngo);
         }
 
-        var psmACM = document.getElementById("psmACM").value;
+        var psmACM = the("psmACM").value;
 
         if (psmACM != ""){
             InformeString += ' <tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Peak sistólico de ACM</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:PSMACM</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;"></td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;"></td></tr>';
@@ -7774,7 +7775,7 @@ function makeModalEmail(){
     let configuracion = JSON.parse(localStorage["configuracion"]);
     if (configuracion.correos.length > 0) {
         for (var i = 0; i < configuracion.correos.length; i++) {
-            let elemento = document.getElementById(_correo);
+            let elemento = the(_correo);
             let opt = document.createElement('option');
             opt.appendChild( document.createTextNode(configuracion.correos[i].profesion + ", " + configuracion.correos[i].nombre + " - " + configuracion.correos[i].ciudad) );
             opt.value = configuracion.correos[i].correo; 
@@ -7856,7 +7857,7 @@ function makeModalNoEMailSelected(){
 
 function bvmTxt(valor){
     'use strict';
-    let eg = +document.getElementById("semanas").value;
+    let eg = +the("semanas").value;
 
 	let a = [], b = [];
     a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
