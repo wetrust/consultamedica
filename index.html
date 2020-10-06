@@ -3691,11 +3691,18 @@
             <div class="tab-pane fade" id="correosConfig" role="tabpanel">
                 <div class="card">
                     <div class="card-body">
-                        <div class="btn-group mb-3" role="group">
-                            <button type="button" class="btn btn-primary" id="nuevoCorreoConfig">Nuevo</button>
-                            <button type="button" class="btn btn-primary d-none" id="guardarCorreoConfig"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
-                            <button type="button" class="btn btn-secondary d-none" id="cancelarCorreoConfig"> Cancelar</button>
-                            <button type="button" class="btn btn-secondary d-none" id="eliminarCorreoConfig"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</button>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="btn-group mb-3" role="group">
+                                    <button type="button" class="btn btn-primary" id="nuevoCorreoConfig">Nuevo</button>
+                                    <button type="button" class="btn btn-primary d-none" id="guardarCorreoConfig"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
+                                    <button type="button" class="btn btn-secondary d-none" id="cancelarCorreoConfig"> Cancelar</button>
+                                    <button type="button" class="btn btn-secondary d-none" id="eliminarCorreoConfig"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</button>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <p>Contactos habituales</p>
+                            </div>
                         </div>
                         <div class="tabla">
                             <table class="table table-hover table-bordered">
@@ -3760,7 +3767,7 @@
                                 <p id="mensaje.licencia" class="text-primary"></p>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row d-none" id="backup">
                             <label class="col-4 col-form-label">Ingresar E-Mail para configuración personal: </label>
                             <div class="col-4">
                                 <input type="email" id="correo.configuracion" class="form-control">

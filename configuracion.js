@@ -703,6 +703,7 @@ $(document).ready(function() {
                     
                 localStorage["configuracion"] = JSON.stringify(configuracion);
                 the("mensaje.licencia").innerHTML =  "Licencia activada";
+                the("backup").classList.remove("d-none");
             }
         }
     });
@@ -717,6 +718,8 @@ $(document).ready(function() {
                 localStorage["configuracion"] = JSON.stringify(configuracion);
 
                 the("mensaje.licencia").innerHTML =  "Licencia desactivada";
+                the("backup").classList.add("d-none");
+                the("correo.configuracion").value = "";
             }
         }
     });
