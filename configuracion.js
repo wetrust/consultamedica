@@ -46,7 +46,7 @@ function haveDatabase() {
 function checkIntegrity() {
     let db = JSON.parse(localStorage["configuracion"]);
 
-    let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete', 'correos', 'licencia', 'lcontrol'];
+    let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete', 'correos', 'licencia', 'lcontrol', "id", "email"];
 
     for (var j = 0; j < tables.length; j++) {
         let table = false;
@@ -66,7 +66,7 @@ function checkIntegrity() {
 }
 
 function makeDatabase() {
-    var db = '{"nacionalidad": [], "MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":"", "correos":[], "licencia": "", "lcontrol": []}';
+    var db = '{"nacionalidad": [], "MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":"", "correos":[], "licencia": "", "lcontrol": [], "id":0, "email":""}';
     localStorage["configuracion"] = db;
 }
 
@@ -177,6 +177,7 @@ function loadDatabase() {
     }
 
     $("#membrete").val(configuracion.membrete);
+    $("#correo\\.configuracion").val(configuracion.email);
 
     if (configuracion.licencia == "medicina"){
         the("licencia").parentElement.classList.add("active");
@@ -781,5 +782,134 @@ $(document).ready(function() {
         } else {
             loadDatabase();
         }
-	});
+    });
+    
+    $("#correo\\.configuracion\\.cargar").on("click", function(){
+
+        let email = the("correo.configuracion").value
+        email = email.replace(/\s+/g, '');
+
+        if (email.length == 0 ) {
+            errorCorreo()
+            return false;
+        }
+
+        if (validateEmail(email) == false) {
+            errorCorreo()
+            return false;
+        }
+
+        let modal = makeModal("Cargar datos")
+
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
+        the(modal.titulo).classList.add("mx-auto");
+        the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
+    
+        let _contenido = '<p>La aplicación revisará en el servidor si hay configuraciones asociadas al correo escrito, y si encuentra configuraciones las cargará a esta computadora</p><h6>¿Continuar?</h6>'
+    
+        the(modal.contenido).innerHTML = _contenido;
+        the(modal.id).children[0].classList.remove("modal-lg");
+    
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+        $('#'+modal.button).on("click", function(){
+
+            let email = the("correo.configuracion").value
+            email = email.replace(/\s+/g, '');
+
+            let configuracion = new FormData()
+
+            configuracion.append("config_name", email)
+
+            fetch('https://api.crecimientofetal.cl/config', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
+            .then(data => {
+                var _conf = data.config_key;
+                _conf.id = data.config_id;
+                localStorage["configuracion"] = JSON.stringify(_conf);
+                loadDatabase()
+                $('#'+modal.id).modal("hide")
+            }).catch(function(error) {
+                alert("error")
+            });
+
+        })
+    })
+
+    $("#correo\\.configuracion\\.guardar").on("click", function(){
+
+        let email = the("correo.configuracion").value
+        email = email.replace(/\s+/g, '');
+
+        if (email.length == 0 ) {
+            errorCorreo()
+            return false;
+        }
+
+        if (validateEmail(email) == false) {
+            errorCorreo()
+            return false;
+        }
+
+        let modal = makeModal("Guardar datos")
+
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        the(modal.titulo).innerHTML = "Guardar datos en servidor";
+        the(modal.titulo).classList.add("mx-auto");
+        the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
+    
+        let _contenido = '<p>La aplicación guardará en el servidor las configuraciones actuales y quedaran asociadas al correo escrito, si ya guardó anteriormente información, los datos serán sobrescritos</p><h6>¿Continuar?</h6>'
+    
+        the(modal.contenido).innerHTML = _contenido;
+        the(modal.id).children[0].classList.remove("modal-lg");
+    
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+        $('#'+modal.button).on("click", function(){
+
+            var _conf = JSON.parse(localStorage["configuracion"]);
+            let email = the("correo.configuracion").value
+            email = email.replace(/\s+/g, '');
+
+            _conf.email = email
+            let configuracion = new FormData()
+
+            configuracion.append("config_id",_conf.id)
+            configuracion.append("config_name", _conf.email)
+            configuracion.append("config_key", JSON.stringify(_conf))
+
+            localStorage["configuracion"] = JSON.stringify(_conf);
+
+            fetch('https://api.crecimientofetal.cl/config/create', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
+            .then(data => {
+                var _conf = JSON.parse(localStorage["configuracion"]);
+                _conf.id = data.config_id;
+                localStorage["configuracion"] = JSON.stringify(_conf);
+                $('#'+modal.id).modal("hide")
+            }).catch(function(error) {
+                alert("error")
+            });
+        })
+
+    })
 });
+
+function errorCorreo(){
+    let modal = makeModal()
+
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+    the(modal.titulo).innerHTML = "Error";
+    the(modal.titulo).classList.add("mx-auto");
+    the(modal.titulo).parentElement.classList.add("bg-danger", "text-white");
+
+    let _contenido = '<p>Escriba un email válido</p>'
+
+    the(modal.contenido).innerHTML = _contenido;
+    the(modal.id).children[0].classList.remove("modal-lg");
+
+    $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+}
+
+function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
