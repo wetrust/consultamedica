@@ -875,7 +875,7 @@ $( document ).ready(function() {
             });
 
             $('#'+licencia.imprimir).on("click", function(){
-                imprInformeMM(informeMorfologia());
+                imprInforme(informeMorfologia());
                 $('#'+this.dataset.modal).modal('hide');
             });
         }else{
