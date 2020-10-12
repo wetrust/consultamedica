@@ -3,7 +3,7 @@ var monthsES=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "A
 
 var dayHoy = new Date();
 var day = ("0" + dayHoy.getUTCDate()).slice(-2);
-var month = ("0" + (dayHoy.getMonth() + 1)).slice(-2);
+var month = ("0" + (dayHoy.getUTCMonth() + 1)).slice(-2);
 var activeHash = "#browser";
 
 var titulos = {
@@ -26,7 +26,7 @@ $( document ).ready(function() {
     //detalle extraño
     the("problematico").checked = true
 
-    $("#fechaHora").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear());
+    $("#fechaHora").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear());
     the("fum").value = getDate();
     the("fee").value = getDate();
 
@@ -2244,7 +2244,7 @@ $( document ).ready(function() {
         var idpaciente = the("id-paciente").value;
         var ecografista = $( '#ecografista option:selected').text();
         let fexamen = new Date(Date.parse(the("fee").value));
-        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
 
         stringGraficos = stringGraficos.replace(":ECOGRAFISTA", ecografista);
         stringGraficos = stringGraficos.replace(":PACIENTE", paciente);
@@ -2640,15 +2640,15 @@ $( document ).ready(function() {
 
         var stringGraficos = "<div class='container'><div style='width:100px;text-align:center;'></div></div><h4 class='text-center d-none'>Gráfica evaluación ecográfica del crecimiento fetal</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none mt-2'></span><div class='row d-none mt-2'> <div class='col-5'><p style='font-size:10px;'><strong>Nombre: </strong>:PACIENTE </p></div><div class='col-3'><p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'><p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row mt-2'> <div class='col'><div id='graficoCcView'></div></div><div class='col'><div id='graficoCerebeloView'></div></div></div><div class='row'><div class='col'><div id='graficoLfView'></div></div><div class='col'><div id='graficoLhView'></div></div></div><div class='row' id='lineclear'><div class='col'><p class='d-none' style='font-size:12px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;'>Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;' class='d-none'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015<br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf<br>** Referencias: CC y LF Hadlock y col. 1984; LH Jeanty y col.<br>*** Diámetro cerebeloso transverso Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
         let fur = new Date(Date.parse(the("fum").value));
-        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+        fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
         let fpp = new Date(Date.parse(the("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
+        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
 
         var paciente = the("nombre-paciente").value;
         var idpaciente = the("id-paciente").value;
         var ecografista = $( '#ecografista option:selected').text();
         let fexamen = new Date(Date.parse(the("fee").value));
-        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
 
         stringGraficos = stringGraficos.replace(":ECOGRAFISTA", ecografista);
@@ -5354,7 +5354,7 @@ function infPrecoz(){
     var ecografista = $( '#ecografista option:selected').text();
 
     let fexamen = new Date(Date.parse(the("fee").value));
-    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
 
     InformeString = InformeString.replace(":PACIENTE", paciente);
     InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
@@ -5362,16 +5362,16 @@ function infPrecoz(){
     InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
 
     let fur = new Date(Date.parse(the("fum").value));
-    fur = fur.getUTCDate() + ' de '+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+    fur = fur.getUTCDate() + ' de '+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getMonth()+1] + ' ' + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getUTCMonth()+1] + ' ' + fpp.getFullYear();
     let eg = the("semanas").value + '.'+ the("dias").value;
     InformeString = InformeString.replace(":FUR", fur);
     InformeString = InformeString.replace(":EG", eg);
     InformeString = InformeString.replace(":FPP", fpp);
 
     dayHoy = new Date();
-    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
     var comentario = the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
@@ -5382,9 +5382,9 @@ function infPrecoz(){
     else if (the("embrion").value != "act. card. y Corp. (-)"){
 
         let fur = new Date(Date.parse(the("fum").value));
-        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+        fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
         let fpp = new Date(Date.parse(the("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
+        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
         let eg = the("semanas").value + "."+ the("dias").value + " semanas.";
         comentario = "Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>" + comentario;
         comentario += "<br><br>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
@@ -5501,7 +5501,7 @@ function infPrecozClon(){
     var ecografista = $( '#ecografista option:selected').text();
 
     let fexamen = new Date(Date.parse(the("fee").value));
-    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
 
     InformeString = InformeString.replace(":PACIENTE", paciente);
     InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
@@ -5509,16 +5509,16 @@ function infPrecozClon(){
     InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
 
     let fur = new Date(Date.parse(the("fum").value));
-    fur = fur.getUTCDate() + ' de '+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+    fur = fur.getUTCDate() + ' de '+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getMonth()+1] + ' ' + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getUTCMonth()+1] + ' ' + fpp.getFullYear();
     let eg = the("semanas").value + '.'+ the("dias").value;
     InformeString = InformeString.replace(":FUR", fur);
     InformeString = InformeString.replace(":EG", eg);
     InformeString = InformeString.replace(":FPP", fpp);
 
     dayHoy = new Date();
-    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
     var comentario = the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
@@ -5529,9 +5529,9 @@ function infPrecozClon(){
     else if (the("embrion").value != "act. card. y Corp. (-)"){
 
         let fur = new Date(Date.parse(the("fum").value));
-        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+        fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
         let fpp = new Date(Date.parse(the("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
+        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
         let eg = the("semanas").value + "."+ the("dias").value + " semanas.";
         comentario = "Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>" + comentario;
         comentario += "<br><br>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
@@ -5571,8 +5571,8 @@ function InfEcoObsSegTrim1(){
     var actCard;
     var movCorp;
 
-    elem=document.getElementsByName('accard');
-    for(i=0;i<elem.length;i++)
+    elem = document.getElementsByName('accard');
+    for(i = 0;i < elem.length;i++)
         if (elem[i].checked) {
             actCard = elem[i].value;
         }
@@ -5602,13 +5602,13 @@ function InfEcoObsSegTrim1(){
     var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + the("bvm").value + ' mm.';
 
     let fur = new Date(Date.parse(the("fum").value));
-    fur = fur.getUTCDate() + ' de '+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+    fur = fur.getUTCDate() + ' de '+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     
     let fexamen = new Date(Date.parse(the("fee").value));
-    fexamen = fexamen.getUTCDate() + ' de '+ monthsES[fexamen.getMonth()] + ' ' + fexamen.getFullYear();
+    fexamen = fexamen.getUTCDate() + ' de '+ monthsES[fexamen.getUTCMonth()] + ' ' + fexamen.getFullYear();
 
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getMonth()+1] + ' ' + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getUTCMonth()+1] + ' ' + fpp.getFullYear();
     let eg = the("semanas").value + '.'+ the("dias").value;
 
     var dbp = the("dbp").value + ' mm';
@@ -5767,7 +5767,7 @@ function InfEcoObsSegTrim1(){
     InformeString = InformeString.replace(":IC", ic);
 
     dayHoy = new Date();
-    let dateInf = daysES[dayHoy.getDay()] + ', ' + dayHoy.getUTCDate() + ' de '+ monthsES[dayHoy.getMonth()] + ' ' + dayHoy.getFullYear();
+    let dateInf = daysES[dayHoy.getDay()] + ', ' + dayHoy.getUTCDate() + ' de '+ monthsES[dayHoy.getUTCMonth()] + ' ' + dayHoy.getFullYear();
     
     InformeString = InformeString.replace(":DATEINFORME", dateInf);
     
@@ -5810,7 +5810,7 @@ function getDate(today) {
 function resetDate(){
     dayHoy = new Date();
     day = ("0" + dayHoy.getUTCDate()).slice(-2);
-    month = ("0" + (dayHoy.getMonth() + 1)).slice(-2);
+    month = ("0" + (dayHoy.getUTCMonth() + 1)).slice(-2);
 
     the("semanas").value = 0;
     the("dias").value = 0;
@@ -6193,7 +6193,7 @@ function imprSelec(muestra){
 	var estilo = '<style>@media print {.col{width:40%; height:30% float:left;}.text-center{text-align:center;}.pie-pagina{font-size:9px;}.pie-pagina-dos{font-size:10px;}#lineclear{clear:both;}h4{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}.membrete::first-letter{font-size:14px;}.membrete::first-line {font-size: 14px;}.membrete {font-size: 10px;}}</style>';
 	var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
 	var membrete = $("#membrete").val().replace(/\r\n|\r|\n/g,"<br />");
-    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 	document = document.replace(":DATOS", ficha);
 	document = document.replace(":DATEINFORME", dateInf);
 	document = document.replace(":ESTILO", estilo);
@@ -6767,11 +6767,11 @@ function crearInformeEcoSegTrim2(){
     var lhRango = oldProgress(tmpData);
     
     let fur = new Date(Date.parse(the("fum").value));
-    fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+    fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fexamen = new Date(Date.parse(the("fee").value));
-    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
     let eg = the("semanas").value + "."+ the("dias").value;
     
     var dbp = $( '#dbp').val() + ' mm';
@@ -6838,7 +6838,7 @@ function crearInformeEcoSegTrim2(){
     var edadmaterna = $( "select[name='edad_materna']").val();
     
     dayHoy = new Date();
-    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
 	var linea1 = "Feto en presentación " + the("presentacion").value + ", dorso " + the("dorso").value + ", " + actCard + " y " + movCorp + ".";
     var linea2 = "Frecuencia cardiaca fetal de " + the("fcf").value + " x minuto.";
@@ -6988,12 +6988,12 @@ function informeGinecologico(){
     let motivo = $( '#motivo-examen option:selected').text();
     let ecografista = $( '#ecografista option:selected').text();
     let fur = new Date(Date.parse(the("fum").value));
-    fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+    fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fexamen = new Date(Date.parse(the("fee").value));
-    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
 
     dayHoy = new Date();
-    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
     let comentario = the("comentario.ginecologica").value;
     comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
@@ -7106,15 +7106,15 @@ function informeMorfologia(){
     InformeString = '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table> <p class="mb-0"> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa:</strong> :ANTECESA </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">BIOMETRÍA</strong></p><p> <strong>Actividad cardíaca:</strong> :ACTCAR , <strong>Movimientos fetales:</strong> :MOVFET , Embarazo: :EMB <br/> <strong>Presentación:</strong> :PRESENT , <strong>Dorso fetal:</strong> :DORSOFET <br/> <strong>Placenta</strong> Ubicación: :PLAUB , Placenta inserción: :PLAIN </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Liquido amniótico</strong></td><td class="p-0">Medicion cualitativa: :BVMCUA .</td></tr><tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Bolsillo Vertical Mayor (BVM): :BVMMED mm</td></tr></tbody> </table></div>';
 
     let fur = new Date(Date.parse(the("fum").value));
-    fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+    fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fexamen = new Date(Date.parse(the("fee").value));
-    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
     let eg = the("semanas").value + "."+ the("dias").value;
 
     dayHoy = new Date();
-    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
@@ -7403,15 +7403,15 @@ function informeMorfologiaClon(){
     InformeString += '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table> <p class="mb-0"> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa:</strong> :ANTECESA </p></div><div class="container-fluid"> <p><strong style="color: #045dab;">BIOMETRÍA</strong></p><p> <strong>Actividad cardíaca:</strong> :ACTCAR , <strong>Movimientos fetales:</strong> :MOVFET , Embarazo: :EMB <br/> <strong>Presentación:</strong> :PRESENT , <strong>Dorso fetal:</strong> :DORSOFET <br/> <strong>Placenta</strong> Ubicación: :PLAUB , Placenta inserción: :PLAIN </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Liquido amniótico</strong></td><td class="p-0">Medicion cualitativa: :BVMCUA .</td></tr><tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Bolsillo Vertical Mayor (BVM): :BVMMED mm</td></tr></tbody> </table></div>';
 
     let fur = new Date(Date.parse(the("fum").value));
-    fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+    fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fexamen = new Date(Date.parse(the("fee").value));
-    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
     let eg = the("semanas").value + "."+ the("dias").value;
 
     dayHoy = new Date();
-    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
@@ -7701,11 +7701,11 @@ function informeDoppler(){
         var ecografista = $( '#ecografista option:selected').text();
 
         let fur = new Date(Date.parse(the("fum").value));
-        fur = fur.getUTCDate() + " de "+ monthsES[fur.getMonth()] + " " + fur.getFullYear();
+        fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
         let fexamen = new Date(Date.parse(the("fee").value));
-        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getMonth()] + " " + fexamen.getFullYear();
+        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
         let fpp = new Date(Date.parse(the("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getMonth()+1] + " " + fpp.getFullYear();
+        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
         let eg = the("semanas").value + "."+ the("dias").value;
 
         var bvm = the("bvmDoppler").value;
@@ -7778,7 +7778,7 @@ function informeDoppler(){
         var edadmaterna = $( "select[name='edad_materna']").val();
         
         dayHoy = new Date();
-        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getMonth()] + " " + dayHoy.getFullYear();
+        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
         var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
 
