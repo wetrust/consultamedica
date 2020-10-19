@@ -5377,7 +5377,7 @@ function infPrecoz(){
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
     if (the("saco").value && the("embrion").value == "no se observa aun"){
-        comentario = "Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>Se sugiere agendar próxima ecografía para determinar edad gestacional por LCC<br>" + comentario;
+        comentario =  comentario + "<br>Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>Se sugiere agendar próxima ecografía para determinar edad gestacional por LCC<br>";
     }
     else if (the("embrion").value != "act. card. y Corp. (-)"){
 
