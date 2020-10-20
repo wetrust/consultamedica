@@ -3,12 +3,12 @@ $(document).ready(function(){
     let req = new FormData()
     req.append("user_id", 2)
 
-    fetch('https://api.crecimientofetal.cl/api/archivos', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
+    fetch('https://api.crecimientofetal.cl/api/archivos', {method: 'POST',body: req, mode: 'cors'}).then(response => response.json())
     .then(data => {
         if (data.success){
             let ul = '<ul>'
             $.each(data.data, function(i, item) {
-                ul += '<li>'+ item.archivo_text+'<a href="https://api.crecimientofetal.cl/archivos/'+item.archivo_file+'">Ver</a></li>'
+                ul += '<li>'+ item.archivo_text+' <a href="https://api.crecimientofetal.cl/archivos/'+item.archivo_file+'">Ver</a></li>'
             });
 
             ul += '</ul>'
