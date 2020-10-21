@@ -56,6 +56,7 @@ function getfile(){
         the(_modal.id).children[0].classList.remove("modal-lg");
         the(_modal.button).dataset.file = file;
         the(_modal.button).dataset.email = _correo;
+        the(_modal.button).dataset.modal = _modal.id;
         $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
         the(_modal.button).onclick = function(){
@@ -68,6 +69,9 @@ function getfile(){
                 alert("Escriba un E-Mail");
                 return false;
             }else{
+
+                $('#'+this.dataset.modal).modal("hide");
+
                 let req = new FormData()
                 req.append("archivo_id", this.dataset.file)
                 req.append("suscrito_email", email)
