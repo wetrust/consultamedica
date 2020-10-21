@@ -45,7 +45,7 @@ function getfile(){
         let _modal = modal("Solicitar archivo");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
-        the(_modal.titulo).innerHTML = "Escribir E-Mail";
+        the(_modal.titulo).innerHTML = "Escribir E-Mail de acceso validado";
         the(_modal.titulo).classList.add("mx-auto");
         the(_modal.titulo).parentElement.classList.add("bg-info", "text-white");
     
