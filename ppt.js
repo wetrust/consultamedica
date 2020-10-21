@@ -54,8 +54,35 @@ function getfile(){
     
         the(_modal.contenido).innerHTML = _contenido;
         the(_modal.id).children[0].classList.remove("modal-lg");
-        the(_modal.button).dataset.file = this.dataset.id;
+        the(_modal.button).dataset.file = file;
+        the(_modal.button).dataset.email = _correo;
         $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+        the(_modal.button).onclick = function(){
+            let email = the(this.dataset.email).value
+            this.disabled = true
+            the(this.dataset.email).disabled = true
+            this.innerHTML = "Cargando.."
+
+            if (email == ""){
+                alert("Escriba un E-Mail");
+                return false;
+            }else{
+                let req = new FormData()
+                req.append("archivo_id", this.dataset.file)
+                req.append("suscrito_email", email)
+                req.append("user_id", 2)
+            
+                fetch('https://api.crecimientofetal.cl/api/archivo', {method: 'POST',body: req, mode: 'cors'}).then(response => response.json())
+                .then(data => {
+                    if (data.success){
+                        window.location.href = 'https://api.crecimientofetal.cl/archivos/' + data.file;
+                    }else{
+                        alert("No autorizado");
+                    }
+                })
+            }
+        }
 
     }else{
         let req = new FormData()
