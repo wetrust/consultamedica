@@ -5377,7 +5377,7 @@ function infPrecoz(){
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
     if (the("saco").value && the("embrion").value == "no se observa aun"){
-        comentario =  comentario + "<br>Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica<br>";
+        comentario += "<br>Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica<br>";
     }
     else if (the("embrion").value != "act. card. y Corp. (-)"){
 
@@ -5386,7 +5386,7 @@ function infPrecoz(){
         let fpp = new Date(Date.parse(the("fpp").value));
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
         let eg = the("semanas").value + "."+ the("dias").value + " semanas.";
-        comentario = "Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>" + comentario;
+        comentario += "Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>";
         comentario += "<br><br>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
     }
 
@@ -5524,7 +5524,7 @@ function infPrecozClon(){
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
     if (the("saco").value && the("embrion").value == "no se observa aun"){
-        comentario = "Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>Se sugiere agendar próxima ecografía para determinar edad gestacional por LCC<br>" + comentario;
+        comentario += "Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>Se sugiere agendar próxima ecografía para determinar edad gestacional por LCC<br>";
     }
     else if (the("embrion").value != "act. card. y Corp. (-)"){
 
@@ -5533,7 +5533,7 @@ function infPrecozClon(){
         let fpp = new Date(Date.parse(the("fpp").value));
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
         let eg = the("semanas").value + "."+ the("dias").value + " semanas.";
-        comentario = "Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>" + comentario;
+        comentario += "Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>";
         comentario += "<br><br>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
     }
 
