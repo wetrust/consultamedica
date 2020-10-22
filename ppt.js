@@ -51,7 +51,7 @@ function getfile(){
     
         var _correo = uuidv4();
         var _solicitud = uuidv4();
-        let _contenido = '<div class="row"><div class="col-12"><div class="form-group"><input id="'+_correo+'" class="form-control" type="email"><p>Solicite inscripción <button type="button" class="btn btn-link"  id="'+_solicitud+'">aquí</button></p></div></div></div>'
+        let _contenido = '<div class="row"><div class="col-12"><div class="form-group"><input id="'+_correo+'" class="form-control" type="email"><p>Solicite acceso al archivo <button type="button" class="btn btn-link"  id="'+_solicitud+'">aquí</button></p></div></div></div>'
     
         the(_modal.contenido).innerHTML = _contenido;
         the(_modal.id).children[0].classList.remove("modal-lg");
@@ -106,6 +106,36 @@ function getfile(){
             let _contenido = '<div class="row"><div class="col-12 form-group"><label for="'+_nombre+'">Nombre</label><input type="text" class="form-control" id="'+_nombre+'"></div><div class="col-12 form-group"><label for="'+_email+'">Email</label><input type="email" class="form-control" id="'+_email+'"></div><div class="col-12 form-group"><label for="'+_mensaje+'">Mensaje</label><textarea class="form-control" id="'+_mensaje+'" rows="3"></textarea></div></div>';
             the(_modal.contenido).innerHTML = _contenido;
 
+            the(_modal.button).dataset.nombre = _nombre;
+            the(_modal.button).dataset.email = _email;
+            the(_modal.button).dataset.mensaje = _mensaje;
+            $('#'+this.dataset.modal).modal("hide");
+
+            the(_modal.button).onclick = function(){
+                let req = new FormData()
+                req.append("nombre", the(this.dataset.nombre)).value
+                req.append("email", the(this.dataset.email)).value
+                req.append("mensaje", the(this.dataset.mensaje)).value
+
+                $('#'+this.dataset.modal).modal("hide");
+            
+                fetch('https://api.crecimientofetal.cl/api/archivo', {method: 'POST',body: req, mode: 'cors'}).then(response => response.json())
+                .then(data => {
+                    if (data.success){
+                        let _modal = modal();
+                        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+                        the(_modal.titulo).innerHTML = "Mensaje";
+                        the(_modal.titulo).classList.add("mx-auto");
+                        the(_modal.titulo).parentElement.classList.add("bg-info", "text-white");
+                        the(_modal.id).children[0].classList.remove("modal-lg");
+                        $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+                        the(_modal.contenido).innerHTML = '<p>Pronto daremos respuesta a su solicitud.</p>';
+                    }else{
+                        alert("No disponible");
+                    }
+                })
+
+            }
         }
     }else{
         let req = new FormData()
