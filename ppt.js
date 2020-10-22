@@ -51,7 +51,7 @@ function getfile(){
     
         var _correo = uuidv4();
         var _solicitud = uuidv4();
-        let _contenido = '<div class="row"><div class="col-12"><div class="form-group"><input id="'+_correo+'" class="form-control" type="email"><p>Solicite acceso al archivo <button type="button" class="btn btn-link"  id="'+_solicitud+'">aquí</button></p></div></div></div>'
+        let _contenido = '<div class="row"><div class="col-12"><div class="form-group"><input id="'+_correo+'" class="form-control" type="email"><p>Si aún no tiene cuenta <button type="button" class="btn btn-link"  id="'+_solicitud+'">solicitar acceso</button></p></div></div></div>'
     
         the(_modal.contenido).innerHTML = _contenido;
         the(_modal.id).children[0].classList.remove("modal-lg");
