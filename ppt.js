@@ -58,6 +58,7 @@ function getfile(){
         the(_modal.button).dataset.file = file;
         the(_modal.button).dataset.email = _correo;
         the(_modal.button).dataset.modal = _modal.id;
+        the(_solicitud).dataset.modal = _modal.id;
         $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
         the(_modal.button).onclick = function(){
