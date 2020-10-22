@@ -113,9 +113,12 @@ function getfile(){
 
             the(_modal.button).onclick = function(){
                 let req = new FormData()
-                req.append("nombre", the(this.dataset.nombre)).value
-                req.append("email", the(this.dataset.email)).value
-                req.append("mensaje", the(this.dataset.mensaje)).value
+                let nombre = this.dataset.nombre
+                let email = this.dataset.email
+                let mensaje = this.dataset.mensaje
+                req.append("nombre", the(nombre).value)
+                req.append("email", the(email).value)
+                req.append("mensaje", the(mensaje).value)
 
                 $('#'+this.dataset.modal).modal("hide");
             
