@@ -119,7 +119,7 @@ function getfile(){
 
                 $('#'+this.dataset.modal).modal("hide");
             
-                fetch('https://api.crecimientofetal.cl/api/archivo', {method: 'POST',body: req, mode: 'cors'}).then(response => response.json())
+                fetch('https://api.crecimientofetal.cl/api/solicitud', {method: 'POST',body: req, mode: 'cors'}).then(response => response.json())
                 .then(data => {
                     if (data.success){
                         let _modal = modal();
