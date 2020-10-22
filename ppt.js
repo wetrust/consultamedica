@@ -89,6 +89,7 @@ function getfile(){
                 })
             }
         }
+        
 
         the(_solicitud).onclick = function(){
             let _modal = modal("Enviar");
