@@ -50,7 +50,8 @@ function getfile(){
         the(_modal.titulo).parentElement.classList.add("bg-info", "text-white");
     
         var _correo = uuidv4();
-        let _contenido = '<div class="row"><div class="col-12"><div class="form-group"><input id="'+_correo+'" class="form-control" type="email"></div></div></div>'
+        var _solicitud = uuidv4();
+        let _contenido = '<div class="row"><div class="col-12"><div class="form-group"><input id="'+_correo+'" class="form-control" type="email"><p>Solicite inscripción <button type="button" class="btn btn-link"  id="'+_solicitud+'">aquí</button></p></div></div></div>'
     
         the(_modal.contenido).innerHTML = _contenido;
         the(_modal.id).children[0].classList.remove("modal-lg");
@@ -88,6 +89,24 @@ function getfile(){
             }
         }
 
+        the(_solicitud).onclick = function(){
+            let _modal = modal("Enviar");
+
+            document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+            the(_modal.titulo).innerHTML = "Solicitar acceso";
+            the(_modal.titulo).classList.add("mx-auto");
+            the(_modal.titulo).parentElement.classList.add("bg-info", "text-white");
+            the(_modal.id).children[0].classList.remove("modal-lg");
+            $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+            var _nombre = uuidv4();
+            var _email = uuidv4();
+            var _mensaje = uuidv4();
+
+            let _contenido = '<div class="row"><div class="col-12 form-group"><label for="'+_nombre+'">Nombre</label><input type="text" class="form-control" id="'+_nombre+'"></div><div class="col-12 form-group"><label for="'+_email+'">Email</label><input type="email" class="form-control" id="'+_email+'"></div><div class="col-12 form-group"><label for="'+_mensaje+'">Mensaje</label><textarea class="form-control" id="'+_mensaje+'" rows="3"></textarea></div></div>';
+            the(_modal.contenido).innerHTML = _contenido;
+
+        }
     }else{
         let req = new FormData()
         req.append("archivo_id", file)
