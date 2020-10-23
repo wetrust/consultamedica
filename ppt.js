@@ -51,7 +51,7 @@ function getfile(){
     
         var _correo = uuidv4();
         var _solicitud = uuidv4();
-        let _contenido = '<div class="row"><div class="col-12"><div class="form-group"><input id="'+_correo+'" class="form-control" type="email"><p>Si aún no dispone de acceso <button type="button" class="btn btn-link"  id="'+_solicitud+'">solicite acceso</button></p></div></div></div>'
+        let _contenido = '<div class="row"><div class="col-12"><div class="form-group"><input id="'+_correo+'" class="form-control" type="email"><p>Si aún no dispone de acceso <button type="button" class="btn btn-link"  id="'+_solicitud+'">active solicitud</button></p></div></div></div>'
     
         the(_modal.contenido).innerHTML = _contenido;
         the(_modal.id).children[0].classList.remove("modal-lg");
@@ -89,7 +89,7 @@ function getfile(){
                 })
             }
         }
-        
+
 
         the(_solicitud).onclick = function(){
             let _modal = modal("Enviar");
@@ -137,7 +137,7 @@ function getfile(){
                         the(_modal.titulo).parentElement.classList.add("bg-info", "text-white");
                         the(_modal.id).children[0].classList.remove("modal-lg");
                         $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-                        the(_modal.contenido).innerHTML = '<p>Pronto daremos respuesta a su solicitud.</p>';
+                        the(_modal.contenido).innerHTML = '<p>Pronto daremos respuesta a su solicitud y obtendrá acceso temporal a documentos restringidos.</p>';
                     }else{
                         alert("No disponible");
                     }
