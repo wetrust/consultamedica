@@ -5319,20 +5319,26 @@ function infPrecoz(){
     var LINEA8 = '';
 
     if (the("lcn").value > 0){
+
         var LINEA9 = "Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
         var LINEA10 = "Exploración anexial derecha " + the("anexo-derecho").value;
         var LINEA11 = "Exploración anexial izquierda " + the("anexo-izquierdo").value;
+
     } 
     else if (the("lcn").value == "" && the("embrion").value == "no procede"){
+
         var LINEA9 = "Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
         var LINEA11 = "";
         LINEA12 = "no procede";
+
     }else{
+
         var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value + "<br>";
         var LINEA11 = "";
         LINEA12 = "Embrion no se observa";
+
     }
 
     if (sacogestacionaltxt > 0){
