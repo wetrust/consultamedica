@@ -5322,7 +5322,7 @@ function infPrecoz(){
 
         var LINEA9 = "Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
         var LINEA10 = "Exploración anexial derecha " + the("anexo-derecho").value;
-        var LINEA11 = "Exploración anexial izquierda " + the("anexo-izquierdo").value;
+        var LINEA11 = "Exploración anexial izquierda " + the("anexo-izquierdo").value + "<br>";
 
     } 
     else if (the("lcn").value == "" && the("embrion").value == "no procede"){
@@ -5335,7 +5335,7 @@ function infPrecoz(){
     }else{
 
         var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
-        var LINEA10 = "Exploración anexial " + the("anexo-derecho").value + "<br>";
+        var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
         var LINEA11 = "";
         LINEA12 = "Embrion no se observa";
 
@@ -5401,7 +5401,7 @@ function infPrecoz(){
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
         let eg = the("semanas").value + "."+ the("dias").value + " semanas.";
         comentario += "<br>Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>";
-        comentario += "-Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
+        comentario += "<br>-Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
 
     }
 
