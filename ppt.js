@@ -138,6 +138,7 @@ function getfile(){
                         the(_modal.id).children[0].classList.remove("modal-lg");
                         $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
                         the(_modal.contenido).innerHTML = '<p>Pronto daremos respuesta a su solicitud y obtendrá acceso temporal a documentos restringidos.</p>';
+                        the("cancelarmodal").textContent = "Volver a documentos restrigidos"
                     }else{
                         alert("No disponible");
                     }
