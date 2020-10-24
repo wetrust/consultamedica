@@ -66,6 +66,12 @@ $(document).ready(function(){
             reiniciaPuntitos();
         }
     });
+    $("#menu\\.modulo\\.activo\\.cinco\\.dos").on("click", function(){
+        reiniciarMensajes();
+        reiniciaPuntitos();
+        ocultarPrincipal();
+        the("pedefes").classList.remove("d-none");
+    })
 })
 
 function reiniciaPuntitos(){
@@ -92,6 +98,7 @@ function reiniciarMensajes(){
     the("mensaje.tres").classList.add("d-none");
     the("mensaje.cuatro").classList.add("d-none");
     the("mensaje.cinco").classList.add("d-none");
+    the("pedefes").classList.add("d-none");
 }
 
 function ocultarPrincipal(){

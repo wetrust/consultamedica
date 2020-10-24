@@ -599,17 +599,17 @@ $( document ).ready(function() {
 
     $("#pdfnacional").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/gnacional.pdf"></iframe>');
-        $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
+        $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
     });
 
     $("#pdfregional").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/gregional.pdf"></iframe>');
-        $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
+        $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
     });
 
     $("#pdfuno").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf"></iframe>');
-        $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
+        $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
     });
 
     $("#pdfunoInternal").on("click", function(){
@@ -619,7 +619,7 @@ $( document ).ready(function() {
 
     $("#pdfdos").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf"></iframe>');
-        $("#pdfviebox").children("ol").children().children().attr("href","#pdfneonatal");
+        $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
     });
 
     $("#pdfbarcelona").on("click", function(){
@@ -5231,7 +5231,7 @@ $(document).ready(function(){
 
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
-    var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet", "#pdfneonatal"];
+    var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet"];
     var div_fecha = ["#consulta","#paciente", "#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet"];
     let d = "d-none";
 

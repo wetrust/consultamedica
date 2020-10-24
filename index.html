@@ -1233,7 +1233,7 @@
                             </ul>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <a class="btn btn-outline-dark rounded text-left w-100 my-1" id="menu.modulo.activo.cinco" ><small>Ver guías clínicas relacionadas</small></a>
+                            <a class="btn btn-outline-dark rounded text-left w-100 my-1" id="menu.modulo.activo.cinco" ><small>Ver documentación clínica relacionada</small></a>
                             <ul class="mb-0">
                                 <li class="azul-li" id="punto.cinco"></li>
                             </ul>
@@ -1241,7 +1241,7 @@
                         <div>
                             <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cinco.tres" href="https://www.isuog.org/clinical-resources/isuog-guidelines/translations/spanish.html"><small>&gt; Guías clínicas ISUOG, en español</small></a>
                             <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cinco.uno" href="https://medicinafetalbarcelona.org/protocolos"><small>&gt; Guías clínicas Medicina Fetal - Barcelona</small></a>
-                            <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cinco.dos" href="#pdfneonatal"><small>&gt; Referencias seleccionadas</small></a>
+                            <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cinco.dos"><small>&gt; Referencias seleccionadas</small></a>
                             <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cinco.cuatro" href="#"><small>&gt; Publicaciones relacionadas</small></a>
                             <a class="btn btn-outline-dark rounded text-left w-100 my-1 d-none" id="menu.modulo.activo.seis"><small>Módulo instructivo en construcción</small></a>
                             <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.seis.uno" href="#"><small>&gt; Determinación ecográfica de edad gestacional.</small></a>
@@ -1347,6 +1347,49 @@
                             <div class="col-5 text-center">
                                 <img src="img/pc.png" class="img-fluid w-75" alt="Logo Crecimientofetal">
                                 <img src="img/cinco.png" class="img-fluid" alt="Logo Crecimientofetal">
+                            </div>
+                        </div>
+                        <div class="d-none" id="pedefes">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Referencias fetales
+                                        </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <p>Guía práctica ISUOG: Evaluación ecográfica de la biometría y el crecimiento fetal <a id="pdfuno" href="#pdfviebox">Ver PDF</a></p>
+                                        <p>Guía Práctica ISUOG: Uso de la ecografía Doppler en obstetricia <a id="pdfnuevo" href="#pdfviebox">Ver PDF</a></p>
+                                        <p>Protocols Medicina materno fetal Hospital Clinic Barcelona; Defectos del crecimiento fetal <a id="pdfdos" href="#pdfviebox">Ver PDF</a></p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Referencias neonatales
+                                        </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <p>Curva Neonatal Chilena: M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274. <a id="pdfnacional" href="#pdfviebox">Ver PDF</a><br><small class="text-primary">-- ( Estándar neonatal chileno en uso desde el año 2010 )</small></p>
+                                        <p>Curva Regional Araucanía - Chile: Lagos y col. Rev. Chilena Obtet. Ginecol. 2009; 74(4). <a id="pdfregional" href="#pdfviebox">Ver PDF</a><br><small class="text-primary">-- ( Curva para ponderar efecto modulador de variables biológicas sobre el peso neonatal )</small></p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Otros documentos de interés:
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                        <div class="card-body" id="ppt.relacionados"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -3780,24 +3823,6 @@
             </div>
         </div>
         <div id="cf"></div>
-    </div>
-    <div class="container pt-2 d-none" id="pdfneonatal">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#inicio"><strong>Volver</strong></a></li>
-        </ol>
-        <div class="card">
-            <div class="card-body">
-                <h6 class="text-primary">Referencias fetales</h6>
-                <p>Guía práctica ISUOG: Evaluación ecográfica de la biometría y el crecimiento fetal <a id="pdfuno" href="#pdfviebox">Ver PDF</a></p>
-                <p>Guía Práctica ISUOG: Uso de la ecografía Doppler en obstetricia <a id="pdfnuevo" href="#pdfviebox">Ver PDF</a></p>
-                <p>Protocols Medicina materno fetal Hospital Clinic Barcelona; Defectos del crecimiento fetal <a id="pdfdos" href="#pdfviebox">Ver PDF</a></p>
-                <h6 class="text-primary">Referencias neonatales</h6>
-                <p>Curva Neonatal Chilena: M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274. <a id="pdfnacional" href="#pdfviebox">Ver PDF</a><br><small class="text-primary">-- ( Estándar neonatal chileno en uso desde el año 2010 )</small></p>
-                <p>Curva Regional Araucanía - Chile: Lagos y col. Rev. Chilena Obtet. Ginecol. 2009; 74(4). <a id="pdfregional" href="#pdfviebox">Ver PDF</a><br><small class="text-primary">-- ( Curva para ponderar efecto modulador de variables biológicas sobre el peso neonatal )</small></p>
-                <h6 class="text-primary">Otros documentos de interés:</h6>
-                <div id="ppt.relacionados"></div>
-            </div>
-        </div>
     </div>
     <div class="container pt-2 d-none" id="paciente">
         <div class="card">
