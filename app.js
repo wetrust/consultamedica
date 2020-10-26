@@ -950,9 +950,7 @@ $( document ).ready(function() {
                 $('#lh').focus();
                 $("html, body").animate({ scrollTop: 100 }, "slow");
             });
-            return;
         }
-        imprInforme(crearInformeEcoSegTrim2());
     });
 
     $("#modalPreInfEcoObsSegTrim1").on("click", function() {
