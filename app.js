@@ -952,7 +952,7 @@ $( document ).ready(function() {
             });
             return;
         }
-        crearInformeEcoSegTrim2();
+        imprInforme(crearInformeEcoSegTrim2());
     });
 
     $("#modalPreInfEcoObsSegTrim1").on("click", function() {
