@@ -1,13 +1,12 @@
-var config = JSON.parse('{"name":"configuración", "backurl":"#volver", "backend":"", "localstorage":true, "usehash":true, "config":[{"name":"membrete", "table":"membrete", "desc":"", "input":[{"name":"membrete", "type":"textarea", "row":3, "limit":40, "help":""}]},{"name":"ciudad", "table":"ciudad", "desc":"", "input":[{"name":"Nombre de la ciudad", "type":"text", "limit":40, "help":""}]},{"name":"Lugar de control", "table":"lcontrol", "desc":"", "input":[{"name":"Lugar de control", "type":"text", "limit":40, "help":""}]},{"name":"Motivo exámen", "table":"motivo", "desc":"", "input":[{"name":"Nombre del motivo", "type":"text", "limit":40, "help":""}]},{"name":"Patología obstétrica", "table":"pobst", "desc":"", "input":[{"name":"Nombre de la patología", "type":"text", "limit":40, "help":""}]},{"name":"Profesional examinador", "table":"profex", "desc":"", "input":[{"name":"Nombre de la patología", "type":"text", "limit":40, "help":""}]},{"name":"Email", "table":"email", "desc":"", "input":[{"name":"Nombre", "type":"text", "limit":40, "help":""},{"name":"profesión", "type":"text", "limit":40, "help":""},{"name":"Ciudad", "type":"text", "limit":40, "help":""},{"name":"teléfono", "type":"text", "limit":40, "help":""}]},{"name":"Activación", "table":"activacion", "desc":"", "input":[{"name":"Activar licencia personalizada", "type":"text", "limit":40, "help":""}]}]}');
+var config = JSON.parse('{"name": "configuración", "backurl": "#volver", "backend": "", "localstorage": true, "usehash": true, "config": [{"name": "Membrete", "data": "membrete", "desc": "", "input": [{"name": "membrete", "type": "textarea", "row": 3, "limit": 40, "help": ""}], "table": false},{"name": "Ciudad", "data": "nacionalidad", "desc": "", "input": [{"name": "Nombre de la ciudad", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Lugar de control", "data": "lcontrol", "desc": "", "input": [{"name": "Lugar de control", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Motivo exámen", "data": "MotivoExamen", "desc": "", "input": [{"name": "Nombre del motivo", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Patología obstétrica", "data": "PatologiaObstetrica", "desc": "", "input": [{"name": "Nombre de la patología", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Profesional examinador", "data": "profesional", "desc": "", "input": [{"name": "Nombre profesional", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Contactos", "data": "correos", "desc": "", "input": [{"name": "Nombre", "type": "text", "limit": 40, "help": ""},{"name": "Profesión", "type": "text", "limit": 40, "help": ""},{"name": "Ciudad", "type": "text", "limit": 40, "help": ""},{"name": "E-Mail", "type": "email", "limit": 40, "help": ""},{"name": "Teléfono", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Activación", "data": "activacion", "desc": "", "input": [{"name": "Activar licencia personalizada", "type": "text", "limit": 40, "help": ""}], "table": false}]}');
 
 function createTabs(config){
     var navID = uuidv4();
-    var tabID = uuidv4();
     var capsuleHeader = '<div class="row">';
     var capsuleFooter = '</div>';
-    var navHeader = '<div class="col-12 col-lg-3"><div class="nav flex-column nav-pills" id="'+navID+'" role="tablist" aria-orientation="vertical">';
+    var navHeader = '<div class="col-12 col-lg-3 border-right"><div class="nav flex-column nav-pills" id="'+navID+'" role="tablist" aria-orientation="vertical">';
     var navFooter = '</div></div>';
-    var tabHeader = '<div class="col-12 col-lg-3"><div class="tab-content" id="'+ tabID+'">';
+    var tabHeader = '<div class="col-12 col-lg-9"><div class="tab-content">';
     var tabFooter = '</div></div>';
 
     var resultado = "";
@@ -27,13 +26,265 @@ function createTabs(config){
 
     resultado += tabHeader;
     for (var z = 0; z < config.config.length; z++){
-        resultado += '<div class="tab-pane fade" id="'+config.config[z].tab+'" role="tabpanel" aria-labelledby="'+config.config[z].id+'">'+config.config[z].name+'</div>';
+        resultado += '<div class="tab-pane fade" id="'+config.config[z].tab+'" role="tabpanel" aria-labelledby="'+config.config[z].id+'"><h4 class="mb-3">'+config.config[z].name+'</h4></div>';
     }
     resultado += tabFooter;
     resultado += capsuleFooter;
 
-    return resultado;
+    elemento = {
+        nav: navID,
+        resultado : resultado
+    }
 
+    return elemento;
+}
+
+function createInputs(config){
+
+    for (var z = 0; z < config.config.length; z++){
+
+        let accordion = uuidv4();
+        let collapse = uuidv4();
+        let title = uuidv4();
+        let saveBtn = uuidv4();
+        let elemento = ""
+        var inputs = ""
+
+        elemento = '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">Nuevo '+config.config[z].name+'</h6></div><div id="'+collapse+'" class="collapse" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
+
+        for (var y = 0; y < config.config[z].input.length; y++){
+            let id = uuidv4();
+            let aria = uuidv4();
+
+            inputs += '<div class="form-group"><label for="'+id+'">'+config.config[z].input[y].name+'</label>'
+
+            if (config.config[z].input[y].type == "textarea"){
+                inputs += '<textarea class="form-control" row="'+config.config[z].input[y].row+'" id="'+id+'"'
+            }else{
+                inputs += '<input type="'+config.config[z].input[y].name+'" class="form-control" id="'+id+'"'
+            }
+
+            //aria
+            if (config.config[z].input[y].help != ""){
+                inputs += 'aria-describedby="'+aria+'"'
+            }
+
+            if (config.config[z].input[y].type == "textarea"){
+                inputs += '></textarea>'
+            }else{
+                inputs += '>'
+            }
+
+            //aria
+            if (config.config[z].input[y].help != ""){
+                inputs += '<small id="'+aria+'" class="form-text text-muted">'+config.config[z].input[y].help+'</small>'
+            }
+    
+            inputs += '</div>'
+            config.config[z].input[y].id = id;
+            config.config[z].input[y].aria = aria;
+        }
+
+        inputs += '<button class="btn btn-outline-info" type="button" id="'+saveBtn+'" data-id="'+z+'">Guardar</button>'
+        config.config[z].save = saveBtn
+        elemento += inputs + '</div></div></div></div>'
+
+        the(config.config[z].tab).insertAdjacentHTML("beforeend",elemento)
+
+        the(saveBtn).onclick = guardar;
+    }
+}
+
+function createTable(config){
+
+    for (var z = 0; z < config.config.length; z++){
+        if (config.config[z].table == true){
+            let elemento = ""
+            let tableid = uuidv4();
+
+            elemento = '<table class="table table-hover"><thead class="thead-dark"><tr>'
+    
+            for (var y = 0; y < config.config[z].input.length; y++){
+                elemento += '<th scope="col">'+config.config[z].input[y].name+'</th>'
+            }
+    
+            elemento += '</tr></thead><tbody id="'+tableid+'">'
+            config.config[z].tableid = tableid
+            elemento += '</tbody></table>';
+            the(config.config[z].tab).insertAdjacentHTML("beforeend",elemento)
+        }
+    }
+}
+
+function guardar(){
+    let z = this.dataset.id;
+    let data = []
+
+    for (var y = 0; y < config.config[z].input.length; y++){
+        let id = config.config[z].input[y].id
+        data.push(document.getElementById(id).value);
+        document.getElementById(id).value = ""
+    }
+
+    if (window.localStorage) {
+        if (localStorage.configuracion != null) {
+            var configuracion = JSON.parse(localStorage["configuracion"]);
+            let name = config.config[z].data
+            configuracion[name].push(data)
+            localStorage["configuracion"] = JSON.stringify(configuracion);
+
+            loadTabla(config)
+
+        }
+    }
+}
+
+function loadTabla(config){
+    for (var z = 0; z < config.config.length; z++){
+        if (config.config[z].table == true){
+            if (window.localStorage) {
+                if (localStorage.configuracion != null) {
+                    var configuracion = JSON.parse(localStorage["configuracion"]);
+                    let name = config.config[z].data
+
+                    the(config.config[z].tableid).innerHTML = "";
+
+                    $.each(configuracion[name], function(i, item) {
+                        var fila = '<tr data-id="'+i+'" data-config="'+z+'" class="modal-edit">';
+                        
+                        $.each(item, function(i, column) {
+                            fila += '<td>' + column + '</td>';
+                        })
+
+                        fila += '</tr>';
+
+                        $('#'+config.config[z].tableid).append(fila);
+                    });
+                }
+            }
+        }
+    }
+
+    $(".modal-edit").off("click", modal_edit)
+    $(".modal-edit").on("click", modal_edit)
+}
+
+function modal_edit(){
+    let modal = makeModal("Guardar")
+
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+    the(modal.titulo).innerHTML = "Modificar Item";
+    the(modal.titulo).classList.add("mx-auto");
+    the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
+
+    let z = this.dataset.config
+    let id = this.dataset.id
+    var configuracion = JSON.parse(localStorage["configuracion"]);
+    let data = configuracion[config.config[z].data][id]
+
+    let _contenido = ''
+    let inputs = []
+
+    for (var y = 0; y < config.config[z].input.length; y++){
+        let id = uuidv4();
+        let aria = uuidv4();
+
+        _contenido += '<div class="form-group"><label for="'+id+'">'+config.config[z].input[y].name+'</label>'
+
+        if (config.config[z].input[y].type == "textarea"){
+            _contenido += '<textarea class="form-control" row="'+config.config[z].input[y].row+'" id="'+id+'"'
+        }else{
+            _contenido += '<input type="'+config.config[z].input[y].name+'" class="form-control" id="'+id+'" value="'+ data[y]+'"'
+        }
+
+        //aria
+        if (config.config[z].input[y].help != ""){
+            _contenido += 'aria-describedby="'+aria+'"'
+        }
+
+        if (config.config[z].input[y].type == "textarea"){
+            _contenido += '>'+data[y]+'</textarea>'
+        }else{
+            _contenido += '>'
+        }
+
+        //aria
+        if (config.config[z].input[y].help != ""){
+            _contenido += '<small id="'+aria+'" class="form-text text-muted">'+config.config[z].input[y].help+'</small>'
+        }
+
+        _contenido += '</div>'
+        inputs.push(id)
+    }
+
+    _btn_delete = uuidv4()
+    _contenido += '<button class="btn btn-outline-danger" data-id="'+id+'" data-config="'+z+'" id="'+_btn_delete+'">Eliminar</button>'
+
+    the(modal.contenido).innerHTML = _contenido;
+    the(modal.id).children[0].classList.remove("modal-lg");
+
+    $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+    the(_btn_delete).dataset.modal = modal.id
+    $("#"+_btn_delete).on("click", preDelete_item)
+
+    the(modal.button).dataset.id = id
+    the(modal.button).dataset.config = z
+    the(modal.button).dataset.inputs = inputs
+    $("#"+modal.button).on("click", function(){
+        let z = this.dataset.config
+        let id = this.dataset.id
+    
+        var configuracion = JSON.parse(localStorage["configuracion"]);
+        let data = configuracion[config.config[z].data][id]
+
+        for (var y = 0; y < inputs.length; y++){
+            data[y] = the(inputs[y]).value
+        }
+
+        configuracion[config.config[z].data][id] = data
+    
+        localStorage["configuracion"] = JSON.stringify(configuracion);
+    
+        $("#"+this.dataset.modal).modal("hide")
+        loadTabla(config)
+    })
+}
+
+function preDelete_item(){
+    let z = this.dataset.config
+    let id = this.dataset.id
+
+    let modal = makeModal("Eliminar")
+
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+    the(modal.titulo).innerHTML = "Eliminar Item";
+    the(modal.titulo).classList.add("mx-auto");
+    the(modal.titulo).parentElement.classList.add("bg-danger", "text-white");
+
+    the(modal.contenido).innerHTML = "<p>Está seguro de eliminar el ítem</p>";
+    the(modal.id).children[0].classList.remove("modal-lg");
+
+    $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+    the(modal.button).dataset.config = z
+    the(modal.button).dataset.id = id
+    the(modal.button).dataset.parent = this.dataset.modal
+    $("#"+modal.button).on("click", delete_item)
+}
+
+function delete_item(){
+    let z = this.dataset.config
+    let id = this.dataset.id
+
+    var configuracion = JSON.parse(localStorage["configuracion"]);
+    let data = configuracion[config.config[z].data]
+
+    data.splice(id, 1);
+    configuracion[config.config[z].data] = data
+    localStorage["configuracion"] = JSON.stringify(configuracion);
+
+    $("#"+this.dataset.parent).modal("hide")
+    $("#"+this.dataset.modal).modal("hide")
+    loadTabla(config)
 }
 
 function haveDatabase() {
@@ -82,42 +333,25 @@ function loadDatabase() {
     var configuracion = JSON.parse(localStorage["configuracion"]);
 
     $('#ecografista').empty();
-    $('#EcografistaConfigTable').empty();
     if (configuracion.profesional.length > 0) {
         $.each(configuracion.profesional, function(i, item) {
             $('#ecografista').append($('<option>', {
                 value: item.id,
                 text: item.nombre
             }));
-
-            var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-            $('#EcografistaConfigTable').append(fila);
-        });
-        $('#eliminarEcografistaConfig').removeClass("d-none");
-        $('#EcografistaConfigTable tr').on('click', function() {
-            activateTr(this);
         });
     }
 
     $('#motivo-examen').empty();
-    $('#MotivoConfigTable').empty();
     if (configuracion.MotivoExamen.length > 0) {
         $.each(configuracion.MotivoExamen, function(i, item) {
             $('#motivo-examen').append($('<option>', {
                 value: item.id,
                 text: item.nombre
             }));
-            var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-            $('#MotivoConfigTable').append(fila);
-
-        });
-        $('#eliminarMotivoConfig').removeClass("d-none");
-        $('#MotivoConfigTable tr').on('click', function() {
-            activateTr(this);
         });
     }
 
-    $('#LcontrolConfigTable').empty();
     $('#lcontrolpaciente').empty();
     if (configuracion.lcontrol.length > 0) {
         $.each(configuracion.lcontrol, function(i, item) {
@@ -125,19 +359,11 @@ function loadDatabase() {
                 value: item.id,
                 text: item.nombre
             }));
-            var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-            $('#LcontrolConfigTable').append(fila);
-
-        });
-        $('#eliminarLcontrolConfig').removeClass("d-none");
-        $('#LcontrolConfigTable tr').on('click', function() {
-            activateTr(this);
         });
     }
 
     $('#nacionalidad').empty();
     $('#ciudadpaciente').empty();
-    $('#NacionalidadConfigTable').empty();
     if (configuracion.nacionalidad.length > 0) {
         $.each(configuracion.nacionalidad, function(i, item) {
             $('#nacionalidad').append($('<option>', {
@@ -148,31 +374,16 @@ function loadDatabase() {
                 value: item.id,
                 text: item.nombre
             }));
-            var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-            $('#NacionalidadConfigTable').append(fila);
-
-        });
-        $('#eliminarNacionalidadConfig').removeClass("d-none");
-        $('#NacionalidadConfigTable tr').on('click', function() {
-            activateTr(this);
         });
     }
 
     $('#patologiaObstetricaUno').empty();
-    $('#PatologiaObstetricaConfigTable').empty();
     if (configuracion.PatologiaObstetrica.length > 0) {
         $.each(configuracion.PatologiaObstetrica, function(i, item) {
             $('#patologiaObstetricaUno').append($('<option>', {
                 value: item.id,
                 text: item.nombre
             }));
-            var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td></tr>';
-            $('#PatologiaObstetricaConfigTable').append(fila);
-
-        });
-        $('#eliminarPatologiaObstetricaConfig').removeClass("d-none");
-        $('#PatologiaObstetricaConfigTable tr').on('click', function() {
-            activateTr(this);
         });
     }
 
@@ -186,485 +397,18 @@ function loadDatabase() {
     } else {
         the("mensaje.licencia").innerHTML =  "Licencia desactivada";
     }
-    
-    $('#CorreoConfigTable').empty();
-
-    if (configuracion.correos.length > 0) {
-        $.each(configuracion.correos, function(i, item) {
-            var fila = '<tr><th scope="row">' + item.id + '</th><td>' + item.nombre + '</td><td>' + item.profesion + '</td><td>' + item.ciudad + '</td><td>' + item.correo + '</td><td>' + item.telefono +'</td></tr>';
-            $('#CorreoConfigTable').append(fila);
-        });
-
-        $('#eliminarCorreoConfig').removeClass("d-none");
-
-        $('#CorreoConfigTable tr').on('click', function() {
-            activateTr(this);
-        });
-    }
-}
-
-function saveMotivoExamenLocalStorage() {
-
-    if (window.localStorage) {
-        if (localStorage.configuracion != null) {
-            var configuracion = JSON.parse(localStorage["configuracion"]);
-
-            $('#motivo-examen').html("");
-            $('#MotivoConfigTable').html("");
-            var aRR = {id: 0, nombre: "Doe"};
-            aRR["id"] = configuracion.MotivoExamen.length + 1;
-            aRR["nombre"] = $('#motivoInput').val();
-
-            configuracion.MotivoExamen.push(aRR);
-            $('#eliminarMotivoConfig').removeClass("d-none");
-            $('#motivoInput').val("");
-            localStorage["configuracion"] = JSON.stringify(configuracion);
-            loadDatabase();
-        }
-    }
-}
-
-function saveEcografistaExamenLocalStorage() {
-
-    if (window.localStorage) {
-        if (localStorage.configuracion != null) {
-            var configuracion = JSON.parse(localStorage["configuracion"]);
-
-            $('#ecografista').html("");
-            $('#EcografistaConfigTable').html("");
-            var aRR = {id: 0, nombre: "Doe"};
-            aRR["id"] = configuracion.profesional.length + 1;
-            aRR["nombre"] = $('#ecografistaInput').val();
-
-            configuracion.profesional.push(aRR);
-            $('#eliminarEcografistaConfig').removeClass("d-none");
-            $('#ecografistaInput').val("");
-            localStorage["configuracion"] = JSON.stringify(configuracion);
-            loadDatabase();
-        }
-    }
-}
-
-function saveLcontrolConfigLocalStorage() {
-
-    if (window.localStorage) {
-        if (localStorage.configuracion != null) {
-            var configuracion = JSON.parse(localStorage["configuracion"]);
-
-            $('#LcontrolConfigTable').html("");
-            $('#LcontrolConfigTable').html("");
-            var aRR = {id: 0, nombre: "Doe"};
-            aRR["id"] = configuracion.lcontrol.length + 1;
-            aRR["nombre"] = $('#lcontrolInput').val();
-
-            configuracion.lcontrol.push(aRR);
-            $('#eliminarLcontrolConfig').removeClass("d-none");
-            $('#lcontrolInput').val("");
-            localStorage["configuracion"] = JSON.stringify(configuracion);
-            loadDatabase();
-        }
-    }
-}
-
-function saveNacionalidadConfigLocalStorage() {
-
-    if (window.localStorage) {
-        if (localStorage.configuracion != null) {
-            var configuracion = JSON.parse(localStorage["configuracion"]);
-
-            $('#nacionalidadInput').html("");
-            $('#NacionalidadConfigTable').html("");
-            var aRR = {id: 0, nombre: "Doe"};
-            aRR["id"] = configuracion.nacionalidad.length + 1;
-            aRR["nombre"] = $('#nacionalidadInput').val();
-
-            configuracion.nacionalidad.push(aRR);
-            $('#eliminarNacionalidadConfig').removeClass("d-none");
-            $('#nacionalidadInput').val("");
-            localStorage["configuracion"] = JSON.stringify(configuracion);
-            loadDatabase();
-        }
-    }
-}
-
-function savePatologiaObstetricaExamenLocalStorage() {
-
-    if (window.localStorage) {
-        if (localStorage.configuracion != null) {
-            var configuracion = JSON.parse(localStorage["configuracion"]);
-
-            $('#patologiaObstetricaUno').html("");
-            $('#PatologiaObstetricaConfigTable').html("");
-
-            var aRR = {id: 0, nombre: "Doe"};
-            aRR["id"] = configuracion.PatologiaObstetrica.length + 1;
-            aRR["nombre"] = $('#PatologiaObstetricaInput').val();
-
-            configuracion.PatologiaObstetrica.push(aRR);
-            $('#eliminarPatologiaObstetricaConfig').removeClass("d-none");
-            $('#PatologiaObstetricaInput').val("");
-            localStorage["configuracion"] = JSON.stringify(configuracion);
-            loadDatabase();
-        }
-    }
-}
-
-function saveCorreoConfigLocalStorage(){
-    if (window.localStorage) {
-        if (localStorage.configuracion != null) {
-            var configuracion = JSON.parse(localStorage["configuracion"]);
-
-            $('#CorreoConfigTable').html("");
-
-            var aRR = {id: 0, nombre: "Doe", profesion: "Doe", ciudad: "Doe", correo: "Doe", telefono: 1234};
-            aRR["id"] = configuracion.correos.length + 1;
-            aRR["nombre"] = $('#nombreCorreoInput').val();
-            aRR["profesion"] = $('#profesionCorreoInput').val();
-            aRR["ciudad"] = $('#ciudadCorreoInput').val();
-            aRR["correo"] = $('#correoCorreoInput').val();
-            aRR["telefono"] = +$('#telefonoCorreoInput').val();
-
-            configuracion.correos.push(aRR);
-            $('#eliminarCorreoConfig').removeClass("d-none");
-            $('#nombreCorreoInput').val("");
-            $('#profesionCorreoInput').val("");
-            $('#ciudadCorreoInput').val("");
-            $('#correoCorreoInput').val("");
-            $('#telefonoCorreoInput').val("0");
-            localStorage["configuracion"] = JSON.stringify(configuracion);
-            loadDatabase();
-        }
-    }
-}
-
-function activateTr(element) {
-    $.each($(element).parent().children(), function(i, val) {
-        $(val).removeClass('table-active');
-    });
-    $(element).addClass('table-active');
 }
 
 //manejadore de botones
 $(document).ready(function() {
-    $('#nuevoLcontrolConfig').on('click', function() {
-        $('#lcontrol .tabla').addClass("d-none");
-        $('#nuevoLcontrolConfig').addClass("d-none");
-        $('#guardarLcontrolConfig').removeClass("d-none");
-        $('#cancelarLcontrolConfig').removeClass("d-none");
-        $('#lcontrol .formulario').removeClass("d-none");
-        $("#eliminarLcontrolConfig").addClass("d-none");
-    });
+    let tab =  createTabs(config);
 
-    $('#guardarLcontrolConfig').on('click', function() {
-        saveLcontrolConfigLocalStorage();
-        $("#lcontrol .tabla").removeClass("d-none");
-        $('#nuevoLcontrolConfig').removeClass("d-none");
-        $('#guardarLcontrolConfig').addClass("d-none");
-        $('#cancelarLcontrolConfig').addClass("d-none");
-        $("#lcontrol .formulario").addClass("d-none");
-        $("#eliminarLcontrolConfig").removeClass("d-none");
-    });
-
-    $('#cancelarLcontrolConfig').on('click', function() {
-        $("#lcontrol .tabla").removeClass("d-none");
-        $('#nuevoLcontrolConfig').removeClass("d-none");
-        $('#guardarLcontrolConfig').addClass("d-none");
-        $('#cancelarLcontrolConfig').addClass("d-none");
-        $("#lcontrol .formulario").addClass("d-none");
-
-        if (the("LcontrolConfigTable").childElementCount > 0){
-            $("#eliminarLcontrolConfig").removeClass("d-none");
-        }
-    });
-
-    $('#eliminarLcontrolConfig').on('click', function() {
-        var getElement = false;
-        var contador = 0
-        $.each($('#LcontrolConfigTable').children(), function(i, val) {
-            if ($(val).hasClass('table-active') == true) {
-                getElement = true;
-                var nombre = $(val).children('td').html();
-                var configuracion = JSON.parse(localStorage["configuracion"]);
-
-                //construir un nuevo array de objetos
-                var MotivoExamen = [];
-                $.each(configuracion.lcontrol, function(i, item) {
-                    if (item.nombre != nombre) {
-                        var aRR = {id: 0, nombre: "Doe"};
-                        aRR["id"] = contador + 1;
-                        aRR["nombre"] = item.nombre;
-
-                        MotivoExamen.push(aRR);
-                        contador++;
-                    }
-                });
-
-                configuracion.lcontrol = MotivoExamen;
-                localStorage["configuracion"] = JSON.stringify(configuracion);
-            }
-        });
-
-        if (getElement == false) {
-            window.alert("haga click sobre un elemento para eliminar");
-        } else {
-            loadDatabase();
-        }
-    });
-
-    $('#nuevoMotivoConfig').on('click', function() {
-        $('#motivoConfig .tabla').addClass("d-none");
-        $('#nuevoMotivoConfig').addClass("d-none");
-        $('#guardarMotivoConfig').removeClass("d-none");
-        $('#cancelarMotivoConfig').removeClass("d-none");
-        $('#motivoConfig .formulario').removeClass("d-none");
-        $("#eliminarMotivoConfig").addClass("d-none");
-    });
-
-    $('#guardarMotivoConfig').on('click', function() {
-        saveMotivoExamenLocalStorage();
-        $("#motivoConfig .tabla").removeClass("d-none");
-        $('#nuevoMotivoConfig').removeClass("d-none");
-        $('#guardarMotivoConfig').addClass("d-none");
-        $('#cancelarMotivoConfig').addClass("d-none");
-        $("#motivoConfig .formulario").addClass("d-none");
-    });
-
-    $('#cancelarMotivoConfig').on('click', function() {
-        $("#motivoConfig .tabla").removeClass("d-none");
-        $('#nuevoMotivoConfig').removeClass("d-none");
-        $('#guardarMotivoConfig').addClass("d-none");
-        $('#cancelarMotivoConfig').addClass("d-none");
-        $("#motivoConfig .formulario").addClass("d-none");
-        if (the("MotivoConfigTable").childElementCount > 0){
-            $("#eliminarMotivoConfig").removeClass("d-none");
-        }
-    });
-
-    $('#eliminarMotivoConfig').on('click', function() {
-        var getElement = false;
-        var contador = 0
-        $.each($('#MotivoConfigTable').children(), function(i, val) {
-            if ($(val).hasClass('table-active') == true) {
-                getElement = true;
-                var nombre = $(val).children('td').html();
-                var configuracion = JSON.parse(localStorage["configuracion"]);
-
-                //construir un nuevo array de objetos
-                var MotivoExamen = [];
-                $.each(configuracion.MotivoExamen, function(i, item) {
-                    if (item.nombre != nombre) {
-                        var aRR = {id: 0, nombre: "Doe"};
-                        aRR["id"] = contador + 1;
-                        aRR["nombre"] = item.nombre;
-
-                        MotivoExamen.push(aRR);
-                        contador++;
-                    }
-                });
-                configuracion.MotivoExamen = MotivoExamen;
-                localStorage["configuracion"] = JSON.stringify(configuracion);
-            }
-        });
-
-        if (getElement == false) { window.alert("haga click sobre un elemento para eliminar"); } else { loadDatabase(); }
-    });
-
-    $('#nuevoEcografistaConfig').on('click', function() {
-        $('#ecografistaConfig .tabla').addClass("d-none");
-        $('#nuevoEcografistaConfig').addClass("d-none");
-        $('#guardarEcografistaConfig').removeClass("d-none");
-        $('#cancelarEcografistaConfig').removeClass("d-none");
-        $('#ecografistaConfig .formulario').removeClass("d-none");
-        $("#eliminarEcografistaConfig").addClass("d-none");
-    });
-
-    $('#cancelarEcografistaConfig').on('click', function() {
-        $("#ecografistaConfig .tabla").removeClass("d-none");
-        $('#nuevoEcografistaConfig').removeClass("d-none");
-        $('#guardarEcografistaConfig').addClass("d-none");
-        $('#cancelarEcografistaConfig').addClass("d-none");
-        $("#ecografistaConfig .formulario").addClass("d-none");
-        if (the("EcografistaConfigTable").childElementCount > 0){
-            $("#eliminarEcografistaConfig").removeClass("d-none");
-        }
-    });
-
-    $('#guardarEcografistaConfig').on('click', function() {
-        saveEcografistaExamenLocalStorage();
-        $("#ecografistaConfig .tabla").removeClass("d-none");
-        $('#nuevoEcografistaConfig').removeClass("d-none");
-        $('#guardarEcografistaConfig').addClass("d-none");
-        $('#cancelarEcografistaConfig').addClass("d-none");
-        $("#ecografistaConfig .formulario").addClass("d-none");
-    });
-
-    $('#eliminarEcografistaConfig').on('click', function() {
-        var getElement = false;
-        var contador = 0
-        $.each($('#EcografistaConfigTable').children(), function(i, val) {
-            if ($(val).hasClass('table-active') == true) {
-                getElement = true;
-                var nombre = $(val).children('td').html();
-                var configuracion = JSON.parse(localStorage["configuracion"]);
-
-                //construir un nuevo array de objetos
-                var profesional = [];
-                $.each(configuracion.profesional, function(i, item) {
-                    if (item.nombre != nombre) {
-                        var aRR = {id: 0, nombre: "Doe"};
-                        aRR["id"] = contador + 1;
-                        aRR["nombre"] = item.nombre;
-
-                        profesional.push(aRR);
-                        contador++;
-                    }
-                });
-
-                configuracion.profesional = profesional;
-                localStorage["configuracion"] = JSON.stringify(configuracion);
-
-                if (profesional.length == 0){
-                    $('#eliminarEcografistaConfig').addClass("d-none");
-                }
-            }
-        });
-
-        if (getElement == false) {
-            window.alert("haga click sobre un elemento para eliminar");
-        } else {
-            loadDatabase();
-        }
-    });
-
-    $('#nuevoNacionalidadConfig').on('click', function() {
-        $('#nacionalidadConfig .tabla').addClass("d-none");
-        $('#nuevoNacionalidadConfig').addClass("d-none");
-        $('#guardarNacionalidadConfig').removeClass("d-none");
-        $('#cancelarNacionalidadConfig').removeClass("d-none");
-        $('#nacionalidadConfig .formulario').removeClass("d-none");
-        $("#eliminarNacionalidadConfig").addClass("d-none");
-    });
-
-    $('#cancelarNacionalidadConfig').on('click', function() {
-        $("#nacionalidadConfig .tabla").removeClass("d-none");
-        $('#nuevoNacionalidadConfig').removeClass("d-none");
-        $('#guardarNacionalidadConfig').addClass("d-none");
-        $('#cancelarNacionalidadConfig').addClass("d-none");
-        $("#nacionalidadConfig .formulario").addClass("d-none");
-        if (the("NacionalidadConfigTable").childElementCount > 0){
-            $("#eliminarNacionalidadConfig").removeClass("d-none");
-        }
-    });
-
-    $('#eliminarNacionalidadConfig').on('click', function() {
-        var getElement = false;
-        var contador = 0
-        $.each($('#NacionalidadConfigTable').children(), function(i, val) {
-            if ($(val).hasClass('table-active') == true) {
-                getElement = true;
-                var nombre = $(val).children('td').html();
-                var configuracion = JSON.parse(localStorage["configuracion"]);
-
-                //construir un nuevo array de objetos
-                var nacionalidad = [];
-                $.each(configuracion.nacionalidad, function(i, item) {
-                    if (item.nombre != nombre) {
-                        var aRR = {id: 0, nombre: "Doe"};
-                        aRR["id"] = contador + 1;
-                        aRR["nombre"] = item.nombre;
-
-                        nacionalidad.push(aRR);
-                        contador++;
-                    }
-                });
-
-                configuracion.nacionalidad = nacionalidad;
-                localStorage["configuracion"] = JSON.stringify(configuracion);
-
-                if (nacionalidad.length == 0){
-                    $('#eliminarNacionalidadConfig').addClass("d-none");
-                }
-            }
-        });
-
-        if (getElement == false) {
-            window.alert("haga click sobre un elemento para eliminar");
-        } else {
-            loadDatabase();
-        }
-    });
-
-    $('#guardarNacionalidadConfig').on('click', function() {
-        saveNacionalidadConfigLocalStorage();
-        $("#nacionalidadConfig .tabla").removeClass("d-none");
-        $('#nuevoNacionalidadConfig').removeClass("d-none");
-        $('#guardarNacionalidadConfig').addClass("d-none");
-        $('#cancelarNacionalidadConfig').addClass("d-none");
-        $("#nacionalidadConfig .formulario").addClass("d-none");
-    });
-
-    $('#nuevoPatologiaObstetricaConfig').on('click', function() {
-        $('#patologiaObstetricaConfig .tabla').addClass("d-none");
-        $('#nuevoPatologiaObstetricaConfig').addClass("d-none");
-        $('#guardarPatologiaObstetricaConfig').removeClass("d-none");
-        $('#cancelarPatologiaObstetricaConfig').removeClass("d-none");
-        $('#patologiaObstetricaConfig .formulario').removeClass("d-none");
-        $("#eliminarPatologiaObstetricaConfig").addClass("d-none");
-    });
-
-    $('#cancelarPatologiaObstetricaConfig').on('click', function() {
-        $("#patologiaObstetricaConfig .tabla").removeClass("d-none");
-        $('#nuevoPatologiaObstetricaConfig').removeClass("d-none");
-        $('#guardarPatologiaObstetricaConfig').addClass("d-none");
-        $('#cancelarPatologiaObstetricaConfig').addClass("d-none");
-        $("#patologiaObstetricaConfig .formulario").addClass("d-none");
-        if (the("PatologiaObstetricaConfigTable").childElementCount > 0){
-            $("#eliminarPatologiaObstetricaConfig").removeClass("d-none");
-        }
-    });
-
-    $('#guardarPatologiaObstetricaConfig').on('click', function() {
-        savePatologiaObstetricaExamenLocalStorage();
-        $("#patologiaObstetricaConfig .tabla").removeClass("d-none");
-        $('#nuevoPatologiaObstetricaConfig').removeClass("d-none");
-        $('#guardarPatologiaObstetricaConfig').addClass("d-none");
-        $('#cancelarPatologiaObstetricaConfig').addClass("d-none");
-        $("#patologiaObstetricaConfig .formulario").addClass("d-none");
-    });
-
-    $('#eliminarPatologiaObstetricaConfig').on('click', function() {
-        var getElement = false;
-        var contador = 0
-        $.each($('#PatologiaObstetricaConfigTable').children(), function(i, val) {
-            if ($(val).hasClass('table-active') == true) {
-                getElement = true;
-                var nombre = $(val).children('td').html();
-                var configuracion = JSON.parse(localStorage["configuracion"]);
-
-                //construir un nuevo array de objetos
-                var PatologiaObstetrica = [];
-                $.each(configuracion.PatologiaObstetrica, function(i, item) {
-                    if (item.nombre != nombre) {
-                        var aRR = {id: 0, nombre: "Doe"};
-                        aRR["id"] = contador + 1;
-                        aRR["nombre"] = item.nombre;
-
-                        PatologiaObstetrica.push(aRR);
-                        contador++;
-                    }
-                });
-
-                configuracion.PatologiaObstetrica = PatologiaObstetrica;
-                localStorage["configuracion"] = JSON.stringify(configuracion);
-            }
-        });
-
-        if (getElement == false) {
-            window.alert("haga click sobre un elemento para eliminar");
-        } else {
-            loadDatabase();
-        }
-	});
+    the("lastab").innerHTML = tab.resultado;
+    $("#" + tab.navID).tab()
+    $("#" + config.config[0].id).tab('show')
+    createInputs(config)
+    createTable(config)
+    loadTabla(config)
 
 	$("#membrete").on("keydown", function(e){
 		var keynum, lines = 1;
@@ -721,69 +465,6 @@ $(document).ready(function() {
                 the("backup").classList.add("d-none");
                 the("correo.configuracion").value = "";
             }
-        }
-    });
-
-    $('#nuevoCorreoConfig').on('click', function() {
-        $('#correosConfig .tabla').addClass("d-none");
-        $('#nuevoCorreoConfig').addClass("d-none");
-        $('#guardarCorreoConfig').removeClass("d-none");
-        $('#cancelarCorreoConfig').removeClass("d-none");
-        $('#correosConfig .formulario').removeClass("d-none");
-        $("#eliminarCorreoConfig").removeClass("d-none");
-    });
-
-    $('#cancelarCorreoConfig').on('click', function() {
-        $("#correosConfig .tabla").removeClass("d-none");
-        $('#nuevoCorreoConfig').removeClass("d-none");
-        $('#guardarCorreoConfig').addClass("d-none");
-        $('#cancelarCorreoConfig').addClass("d-none");
-        $("#correosConfig .formulario").addClass("d-none");
-        if (the("CorreoConfigTable").childElementCount > 0){
-            $("#eliminarCorreoConfig").removeClass("d-none");
-        }
-    });
-
-    $('#guardarCorreoConfig').on('click', function() {
-        saveCorreoConfigLocalStorage();
-        $("#correosConfig .tabla").removeClass("d-none");
-        $('#nuevoCorreoConfig').removeClass("d-none");
-        $('#guardarCorreoConfig').addClass("d-none");
-        $('#cancelarCorreoConfig').addClass("d-none");
-        $("#correosConfig .formulario").addClass("d-none");
-    });
-
-    $('#eliminarCorreoConfig').on('click', function() {
-        var getElement = false;
-        var contador = 0
-        $.each($('#CorreoConfigTable').children(), function(i, val) {
-            if ($(val).hasClass('table-active') == true) {
-                getElement = true;
-                var nombre = $(val).children('td').html();
-                var configuracion = JSON.parse(localStorage["configuracion"]);
-
-                //construir un nuevo array de objetos
-                var correos = [];
-                $.each(configuracion.correos, function(i, item) {
-                    if (item.nombre != nombre) {
-                        var aRR = {id: 0, nombre: "Doe"};
-                        aRR["id"] = contador + 1;
-                        aRR["nombre"] = item.nombre;
-
-                        correos.push(aRR);
-                        contador++;
-                    }
-                });
-
-                configuracion.correos = correos;
-                localStorage["configuracion"] = JSON.stringify(configuracion);
-            }
-        });
-
-        if (getElement == false) {
-            window.alert("haga click sobre un elemento para eliminar");
-        } else {
-            loadDatabase();
         }
     });
     

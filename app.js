@@ -5873,17 +5873,10 @@ function makeModal(button){
         titulo:titulo,
         contenido:contenido,
         button:_button,
-        modal:'<div class="modal fade" tabindex="-1" role="dialog" id="'+id+'"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="'+titulo+'">Modal title</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body" id="'+contenido+'"></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>'+ button_string+'</div></div></div></div>'
+        modal:'<div class="modal fade" tabindex="-1" role="dialog" id="'+id+'"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="'+titulo+'">Modal title</h5></div><div class="modal-body" id="'+contenido+'"></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>'+ button_string+'</div></div></div></div>'
     }
         
     return resultado;
-}
-
-//crea id random para los modales
-function uuidv4() {
-    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-    )
 }
 
 function imprInforme(datos){
@@ -7064,11 +7057,19 @@ function modal(button){
         
     return resultado;
 }
-
+//crea id random para los modales
 function uuidv4() {
-    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    //genera un uuid
+    let uid = ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
     )
+
+    // genera infinitamente uuid mientras no comience con una letra
+    if (isNaN(uid.charAt(0))){
+        return uid
+    }else{
+        return uuidv4()
+    }
 }
 
 function oldProgress(value){
@@ -7707,164 +7708,162 @@ function informeMorfologiaClon(){
 function informeDoppler(){
     var InformeString = '<div class="container"><h3>Evaluación de flujometria doppler materno fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table><p> <strong>FUM: </strong> :FUM <br/> <strong>Ege: </strong> :EG semanas <br/> <strong>FPP: </strong> :FPP </p></div><div class="container"> <p><strong style="color: #045dab;">ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small></p><p> Motivo del exámen: :MOTIVODOPPLER <br/> Antecedentes Obstétricos: :ANTECEDENTES <br/> Feto en Presentación: :PRESENTACION <br/> Motilidad Fetal: :MOTILIDAD <br/> Ubicación Placentaria: :UBICACION <br/> Líquido Amniótico***: :LIQUIDO <br/> Medida única de BVM***: :BVM </p></div><div class="container"> <table class="table"> <thead> <tr> <th style="color: #045dab;">FLUJOMETRIA DOPPLER</th> <th style="text-align: center;">IP Observado</th> <th style="text-align: center;">Percentiles de IP</th> <th style="text-align: center;">Rango percentilar</th> </tr></thead> <tbody> <tr> <td>Arteria Uterina Derecha*</td><td style="text-align: center;">:UD</td><td style="text-align: center;">:UDTXT</td><td style="text-align: center;">:UDRGO</td></tr><tr> <td>Arteria Uterina Izquierda*</td><td style="text-align: center;">:UI</td><td style="text-align: center;">:UITXT</td><td style="text-align: center;">:UIRGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Promedio Arterias Uterinas*</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROM</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROMTXT</td><td style="text-align: center; border-top: 1px dashed #045dab;">:UPROMRGO</td></tr><tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Arteria Umbilical**</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AU</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AUTXT</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AURGO</td></tr><tr> <td style="padding-bottom: 15px !important;">Arteria Cerebral Media**</td><td style="text-align: center; padding-bottom: 15px !important;">:ACM</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMTXT</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMRGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Cuociente Cerebro Placentario ( CCP )**</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCP</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCPTXT</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCPRGO</td></tr>';
 
-        var paciente = the("nombre-paciente").value;
-        var idpaciente = the("id-paciente").value;
-        var motivo = $( '#motivo-examen option:selected').text();
-        var ecografista = $( '#ecografista option:selected').text();
+    var paciente = the("nombre-paciente").value;
+    var idpaciente = the("id-paciente").value;
+    var motivo = $( '#motivo-examen option:selected').text();
+    var ecografista = $( '#ecografista option:selected').text();
 
-        let fur = new Date(Date.parse(the("fum").value));
-        fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
-        let fexamen = new Date(Date.parse(the("fee").value));
-        fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
-        let fpp = new Date(Date.parse(the("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
-        let eg = the("semanas").value + "."+ the("dias").value;
+    let fur = new Date(Date.parse(the("fum").value));
+    fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
+    let fexamen = new Date(Date.parse(the("fee").value));
+    fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
+    let fpp = new Date(Date.parse(the("fpp").value));
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
+    let eg = the("semanas").value + "."+ the("dias").value;
 
-        var bvm = the("bvmDoppler").value;
-        var comentario = the("comentarios-doppler").value;
-        comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
+    var bvm = the("bvmDoppler").value;
+    var comentario = the("comentarios-doppler").value;
+    comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-        var motivoDoppler = the("motivo-doppler").value;
-        var antecedentes = the("antecedentes-doppler").value;
-        var motilidad = the("motilidad-doppler").value;
-        var ubicacion = the("ubicacion-doppler").value;
-        var liquido = the("liqAmnioDoppler").value;
-        var ud = the("aud").value;
-        var udTxt = the("audPctTxt").value;
+    var motivoDoppler = the("motivo-doppler").value;
+    var antecedentes = the("antecedentes-doppler").value;
+    var motilidad = the("motilidad-doppler").value;
+    var ubicacion = the("ubicacion-doppler").value;
+    var liquido = the("liqAmnioDoppler").value;
+    var ud = the("aud").value;
+    var udTxt = the("audPctTxt").value;
 
-        let tmpData = "";
+    let tmpData = "";
 
-        if (udTxt == "&gt; 95" || udTxt == "&lt; 5"){
-            tmpData = 0;
-        }else{
-            tmpData = udTxt;
-        }
-        var udRgo = oldProgress(tmpData);
+    if (udTxt == "&gt; 95" || udTxt == "&lt; 5"){
+        tmpData = 0;
+    }else{
+        tmpData = udTxt;
+    }
+    var udRgo = oldProgress(tmpData);
 
-        var ui = the("aui").value;
-        var uiTxt = the("auiPctTxt").value;
-        if (uiTxt == "&gt; 95" || uiTxt == "&lt; 5"){
-            tmpData = 0;
-        }else{
-            tmpData = uiTxt;
-        }
-        var uiRgo = oldProgress(tmpData);
+    var ui = the("aui").value;
+    var uiTxt = the("auiPctTxt").value;
+    if (uiTxt == "&gt; 95" || uiTxt == "&lt; 5"){
+        tmpData = 0;
+    }else{
+        tmpData = uiTxt;
+    }
+    var uiRgo = oldProgress(tmpData);
 
-        var uprom = '<strong>' + the("auprom").value + '</strong>';
-        var upromTxt = '<strong>' + the("auPctTxt").value + '</strong>';
-        if (the("auPctTxt").value == "&gt; 95" || the("auPctTxt").value == "&lt; 5"){
-            tmpData = 0;
-        }else{
-            tmpData = the("auPctTxt").value;
-        }
-        var upromRgo = oldProgress(tmpData);
+    var uprom = '<strong>' + the("auprom").value + '</strong>';
+    var upromTxt = '<strong>' + the("auPctTxt").value + '</strong>';
+    if (the("auPctTxt").value == "&gt; 95" || the("auPctTxt").value == "&lt; 5"){
+        tmpData = 0;
+    }else{
+        tmpData = the("auPctTxt").value;
+    }
+    var upromRgo = oldProgress(tmpData);
 
-        var au = the("ipau").value;
-        var auTxt = the("ipauPctTxt").value;
-        if (auTxt == "&gt; 95" || auTxt == "&lt; 5"){
-            tmpData = 0;
-        }else{
-            tmpData = +auTxt;
-        }
-        var auRgo = oldProgress(tmpData);
+    var au = the("ipau").value;
+    var auTxt = the("ipauPctTxt").value;
+    if (auTxt == "&gt; 95" || auTxt == "&lt; 5"){
+        tmpData = 0;
+    }else{
+        tmpData = +auTxt;
+    }
+    var auRgo = oldProgress(tmpData);
 
-        var acm =the("ipacm").value;
-        var acmTxt = the("ipacmPctTxt").value;
-        if (acmTxt == "&gt; 95" || acmTxt == "&lt; 5"){
-            tmpData = 0;
-        }else{
-            tmpData = acmTxt;
-        }
-        var acmRgo = oldProgress(tmpData);
+    var acm =the("ipacm").value;
+    var acmTxt = the("ipacmPctTxt").value;
+    if (acmTxt == "&gt; 95" || acmTxt == "&lt; 5"){
+        tmpData = 0;
+    }else{
+        tmpData = acmTxt;
+    }
+    var acmRgo = oldProgress(tmpData);
 
-        var ccp = '<strong>' + the("ccp").value + '</strong>';
-        var ccpTxt = '<strong>' + the("ccpPctTxt").value + '</strong>';
-        if (the("ccpPctTxt").value == "&gt; 95" || the("ccpPctTxt").value == "&lt; 5"){
-            tmpData = 0;
-        }else{
-            tmpData = +the("ccpPctTxt").value;
-        }
-        var ccpRgo = oldProgress(tmpData);
+    var ccp = '<strong>' + the("ccp").value + '</strong>';
+    var ccpTxt = '<strong>' + the("ccpPctTxt").value + '</strong>';
+    if (the("ccpPctTxt").value == "&gt; 95" || the("ccpPctTxt").value == "&lt; 5"){
+        tmpData = 0;
+    }else{
+        tmpData = +the("ccpPctTxt").value;
+    }
+    var ccpRgo = oldProgress(tmpData);
 
-        var presentacion = the("presentacion-doppler").value;
-        var edadmaterna = $( "select[name='edad_materna']").val();
+    var presentacion = the("presentacion-doppler").value;
+    var edadmaterna = $( "select[name='edad_materna']").val();
         
-        dayHoy = new Date();
-        let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
+    dayHoy = new Date();
+    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
-        var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var dvp = the("dv").value;
 
-        var dvp = the("dv").value;
-
-        if (dvp != ""){
-            var dvPctTxt = the("dvPctTxt").value;
-            if (dvPctTxt == "&gt; 95" || dvPctTxt == "&lt; 5"){
-                tmpData = 0;
-            }else{
-                tmpData = dvPctTxt;
-            }
-            var dvRngo = oldProgress(tmpData);
-
-            InformeString += ' <tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Ductus Venoso</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVP</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVPTXT</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVPRGO</td></tr>';
-        
-            InformeString = InformeString.replace(":DVP", dvp);
-            InformeString = InformeString.replace(":DVPTXT", dvPctTxt);
-            InformeString = InformeString.replace(":DVPRGO", dvRngo);
+    if (dvp != ""){
+        var dvPctTxt = the("dvPctTxt").value;
+        if (dvPctTxt == "&gt; 95" || dvPctTxt == "&lt; 5"){
+            tmpData = 0;
+        }else{
+            tmpData = dvPctTxt;
         }
+        var dvRngo = oldProgress(tmpData);
 
-        var psmACM = the("psmACM").value;
+        InformeString += ' <tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Ductus Venoso</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVP</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVPTXT</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:DVPRGO</td></tr>';
+        InformeString = InformeString.replace(":DVP", dvp);
+        InformeString = InformeString.replace(":DVPTXT", dvPctTxt);
+        InformeString = InformeString.replace(":DVPRGO", dvRngo);
+    }
 
-        if (psmACM != ""){
-            InformeString += ' <tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Peak sistólico de ACM</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:PSMACM</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;"></td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;"></td></tr>';
-            InformeString = InformeString.replace(":PSMACM", psmACM);
-        }
+    var psmACM = the("psmACM").value;
 
-        InformeString += '</tbody></table></div><div class="container"> <p style="padding-bottom: 0px; margin-bottom: 0px;"><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container"> <p class="text-right top40" style="margin-right: 100px;">Ecografista: :ECOGRAFISTA</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p class="pie-pagina"> * Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32 <br/> ** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127 <br/> *** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 </p><p><strong> El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
+    if (psmACM != ""){
+        InformeString += ' <tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Peak sistólico de ACM</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;">:PSMACM</td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;"></td><td style="padding-top: 15px !important; text-align: center; border-top: 1px dashed #045dab;"></td></tr>';
+        InformeString = InformeString.replace(":PSMACM", psmACM);
+    }
 
-        InformeString = InformeString.replace(":PACIENTE", paciente);
-        InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
-        InformeString = InformeString.replace(":MOTIVO", motivo);
-        InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
-        InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
+    InformeString += '</tbody></table></div><div class="container"> <p style="padding-bottom: 0px; margin-bottom: 0px;"><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container"> <p class="text-right top40" style="margin-right: 100px;">Ecografista: :ECOGRAFISTA</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p class="pie-pagina"> * Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32 <br/> ** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127 <br/> *** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 </p><p><strong> El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
+
+    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
+    var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
+
+    InformeString = InformeString.replace(":PACIENTE", paciente);
+    InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
+    InformeString = InformeString.replace(":MOTIVO", motivo);
+    InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
+    InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
         
-        InformeString = InformeString.replace(":FUM", fur);
-        InformeString = InformeString.replace(":FEXAMEN", fexamen);
-        InformeString = InformeString.replace(":EG", eg);
-        InformeString = InformeString.replace(":FPP", fpp);
+    InformeString = InformeString.replace(":FUM", fur);
+    InformeString = InformeString.replace(":FEXAMEN", fexamen);
+    InformeString = InformeString.replace(":EG", eg);
+    InformeString = InformeString.replace(":FPP", fpp);
 
-        InformeString = InformeString.replace(":MOTIVODOPPLER", motivoDoppler);
-        InformeString = InformeString.replace(":ANTECEDENTES", antecedentes);
-        InformeString = InformeString.replace(":MOTILIDAD", motilidad);
-        InformeString = InformeString.replace(":UBICACION", ubicacion);
-        InformeString = InformeString.replace(":LIQUIDO", liquido);
-        InformeString = InformeString.replace(":PRESENTACION", presentacion);
-        InformeString = InformeString.replace(":BVM", bvm);
-        InformeString = InformeString.replace(":UD", ud);
-        InformeString = InformeString.replace(":UDRGO", udRgo);
-        InformeString = InformeString.replace(":UDTXT", udTxt);
-        InformeString = InformeString.replace(":UI", ui);
-        InformeString = InformeString.replace(":UIRGO", uiRgo);
-        InformeString = InformeString.replace(":UITXT", uiTxt);
-        InformeString = InformeString.replace(":UPROM", uprom);
-        InformeString = InformeString.replace(":UPROMRGO", upromRgo);
-        InformeString = InformeString.replace(":UPROMTXT", upromTxt);
-        InformeString = InformeString.replace(":AU", au);
-        InformeString = InformeString.replace(":AURGO", auRgo);
-        InformeString = InformeString.replace(":AUTXT", auTxt);
-        InformeString = InformeString.replace(":ACM", acm);
-        InformeString = InformeString.replace(":ACMRGO", acmRgo);
-        InformeString = InformeString.replace(":ACMTXT", acmTxt);
-        InformeString = InformeString.replace(":CCP", ccp);
-        InformeString = InformeString.replace(":CCPRGO", ccpRgo);
-        InformeString = InformeString.replace(":CCPTXT", ccpTxt);
-        InformeString = InformeString.replace(":COMENTARIO", comentario);
-        InformeString = InformeString.replace(":DATEINFORME", dateInf);
-        InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
-
-        var CIUDAD =  $( '#ciudadpaciente option:selected').text();
-        var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
-        InformeString = InformeString.replace(":CIUDAD", CIUDAD);
-        InformeString = InformeString.replace(":LCONTROL", LCONTROL);
+    InformeString = InformeString.replace(":MOTIVODOPPLER", motivoDoppler);
+    InformeString = InformeString.replace(":ANTECEDENTES", antecedentes);
+    InformeString = InformeString.replace(":MOTILIDAD", motilidad);
+    InformeString = InformeString.replace(":UBICACION", ubicacion);
+    InformeString = InformeString.replace(":LIQUIDO", liquido);
+    InformeString = InformeString.replace(":PRESENTACION", presentacion);
+    InformeString = InformeString.replace(":BVM", bvm);
+    InformeString = InformeString.replace(":UD", ud);
+    InformeString = InformeString.replace(":UDRGO", udRgo);
+    InformeString = InformeString.replace(":UDTXT", udTxt);
+    InformeString = InformeString.replace(":UI", ui);
+    InformeString = InformeString.replace(":UIRGO", uiRgo);
+    InformeString = InformeString.replace(":UITXT", uiTxt);
+    InformeString = InformeString.replace(":UPROM", uprom);
+    InformeString = InformeString.replace(":UPROMRGO", upromRgo);
+    InformeString = InformeString.replace(":UPROMTXT", upromTxt);
+    InformeString = InformeString.replace(":AU", au);
+    InformeString = InformeString.replace(":AURGO", auRgo);
+    InformeString = InformeString.replace(":AUTXT", auTxt);
+    InformeString = InformeString.replace(":ACM", acm);
+    InformeString = InformeString.replace(":ACMRGO", acmRgo);
+    InformeString = InformeString.replace(":ACMTXT", acmTxt);
+    InformeString = InformeString.replace(":CCP", ccp);
+    InformeString = InformeString.replace(":CCPRGO", ccpRgo);
+    InformeString = InformeString.replace(":CCPTXT", ccpTxt);
+    InformeString = InformeString.replace(":COMENTARIO", comentario);
+    InformeString = InformeString.replace(":DATEINFORME", dateInf);
+    InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
+    InformeString = InformeString.replace(":CIUDAD", CIUDAD);
+    InformeString = InformeString.replace(":LCONTROL", LCONTROL);
         
     return InformeString;
 }
