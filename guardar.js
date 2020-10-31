@@ -7,7 +7,7 @@ $(document).ready(function() {
 
             $("#btn\\.guardar\\.precoz").on("click", function(){
                 let configuracion = new FormData()
-    
+
                 let data = {
                     'lcn' : $("#lcn").val(),
                     'lcneg' : the("lcnPct").value,
@@ -32,7 +32,6 @@ $(document).ready(function() {
                     if (data.success == true ){
                         alert("guardó")
                     }
-                    alert("guardado")
                 }).catch(function(error) {
                     alert("error")
                 });
