@@ -10,10 +10,10 @@ $(document).ready(function() {
     
                 let data = []
 
-                data["lcn"] = the("lcn").value
-                data["lcneg"] = the("lcnPct").value
-                data["fecha"] = the("fee").value
-                data["fur"] = the("fum").value
+                data['lcn'] = $("#lcn").val()
+                data['lcneg'] = the("lcnPct").value
+                data['fecha'] = the("fee").value
+                data['fur'] = the("fum").value
 
                 configuracion.append("rut", the("id-paciente").value)
                 configuracion.append("nombre", the("nombre-paciente").value)
