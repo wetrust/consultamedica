@@ -12,7 +12,9 @@ $(document).ready(function() {
                     'lcn' : $("#lcn").val(),
                     'lcneg' : the("lcnPct").value,
                     'fecha' : the("fee").value,
-                    'fur' : the("fum").value
+                    'fur' : the("fum").value,
+                    'ciudad' : the("ciudadpaciente").value,
+                    'lugar' : the("lcontrolpaciente").value
                 }
 
                 data['lcn'] = $("#lcn").val()
