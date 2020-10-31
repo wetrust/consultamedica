@@ -1,4 +1,4 @@
-var config = JSON.parse('{"name": "configuración", "backurl": "#volver", "backend": "", "localstorage": true, "usehash": true, "config": [{"name": "Membrete", "data": "membrete", "desc": "", "input": [{"name": "membrete", "type": "textarea", "row": 3, "limit": 40, "help": ""}], "table": false},{"name": "Ciudad", "data": "nacionalidad", "desc": "", "input": [{"name": "Nombre de la ciudad", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Lugar de control", "data": "lcontrol", "desc": "", "input": [{"name": "Lugar de control", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Motivo exámen", "data": "MotivoExamen", "desc": "", "input": [{"name": "Nombre del motivo", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Patología obstétrica", "data": "PatologiaObstetrica", "desc": "", "input": [{"name": "Nombre de la patología", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Profesional examinador", "data": "profesional", "desc": "", "input": [{"name": "Nombre profesional", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Contactos", "data": "correos", "desc": "", "input": [{"name": "Nombre", "type": "text", "limit": 40, "help": ""},{"name": "Profesión", "type": "text", "limit": 40, "help": ""},{"name": "Ciudad", "type": "text", "limit": 40, "help": ""},{"name": "E-Mail", "type": "email", "limit": 40, "help": ""},{"name": "Teléfono", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Activación", "data": "activacion", "desc": "", "input": [{"name": "Activar licencia personalizada", "type": "text", "limit": 40, "help": ""}], "table": false}]}');
+var config = JSON.parse('{"name": "configuración", "backurl": "#volver", "backend": "", "localstorage": true, "usehash": true, "config": [{"name": "Membrete", "data": "membrete", "desc": "", "input": [{"name": "Membrete", "type": "textarea", "row": 3, "limit": 40, "help": ""}], "table": false},{"name": "Ciudad", "data": "nacionalidad", "desc": "", "input": [{"name": "Nombre de la ciudad", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Lugar de control", "data": "lcontrol", "desc": "", "input": [{"name": "Lugar de control", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Motivo exámen", "data": "MotivoExamen", "desc": "", "input": [{"name": "Nombre del motivo", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Patología obstétrica", "data": "PatologiaObstetrica", "desc": "", "input": [{"name": "Nombre de la patología", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Profesional examinador", "data": "profesional", "desc": "", "input": [{"name": "Nombre profesional", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Contactos", "data": "correos", "desc": "", "input": [{"name": "Nombre", "type": "text", "limit": 40, "help": ""},{"name": "Profesión", "type": "text", "limit": 40, "help": ""},{"name": "Ciudad", "type": "text", "limit": 40, "help": ""},{"name": "E-Mail", "type": "email", "limit": 40, "help": ""},{"name": "Teléfono", "type": "text", "limit": 40, "help": ""}], "table": true},{"name": "Activación", "data": "activacion", "desc": "", "input": [], "table": false}]}');
 
 function createTabs(config){
     var navID = uuidv4();
@@ -40,58 +40,58 @@ function createTabs(config){
 }
 
 function createInputs(config){
-
     for (var z = 0; z < config.config.length; z++){
-
-        let accordion = uuidv4();
-        let collapse = uuidv4();
-        let title = uuidv4();
-        let saveBtn = uuidv4();
-        let elemento = ""
-        var inputs = ""
-
-        elemento = '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">Nuevo '+config.config[z].name+'</h6></div><div id="'+collapse+'" class="collapse" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
-
-        for (var y = 0; y < config.config[z].input.length; y++){
-            let id = uuidv4();
-            let aria = uuidv4();
-
-            inputs += '<div class="form-group"><label for="'+id+'">'+config.config[z].input[y].name+'</label>'
-
-            if (config.config[z].input[y].type == "textarea"){
-                inputs += '<textarea class="form-control" row="'+config.config[z].input[y].row+'" id="'+id+'"'
-            }else{
-                inputs += '<input type="'+config.config[z].input[y].name+'" class="form-control" id="'+id+'"'
-            }
-
-            //aria
-            if (config.config[z].input[y].help != ""){
-                inputs += 'aria-describedby="'+aria+'"'
-            }
-
-            if (config.config[z].input[y].type == "textarea"){
-                inputs += '></textarea>'
-            }else{
-                inputs += '>'
-            }
-
-            //aria
-            if (config.config[z].input[y].help != ""){
-                inputs += '<small id="'+aria+'" class="form-text text-muted">'+config.config[z].input[y].help+'</small>'
+        if (config.config[z].input.length > 0){
+            let accordion = uuidv4();
+            let collapse = uuidv4();
+            let title = uuidv4();
+            let saveBtn = uuidv4();
+            let elemento = ""
+            var inputs = ""
+    
+            elemento = '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">Nuevo '+config.config[z].name+'</h6></div><div id="'+collapse+'" class="collapse" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
+    
+            for (var y = 0; y < config.config[z].input.length; y++){
+                let id = uuidv4();
+                let aria = uuidv4();
+    
+                inputs += '<div class="form-group"><label for="'+id+'">'+config.config[z].input[y].name+'</label>'
+    
+                if (config.config[z].input[y].type == "textarea"){
+                    inputs += '<textarea class="form-control" rows="'+config.config[z].input[y].row+'" id="'+id+'"'
+                }else{
+                    inputs += '<input type="'+config.config[z].input[y].name+'" class="form-control" id="'+id+'"'
+                }
+    
+                //aria
+                if (config.config[z].input[y].help != ""){
+                    inputs += 'aria-describedby="'+aria+'"'
+                }
+    
+                if (config.config[z].input[y].type == "textarea"){
+                    inputs += '></textarea>'
+                }else{
+                    inputs += '>'
+                }
+    
+                //aria
+                if (config.config[z].input[y].help != ""){
+                    inputs += '<small id="'+aria+'" class="form-text text-muted">'+config.config[z].input[y].help+'</small>'
+                }
+        
+                inputs += '</div>'
+                config.config[z].input[y].id = id;
+                config.config[z].input[y].aria = aria;
             }
     
-            inputs += '</div>'
-            config.config[z].input[y].id = id;
-            config.config[z].input[y].aria = aria;
+            inputs += '<button class="btn btn-outline-info" type="button" id="'+saveBtn+'" data-id="'+z+'">Guardar</button>'
+            config.config[z].save = saveBtn
+            elemento += inputs + '</div></div></div></div>'
+    
+            the(config.config[z].tab).insertAdjacentHTML("beforeend",elemento)
+    
+            the(saveBtn).onclick = guardar;
         }
-
-        inputs += '<button class="btn btn-outline-info" type="button" id="'+saveBtn+'" data-id="'+z+'">Guardar</button>'
-        config.config[z].save = saveBtn
-        elemento += inputs + '</div></div></div></div>'
-
-        the(config.config[z].tab).insertAdjacentHTML("beforeend",elemento)
-
-        the(saveBtn).onclick = guardar;
     }
 }
 
