@@ -349,30 +349,21 @@ function loadDatabase() {
     $('#ecografista').empty();
     if (configuracion.profesional.length > 0) {
         $.each(configuracion.profesional, function(i, item) {
-            $('#ecografista').append($('<option>', {
-                value: item.id,
-                text: item.nombre
-            }));
+            $('#ecografista').append('<option value="'+i+'">'+item+'</option>');
         });
     }
 
     $('#motivo-examen').empty();
     if (configuracion.MotivoExamen.length > 0) {
         $.each(configuracion.MotivoExamen, function(i, item) {
-            $('#motivo-examen').append($('<option>', {
-                value: item.id,
-                text: item.nombre
-            }));
+            $('#motivo-examen').append('<option value="'+i+'">'+item+'</option>');
         });
     }
 
     $('#lcontrolpaciente').empty();
     if (configuracion.lcontrol.length > 0) {
         $.each(configuracion.lcontrol, function(i, item) {
-            $('#lcontrolpaciente').append($('<option>', {
-                value: item.id,
-                text: item.nombre
-            }));
+            $('#lcontrolpaciente').append('<option value="'+i+'">'+item+'</option>');
         });
     }
 
@@ -380,24 +371,15 @@ function loadDatabase() {
     $('#ciudadpaciente').empty();
     if (configuracion.nacionalidad.length > 0) {
         $.each(configuracion.nacionalidad, function(i, item) {
-            $('#nacionalidad').append($('<option>', {
-                value: item.id,
-                text: item.nombre
-            }));
-            $('#ciudadpaciente').append($('<option>', {
-                value: item.id,
-                text: item.nombre
-            }));
+            $('#nacionalidad').append('<option value="'+i+'">'+item+'</option>');
+            $('#ciudadpaciente').append('<option value="'+i+'">'+item+'</option>');
         });
     }
 
     $('#patologiaObstetricaUno').empty();
     if (configuracion.PatologiaObstetrica.length > 0) {
         $.each(configuracion.PatologiaObstetrica, function(i, item) {
-            $('#patologiaObstetricaUno').append($('<option>', {
-                value: item.id,
-                text: item.nombre
-            }));
+            $('#patologiaObstetricaUno').append('<option value="'+i+'">'+item+'</option>');
         });
     }
 
