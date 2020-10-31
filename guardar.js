@@ -13,8 +13,6 @@ $(document).ready(function() {
                     'lcneg' : the("lcnPct").value,
                     'fecha' : the("fee").value,
                     'fur' : the("fum").value,
-                    'ciudad' : the("ciudadpaciente").value,
-                    'lugar' : the("lcontrolpaciente").value
                 }
 
                 data['lcn'] = $("#lcn").val()
@@ -25,6 +23,8 @@ $(document).ready(function() {
                 configuracion.append("rut", the("id-paciente").value)
                 configuracion.append("nombre", the("nombre-paciente").value)
                 configuracion.append("eg", the("semanas").value)
+                configuracion.append("ciudad", the("ciudadpaciente").value)
+                configuracion.append("lugar", the("lcontrolpaciente").value)
                 configuracion.append("data", JSON.stringify(data))
     
                 fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
