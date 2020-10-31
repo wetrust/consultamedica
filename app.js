@@ -103,11 +103,6 @@ $( document ).ready(function() {
 
     if (storageAvailable('localStorage')) {
         document.location.hash = "#inicio";
-        checkDatabase();
-        loadDatabase();
-        
-        //let cf = createTabs(config);
-        //the("cf").innerHTML = cf;
     }
 
     //cargar edad materna

@@ -118,23 +118,37 @@ function createTable(config){
 
 function guardar(){
     let z = this.dataset.id;
-    let data = []
-
-    for (var y = 0; y < config.config[z].input.length; y++){
-        let id = config.config[z].input[y].id
-        data.push(document.getElementById(id).value);
-        document.getElementById(id).value = ""
-    }
-
+    
+    //tratar los datos de forma diferente según la configuración
+    //hay que guardar algunos como array y otros como cadena
     if (window.localStorage) {
         if (localStorage.configuracion != null) {
             var configuracion = JSON.parse(localStorage["configuracion"]);
             let name = config.config[z].data
-            configuracion[name].push(data)
+
+            //verificar si el dato se va a guardar en un array o en una cadena
+            if (Array.isArray(configuracion[name]) == true){
+                let data = []
+                
+                for (var y = 0; y < config.config[z].input.length; y++){
+                    let id = config.config[z].input[y].id
+                    data.push(document.getElementById(id).value);
+                    document.getElementById(id).value = ""
+                }
+
+                configuracion[name].push(data)
+            }else{
+                let id = config.config[z].input[0].id
+                let data = document.getElementById(id).value
+
+                configuracion[name] = data
+            }
+
+
             localStorage["configuracion"] = JSON.stringify(configuracion);
 
             loadTabla(config)
-
+            loadDatabase()
         }
     }
 }
@@ -387,7 +401,8 @@ function loadDatabase() {
         });
     }
 
-    $("#membrete").val(configuracion.membrete);
+    //membrete
+    $("#"+config.config[0].input[0].id).val(configuracion.membrete);
     $("#correo\\.configuracion").val(configuracion.email);
 
     if (configuracion.licencia == "medicina"){
@@ -408,9 +423,16 @@ $(document).ready(function() {
     $("#" + config.config[0].id).tab('show')
     createInputs(config)
     createTable(config)
-    loadTabla(config)
 
-	$("#membrete").on("keydown", function(e){
+    if (storageAvailable('localStorage')) {
+        checkDatabase();
+        loadTabla(config)
+        loadDatabase();
+    }
+
+    //funciones adicionales
+    //funcion para el membrete
+	$("#"+config.config[0].input[0].id).on("keydown", function(e){
 		var keynum, lines = 1;
 		// IE
 		if(window.event) {
@@ -419,24 +441,15 @@ $(document).ready(function() {
 		} else if(e.which) {
 			keynum = e.which;
 		}
-		
+
 		if(keynum == 13) {
-			if(lines == document.getElementById("membrete").rows) {
+			if(lines == this.rows) {
 				return false;
 			}else{
 				lines++;
 			}
 		}
 	});
-
-    $("#saveMebrete").on("click", function(event){
-		event.preventDefault();
-		var configuracion = JSON.parse(localStorage["configuracion"]);
-		var membrete = $('#membrete').val();
-		configuracion.membrete = membrete;
-		
-		localStorage["configuracion"] = JSON.stringify(configuracion);
-    });
 
 	$("#licencia\\.button").on("click", function(){
         if (window.localStorage) {
@@ -458,18 +471,15 @@ $(document).ready(function() {
                 var configuracion = JSON.parse(localStorage["configuracion"]);
                 var licencia = "x";
                 configuracion.licencia = licencia;
-                    
                 localStorage["configuracion"] = JSON.stringify(configuracion);
-
                 the("mensaje.licencia").innerHTML =  "Licencia desactivada";
                 the("backup").classList.add("d-none");
                 the("correo.configuracion").value = "";
             }
         }
     });
-    
-    $("#correo\\.configuracion\\.cargar").on("click", function(){
 
+    $("#correo\\.configuracion\\.cargar").on("click", function(){
         let email = the("correo.configuracion").value
         email = email.replace(/\s+/g, '');
 
@@ -516,7 +526,6 @@ $(document).ready(function() {
             }).catch(function(error) {
                 alert("error")
             });
-
         })
     })
 
