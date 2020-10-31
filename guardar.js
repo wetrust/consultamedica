@@ -14,6 +14,7 @@ $(document).ready(function() {
                     'lcneg' : the("lcnPct").value,
                     'fecha' : the("fee").value,
                     'fur' : the("fum").value,
+                    'fcf' : the("fcf-prim").value
                 }
 
                 data['lcn'] = $("#lcn").val()
