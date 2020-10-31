@@ -165,13 +165,10 @@ function loadTabla(config){
 
                     $.each(configuracion[name], function(i, item) {
                         var fila = '<tr data-id="'+i+'" data-config="'+z+'" class="modal-edit">';
-                        
                         $.each(item, function(i, column) {
                             fila += '<td>' + column + '</td>';
                         })
-
                         fila += '</tr>';
-
                         $('#'+config.config[z].tableid).append(fila);
                     });
                 }
@@ -503,7 +500,9 @@ $(document).ready(function() {
                 var _conf = data.config_key;
                 _conf.id = data.config_id;
                 localStorage["configuracion"] = JSON.stringify(_conf);
-                loadDatabase()
+                checkDatabase();
+                loadTabla(config)
+                loadDatabase();
                 $('#'+modal.id).modal("hide")
             }).catch(function(error) {
                 alert("error")

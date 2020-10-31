@@ -3,7 +3,8 @@ $(document).ready(function() {
         var configuracion = JSON.parse(localStorage["configuracion"]);
 
         if (configuracion.email == 'rudecindolagos@gmail.com'){
-            the("btn.guardar.precoz").parentElement.classList.add("d-none");
+            the("btn.guardar.precoz").parentElement.classList.remove("d-none");
+            the("btn.guardar.precoz").parentElement.classList.add("d-flex");
 
             $("#btn\\.guardar\\.precoz").on("click", function(){
                 let configuracion = new FormData()
