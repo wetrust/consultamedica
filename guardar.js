@@ -8,7 +8,12 @@ $(document).ready(function() {
             $("#btn\\.guardar\\.precoz").on("click", function(){
                 let configuracion = new FormData()
     
-                let data = []
+                let data = {
+                    'lcn' : $("#lcn").val(),
+                    'lcneg' : the("lcnPct").value,
+                    'fecha' : the("fee").value,
+                    'fur' : the("fum").value
+                }
 
                 data['lcn'] = $("#lcn").val()
                 data['lcneg'] = the("lcnPct").value
