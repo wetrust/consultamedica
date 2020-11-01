@@ -306,30 +306,35 @@ function haveDatabase() {
 }
 
 function checkIntegrity() {
-    let db = JSON.parse(localStorage["configuracion"]);
 
-    let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete', 'correos', 'licencia', 'lcontrol', "id", "email"];
+    configuracion = localStorage["configuracion"];
+    if (configuracion){
+        let db = JSON.parse(localStorage["configuracion"]);
 
-    for (var j = 0; j < tables.length; j++) {
-        let table = false;
-        $.each(db, function(index, value) {
-            if (index == tables[j]) {
-                table = true;
+        let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete', 'correos', 'licencia', 'lcontrol', "id", "email"];
+    
+        for (var j = 0; j < tables.length; j++) {
+            let table = false;
+            $.each(db, function(index, value) {
+                if (index == tables[j]) {
+                    table = true;
+                }
+            });
+    
+            if (table == false) {
+                let element = JSON.parse('{"' + tables[j] + '":[]}');
+                $.extend(db, element);
             }
-        });
-
-        if (table == false) {
-            let element = JSON.parse('{"' + tables[j] + '":[]}');
-            $.extend(db, element);
         }
+    
+        localStorage["configuracion"] = JSON.stringify(db);
     }
-
-    localStorage["configuracion"] = JSON.stringify(db);
+    
 }
 
 function makeDatabase() {
-    var db = '{"nacionalidad": [], "MotivoExamen":[],"profesional":[],"PatologiaObstetrica":[],"membrete":"", "correos":[], "licencia": "", "lcontrol": [], "id":0, "email":""}';
-    localStorage["configuracion"] = db;
+    var db = JSON.parse('{\"nacionalidad\":[],\"MotivoExamen\":[],\"profesional\":[],\"PatologiaObstetrica\":[],\"membrete\":\"PROTOCOLO ULTRASONOGR\u00C1FICO\\nUNIDAD DE URGENCIA\\nGINECO \/ OBSTETRA\",\"correos\":[],\"licencia\":\"\",\"lcontrol\":[],\"id\":0,\"email\":\"\"}');
+    localStorage["configuracion"] = JSON.stringify(db);
 }
 
 function checkDatabase() {

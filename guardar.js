@@ -8,7 +8,6 @@ $(document).ready(function() {
 
             $("#btn\\.guardar\\.precoz").on("click", function(){
                 let configuracion = new FormData()
-
                 let data = {
                     'lcn' : $("#lcn").val(),
                     'lcneg' : the("lcnPct").value,
@@ -28,7 +27,7 @@ $(document).ready(function() {
                 configuracion.append("ciudad", the("ciudadpaciente").value)
                 configuracion.append("lugar", the("lcontrolpaciente").value)
                 configuracion.append("data", JSON.stringify(data))
-    
+
                 fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
                 .then(data => {
                     if (data.success == true ){
