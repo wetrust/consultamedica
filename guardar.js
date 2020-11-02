@@ -18,7 +18,14 @@ $(document).ready(function() {
                 }
 
                 configuracion.append("rut", the("id-paciente").value)
-                configuracion.append("nombre", the("nombre-paciente").value)
+
+                if (the("nombre-paciente").value == ""){
+                    nombre()
+                    return
+                }else{
+                    configuracion.append("nombre", the("nombre-paciente").value)
+                }
+                
                 configuracion.append("eg", the("semanas").value)
                 configuracion.append("ciudad", the("ciudadpaciente").value)
                 configuracion.append("lugar", the("lcontrolpaciente").value)
@@ -134,3 +141,40 @@ $(document).ready(function() {
         }
     }
 })
+function nombre(){
+    let modal = makeModal("Guardar nombre")
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+    the(modal.titulo).innerHTML = "Falta nombre paciente";
+    the(modal.titulo).classList.add("mx-auto");
+    the(modal.titulo).parentElement.classList.add("bg-danger", "text-white");
+
+    let _contenido = '<div class="form-group"><label for="nombre">Nombre de la paciente</label><input type="text" class="form-control" id="nombre"></div>'
+
+    the(modal.contenido).innerHTML = _contenido;
+    the(modal.id).children[0].classList.remove("modal-lg");
+    
+    $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+    $('#'+modal.button).on("click", function(){
+
+        document.getElementById("nombre-paciente").value = document.getElementById("nombre").value
+        $("#"+modal.button).modal("hide")
+
+    })
+}
+
+function rut(){
+
+}
+
+function eg(){
+
+}
+
+function ciudad(){
+
+}
+
+function lugar(){
+
+}
