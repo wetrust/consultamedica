@@ -9,12 +9,12 @@ $(document).ready(function() {
             $("#btn\\.guardar\\.precoz").on("click", function(){
                 let configuracion = new FormData()
                 let data = {
-                    'lcn' : $("#lcn").val(),
-                    'lcneg' : the("lcnPct").value,
-                    'fecha' : the("fee").value,
-                    'fur' : the("fum").value,
-                    'fcf' : the("fcf-prim").value,
-                    'obs' : the("comentarios-eco-uno").value,
+                    'Fecha' : the("fee").value,
+                    'FUR' : the("fum").value,
+                    'LCN' : $("#lcn").val(),
+                    'EG Ajustada' : the("lcnPct").value,
+                    'FCF' : the("fcf-prim").value,
+                    'Observaciones' : the("comentarios-eco-uno").value,
                 }
 
                 configuracion.append("rut", the("id-paciente").value)
@@ -22,13 +22,12 @@ $(document).ready(function() {
                 configuracion.append("eg", the("semanas").value)
                 configuracion.append("ciudad", the("ciudadpaciente").value)
                 configuracion.append("lugar", the("lcontrolpaciente").value)
+                configuracion.append("tipo", "Ecografía obstétrica precoz < 11 semanas")
                 configuracion.append("data", JSON.stringify(data))
 
                 fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
                 .then(data => {
-                    if (data.success == true ){
-                        alert("guardó")
-                    }
+                    if (data.success == true ){ alert("guardó") }
                 }).catch(function(error) {
                     alert("error")
                 });
@@ -116,9 +115,7 @@ $(document).ready(function() {
                 fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
                 .then(data => {
                     if (data.success == true ){
-
                         let modal = makeModal()
-
                         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
                         the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
                         the(modal.titulo).classList.add("mx-auto");
@@ -134,7 +131,6 @@ $(document).ready(function() {
                     alert("error")
                 });
             })
-
         }
     }
 })
