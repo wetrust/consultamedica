@@ -17,7 +17,12 @@ $(document).ready(function() {
                     'Observaciones' : the("comentarios-eco-uno").value,
                 }
 
-                configuracion.append("rut", the("id-paciente").value)
+                if (the("id-paciente").value == ""){
+                    rut()
+                    return
+                }else{
+                    configuracion.append("rut", the("id-paciente").value)
+                }
 
                 if (the("nombre-paciente").value == ""){
                     nombre()
@@ -25,9 +30,21 @@ $(document).ready(function() {
                 }else{
                     configuracion.append("nombre", the("nombre-paciente").value)
                 }
-                
-                configuracion.append("eg", the("semanas").value)
-                configuracion.append("ciudad", the("ciudadpaciente").value)
+
+                if (the("ciudadpaciente").value == 0){
+                    ciudad()
+                    return
+                }else{
+                    configuracion.append("ciudad", the("ciudadpaciente").value)
+                }
+
+                if (the("semanas").value == 0){
+                    eg()
+                    return
+                }else{
+                    configuracion.append("eg", the("semanas").value)
+                }
+
                 configuracion.append("lugar", the("lcontrolpaciente").value)
                 configuracion.append("tipo", "Ecografía obstétrica precoz < 11 semanas")
                 configuracion.append("data", JSON.stringify(data))
@@ -71,10 +88,34 @@ $(document).ready(function() {
                     'obs' : the("comentarios-eco-dos-inf-dos").value,
                 }
 
-                configuracion.append("rut", the("id-paciente").value)
-                configuracion.append("nombre", the("nombre-paciente").value)
-                configuracion.append("eg", the("semanas").value)
-                configuracion.append("ciudad", the("ciudadpaciente").value)
+                if (the("id-paciente").value == ""){
+                    rut()
+                    return
+                }else{
+                    configuracion.append("rut", the("id-paciente").value)
+                }
+
+                if (the("nombre-paciente").value == ""){
+                    nombre()
+                    return
+                }else{
+                    configuracion.append("nombre", the("nombre-paciente").value)
+                }
+
+                if (the("ciudadpaciente").value == 0){
+                    ciudad()
+                    return
+                }else{
+                    configuracion.append("ciudad", the("ciudadpaciente").value)
+                }
+
+                if (the("semanas").value == 0){
+                    eg()
+                    return
+                }else{
+                    configuracion.append("eg", the("semanas").value)
+                }
+
                 configuracion.append("lugar", the("lcontrolpaciente").value)
                 configuracion.append("data", JSON.stringify(data))
 
@@ -85,7 +126,7 @@ $(document).ready(function() {
                     }
                 }).catch(function(error) { alert("error") });
             })
-        
+
             the("btn.guardar.doppler").parentElement.classList.remove("d-none");
             the("btn.guardar.doppler").parentElement.classList.add("d-flex");
 
@@ -112,10 +153,34 @@ $(document).ready(function() {
                     'obs' : the("comentarios-doppler").value,
                 }
 
-                configuracion.append("rut", the("id-paciente").value)
-                configuracion.append("nombre", the("nombre-paciente").value)
-                configuracion.append("eg", the("semanas").value)
-                configuracion.append("ciudad", the("ciudadpaciente").value)
+                if (the("id-paciente").value == ""){
+                    rut()
+                    return
+                }else{
+                    configuracion.append("rut", the("id-paciente").value)
+                }
+
+                if (the("nombre-paciente").value == ""){
+                    nombre()
+                    return
+                }else{
+                    configuracion.append("nombre", the("nombre-paciente").value)
+                }
+
+                if (the("ciudadpaciente").value == 0){
+                    ciudad()
+                    return
+                }else{
+                    configuracion.append("ciudad", the("ciudadpaciente").value)
+                }
+
+                if (the("semanas").value == 0){
+                    eg()
+                    return
+                }else{
+                    configuracion.append("eg", the("semanas").value)
+                }
+                
                 configuracion.append("lugar", the("lcontrolpaciente").value)
                 configuracion.append("data", JSON.stringify(data))
 
@@ -126,12 +191,9 @@ $(document).ready(function() {
                         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
                         the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
                         the(modal.titulo).classList.add("mx-auto");
-                    
                         let _contenido = '<p>Guardado</p>'
-                    
                         the(modal.contenido).innerHTML = _contenido;
                         the(modal.id).children[0].classList.remove("modal-lg");
-                    
                         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
                     }
                 }).catch(function(error) {
@@ -143,37 +205,79 @@ $(document).ready(function() {
 })
 
 function nombre(){
-    let modal = makeModal("Guardar nombre")
-    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-    the(modal.titulo).innerHTML = "Falta nombre paciente";
-    the(modal.titulo).classList.add("mx-auto");
-    the(modal.titulo).parentElement.classList.add("bg-danger", "text-white");
+    let _modal = modal("Guardar nombre")
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+    the(_modal.titulo).innerHTML = "Falta nombre paciente";
+    the(_modal.titulo).classList.add("mx-auto");
+    the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
 
-    let _contenido = '<p>No Escribió el nombre de la paciente, escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="nombre">Nombre de la paciente</label><input type="text" class="form-control" id="nombre"></div>'
+    let _contenido = '<p>No escribió el nombre de la paciente, escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="nombre">Nombre de la paciente</label><input type="text" class="form-control" id="nombre"></div>'
 
-    the(modal.contenido).innerHTML = _contenido;
-    the(modal.id).children[0].classList.remove("modal-lg");
-    
-    $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+    the(_modal.contenido).innerHTML = _contenido;
+    the(_modal.id).children[0].classList.remove("modal-lg");
 
-    $('#'+modal.button).on("click", function(){
+    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
+    $('#'+_modal.button).on("click", function(){
         document.getElementById("nombre-paciente").value = document.getElementById("nombre").value
-        $("#"+modal.button).modal("hide")
-
+        $("#"+this.dataset.modal).modal("hide")
     })
 }
 
 function rut(){
+    let _modal = modal("Guardar RUT")
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+    the(_modal.titulo).innerHTML = "Falta RUT";
+    the(_modal.titulo).classList.add("mx-auto");
+    the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
 
+    let _contenido = '<p>No escribió el RUT de la paciente, escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="rut">RUT del paciente</label><input type="text" class="form-control" id="rut"></div>'
+
+    the(_modal.contenido).innerHTML = _contenido;
+    the(_modal.id).children[0].classList.remove("modal-lg");
+
+    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+    $('#'+_modal.button).on("click", function(){
+        document.getElementById("id-paciente").value = document.getElementById("rut").value
+        $("#"+this.dataset.modal).modal("hide")
+    })
 }
 
 function eg(){
+    let _modal = modal()
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+    the(_modal.titulo).innerHTML = "Falta EG";
+    the(_modal.titulo).classList.add("mx-auto");
+    the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
 
+    let _contenido = '<p>Seleccione la edad gestacional</p>'
+
+    the(_modal.contenido).innerHTML = _contenido;
+
+    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 }
 
 function ciudad(){
+    let _modal = modal("Guardar Ciudad")
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+    the(_modal.titulo).innerHTML = "Falta Ciudad";
+    the(_modal.titulo).classList.add("mx-auto");
+    the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
 
+    let _contenido = '<p>No escribió la ciudad de la paciente, escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="ciudad">Ciudad de paciente</label><select class="form-control" id="ciudad"></select></div>'
+
+    the(_modal.contenido).innerHTML = _contenido;
+    the(_modal.id).children[0].classList.remove("modal-lg");
+
+    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+    $('#ciudadpaciente').find('option').clone().appendTo('#ciudad');
+
+    $('#'+_modal.button).on("click", function(){
+        document.getElementById("ciudadpaciente").value = document.getElementById("ciudad").value
+        $("#"+this.dataset.modal).modal("hide")
+    })
 }
 
 function lugar(){
