@@ -148,7 +148,7 @@ function nombre(){
     the(modal.titulo).classList.add("mx-auto");
     the(modal.titulo).parentElement.classList.add("bg-danger", "text-white");
 
-    let _contenido = '<div class="form-group"><label for="nombre">Nombre de la paciente</label><input type="text" class="form-control" id="nombre"></div>'
+    let _contenido = '<p>No Escribió el nombre de la paciente, escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="nombre">Nombre de la paciente</label><input type="text" class="form-control" id="nombre"></div>'
 
     the(modal.contenido).innerHTML = _contenido;
     the(modal.id).children[0].classList.remove("modal-lg");
