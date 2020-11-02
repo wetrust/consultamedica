@@ -68,6 +68,18 @@ $( document ).ready(function() {
     opt.value = "< 80"; 
     dias.appendChild(opt);
 
+    let dias = the("fcf-prim-dos");
+    let opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("(+) inicial") );
+    opt.value = "(+) inicial"; 
+    dias.appendChild(opt); 
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("< 80") );
+    opt.value = "< 80"; 
+    dias.appendChild(opt);
+
+
+
     for (var i = 80; i < 181; i++) {
         let opt = document.createElement('option');
         opt.appendChild( document.createTextNode(i) );
@@ -390,10 +402,13 @@ $( document ).ready(function() {
 
         if (cardio.includes(embrion)){
             the("fcf-primer-trim").classList.remove("d-none");
+            the("fcf-primer-trim-dos").classList.remove("d-none");
             the("fcf-prim").value = (embrion == "act. cardiaca evidenciable") ? "(+) inicial": 150;
+            the("fcf-prim-dos").value = (embrion == "act. cardiaca evidenciable") ? "(+) inicial": 150;
         }
         else{
             the("fcf-primer-trim").classList.add("d-none");
+            the("fcf-primer-trim-dos").classList.add("d-none");
         }
     });
 
@@ -752,6 +767,10 @@ $( document ).ready(function() {
     $("#liquido\\.semi\\.morfologia").on("keyup", function(){
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liquido.cualitativo.morfologia").value = txt;
+    })
+
+    $("#fcf-prim-dos").on("change", function(){
+        the("fcf-prim").value = this.value
     })
 });
 
@@ -1144,6 +1163,7 @@ $( document ).ready(function() {
             the("saco-vitelino").selectedIndex = 1;
             $("#saco-vitelino").trigger("change");
             the("fcf-prim").selectedIndex = 0;
+            the("fcf-prim-dos").selectedIndex = 0
             the("anexo-derecho").selectedIndex = 0;
 
             the("anexo-derecho").selectedIndex = 0;

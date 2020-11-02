@@ -13,7 +13,7 @@ $(document).ready(function() {
                     'FUR' : the("fum").value,
                     'LCN' : $("#lcn").val(),
                     'EG Ajustada' : the("lcnPct").value,
-                    'FCF' : the("fcf-prim").value,
+                    'FCF' : the("fcf-prim-dos").value,
                     'Observaciones' : the("comentarios-eco-uno").value,
                 }
 
