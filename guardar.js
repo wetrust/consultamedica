@@ -141,6 +141,7 @@ $(document).ready(function() {
         }
     }
 })
+
 function nombre(){
     let modal = makeModal("Guardar nombre")
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
