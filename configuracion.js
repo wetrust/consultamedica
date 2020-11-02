@@ -351,21 +351,21 @@ function loadDatabase() {
     $('#ecografista').empty();
     if (configuracion.profesional.length > 0) {
         $.each(configuracion.profesional, function(i, item) {
-            $('#ecografista').append('<option value="'+i+'">'+item+'</option>');
+            $('#ecografista').append('<option value="'+(i+1)+'">'+item+'</option>');
         });
     }
 
     $('#motivo-examen').empty();
     if (configuracion.MotivoExamen.length > 0) {
         $.each(configuracion.MotivoExamen, function(i, item) {
-            $('#motivo-examen').append('<option value="'+i+'">'+item+'</option>');
+            $('#motivo-examen').append('<option value="'+(i+1)+'">'+item+'</option>');
         });
     }
 
     $('#lcontrolpaciente').empty();
     if (configuracion.lcontrol.length > 0) {
         $.each(configuracion.lcontrol, function(i, item) {
-            $('#lcontrolpaciente').append('<option value="'+i+'">'+item+'</option>');
+            $('#lcontrolpaciente').append('<option value="'+(i+1)+'">'+item+'</option>');
         });
     }
 
@@ -373,15 +373,15 @@ function loadDatabase() {
     $('#ciudadpaciente').empty();
     if (configuracion.nacionalidad.length > 0) {
         $.each(configuracion.nacionalidad, function(i, item) {
-            $('#nacionalidad').append('<option value="'+i+'">'+item+'</option>');
-            $('#ciudadpaciente').append('<option value="'+i+'">'+item+'</option>');
+            $('#nacionalidad').append('<option value="'+(i+1)+'">'+item+'</option>');
+            $('#ciudadpaciente').append('<option value="'+(i+1)+'">'+item+'</option>');
         });
     }
 
     $('#patologiaObstetricaUno').empty();
     if (configuracion.PatologiaObstetrica.length > 0) {
         $.each(configuracion.PatologiaObstetrica, function(i, item) {
-            $('#patologiaObstetricaUno').append('<option value="'+i+'">'+item+'</option>');
+            $('#patologiaObstetricaUno').append('<option value="'+(i+1)+'">'+item+'</option>');
         });
     }
 

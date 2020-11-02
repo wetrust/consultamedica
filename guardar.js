@@ -232,7 +232,25 @@ function ciudad(){
 }
 
 function lugar(){
+    let _modal = modal("Guardar Lugar")
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+    the(_modal.titulo).innerHTML = "Falta Ciudad";
+    the(_modal.titulo).classList.add("mx-auto");
+    the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
 
+    let _contenido = '<p>No escribió el lugar de control de la paciente, escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="lcontrol">Lugar de control</label><select class="form-control" id="lcontrol"></select></div>'
+
+    the(_modal.contenido).innerHTML = _contenido;
+    the(_modal.id).children[0].classList.remove("modal-lg");
+
+    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+    $('#lcontrolpaciente').find('option').clone().appendTo('#lcontrol');
+
+    $('#'+_modal.button).on("click", function(){
+        document.getElementById("lcontrolpaciente").value = document.getElementById("lcontrol").value
+        $("#"+this.dataset.modal).modal("hide")
+    })
 }
 
 function basicDataValid(){
