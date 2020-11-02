@@ -17,35 +17,17 @@ $(document).ready(function() {
                     'Observaciones' : the("comentarios-eco-uno").value,
                 }
 
-                if (the("id-paciente").value == ""){
-                    rut()
+                if (basicDataValid() == false){
                     return
-                }else{
-                    configuracion.append("rut", the("id-paciente").value)
                 }
 
-                if (the("nombre-paciente").value == ""){
-                    nombre()
-                    return
-                }else{
-                    configuracion.append("nombre", the("nombre-paciente").value)
-                }
-
-                if (the("ciudadpaciente").value == 0){
-                    ciudad()
-                    return
-                }else{
-                    configuracion.append("ciudad", the("ciudadpaciente").value)
-                }
-
-                if (the("semanas").value == 0){
-                    eg()
-                    return
-                }else{
-                    configuracion.append("eg", the("semanas").value)
-                }
-
-                configuracion.append("lugar", the("lcontrolpaciente").value)
+                configuracion.append("rut", the("id-paciente").value)
+                configuracion.append("nombre", the("nombre-paciente").value)
+                let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
+                configuracion.append("ciudad", ciudad)
+                configuracion.append("eg", the("semanas").value)
+                let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
+                configuracion.append("lugar", lugar)
                 configuracion.append("tipo", "Ecografía obstétrica precoz < 11 semanas")
                 configuracion.append("data", JSON.stringify(data))
 
@@ -85,37 +67,23 @@ $(document).ready(function() {
                     'cccapct' : the("cccaPctVal").value,
                     'placenta' : the("ubicacion").value,
                     'liquido' : the("liq-cualitativo-eco").value,
+                    'Uterinas Prom': the('respuesta_uterina_promedio').value,
+                    'Uterinas Prom Pct': the('respuesta_uterina_promedio_percentil').textContent,
+                    'Largo cervical': the('largo.cervical.segundo').value,
                     'obs' : the("comentarios-eco-dos-inf-dos").value,
                 }
 
-                if (the("id-paciente").value == ""){
-                    rut()
+                if (basicDataValid() == false){
                     return
-                }else{
-                    configuracion.append("rut", the("id-paciente").value)
                 }
 
-                if (the("nombre-paciente").value == ""){
-                    nombre()
-                    return
-                }else{
-                    configuracion.append("nombre", the("nombre-paciente").value)
-                }
-
-                if (the("ciudadpaciente").value == 0){
-                    ciudad()
-                    return
-                }else{
-                    configuracion.append("ciudad", the("ciudadpaciente").value)
-                }
-
-                if (the("semanas").value == 0){
-                    eg()
-                    return
-                }else{
-                    configuracion.append("eg", the("semanas").value)
-                }
-
+                configuracion.append("rut", the("id-paciente").value)
+                configuracion.append("nombre", the("nombre-paciente").value)
+                let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
+                configuracion.append("ciudad", ciudad)
+                configuracion.append("eg", the("semanas").value)
+                let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
+                configuracion.append("lugar", lugar)
                 configuracion.append("lugar", the("lcontrolpaciente").value)
                 configuracion.append("data", JSON.stringify(data))
 
@@ -153,34 +121,17 @@ $(document).ready(function() {
                     'obs' : the("comentarios-doppler").value,
                 }
 
-                if (the("id-paciente").value == ""){
-                    rut()
+                if (basicDataValid() == false){
                     return
-                }else{
-                    configuracion.append("rut", the("id-paciente").value)
                 }
 
-                if (the("nombre-paciente").value == ""){
-                    nombre()
-                    return
-                }else{
-                    configuracion.append("nombre", the("nombre-paciente").value)
-                }
-
-                if (the("ciudadpaciente").value == 0){
-                    ciudad()
-                    return
-                }else{
-                    configuracion.append("ciudad", the("ciudadpaciente").value)
-                }
-
-                if (the("semanas").value == 0){
-                    eg()
-                    return
-                }else{
-                    configuracion.append("eg", the("semanas").value)
-                }
-                
+                configuracion.append("rut", the("id-paciente").value)
+                configuracion.append("nombre", the("nombre-paciente").value)
+                let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
+                configuracion.append("ciudad", ciudad)
+                configuracion.append("eg", the("semanas").value)
+                let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
+                configuracion.append("lugar", lugar)
                 configuracion.append("lugar", the("lcontrolpaciente").value)
                 configuracion.append("data", JSON.stringify(data))
 
@@ -282,4 +233,33 @@ function ciudad(){
 
 function lugar(){
 
+}
+
+function basicDataValid(){
+    if (the("id-paciente").value == ""){
+        rut()
+        return false
+    }
+
+    if (the("nombre-paciente").value == ""){
+        nombre()
+        return false
+    }
+
+    if (the("ciudadpaciente").value == 0){
+        ciudad()
+        return false
+    }
+
+    if (the("semanas").value == 0){
+        eg()
+        return false
+    }
+
+    if (the("lcontrolpaciente").value == 0){
+        lugar()
+        return false
+    }
+
+    return true
 }
