@@ -68,6 +68,19 @@ $( document ).ready(function() {
     opt.value = "< 80"; 
     dias.appendChild(opt);
 
+    for (var i = 80; i < 181; i++) {
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode(i) );
+        opt.value = i; 
+        dias.appendChild(opt); 
+    }
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("> 180") );
+    opt.value = "> 180"; 
+    dias.appendChild(opt);
+
+
+
     dias = the("fcf-prim-dos");
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("(+) inicial") );
@@ -77,8 +90,6 @@ $( document ).ready(function() {
     opt.appendChild( document.createTextNode("< 80") );
     opt.value = "< 80"; 
     dias.appendChild(opt);
-
-
 
     for (var i = 80; i < 181; i++) {
         let opt = document.createElement('option');
@@ -770,7 +781,7 @@ $( document ).ready(function() {
     })
 
     $("#fcf-prim-dos").on("change", function(){
-        the("fcf-prim").value = this.value
+        $("#fcf-prim").val(this.value)
     })
 });
 
