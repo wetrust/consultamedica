@@ -1,6 +1,5 @@
 $(document).ready(function(){
     var i;
-    
     for (i = 14; i <51; i++) {
         if (i == 20){
             $("#edadmaternaprimtrim").append('<option value="'+ i +'" selected>' + i + ' años</option>');
@@ -9,11 +8,9 @@ $(document).ready(function(){
             $("#edadmaternaprimtrim").append('<option value="'+ i +'">' + i + ' años</option>');
         }
     }
-
     for (i = 45; i < 84; i++) {
         $("#loncefalocaudal").append('<option value="'+ i +'">' + i + ' mm</option>');
     }
-
     $("#psisTamizaje").on("keyup", function(e){
 		if ( e.which == 13 ) {
 			e.preventDefault();
@@ -23,7 +20,6 @@ $(document).ready(function(){
 			var unTercioPSis = $("#psisTamizaje").val() / 3;
 			var unTercioPDias = "";
 			var pMedia = "";
-
 			if ($("#pdiasTamizaje").val() > 1){
 				unTercioPDias = $("#pdiasTamizaje").val() / 3;
 			}
@@ -31,7 +27,6 @@ $(document).ready(function(){
 			if (unTercioPDias > 0){
 				pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
 			}
-
 			$("#pmediaTamizaje").val(pMedia);
 		}
 	});
@@ -45,15 +40,12 @@ $(document).ready(function(){
 			var unTercioPSis = $("#psisTamizaje").val() / 3;
 			var unTercioPDias = "";
 			var pMedia = "";
-
 			if ($("#pdiasTamizaje").val() > 1){
 				unTercioPDias = $("#pdiasTamizaje").val() / 3;
 			}
-
 			if (unTercioPDias > 0){
 				pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
 			}
-
 			$("#pmediaTamizaje").val(pMedia);
 		}
 	});
@@ -105,7 +97,6 @@ $(document).ready(function(){
 			aud = parseFloat(aud);
 		}
 		var aui = "";
-
 		if ($("#auiTamizaje").val() != ""){
 			aui = $("#auiTamizaje").val();
 			aui = aui.toString(); 
@@ -138,7 +129,6 @@ $(document).ready(function(){
 			aud = parseFloat(aud);
 		}
 		var aui = "";
-
 		if ($("#auiTamizaje").val() != ""){
 			aui = $("#auiTamizaje").val();
 			aui = aui.toString(); 
@@ -338,7 +328,6 @@ function crlIndependantT21(nt,risk){
     var mixtureModel=probabilidadFinal*probComponent + risk*NprobComponent;
     return mixtureModel;
 }
-
 function crlIndependantT18(nt,risk){
     var NT=nt;
     var STD=0.1658;
@@ -353,7 +342,6 @@ function crlIndependantT18(nt,risk){
     var mixtureModel=probabilidadFinal*probComponent + risk*NprobComponent;
     return mixtureModel;
 }
-
 function crlIndependantT13(nt,risk){
     var NT=nt;
     var STD=0.2032;
@@ -368,13 +356,10 @@ function crlIndependantT13(nt,risk){
     var mixtureModel=probabilidadFinal*probComponent + risk*NprobComponent;
     return mixtureModel;
 }
-
 function cacularLR(mixModCRL,mixModTris){
     return (mixModTris/mixModCRL);
 }
-
 function calcularRiesgo(){
-
     var compr = parseInt($("#loncefalocaudal").val());
     var trasl = parseInt($("#translunucal").val());
     var age = $("#edadmaternaprimtrim").val(); 
