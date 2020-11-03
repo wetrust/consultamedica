@@ -68,8 +68,8 @@ $( document ).ready(function() {
     opt.value = "< 80"; 
     dias.appendChild(opt);
 
-    let dias = the("fcf-prim-dos");
-    let opt = document.createElement('option');
+    dias = the("fcf-prim-dos");
+    opt = document.createElement('option');
     opt.appendChild( document.createTextNode("(+) inicial") );
     opt.value = "(+) inicial"; 
     dias.appendChild(opt); 

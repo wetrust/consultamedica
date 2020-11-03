@@ -14,7 +14,7 @@ $(document).ready(function() {
                     'LCN' : $("#lcn").val(),
                     'EG Ajustada' : the("lcnPct").value,
                     'FCF' : the("fcf-prim-dos").value,
-                    'Observaciones' : the("comentarios-eco-uno").value,
+                    'Comentario' : the("comentarios-eco-uno").value,
                 }
 
                 if (basicDataValid() == false){
@@ -70,7 +70,7 @@ $(document).ready(function() {
                     'Uterinas Prom': the('respuesta_uterina_promedio').value,
                     'Uterinas Prom Pct': the('respuesta_uterina_promedio_percentil').textContent,
                     'Largo cervical': the('largo.cervical.segundo').value,
-                    'obs' : the("comentarios-eco-dos-inf-dos").value,
+                    'Comentario' : the("comentarios-eco-dos-inf-dos").value,
                 }
 
                 if (basicDataValid() == false){
@@ -118,7 +118,7 @@ $(document).ready(function() {
                     'couciente pct' : the("ccpPct").value,
                     'Ductus Venoso' : the("dv").value,
                     'Ductus Venoso pct' : the("dvPct").value,
-                    'obs' : the("comentarios-doppler").value,
+                    'Comentario' : the("comentarios-doppler").value,
                 }
 
                 if (basicDataValid() == false){
