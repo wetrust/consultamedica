@@ -6384,7 +6384,7 @@ function pctcc() {
         psohdlk();
         p50();
     }
-};
+}
 
 function pctca() {
     /* 3 97 */
@@ -6423,7 +6423,7 @@ function pctca() {
         psohdlk();
         p50();
     }
-};
+}
 
 function pctlf() {
     /* 3 97 */
@@ -6460,7 +6460,7 @@ function pctlf() {
         psohdlk();
         p50();
     }
-};
+}
 
 function pctcb() {
     /* 3 97 desvio estandar, no percentil*/ 
@@ -6517,7 +6517,7 @@ function pctcb() {
          
         p50();
     }
-};
+}
 
 function pctlh() {
     /* 5 95 */
@@ -7998,7 +7998,7 @@ function informeDopplerClon(){
         }
         var dvRngo = oldProgress(tmpData);
 
-        InformeString += ' <tr> <td>Ductus Venoso</td><td>:DVP</td><td>:DVPTXT</td><td>:DVPRGO</td></tr>';
+        InformeString += ' <tr> <td>Ductus Venoso</td><td style="text-align: center;">:DVP</td><td style="text-align: center;">:DVPTXT</td><td style="text-align: center;">:DVPRGO</td></tr>';
         InformeString = InformeString.replace(":DVP", dvp);
         InformeString = InformeString.replace(":DVPTXT", dvPctTxt);
         InformeString = InformeString.replace(":DVPRGO", dvRngo);
@@ -8007,7 +8007,7 @@ function informeDopplerClon(){
     var psmACM = the("psmACM").value;
 
     if (psmACM != ""){
-        InformeString += ' <tr> <td>Peak sistólico de ACM</td><td>:PSMACM</td><td></td><td></td></tr>';
+        InformeString += ' <tr> <td>Peak sistólico de ACM</td><td style="text-align: center;">:PSMACM</td><td></td><td></td></tr>';
         InformeString = InformeString.replace(":PSMACM", psmACM);
     }
 

@@ -101,7 +101,6 @@ function createInputs(config){
 }
 
 function createTable(config){
-
     for (var z = 0; z < config.config.length; z++){
         if (config.config[z].table == true){
             let elemento = ""
