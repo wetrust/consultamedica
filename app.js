@@ -8128,8 +8128,8 @@ function makeModalEmail(){
         for (var i = 0; i < configuracion.correos.length; i++) {
             let elemento = the(_correo);
             let opt = document.createElement('option');
-            opt.appendChild( document.createTextNode(configuracion.correos[i].profesion + ", " + configuracion.correos[i].nombre + " - " + configuracion.correos[i].ciudad) );
-            opt.value = configuracion.correos[i].correo; 
+            opt.appendChild( document.createTextNode(configuracion.correos[i][1] + ", " + configuracion.correos[i][0] + " - " + configuracion.correos[i][2]) );
+            opt.value = configuracion.correos[i][3]; 
             elemento.appendChild(opt); 
         }
     }
