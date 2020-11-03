@@ -5940,7 +5940,6 @@ function InfEcoObsSegTrim1Clon(){
 
     if (the("larg.cerv").checked == true){
         InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td style="text-align:center;">:LARGCERVTXT</td><td></td></tr>';
-    
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
         InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
         contadorOpcional++;
