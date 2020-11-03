@@ -1467,9 +1467,24 @@
             <p class="text-primary"><em>Configuración general y datos personales</em></p>
             <div class="card mx-5" style="background-color:#ebefff;">
                 <div class="card-body">
+                    <div class="row my-4">
+                        <div class="col-9">
+                            <h5 class="card-title text-dark">A.- Configuración datos de paciente en exámen ultrasonográfico.</h5>
+                        </div>
+                        <div class="col-3">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-outline-secondary active" id="informacionPacienteNo" data-value="0">
+                                    <input type="radio" value="0" checked> NO
+                                </label>
+                                <label class="btn btn-outline-secondary" id="informacionPacienteSi" data-value="1">
+                                    <input type="radio" value="1"> SI
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row mb-2">
                         <div class="col-9">
-                            <h5 class="card-title text-dark">A.- Configuración datos propios de cada unidad ultrasonográfica.</h5>
+                            <h5 class="card-title text-dark">B.- Configuración datos propios de cada unidad ultrasonográfica.</h5>
                         </div>
                         <div class="col-3">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -1482,21 +1497,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row my-4">
-                        <div class="col-9">
-                            <h5 class="card-title text-dark">B.- Configuración datos de paciente en exámen ultrasonográfico.</h5>
-                        </div>
-                        <div class="col-3">
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-outline-secondary active" id="informacionPacienteNo" data-value="0">
-                                    <input type="radio" value="0" checked> NO
-                                </label>
-                                <label class="btn btn-outline-secondary" id="informacionPacienteSi" data-value="1">
-                                    <input type="radio" value="1"> SI
-                                </label>
-                            </div>
-                        </div>
-                    </div>   
                     <div class="row">
                         <div class="col-6 text-right">
                             <img src="img/volver_al_futuro.png" alt="Volver al futuro" class="img-fluid d-none" id="auto">
@@ -3561,7 +3561,7 @@
                         <select name="edad_materna" class="form-control gris-claro"></select>
                     </div>
                     <div class="col-2">
-                        <label>Ecografista</label>
+                        <label>Profesional ecografista</label>
                     </div>
                     <div class="col-4">
                         <select class="form-control" id="ecografista"></select>
@@ -3573,13 +3573,15 @@
                         <select id="ciudadpaciente" class="form-control gris-claro"></select>
                     </div>
                     <div class="col-2 mt-3">
-                        <label>Lugar de control</label>
+                        <label>Lugar de control maternal</label>
                     </div>
                     <div class="col-4 mt-3">
                         <select class="form-control" id="lcontrolpaciente"></select>
                     </div>
+                    <div class="col-12 text-center">
+                        <a class="btn btn-consulta text-white" href="#inicio">CONTINUAR A EXÁMEN ECOGRÁFICO</a>
+                    </div>
                 </div>
-                <a class="btn btn-consulta text-white" href="#inicio">CONTINUAR A EXÁMEN ECOGRÁFICO</a>
             </div>
         </div>
     </div>
