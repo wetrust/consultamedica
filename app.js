@@ -48,7 +48,7 @@ $( document ).ready(function() {
     }
 
     $('#edadGestacional option[value="40"]').prop('selected', true);
-    
+
     for (var i = 0; i < 7; i++) {
         let dias = the("dias");
         let opt = document.createElement('option');
@@ -60,7 +60,7 @@ $( document ).ready(function() {
     //cargar frecuencia cardiaca fetal primer trimestre
     let dias = the("fcf-prim");
     let opt = document.createElement('option');
-    opt.appendChild( document.createTextNode("(+) inicial") );
+    opt.appendChild(document.createTextNode("(+) inicial"));
     opt.value = "(+) inicial"; 
     dias.appendChild(opt); 
     opt = document.createElement('option');
@@ -74,12 +74,11 @@ $( document ).ready(function() {
         opt.value = i; 
         dias.appendChild(opt); 
     }
+
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("> 180") );
     opt.value = "> 180"; 
     dias.appendChild(opt);
-
-
 
     dias = the("fcf-prim-dos");
     opt = document.createElement('option');
@@ -97,6 +96,7 @@ $( document ).ready(function() {
         opt.value = i; 
         dias.appendChild(opt); 
     }
+
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("> 180") );
     opt.value = "> 180"; 
@@ -124,9 +124,7 @@ $( document ).ready(function() {
     opt.value = "> 170"; 
     dias.appendChild(opt);
 
-    if (storageAvailable('localStorage')) {
-        document.location.hash = "#inicio";
-    }
+    if (storageAvailable('localStorage')) { document.location.hash = "#inicio"; }
 
     //cargar edad materna
     let edad = document.getElementsByName("edad_materna")[0];

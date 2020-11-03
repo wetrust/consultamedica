@@ -413,12 +413,6 @@ $(document).ready(function() {
     createInputs(config)
     createTable(config)
 
-    if (storageAvailable('localStorage')) {
-        checkDatabase();
-        loadTabla(config)
-        loadDatabase();
-    }
-
     //funciones adicionales
     //funcion para el membrete
 	$("#"+config.config[0].input[0].id).on("keydown", function(e){
@@ -438,7 +432,17 @@ $(document).ready(function() {
 				lines++;
 			}
 		}
-	});
+    });
+
+
+    //activar
+    //
+    let largo = config.config.length
+    largo = largo -1
+
+    activacion = '<div class="form-group row"><label class="col-sm-4 col-form-label">Activar envío informes por E-Mail</label><div class="col-sm-2"><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-secondary active" id="licencia.no.button"><input type="radio" name="check.licencia" id="licencia.no" value="" checked="checked"> No</label><label class="btn btn-secondary ml-2" id="licencia.button"><input type="radio" name="check.licencia" id="licencia" value="medicina"> Si</label></div></div><div class="col-12 col-lg-6"><p id="mensaje.licencia" class="text-primary">Licencia activada</p></div></div><div class="form-group row d-none" id="backup"><label class="col-4 col-form-label">Ingresar E-Mail para configuración personal: </label><div class="col-4"><input type="email" id="correo.configuracion" class="form-control"></div><div class="col-4"><button type="button" class="btn btn-secondary" id="correo.configuracion.guardar">Guardar</button><button type="button" class="btn btn-secondary" id="correo.configuracion.cargar">Restaurar configuración</button></div><div class="col-12"><p class="text-primary mt-2"><small><em>Cuando use Google Chrome puede guardar informe del exámen (PDF) en Google Drive, previamente haber creado cuenta personal en Google.</em></small></p></div></div>'
+
+    the(config.config[largo].tab).insertAdjacentHTML("beforeend",activacion)
 
 	$("#licencia\\.button").on("click", function(){
         if (window.localStorage) {
@@ -576,6 +580,12 @@ $(document).ready(function() {
         })
 
     })
+
+    if (storageAvailable('localStorage')) {
+        checkDatabase();
+        loadTabla(config)
+        loadDatabase();
+    }
 });
 
 function errorCorreo(){
