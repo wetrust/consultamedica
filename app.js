@@ -67,7 +67,7 @@ $( document ).ready(function() {
     dias.appendChild(opt); 
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 80") );
-    opt.value = "< 80"; 
+    opt.value = "&lt; 80"; 
     dias.appendChild(opt);
 
     for (var i = 80; i < 181; i++) {
@@ -79,7 +79,7 @@ $( document ).ready(function() {
 
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("> 180") );
-    opt.value = "> 180"; 
+    opt.value = "&gt; 180"; 
     dias.appendChild(opt);
 
     dias = the("fcf-prim-dos");
@@ -89,7 +89,7 @@ $( document ).ready(function() {
     dias.appendChild(opt); 
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 80") );
-    opt.value = "< 80"; 
+    opt.value = "&lt; 80"; 
     dias.appendChild(opt);
 
     for (var i = 80; i < 181; i++) {
@@ -101,7 +101,7 @@ $( document ).ready(function() {
 
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("> 180") );
-    opt.value = "> 180"; 
+    opt.value = "&gt; 180"; 
     dias.appendChild(opt);
 
     //cargar la frecuencia cardiaca fetal para segundo trimestre
@@ -112,7 +112,7 @@ $( document ).ready(function() {
     dias.appendChild(opt); 
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 90") );
-    opt.value = "< 90"; 
+    opt.value = "&lt; 90"; 
     dias.appendChild(opt);
 
     for (var i = 90; i < 171; i++) {
@@ -123,7 +123,7 @@ $( document ).ready(function() {
     }
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("> 170") );
-    opt.value = "> 170"; 
+    opt.value = "&gt; 170"; 
     dias.appendChild(opt);
 
     if (storageAvailable('localStorage')) { document.location.hash = "#inicio"; }
@@ -132,7 +132,7 @@ $( document ).ready(function() {
     let edad = document.getElementsByName("edad_materna")[0];
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 12") );
-    opt.value = "< 12"; 
+    opt.value = "&lt; 12"; 
     edad.appendChild(opt); 
     for (var i = 12; i < 61; i++) {
         edad = document.getElementsByName("edad_materna")[0];
@@ -144,7 +144,7 @@ $( document ).ready(function() {
     edad = document.getElementsByName("edad_materna")[0];
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("> 60") );
-    opt.value = "> 60"; 
+    opt.value = "&gt; 60"; 
     edad.appendChild(opt); 
 
     //funcion rara
@@ -5936,7 +5936,6 @@ function imprInformeMM(datos){
 	document = document.replace(/:DATOS/g, datos);
 	document = document.replace(/:ESTILO/g, estilo);
 	document = document.replace(/:FUNCION/g, funcion);
-	document = document.replace(new RegExp('invisible', 'g'), "");
 	ventimp.document.write(document);
 	ventimp.document.close();
 }
@@ -7900,7 +7899,7 @@ function informeDoppler(){
 }
 
 function informeDopplerClon(){
-    var InformeString = '<div class="container"><h3>Evaluación de flujometria doppler materno fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table><p> <strong>FUM: </strong> :FUM <br/> <strong>Ege: </strong> :EG semanas <br/> <strong>FPP: </strong> :FPP </p></div><div class="container"> <p><strong style="color: #045dab;">ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small></p><p> Motivo del exámen: :MOTIVODOPPLER <br/> Antecedentes Obstétricos: :ANTECEDENTES <br/> Feto en Presentación: :PRESENTACION <br/> Motilidad Fetal: :MOTILIDAD <br/> Ubicación Placentaria: :UBICACION <br/> Líquido Amniótico***: :LIQUIDO <br/> Medida única de BVM***: :BVM </p></div><div class="container"> <table class="table"> <thead> <tr> <th style="color: #045dab;">FLUJOMETRIA DOPPLER</th> <th style="text-align: center;">IP Observado</th> <th style="text-align: center;">Percentiles de IP</th> <th style="text-align: center;">Rango percentilar</th> </tr></thead> <tbody> <tr> <td>Arteria Uterina Derecha*</td><td style="text-align: center;">:UD</td><td style="text-align: center;">:UDTXT</td><td style="text-align: center;">:UDRGO</td></tr><tr> <td>Arteria Uterina Izquierda*</td><td style="text-align: center;">:UI</td><td style="text-align: center;">:UITXT</td><td style="text-align: center;">:UIRGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Promedio Arterias Uterinas*</td><td>:UPROM</td><td>:UPROMTXT</td><td>:UPROMRGO</td></tr><tr> <td style="padding-top: 15px !important; border-top: 1px dashed #045dab;">Arteria Umbilical**</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AU</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AUTXT</td><td style="text-align: center; padding-top: 15px !important; border-top: 1px dashed #045dab;">:AURGO</td></tr><tr> <td style="padding-bottom: 15px !important;">Arteria Cerebral Media**</td><td style="text-align: center; padding-bottom: 15px !important;">:ACM</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMTXT</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMRGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Cuociente Cerebro Placentario ( CCP )**</td><td>:CCP</td><td>:CCPTXT</td><td>:CCPRGO</td></tr>';
+    var InformeString = '<div class="container"><h3>Evaluación de flujometria doppler materno fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table><p> <strong>FUM: </strong> :FUM <br/> <strong>Ege: </strong> :EG semanas <br/> <strong>FPP: </strong> :FPP </p></div><div class="container"> <p><strong style="color: #045dab;">ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small></p><p> Motivo del exámen: :MOTIVODOPPLER <br/> Antecedentes Obstétricos: :ANTECEDENTES <br/> Feto en Presentación: :PRESENTACION <br/> Motilidad Fetal: :MOTILIDAD <br/> Ubicación Placentaria: :UBICACION <br/> Líquido Amniótico***: :LIQUIDO <br/> Medida única de BVM***: :BVM </p></div><div class="container"> <table class="table"> <thead> <tr> <th style="color: #045dab;">FLUJOMETRIA DOPPLER</th> <th style="text-align: center;">IP Observado</th> <th style="text-align: center;">Percentiles de IP</th> <th style="text-align: center;">Rango percentilar</th> </tr></thead> <tbody> <tr> <td>Arteria Uterina Derecha*</td><td style="text-align: center;">:UD</td><td style="text-align: center;">:UDTXT</td><td style="text-align: center;">:UDRGO</td></tr><tr> <td>Arteria Uterina Izquierda*</td><td style="text-align: center;">:UI</td><td style="text-align: center;">:UITXT</td><td style="text-align: center;">:UIRGO</td></tr><tr> <td>Promedio Arterias Uterinas*</td><td style="text-align: center;">:UPROM</td><td style="text-align: center;">:UPROMTXT</td><td style="text-align: center;">:UPROMRGO</td></tr><tr> <td>Arteria Umbilical**</td><td style="text-align: center;">:AU</td><td style="text-align: center;">:AUTXT</td><td style="text-align: center;">:AURGO</td></tr><tr> <td style="padding-bottom: 15px !important;">Arteria Cerebral Media**</td><td style="text-align: center; padding-bottom: 15px !important;">:ACM</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMTXT</td><td style="text-align: center; padding-bottom: 15px !important;">:ACMRGO</td></tr><tr> <td>Cuociente Cerebro Placentario ( CCP )**</td><td style="text-align: center;">:CCP</td><td style="text-align: center;">:CCPTXT</td><td style="text-align: center;">:CCPRGO</td></tr>';
 
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
