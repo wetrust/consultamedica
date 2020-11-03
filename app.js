@@ -19,7 +19,6 @@ var titulos = {
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
 }
 
-
 //comementario adicional anatomia 
 document.location.hash = "";
 
@@ -916,21 +915,21 @@ $( document ).ready(function() {
     $("#modalPreInfEcoObsSegTrim2").on("click", function(){
         var cb = parseInt($('#cerebelo').val());
         var lh = parseInt($('#lh').val());
-        
+
         if (isNaN(cb) || isNaN(lh)){
             var modal = makeModal();
             document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
             the(modal.titulo).innerText = "Información";
             the(modal.contenido).innerHTML = "<p><strong>Actualmente la Edad gestacional se calculará solo por biometrías de Cráneo y Fémur (Excluido CA).<br>Para mayor exactitud es recomendable ingresar mediciones de Humero y Cerebelo.</strong><br>¿Desea ingresar biometrías de Humero y Cerebelo?</p><div class='btn-group btn-group-toggle' data-toggle='buttons'><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verNO' aria-pressed='true' data-modal='"+modal.id+"'><input type='radio' value='0' checked=''> NO</label><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verSi' aria-pressed='true' data-modal='"+modal.id+"'><input type='radio' value='1'> SI</label></div>";
-    
+
             $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {$(this).remove();});
 
-            $( "#infEcoObsSegTrim2verNO").on("click", function(){
+            $("#infEcoObsSegTrim2verNO").on("click", function(){
                 $('#'+this.dataset.modal).modal('hide');
                 modalEcoSegTrimInforme()
             });
 
-            $( "#infEcoObsSegTrim2verSi").on("click", function(){
+            $("#infEcoObsSegTrim2verSi").on("click", function(){
                 $('#'+this.dataset.modal).modal('hide');
                 $('#lh').focus();
                 $("html, body").animate({ scrollTop: 100 }, "slow");
