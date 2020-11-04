@@ -159,7 +159,7 @@ function nombre(){
     the(_modal.titulo).classList.add("mx-auto");
     the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
 
-    let _contenido = '<p>No escribió el nombre de la paciente, escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="nombre">Nombre de la paciente</label><input type="text" class="form-control" id="nombre"></div>'
+    let _contenido = '<p>NO ESCRIBIÓ EL NOMBRE DE LA PACIENTE.<br>escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="nombre">Nombre de la paciente</label><input type="text" class="form-control" id="nombre"></div>'
 
     the(_modal.contenido).innerHTML = _contenido;
     the(_modal.id).children[0].classList.remove("modal-lg");
@@ -179,7 +179,7 @@ function rut(){
     the(_modal.titulo).classList.add("mx-auto");
     the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
 
-    let _contenido = '<p>No escribió el RUT de la paciente, escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="rut">RUT del paciente</label><input type="text" class="form-control" id="rut"></div>'
+    let _contenido = '<p>NO ESCRIBIÓ EL RUT DE LA PACIENTE.<br>escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="rut">RUT del paciente</label><input type="text" class="form-control" id="rut"></div>'
 
     the(_modal.contenido).innerHTML = _contenido;
     the(_modal.id).children[0].classList.remove("modal-lg");
@@ -202,7 +202,7 @@ function eg(){
     let _contenido = '<p>Seleccione la edad gestacional</p>'
 
     the(_modal.contenido).innerHTML = _contenido;
-
+    the(_modal.id).children[0].classList.remove("modal-lg");
     $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 }
 
