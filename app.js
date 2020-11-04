@@ -639,6 +639,11 @@ $( document ).ready(function() {
         $("#pdfviebox").children("ol").children().children().attr("href","#ecoDoppler");
     });
 
+    $("#pdfprimtrim").on("click", function(){
+        $("#pdfview").html('<iframe class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/primtrim.pdf"></iframe>');
+        $("#pdfviebox").children("ol").children().children().attr("href","#ecoObsPrimTrim");
+    });
+
     $("#pdfdos").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#inicio");

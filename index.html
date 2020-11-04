@@ -2164,23 +2164,41 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
-                <h4 class="text-center">Ver Informe</h4>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="py-3 btn-group-vertical d-flex">
-                            <button class="btn btn-default text-white bg-gris" id="btn.informe.precoz">Informe ecográfico</button>
-                        </div>
-                        <div class="py-3 btn-group-vertical d-none">
-                            <button class="btn btn-default text-white bg-gris" id="btn.guardar.precoz">Guardar</button>
-                        </div>
-                        <div class="pt-3 pb-2 btn-group-vertical d-flex">
-                            <button class="btn btn-default text-white bg-gris" id="btn.erase.precoz">Borrar Datos</button>
+            <div class="col-3 border-left">
+                <h6>Ver &lt; 11 semanas</h6>
+                <div class="d-flex justify-content-around py-2">
+                    <button class="btn btn-default text-white bg-gris shadow-lg px-4" id="btn.informe.precoz" title="Informe de Primer trimestre">
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-file-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H4z"/>
+                            <path fill-rule="evenodd" d="M4.5 10.5A.5.5 0 0 1 5 10h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
+                          </svg>
+                    </button>
+                </div>
+                <h6 class="mt-4">Acciones</h6>
+                <div class="d-flex justify-content-around py-2">
+                    <button class="btn btn-default text-white bg-gris d-none px-4" id="btn.guardar.precoz" title="Guardar Exámen">
+                        <svg width="2em" height="2em"  viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM272 80v80H144V80h128zm122 352H54a6 6 0 0 1-6-6V86a6 6 0 0 1 6-6h42v104c0 13.255 10.745 24 24 24h176c13.255 0 24-10.745 24-24V83.882l78.243 78.243a6 6 0 0 1 1.757 4.243V426a6 6 0 0 1-6 6zM224 232c-48.523 0-88 39.477-88 88s39.477 88 88 88 88-39.477 88-88-39.477-88-88-88zm0 128c-22.056 0-40-17.944-40-40s17.944-40 40-40 40 17.944 40 40-17.944 40-40 40z" class=""></path></svg>
+                    </button>
+                    <button class="btn btn-default text-white bg-gris px-4" id="btn.erase.precoz" title="Eliminar exámen">
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                      </svg>
+                    </button>
+                </div>
+                <div class="btn-group-vertical d-flex mt-4">
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="ver.ecoObsSegTrim.snoopy">
+                        <label class="form-check-label" for="ver.ecoObsSegTrim.snoopy">Ver guías clínicas</label>
+                    </div>
+                    <div class="row d-none">
+                        <div class="col-12 mt-2">
+                            <a href="#pdfviebox" id="pdfprimtrim" class="btn btn-otro mb-2 texto-pequeno">realización de la exploración ecográfica fetal del primer trimestre Guía práctica ISUOG</a>
                         </div>
                     </div>
                 </div>
-                <div class="mx-2">
-                    <div class="form-group form-check text-center"> <input type="checkbox" class="form-check-input" id="ver.ecoPrimTrim.snoopy"> <label class="form-check-label" for="ver.ecoPrimTrim.snoopy">Importante</label> </div>
+                <div class="btn-group-vertical d-flex mt-1">
+                    <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="ver.ecoPrimTrim.snoopy"> <label class="form-check-label" for="ver.ecoPrimTrim.snoopy">Importante</label> </div>
                     <div class="row mt-2 d-none">
                         <div class="col-12">
                             <img src="img/Snoopy4.png" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
