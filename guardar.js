@@ -3,8 +3,7 @@ $(document).ready(function() {
         var configuracion = JSON.parse(localStorage["configuracion"]);
 
         if (configuracion.email == 'rudecindolagos@gmail.com'){
-            the("btn.guardar.precoz").parentElement.classList.remove("d-none");
-            the("btn.guardar.precoz").parentElement.classList.add("d-flex");
+            the("btn.guardar.precoz").classList.remove("d-none");
 
             $("#btn\\.guardar\\.precoz").on("click", function(){
                 let configuracion = new FormData()
@@ -94,8 +93,7 @@ $(document).ready(function() {
                 }).catch(function(error) { alert("error") });
             })
 
-            the("btn.guardar.doppler").parentElement.classList.remove("d-none");
-            the("btn.guardar.doppler").parentElement.classList.add("d-flex");
+            the("btn.guardar.doppler").classList.remove("d-none");
 
             $("#btn\\.guardar\\.doppler").on("click", function(){
                 let configuracion = new FormData()
