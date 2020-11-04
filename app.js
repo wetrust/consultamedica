@@ -634,6 +634,11 @@ $( document ).ready(function() {
         $("#pdfviebox").children("ol").children().children().attr("href","#ecoObsSegTrim");  
     })
 
+    $("#pdfdopplernuevo").on("click", function(){
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/uso_ecografia_doppler_obstetrcia.pdf"></iframe>');
+        $("#pdfviebox").children("ol").children().children().attr("href","#ecoDoppler");
+    });
+
     $("#pdfdos").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/2_Defectos_del_crecimiento_fetal.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
