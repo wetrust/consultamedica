@@ -74,9 +74,6 @@
 .bg-gris.active {
     background-color:#b4b4b4!important
 }
-body{
-    background-image:url('img/cream_pixels.png');
-}
 
 .progress{
     background-image: url(img/bg-progress.png);

@@ -39,8 +39,7 @@ $(document).ready(function() {
                 });
             })
 
-            the("btn.guardar.segtrim").parentElement.classList.remove("d-none");
-            the("btn.guardar.segtrim").parentElement.classList.add("d-flex");
+            the("btn.guardar.segtrim").classList.remove("d-none");
 
             $("#btn\\.guardar\\.segtrim").on("click", function(){
                 let configuracion = new FormData()
