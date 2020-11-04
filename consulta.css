@@ -112,3 +112,6 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+.texto-pequeno{
+    font-size: 12px;
+}

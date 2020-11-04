@@ -529,14 +529,6 @@ $( document ).ready(function() {
         }
     });
 
-    $("#ver\\.auto").on("click", function(){
-        if (the("auto").classList.contains("d-none") == true){
-            the("auto").classList.remove("d-none");
-        }else{
-            the("auto").classList.add("d-none");
-        }
-    });
-
     $("#ver\\.ecoPrimTrim, #ver\\.ecoPrimTrim\\.snoopy, #ver\\.ecoObsSegTrim\\.snoopy, #ver\\.ecoDoppler\\.snoopy, #ver\\.ecoGinecologica\\.snoopy, #ver\\.ecoPrimTrim\\.new, #ver\\.ila\\.morfologia").on("click", function(){
         if (this.checked == true){
             this.parentElement.parentElement.children[1].classList.remove("d-none");
