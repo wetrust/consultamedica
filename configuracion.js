@@ -433,7 +433,6 @@ $(document).ready(function() {
 		}
     });
 
-
     //activar
     //
     let largo = config.config.length
@@ -585,6 +584,16 @@ $(document).ready(function() {
         loadTabla(config)
         loadDatabase();
     }
+
+    var h = document.createElement("p")
+    var t = document.createTextNode("Opcionales");
+    h.appendChild(t)
+    h.classList.add("mt-2")
+    h.classList.add("mb-1")
+
+    let tabs = the(tab.nav);
+    tabs.insertBefore(h, tabs.childNodes[tabs.childNodes.length -2]);
+
 });
 
 function errorCorreo(){
