@@ -7,12 +7,22 @@ $(document).ready(function() {
 
             $("#btn\\.guardar\\.precoz").on("click", function(){
                 let configuracion = new FormData()
+
+                let profesional = the("ecografista").options[the("ecografista").selectedIndex].text
+                let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
+                let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
+
                 let data = {
+                    'edadm' : the("edad_materna").value,
+                    'profesional' : profesional,
+                    'motivo' : motivo,
+                    'patologia' : patologia,
                     'Fecha' : the("fee").value,
                     'FUR' : the("fum").value,
                     'LCN' : $("#lcn").val(),
                     'EG Ajustada' : the("lcnPct").value,
                     'FCF' : the("fcf-prim-dos").value,
+                    'saco vitelino' : the("saco-vitelino-mm").value,
                     'Comentario' : the("comentarios-eco-uno").value,
                 }
 
@@ -42,7 +52,16 @@ $(document).ready(function() {
 
             $("#btn\\.guardar\\.segtrim").on("click", function(){
                 let configuracion = new FormData()
+
+                let profesional = the("ecografista").options[the("ecografista").selectedIndex].text
+                let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
+                let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
+
                 let data = {
+                    'edadm' : the("edad_materna").value,
+                    'profesional' : profesional,
+                    'motivo' : motivo,
+                    'patologia' : patologia,
                     'fecha' : the("fee").value,
                     'fur' : the("fum").value,
                     'dbp' : the("dbp").value,
@@ -63,8 +82,10 @@ $(document).ready(function() {
                     'pesopct' : the("pfePctRpt").value,
                     'ccca' : the("ccca").value,
                     'cccapct' : the("cccaPctVal").value,
-                    'placenta' : the("ubicacion").value,
+                    'placenta ubic' : the("ubicacion").value,
+                    'placenta ins' : the("incersion").value,
                     'liquido' : the("liq-cualitativo-eco").value,
+                    'bvm' : the("bvmEcoDos").value,
                     'Uterinas Prom': the('respuesta_uterina_promedio').value,
                     'Uterinas Prom Pct': the('respuesta_uterina_promedio_percentil').textContent,
                     'Largo cervical': the('largo.cervical.segundo').value,
@@ -97,7 +118,16 @@ $(document).ready(function() {
 
             $("#btn\\.guardar\\.doppler").on("click", function(){
                 let configuracion = new FormData()
+
+                let profesional = the("ecografista").options[the("ecografista").selectedIndex].text
+                let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
+                let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
+
                 let data = {
+                    'edadm' : the("edad_materna").value,
+                    'profesional' : profesional,
+                    'motivo' : motivo,
+                    'patologia' : patologia,
                     'fecha' : the("fee").value,
                     'fur' : the("fum").value,
                     'fcf' : the("fcf-prim").value,
