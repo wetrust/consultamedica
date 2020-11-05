@@ -5258,6 +5258,13 @@ $(window).on('hashchange', function(){
         if (hash == "#ecoObsPrimTrim" || hash == "#ecoObsSegTrim"){
             $("#volver").attr("href", "#inicio");
         }
+
+        //especial para el header
+        if (hash == "#inicio"){
+            document.getElementsByTagName("header")[0].classList.remove("d-none");
+        }else{
+            document.getElementsByTagName("header")[0].classList.add("d-none");
+        }
     }
     else{
         $(activeHash).addClass(d);

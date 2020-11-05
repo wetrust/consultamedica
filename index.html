@@ -1204,7 +1204,7 @@
                     <div class="card-body rounded-lg">
                         <h5>Ingresar a plataforma</h5>
                         <div class="d-flex justify-content-start align-items-center">
-                            <a class="btn btn-outline-dark rounded text-left w-100 my-1" href="#consulta" id="boton.datos.iniciales"><small>Datos iniciales de configuración</small></a>
+                            <a class="btn btn-outline-dark rounded text-left w-100 my-1" href="#consulta" id="boton.datos.iniciales"><small>Configuración datos iniciales</small></a>
                             <ul class="mb-0">
                                 <li class="azul-li" id="punto.uno"></li>
                             </ul>
@@ -1269,11 +1269,11 @@
                         <div class="row d-none" id="mensaje.uno">
                             <div class="col-7">
                                 <ul class="text-left mt-5">
-                                    <li class="text-azul"><em><strong>Relativo a ingreso de datos generales.</strong></em></li>
+                                    <li class="text-azul"><em><strong>Niveles de configuración.</strong></em></li>
                                     <ul class="mt-3">
-                                        <li><em>Identificación de centro ultrasonográfico.</em></li>
-                                        <li class="mt-2"><em>Datos propios de paciente a exáminar.</em></li>
-                                        <li class="mt-2"><em>Edad gestacional de referencia.</em></li>
+                                        <li><em>Edad gestacional de referencia.</em></li>
+                                        <li class="mt-2"><em>Configuración datos personales.</em></li>
+                                        <li class="mt-2"><em>Configuración datos generales</em></li>
                                     </ul>
                                 </ul>
                             </div>
@@ -1283,14 +1283,9 @@
                         </div>
                         <div class="row d-none" id="mensaje.dos">
                             <div class="col-7 d-flex align-items-center">
-                                <div>
+                                <div class="mt-5">
                                     <ul>
                                         <li class="text-azul mb-3"><em>Acorde al <strong>modelo clasico de control prenatal</strong>, énfasis en la valoración del crecimiento fetal, diagnóstico y seguimiento Eco / Doppler.</em></li>
-                                        <ul>
-                                            <li class="text-justify text-azul"><em><small>Determinación oportuna de edad gestacional.</small></em></li>
-                                            <li class="text-justify text-azul"><em><small>Valoración ecográfica del crecimiento fetal.</small></em></li>
-                                            <li class="text-justify text-azul"><em><small>Evaluación de flujometria Doppler materno/fetal.</small></em></li>
-                                        </ul>
                                     </ul>
                                 </div>
                             </div>
@@ -1299,22 +1294,12 @@
                             </div>
                         </div>
                         <div class="row d-none" id="mensaje.tres">
-                            <div class="col-7">
-                                <ul>
-                                    <li class="text-justify text-azul mb-2"><small><em>Acorde al modelo <strong>Pirámide Invertida de control prenatal</strong>, aprovechando ventanas de oportunidad, mejorando así capacidad diagostica y oportunidad terapéutica.</em></small></li>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="mt-5">
                                     <ul>
-                                        <li><em><small>En desarrollo:</small></em></li>
-                                        <ul class="list-unstyled">
-                                            <li><em><small>- Ecografía 11 - 14 semanas</small></em></li>
-                                            <li><em><small>- Ecografía 22 - 24 semanas</small></em></li>
-                                        </ul>
-                                        <li class="mt-3"><em><small>Proyectos futuros:</small></em></li>
-                                        <ul class="list-unstyled">
-                                            <li><em><small>- Ecocardiografía básica</small></em></li>
-                                            <li><em><small>- Neurosonografía básica</small></em></li>
-                                        </ul>
+                                        <li class="text-azul mb-3"><small><em>Acorde al modelo <strong>Pirámide Invertida de control prenatal</strong>, aprovechando ventanas de oportunidad, mejorando así capacidad diagostica y oportunidad terapéutica.</em></small></li>
                                     </ul>
-                                </ul>
+                                </div>
                             </div>
                             <div class="col-5 text-center">
                                 <img src="img/tres.png" class="img-fluid my-4 w-75" alt="Logo Crecimientofetal">
@@ -1450,28 +1435,14 @@
     <div class="container d-none" id="consulta">
         <div class="card my-3 shadow-sm">
             <div class="card-body">
-                <div class="mb-3">
-                    <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="ver.consulta"><label class="form-check-label text-primary" for="ver.consulta"><em>Instructivo para él modulo determinación de edad gestacional *</em></label></div>
-                    <div class="d-none p-1">
-                        <p><small>* Para Longitud Céfalo Caudal (LCC) medida entre 7 y 10 semanas, la variación es tan solo +- 3 días.</small></p>
-                        <div class="justify-content-center">
-                            <div style="background-color: #e9ecef" class="p-2 rounded">
-                                <ul type="a" >
-                                    <li>Cálculo de edad gestacional y fecha probable de parto (FPP) según fecha última mestruación (FUM) referida.</li>
-                                    <li>De forma inversa, obtener FUM y FPP a partir de edad gestacional referida, determinada previamente.</li>
-                                    <li>Para evaluación de exámenes anteriores, el software dispone de la opción &laquo; fecha de examen modificable &raquo;</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             <hr class="btn-consulta">
             <p class="text-primary"><em>Configuración general y datos personales</em></p>
             <div class="card mx-5" style="background-color:#ebefff;">
                 <div class="card-body">
                     <div class="row my-4">
                         <div class="col-9">
-                            <h5 class="card-title text-dark">A.- Configuración datos de paciente en exámen ultrasonográfico.</h5>
+                            <h5 class="card-title text-dark">A.- Configuración datos personales.</h5>
                         </div>
                         <div class="col-3">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -1486,7 +1457,7 @@
                     </div>
                     <div class="row mb-2">
                         <div class="col-9">
-                            <h5 class="card-title text-dark">B.- Configuración datos propios de cada unidad ultrasonográfica.</h5>
+                            <h5 class="card-title text-dark">B.- Configuración datos generales.</h5>
                         </div>
                         <div class="col-3">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -1507,6 +1478,21 @@
                 </div>
             </div>
             <hr class="btn-consulta">
+            <div class="mb-3">
+                <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="ver.consulta"><label class="form-check-label text-primary" for="ver.consulta"><em>Instructivo para él modulo determinación de edad gestacional *</em></label></div>
+                <div class="d-none p-1">
+                    <p><small>* Para Longitud Céfalo Caudal (LCC) medida entre 7 y 10 semanas, la variación es tan solo +- 3 días.</small></p>
+                    <div class="justify-content-center">
+                        <div style="background-color: #e9ecef" class="p-2 rounded">
+                            <ul type="a" >
+                                <li>Cálculo de edad gestacional y fecha probable de parto (FPP) según fecha última mestruación (FUM) referida.</li>
+                                <li>De forma inversa, obtener FUM y FPP a partir de edad gestacional referida, determinada previamente.</li>
+                                <li>Para evaluación de exámenes anteriores, el software dispone de la opción &laquo; fecha de examen modificable &raquo;</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     </div>
