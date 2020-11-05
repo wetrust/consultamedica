@@ -13,7 +13,7 @@ $(document).ready(function() {
                 let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
                 let data = {
-                    'edadm' : the("edad_materna").value,
+                    'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
                     'motivo' : motivo,
                     'patologia' : patologia,
@@ -58,7 +58,7 @@ $(document).ready(function() {
                 let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
                 let data = {
-                    'edadm' : the("edad_materna").value,
+                    'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
                     'motivo' : motivo,
                     'patologia' : patologia,
@@ -124,7 +124,7 @@ $(document).ready(function() {
                 let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
                 let data = {
-                    'edadm' : the("edad_materna").value,
+                    'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
                     'motivo' : motivo,
                     'patologia' : patologia,
