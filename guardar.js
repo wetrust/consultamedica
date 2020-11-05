@@ -82,7 +82,7 @@ $(document).ready(function() {
                 configuracion.append("eg", the("semanas").value)
                 let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
                 configuracion.append("lugar", lugar)
-                configuracion.append("lugar", the("lcontrolpaciente").value)
+                configuracion.append("tipo", "Evaluación del crecimiento fetal")
                 configuracion.append("data", JSON.stringify(data))
 
                 fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
@@ -129,7 +129,7 @@ $(document).ready(function() {
                 configuracion.append("eg", the("semanas").value)
                 let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
                 configuracion.append("lugar", lugar)
-                configuracion.append("lugar", the("lcontrolpaciente").value)
+                configuracion.append("tipo", "Flujometría Doppler materno / fetal")
                 configuracion.append("data", JSON.stringify(data))
 
                 fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
