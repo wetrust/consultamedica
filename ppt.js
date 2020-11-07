@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     let req = new FormData()
     req.append("user_id", 2)
 
@@ -8,9 +7,7 @@ $(document).ready(function(){
         if (data.success){
             let categorias = []
 
-            $.each(data.data, function(i, item) {
-                categorias.push(item.categoria_text);
-            })
+            $.each(data.data, function(i, item) { categorias.push(item.categoria_text) })
 
             //remover repetidos
             let unique = [...new Set(categorias)];
@@ -48,11 +45,11 @@ function getfile(){
         the(_modal.titulo).innerHTML = "Escribir E-Mail de acceso validado";
         the(_modal.titulo).classList.add("mx-auto");
         the(_modal.titulo).parentElement.classList.add("bg-info", "text-white");
-    
+
         var _correo = uuidv4();
         var _solicitud = uuidv4();
         let _contenido = '<div class="row"><div class="col-12"><div class="form-group"><input id="'+_correo+'" class="form-control" type="email"><p>Si aún no dispone de acceso <button type="button" class="btn btn-link"  id="'+_solicitud+'">active solicitud</button></p></div></div></div>'
-    
+
         the(_modal.contenido).innerHTML = _contenido;
         the(_modal.id).children[0].classList.remove("modal-lg");
         the(_modal.button).dataset.file = file;
@@ -82,14 +79,17 @@ function getfile(){
                 fetch('https://api.crecimientofetal.cl/api/archivo', {method: 'POST',body: req, mode: 'cors'}).then(response => response.json())
                 .then(data => {
                     if (data.success){
-                        window.location.href = 'https://api.crecimientofetal.cl/archivos/' + data.file;
+
+                        $("#pdfview").html('<iframe  class="embed-responsive-item" src="'+'https://api.crecimientofetal.cl/archivos/' + data.file +'"></iframe>');
+                        $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
+                        document.location.hash = "#pdfviebox";
+
                     }else{
                         alert("No autorizado");
                     }
                 })
             }
         }
-
 
         the(_solicitud).onclick = function(){
             let _modal = modal("Enviar");
@@ -126,7 +126,7 @@ function getfile(){
                 req.append("mensaje", the(mensaje).value)
 
                 $('#'+this.dataset.modal).modal("hide");
-            
+
                 fetch('https://api.crecimientofetal.cl/api/solicitud', {method: 'POST',body: req, mode: 'cors'}).then(response => response.json())
                 .then(data => {
                     if (data.success){
@@ -140,20 +140,26 @@ function getfile(){
                         the(_modal.contenido).innerHTML = '<p>Pronto daremos respuesta a su solicitud y obtendrá acceso temporal a documentos restringidos.</p>';
                         the("cancelarmodal").textContent = "Volver a documentos restrigidos"
                     }else{
+
                         alert("No disponible");
+
                     }
                 })
-
             }
         }
     }else{
         let req = new FormData()
         req.append("archivo_id", file)
-    
+
         fetch('https://api.crecimientofetal.cl/api/archivo', {method: 'POST',body: req, mode: 'cors'}).then(response => response.json())
         .then(data => {
             if (data.success){
-                window.location.href = 'https://api.crecimientofetal.cl/archivos/' + data.file;
+
+                $("#pdfview").html('<iframe  class="embed-responsive-item" src="'+'https://api.crecimientofetal.cl/archivos/' + data.file +'"></iframe>');
+                $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
+
+                document.location.hash = "#pdfviebox";
+
             }else{
                 alert("No autorizado");
             }

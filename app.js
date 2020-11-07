@@ -5255,7 +5255,7 @@ $(window).on('hashchange', function(){
         }
 
         //especial
-        if (hash == "#ecoObsPrimTrim" || hash == "#ecoObsSegTrim"){
+        if (hash == "#ecoObsPrimTrim" || hash == "#ecoObsSegTrim" || hash == "#inicio"){
             $("#volver").attr("href", "#inicio");
         }
 
