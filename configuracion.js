@@ -1,4 +1,4 @@
-var config = JSON.parse('{"name": "configuración", "backurl": "#volver", "backend": "", "localstorage": true, "usehash": true, "config": [{"name": "Membrete unidad ecográfica", "data": "membrete", "desc": "", "input": [{"name": "", "type": "textarea", "row": 3, "limit": 40, "help": ""}], "table": false, "open": true},{"name": "Ciudad de procedencia", "data": "nacionalidad", "desc": "", "input": [{"name": "Nombre de la ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Lugar de control", "data": "lcontrol", "desc": "", "input": [{"name": "Lugar de control", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Motivo exámen", "data": "MotivoExamen", "desc": "", "input": [{"name": "Nombre del motivo", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Patología obstétrica", "data": "PatologiaObstetrica", "desc": "", "input": [{"name": "Nombre de la patología", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Profesional examinador", "data": "profesional", "desc": "", "input": [{"name": "Nombre profesional", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Profesional de contacto", "data": "correos", "desc": "", "input": [{"name": "Nombre", "type": "text", "limit": 40, "help": ""},{"name": "Profesión", "type": "text", "limit": 40, "help": ""},{"name": "Ciudad", "type": "text", "limit": 40, "help": ""},{"name": "E-Mail", "type": "email", "limit": 40, "help": ""},{"name": "Teléfono", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Activación de licencia", "data": "activacion", "desc": "", "input": [], "table": false, "open": false}]}');
+var config = JSON.parse('{"name": "configuración", "backurl": "#volver", "backend": "", "localstorage": true, "usehash": true, "config": [{"name": "Membrete unidad ecográfica", "data": "membrete", "desc": "", "input": [{"name": "", "type": "textarea", "row": 3, "limit": 40, "help": ""}], "table": false, "open": true},{"name": "Ciudad de procedencia", "data": "nacionalidad", "desc": "", "input": [{"name": "Nombre de la ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Lugar de control", "data": "lcontrol", "desc": "", "input": [{"name": "Lugar de control", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Motivo exámen", "data": "MotivoExamen", "desc": "", "input": [{"name": "Nombre del motivo", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Patología obstétrica", "data": "PatologiaObstetrica", "desc": "", "input": [{"name": "Nombre de la patología", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Profesional examinador", "data": "profesional", "desc": "", "input": [{"name": "Nombre profesional", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Profesional referente", "data": "correos", "desc": "", "input": [{"name": "Nombre", "type": "text", "limit": 40, "help": ""},{"name": "Profesión", "type": "text", "limit": 40, "help": ""},{"name": "Ciudad", "type": "text", "limit": 40, "help": ""},{"name": "E-Mail", "type": "email", "limit": 40, "help": ""},{"name": "Teléfono", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Activación de licencia", "data": "activacion", "desc": "", "input": [], "table": false, "open": false}]}');
 
 function createTabs(config){
     var navID = uuidv4();
@@ -389,6 +389,15 @@ function loadDatabase() {
         });
     }
 
+    //profesional referente
+    $('#profref').empty();
+    if (configuracion.correos.length > 0) {
+        $.each(configuracion.correos, function(i, item) {
+            $('#profref').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
+        });
+    }
+
+
     //membrete
     $("#"+config.config[0].input[0].id).val(configuracion.membrete);
     $("#correo\\.configuracion").val(configuracion.email);
@@ -434,7 +443,6 @@ $(document).ready(function() {
     });
 
     //activar
-    //
     let largo = config.config.length
     largo = largo -1
 
@@ -593,7 +601,7 @@ $(document).ready(function() {
     h.classList.add("mt-2", "mb-1")
 
     let tabs = the(tab.nav);
-    tabs.insertBefore(h, tabs.childNodes[tabs.childNodes.length -2]);
+    tabs.insertBefore(h, tabs.childNodes[tabs.childNodes.length -1]);
 
 });
 
