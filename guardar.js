@@ -13,6 +13,8 @@ $(document).ready(function() {
                 let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
                 let data = {
+                    'Nombre profesional referente': the("profref").value,
+                    'Fono profesional referente': the("profreftel").value,
                     'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
                     'motivo' : motivo,
@@ -58,6 +60,8 @@ $(document).ready(function() {
                 let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
                 let data = {
+                    'Nombre profesional referente': the("profref").value,
+                    'Fono profesional referente': the("profreftel").value,
                     'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
                     'motivo' : motivo,
@@ -124,6 +128,8 @@ $(document).ready(function() {
                 let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
                 let data = {
+                    'Nombre profesional referente': the("profref").value,
+                    'Fono profesional referente': the("profreftel").value,
                     'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
                     'motivo' : motivo,

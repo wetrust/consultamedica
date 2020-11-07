@@ -397,6 +397,10 @@ function loadDatabase() {
         });
     }
 
+    $('#profref').off("change", loadTelefono)
+    $('#profref').on("change", loadTelefono)
+    $('#profref').trigger("change")
+
 
     //membrete
     $("#"+config.config[0].input[0].id).val(configuracion.membrete);
@@ -604,6 +608,16 @@ $(document).ready(function() {
     tabs.insertBefore(h, tabs.childNodes[tabs.childNodes.length -1]);
 
 });
+
+function loadTelefono(){
+    var configuracion = JSON.parse(localStorage["configuracion"]);
+    var resultado = ""
+
+    if (configuracion.correos.length > 0) {
+        resultado = configuracion.correos[+this.value -1][4]
+    }
+    $('#profreftel').val(resultado)
+}
 
 function errorCorreo(){
     let modal = makeModal()
