@@ -450,7 +450,7 @@ $(document).ready(function() {
     let largo = config.config.length
     largo = largo -1
 
-    let activacion = '<p class="text-secondary mb-0"><small><em>Opciones avanzadas permiten:</em></small></p><ol class="text-secondary"><li><small><em>Envío de  informes por EMail</em></small></li><li><small><em>Guardar &#47; restaurar parámetros de configuración</em></small></li></ol>'
+    let activacion = '<ol class="text-secondary"><li><small><em>Envío de  informes por EMail</em></small></li><li><small><em>Guardar &#47; restaurar parámetros de configuración</em></small></li></ol>'
     let accordion = uuidv4();
     let collapse = uuidv4();
     let title = uuidv4();
@@ -468,7 +468,7 @@ $(document).ready(function() {
     activacion += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
     activacion += '<div class="form-group row"><label class="col-12">Ingresar E-Mail para configuración personal: </label><div class="col-4"><input type="email" id="correo.configuracion" class="form-control" /></div><div class="col"><button type="button" class="btn btn-secondary" id="correo.configuracion.guardar">Guardar</button><button type="button" class="btn btn-secondary" id="correo.configuracion.cargar">Restaurar configuración</button></div></div>'
     activacion += '</div></div></div></div>'
-    activacion += '<p class="text-secondary"><small><em>Al utilizar Google Chrome puede guadar los informes en formato pdf directamente en Google Drive</em></small></p>'
+    activacion += '<p class="text-secondary"><small><em>Al utilizar Google Chrome puede guardar informe de exámen en formato pdf directamente en Google Drive</em></small></p>'
 
     the(config.config[largo].tab).insertAdjacentHTML("beforeend",activacion)
 
