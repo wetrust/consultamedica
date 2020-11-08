@@ -12,8 +12,10 @@ $(document).ready(function() {
                 let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
                 let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
+                let profRef = the("profref").options[the("profref").selectedIndex].text
+
                 let data = {
-                    'Nombre profesional referente': the("profref").value,
+                    'Nombre profesional referente': profRef,
                     'Fono profesional referente': the("profreftel").value,
                     'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
@@ -59,8 +61,10 @@ $(document).ready(function() {
                 let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
                 let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
+                let profRef = the("profref").options[the("profref").selectedIndex].text
+
                 let data = {
-                    'Nombre profesional referente': the("profref").value,
+                    'Nombre profesional referente': profRef,
                     'Fono profesional referente': the("profreftel").value,
                     'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
@@ -127,8 +131,10 @@ $(document).ready(function() {
                 let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
                 let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
+                let profRef = the("profref").options[the("profref").selectedIndex].text
+
                 let data = {
-                    'Nombre profesional referente': the("profref").value,
+                    'Nombre profesional referente': profRef,
                     'Fono profesional referente': the("profreftel").value,
                     'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
