@@ -614,7 +614,7 @@ function loadTelefono(){
     var resultado = ""
 
     if (configuracion.correos.length > 0) {
-        resultado = configuracion.correos[+this.value -1][4]
+        resultado = configuracion.correos[+this.value -1][1]
     }
     $('#profreftel').val(resultado)
 }
