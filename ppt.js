@@ -19,7 +19,11 @@ $(document).ready(function(){
                 let archivosInCategorias = data.data.filter(archivo => { return archivo.categoria_text === item; });
 
                 $.each(archivosInCategorias, function(i, item) {
-                    ul += '<li>'+ item.archivo_text+' <a class="getfile" data-id="'+item.archivo_id+'" data-private="'+item.archivo_private+'">Ver</a></li>'
+                    ul += '<li>'+ item.archivo_text
+                    if (item.archivo_private == "1"){
+                        ul += ' (restringido)'
+                    }
+                    ul += ' <a class="getfile" data-id="'+item.archivo_id+'" data-private="'+item.archivo_private+'">Ver</a></li>'
                 })
                 ul += '</ul>'
 
