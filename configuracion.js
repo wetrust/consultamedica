@@ -49,7 +49,7 @@ function createInputs(config){
             let elemento = ""
             var inputs = ""
     
-            elemento = '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">Nuevo '+config.config[z].name+'</h6></div><div id="'+collapse+'" class="collapse '
+            elemento = '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white pointer" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">Nuevo '+config.config[z].name+'</h6></div><div id="'+collapse+'" class="collapse '
             if (config.config[z].open == true){
                 elemento += 'show'
             }
@@ -455,7 +455,7 @@ $(document).ready(function() {
     let collapse = uuidv4();
     let title = uuidv4();
 
-    activacion += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">1.- Envío de informes por E-Mail</h6></div><div id="'+collapse+'" class="collapse '
+    activacion += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white pointer" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">1.- Envío de informes por E-Mail</h6></div><div id="'+collapse+'" class="collapse '
     activacion += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
     activacion += '<div class="form-group row"> <label class="col-12">Activar envío informes por E-Mail:</label> <div class="col-sm-2"> <div class="btn-group btn-group-toggle" data-toggle="buttons"> <label class="btn btn-secondary active" id="licencia.no.button"><input type="radio" name="check.licencia" id="licencia.no" value="" checked="checked"/> No</label> <label class="btn btn-secondary ml-2" id="licencia.button"><input type="radio" name="check.licencia" id="licencia" value="medicina"/> Si</label> </div></div><div class="col-12 col-lg-6"><p id="mensaje.licencia" class="text-primary">Licencia activada</p></div></div><p>Email de destinatario debe ser configurado previamente en profesional referente</p>'
     activacion += '</div></div></div></div>'
@@ -464,7 +464,7 @@ $(document).ready(function() {
     collapse = uuidv4();
     title = uuidv4();
 
-    activacion += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">2.- Guardar &#47; restaurar configuración</h6></div><div id="'+collapse+'" class="collapse '
+    activacion += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white pointer" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">2.- Guardar &#47; restaurar configuración</h6></div><div id="'+collapse+'" class="collapse '
     activacion += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
     activacion += '<div class="form-group row"><label class="col-12">Ingresar E-Mail para configuración personal: </label><div class="col-4"><input type="email" id="correo.configuracion" class="form-control" /></div><div class="col"><button type="button" class="btn btn-secondary" id="correo.configuracion.guardar">Guardar</button><button type="button" class="btn btn-secondary" id="correo.configuracion.cargar">Restaurar configuración</button></div></div>'
     activacion += '</div></div></div></div>'
