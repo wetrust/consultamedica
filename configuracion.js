@@ -409,9 +409,9 @@ function loadDatabase() {
     if (configuracion.licencia == "medicina"){
         the("licencia").parentElement.classList.add("active");
         the("licencia.no").parentElement.classList.remove("active");
-        the("mensaje.licencia").innerHTML =  "Licencia activada";
+        the("mensaje.licencia").innerHTML =  "Envio activado";
     } else {
-        the("mensaje.licencia").innerHTML =  "Licencia desactivada";
+        the("mensaje.licencia").innerHTML =  "Envio desactivado";
     }
 }
 
