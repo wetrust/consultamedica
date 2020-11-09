@@ -468,7 +468,7 @@ $(document).ready(function() {
     activacion += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
     activacion += '<div class="form-group row"><label class="col-12">Ingresar E-Mail para configuración personal: </label><div class="col-4"><input type="email" id="correo.configuracion" class="form-control" /></div><div class="col"><button type="button" class="btn btn-secondary" id="correo.configuracion.guardar">Guardar</button><button type="button" class="btn btn-secondary" id="correo.configuracion.cargar">Restaurar configuración</button></div></div>'
     activacion += '</div></div></div></div>'
-    activacion += '<p class="text-white bg-secondary mt-5"><em>Como alternativa a "Opciones avanzadas", utilizando Google Chrome puede guardar informe directamente en Google Drive.</em></p>'
+    activacion += '<p class="mt-5"><em>Como alternativa a "Opciones avanzadas", utilizando Google Chrome puede guardar informe directamente en Google Drive.</em></p>'
 
     the(config.config[largo].tab).insertAdjacentHTML("beforeend",activacion)
 
