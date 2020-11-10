@@ -1,4 +1,4 @@
-var config = JSON.parse('{"name": "configuración", "backurl": "#volver", "backend": "", "localstorage": true, "usehash": true, "config": [{"name": "Membrete unidad ecográfica", "data": "membrete", "desc": "", "input": [{"name": "", "type": "textarea", "row": 3, "limit": 40, "help": ""}], "table": false, "open": true},{"name": "Ciudad de procedencia", "data": "nacionalidad", "desc": "", "input": [{"name": "Nombre de la ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Lugar de control", "data": "lcontrol", "desc": "", "input": [{"name": "Lugar de control", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Motivo exámen", "data": "MotivoExamen", "desc": "", "input": [{"name": "Nombre del motivo", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Patología obstétrica", "data": "PatologiaObstetrica", "desc": "", "input": [{"name": "Nombre de la patología", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Profesional ecografista", "data": "profesional", "desc": "", "input": [{"name": "Nombre profesional", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Guardar Configuracion", "data": "guardar", "desc": "", "input": [], "table": false, "open": false},{"name": "Profesional referente", "data": "correos", "desc": "", "input": [{"name": "NOMBRE", "type": "text", "limit": 40, "help": ""},{"name": "TELÉFONO", "type": "text", "limit": 40, "help": ""},{"name": "E-MAIL", "type": "email", "limit": 40, "help": ""},{"name": "Profesión", "type": "text", "limit": 40, "help": ""},{"name": "Ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Opciones avanzadas", "data": "activacion", "desc": "", "input": [], "table": false, "open": false}]}');
+var config = JSON.parse('{"name": "configuración", "backurl": "#volver", "backend": "", "localstorage": true, "usehash": true, "config": [{"name": "Membrete unidad ecográfica", "data": "membrete", "desc": "", "input": [{"name": "", "type": "textarea", "row": 3, "limit": 40, "help": ""}], "table": false, "open": true},{"name": "Ciudad de procedencia", "data": "nacionalidad", "desc": "", "input": [{"name": "Nombre de la ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Lugar de control", "data": "lcontrol", "desc": "", "input": [{"name": "Lugar de control", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Motivo exámen", "data": "MotivoExamen", "desc": "", "input": [{"name": "Nombre del motivo", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Patología obstétrica", "data": "PatologiaObstetrica", "desc": "", "input": [{"name": "Nombre de la patología", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Profesional ecografista", "data": "profesional", "desc": "", "input": [{"name": "Nombre profesional", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Guardar Configuracion", "data": "guardar", "desc": "", "input": [], "table": false, "open": false},{"name": "Profesional referente", "data": "correos", "desc": "", "input": [{"name": "NOMBRE", "type": "text", "limit": 40, "help": ""},{"name": "TELÉFONO", "type": "text", "limit": 40, "help": ""},{"name": "E-MAIL", "type": "email", "limit": 40, "help": ""},{"name": "Profesión", "type": "text", "limit": 40, "help": ""},{"name": "Ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Envio informes por E-Mail", "data": "activacion", "desc": "", "input": [], "table": false, "open": false}]}');
 
 function createTabs(config){
     var navID = uuidv4();
@@ -619,13 +619,33 @@ $(document).ready(function() {
         loadDatabase();
     }
 
+    //agregar una brujeria para ocultar 2 opciones en base al criterio del doc
     var h = document.createElement("p")
-    var t = document.createTextNode("Datos opcionales");
+    var t = document.createTextNode("Opciones avanzadas");
+    h.appendChild(t)
+    t = document.createElement("br")
+    h.appendChild(t)
+    t = document.createTextNode("(En construcción)");
+    h.appendChild(t)
+    t = document.createElement("a");
+    let x = document.createTextNode(".");
+    t.appendChild(x)
+    t.id = "configOculto"; 
     h.appendChild(t)
     h.classList.add("mt-2", "mb-1")
 
     let tabs = the(tab.nav);
     tabs.insertBefore(h, tabs.childNodes[tabs.childNodes.length -2]);
+
+    the(config.config[config.config.length -1].tab).classList.add("d-none")
+    the(config.config[config.config.length -2].tab).classList.add("d-none")
+
+    $("#configOculto").on("click", function(){
+        the(config.config[config.config.length -1].tab).classList.remove("d-none")
+        the(config.config[config.config.length -2].tab).classList.remove("d-none")
+        the("profesionalOcultoConfig").classList.remove("d-none")
+    })
+
 });
 
 function loadTelefono(){

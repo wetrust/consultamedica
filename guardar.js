@@ -3,6 +3,7 @@ $(document).ready(function() {
         var configuracion = JSON.parse(localStorage["configuracion"]);
 
         if (configuracion.email == 'rudecindolagos@gmail.com'){
+            the("profesionalOcultoConfig").classList.remove("d-none")
             the("btn.guardar.precoz").classList.remove("d-none");
 
             $("#btn\\.guardar\\.precoz").on("click", function(){
