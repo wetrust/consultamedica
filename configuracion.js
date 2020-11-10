@@ -474,7 +474,7 @@ $(document).ready(function() {
     activacion += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
     activacion += '<div class="form-group row"> <label class="col-12">Activar envío informes por E-Mail:</label> <div class="col-sm-2"> <div class="btn-group btn-group-toggle" data-toggle="buttons"> <label class="btn btn-secondary active" id="licencia.no.button"><input type="radio" name="check.licencia" id="licencia.no" value="" checked="checked"/> No</label> <label class="btn btn-secondary ml-2" id="licencia.button"><input type="radio" name="check.licencia" id="licencia" value="medicina"/> Si</label> </div></div><div class="col-12 col-lg-6"><p id="mensaje.licencia" class="text-primary">Licencia activada</p></div></div><p>Email de destinatario debe ser configurado previamente en profesional referente</p>'
     activacion += '</div></div></div></div>'
-    activacion += '<p class="mt-5"><em>Como alternativa a "Opciones avanzadas", utilizando Google Chrome puede guardar informe directamente en Google Drive.</em></p>'
+    activacion += '<p class="mt-5"><em>Como alternativa a "Envio de E-Mail personalizado", utilizando Google Chrome puede guardar informe directamente en Google Drive.</em></p>'
 
     the(config.config[largo].tab).insertAdjacentHTML("beforeend",activacion)
 
