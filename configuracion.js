@@ -65,7 +65,7 @@ function createInputs(config){
                 if (config.config[z].input[y].type == "textarea"){
                     inputs += '<textarea class="form-control" rows="'+config.config[z].input[y].row+'" id="'+id+'"'
                 }else{
-                    inputs += '<input type="'+config.config[z].input[y].name+'" class="form-control" id="'+id+'"'
+                    inputs += '<input type="'+config.config[z].input[y].type+'" class="form-control" id="'+id+'"'
                 }
     
                 //aria
@@ -209,7 +209,7 @@ function modal_edit(){
         if (config.config[z].input[y].type == "textarea"){
             _contenido += '<textarea class="form-control" row="'+config.config[z].input[y].row+'" id="'+id+'"'
         }else{
-            _contenido += '<input type="'+config.config[z].input[y].name+'" class="form-control" id="'+id+'" value="'+ data[y]+'"'
+            _contenido += '<input type="'+config.config[z].input[y].type+'" class="form-control" id="'+id+'" value="'+ data[y]+'"'
         }
 
         //aria
@@ -310,7 +310,6 @@ function haveDatabase() {
 }
 
 function checkIntegrity() {
-
     configuracion = localStorage["configuracion"];
     if (configuracion){
         let db = JSON.parse(localStorage["configuracion"]);
@@ -333,7 +332,6 @@ function checkIntegrity() {
     
         localStorage["configuracion"] = JSON.stringify(db);
     }
-    
 }
 
 function makeDatabase() {
@@ -432,7 +430,7 @@ $(document).ready(function() {
 		// IE
 		if(window.event) {
 			keynum = e.keyCode;
-		// Netscape/Firefox/Opera
+		    // Netscape/Firefox/Opera
 		} else if(e.which) {
 			keynum = e.which;
 		}
@@ -620,7 +618,6 @@ $(document).ready(function() {
 
     let tabs = the(tab.nav);
     tabs.insertBefore(h, tabs.childNodes[tabs.childNodes.length -1]);
-
 });
 
 function loadTelefono(){
