@@ -457,7 +457,7 @@ $(document).ready(function() {
     guardar += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
     guardar += '<div class="form-group row"><label class="col-12">Ingresar E-Mail para configuración personal: </label><div class="col-4"><input type="email" id="correo.configuracion" class="form-control" /></div><div class="col"><button type="button" class="btn btn-secondary" id="correo.configuracion.guardar">Guardar</button><button type="button" class="btn btn-secondary" id="correo.configuracion.cargar">Restaurar configuración</button></div></div>'
     guardar += '</div></div></div></div>'
-    guardar += '<p class="mt-5"><em>-La configuración de la plataforma se guarda de forma temporal en su navegador, si desea guardar la configuración de forma permanente escriba su email y presione el boton guardar.<br>-Si desea restaurar la configuración guardada anteriormente presione el botón restaurar.<br>-Recuerde que si guardo una configuración y hace nuevos cambios, debe guardarla nuevamente ya que el guardado no es automático. </em></p>'
+    guardar += '<p class="mt-5"><em>-Configuración de la plataforma se guarda de forma temporal en su navegador, si desea guardar configuración de forma permanente escriba su email y presione el boton guardar.<br>-Si desea restaurar configuración guardada anteriormente presione el botón restaurar.<br>-Recuerde que si guardo una configuración y hace nuevos cambios, debe guardarla nuevamente ya que el guardado no es automático.</em></p>'
 
     the(config.config[largo].tab).insertAdjacentHTML("beforeend",guardar)
 
