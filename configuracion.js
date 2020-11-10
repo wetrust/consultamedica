@@ -1,4 +1,4 @@
-var config = JSON.parse('{"name": "configuración", "backurl": "#volver", "backend": "", "localstorage": true, "usehash": true, "config": [{"name": "Membrete unidad ecográfica", "data": "membrete", "desc": "", "input": [{"name": "", "type": "textarea", "row": 3, "limit": 40, "help": ""}], "table": false, "open": true},{"name": "Ciudad de procedencia", "data": "nacionalidad", "desc": "", "input": [{"name": "Nombre de la ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Lugar de control", "data": "lcontrol", "desc": "", "input": [{"name": "Lugar de control", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Motivo exámen", "data": "MotivoExamen", "desc": "", "input": [{"name": "Nombre del motivo", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Patología obstétrica", "data": "PatologiaObstetrica", "desc": "", "input": [{"name": "Nombre de la patología", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Profesional ecografista", "data": "profesional", "desc": "", "input": [{"name": "Nombre profesional", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Profesional referente", "data": "correos", "desc": "", "input": [{"name": "NOMBRE", "type": "text", "limit": 40, "help": ""},{"name": "TELÉFONO", "type": "text", "limit": 40, "help": ""},{"name": "E-MAIL", "type": "email", "limit": 40, "help": ""},{"name": "Profesión", "type": "text", "limit": 40, "help": ""},{"name": "Ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Opciones avanzadas", "data": "activacion", "desc": "", "input": [], "table": false, "open": false}]}');
+var config = JSON.parse('{"name": "configuración", "backurl": "#volver", "backend": "", "localstorage": true, "usehash": true, "config": [{"name": "Membrete unidad ecográfica", "data": "membrete", "desc": "", "input": [{"name": "", "type": "textarea", "row": 3, "limit": 40, "help": ""}], "table": false, "open": true},{"name": "Ciudad de procedencia", "data": "nacionalidad", "desc": "", "input": [{"name": "Nombre de la ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Lugar de control", "data": "lcontrol", "desc": "", "input": [{"name": "Lugar de control", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Motivo exámen", "data": "MotivoExamen", "desc": "", "input": [{"name": "Nombre del motivo", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Patología obstétrica", "data": "PatologiaObstetrica", "desc": "", "input": [{"name": "Nombre de la patología", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Profesional ecografista", "data": "profesional", "desc": "", "input": [{"name": "Nombre profesional", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Guardar Configuracion", "data": "guardar", "desc": "", "input": [], "table": false, "open": false},{"name": "Profesional referente", "data": "correos", "desc": "", "input": [{"name": "NOMBRE", "type": "text", "limit": 40, "help": ""},{"name": "TELÉFONO", "type": "text", "limit": 40, "help": ""},{"name": "E-MAIL", "type": "email", "limit": 40, "help": ""},{"name": "Profesión", "type": "text", "limit": 40, "help": ""},{"name": "Ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Opciones avanzadas", "data": "activacion", "desc": "", "input": [], "table": false, "open": false}]}');
 
 function createTabs(config){
     var navID = uuidv4();
@@ -444,27 +444,34 @@ $(document).ready(function() {
 		}
     });
 
-    //activar
+    //guardar configuracion
     let largo = config.config.length
-    largo = largo -1
+    largo = largo -3
 
-    let activacion = '<ol class="text-secondary"><li><em>Envío de  informes por EMail</em></li><li><em>Guardar &#47; restaurar parámetros de configuración</em></li></ol>'
+    let guardar = ""
     let accordion = uuidv4();
     let collapse = uuidv4();
     let title = uuidv4();
 
-    activacion += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white pointer" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">1.- Envío de informes por E-Mail</h6></div><div id="'+collapse+'" class="collapse '
-    activacion += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
-    activacion += '<div class="form-group row"> <label class="col-12">Activar envío informes por E-Mail:</label> <div class="col-sm-2"> <div class="btn-group btn-group-toggle" data-toggle="buttons"> <label class="btn btn-secondary active" id="licencia.no.button"><input type="radio" name="check.licencia" id="licencia.no" value="" checked="checked"/> No</label> <label class="btn btn-secondary ml-2" id="licencia.button"><input type="radio" name="check.licencia" id="licencia" value="medicina"/> Si</label> </div></div><div class="col-12 col-lg-6"><p id="mensaje.licencia" class="text-primary">Licencia activada</p></div></div><p>Email de destinatario debe ser configurado previamente en profesional referente</p>'
-    activacion += '</div></div></div></div>'
+    guardar += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white pointer" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">Guardar &#47; restaurar configuración</h6></div><div id="'+collapse+'" class="collapse show'
+    guardar += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
+    guardar += '<div class="form-group row"><label class="col-12">Ingresar E-Mail para configuración personal: </label><div class="col-4"><input type="email" id="correo.configuracion" class="form-control" /></div><div class="col"><button type="button" class="btn btn-secondary" id="correo.configuracion.guardar">Guardar</button><button type="button" class="btn btn-secondary" id="correo.configuracion.cargar">Restaurar configuración</button></div></div>'
+    guardar += '</div></div></div></div>'
 
+    the(config.config[largo].tab).insertAdjacentHTML("beforeend",guardar)
+
+    //activar
+    largo = config.config.length
+    largo = largo -1
+
+    let activacion = '<ol class="text-secondary"><li><em>Envío de  informes por EMail</em></li></ol>'
     accordion = uuidv4();
     collapse = uuidv4();
     title = uuidv4();
 
-    activacion += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white pointer" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">2.- Guardar &#47; restaurar configuración</h6></div><div id="'+collapse+'" class="collapse '
+    activacion += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white pointer" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">1.- Envío de informes por E-Mail</h6></div><div id="'+collapse+'" class="collapse '
     activacion += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
-    activacion += '<div class="form-group row"><label class="col-12">Ingresar E-Mail para configuración personal: </label><div class="col-4"><input type="email" id="correo.configuracion" class="form-control" /></div><div class="col"><button type="button" class="btn btn-secondary" id="correo.configuracion.guardar">Guardar</button><button type="button" class="btn btn-secondary" id="correo.configuracion.cargar">Restaurar configuración</button></div></div>'
+    activacion += '<div class="form-group row"> <label class="col-12">Activar envío informes por E-Mail:</label> <div class="col-sm-2"> <div class="btn-group btn-group-toggle" data-toggle="buttons"> <label class="btn btn-secondary active" id="licencia.no.button"><input type="radio" name="check.licencia" id="licencia.no" value="" checked="checked"/> No</label> <label class="btn btn-secondary ml-2" id="licencia.button"><input type="radio" name="check.licencia" id="licencia" value="medicina"/> Si</label> </div></div><div class="col-12 col-lg-6"><p id="mensaje.licencia" class="text-primary">Licencia activada</p></div></div><p>Email de destinatario debe ser configurado previamente en profesional referente</p>'
     activacion += '</div></div></div></div>'
     activacion += '<p class="mt-5"><em>Como alternativa a "Opciones avanzadas", utilizando Google Chrome puede guardar informe directamente en Google Drive.</em></p>'
 
