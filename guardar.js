@@ -15,9 +15,12 @@ $(document).ready(function() {
 
                 let profRef = the("profref").options[the("profref").selectedIndex].text
 
+                let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
+
                 let data = {
                     'Nombre profesional referente': profRef,
                     'Fono profesional referente': the("profreftel").value,
+                    'Centro Ecografico': centroecograf,
                     'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
                     'motivo' : motivo,
@@ -63,10 +66,12 @@ $(document).ready(function() {
                 let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
                 let profRef = the("profref").options[the("profref").selectedIndex].text
+                let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
 
                 let data = {
                     'Nombre profesional referente': profRef,
                     'Fono profesional referente': the("profreftel").value,
+                    'Centro Ecografico': centroecograf,
                     'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
                     'motivo' : motivo,
@@ -133,10 +138,12 @@ $(document).ready(function() {
                 let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
                 let profRef = the("profref").options[the("profref").selectedIndex].text
+                let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
 
                 let data = {
                     'Nombre profesional referente': profRef,
                     'Fono profesional referente': the("profreftel").value,
+                    'Centro Ecografico': centroecograf,
                     'edadm' : document.getElementsByName("edad_materna")[0].value,
                     'profesional' : profesional,
                     'motivo' : motivo,
