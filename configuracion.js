@@ -148,8 +148,11 @@ function guardar(){
                 configuracion[name] = data
             }
 
-
             localStorage["configuracion"] = JSON.stringify(configuracion);
+
+            this.parentElement().parentElement().classList.remove("show")
+
+
 
             loadTabla(config)
             loadDatabase()
