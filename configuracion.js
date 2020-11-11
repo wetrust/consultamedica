@@ -1,4 +1,4 @@
-var config = JSON.parse('{"name": "configuración", "backurl": "#volver", "backend": "", "localstorage": true, "usehash": true, "config": [{"name": "Membrete unidad ecográfica", "data": "membrete", "desc": "", "input": [{"name": "", "type": "textarea", "row": 3, "limit": 40, "help": ""}], "table": false, "open": true},{"name": "Ciudad de procedencia", "data": "nacionalidad", "desc": "", "input": [{"name": "Nombre de la ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Lugar de control", "data": "lcontrol", "desc": "", "input": [{"name": "Lugar de control", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Motivo exámen", "data": "MotivoExamen", "desc": "", "input": [{"name": "Nombre del motivo", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Patología obstétrica", "data": "PatologiaObstetrica", "desc": "", "input": [{"name": "Nombre de la patología", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Profesional ecografista", "data": "profesional", "desc": "", "input": [{"name": "Nombre profesional", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Guardar Configuracion", "data": "guardar", "desc": "", "input": [], "table": false, "open": false},{"name": "Profesional referente", "data": "correos", "desc": "", "input": [{"name": "NOMBRE", "type": "text", "limit": 40, "help": ""},{"name": "TELÉFONO", "type": "text", "limit": 40, "help": ""},{"name": "E-MAIL", "type": "email", "limit": 40, "help": ""},{"name": "Profesión", "type": "text", "limit": 40, "help": ""},{"name": "Ciudad", "type": "text", "limit": 40, "help": ""}], "table": true, "open": false},{"name": "Envio informes por E-Mail", "data": "activacion", "desc": "", "input": [], "table": false, "open": false}]}');
+var config = JSON.parse('{"name":"configuración","backurl":"#volver","backend":"","localstorage":true,"usehash":true,"config":[{"name":"Membrete unidad ecográfica","data":"membrete","desc":"","input":[{"name":"","type":"textarea","row":3,"limit":40,"help":""}],"table":false,"open":true},{"name":"Ciudad de procedencia","data":"nacionalidad","desc":"","input":[{"name":"Nombre de la ciudad","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Lugar de control","data":"lcontrol","desc":"","input":[{"name":"Lugar de control","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Motivo exámen","data":"MotivoExamen","desc":"","input":[{"name":"Nombre del motivo","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Patología obstétrica","data":"PatologiaObstetrica","desc":"","input":[{"name":"Nombre de la patología","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Profesional ecografista","data":"profesional","desc":"","input":[{"name":"Nombre profesional","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Guardar Configuracion","data":"guardar","desc":"","input":[],"table":false,"open":false},{"name":"Profesional referente","data":"correos","desc":"","input":[{"name":"NOMBRE","type":"text","limit":40,"help":""},{"name":"TELÉFONO","type":"text","limit":40,"help":""},{"name":"E-MAIL","type":"email","limit":40,"help":""},{"name":"Profesión","type":"text","limit":40,"help":""},{"name":"Ciudad","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Envio informes por E-Mail","data":"activacion","desc":"","input":[],"table":false,"open":false},{"name":"Centro ecográfico","data":"centro","desc":"","input":[{"name":"Nombre del centro","type":"text","limit":40,"help":""}],"table":true,"open":false}]}');
 
 function createTabs(config){
     var navID = uuidv4();
@@ -314,7 +314,7 @@ function checkIntegrity() {
     if (configuracion){
         let db = JSON.parse(localStorage["configuracion"]);
 
-        let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete', 'correos', 'licencia', 'lcontrol', "id", "email"];
+        let tables = ['nacionalidad', 'MotivoExamen', 'profesional', 'PatologiaObstetrica', 'membrete', 'correos', 'licencia', 'lcontrol', "id", "email", "centro"];
     
         for (var j = 0; j < tables.length; j++) {
             let table = false;
@@ -335,7 +335,7 @@ function checkIntegrity() {
 }
 
 function makeDatabase() {
-    var db = JSON.parse('{\"nacionalidad\":[],\"MotivoExamen\":[],\"profesional\":[],\"PatologiaObstetrica\":[],\"membrete\":\"PROTOCOLO ULTRASONOGR\u00C1FICO\\nUNIDAD DE URGENCIA\\nGINECO \/ OBSTETRA\",\"correos\":[],\"licencia\":\"\",\"lcontrol\":[],\"id\":0,\"email\":\"\"}');
+    var db = JSON.parse('{\"nacionalidad\":[],\"MotivoExamen\":[],\"profesional\":[],\"PatologiaObstetrica\":[],\"membrete\":\"PROTOCOLO ULTRASONOGR\u00C1FICO\\nUNIDAD DE URGENCIA\\nGINECO \/ OBSTETRA\",\"correos\":[],\"licencia\":\"\",\"lcontrol\":[],\"id\":0,\"email\":\"\",\"centro\":[]}');
     localStorage["configuracion"] = JSON.stringify(db);
 }
 
@@ -446,7 +446,7 @@ $(document).ready(function() {
 
     //guardar configuracion
     let largo = config.config.length
-    largo = largo -3
+    largo = largo -4
 
     let guardar = ""
     let accordion = uuidv4();
@@ -463,7 +463,7 @@ $(document).ready(function() {
 
     //activar
     largo = config.config.length
-    largo = largo -1
+    largo = largo -2
 
     let activacion = '<ol class="text-secondary"><li><em>Envío de  informes por EMail</em></li></ol>'
     accordion = uuidv4();
@@ -643,14 +643,16 @@ $(document).ready(function() {
     m.classList.add("mt-2", "mb-1")
 
     let tabs = the(tab.nav);
-    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length -2]);
+    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length -3]);
 
     the(config.config[config.config.length -1].tab).classList.add("d-none")
     the(config.config[config.config.length -2].tab).classList.add("d-none")
+    the(config.config[config.config.length -3].tab).classList.add("d-none")
 
     $("#configOculto").on("click", function(){
         the(config.config[config.config.length -1].tab).classList.remove("d-none")
         the(config.config[config.config.length -2].tab).classList.remove("d-none")
+        the(config.config[config.config.length -3].tab).classList.remove("d-none")
         the("profesionalOcultoConfig").classList.remove("d-none")
     })
 
