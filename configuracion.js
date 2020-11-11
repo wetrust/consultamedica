@@ -411,6 +411,15 @@ function loadDatabase() {
     } else {
         the("mensaje.licencia").innerHTML =  "Envio desactivado";
     }
+
+    //centro ecográfico
+    $('#centroecograf').empty();
+    if (configuracion.centro.length > 0) {
+        $.each(configuracion.centro, function(i, item) {
+            $('#centroecograf').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
+        });
+    }
+    
 }
 
 //manejadore de botones
