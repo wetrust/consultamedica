@@ -150,7 +150,7 @@ function guardar(){
 
             localStorage["configuracion"] = JSON.stringify(configuracion);
 
-            this.parentElement().parentElement().classList.remove("show")
+            this.parentElement.parentElement.classList.remove("show")
 
 
 
