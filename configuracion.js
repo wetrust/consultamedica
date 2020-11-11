@@ -620,22 +620,30 @@ $(document).ready(function() {
     }
 
     //agregar una brujeria para ocultar 2 opciones en base al criterio del doc
-    var h = document.createElement("p")
-    var t = document.createTextNode("Opciones avanzadas");
-    h.appendChild(t)
-    t = document.createElement("br")
-    h.appendChild(t)
-    t = document.createTextNode("(En construcción)");
-    h.appendChild(t)
-    t = document.createElement("a");
+    var m = document.createElement("p")
+    var o = document.createElement("em")
+
+    var p = document.createTextNode("Opciones avanzadas");
+    o.appendChild(p)
+    p = document.createElement("br")
+    o.appendChild(p)
+
+    var q = document.createElement("small");
+
+    p = document.createTextNode("(En construcción)");
+    q.appendChild(p)
+
+    p = document.createElement("a");
     let x = document.createTextNode(".");
-    t.appendChild(x)
-    t.id = "configOculto"; 
-    h.appendChild(t)
-    h.classList.add("mt-2", "mb-1")
+    p.appendChild(x)
+    p.id = "configOculto";
+    q.appendChild(p)
+    o.appendChild(q)
+    m.appendChild(o)
+    m.classList.add("mt-2", "mb-1")
 
     let tabs = the(tab.nav);
-    tabs.insertBefore(h, tabs.childNodes[tabs.childNodes.length -2]);
+    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length -2]);
 
     the(config.config[config.config.length -1].tab).classList.add("d-none")
     the(config.config[config.config.length -2].tab).classList.add("d-none")
