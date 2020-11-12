@@ -469,7 +469,7 @@ $(document).ready(function() {
     guardar += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
     guardar += '<div class="form-group row"><label class="col-12">Ingresar E-Mail para configuración personal: </label><div class="col-4"><input type="email" id="correo.configuracion" class="form-control" /></div><div class="col"><button type="button" class="btn btn-secondary" id="correo.configuracion.guardar">Guardar</button><button type="button" class="btn btn-secondary" id="correo.configuracion.cargar">Restaurar configuración</button></div></div>'
     guardar += '</div></div></div></div>'
-    guardar += '<p class="mt-5"><em>-Configuración de la plataforma se guarda de forma temporal en su navegador, si desea guardar configuración de forma permanente escriba su email y presione el boton guardar.<br>-Si desea restaurar configuración guardada anteriormente presione el botón restaurar.<br>-Recuerde que si guardo una configuración y hace nuevos cambios, debe guardarla nuevamente ya que el guardado no es automático.</em></p>'
+    guardar += '<ul class="mt-5"><li>Configuración de plataforma se guarda de forma temporal en su navegador, si desea guardar configuración de forma permanente escriba su email y presione el boton guardar.</li><li>Si desea restaurar configuración guardada anteriormente presione el botón restaurar.</li><li>Recuerde, si guardo una configuración y realiza nuevos cambios, debe guardar nuevamente.</li></ul>'
 
     the(config.config[largo].tab).insertAdjacentHTML("beforeend",guardar)
 
@@ -657,14 +657,41 @@ $(document).ready(function() {
     let tabs = the(tab.nav);
     tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length -3]);
 
-    the(config.config[config.config.length -1].tab).classList.add("d-none")
-    the(config.config[config.config.length -2].tab).classList.add("d-none")
-    the(config.config[config.config.length -3].tab).classList.add("d-none")
+    the(config.config[config.config.length -1].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
+    m = document.createElement("p")
+    o = document.createTextNode("Modulo en construcción,opciones a desarrollar en el futuro")
+    m.appendChild(o)
+    tabs = the(config.config[config.config.length -1].tab);
+    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length]);
+
+    the(config.config[config.config.length -2].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
+    m = document.createElement("p")
+    o = document.createTextNode("Modulo en construcción,opciones a desarrollar en el futuro")
+    m.appendChild(o)
+    tabs = the(config.config[config.config.length -2].tab);
+    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length]);
+
+
+    the(config.config[config.config.length -3].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
+    m = document.createElement("p")
+    o = document.createTextNode("Modulo en construcción,opciones a desarrollar en el futuro")
+    m.appendChild(o)
+    tabs = the(config.config[config.config.length -3].tab);
+    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length]);
 
     $("#configOculto").on("click", function(){
-        the(config.config[config.config.length -1].tab).classList.remove("d-none")
-        the(config.config[config.config.length -2].tab).classList.remove("d-none")
-        the(config.config[config.config.length -3].tab).classList.remove("d-none")
+        the(config.config[config.config.length -1].tab).childNodes.forEach(elemento => elemento.classList.remove("d-none"))
+        tabs = the(config.config[config.config.length -1].tab);
+        tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
+
+        the(config.config[config.config.length -2].tab).childNodes.forEach(elemento => elemento.classList.remove("d-none"))
+        tabs = the(config.config[config.config.length -2].tab);
+        tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
+
+        the(config.config[config.config.length -3].tab).childNodes.forEach(elemento => elemento.classList.remove("d-none"))
+        tabs = the(config.config[config.config.length -3].tab);
+        tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
+
         the("profesionalOcultoConfig").classList.remove("d-none")
     })
 
