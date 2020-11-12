@@ -545,6 +545,14 @@ $( document ).ready(function() {
         }
     });
 
+    $("#ver\\.morfo\\.new").on("click", function(){
+        if (this.checked == true){
+            this.parentElement.parentElement.children[1].classList.remove("d-none");
+        }else{
+            this.parentElement.parentElement.children[1].classList.add("d-none");
+        }
+    });
+
     $("#ver\\.ref\\.morfologia").on("click", function(){
         if (this.checked == true){
             the("ver.ref.div.morfologia").classList.remove("d-none");
@@ -622,6 +630,12 @@ $( document ).ready(function() {
     $("#pdfuno").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
+    });
+
+
+    $("#pdfmorfonew").on("click", function(){
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://www.isuog.org/uploads/assets/uploaded/87c804a5-87af-4af8-96a700eb4061fb09.pdf"></iframe>');
+        $("#pdfviebox").children("ol").children().children().attr("href","#morfologiafet");
     });
 
     $("#pdfunoInternal").on("click", function(){
