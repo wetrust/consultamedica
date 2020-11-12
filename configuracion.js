@@ -658,14 +658,14 @@ $(document).ready(function() {
     tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length -3]);
 
     the(config.config[config.config.length -1].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
-    m = document.createElement("p")
+    m = document.createElement("h5")
     o = document.createTextNode("Modulo en construcción,opciones a desarrollar en el futuro")
     m.appendChild(o)
     tabs = the(config.config[config.config.length -1].tab);
     tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length]);
 
     the(config.config[config.config.length -2].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
-    m = document.createElement("p")
+    m = document.createElement("h5")
     o = document.createTextNode("Modulo en construcción,opciones a desarrollar en el futuro")
     m.appendChild(o)
     tabs = the(config.config[config.config.length -2].tab);
@@ -673,7 +673,7 @@ $(document).ready(function() {
 
 
     the(config.config[config.config.length -3].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
-    m = document.createElement("p")
+    m = document.createElement("h5")
     o = document.createTextNode("Modulo en construcción,opciones a desarrollar en el futuro")
     m.appendChild(o)
     tabs = the(config.config[config.config.length -3].tab);
