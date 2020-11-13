@@ -634,7 +634,7 @@ $( document ).ready(function() {
 
     $("#pdfmorfonewx").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://www.isuog.org/uploads/assets/uploaded/87c804a5-87af-4af8-96a700eb4061fb09.pdf"></iframe>');
-        $("#pdfviebox").children("ol").children().children().attr("href","#morfologiafet");
+        $("#pdfviebox").children("ol").children().children().attr("href","#ecoObsSegTrim");
     });
     $("#pdfmorfonew").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://www.isuog.org/uploads/assets/uploaded/87c804a5-87af-4af8-96a700eb4061fb09.pdf"></iframe>');
@@ -8669,11 +8669,11 @@ function modalEcoSegTrimInforme(){
         });
 
         $('#'+licencia.imprimir).on("click", function(){
-            imprInformeMM(crearInformeEcoSegTrim2());
+            imprInforme(crearInformeEcoSegTrim2());
             $('#'+this.dataset.modal).modal('hide');
         });
 
     } else {
-        imprInformeMM(crearInformeEcoSegTrim2());
+        imprInforme(crearInformeEcoSegTrim2());
     }
 }
