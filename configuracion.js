@@ -338,7 +338,7 @@ function checkIntegrity() {
 }
 
 function makeDatabase() {
-    var db = JSON.parse('{\"nacionalidad\":[],\"MotivoExamen\":[],\"profesional\":[],\"PatologiaObstetrica\":[],\"membrete\":\"PROTOCOLO ULTRASONOGR\u00C1FICO\\nUNIDAD DE URGENCIA\\nGINECO \/ OBSTETRA\",\"correos\":[],\"licencia\":\"\",\"lcontrol\":[],\"id\":0,\"email\":\"\",\"centro\":[]}');
+    var db = JSON.parse('{\"nacionalidad\":[],\"MotivoExamen\":[],\"profesional\":[],\"PatologiaObstetrica\":[],\"membrete\":\"PROTOCOLO ULTRASONOGR\u00C1FICO\\nUNIDAD DE URGENCIA\\nGINECO \/ OBSTETRICA\",\"correos\":[],\"licencia\":\"\",\"lcontrol\":[],\"id\":0,\"email\":\"\",\"centro\":[]}');
     localStorage["configuracion"] = JSON.stringify(db);
 }
 
