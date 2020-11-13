@@ -632,7 +632,10 @@ $( document ).ready(function() {
         $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
     });
 
-
+    $("#pdfmorfonewx").on("click", function(){
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://www.isuog.org/uploads/assets/uploaded/87c804a5-87af-4af8-96a700eb4061fb09.pdf"></iframe>');
+        $("#pdfviebox").children("ol").children().children().attr("href","#morfologiafet");
+    });
     $("#pdfmorfonew").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://www.isuog.org/uploads/assets/uploaded/87c804a5-87af-4af8-96a700eb4061fb09.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#morfologiafet");
