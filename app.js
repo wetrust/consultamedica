@@ -811,6 +811,29 @@ $( document ).ready(function() {
     $("#fcf-prim-dos").on("change", function(){
         $("#fcf-prim").val(this.value)
     })
+
+    $("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
+		var sexoFetal = $('#ecografia\\.segtrim\\.sexo').val();
+		
+        if ($(this).val() == 1){
+            $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
+
+            var percentilPeso = $('#pfePctRpt').val();
+			percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
+            var comentarios = 'Sexo Fetal ' + sexoFetal + '\r\nCrecimiento (peso) percentil ' + percentilPeso + ', para gráfica de peso fetal Hadlock* \r\n';
+
+            var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvmEcoDos").value + " mm.";
+
+            comentarios = comentarios + linea6 + '\r\n';
+            $("#comentarios-eco-dos-inf-dos").val(comentarios);
+        }
+        else if ($(this).val() == 2){
+			var fur = $( "input[name='fum']").val();
+			var fpp = $( "input[name='fpp']").val();
+            var comentario = "Según edad gestacional obtenida de biometría fetal promedio\r\nFum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n";
+            $('#comentarios-eco-dos-inf-dos').val(comentario);
+        }
+	});
 });
 
 //controlador de input clones
