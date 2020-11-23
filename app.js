@@ -841,6 +841,14 @@ $( document ).ready(function() {
             $('#comentarios-eco-dos-inf-dos').val(comentario);
         }
 	});
+
+    $("#calc\\.oms").on("change", function(){
+        if (this.checked == true){
+            $("#calc\\.oms\\.div").removeClass("d-none")
+        }else{
+            $("#calc\\.oms\\.div").addClass("d-none")
+        }
+    })
 });
 
 //controlador de input clones
@@ -7517,6 +7525,7 @@ function modal(button){
 
     return resultado;
 }
+
 //crea id random para los modales
 function uuidv4() {
     //genera un uuid
