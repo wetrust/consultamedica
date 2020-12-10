@@ -657,6 +657,10 @@ $(document).ready(function() {
     let tabs = the(tab.nav);
     tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length -3]);
 
+    tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
+    tabs.childNodes[tabs.childNodes.length-2].classList.add("d-none")
+    tabs.childNodes[tabs.childNodes.length-3].classList.add("d-none")
+
     the(config.config[config.config.length -1].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
     m = document.createElement("h5")
     p = document.createElement("em")
@@ -699,6 +703,12 @@ $(document).ready(function() {
         tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
 
         the("profesionalOcultoConfig").classList.remove("d-none")
+
+        tabs = the(tab.nav);
+    
+        tabs.childNodes[tabs.childNodes.length-1].classList.remove("d-none")
+        tabs.childNodes[tabs.childNodes.length-2].classList.remove("d-none")
+        tabs.childNodes[tabs.childNodes.length-3].classList.remove("d-none")
     })
 
 });
