@@ -7486,15 +7486,15 @@ function informeGinecologico(){
     informe = informe.replace(/:EDADMATERNA/g, edadmaterna);
     informe = informe.replace(/:FEXAMEN/g, fexamen);
     informe = informe.replace(/:LINEA1/g, fexamen);
-    informe = informe.replace(/:LINEA2/g, LINEA2.toLowerCase());
-    informe = informe.replace(/:LINEA3/g, LINEA3.toLowerCase());
-    informe = informe.replace(/:LINEA4/g, LINEA4.toLowerCase());
-    informe = informe.replace(/:LINEA5/g, LINEA5.toLowerCase());
-    informe = informe.replace(/:LINEA6/g, LINEA6.toLowerCase());
-    informe = informe.replace(/:LINEA7/g, LINEA7.toLowerCase());
-    informe = informe.replace(/:LINEA8/g, LINEA8.toLowerCase());
+    informe = informe.replace(/:LINEA2/g, LINEA2);
+    informe = informe.replace(/:LINEA3/g, LINEA3);
+    informe = informe.replace(/:LINEA4/g, LINEA4);
+    informe = informe.replace(/:LINEA5/g, LINEA5);
+    informe = informe.replace(/:LINEA6/g, LINEA6);
+    informe = informe.replace(/:LINEA7/g, LINEA7);
+    informe = informe.replace(/:LINEA8/g, LINEA8);
     informe = informe.replace(/:DIACICLO/g, diaciclo);
-    informe = informe.replace(/:COMENTARIO/g, comentario.toLowerCase());
+    informe = informe.replace(/:COMENTARIO/g, comentario);
     informe = informe.replace(/:DATEINFORME/g, dateInf);
     informe = informe.replace(/:PATOLOGIAOBSTETRICA/g, patologiaObstetrica);
 
