@@ -5341,7 +5341,12 @@ $(document).ready(function(){
         data.append("dias" , the("dias").value)
         data.append("fpp" , the("fpp").value)
 
-        data.append("profref" , the("profref").value)
+        let profref = the("profref").value
+
+        var configuracion = JSON.parse(localStorage["configuracion"]);
+        let resultado = configuracion.correos[+profref.value -1]
+
+        data.append("profref" , resultado)
 
         fetch('https://partos.crecimientofetal.cl/api/guardar', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
 
