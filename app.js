@@ -5344,7 +5344,7 @@ $(document).ready(function(){
         let profref = the("profref").value
 
         var configuracion = JSON.parse(localStorage["configuracion"]);
-        let resultado = configuracion.correos[+profref.value -1]
+        let resultado = configuracion.correos[+profref -1]
 
         data.append("profref" , resultado)
 
