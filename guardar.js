@@ -2,7 +2,7 @@ $(document).ready(function() {
     if (storageAvailable('localStorage')) {
         var configuracion = JSON.parse(localStorage["configuracion"]);
 
-        if (configuracion.email == 'rudecindolagos@gmail.com'){
+        if (configuracion.email == 'drlagosbarcelona@gmail.com'){
             the("profesionalOcultoConfig").classList.remove("d-none")
             the("btn.guardar.precoz").classList.remove("d-none");
 
