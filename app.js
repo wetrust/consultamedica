@@ -19,10 +19,10 @@ var titulos = {
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
 }
 
-//comementario adicional anatomia 
+// Comementario adicional anatomia 
 document.location.hash = "";
 
-//controlador de funciones base cuando se carga la pagina
+// Controlador de funciones base cuando se carga la pagina
 $( document ).ready(function() {
     //detalle extraño
     the("problematico").checked = true
@@ -851,8 +851,8 @@ $( document ).ready(function() {
     })
 });
 
-//controlador de input clones
-//si se escribe en uno, se refleja en otro
+// Controlador de input clones
+// Si se escribe en uno, se refleja en otro
 $( document ).ready(function() {
     $("#lcn").on("change", function(){
         the("lcn.clon").value = the("lcn").value;
@@ -871,7 +871,7 @@ $( document ).ready(function() {
     
 });
 
-//controlador de los informes
+// Controlador de los informes
 $( document ).ready(function() {
     $("#btn\\.informe\\.precoz").on("click", function (){
 
@@ -1145,7 +1145,7 @@ $( document ).ready(function() {
     });
 });
 
-//controlador de botones reset
+// Controlador de botones reset
 $( document ).ready(function() {
     $("#btn\\.erase\\.ginecologica").on("click", function(){
         var modal = makeModal("Si");
@@ -1296,7 +1296,7 @@ $( document ).ready(function() {
     })
 });
 
-//controlador de los keypress
+// Controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
         var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia","p.sis.morfologia", "", "vlp.morfologia", "vld.morfologia"];
@@ -1311,7 +1311,7 @@ $( document ).ready(function() {
     });  
 });
 
-//controlador de los gráficos
+// Controlador de los gráficos
 $( document ).ready(function() {
     $("#graficoSaco").on( 'click', function() {
         var modal = makeModal();
@@ -4331,7 +4331,7 @@ $( document ).ready(function() {
     });
 });
 
-//controlador de morfología
+// Controlador de morfología
 $(document).ready(function(){
     $('#liquido\\.ila\\.uno\\.morfologia, #liquido\\.ila\\.dos\\.morfologia, #liquido\\.ila\\.tres\\.morfologia, #liquido\\.ila\\.cuatro\\.morfologia').on("keyup", function(){
         var uno = $("#liquido\\.ila\\.uno\\.morfologia ").val();
@@ -5326,6 +5326,33 @@ $(window).on('hashchange', function(){
         the("inicio").classList.remove(d);
     }
 });
+
+// Guardar para partos
+$(document).ready(function(){
+
+    $("#modalPreInfEcoObsSegTrim1, #modalPreInfEcoObsSegTrim2").on('click', function() {
+        let data = new FormData()
+
+        data.append("nombre" , the("nombre-paciente").value)
+        data.append("paciente" , the("id-paciente").value)
+
+        data.append("fum" , the("fum").value)
+        data.append("semanas" , the("semanas").value)
+        data.append("dias" , the("dias").value)
+        data.append("fpp" , the("fpp").value)
+
+        data.append("profref" , the("profref").value)
+
+        fetch('https://partos.crecimientofetal.cl/api/guardar', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+
+            console.log(response)
+
+        }).catch(function(error) {
+            console.log(error)
+        });
+    });
+
+})
 
 function infPrecoz(){
 
