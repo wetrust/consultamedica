@@ -5345,6 +5345,7 @@ $(document).ready(function(){
 
         var configuracion = JSON.parse(localStorage["configuracion"]);
         let resultado = configuracion.correos[+profref -1]
+        resultado = JSON.stringify(resultado)
 
         data.append("profref" , resultado)
 
