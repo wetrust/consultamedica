@@ -468,10 +468,11 @@ $(document).ready(function() {
         RN.sexo = $("#sn").val();
         var p90 = [0.2418159, -0.0038925, 0.0000168, -0.0130562, -0.0127872, -0.0034632, 0.0117179, 0.0021092, -0.9260631];
         var p10 = [-0.2639902, 0.0110356, -0.0001265, -0.0146183, -0.0134044, -0.0020684, 0.0092266, 0.0009001, 4.474501];
+
         for (i = 24; i < 43; i++) {
             x = i - 24;
             p90Pso[x] = Math.pow(10, ((i * p90[0]) + (Math.pow(i, 2) * p90[1]) + (Math.pow(i, 3) * p90[2]) + (p90[3] * $("#pm").val()) + (p90[4] * $("#sn").val()) + (p90[5] * apell) + (p90[6] * $("#imc").val()) + (p90[7] * $("#em").val()) + p90[8]));
-            p10Pso[x] = Math.pow(10, ((i * p10[0]) + (Math.pow(i, 2) * p10[1]) + (Math.pow(i, 3) * p10[2]) + (p10[3] * $("#pm").val()) + (p10[4] * $("#sn").val()) + (p10[5] * apell) + (p10[6] * $("#imc").val()) + (p10[7] * $("#em").val()) + p10[8]));;
+            p10Pso[x] = Math.pow(10, ((i * p10[0]) + (Math.pow(i, 2) * p10[1]) + (Math.pow(i, 3) * p10[2]) + (p10[3] * $("#pm").val()) + (p10[4] * $("#sn").val()) + (p10[5] * apell) + (p10[6] * $("#imc").val()) + (p10[7] * $("#em").val()) + p10[8]));
         }
         tablaPercentilesView(p10Pso,p90Pso);
         $("#PesoEgeSAj").html("Pct. Peso/edad " + RN.pesoTemuco());
@@ -725,13 +726,13 @@ $(document).ready(function() {
     //cargar inputs de talla
     for (i = 135; i < 190; i++) {
         $("#tm").append('<option value="' + i +'">' + i + '</option>');
-        $('#tm option[value="149"]').prop('selected', true);
+        $('#tm option[value="155"]').prop('selected', true);
     }
 
     //cargar inputs de peso materno
     for (i = 35; i < 140; i++) {
         $("#pesom").append('<option value="' + i +'">' + i + '</option>');
-        $('#pesom option[value="70"]').prop('selected', true);
+        $('#pesom option[value="63"]').prop('selected', true);
     }
 });
 
