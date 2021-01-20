@@ -662,14 +662,14 @@ $(document).ready(function() {
 
     $('#opt1').click(function() {
         $('#pm').val("1");
-        $('#sn').val("1");
-        $('#tm').val("149");
-        $('#pesom').val("70");
-        $('#em').val("6");
+        $('#sn').val("0");
+        $('#tm').val("155");
+        $('#pesom').val("63");
+        $('#em').val("2");
         $('#apellm').val("1");
-        varMama = new Mama('149', '70', $("#em").val(), $('#apellm').val());
-        varMama.talla = '149';
-        varMama.peso = '70';
+        varMama = new Mama('155', '63', $("#em").val(), $('#apellm').val());
+        varMama.talla = '155';
+        varMama.peso = '63';
         $('#valorimc').val(varMama.imc());
         $('#imc').val(varMama.imcCondicion());
         RN.ajustePequeno = false;
