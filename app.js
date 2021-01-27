@@ -202,7 +202,7 @@ $( document ).ready(function() {
 
     $("#menu\\.modulo\\.construccion").on("click", function(){
         var botones = ["menu.modulo.construccion.uno", "menu.modulo.construccion.dos"];
-        
+
         if (the("menu.modulo.construccion.uno").classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
                 the(value).classList.remove("d-none");
@@ -363,6 +363,7 @@ $( document ).ready(function() {
             $('#preguntaAjusteEcoPrimTrim').hide();
             $('#resultadoAjusteEcoPrimTrim').hide();
         } else {
+
             var eg1 = new Number((Math.trunc(EGLCN) * 7) + Math.trunc((EGLCN - Math.trunc(EGLCN))* 10));
             var eg2 = parseInt(semanas * 7) +  dias;
             var diferencia = Math.abs(Math.trunc(eg2 - eg1));
@@ -473,10 +474,12 @@ $( document ).ready(function() {
         valccca();
         pctcc();
     });
+
     $( '#ca' ).change( function(){
         valccca();
         pctca();
     });
+
     $( '#lf' ).change( pctlf);
     $( '#cerebelo' ).change( pctcb);
     $( "#bvm" ).change(bvm).on("keyup", function(){
@@ -636,6 +639,7 @@ $( document ).ready(function() {
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://www.isuog.org/uploads/assets/uploaded/87c804a5-87af-4af8-96a700eb4061fb09.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#ecoObsSegTrim");
     });
+
     $("#pdfmorfonew").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://www.isuog.org/uploads/assets/uploaded/87c804a5-87af-4af8-96a700eb4061fb09.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#morfologiafet");
@@ -772,7 +776,7 @@ $( document ).ready(function() {
             the("art.ut.d.morfologia").focus()
         }
 
-      })
+    })
 
     $("#goto\\.morfologia").on("click", function(){
         $("#morfologia-morfologia-tab").trigger("click");
@@ -849,6 +853,7 @@ $( document ).ready(function() {
             $("#calc\\.oms\\.div").addClass("d-none")
         }
     })
+
 });
 
 // Controlador de input clones
@@ -2672,7 +2677,7 @@ $( document ).ready(function() {
                  });
             }
     });
-    
+
     $( '#infecoObsSegTrim2' ).on( 'click', function() {
 
         var edadGestacional = the("semanas").value;
@@ -3736,7 +3741,7 @@ $( document ).ready(function() {
         });
     });
 
-    $( '#infDoppler1' ).on( 'click', function() {
+    $("#infDoppler1").on( 'click', function() {
         var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 20){
