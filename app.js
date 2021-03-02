@@ -246,6 +246,18 @@ $( document ).ready(function() {
         }
     }).trigger("change");
 
+        //controlador al cambiar input de edad gestacional
+        $("#fpp").on("change", function(){
+
+            let fpp = dayHoy;
+            fpp.setTime(Date.parse(the("fpp").value));
+            fpp.setTime(fpp.getTime() - (1000*60*60*24*282));
+            the("fum").value = getDate(fpp);
+    
+            $("#fum").trigger("change")
+
+        })
+
     $("#fee").on("change", function(){
         let fum = dayHoy; 
         fum.setTime(Date.parse(the("fum").value));
