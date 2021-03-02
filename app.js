@@ -1,3 +1,6 @@
+import { fechas } from './functionesM.js'
+import { make, the, inputDate, humanDate } from './wetrust.js'
+
 var daysES=["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
@@ -28,8 +31,16 @@ $( document ).ready(function() {
     the("problematico").checked = true
 
     $("#fechaHora").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear());
-    the("fum").value = getDate();
-    the("fee").value = getDate();
+
+    let _fecha = new Date()
+
+    the("fee").value = inputDate(_fecha)
+
+    let _fur = fechas.fur(10, _fecha)
+    the("fum").value = inputDate(_fur)
+
+    let _fpp = fechas.fpp(_fur)
+    the("fpp").value = inputDate(_fpp)
 
     //cargar select semana y dias
     for (var i = 0; i < 43; i++) {
@@ -39,6 +50,7 @@ $( document ).ready(function() {
         opt.value = i; 
         semanas.appendChild(opt); 
     }
+    the("semanas").value = 10
 
     for (var i = 25; i < 43; i++) {
         let semanas = the("edadGestacional");
@@ -217,70 +229,76 @@ $( document ).ready(function() {
 
     //controlador al cambiar input de edad gestacional
     $("#fum").on("change", function(){
-        let fum = dayHoy;
-        fum.setTime(Date.parse(the("fum").value));
-        fum.setTime(fum.getTime() + (1000*60*60*24*282));
-        the("fpp").value = getDate(fum);
 
-        fum.setTime(fum.getTime() - (1000*60*60*24*282));
-        fum = fum.getTime();
-        let fee = dayHoy;
-        fee.setTime(Date.parse(the("fee").value));
-        fee = fee.getTime();
+        //convertir a fecha
+        let _fur = fechas.toDate(this.value)
 
-        //la fecha de mestruación si puede ser antes de la fecha de exámen
-        let diff = fee - fum;
+        //calcular la eg
+        let _fexamen = fechas.toDate(the("fee").value)
 
-        if (diff > 0){
-            let dias = Math.abs(diff/(1000*60*60*24));
-            let semanas = Math.trunc(dias / 7);
-            the("diaciclo").value = dias;
-            dias = Math.trunc(dias - (semanas * 7));
+        let eg = fechas.eg(_fur, _fexamen)
+
+        if (eg > 0){
+            let semanas = Math.trunc(eg / 7);
+            let dias = Math.trunc(eg - (semanas * 7));
+            the("diaciclo").value = eg;
             the("semanas").value = semanas;
             the("dias").value = dias;
-        }
-        else{
+        } else {
+            the("diaciclo").value = 0;
             the("semanas").value = 0;
             the("dias").value = 0;
-            the("diaciclo").value = 0;
         }
-    }).trigger("change");
+    })
 
-        //controlador al cambiar input de edad gestacional
-        $("#fpp").on("change", function(){
+    //controlador al cambiar input de edad gestacional
+    $("#fpp").on("change", function(){
+        //convertir a fecha
+        let _fpp = fechas.toDate(this.value)
+        //calcular fur
+        let _fur = fechas.fppToFUR(_fpp)
 
-            let fpp = dayHoy;
-            fpp.setTime(Date.parse(the("fpp").value));
-            fpp.setTime(fpp.getTime() - (1000*60*60*24*282));
-            the("fum").value = getDate(fpp);
-    
-            $("#fum").trigger("change")
+        //set en input y prelude
+        the("fur").value = inputDate(_fur)
 
-        })
+        //calcular la eg
+        let _fexamen = fechas.toDate(the("fee").value)
+
+        let eg = fechas.eg(_fur, _fexamen)
+
+        if (eg > 0){
+            let semanas = Math.trunc(eg / 7);
+            let dias = Math.trunc(eg - (semanas * 7));
+            the("diaciclo").value = eg;
+            the("eg").value = semanas;
+            the("dias").value = dias;
+        } else {
+            the("diaciclo").value = 0;
+            the("eg").value = 0;
+            the("dias").value = 0;
+        }
+    })
 
     $("#fee").on("change", function(){
-        let fum = dayHoy; 
-        fum.setTime(Date.parse(the("fum").value));
-        fum = fum.getTime();
-        let fee = dayHoy;
-        fee.setTime(Date.parse(the("fee").value));
-        fee = fee.getTime();
+        //convertir a fecha
+        let _fur = fechas.toDate(the("fum").value)
 
-        //la fecha de exámen no puede ser anterior a la fecha de última regla
-        let diff = fee - fum;
+        //calcular la eg
+        let _fexamen = fechas.toDate(this.value)
 
-        if (diff > 0){
-            let dias = diff/(1000*60*60*24);
-            let semanas = Math.trunc(dias / 7);
-            the("diaciclo").value = dias;
-            dias = Math.trunc(dias - (semanas * 7));
-            the("semanas").value = semanas;
+        let eg = fechas.eg(_fur, _fexamen)
+
+        if (eg > 0){
+            let semanas = Math.trunc(eg / 7);
+            let dias = Math.trunc(eg - (semanas * 7));
+            the("diaciclo").value = eg;
+            the("eg").value = semanas;
             the("dias").value = dias;
         }
         else{
-            the("semanas").value = 0;
-            the("dias").value = 0;
             the("diaciclo").value = 0;
+            the("eg").value = 0;
+            the("dias").value = 0;
         }
     });
 
@@ -288,11 +306,11 @@ $( document ).ready(function() {
         let semanas = parseInt(the("semanas").value);
         let dias = parseInt(the("dias").value);
         semanas = 7 * semanas;
-		let fee = new Date(the("fee").value);
-		dias = (semanas + dias-1)*(1000*60*60*24);
-        fee.setTime(fee.getTime() - dias);
 
-        the("fum").value = getDate(fee);
+        let _fexamen = fechas.toDate(the("fee").value)
+        _fexamen.setDate(_fexamen.getDate() - (semanas + dias));
+        the("fum").value = inputDate(_fexamen)
+
         $("#fum").trigger("change");
     });
 
@@ -7579,21 +7597,6 @@ function modal(button){
     return resultado;
 }
 
-//crea id random para los modales
-function uuidv4() {
-    //genera un uuid
-    let uid = ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-    )
-
-    // genera infinitamente uuid mientras no comience con una letra
-    if (isNaN(uid.charAt(0))){
-        return uid
-    }else{
-        return uuidv4()
-    }
-}
-
 function oldProgress(value){
     let step = [0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100]
 
@@ -7624,9 +7627,6 @@ function oldProgress(value){
     return result;
 }
 
-function the(id){
-    return document.getElementById(id);
-}
 
 function setCursor(id) { 
     if (typeof the(id).createTextRange != "undefined") {

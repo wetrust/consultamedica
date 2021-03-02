@@ -1,4 +1,21 @@
+import { the } from './wetrust.js'
+
 var config = JSON.parse('{"name":"configuración","backurl":"#volver","backend":"","localstorage":true,"usehash":true,"config":[{"name":"Membrete unidad ecográfica","data":"membrete","desc":"","input":[{"name":"","type":"textarea","row":3,"limit":40,"help":""}],"table":false,"open":true},{"name":"Ciudad de procedencia","data":"nacionalidad","desc":"","input":[{"name":"Nombre de la ciudad","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Lugar de control","data":"lcontrol","desc":"","input":[{"name":"Lugar de control","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Motivo exámen","data":"MotivoExamen","desc":"","input":[{"name":"Nombre del motivo","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Patología obstétrica","data":"PatologiaObstetrica","desc":"","input":[{"name":"Nombre de la patología","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Profesional ecografista","data":"profesional","desc":"","input":[{"name":"Nombre profesional","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Guardar Configuracion","data":"guardar","desc":"","input":[],"table":false,"open":false},{"name":"Profesional referente","data":"correos","desc":"","input":[{"name":"NOMBRE","type":"text","limit":40,"help":""},{"name":"TELÉFONO","type":"text","limit":40,"help":""},{"name":"E-MAIL","type":"email","limit":40,"help":""},{"name":"Profesión","type":"text","limit":40,"help":""},{"name":"Ciudad","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Envio informes por E-Mail","data":"activacion","desc":"","input":[],"table":false,"open":false},{"name":"Centro ecográfico","data":"centro","desc":"","input":[{"name":"Nombre del centro","type":"text","limit":40,"help":""}],"table":true,"open":false}]}');
+
+//crea id random para los modales
+function uuidv4() {
+    //genera un uuid
+    let uid = ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    )
+
+    // genera infinitamente uuid mientras no comience con una letra
+    if (isNaN(uid.charAt(0))){
+        return uid
+    }else{
+        return uuidv4()
+    }
+}
 
 function createTabs(config){
     var navID = uuidv4();
@@ -31,7 +48,7 @@ function createTabs(config){
     resultado += tabFooter;
     resultado += capsuleFooter;
 
-    elemento = {
+    let elemento = {
         nav: navID,
         resultado : resultado
     }
