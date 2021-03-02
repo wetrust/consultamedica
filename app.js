@@ -259,7 +259,7 @@ $( document ).ready(function() {
         let _fur = fechas.fppToFUR(_fpp)
 
         //set en input y prelude
-        the("fur").value = inputDate(_fur)
+        the("fum").value = inputDate(_fur)
 
         //calcular la eg
         let _fexamen = fechas.toDate(the("fee").value)
