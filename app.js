@@ -270,11 +270,11 @@ $( document ).ready(function() {
             let semanas = Math.trunc(eg / 7);
             let dias = Math.trunc(eg - (semanas * 7));
             the("diaciclo").value = eg;
-            the("eg").value = semanas;
+            the("semanas").value = semanas;
             the("dias").value = dias;
         } else {
             the("diaciclo").value = 0;
-            the("eg").value = 0;
+            the("semanas").value = 0;
             the("dias").value = 0;
         }
     })
@@ -292,12 +292,12 @@ $( document ).ready(function() {
             let semanas = Math.trunc(eg / 7);
             let dias = Math.trunc(eg - (semanas * 7));
             the("diaciclo").value = eg;
-            the("eg").value = semanas;
+            the("semanas").value = semanas;
             the("dias").value = dias;
         }
         else{
             the("diaciclo").value = 0;
-            the("eg").value = 0;
+            the("semanas").value = 0;
             the("dias").value = 0;
         }
     });
