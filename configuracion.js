@@ -330,7 +330,7 @@ function haveDatabase() {
 }
 
 function checkIntegrity() {
-    configuracion = localStorage["configuracion"];
+    let configuracion = localStorage["configuracion"];
     if (configuracion){
         let db = JSON.parse(localStorage["configuracion"]);
 
