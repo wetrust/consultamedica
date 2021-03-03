@@ -1044,7 +1044,6 @@ $( document ).ready(function() {
             $("#infEcoObsSegTrim2verSi").on("click", function(){
                 $('#'+this.dataset.modal).modal('hide');
                 $('#lh').focus();
-                $("html, body").animate({ scrollTop: 100 }, "slow");
             });
         }else{
             modalEcoSegTrimInforme()
