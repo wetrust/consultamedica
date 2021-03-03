@@ -1,4 +1,4 @@
-import { the } from './wetrust.js'
+import { the, make} from './wetrust.js'
 
 var config = JSON.parse('{"name":"configuración","backurl":"#volver","backend":"","localstorage":true,"usehash":true,"config":[{"name":"Membrete unidad ecográfica","data":"membrete","desc":"","input":[{"name":"","type":"textarea","row":3,"limit":40,"help":""}],"table":false,"open":true},{"name":"Ciudad de procedencia","data":"nacionalidad","desc":"","input":[{"name":"Nombre de la ciudad","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Lugar de control","data":"lcontrol","desc":"","input":[{"name":"Lugar de control","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Motivo exámen","data":"MotivoExamen","desc":"","input":[{"name":"Nombre del motivo","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Patología obstétrica","data":"PatologiaObstetrica","desc":"","input":[{"name":"Nombre de la patología","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Profesional ecografista","data":"profesional","desc":"","input":[{"name":"Nombre profesional","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Guardar Configuracion","data":"guardar","desc":"","input":[],"table":false,"open":false},{"name":"Profesional referente","data":"correos","desc":"","input":[{"name":"NOMBRE","type":"text","limit":40,"help":""},{"name":"TELÉFONO","type":"text","limit":40,"help":""},{"name":"E-MAIL","type":"email","limit":40,"help":""},{"name":"Profesión","type":"text","limit":40,"help":""},{"name":"Ciudad","type":"text","limit":40,"help":""}],"table":true,"open":false},{"name":"Envio informes por E-Mail","data":"activacion","desc":"","input":[],"table":false,"open":false},{"name":"Centro ecográfico","data":"centro","desc":"","input":[{"name":"Nombre del centro","type":"text","limit":40,"help":""}],"table":true,"open":false}]}');
 
@@ -205,7 +205,7 @@ function loadTabla(config){
 }
 
 function modal_edit(){
-    let modal = makeModal("Guardar")
+    let modal = make.modal("Guardar")
 
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
     the(modal.titulo).innerHTML = "Modificar Item";
@@ -289,7 +289,7 @@ function preDelete_item(){
     let z = this.dataset.config
     let id = this.dataset.id
 
-    let modal = makeModal("Eliminar")
+    let modal = make.modal("Eliminar")
 
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
     the(modal.titulo).innerHTML = "Eliminar Item";
@@ -547,7 +547,7 @@ $(document).ready(function() {
             return false;
         }
 
-        let modal = makeModal("Cargar datos")
+        let modal = make.modal("Cargar datos")
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
@@ -600,7 +600,7 @@ $(document).ready(function() {
             return false;
         }
 
-        let modal = makeModal("Guardar datos")
+        let modal = make.modal("Guardar datos")
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerHTML = "Guardar datos en servidor";
@@ -741,7 +741,7 @@ function loadTelefono(){
 }
 
 function errorCorreo(){
-    let modal = makeModal()
+    let modal = make.modal()
 
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
     the(modal.titulo).innerHTML = "Error";
