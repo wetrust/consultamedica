@@ -1,3 +1,5 @@
+import { make, the, inputDate, humanDate } from './wetrust.js'
+
 function storageAvailable(type) {
     var storage;
     try {
@@ -210,7 +212,7 @@ $(document).ready(function() {
                 fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
                 .then(data => {
                     if (data.success == true ){
-                        let modal = makeModal()
+                        let modal = make.modal()
                         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
                         the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
                         the(modal.titulo).classList.add("mx-auto");
@@ -228,7 +230,7 @@ $(document).ready(function() {
 })
 
 function nombre(){
-    let _modal = modal("Guardar nombre")
+    let _modal = make.modal("Guardar nombre")
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
     the(_modal.titulo).innerHTML = "Falta nombre paciente";
     the(_modal.titulo).classList.add("mx-auto");
@@ -248,7 +250,7 @@ function nombre(){
 }
 
 function rut(){
-    let _modal = modal("Guardar RUT")
+    let _modal = make.modal("Guardar RUT")
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
     the(_modal.titulo).innerHTML = "Falta RUT";
     the(_modal.titulo).classList.add("mx-auto");
@@ -268,7 +270,7 @@ function rut(){
 }
 
 function eg(){
-    let _modal = modal()
+    let _modal = make.modal()
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
     the(_modal.titulo).innerHTML = "Falta EG";
     the(_modal.titulo).classList.add("mx-auto");
@@ -282,7 +284,7 @@ function eg(){
 }
 
 function ciudad(){
-    let _modal = modal("Guardar Ciudad")
+    let _modal = make.modal("Guardar Ciudad")
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
     the(_modal.titulo).innerHTML = "Falta Ciudad";
     the(_modal.titulo).classList.add("mx-auto");
@@ -304,7 +306,7 @@ function ciudad(){
 }
 
 function lugar(){
-    let _modal = modal("Guardar Lugar")
+    let _modal = make.modal("Guardar Lugar")
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
     the(_modal.titulo).innerHTML = "Falta Ciudad";
     the(_modal.titulo).classList.add("mx-auto");
