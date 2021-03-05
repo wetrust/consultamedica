@@ -5390,6 +5390,9 @@ $(document).ready(function(){
         data.append("dias" , the("dias").value)
         data.append("fpp" , the("fpp").value)
 
+        var _c = JSON.parse(localStorage["configuracion"]);
+        data.append("correo", _c.email)
+
         let profref = the("profref").value
 
         var configuracion = JSON.parse(localStorage["configuracion"]);
