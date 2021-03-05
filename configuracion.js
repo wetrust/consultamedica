@@ -26,7 +26,7 @@ function storageAvailable(type) {
 }
 
 function createTabs(config){
-    var navID = uuidv4();
+    var navID = make.uuidv4();
     var capsuleHeader = '<div class="row">';
     var capsuleFooter = '</div>';
     var navHeader = '<div class="col-12 col-lg-3 border-right"><div class="nav flex-column nav-pills" id="'+navID+'" role="tablist" aria-orientation="vertical">';
@@ -39,8 +39,8 @@ function createTabs(config){
     resultado += capsuleHeader;
     resultado += navHeader;
     for (var z = 0; z < config.config.length; z++){
-        let id = uuidv4();
-        let tab = uuidv4();
+        let id = make.uuidv4();
+        let tab = make.uuidv4();
 
         resultado += '<a class="nav-link" id="'+id+'" data-toggle="pill" href="#'+tab+'" role="tab" aria-controls="'+tab+'" aria-selected="true">'+config.config[z].name+'</a>';
     
@@ -67,10 +67,10 @@ function createTabs(config){
 function createInputs(config){
     for (var z = 0; z < config.config.length; z++){
         if (config.config[z].input.length > 0){
-            let accordion = uuidv4();
-            let collapse = uuidv4();
-            let title = uuidv4();
-            let saveBtn = uuidv4();
+            let accordion = make.uuidv4();
+            let collapse = make.uuidv4();
+            let title = make.uuidv4();
+            let saveBtn = make.uuidv4();
             let elemento = ""
             var inputs = ""
     
@@ -82,8 +82,8 @@ function createInputs(config){
             elemento += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
     
             for (var y = 0; y < config.config[z].input.length; y++){
-                let id = uuidv4();
-                let aria = uuidv4();
+                let id = make.uuidv4();
+                let aria = make.uuidv4();
     
                 inputs += '<div class="form-group"><label for="'+id+'">'+config.config[z].input[y].name+'</label>'
     
@@ -129,7 +129,7 @@ function createTable(config){
     for (var z = 0; z < config.config.length; z++){
         if (config.config[z].table == true){
             let elemento = ""
-            let tableid = uuidv4();
+            let tableid = make.uuidv4();
 
             elemento = '<table class="table table-hover"><thead class="thead-dark"><tr>'
     
@@ -229,8 +229,8 @@ function modal_edit(){
     let inputs = []
 
     for (var y = 0; y < config.config[z].input.length; y++){
-        let id = uuidv4();
-        let aria = uuidv4();
+        let id = make.uuidv4();
+        let aria = make.uuidv4();
 
         _contenido += '<div class="form-group"><label for="'+id+'">'+config.config[z].input[y].name+'</label>'
 
@@ -486,9 +486,9 @@ $(document).ready(function() {
     largo = largo -4
 
     let guardar = ""
-    let accordion = uuidv4();
-    let collapse = uuidv4();
-    let title = uuidv4();
+    let accordion = make.uuidv4();
+    let collapse = make.uuidv4();
+    let title = make.uuidv4();
 
     guardar += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white pointer" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">Guardar &#47; restaurar configuración</h6></div><div id="'+collapse+'" class="collapse show'
     guardar += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
@@ -503,9 +503,9 @@ $(document).ready(function() {
     largo = largo -2
 
     let activacion = '<ol class="text-secondary"><li><em>Envío de  informes por EMail</em></li></ol>'
-    accordion = uuidv4();
-    collapse = uuidv4();
-    title = uuidv4();
+    accordion = make.uuidv4();
+    collapse = make.uuidv4();
+    title = make.uuidv4();
 
     activacion += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white pointer" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">1.- Envío de informes por E-Mail</h6></div><div id="'+collapse+'" class="collapse '
     activacion += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
