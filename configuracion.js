@@ -195,8 +195,11 @@ function loadTabla(config){
 
                     the(config.config[z].tableid).innerHTML = "";
 
+                    configuracion[name].sort();
+
                     $.each(configuracion[name], function(i, item) {
                         var fila = '<tr data-id="'+i+'" data-config="'+z+'" class="modal-edit">';
+
                         $.each(item, function(i, column) {
                             fila += '<td>' + column + '</td>';
                         })
