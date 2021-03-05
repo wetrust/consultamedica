@@ -29,7 +29,7 @@ $(document).ready(function() {
     if (storageAvailable('localStorage')) {
         var configuracion = JSON.parse(localStorage["configuracion"]);
 
-        if (configuracion.email == 'drlagosbarcelona@gmail.com'){
+        if (configuracion.email == 'drlagosbarcelona@gmail.com' || configuracion.email == 'ecocattemuco@gmail.com'){
             the("profesionalOcultoConfig").classList.remove("d-none")
             the("btn.guardar.precoz").classList.remove("d-none");
 
@@ -73,6 +73,10 @@ $(document).ready(function() {
                 let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
                 configuracion.append("lugar", lugar)
                 configuracion.append("tipo", "Ecografía obstétrica precoz < 11 semanas")
+
+                var _c = JSON.parse(localStorage["configuracion"]);
+
+                configuracion.append("correo", _c.email)
                 configuracion.append("data", JSON.stringify(data))
 
                 fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
@@ -145,6 +149,9 @@ $(document).ready(function() {
                 let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
                 configuracion.append("lugar", lugar)
                 configuracion.append("tipo", "Evaluación del crecimiento fetal")
+                var _c = JSON.parse(localStorage["configuracion"]);
+
+                configuracion.append("correo", _c.email)
                 configuracion.append("data", JSON.stringify(data))
 
                 fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
@@ -207,6 +214,9 @@ $(document).ready(function() {
                 let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
                 configuracion.append("lugar", lugar)
                 configuracion.append("tipo", "Flujometría Doppler materno / fetal")
+                var _c = JSON.parse(localStorage["configuracion"]);
+
+                configuracion.append("correo", _c.email)
                 configuracion.append("data", JSON.stringify(data))
 
                 fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
