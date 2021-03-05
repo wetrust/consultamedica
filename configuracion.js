@@ -1,20 +1,5 @@
 import { the, make} from './wetrust.js'
 
-//crea id random para los modales
-function uuidv4() {
-    //genera un uuid
-    let uid = ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-    )
-
-    // genera infinitamente uuid mientras no comience con una letra
-    if (isNaN(uid.charAt(0))){
-        return uid
-    }else{
-        return uuidv4()
-    }
-}
-
 function storageAvailable(type) {
     var storage;
     try {
@@ -275,7 +260,7 @@ function modal_edit(){
         inputs.push(id)
     }
 
-    _btn_delete = uuidv4()
+    let _btn_delete = make.uuidv4()
     _contenido += '<button class="btn btn-outline-danger" data-id="'+id+'" data-config="'+z+'" id="'+_btn_delete+'">Eliminar</button>'
 
     the(modal.contenido).innerHTML = _contenido;
