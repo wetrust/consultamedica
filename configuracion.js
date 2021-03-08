@@ -380,6 +380,7 @@ function checkDatabase() {
 
 function loadDatabase() {
     var configuracion = JSON.parse(localStorage["configuracion"]);
+    ordenarAlfabeto()
 
     $('#ecografista').empty();
     if (configuracion.profesional.length > 0) {
@@ -430,7 +431,6 @@ function loadDatabase() {
     $('#profref').on("change", loadTelefono)
     $('#profref').trigger("change")
 
-
     //membrete
     $("#"+config.config[0].input[0].id).val(configuracion.membrete);
     $("#correo\\.configuracion").val(configuracion.email);
@@ -450,7 +450,6 @@ function loadDatabase() {
             $('#centroecograf').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
         });
     }
-    
 }
 
 //manejadore de botones
@@ -769,4 +768,25 @@ function errorCorreo(){
 
 function validateEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+
+function ordenarAlfabeto(){
+    if (window.localStorage) {
+        if (localStorage.configuracion != null) {
+            var configuracion = JSON.parse(localStorage["configuracion"]);
+
+            for (var z = 0; z < configuracion.length; z++){
+
+                if (Array.isArray(configuracion[Object.keys(configuracion)[z]]) == true){
+                    let dato = configuracion[Object.keys(configuracion)[z]]
+                    dato.sort();
+                    configuracion[Object.keys(configuracion)[z]] = dato
+                }
+            }
+
+            localStorage["configuracion"] = JSON.stringify(configuracion);
+
+        }
+    }
 }
