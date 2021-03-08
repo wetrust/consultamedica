@@ -180,6 +180,7 @@ function guardar(){
 
 
             loadTabla(config)
+            ordenarAlfabeto()
             loadDatabase()
         }
     }
@@ -377,7 +378,6 @@ function checkDatabase() {
 }
 
 function loadDatabase() {
-    ordenarAlfabeto()
     var configuracion = JSON.parse(localStorage["configuracion"]);
 
     $('#ecografista').empty();
@@ -585,6 +585,7 @@ $(document).ready(function() {
                 localStorage["configuracion"] = JSON.stringify(_conf);
                 checkDatabase();
                 loadTabla(config)
+                ordenarAlfabeto()
                 loadDatabase();
                 $('#'+modal.id).modal("hide")
             }).catch(function(error) {
@@ -653,6 +654,7 @@ $(document).ready(function() {
     if (storageAvailable('localStorage')) {
         checkDatabase();
         loadTabla(config)
+        ordenarAlfabeto()
         loadDatabase();
     }
 
