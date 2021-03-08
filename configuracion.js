@@ -195,8 +195,6 @@ function loadTabla(config){
 
                     the(config.config[z].tableid).innerHTML = "";
 
-                    configuracion[name].sort();
-
                     $.each(configuracion[name], function(i, item) {
                         var fila = '<tr data-id="'+i+'" data-config="'+z+'" class="modal-edit">';
 
@@ -379,8 +377,8 @@ function checkDatabase() {
 }
 
 function loadDatabase() {
-    var configuracion = JSON.parse(localStorage["configuracion"]);
     ordenarAlfabeto()
+    var configuracion = JSON.parse(localStorage["configuracion"]);
 
     $('#ecografista').empty();
     if (configuracion.profesional.length > 0) {
