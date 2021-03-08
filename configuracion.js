@@ -774,12 +774,12 @@ function ordenarAlfabeto(){
         if (localStorage.configuracion != null) {
             var configuracion = JSON.parse(localStorage["configuracion"]);
 
-            for (var z = 0; z < configuracion.length; z++){
+            for(var key in configuracion) { 
 
-                if (Array.isArray(configuracion[Object.keys(configuracion)[z]]) == true){
-                    let dato = configuracion[Object.keys(configuracion)[z]]
+                if (Array.isArray(configuracion[key]) == true){
+                    let dato = configuracion[key]
                     dato.sort();
-                    configuracion[Object.keys(configuracion)[z]] = dato
+                    configuracion[key] = dato
                 }
             }
 
