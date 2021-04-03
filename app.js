@@ -441,7 +441,7 @@ $( document ).ready(function() {
     });
 
     $("#embrion, #embrion\\.clon").on("change", function(){
-        let optiones = ["no se observa aun"];
+        let optiones = ["no se observa aun", "no se observa"];
         let cardio = ["con act. cardiaca (+)", "act. cardiaca evidenciable", "act. card. y Corp.(+)"];
         let embrion = the("embrion").value;
 
