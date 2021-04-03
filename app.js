@@ -5472,6 +5472,11 @@ function infPrecoz(){
         var LINEA11 = "";
         LINEA12 = "no procede";
 
+    }else if (the("embrion").value == "no se observa" && the("saco").value == ""){
+        var LINEA9 = "Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
+        var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
+        var LINEA11 = "";
+        LINEA12 = "No se observan estructuras ovulares";
     }else if (the("embrion").value == "no se observa"){
         var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
@@ -5532,10 +5537,8 @@ function infPrecoz(){
     var comentario = the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    if (the("saco").value && the("embrion").value == "no se observa"){
-
+    if ((the("saco").value == "" && the("embrion").value == "no se observa") || the("embrion").value == "no se observa"){
         comentario += "";
-
     }
     else if (the("saco").value && the("embrion").value == "no se observa aun"){
 
@@ -5631,6 +5634,11 @@ function infPrecozClon(){
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
         var LINEA11 = "";
         LINEA12 = "no procede";
+    }else if (the("embrion").value == "no se observa" && the("saco").value == ""){
+        var LINEA9 = "Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
+        var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
+        var LINEA11 = "";
+        LINEA12 = "No se observan estructuras ovulares";
     }else if (the("embrion").value == "no se observa"){
         var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
@@ -5691,10 +5699,8 @@ function infPrecozClon(){
     var comentario = the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    if (the("saco").value && the("embrion").value == "no se observa"){
-
+    if ((the("saco").value == "" && the("embrion").value == "no se observa") || the("embrion").value == "no se observa"){
         comentario += "";
-
     }
     else if (the("saco").value && the("embrion").value == "no se observa aun"){
         comentario += "<br>Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>Se sugiere agendar próxima ecografía para determinar edad gestacional por LCN<br>";
