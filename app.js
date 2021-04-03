@@ -442,7 +442,7 @@ $( document ).ready(function() {
 
     $("#embrion, #embrion\\.clon").on("change", function(){
         let optiones = ["no se observa aun", "no se observa"];
-        let cardio = ["con act. cardiaca (+)", "act. cardiaca evidenciable"];
+        let cardio = ["con act. cardiaca (+)", "act. cardiaca inicial"];
         let embrion = the("embrion").value;
 
         if (optiones.includes(embrion)){
@@ -459,8 +459,8 @@ $( document ).ready(function() {
         if (cardio.includes(embrion)){
             the("fcf-primer-trim").classList.remove("d-none");
             the("fcf-primer-trim-dos").classList.remove("d-none");
-            the("fcf-prim").value = (embrion == "act. cardiaca evidenciable") ? "(+) inicial": 150;
-            the("fcf-prim-dos").value = (embrion == "act. cardiaca evidenciable") ? "(+) inicial": 150;
+            the("fcf-prim").value = (embrion == "act. cardiaca inicial") ? "(+) inicial": 150;
+            the("fcf-prim-dos").value = (embrion == "act. cardiaca inicial") ? "(+) inicial": 150;
         }
         else{
             the("fcf-primer-trim").classList.add("d-none");
@@ -5437,7 +5437,7 @@ function infPrecoz(){
     }
 
     let fcftexto = the("embrion").value;
-    let optiones = ["no se observa aun","act. no evidenciable","con act. cardiaca (-)"];
+    let optiones = ["no se observa aun","con act. cardiaca (-)"];
 
     if (optiones.includes(fcftexto)){
         fcftexto = ".";
@@ -5597,7 +5597,7 @@ function infPrecozClon(){
     }
 
     let fcftexto = the("embrion").value;
-    let optiones = ["no se observa aun","act. no evidenciable","con act. cardiaca (-)"];
+    let optiones = ["no se observa aun","con act. cardiaca (-)"];
 
     if (optiones.includes(fcftexto)){
         fcftexto = ".";
