@@ -5437,7 +5437,7 @@ function infPrecoz(){
     }
 
     let fcftexto = the("embrion").value;
-    let optiones = ["no se observa aun","con act. cardiaca (-)"];
+    let optiones = ["no se observa","no se observa aun","con act. cardiaca (-)"];
 
     if (optiones.includes(fcftexto)){
         fcftexto = ".";
@@ -5597,7 +5597,7 @@ function infPrecozClon(){
     }
 
     let fcftexto = the("embrion").value;
-    let optiones = ["no se observa aun","con act. cardiaca (-)"];
+    let optiones = ["no se observa","no se observa aun","con act. cardiaca (-)"];
 
     if (optiones.includes(fcftexto)){
         fcftexto = ".";
