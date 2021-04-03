@@ -504,7 +504,6 @@ $( document ).ready(function() {
 
     $("#auprom").on("change",function(){
         let ut = pctut(this.value);
-        $("#auPct").val(ut.pct);
         $("#auPctTxt").val(ut.pct);
         $("#auRngo").val(ut.rango.min + " - " + ut.rango.max);
         ajustarProgreso(ut.raw, "auPct");
