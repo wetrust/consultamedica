@@ -503,10 +503,12 @@ $( document ).ready(function() {
     });
 
     $("#auprom").on("change",function(){
-        let ut = pctut(this.value);
-        $("#auPctTxt").val(ut.pct);
-        $("#auRngo").val(ut.rango.min + " - " + ut.rango.max);
-        ajustarProgreso(ut.raw, "auPct");
+        if (this.value > 0){
+            let ut = pctut(this.value);
+            $("#auPctTxt").val(ut.pct);
+            $("#auRngo").val(ut.rango.min + " - " + ut.rango.max);
+            ajustarProgreso(ut.raw, "auPct");
+        }
     });
 
     $("#dv").change( pctdv);
