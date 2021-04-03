@@ -5531,7 +5531,7 @@ function infPrecoz(){
 
     if (the("saco").value && the("embrion").value == "no se observa"){
 
-        comentario += "<br>Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br><br>";
+        comentario += "<br>Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>";
 
     }
     else if (the("saco").value && the("embrion").value == "no se observa aun"){
@@ -5683,7 +5683,10 @@ function infPrecozClon(){
     var comentario = the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    if (the("saco").value && the("embrion").value == "no se observa aun"){
+    if (the("saco").value && the("embrion").value == "no se observa"){
+        comentario += "<br>Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>";
+    }
+    else if (the("saco").value && the("embrion").value == "no se observa aun"){
         comentario += "<br>Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>Se sugiere agendar próxima ecografía para determinar edad gestacional por LCN<br>";
     }
     else if (the("embrion").value != "act. card. y Corp. (-)"){
