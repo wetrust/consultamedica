@@ -3835,7 +3835,7 @@ $( document ).ready(function() {
             imprSelec(modal);
         });
 
-        graficoUno = Highcharts.chart('graficoIpArtUtView', {
+        let graficoUno = Highcharts.chart('graficoIpArtUtView', {
             chart: {
                 height: 250
             },
@@ -3912,7 +3912,7 @@ $( document ).ready(function() {
         });
         
         //$('#graficoIpArtUmbView').highcharts({
-        graficoDos = Highcharts.chart('graficoIpArtUmbView', {
+        let graficoDos = Highcharts.chart('graficoIpArtUmbView', {
                 chart: {
                 height: 250
             },
@@ -3986,7 +3986,7 @@ $( document ).ready(function() {
              }]
         });
         //$('#graficoIpArtCMView').highcharts({
-        graficoTres = Highcharts.chart('graficoIpArtCMView', {
+        let graficoTres = Highcharts.chart('graficoIpArtCMView', {
                 chart: {
                 height: 250
             },
@@ -4067,7 +4067,7 @@ $( document ).ready(function() {
         var dvp = the("dv").value;
 
         if (dvp != ""){
-            graficoCuatro = Highcharts.chart('graficoIpCCPView', {
+            let graficoCuatro = Highcharts.chart('graficoIpCCPView', {
                 chart: { height: 250 },
                 title: {
                     text: 'IP Ductus Venoso',
@@ -4140,7 +4140,7 @@ $( document ).ready(function() {
                 }]
             });
         }else{
-            graficoCuatro = Highcharts.chart('graficoIpCCPView', {
+            let graficoCuatro = Highcharts.chart('graficoIpCCPView', {
                 chart: { height: 250 },
                 title: {
                     text: 'IP de CCP (Indice ACM / AU) **',
@@ -4384,10 +4384,10 @@ $( document ).ready(function() {
 // Controlador de morfología
 $(document).ready(function(){
     $('#liquido\\.ila\\.uno\\.morfologia, #liquido\\.ila\\.dos\\.morfologia, #liquido\\.ila\\.tres\\.morfologia, #liquido\\.ila\\.cuatro\\.morfologia').on("keyup", function(){
-        var uno = $("#liquido\\.ila\\.uno\\.morfologia ").val();
-        var dos = $("#liquido\\.ila\\.dos\\.morfologia ").val();
-        var tres = $("#liquido\\.ila\\.tres\\.morfologia").val();
-        var cuatro = $("#liquido\\.ila\\.cuatro\\.morfologia").val();
+        var uno = the("liquido.ila.uno.morfologia").value;
+        var dos = the("liquido.ila.dos.morfologia").value;
+        var tres = the("liquido.ila.tres.morfologia").value;
+        var cuatro = the("liquido.ila.cuatro.morfologia").value;
 
         uno = (uno.length > 0) ? +uno : 0;
         dos = (dos.length > 0) ? +dos : 0;
@@ -4395,7 +4395,7 @@ $(document).ready(function(){
         cuatro = (cuatro.length > 0) ? +cuatro : 0;
 
         var suma = (uno + dos + tres + cuatro);
-        $("#liquido\\.ila\\.suma\\.morfologia").val(suma);
+        the("liquido.ila.suma.morfologia").value = suma;
 
         let pct5ILA = [], pct95ILA = [];
 
@@ -8720,9 +8720,8 @@ function bvmTxt(valor){
     'use strict';
     let eg = +the("semanas").value;
 
-	let a = [], b = [];
-    a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
-    b[0]=59; b[1]=62; b[2]=64; b[3]=66; b[4]=67; b[5]=68; b[6]=68; b[7]=68; b[8]=68; b[9]=68; b[10]=68; b[11]=69; b[12]=69; b[13]=69; b[14]=69; b[15]=70; b[16]=71; b[17]=72; b[18]=72; b[19]=72; b[20]=71; b[21]=70; b[22]=68; b[23]=66; b[24]=62;
+	let a = [23, 25, 27, 28, 29, 29, 30, 30, 30, 30, 30, 30, 30, 29, 29, 29, 29, 29, 28, 28, 27, 26, 24, 23, 21];
+    let b = [59, 62, 64, 66, 67, 68, 68, 68, 68, 68, 68, 69, 69, 69, 69, 70, 71, 72, 72, 72, 71, 70, 68, 66, 62];
 
     if (eg > 15 || eg < 41){
         eg = eg - 16;
