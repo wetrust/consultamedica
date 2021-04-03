@@ -5477,7 +5477,7 @@ function infPrecoz(){
         var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
         var LINEA11 = "";
-        LINEA12 = "Embrion no se observa";
+        LINEA12 = "Embrion no se observa aun";
 
     }
 
@@ -5632,7 +5632,7 @@ function infPrecozClon(){
         var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
         var LINEA11 = "";
-        LINEA12 = "Embrion no se observa";
+        LINEA12 = "Embrion no se observa aun";
     }
 
     if (sacogestacionaltxt > 0){
