@@ -481,8 +481,8 @@ $( document ).ready(function() {
         $("#audRngo").val(ut.rango.min + " - " + ut.rango.max);
         ajustarProgreso(ut.raw, "audPct");
 
-        aui = parseFloat($("#aui").val());
-        aud = parseFloat(this.value);
+        let aui = parseFloat($("#aui").val());
+        let aud = parseFloat(this.value);
         let utprom = ((aui + aud) / 2);
         the("auprom").value = utprom.toFixed(2);
         $("#auprom").trigger("change");
@@ -495,8 +495,8 @@ $( document ).ready(function() {
         $("#auiRngo").val(ut.rango.min + " - " + ut.rango.max);
         ajustarProgreso(ut.raw, "auiPct");
 
-        aui = parseFloat(this.value);
-        aud = parseFloat($("#aud").val());
+        let aui = parseFloat(this.value);
+        let aud = parseFloat($("#aud").val());
         let utprom = ((aui + aud) / 2);
         the("auprom").value = utprom.toFixed(2);
         $("#auprom").trigger("change");
