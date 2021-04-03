@@ -5472,13 +5472,16 @@ function infPrecoz(){
         var LINEA11 = "";
         LINEA12 = "no procede";
 
+    }else if (the("embrion").value == "no se observa"){
+        var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
+        var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
+        var LINEA11 = "";
+        LINEA12 = "Embrion no se observa";
     }else{
-
         var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
         var LINEA11 = "";
         LINEA12 = "Embrion no se observa aun";
-
     }
 
     if (sacogestacionaltxt > 0){
@@ -5628,6 +5631,11 @@ function infPrecozClon(){
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
         var LINEA11 = "";
         LINEA12 = "no procede";
+    }else if (the("embrion").value == "no se observa"){
+        var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
+        var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
+        var LINEA11 = "";
+        LINEA12 = "Embrion no se observa";
     }else{
         var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
