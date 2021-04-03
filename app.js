@@ -442,7 +442,7 @@ $( document ).ready(function() {
 
     $("#embrion, #embrion\\.clon").on("change", function(){
         let optiones = ["no se observa aun", "no se observa"];
-        let cardio = ["con act. cardiaca (+)", "act. cardiaca evidenciable", "act. card. y Corp.(+)"];
+        let cardio = ["con act. cardiaca (+)", "act. cardiaca evidenciable"];
         let embrion = the("embrion").value;
 
         if (optiones.includes(embrion)){
@@ -5437,7 +5437,7 @@ function infPrecoz(){
     }
 
     let fcftexto = the("embrion").value;
-    let optiones = ["no se observa aun","act. no evidenciable","act. card. y Corp. (-)"];
+    let optiones = ["no se observa aun","act. no evidenciable","con act. cardiaca (-)"];
 
     if (optiones.includes(fcftexto)){
         fcftexto = ".";
@@ -5538,7 +5538,7 @@ function infPrecoz(){
 
         comentario += "<br>Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br><br>-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica<br>";
 
-    } else if (the("embrion").value != "act. card. y Corp. (-)"){
+    } else if (the("embrion").value != "con act. cardiaca (-)"){
 
         let fur = new Date(Date.parse(the("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
@@ -5597,7 +5597,7 @@ function infPrecozClon(){
     }
 
     let fcftexto = the("embrion").value;
-    let optiones = ["no se observa aun","act. no evidenciable","act. card. y Corp. (-)"];
+    let optiones = ["no se observa aun","act. no evidenciable","con act. cardiaca (-)"];
 
     if (optiones.includes(fcftexto)){
         fcftexto = ".";
@@ -5689,7 +5689,7 @@ function infPrecozClon(){
     else if (the("saco").value && the("embrion").value == "no se observa aun"){
         comentario += "<br>Calculo inicial de edad según saco gestacional: "+the("sacoPct").value+" semanas<br>Se sugiere agendar próxima ecografía para determinar edad gestacional por LCN<br>";
     }
-    else if (the("embrion").value != "act. card. y Corp. (-)"){
+    else if (the("embrion").value != "con act. cardiaca (-)"){
         let fur = new Date(Date.parse(the("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
         let fpp = new Date(Date.parse(the("fpp").value));
