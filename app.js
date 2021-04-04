@@ -8657,7 +8657,7 @@ function makeModalEmail(){
             let elemento = the(_correo);
             let opt = document.createElement('option');
             opt.appendChild( document.createTextNode(configuracion.correos[i][1] + ", " + configuracion.correos[i][0] + " - " + configuracion.correos[i][2]) );
-            opt.value = configuracion.correos[i][3]; 
+            opt.value = configuracion.correos[i][2]; 
             elemento.appendChild(opt); 
         }
     }
