@@ -943,7 +943,7 @@ $( document ).ready(function() {
                     data.append("data" , InformeString);
                     var membrete = "<p>"+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
                     data.append("header" , membrete);
-                    verifyEmailSend(this,data);
+                    data = verifyEmailSend(this,data);
                     if (data.get("email") == null){return false}
 
 
@@ -8690,6 +8690,7 @@ function verifyEmailSend(_this,data){
             makeModalNoEMailSelected();
         } else{
             data.append("email" , the(_this.dataset.email).value);
+            return data
         }
     }else{
         //verificar si escribió un correo electrónico
@@ -8698,6 +8699,7 @@ function verifyEmailSend(_this,data){
             makeModalNoEMail();
         }else{
             data.append("email" , the(_this.dataset.emaile).value); 
+            return data
         }
     }
 }
