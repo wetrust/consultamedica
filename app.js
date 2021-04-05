@@ -926,7 +926,8 @@ $( document ).ready(function() {
 $( document ).ready(function() {
     $("#btn\\.informe\\.precoz").on("click", function (){
 
-        if (the("licencia").parentElement.classList.contains("active")){
+        //if (the("licencia").parentElement.classList.contains("active")){
+        if (true){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -946,9 +947,7 @@ $( document ).ready(function() {
                     data = verifyEmailSend(this,data);
                     if (data.get("email") == null){return false}
 
-
                     //determinar si el email es seleccionado o escrito
-
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
                         //console.log(response);
                         //response.blob().then((successMessage) => {
@@ -970,14 +969,14 @@ $( document ).ready(function() {
                 imprInforme(infPrecoz());
                 $('#'+this.dataset.modal).modal('hide');
             });
-
         } else {
             imprInforme(infPrecoz());
         }
     });
 
     $("#informe\\.morfologia").on("click", function(){
-        if (the("licencia").parentElement.classList.contains("active")){
+        //if (the("licencia").parentElement.classList.contains("active")){
+        if (true){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -987,7 +986,7 @@ $( document ).ready(function() {
 
                 $('#'+email.button).on("click", function(){
                     var InformeString = informeMorfologiaClon();
-                
+
                     var data = new FormData();
                     data.append("licencia" , the("licencia").value);
                     data.append("informe" , 2);
@@ -996,7 +995,7 @@ $( document ).ready(function() {
                     data.append("header" , "");
                     verifyEmailSend(this,data);
                     if (data.get("email") == null){return false}
-    
+
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
                         //console.log(response);
                         //response.blob().then((successMessage) => {
@@ -1052,7 +1051,8 @@ $( document ).ready(function() {
     });
 
     $("#modalPreInfEcoObsSegTrim1").on("click", function() {
-        if (the("licencia").parentElement.classList.contains("active")){
+        //if (the("licencia").parentElement.classList.contains("active")){
+        if (true){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -1099,7 +1099,8 @@ $( document ).ready(function() {
     });
 
     $("#modalPreInfEcoDoppler").on("click", function(){
-        if (the("licencia").parentElement.classList.contains("active")){
+        //if (the("licencia").parentElement.classList.contains("active")){
+        if (true){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -1147,7 +1148,8 @@ $( document ).ready(function() {
     });
 
     $("#btn\\.informe\\.ginecologica").on("click",function() {
-        if (the("licencia").parentElement.classList.contains("active")){
+        //if (the("licencia").parentElement.classList.contains("active")){
+        if (true){
             let licencia = makeModalLicencia();
 
             $('#'+licencia.email).on("click", function(){
@@ -1183,12 +1185,10 @@ $( document ).ready(function() {
                     $('#'+this.dataset.parentmodal).modal('hide');
                 });
             });
-
             $('#'+licencia.imprimir).on("click", function(){
                 imprInforme(informeGinecologico());
                 $('#'+this.dataset.modal).modal('hide');
             });
-
         } else {
             imprInforme(informeGinecologico());
         }
@@ -8761,7 +8761,8 @@ function isNumeric(n) {
 }
 
 function modalEcoSegTrimInforme(){
-    if (the("licencia").parentElement.classList.contains("active")){
+    //if (the("licencia").parentElement.classList.contains("active")){
+    if (true){
         let licencia = makeModalLicencia();
 
         $('#'+licencia.email).on("click", function(){
