@@ -635,7 +635,6 @@ $(document).ready(function() {
 
     tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
     tabs.childNodes[tabs.childNodes.length-2].classList.add("d-none")
-    tabs.childNodes[tabs.childNodes.length-3].classList.add("d-none")
 
     the(config.config[config.config.length -1].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
     m = document.createElement("h5")
@@ -655,16 +654,6 @@ $(document).ready(function() {
     tabs = the(config.config[config.config.length -2].tab);
     tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length]);
 
-
-    the(config.config[config.config.length -3].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
-    m = document.createElement("h5")
-    p = document.createElement("em")
-    o = document.createTextNode("Modulo en construcción,opciones a desarrollar en un futuro proximo")
-    p.appendChild(o)
-    m.appendChild(p)
-    tabs = the(config.config[config.config.length -3].tab);
-    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length]);
-
     $("#configOculto").on("click", function(){
         the(config.config[config.config.length -1].tab).childNodes.forEach(elemento => elemento.classList.remove("d-none"))
         tabs = the(config.config[config.config.length -1].tab);
@@ -674,19 +663,13 @@ $(document).ready(function() {
         tabs = the(config.config[config.config.length -2].tab);
         tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
 
-        the(config.config[config.config.length -3].tab).childNodes.forEach(elemento => elemento.classList.remove("d-none"))
-        tabs = the(config.config[config.config.length -3].tab);
-        tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
-
         the("profesionalOcultoConfig").classList.remove("d-none")
 
         tabs = the(tab.nav);
     
         tabs.childNodes[tabs.childNodes.length-1].classList.remove("d-none")
         tabs.childNodes[tabs.childNodes.length-2].classList.remove("d-none")
-        tabs.childNodes[tabs.childNodes.length-3].classList.remove("d-none")
     })
-
 });
 
 function loadTelefono(){
