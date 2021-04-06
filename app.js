@@ -5541,7 +5541,7 @@ function infPrecoz(){
     }
     else if (the("saco").value && the("embrion").value == "no se observa aun"){
 
-        comentario += "<br>Calculo inicial transitorio de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco<br><br>-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica<br>";
+        comentario += "<br>Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco<br><br>-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica<br>";
 
     } else if (the("embrion").value != "con act. cardiaca (-)"){
 
@@ -5702,7 +5702,7 @@ function infPrecozClon(){
         comentario += "";
     }
     else if (the("saco").value && the("embrion").value == "no se observa aun"){
-        comentario += "<br>Calculo inicial transitorio de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco<br>Se sugiere agendar próxima ecografía para determinar edad gestacional por LCN<br>";
+        comentario += "<br>Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco<br>Se sugiere agendar próxima ecografía para determinar edad gestacional por LCN<br>";
     }
     else if (the("embrion").value != "con act. cardiaca (-)"){
         let fur = new Date(Date.parse(the("fum").value));
