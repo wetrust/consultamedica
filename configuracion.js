@@ -433,14 +433,6 @@ function loadDatabase() {
     $("#"+config.config[0].input[0].id).val(configuracion.membrete);
     $("#correo\\.configuracion").val(configuracion.email);
 
-    if (configuracion.licencia == "medicina"){
-        the("licencia").parentElement.classList.add("active");
-        the("licencia.no").parentElement.classList.remove("active");
-        the("mensaje.licencia").innerHTML =  "Envio activado";
-    } else {
-        the("mensaje.licencia").innerHTML =  "Envio desactivado";
-    }
-
     //centro ecográfico
     $('#centroecograf').empty();
     if (configuracion.centro.length > 0) {

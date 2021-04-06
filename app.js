@@ -939,7 +939,8 @@ $( document ).ready(function() {
                     var InformeString = infPrecozClon();
 
                     var data = new FormData();
-                    data.append("licencia" , the("licencia").value);
+                    //data.append("licencia" , the("licencia").value);
+                    data.append("licencia" , "medicina");
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
                     var membrete = "<p>"+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
@@ -988,7 +989,8 @@ $( document ).ready(function() {
                     var InformeString = informeMorfologiaClon();
 
                     var data = new FormData();
-                    data.append("licencia" , the("licencia").value);
+                    //data.append("licencia" , the("licencia").value);
+                    data.append("licencia" , "medicina");
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
                     var membrete = "<p>"+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
@@ -1064,7 +1066,8 @@ $( document ).ready(function() {
                     var InformeString = InfEcoObsSegTrim1Clon();
 
                     var data = new FormData();
-                    data.append("licencia" , the("licencia").value);
+                    //data.append("licencia" , the("licencia").value);
+                    data.append("licencia" , "medicina");
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
                     var membrete = "<p>"+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
@@ -1112,7 +1115,8 @@ $( document ).ready(function() {
                     var InformeString = informeDopplerClon();
 
                     var data = new FormData();
-                    data.append("licencia" , the("licencia").value);
+                    //data.append("licencia" , the("licencia").value);
+                    data.append("licencia" , "medicina");
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
                     var membrete = "<p>"+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
@@ -1161,7 +1165,8 @@ $( document ).ready(function() {
                     var InformeString = informeGinecologico();
 
                     var data = new FormData();
-                    data.append("licencia" , the("licencia").value);
+                    //data.append("licencia" , the("licencia").value);
+                    data.append("licencia" , "medicina");
                     data.append("informe" , 2);
                     data.append("data" , InformeString);
                     var membrete = "<p>"+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
@@ -8774,7 +8779,8 @@ function modalEcoSegTrimInforme(){
                 var InformeString = crearInformeEcoSegTrim2Clon();
 
                 var data = new FormData();
-                data.append("licencia" , the("licencia").value);
+                //data.append("licencia" , the("licencia").value);
+                data.append("licencia" , "medicina");
                 data.append("informe" , 2);
                 data.append("data" , InformeString);
                 var membrete = "<p>"+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
