@@ -475,7 +475,7 @@ $(document).ready(function() {
 
     //guardar configuracion
     let largo = config.config.length
-    largo = largo -4
+    largo = largo -3
 
     let guardar = ""
     let accordion = make.uuidv4();
