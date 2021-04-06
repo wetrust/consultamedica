@@ -498,49 +498,6 @@ $(document).ready(function() {
 
     the(config.config[largo].tab).insertAdjacentHTML("beforeend",guardar)
 
-    //activar
-    largo = config.config.length
-    largo = largo -2
-
-    let activacion = '<ol class="text-secondary"><li><em>Envío de  informes por EMail</em></li></ol>'
-    accordion = make.uuidv4();
-    collapse = make.uuidv4();
-    title = make.uuidv4();
-
-    activacion += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white pointer" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">1.- Envío de informes por E-Mail</h6></div><div id="'+collapse+'" class="collapse '
-    activacion += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
-    activacion += '<div class="form-group row"> <label class="col-12">Activar envío informes por E-Mail:</label> <div class="col-sm-2"> <div class="btn-group btn-group-toggle" data-toggle="buttons"> <label class="btn btn-secondary active" id="licencia.no.button"><input type="radio" name="check.licencia" id="licencia.no" value="" checked="checked"/> No</label> <label class="btn btn-secondary ml-2" id="licencia.button"><input type="radio" name="check.licencia" id="licencia" value="medicina"/> Si</label> </div></div><div class="col-12 col-lg-6"><p id="mensaje.licencia" class="text-primary">Licencia activada</p></div></div><p>Email de destinatario debe ser configurado previamente en profesional referente</p>'
-    activacion += '</div></div></div></div>'
-    activacion += '<p class="mt-5"><em>Como alternativa a "Envio de E-Mail personalizado", utilizando Google Chrome puede guardar informe directamente en Google Drive.</em></p>'
-
-    the(config.config[largo].tab).insertAdjacentHTML("beforeend",activacion)
-
-	$("#licencia\\.button").on("click", function(){
-        if (window.localStorage) {
-            if (localStorage.configuracion != null) {
-                var configuracion = JSON.parse(localStorage["configuracion"]);
-                var licencia = "medicina";
-                configuracion.licencia = licencia;
-                    
-                localStorage["configuracion"] = JSON.stringify(configuracion);
-                the("mensaje.licencia").innerHTML =  "Envío activado";
-            }
-        }
-    });
-
-    $("#licencia\\.no\\.button").on("click", function(){
-        if (window.localStorage) {
-            if (localStorage.configuracion != null) {
-                var configuracion = JSON.parse(localStorage["configuracion"]);
-                var licencia = "x";
-                configuracion.licencia = licencia;
-                localStorage["configuracion"] = JSON.stringify(configuracion);
-                the("mensaje.licencia").innerHTML =  "Envío desactivado";
-                the("correo.configuracion").value = "";
-            }
-        }
-    });
-
     $("#correo\\.configuracion\\.cargar").on("click", function(){
         let email = the("correo.configuracion").value
         email = email.replace(/\s+/g, '');

@@ -8624,7 +8624,7 @@ function makeModalEmail(){
 
     var _correo = uuidv4();
     var _correoe = uuidv4();
-    let _contenido = '<div class="row"> <div class="col-12"><div class="form-check"> <input class="form-check-input" type="radio" name="emalRadios" id="seleccionar" value="sel" checked> <label class="form-check-label" for="seleccionar"> Seleccionar E-Mail </label></div><div class="form-group"><select id="'+_correo+'" class="form-control"></select></div></div><div class="col-12"> <div class="form-check"> <input class="form-check-input" type="radio" name="emalRadios" id="escribir" value="esc" > <label class="form-check-label" for="escribir"> Escribir E-Mail </label></div><div class="form-group"><input id="'+_correoe+'" class="form-control  d-none" type="email"></div></div></div>'
+    let _contenido = '<div class="row"><div class="col-12"> <div class="form-check"> <input class="form-check-input" type="radio" name="emalRadios" id="escribir" value="esc" > <label class="form-check-label" for="escribir"> Escribir E-Mail </label></div><div class="form-group"><input id="'+_correoe+'" class="form-control  d-none" type="email"></div></div><div class="col-12"><div class="form-check"> <input class="form-check-input" type="radio" name="emalRadios" id="seleccionar" value="sel" checked> <label class="form-check-label" for="seleccionar"> Seleccionar E-Mail </label></div><div class="form-group"><select id="'+_correo+'" class="form-control"></select></div></div></div>'
 
     the(_modal.contenido).innerHTML = _contenido;
     the(_modal.id).children[0].classList.remove("modal-lg");
