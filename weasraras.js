@@ -1,4 +1,6 @@
 //controlador de cosas raras que pasan el la portada
+import { the } from './wetrust.js'
+
 $(document).ready(function(){
     $("#punto\\.uno").on("click", function(){
         reiniciaBotones();
