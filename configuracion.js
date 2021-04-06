@@ -631,7 +631,7 @@ $(document).ready(function() {
     m.classList.add("mt-2", "mb-1")
 
     let tabs = the(tab.nav);
-    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length -3]);
+    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length -2]);
 
     tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
     tabs.childNodes[tabs.childNodes.length-2].classList.add("d-none")
