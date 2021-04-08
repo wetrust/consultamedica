@@ -670,7 +670,8 @@ $(document).ready(function() {
         tabs.childNodes[tabs.childNodes.length-1].classList.remove("d-none")
         tabs.childNodes[tabs.childNodes.length-2].classList.remove("d-none")
     })
-});
+
+})
 
 function loadTelefono(){
     var configuracion = JSON.parse(localStorage["configuracion"]);

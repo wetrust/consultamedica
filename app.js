@@ -7218,14 +7218,14 @@ function crearInformeEcoSegTrim2(){
         tmpData = cerebeloPctRpt;
     }
     var cbRango = oldProgress(tmpData);
-	
+
 	var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
     var motivo = $( '#motivo-examen option:selected').text();
     var ecografista = $( '#ecografista option:selected').text();
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     var edadmaterna = $( "select[name='edad_materna']").val();
-    
+
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
@@ -7294,7 +7294,7 @@ function crearInformeEcoSegTrim2(){
 	InformeString = InformeString.replace(":CBRANGO", cbRango);
 	InformeString = InformeString.replace(":COMENTARIO", comentario);
 	InformeString = InformeString.replace(":P50", p50);
-	
+
 	InformeString = InformeString.replace(":LINEA1", linea1);
 	InformeString = InformeString.replace(":LINEA2", linea2);
 	InformeString = InformeString.replace(":LINEA3", linea3);
@@ -7303,7 +7303,7 @@ function crearInformeEcoSegTrim2(){
 	InformeString = InformeString.replace(":LINEA6", linea6);
 	InformeString = InformeString.replace(":DATEINFORME", dateInf);
 	InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
-    
+
     var CIUDAD =  $( '#ciudadpaciente option:selected').text();
     var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
     InformeString = InformeString.replace(":CIUDAD", CIUDAD);
@@ -7668,7 +7668,6 @@ function oldProgress(value){
 
     return result;
 }
-
 
 function setCursor(id) { 
     if (typeof the(id).createTextRange != "undefined") {
@@ -8629,7 +8628,7 @@ function makeModalEmail(){
 
     var _correo = uuidv4();
     var _correoe = uuidv4();
-    let _contenido = '<div class="row"><div class="col-12"> <div class="form-check"> <input class="form-check-input" type="radio" name="emalRadios" id="escribir" value="esc" > <label class="form-check-label" for="escribir"> Escribir E-Mail </label></div><div class="form-group"><input id="'+_correoe+'" class="form-control  d-none" type="email"></div></div><div class="col-12"><div class="form-check"> <input class="form-check-input" type="radio" name="emalRadios" id="seleccionar" value="sel" checked> <label class="form-check-label" for="seleccionar"> Buscar E-Mail configurado </label></div><div class="form-group"><select id="'+_correo+'" class="form-control"></select></div></div></div>'
+    let _contenido = '<div class="row"><div class="col-12"> <div class="form-check"> <input class="form-check-input" type="radio" name="emalRadios" id="escribir" value="esc" checked> <label class="form-check-label" for="escribir"> Escribir E-Mail </label></div><div class="form-group"><input id="'+_correoe+'" class="form-control" type="email"></div></div><div class="col-12 d-none"><div class="form-check"> <input class="form-check-input" type="radio" name="emalRadios" id="seleccionar" value="sel" ><label class="form-check-label" for="seleccionar"> Buscar E-Mail configurado </label></div><div class="form-group"><select id="'+_correo+'" class="form-control"></select></div></div></div>'
 
     the(_modal.contenido).innerHTML = _contenido;
     the(_modal.id).children[0].classList.remove("modal-lg");
@@ -8665,6 +8664,10 @@ function makeModalEmail(){
             opt.value = configuracion.correos[i][2]; 
             elemento.appendChild(opt); 
         }
+
+        $("#seleccionar")[0].parentElement.parentElement.classList.remove("d-none")
+        $("#seleccionar").prop('checked', true);
+        $("#seleccionar").trigger("change")
     }
 
     the(_modal.button).dataset.modal = _modal.id;
