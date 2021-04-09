@@ -5883,7 +5883,7 @@ function InfEcoObsSegTrim1(){
         InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
         InformeString = InformeString.replace(":ARTUTPCTVAL", $("#respuesta_uterina_promedio_percentil").html());
 
-        pctUT = $("#respuesta_uterina_promedio_percentil").html();
+        let pctUT = $("#respuesta_uterina_promedio_percentil").html();
 
         if (pctUT == "&gt; 95" || pctUT == "&lt; 5"){
             tmpData = 0;
@@ -7317,13 +7317,13 @@ function crearInformeEcoSegTrim2Clon(){
     var movCorp;
 
     let elem=document.getElementsByName('accard');
-    for(i=0;i<elem.length;i++)
+    for(i = 0;i < elem.length; i++)
         if (elem[i].checked) {
             actCard = elem[i].value;
         }
 
-        elem=document.getElementsByName('movfet');
-        for(i=0;i<elem.length;i++)
+        elem = document.getElementsByName('movfet');
+        for(i = 0;i < elem.length;i++)
             if (elem[i].checked) {
                 movCorp = elem[i].value;
             }
@@ -7456,7 +7456,7 @@ function crearInformeEcoSegTrim2Clon(){
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
     }
 
-    InformeString += '<tr> <td style="border-top:1px dashed #045dab;">* En el cálculo de edad gestacional tardía, es excluido perímetro abdominal, adicionando Largo Humeral y Diámetro de Cerebelo</td></tr><tr> <td style="border-top:1px dashed #045dab;"></td><td style="border-top:1px dashed #045dab;"></td><td style="border-top:1px dashed #045dab;"></td></tr></tbody> </table></div><div class="container-fluid"> <p style="margin-top:0.5rem;padding-bottom:0px;margin-bottom:0px;"><strong style="color:#045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style="max-width: 700px;text-align: justify;">:COMENTARIO</p></div><div class="container-fluid"> <p style="text-align:right;margin-top:1rem">Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style="border-top: 1px solid #000;width: 100% !important;display: block;"></span><hr>Fecha Informe: :DATEINFORME<hr><span style="border-top: 2px solid #000;width: 100% !important;display: block;"></span> <p style="margin-bottom:0;" class="pie-pagina"><small><strong>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015</strong> <br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p><p style="margin-bottom:0 !important;"><small><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></small> </p></div>';
+    InformeString += '<tr> <td style="border-top:1px dashed #045dab;">* En el cálculo de edad gestacional tardía, es excluido perímetro abdominal, adicionando Largo Humeral y Diámetro de Cerebelo</td></tr><tr> <td style="border-top:1px dashed #045dab;"></td><td style="border-top:1px dashed #045dab;"></td><td style="border-top:1px dashed #045dab;"></td></tr></tbody> </table></div><div class="container-fluid"> <p style="margin-top:0.5rem;padding-bottom:0px;margin-bottom:0px;"><strong style="color:#045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style="max-width: 700px;text-align: justify;">:COMENTARIO</p></div><div class="container-fluid"> <p style="text-align:right;margin-top:1rem">Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style="border-top: 1px solid #000;width: 100% !important;display: block;"></span><hr>Fecha Informe: :DATEINFORME<hr style="margin-top:0px"><span style="border-top: 2px solid #000;width: 100% !important;display: block;"></span> <p style="margin-bottom:0;" class="pie-pagina"><small><strong>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015</strong> <br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p><p style="margin-bottom:0 !important;"><small><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></small> </p></div>';
 
 	var comentario = $('#comentarios-eco-dos-inf-dos').val()
 	comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : '';
