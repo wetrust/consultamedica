@@ -582,14 +582,14 @@ $( document ).ready(function() {
     $("#doppler\\.largo\\.cervical\\.segundo").on("keyup", function(){
         let cV = +this.value;
         if (cV == NaN){
-            the("doppler\\.info.cervix").innerHTML = "";
-            the("doppler\\.info.cervix").classList.add("d-none");
+            the("doppler.info.cervix").innerHTML = "";
+            the("doppler.info.cervix").classList.add("d-none");
         }else if (cV < 25){
-            the("doppler\\.info.cervix").innerHTML ='<p class="mb-0">Cérvix corto</p>';
-            the("doppler\\.info.cervix").classList.remove("d-none");
+            the("doppler.info.cervix").innerHTML ='<p class="mb-0">Cérvix corto</p>';
+            the("doppler.info.cervix").classList.remove("d-none");
         }else if(cV > 24){
-            the("doppler\\.info.cervix").innerHTML ='<p class="mb-0">Cérvix normal</p>';
-            the("doppler\\.info.cervix").classList.remove("d-none");
+            the("doppler.info.cervix").innerHTML ='<p class="mb-0">Cérvix normal</p>';
+            the("doppler.info.cervix").classList.remove("d-none");
         }
     })
 
