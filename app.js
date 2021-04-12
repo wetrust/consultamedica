@@ -570,6 +570,29 @@ $( document ).ready(function() {
         }
     })
 
+    $("#doppler\\.larg\\.cerv").on("click", function(){
+        if (this.checked == true){
+            the("doppler.larg.cerv.div").classList.remove("d-none");
+            the("doppler.largo.cervical.segundo").focus();
+        }else{
+            the("doppler.larg.cerv.div").classList.add("d-none");
+        }
+    });
+
+    $("#doppler\\.largo\\.cervical\\.segundo").on("keyup", function(){
+        let cV = +this.value;
+        if (cV == NaN){
+            the("doppler\\.info.cervix").innerHTML = "";
+            the("doppler\\.info.cervix").classList.add("d-none");
+        }else if (cV < 25){
+            the("doppler\\.info.cervix").innerHTML ='<p class="mb-0">Cérvix corto</p>';
+            the("doppler\\.info.cervix").classList.remove("d-none");
+        }else if(cV > 24){
+            the("doppler\\.info.cervix").innerHTML ='<p class="mb-0">Cérvix normal</p>';
+            the("doppler\\.info.cervix").classList.remove("d-none");
+        }
+    })
+
     $("#ver\\.ref").on("click", function(){
         if (this.checked == true){
             the("ver.ref.div").classList.remove("d-none");
