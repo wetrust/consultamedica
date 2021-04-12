@@ -8410,7 +8410,7 @@ function informeDoppler(){
     }
 
     //cervix
-    if (the("larg.cerv").checked == true){
+    if (the("doppler.larg.cerv").checked == true){
         InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td>:LARGCERV mm</td><td class="text-center">:LARGCERVTXT</td><td class="text-center"></td></tr>';
 
         InformeString = InformeString.replace(":LARGCERV", $("#doppler\\.largo\\.cervical\\.segundo").val());
