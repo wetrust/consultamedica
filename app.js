@@ -645,8 +645,8 @@ $( document ).ready(function() {
         let ut = pctut(this.value);
         $("#respuesta_uterina_derecha_percentil").html(ut.pct);
 
-        aui = parseFloat($("#respuesta_uterina_izquierda").val());
-        aud = parseFloat(this.value);
+        let aui = parseFloat($("#respuesta_uterina_izquierda").val());
+        let aud = parseFloat(this.value);
         let utprom = ((aui + aud) / 2);
         the("respuesta_uterina_promedio").value = utprom.toFixed(2);
         $("#respuesta_uterina_promedio").trigger("change");
@@ -656,8 +656,8 @@ $( document ).ready(function() {
         let ut = pctut(this.value);
         $("#respuesta_uterina_izquierda_percentil").html(ut.pct);
 
-        aui = parseFloat(this.value);
-        aud = parseFloat($("#respuesta_uterina_derecha").val());
+        let aui = parseFloat(this.value);
+        let aud = parseFloat($("#respuesta_uterina_derecha").val());
         let utprom = ((aui + aud) / 2);
         the("respuesta_uterina_promedio").value = utprom.toFixed(2);
         $("#respuesta_uterina_promedio").trigger("change");
