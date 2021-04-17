@@ -664,9 +664,11 @@ $( document ).ready(function() {
     });
 
     $("#respuesta_uterina_promedio").on("change",function(){
-        let ut = pctut(this.value);
-        $("#respuesta_uterina_promedio_percentil").html(ut.pct);
-        $("#respuesta_uterina_promedio_rango").val(ut.rango.min + " - " + ut.rango.max);
+        if (Number.isInteger(this.value)){
+            let ut = pctut(this.value);
+            $("#respuesta_uterina_promedio_percentil").html(ut.pct);
+            $("#respuesta_uterina_promedio_rango").val(ut.rango.min + " - " + ut.rango.max);
+        }
     });
 
     $("#pdfnacionalview").on("click", function(){
