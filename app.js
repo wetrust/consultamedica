@@ -5359,7 +5359,7 @@ $(document).ready(function(){
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
     var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet"];
-    var div_fecha = ["#consulta","#paciente", "#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet", "#postnatal", "#recienacido", "#investigacion", "#ajustepeso"];
+    var div_fecha = ["#consulta","#paciente", "#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet"];
     let d = "d-none";
 
     if (div.includes(hash)){
@@ -5375,13 +5375,13 @@ $(window).on('hashchange', function(){
                 the("semanas").parentElement.parentElement.parentElement.parentElement.classList.add(d);
                 the("fpp").parentElement.parentElement.classList.add(d);
                 the("diaciclo").parentElement.parentElement.classList.remove(d);
-            }else{
+            } else {
                 the("diaciclo").parentElement.parentElement.classList.add(d);
                 the("semanas").parentElement.parentElement.parentElement.parentElement.classList.remove(d);
                 the("fpp").parentElement.parentElement.classList.remove(d);
             }
         }
-        else{
+        else {
             document.getElementsByTagName("section")[0].classList.add(d);
             //especial
             if (hash == "#recienacido"){
@@ -5395,13 +5395,14 @@ $(window).on('hashchange', function(){
         }
 
         //especial para el header
-        if (hash == "#inicio"){
+        let headers = ["#inicio", "#ajustepeso", "#postnatal","#recienacido","#investigacion"]
+        if (headers.includes(hash)){
             document.getElementsByTagName("header")[0].classList.remove("d-none");
-        }else{
+        } else {
             document.getElementsByTagName("header")[0].classList.add("d-none");
         }
     }
-    else{
+    else {
         $(activeHash).addClass(d);
         the("inicio").classList.remove(d);
     }
