@@ -1915,7 +1915,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="form-group form-check">
+                                    <div class="form-group form-check d-none">
                                         <input type="checkbox" class="form-check-input" id="ver.ecoPrimTrim.new">
                                         <label class="form-check-label text-primary" for="ver.ecoPrimTrim.new">
                                             <small>Evaluación secuencial mediante tres módulos, dependiendo de hallazgos clínicos.</small></label> </div>
@@ -1992,8 +1992,8 @@
                                     </div>
                                 </div>
                                 <div class="row mt-3" id="resultadoAjusteEcoPrimTrim" style="display:none;">
-                                    <div class="col-12">
-                                        <div class="row bg-secondary py-2">
+                                    <div class="col-12 my-2">
+                                        <div class="row bg-secondary py-2 rounded">
                                             <div class="col">
                                                 <div class="form-group mb-0">
                                                     <label class="text-white"><small>Fecha de última mestruación</small></label>
@@ -2021,14 +2021,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-12 py-3 rounded text-center" style="background-color: rgb(236, 236, 236);">
+                                        <h6 class="mb-0">Diferencia con edad gestacional referida <span id="diferenciaEcoPrimTrim" class="border border-dark p-2 rounded"></span> Días *.</h6>
+                                    </div>
                                     <div class="col-12">
-                                        <p class="my-2">Diferencia con edad gestacional referida <span id="diferenciaEcoPrimTrim" class="border border-dark p-2 rounded"></span> Días *.</p>
                                         <p class="mb-0"><small>* Para las semanas 7 a 10, el rango de diferencia clínica aceptable, entre edad gestacional referida y edad calculada es ± 3 días.</small></p>
                                     </div>
                                 </div>
-                                <div class="row ml-3" id="preguntaAjusteEcoPrimTrim" style="display:none;">
-                                    <div class="col-8">
-                                        <h6 class="tmt-2">¿Desea realizar ajuste a la edad gestacional referida?</h6>
+                                <div class="row my-3 py-3 rounded" id="preguntaAjusteEcoPrimTrim" style="display:none;background-color: rgb(236, 236, 236);">
+                                    <div class="col-7">
+                                        <h6>¿Desea realizar ajuste a la edad gestacional referida?</h6>
                                     </div>
                                     <div class="col-1"></div>
                                     <div class="col-3 text-right">
