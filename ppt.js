@@ -1,3 +1,5 @@
+import { make, the } from './wetrust.js'
+
 $(document).ready(function(){
     let req = new FormData()
     req.append("user_id", 2)
@@ -43,7 +45,7 @@ function getfile(){
     var file =  this.dataset.id;
 
     if (private == 1){
-        let _modal = modal("Solicitar archivo");
+        let _modal = make.modal("Solicitar archivo");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
         the(_modal.titulo).innerHTML = "Escribir E-Mail de acceso validado";
@@ -79,7 +81,7 @@ function getfile(){
                 req.append("archivo_id", this.dataset.file)
                 req.append("suscrito_email", email)
                 req.append("user_id", 2)
-            
+
                 fetch('https://api.crecimientofetal.cl/api/archivo', {method: 'POST',body: req, mode: 'cors'}).then(response => response.json())
                 .then(data => {
                     if (data.success){
@@ -96,7 +98,7 @@ function getfile(){
         }
 
         the(_solicitud).onclick = function(){
-            let _modal = modal("Enviar");
+            let _modal = make.modal("Enviar");
 
             document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
             the(_modal.titulo).innerHTML = "Solicitar acceso";
@@ -134,7 +136,7 @@ function getfile(){
                 fetch('https://api.crecimientofetal.cl/api/solicitud', {method: 'POST',body: req, mode: 'cors'}).then(response => response.json())
                 .then(data => {
                     if (data.success){
-                        let _modal = modal();
+                        let _modal = make.modal();
                         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
                         the(_modal.titulo).innerHTML = "Mensaje";
                         the(_modal.titulo).classList.add("mx-auto");
@@ -144,9 +146,7 @@ function getfile(){
                         the(_modal.contenido).innerHTML = '<p>Pronto daremos respuesta a su solicitud y obtendrá acceso temporal a documentos restringidos.</p>';
                         the("cancelarmodal").textContent = "Volver a documentos restrigidos"
                     }else{
-
                         alert("No disponible");
-
                     }
                 })
             }
@@ -163,7 +163,6 @@ function getfile(){
                 $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
 
                 document.location.hash = "#pdfviebox";
-
             }else{
                 alert("No autorizado");
             }
