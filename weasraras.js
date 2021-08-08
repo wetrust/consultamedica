@@ -37,7 +37,6 @@ $(document).ready(function(){
             this.classList.add("active");
             ocultarPrincipal();
             the("mensaje.tres").classList.remove("d-none");
-            the("referencia.tres").classList.remove("d-none");
         }else{
             reiniciaPuntitos();
         }
