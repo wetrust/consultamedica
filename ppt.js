@@ -52,8 +52,8 @@ function getfile(){
         the(_modal.titulo).classList.add("mx-auto");
         the(_modal.titulo).parentElement.classList.add("bg-info", "text-white");
 
-        var _correo = uuidv4();
-        var _solicitud = uuidv4();
+        var _correo = make.uuidv4();
+        var _solicitud = make.uuidv4();
         let _contenido = '<div class="row"><div class="col-12"><div class="form-group"><input id="'+_correo+'" class="form-control" type="email"><p>Si aún no dispone de acceso <button type="button" class="btn btn-link"  id="'+_solicitud+'">active solicitud</button></p></div></div></div>'
 
         the(_modal.contenido).innerHTML = _contenido;
@@ -110,9 +110,9 @@ function getfile(){
             the("cancelarmodal").classList.remove("btn-secondary")
             the("cancelarmodal").classList.add("btn-outline-secondary")
 
-            var _nombre = uuidv4();
-            var _email = uuidv4();
-            var _mensaje = uuidv4();
+            var _nombre = make.uuidv4();
+            var _email = make.uuidv4();
+            var _mensaje = make.uuidv4();
 
             let _contenido = '<div class="row"><div class="col-12 form-group"><label for="'+_nombre+'">Nombre</label><input type="text" class="form-control" id="'+_nombre+'"></div><div class="col-12 form-group"><label for="'+_email+'">Email</label><input type="email" class="form-control" id="'+_email+'"></div><div class="col-12 form-group"><label for="'+_mensaje+'">Mensaje</label><textarea class="form-control" id="'+_mensaje+'" rows="3"></textarea></div></div>';
             the(_modal.contenido).innerHTML = _contenido;
