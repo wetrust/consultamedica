@@ -41,10 +41,10 @@ $(document).ready(function(){
 });
 
 function getfile(){
-    var private = this.dataset.private;
+    var _private = this.dataset.private;
     var file =  this.dataset.id;
 
-    if (private == 1){
+    if (_private == 1){
         let _modal = make.modal("Solicitar archivo");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
