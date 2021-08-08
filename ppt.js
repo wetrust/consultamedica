@@ -1,5 +1,4 @@
-import { make, the } from './wetrust.js'
-
+import { make, the } from './wetrust.js';
 $(document).ready(function(){
     let req = new FormData()
     req.append("user_id", 2)
