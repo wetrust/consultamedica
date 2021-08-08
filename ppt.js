@@ -107,9 +107,6 @@ function getfile(){
             the(_modal.id).children[0].classList.remove("modal-lg");
             $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
-            the("cancelarmodal").classList.remove("btn-secondary")
-            the("cancelarmodal").classList.add("btn-outline-secondary")
-
             var _nombre = make.uuidv4();
             var _email = make.uuidv4();
             var _mensaje = make.uuidv4();
