@@ -1,0 +1,117 @@
+.bienvenida{	
+	background: #009688; /* For browsers that do not support gradients */
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+.bg-verde{
+  background-color: #009688 !important;
+}
+.text-verde{
+    color: #009688 !important;
+}
+.bg-verde-claro{
+    background-color: #05c4b2 !important;
+}
+.alert-gris{
+	background: #ccd4d8; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #ccd4d8, #eceeef); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right,#ccd4d8,  #eceeef); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right,#ccd4d8, #eceeef); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #ccd4d8, #eceeef); /* Standard syntax (must be last) */
+}
+.text-azul{
+	color:#013a6b !important;
+}
+
+.btn-consulta{
+    background-color: #6bb4e0 !important;
+    border-color: #6bb4e0 !important;
+    color: #fff;
+}
+
+.txt-consulta{
+  color: #6bb4e0;
+}
+
+.btn-outline-consulta {
+    color: #6bb4e0;
+    background-image: none;
+    background-color: transparent;
+    border-color: #6bb4e0;
+}
+
+.btn-outline-consulta:active, .btn-outline-consulta.active {
+    color: #fff;
+    background-color: #6bb4e0;
+    border-color: #6bb4e0;
+}
+.gris-claro{
+    background-color:#868e9652;
+}
+
+
+.text-animado { animation: example 5s infinite; color:#000;}
+
+@keyframes example {
+    0% { color: #BDCE30; }
+    11% { color: #6ABB81; }
+    23% { color: #00B29A; }
+    33% { color: #0099AE; }
+    45% { color: #4F72B8; }
+    54% { color: #A065AA; }
+    66% { color: #EE4D7A; }
+    77% { color: #EF4C45; }
+    89% { color: #F4792B; }
+    100% {color: #FAA634; }}
+
+.internal-shadow{
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.bg-gris {
+    background-color:#6c757d!important
+}
+.bg-gris.active {
+    background-color:#b4b4b4!important
+}
+
+.progress{
+    background-image: url(img/bg-progress.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.progress-consulta{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    transition: width .6s ease;
+}
+.progress-consulta::after {
+    content: "X";
+    margin-right: -5px;
+    text-align: right;
+    color: black;
+}
+
+
+/* Eliminar las flechas hacia arriba y abajo en los input number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.texto-pequeno{
+    font-size: 12px !important;
+}
