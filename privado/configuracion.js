@@ -1,5 +1,20 @@
 import { the, make} from './wetrust.js'
 
+$( document ).ready(function() {
+    fetch('https://api.crecimientofetal.cl/config/getPrivado', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
+    .then(data => {
+        var _conf = data.config_key;
+        _conf.id = data.config_id;
+        localStorage["configuracion"] = JSON.stringify(_conf);
+        checkDatabase();
+        loadTabla(config)
+        ordenarAlfabeto()
+        loadDatabase();
+    }).catch(function(error) {
+        console.log("configuración")
+    });
+})
+
 function storageAvailable(type) {
     var storage;
     try {
@@ -177,7 +192,22 @@ function guardar(){
 
             this.parentElement.parentElement.classList.remove("show")
 
+            //////
 
+            let _configuracion = new FormData()
+
+            _configuracion.append("config_id",_conf.id)
+            _configuracion.append("config_key", localStorage["configuracion"])
+
+            fetch('https://api.crecimientofetal.cl/config/setPrivado', {method: 'POST',body: _configuracion, mode: 'cors'}).then(response => response.json())
+            .then(data => {
+                var _conf = JSON.parse(localStorage["configuracion"]);
+                _conf.id = data.config_id;
+                localStorage["configuracion"] = JSON.stringify(_conf);
+            }).catch(function(error) {
+                console.log("error")
+            });
+            ///////
 
             loadTabla(config)
             ordenarAlfabeto()
@@ -473,203 +503,12 @@ $(document).ready(function() {
 		}
     });
 
-    //guardar configuracion
-    let largo = config.config.length
-    largo = largo -3
-
-    let guardar = ""
-    let accordion = make.uuidv4();
-    let collapse = make.uuidv4();
-    let title = make.uuidv4();
-
-    guardar += '<div class="accordion" id="'+accordion+'"><div class="card shadow mb-3"><div class="card-header bg-verde text-white pointer" id="'+title+'"><h6 class="mb-0" data-toggle="collapse" data-target="#'+collapse+'" aria-expanded="true" aria-controls="'+collapse+'">Guardar &#47; restaurar configuración</h6></div><div id="'+collapse+'" class="collapse show'
-    guardar += '" aria-labelledby="'+title+'" data-parent="#'+accordion+'"><div class="card-body">'
-    guardar += '<div class="form-group row"><label class="col-12">Ingresar E-Mail para configuración personal: </label><div class="col-4"><input type="email" id="correo.configuracion" class="form-control" /></div><div class="col"><button type="button" class="btn btn-secondary" id="correo.configuracion.guardar">Guardar configuración</button><button type="button" class="btn btn-secondary" id="correo.configuracion.cargar">Restaurar configuración</button></div></div>'
-    guardar += '</div></div></div></div>'
-    guardar += '<ul class="mt-5"><li>Configuración de plataforma en su navegador se guarda de forma temporal, si desea guardar configuración de forma permanente escriba su email y presione <strong>botón guardar</strong>.</li><li>Para restaurar configuración guardada anteriormente, presione <strong>restaurar configuración</strong>.</li><li>Recuerde una vez guardado, si realiza cambios debe nuevamente <strong>guardar configuración</strong>.</li></ul>'
-
-    the(config.config[largo].tab).insertAdjacentHTML("beforeend",guardar)
-
-    $("#correo\\.configuracion\\.cargar").on("click", function(){
-        let email = the("correo.configuracion").value
-        email = email.replace(/\s+/g, '');
-
-        if (email.length == 0 ) {
-            errorCorreo()
-            return false;
-        }
-
-        if (validateEmail(email) == false) {
-            errorCorreo()
-            return false;
-        }
-
-        let modal = make.modal("Cargar datos")
-
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
-        the(modal.titulo).classList.add("mx-auto");
-        the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
-    
-        let _contenido = '<p>La aplicación revisará en el servidor si hay configuraciones asociadas al correo escrito, y si encuentra configuraciones las cargará a esta computadora</p><h6>¿Continuar?</h6>'
-    
-        the(modal.contenido).innerHTML = _contenido;
-        the(modal.id).children[0].classList.remove("modal-lg");
-    
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-
-        $('#'+modal.button).on("click", function(){
-
-            let email = the("correo.configuracion").value
-            email = email.replace(/\s+/g, '');
-
-            let configuracion = new FormData()
-
-            configuracion.append("config_name", email)
-
-            fetch('https://api.crecimientofetal.cl/config', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
-            .then(data => {
-                var _conf = data.config_key;
-                _conf.id = data.config_id;
-                localStorage["configuracion"] = JSON.stringify(_conf);
-                checkDatabase();
-                loadTabla(config)
-                ordenarAlfabeto()
-                loadDatabase();
-                $('#'+modal.id).modal("hide")
-            }).catch(function(error) {
-                alert("error")
-            });
-        })
-    })
-
-    $("#correo\\.configuracion\\.guardar").on("click", function(){
-
-        let email = the("correo.configuracion").value
-        email = email.replace(/\s+/g, '');
-
-        if (email.length == 0 ) {
-            errorCorreo()
-            return false;
-        }
-
-        if (validateEmail(email) == false) {
-            errorCorreo()
-            return false;
-        }
-
-        let modal = make.modal("Guardar datos")
-
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerHTML = "Guardar datos en servidor";
-        the(modal.titulo).classList.add("mx-auto");
-        the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
-    
-        let _contenido = '<p>La aplicación guardará en el servidor las configuraciones actuales y quedaran asociadas al correo escrito, si ya guardó anteriormente información, los datos serán sobrescritos</p><h6>¿Continuar?</h6>'
-    
-        the(modal.contenido).innerHTML = _contenido;
-        the(modal.id).children[0].classList.remove("modal-lg");
-    
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-
-        $('#'+modal.button).on("click", function(){
-
-            var _conf = JSON.parse(localStorage["configuracion"]);
-            let email = the("correo.configuracion").value
-            email = email.replace(/\s+/g, '');
-
-            _conf.email = email
-            let configuracion = new FormData()
-
-            configuracion.append("config_id",_conf.id)
-            configuracion.append("config_name", _conf.email)
-            configuracion.append("config_key", JSON.stringify(_conf))
-
-            localStorage["configuracion"] = JSON.stringify(_conf);
-
-            fetch('https://api.crecimientofetal.cl/config/create', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
-            .then(data => {
-                var _conf = JSON.parse(localStorage["configuracion"]);
-                _conf.id = data.config_id;
-                localStorage["configuracion"] = JSON.stringify(_conf);
-                $('#'+modal.id).modal("hide")
-            }).catch(function(error) {
-                alert("error")
-            });
-        })
-
-    })
-
     if (storageAvailable('localStorage')) {
         checkDatabase();
         loadTabla(config)
         ordenarAlfabeto()
         loadDatabase();
     }
-
-    //agregar una brujeria para ocultar 2 opciones en base al criterio del doc
-    var m = document.createElement("p")
-    var o = document.createElement("em")
-
-    var p = document.createTextNode("Opciones avanzadas");
-    o.appendChild(p)
-    p = document.createElement("br")
-    o.appendChild(p)
-
-    var q = document.createElement("small");
-
-    p = document.createTextNode("(En construcción)");
-    q.appendChild(p)
-
-    p = document.createElement("a");
-    let x = document.createTextNode(".");
-    p.appendChild(x)
-    p.id = "configOculto";
-    q.appendChild(p)
-    o.appendChild(q)
-    m.appendChild(o)
-    m.classList.add("mt-2", "mb-1")
-
-    let tabs = the(tab.nav);
-    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length -2]);
-
-    tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
-    tabs.childNodes[tabs.childNodes.length-2].classList.add("d-none")
-
-    the(config.config[config.config.length -1].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
-    m = document.createElement("h5")
-    p = document.createElement("em")
-    o = document.createTextNode("Modulo en construcción,opciones a desarrollar en un futuro proximo")
-    p.appendChild(o)
-    m.appendChild(p)
-    tabs = the(config.config[config.config.length -1].tab);
-    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length]);
-
-    the(config.config[config.config.length -2].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
-    m = document.createElement("h5")
-    p = document.createElement("em")
-    o = document.createTextNode("Modulo en construcción,opciones a desarrollar en un futuro proximo")
-    p.appendChild(o)
-    m.appendChild(p)
-    tabs = the(config.config[config.config.length -2].tab);
-    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length]);
-
-    $("#configOculto").on("click", function(){
-        the(config.config[config.config.length -1].tab).childNodes.forEach(elemento => elemento.classList.remove("d-none"))
-        tabs = the(config.config[config.config.length -1].tab);
-        tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
-
-        the(config.config[config.config.length -2].tab).childNodes.forEach(elemento => elemento.classList.remove("d-none"))
-        tabs = the(config.config[config.config.length -2].tab);
-        tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
-
-        the("profesionalOcultoConfig").classList.remove("d-none")
-
-        tabs = the(tab.nav);
-    
-        tabs.childNodes[tabs.childNodes.length-1].classList.remove("d-none")
-        tabs.childNodes[tabs.childNodes.length-2].classList.remove("d-none")
-    })
 
 })
 
@@ -681,26 +520,6 @@ function loadTelefono(){
         resultado = configuracion.correos[+this.value -1][1]
     }
     $('#profreftel').val(resultado)
-}
-
-function errorCorreo(){
-    let modal = make.modal()
-
-    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-    the(modal.titulo).innerHTML = "Error";
-    the(modal.titulo).classList.add("mx-auto");
-    the(modal.titulo).parentElement.classList.add("bg-danger", "text-white");
-
-    let _contenido = '<p>Escriba un email válido</p>'
-
-    the(modal.contenido).innerHTML = _contenido;
-    the(modal.id).children[0].classList.remove("modal-lg");
-
-    $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-}
-
-function validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }
 
 

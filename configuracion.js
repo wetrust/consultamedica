@@ -147,7 +147,7 @@ function createTable(config){
 
 function guardar(){
     let z = this.dataset.id;
-    
+
     //tratar los datos de forma diferente según la configuración
     //hay que guardar algunos como array y otros como cadena
     if (window.localStorage) {
@@ -158,7 +158,7 @@ function guardar(){
             //verificar si el dato se va a guardar en un array o en una cadena
             if (Array.isArray(configuracion[name]) == true){
                 let data = []
-                
+
                 for (var y = 0; y < config.config[z].input.length; y++){
                     let id = config.config[z].input[y].id
                     data.push(document.getElementById(id).value);
@@ -176,8 +176,6 @@ function guardar(){
             localStorage["configuracion"] = JSON.stringify(configuracion);
 
             this.parentElement.parentElement.classList.remove("show")
-
-
 
             loadTabla(config)
             ordenarAlfabeto()
