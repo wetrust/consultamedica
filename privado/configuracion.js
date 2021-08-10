@@ -173,7 +173,7 @@ function guardar(){
             //verificar si el dato se va a guardar en un array o en una cadena
             if (Array.isArray(configuracion[name]) == true){
                 let data = []
-                
+
                 for (var y = 0; y < config.config[z].input.length; y++){
                     let id = config.config[z].input[y].id
                     data.push(document.getElementById(id).value);
@@ -195,6 +195,7 @@ function guardar(){
             //////
 
             let _configuracion = new FormData()
+            var _conf = JSON.parse(localStorage["configuracion"]);
 
             _configuracion.append("config_id",_conf.id)
             _configuracion.append("config_key", localStorage["configuracion"])
