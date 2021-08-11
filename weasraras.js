@@ -79,7 +79,7 @@ $(document).ready(function(){
         let _modal = make.modal("Ingresar");
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
         the(_modal.titulo).innerText = "Ingresar Código Acceso";
-        the(_modal.contenido).innerHTML = '<div class="form-group"><label for="Ica">Código Acceso</label><input type="text" class="form-control" id="Ica"><small id="emailHelp" class="form-text text-muted">Ingrese código de acceso para plataforma.</small></div>';
+        the(_modal.contenido).innerHTML = '<div class="form-group"><label for="Ica">Código Acceso</label><input type="password" class="form-control" id="Ica"><small id="emailHelp" class="form-text text-muted">Ingrese código de acceso para plataforma.</small></div>';
 
         the("Ica").onkeyup = function(){
             ("barcelona" == this.value) ? window.location.href = "https://crecimientofetal.cl/privado" : "";
