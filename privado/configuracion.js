@@ -516,11 +516,13 @@ $(document).ready(function() {
 function loadTelefono(){
     var configuracion = JSON.parse(localStorage["configuracion"]);
     var resultado = ""
-
+    var email = ""
     if (configuracion.correos.length > 0) {
         resultado = configuracion.correos[+this.value -1][1]
+        email = configuracion.correos[+this.value -1][2]
     }
     $('#profreftel').val(resultado)
+    $('#profrefemail').val(resultado)
 }
 
 
