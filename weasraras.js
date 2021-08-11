@@ -67,6 +67,7 @@ $(document).ready(function(){
             reiniciaPuntitos();
         }
     });
+
     $("#menu\\.modulo\\.activo\\.cinco\\.dos").on("click", function(){
         reiniciarMensajes();
         reiniciaPuntitos();
