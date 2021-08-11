@@ -522,7 +522,7 @@ function loadTelefono(){
         email = configuracion.correos[+this.value -1][2]
     }
     $('#profreftel').val(resultado)
-    $('#profrefemail').val(resultado)
+    $('#profrefemail').val(email)
 }
 
 
