@@ -1,6 +1,6 @@
 import { make, the, these } from './wetrust.js'
 
-var iconos ={
+var iconos = {
     "lupa" : '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>',
     "basura" : '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/><path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg>'
 
@@ -19,6 +19,7 @@ function loadPacientesTabla(){
             let fecha = document.createElement("td")
             let eg = document.createElement("td")
             let nombre = document.createElement("td")
+            let apellido = document.createElement("td")
             let rut = document.createElement("td")
             let motivo = document.createElement("td")
             let profesional = document.createElement("td")
@@ -32,6 +33,8 @@ function loadPacientesTabla(){
             rut.innerText = value.paciente_rut
             motivo.innerText = value.paciente_motivo_txt
             profesional.innerText = value.paciente_referente_txt
+
+            apellido.innerText = value.paciente_apellido
 
             let ver = document.createElement("td")
             ver.dataset.id = value.paciente_id
@@ -49,6 +52,7 @@ function loadPacientesTabla(){
             tr.appendChild(eg)
             tr.appendChild(rut)
             tr.appendChild(nombre)
+            tr.appendChild(apellido)
             tr.appendChild(motivo)
             tr.appendChild(profesional)
             tr.appendChild(ver)
@@ -79,6 +83,7 @@ function traerPaciente(){
         the("semanas").value = data.paciente_eg;
         $("#semanas").trigger("change")
         the("nombre-paciente").value = data.paciente_nombre
+        the("apellido-paciente").value = data.paciente_apellido
         the("id-paciente").value = data.paciente_rut
         the("email-paciente").value = data.paciente_email
         the("fono-paciente").value = data.paciente_telefono
@@ -119,6 +124,7 @@ $(document).ready(function(){
         configuracion.append("paciente_fee", the("fee").value)
         configuracion.append("paciente_eg", the("semanas").value)
         configuracion.append("paciente_nombre", the("nombre-paciente").value)
+        configuracion.append("paciente_apellido", the("apellido-paciente").value)
         configuracion.append("paciente_rut", the("id-paciente").value)
         configuracion.append("paciente_email", the("email-paciente").value)
         configuracion.append("paciente_telefono", the("fono-paciente").value)
