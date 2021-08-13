@@ -40,7 +40,7 @@ function loadPacientesTabla(){
             eliminar.dataset.id = value.paciente_id
             eliminar.classList.add("click-eliminar")
             eliminar.innerHTML = iconos["basura"]
-            ver.onclick = eliminarPaciente
+            eliminar.onclick = eliminarPaciente
 
             tr.appendChild(fecha)
             tr.appendChild(eg)
