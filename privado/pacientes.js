@@ -40,6 +40,7 @@ function loadPacientesTabla(){
             eliminar.dataset.id = value.paciente_id
             eliminar.classList.add("click-eliminar")
             eliminar.innerHTML = iconos["basura"]
+            ver.onclick = eliminarPaciente
 
             tr.appendChild(fecha)
             tr.appendChild(eg)
@@ -53,6 +54,15 @@ function loadPacientesTabla(){
             the("tablaListaPacientes").appendChild(tr);
         });
     })
+}
+
+function eliminarPaciente(){
+    make.deleteModal("el paciente", this.dataset.id, function(){
+        fetch('https://api.crecimientofetal.cl/config/eliminar/'+this.dataset.delete).then(response => response.json())
+        .then(data => {
+            loadPacientesTabla()
+        })
+    });
 }
 
 function traerPaciente(){
