@@ -22,6 +22,7 @@ function loadPacientesTabla(){
             let motivo = document.createElement("td")
             let profesional = document.createElement("td")
 
+            fecha.innerText = value.paciente_fee
             nombre.innerText = value.paciente_nombre
             rut.innerText = value.paciente_rut
             motivo.innerText = value.paciente_motivo_txt
