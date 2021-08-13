@@ -17,12 +17,14 @@ function loadPacientesTabla(){
 
             let tr = document.createElement("tr");
             let fecha = document.createElement("td")
+            let eg = document.createElement("td")
             let nombre = document.createElement("td")
             let rut = document.createElement("td")
             let motivo = document.createElement("td")
             let profesional = document.createElement("td")
 
             fecha.innerText = value.paciente_fee
+            eg.innerText = value.paciente_eg
             nombre.innerText = value.paciente_nombre
             rut.innerText = value.paciente_rut
             motivo.innerText = value.paciente_motivo_txt
@@ -40,6 +42,7 @@ function loadPacientesTabla(){
             eliminar.innerHTML = iconos["basura"]
 
             tr.appendChild(fecha)
+            tr.appendChild(eg)
             tr.appendChild(rut)
             tr.appendChild(nombre)
             tr.appendChild(motivo)
@@ -58,7 +61,9 @@ function traerPaciente(){
     fetch('https://api.crecimientofetal.cl/config/el/'+id).then(response => response.json())
     .then(data => {
 
-        the("fee").value = data.paciente_fee
+        the("fee").value = data.paciente_fee;
+        the("semanas").value = data.paciente_eg;
+        $("#semanas").trigger("change")
         the("nombre-paciente").value = data.paciente_nombre
         the("id-paciente").value = data.paciente_rut
         the("email-paciente").value = data.paciente_email
@@ -98,6 +103,7 @@ $(document).ready(function(){
         let configuracion = new FormData()
 
         configuracion.append("paciente_fee", the("fee").value)
+        configuracion.append("paciente_eg", the("semanas").value)
         configuracion.append("paciente_nombre", the("nombre-paciente").value)
         configuracion.append("paciente_rut", the("id-paciente").value)
         configuracion.append("paciente_email", the("email-paciente").value)
