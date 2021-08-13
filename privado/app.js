@@ -40,6 +40,36 @@ function uuidv4() {
     }
 }
 
+function loadPacientesTabla(){
+    
+    fetch('https://api.crecimientofetal.cl/config/pacienteAll', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
+    .then(data => {
+        
+        the("tablaListaPacientes").innerHTML = "";
+
+        data.forEach(function myFunction(value, index, array) {
+
+            let tr = document.createElement("tr");
+            let nombre = document.createElement("td")
+            let rut = document.createElement("td")
+            let motivo = document.createElement("td")
+            let profesional = document.createElement("td")
+
+            nombre.innerText = value.paciente_nombre
+            rut.innerText = value.paciente_rut
+            motivo.innerText = value.paciente_motivo_txt
+            profesional.innerText = value.paciente_referente_txt
+
+            tr.appendChild(rut)
+            tr.appendChild(nombre)
+            tr.appendChild(motivo)
+            tr.appendChild(profesional)
+
+            the("tablaListaPacientes").appendChild(tr);
+        });
+    })
+}
+
 $(document).ready(function(){
     the("guardarElPaciente").onclick = function(){
         let configuracion = new FormData()
@@ -66,34 +96,7 @@ $(document).ready(function(){
         configuracion.append("paciente_ecografista", the("ecografista").value)
         configuracion.append("paciente_ecografista_txt", the("ecografista").options[the("ecografista").selectedIndex].text)
 
-        fetch('https://api.crecimientofetal.cl/config/paciente', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
-        .then(data => {
-            
-            data.datos.forEach(function myFunction(value, index, array) {
-
-                let tr = document.createElement("tr");
-                let nombre = document.createElement("td")
-                let rut = document.createElement("td")
-                let motivo = document.createElement("td")
-                let profesional = document.createElement("td")
-
-                nombre.innerText = value.paciente_nombre
-                rut.innerText = value.paciente_rut
-                motivo.innerText = value.paciente_motivo_txt
-                profesional.innerText = value.paciente_referente_txt
-
-                tr.appendChild(rut)
-                tr.appendChild(nombre)
-                tr.appendChild(motivo)
-                tr.appendChild(profesional)
-
-                the("tablaListaPacientes").appendChild(tr)
-            });
-
-            
-        }).catch(function(error) {
-            console.log("error")
-        });
+        loadPacientesTabla();
     }
 })
 
