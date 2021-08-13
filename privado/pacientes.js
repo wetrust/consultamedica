@@ -23,7 +23,10 @@ function loadPacientesTabla(){
             let motivo = document.createElement("td")
             let profesional = document.createElement("td")
 
-            fecha.innerText = value.paciente_fee
+            let _f = value.paciente_fee
+
+            _f = _f.split("-")
+            fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
             eg.innerText = value.paciente_eg
             nombre.innerText = value.paciente_nombre
             rut.innerText = value.paciente_rut
@@ -58,6 +61,7 @@ function loadPacientesTabla(){
 
 function eliminarPaciente(){
     make.deleteModal("el paciente", this.dataset.id, function(){
+        $("#"+this.dataset.modal).modal("hide")
         fetch('https://api.crecimientofetal.cl/config/eliminar/'+this.dataset.delete).then(response => response.json())
         .then(data => {
             loadPacientesTabla()
