@@ -89,7 +89,7 @@ $(document).ready(function(){
         let telefono = the("email-paciente").value
         let email = the("fono-paciente").value
 
-        if (String(nombre).length == 0 || String(rut).length == 0 || String(telefono).length || String(email).length){
+        if (String(nombre).length == 0 || String(rut).length == 0 || String(telefono).length == 0 || String(email).length == 0){
             make.alert("Complete los datos requeridos", true);
             e.preventDefault()
             return false
