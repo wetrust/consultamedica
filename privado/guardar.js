@@ -387,7 +387,7 @@ export function loadEcoPrecozTabla(paciente_rut){
             tr.appendChild(ver)
             tr.appendChild(eliminar)
 
-            the("tablaListaPacientes").appendChild(tr);
+            the("tablaEcoPrecoz").appendChild(tr);
         });
     })
 }
