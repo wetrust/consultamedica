@@ -362,11 +362,11 @@ export function loadEcoPrecozTabla(paciente_rut){
             nombre.innerText = value.caso_nombre
             eg.innerText = value.caso_eg
 
-            lcn.innerText = value.LCN
-            egLcn.innerText = value.egAjustada
-            saco.innerText = value.saco
-            egSaco.innerText = value.egsaco
-            embrion.innerText = value.embrion
+            lcn.innerText = datos.LCN
+            egLcn.innerText = datos.egAjustada
+            saco.innerText = datos.saco
+            egSaco.innerText = datos.egsaco
+            embrion.innerText = datos.embrion
 
 
             let ver = document.createElement("td")
