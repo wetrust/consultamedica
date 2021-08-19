@@ -142,7 +142,7 @@ $(document).ready(function(){
         configuracion.append("paciente_centro", the("centroecograf").value)
         configuracion.append("paciente_centro_txt", the("centroecograf").options[the("centroecograf").selectedIndex].text)
 
-        configuracion.append("paciente_ecografista", the("ecografista").value)
+        configuracion.append("paciente_ecografista", 1)
         configuracion.append("paciente_ecografista_txt", the("ecografista").value)
 
         fetch('https://api.crecimientofetal.cl/config/paciente', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
