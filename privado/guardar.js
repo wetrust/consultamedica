@@ -1,5 +1,10 @@
 import { make, the } from './wetrust.js'
 
+var iconos = {
+    "lupa" : '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>',
+    "basura" : '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/><path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg>'
+}
+
 $(document).ready(function() {
 
     $("#btn\\.guardar\\.precoz").on("click", function(){
@@ -25,6 +30,8 @@ $(document).ready(function() {
             'FUR' : the("fum").value,
             'LCN' : $("#lcn").val(),
             'EG Ajustada' : the("lcnPct").value,
+            'saco' : the("saco").value,
+            'egsaco' : the("sacoPct").value,
             'FCF' : the("fcf-prim-dos").value,
             'saco vitelino' : the("saco-vitelino-mm").value,
             'Comentario' : the("comentarios-eco-uno").value,
@@ -323,4 +330,63 @@ function basicDataValid(){
     }
 
     return true
+}
+
+export function loadEcoPrecozTabla(paciente_rut){
+
+    fetch('https://api.crecimientofetal.cl/config/examenUno/'+paciente_rut).then(response => response.json())
+    .then(data => {
+
+        the("tablaEcoPrecoz").innerHTML = "";
+
+        data.forEach(function myFunction(value, index, array) {
+
+            let tr = document.createElement("tr");
+            let nombre = document.createElement("td")
+            let fecha = document.createElement("td")
+            let eg = document.createElement("td")
+            let lcn = document.createElement("td")
+            let egLcn = document.createElement("td")
+            let saco = document.createElement("td")
+            let egSaco = document.createElement("td")
+            let embrion = document.createElement("td")
+
+            let datos = JSON.parse(value.caso_data)
+            let _f = datos.Fecha
+
+            _f = _f.split("-")
+            fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
+            
+            nombre.innerText = value.caso_nombre
+            eg.innerText = value.caso_eg
+
+            lcn.innerText = value.LCN
+            saco.innerText = value.saco
+            egSaco.innerText = value.egsaco
+
+
+            let ver = document.createElement("td")
+            ver.dataset.id = value.caso_id
+            ver.classList.add("click-paciente")
+            ver.innerHTML = iconos["lupa"]
+
+            let eliminar = document.createElement("td")
+            eliminar.dataset.id = value.caso_id
+            eliminar.classList.add("click-eliminar")
+            eliminar.innerHTML = iconos["basura"]
+
+            tr.appendChild(nombre)
+            tr.appendChild(fecha)
+            tr.appendChild(eg)
+            tr.appendChild(lcn)
+            tr.appendChild(egLcn)
+            tr.appendChild(saco)
+            tr.appendChild(egSaco)
+            tr.appendChild(embrion)
+            tr.appendChild(ver)
+            tr.appendChild(eliminar)
+
+            the("tablaListaPacientes").appendChild(tr);
+        });
+    })
 }
