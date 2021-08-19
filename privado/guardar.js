@@ -405,3 +405,73 @@ function eliminarEcoPrecoz(){
         })
     });
 }
+
+export function loadEcoCrecimientoTabla(paciente_rut){
+
+    fetch('https://api.crecimientofetal.cl/config/examenDos/'+paciente_rut).then(response => response.json())
+    .then(data => {
+
+        the("tablaEcoCrecimiento").innerHTML = "";
+
+        data.forEach(function myFunction(value, index, array) {
+
+            let tr = document.createElement("tr");
+            let nombre = document.createElement("td")
+            let fecha = document.createElement("td")
+            let eg = document.createElement("td")
+            let pfe = document.createElement("td")
+            let pfePct = document.createElement("td")
+            let cccaPct = document.createElement("td")
+            let bvm = document.createElement("td")
+
+            let datos = JSON.parse(value.caso_data)
+            let _f = datos.fecha
+
+            _f = _f.split("-")
+            fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
+            
+            nombre.innerText = value.caso_nombre
+            eg.innerText = value.caso_eg
+
+            pfe.innerText = datos.peso
+            pfePct.innerText = datos.pesopct
+            cccaPct.innerText = datos.cccapct
+            bvm.innerText = datos.bvm
+
+
+            let ver = document.createElement("td")
+            ver.dataset.id = value.caso_id
+            ver.classList.add("click-paciente")
+            ver.innerHTML = iconos["lupa"]
+
+            let eliminar = document.createElement("td")
+            eliminar.dataset.id = value.caso_id
+            eliminar.classList.add("click-eliminar")
+            eliminar.innerHTML = iconos["basura"]
+            eliminar.onclick = eliminarEcoCrecimiento
+
+            tr.appendChild(nombre)
+            tr.appendChild(fecha)
+            tr.appendChild(eg)
+            tr.appendChild(pfe)
+            tr.appendChild(pfePct)
+            tr.appendChild(cccaPct)
+            tr.appendChild(bvm)
+            tr.appendChild(ver)
+            tr.appendChild(eliminar)
+
+            the("tablaEcoCrecimiento").appendChild(tr);
+        });
+    })
+}
+
+
+function eliminarEcoCrecimiento(){
+    make.deleteModal("la ecografía", this.dataset.id, function(){
+        $("#"+this.dataset.modal).modal("hide")
+        fetch('https://api.crecimientofetal.cl/config/dexamenDos/'+this.dataset.delete).then(response => response.json())
+        .then(data => {
+            loadEcoPrecozTabla(the("id-paciente").value)
+        })
+    });
+}
