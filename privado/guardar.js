@@ -131,6 +131,7 @@ $(document).ready(function() {
         .then(data => {
             if (data.success == true ){
                 alert("guardó")
+                loadEcoCrecimientoTabla(the("id-paciente").value)
             }
         }).catch(function(error) { alert("error") });
     })
