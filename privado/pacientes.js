@@ -99,7 +99,6 @@ function traerPaciente(){
         the("ecografista").value = data.paciente_ecografista_txt
 
         make.alert("Paciente cargado")
-
     })
 }
 
