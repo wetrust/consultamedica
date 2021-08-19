@@ -56,6 +56,7 @@ $(document).ready(function() {
         fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
         .then(data => {
             if (data.success == true ){ alert("guardó") }
+            loadEcoPrecozTabla(the("id-paciente").value)
         }).catch(function(error) {
             alert("error")
         });
