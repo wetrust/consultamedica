@@ -375,6 +375,7 @@ export function loadEcoPrecozTabla(paciente_rut){
             eliminar.dataset.id = value.caso_id
             eliminar.classList.add("click-eliminar")
             eliminar.innerHTML = iconos["basura"]
+            eliminar.onclick = eliminarEcoPrecoz
 
             tr.appendChild(nombre)
             tr.appendChild(fecha)
@@ -390,4 +391,14 @@ export function loadEcoPrecozTabla(paciente_rut){
             the("tablaEcoPrecoz").appendChild(tr);
         });
     })
+}
+
+function eliminarEcoPrecoz(){
+    make.deleteModal("la ecografía", this.dataset.id, function(){
+        $("#"+this.dataset.modal).modal("hide")
+        fetch('https://api.crecimientofetal.cl/config/dexamenUno/'+this.dataset.delete).then(response => response.json())
+        .then(data => {
+            loadEcoPrecozTabla(the("id-paciente").value)
+        })
+    });
 }

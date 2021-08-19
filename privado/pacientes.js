@@ -1,4 +1,5 @@
 import { make, the, these } from './wetrust.js'
+import { loadEcoPrecozTabla } from './guardar.js'
 
 var iconos = {
     "lupa" : '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>',
@@ -99,6 +100,8 @@ function traerPaciente(){
         the("ecografista").value = data.paciente_ecografista_txt
 
         make.alert("Paciente cargado")
+
+        loadEcoPrecozTabla(data.paciente_rut)
     })
 }
 
@@ -155,7 +158,7 @@ $(document).ready(function(){
 
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["nombre-paciente", "id-paciente", "fono-paciente", "email-paciente", "motivo-examen"];
+        var key_enter = ["id-paciente", "nombre-paciente", "apellido-paciente", "fono-paciente", "email-paciente", "motivo-examen"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
