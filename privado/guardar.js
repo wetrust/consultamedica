@@ -29,9 +29,10 @@ $(document).ready(function() {
             'Fecha' : the("fee").value,
             'FUR' : the("fum").value,
             'LCN' : $("#lcn").val(),
-            'EG Ajustada' : the("lcnPct").value,
+            'egAjustada' : the("lcnPct").value,
             'saco' : the("saco").value,
             'egsaco' : the("sacoPct").value,
+            'embrion' : the("embrion").options[the("embrion").selectedIndex].text,
             'FCF' : the("fcf-prim-dos").value,
             'saco vitelino' : the("saco-vitelino-mm").value,
             'Comentario' : the("comentarios-eco-uno").value,
@@ -362,8 +363,10 @@ export function loadEcoPrecozTabla(paciente_rut){
             eg.innerText = value.caso_eg
 
             lcn.innerText = value.LCN
+            egLcn.innerText = value.egAjustada
             saco.innerText = value.saco
             egSaco.innerText = value.egsaco
+            embrion.innerText = value.embrion
 
 
             let ver = document.createElement("td")
