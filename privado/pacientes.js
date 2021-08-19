@@ -96,7 +96,7 @@ function traerPaciente(){
         the("profref").value = data.paciente_referente
         the("centroecograf").value = data.paciente_centro
 
-        the("ecografista").value = data.paciente_ecografista
+        the("ecografista").value = data.paciente_ecografista_txt
 
         make.alert("Paciente cargado")
 
@@ -144,7 +144,7 @@ $(document).ready(function(){
         configuracion.append("paciente_centro_txt", the("centroecograf").options[the("centroecograf").selectedIndex].text)
 
         configuracion.append("paciente_ecografista", the("ecografista").value)
-        configuracion.append("paciente_ecografista_txt", the("ecografista").options[the("ecografista").selectedIndex].text)
+        configuracion.append("paciente_ecografista_txt", the("ecografista").value)
 
         fetch('https://api.crecimientofetal.cl/config/paciente', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
             .then(data => {

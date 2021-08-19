@@ -411,13 +411,6 @@ function checkDatabase() {
 function loadDatabase() {
     var configuracion = JSON.parse(localStorage["configuracion"]);
 
-    $('#ecografista').empty();
-    if (configuracion.profesional.length > 0) {
-        $.each(configuracion.profesional, function(i, item) {
-            $('#ecografista').append('<option value="'+(i+1)+'">'+item+'</option>');
-        });
-    }
-
     $('#motivo-examen').empty();
     if (configuracion.MotivoExamen.length > 0) {
         $.each(configuracion.MotivoExamen, function(i, item) {

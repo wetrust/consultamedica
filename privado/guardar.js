@@ -1,242 +1,205 @@
-import { make, the, inputDate, humanDate } from './wetrust.js'
-
-function storageAvailable(type) {
-    var storage;
-    try {
-        storage = window[type];
-        var x = '__storage_test__';
-        storage.setItem(x, x);
-        storage.removeItem(x);
-        return true;
-    }
-    catch(e) {
-        return e instanceof DOMException && (
-            // everything except Firefox
-            e.code === 22 ||
-            // Firefox
-            e.code === 1014 ||
-            // test name field too, because code might not be present
-            // everything except Firefox
-            e.name === 'QuotaExceededError' ||
-            // Firefox
-            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-            // acknowledge QuotaExceededError only if there's something already stored
-            (storage && storage.length !== 0);
-        }
-}
+import { make, the } from './wetrust.js'
 
 $(document).ready(function() {
-    if (storageAvailable('localStorage')) {
-        var configuracion = JSON.parse(localStorage["configuracion"]);
 
-        if (configuracion.email == 'drlagosbarcelona@gmail.com' || configuracion.email == 'ecocattemuco@gmail.com'){
-            the("profesionalOcultoConfig").classList.remove("d-none")
-            the("btn.guardar.precoz").classList.remove("d-none");
+    $("#btn\\.guardar\\.precoz").on("click", function(){
+        let configuracion = new FormData()
 
-            $("#btn\\.guardar\\.precoz").on("click", function(){
-                let configuracion = new FormData()
+        let profesional = the("ecografista").value
+        let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
+        let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
-                let profesional = the("ecografista").options[the("ecografista").selectedIndex].text
-                let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
-                let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
+        let profRef = the("profref").options[the("profref").selectedIndex].text
 
-                let profRef = the("profref").options[the("profref").selectedIndex].text
+        let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
 
-                let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
-
-                let data = {
-                    'Nombre profesional referente': profRef,
-                    'Fono profesional referente': the("profreftel").value,
-                    'Centro Ecografico': centroecograf,
-                    'edadm' : document.getElementsByName("edad_materna")[0].value,
-                    'profesional' : profesional,
-                    'motivo' : motivo,
-                    'patologia' : patologia,
-                    'Fecha' : the("fee").value,
-                    'FUR' : the("fum").value,
-                    'LCN' : $("#lcn").val(),
-                    'EG Ajustada' : the("lcnPct").value,
-                    'FCF' : the("fcf-prim-dos").value,
-                    'saco vitelino' : the("saco-vitelino-mm").value,
-                    'Comentario' : the("comentarios-eco-uno").value,
-                }
-
-                if (basicDataValid() == false){
-                    return
-                }
-
-                configuracion.append("rut", the("id-paciente").value)
-                configuracion.append("nombre", the("nombre-paciente").value)
-                let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
-                configuracion.append("ciudad", ciudad)
-                configuracion.append("eg", the("semanas").value)
-                let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
-                configuracion.append("lugar", lugar)
-                configuracion.append("tipo", "Ecografía obstétrica precoz < 11 semanas")
-
-                var _c = JSON.parse(localStorage["configuracion"]);
-
-                configuracion.append("correo", _c.email)
-                configuracion.append("data", JSON.stringify(data))
-
-                fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
-                .then(data => {
-                    if (data.success == true ){ alert("guardó") }
-                }).catch(function(error) {
-                    alert("error")
-                });
-            })
-
-            the("btn.guardar.segtrim").classList.remove("d-none");
-
-            $("#btn\\.guardar\\.segtrim").on("click", function(){
-                let configuracion = new FormData()
-
-                let profesional = the("ecografista").options[the("ecografista").selectedIndex].text
-                let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
-                let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
-
-                let profRef = the("profref").options[the("profref").selectedIndex].text
-                let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
-
-                let data = {
-                    'Nombre profesional referente': profRef,
-                    'Fono profesional referente': the("profreftel").value,
-                    'Centro Ecografico': centroecograf,
-                    'edadm' : document.getElementsByName("edad_materna")[0].value,
-                    'profesional' : profesional,
-                    'motivo' : motivo,
-                    'patologia' : patologia,
-                    'fecha' : the("fee").value,
-                    'fur' : the("fum").value,
-                    'dbp' : the("dbp").value,
-                    'dbpde' : the("dbpDE").value,
-                    'dof' : the("dof").value,
-                    'dofpct' : the("dofPct").value,
-                    'cc' : the("cc").value,
-                    'ccpct' : the("ccPct").value,
-                    'ca' : the("ca").value,
-                    'capct' : the("caPct").value,
-                    'lf' : the("lf").value,
-                    'lfpct' : the("lfPct").value,
-                    'lh' : the("lh").value,
-                    'lhpct' : the("lhPct").value,
-                    'cerebelo' : the("cerebelo").value,
-                    'cerebelopct' : the("cerebeloPctRpt").value,
-                    'peso' : the("pfe").value,
-                    'pesopct' : the("pfePctRpt").value,
-                    'ccca' : the("ccca").value,
-                    'cccapct' : the("cccaPctVal").value,
-                    'placenta ubic' : the("ubicacion").value,
-                    'placenta ins' : the("incersion").value,
-                    'liquido' : the("liq-cualitativo-eco").value,
-                    'bvm' : the("bvmEcoDos").value,
-                    'Uterinas Prom': the('respuesta_uterina_promedio').value,
-                    'Uterinas Prom Pct': the('respuesta_uterina_promedio_percentil').textContent,
-                    'Largo cervical': the('largo.cervical.segundo').value,
-                    'Comentario' : the("comentarios-eco-dos-inf-dos").value,
-                }
-
-                if (basicDataValid() == false){
-                    return
-                }
-
-                configuracion.append("rut", the("id-paciente").value)
-                configuracion.append("nombre", the("nombre-paciente").value)
-                let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
-                configuracion.append("ciudad", ciudad)
-                configuracion.append("eg", the("semanas").value)
-                let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
-                configuracion.append("lugar", lugar)
-                configuracion.append("tipo", "Evaluación del crecimiento fetal")
-                var _c = JSON.parse(localStorage["configuracion"]);
-
-                configuracion.append("correo", _c.email)
-                configuracion.append("data", JSON.stringify(data))
-
-                fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
-                .then(data => {
-                    if (data.success == true ){
-                        alert("guardó")
-                    }
-                }).catch(function(error) { alert("error") });
-            })
-
-            the("btn.guardar.doppler").classList.remove("d-none");
-
-            $("#btn\\.guardar\\.doppler").on("click", function(){
-                let configuracion = new FormData()
-
-                let profesional = the("ecografista").options[the("ecografista").selectedIndex].text
-                let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
-                let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
-
-                let profRef = the("profref").options[the("profref").selectedIndex].text
-                let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
-
-                let data = {
-                    'Nombre profesional referente': profRef,
-                    'Fono profesional referente': the("profreftel").value,
-                    'Centro Ecografico': centroecograf,
-                    'edadm' : document.getElementsByName("edad_materna")[0].value,
-                    'profesional' : profesional,
-                    'motivo' : motivo,
-                    'patologia' : patologia,
-                    'fecha' : the("fee").value,
-                    'fur' : the("fum").value,
-                    'fcf' : the("fcf-prim").value,
-                    'ut derecha' : the("aud").value,
-                    'ut derecha pct' : the("audPct").value,
-                    'ut izquierda' : the("aui").value,
-                    'ut izquierda pct' : the("auiPct").value,
-                    'ut promedio' : the("auprom").value,
-                    'ut promedio pct' : the("auPct").value,
-                    'ut umbilical' : the("ipau").value,
-                    'ut umbilical pct' : the("ipauPct").value,
-                    'utcmedia' : the("ipacm").value,
-                    'utcmedia pct' : the("ipacmPct").value,
-                    'couciente' : the("ccp").value,
-                    'couciente pct' : the("ccpPct").value,
-                    'Ductus Venoso' : the("dv").value,
-                    'Ductus Venoso pct' : the("dvPct").value,
-                    'Comentario' : the("comentarios-doppler").value,
-                }
-
-                if (basicDataValid() == false){
-                    return
-                }
-
-                configuracion.append("rut", the("id-paciente").value)
-                configuracion.append("nombre", the("nombre-paciente").value)
-                let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
-                configuracion.append("ciudad", ciudad)
-                configuracion.append("eg", the("semanas").value)
-                let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
-                configuracion.append("lugar", lugar)
-                configuracion.append("tipo", "Flujometría Doppler materno / fetal")
-                var _c = JSON.parse(localStorage["configuracion"]);
-
-                configuracion.append("correo", _c.email)
-                configuracion.append("data", JSON.stringify(data))
-
-                fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
-                .then(data => {
-                    if (data.success == true ){
-                        let modal = make.modal()
-                        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-                        the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
-                        the(modal.titulo).classList.add("mx-auto");
-                        let _contenido = '<p>Guardado</p>'
-                        the(modal.contenido).innerHTML = _contenido;
-                        the(modal.id).children[0].classList.remove("modal-lg");
-                        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-                    }
-                }).catch(function(error) {
-                    alert("error")
-                });
-            })
+        let data = {
+            'Nombre profesional referente': profRef,
+            'Fono profesional referente': the("profreftel").value,
+            'Centro Ecografico': centroecograf,
+            'edadm' : document.getElementsByName("edad_materna")[0].value,
+            'profesional' : profesional,
+            'motivo' : motivo,
+            'patologia' : patologia,
+            'Fecha' : the("fee").value,
+            'FUR' : the("fum").value,
+            'LCN' : $("#lcn").val(),
+            'EG Ajustada' : the("lcnPct").value,
+            'FCF' : the("fcf-prim-dos").value,
+            'saco vitelino' : the("saco-vitelino-mm").value,
+            'Comentario' : the("comentarios-eco-uno").value,
         }
-    }
+
+        if (basicDataValid() == false){
+            return
+        }
+
+        configuracion.append("rut", the("id-paciente").value)
+        configuracion.append("nombre", the("nombre-paciente").value)
+        let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
+        configuracion.append("ciudad", ciudad)
+        configuracion.append("eg", the("semanas").value)
+        let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
+        configuracion.append("lugar", lugar)
+        configuracion.append("tipo", "Ecografía obstétrica precoz < 11 semanas")
+
+        var _c = JSON.parse(localStorage["configuracion"]);
+
+        configuracion.append("correo", _c.email)
+        configuracion.append("data", JSON.stringify(data))
+
+        fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
+        .then(data => {
+            if (data.success == true ){ alert("guardó") }
+        }).catch(function(error) {
+            alert("error")
+        });
+    })
+
+    $("#btn\\.guardar\\.segtrim").on("click", function(){
+        let configuracion = new FormData()
+
+        let profesional = the("ecografista").value
+        let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
+        let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
+
+        let profRef = the("profref").options[the("profref").selectedIndex].text
+        let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
+
+        let data = {
+            'Nombre profesional referente': profRef,
+            'Fono profesional referente': the("profreftel").value,
+            'Centro Ecografico': centroecograf,
+            'edadm' : document.getElementsByName("edad_materna")[0].value,
+            'profesional' : profesional,
+            'motivo' : motivo,
+            'patologia' : patologia,
+            'fecha' : the("fee").value,
+            'fur' : the("fum").value,
+            'dbp' : the("dbp").value,
+            'dbpde' : the("dbpDE").value,
+            'dof' : the("dof").value,
+            'dofpct' : the("dofPct").value,
+            'cc' : the("cc").value,
+            'ccpct' : the("ccPct").value,
+            'ca' : the("ca").value,
+            'capct' : the("caPct").value,
+            'lf' : the("lf").value,
+            'lfpct' : the("lfPct").value,
+            'lh' : the("lh").value,
+            'lhpct' : the("lhPct").value,
+            'cerebelo' : the("cerebelo").value,
+            'cerebelopct' : the("cerebeloPctRpt").value,
+            'peso' : the("pfe").value,
+            'pesopct' : the("pfePctRpt").value,
+            'ccca' : the("ccca").value,
+            'cccapct' : the("cccaPctVal").value,
+            'placenta ubic' : the("ubicacion").value,
+            'placenta ins' : the("incersion").value,
+            'liquido' : the("liq-cualitativo-eco").value,
+            'bvm' : the("bvmEcoDos").value,
+            'Uterinas Prom': the('respuesta_uterina_promedio').value,
+            'Uterinas Prom Pct': the('respuesta_uterina_promedio_percentil').textContent,
+            'Largo cervical': the('largo.cervical.segundo').value,
+            'Comentario' : the("comentarios-eco-dos-inf-dos").value,
+        }
+
+        if (basicDataValid() == false){
+            return
+        }
+
+        configuracion.append("rut", the("id-paciente").value)
+        configuracion.append("nombre", the("nombre-paciente").value)
+        let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
+        configuracion.append("ciudad", ciudad)
+        configuracion.append("eg", the("semanas").value)
+        let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
+        configuracion.append("lugar", lugar)
+        configuracion.append("tipo", "Evaluación del crecimiento fetal")
+        var _c = JSON.parse(localStorage["configuracion"]);
+
+        configuracion.append("correo", _c.email)
+        configuracion.append("data", JSON.stringify(data))
+
+        fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
+        .then(data => {
+            if (data.success == true ){
+                alert("guardó")
+            }
+        }).catch(function(error) { alert("error") });
+    })
+
+    $("#btn\\.guardar\\.doppler").on("click", function(){
+        let configuracion = new FormData()
+
+        let profesional = the("ecografista").value
+        let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
+        let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
+
+        let profRef = the("profref").options[the("profref").selectedIndex].text
+        let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
+
+        let data = {
+            'Nombre profesional referente': profRef,
+            'Fono profesional referente': the("profreftel").value,
+            'Centro Ecografico': centroecograf,
+            'edadm' : document.getElementsByName("edad_materna")[0].value,
+            'profesional' : profesional,
+            'motivo' : motivo,
+            'patologia' : patologia,
+            'fecha' : the("fee").value,
+            'fur' : the("fum").value,
+            'fcf' : the("fcf-prim").value,
+            'ut derecha' : the("aud").value,
+            'ut derecha pct' : the("audPct").value,
+            'ut izquierda' : the("aui").value,
+            'ut izquierda pct' : the("auiPct").value,
+            'ut promedio' : the("auprom").value,
+            'ut promedio pct' : the("auPct").value,
+            'ut umbilical' : the("ipau").value,
+            'ut umbilical pct' : the("ipauPct").value,
+            'utcmedia' : the("ipacm").value,
+            'utcmedia pct' : the("ipacmPct").value,
+            'couciente' : the("ccp").value,
+            'couciente pct' : the("ccpPct").value,
+            'Ductus Venoso' : the("dv").value,
+            'Ductus Venoso pct' : the("dvPct").value,
+            'Comentario' : the("comentarios-doppler").value,
+        }
+
+        if (basicDataValid() == false){
+            return
+        }
+
+        configuracion.append("rut", the("id-paciente").value)
+        configuracion.append("nombre", the("nombre-paciente").value)
+        let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
+        configuracion.append("ciudad", ciudad)
+        configuracion.append("eg", the("semanas").value)
+        let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
+        configuracion.append("lugar", lugar)
+        configuracion.append("tipo", "Flujometría Doppler materno / fetal")
+        var _c = JSON.parse(localStorage["configuracion"]);
+
+        configuracion.append("correo", _c.email)
+        configuracion.append("data", JSON.stringify(data))
+
+        fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
+        .then(data => {
+            if (data.success == true ){
+                let modal = make.modal()
+                document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+                the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
+                the(modal.titulo).classList.add("mx-auto");
+                let _contenido = '<p>Guardado</p>'
+                the(modal.contenido).innerHTML = _contenido;
+                the(modal.id).children[0].classList.remove("modal-lg");
+                $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+            }
+        }).catch(function(error) {
+            alert("error")
+        });
+    })
 })
 
 function nombre(){
