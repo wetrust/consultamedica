@@ -163,14 +163,18 @@ $(document).ready(function() {
             'ut izquierda pct' : the("auiPct").value,
             'ut promedio' : the("auprom").value,
             'ut promedio pct' : the("auPct").value,
+            'utprompct': the("auPct").value,
             'ut umbilical' : the("ipau").value,
             'ut umbilical pct' : the("ipauPct").value,
             'utcmedia' : the("ipacm").value,
             'utcmedia pct' : the("ipacmPct").value,
+            'utcmediapct' : the("ipacmPct").value,
             'couciente' : the("ccp").value,
             'couciente pct' : the("ccpPct").value,
+            'cmau' : the("ccpPct").value,
             'Ductus Venoso' : the("dv").value,
             'Ductus Venoso pct' : the("dvPct").value,
+            'dvpct' : the("dvPct").value,
             'Comentario' : the("comentarios-doppler").value,
         }
 
@@ -372,12 +376,10 @@ export function loadEcoPrecozTabla(paciente_rut){
 
             let ver = document.createElement("td")
             ver.dataset.id = value.caso_id
-            ver.classList.add("click-paciente")
             ver.innerHTML = iconos["lupa"]
 
             let eliminar = document.createElement("td")
             eliminar.dataset.id = value.caso_id
-            eliminar.classList.add("click-eliminar")
             eliminar.innerHTML = iconos["basura"]
             eliminar.onclick = eliminarEcoPrecoz
 
@@ -442,12 +444,10 @@ export function loadEcoCrecimientoTabla(paciente_rut){
 
             let ver = document.createElement("td")
             ver.dataset.id = value.caso_id
-            ver.classList.add("click-paciente")
             ver.innerHTML = iconos["lupa"]
 
             let eliminar = document.createElement("td")
             eliminar.dataset.id = value.caso_id
-            eliminar.classList.add("click-eliminar")
             eliminar.innerHTML = iconos["basura"]
             eliminar.onclick = eliminarEcoCrecimiento
 
@@ -466,11 +466,76 @@ export function loadEcoCrecimientoTabla(paciente_rut){
     })
 }
 
-
 function eliminarEcoCrecimiento(){
     make.deleteModal("la ecografía", this.dataset.id, function(){
         $("#"+this.dataset.modal).modal("hide")
         fetch('https://api.crecimientofetal.cl/config/dexamenDos/'+this.dataset.delete).then(response => response.json())
+        .then(data => {
+            loadEcoPrecozTabla(the("id-paciente").value)
+        })
+    });
+}
+
+export function loadEcoDopplerTabla(paciente_rut){
+
+    fetch('https://api.crecimientofetal.cl/config/examenDoppler/'+paciente_rut).then(response => response.json())
+    .then(data => {
+
+        the("tablaEcoDopper").innerHTML = "";
+
+        data.forEach(function myFunction(value, index, array) {
+
+            let tr = document.createElement("tr");
+            let nombre = document.createElement("td")
+            let fecha = document.createElement("td")
+            let eg = document.createElement("td")
+            let ut = document.createElement("td")
+            let cm = document.createElement("td")
+            let cmau = document.createElement("td")
+            let duc = document.createElement("td")
+
+            let datos = JSON.parse(value.caso_data)
+            let _f = datos.fecha
+
+            _f = _f.split("-")
+            fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
+
+            nombre.innerText = value.caso_nombre
+            eg.innerText = value.caso_eg
+
+            ut.innerText = datos.utprompct
+            cm.innerText = datos.utcmediapct
+            cmau.innerText = datos.cmau
+            duc.innerText = datos.dvpct
+
+            let ver = document.createElement("td")
+            ver.dataset.id = value.caso_id
+            ver.innerHTML = iconos["lupa"]
+
+            let eliminar = document.createElement("td")
+            eliminar.dataset.id = value.caso_id
+            eliminar.innerHTML = iconos["basura"]
+            eliminar.onclick = eliminarEcoDoppler
+
+            tr.appendChild(nombre)
+            tr.appendChild(fecha)
+            tr.appendChild(eg)
+            tr.appendChild(ut)
+            tr.appendChild(cm)
+            tr.appendChild(cmau)
+            tr.appendChild(duc)
+            tr.appendChild(ver)
+            tr.appendChild(eliminar)
+
+            the("tablaEcoDopper").appendChild(tr);
+        });
+    })
+}
+
+function eliminarEcoDoppler(){
+    make.deleteModal("la ecografía", this.dataset.id, function(){
+        $("#"+this.dataset.modal).modal("hide")
+        fetch('https://api.crecimientofetal.cl/config/dexamenDoppler/'+this.dataset.delete).then(response => response.json())
         .then(data => {
             loadEcoPrecozTabla(the("id-paciente").value)
         })
