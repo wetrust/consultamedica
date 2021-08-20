@@ -1251,129 +1251,6 @@ $( document ).ready(function() {
             $('#'+modal).modal("hide");
         });
     });
-
-    $("#btn\\.erase\\.precoz").on("click", function(){
-        var modal = makeModal("Si");
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Borrar datos de ecografía obstétrica precoz";
-        the(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
-
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
-
-        $("#"+modal.button).on("click", function(){
-            let modal =  $(this).data("modal");
-            the("saco").value = "";
-            $("#saco").trigger("change");
-            the("embrion").selectedIndex = 0;
-            $("#embrion").trigger("change");
-            the("lcn").value = 0;
-            $("#lcn").trigger("change");
-            the("utero-ubic1").selectedIndex = 0;
-            the("utero-ubic2").selectedIndex = 0;
-            the("cuerpo-uterino").selectedIndex = 0;
-            the("saco-gestacional").selectedIndex = 0;
-            the("saco-vitelino").selectedIndex = 1;
-            $("#saco-vitelino").trigger("change");
-            the("fcf-prim").selectedIndex = 0;
-            the("fcf-prim-dos").selectedIndex = 0
-            the("anexo-derecho").selectedIndex = 0;
-
-            the("anexo-derecho").selectedIndex = 0;
-            the("anexo-izquierdo").selectedIndex = 0;
-            the("exploracion-douglas").selectedIndex = 0;
-            the("comentarios-eco-uno").value = "";
-            resetDate();
-            $("#menu\\.modulo\\.prim\\.trim\\.no").button("toggle");
-            $('#'+modal).modal("hide");
-        });
-    });
-
-    $("#btn\\.erase\\.seg\\.trim").on("click", function(){
-        var modal = makeModal("Si");
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Borrar datos de evaluación del crecimiento fetal";
-        the(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
-
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
-
-        $("#"+modal.button).on("click", function(){
-            let modal =  $(this).data("modal");
-            the("dbp").value = "";
-            the("dof").value = "";
-            the("cc").value = "";
-            the("ca").value = "";
-            the("lf").value = "";
-            the("lh").value = "";
-            the("bvm").value = "";
-            the("pfe").value = "";
-            the("atrio.ecoDosTres").value = "";
-            the("cerebelo").value = "";
-            the("cm.ecoDosTres").selectedIndex = 0;
-            the("respuesta_uterina_derecha").value = "";
-            the("respuesta_uterina_izquierda").value = "";
-            the("largo.cervical.segundo").value = ""
-            the("egP50").value = ""
-            the("presentacion").selectedIndex = 0;
-            the("dorso").selectedIndex = 0;
-            the("fcf").selectedIndex = 0;
-            the("accardSi").checked = true;
-            the("movfetSi").checked = true;
-            the("ecografia.segtrim.sexo").selectedIndex = 2;
-            the("grado-placenta").selectedIndex = 0
-            the("ubicacion").selectedIndex = 0;
-            the("incersion").selectedIndex = 0;
-            the("liq-cualitativo-eco").selectedIndex = 0;
-            the("bvmEcoDos").value = "";
-            the("cordon").selectedIndex = 0;
-            the("vasos").selectedIndex = 0;
-            the("ev-morfo").selectedIndex = 0;
-            the("comentarios-anatomia-informe-eg-texto").value = "";
-            the("eco.seg.trim.select.comentario").selectedIndex = 0;
-            the("comentarios-eco-dos-inf-dos").value = "";
-            resetDate();
-            $('#'+modal).modal("hide");
-        });
-    });
-
-    $("#eco\\.doppler\\.nuevo").on("click", function(){
-        var modal = makeModal("Si");
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Borrar datos Doppler";
-        the(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
-
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
-
-        $("#"+modal.button).on("click", function(){
-            let modal =  $(this).data("modal");
-            the("aud").value = "";
-            the("aui").value = "";
-            the("auprom").value = "";
-            the("ipau").value = "";
-            the("ipacm").value = "";
-            the("ccp").value = "";
-            the("dv").value = "";
-            the("psmACM").value = "";
-            the("liqAmnioDoppler").selectedIndex = 0;
-            the("bvmDoppler").value = "";
-            the("liqAmnioDoppler").selectedIndex = 12;
-            the("antecedentes-doppler").selectedIndex = 0;
-            the("presentacion-doppler").selectedIndex = 0;
-            the("motilidad-doppler").selectedIndex = 0;
-            the("ubicacion-doppler").selectedIndex = 0;
-            the("comentarios-doppler").value = "";
-            the("fee").value = getDate();
-            the("fum").value = getDate();
-            the("semanas").value = 0;
-            the("dias").value = 0;
-            $('#'+modal).modal("hide");
-        });
-    })
 });
 
 // Controlador de los keypress
@@ -5401,6 +5278,83 @@ $(window).on('hashchange', function(){
         } else {
             document.getElementsByTagName("header")[0].classList.add("d-none");
         }
+
+        //especial que borra los input según el exámen
+        if (hash == "#ecoObsPrimTrim"){
+            the("saco").value = "";
+            $("#saco").trigger("change");
+            the("embrion").selectedIndex = 0;
+            $("#embrion").trigger("change");
+            the("lcn").value = 0;
+            $("#lcn").trigger("change");
+            the("utero-ubic1").selectedIndex = 0;
+            the("utero-ubic2").selectedIndex = 0;
+            the("cuerpo-uterino").selectedIndex = 0;
+            the("saco-gestacional").selectedIndex = 0;
+            the("saco-vitelino").selectedIndex = 1;
+            $("#saco-vitelino").trigger("change");
+            the("fcf-prim").selectedIndex = 0;
+            the("fcf-prim-dos").selectedIndex = 0
+            the("anexo-derecho").selectedIndex = 0;
+
+            the("anexo-derecho").selectedIndex = 0;
+            the("anexo-izquierdo").selectedIndex = 0;
+            the("exploracion-douglas").selectedIndex = 0;
+            the("comentarios-eco-uno").value = "";
+            resetDate();
+            $("#menu\\.modulo\\.prim\\.trim\\.no").button("toggle");
+        }else if (hash == "#ecoObsSegTrim"){
+            the("dbp").value = "";
+            the("dof").value = "";
+            the("cc").value = "";
+            the("ca").value = "";
+            the("lf").value = "";
+            the("lh").value = "";
+            the("bvm").value = "";
+            the("pfe").value = "";
+            the("atrio.ecoDosTres").value = "";
+            the("cerebelo").value = "";
+            the("cm.ecoDosTres").selectedIndex = 0;
+            the("respuesta_uterina_derecha").value = "";
+            the("respuesta_uterina_izquierda").value = "";
+            the("largo.cervical.segundo").value = ""
+            the("egP50").value = ""
+            the("presentacion").selectedIndex = 0;
+            the("dorso").selectedIndex = 0;
+            the("fcf").selectedIndex = 0;
+            the("accardSi").checked = true;
+            the("movfetSi").checked = true;
+            the("ecografia.segtrim.sexo").selectedIndex = 2;
+            the("grado-placenta").selectedIndex = 0
+            the("ubicacion").selectedIndex = 0;
+            the("incersion").selectedIndex = 0;
+            the("liq-cualitativo-eco").selectedIndex = 0;
+            the("bvmEcoDos").value = "";
+            the("cordon").selectedIndex = 0;
+            the("vasos").selectedIndex = 0;
+            the("ev-morfo").selectedIndex = 0;
+            the("comentarios-anatomia-informe-eg-texto").value = "";
+            the("eco.seg.trim.select.comentario").selectedIndex = 0;
+            the("comentarios-eco-dos-inf-dos").value = "";
+        }else if (hash == "#ecoDoppler"){
+            the("aud").value = "";
+            the("aui").value = "";
+            the("auprom").value = "";
+            the("ipau").value = "";
+            the("ipacm").value = "";
+            the("ccp").value = "";
+            the("dv").value = "";
+            the("psmACM").value = "";
+            the("liqAmnioDoppler").selectedIndex = 0;
+            the("bvmDoppler").value = "";
+            the("liqAmnioDoppler").selectedIndex = 12;
+            the("antecedentes-doppler").selectedIndex = 0;
+            the("presentacion-doppler").selectedIndex = 0;
+            the("motilidad-doppler").selectedIndex = 0;
+            the("ubicacion-doppler").selectedIndex = 0;
+            the("comentarios-doppler").value = "";
+        }
+
     }
     else {
         $(activeHash).addClass(d);
