@@ -197,14 +197,8 @@ $(document).ready(function() {
         fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
         .then(data => {
             if (data.success == true ){
-                let modal = make.modal()
-                document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-                the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
-                the(modal.titulo).classList.add("mx-auto");
-                let _contenido = '<p>Guardado</p>'
-                the(modal.contenido).innerHTML = _contenido;
-                the(modal.id).children[0].classList.remove("modal-lg");
-                $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+                alert("guardado")
+                loadEcoDopplerTabla(the("id-paciente").value)
             }
         }).catch(function(error) {
             alert("error")
