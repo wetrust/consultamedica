@@ -169,5 +169,17 @@ $( document ).ready(function() {
                 the(key_enter[pos+1]).focus();
            }
         }
-    });  
+    });
+
+    $("input").on("keyup",function( e ) {
+        var key_enter = ["fono-paciente"];
+
+        if (key_enter.includes(this.id)== true){
+
+            let contenido = String(this.value)
+            if ( contenido.length > 11 ) {
+                this.value = contenido.substr(0, 11)
+            }
+        }
+    }); 
 });
