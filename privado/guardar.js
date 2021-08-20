@@ -531,7 +531,7 @@ function eliminarEcoDoppler(){
         $("#"+this.dataset.modal).modal("hide")
         fetch('https://api.crecimientofetal.cl/config/dexamenDoppler/'+this.dataset.delete).then(response => response.json())
         .then(data => {
-            loadEcoPrecozTabla(the("id-paciente").value)
+            loadEcoDopplerTabla(the("id-paciente").value)
         })
     });
 }
