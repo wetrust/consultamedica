@@ -138,10 +138,17 @@ $( document ).ready(function() {
 
     //cargar la frecuencia cardiaca fetal para segundo trimestre
     dias = the("fcf");
+
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("") );
+    opt.value = ""; 
+    dias.appendChild(opt); 
+
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("(+) inicial") );
     opt.value = "(+) inicial"; 
     dias.appendChild(opt); 
+    
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 90") );
     opt.value = "&lt; 90"; 
@@ -162,6 +169,8 @@ $( document ).ready(function() {
 
     //cargar edad materna
     let edad = document.getElementsByName("edad_materna")[0];
+
+
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 12") );
     opt.value = "&lt; 12"; 
