@@ -177,8 +177,8 @@ $( document ).ready(function() {
         if (key_enter.includes(this.id)== true){
 
             let contenido = String(this.value)
-            if ( contenido.length > 11 ) {
-                this.value = contenido.substr(0, 11)
+            if ( contenido.length > 10 ) {
+                this.value = contenido.substr(0, 10)
             }
         }
     }); 
