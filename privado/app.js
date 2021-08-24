@@ -109,6 +109,12 @@ $( document ).ready(function() {
     dias.appendChild(opt);
 
     dias = the("fcf-prim-dos");
+
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("") );
+    opt.value = ""; 
+    dias.appendChild(opt); 
+
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("(+) inicial") );
     opt.value = "(+) inicial"; 
@@ -447,13 +453,10 @@ $( document ).ready(function() {
 
         if (optiones.includes(embrion)){
             the("lcn.clon").parentElement.parentElement.parentElement.classList.add("d-none");
-            the("lcn").parentElement.parentElement.parentElement.classList.add("d-none");
-            the("lcn").value = 0;
             $("#lcn").trigger("change");
         }
         else{
             the("lcn.clon").parentElement.parentElement.parentElement.classList.remove("d-none");
-            the("lcn").parentElement.parentElement.parentElement.classList.remove("d-none");
         }
 
         if (cardio.includes(embrion)){
@@ -461,10 +464,6 @@ $( document ).ready(function() {
             the("fcf-primer-trim-dos").classList.remove("d-none");
             the("fcf-prim").value = 150;
             the("fcf-prim-dos").value = 150;
-        }
-        else{
-            the("fcf-primer-trim").classList.add("d-none");
-            the("fcf-primer-trim-dos").classList.add("d-none");
         }
     });
 
