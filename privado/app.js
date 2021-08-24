@@ -88,6 +88,12 @@ $( document ).ready(function() {
     //cargar frecuencia cardiaca fetal primer trimestre
     let dias = the("fcf-prim");
     let opt = document.createElement('option');
+
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("") );
+    opt.value = ""; 
+    dias.appendChild(opt); 
+
     opt.appendChild(document.createTextNode("(+) inicial"));
     opt.value = "(+) inicial"; 
     dias.appendChild(opt); 
@@ -138,17 +144,11 @@ $( document ).ready(function() {
 
     //cargar la frecuencia cardiaca fetal para segundo trimestre
     dias = the("fcf");
-
-    opt = document.createElement('option');
-    opt.appendChild( document.createTextNode("") );
-    opt.value = ""; 
-    dias.appendChild(opt); 
-
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("(+) inicial") );
     opt.value = "(+) inicial"; 
     dias.appendChild(opt); 
-    
+
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 90") );
     opt.value = "&lt; 90"; 
