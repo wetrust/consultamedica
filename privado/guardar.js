@@ -403,7 +403,9 @@ function traerEcoPrecoz(){
         let datos = JSON.parse(data.caso_data)
 
         document.getElementsByName("edad_materna")[0].value = datos.edadm
-        the("fee").value = datos.Fecha
+        the("semanas").value = datos.Fecha
+
+        the("fee").value = data.caso_eg
         the("fum").value = datos.FUR
         $("#lcn").val(datos.LCN)
         the("lcnPct").value = datos.egAjustada
