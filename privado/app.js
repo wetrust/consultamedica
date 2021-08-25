@@ -835,6 +835,42 @@ $( document ).ready(function() {
 
     $("#nombre-paciente").on("change", function(){ the("nombre.morfologia").value = this.value; })
 
+    $("#nombre-paciente").on("keyup", function(){ 
+        let _v = this.value; 
+        this.value = ""
+        _v = _v.split(" ")
+
+        for(let h = 0; h < _v.length; h++){
+            _v[h] = _v[h].charAt(0).toUpperCase() + _v[h].slice(1);
+        }
+
+        for(let h = 0; h < _v.length; h++){
+            if(h > 0){
+                this.value += " "
+            }
+
+            this.value += _v[h]
+        }
+    })
+
+    $("#apellido-paciente").on("keyup", function(){ 
+        let _v = this.value; 
+        this.value = ""
+        _v = _v.split(" ")
+
+        for(let h = 0; h < _v.length; h++){
+            _v[h] = _v[h].charAt(0).toUpperCase() + _v[h].slice(1);
+        }
+
+        for(let h = 0; h < _v.length; h++){
+            if(h > 0){
+                this.value += " "
+            }
+
+            this.value += _v[h]
+        }
+    })
+
     $("#ecografista").on("change", function(){
         var nombre = this.options[this.selectedIndex].text
         the("ecografista.morfologia").value = nombre;
