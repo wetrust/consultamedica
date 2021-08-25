@@ -1,4 +1,4 @@
-import { make, the, these } from './wetrust.js'
+import { make, the, these, inputDate } from './wetrust.js'
 import { loadEcoPrecozTabla, loadEcoCrecimientoTabla, loadEcoDopplerTabla } from './guardar.js'
 
 var iconos = {
@@ -95,7 +95,13 @@ function traerPaciente(){
         the("lcontrolpaciente").value = data.paciente_control
 
         if(data.hasOwnProperty('paciente_fum')){
-            the("fum").value = data.paciente_fum;
+            if (data.paciente_fum == null){
+                the("fum").value = inputDate()
+
+            }else{
+                the("fum").value = data.paciente_fum;
+            }
+
         }
 
         the("profref").value = data.paciente_referente
