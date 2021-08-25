@@ -27,7 +27,7 @@ $(document).ready(function() {
             'motivo' : motivo,
             'patologia' : patologia,
             'Fecha' : the("fee").value,
-            'FUR' : the("fum").value,
+            'fur' : the("fum").value,
             'LCN' : $("#lcn").val(),
             'egAjustada' : the("lcnPct").value,
             'saco' : the("saco").value,
