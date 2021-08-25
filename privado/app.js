@@ -609,7 +609,7 @@ $( document ).ready(function() {
         }
     });
 
-    $("#ver\\.ecoPrimTrim, #ver\\.ecoPrimTrim\\.snoopy, #ver\\.ecoObsSegTrim\\.snoopy, #ver\\.ecoDoppler\\.snoopy, #ver\\.ecoGinecologica\\.snoopy, #ver\\.ecoPrimTrim\\.new, #ver\\.ila\\.morfologia").on("click", function(){
+    $("#ver\\.ecoPrimTrim, #ver\\.ecoDoppler\\.snoopy, #ver\\.ecoGinecologica\\.snoopy, #ver\\.ecoPrimTrim\\.new, #ver\\.ila\\.morfologia").on("click", function(){
         if (this.checked == true){
             this.parentElement.parentElement.children[1].classList.remove("d-none");
         }else{
