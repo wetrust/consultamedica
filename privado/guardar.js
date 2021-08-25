@@ -406,7 +406,7 @@ function traerEcoPrecoz(){
         the("semanas").value = data.caso_eg
 
         the("fee").value = datos.Fecha
-        the("fum").value = datos.FUR
+        the("fum").value = datos.fur
         $("#lcn").val(datos.LCN)
         the("lcnPct").value = datos.egAjustada
         the("saco").value = datos.saco
