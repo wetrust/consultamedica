@@ -94,6 +94,10 @@ function traerPaciente(){
         the("ciudadpaciente").value = data.paciente_lugar
         the("lcontrolpaciente").value = data.paciente_control
 
+        if(data.hasOwnProperty('paciente_fum')){
+            the("fum").value = data.paciente_fum;
+        }
+
         the("profref").value = data.paciente_referente
         the("centroecograf").value = data.paciente_centro
 
@@ -149,6 +153,8 @@ $(document).ready(function(){
 
         configuracion.append("paciente_ecografista", 1)
         configuracion.append("paciente_ecografista_txt", the("ecografista").value)
+
+        configuracion.append("paciente_fum", the("fum").value)
 
         fetch('https://api.crecimientofetal.cl/config/paciente', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
             .then(data => {
