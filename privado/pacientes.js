@@ -80,7 +80,8 @@ function traerPaciente(){
     fetch('https://api.crecimientofetal.cl/config/el/'+id).then(response => response.json())
     .then(data => {
 
-        the("fee").value = data.paciente_fee;
+        the("fee").value = inputDate()
+
         the("semanas").value = data.paciente_eg;
         $("#semanas").trigger("change")
         the("nombre-paciente").value = data.paciente_nombre

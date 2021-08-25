@@ -15,7 +15,6 @@ $(document).ready(function() {
         let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
         let profRef = the("profref").options[the("profref").selectedIndex].text
-
         let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
 
         let data = {
@@ -357,7 +356,7 @@ export function loadEcoPrecozTabla(paciente_rut){
 
             _f = _f.split("-")
             fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
-            
+
             nombre.innerText = value.caso_nombre
             eg.innerText = value.caso_eg
 
@@ -366,7 +365,6 @@ export function loadEcoPrecozTabla(paciente_rut){
             saco.innerText = datos.saco
             egSaco.innerText = datos.egsaco
             embrion.innerText = datos.embrion
-
 
             let ver = document.createElement("td")
             ver.dataset.id = value.caso_id
