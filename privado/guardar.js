@@ -371,6 +371,7 @@ export function loadEcoPrecozTabla(paciente_rut){
             let ver = document.createElement("td")
             ver.dataset.id = value.caso_id
             ver.innerHTML = iconos["lupa"]
+            ver.onclick = traerEcoPrecoz
 
             let eliminar = document.createElement("td")
             eliminar.dataset.id = value.caso_id
@@ -390,6 +391,30 @@ export function loadEcoPrecozTabla(paciente_rut){
 
             the("tablaEcoPrecoz").appendChild(tr);
         });
+    })
+}
+
+function traerEcoPrecoz(){
+    let id = this.dataset.id
+
+    fetch('https://api.crecimientofetal.cl/config/elUno/'+id).then(response => response.json())
+    .then(data => {
+
+        let datos = JSON.parse(data.caso_data)
+
+        document.getElementsByName("edad_materna")[0].value = datos.edadm
+        the("fee").value = datos.Fecha
+        the("fum").value = datos.FUR
+        $("#lcn").val(datos.LCN)
+        the("lcnPct").value = datos.egAjustada
+        the("saco").value = datos.saco
+        the("sacoPct").value = datos.egsaco
+        //datos.embrion' : the("embrion").options[the("embrion").selectedIndex].text,
+        the("fcf-prim-dos").value = datos.FCF
+        //datos.saco vitelino' : the("saco-vitelino-mm").value = 
+        the("comentarios-eco-uno").value  = datos.Comentario
+
+        make.alert("Exámen cargado")
     })
 }
 
