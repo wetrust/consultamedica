@@ -108,6 +108,10 @@ $(document).ready(function() {
             'Uterinas Prom Pct': the('respuesta_uterina_promedio_percentil').textContent,
             'Largo cervical': the('largo.cervical.segundo').value,
             'Comentario' : the("comentarios-eco-dos-inf-dos").value,
+            'cm' : the("cm.ecoDosTres").value,
+            'cmpct' : the("cm.pct.ecoDosTres").value,
+            'atrio' : the("atrio.ecoDosTres").value,
+            'atriopct' : the("atrio.desc.ecoDosTres").value,
         }
 
         if (basicDataValid() == false){
@@ -529,6 +533,11 @@ function traerEcoCrecimiento(){
         the('largo.cervical.segundo').value = datos['Largo cervical']
         the("comentarios-eco-dos-inf-dos").value = datos.Comentario
 
+        the("cm.ecoDosTres").value = datos.cm
+        the("cm.pct.ecoDosTres").value = datos.cmpct
+
+        the("atrio.ecoDosTres").value = datos.atrio
+        the("atrio.desc.ecoDosTres").value = datos.atriopct
 
         make.alert("Exámen cargado")
     })
@@ -539,7 +548,7 @@ function eliminarEcoCrecimiento(){
         $("#"+this.dataset.modal).modal("hide")
         fetch('https://api.crecimientofetal.cl/config/dexamenDos/'+this.dataset.delete).then(response => response.json())
         .then(data => {
-            loadEcoPrecozTabla(the("id-paciente").value)
+            loadEcoCrecimientoTabla(the("id-paciente").value)
         })
     });
 }
