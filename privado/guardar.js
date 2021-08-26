@@ -116,7 +116,15 @@ $(document).ready(function() {
             'utdpct' : the("respuesta_uterina_derecha_percentil").innerText,
             'uti' : the("respuesta_uterina_izquierda").value,
             'utipct' : the("respuesta_uterina_izquierda_percentil").innerText,
-
+            'psisTamizaje' : the("psisTamizaje").value,
+            'pdiasTamizaje' : the("pdiasTamizaje").value,
+            'pmediaTamizaje' : the("pmediaTamizaje").value,
+            'tallaTamizaje' : the("tallaTamizaje").value,
+            'pesoTamizaje' : the("pesoTamizaje").value,
+            'imcTamizaje' : the("imcTamizaje").value,
+            'primigesta' : the("primigesta").value,
+            'peprevia' : the("peprevia").value,
+            'trombofilias' : the("trombofilias").value,
         }
 
         if (basicDataValid() == false){
@@ -548,6 +556,17 @@ function traerEcoCrecimiento(){
 
         the("respuesta_uterina_izquierda").value = datos.uti
         the("respuesta_uterina_izquierda_percentil").innerText = datos.utipct
+
+
+        the("psisTamizaje").value = datos.psisTamizaje
+        the("pdiasTamizaje").value = datos.pdiasTamizaje
+        the("pmediaTamizaje").value = datos.pmediaTamizaje
+        the("tallaTamizaje").value = datos.tallaTamizaje
+        the("pesoTamizaje").value = datos.pesoTamizaje
+        the("imcTamizaje").value = datos.imcTamizaje
+        the("primigesta").value = datos.primigesta
+        the("peprevia").value = datos.peprevia
+        the("trombofilias").value = datos.trombofilias
 
         make.alert("Exámen cargado")
     })
