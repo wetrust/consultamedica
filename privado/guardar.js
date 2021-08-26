@@ -103,7 +103,7 @@ $(document).ready(function() {
             'placenta ubic' : the("ubicacion").value,
             'placenta ins' : the("incersion").value,
             'liquido' : the("liq-cualitativo-eco").value,
-            'bvm' : the("bvmEcoDos").value,
+            'bvm' : the("bvm").value,
             'Uterinas Prom': the('respuesta_uterina_promedio').value,
             'Uterinas Prom Pct': the('respuesta_uterina_promedio_percentil').textContent,
             'Largo cervical': the('largo.cervical.segundo').value,
@@ -116,6 +116,7 @@ $(document).ready(function() {
             'utdpct' : the("respuesta_uterina_derecha_percentil").innerText,
             'uti' : the("respuesta_uterina_izquierda").value,
             'utipct' : the("respuesta_uterina_izquierda_percentil").innerText,
+
         }
 
         if (basicDataValid() == false){
@@ -164,23 +165,22 @@ $(document).ready(function() {
             'fecha' : the("fee").value,
             'fur' : the("fum").value,
             'fcf' : the("fcf-prim").value,
-            'ut derecha' : the("aud").value,
-            'ut derecha pct' : the("audPct").value,
-            'ut izquierda' : the("aui").value,
-            'ut izquierda pct' : the("auiPct").value,
-            'ut promedio' : the("auprom").value,
-            'ut promedio pct' : the("auPct").value,
+            'utderecha' : the("aud").value,
+            'utderechapct' : the("audPct").value,
+            'utizquierda' : the("aui").value,
+            'utizquierdapct' : the("auiPct").value,
+            'utpromedio' : the("auprom").value,
+            'utpromediopct' : the("auPct").value,
             'utprompct': the("auPct").value,
-            'ut umbilical' : the("ipau").value,
-            'ut umbilical pct' : the("ipauPct").value,
+            'utumbilical' : the("ipau").value,
+            'utumbilicalpct' : the("ipauPct").value,
             'utcmedia' : the("ipacm").value,
-            'utcmedia pct' : the("ipacmPct").value,
             'utcmediapct' : the("ipacmPct").value,
             'couciente' : the("ccp").value,
-            'couciente pct' : the("ccpPct").value,
+            'coucientepct' : the("ccpPct").value,
             'cmau' : the("ccpPct").value,
-            'Ductus Venoso' : the("dv").value,
-            'Ductus Venoso pct' : the("dvPct").value,
+            'DuctusVenoso' : the("dv").value,
+            'DuctusVenosoPct' : the("dvPct").value,
             'dvpct' : the("dvPct").value,
             'Comentario' : the("comentarios-doppler").value,
         }
@@ -598,6 +598,7 @@ export function loadEcoDopplerTabla(paciente_rut){
             let ver = document.createElement("td")
             ver.dataset.id = value.caso_id
             ver.innerHTML = iconos["lupa"]
+            ver.onclick = traerEcoDoppler
 
             let eliminar = document.createElement("td")
             eliminar.dataset.id = value.caso_id
@@ -616,6 +617,41 @@ export function loadEcoDopplerTabla(paciente_rut){
 
             the("tablaEcoDopper").appendChild(tr);
         });
+    })
+}
+
+function traerEcoDoppler(){
+    let id = this.dataset.id
+
+    fetch('https://api.crecimientofetal.cl/config/elDoppler/'+id).then(response => response.json())
+    .then(data => {
+
+        let datos = JSON.parse(data.caso_data)
+
+        document.getElementsByName("edad_materna")[0].value = datos.edadm
+        the("fee").value = datos.fecha
+        the("fum").value = datos.fur
+        the("fcf-prim").value = datos.fcf
+        the("aud").value = datos.utderecha
+        the("audPct").value = datos.utderechapct
+        the("aui").value = datos.utizquierda
+        the("auiPct").value = datos.utizquierdapct
+        the("auprom").value = datos.utpromedio
+        the("auPct").value = datos.utpromediopct
+        the("auPct").value = datos.utprompct
+        the("ipau").value = datos.utumbilical
+        the("ipauPct").value = datos.utumbilicalpct
+        the("ipacm").value = datos.utcmedia
+        the("ipacmPct").value = datos.utcmediapct
+        the("ccp").value = datos.couciente
+        the("ccpPct").value = datos.coucientepct
+        the("ccpPct").value = datos.cmau
+        the("dv").value = datos.DuctusVenoso
+        the("dvPct").value = datos.DuctusVenosoPct
+        the("dvPct").value = datos.dvpct
+        the("comentarios-doppler").value = datos.Comentario
+
+        make.alert("Exámen cargado")
     })
 }
 
