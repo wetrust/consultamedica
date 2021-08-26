@@ -464,6 +464,7 @@ export function loadEcoCrecimientoTabla(paciente_rut){
             let ver = document.createElement("td")
             ver.dataset.id = value.caso_id
             ver.innerHTML = iconos["lupa"]
+            ver.onclick = traerEcoCrecimiento
 
             let eliminar = document.createElement("td")
             eliminar.dataset.id = value.caso_id
@@ -482,6 +483,54 @@ export function loadEcoCrecimientoTabla(paciente_rut){
 
             the("tablaEcoCrecimiento").appendChild(tr);
         });
+    })
+}
+
+function traerEcoCrecimiento(){
+    let id = this.dataset.id
+
+    fetch('https://api.crecimientofetal.cl/config/elDos/'+id).then(response => response.json())
+    .then(data => {
+
+        let datos = JSON.parse(data.caso_data)
+
+        document.getElementsByName("edad_materna")[0].value = datos.edadm
+        the("semanas").value = data.caso_eg
+
+        the("fee").value = datos.Fecha
+        the("fum").value = datos.fur
+        
+        the("dbp").value = datos.dbp
+        the("dbpDE").value = datos.dbpde
+        the("dof").value = datos.dof
+        the("dofPct").value = datos.dofpct
+        the("cc").value = datos.cc
+        the("ccPct").value = datos.ccpct
+        the("ca").value = datos.ca
+        the("caPct").value = datos.capct
+        the("lf").value = datos.lf
+        the("lfPct").value = datos.lfpct
+        the("lh").value = datos.lh
+        the("lhPct").value = datos.lhpct
+        the("cerebelo").value = datos.cerebelo
+        the("cerebeloPctRpt").value = datos.cerebelopct
+        the("pfe").value = datos.peso
+        the("pfePctRpt").value = datos.pesopct
+        the("ccca").value = datos.ccca
+        the("cccaPctVal").value = datos.cccapct
+
+        the("ubicacion").value = datos['placenta ubic']
+        the("incersion").value = datos['placenta ins']
+
+        the("liq-cualitativo-eco").value = datos.liquido
+        the("bvmEcoDos").value = datos.bvm
+        the('respuesta_uterina_promedio').value = datos['Uterinas Prom']
+        the('respuesta_uterina_promedio_percentil').textContent = datos['Uterinas Prom Pct']
+        the('largo.cervical.segundo').value = datos['Largo cervical']
+        the("comentarios-eco-dos-inf-dos").value = datos.Comentario
+
+
+        make.alert("Exámen cargado")
     })
 }
 
