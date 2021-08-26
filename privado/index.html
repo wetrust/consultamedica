@@ -2259,358 +2259,6 @@
             </div>
         </div>
     </div>
-    <div class="container pt-2 d-none" id="ecoObsPrimTrimTrisomia">
-        <div class="row">
-            <div class="col-9">
-                <button class="btn btn-info mt-4"><strong>Tamizaje de preeclampsia&nbsp;&nbsp;&nbsp;(Módulo en construcción)</strong></button>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="form-group row">
-                            <div class="col mb-2">
-                                <label>Arteria Uterina Derecha</label>
-                            </div>
-                            <div class="col mb-2">
-                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                    <input type="text" class="form-control" id="audTamizaje">
-                                    <div class="input-group-append"><div class="input-group-text">IP</div></div>
-                                </div>
-                            </div>
-                            <div class="col mb-2">
-                                <label>Arteria Uterina Izquierda</label>
-                            </div>
-                            <div class="col mb-2">
-                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                    <input type="text" class="form-control" id="auiTamizaje">
-                                    <div class="input-group-append"><div class="input-group-text">IP</div></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col mb-2">
-                                <label><strong>Promedio de Uterinas</strong></label>
-                            </div>
-                            <div class="col mb-2">
-                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                    <input type="text" class="form-control" id="aupromTamizaje" readonly>
-                                    <div class="input-group-append"><div class="input-group-text">IP</div></div>
-                                </div>
-                            </div>
-                            <div class="col mb-2">
-                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                    <div class="input-group-prepend"><div class="input-group-text">PCT</div></div>
-                                    <input type="text" class="form-control" id="aupromTamizajePct" readonly>
-                                </div>
-                            </div>
-                            <div class="col mb-2">
-                                <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="auTamizajePct">
-                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <input type="hidden" id="auTamizajePctTxt">
-                                <input type="hidden" id="auTamizajeRngo">
-                            </div>
-                        </div>
-                        <p><strong>Presión arterial materna</strong></p>
-                        <div class="form-group row">
-                            <div class="col-1 mb-2">
-                                <label>Sistólica</label>
-                            </div>
-                            <div class="col-3 mb-2">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="psisTamizaje">
-                                    <div class="input-group-append"><div class="input-group-text">mmHg</div></div>
-                                </div>
-                            </div>
-                            <div class="col-1 mb-2">
-                                <label>Diastólica</label>
-                            </div>
-                            <div class="col-3 mb-2">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="pdiasTamizaje">
-                                    <div class="input-group-append"><div class="input-group-text">mmHg</div></div>
-                                </div>
-                            </div>
-                            <div class="col-1 mb-2">
-                                <label><strong>Media</strong></label>
-                            </div>
-                            <div class="col-3 mb-2">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="pmediaTamizaje" readonly>
-                                    <div class="input-group-append"><div class="input-group-text">mmHg</div></div>
-                                </div>
-                            </div>
-                        </div>
-                        <p><strong>Estado nutricional materno</strong></p>
-                        <div class="form-group row">
-                            <div class="col-1 mb-2">
-                                <label>Talla</label>
-                            </div>
-                            <div class="col-3 mb-2">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="tallaTamizaje">
-                                    <div class="input-group-append"><div class="input-group-text">cms</div></div>
-                                </div>
-                            </div>
-                            <div class="col-1 mb-2">
-                                <label>Peso</label>
-                            </div>
-                            <div class="col-3 mb-2">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="pesoTamizaje">
-                                    <div class="input-group-append"><div class="input-group-text">kg</div></div>
-                                </div>
-                            </div>
-                            <div class="col-1 mb-2">
-                                <label><strong>IMC</strong></label>
-                            </div>
-                            <div class="col-3 mb-2">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="imcTamizaje" readonly>
-                                    <div class="input-group-append"><div class="input-group-text">(kg/m2)</div></div>
-                                </div>
-                            </div>
-                        </div>
-                        <p><strong>Otros antecedentes clínicos</strong></p>
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>Ciudad</label>
-                                <select class="form-control" id="nacionalidad">
-                                </select>
-                            </div>
-                            <div class="form-group col">
-                                <label>Antecedentes obstétricos</label>
-                                <select class="form-control" id="primigesta">
-                                    <option value="si" selected>Primigesta</option>
-                                    <option value="no">Feto pequeño previo</option>
-                                    <option value="no evaluado">sin antecedentes</option>
-                                </select>
-                            </div>
-                            <div class="form-group col">
-                                <label>Hipertensión previa</label>
-                                <select class="form-control" id="peprevia">
-                                    <option value="No hubo" selected>No hubo</option>
-                                    <option value="PE previa">PE previa</option>
-                                    <option value="HA previa">HA previa</option>
-                                    <option value="no evaluado">no evaluado</option>
-                                </select>
-                            </div>
-                            <div class="form-group col">
-                                <label>Antecedentes de SAF</label>
-                                <select class="form-control" id="trombofilias">
-                                    <option value="si">Si</option>
-                                    <option value="no" selected>No</option>
-                                    <option value="no evaluado">no evaluado</option>
-                                </select>
-                            </div> 
-                        </div>
-                        <div class="row d-none">           
-                            <div class="form-group col">
-                                <label>RAC &gt; 30 mg/gr.</label>
-                                <select class="form-control" id="rac">
-                                    <option value="si">Si</option>
-                                    <option value="no" selected>No</option>
-                                    <option value="no evaluado">no evaluado</option>
-                                </select>
-                            </div>
-                            <div class="form-group col">
-                                <label>Proteinuria &gt; 300 mg/24hrs</label>
-                                <select class="form-control" id="proteinuria">
-                                    <option value="si">Si</option>
-                                    <option value="no" selected>No</option>
-                                    <option value="no evaluado">no evaluado</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <button class="btn btn-consulta mb-2">Calcular riesgo para Preeclampsia</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-consulta mb-2">Ocultar riesgo para PE</button>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-                <button class="btn btn-info mt-2"><strong>Tamizaje largo cervical&nbsp;&nbsp;&nbsp;(Módulo en construcción)</strong></button>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12 col-lg-3">
-                                <p class="text-secondary">Largo Cervical</p>
-                            </div>
-                            <div class="col-md-12 col-lg-3">
-                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                    <input type="number" class="form-control" id="largo.cervical.tamizaje" min="1" max="999">
-                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-3">
-                            </div>
-                            <div class="col">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="btn btn-info mt-2"><strong>Tamizaje cromosomopatía&nbsp;&nbsp;&nbsp;(Módulo en construcción)</strong></button>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group row">
-                                    <label class="col-6">Edad Materna</label>
-                                    <select class="form-control col-6" id="edadmaternaprimtrim"></select>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group row">
-                                    <label class="col-6">LCN (45 a 84 mm)</label>
-                                    <select class="form-control col-6" id="loncefalocaudal"></select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group row px-3">
-                                    <label class="col-12"><strong>Translucidez Nucal</strong></label>
-                                    <select class="form-control col-6" id="translucenciaNucal">
-                                        <option value="no procede">No procede</option>
-                                        <option value="no medible">No medible</option>
-                                        <option value="medible" selected>Medible</option>
-                                    </select>
-                                    <input type="number" class="form-control col-6" id="translunucal" value="1">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <label>¿Ha tenido algun hijo con trisomia 21?</label>
-                                <div class="row px-4">
-                                    <div class="col">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="trisomia" id="examen.eco.primtrim.adicionales.translucencia.trisomia.no" value="false" checked>
-                                            <label class="form-check-label">No</label>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="trisomia" id="examen.eco.primtrim.adicionales.translucencia.trisomia.si" value="true">
-                                            <label class="form-check-label">Si</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-6">
-                                <div class="row px-3">
-                                    <label class="col-6"><strong>Hueso Nasal</strong></label>
-                                    <select class="form-control col-6" id="huesonasal">
-                                        <option value="no procede" selected>No procede</option>
-                                        <option value="no visible">No visible</option>
-                                        <option value="visible">Visible</option>
-                                    </select>
-                                </div>
-                                <div class="row px-3">
-                                    <label class="col-6"><strong>Ductus venoso</strong></label>
-                                    <select class="form-control col-6" id="ductusvenoso">
-                                        <option value="no evaluado" selected>No evaluado</option>
-                                        <option value="normal">Normal</option>
-                                        <option value="onda a ausente">Onda A ausente</option>
-                                        <option value="onda a negativa">Onda A negativa</option>
-                                    </select>
-                                </div>
-                                <div class="row px-3">
-                                    <label class="col-6"><strong>Reflujo tricuspídeo</strong></label>
-                                    <select class="form-control col-6" id="reflujotricuspideo">
-                                        <option value="no evaluado" selected>No evaluado</option>
-                                        <option value="normal">Normal</option>
-                                        <option value="alteracion leve">Alteracion leve</option>
-                                        <option value="onda anormal">Onda anormal</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <button class="btn btn-consulta mb-2" id="primtrim.adicionales.translucencia">Calcular riesgo por TN</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-consulta mb-2" id="primtrim.adicionales.translucencia.ocultar">ocultar riesgo por TN</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col d-none" id="prob">
-                                <table class="table">
-                                    <thead class="thead-inverse">
-                                        <tr>
-                                            <th scope="col">Trisomias</th>
-                                            <th scope="col">Riesgo a priori</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>Trisomia 21</th>
-                                            <td id="trisomia.priori.veintiuno"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Trisomia 18</th>
-                                            <td id="trisomia.priori.diesiocho"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Trisomia 13</th>
-                                            <td id="trisomia.priori.trece"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="col d-none" id="prob2">
-                                <table class="table">
-                                    <thead class="thead-inverse">
-                                        <tr>
-                                            <th scope="col">Trisomias</th>
-                                            <th scope="col">Riesgo post - test</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>Trisomia 21</th>
-                                            <td id="trisomia.translucidez.veintiuno"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Trisomia 18</th>
-                                            <td id="trisomia.translucidez.diesiocho"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Trisomia 13</th>
-                                            <td id="trisomia.translucidez.trece"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <h4 class="text-center">Ver Informe</h4>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="py-3 btn-group-vertical d-flex">
-                            <button class="btn btn-default text-white bg-gris" id="modalPreInfEcoPrimTrim" disabled>Informe 1er. trimestre</button>
-                        </div>
-                        <div class="pt-3 pb-2 btn-group-vertical d-flex">
-                            <button class="btn btn-default text-white bg-gris" id="eco.prim.trim.nuevo">Borrar Datos</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mt-3">
-                    <div class="card-body bg-faded">
-                        <div class="d-flex justify-content-center mb-1">
-                            <img src="https://servidor.crecimientofetal.cl/img/tn.jpeg" class="w-50 h-50" alt="feto con translucencia">
-                        </div>
-                        ¡Tamizaje NO es Diagnóstico!<br><br>Es valorar probabilidad de riesgo, respecto al de una población homologable.<br><br>Evaluacion adicional de TN ( aplica para LCN de 45 a 84 mm )<br>Gentileza Dr. Francisco Guerra B. Universidad Austral de Chile
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container pt-2 d-none" id="ecoObsSegTrim">
         <div class="row">
             <div class="col">
@@ -2908,8 +2556,6 @@
                                         <input type="text" class="form-control" id="atrio.desc.ecoDosTres" disabled>
                                     </div>
                                 </div>
-                                <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="art.ut"> <label class="form-check-label" for="art.ut">Opcional Doppler arterias uterinas</label> </div>
-                                <div class="row d-none pt-2" id="art.ut.div"> <div class="col form-group"> <label>IP. Uterina derecha</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_derecha"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterina izquierda</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div></div>
                                 <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="larg.cerv"> <label class="form-check-label" for="larg.cerv">Opcional Largo Cervical</label> </div>
                                 <div class="form-group row d-none pt-2" id="larg.cerv.div">
                                     <div class="col mb-2">
@@ -2925,6 +2571,73 @@
                                         <div class="alert text-info border-info mb-0 p-2 d-none" id="info.cervix"></div>
                                     </div>
                                     <div class="col mb-2"></div>
+                                </div>
+                                <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="art.ut"> <label class="form-check-label" for="art.ut">Opcional Doppler arterias uterinas</label> </div>
+                                <div class="row d-none pt-2" id="art.ut.div"> <div class="col form-group"> <label>IP. Uterina derecha</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_derecha"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterina izquierda</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div></div>
+                                <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="opt.clinico"> <label class="form-check-label" for="larg.cerv">Opcional Clínico (Presión Arterial &#43; Nutrición materna)</label> </div>
+                                <div class="form-group row d-none pt-2" id="opt.clinico.div">
+                                    <div class="col-12">
+                                        <p><strong>Presión arterial materna</strong></p>
+                                        <div class="form-group row">
+                                            <div class="col-1 mb-2">
+                                                <label>Sistólica</label>
+                                            </div>
+                                            <div class="col-3 mb-2">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="psisTamizaje">
+                                                    <div class="input-group-append"><div class="input-group-text">mmHg</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-1 mb-2">
+                                                <label>Diastólica</label>
+                                            </div>
+                                            <div class="col-3 mb-2">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="pdiasTamizaje">
+                                                    <div class="input-group-append"><div class="input-group-text">mmHg</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-1 mb-2">
+                                                <label><strong>Media</strong></label>
+                                            </div>
+                                            <div class="col-3 mb-2">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="pmediaTamizaje" readonly="">
+                                                    <div class="input-group-append"><div class="input-group-text">mmHg</div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p><strong>Estado nutricional materno</strong></p>
+                                        <div class="form-group row">
+                                            <div class="col-1 mb-2">
+                                                <label>Talla</label>
+                                            </div>
+                                            <div class="col-3 mb-2">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="tallaTamizaje">
+                                                    <div class="input-group-append"><div class="input-group-text">cms</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-1 mb-2">
+                                                <label>Peso</label>
+                                            </div>
+                                            <div class="col-3 mb-2">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="pesoTamizaje">
+                                                    <div class="input-group-append"><div class="input-group-text">kg</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-1 mb-2">
+                                                <label><strong>IMC</strong></label>
+                                            </div>
+                                            <div class="col-3 mb-2">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="imcTamizaje" readonly="">
+                                                    <div class="input-group-append"><div class="input-group-text">(kg/m2)</div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="calc.oms"> <label class="form-check-label" for="calc.oms">Opcional calculador crecimiento de Fetal OMS</label> </div>
                                 <div class="form-group row d-none pt-2" id="calc.oms.div">
