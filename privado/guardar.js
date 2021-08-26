@@ -112,6 +112,10 @@ $(document).ready(function() {
             'cmpct' : the("cm.pct.ecoDosTres").value,
             'atrio' : the("atrio.ecoDosTres").value,
             'atriopct' : the("atrio.desc.ecoDosTres").value,
+            'utd' : the("respuesta_uterina_derecha").value,
+            'utdpct' : the("respuesta_uterina_derecha_percentil").innerText,
+            'uti' : the("respuesta_uterina_izquierda").value,
+            'utipct' : the("respuesta_uterina_izquierda_percentil").innerText,
         }
 
         if (basicDataValid() == false){
@@ -538,6 +542,12 @@ function traerEcoCrecimiento(){
 
         the("atrio.ecoDosTres").value = datos.atrio
         the("atrio.desc.ecoDosTres").value = datos.atriopct
+
+        the("respuesta_uterina_derecha").value = datos.utd
+        the("respuesta_uterina_derecha_percentil").innerText = datos.utdpct
+
+        the("respuesta_uterina_izquierda").value = datos.uti
+        the("respuesta_uterina_izquierda_percentil").innerText = datos.utipct
 
         make.alert("Exámen cargado")
     })
