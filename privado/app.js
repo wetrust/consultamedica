@@ -1008,7 +1008,24 @@ $( document ).ready(function() {
             the("comentarios-anatomia-informe-eg-texto").value = "";
             the("eco.seg.trim.select.comentario").selectedIndex = 0;
             the("comentarios-eco-dos-inf-dos").value = "";
-            resetDate();
+
+            the("respuesta_uterina_derecha").value = "";
+            the("respuesta_uterina_derecha_percentil").innerText = "";
+    
+            the("respuesta_uterina_izquierda").value = "";
+            the("respuesta_uterina_izquierda_percentil").innerText  = "";
+    
+    
+            the("psisTamizaje").value = "";
+            the("pdiasTamizaje").value  = "";
+            the("pmediaTamizaje").value = "";
+            the("tallaTamizaje").value = "";
+            the("pesoTamizaje").value = "";
+            the("imcTamizaje").value = "";
+            the("primigesta").value = "";
+            the("peprevia").value = "";
+            the("trombofilias").value = "";
+
             $('#'+modal).modal("hide");
         });
     });
