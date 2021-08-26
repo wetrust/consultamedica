@@ -517,6 +517,7 @@ function traerEcoCrecimiento(){
         the("fum").value = datos.fur
         
         the("dbp").value = datos.dbp
+        the("dbp").onchange()
         the("dbpDE").value = datos.dbpde
         the("dof").value = datos.dof
         the("dofPct").value = datos.dofpct
