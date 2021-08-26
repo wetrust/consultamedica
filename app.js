@@ -716,6 +716,11 @@ $( document ).ready(function() {
         $("#pdfviebox").children("ol").children().children().attr("href","#ecoObsSegTrim");
     });
 
+    $("#pdfbiometriaRef").on("click", function(){
+        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/biometrias_de_referencia.pdf"></iframe>');
+        $("#pdfviebox").children("ol").children().children().attr("href","#ecoObsSegTrim");
+    });
+
     $("#pdfmorfonew").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://www.isuog.org/uploads/assets/uploaded/87c804a5-87af-4af8-96a700eb4061fb09.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#morfologiafet");
