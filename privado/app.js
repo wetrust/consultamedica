@@ -1058,10 +1058,6 @@ $( document ).ready(function() {
             the("motilidad-doppler").selectedIndex = 0;
             the("ubicacion-doppler").selectedIndex = 0;
             the("comentarios-doppler").value = "";
-            the("fee").value = getDate();
-            the("fum").value = getDate();
-            the("semanas").value = 0;
-            the("dias").value = 0;
             $('#'+modal).modal("hide");
         });
     })
