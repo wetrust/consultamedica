@@ -185,7 +185,7 @@ $(document).ready(function() {
             'utcmedia' : the("ipacm").value,
             'utcmediapct' : the("ipacmPct").value,
             'couciente' : the("ccp").value,
-            'coucientepct' : the("ccpPct").value,
+            'coucientepct' : the("ccpPctTxt").value,
             'cmau' : the("ccpPct").value,
             'DuctusVenoso' : the("dv").value,
             'DuctusVenosoPct' : the("dvPctTxt").value,
