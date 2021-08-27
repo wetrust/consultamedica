@@ -617,7 +617,7 @@ export function loadEcoDopplerTabla(paciente_rut){
             let eg = document.createElement("td")
             let ut = document.createElement("td")
             let cm = document.createElement("td")
-            let cmau = document.createElement("td")
+            let ccp = document.createElement("td")
             let duc = document.createElement("td")
 
             let datos = JSON.parse(value.caso_data)
@@ -629,10 +629,10 @@ export function loadEcoDopplerTabla(paciente_rut){
             nombre.innerText = value.caso_nombre
             eg.innerText = value.caso_eg
 
-            ut.innerText = datos.utprompct
+            ut.innerText = datos.utpromediopct
             cm.innerText = datos.utcmediapct
-            cmau.innerText = datos.cmau
-            duc.innerText = datos.dvpct
+            ccp.innerText = datos.coucientepct
+            duc.innerText = datos.DuctusVenosoPct
 
             let ver = document.createElement("td")
             ver.dataset.id = value.caso_id
@@ -649,7 +649,7 @@ export function loadEcoDopplerTabla(paciente_rut){
             tr.appendChild(eg)
             tr.appendChild(ut)
             tr.appendChild(cm)
-            tr.appendChild(cmau)
+            tr.appendChild(ccp)
             tr.appendChild(duc)
             tr.appendChild(ver)
             tr.appendChild(eliminar)
@@ -684,7 +684,6 @@ function traerEcoDoppler(){
         the("ipacmPct").value = datos.utcmediapct
         the("ccp").value = datos.couciente
         the("ccpPct").value = datos.coucientepct
-        the("ccpPct").value = datos.cmau
         the("dv").value = datos.DuctusVenoso
         the("dvPct").value = datos.DuctusVenosoPct
         the("dvPct").value = datos.dvpct
