@@ -1062,6 +1062,44 @@ $( document ).ready(function() {
         });
     })
 
+    $("#btn\\.erase\\.precoz").on("click", function(){
+        var modal = makeModal("Si");
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        the(modal.titulo).innerText = "Borrar datos de ecografía obstétrica precoz";
+        the(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $("#"+modal.button).on("click", function(){
+            let modal =  $(this).data("modal");
+            the("saco").value = "";
+            $("#saco").trigger("change");
+            the("embrion").selectedIndex = 0;
+            $("#embrion").trigger("change");
+            the("lcn").value = 0;
+            $("#lcn").trigger("change");
+            the("utero-ubic1").selectedIndex = 0;
+            the("utero-ubic2").selectedIndex = 0;
+            the("cuerpo-uterino").selectedIndex = 0;
+            the("saco-gestacional").selectedIndex = 0;
+            the("saco-vitelino").selectedIndex = 1;
+            $("#saco-vitelino").trigger("change");
+            the("fcf-prim").selectedIndex = 0;
+            the("fcf-prim-dos").selectedIndex = 0
+            the("anexo-derecho").selectedIndex = 0;
+
+            the("anexo-derecho").selectedIndex = 0;
+            the("anexo-izquierdo").selectedIndex = 0;
+            the("exploracion-douglas").selectedIndex = 0;
+            the("comentarios-eco-uno").value = "";
+            resetDate();
+            $("#menu\\.modulo\\.prim\\.trim\\.no").button("toggle");
+            $('#'+modal).modal("hide");
+        });
+    });
+
 });
 
 // Controlador de input clones
