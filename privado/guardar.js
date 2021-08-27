@@ -182,7 +182,7 @@ $(document).ready(function() {
             'utumbilical' : the("ipau").value,
             'utumbilicalpct' : the("ipauPct").value,
             'utcmedia' : the("ipacm").value,
-            'utcmediapct' : the("ipacmPct").value,
+            'utcmediapct' : the("ipacmPctTxt").value,
             'couciente' : the("ccp").value,
             'coucientepct' : the("ccpPctTxt").value,
             'cmau' : the("ccpPct").value,
