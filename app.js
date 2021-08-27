@@ -552,6 +552,14 @@ $( document ).ready(function() {
         }
     });
 
+    $("#opt\\.clinico").on("click", function(){
+        if (this.checked == true){
+            the("opt\\.clinico\\.div").classList.remove("d-none");
+        }else{
+            the("opt\\.clinico\\.div").classList.add("d-none");
+        }
+    });
+
     $("#larg\\.cerv").on("click", function(){
         if (this.checked == true){
             the("larg.cerv.div").classList.remove("d-none");
