@@ -668,21 +668,29 @@ function traerEcoDoppler(){
         document.getElementsByName("edad_materna")[0].value = datos.edadm
         the("fee").value = datos.fecha
         the("fum").value = datos.fur
+        $("#fee").trigger("change")
         the("fcf-prim").value = datos.fcf
         the("aud").value = datos.utderecha
+        $("#aud").trigger("change")
         the("audPct").value = datos.utderechapct
         the("aui").value = datos.utizquierda
+        $("#aui").trigger("change")
         the("auiPct").value = datos.utizquierdapct
         the("auprom").value = datos.utpromedio
+        $("#auprom").trigger("change")
         the("auPct").value = datos.utpromediopct
         the("auPct").value = datos.utprompct
         the("ipau").value = datos.utumbilical
+        $("#ipau").trigger("change")
         the("ipauPct").value = datos.utumbilicalpct
         the("ipacm").value = datos.utcmedia
+        $("#ipacm").trigger("change")
         the("ipacmPct").value = datos.utcmediapct
         the("ccp").value = datos.couciente
+        $("#ccp").trigger("change")
         the("ccpPct").value = datos.coucientepct
         the("dv").value = datos.DuctusVenoso
+        $("#dv").trigger("change")
         the("dvPct").value = datos.DuctusVenosoPct
         the("dvPct").value = datos.dvpct
         the("comentarios-doppler").value = datos.Comentario
