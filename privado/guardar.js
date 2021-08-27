@@ -520,50 +520,69 @@ function traerEcoCrecimiento(){
         $("#dbp").trigger("change")
         the("dbpDE").value = datos.dbpde
         the("dof").value = datos.dof
+        $("#dof").trigger("change")
         the("dofPct").value = datos.dofpct
         the("cc").value = datos.cc
+        $("#cc").trigger("change")
         the("ccPct").value = datos.ccpct
         the("ca").value = datos.ca
+        $("#ca").trigger("change")
         the("caPct").value = datos.capct
         the("lf").value = datos.lf
+        $("#lf").trigger("change")
         the("lfPct").value = datos.lfpct
         the("lh").value = datos.lh
+        $("#lh").trigger("change")
         the("lhPct").value = datos.lhpct
         the("cerebelo").value = datos.cerebelo
+        $("#cerebelo").trigger("change")
         the("cerebeloPctRpt").value = datos.cerebelopct
         the("pfe").value = datos.peso
+        $("#pfe").trigger("change")
         the("pfePctRpt").value = datos.pesopct
         the("ccca").value = datos.ccca
+        $("#ccca").trigger("change")
         the("cccaPctVal").value = datos.cccapct
 
         the("ubicacion").value = datos['placenta ubic']
         the("incersion").value = datos['placenta ins']
 
         the("liq-cualitativo-eco").value = datos.liquido
-        the("bvmEcoDos").value = datos.bvm
+        the("bvm").value = datos.bvm
+        $("#bvm").trigger("change")
         the('respuesta_uterina_promedio').value = datos['Uterinas Prom']
+        $("#respuesta_uterina_promedio").trigger("change")
         the('respuesta_uterina_promedio_percentil').textContent = datos['Uterinas Prom Pct']
         the('largo.cervical.segundo').value = datos['Largo cervical']
+        $("#largo\\.cervical\\.segundo").trigger("change")
         the("comentarios-eco-dos-inf-dos").value = datos.Comentario
 
         the("cm.ecoDosTres").value = datos.cm
+        $("#cm\\.ecoDosTres").trigger("change")
         the("cm.pct.ecoDosTres").value = datos.cmpct
 
         the("atrio.ecoDosTres").value = datos.atrio
+        $("#atrio\\.ecoDosTres").trigger("change")
         the("atrio.desc.ecoDosTres").value = datos.atriopct
 
         the("respuesta_uterina_derecha").value = datos.utd
+        $("#respuesta_uterina_derecha").trigger("change")
         the("respuesta_uterina_derecha_percentil").innerText = datos.utdpct
 
         the("respuesta_uterina_izquierda").value = datos.uti
+        $("#respuesta_uterina_izquierda").trigger("change")
         the("respuesta_uterina_izquierda_percentil").innerText = datos.utipct
 
 
         the("psisTamizaje").value = datos.psisTamizaje
+        $("#psisTamizaje").trigger("change")
         the("pdiasTamizaje").value = datos.pdiasTamizaje
+        $("#pdiasTamizaje").trigger("change")
         the("pmediaTamizaje").value = datos.pmediaTamizaje
         the("tallaTamizaje").value = datos.tallaTamizaje
+        $("#tallaTamizaje").trigger("change")
         the("pesoTamizaje").value = datos.pesoTamizaje
+        $("#pesoTamizaje").trigger("change")
         the("imcTamizaje").value = datos.imcTamizaje
         the("primigesta").value = datos.primigesta
         the("peprevia").value = datos.peprevia
