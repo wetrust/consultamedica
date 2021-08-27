@@ -188,8 +188,7 @@ $(document).ready(function() {
             'coucientepct' : the("ccpPct").value,
             'cmau' : the("ccpPct").value,
             'DuctusVenoso' : the("dv").value,
-            'DuctusVenosoPct' : the("dvPct").value,
-            'dvpct' : the("dvPct").value,
+            'DuctusVenosoPct' : the("dvPctTxt").value,
             'Comentario' : the("comentarios-doppler").value,
         }
 
