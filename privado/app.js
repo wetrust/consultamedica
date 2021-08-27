@@ -1100,6 +1100,14 @@ $( document ).ready(function() {
         });
     });
 
+    $("#calc\\.test").on("click", function(){
+        if (the("calc.test.div").classList.contains("d-none") == true){
+            the("calc.test.div").classList.remove("d-none");
+        }else{
+            the("calc.test.div").classList.add("d-none");
+        }
+    });
+
 });
 
 // Controlador de input clones

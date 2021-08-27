@@ -552,11 +552,19 @@ $( document ).ready(function() {
         }
     });
 
+    $("#calc\\.test").on("click", function(){
+        if (the("calc.test.div").classList.contains("d-none") == true){
+            the("calc.test.div").classList.remove("d-none");
+        }else{
+            the("calc.test.div").classList.add("d-none");
+        }
+    });
+
     $("#opt\\.clinico").on("click", function(){
         if (this.checked == true){
-            the("opt\\.clinico\\.div").classList.remove("d-none");
+            the("opt.clinico.div").classList.remove("d-none");
         }else{
-            the("opt\\.clinico\\.div").classList.add("d-none");
+            the("opt.clinico.div").classList.add("d-none");
         }
     });
 
