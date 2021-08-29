@@ -1115,7 +1115,6 @@ $( document ).ready(function() {
             this.checked == false
         }
     })
-
 });
 
 // Controlador de input clones

@@ -69,6 +69,8 @@ function eliminarPaciente(){
         $("#"+this.dataset.modal).modal("hide")
         fetch('https://api.crecimientofetal.cl/config/eliminar/'+this.dataset.delete).then(response => response.json())
         .then(data => {
+            the("notificacionText").innerText = "Paciente Eliminado"
+            $('#notificacion').toast('show')
             loadPacientesTabla()
         })
     });
@@ -110,7 +112,8 @@ function traerPaciente(){
 
         the("ecografista").value = data.paciente_ecografista_txt
 
-        make.alert("Paciente cargado")
+        the("notificacionText").innerText = "Paciente Cargado"
+        $('#notificacion').toast('show')
 
         loadEcoPrecozTabla(data.paciente_rut)
         loadEcoCrecimientoTabla(data.paciente_rut)
@@ -165,7 +168,8 @@ $(document).ready(function(){
 
         fetch('https://api.crecimientofetal.cl/config/paciente', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
             .then(data => {
-                make.alert("Paciente guardado")
+                the("notificacionText").innerText = "Paciente Guardado"
+                $('#notificacion').toast('show')
                 loadPacientesTabla();
             })
     }

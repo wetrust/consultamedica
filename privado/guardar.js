@@ -55,7 +55,10 @@ $(document).ready(function() {
 
         fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
         .then(data => {
-            if (data.success == true ){ alert("guardó") }
+            if (data.success == true ){ 
+                the("notificacionText").innerText = "Guardado"  
+                $('#notificacion').toast('show')
+            }
             loadEcoPrecozTabla(the("id-paciente").value)
         }).catch(function(error) {
             alert("error")
@@ -146,7 +149,8 @@ $(document).ready(function() {
         fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
         .then(data => {
             if (data.success == true ){
-                alert("guardó")
+                the("notificacionText").innerText = "Guardado"
+                $('#notificacion').toast('show')
                 loadEcoCrecimientoTabla(the("id-paciente").value)
             }
         }).catch(function(error) { alert("error") });
@@ -210,7 +214,8 @@ $(document).ready(function() {
         fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
         .then(data => {
             if (data.success == true ){
-                alert("guardado")
+                the("notificacionText").innerText = "Guardado"
+                $('#notificacion').toast('show')
                 loadEcoDopplerTabla(the("id-paciente").value)
             }
         }).catch(function(error) {
@@ -428,7 +433,8 @@ function traerEcoPrecoz(){
         //datos.saco vitelino' : the("saco-vitelino-mm").value = 
         the("comentarios-eco-uno").value  = datos.Comentario
 
-        make.alert("Exámen cargado")
+        the("notificacionText").innerText = "Exámen Cargado"
+        $('#notificacion').toast('show')
     })
 }
 
@@ -437,6 +443,8 @@ function eliminarEcoPrecoz(){
         $("#"+this.dataset.modal).modal("hide")
         fetch('https://api.crecimientofetal.cl/config/dexamenUno/'+this.dataset.delete).then(response => response.json())
         .then(data => {
+            the("notificacionText").innerText = "Exámen Eliminado"
+            $('#notificacion').toast('show')
             loadEcoPrecozTabla(the("id-paciente").value)
         })
     });
@@ -586,7 +594,8 @@ function traerEcoCrecimiento(){
         the("peprevia").value = datos.peprevia
         the("trombofilias").value = datos.trombofilias
 
-        make.alert("Exámen cargado")
+        the("notificacionText").innerText = "Exámen Cargado"
+        $('#notificacion').toast('show')
     })
 }
 
@@ -595,6 +604,8 @@ function eliminarEcoCrecimiento(){
         $("#"+this.dataset.modal).modal("hide")
         fetch('https://api.crecimientofetal.cl/config/dexamenDos/'+this.dataset.delete).then(response => response.json())
         .then(data => {
+            the("notificacionText").innerText = "Exámen Eliminado"
+            $('#notificacion').toast('show')
             loadEcoCrecimientoTabla(the("id-paciente").value)
         })
     });
@@ -695,7 +706,8 @@ function traerEcoDoppler(){
         the("dvPct").value = datos.dvpct
         the("comentarios-doppler").value = datos.Comentario
 
-        make.alert("Exámen cargado")
+        the("notificacionText").innerText = "Exámen Cargado"
+        $('#notificacion').toast('show')
     })
 }
 
@@ -704,6 +716,8 @@ function eliminarEcoDoppler(){
         $("#"+this.dataset.modal).modal("hide")
         fetch('https://api.crecimientofetal.cl/config/dexamenDoppler/'+this.dataset.delete).then(response => response.json())
         .then(data => {
+            the("notificacionText").innerText = "Exámen Eliminado"
+            $('#notificacion').toast('show')
             loadEcoDopplerTabla(the("id-paciente").value)
         })
     });
