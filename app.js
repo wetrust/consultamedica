@@ -951,6 +951,13 @@ $( document ).ready(function() {
         }
     })
 
+    $("#activ\\.calculadora\\.pree").on("change", function(){
+        if (this.checked == true){
+            the("div.calculadora.pree").classList.remove("d-none")
+        }else{
+            the("div.calculadora.pree").classList.add("d-none")
+        }
+    })
 });
 
 // Controlador de input clones
