@@ -2036,6 +2036,12 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="activ.calculadora.pree">
+                                            <label class="form-check-label text-primary" for="activ.calculadora.pree"><em>Calculadora, Medicina Fetal - Barcelona</em></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
                                         <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="alternativa.once"><label class="form-check-label text-primary" for="alternativa.once"><em>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas</em></label></div>
                                     </div>
                                 </div>
@@ -2583,7 +2589,7 @@
                                 </div>
                                 <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="art.ut"> <label class="form-check-label" for="art.ut">Opcional Doppler arterias uterinas</label> </div>
                                 <div class="row d-none pt-2" id="art.ut.div"> <div class="col form-group"> <label>IP. Uterina derecha</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_derecha"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterina izquierda</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div></div>
-                                <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="opt.clinico"> <label class="form-check-label" for="opt.clinico">Opcional Clínico (Examen y antecedentes)</label> </div>
+                                <div class="form-group form-check mb-0 d-none"> <input type="checkbox" class="form-check-input" id="opt.clinico"> <label class="form-check-label" for="opt.clinico">Opcional Clínico (Examen y antecedentes)</label> </div>
                                 <div class="form-group row d-none pt-2" id="opt.clinico.div">
                                     <div class="col-12">
                                         <p><strong>Presión arterial materna</strong></p>
@@ -3420,23 +3426,6 @@
                 <div class="modal-body" id="popupBody">
                 </div>
                 <div class="modal-footer" id="popupFooter">
-                    <button class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal" id="popupGraficos">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header" id="graficosHeader">
-                    <h5 class="modal-title text-center" id="graficosTitle">Modal title</h5>
-                    <button class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="graficosBody">
-                </div>
-                <div class="modal-footer" id="graficosFooter">
                     <button class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>

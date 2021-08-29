@@ -1041,7 +1041,7 @@ $( document ).ready(function() {
         });
 
         $("#"+modal.button).on("click", function(){
-            let modal =  $(this).data("modal");
+            let modal = this.dataset.modal;
             the("aud").value = "";
             the("aui").value = "";
             the("auprom").value = "";
@@ -1107,6 +1107,14 @@ $( document ).ready(function() {
             the("calc.test.div").classList.add("d-none");
         }
     });
+
+    $("#activ\\.calculadora\\.pree").on("change", function(){
+        if (this.checked == true){
+            var URL = "http://medicinafetalbarcelona.org/calc/";
+            var win = window.open(URL, "_blank");
+            this.checked == false
+        }
+    })
 
 });
 
