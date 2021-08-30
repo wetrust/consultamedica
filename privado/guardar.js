@@ -184,7 +184,7 @@ $(document).ready(function() {
             'utpromedio' : the("auprom").value,
             'utpromediopct' : the("auPctTxt").value,
             'utumbilical' : the("ipau").value,
-            'utumbilicalpct' : the("ipauPct").value,
+            'utumbilicalpct' : the("ipauPctTxt").value,
             'utcmedia' : the("ipacm").value,
             'utcmediapct' : the("ipacmPctTxt").value,
             'couciente' : the("ccp").value,
@@ -618,7 +618,7 @@ export function loadEcoDopplerTabla(paciente_rut){
             let fecha = document.createElement("td")
             let eg = document.createElement("td")
             let ut = document.createElement("td")
-            let cm = document.createElement("td")
+            let umb = document.createElement("td")
             let ccp = document.createElement("td")
             let duc = document.createElement("td")
 
@@ -631,7 +631,7 @@ export function loadEcoDopplerTabla(paciente_rut){
             eg.innerText = value.caso_eg
 
             ut.innerText = datos.utpromediopct
-            cm.innerText = datos.utcmediapct
+            umb.innerText = datos.utumbilicalpct
             ccp.innerText = datos.coucientepct
             duc.innerText = datos.DuctusVenosoPct
 
@@ -648,7 +648,7 @@ export function loadEcoDopplerTabla(paciente_rut){
             tr.appendChild(fecha)
             tr.appendChild(eg)
             tr.appendChild(ut)
-            tr.appendChild(cm)
+            tr.appendChild(umb)
             tr.appendChild(ccp)
             tr.appendChild(duc)
             tr.appendChild(ver)
