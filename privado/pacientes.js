@@ -88,6 +88,10 @@ function traerPaciente(){
         $("#semanas").trigger("change")
         the("nombre-paciente").value = data.paciente_nombre
         the("apellido-paciente").value = data.paciente_apellido
+
+        the("nombre.ecoprim").value = data.paciente_nombre
+        the("apellido.ecoprim").value = data.paciente_apellido
+
         the("id-paciente").value = data.paciente_rut
         the("email-paciente").value = data.paciente_email
         the("fono-paciente").value = data.paciente_telefono
@@ -165,6 +169,10 @@ $(document).ready(function(){
         configuracion.append("paciente_ecografista_txt", the("ecografista").value)
 
         configuracion.append("paciente_fum", the("fum").value)
+
+        the("nombre.ecoprim").value = the("nombre-paciente").value
+        the("apellido.ecoprim").value = the("apellido-paciente").value
+
 
         fetch('https://api.crecimientofetal.cl/config/paciente', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
             .then(data => {
