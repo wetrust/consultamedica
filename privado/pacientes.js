@@ -92,6 +92,12 @@ function traerPaciente(){
         the("nombre.ecoprim").value = data.paciente_nombre
         the("apellido.ecoprim").value = data.paciente_apellido
 
+        the("nombre.crecim").value = data.paciente_nombre
+        the("apellido.crecim").value = data.paciente_apellido
+
+        the("nombre.doppler").value = data.paciente_nombre
+        the("apellido.doppler").value = data.paciente_apellido
+
         the("id-paciente").value = data.paciente_rut
         the("email-paciente").value = data.paciente_email
         the("fono-paciente").value = data.paciente_telefono
@@ -172,6 +178,12 @@ $(document).ready(function(){
 
         the("nombre.ecoprim").value = the("nombre-paciente").value
         the("apellido.ecoprim").value = the("apellido-paciente").value
+
+        the("nombre.crecim").value = the("nombre-paciente").value
+        the("apellido.crecim").value = the("apellido-paciente").value
+
+        the("nombre.doppler").value = the("nombre-paciente").value
+        the("apellido.doppler").value = the("apellido-paciente").value
 
 
         fetch('https://api.crecimientofetal.cl/config/paciente', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())

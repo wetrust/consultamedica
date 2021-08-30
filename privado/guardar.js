@@ -361,7 +361,6 @@ export function loadEcoPrecozTabla(paciente_rut){
         data.forEach(function myFunction(value, index, array) {
 
             let tr = document.createElement("tr");
-            let nombre = document.createElement("td")
             let fecha = document.createElement("td")
             let eg = document.createElement("td")
             let lcn = document.createElement("td")
@@ -376,7 +375,6 @@ export function loadEcoPrecozTabla(paciente_rut){
             _f = _f.split("-")
             fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
 
-            nombre.innerText = value.caso_nombre
             eg.innerText = value.caso_eg
 
             lcn.innerText = datos.LCN
@@ -395,7 +393,6 @@ export function loadEcoPrecozTabla(paciente_rut){
             eliminar.innerHTML = iconos["basura"]
             eliminar.onclick = eliminarEcoPrecoz
 
-            tr.appendChild(nombre)
             tr.appendChild(fecha)
             tr.appendChild(eg)
             tr.appendChild(saco)
@@ -460,7 +457,6 @@ export function loadEcoCrecimientoTabla(paciente_rut){
         data.forEach(function myFunction(value, index, array) {
 
             let tr = document.createElement("tr");
-            let nombre = document.createElement("td")
             let fecha = document.createElement("td")
             let eg = document.createElement("td")
             let pfe = document.createElement("td")
@@ -474,7 +470,6 @@ export function loadEcoCrecimientoTabla(paciente_rut){
             _f = _f.split("-")
             fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
             
-            nombre.innerText = value.caso_nombre
             eg.innerText = value.caso_eg
 
             pfe.innerText = datos.peso
@@ -493,7 +488,6 @@ export function loadEcoCrecimientoTabla(paciente_rut){
             eliminar.innerHTML = iconos["basura"]
             eliminar.onclick = eliminarEcoCrecimiento
 
-            tr.appendChild(nombre)
             tr.appendChild(fecha)
             tr.appendChild(eg)
             tr.appendChild(pfe)
@@ -621,7 +615,6 @@ export function loadEcoDopplerTabla(paciente_rut){
         data.forEach(function myFunction(value, index, array) {
 
             let tr = document.createElement("tr");
-            let nombre = document.createElement("td")
             let fecha = document.createElement("td")
             let eg = document.createElement("td")
             let ut = document.createElement("td")
@@ -635,7 +628,6 @@ export function loadEcoDopplerTabla(paciente_rut){
             _f = _f.split("-")
             fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
 
-            nombre.innerText = value.caso_nombre
             eg.innerText = value.caso_eg
 
             ut.innerText = datos.utpromediopct
@@ -653,7 +645,6 @@ export function loadEcoDopplerTabla(paciente_rut){
             eliminar.innerHTML = iconos["basura"]
             eliminar.onclick = eliminarEcoDoppler
 
-            tr.appendChild(nombre)
             tr.appendChild(fecha)
             tr.appendChild(eg)
             tr.appendChild(ut)
