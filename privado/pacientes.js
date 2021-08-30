@@ -1,5 +1,6 @@
 import { make, the, these, inputDate } from './wetrust.js'
 import { loadEcoPrecozTabla, loadEcoCrecimientoTabla, loadEcoDopplerTabla } from './guardar.js'
+import { fechas } from './functionesM.js'
 
 var iconos = {
     "lupa" : '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>',
@@ -192,6 +193,36 @@ $(document).ready(function(){
                 $('#notificacion').toast('show')
                 loadPacientesTabla();
             })
+    }
+
+    the("cleanParson").onclick = function(){
+        let _fecha = new Date()
+
+        the("fee").value = inputDate(_fecha)
+    
+        the("semanas").value = 10;
+        the("dias").value = 0;
+
+        let _fur = fechas.fur(10, _fecha)
+        the("fum").value = inputDate(_fur)
+    
+        let _fpp = fechas.fpp(_fur)
+        the("fpp").value = inputDate(_fpp)
+
+        the("nombre-paciente").value = ""
+        the("apellido-paciente").value = ""
+        the("id-paciente").value = ""
+        the("email-paciente").value = ""
+        the("fono-paciente").value = ""
+        the("motivo-examen").value = 1
+        the("patologiaObstetricaUno").value = 1
+        these("edad_materna")[0].value = "&lt; 12"
+        the("ciudadpaciente").value = 1
+        the("lcontrolpaciente").value = 1
+
+        the("profref").value = 1
+        the("centroecograf").value = 1
+
     }
 })
 
