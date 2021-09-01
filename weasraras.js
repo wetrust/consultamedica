@@ -68,12 +68,13 @@ $(document).ready(function(){
         }
     });
 
-    $("#menu\\.modulo\\.activo\\.cinco\\.dos").on("click", function(){
-        reiniciarMensajes();
-        reiniciaPuntitos();
-        ocultarPrincipal();
-        the("pedefes").classList.remove("d-none");
-    })
+    $("#ver\\.consulta").on("click", function(){
+        if (this.checked == true){
+            the("pedefes").classList.remove("d-none");
+        }else{
+            the("pedefes").classList.add("d-none");
+        }
+    });
 
     $("#codigoAcceso").on("click", function(){
         let _modal = make.modal("Ingresar");
