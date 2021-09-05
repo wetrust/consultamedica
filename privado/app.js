@@ -7638,15 +7638,8 @@ function valccca() {
 }
 
 function informeGinecologico(){
-    let informe = '<div class="container-fluid"><h4 class="page-header text-center">INFORME ECOGRÁFICO GINECOLÓGICO ALTERNATIVO</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid" style="margin-top: 1rem;"> <p> <strong><em>Datos generales</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0">Nombre de paciente:</td><td class="p-0">:PACIENTE</td><td class="p-0">Edad Materna:</td><td class="p-0">:EDADMATERNA años.</td></tr><tr> <td class="p-0">RUT (DNI):</td><td class="p-0">:IDPACIENTE</td><td class="p-0">Fecha de Exámen:</td><td class="p-0">:FEXAMEN</td></tr><tr> <td class="p-0">Lugar de procedencia:</td><td class="p-0">:CIUDAD</td><td class="p-0">Lugar de control:</td><td class="p-0">:LCONTROL</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Antecedentes clínicos</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="w-50 p-0">FUR referida:</td><td class="p-0">:FUM</td></tr><tr> <td class="w-50 p-0">Días del ciclo mestrual:</td><td class="p-0">:DIACICLO días.</td></tr><tr> <td class="w-50 p-0">Motivo de exámen:</td><td class="p-0">:MOTIVO</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Descripción hallazgos ecográficos</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td>Cuerpo uterino:</td><td>:LINEA2</td></tr><tr> <td>Contenido endouterino (endometrio):</td><td>:LINEA3</td></tr><tr> <td>Anexo Derecho:</td><td>:LINEA6</td></tr><tr> <td>&nbsp;-&nbsp;Ovario Derecho:</td><td>:LINEA7</td></tr><tr> <td>Anexo Izquierdo:</td><td>:LINEA4</td></tr><tr> <td>&nbsp;-&nbsp;Ovario Izquierdo:</td><td>:LINEA5</td></tr><tr> <td>Espacio retro-uterino (Douglas):</td><td>:LINEA8</td></tr></tbody> </table></div><div class="container-fluid"> <p><strong>Comentarios y observaciones:</strong></p><p>:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 7rem;"> <p style="text-align: right;" class="top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><p style="margin-top: 2rem; border-top: 1px solid #000; width: 100% !important; display: block;">Fecha Informe: :DATEINFORME</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"> Informe generado desde software crecimientofetal.cl, el objetivo de este es favorecer análisis preeliminar de los datos, la interpretación de los resultados de este informe, es responsabilidad fundamentalmente del profesional referente a exámen ecográfico. Profesional quien finalmente evaluará clínicamente la información contenida en este informe. </p></div>';
+    let informe = '<div class="container-fluid"><h4 class="page-header text-center">INFORME ECOGRÁFICO GINECOLÓGICO ALTERNATIVO</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid" style="margin-top: 1rem;"> <p> <strong><em>Datos generales</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0">Nombre de paciente:</td><td class="p-0">:PACIENTE</td><td class="p-0">Edad Materna:</td><td class="p-0">:EDADMATERNA años.</td></tr><tr> <td class="p-0">RUT (DNI):</td><td class="p-0">:IDPACIENTE</td><td class="p-0">Fecha de Exámen:</td><td class="p-0">:FEXAMEN</td></tr><tr> <td class="p-0">Lugar de procedencia:</td><td class="p-0">:CIUDAD</td><td class="p-0">Lugar de control:</td><td class="p-0">:LCONTROL</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Antecedentes clínicos</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="w-50 p-0">FUR referida:</td><td class="p-0">:FUM</td></tr><tr> <td class="w-50 p-0">Días del ciclo mestrual:</td><td class="p-0">:DIACICLO días.</td></tr><tr> <td class="w-50 p-0">Motivo de exámen:</td><td class="p-0">:MOTIVO</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Descripción hallazgos ecográficos</em></strong> </p><p>Útero :utUbicacion1 :utUbicacion2 , Cuerpo uterino: :cuerpoUterino<br>Uterno dimensiones de :uteroDim1 x :uteroDim2 x :uteroDim3 , DIU: :uteroDiu<br>:uteroObs</p><p>Endometrio :endometDesc1 , :endometDesc2 , :endometGrosor<br>:endometObs</p><p>Anexo Derecho :anexDerecho , Anexo Izquierdo :anexIzquierdo<br>Ovario Derecho :ovarDereMed1 x :ovarDereMed2 x :ovarDereMed3</p><p>Anexo Izquierdo :ovarIzquier1 x :ovarIzquier2 x :ovarIzquier3</p><p>Espacio retrouterino: :espacioRetro</p></div><div class="container-fluid"> <p><strong>Comentarios y observaciones:</strong></p><p>:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 7rem;"> <p style="text-align: right;" class="top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><p style="margin-top: 2rem; border-top: 1px solid #000; width: 100% !important; display: block;">Fecha Informe: :DATEINFORME</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"> Informe generado desde software crecimientofetal.cl, el objetivo de este es favorecer análisis preeliminar de los datos, la interpretación de los resultados de este informe, es responsabilidad fundamentalmente del profesional referente a exámen ecográfico. Profesional quien finalmente evaluará clínicamente la información contenida en este informe. </p></div>';
 
-    let LINEA2 = the("utero.ginecologica").value;
-    let LINEA3 = the("endometrio.ginecologica").value;
-    let LINEA4 = the("anexo.izquierdo.ginecologica").value;
-    let LINEA6 = the("anexo.derecho.ginecologica").value;
-    let LINEA5 = the("ovario.izquierdo.ginecologica").value;
-    let LINEA7 = the("ovario.derecho.ginecologica").value;
-    let LINEA8 = the("douglas.ginecologica").value;
     let paciente = $( '#nombre-paciente').val();
     let idpaciente = $( '#id-paciente').val();
     let motivo = $( '#motivo-examen option:selected').text();
@@ -7666,6 +7659,33 @@ function informeGinecologico(){
     let edadmaterna = $( "select[name='edad_materna']").val();
     let diaciclo = the("diaciclo").value;
 
+    let utUbicacion1 = the("utUbicacion1").value;
+    let utUbicacion2 = the("utUbicacion2").value;
+    let cuerpoUterino = the("cuerpoUterino").value;
+    let uteroDim1 = the("uteroDim1").value;
+    let uteroDim2 = the("uteroDim2").value;
+    let uteroDim3 = the("uteroDim3").value;
+    let uteroDiu = the("uteroDiu").value;
+
+    let uteroObs = the("uteroObs").value;
+    let endometDesc1 = the("endometDesc1").value;
+    let endometDesc2 = the("endometDesc2").value;
+    let endometGrosor = the("endometGrosor").value;
+    let endometObs = the("endometObs").value;
+
+    let anexDerecho = the("anexDerecho").value;
+    let anexIzquierdo = the("anexIzquierdo").value;
+    let ovarDereMed1 = the("ovarDereMed1").value;
+    let ovarDereMed2 = the("ovarDereMed2").value;
+    let ovarDereMed3 = the("ovarDereMed3").value;
+
+    let ovarIzquier1 = the("ovarIzquier1").value;
+    let ovarIzquier2 = the("ovarIzquier2").value;
+    let ovarIzquier3 = the("ovarIzquier3").value;
+
+    let espacioRetro = the("espacioRetro").value;
+
+
     informe = informe.replace(/:PACIENTE/g, paciente);
     informe = informe.replace(/:IDPACIENTE/g, idpaciente);
     informe = informe.replace(/:MOTIVO/g, motivo);
@@ -7673,14 +7693,31 @@ function informeGinecologico(){
     informe = informe.replace(/:FUM/g, fur);
     informe = informe.replace(/:EDADMATERNA/g, edadmaterna);
     informe = informe.replace(/:FEXAMEN/g, fexamen);
-    informe = informe.replace(/:LINEA1/g, fexamen);
-    informe = informe.replace(/:LINEA2/g, LINEA2);
-    informe = informe.replace(/:LINEA3/g, LINEA3);
-    informe = informe.replace(/:LINEA4/g, LINEA4);
-    informe = informe.replace(/:LINEA5/g, LINEA5);
-    informe = informe.replace(/:LINEA6/g, LINEA6);
-    informe = informe.replace(/:LINEA7/g, LINEA7);
-    informe = informe.replace(/:LINEA8/g, LINEA8);
+
+    informe = informe.replace(/:utUbicacion1/g, utUbicacion1);
+    informe = informe.replace(/:utUbicacion2/g, utUbicacion2);
+    informe = informe.replace(/:cuerpoUterino/g, cuerpoUterino);
+    informe = informe.replace(/:uteroDim1/g, uteroDim1);
+    informe = informe.replace(/:uteroDim2/g, uteroDim2);
+    informe = informe.replace(/:uteroDim3/g, uteroDim3);
+    informe = informe.replace(/:uteroDiu/g, uteroDiu);
+    informe = informe.replace(/:uteroObs/g, uteroObs);
+
+    informe = informe.replace(/:endometDesc1/g, endometDesc1);
+    informe = informe.replace(/:endometDesc2/g, endometDesc2);
+    informe = informe.replace(/:endometGrosor/g, endometGrosor);
+    informe = informe.replace(/:endometObs/g, endometObs);
+    informe = informe.replace(/:anexDerecho/g, anexDerecho);
+    informe = informe.replace(/:anexIzquierdo/g, anexIzquierdo);
+    informe = informe.replace(/:ovarDereMed1/g, ovarDereMed1);
+    informe = informe.replace(/:ovarDereMed2/g, ovarDereMed2);
+
+    informe = informe.replace(/:ovarDereMed3/g, ovarDereMed3);
+    informe = informe.replace(/:ovarIzquier1/g, ovarIzquier1);
+    informe = informe.replace(/:ovarIzquier2/g, ovarIzquier2);
+    informe = informe.replace(/:ovarIzquier3/g, ovarIzquier3);
+    informe = informe.replace(/:espacioRetro/g, espacioRetro);
+
     informe = informe.replace(/:DIACICLO/g, diaciclo);
     informe = informe.replace(/:COMENTARIO/g, comentario);
     informe = informe.replace(/:DATEINFORME/g, dateInf);
