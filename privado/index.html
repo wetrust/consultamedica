@@ -1419,6 +1419,36 @@
     <div class="container pt-2 d-none" id="ecoGinecologica">
         <div class="row">
             <div class="col-9">
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-1">
+                                <label class="text-secondary align-middle mb-0">Nombre:</label>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group mb-0">
+                                    <input type="text" class="form-control bg-verde text-white" id="nombre.gine" readonly>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <label class="text-secondary align-middle mb-0">Apellido:</label>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group mb-0">
+                                    <input type="text" class="form-control bg-verde text-white" id="apellido.gine" readonly>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <label class="text-secondary align-middle mb-0">Edad Materna:</label>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group mb-0">
+                                    <input type="text" class="form-control bg-verde text-white" id="edad.gine" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="card mb-2">
                     <div class="card-body">
                         <h5 class="card-title">Útero</h5>
@@ -3695,19 +3725,19 @@
                         <label class="mb-0">Fono</label>
                     </div>
                     <div>
-                        <input class="form-control bg-verde text-white shadow" type="number" id="fono-paciente">
+                        <input class="form-control gris-claro" type="number" id="fono-paciente">
                     </div>
                     <div class="ml-3 mr-2 align-self-center">
                         <label class="mb-0">E-Mail</label>
                     </div>
                     <div class="flex-fill">
-                       <input class="form-control bg-verde text-white shadow" type="email"  id="email-paciente">
+                       <input class="form-control gris-claro" type="email"  id="email-paciente">
                     </div>
                     <div class="ml-3 mr-2 align-self-center">
                         <label class="mb-0">Edad materna</label>
                     </div>
                     <div>
-                        <select name="edad_materna" class="form-control gris-claro"></select>
+                        <select name="edad_materna" class="form-control bg-verde text-white shadow"></select>
                     </div>
                     <div class="mx-2 align-self-center">
                         <label class="mb-0">años</label>
@@ -3720,14 +3750,14 @@
                         <label><small>Motivo del exámen</small></label>
                     </div>
                     <div class="col-3">
-                        <select id="motivo-examen" class="form-control gris-claro"></select>
+                        <select id="motivo-examen" class="form-control bg-verde text-white shadow"></select>
                     </div>
                     <div class="col-1"></div>
                     <div class="col-3">
                         <label><small>Patología Obstétrica Relevante</small></label>
                     </div>
                     <div class="col-3">
-                        <select id="patologiaObstetricaUno" class="form-control gris-claro"></select>
+                        <select id="patologiaObstetricaUno" class="form-control bg-verde text-white shadow"></select>
                     </div>
                     <div class="col-2 mt-3">
                         <label><small>Lugar de procedencia</small></label>

@@ -93,6 +93,10 @@ function traerPaciente(){
         the("nombre.ecoprim").value = data.paciente_nombre
         the("apellido.ecoprim").value = data.paciente_apellido
 
+        the("nombre.gine").value = data.paciente_nombre
+        the("apellido.gine").value = data.paciente_apellido
+        the("edad.gine").value = data.paciente_edad
+
         the("nombre.crecim").value = data.paciente_nombre
         the("apellido.crecim").value = data.paciente_apellido
 
@@ -139,10 +143,8 @@ $(document).ready(function(){
 
         let nombre = the("nombre-paciente").value
         let rut = the("id-paciente").value
-        let telefono = the("email-paciente").value
-        let email = the("fono-paciente").value
 
-        if (String(nombre).length == 0 || String(rut).length == 0 || String(telefono).length == 0 || String(email).length == 0){
+        if (String(nombre).length == 0 || String(rut).length == 0){
             make.alert("Complete los datos requeridos", true);
             e.preventDefault()
             return false
@@ -179,6 +181,10 @@ $(document).ready(function(){
 
         the("nombre.ecoprim").value = the("nombre-paciente").value
         the("apellido.ecoprim").value = the("apellido-paciente").value
+
+        the("nombre.gine").value = the("nombre-paciente").value
+        the("apellido.gine").value = the("apellido-paciente").value
+        the("edad.gine").value = these("edad_materna")[0].value
 
         the("nombre.crecim").value = the("nombre-paciente").value
         the("apellido.crecim").value = the("apellido-paciente").value
