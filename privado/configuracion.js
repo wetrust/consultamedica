@@ -413,6 +413,7 @@ function loadDatabase() {
 
     $('#motivo-examen').empty();
     if (configuracion.MotivoExamen.length > 0) {
+        $('#motivo-examen').append('<option value="0"></option>');
         $.each(configuracion.MotivoExamen, function(i, item) {
             $('#motivo-examen').append('<option value="'+(i+1)+'">'+item+'</option>');
         });
@@ -436,6 +437,7 @@ function loadDatabase() {
 
     $('#patologiaObstetricaUno').empty();
     if (configuracion.PatologiaObstetrica.length > 0) {
+        $('#patologiaObstetricaUno').append('<option value="0"></option>');
         $.each(configuracion.PatologiaObstetrica, function(i, item) {
             $('#patologiaObstetricaUno').append('<option value="'+(i+1)+'">'+item+'</option>');
         });

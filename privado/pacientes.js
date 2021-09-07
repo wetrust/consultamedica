@@ -143,8 +143,12 @@ $(document).ready(function(){
 
         let nombre = the("nombre-paciente").value
         let rut = the("id-paciente").value
+        let edad = these("edad_materna")[0].value
 
-        if (String(nombre).length == 0 || String(rut).length == 0){
+        let motiv = the("motivo-examen").value
+        let pat = the("patologiaObstetricaUno").value
+
+        if (String(nombre).length == 0 || String(rut).length == 0 || edad == 0|| motiv == 0|| pat == 0){
             make.alert("Complete los datos requeridos", true);
             e.preventDefault()
             return false
@@ -158,7 +162,10 @@ $(document).ready(function(){
         configuracion.append("paciente_apellido", the("apellido-paciente").value)
         configuracion.append("paciente_rut", the("id-paciente").value)
         configuracion.append("paciente_email", the("email-paciente").value)
-        configuracion.append("paciente_telefono", (isNaN(the("fono-paciente").value) == true) ? 0 : the("fono-paciente").value)
+
+        let _numero = (isNaN(the("fono-paciente").value) == true || the("fono-paciente").value == "") ? "0" : the("fono-paciente").value
+
+        configuracion.append("paciente_telefono", _numero)
         configuracion.append("paciente_motivo", the("motivo-examen").value)
         configuracion.append("paciente_motivo_txt", the("motivo-examen").options[the("motivo-examen").selectedIndex].text)
         configuracion.append("paciente_patologia", the("patologiaObstetricaUno").value)
