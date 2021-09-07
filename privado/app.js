@@ -7677,8 +7677,8 @@ function informeGinecologico(){
     let espacioRetro = the("espacioRetro").value;
 
 
-    informe = informe.replace(/:MOTIVEXM/g, the("motivo-examen").value);
-    informe = informe.replace(/:PATGINEOBS/g, the("patologiaObstetricaUno").value);
+    informe = informe.replace(/:MOTIVEXM/g, the("motivo-examen").options[the("motivo-examen").selectedIndex].text)
+    informe = informe.replace(/:PATGINEOBS/g, the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text);
 
     informe = informe.replace(/:PACIENTE/g, paciente);
     informe = informe.replace(/:IDPACIENTE/g, idpaciente);
