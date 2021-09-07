@@ -158,7 +158,7 @@ $(document).ready(function(){
         configuracion.append("paciente_apellido", the("apellido-paciente").value)
         configuracion.append("paciente_rut", the("id-paciente").value)
         configuracion.append("paciente_email", the("email-paciente").value)
-        configuracion.append("paciente_telefono", the("fono-paciente").value)
+        configuracion.append("paciente_telefono", (isNaN(the("fono-paciente").value) == true) ? 0 : the("fono-paciente").value)
         configuracion.append("paciente_motivo", the("motivo-examen").value)
         configuracion.append("paciente_motivo_txt", the("motivo-examen").options[the("motivo-examen").selectedIndex].text)
         configuracion.append("paciente_patologia", the("patologiaObstetricaUno").value)
