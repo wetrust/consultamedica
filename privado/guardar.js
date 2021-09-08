@@ -813,7 +813,6 @@ export function loadEcoGineTabla(paciente_rut){
         data.forEach(function myFunction(value, index, array) {
 
             let tr = document.createElement("tr");
-            let data_id = document.createElement("td")
             let fecha = document.createElement("td")
             let diaciclo = document.createElement("td")
             let uteroDim1 = document.createElement("td")
@@ -827,7 +826,6 @@ export function loadEcoGineTabla(paciente_rut){
             _f = _f.split("-")
             fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
 
-            data_id.innerText = value.caso_id
             diaciclo.innerText = datos.diaciclo
 
             uteroDim1.innerText = datos.uteroDim1
@@ -845,7 +843,6 @@ export function loadEcoGineTabla(paciente_rut){
             eliminar.innerHTML = iconos["basura"]
             eliminar.onclick = eliminarEcoGine
 
-            tr.appendChild(data_id)
             tr.appendChild(fecha)
             tr.appendChild(diaciclo)
             tr.appendChild(uteroDim1)
