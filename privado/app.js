@@ -170,7 +170,6 @@ $( document ).ready(function() {
     //cargar edad materna
     let edad = document.getElementsByName("edad_materna")[0];
 
-
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 12") );
     opt.value = "&lt; 12"; 
@@ -721,7 +720,6 @@ $( document ).ready(function() {
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/1_ISUOG-Ultrasound-assessment-of-fetal-biometry-and-growth-Spanish.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
     });
-
 
     $("#pdfmorfonew").on("click", function(){
         $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://www.isuog.org/uploads/assets/uploaded/87c804a5-87af-4af8-96a700eb4061fb09.pdf"></iframe>');
@@ -1429,8 +1427,29 @@ $( document ).ready(function() {
 
         $("#"+modal.button).on("click", function(){
             let modal =  $(this).data("modal");
-            the("comentario.ginecologica").value = "";
-            resetDate();
+
+            the("utUbicacion1").value = ""
+            the("utUbicacion2").value = ""
+            the("cuerpoUterino").value = ""
+            the("uteroDim1").value = ""
+            the("uteroDim2").value = ""
+            the("uteroDim3").value = ""
+            the("uteroDiu").value = ""
+            the("endometDesc1").value = ""
+            the("endometDesc2").value = ""
+            the("endometGrosor").value = ""
+            the("endometObs").value = ""
+            the("anexDerecho").value = ""
+            the("anexIzquierdo").value = ""
+            the("ovarDereMed1").value = ""
+            the("ovarDereMed2").value = ""
+            the("ovarDereMed3").value = ""
+            the("ovarIzquier1").value = ""
+            the("ovarIzquier2").value = ""
+            the("ovarIzquier3").value = ""
+            the("espacioRetro").value = ""
+            the("comentario.ginecologica").value = ""
+
             $('#'+modal).modal("hide");
         });
     });
@@ -6400,7 +6419,7 @@ function egSaco(saco) {
     else {
         return a[saco];
     }
-};
+}
 
 function eglcn(lcn) {
 	'use strict';
@@ -6429,7 +6448,7 @@ function eglcn(lcn) {
     else{
         return 0;
     }
-};
+}
 
 function pctut(uterina) {
     'use strict';

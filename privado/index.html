@@ -152,7 +152,7 @@
                 </div>
                 <div class="col d-none">
                     <div class="form-group mb-0">
-                        <label class="text-white">capacidad) Día del ciclo mestrual</label>
+                        <label class="text-white">c) Día del ciclo mestrual</label>
                         <input type="text" class="form-control bg-verde text-white" id="diaciclo" readonly>
                     </div>
                 </div>
@@ -1637,13 +1637,51 @@
                             <textarea class="form-control" id="comentario.ginecologica" rows="5"> - Cuerpo uterino&#13; - Contenido endouterino&#13; - Exploración anexial bilateral&#13; - Espacio retrouterino</textarea></div>
                     </div>
                 </div>
+                <div class="card shadow my-4">
+                    <div class="card-body">
+                        <table class="table table-striped table-hover">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Día C.</th>
+                                <th scope="col">ut 1.</th>
+                                <th scope="col">ut 2</th>
+                                <th scope="col">ut 3</th>
+                                <th scope="col">Endomet</th>
+                                <th scope="col">Ver Exm</th>
+                                <th scope="col">Elim. Exm</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tablaGinecologica"></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div class="col-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="py-3 btn-group-vertical d-flex">
                             <button class="btn btn-default text-white bg-gris" id="btn.informe.ginecologica">Informe Ginecologico</button>
-                            <button class="btn btn-default text-white bg-gris mt-1" id="btn.erase.ginecologica">Borrar Datos</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <h6 class="mt-4">Guardar</h6>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="mt-4">Limpiar cajas</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-around py-2">
+                            <button class="btn btn-default text-white bg-gris px-4" id="btn.guardar.ginecologico" title="Guardar Exámen">
+                                <svg width="2em" height="2em"  viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM272 80v80H144V80h128zm122 352H54a6 6 0 0 1-6-6V86a6 6 0 0 1 6-6h42v104c0 13.255 10.745 24 24 24h176c13.255 0 24-10.745 24-24V83.882l78.243 78.243a6 6 0 0 1 1.757 4.243V426a6 6 0 0 1-6 6zM224 232c-48.523 0-88 39.477-88 88s39.477 88 88 88 88-39.477 88-88-39.477-88-88-88zm0 128c-22.056 0-40-17.944-40-40s17.944-40 40-40 40 17.944 40 40-17.944 40-40 40z" class=""></path></svg>
+                            </button>
+                            <button class="btn btn-default text-white bg-gris px-4" id="btn.erase.ginecologica" title="Eliminar exámen">
+                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                              </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -2475,6 +2513,9 @@
                         <div class="col-12">
                             <a href="pdf/BHCG.pdf" target="_blank" class="btn btn-otro mb-2 texto-pequeno">Bhcg y Desarrollo Embrionario</a>
                         </div>
+                        <div class="col-12">
+                            <a href="img/largo_embrionario.jpg" target="_blank" class="btn btn-otro mb-2 texto-pequeno">Longitud Céfalo-Nalga</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3229,8 +3270,7 @@
                     </div>
                     <div class="row mt-2 d-none">
                         <div class="col-12">
-                            <img src="img/Snoopy4.png" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
-                            <img src="img/snoopy.png" class="w-50 mt-2 d-block mx-auto" alt="snoopy">
+                            <img src="img/largo_embrionario.jpg" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
                         </div>
                     </div>
                 </div>
@@ -3646,8 +3686,7 @@
                     <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="ver.ecoDoppler.snoopy"> <label class="form-check-label" for="ver.ecoDoppler.snoopy">Importante</label> </div>
                     <div class="row mt-2 d-none">
                         <div class="col-12">
-                            <img src="img/Snoopy4.png" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
-                            <img src="img/snoopy.png" class="w-50 mt-2 d-block mx-auto" alt="snoopy">
+                            <img src="img/doppler_materno_fetal.jpg" class="w-75 mt-2 d-block mx-auto" alt="snoopy">
                         </div>
                     </div>
                 </div>

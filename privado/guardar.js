@@ -223,6 +223,76 @@ $(document).ready(function() {
         });
     })
 
+    $("#btn\\.guardar\\.ginecologico").on("click", function(){
+        let configuracion = new FormData()
+
+        let profesional = "Rudecindo Lagos"
+        let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
+        let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
+
+        let profRef = the("profref").options[the("profref").selectedIndex].text
+        let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
+
+        let data = {
+            'Nombre profesional referente': profRef,
+            'Fono profesional referente': the("profreftel").value,
+            'Centro Ecografico': centroecograf,
+            'edadm' : document.getElementsByName("edad_materna")[0].value,
+            'profesional' : profesional,
+            'motivo' : motivo,
+            'patologia' : patologia,
+            'utUbicacion1': the("utUbicacion1").value,
+            'utUbicacion2': the("utUbicacion2").value,
+            'cuerpoUterino': the("cuerpoUterino").value,
+            'uteroDim1': the("uteroDim1").value,
+            'uteroDim2': the("uteroDim2").value,
+            'uteroDim3': the("uteroDim3").value,
+            'uteroDiu': the("uteroDiu").value,
+            'endometDesc1': the("endometDesc1").value,
+            'endometDesc2': the("endometDesc2").value,
+            'endometGrosor': the("endometGrosor").value,
+            'endometObs': the("endometObs").value,
+            'anexDerecho': the("anexDerecho").value,
+            'anexIzquierdo': the("anexIzquierdo").value,
+            'ovarDereMed1': the("ovarDereMed1").value,
+            'ovarDereMed2': the("ovarDereMed2").value,
+            'ovarDereMed3': the("ovarDereMed3").value,
+            'ovarIzquier1': the("ovarIzquier1").value,
+            'ovarIzquier2': the("ovarIzquier2").value,
+            'ovarIzquier3': the("ovarIzquier3").value,
+            'espacioRetro': the("espacioRetro").value,
+            'comentario': the("comentario.ginecologica").value,
+            'fecha' : the("fee").value,
+            'fur' : the("fum").value,
+            'diaciclo' : the("diaciclo").value
+        }
+
+        if (basicDataValid() == false){
+            return
+        }
+
+        configuracion.append("rut", the("id-paciente").value)
+        configuracion.append("nombre", the("nombre-paciente").value)
+        let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
+        configuracion.append("ciudad", ciudad)
+        configuracion.append("eg", the("semanas").value)
+        let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
+        configuracion.append("lugar", lugar)
+        configuracion.append("tipo", "Ginecologico")
+
+        configuracion.append("correo", "drlagosbarcelona@gmail.com")
+        configuracion.append("data", JSON.stringify(data))
+
+        fetch('https://api.crecimientofetal.cl/api/saveData', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
+        .then(data => {
+            if (data.success == true ){
+                the("notificacionText").innerText = "Guardado"
+                $('#notificacion').toast('show')
+                loadEcoGineTabla(the("id-paciente").value)
+            }
+        }).catch(function(error) { alert("error") });
+    })
+
     $("input").on("keyup",function( e ) {
         var key_enter = ["uteroDim1", "uteroDim2", "uteroDim3", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3"];
 
@@ -729,6 +799,116 @@ function eliminarEcoDoppler(){
             the("notificacionText").innerText = "Exámen Eliminado"
             $('#notificacion').toast('show')
             loadEcoDopplerTabla(the("id-paciente").value)
+        })
+    });
+}
+
+export function loadEcoGineTabla(paciente_rut){
+
+    fetch('https://api.crecimientofetal.cl/config/examenGinecologico/'+paciente_rut).then(response => response.json())
+    .then(data => {
+
+        the("tablaGinecologica").innerHTML = "";
+
+        data.forEach(function myFunction(value, index, array) {
+
+            let tr = document.createElement("tr");
+            let data_id = document.createElement("td")
+            let fecha = document.createElement("td")
+            let diaciclo = document.createElement("td")
+            let uteroDim1 = document.createElement("td")
+            let uteroDim2 = document.createElement("td")
+            let uteroDim3 = document.createElement("td")
+            let endometGrosor = document.createElement("td")
+
+            let datos = JSON.parse(value.caso_data)
+            let _f = datos.fecha
+
+            _f = _f.split("-")
+            fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
+
+            data_id.innerText = value.caso_id
+            diaciclo.innerText = datos.diaciclo
+
+            uteroDim1.innerText = datos.uteroDim1
+            uteroDim2.innerText = datos.uteroDim2
+            uteroDim3.innerText = datos.uteroDim3
+            endometGrosor.innerText = datos.endometGrosor
+
+            let ver = document.createElement("td")
+            ver.dataset.id = value.caso_id
+            ver.innerHTML = iconos["lupa"]
+            ver.onclick = traerEcoGine
+
+            let eliminar = document.createElement("td")
+            eliminar.dataset.id = value.caso_id
+            eliminar.innerHTML = iconos["basura"]
+            eliminar.onclick = eliminarEcoGine
+
+            tr.appendChild(data_id)
+            tr.appendChild(fecha)
+            tr.appendChild(diaciclo)
+            tr.appendChild(uteroDim1)
+            tr.appendChild(uteroDim2)
+            tr.appendChild(uteroDim3)
+            tr.appendChild(endometGrosor)
+            tr.appendChild(ver)
+            tr.appendChild(eliminar)
+
+            the("tablaGinecologica").appendChild(tr);
+        });
+    })
+}
+
+function traerEcoGine(){
+    let id = this.dataset.id
+
+    fetch('https://api.crecimientofetal.cl/config/elGinecologico/'+id).then(response => response.json())
+    .then(data => {
+
+        let datos = JSON.parse(data.caso_data)
+
+        document.getElementsByName("edad_materna")[0].value = datos.edadm
+        the("fee").value = datos.fecha
+        the("fum").value = datos.fur
+        $("#fee").trigger("change")
+
+        the("utUbicacion1").value = datos.utUbicacion1
+        the("utUbicacion2").value = datos.utUbicacion2
+        the("cuerpoUterino").value = datos.cuerpoUterino
+        the("uteroDim1").value = datos.uteroDim1
+        the("uteroDim2").value = datos.uteroDim2
+        the("uteroDim3").value = datos.uteroDim3
+        the("uteroDiu").value = datos.uteroDiu
+        the("endometDesc1").value = datos.endometDesc1
+        the("endometDesc2").value = datos.endometDesc2
+        the("endometGrosor").value = datos.endometGrosor
+        the("endometObs").value = datos.endometObs
+        the("anexDerecho").value = datos.anexDerecho
+        the("anexIzquierdo").value = datos.anexIzquierdo
+        the("ovarDereMed1").value = datos.ovarDereMed1
+        the("ovarDereMed2").value = datos.ovarDereMed2
+        the("ovarDereMed3").value = datos.ovarDereMed3
+        the("ovarIzquier1").value = datos.ovarIzquier1
+        the("ovarIzquier2").value = datos.ovarIzquier2
+        the("ovarIzquier3").value = datos.ovarIzquier3
+        the("espacioRetro").value = datos.espacioRetro
+        the("comentario.ginecologica").value = datos.comentario
+        the("diaciclo").value = datos.diaciclo
+
+        the("notificacionText").innerText = "Exámen Cargado"
+        $('#notificacion').toast('show')
+    })
+}
+
+function eliminarEcoGine(){
+    make.deleteModal("la ecografía", this.dataset.id, function(){
+        $("#"+this.dataset.modal).modal("hide")
+        fetch('https://api.crecimientofetal.cl/config/dexamenGinecologico/'+this.dataset.delete).then(response => response.json())
+        .then(data => {
+            the("notificacionText").innerText = "Exámen Eliminado"
+            $('#notificacion').toast('show')
+            loadEcoGineTabla(the("id-paciente").value)
         })
     });
 }

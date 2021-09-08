@@ -1,5 +1,5 @@
 import { make, the, these, inputDate } from './wetrust.js'
-import { loadEcoPrecozTabla, loadEcoCrecimientoTabla, loadEcoDopplerTabla } from './guardar.js'
+import { loadEcoPrecozTabla, loadEcoCrecimientoTabla, loadEcoDopplerTabla, loadEcoGineTabla } from './guardar.js'
 import { fechas } from './functionesM.js'
 
 var iconos = {
@@ -133,6 +133,7 @@ function traerPaciente(){
         loadEcoPrecozTabla(data.paciente_rut)
         loadEcoCrecimientoTabla(data.paciente_rut)
         loadEcoDopplerTabla(data.paciente_rut)
+        loadEcoGineTabla(data.paciente_rut)
     })
 }
 
