@@ -192,7 +192,7 @@ $(document).ready(function(){
         }
 
         if (pat == 0){
-            make.alert("Seleccione patología", true);
+            make.alert("Seleccione patología relevante", true);
             the("patologiaObstetricaUno").classList.add("is-invalid");
             e.preventDefault()
             return false
