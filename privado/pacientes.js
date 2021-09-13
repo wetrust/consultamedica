@@ -143,14 +143,57 @@ $(document).ready(function(){
     the("guardarElPaciente").onclick = function(e){
 
         let nombre = the("nombre-paciente").value
+        let apellido = the("apellido-paciente").value
         let rut = the("id-paciente").value
         let edad = these("edad_materna")[0].value
-
         let motiv = the("motivo-examen").value
         let pat = the("patologiaObstetricaUno").value
 
-        if (String(nombre).length == 0 || String(rut).length == 0 || edad == 0|| motiv == 0|| pat == 0){
-            make.alert("Complete los datos requeridos", true);
+        the("nombre-paciente").classList.remove("is-invalid");
+        the("apellido-paciente").classList.remove("is-invalid");
+        the("id-paciente").classList.remove("is-invalid");
+        these("edad_materna")[0].classList.remove("is-invalid");
+        the("motivo-examen").classList.remove("is-invalid");
+        the("patologiaObstetricaUno").classList.remove("is-invalid");
+
+        if (String(nombre).length == 0){
+            make.alert("Falta Nombre de paciente", true);
+            the("nombre-paciente").classList.add("is-invalid");
+            e.preventDefault()
+            return false
+        }
+
+        if (String(apellido).length == 0){
+            make.alert("Falta Apellido de paciente", true);
+            the("apellido-paciente").classList.add("is-invalid");
+            e.preventDefault()
+            return false
+        }
+
+        if (String(rut).length == 0){
+            make.alert("Falta RUT de paciente", true);
+            the("id-paciente").classList.add("is-invalid");
+            e.preventDefault()
+            return false
+        }
+
+        if (edad == 0){
+            make.alert("Seleccione edad", true);
+            these("edad_materna")[0].classList.add("is-invalid");
+            e.preventDefault()
+            return false
+        }
+
+        if (motiv == 0){
+            make.alert("Seleccione motivo", true);
+            the("motivo-examen").classList.add("is-invalid");
+            e.preventDefault()
+            return false
+        }
+
+        if (pat == 0){
+            make.alert("Seleccione patología", true);
+            the("patologiaObstetricaUno").classList.add("is-invalid");
             e.preventDefault()
             return false
         }
