@@ -2444,10 +2444,57 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="form-group" id="exploracion-douglas-informe" style="display:none;">
+                                    <div class="col" style="display:none;">
+                                        <div class="form-group" id="exploracion-douglas-informe" >
                                             <p><strong>Comentarios douglas</strong> </p>
                                             <textarea id="comentarios-douglas-informe" rows="3" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center">
+                                        <div class="form-group form-check mb-0">
+                                            <input type="checkbox" class="form-check-input" id="art.ut.prim.new">
+                                            <label class="form-check-label" for="art.ut.prim.new">Opcional Doppler arterias uterinas</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row d-none pt-2" id="art.ut.div.prim.new">
+                                    <div class="col form-group">
+                                        <label>IP. Uterina derecha</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="ut.der.primtrim">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text" id="ut.der.prom.primtrim"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col form-group">
+                                        <label>IP. Uterina izquierda</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="ut.izq.primtrim">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text" id="ut.izq.prom.primtrim"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col form-group">
+                                        <label>IP. Uterinas promedio</label>
+                                        <div class="input-group"> 
+                                            <input type="text" class="form-control bg-secondary text-white" id="ut.prom.primtrim" disabled="">
+                                            <input type="hidden" id="ut.rgo.primtrim">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text" id="ut.percentil.primtrim"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficUtPrim">Ver Gráficas</button></div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-3">
+                                        <label class="text-secondary">Riesgo de Preeclampsia</label>
+                                        <div class="input-group">
+                                            <!--saco-gestacional-mm saco -->
+                                            <input id="rg.pre" type="text" class="form-control" >
                                         </div>
                                     </div>
                                 </div>
