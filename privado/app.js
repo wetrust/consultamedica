@@ -1117,43 +1117,28 @@ $( document ).ready(function() {
 
     the("verImagenGine").onclick = function(){
         the("volver").href = "#ecoGinecologica"
-
-        let rut = the("id-paciente").value
-        rut = rut.split('.').join("");
+        loadImagenesDICOM();
         
-        let fExamen = the("fee").value
-        fExamen = fExamen.split("-")
-        the("listDicom").innerHTML = ""
-
-        fetch('https://servidor.crecimientofetal.cl/configuracion/obtenerexamenes/'+rut+'/'+fExamen[0]+fExamen[1]+fExamen[2]).then(response => response.json())
-        .then(data => {
-            the("listDicom").innerHTML = ""
-
-            if (data.exist == true){
-                let rut = the("id-paciente").value
-                rut = rut.split('.').join("");
-                fetch('https://servidor.crecimientofetal.cl/dicom/getimages/'+rut+'/' +data.StudyDate+'/'+ data.StudyInsta).then(response => response.json())
-                .then(data => {
-                    if (data.exist == true){
-                        data.JPGFiles.forEach(function myFunction(value, index, array) {
-                            let div = document.createElement("div")
-                            div.classList.add("col-12", "col-lg-4", "mb-3")
-
-                            let imagen = document.createElement("img")
-                            imagen.src = "https://servidor.crecimientofetal.cl/data/" + value[1]
-                            imagen.classList.add("img-fluid", "rounded", "shadow");
-
-                            div.appendChild(imagen)
-
-                            the("listDicom").appendChild(div)
-                        });
-                    }
-                })
-            }
-        }).catch(function(error) {
-
-        });
     }
+
+    the("verImagenPrimTrim").onclick = function(){
+        the("volver").href = "#ecoObsPrimTrim"
+        loadImagenesDICOM();
+        
+    }
+
+    the("verImagenSegTrim").onclick = function(){
+        the("volver").href = "#ecoObsSegTrim"
+        loadImagenesDICOM();
+        
+    }
+
+    the("verImagenDoppler").onclick = function(){
+        the("volver").href = "#ecoDoppler"
+        loadImagenesDICOM();
+        
+    }
+    
 });
 
 // Controlador de input clones
@@ -5510,7 +5495,7 @@ $(window).on('hashchange', function(){
         }
 
         //especial
-        if (hash == "#ecoObsPrimTrim" || hash == "#ecoObsSegTrim" || hash == "#inicio" || hash == "#ecoGinecologica"){
+        if (hash == "#ecoObsPrimTrim" || hash == "#ecoObsSegTrim" || hash == "#inicio" || hash == "#ecoGinecologica" || hash == "#ecoDoppler"){
             $("#volver").attr("href", "#inicio");
         }
 
@@ -8992,4 +8977,43 @@ function modalEcoSegTrimInforme(){
     } else {
         imprInforme(crearInformeEcoSegTrim2());
     }
+}
+
+
+function loadImagenesDICOM(){
+    let rut = the("id-paciente").value
+    rut = rut.split('.').join("");
+    
+    let fExamen = the("fee").value
+    fExamen = fExamen.split("-")
+    the("listDicom").innerHTML = ""
+
+    fetch('https://servidor.crecimientofetal.cl/configuracion/obtenerexamenes/'+rut+'/'+fExamen[0]+fExamen[1]+fExamen[2]).then(response => response.json())
+    .then(data => {
+        the("listDicom").innerHTML = ""
+
+        if (data.exist == true){
+            let rut = the("id-paciente").value
+            rut = rut.split('.').join("");
+            fetch('https://servidor.crecimientofetal.cl/dicom/getimages/'+rut+'/' +data.StudyDate+'/'+ data.StudyInsta).then(response => response.json())
+            .then(data => {
+                if (data.exist == true){
+                    data.JPGFiles.forEach(function myFunction(value, index, array) {
+                        let div = document.createElement("div")
+                        div.classList.add("col-12", "col-lg-4", "mb-3")
+
+                        let imagen = document.createElement("img")
+                        imagen.src = "https://servidor.crecimientofetal.cl/data/" + value[1]
+                        imagen.classList.add("img-fluid", "rounded", "shadow");
+
+                        div.appendChild(imagen)
+
+                        the("listDicom").appendChild(div)
+                    });
+                }
+            })
+        }
+    }).catch(function(error) {
+
+    });
 }
