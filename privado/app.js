@@ -1194,30 +1194,20 @@ $( document ).ready(function() {
             return false;
         }
 
-        let informeString = '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Imágenes Ecográficas</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"><table class="table table-borderless"><tbody><tr><td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr><td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td></tr></tbody></table><p class="mb-0"><strong>FUM: </strong>:FUR <br /><strong>Ege: </strong>:EG semanas <br /><strong>FPP: </strong>:FPP <br /></p></div><div class="row"> :IMAGENES </div>'
+        let informeString = '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Imágenes de Exámen Ecográfico</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"><table class="table table-borderless"><tbody><tr><td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr><td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Ege: </strong>:EG semanas</td></tr></tbody></table></div><div class="row"> :IMAGENES </div>'
  
         var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
 
         let fexamen = new Date(Date.parse(the("fee").value));
         fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
         var idpaciente = the("id-paciente").value;
-        var motivo = $( '#motivo-examen option:selected').text();
-
-        let fur = new Date(Date.parse(the("fum").value));
-        fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
 
         let eg = the("semanas").value + "."+ the("dias").value;
-
-        let fpp = new Date(Date.parse(the("fpp").value));
-        fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
 
         informeString = informeString.replace(":PACIENTE", paciente);
         informeString = informeString.replace(":FEXAMEN", fexamen);
         informeString = informeString.replace(":IDPACIENTE", idpaciente);
-        informeString = informeString.replace(":MOTIVO", motivo);
-        informeString = informeString.replace(":FUR", fur);
         informeString = informeString.replace(":EG", eg);
-        informeString = informeString.replace(":FPP", fpp);
 
 
         let imgString = ''
