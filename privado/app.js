@@ -687,33 +687,33 @@ $( document ).ready(function() {
         }
     });
 
-    $("#ut.der.primtrim").on("keyup",function(){
+    $("#ut\\.der\\.primtrim").on("keyup",function(){
         let ut = pctut(this.value);
-        $("#ut.der.prom.primtrim").html(ut.pct);
+        $("#ut\\.der\\.prom\\.primtrim").html(ut.pct);
 
-        let aui = parseFloat($("#ut.izq.primtrim").val());
+        let aui = parseFloat($("#ut\\.izq\\.primtrim").val());
         let aud = parseFloat(this.value);
-        let utprom = ((aui + aud) / 2);
-        the("ut.prom.primtri").value = utprom.toFixed(2);
-        $("#ut.prom.primtri").trigger("change");
+        let utprom = parseFloat((aui + aud) / 2);
+        the("ut.prom.primtrim").value = utprom.toFixed(2);
+        $("#ut\\.prom\\.primtri").trigger("change");
     });
 
-    $("#ut.izq.primtrim").on("keyup",function(){
+    $("#ut\\.izq\\.primtrim").on("keyup",function(){
         let ut = pctut(this.value);
-        $("#ut.izq.prom.primtrim").html(ut.pct);
+        $("#ut\\.izq\\.prom\\.primtrim").html(ut.pct);
 
         let aui = parseFloat(this.value);
-        let aud = parseFloat($("#ut.der.primtrim").val());
-        let utprom = ((aui + aud) / 2);
-        the("ut.prom.primtri").value = utprom.toFixed(2);
-        $("#ut.prom.primtri").trigger("change");
+        let aud = parseFloat($("#ut\\.der\\.primtrim").val());
+        let utprom = parseFloat((aui + aud) / 2);
+        the("ut.prom.primtrim").value = utprom.toFixed(2);
+        $("#ut\\.prom\\.primtri").trigger("change");
     });
 
-    $("#ut.prom.primtri").on("change",function(){
+    $("#ut\\.prom\\.primtrim").on("change",function(){
         if (Number.isInteger(this.value)){
             let ut = pctut(this.value);
-            $("#ut.percentil.primtrim").html(ut.pct);
-            $("#ut.rgo.primtrim").val(ut.rango.min + " - " + ut.rango.max);
+            $("#ut\\.percentil\\.primtrim").html(ut.pct);
+            $("#ut\\.rgo\\.primtrim").val(ut.rango.min + " - " + ut.rango.max);
         }
     });
 
