@@ -9131,8 +9131,21 @@ function loadImagenesDICOM(){
                         imagen.src = "https://servidor.crecimientofetal.cl/data/" + value[1]
                         imagen.classList.add("img-fluid", "rounded", "shadow");
 
-                        div.appendChild(imagen)
+                        imagen.onclick = function(){
+                            let _modal = modal();
 
+                            document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+                            the(_modal.titulo).innerHTML = "IMAGEN";
+                            the(_modal.titulo).classList.add("mx-auto");
+
+                            let _contenido = '<img class="img-fluid" src="'+this.src+'">'
+
+                            the(_modal.contenido).innerHTML = _contenido;
+
+                            $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+                        }
+
+                        div.appendChild(imagen)
                         the("listDicom").appendChild(div)
                     });
                 }
