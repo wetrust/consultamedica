@@ -1219,8 +1219,99 @@ $( document ).ready(function() {
         informeString = informeString.replace(":IMAGENES", imgString);
 
         imprInforme(informeString)
+    }
 
-}
+    the("enviarImagenes").onclick = function(){
+        var fotos = [];
+
+        the("listDicom").childNodes.forEach(function myFunction(value, index, array) {
+            if (value.children[1].children[0].checked == true){
+                fotos[fotos.length] = value.children[0].src
+            }
+        })
+
+        if (fotos.length == 0){
+            make.alert("Seleccione Imágenes")
+            return false;
+        }
+
+        let email = makeModalEmail();
+
+        $('#'+email.button).on("click", function(){
+
+            var fotos = [];
+
+            the("listDicom").childNodes.forEach(function myFunction(value, index, array) {
+                if (value.children[1].children[0].checked == true){
+                    fotos[fotos.length] = value.children[0].src
+                }
+            })
+    
+            let informeString = '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Imágenes de Exámen Ecográfico</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"><table class="table table-borderless"><tbody><tr><td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr><td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Ege: </strong>:EG semanas</td></tr></tbody></table></div><table class="table table-borderless"><tbody> :IMAGENES </tbody></table>'
+            var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
+    
+            let fexamen = new Date(Date.parse(the("fee").value));
+            fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
+            var idpaciente = the("id-paciente").value;
+    
+            let eg = the("semanas").value + "."+ the("dias").value;
+    
+            informeString = informeString.replace(":PACIENTE", paciente);
+            informeString = informeString.replace(":FEXAMEN", fexamen);
+            informeString = informeString.replace(":IDPACIENTE", idpaciente);
+            informeString = informeString.replace(":EG", eg);
+    
+    
+            let imgString = ''
+            let columnas = 0;
+
+            for (let m = 0; m < fotos.length; m++){
+                if (columnas == 0){
+                    imgString += '<tr>'
+                }
+                imgString += '<td style="margin-right: 15px;"><img src="'+fotos[m]+'" class="img-fluid rounded shadow" /></td>'
+                if (columnas == 1){
+                    imgString += "</tr>"
+                }
+                if (columnas == 0){
+                    columnas++;
+                }else if (columnas == 1){
+                    columnas = 0;
+                }
+            }
+
+            if (columnas == 1){
+                imgString += "</tr>"
+                columnas = 0;
+            }
+    
+            informeString = informeString.replace(":IMAGENES", imgString);
+
+            var data = new FormData();
+            //data.append("licencia" , the("licencia").value);
+            data.append("licencia" , "medicina");
+            data.append("informe" , 2);
+            data.append("data" , informeString);
+            var membrete = "<p>"+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
+            data.append("header" , membrete);
+            data = verifyEmailSend(this,data);
+            if (data.get("email") == null){return false}
+
+            //determinar si el email es seleccionado o escrito
+            fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+                //console.log(response);
+                //response.blob().then((successMessage) => {
+                //    var link = document.createElement('a');
+                //    link.href = window.URL.createObjectURL(successMessage);
+                //    link.download = "document.pdf";
+                //    link.click();
+                //});
+            }).catch(function(error) {
+            });
+
+            $('#'+this.dataset.modal).modal('hide');
+        });
+    }
     
 });
 
