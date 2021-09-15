@@ -1123,7 +1123,7 @@ $( document ).ready(function() {
         
         let fExamen = the("fee").value
         fExamen = fExamen.split("-")
-        console.log(fExamen)
+        the("listDicom").innerHTML = ""
 
         fetch('https://servidor.crecimientofetal.cl/configuracion/obtenerexamenes/'+rut+'/'+fExamen[0]+fExamen[1]+fExamen[2]).then(response => response.json())
         .then(data => {
