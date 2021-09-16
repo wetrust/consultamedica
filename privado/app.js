@@ -1308,6 +1308,7 @@ $( document ).ready(function() {
                 //    link.click();
                 //});
             }).catch(function(error) {
+                make.alert("Enviado")
             });
 
             $('#'+this.dataset.modal).modal('hide');
