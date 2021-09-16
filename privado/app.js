@@ -1269,7 +1269,7 @@ $( document ).ready(function() {
                 if (columnas == 0){
                     imgString += '<tr>'
                 }
-                imgString += '<td style="margin-right: 15px;"><img src="'+fotos[m]+'" class="img-fluid rounded shadow" /></td>'
+                imgString += '<td style="width:10px;"></td><td style="width:300px;"><img src="'+fotos[m]+'" class="img-fluid rounded shadow" /></td><td style="width:10px;"></td>'
                 if (columnas == 1){
                     imgString += "</tr>"
                 }
@@ -1299,6 +1299,7 @@ $( document ).ready(function() {
 
             //determinar si el email es seleccionado o escrito
             fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+                make.alert("Enviado")
                 //console.log(response);
                 //response.blob().then((successMessage) => {
                 //    var link = document.createElement('a');
