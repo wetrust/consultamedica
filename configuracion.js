@@ -179,7 +179,9 @@ function guardar(){
 
             loadTabla(config)
             ordenarAlfabeto()
-            loadDatabase()
+            //loadDatabase()
+            //funcion mutante, permite cargar solo el que se guardó
+            loadOnly(name)
         }
     }
 }
@@ -508,12 +510,12 @@ $(document).ready(function() {
         the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
         the(modal.titulo).classList.add("mx-auto");
         the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
-    
+
         let _contenido = '<p>La aplicación revisará en el servidor si hay configuraciones asociadas al correo escrito, y si encuentra configuraciones las cargará a esta computadora</p><h6>¿Continuar?</h6>'
-    
+
         the(modal.contenido).innerHTML = _contenido;
         the(modal.id).children[0].classList.remove("modal-lg");
-    
+
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
         $('#'+modal.button).on("click", function(){
@@ -562,9 +564,9 @@ $(document).ready(function() {
         the(modal.titulo).innerHTML = "Guardar datos en servidor";
         the(modal.titulo).classList.add("mx-auto");
         the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
-    
+
         let _contenido = '<p>La aplicación guardará en el servidor las configuraciones actuales y quedaran asociadas al correo escrito, si ya guardó anteriormente información, los datos serán sobrescritos</p><h6>¿Continuar?</h6>'
-    
+
         the(modal.contenido).innerHTML = _contenido;
         the(modal.id).children[0].classList.remove("modal-lg");
     
@@ -595,7 +597,6 @@ $(document).ready(function() {
                 alert("error")
             });
         })
-
     })
 
     if (storageAvailable('localStorage')) {
@@ -701,7 +702,6 @@ function validateEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }
 
-
 function ordenarAlfabeto(){
     if (window.localStorage) {
         if (localStorage.configuracion != null) {
@@ -720,4 +720,94 @@ function ordenarAlfabeto(){
 
         }
     }
+}
+
+
+function loadOnly(name){
+ 
+    var configuracion = JSON.parse(localStorage["configuracion"]);
+
+    if (name == "profesional"){
+        $('#ecografista').empty();
+        if (configuracion.profesional.length > 0) {
+            $.each(configuracion.profesional, function(i, item) {
+                $('#ecografista').append('<option value="'+(i+1)+'">'+item+'</option>');
+            });
+        }
+    }
+
+    if (name == "MotivoExamen"){
+        $('#motivo-examen').empty();
+        if (configuracion.MotivoExamen.length > 0) {
+            $.each(configuracion.MotivoExamen, function(i, item) {
+                $('#motivo-examen').append('<option value="'+(i+1)+'">'+item+'</option>');
+            });
+        } 
+    }
+
+
+    if (name == "lcontrol"){
+        $('#lcontrolpaciente').empty();
+        if (configuracion.lcontrol.length > 0) {
+            $.each(configuracion.lcontrol, function(i, item) {
+                $('#lcontrolpaciente').append('<option value="'+(i+1)+'">'+item+'</option>');
+            });
+        } 
+    }
+
+
+    if (name == "nacionalidad"){
+        $('#nacionalidad').empty();
+        $('#ciudadpaciente').empty();
+        if (configuracion.nacionalidad.length > 0) {
+            $.each(configuracion.nacionalidad, function(i, item) {
+                $('#nacionalidad').append('<option value="'+(i+1)+'">'+item+'</option>');
+                $('#ciudadpaciente').append('<option value="'+(i+1)+'">'+item+'</option>');
+            });
+        }
+    }
+
+
+    if (name == "PatologiaObstetrica"){
+        $('#patologiaObstetricaUno').empty();
+        if (configuracion.PatologiaObstetrica.length > 0) {
+            $.each(configuracion.PatologiaObstetrica, function(i, item) {
+                $('#patologiaObstetricaUno').append('<option value="'+(i+1)+'">'+item+'</option>');
+            });
+        }  
+    }
+
+
+    if (name == "correos"){
+        //profesional referente
+        $('#profref').empty();
+        if (configuracion.correos.length > 0) {
+            $.each(configuracion.correos, function(i, item) {
+                $('#profref').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
+            });
+        }
+
+        $('#profref').off("change", loadTelefono)
+        $('#profref').on("change", loadTelefono)
+        $('#profref').trigger("change")
+    }
+
+
+    if (name == "membrete"){
+        //membrete
+        $("#"+config.config[0].input[0].id).val(configuracion.membrete);
+        $("#correo\\.configuracion").val(configuracion.email);
+    }
+
+
+    if (name == "centro"){
+        //centro ecográfico
+        $('#centroecograf').empty();
+        if (configuracion.centro.length > 0) {
+            $.each(configuracion.centro, function(i, item) {
+                $('#centroecograf').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
+            });
+        }
+    }
+
 }

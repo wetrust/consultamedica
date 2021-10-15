@@ -120,7 +120,7 @@ $( document ).ready(function() {
     opt.appendChild( document.createTextNode("") );
     opt.value = ""; 
     dias.appendChild(opt); 
-    
+
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("(+) inicial") );
     opt.value = "(+) inicial"; 
