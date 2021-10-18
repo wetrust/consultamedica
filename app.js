@@ -65,6 +65,7 @@ $( document ).ready(function() {
         opt.value = i; 
         semanas.appendChild(opt); 
     }
+
     the("semanas").value = 10
 
     for (var i = 25; i < 43; i++) {
@@ -159,6 +160,7 @@ $( document ).ready(function() {
         opt.value = i; 
         dias.appendChild(opt); 
     }
+
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("> 170") );
     opt.value = "&gt; 170"; 
@@ -401,6 +403,8 @@ $( document ).ready(function() {
 
         if (+this.value > 0){
             the("embrion").value = "con act. cardiaca (+)"
+            $("#embrion").trigger("change");
+
             $("#mensajeSaco").hide();
             $("#sacoFlecha").hide();
             $("#sacoModulo").hide();
@@ -458,8 +462,15 @@ $( document ).ready(function() {
         let cardio = ["con act. cardiaca (+)"];
         let embrion = the("embrion").value;
 
+        if (this.id = "embrion"){
+            the("embrion.clon").value = the("embrion").value
+        }else{
+            the("embrion").value = the("embrion.clon").value
+        }
+
         if (optiones.includes(embrion)){
             the("lcn.clon").parentElement.parentElement.parentElement.classList.add("d-none");
+            the("lcn").value = ""
             $("#lcn").trigger("change");
         }
         else{
@@ -471,6 +482,11 @@ $( document ).ready(function() {
             the("fcf-primer-trim-dos").classList.remove("d-none");
             the("fcf-prim").value = 150;
             the("fcf-prim-dos").value = 150;
+        }else{
+            the("fcf-primer-trim").classList.add("d-none");
+            the("fcf-primer-trim-dos").classList.add("d-none");
+            the("fcf-prim").value = "";
+            the("fcf-prim-dos").value = "";  
         }
     });
 
