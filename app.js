@@ -5790,7 +5790,7 @@ function infPrecozClon(){
         let eg = the("semanasAjustada").value + "."+ the("diasAjustada").value + " semanas.";
         comentario += "<br>Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>";
     }
-        
+
     if (the("alternativa.once").checked == true){
         comentario += "<br><br>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
     }
