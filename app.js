@@ -5626,7 +5626,7 @@ function infPrecoz(){
         let fpp = new Date(Date.parse(the("fppAjustada").value));
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
         let eg = the("semanasAjustada").value + "."+ the("diasAjustada").value + " semanas.";
-        comentario += "<br>Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>";
+        comentario += "<br><strong>Para edad gestacional calculada, corresponde a "+eg+", por tanto:</strong><br><strong>- FUR operacional ecográfica  =  "+ fur +"</strong><br><strong>- Fecha esperada de parto  =  " + fpp + "</strong><br>";
     }
 
     if (the("alternativa.once").checked == true){
@@ -5788,7 +5788,7 @@ function infPrecozClon(){
         let fpp = new Date(Date.parse(the("fppAjustada").value));
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
         let eg = the("semanasAjustada").value + "."+ the("diasAjustada").value + " semanas.";
-        comentario += "<br>Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>";
+        comentario += "<br><strong>Para edad gestacional calculada, corresponde a "+eg+", por tanto:</strong><br><strong>- FUR operacional ecográfica  =  "+ fur +"</strong><br><strong>- Fecha esperada de parto  =  " + fpp + "</strong><br>";
     }
 
     if (the("alternativa.once").checked == true){
