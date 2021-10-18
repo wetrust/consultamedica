@@ -5619,7 +5619,7 @@ function infPrecoz(){
 
         comentario += "<br>-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco<br>-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )<br>";
 
-    } else if (the("embrion").value != "con act. cardiaca (-)"){
+    } else if (the("embrion").value != "embrión sin actividad cardiaca"){
 
         let fur = new Date(Date.parse(the("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
@@ -5782,12 +5782,12 @@ function infPrecozClon(){
     else if (the("saco").value && the("embrion").value == "no se observa aun"){
         comentario += "<br>-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco<br>-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )<br>";
     }
-    else if (the("embrion").value != "con act. cardiaca (-)"){
-        let fur = new Date(Date.parse(the("fum").value));
+    else if (the("embrion").value != "embrión sin actividad cardiaca"){
+        let fur = new Date(Date.parse(the("furAjustada").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
-        let fpp = new Date(Date.parse(the("fpp").value));
+        let fpp = new Date(Date.parse(the("fppAjustada").value));
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
-        let eg = the("semanas").value + "."+ the("dias").value + " semanas.";
+        let eg = the("semanasAjustada").value + "."+ the("diasAjustada").value + " semanas.";
         comentario += "<br>Para edad gestacional calculada, corresponde a: "+eg+"<br>- FUR operacional: "+ fur +"<br>- Fecha probable de parto: " + fpp + "<br>";
     }
         
