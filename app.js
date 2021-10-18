@@ -5622,7 +5622,7 @@ function infPrecoz(){
         let fpp = new Date(Date.parse(the("fppAjustada").value));
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
         let eg = the("semanasAjustada").value + "."+ the("diasAjustada").value + " semanas.";
-        comentario += "<strong>La edad gestacional calculada  =  "+eg+", por tanto las fechas operacionales son:</strong><br><strong>- FUM ecográfica  =  "+ fur +"</strong><br><strong>- Fecha esperada de parto  =  " + fpp + "</strong><br>";
+        comentario += "<strong>La edad gestacional calculada  =  "+eg+", por tanto fechas operacionales son:</strong><br><strong>- FUM ecográfica  =  "+ fur +"</strong><br><strong>- Fecha esperada de parto  =  " + fpp + "</strong><br>";
     }
 
     if (the("alternativa.once").checked == true){
@@ -5631,7 +5631,7 @@ function infPrecoz(){
 
     comentario += "<br>";
     comentario += the("comentarios-eco-uno").value;
-    comentario +=  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
+    comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     var edadmaterna = $( "select[name='edad_materna']").val();
@@ -5792,7 +5792,7 @@ function infPrecozClon(){
 
     comentario += "<br>";
     comentario += the("comentarios-eco-uno").value;
-    comentario +=  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
+    comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     var edadmaterna = $( "select[name='edad_materna']").val();
