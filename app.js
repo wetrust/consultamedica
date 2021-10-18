@@ -442,7 +442,7 @@ $( document ).ready(function() {
             the("semanasAjustada").value = Math.trunc(EGLCN);
             the("diasAjustada").value = Math.trunc((EGLCN - Math.trunc(EGLCN))* 10);
 
-            fee.setTime(fee.getTime() + (1000*60*60*24*282));
+            fee.setTime(fee.getTime() + (1000*60*60*24*280));
             the("fppAjustada").value = getDate(fee);
         }
     });
