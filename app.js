@@ -430,7 +430,7 @@ $( document ).ready(function() {
             var eg2 = parseInt(semanas * 7) +  dias;
             var diferencia = Math.abs(Math.trunc(eg2 - eg1));
             $('#diferenciaEcoPrimTrim').html(diferencia);
-            $('#preguntaAjusteEcoPrimTrim').show();
+            //no se usa $('#preguntaAjusteEcoPrimTrim').show();
             $('#resultadoAjusteEcoPrimTrim').show();
 
             let fee = new Date();
