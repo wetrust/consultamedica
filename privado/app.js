@@ -403,6 +403,9 @@ $( document ).ready(function() {
         the("lcnPct").value = eglcn(this.value);
 
         if (+this.value > 0){
+            the("embrion").value = "con act. cardiaca (+)"
+            $("#embrion").trigger("change");
+            
             $("#mensajeSaco").hide();
             $("#sacoFlecha").hide();
             $("#sacoModulo").hide();
