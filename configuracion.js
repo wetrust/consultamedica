@@ -176,9 +176,9 @@ function guardar(){
             localStorage["configuracion"] = JSON.stringify(configuracion);
 
             this.parentElement.parentElement.classList.remove("show")
-
-            loadTabla(config)
+            
             ordenarAlfabeto()
+            loadTabla(config)
             //loadDatabase()
             //funcion mutante, permite cargar solo el que se guardó
             loadOnly(name)
@@ -533,8 +533,8 @@ $(document).ready(function() {
                 _conf.id = data.config_id;
                 localStorage["configuracion"] = JSON.stringify(_conf);
                 checkDatabase();
-                loadTabla(config)
                 ordenarAlfabeto()
+                loadTabla(config)
                 loadDatabase();
                 $('#'+modal.id).modal("hide")
             }).catch(function(error) {

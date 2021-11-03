@@ -7,8 +7,8 @@ $( document ).ready(function() {
         _conf.id = data.config_id;
         localStorage["configuracion"] = JSON.stringify(_conf);
         checkDatabase();
-        loadTabla(config)
         ordenarAlfabeto()
+        loadTabla(config)
         loadDatabase();
     }).catch(function(error) {
         console.log("configuración")
