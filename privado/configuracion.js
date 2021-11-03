@@ -192,6 +192,10 @@ function guardar(){
 
             this.parentElement.parentElement.classList.remove("show")
 
+            ordenarAlfabeto()
+            loadTabla(config)
+            loadDatabase()
+
             //////
 
             let _configuracion = new FormData()
@@ -209,10 +213,6 @@ function guardar(){
                 console.log("error")
             });
             ///////
-
-            loadTabla(config)
-            ordenarAlfabeto()
-            loadDatabase()
         }
     }
 }
@@ -519,7 +519,6 @@ function loadTelefono(){
     $('#profreftel').val(resultado)
     $('#profrefemail').val(email)
 }
-
 
 function ordenarAlfabeto(){
     if (window.localStorage) {
