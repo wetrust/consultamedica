@@ -994,27 +994,51 @@ $( document ).ready(function() {
 
     }
 
-	//the("#ptSis").onkeyup = function(e){
-	//	if ( e.key == "Enter" ) {
-	//		$("#pdiasTamizaje").focus();
-	//	}
+	the("ptSis").onkeyup = function(e){
+		if ( e.key == "Enter" ) {
+			the("ptDias").focus();
+		}
 
-	//	if ($("#psisTamizaje").val() > 1){
-	//		var unTercioPSis = $("#psisTamizaje").val() / 3;
-	//		var unTercioPDias = "";
-	//		var pMedia = "";
+		if (this.value > 0){
+			var unTercioPSis = this.value / 3;
+			var unTercioPDias = "";
+			var pMedia = "";
 
-	//		if ($("#pdiasTamizaje").val() > 1){
-	//			unTercioPDias = $("#pdiasTamizaje").val() / 3;
-	//		}
+			if (the("ptDias").value > 1){
+				unTercioPDias = the("ptDias").value / 3;
+			}
 
-	//		if (unTercioPDias > 0){
-	//			pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
-	//		}
+			if (unTercioPDias > 0){
+				pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
+			}
 
-	//		$("#pmediaTamizaje").val(pMedia);
-	//	}
-	//}
+			the("ptMedia").value = pMedia;
+		}
+	}
+
+    the("ptDias").onkeyup = function(e){
+
+		if ( e.key == "Enter" ) {
+			e.preventDefault();
+			$("ptTalla").focus();
+		}
+
+		if (the("ptSis").value > 0){
+			var unTercioPSis = the("ptSis").value / 3;
+			var unTercioPDias = "";
+			var pMedia = "";
+
+			if (this.value > 1){
+				unTercioPDias = this.value / 3;
+			}
+
+			if (unTercioPDias > 0){
+				pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
+			}
+
+			the("ptMedia").value = pMedia;
+		}
+	}
 
 });
 
