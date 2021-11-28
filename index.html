@@ -2055,42 +2055,44 @@
                                         <div class="form-group form-check">
                                             <input type="checkbox" class="form-check-input" id="alternativa.once">
                                             <label class="form-check-label text-primary" for="alternativa.once">
-                                                <em>Registro de datos por calculadora MFB (PAAP - A Valor Promedio)</em>
+                                                <em>Registro de datos por calculadora MFB ( PAAP-A, Valor Promedio )</em>
                                             </label>
                                         </div>
-
                                         <div class="card">
                                             <div class="card-body">
                                                 <p><strong>Prom. Uterinas</strong></p>
                                                 <div class="form-group row">
                                                     <div class="col mb-2">
                                                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                            <input type="text" class="form-control" id="aupromTamizaje">
-                                                            <div class="input-group-append"><div class="input-group-text">IP</div></div>
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">IP</div>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="ptPromUterinas">
                                                         </div>
                                                     </div>
                                                     <div class="col mb-2">
                                                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                             <div class="input-group-prepend"><div class="input-group-text">PCT</div></div>
-                                                            <input type="text" class="form-control" id="aupromTamizajePct" readonly>
+                                                            <input type="text" class="form-control" id="ptPCTPromUterinas" readonly>
                                                         </div>
                                                     </div>
-                                                    <div class="col mb-2">
+                                                    <div class="col mb-2 d-flex align-items-center">
+                                                        <div id="pttextoPromUterinas"></div>
                                                     </div>
                                                 </div>
                                                 <p><strong>P. Arterial</strong></p>
                                                 <div class="form-group row">
-                                                    <div class="col-1 mb-2">
-                                                        <label>Sist</label>
+                                                    <div class="col-1 mb-2 d-flex align-items-center">
+                                                        <label class="mb-0">Sist</label>
                                                     </div>
                                                     <div class="col-3 mb-2">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" id="psisTamizaje">
+                                                            <input type="text" class="form-control" id="ptSis">
                                                             <div class="input-group-append"><div class="input-group-text">mmHg</div></div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-1 mb-2">
-                                                        <label>Diast</label>
+                                                    <div class="col-1 mb-2 d-flex align-items-center">
+                                                        <label class="mb-0">Diast</label>
                                                     </div>
                                                     <div class="col-3 mb-2">
                                                         <div class="input-group">
@@ -2098,8 +2100,8 @@
                                                             <div class="input-group-append"><div class="input-group-text">mmHg</div></div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-1 mb-2">
-                                                        <label><strong>Media</strong></label>
+                                                    <div class="col-1 mb-2 d-flex align-items-center">
+                                                        <label class="mb-0"><strong>Media</strong></label>
                                                     </div>
                                                     <div class="col-3 mb-2">
                                                         <div class="input-group">
@@ -2110,8 +2112,8 @@
                                                 </div>
                                                 <p><strong>Nutrición</strong></p>
                                                 <div class="form-group row">
-                                                    <div class="col-1 mb-2">
-                                                        <label>Talla</label>
+                                                    <div class="col-1 mb-2 d-flex align-items-center">
+                                                        <label class="mb-0">Talla</label>
                                                     </div>
                                                     <div class="col-3 mb-2">
                                                         <div class="input-group">
@@ -2119,8 +2121,8 @@
                                                             <div class="input-group-append"><div class="input-group-text">cms</div></div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-1 mb-2">
-                                                        <label>Peso</label>
+                                                    <div class="col-1 mb-2 d-flex align-items-center">
+                                                        <label class="mb-0">Peso</label>
                                                     </div>
                                                     <div class="col-3 mb-2">
                                                         <div class="input-group">
@@ -2128,8 +2130,8 @@
                                                             <div class="input-group-append"><div class="input-group-text">kg</div></div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-1 mb-2">
-                                                        <label><strong>IMC</strong></label>
+                                                    <div class="col-1 mb-2 d-flex align-items-center">
+                                                        <label class="mb-0"><strong>IMC</strong></label>
                                                     </div>
                                                     <div class="col-3 mb-2">
                                                         <div class="input-group">
@@ -2139,27 +2141,21 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <div class="col-3 mb-2">
-                                                        <label>Paridad</label>
-                                                    </div>
                                                     <div class="col-4 mb-2">
+                                                        <p><strong>Paridad</strong></p>
                                                         <select class="form-control" id="trombofilias">
-                                                            <option value="si" selected>primipara</option>
-                                                            <option value="no">multipara</option>
+                                                            <option value="Primipara" selected>Primipara</option>
+                                                            <option value="Multipara">Multipara</option>
                                                         </select>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-3 mb-2">
-                                                        <label>Otros antecedentes</label>
-                                                    </div>
                                                     <div class="col-4 mb-2">
+                                                        <p><strong>Otros antecedentes</strong></p>
                                                         <select class="form-control" id="trombofilias">
-                                                            <option value="si">Sin antecedentes</option>
-                                                            <option value="no" selected="">Preeclampsia</option>
-                                                            <option value="no evaluado">Hipertensión</option>
-                                                            <option value="no evaluado">Diabetes gestacional</option>
-                                                            <option value="no evaluado">Antecedentes de SAF</option>
+                                                            <option value="Sin antecedentes" selected>Sin antecedentes</option>
+                                                            <option value="Preeclampsia">Preeclampsia</option>
+                                                            <option value="Hipertensión">Hipertensión</option>
+                                                            <option value="Diabetes gestacional">Diabetes gestacional</option>
+                                                            <option value="Antecedentes de SAF">Antecedentes de SAF</option>
                                                         </select>
                                                     </div>
                                                 </div>

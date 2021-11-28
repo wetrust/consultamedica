@@ -174,6 +174,7 @@ $( document ).ready(function() {
     opt.appendChild( document.createTextNode("< 12") );
     opt.value = "&lt; 12"; 
     edad.appendChild(opt); 
+
     for (var i = 12; i < 61; i++) {
         edad = document.getElementsByName("edad_materna")[0];
         opt = document.createElement('option');
@@ -181,6 +182,7 @@ $( document ).ready(function() {
         opt.value = i; 
         edad.appendChild(opt); 
     }
+
     edad = document.getElementsByName("edad_materna")[0];
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("> 60") );
@@ -983,6 +985,37 @@ $( document ).ready(function() {
             this.checked == false
         }
     })
+
+    the("ptPromUterinas").onkeyup = function(){
+        let ut = pctut(this.value);
+
+        the("ptPCTPromUterinas").value = ut.pct
+        the("pttextoPromUterinas").innerHTML = (ut.raw < 95) ? "Normal" : "Alterado";
+
+    }
+
+	//the("#ptSis").onkeyup = function(e){
+	//	if ( e.key == "Enter" ) {
+	//		$("#pdiasTamizaje").focus();
+	//	}
+
+	//	if ($("#psisTamizaje").val() > 1){
+	//		var unTercioPSis = $("#psisTamizaje").val() / 3;
+	//		var unTercioPDias = "";
+	//		var pMedia = "";
+
+	//		if ($("#pdiasTamizaje").val() > 1){
+	//			unTercioPDias = $("#pdiasTamizaje").val() / 3;
+	//		}
+
+	//		if (unTercioPDias > 0){
+	//			pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
+	//		}
+
+	//		$("#pmediaTamizaje").val(pMedia);
+	//	}
+	//}
+
 });
 
 // Controlador de input clones
