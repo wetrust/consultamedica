@@ -2052,7 +2052,97 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="alternativa.once"><label class="form-check-label text-primary" for="alternativa.once"><em>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas</em></label></div>
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="alternativa.once">
+                                            <label class="form-check-label text-primary" for="alternativa.once">
+                                                <em>Registro de datos</em>
+                                            </label>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="form-group row">
+                                                    <div class="col mb-2">
+                                                        <label><strong>Promedio de Uterinas</strong></label>
+                                                    </div>
+                                                    <div class="col mb-2">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="aupromTamizaje">
+                                                            <div class="input-group-append"><div class="input-group-text">IP</div></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col mb-2">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <div class="input-group-prepend"><div class="input-group-text">PCT</div></div>
+                                                            <input type="text" class="form-control" id="aupromTamizajePct" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col mb-2">
+                                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="auTamizajePct">
+                                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                        <input type="hidden" id="auTamizajePctTxt">
+                                                        <input type="hidden" id="auTamizajeRngo">
+                                                    </div>
+                                                </div>
+                                                <p><strong>Presión arterial materna</strong></p>
+                                                <div class="form-group row">
+                                                    <div class="col-1 mb-2">
+                                                        <label>Sistólica</label>
+                                                    </div>
+                                                    <div class="col-3 mb-2">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="psisTamizaje">
+                                                            <div class="input-group-append"><div class="input-group-text">mmHg</div></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-1 mb-2">
+                                                        <label>Diastólica</label>
+                                                    </div>
+                                                    <div class="col-3 mb-2">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="pdiasTamizaje">
+                                                            <div class="input-group-append"><div class="input-group-text">mmHg</div></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-1 mb-2">
+                                                        <label><strong>Media</strong></label>
+                                                    </div>
+                                                    <div class="col-3 mb-2">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="pmediaTamizaje" readonly>
+                                                            <div class="input-group-append"><div class="input-group-text">mmHg</div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+        
+                                                <div class="form-group row">
+                                                    <div class="col-3 mb-2">
+                                                        <label>Paridad</label>
+                                                    </div>
+                                                    <div class="col-4 mb-2">
+                                                        <select class="form-control" id="trombofilias">
+                                                            <option value="si" selected>primipara</option>
+                                                            <option value="no">multipara</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-3 mb-2">
+                                                        <label>Otros antecedentes</label>
+                                                    </div>
+                                                    <div class="col-4 mb-2">
+                                                        <select class="form-control" id="trombofilias">
+                                                            <option value="si">Sin antecedentes</option>
+                                                            <option value="no" selected="">Preeclampsia</option>
+                                                            <option value="no evaluado">Hipertensión</option>
+                                                            <option value="no evaluado">Diabetes gestacional</option>
+                                                            <option value="no evaluado">Antecedentes de SAF</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

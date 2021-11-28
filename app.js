@@ -5633,10 +5633,6 @@ function infPrecoz(){
         comentario += "<strong>La edad gestacional calculada  =  "+eg+", por tanto fechas operacionales son:</strong><br><strong>- FUM ecográfica  =  "+ fur +"</strong><br><strong>- Fecha esperada de parto  =  " + fpp + "</strong><br>";
     }
 
-    if (the("alternativa.once").checked == true){
-        comentario += "<br><br>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
-    }
-
     comentario += "<br>";
     comentario += the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
@@ -5792,10 +5788,6 @@ function infPrecozClon(){
         fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
         let eg = the("semanasAjustada").value + "."+ the("diasAjustada").value + " semanas.";
         comentario += "<strong>Para edad gestacional calculada, corresponde a "+eg+", por tanto fechas operacionales son:</strong><br><strong>- FUM ecográfica  =  "+ fur +"</strong><br><strong>- Fecha esperada de parto  =  " + fpp + "</strong><br>";
-    }
-
-    if (the("alternativa.once").checked == true){
-        comentario += "<br><br>Se sugiere agendar próxima ecografía para evaluación 11 - 14 semanas";
     }
 
     comentario += "<br>";
