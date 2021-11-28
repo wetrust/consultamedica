@@ -1020,7 +1020,7 @@ $( document ).ready(function() {
 
 		if ( e.key == "Enter" ) {
 			e.preventDefault();
-			$("ptTalla").focus();
+			the("ptTalla").focus();
 		}
 
 		if (the("ptSis").value > 0){
@@ -1039,6 +1039,32 @@ $( document ).ready(function() {
 			the("ptMedia").value = pMedia;
 		}
 	}
+
+    the("ptTalla").onkeyup = function(e){
+        if ( e.key == "Enter" ) {
+            the("ptPeso").focus();
+        }
+
+        if (this.value > 1 && the("ptPeso").value > 1){
+            var tallapeso = the("ptPeso").value / Math.pow(this.value,2);
+            var IMC = tallapeso * 10000;
+
+            the("ptIMC").value = IMC.toFixed(1);
+        }
+    }
+
+    the("ptPeso").onkeyup = function(e){
+        if ( e.key == "Enter" ) {
+            the("ptParidad").focus();
+        }
+
+        if (the("ptTalla").value > 1 && this.value > 1){
+            var tallapeso = this.value / Math.pow(the("ptTalla").value, 2);
+            var IMC = tallapeso * 10000;
+
+            the("ptIMC").value = IMC.toFixed(1);
+        }
+    }
 
 });
 
