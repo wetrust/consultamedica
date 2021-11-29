@@ -189,6 +189,27 @@ $( document ).ready(function() {
     opt.value = "&gt; 60"; 
     edad.appendChild(opt); 
 
+    //cargar edad materna en otro lado
+    edad = the("ptEdadMaterna");
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("< 12") );
+    opt.value = "&lt; 12"; 
+    edad.appendChild(opt); 
+
+    for (var i = 12; i < 61; i++) {
+        edad = document.getElementsByName("edad_materna")[0];
+        opt = document.createElement('option');
+        opt.appendChild( document.createTextNode(i) );
+        opt.value = i; 
+        edad.appendChild(opt); 
+    }
+
+    edad = document.getElementsByName("edad_materna")[0];
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("> 60") );
+    opt.value = "&gt; 60"; 
+    edad.appendChild(opt); 
+
     //funcion rara
     $("#menu\\.modulo\\.activo").mouseout(function(){
         if (the("menu.modulo.activo").classList.contains("btn-dark")){
@@ -987,6 +1008,10 @@ $( document ).ready(function() {
     })
 
     the("ptPromUterinas").onkeyup = function(){
+        if ( e.key == "Enter" ) {
+			the("ptSis").focus();
+		}
+
         let ut = pctut(this.value);
 
         the("ptPCTPromUterinas").value = ut.pct
@@ -1063,6 +1088,24 @@ $( document ).ready(function() {
             var IMC = tallapeso * 10000;
 
             the("ptIMC").value = IMC.toFixed(1);
+        }
+    }
+
+    the("ptRiesgoPE").onkeyup = function(e){
+        if (isNaN(this.value) == false){
+            if (this.value < 100){
+                the("ptRiesgoPEAlto").value= "X"
+                the("ptRiesgoPEMedio").value= ""
+                the("ptRiesgoPEBajo").value= ""
+            }else if (this.value < 1000){   
+                the("ptRiesgoPEAlto").value= ""
+                the("ptRiesgoPEMedio").value= "X"
+                the("ptRiesgoPEBajo").value= ""
+            }else if (this.value > 1000){
+                the("ptRiesgoPEAlto").value= ""
+                the("ptRiesgoPEMedio").value= ""
+                the("ptRiesgoPEBajo").value= "X"
+            }
         }
     }
 

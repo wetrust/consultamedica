@@ -2048,14 +2048,14 @@
                                     <div class="col-12">
                                         <div class="form-group form-check">
                                             <input type="checkbox" class="form-check-input" id="activ.calculadora.pree">
-                                            <label class="form-check-label text-primary" for="activ.calculadora.pree"><em>Calculadora, Medicina Fetal (MFB)</em></label>
+                                            <label class="form-check-label text-primary" for="activ.calculadora.pree"><em>Calculadora de PE, Medicina Fetal Barcelona (MFB)</em></label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group form-check">
                                             <input type="checkbox" class="form-check-input" id="alternativa.once">
                                             <label class="form-check-label text-primary" for="alternativa.once">
-                                                <em>Registro de datos por calculadora MFB ( PAAP-A, Valor Promedio )</em>
+                                                <em>Registro datos calculadora MFB ( Con valor normal PAAP-A )</em>
                                             </label>
                                         </div>
                                         <div class="card">
@@ -2142,6 +2142,11 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-4 mb-2">
+                                                        <p><strong>Edad Materna</strong></p>
+                                                        <select class="form-control" id="ptEdadMaterna">
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-4 mb-2">
                                                         <p><strong>Paridad</strong></p>
                                                         <select class="form-control" id="ptParidad">
                                                             <option value="Primipara" selected>Primipara</option>
@@ -2157,6 +2162,36 @@
                                                             <option value="Diabetes gestacional">Diabetes gestacional</option>
                                                             <option value="Antecedentes de SAF">Antecedentes de SAF</option>
                                                         </select>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="form-group row">
+                                                    <div class="col-2 mb-2 d-flex align-items-center">
+                                                        <label class="mb-0">Riesgo de PE</label>
+                                                    </div>
+                                                    <div class="col-3 mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend"><div class="input-group-text">1 / </div></div>
+                                                            <input type="text" class="form-control" id="ptRiesgoPE">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend"><div class="input-group-text">Alto</div></div>
+                                                            <input type="text" class="form-control" id="ptRiesgoPEAlto" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend"><div class="input-group-text">Medio</div></div>
+                                                            <input type="text" class="form-control" id="ptRiesgoPEMedio" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend"><div class="input-group-text">Bajo</div></div>
+                                                            <input type="text" class="form-control" id="ptRiesgoPEBajo" disabled>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
