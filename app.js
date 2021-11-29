@@ -1039,6 +1039,12 @@ $( document ).ready(function() {
 			}
 
 			the("ptMedia").value = pMedia;
+            
+            if (pMedia > 100){
+                the("ptMedia").classList.add("bg-danger")
+            }else{
+                the("ptMedia").classList.remove("bg-danger")  
+            }
 		}
 	}
 
@@ -1063,6 +1069,12 @@ $( document ).ready(function() {
 			}
 
 			the("ptMedia").value = pMedia;
+
+            if (pMedia > 100){
+                the("ptMedia").classList.add("bg-danger")
+            }else{
+                the("ptMedia").classList.remove("bg-danger")  
+            }
 		}
 	}
 
@@ -1076,6 +1088,12 @@ $( document ).ready(function() {
             var IMC = tallapeso * 10000;
 
             the("ptIMC").value = IMC.toFixed(1);
+
+            if (IMC > 30){
+                the("ptIMC").classList.add("bg-danger")
+            }else{
+                the("ptIMC").classList.remove("bg-danger")  
+            }
         }
     }
 
@@ -1089,6 +1107,12 @@ $( document ).ready(function() {
             var IMC = tallapeso * 10000;
 
             the("ptIMC").value = IMC.toFixed(1);
+
+            if (IMC > 30){
+                the("ptIMC").classList.add("bg-danger")
+            }else{
+                the("ptIMC").classList.remove("bg-danger")  
+            }
         }
     }
 
