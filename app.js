@@ -209,6 +209,7 @@ $( document ).ready(function() {
     opt.appendChild( document.createTextNode("> 60") );
     opt.value = "&gt; 60"; 
     edad.appendChild(opt); 
+    the("ptEdadMaterna").value = 30
 
     //funcion rara
     $("#menu\\.modulo\\.activo").mouseout(function(){
