@@ -1137,7 +1137,7 @@ $( document ).ready(function() {
     }
 
     the("alternativa.once").onclick = function(){
-        if (this.checked = true){
+        if (this.checked == true){
             the("alternativa.once.ptPE").classList.remove("d-none")
         }else{
             the("alternativa.once.ptPE").classList.add("d-none")
