@@ -1016,7 +1016,7 @@ $( document ).ready(function() {
         let ut = pctut(this.value);
 
         the("ptPCTPromUterinas").value = ut.pct
-        the("pttextoPromUterinas").innerHTML = (ut.raw < 95) ? "Normal" : "Alterado";
+        the("pttextoPromUterinas").innerHTML = (ut.raw < 95) ? "Normal" : '<strong class="text-danger">Alterado</strong>';
 
     }
 
