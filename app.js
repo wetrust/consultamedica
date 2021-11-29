@@ -1503,6 +1503,30 @@ $( document ).ready(function() {
             the("anexo-izquierdo").selectedIndex = 0;
             the("exploracion-douglas").selectedIndex = 0;
             the("comentarios-eco-uno").value = "";
+
+            the("ptPromUterinas").value = "";
+            the("ptPCTPromUterinas").value = "";
+            the("pttextoPromUterinas").value = "";
+            the("ptSis").value = "";
+            the("ptDias").value = "";
+            the("ptMedia").value = "";
+            the("ptIMC").value = "";
+            the("ptIMC").classList.remove("bg-danger", "text-white")
+
+            the("ptTalla").value = "";
+            the("ptPeso").value = "";
+            the("ptEdadMaterna").value = "";
+
+            the("ptRiesgoPEAlto").classList.remove("bg-danger", "text-white")
+            the("ptRiesgoPEAlto").value= ""
+            the("ptRiesgoPEMedio").value= ""
+            the("ptRiesgoPEBajo").value= ""
+
+            the("ptEdadMaterna").value = 30
+            the("ptParidad").value = "Primipara";
+            the("trombofilias").value = "Sin antecedentes";
+            the("ptRiesgoPE").value = "";
+
             resetDate();
             $("#menu\\.modulo\\.prim\\.trim\\.no").button("toggle");
             $('#'+modal).modal("hide");
@@ -7780,7 +7804,8 @@ function valccca() {
     }
 }
 
-function informeGinecologico(){
+function informeGinecologico()
+{
     let informe = '<div class="container-fluid"><h4 class="page-header text-center">INFORME ECOGRÁFICO GINECOLÓGICO ALTERNATIVO</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid" style="margin-top: 1rem;"> <p> <strong><em>Datos generales</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0">Nombre de paciente:</td><td class="p-0">:PACIENTE</td><td class="p-0">Edad Materna:</td><td class="p-0">:EDADMATERNA años.</td></tr><tr> <td class="p-0">RUT (DNI):</td><td class="p-0">:IDPACIENTE</td><td class="p-0">Fecha de Exámen:</td><td class="p-0">:FEXAMEN</td></tr><tr> <td class="p-0">Ciudad de procedencia:</td><td class="p-0">:CIUDAD</td><td class="p-0">Lugar de control:</td><td class="p-0">:LCONTROL</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Antecedentes clínicos</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="w-50 p-0">FUR referida:</td><td class="p-0">:FUM</td></tr><tr> <td class="w-50 p-0">Días del ciclo mestrual:</td><td class="p-0">:DIACICLO días.</td></tr><tr> <td class="w-50 p-0">Motivo de exámen:</td><td class="p-0">:MOTIVO</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Descripción hallazgos ecográficos</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td>Cuerpo uterino:</td><td>:LINEA2</td></tr><tr> <td>Contenido endouterino (endometrio):</td><td>:LINEA3</td></tr><tr> <td>Anexo Derecho:</td><td>:LINEA6</td></tr><tr> <td>&nbsp;-&nbsp;Ovario Derecho:</td><td>:LINEA7</td></tr><tr> <td>Anexo Izquierdo:</td><td>:LINEA4</td></tr><tr> <td>&nbsp;-&nbsp;Ovario Izquierdo:</td><td>:LINEA5</td></tr><tr> <td>Espacio retro-uterino (Douglas):</td><td>:LINEA8</td></tr></tbody> </table></div><div class="container-fluid"> <p><strong>Comentarios y observaciones:</strong></p><p>:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 7rem;"> <p style="text-align: right;" class="top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><p style="margin-top: 2rem; border-top: 1px solid #000; width: 100% !important; display: block;">Fecha Informe: :DATEINFORME</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"> El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento.</p></div>';
 
     let LINEA2 = the("utero.ginecologica").value;
