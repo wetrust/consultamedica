@@ -197,14 +197,14 @@ $( document ).ready(function() {
     edad.appendChild(opt); 
 
     for (var i = 12; i < 61; i++) {
-        edad = document.getElementsByName("edad_materna")[0];
+        edad = the("ptEdadMaterna");
         opt = document.createElement('option');
         opt.appendChild( document.createTextNode(i) );
         opt.value = i; 
         edad.appendChild(opt); 
     }
 
-    edad = document.getElementsByName("edad_materna")[0];
+    edad = the("ptEdadMaterna");
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("> 60") );
     opt.value = "&gt; 60"; 
@@ -1007,7 +1007,7 @@ $( document ).ready(function() {
         }
     })
 
-    the("ptPromUterinas").onkeyup = function(){
+    the("ptPromUterinas").onkeyup = function(e){
         if ( e.key == "Enter" ) {
 			the("ptSis").focus();
 		}
