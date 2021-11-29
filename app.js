@@ -1446,6 +1446,7 @@ $( document ).ready(function() {
 
 // Controlador de botones reset
 $( document ).ready(function() {
+
     $("#btn\\.erase\\.ginecologica").on("click", function(){
         var modal = makeModal("Si");
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
@@ -1458,14 +1459,14 @@ $( document ).ready(function() {
 
         $("#"+modal.button).on("click", function(){
             let modal =  $(this).data("modal");
-            the("utero.ginecologica").value = "";
-            the("endometrio.ginecologica").value = "";
-            the("anexo.izquierdo.ginecologica").value = "";
-            the("anexo.derecho.ginecologica").value = "";
-            the("ovario.izquierdo.ginecologica").value = "";
-            the("ovario.derecho.ginecologica").value = "";
-            the("douglas.ginecologica").value = "";
-            the("comentario.ginecologica").value = "";
+            the("utero.ginecologica").value = "Utero central anterior, aspecto general normal; .... x .... x .... mm.";
+            the("endometrio.ginecologica").value = "Homogéneo de aspecto normal, grosor máximo .... mm.";
+            the("anexo.izquierdo.ginecologica").value = "Aspecto general normal";
+            the("anexo.derecho.ginecologica").value = "Aspecto general normal";
+            the("ovario.izquierdo.ginecologica").value = "Aspecto normal .... x .... x .... mm.";
+            the("ovario.derecho.ginecologica").value = "Aspecto normal .... x .... x .... mm.";
+            the("douglas.ginecologica").value = "Libre";
+            the("comentario.ginecologica").value = "- Cuerpo uterino\n- Contenido endouterino\n- Exploración anexial bilateral\n- Espacio retrouterino";
             resetDate();
             $('#'+modal).modal("hide");
         });
