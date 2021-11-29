@@ -1118,10 +1118,12 @@ $( document ).ready(function() {
 
     the("ptRiesgoPE").onkeyup = function(e){
         if (isNaN(this.value) == false){
+            the("ptRiesgoPEAlto").classList.remove("bg-danger", "text-white") 
             if (this.value < 100){
                 the("ptRiesgoPEAlto").value= "X"
                 the("ptRiesgoPEMedio").value= ""
                 the("ptRiesgoPEBajo").value= ""
+                the("ptRiesgoPEAlto").classList.add("bg-danger", "text-white")
             }else if (this.value < 1000){   
                 the("ptRiesgoPEAlto").value= ""
                 the("ptRiesgoPEMedio").value= "X"
@@ -1131,6 +1133,14 @@ $( document ).ready(function() {
                 the("ptRiesgoPEMedio").value= ""
                 the("ptRiesgoPEBajo").value= "X"
             }
+        }
+    }
+
+    the("alternativa.once").onclick = function(){
+        if (this.checked = true){
+            the("alternativa.once.ptPE").classList.remove("d-none")
+        }else{
+            the("alternativa.once.ptPE").classList.add("d-none")
         }
     }
 
