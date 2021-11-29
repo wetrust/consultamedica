@@ -1041,9 +1041,9 @@ $( document ).ready(function() {
 			the("ptMedia").value = pMedia;
             
             if (pMedia > 100){
-                the("ptMedia").classList.add("bg-danger")
+                the("ptMedia").classList.add("bg-danger", "text-white")
             }else{
-                the("ptMedia").classList.remove("bg-danger")  
+                the("ptMedia").classList.remove("bg-danger", "text-white")  
             }
 		}
 	}
@@ -1071,9 +1071,9 @@ $( document ).ready(function() {
 			the("ptMedia").value = pMedia;
 
             if (pMedia > 100){
-                the("ptMedia").classList.add("bg-danger")
+                the("ptMedia").classList.add("bg-danger", "text-white")
             }else{
-                the("ptMedia").classList.remove("bg-danger")  
+                the("ptMedia").classList.remove("bg-danger", "text-white")  
             }
 		}
 	}
@@ -1090,9 +1090,9 @@ $( document ).ready(function() {
             the("ptIMC").value = IMC.toFixed(1);
 
             if (IMC > 30){
-                the("ptIMC").classList.add("bg-danger")
+                the("ptIMC").classList.add("bg-danger", "text-white")
             }else{
-                the("ptIMC").classList.remove("bg-danger")  
+                the("ptIMC").classList.remove("bg-danger", "text-white")  
             }
         }
     }
@@ -1109,9 +1109,9 @@ $( document ).ready(function() {
             the("ptIMC").value = IMC.toFixed(1);
 
             if (IMC > 30){
-                the("ptIMC").classList.add("bg-danger")
+                the("ptIMC").classList.add("bg-danger", "text-white")
             }else{
-                the("ptIMC").classList.remove("bg-danger")  
+                the("ptIMC").classList.remove("bg-danger", "text-white")  
             }
         }
     }
