@@ -1518,15 +1518,14 @@ $( document ).ready(function() {
             the("ptPeso").value = "";
             the("ptEdadMaterna").value = "";
 
-            the("ptRiesgoPEAlto").classList.remove("bg-danger", "text-white")
-            the("ptRiesgoPEAlto").value= ""
-            the("ptRiesgoPEMedio").value= ""
-            the("ptRiesgoPEBajo").value= ""
-
             the("ptEdadMaterna").value = 30
             the("ptParidad").value = "Primipara";
             the("trombofilias").value = "Sin antecedentes";
             the("ptRiesgoPE").value = "";
+            the("ptRiesgoPEAlto").classList.remove("bg-danger", "text-white")
+            the("ptRiesgoPEAlto").value= ""
+            the("ptRiesgoPEMedio").value= ""
+            the("ptRiesgoPEBajo").value= ""
 
             resetDate();
             $("#menu\\.modulo\\.prim\\.trim\\.no").button("toggle");
