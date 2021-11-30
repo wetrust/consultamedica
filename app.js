@@ -791,11 +791,6 @@ $( document ).ready(function() {
         $("#pdfviebox").children("ol").children().children().attr("href","#ecoObsSegTrim");  
     })
 
-    $("#pdfdopplernuevo").on("click", function(){
-        $("#pdfview").html('<iframe  class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/uso_ecografia_doppler_obstetrcia.pdf"></iframe>');
-        $("#pdfviebox").children("ol").children().children().attr("href","#ecoDoppler");
-    });
-
     $("#pdfprimtrim").on("click", function(){
         $("#pdfview").html('<iframe class="embed-responsive-item" src="https://crecimientofetal.cl/pdf/primtrim.pdf"></iframe>');
         $("#pdfviebox").children("ol").children().children().attr("href","#ecoObsPrimTrim");
