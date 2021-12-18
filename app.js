@@ -1096,16 +1096,18 @@ $( document ).ready(function() {
             the("ptRiesgoPEAlto").classList.remove("bg-danger", "text-white") 
             if (this.value < 100){
                 the("ptRiesgoPEAlto").value= "X"
-                the("ptRiesgoPEMedio").value= ""
+                ajustarProgresoNew(0, "ptRiesgoPEBarra")
                 the("ptRiesgoPEBajo").value= ""
                 the("ptRiesgoPEAlto").classList.add("bg-danger", "text-white")
             }else if (this.value < 1000){   
                 the("ptRiesgoPEAlto").value= ""
-                the("ptRiesgoPEMedio").value= "X"
+                let procentaje = (Number(this.value) * 100) / 1000
+
+                ajustarProgresoNew(procentaje, "ptRiesgoPEBarra")
                 the("ptRiesgoPEBajo").value= ""
             }else if (this.value > 1000){
                 the("ptRiesgoPEAlto").value= ""
-                the("ptRiesgoPEMedio").value= ""
+                ajustarProgresoNew(0, "ptRiesgoPEBarra")
                 the("ptRiesgoPEBajo").value= "X"
             }
         }
@@ -6813,6 +6815,13 @@ function ajustarProgreso(valor, objeto){
     valor = (isNaN(valor)== true) ? 0 : valor;
 	valor = valor + "%";
 	$("#"+objeto + " > .progress-consulta").css({"width": valor});
+}
+
+function ajustarProgresoNew(valor, objeto){
+    valor = (valor == "&gt; 99") ? 99 : valor; // si es mayor a 99
+    valor = (isNaN(valor)== true) ? 0 : valor;
+	valor = valor + "%";
+	$("#"+objeto + " > .progress-bar").css({"width": valor});
 }
 
 function imprSelec(muestra){
