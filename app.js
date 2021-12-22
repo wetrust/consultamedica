@@ -5143,8 +5143,8 @@ $(document).ready(function(){
             the("art.ut.d.pct.morfologia").classList.add("is-valid");
         }
 
-        aui = the("art.ut.i.morfologia").value;
-        aud = the("art.ut.d.morfologia").value;
+        let aui = the("art.ut.i.morfologia").value;
+        let aud = the("art.ut.d.morfologia").value;
 
         aui = aui.toString(); 
         aui = aui.replace(",", ".");
@@ -5190,8 +5190,8 @@ $(document).ready(function(){
             the("art.ut.i.pct.morfologia").classList.add("is-valid");
         }
 
-        aui = the("art.ut.i.morfologia").value;
-        aud = the("art.ut.d.morfologia").value;
+        let aui = the("art.ut.i.morfologia").value;
+        let aud = the("art.ut.d.morfologia").value;
 
         aui = aui.toString(); 
         aui = aui.replace(",", ".");
