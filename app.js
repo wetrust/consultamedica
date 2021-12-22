@@ -5485,7 +5485,7 @@ $(document).ready(function(){
                 the("vlp.txt.morfologia").value = "Ventriculomegalia Leve"
             }else if (atrio < 16){
                 the("vlp.txt.morfologia").value = "Ventriculomegalia Moderada"
-            }else{
+            }else if (atrio > 15){
                 the("vlp.txt.morfologia").value = "Ventriculomegalia Severa"
             }
         }
@@ -5499,13 +5499,13 @@ $(document).ready(function(){
         if (isNaN(atrio) == false){
             atrio = parseFloat(atrio);
             if (atrio < 10){
-                the("vlp.txt.morfologia").value = "Normal"
+                the("vld.txt.morfologia").value = "Normal"
             }else if (atrio < 13){
-                the("vlp.txt.morfologia").value = "Ventriculomegalia Leve"
+                the("vld.txt.morfologia").value = "Ventriculomegalia Leve"
             }else if (atrio < 16){
-                the("vlp.txt.morfologia").value = "Ventriculomegalia Moderada"
-            }else{
-                the("vlp.txt.morfologia").value = "Ventriculomegalia Severa"
+                the("vld.txt.morfologia").value = "Ventriculomegalia Moderada"
+            }else if (atrio > 15){
+                the("vld.txt.morfologia").value = "Ventriculomegalia Severa"
             }
         }
     }
