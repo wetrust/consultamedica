@@ -8195,7 +8195,6 @@ function informeMorfologia(){
     InformeString = InformeString.replace(":ICEREPPCT", ICEREPPCT);
     InformeString = InformeString.replace(":ICEREPRANGO", ICEREPRANGO);
 
-    InformeString = InformeString.replace(":PACM", PACM);
     InformeString = InformeString.replace(":DUCV", DUCV);
     InformeString = InformeString.replace(":DUCVPCT", DUCVPCT);
     InformeString = InformeString.replace(":DUCVRANGO", DUCVRANGO);
