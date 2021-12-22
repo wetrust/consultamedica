@@ -878,7 +878,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4 col-form-label">Tracto de salida  pulmonar aspecto normal</label>
+                            <label class="col-sm-4 col-form-label">Tracto de salida pulmonar aspecto normal</label>
                             <div class="col-sm-2">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-secondary active">
@@ -935,25 +935,6 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4 col-form-label">Pared Abdominal</label>
-                            <div class="col-sm-2">
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-secondary active">
-                                      <input type="radio" name="abdo.morfologia" value="si" checked="checked"> Si
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                      <input type="radio" name="abdo.morfologia" value="no"> No
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                        <input type="radio" name="abdo.morfologia" value="eliminar"> Eliminar
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <input type="text" class="form-control shadow rounded border-0">
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             <label class="col-sm-4 col-form-label">Pared aspecto normal</label>
                             <div class="col-sm-2">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -984,6 +965,25 @@
                                     </label>
                                     <label class="btn btn-secondary">
                                         <input type="radio" name="ev.morfologia" value="eliminar"> Eliminar
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <input type="text" class="form-control shadow rounded border-0">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Aspecto de asas abdominales</label>
+                            <div class="col-sm-2">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                      <input type="radio" name="abdo.morfologia" value="si" checked="checked"> Si
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                      <input type="radio" name="abdo.morfologia" value="no"> No
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                        <input type="radio" name="abdo.morfologia" value="eliminar"> Eliminar
                                     </label>
                                 </div>
                             </div>
@@ -1030,7 +1030,17 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4 col-form-label"><strong>Columna aspecto normal</strong></label>
+                            <label class="col-sm-4 col-form-label">Genitales</label>
+                            <div class="col-sm-2">
+                                <select class="form-control shadow border-0" id="gen.morfologia">
+                                    <option value="masculino" selected>Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="no identificado">No identificado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">Columna aspecto normal</label>
                             <div class="col-sm-2">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-secondary active">
@@ -1087,19 +1097,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4 col-form-label">Genitales</label>
-                            <div class="col-sm-2">
-                                <select class="form-control shadow border-0" id="gen.morfologia">
-                                    <option value="masculino" selected>Masculino</option>
-                                    <option value="femenino">Femenino</option>
-                                    <option value="no identificado">No identificado</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             <label class="col-sm-4 col-form-label"><strong>Comentarios Morfología</strong></label>
                             <div class="col-sm-8">
-                                <textarea class="form-control" id="morfologia.comentario.morfologia" rows="3">- Morfología fetal</textarea>
+                                <textarea class="form-control" id="morfologia.comentario.morfologia" rows="3">Ecografía morfológica con hallazgos acordes con la edad gestacional. En este momento no se observan anomalías morfológicas fetales mayores, si bien no pueden descartarse las que no tienen expresión ecográfica o se presentan de forma tardía. Exploración ecográfica satisfactoria.</textarea>
                             </div>
                         </div>
                         <div class="form-group row">
