@@ -5570,7 +5570,7 @@ $(document).ready(function(){
     $("input[type='radio']").on("change",function() {
         if (this.value == "eliminar"){
             this.parentElement.parentElement.parentElement.parentElement.children[2].classList.add("d-none");
-        }else if (this.value == "no" || this.value == "Si"){
+        }else if (this.value == "no" || this.value == "si"){
             this.parentElement.parentElement.parentElement.parentElement.children[2].classList.remove("d-none");
         }
     });  
