@@ -8202,14 +8202,14 @@ function informeMorfologia(){
     InformeString = InformeString.replace(":FUR", fur);
     InformeString = InformeString.replace(":EG", eg);
     InformeString = InformeString.replace(":FPP", fpp);
-    InformeString = InformeString.replace(":DATEINFORME", dateInf);
-    InformeString = InformeString.replace(":MOTIVO", motivo);
-    InformeString = InformeString.replace(":CIUDAD", CIUDAD);
+    InformeString = InformeString.replace(/:DATEINFORME/g, dateInf);
+    InformeString = InformeString.replace(/:MOTIVO/g, motivo);
+    InformeString = InformeString.replace(/:CIUDAD/g, CIUDAD);
 
     InformeString = InformeString.replace(/:PACIENTE/g, paciente);
-    InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
-    InformeString = InformeString.replace(":FEXAMEN", fexamen);
-    InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
+    InformeString = InformeString.replace(/:EDADMATERNA/g, edadmaterna);
+    InformeString = InformeString.replace(/:FEXAMEN/g, fexamen);
+    InformeString = InformeString.replace(/:IDPACIENTE/g, idpaciente);
     InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
 
     InformeString = InformeString.replace(":ACTCAR", ACTCAR);
