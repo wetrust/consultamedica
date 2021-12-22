@@ -5472,35 +5472,43 @@ $(document).ready(function(){
         }
     })
 
-    $("#vlp\\.morfologia").on("keyup", function(){
+    the("vlp.morfologia").onkeyup = function(){
+        let atrio = this.value;
+        atrio = atrio.toString();
+        atrio = atrio.replace(",", ".");
+
+        if (isNaN(atrio) == false){
+            atrio = parseFloat(atrio);
+            if (atrio < 10){
+                the("vlp.txt.morfologia").value = "Normal"
+            }else if (atrio < 13){
+                the("vlp.txt.morfologia").value = "Ventriculomegalia Leve"
+            }else if (atrio < 16){
+                the("vlp.txt.morfologia").value = "Ventriculomegalia Moderada"
+            }else{
+                the("vlp.txt.morfologia").value = "Ventriculomegalia Severa"
+            }
+        }
+    }
+
+    the("vld.morfologia").onkeyup =  function(){
         atrio = this.value;
         atrio = atrio.toString();
         atrio = atrio.replace(",", ".");
-        atrio = parseFloat(atrio);
 
-        if (atrio < 10){
-            the("vlp.txt.morfologia").value = "Normal"
-        }else if (atrio < 16){
-            the("vlp.txt.morfologia").value = "Ventriculomegalia"
-        }else{
-            the("vlp.txt.morfologia").value = "Hidrocefalia"
+        if (isNaN(atrio) == false){
+            atrio = parseFloat(atrio);
+            if (atrio < 10){
+                the("vlp.txt.morfologia").value = "Normal"
+            }else if (atrio < 13){
+                the("vlp.txt.morfologia").value = "Ventriculomegalia Leve"
+            }else if (atrio < 16){
+                the("vlp.txt.morfologia").value = "Ventriculomegalia Moderada"
+            }else{
+                the("vlp.txt.morfologia").value = "Ventriculomegalia Severa"
+            }
         }
-    })
-
-    $("#vld\\.morfologia").on("keyup", function(){
-        atrio = this.value;
-        atrio = atrio.toString();
-        atrio = atrio.replace(",", ".");
-        atrio = parseFloat(atrio);
-
-        if (atrio < 10){
-            the("vld.txt.morfologia").value = "Normal"
-        }else if (atrio < 16){
-            the("vld.txt.morfologia").value = "Ventriculomegalia"
-        }else{
-            the("vld.txt.morfologia").value = "Hidrocefalia"
-        }
-    })
+    }
 
     $("input[type='radio']").on("change",function() {
         if (this.value == "eliminar"){
