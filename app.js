@@ -1599,7 +1599,7 @@ $( document ).ready(function() {
 // Controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia","p.sis.morfologia", "", "vlp.morfologia", "vld.morfologia"];
+        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia", "", "vlp.morfologia", "vld.morfologia"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -4543,92 +4543,6 @@ $( document ).ready(function() {
            }]
        });
     })
-
-    $("#p\\.sis\\.grafica\\.morfologia").on( 'click', function() {
-        var edadGestacional = the("semanas").value;
-
-        if (edadGestacional < 18){
-            alert("Edad Gestacional inferior a 18 semanas");
-            return false;
-        }
-
-        var modal = makeModal();
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Gráfico Peak sistólico máximo de ACM";
-        the(modal.contenido).innerHTML = '<div id="viewGraficopsmACM"></div>';
-
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
-                                
-        $('#viewGraficopsmACM').highcharts({
-        title: {
-            text: 'Peak sistólico máximo de ACM',
-            x: -20 //center
-        },
-        plotOptions: {
-            series: {
-                enableMouseTracking: false
-            }
-        },
-        yAxis: {
-            title: { text: 'cm/s' },
-            tickPositions: [20, 40, 60, 80, 100]
-        },
-        colors: ['#313131', '#313131', '#313131'],
-        xAxis: {
-            categories: ['18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
-        },
-        credits: { enabled: false },
-        series: [{
-            type: "line",
-            name: 'Valor de la Media',
-            marker: { enabled: false },  
-            data:  [23.2,24.3,25.5,26.7,27.9,29.3,30.7,32.1,33.6,35.2,36.9,38.7,40.5,42.4,44.4,46.5,48.7,51.1,53.5,56,58.7,61.5,64.4]
-        }, {
-            type: "line",
-            name: 'Anemia leve',
-            marker: { enabled: false },
-            data: [29.9, 31.1, 32.8,34.5,36,37.8,39.5,41.5,43.3,45.6,47.6,50.4,52.2,55,57.3,60.1,62.9,66,69,72.8,75.7,79.8,83] 
-        }, {
-            type: "line",
-            name: 'Anemia moderada',
-            marker: { enabled: false },
-            data: [34.8,36.5,38.2,39.7,41.9,44,46,48,50.4,53,55.4,58,60.9,63.5,66.6,70,73.1,76.5,80.2,84,88,92.5,96.6]
-        }, {
-            type: "line",
-            name: 'Peak sistólico máximo de ACM',
-            dashStyle: "Dot",
-            marker: { symbol: 'square' },
-            lineWidth: 0,
-            data: (function () {
-                // generate an array of random data
-                var data = [];
-                var edadGest = the("semanas").value;
-
-                var medida = $("#p\\.sis\\.morfologia").val();
-                medida = medida.toString();
-                medida = medida.replace(",", ".");
-                medida = parseFloat(medida);
-
-                for (i = 18; i < edadGest; i++) {
-                    data.push({
-                        y: 0,
-                    });
-                }
-                data.push({
-                    y: medida,
-                });
-                for (i = edadGest + 1; i <= 39; i++) {
-                    data.push({
-                        y: 0,
-                    });
-                }
-                return data;
-            }())
-        }]
-        });
-    });
 });
 
 // Controlador de morfología
@@ -7946,7 +7860,7 @@ function informeMorfologia(){
         InformeString = InformeString.replace(":ILA", ILA);
     }
 
-    InformeString += ' </tbody> </table> <table class="table"> <tbody> <tr> <th style="color: #045dab;">A).- EVALUACIÓN BIOMETRÍA FETAL (mm)</th> <th style="text-align: center;">Valor observado</th> <th class="text-center" style="text-align: center;">Pct de Crecimiento</th> <th class="text-center" style="text-align: center;">Rango percentilar</th> </tr><tr> <td class="p-0 pl-3">DBP (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPRANGO</td></tr><tr> <td class="p-0 pl-3">DOF:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOF</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFRANGO</td></tr><tr> <td class="p-0 pl-3">CC (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CC</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCRANGO</td></tr><tr> <td class="p-0 pl-3">CA (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CA</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CAPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CARANGO</td></tr><tr> <td class="p-0 pl-3">Femur (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMUR</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFEPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFERANGO</td></tr><tr> <td class="p-0 pl-3">Humero (Jeanty):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERO</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMEROPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERORANGO</td></tr><tr> <td class="p-0 pl-3">Índice Cefálico:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:INDCEF</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">Transverso cerebeloso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCEREPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERERANGO</td></tr><tr> <td class="p-0 pl-3">Cisterna magna:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAG</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGRANGO</td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td></tr><tr> <th class="p-0 pl-3" style="color: #045dab;">B).- FLUJOMETRÍA DE UTERINAS Y CERVIX</th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> </tr><tr> <td class="p-0 pl-3">IP Arteria uterina derecha:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUD</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDRANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria uterina izquierda:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUI</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>IP Arteria uterinas promedio:</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Largo cervical (mm):</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERVTXT</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td></tr><tr> <td class="p-0 pl-3" style="color: #045dab;">ADICIONAL DOPPLER FETAL</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3">IP Arteria Umbilical:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AU</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AURANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria cerebral media:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CM</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMRANGO</td></tr><tr> <td class="p-0 pl-3">IP Índice cerebro placentario:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPRANGO</td></tr><tr> <td class="p-0 pl-3">Ductus venoso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVRANGO</td></tr><tr> <td class="p-0 pl-3">Peak sistólico de ACM, PSV (cm/s):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PACM</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr></tbody></table><div class="newpage" pagebreak="true"></div>'
+    InformeString += ' </tbody> </table> <table class="table"> <tbody> <tr> <th style="color: #045dab;">A).- EVALUACIÓN BIOMETRÍA FETAL (mm)</th> <th style="text-align: center;">Valor observado</th> <th class="text-center" style="text-align: center;">Pct de Crecimiento</th> <th class="text-center" style="text-align: center;">Rango percentilar</th> </tr><tr> <td class="p-0 pl-3">DBP (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPRANGO</td></tr><tr> <td class="p-0 pl-3">DOF:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOF</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFRANGO</td></tr><tr> <td class="p-0 pl-3">CC (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CC</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCRANGO</td></tr><tr> <td class="p-0 pl-3">CA (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CA</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CAPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CARANGO</td></tr><tr> <td class="p-0 pl-3">Femur (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMUR</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFEPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFERANGO</td></tr><tr> <td class="p-0 pl-3">Humero (Jeanty):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERO</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMEROPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERORANGO</td></tr><tr> <td class="p-0 pl-3">Índice Cefálico:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:INDCEF</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">Transverso cerebeloso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCEREPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERERANGO</td></tr><tr> <td class="p-0 pl-3">Cisterna magna:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAG</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGRANGO</td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td></tr><tr> <th class="p-0 pl-3" style="color: #045dab;">B).- FLUJOMETRÍA DE UTERINAS Y CERVIX</th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> </tr><tr> <td class="p-0 pl-3">IP Arteria uterina derecha:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUD</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDRANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria uterina izquierda:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUI</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>IP Arteria uterinas promedio:</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Largo cervical (mm):</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERVTXT</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td></tr><tr> <td class="p-0 pl-3" style="color: #045dab;">ADICIONAL DOPPLER FETAL</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3">IP Arteria Umbilical:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AU</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AURANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria cerebral media:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CM</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMRANGO</td></tr><tr> <td class="p-0 pl-3">IP Índice cerebro placentario:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPRANGO</td></tr><tr> <td class="p-0 pl-3">Ductus venoso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVRANGO</td></tr></tbody></table><div class="newpage" pagebreak="true"></div>'
     var membrete = "<p>"+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
     InformeString += membrete;
     InformeString += '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table> <p style="color: #045dab; margin-top: 2rem;"><strong>C).- EVALUACIÓN MORFOLOGÍA FETAL</strong></p><table class="table"> <tbody>';
@@ -7990,7 +7904,7 @@ function informeMorfologia(){
 
     var CEES = document.querySelector('input[name="cees.morfologia"]:checked').value;
     if (CEES != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3" style="width: 360px;">Cabeza con estructuras encefálicas simétricas: :CEES mm</td><td class="p-0 pl-3">:CEESTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3" style="width: 360px;">Cabeza con estructuras encefálicas simétricas: :CEES</td><td class="p-0 pl-3">:CEESTXT</td></tr>';
         InformeString = InformeString.replace(":CEES", CEES);
         var CEESTXT = document.querySelector('input[name="cees.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
         InformeString = InformeString.replace(":CEESTXT", CEESTXT);
@@ -8132,7 +8046,7 @@ function informeMorfologia(){
         InformeString = InformeString.replace(":VEJIVTXT", VEJIVTXT);
     }
 
-
+    var GEN = the("gen.morfologia").value;
     InformeString += '<tr> <td class="p-0 pl-3">Sexo fetal:</td><td class="p-0 pl-3">:GEN</td></tr>';
     InformeString = InformeString.replace(":GEN", GEN);
 
@@ -8160,8 +8074,6 @@ function informeMorfologia(){
         InformeString = InformeString.replace(":EXINFTXT", EXINFTXT);
     }
 
-    var GEN = the("gen.morfologia").value;
-
     var AUD = the("art.ut.d.morfologia").value;
     var AUDPCT = the("art.ut.d.pct.morfologia").value;
     var AUDRANGO = oldProgress(the("art.ut.d.pct.real.morfologia").value);
@@ -8185,8 +8097,6 @@ function informeMorfologia(){
     var ICEREP = the("ind.cp.morfologia").value;
     var ICEREPPCT = the("ind.cp.pct.morfologia").value;
     var ICEREPRANGO = oldProgress(the("ind.cp.pct.real.morfologia").value);
-
-    var PACM = the("p.sis.morfologia").value;
 
     var DUCV = the("dv.morfologia").value;
     var DUCVPCT = the("dv.pct.morfologia").value;
@@ -8444,8 +8354,6 @@ function informeMorfologiaClon(){
     var ICEREP = the("ind.cp.morfologia").value;
     var ICEREPPCT = the("ind.cp.pct.morfologia").value;
     var ICEREPRANGO = oldProgress(the("ind.cp.pct.real.morfologia").value);
-
-    var PACM = the("p.sis.morfologia").value;
 
     var DUCV = the("dv.morfologia").value;
     var DUCVPCT = the("dv.pct.morfologia").value;
