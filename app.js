@@ -7949,7 +7949,7 @@ function informeMorfologia(){
     InformeString += ' </tbody> </table> <table class="table"> <tbody> <tr> <th style="color: #045dab;">A).- EVALUACIÓN BIOMETRÍA FETAL (mm)</th> <th style="text-align: center;">Valor observado</th> <th class="text-center" style="text-align: center;">Pct de Crecimiento</th> <th class="text-center" style="text-align: center;">Rango percentilar</th> </tr><tr> <td class="p-0 pl-3">DBP (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DBPRANGO</td></tr><tr> <td class="p-0 pl-3">DOF:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOF</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DOFRANGO</td></tr><tr> <td class="p-0 pl-3">CC (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CC</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CCRANGO</td></tr><tr> <td class="p-0 pl-3">CA (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CA</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CAPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CARANGO</td></tr><tr> <td class="p-0 pl-3">Femur (Hadlock):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMUR</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:FEMURRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFEPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PFERANGO</td></tr><tr> <td class="p-0 pl-3">Humero (Jeanty):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERO</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMEROPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:HUMERORANGO</td></tr><tr> <td class="p-0 pl-3">Índice Cefálico:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:INDCEF</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">Transverso cerebeloso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERE</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCEREPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:TRANSCERERANGO</td></tr><tr> <td class="p-0 pl-3">Cisterna magna:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAG</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CISMAGRANGO</td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td><td class="p-0 pl-3 text-center">&nbsp;</td></tr><tr> <th class="p-0 pl-3" style="color: #045dab;">B).- FLUJOMETRÍA DE UTERINAS Y CERVIX</th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> <th class="p-0 pl-3 text-center"></th> </tr><tr> <td class="p-0 pl-3">IP Arteria uterina derecha:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUD</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUDRANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria uterina izquierda:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUI</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUIRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>IP Arteria uterinas promedio:</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPRANGO</td></tr><tr> <td class="p-0 pl-3"><strong>Largo cervical (mm):</strong></td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:LARCERVTXT</td><td class="p-0 pl-3 text-center" style="text-align: center;"></td></tr><tr> <td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td><td class="p-0 pl-3">&nbsp;</td></tr><tr> <td class="p-0 pl-3" style="color: #045dab;">ADICIONAL DOPPLER FETAL</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr><tr> <td class="p-0 pl-3">IP Arteria Umbilical:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AU</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AUPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:AURANGO</td></tr><tr> <td class="p-0 pl-3">IP Arteria cerebral media:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CM</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:CMRANGO</td></tr><tr> <td class="p-0 pl-3">IP Índice cerebro placentario:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREP</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:ICEREPRANGO</td></tr><tr> <td class="p-0 pl-3">Ductus venoso:</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCV</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVPCT</td><td class="p-0 pl-3 text-center" style="text-align: center;">:DUCVRANGO</td></tr><tr> <td class="p-0 pl-3">Peak sistólico de ACM, PSV (cm/s):</td><td class="p-0 pl-3 text-center" style="text-align: center;">:PACM</td><td class="p-0 pl-3 text-center"></td><td class="p-0 pl-3 text-center"></td></tr></tbody></table><div class="newpage" pagebreak="true"></div>'
     var membrete = "<p>"+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") + "</p>";
     InformeString += membrete;
-    InformeString += '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table><p style="color: #045dab;margin-top:2rem"><strong>C).- EVALUACIÓN MORFOLOGÍA FETAL</strong></p><table class="table"> <tbody> <tr> <td class="p-0 pl-3" style="width: 360px;">Cerebro Ventrículo Lateral proximal: :CEREVLP mm</td><td class="p-0 pl-3">:CEREVLPTXT</td></tr><tr> <td class="p-0 pl-3">Cerebro Ventrículo Lateral distal: :CEREVLD mm</td><td class="p-0 pl-3">:CEREVLDTXT</td></tr><tr> <td class="p-0 pl-3">Cavum SP presente: :CAVUM</td><td class="p-0 pl-3">:CAVUMTXT</td></tr><tr> <td class="p-0 pl-3">Cuerpo calloso visible: :CCV</td><td class="p-0 pl-3">:CCVTXT</td></tr><tr> <td class="p-0 pl-3">Cuello normal: :CUELLO</td><td class="p-0 pl-3">:CUELLOTXT</td></tr><tr> <td class="p-0 pl-3">Labio nariz normal: :LNN</td><td class="p-0 pl-3">:LNNTXT</td></tr><tr> <td class="p-0 pl-3">Corazón 4 cámaras visible: :CORACV</td><td class="p-0 pl-3">:CORACVTXT</td></tr><tr> <td class="p-0 pl-3">Corazón Tracto de salida pulmonar normal: :CORATSPN</td><td class="p-0 pl-3">:CORATSPNTXT</td></tr><tr> <td class="p-0 pl-3">Corazón Tracto salida Aórtico normal: :CORATSAN</td><td class="p-0 pl-3">:CORATSANTXT</td></tr><tr> <td class="p-0 pl-3">Corazón 3 vasos tráquea visible: :CORAVTV</td><td class="p-0 pl-3">:CORAVTVTXT</td></tr><tr> <td class="p-0 pl-3">Tórax Normal: :TN</td><td class="p-0 pl-3">:TNTXT</td></tr><tr> <td class="p-0 pl-3">Abdomen: :ABDO</td><td class="p-0 pl-3">:ABDOTXT</td></tr><tr> <td class="p-0 pl-3">Pared normal: :PARNOR</td><td class="p-0 pl-3">:PARNORTXT</td></tr><tr> <td class="p-0 pl-3">Estómago visible: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr><tr> <td class="p-0 pl-3">Riñones visibles: :RINOV</td><td class="p-0 pl-3">:RINOVTXT</td></tr><tr> <td class="p-0 pl-3">Vejiga visible: :VEJIV</td><td class="p-0 pl-3">:VEJIVTXT</td></tr><tr> <td class="p-0 pl-3">Columna normal: :COLUMN</td><td class="p-0 pl-3">:COLUMNTXT</td></tr><tr> <td class="p-0 pl-3">Extremidades superiores normales: :EXSUP</td><td class="p-0 pl-3">:EXSUPTXT</td></tr><tr> <td class="p-0 pl-3">Extremidades inferiores normales: :EXINF</td><td class="p-0 pl-3">:EXINFTXT</td></tr><tr> <td class="p-0 pl-3">Sexo fetal:</td><td class="p-0 pl-3">:GEN</td></tr></tbody></table> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong></p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><p><strong style="color: #045dab;">INDICACIONES (seguimiento)</strong>:</p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:INDI</p></div><div class="container-fluid" style="margin-top: 5rem;text-align: right;"> <p class="text-right top40" style="text-align: right;">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p></div></div>';
+    InformeString += '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table> <p style="color: #045dab; margin-top: 2rem;"><strong>C).- EVALUACIÓN MORFOLOGÍA FETAL</strong></p><table class="table"> <tbody>';
 
     var DBP = the("dbp.morfologia").value;
     var DBPPCT = the("dbp.pct.morfologia").value;
@@ -7989,105 +7989,166 @@ function informeMorfologia(){
     var PFERANGO = oldProgress(the("pfe.pct.real.morfologia").value);
 
     var CEREVLP = the("vlp.morfologia").value;
-    InformeString = InformeString.replace(":CEREVLP", CEREVLP);
+    if (CEREVLP != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3" style="width: 360px;">Cerebro Ventrículo Lateral proximal: :CEREVLP mm</td><td class="p-0 pl-3">:CEREVLPTXT</td></tr>';
+        InformeString = InformeString.replace(":CEREVLP", CEREVLP);
+        var CEREVLPTXT = the("vlp.txt.morfologia").value;
+        InformeString = InformeString.replace(":CEREVLPTXT", CEREVLPTXT);
+    }
 
     var CEREVLD = the("vld.morfologia").value;
-    InformeString = InformeString.replace(":CEREVLD", CEREVLD);
+    if (CEREVLD != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Cerebro Ventrículo Lateral distal: :CEREVLD mm</td><td class="p-0 pl-3">:CEREVLDTXT</td></tr>';
+        InformeString = InformeString.replace(":CEREVLD", CEREVLD);
+        var CEREVLDTXT = the("vld.txt.morfologia").value;
+        InformeString = InformeString.replace(":CEREVLDTXT", CEREVLDTXT);
+    }
 
     var CAVUM = document.querySelector('input[name="cspp.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":CAVUM", CAVUM);
-    var CAVUMTXT = document.querySelector('input[name="cspp.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":CAVUMTXT", CAVUMTXT);
+    if (CAVUM != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Cavum SP presente: :CAVUM</td><td class="p-0 pl-3">:CAVUMTXT</td></tr>';
+        InformeString = InformeString.replace(":CAVUM", CAVUM);
+        var CAVUMTXT = document.querySelector('input[name="cspp.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":CAVUMTXT", CAVUMTXT);
+    }
 
     var CCV = document.querySelector('input[name="ccv.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":CCV", CCV);
-    var CCVTXT = document.querySelector('input[name="ccv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":CCVTXT", CCVTXT);
+    if (CCV != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Cuerpo calloso visible: :CCV</td><td class="p-0 pl-3">:CCVTXT</td></tr>';
+        InformeString = InformeString.replace(":CCV", CCV);
+        var CCVTXT = document.querySelector('input[name="ccv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":CCVTXT", CCVTXT);
+    }
 
     var CUELLO = document.querySelector('input[name="cn.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":CUELLO", CUELLO);
-    var CUELLOTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":CUELLOTXT", CUELLOTXT);
+    if (CUELLO != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Cuello normal: :CUELLO</td><td class="p-0 pl-3">:CUELLOTXT</td></tr>';
+        InformeString = InformeString.replace(":CUELLO", CUELLO);
+        var CUELLOTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":CUELLOTXT", CUELLOTXT);
+    }
 
     var LNN = document.querySelector('input[name="lnn.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":LNN", LNN);
-    var LNNTXT = document.querySelector('input[name="lnn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":LNNTXT", LNNTXT);
+    if (LNN != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Labio nariz normal: :LNN</td><td class="p-0 pl-3">:LNNTXT</td></tr>';
+        InformeString = InformeString.replace(":LNN", LNN);
+        var LNNTXT = document.querySelector('input[name="lnn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":LNNTXT", LNNTXT);
+    }
 
     var CORACV = document.querySelector('input[name="cv.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":CORACV", CORACV);
-    var CORACVTXT = document.querySelector('input[name="cv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":CORACVTXT", CORACVTXT);
+    if (CORACV != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Corazón 4 cámaras visible: :CORACV</td><td class="p-0 pl-3">:CORACVTXT</td></tr>';
+        InformeString = InformeString.replace(":CORACV", CORACV);
+        var CORACVTXT = document.querySelector('input[name="cv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":CORACVTXT", CORACVTXT);
+    }
 
     var CORATSPN = document.querySelector('input[name="tspn.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":CORATSPN", CORATSPN);
-    var CORATSPNTXT = document.querySelector('input[name="tspn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":CORATSPNTXT", CORATSPNTXT);
+    if (CORATSPN != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Corazón Tracto de salida pulmonar normal: :CORATSPN</td><td class="p-0 pl-3">:CORATSPNTXT</td></tr>';
+        InformeString = InformeString.replace(":CORATSPN", CORATSPN);
+        var CORATSPNTXT = document.querySelector('input[name="tspn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":CORATSPNTXT", CORATSPNTXT);
+    }
 
     var CORATSAN = document.querySelector('input[name="tsan.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":CORATSAN", CORATSAN);
-    var CORATSANTXT = document.querySelector('input[name="tsan.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":CORATSANTXT", CORATSANTXT);
+    if (CORATSAN != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Corazón Tracto salida Aórtico normal: :CORATSAN</td><td class="p-0 pl-3">:CORATSANTXT</td></tr>';
+        InformeString = InformeString.replace(":CORATSAN", CORATSAN);
+        var CORATSANTXT = document.querySelector('input[name="tsan.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":CORATSANTXT", CORATSANTXT);
+    }
 
     var CORAVTV = document.querySelector('input[name="vtv.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":CORAVTV", CORAVTV);
-    var CORAVTVTXT = document.querySelector('input[name="vtv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":CORAVTVTXT", CORAVTVTXT);
+    if (CORAVTV != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Corazón 3 vasos tráquea visible: :CORAVTV</td><td class="p-0 pl-3">:CORAVTVTXT</td></tr>';
+        InformeString = InformeString.replace(":CORAVTV", CORAVTV);
+        var CORAVTVTXT = document.querySelector('input[name="vtv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":CORAVTVTXT", CORAVTVTXT);
+    }
 
     var TN = document.querySelector('input[name="tn.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":TN", TN);
-    var TNTXT = document.querySelector('input[name="tn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":TNTXT", TNTXT);
+    if (TN != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Tórax Normal: :TN</td><td class="p-0 pl-3">:TNTXT</td></tr>';
+        InformeString = InformeString.replace(":TN", TN);
+        var TNTXT = document.querySelector('input[name="tn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":TNTXT", TNTXT);
+    }
 
     var PPAN = document.querySelector('input[name="ppan.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":PPAN", PPAN);
+    if (PPAN != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Parénquima pulmonar aspecto Normal: :PPAN</td><td class="p-0 pl-3">:PPANTXT</td></tr>';
+        InformeString = InformeString.replace(":PPAN", PPAN);
+        var PPANTXT = document.querySelector('input[name="ppan.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":PPANTXT", PPANTXT);
+    }
 
     var ABDO = document.querySelector('input[name="abdo.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":ABDO", ABDO);
-    var ABDOTXT = document.querySelector('input[name="abdo.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":ABDOTXT", ABDOTXT);
+    if (ABDO != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Abdomen: :ABDO</td><td class="p-0 pl-3">:ABDOTXT</td></tr>';
+        InformeString = InformeString.replace(":ABDO", ABDO);
+        var ABDOTXT = document.querySelector('input[name="abdo.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":ABDOTXT", ABDOTXT);
+    }
 
     var PARNOR = document.querySelector('input[name="pn.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":PARNOR", PARNOR);
-    var PARNORTXT = document.querySelector('input[name="pn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":PARNORTXT", PARNORTXT);
+    if (PARNOR != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Pared normal: :PARNOR</td><td class="p-0 pl-3">:PARNORTXT</td></tr>';
+        InformeString = InformeString.replace(":PARNOR", PARNOR);
+        var PARNORTXT = document.querySelector('input[name="pn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":PARNORTXT", PARNORTXT);
+    }
 
     var ESTOV = document.querySelector('input[name="ev.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":ESTOV", ESTOV);
-    var ESTOVTXT = document.querySelector('input[name="ev.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":ESTOVTXT", ESTOVTXT);
+    if (ESTOV != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Estómago visible: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr>';
+        InformeString = InformeString.replace(":ESTOV", ESTOV);
+        var ESTOVTXT = document.querySelector('input[name="ev.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":ESTOVTXT", ESTOVTXT);
+    }
 
     var RINOV = document.querySelector('input[name="rv.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":RINOV", RINOV);
-    var RINOVTXT = document.querySelector('input[name="rv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":RINOVTXT", RINOVTXT);
+    if (RINOV != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Riñones visibles: :RINOV</td><td class="p-0 pl-3">:RINOVTXT</td></tr>';
+        InformeString = InformeString.replace(":RINOV", RINOV);
+        var RINOVTXT = document.querySelector('input[name="rv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":RINOVTXT", RINOVTXT);
+    }
 
     var VEJIV = document.querySelector('input[name="vv.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":VEJIV", VEJIV);
-    var VEJIVTXT = document.querySelector('input[name="vv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":VEJIVTXT", VEJIVTXT);
+    if (VEJIV != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Vejiga visible: :VEJIV</td><td class="p-0 pl-3">:VEJIVTXT</td></tr>';
+        InformeString = InformeString.replace(":VEJIV", VEJIV);
+        var VEJIVTXT = document.querySelector('input[name="vv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":VEJIVTXT", VEJIVTXT);
+    }
 
     var COLUMN = document.querySelector('input[name="cn.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":COLUMN", COLUMN);
-    var COLUMNTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":COLUMNTXT", COLUMNTXT);
+    if (COLUMN != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Columna normal: :COLUMN</td><td class="p-0 pl-3">:COLUMNTXT</td></tr>';
+        InformeString = InformeString.replace(":COLUMN", COLUMN);
+        var COLUMNTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":COLUMNTXT", COLUMNTXT);
+    }
 
     var EXSUP = document.querySelector('input[name="esn.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":EXSUP", EXSUP);
-    var EXSUPTXT = document.querySelector('input[name="esn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":EXSUPTXT", EXSUPTXT);
+    if (EXSUP != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Extremidades superiores normales: :EXSUP</td><td class="p-0 pl-3">:EXSUPTXT</td></tr>';
+        InformeString = InformeString.replace(":EXSUP", EXSUP);
+        var EXSUPTXT = document.querySelector('input[name="esn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":EXSUPTXT", EXSUPTXT);
+    }
 
     var EXINF = document.querySelector('input[name="ein.morfologia"]:checked').value;
-    InformeString = InformeString.replace(":EXINF", EXINF);
-    var EXINFTXT = document.querySelector('input[name="ein.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    InformeString = InformeString.replace(":EXINFTXT", EXINFTXT);
+    if (EXINF != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Extremidades inferiores normales: :EXINF</td><td class="p-0 pl-3">:EXINFTXT</td></tr>';
+        InformeString = InformeString.replace(":EXINF", EXINF);
+        var EXINFTXT = document.querySelector('input[name="ein.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":EXINFTXT", EXINFTXT);
+    }
 
     var GEN = the("gen.morfologia").value;
-    InformeString = InformeString.replace(":GEN", GEN);
-    var CEREVLPTXT = the("vlp.txt.morfologia").value;
-    InformeString = InformeString.replace(":CEREVLPTXT", CEREVLPTXT);
-    var CEREVLDTXT = the("vld.txt.morfologia").value;
-    InformeString = InformeString.replace(":CEREVLDTXT", CEREVLDTXT);
 
     var AUD = the("art.ut.d.morfologia").value;
     var AUDPCT = the("art.ut.d.pct.morfologia").value;
@@ -8127,6 +8188,8 @@ function informeMorfologia(){
 
     var CIUDAD =  $( '#ciudadpaciente option:selected').text();
     var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
+
+    InformeString += '<tr> <td class="p-0 pl-3">Sexo fetal:</td><td class="p-0 pl-3">:GEN</td></tr></tbody> </table> <p><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong></p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><p><strong style="color: #045dab;">INDICACIONES (seguimiento)</strong>:</p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:INDI</p></div><div class="container-fluid" style="margin-top: 5rem; text-align: right;"> <p class="text-right top40" style="text-align: right;">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p></div></div>';
 
     InformeString = InformeString.replace(":FUR", fur);
     InformeString = InformeString.replace(":EG", eg);
@@ -8188,6 +8251,8 @@ function informeMorfologia(){
     InformeString = InformeString.replace(":PFE", PFE);
     InformeString = InformeString.replace(":PFEPCT", PFEPCT);
     InformeString = InformeString.replace(":PFERANGO", PFERANGO);
+
+    InformeString = InformeString.replace(":GEN", GEN);
 
     InformeString = InformeString.replace(":AUD", AUD);
     InformeString = InformeString.replace(":AUDPCT", AUDPCT);
