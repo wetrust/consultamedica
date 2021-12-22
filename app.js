@@ -695,6 +695,14 @@ $( document ).ready(function() {
         }
     });
 
+    $("#ver\\.morfo\\.minsal").on("click", function(){
+        if (this.checked == true){
+            this.parentElement.parentElement.children[1].classList.remove("d-none");
+        }else{
+            this.parentElement.parentElement.children[1].classList.add("d-none");
+        }
+    });
+
     $("#ver\\.ref\\.morfologia").on("click", function(){
         if (this.checked == true){
             the("ver.ref.div.morfologia").classList.remove("d-none");
