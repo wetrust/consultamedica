@@ -7989,45 +7989,105 @@ function informeMorfologia(){
     var PFERANGO = oldProgress(the("pfe.pct.real.morfologia").value);
 
     var CEREVLP = the("vlp.morfologia").value;
-    var CEREVLD = the("vld.morfologia").value;
-    var CAVUM = document.querySelector('input[name="cspp.morfologia"]:checked').value;
-    var CCV = document.querySelector('input[name="ccv.morfologia"]:checked').value;
-    var CUELLO = document.querySelector('input[name="cn.morfologia"]:checked').value;
-    var LNN = document.querySelector('input[name="lnn.morfologia"]:checked').value;
-    var CORACV = document.querySelector('input[name="cv.morfologia"]:checked').value;
-    var CORATSPN = document.querySelector('input[name="tspn.morfologia"]:checked').value;
-    var CORATSAN = document.querySelector('input[name="tsan.morfologia"]:checked').value;
-    var CORAVTV = document.querySelector('input[name="vtv.morfologia"]:checked').value;
-    var TN = document.querySelector('input[name="tn.morfologia"]:checked').value;
-    var ABDO = document.querySelector('input[name="abdo.morfologia"]:checked').value;
-    var PARNOR = document.querySelector('input[name="pn.morfologia"]:checked').value;
-    var ESTOV = document.querySelector('input[name="ev.morfologia"]:checked').value;
-    var RINOV = document.querySelector('input[name="rv.morfologia"]:checked').value;
-    var VEJIV = document.querySelector('input[name="vv.morfologia"]:checked').value;
-    var COLUMN = document.querySelector('input[name="cn.morfologia"]:checked').value;
-    var EXSUP = document.querySelector('input[name="esn.morfologia"]:checked').value;
-    var EXINF = document.querySelector('input[name="ein.morfologia"]:checked').value;
-    var GEN = the("gen.morfologia").value;
+    InformeString = InformeString.replace(":CEREVLP", CEREVLP);
 
-    var CEREVLPTXT = the("vlp.txt.morfologia").value;
-    var CEREVLDTXT = the("vld.txt.morfologia").value;
+    var CEREVLD = the("vld.morfologia").value;
+    InformeString = InformeString.replace(":CEREVLD", CEREVLD);
+
+    var CAVUM = document.querySelector('input[name="cspp.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":CAVUM", CAVUM);
     var CAVUMTXT = document.querySelector('input[name="cspp.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":CAVUMTXT", CAVUMTXT);
+
+    var CCV = document.querySelector('input[name="ccv.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":CCV", CCV);
     var CCVTXT = document.querySelector('input[name="ccv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":CCVTXT", CCVTXT);
+
+    var CUELLO = document.querySelector('input[name="cn.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":CUELLO", CUELLO);
     var CUELLOTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":CUELLOTXT", CUELLOTXT);
+
+    var LNN = document.querySelector('input[name="lnn.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":LNN", LNN);
     var LNNTXT = document.querySelector('input[name="lnn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":LNNTXT", LNNTXT);
+
+    var CORACV = document.querySelector('input[name="cv.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":CORACV", CORACV);
     var CORACVTXT = document.querySelector('input[name="cv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":CORACVTXT", CORACVTXT);
+
+    var CORATSPN = document.querySelector('input[name="tspn.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":CORATSPN", CORATSPN);
     var CORATSPNTXT = document.querySelector('input[name="tspn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":CORATSPNTXT", CORATSPNTXT);
+
+    var CORATSAN = document.querySelector('input[name="tsan.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":CORATSAN", CORATSAN);
     var CORATSANTXT = document.querySelector('input[name="tsan.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":CORATSANTXT", CORATSANTXT);
+
+    var CORAVTV = document.querySelector('input[name="vtv.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":CORAVTV", CORAVTV);
     var CORAVTVTXT = document.querySelector('input[name="vtv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":CORAVTVTXT", CORAVTVTXT);
+
+    var TN = document.querySelector('input[name="tn.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":TN", TN);
     var TNTXT = document.querySelector('input[name="tn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":TNTXT", TNTXT);
+
+    var PPAN = document.querySelector('input[name="ppan.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":PPAN", PPAN);
+
+    var ABDO = document.querySelector('input[name="abdo.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":ABDO", ABDO);
     var ABDOTXT = document.querySelector('input[name="abdo.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":ABDOTXT", ABDOTXT);
+
+    var PARNOR = document.querySelector('input[name="pn.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":PARNOR", PARNOR);
     var PARNORTXT = document.querySelector('input[name="pn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":PARNORTXT", PARNORTXT);
+
+    var ESTOV = document.querySelector('input[name="ev.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":ESTOV", ESTOV);
     var ESTOVTXT = document.querySelector('input[name="ev.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":ESTOVTXT", ESTOVTXT);
+
+    var RINOV = document.querySelector('input[name="rv.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":RINOV", RINOV);
     var RINOVTXT = document.querySelector('input[name="rv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":RINOVTXT", RINOVTXT);
+
+    var VEJIV = document.querySelector('input[name="vv.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":VEJIV", VEJIV);
     var VEJIVTXT = document.querySelector('input[name="vv.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":VEJIVTXT", VEJIVTXT);
+
+    var COLUMN = document.querySelector('input[name="cn.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":COLUMN", COLUMN);
     var COLUMNTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":COLUMNTXT", COLUMNTXT);
+
+    var EXSUP = document.querySelector('input[name="esn.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":EXSUP", EXSUP);
     var EXSUPTXT = document.querySelector('input[name="esn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":EXSUPTXT", EXSUPTXT);
+
+    var EXINF = document.querySelector('input[name="ein.morfologia"]:checked').value;
+    InformeString = InformeString.replace(":EXINF", EXINF);
     var EXINFTXT = document.querySelector('input[name="ein.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+    InformeString = InformeString.replace(":EXINFTXT", EXINFTXT);
+
+    var GEN = the("gen.morfologia").value;
+    InformeString = InformeString.replace(":GEN", GEN);
+    var CEREVLPTXT = the("vlp.txt.morfologia").value;
+    InformeString = InformeString.replace(":CEREVLPTXT", CEREVLPTXT);
+    var CEREVLDTXT = the("vld.txt.morfologia").value;
+    InformeString = InformeString.replace(":CEREVLDTXT", CEREVLDTXT);
 
     var AUD = the("art.ut.d.morfologia").value;
     var AUDPCT = the("art.ut.d.pct.morfologia").value;
@@ -8129,27 +8189,6 @@ function informeMorfologia(){
     InformeString = InformeString.replace(":PFEPCT", PFEPCT);
     InformeString = InformeString.replace(":PFERANGO", PFERANGO);
 
-    InformeString = InformeString.replace(":CEREVLP", CEREVLP);
-    InformeString = InformeString.replace(":CEREVLD", CEREVLD);
-    InformeString = InformeString.replace(":CAVUM", CAVUM);
-    InformeString = InformeString.replace(":CCV", CCV);
-    InformeString = InformeString.replace(":CUELLO", CUELLO);
-    InformeString = InformeString.replace(":LNN", LNN);
-    InformeString = InformeString.replace(":CORACV", CORACV);
-    InformeString = InformeString.replace(":CORATSPN", CORATSPN);
-    InformeString = InformeString.replace(":CORATSAN", CORATSAN);
-
-    InformeString = InformeString.replace(":CORAVTV", CORAVTV);
-    InformeString = InformeString.replace(":TN", TN);
-    InformeString = InformeString.replace(":ABDO", ABDO);
-    InformeString = InformeString.replace(":PARNOR", PARNOR);
-    InformeString = InformeString.replace(":ESTOV", ESTOV);
-    InformeString = InformeString.replace(":RINOV", RINOV);
-    InformeString = InformeString.replace(":VEJIV", VEJIV);
-    InformeString = InformeString.replace(":COLUMN", COLUMN);
-    InformeString = InformeString.replace(":EXSUP", EXSUP);
-    InformeString = InformeString.replace(":EXINF", EXINF);
-    InformeString = InformeString.replace(":GEN", GEN);
     InformeString = InformeString.replace(":AUD", AUD);
     InformeString = InformeString.replace(":AUDPCT", AUDPCT);
     InformeString = InformeString.replace(":AUDRANGO", AUDRANGO);
@@ -8168,26 +8207,6 @@ function informeMorfologia(){
     InformeString = InformeString.replace(":ICEREP", ICEREP);
     InformeString = InformeString.replace(":ICEREPPCT", ICEREPPCT);
     InformeString = InformeString.replace(":ICEREPRANGO", ICEREPRANGO);
-
-    InformeString = InformeString.replace(":CEREVLPTXT", CEREVLPTXT);
-    InformeString = InformeString.replace(":CEREVLDTXT", CEREVLDTXT);
-    InformeString = InformeString.replace(":CAVUMTXT", CAVUMTXT);
-    InformeString = InformeString.replace(":CCVTXT", CCVTXT);
-    InformeString = InformeString.replace(":CUELLOTXT", CUELLOTXT);
-    InformeString = InformeString.replace(":LNNTXT", LNNTXT);
-    InformeString = InformeString.replace(":CORACVTXT", CORACVTXT);
-    InformeString = InformeString.replace(":CORATSPNTXT", CORATSPNTXT);
-    InformeString = InformeString.replace(":CORATSANTXT", CORATSANTXT);
-    InformeString = InformeString.replace(":CORAVTVTXT", CORAVTVTXT);
-    InformeString = InformeString.replace(":TNTXT", TNTXT);
-    InformeString = InformeString.replace(":ABDOTXT", ABDOTXT);
-    InformeString = InformeString.replace(":PARNORTXT", PARNORTXT);
-    InformeString = InformeString.replace(":ESTOVTXT", ESTOVTXT);
-    InformeString = InformeString.replace(":RINOVTXT", RINOVTXT);
-    InformeString = InformeString.replace(":VEJIVTXT", VEJIVTXT);
-    InformeString = InformeString.replace(":COLUMNTXT", COLUMNTXT);
-    InformeString = InformeString.replace(":EXSUPTXT", EXSUPTXT);
-    InformeString = InformeString.replace(":EXINFTXT", EXINFTXT);
 
     InformeString = InformeString.replace(":PACM", PACM);
     InformeString = InformeString.replace(":DUCV", DUCV);

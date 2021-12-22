@@ -1041,12 +1041,12 @@ $( '#loadPacienteSelect' ).on( 'click', function() {
 
 $( document ).ready(function() {
 	//puedoGuardarEnElNavegador();
-        //queDiaEs();
-        //cualEsMiIp();
-        //cargarDatosGenerales();
-        //activarTooltips();
-		//activarBotones();
-		
+    //queDiaEs();
+    //cualEsMiIp();
+    //cargarDatosGenerales();
+    //activarTooltips();
+	//activarBotones();
+
 	$("#fum-ginecologica").on("change", function(){
 		var FExamen,FUM,EdadGestacional;
 		var undia = 1000 * 60 * 60 * 24;
@@ -1196,5 +1196,3 @@ $( document ).ready(function() {
 $(window).on('hashchange', function(){
 	aplication.onHashChange();
 });
-
-
