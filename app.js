@@ -7988,6 +7988,14 @@ function informeMorfologia(){
     var PFEPCT = the("pfe.pct.morfologia").value;
     var PFERANGO = oldProgress(the("pfe.pct.real.morfologia").value);
 
+    var CEES = document.querySelector('input[name="cees.morfologia"]:checked').value;
+    if (CEES != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3" style="width: 360px;">Cabeza de estructura encefálica simétrica: :CEES mm</td><td class="p-0 pl-3">:CEESTXT</td></tr>';
+        InformeString = InformeString.replace(":CEES", CEES);
+        var CEESTXT = document.querySelector('input[name="cees.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":CEESTXT", CEESTXT);
+    }
+
     var CEREVLP = the("vlp.morfologia").value;
     if (CEREVLP != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3" style="width: 360px;">Cerebro Ventrículo Lateral proximal: :CEREVLP mm</td><td class="p-0 pl-3">:CEREVLPTXT</td></tr>';
