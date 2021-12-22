@@ -5568,9 +5568,9 @@ $(document).ready(function(){
     })
 
     $("input[type='radio']").on("change",function() {
-        if (this.value == "si"){
+        if (this.value == "eliminar"){
             this.parentElement.parentElement.parentElement.parentElement.children[2].classList.add("d-none");
-        }else if (this.value == "no"){
+        }else if (this.value == "no" || this.value == "Si"){
             this.parentElement.parentElement.parentElement.parentElement.children[2].classList.remove("d-none");
         }
     });  
