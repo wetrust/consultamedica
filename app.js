@@ -5492,7 +5492,7 @@ $(document).ready(function(){
     }
 
     the("vld.morfologia").onkeyup =  function(){
-        atrio = this.value;
+        let atrio = this.value;
         atrio = atrio.toString();
         atrio = atrio.replace(",", ".");
 
