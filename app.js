@@ -8206,7 +8206,7 @@ function informeMorfologia(){
     InformeString = InformeString.replace(":MOTIVO", motivo);
     InformeString = InformeString.replace(":CIUDAD", CIUDAD);
 
-    InformeString = InformeString.replace(":PACIENTE", paciente);
+    InformeString = InformeString.replace(/:PACIENTE/g, paciente);
     InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
     InformeString = InformeString.replace(":FEXAMEN", fexamen);
     InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
