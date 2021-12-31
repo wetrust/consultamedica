@@ -414,7 +414,7 @@ $( document ).ready(function() {
             comentario += "";
         } else if (the("saco").value && the("embrion").value == "no se observa aun"){
         
-            comentario += "-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco<br>-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )<br>";
+            comentario += "-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco/n-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )/n";
         
         } else if (the("embrion").value != "embrión sin actividad cardiaca"){
         
@@ -423,7 +423,7 @@ $( document ).ready(function() {
             let fpp = new Date(Date.parse(the("fppAjustada").value));
             fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
             let eg = the("semanasAjustada").value + "."+ the("diasAjustada").value + " semanas.";
-            comentario += "<strong>La edad gestacional calculada  =  "+eg+", por tanto fechas operacionales son:</strong><br><strong>- FUM ecográfica  =  "+ fur +"</strong><br><strong>- Fecha esperada de parto  =  " + fpp + "</strong><br>";
+            comentario += "La edad gestacional calculada  =  "+eg+", por tanto fechas operacionales son:/n- FUM ecográfica  =  "+ fur +"/n- Fecha esperada de parto  =  " + fpp + "/n";
         }
 
         the("comentarios-eco-uno").value = comentario
@@ -496,7 +496,7 @@ $( document ).ready(function() {
             comentario += "";
         } else if (the("saco").value && the("embrion").value == "no se observa aun"){
         
-            comentario += "-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco<br>-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )<br>";
+            comentario += "-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco/n-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )/n";
         
         } else if (the("embrion").value != "embrión sin actividad cardiaca"){
         
@@ -505,7 +505,7 @@ $( document ).ready(function() {
             let fpp = new Date(Date.parse(the("fppAjustada").value));
             fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
             let eg = the("semanasAjustada").value + "."+ the("diasAjustada").value + " semanas.";
-            comentario += "<strong>La edad gestacional calculada  =  "+eg+", por tanto fechas operacionales son:</strong><br><strong>- FUM ecográfica  =  "+ fur +"</strong><br><strong>- Fecha esperada de parto  =  " + fpp + "</strong><br>";
+            comentario += "La edad gestacional calculada  =  "+eg+", por tanto fechas operacionales son:/n- FUM ecográfica  =  "+ fur +"/n- Fecha esperada de parto  =  " + fpp + "/n";
         }
 
         the("comentarios-eco-uno").value = comentario
@@ -559,7 +559,7 @@ $( document ).ready(function() {
             comentario += "";
         } else if (the("saco").value && the("embrion").value == "no se observa aun"){
         
-            comentario += "-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco<br>-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )<br>";
+            comentario += "-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco/n-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )/n";
         
         } else if (the("embrion").value != "embrión sin actividad cardiaca"){
         
@@ -568,7 +568,7 @@ $( document ).ready(function() {
             let fpp = new Date(Date.parse(the("fppAjustada").value));
             fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
             let eg = the("semanasAjustada").value + "."+ the("diasAjustada").value + " semanas.";
-            comentario += "<strong>La edad gestacional calculada  =  "+eg+", por tanto fechas operacionales son:</strong><br><strong>- FUM ecográfica  =  "+ fur +"</strong><br><strong>- Fecha esperada de parto  =  " + fpp + "</strong><br>";
+            comentario += "La edad gestacional calculada  =  "+eg+", por tanto fechas operacionales son:/n- FUM ecográfica  =  "+ fur +"/n- Fecha esperada de parto  =  " + fpp + "/n";
         }
 
         the("comentarios-eco-uno").value = comentario
