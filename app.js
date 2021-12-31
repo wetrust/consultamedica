@@ -1146,7 +1146,7 @@ $( document ).ready(function() {
         }
     }
 
-    $('input[name="nombre-paciente"]').on("blur", function(){
+    $("#nombre-paciente").on("blur", function(){
         mayusculas(this)
     });
 });
