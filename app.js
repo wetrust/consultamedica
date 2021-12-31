@@ -412,7 +412,7 @@ $( document ).ready(function() {
 
         if ((the("saco").value == "" && the("embrion").value == "no se observa") || the("embrion").value == "no se observa"){
             comentario += "";
-        } else if (the("saco").value && the("embrion").value == "no se observa aun"){
+        } else if (the("saco").value > 0 && the("embrion").value == "no se observa" || the("embrion").value == "no se observa"){
         
             comentario += "-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco\n-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )\n";
         
@@ -494,7 +494,7 @@ $( document ).ready(function() {
 
         if ((the("saco").value == "" && the("embrion").value == "no se observa") || the("embrion").value == "no se observa"){
             comentario += "";
-        } else if (the("saco").value && the("embrion").value == "no se observa aun"){
+        } else if (the("saco").value > 0 && the("embrion").value == "no se observa" || the("embrion").value == "no se observa"){
         
             comentario += "-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco\n-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )\n";
         
@@ -557,7 +557,7 @@ $( document ).ready(function() {
 
         if ((the("saco").value == "" && the("embrion").value == "no se observa") || the("embrion").value == "no se observa"){
             comentario += "";
-        } else if (the("saco").value && the("embrion").value == "no se observa aun"){
+        } else if (the("saco").value > 0 && the("embrion").value == "no se observa" || the("embrion").value == "no se observa"){
         
             comentario += "-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco\n-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )\n";
         
