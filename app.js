@@ -1145,6 +1145,10 @@ $( document ).ready(function() {
             el.classList.add("d-none");
         }
     }
+
+    $('input[name="nombre-paciente"]').on("blur", function(){
+        mayusculas(this)
+    });
 });
 
 // Controlador de input clones
@@ -9097,4 +9101,24 @@ function modalEcoSegTrimInforme(){
     } else {
         imprInforme(crearInformeEcoSegTrim2());
     }
+}
+
+function mayusculas(el){
+    let txt = el.value
+    txt = txt.split(" ")
+
+    if (Array.isArray(txt)){
+        for (let z = 0; z < txt.length; z++){
+            txt[z] = capitalize(txt[z])
+        }
+
+        el.value = txt.join(" ")
+    }else{
+        el.value = capitalize(el.value)
+    }
+}
+
+const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
 }
