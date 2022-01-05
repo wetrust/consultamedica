@@ -8248,8 +8248,11 @@ function informeMorfologia(){
     }
 
     var INDI = the("seguimiento.morfologia").value;
-    var COMENTARIO = the("biometria.comentario.morfologia").value +  "<br>" + the("conclusion.morfologia").value + "<br>" + the("morfologia.comentario.morfologia").value;
+    INDI =  (typeof INDI !== 'undefined') ? INDI.replace(/\r?\n/g, "<br>") : INDI = '';
 
+    var COMENTARIO = the("biometria.comentario.morfologia").value +  "<br>" + the("conclusion.morfologia").value + "<br>" + the("morfologia.comentario.morfologia").value;
+    COMENTARIO =  (typeof COMENTARIO !== 'undefined') ? COMENTARIO.replace(/\r?\n/g, "<br>") : COMENTARIO = '';
+    
     var CIUDAD =  $( '#ciudadpaciente option:selected').text();
 
     InformeString += '</tbody> </table> <p><strong style="color: #045dab;">COMENTARIOS</strong></p><div class="container-fluid"><p style="max-width: 800px; text-align: justify;">:COMENTARIO</p></div><p><strong style="color: #045dab;">OBSERVACIONES</strong>:</p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:INDI</p></div><div class="container-fluid" style="margin-top: 5rem; text-align: right;"> <p class="text-right top40" style="text-align: right;">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p></div></div>';
@@ -8303,7 +8306,7 @@ function informeDoppler(){
 
     var bvm = the("bvmDoppler").value;
     var comentario = the("comentarios-doppler").value;
-    comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
+    comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
     var motivoDoppler = the("motivo-doppler").value;
     var antecedentes = the("antecedentes-doppler").value;
