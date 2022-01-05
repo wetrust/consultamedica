@@ -5584,7 +5584,7 @@ $(document).ready(function(){
             this.parentElement.parentElement.parentElement.parentElement.children[2].classList.remove("d-none");
         }
 
-        if (this.value == "si"){
+        if (this.value == "no"){
             this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = "Comentario: "
         }else{
             this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = ""
