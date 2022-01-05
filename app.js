@@ -5583,6 +5583,12 @@ $(document).ready(function(){
         }else if (this.value == "no" || this.value == "si"){
             this.parentElement.parentElement.parentElement.parentElement.children[2].classList.remove("d-none");
         }
+
+        if (this.value == "si"){
+            this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = "Comentario: "
+        }else{
+            this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = ""
+        }
     });  
 })
 
@@ -8064,7 +8070,7 @@ function informeMorfologia(){
 
     var CEES = document.querySelector('input[name="cees.morfologia"]:checked').value;
     if (CEES != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3" style="width: 360px;">Cabeza con estructuras encefálicas simétricas: :CEES</td><td class="p-0 pl-3">:CEESTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3" style="width: 360px;">Cabeza, estructuras encefálicas simétricas: :CEES</td><td class="p-0 pl-3">:CEESTXT</td></tr>';
         InformeString = InformeString.replace(":CEES", CEES);
         var CEESTXT = document.querySelector('input[name="cees.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
         InformeString = InformeString.replace(":CEESTXT", CEESTXT);
@@ -8088,7 +8094,7 @@ function informeMorfologia(){
 
     var CEREVLP = the("vlp.morfologia").value;
     if (CEREVLP != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3" style="width: 360px;">Cerebro Ventrículo Lateral proximal: :CEREVLP mm</td><td class="p-0 pl-3">:CEREVLPTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3" style="width: 360px;">Ventrículo Lateral proximal: :CEREVLP mm</td><td class="p-0 pl-3">:CEREVLPTXT</td></tr>';
         InformeString = InformeString.replace(":CEREVLP", CEREVLP);
         var CEREVLPTXT = the("vlp.txt.morfologia").value;
         InformeString = InformeString.replace(":CEREVLPTXT", CEREVLPTXT);
@@ -8096,7 +8102,7 @@ function informeMorfologia(){
 
     var CEREVLD = the("vld.morfologia").value;
     if (CEREVLD != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Cerebro Ventrículo Lateral distal: :CEREVLD mm</td><td class="p-0 pl-3">:CEREVLDTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">Ventrículo Lateral distal: :CEREVLD mm</td><td class="p-0 pl-3">:CEREVLDTXT</td></tr>';
         InformeString = InformeString.replace(":CEREVLD", CEREVLD);
         var CEREVLDTXT = the("vld.txt.morfologia").value;
         InformeString = InformeString.replace(":CEREVLDTXT", CEREVLDTXT);
