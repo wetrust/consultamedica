@@ -8102,13 +8102,13 @@ function informeMorfologia(){
         InformeString = InformeString.replace(":CEREVLDTXT", CEREVLDTXT);
     }
 
-    //var LNN = document.querySelector('input[name="lnn.morfologia"]:checked').value;
-    //if (LNN != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Cerebelo y cisterna posterior normal: :LNN</td><td class="p-0 pl-3">:LNNTXT</td></tr>';
-    //    InformeString = InformeString.replace(":LNN", LNN);
-    //    var LNNTXT = document.querySelector('input[name="lnn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
-    //    InformeString = InformeString.replace(":LNNTXT", LNNTXT);
-    //} 
+    var CCPN = document.querySelector('input[name="ccpn.morfologia"]:checked').value;
+    if (CCPN != "eliminar"){
+        InformeString += '<tr> <td class="p-0 pl-3">Cerebelo y cisterna posterior normal: :CCPN</td><td class="p-0 pl-3">:CCPNTXT</td></tr>';
+        InformeString = InformeString.replace(":CCPN", CCPN);
+        var CCPNTXT = document.querySelector('input[name="ccpn.morfologia"]:checked').parentElement.parentElement.parentElement.parentElement.children[2].children[0].value;
+        InformeString = InformeString.replace(":CCPNTXT", CCPNTXT);
+    } 
 
     var LNN = document.querySelector('input[name="lnn.morfologia"]:checked').value;
     if (LNN != "eliminar"){
