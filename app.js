@@ -5579,11 +5579,11 @@ $(document).ready(function(){
     $("input[type='radio']").on("change",function() {
         if (this.value == "eliminar"){
             this.parentElement.parentElement.parentElement.parentElement.children[2].classList.add("d-none");
-        }else if (this.value == "no" || this.value == "si"){
+        }else if (this.value == "no" || this.value == "si" || this.value == "normal" || this.value == "anormal"){
             this.parentElement.parentElement.parentElement.parentElement.children[2].classList.remove("d-none");
         }
 
-        if (this.value == "no"){
+        if (this.value == "no" || this.value == "anormal"){
             this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = "Comentario: "
         }else{
             this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = ""
