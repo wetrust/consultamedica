@@ -5591,7 +5591,7 @@ $(document).ready(function(){
     });  
 
 
-    $("input[name='cees.morfologia']").on("change", function(){
+    $("input[name='cees\\.morfologia']").on("change", function(){
         if (this.value == "eliminar"){
             this.parentElement.parentElement.parentElement.children[1].classList.add("d-none");
         }else if (this.value == "normal" || this.value == "anormal"){
