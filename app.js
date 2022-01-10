@@ -5577,33 +5577,33 @@ $(document).ready(function(){
     }
 
     $("input[type='radio']").on("change",function() {
-        if (this.value == "eliminar"){
-            this.parentElement.parentElement.parentElement.parentElement.children[2].classList.add("d-none");
-        }else if (this.value == "no" || this.value == "si" || this.value == "normal" || this.value == "anormal"){
-            this.parentElement.parentElement.parentElement.parentElement.children[2].classList.remove("d-none");
-        }
 
-        if (this.value == "no" || this.value == "anormal"){
-            this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = "Comentario: "
+        if (this.name == "cees.morfologia"){
+            if (this.value == "eliminar"){
+                this.parentElement.parentElement.parentElement.children[1].classList.add("d-none");
+            }else if (this.value == "normal" || this.value == "anormal"){
+                this.parentElement.parentElement.parentElement.children[1].classList.remove("d-none");
+            }
+    
+            if (this.value == "no" || this.value == "anormal"){
+                this.parentElement.parentElement.parentElement.children[1].children[0].value = "Comentario: "
+            }else{
+                this.parentElement.parentElement.parentElement.children[1].children[0].value = ""
+            }
         }else{
-            this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = ""
+            if (this.value == "eliminar"){
+                this.parentElement.parentElement.parentElement.parentElement.children[2].classList.add("d-none");
+            }else if (this.value == "no" || this.value == "si" || this.value == "normal" || this.value == "anormal"){
+                this.parentElement.parentElement.parentElement.parentElement.children[2].classList.remove("d-none");
+            }
+    
+            if (this.value == "no" || this.value == "anormal"){
+                this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = "Comentario: "
+            }else{
+                this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = ""
+            }
         }
-    });  
-
-
-    $("input[name='cees\\.morfologia']").on("change", function(){
-        if (this.value == "eliminar"){
-            this.parentElement.parentElement.parentElement.children[1].classList.add("d-none");
-        }else if (this.value == "normal" || this.value == "anormal"){
-            this.parentElement.parentElement.parentElement.children[1].classList.remove("d-none");
-        }
-
-        if (this.value == "no" || this.value == "anormal"){
-            this.parentElement.parentElement.parentElement.children[1].children[0].value = "Comentario: "
-        }else{
-            this.parentElement.parentElement.parentElement.children[1].children[0].value = ""
-        }
-    })
+    });
 })
 
 $(window).on('hashchange', function(){
