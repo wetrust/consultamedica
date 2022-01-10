@@ -42,8 +42,6 @@ function uuidv4() {
 
 // Controlador de funciones base cuando se carga la pagina
 $( document ).ready(function() {
-    //detalle extraño
-    the("problematico").checked = true
 
     $("#fechaHora").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear());
 
