@@ -5586,9 +5586,9 @@ $(document).ready(function(){
             }
     
             if (this.value == "no" || this.value == "anormal"){
-                this.parentElement.parentElement.parentElement.children[1].children[0].value = "Comentario: "
+                this.parentElement.parentElement.parentElement.children[1].value = "Comentario: "
             }else{
-                this.parentElement.parentElement.parentElement.children[1].children[0].value = ""
+                this.parentElement.parentElement.parentElement.children[1].value = ""
             }
         }else{
             if (this.value == "eliminar"){
