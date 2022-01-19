@@ -8289,7 +8289,7 @@ function informeMorfologia(){
     }
 
     if (ESTOV != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Cámara gástrica visible, ubicación normal: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">Cámara gástrica visible: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr>';
         InformeString = InformeString.replace(":ESTOV", ESTOV);
         var ESTOVTXT = document.querySelector('input[name="ev.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":ESTOVTXT", ESTOVTXT);
