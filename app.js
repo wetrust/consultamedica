@@ -8131,6 +8131,13 @@ function informeMorfologia(){
     }
 
     var CCPN = document.querySelector('input[name="ccpn.morfologia"]:checked').value;
+
+    if (CCPN == "normal"){
+        CCPN = "Si"
+    }else if (CCPN == "anormal"){
+        CCPN = ""
+    }
+
     if (CCPN != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Cerebelo y cisterna posterior: :CCPN</td><td class="p-0 pl-3">:CCPNTXT</td></tr>';
         InformeString = InformeString.replace(":CCPN", CCPN);
