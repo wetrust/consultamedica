@@ -8071,7 +8071,7 @@ function informeMorfologia(){
     if (CEES == "normal"){
         CEES = "Si"
     }else if (CEES == "anormal"){
-        CEES = "no"
+        CEES = "No"
     }
 
     if (CEES != "eliminar"){
@@ -8089,7 +8089,7 @@ function informeMorfologia(){
     if (CAVUM == "normal"){
         CAVUM = "Si"
     }else if (CAVUM == "anormal"){
-        CAVUM = "no"
+        CAVUM = "No"
     }
 
     if (CAVUM != "eliminar"){
@@ -8104,7 +8104,7 @@ function informeMorfologia(){
     if (CCV == "normal"){
         CCV = "Si"
     }else if (CCV == "anormal"){
-        CCV = "no"
+        CCV = "No"
     }
 
     if (CCV != "eliminar"){
@@ -8150,7 +8150,7 @@ function informeMorfologia(){
     if (LNN == "normal"){
         LNN = "Si"
     }else if (LNN == "anormal"){
-        LNN = "no"
+        LNN = "No"
     }
 
     if (LNN != "eliminar"){
@@ -8165,7 +8165,7 @@ function informeMorfologia(){
     if (TN == "normal"){
         TN = "Si"
     }else if (TN == "anormal"){
-        TN = "no"
+        TN = "No"
     }
 
     if (TN != "eliminar"){
@@ -8180,7 +8180,7 @@ function informeMorfologia(){
     if (PPAN == "normal"){
         PPAN = "Si"
     }else if (PPAN == "anormal"){
-        PPAN = "no"
+        PPAN = "No"
     }
 
     if (PPAN != "eliminar"){
@@ -8195,7 +8195,7 @@ function informeMorfologia(){
     if (CUELLO == "normal"){
         CUELLO = "Si"
     }else if (CUELLO == "anormal"){
-        CUELLO = "no"
+        CUELLO = "No"
     }
 
     if (CUELLO != "eliminar"){
@@ -8210,7 +8210,7 @@ function informeMorfologia(){
     if (CORACV == "normal"){
         CORACV = "Si"
     }else if (CORACV == "anormal"){
-        CORACV = "no"
+        CORACV = "No"
     }
 
     if (CORACV != "eliminar"){
@@ -8225,7 +8225,7 @@ function informeMorfologia(){
     if (CORATSPN == "normal"){
         CORATSPN = "Si"
     }else if (CORATSPN == "anormal"){
-        CORATSPN = "no"
+        CORATSPN = "No"
     }
 
     if (CORATSPN != "eliminar"){
@@ -8240,7 +8240,7 @@ function informeMorfologia(){
     if (CORATSAN == "normal"){
         CORATSAN = "Si"
     }else if (CORATSAN == "anormal"){
-        CORATSAN = "no"
+        CORATSAN = "No"
     }
 
     if (CORATSAN != "eliminar"){
@@ -8255,7 +8255,7 @@ function informeMorfologia(){
     if (CORAVTV == "normal"){
         CORAVTV = "Si"
     }else if (CORAVTV == "anormal"){
-        CORAVTV = "no"
+        CORAVTV = "No"
     }
 
     if (CORAVTV != "eliminar"){
@@ -8270,7 +8270,7 @@ function informeMorfologia(){
     if (PARNOR == "normal"){
         PARNOR = "Si"
     }else if (PARNOR == "anormal"){
-        PARNOR = "no"
+        PARNOR = "No"
     }
 
     if (PARNOR != "eliminar"){
@@ -8285,7 +8285,7 @@ function informeMorfologia(){
     if (ESTOV == "normal"){
         ESTOV = "Si"
     }else if (ESTOV == "anormal"){
-        ESTOV = "no"
+        ESTOV = "No"
     }
 
     if (ESTOV != "eliminar"){
@@ -8300,7 +8300,7 @@ function informeMorfologia(){
     if (ABDO == "normal"){
         ABDO = "Si"
     }else if (ABDO == "anormal"){
-        ABDO = "no"
+        ABDO = "No"
     }
 
     if (ABDO != "eliminar"){
@@ -8315,7 +8315,7 @@ function informeMorfologia(){
     if (RINOV == "normal"){
         RINOV = "Si"
     }else if (RINOV == "anormal"){
-        RINOV = "no"
+        RINOV = "No"
     }
 
     if (RINOV != "eliminar"){
@@ -8330,7 +8330,7 @@ function informeMorfologia(){
     if (VEJIV == "normal"){
         VEJIV = "Si"
     }else if (VEJIV == "anormal"){
-        VEJIV = "no"
+        VEJIV = "No"
     }
 
     if (VEJIV != "eliminar"){
@@ -8349,7 +8349,7 @@ function informeMorfologia(){
     if (COLUMN == "normal"){
         COLUMN = "Si"
     }else if (COLUMN == "anormal"){
-        COLUMN = "no"
+        COLUMN = "No"
     }
 
     if (COLUMN != "eliminar"){
@@ -8364,7 +8364,7 @@ function informeMorfologia(){
     if (EXSUP == "normal"){
         EXSUP = "Si"
     }else if (EXSUP == "anormal"){
-        EXSUP = "no"
+        EXSUP = "No"
     }
 
     if (EXSUP != "eliminar"){
@@ -8379,7 +8379,7 @@ function informeMorfologia(){
     if (EXINF == "normal"){
         EXINF = "Si"
     }else if (EXINF == "anormal"){
-        EXINF = "no"
+        EXINF = "No"
     }
 
     if (EXINF != "eliminar"){
