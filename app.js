@@ -8825,22 +8825,7 @@ function makeModalEmail(){
             the(this.dataset.email).classList.add("d-none");
             the(this.dataset.emaile).classList.remove("d-none");
         }
-    }); 
-
-    let configuracion = JSON.parse(localStorage["configuracion"]);
-    if (configuracion.correos.length > 0) {
-        for (var i = 0; i < configuracion.correos.length; i++) {
-            let elemento = the(_correo);
-            let opt = document.createElement('option');
-            opt.appendChild( document.createTextNode(configuracion.correos[i][0] + " - " + configuracion.correos[i][2]) );
-            opt.value = configuracion.correos[i][2]; 
-            elemento.appendChild(opt); 
-        }
-
-        $("#seleccionar")[0].parentElement.parentElement.classList.remove("d-none")
-        $("#seleccionar").prop('checked', true);
-        $("#seleccionar").trigger("change")
-    }
+    });
 
     the(_modal.button).dataset.modal = _modal.id;
 
