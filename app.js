@@ -8849,15 +8849,15 @@ function makeModalError(){
 }
 
 function verifyEmailSend(_this,data){
-    if (the("seleccionar").checked == true){
+    //if (the("seleccionar").checked == true){
         //verificar si escribió emails en configuración
-        if (the(_this.dataset.email).options.length == 0){
-            makeModalNoEMailSelected();
-        } else{
-            data.append("email" , the(_this.dataset.email).value);
-            return data
-        }
-    }else{
+    //    if (the(_this.dataset.email).options.length == 0){
+    //        makeModalNoEMailSelected();
+    //    } else{
+    //        data.append("email" , the(_this.dataset.email).value);
+    //        return data
+    //    }
+    //}else{
         //verificar si escribió un correo electrónico
 
         if (the(_this.dataset.emaile).value == ""){
@@ -8866,7 +8866,7 @@ function verifyEmailSend(_this,data){
             data.append("email" , the(_this.dataset.emaile).value); 
             return data
         }
-    }
+    //}
 }
 
 function makeModalNoEMail(){
