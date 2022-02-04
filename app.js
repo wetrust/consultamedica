@@ -8816,18 +8816,9 @@ function makeModalEmail(){
 
     the(_modal.button).dataset.email = _correo;
     the(_modal.button).dataset.emaile = _correoe;
-    the("seleccionar").dataset.email = _correo;
-    the("seleccionar").dataset.emaile = _correoe;
     the("escribir").dataset.email = _correo;
     the("escribir").dataset.emaile = _correoe;
     $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-
-    $("#seleccionar").on("change",function() {
-        if (this.checked == true){
-            the(this.dataset.email).classList.remove("d-none");
-            the(this.dataset.emaile).classList.add("d-none");
-        }
-    });
 
     $("#escribir").on("change",function() {
         if (this.checked == true){
@@ -8852,8 +8843,6 @@ function makeModalEmail(){
     }
 
     the(_modal.button).dataset.modal = _modal.id;
-
-    $("#escribir").trigger("change");
 
     return _modal;
 }
