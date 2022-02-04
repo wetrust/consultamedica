@@ -5169,7 +5169,6 @@ $(document).ready(function(){
             var dos = bvm - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             var pctCISM = 0;
-            ajustarProgreso(resultado, "bvmMorfologia");
             
             if (resultado > 95){
                 pctCISM = '> 95';

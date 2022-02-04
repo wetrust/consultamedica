@@ -372,9 +372,22 @@
                             </div>
                         </div>
                         <div class="row my-3">
-                            <div class="col-12 col-sm-6">
+                            <div class="col">
                                 <div class="form-group row">
-                                    <label for="liquido.cualitativo.morfologia" class="col-12 col-form-label">Liquido amniótico Medicion cualitativa</label>
+                                    <label for="grado.morfologia" class="col-12 col-form-label">Placenta ( GRADO )</label>
+                                    <div class="col-12">
+                                        <select class="form-control shadow border-0" id="grado.morfologia">
+                                            <option value="0">0 ( Grannum )</option>
+                                            <option value="1">1 ( Grannum )</option>
+                                            <option value="2">2 ( Grannum )</option>
+                                            <option value="3">3 ( Grannum )</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-5">
+                                <div class="form-group row">
+                                    <label for="liquido.cualitativo.morfologia" class="col-12 col-form-label">Liquido amniótico ( LA )Medicion cualitativa</label>
                                     <div class="col-12">
                                         <select class="form-control shadow border-0" id="liquido.cualitativo.morfologia">
                                             <option value="normal">Normal</option>
@@ -384,10 +397,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-6">
+                            <div class="col-12 col-sm-5">
                                 <div class="form-group row">
-                                    <label for="liquido.semi.morfologia" class="col-12 col-form-label">Liquido Amniótico Medicion Única Bolsillo Mayor (BVM)</label>
-                                    <div class="col-6 col-lg-4">
+                                    <label for="liquido.semi.morfologia" class="col-12 col-form-label">LA. Medicion Única Bolsillo Mayor (BVM)</label>
+                                    <div class="col-6">
                                         <div class="input-group mb-2 shadow rounded">
                                             <input type="number" class="form-control border-0" id="liquido.semi.morfologia">
                                             <div class="input-group-append">
@@ -395,18 +408,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg-3">
+                                    <div class="col-6">
                                         <input type="text" class="form-control" id="liquido.semi.pct.morfologia" disabled>
-                                    </div>
-                                    <div class="col-12 col-lg-5">
-                                        <div class="progress my-3 border" id="bvmMorfologia">
-                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <p class="text-muted"><small>- Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p>
+                                <p class="text-muted"><small>- Referencia para medición semicuantitativa de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p>
                             </div>
                         </div>
                         <div>
