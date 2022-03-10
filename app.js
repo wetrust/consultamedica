@@ -167,24 +167,21 @@ $( document ).ready(function() {
     if (storageAvailable('localStorage')) { document.location.hash = "#inicio"; }
 
     //cargar edad materna
-    let edad = document.getElementsByName("edad_materna")[0];
+    let edad = the("edadMaternaList");
     opt = document.createElement('option');
-    opt.appendChild( document.createTextNode("< 12") );
-    opt.value = "&lt; 12"; 
+    opt.value = "< 12"; 
     edad.appendChild(opt); 
 
     for (var i = 12; i < 61; i++) {
-        edad = document.getElementsByName("edad_materna")[0];
+        edad = the("edadMaternaList");;
         opt = document.createElement('option');
-        opt.appendChild( document.createTextNode(i) );
         opt.value = i; 
         edad.appendChild(opt); 
     }
 
-    edad = document.getElementsByName("edad_materna")[0];
+    edad = the("edadMaternaList");;
     opt = document.createElement('option');
-    opt.appendChild( document.createTextNode("> 60") );
-    opt.value = "&gt; 60"; 
+    opt.value = "> 60"; 
     edad.appendChild(opt); 
 
     //cargar edad materna en otro lado
