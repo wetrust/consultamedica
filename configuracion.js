@@ -383,14 +383,14 @@ function loadDatabase() {
     $('#ecografistaList').empty();
     if (configuracion.profesional.length > 0) {
         $.each(configuracion.profesional, function(i, item) {
-            $('#ecografistaList').append('<option value="'+(i+1)+'"></option>');
+            $('#ecografistaList').append('<option value="'+item+'"></option>');
         });
     }
 
     $('#motivoExamenList').empty();
     if (configuracion.MotivoExamen.length > 0) {
         $.each(configuracion.MotivoExamen, function(i, item) {
-            $('#motivoExamenList').append('<option value="'+(i+1)+'"></option>');
+            $('#motivoExamenList').append('<option value="'+item+'"></option>');
         });
     }
 
@@ -413,7 +413,7 @@ function loadDatabase() {
     $('#patologiaObstetricaUnoList').empty();
     if (configuracion.PatologiaObstetrica.length > 0) {
         $.each(configuracion.PatologiaObstetrica, function(i, item) {
-            $('#patologiaObstetricaUnoList').append('<option value="'+(i+1)+'"></option>');
+            $('#patologiaObstetricaUnoList').append('<option value="'+item+'"></option>');
         });
     }
 
@@ -636,7 +636,7 @@ function loadOnly(name){
         $('#ecografistaList').empty();
         if (configuracion.profesional.length > 0) {
             $.each(configuracion.profesional, function(i, item) {
-                $('#ecografistaList').append('<option value="'+(i+1)+'"></option>');
+                $('#ecografistaList').append('<option value="'+item+'"></option>');
             });
         }
     }
@@ -645,7 +645,7 @@ function loadOnly(name){
         $('#motivoExamenList').empty();
         if (configuracion.MotivoExamen.length > 0) {
             $.each(configuracion.MotivoExamen, function(i, item) {
-                $('#motivoExamenList').append('<option value="'+(i+1)+'"></option>');
+                $('#motivoExamenList').append('<option value="'+item+'"></option>');
             });
         } 
     }
@@ -677,7 +677,7 @@ function loadOnly(name){
         $('#patologiaObstetricaUnoList').empty();
         if (configuracion.PatologiaObstetrica.length > 0) {
             $.each(configuracion.PatologiaObstetrica, function(i, item) {
-                $('#patologiaObstetricaUnoList').append('<option value="'+(i+1)+'"></option>');
+                $('#patologiaObstetricaUnoList').append('<option value="'+item+'"></option>');
             });
         }  
     }
