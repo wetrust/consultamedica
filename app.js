@@ -11,7 +11,7 @@ var activeHash = "#browser";
 
 var titulos = {
     "#consulta": "Datos iniciales de configuración ( Cuatro opciones de cálculo )",
-    "#paciente": "Información útil para reporte de informe y / o graficas (Opcional)",
+    "#paciente": "INGRESO DE DATOS PERSONALES",
     "#tipoExamen": "Módulos de la aplicación",
     "#ecoDoppler": "Flujometría Doppler materno / fetal",
     "#ecoObsSegTrim": "Evaluación del crecimiento fetal",
@@ -1502,6 +1502,11 @@ $( document ).ready(function() {
             imprInforme(informeGinecologico());
         }
     });
+
+    the("ver.ecoObsSegTrim.tablas.biometria").onclick = function(){
+        window.open(this.dataset.href, "_blank");
+        this.checked = false
+    }
 });
 
 // Controlador de botones reset
