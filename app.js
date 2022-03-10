@@ -5659,14 +5659,6 @@ $(document).ready(function(){
         var _c = JSON.parse(localStorage["configuracion"]);
         data.append("correo", _c.email)
 
-        let profref = the("profref").value
-
-        var configuracion = JSON.parse(localStorage["configuracion"]);
-        let resultado = configuracion.correos[+profref -1]
-        resultado = JSON.stringify(resultado)
-
-        data.append("profref" , resultado)
-
         fetch('https://partos.crecimientofetal.cl/api/guardar', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
 
             console.log(response)

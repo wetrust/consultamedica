@@ -417,29 +417,9 @@ function loadDatabase() {
         });
     }
 
-    //profesional referente
-    $('#profref').empty();
-    if (configuracion.correos.length > 0) {
-        $.each(configuracion.correos, function(i, item) {
-            $('#profref').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
-        });
-    }
-
-    $('#profref').off("change", loadTelefono)
-    $('#profref').on("change", loadTelefono)
-    $('#profref').trigger("change")
-
     //membrete
     $("#"+config.config[0].input[0].id).val(configuracion.membrete);
     $("#correo\\.configuracion").val(configuracion.email);
-
-    //centro ecográfico
-    $('#centroecograf').empty();
-    if (configuracion.centro.length > 0) {
-        $.each(configuracion.centro, function(i, item) {
-            $('#centroecograf').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
-        });
-    }
 }
 
 //manejadore de botones
@@ -605,82 +585,7 @@ $(document).ready(function() {
         ordenarAlfabeto()
         loadDatabase();
     }
-
-    //agregar una brujeria para ocultar 2 opciones en base al criterio del doc
-    var m = document.createElement("p")
-    var o = document.createElement("em")
-
-    var p = document.createTextNode("Opciones avanzadas");
-    o.appendChild(p)
-    p = document.createElement("br")
-    o.appendChild(p)
-
-    var q = document.createElement("small");
-
-    p = document.createTextNode("(En construcción)");
-    q.appendChild(p)
-
-    p = document.createElement("a");
-    let x = document.createTextNode(".");
-    p.appendChild(x)
-    p.id = "configOculto";
-    q.appendChild(p)
-    o.appendChild(q)
-    m.appendChild(o)
-    m.classList.add("mt-2", "mb-1")
-
-    let tabs = the(tab.nav);
-    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length -2]);
-
-    tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
-    tabs.childNodes[tabs.childNodes.length-2].classList.add("d-none")
-
-    the(config.config[config.config.length -1].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
-    m = document.createElement("h5")
-    p = document.createElement("em")
-    o = document.createTextNode("Modulo en construcción,opciones a desarrollar en un futuro proximo")
-    p.appendChild(o)
-    m.appendChild(p)
-    tabs = the(config.config[config.config.length -1].tab);
-    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length]);
-
-    the(config.config[config.config.length -2].tab).childNodes.forEach(elemento => elemento.classList.add("d-none"))
-    m = document.createElement("h5")
-    p = document.createElement("em")
-    o = document.createTextNode("Modulo en construcción,opciones a desarrollar en un futuro proximo")
-    p.appendChild(o)
-    m.appendChild(p)
-    tabs = the(config.config[config.config.length -2].tab);
-    tabs.insertBefore(m, tabs.childNodes[tabs.childNodes.length]);
-
-    $("#configOculto").on("click", function(){
-        the(config.config[config.config.length -1].tab).childNodes.forEach(elemento => elemento.classList.remove("d-none"))
-        tabs = the(config.config[config.config.length -1].tab);
-        tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
-
-        the(config.config[config.config.length -2].tab).childNodes.forEach(elemento => elemento.classList.remove("d-none"))
-        tabs = the(config.config[config.config.length -2].tab);
-        tabs.childNodes[tabs.childNodes.length-1].classList.add("d-none")
-
-        the("profesionalOcultoConfig").classList.remove("d-none")
-
-        tabs = the(tab.nav);
-    
-        tabs.childNodes[tabs.childNodes.length-1].classList.remove("d-none")
-        tabs.childNodes[tabs.childNodes.length-2].classList.remove("d-none")
-    })
-
 })
-
-function loadTelefono(){
-    var configuracion = JSON.parse(localStorage["configuracion"]);
-    var resultado = ""
-
-    if (configuracion.correos.length > 0) {
-        resultado = configuracion.correos[+this.value -1][1]
-    }
-    $('#profreftel').val(resultado)
-}
 
 function errorCorreo(){
     let modal = make.modal()
@@ -778,36 +683,9 @@ function loadOnly(name){
     }
 
 
-    if (name == "correos"){
-        //profesional referente
-        $('#profref').empty();
-        if (configuracion.correos.length > 0) {
-            $.each(configuracion.correos, function(i, item) {
-                $('#profref').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
-            });
-        }
-
-        $('#profref').off("change", loadTelefono)
-        $('#profref').on("change", loadTelefono)
-        $('#profref').trigger("change")
-    }
-
-
     if (name == "membrete"){
         //membrete
         $("#"+config.config[0].input[0].id).val(configuracion.membrete);
         $("#correo\\.configuracion").val(configuracion.email);
     }
-
-
-    if (name == "centro"){
-        //centro ecográfico
-        $('#centroecograf').empty();
-        if (configuracion.centro.length > 0) {
-            $.each(configuracion.centro, function(i, item) {
-                $('#centroecograf').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
-            });
-        }
-    }
-
 }
