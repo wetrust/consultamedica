@@ -10,7 +10,7 @@ var month = ("0" + (dayHoy.getUTCMonth() + 1)).slice(-2);
 var activeHash = "#browser";
 
 var titulos = {
-    "#consulta": "Datos iniciales de configuración ( Cuatro opciones de cálculo )",
+    "#consulta": "DATOS INICIALES DE CONFIGURACIÓN",
     "#paciente": "INGRESO DE DATOS PERSONALES",
     "#tipoExamen": "Módulos de la aplicación",
     "#ecoDoppler": "Flujometría Doppler materno / fetal",
