@@ -394,22 +394,6 @@ function loadDatabase() {
         });
     }
 
-    $('#lcontrolpaciente').empty();
-    if (configuracion.lcontrol.length > 0) {
-        $.each(configuracion.lcontrol, function(i, item) {
-            $('#lcontrolpaciente').append('<option value="'+(i+1)+'">'+item+'</option>');
-        });
-    }
-
-    $('#nacionalidad').empty();
-    $('#ciudadpaciente').empty();
-    if (configuracion.nacionalidad.length > 0) {
-        $.each(configuracion.nacionalidad, function(i, item) {
-            $('#nacionalidad').append('<option value="'+(i+1)+'">'+item+'</option>');
-            $('#ciudadpaciente').append('<option value="'+(i+1)+'">'+item+'</option>');
-        });
-    }
-
     $('#patologiaObstetricaUnoList').empty();
     if (configuracion.PatologiaObstetrica.length > 0) {
         $.each(configuracion.PatologiaObstetrica, function(i, item) {
@@ -649,29 +633,6 @@ function loadOnly(name){
             });
         } 
     }
-
-
-    if (name == "lcontrol"){
-        $('#lcontrolpaciente').empty();
-        if (configuracion.lcontrol.length > 0) {
-            $.each(configuracion.lcontrol, function(i, item) {
-                $('#lcontrolpaciente').append('<option value="'+(i+1)+'">'+item+'</option>');
-            });
-        } 
-    }
-
-
-    if (name == "nacionalidad"){
-        $('#nacionalidad').empty();
-        $('#ciudadpaciente').empty();
-        if (configuracion.nacionalidad.length > 0) {
-            $.each(configuracion.nacionalidad, function(i, item) {
-                $('#nacionalidad').append('<option value="'+(i+1)+'">'+item+'</option>');
-                $('#ciudadpaciente').append('<option value="'+(i+1)+'">'+item+'</option>');
-            });
-        }
-    }
-
 
     if (name == "PatologiaObstetrica"){
         $('#patologiaObstetricaUnoList').empty();
