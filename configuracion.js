@@ -380,17 +380,17 @@ function checkDatabase() {
 function loadDatabase() {
     var configuracion = JSON.parse(localStorage["configuracion"]);
 
-    $('#ecografista').empty();
+    $('#ecografistaList').empty();
     if (configuracion.profesional.length > 0) {
         $.each(configuracion.profesional, function(i, item) {
-            $('#ecografista').append('<option value="'+(i+1)+'">'+item+'</option>');
+            $('#ecografistaList').append('<option value="'+(i+1)+'"></option>');
         });
     }
 
-    $('#motivo-examen').empty();
+    $('#motivoExamenList').empty();
     if (configuracion.MotivoExamen.length > 0) {
         $.each(configuracion.MotivoExamen, function(i, item) {
-            $('#motivo-examen').append('<option value="'+(i+1)+'">'+item+'</option>');
+            $('#motivoExamenList').append('<option value="'+(i+1)+'"></option>');
         });
     }
 
@@ -410,10 +410,10 @@ function loadDatabase() {
         });
     }
 
-    $('#patologiaObstetricaUno').empty();
+    $('#patologiaObstetricaUnoList').empty();
     if (configuracion.PatologiaObstetrica.length > 0) {
         $.each(configuracion.PatologiaObstetrica, function(i, item) {
-            $('#patologiaObstetricaUno').append('<option value="'+(i+1)+'">'+item+'</option>');
+            $('#patologiaObstetricaUnoList').append('<option value="'+(i+1)+'"></option>');
         });
     }
 
@@ -633,19 +633,19 @@ function loadOnly(name){
     var configuracion = JSON.parse(localStorage["configuracion"]);
 
     if (name == "profesional"){
-        $('#ecografista').empty();
+        $('#ecografistaList').empty();
         if (configuracion.profesional.length > 0) {
             $.each(configuracion.profesional, function(i, item) {
-                $('#ecografista').append('<option value="'+(i+1)+'">'+item+'</option>');
+                $('#ecografistaList').append('<option value="'+(i+1)+'"></option>');
             });
         }
     }
 
     if (name == "MotivoExamen"){
-        $('#motivo-examen').empty();
+        $('#motivoExamenList').empty();
         if (configuracion.MotivoExamen.length > 0) {
             $.each(configuracion.MotivoExamen, function(i, item) {
-                $('#motivo-examen').append('<option value="'+(i+1)+'">'+item+'</option>');
+                $('#motivoExamenList').append('<option value="'+(i+1)+'"></option>');
             });
         } 
     }
@@ -674,10 +674,10 @@ function loadOnly(name){
 
 
     if (name == "PatologiaObstetrica"){
-        $('#patologiaObstetricaUno').empty();
+        $('#patologiaObstetricaUnoList').empty();
         if (configuracion.PatologiaObstetrica.length > 0) {
             $.each(configuracion.PatologiaObstetrica, function(i, item) {
-                $('#patologiaObstetricaUno').append('<option value="'+(i+1)+'">'+item+'</option>');
+                $('#patologiaObstetricaUnoList').append('<option value="'+(i+1)+'"></option>');
             });
         }  
     }
