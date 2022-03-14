@@ -2678,7 +2678,7 @@ $( document ).ready(function() {
 
         var paciente = the("nombre-paciente").value;
         var idpaciente = the("id-paciente").value;
-        var ecografista = $( '#ecografista option:selected').text();
+        var ecografista = the("ecografista").value;
         let fexamen = new Date(Date.parse(the("fee").value));
         fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
 
@@ -3082,7 +3082,7 @@ $( document ).ready(function() {
 
         var paciente = the("nombre-paciente").value;
         var idpaciente = the("id-paciente").value;
-        var ecografista = $( '#ecografista option:selected').text();
+        var ecografista = the("ecografista").value;
         let fexamen = new Date(Date.parse(the("fee").value));
         fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
@@ -4143,7 +4143,7 @@ $( document ).ready(function() {
         var paciente = $( '#nombre-paciente').val();
         var idpaciente = $( '#id-paciente').val();
         var fexamen = $( "input[name='fee']").val();
-        var ecografista = $( '#ecografista option:selected').text();
+        var ecografista = the("ecografista").value;
         stringGraficos = stringGraficos.replace(":ECOGRAFISTA", ecografista);
         stringGraficos = stringGraficos.replace(":PACIENTE", paciente);
         stringGraficos = stringGraficos.replace(":IDPACIENTE", idpaciente);
@@ -5763,7 +5763,7 @@ function infPrecoz(){
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = $( '#ecografista option:selected').text();
+    var ecografista = the("ecografista").value;
 
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
@@ -5900,7 +5900,7 @@ function infPrecozClon(){
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = $( '#ecografista option:selected').text();
+    var ecografista = the("ecografista").value;
 
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
@@ -6073,7 +6073,7 @@ function InfEcoObsSegTrim1(){
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = $( '#ecografista option:selected').text();
+    var ecografista = the("ecografista").value;
 
     var comentario = the("comentarios-eco-dos-inf-dos").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
@@ -6288,7 +6288,7 @@ function InfEcoObsSegTrim1Clon(){
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = $( '#ecografista option:selected').text();
+    var ecografista = the("ecografista").value;
 
     var comentario = the("comentarios-eco-dos-inf-dos").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
@@ -7418,7 +7418,7 @@ function crearInformeEcoSegTrim2(){
 	var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = $( '#ecografista option:selected').text();
+    var ecografista = the("ecografista").value;
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     var edadmaterna = $( "select[name='edad_materna']").val();
 
@@ -7599,7 +7599,7 @@ function crearInformeEcoSegTrim2Clon(){
 	var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = $( '#ecografista option:selected').text();
+    var ecografista = the("ecografista").value;
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     var edadmaterna = $( "select[name='edad_materna']").val();
     
@@ -7748,7 +7748,7 @@ function informeGinecologico()
     let paciente = $( '#nombre-paciente').val();
     let idpaciente = $( '#id-paciente').val();
     let motivo = the("motivo-examen").value;
-    let ecografista = $( '#ecografista option:selected').text();
+    let ecografista = the("ecografista").value;
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fexamen = new Date(Date.parse(the("fee").value));
@@ -8396,7 +8396,7 @@ function informeDoppler(){
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = $( '#ecografista option:selected').text();
+    var ecografista = the("ecografista").value;
 
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
@@ -8562,7 +8562,7 @@ function informeDopplerClon(){
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = $( '#ecografista option:selected').text();
+    var ecografista = the("ecografista").value;
 
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
