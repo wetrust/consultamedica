@@ -8486,7 +8486,8 @@ function informeDoppler(){
         if (dvPctTxt == "&gt; 95" || dvPctTxt == "&lt; 5"){
             tmpData = 0;
         }else{
-            tmpData = dvPctTxt;
+            tmpData = parseFloat(dvPctTxt);
+            tmpData = tmpData.toFixed(2);
         }
         var dvRngo = oldProgress(tmpData);
 
