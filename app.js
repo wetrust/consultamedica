@@ -1,5 +1,5 @@
 import { fechas } from './functionesM.js'
-import { make, the, inputDate, humanDate } from './wetrust.js'
+import { make, the, inputDate, humanDate, these } from './wetrust.js'
 
 var daysES=["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
