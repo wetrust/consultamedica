@@ -8480,6 +8480,7 @@ function informeDoppler(){
 
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var dvp = the("dv").value;
+    dvp = (dvp == "") ? 0 : dvp;
     dvp = parseFloat(dvp);
     dvp = dvp.toFixed(2);
 
