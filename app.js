@@ -8474,20 +8474,22 @@ function informeDoppler(){
 
     var presentacion = the("presentacion-doppler").value;
     var edadmaterna = these("edad_materna")[0].value;
-        
+
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var dvp = the("dv").value;
+    dvp = parseFloat(dvp);
+    dvp = dvp.toFixed(2);
 
     if (dvp != ""){
         var dvPctTxt = the("dvPctTxt").value;
+
         if (dvPctTxt == "&gt; 95" || dvPctTxt == "&lt; 5"){
             tmpData = 0;
         }else{
-            tmpData = parseFloat(dvPctTxt);
-            tmpData = tmpData.toFixed(2);
+            tmpData = dvPctTxt;
         }
         var dvRngo = oldProgress(tmpData);
 
