@@ -5789,8 +5789,8 @@ function infPrecoz(){
     comentario += the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
+    var edadmaterna = these("edad_materna")[0].value;
 
     InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
     InformeString = InformeString.replace(":FEXAMEN", fexamen);
@@ -5927,8 +5927,8 @@ function infPrecozClon(){
     comentario += the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
+    var edadmaterna = these("edad_materna")[0].value;
 
     InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
     InformeString = InformeString.replace(":FEXAMEN", fexamen);
@@ -6068,7 +6068,7 @@ function InfEcoObsSegTrim1(){
     var pfeRango = oldProgress(tmpData);
 
     var ic = the("dof-dbp").value;
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
 
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
@@ -6078,7 +6078,7 @@ function InfEcoObsSegTrim1(){
     var comentario = the("comentarios-eco-dos-inf-dos").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var edadmaterna = these("edad_materna")[0].value;
 
     var InformeString = '<div class="container"><h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr></tbody> </table> <p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa: </strong>:CESAPREV </p></div><div class="container"> <p style="margin-bottom: 0;"> <strong style="color: #045dab;">DESCRIPCIÓN</strong><br/> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA6 </p><p></p><p></p></div><div class="container"> <table class="table"> <tbody> <tr> <th style="color: #045dab;">BIOMETRÍA FETAL</th> <th style="text-align: center;">Valor observado</th> <th style="text-align: center;">Pct de Crecimiento</th> <th style="text-align: center;">Rango percentilar</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td style="text-align: center;">:DBPPCT</td><td style="text-align: center;">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td style="text-align: center;">:CCPCT</td><td style="text-align: center;">:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style="text-align: center;">:CA</td><td style="text-align: center;">:CAPCT</td><td style="text-align: center;">:CARANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">LF (Hadlock):</td><td style="text-align: center; padding-bottom: 15px !important;">:LF</td><td style="text-align: center; padding-bottom: 15px !important;">:LFPCT</td><td style="text-align: center; padding-bottom: 15px !important;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td style="text-align: center;">:LHPCT</td><td style="text-align: center;">:LHRANGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;"><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td style="text-align: center; border-top: 1px dashed #045dab;">:PFE</td><td style="text-align: center; border-top: 1px dashed #045dab;">:PFEPCT</td><td style="text-align: center; border-top: 1px dashed #045dab;">:PFERANGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Relación CC / CA (Hadlock)</td><td style="text-align: center; border-top: 1px dashed #045dab; text">:CCCA</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCCAPCTVAL</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style="text-align: center;">:IC</td><td></td><td style="text-align: center;">( 70% - 86% )</td></tr></tbody> </table></div>';
     var CESAPREV = $('#grado-placenta').val();
@@ -6283,7 +6283,7 @@ function InfEcoObsSegTrim1Clon(){
     var pfeRango = oldProgress(tmpData);
 
     var ic = the("dof-dbp").value;
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
 
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
@@ -6293,7 +6293,7 @@ function InfEcoObsSegTrim1Clon(){
     var comentario = the("comentarios-eco-dos-inf-dos").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var edadmaterna = these("edad_materna")[0].value;
 
     var InformeString = '<div class="container"><h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr></tbody> </table> <p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa: </strong>:CESAPREV </p></div><div class="container"> <p style="margin-bottom: 0;"> <strong style="color: #045dab;">DESCRIPCIÓN</strong><br/> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA6 </p><p></p><p></p></div><div class="container"> <table class="table"> <tbody> <tr> <th style="color: #045dab;">BIOMETRÍA FETAL</th> <th style="text-align: center;">Valor observado</th> <th class="text-center">Pct de Crecimiento</th> <th class="text-center">Rango percentilar</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td style="text-align: center;">:DBPPCT</td><td style="text-align: center;">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td style="text-align: center;">:CCPCT</td><td style="text-align: center;">:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style="text-align: center;">:CA</td><td style="text-align: center;">:CAPCT</td><td style="text-align: center;">:CARANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">LF (Hadlock):</td><td style="text-align: center; padding-bottom: 15px !important;">:LF</td><td style="text-align: center; padding-bottom: 15px !important;">:LFPCT</td><td style="text-align: center; padding-bottom: 15px !important;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td style="text-align: center;">:LHPCT</td><td style="text-align: center;">:LHRANGO</td></tr><tr> <td><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td style="text-align: center;">:PFE</td><td style="text-align: center;">:PFEPCT</td><td style="text-align: center;">:PFERANGO</td></tr><tr> <td>Relación CC / CA (Hadlock)</td><td style="text-align: center;">:CCCA</td><td style="text-align: center;">:CCCAPCTVAL</td><td style="text-align: center;">:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style="text-align: center;">:IC</td><td></td><td style="text-align: center;">( 70% - 86% )</td></tr></tbody> </table></div>';
     var CESAPREV = $('#grado-placenta').val();
@@ -7419,8 +7419,8 @@ function crearInformeEcoSegTrim2(){
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = the("ecografista").value;
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
+    var edadmaterna = these("edad_materna")[0].value;
 
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
@@ -7600,8 +7600,8 @@ function crearInformeEcoSegTrim2Clon(){
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = the("ecografista").value;
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
+    var edadmaterna = these("edad_materna")[0].value;
     
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
@@ -7760,8 +7760,8 @@ function informeGinecologico()
     let comentario = the("comentario.ginecologica").value;
     comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
 
-    let patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-    let edadmaterna = $( "select[name='edad_materna']").val();
+    let patologiaObstetrica = the("patologiaObstetricaUno").value;
+    let edadmaterna = these("edad_materna")[0].value;
     let diaciclo = the("diaciclo").value;
 
     informe = informe.replace(/:PACIENTE/g, paciente);
@@ -7867,7 +7867,7 @@ function informeMorfologia(){
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = $( '#ecografista\\.morfologia').val();
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var edadmaterna = these("edad_materna")[0].value;
 
     var ACTCAR = the("actividad.cardiaca.morfologia").value;
     var MOVFET = the("movimientos.fetales.morfologia").value;
@@ -8473,12 +8473,12 @@ function informeDoppler(){
     var ccpRgo = oldProgress(tmpData);
 
     var presentacion = the("presentacion-doppler").value;
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var edadmaterna = these("edad_materna")[0].value;
         
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var dvp = the("dv").value;
 
     if (dvp != ""){
@@ -8639,12 +8639,12 @@ function informeDopplerClon(){
     var ccpRgo = oldProgress(tmpData);
 
     var presentacion = the("presentacion-doppler").value;
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var edadmaterna = these("edad_materna")[0].value;
         
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var dvp = the("dv").value;
 
     if (dvp != ""){
