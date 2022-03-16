@@ -5988,7 +5988,7 @@ function InfEcoObsSegTrim1(){
 
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + ' de '+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
-    
+
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + ' de '+ monthsES[fexamen.getUTCMonth()] + ' ' + fexamen.getFullYear();
 
@@ -6087,7 +6087,7 @@ function InfEcoObsSegTrim1(){
     var contadorOpcional = 0;
     if (the("art.ut").checked == true){
         InformeString += '<tr> <td><strong>IP Promedio Arterias Uterinas</strong></td><td style="text-align:center;">:ARTUT</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTPCTVAL</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTRANGO</td></tr>';
-    
+
         InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
         InformeString = InformeString.replace(":ARTUTPCTVAL", $("#respuesta_uterina_promedio_percentil").html());
 
@@ -6106,7 +6106,7 @@ function InfEcoObsSegTrim1(){
 
     if (the("larg.cerv").checked == true){
         InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td class="text-center" style="border-top:1px dashed #045dab;">:LARGCERVTXT</td><td class="text-center" style="border-top:1px dashed #045dab;"></td></tr>';
-    
+
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
         InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
         contadorOpcional++;
@@ -6153,9 +6153,9 @@ function InfEcoObsSegTrim1(){
 
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ', ' + dayHoy.getUTCDate() + ' de '+ monthsES[dayHoy.getUTCMonth()] + ' ' + dayHoy.getFullYear();
-    
+
     InformeString = InformeString.replace(":DATEINFORME", dateInf);
-    
+
     InformeString = InformeString.replace(":LINEA1", linea1);
     InformeString = InformeString.replace(":LINEA2", linea2);
     InformeString = InformeString.replace(":LINEA3", linea3);

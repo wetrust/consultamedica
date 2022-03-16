@@ -1006,7 +1006,6 @@ $( document ).ready(function() {
         }
     })
 
-
     $("#btn\\.erase\\.seg\\.trim").on("click", function(){
         var modal = makeModal("Si");
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
@@ -1328,7 +1327,14 @@ $( document ).ready(function() {
             $('#'+this.dataset.modal).modal('hide');
         });
     }
-    
+
+    the("punto.nn").onclick = function(){
+        if(the("nn.oculto").classList.contains("d-none") == true){
+            the("nn.oculto").classList.remove("d-none")
+        }else{
+            the("nn.oculto").classList.add("d-none") 
+        }
+    }
 });
 
 // Controlador de input clones
