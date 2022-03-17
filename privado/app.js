@@ -7631,7 +7631,7 @@ function crearInformeEcoSegTrim2(){
         linea3 += " <br>";
     }
 
-    var linea4 = '<strong>Placenta</strong> grado ' + the("grado").value +', de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '.';
+    var linea4 = '<strong>Placenta</strong> ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '.';
     var linea5 = "<strong>Cordón umbilical</strong> " + the("cordon").value + ", identificandose "+ the("vasos").value +" vasos.";
     var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + the("bvm").value + " mm.";
 
