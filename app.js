@@ -6102,7 +6102,7 @@ function InfEcoObsSegTrim1(){
     }
 
     if (the("larg.cerv").checked == true){
-        InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td class="text-center" style="border-top:1px dashed #045dab;">:LARGCERVTXT</td><td class="text-center" style="border-top:1px dashed #045dab;"></td><td class="text-center" style="border-top:1px dashed #045dab;"></td></tr>';
+        InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td class="text-center" style="border-top:1px dashed #045dab;"></td><td class="text-center" style="border-top:1px dashed #045dab;">:LARGCERVTXT</td><td class="text-center" style="border-top:1px dashed #045dab;"></td></tr>';
 
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
         InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
@@ -6200,7 +6200,7 @@ function InfEcoObsSegTrim1Clon(){
 
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + ' de '+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
-    
+
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + ' de '+ monthsES[fexamen.getUTCMonth()] + ' ' + fexamen.getFullYear();
 
