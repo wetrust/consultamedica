@@ -6102,7 +6102,7 @@ function InfEcoObsSegTrim1(){
     }
 
     if (the("larg.cerv").checked == true){
-        InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td class="text-center" style="border-top:1px dashed #045dab;"></td><td class="text-center" style="border-top:1px dashed #045dab;">:LARGCERVTXT</td><td class="text-center" style="border-top:1px dashed #045dab;"></td></tr>';
+        InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td class="text-center" style="border-top:1px dashed #045dab;"></td><td class="text-center" style="border-top:1px dashed #045dab;">:LARGCERVTXT</td></tr>';
 
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
         InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
@@ -7448,8 +7448,10 @@ function crearInformeEcoSegTrim2(){
     }
 
     if (the("larg.cerv").checked == true){
-        InformeString += "<tr> <td style='padding-bottom: 15px !important;'>Largo Cervical</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERV mm</td><td style='text-align:center;padding-bottom: 15px !important;'></td><td style='text-align:center;padding-bottom: 15px !important;'></td></tr>"
+        InformeString += "<tr> <td style='padding-bottom: 15px !important;'>Largo Cervical</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERV mm</td><td style='text-align:center;padding-bottom: 15px !important;'></td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERVTXT</td></tr>"
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
+        InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
+    
     }
 
     InformeString += "<tr> <td style='padding-bottom: 15px !important;'><strong>Edad Gestacional Promedio:</strong></td><td style='text-align:center;padding-bottom: 15px !important;'>:EGPROM</td><td style='text-align:center;padding-bottom: 15px !important;'></td></tr>";
