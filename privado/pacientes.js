@@ -140,6 +140,9 @@ function traerPaciente(){
 $(document).ready(function(){
     loadPacientesTabla();
 
+    the("guardarElPacienteFlecha").onclick = function(){
+        the("guardarElPaciente").onclick();
+    }
     the("guardarElPaciente").onclick = function(e){
 
         let nombre = the("nombre-paciente").value
