@@ -6183,7 +6183,7 @@ function InfEcoObsSegTrim1(){
         linea3 += " <br>";
     }
 
-    var linea4 = '<strong>Placenta</strong> grado ' + the("grado").value + ', de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '. Cordón umbilical ' + the("cordon").value + ', identificandose '+ the("vasos").value +' vasos.';
+    var linea4 = '<strong>Placenta</strong> ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '. Cordón umbilical ' + the("cordon").value + ', identificandose '+ the("vasos").value +' vasos.';
     var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + the("bvm").value + ' mm.';
 
     let fur = new Date(Date.parse(the("fum").value));
@@ -6398,7 +6398,7 @@ function InfEcoObsSegTrim1Clon(){
         linea3 += " <br>";
     }
 
-    var linea4 = '<strong>Placenta</strong> grado ' + the("grado").value + ', de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '. Cordón umbilical ' + the("cordon").value + ', identificandose '+ the("vasos").value +' vasos.';
+    var linea4 = '<strong>Placenta</strong> de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '. Cordón umbilical ' + the("cordon").value + ', identificandose '+ the("vasos").value +' vasos.';
     var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + the("bvm").value + ' mm.';
 
     let fur = new Date(Date.parse(the("fum").value));
