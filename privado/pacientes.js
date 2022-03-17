@@ -252,8 +252,8 @@ function guardarPaciente(e){
 $(document).ready(function(){
     loadPacientesTabla();
 
-    the("guardarElPacienteFlecha").onclick = guardarPaciente();
-    the("guardarElPaciente").onclick = guardarPaciente();
+    the("guardarElPacienteFlecha").onclick = guardarPaciente;
+    the("guardarElPaciente").onclick = guardarPaciente;
 
     the("cleanParson").onclick = function(){
         let _fecha = new Date()
