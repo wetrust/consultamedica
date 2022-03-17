@@ -6507,7 +6507,7 @@ function InfEcoObsSegTrim1Clon(){
     var contadorOpcional = 0;
     if (the("art.ut").checked == true){
         InformeString += '<tr> <td><strong>IP Promedio Arterias Uterinas</strong></td><td style="text-align:center;">:ARTUT</td><td style="text-align:center;">:ARTUTPCTVAL</td><td style="text-align:center;">:ARTUTRANGO</td></tr>';
-    
+
         InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
         InformeString = InformeString.replace(":ARTUTPCTVAL", $("#respuesta_uterina_promedio_percentil").html());
 
