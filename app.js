@@ -787,7 +787,7 @@ $( document ).ready(function() {
 
     $("#respuesta_uterina_izquierda").on("keyup",function(){
         let ut = pctut(this.value);
-        $("#respuesta_uterina_izquierda_percentil").html(ut.pct);
+        the("respuesta_uterina_izquierda_percentil").innerText = ut.pct;
 
         let aui = parseFloat(this.value);
         let aud = parseFloat($("#respuesta_uterina_derecha").val());
@@ -797,7 +797,7 @@ $( document ).ready(function() {
     });
 
     $("#respuesta_uterina_promedio").on("change",function(){
-        if (Number.isInteger(this.value)){
+        if (Number.isNaN(this.value) == false){
             let ut = pctut(this.value);
             $("#respuesta_uterina_promedio_percentil").html(ut.pct);
             $("#respuesta_uterina_promedio_rango").val(ut.rango.min + " - " + ut.rango.max);
