@@ -940,9 +940,7 @@ $( document ).ready(function() {
     })
 
     $("#morfologia-morfologia-tab").on("click", function(){
-        var elemento = the("ecografista");
-        var nombre = (the("ecografista").options.length == 0) ? "" : elemento.options[elemento.selectedIndex].text
-        the("ecografista.morfologia").value = nombre;
+        the("ecografista.morfologia").value = the("ecografista").value;
     })
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
