@@ -936,8 +936,7 @@ $( document ).ready(function() {
     $("#nombre-paciente").on("change", function(){ the("nombre.morfologia").value = this.value; })
 
     $("#ecografista").on("change", function(){
-        var nombre = this.options[this.selectedIndex].text
-        the("ecografista.morfologia").value = nombre;
+        the("ecografista.morfologia").value = this.value;
     })
 
     $("#morfologia-morfologia-tab").on("click", function(){
