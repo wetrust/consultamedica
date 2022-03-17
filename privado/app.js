@@ -694,7 +694,7 @@ $( document ).ready(function() {
     });
 
     $("#respuesta_uterina_promedio").on("change",function(){
-        if (Number.isInteger(this.value)){
+        if (Number.isNaN(this.value) == false){
             let ut = pctut(this.value);
             $("#respuesta_uterina_promedio_percentil").html(ut.pct);
             $("#respuesta_uterina_promedio_rango").val(ut.rango.min + " - " + ut.rango.max);
