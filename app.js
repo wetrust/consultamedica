@@ -7448,7 +7448,7 @@ function crearInformeEcoSegTrim2(){
     }
 
     if (the("larg.cerv").checked == true){
-        InformeString += "<tr> <td style='padding-bottom: 15px !important;'>Largo Cervical</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERV mm</td><td style='text-align:center;padding-bottom: 15px !important;'></td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERVTXT</td></tr>"
+        InformeString += "<tr> <td style='padding-bottom: 15px !important;'>Largo Cervical</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERV mm</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERVTXT</td></tr>"
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
         InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
     
