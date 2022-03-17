@@ -8775,6 +8775,9 @@ function informeDoppler(){
 
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     var dvp = the("dv").value;
+    dvp = (dvp == "") ? 0 : dvp;
+    dvp = parseFloat(dvp);
+    dvp = dvp.toFixed(2);
 
     if (dvp != ""){
         var dvPctTxt = the("dvPctTxt").value;
@@ -8800,7 +8803,7 @@ function informeDoppler(){
 
     //cervix
     if (the("doppler.larg.cerv").checked == true){
-        InformeString += '<tr> <td>Largo Cervical</td><td style="text-align: center;">:LARGCERV mm</td><td class="text-center"></td><td style="text-align: center;">:LARGCERVTXT</td></tr>';
+        InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align: center;"><strong>:LARGCERV mm</strong></td><td class="text-center"></td><td style="text-align: center;"><strong>:LARGCERVTXT</strong></td></tr>';
 
         InformeString = InformeString.replace(":LARGCERV", $("#doppler\\.largo\\.cervical\\.segundo").val());
         InformeString = InformeString.replace(":LARGCERVTXT", the("doppler.info.cervix").children[0].innerHTML);
