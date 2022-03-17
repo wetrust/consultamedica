@@ -6183,12 +6183,12 @@ function InfEcoObsSegTrim1(){
         linea3 += " <br>";
     }
 
-    var linea4 = '<strong>Placenta</strong> de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '. Cordón umbilical ' + the("cordon").value + ', identificandose '+ the("vasos").value +' vasos.';
+    var linea4 = '<strong>Placenta</strong> grado ' + the("grado").value + ', de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '. Cordón umbilical ' + the("cordon").value + ', identificandose '+ the("vasos").value +' vasos.';
     var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + the("bvm").value + ' mm.';
 
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + ' de '+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
-    
+
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + ' de '+ monthsES[fexamen.getUTCMonth()] + ' ' + fexamen.getFullYear();
 
@@ -6268,26 +6268,26 @@ function InfEcoObsSegTrim1(){
     var pfeRango = oldProgress(tmpData);
 
     var ic = the("dof-dbp").value;
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
 
-    var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
+    var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
-    var motivo = $( '#motivo-examen option:selected').text();
-    var ecografista = "Dr. Rudecindo Lagos";
+    var motivo = the("motivo-examen").value;
+    var ecografista = the("ecografista").value;
 
     var comentario = the("comentarios-eco-dos-inf-dos").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var edadmaterna = these("edad_materna")[0].value;
 
-    var InformeString = '<div class="container"><h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Ciudad de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table> <p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa: </strong>:CESAPREV </p></div><div class="container"> <p style="margin-bottom: 0;"> <strong style="color: #045dab;">DESCRIPCIÓN</strong><br/> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA6 </p><p></p><p></p></div><div class="container"> <table class="table"> <tbody> <tr> <th style="color: #045dab;">BIOMETRÍA FETAL</th> <th style="text-align: center;">Valor observado</th> <th style="text-align: center;">Pct de Crecimiento</th> <th style="text-align: center;">Rango percentilar</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td style="text-align: center;">:DBPPCT</td><td style="text-align: center;">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td style="text-align: center;">:CCPCT</td><td style="text-align: center;">:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style="text-align: center;">:CA</td><td style="text-align: center;">:CAPCT</td><td style="text-align: center;">:CARANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">LF (Hadlock):</td><td style="text-align: center; padding-bottom: 15px !important;">:LF</td><td style="text-align: center; padding-bottom: 15px !important;">:LFPCT</td><td style="text-align: center; padding-bottom: 15px !important;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td style="text-align: center;">:LHPCT</td><td style="text-align: center;">:LHRANGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;"><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td style="text-align: center; border-top: 1px dashed #045dab;">:PFE</td><td style="text-align: center; border-top: 1px dashed #045dab;">:PFEPCT</td><td style="text-align: center; border-top: 1px dashed #045dab;">:PFERANGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Relación CC / CA (Hadlock)</td><td style="text-align: center; border-top: 1px dashed #045dab; text">:CCCA</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCCAPCTVAL</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style="text-align: center;">:IC</td><td></td><td style="text-align: center;">( 70% - 86% )</td></tr>';
+    var InformeString = '<div class="container"><h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr></tbody> </table> <p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa: </strong>:CESAPREV </p></div><div class="container"> <p style="margin-bottom: 0;"> <strong style="color: #045dab;">DESCRIPCIÓN</strong><br/> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA6 </p><p></p><p></p></div><div class="container"> <table class="table"> <tbody> <tr> <th style="color: #045dab;">BIOMETRÍA FETAL</th> <th style="text-align: center;">Valor observado</th> <th style="text-align: center;">Pct de Crecimiento</th> <th style="text-align: center;">Rango percentilar</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td style="text-align: center;">:DBPPCT</td><td style="text-align: center;">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td style="text-align: center;">:CCPCT</td><td style="text-align: center;">:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style="text-align: center;">:CA</td><td style="text-align: center;">:CAPCT</td><td style="text-align: center;">:CARANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">LF (Hadlock):</td><td style="text-align: center; padding-bottom: 15px !important;">:LF</td><td style="text-align: center; padding-bottom: 15px !important;">:LFPCT</td><td style="text-align: center; padding-bottom: 15px !important;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td style="text-align: center;">:LHPCT</td><td style="text-align: center;">:LHRANGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;"><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td style="text-align: center; border-top: 1px dashed #045dab;">:PFE</td><td style="text-align: center; border-top: 1px dashed #045dab;">:PFEPCT</td><td style="text-align: center; border-top: 1px dashed #045dab;">:PFERANGO</td></tr><tr> <td style="border-top: 1px dashed #045dab;">Relación CC / CA (Hadlock)</td><td style="text-align: center; border-top: 1px dashed #045dab; text">:CCCA</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCCAPCTVAL</td><td style="text-align: center; border-top: 1px dashed #045dab;">:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style="text-align: center;">:IC</td><td></td><td style="text-align: center;">( 70% - 86% )</td></tr>';
     var CESAPREV = $('#grado-placenta').val();
     InformeString = InformeString.replace(":CESAPREV", CESAPREV);
 
     var contadorOpcional = 0;
     if (the("art.ut").checked == true){
         InformeString += '<tr> <td><strong>IP Promedio Arterias Uterinas</strong></td><td style="text-align:center;">:ARTUT</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTPCTVAL</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTRANGO</td></tr>';
-    
+
         InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
         InformeString = InformeString.replace(":ARTUTPCTVAL", $("#respuesta_uterina_promedio_percentil").html());
 
@@ -6305,8 +6305,8 @@ function InfEcoObsSegTrim1(){
     }
 
     if (the("larg.cerv").checked == true){
-        InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td class="text-center" style="border-top:1px dashed #045dab;">:LARGCERVTXT</td><td class="text-center" style="border-top:1px dashed #045dab;"></td></tr>';
-    
+        InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td class="text-center" style="border-top:1px dashed #045dab;"></td><td class="text-center" style="border-top:1px dashed #045dab;">:LARGCERVTXT</td></tr>';
+
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
         InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
         contadorOpcional++;
@@ -6316,7 +6316,7 @@ function InfEcoObsSegTrim1(){
         InformeString += '<tr> <td></td><td></td><td></td><td></td>';
     }
 
-    InformeString += '</tbody> </table></div><div class="container"> <p style="margin-bottom;0px;padding-bottom:0px;margin-bottom:0px;"><strong style="color:#045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style="max-width: 700px;text-align: justify;margin-top:0px;padding-top:0px;">:COMENTARIO</p></div><div class="container"> <p class="text-right" style="margin-right:100px;margin-top:5rem;text-align: right;">Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style="border-top: 1px solid #000;width: 100% !important;display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000;width: 100% !important;display: block;"></span> <p style="margin-bottom:0;" class="pie-pagina">* Evaluación de crecimiento fetal (Gráfica), según referencia propuesta por Hadlock y col. Radiology 181: 129 - 133; 1991 (Normalidad Pct 10 a 90) <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p style="margin-bottom:0 !important;"><strong>El software tiene por objetivo favorecer análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>';
+    InformeString += '</tbody> </table></div><div class="container"> <p style="margin-bottom;0px;padding-bottom:0px;margin-bottom:0px;"><strong style="color:#045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style="max-width: 700px;text-align: justify;margin-top:0px;padding-top:0px;">:COMENTARIO</p></div><div class="container"> <p class="text-right" style="margin-right:100px;margin-top:5rem;text-align: right;">Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style="border-top: 1px solid #000;width: 100% !important;display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000;width: 100% !important;display: block;"></span> <p style="margin-bottom:0;" class="pie-pagina">* Evaluación de crecimiento fetal (Gráfica), según referencia propuesta por Hadlock y col. Radiology 181: 129 - 133; 1991 (Normalidad Pct 10 a 90) <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p style="margin-bottom:0 !important;"><strong>El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>';
 
     InformeString = InformeString.replace(":PACIENTE", paciente);
     InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
@@ -6353,9 +6353,9 @@ function InfEcoObsSegTrim1(){
 
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ', ' + dayHoy.getUTCDate() + ' de '+ monthsES[dayHoy.getUTCMonth()] + ' ' + dayHoy.getFullYear();
-    
+
     InformeString = InformeString.replace(":DATEINFORME", dateInf);
-    
+
     InformeString = InformeString.replace(":LINEA1", linea1);
     InformeString = InformeString.replace(":LINEA2", linea2);
     InformeString = InformeString.replace(":LINEA3", linea3);
@@ -6363,11 +6363,6 @@ function InfEcoObsSegTrim1(){
     InformeString = InformeString.replace(":LINEA6", linea6);
     InformeString = InformeString.replace(":COMENTARIO", comentario);
     InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
-
-    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
-    var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
-    InformeString = InformeString.replace(":CIUDAD", CIUDAD);
-    InformeString = InformeString.replace(":LCONTROL", LCONTROL);
 
     return InformeString;
 }
@@ -6403,12 +6398,12 @@ function InfEcoObsSegTrim1Clon(){
         linea3 += " <br>";
     }
 
-    var linea4 = '<strong>Placenta</strong> de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '. Cordón umbilical ' + the("cordon").value + ', identificandose '+ the("vasos").value +' vasos.';
+    var linea4 = '<strong>Placenta</strong> grado ' + the("grado").value + ', de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '. Cordón umbilical ' + the("cordon").value + ', identificandose '+ the("vasos").value +' vasos.';
     var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + the("bvm").value + ' mm.';
 
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + ' de '+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
-    
+
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + ' de '+ monthsES[fexamen.getUTCMonth()] + ' ' + fexamen.getFullYear();
 
@@ -6488,19 +6483,19 @@ function InfEcoObsSegTrim1Clon(){
     var pfeRango = oldProgress(tmpData);
 
     var ic = the("dof-dbp").value;
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
 
-    var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
+    var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
-    var motivo = $( '#motivo-examen option:selected').text();
-    var ecografista = "Dr. Rudecindo Lagos";
+    var motivo = the("motivo-examen").value;
+    var ecografista = the("ecografista").value;
 
     var comentario = the("comentarios-eco-dos-inf-dos").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var edadmaterna = these("edad_materna")[0].value;
 
-    var InformeString = '<div class="container"><h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Lugar de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table><p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa: </strong>:CESAPREV </p></div><div class="container"><p style="margin-bottom: 0;"><strong style="color: #045dab;">DESCRIPCIÓN</strong><br> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA6 </p><p></p><p></p></div><div class="container"> <table class="table"> <tbody> <tr> <th style="color: #045dab;">BIOMETRÍA FETAL</th> <th style="text-align: center;">Valor observado</th> <th class="text-center">Pct de Crecimiento</th> <th class="text-center">Rango percentilar</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td style="text-align:center;">:DBPPCT</td><td style="text-align:center;">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td style="text-align:center;">:CCPCT</td><td style="text-align:center;">:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style="text-align: center;">:CA</td><td style="text-align:center;">:CAPCT</td><td style="text-align:center;">:CARANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">LF (Hadlock):</td><td style="text-align: center; padding-bottom: 15px !important;">:LF</td><td style="text-align: center; padding-bottom: 15px !important;">:LFPCT</td><td style="text-align: center; padding-bottom: 15px !important;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td style="text-align:center;">:LHPCT</td><td style="text-align:center;">:LHRANGO</td></tr><tr> <td><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td style="text-align: center;">:PFE</td><td style="text-align: center;">:PFEPCT</td><td style="text-align: center;">:PFERANGO</td></tr><tr> <td>Relación CC / CA (Hadlock)</td><td style="text-align:center;">:CCCA</td><td style="text-align:center;">:CCCAPCTVAL</td><td style="text-align:center;">:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style="text-align: center;">:IC</td><td></td><td style="text-align:center;">( 70% - 86% )</td></tr>';
+    var InformeString = '<div class="container"><h3>Evaluación ecográfica del crecimiento fetal</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr></tbody> </table> <p> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa: </strong>:CESAPREV </p></div><div class="container"> <p style="margin-bottom: 0;"> <strong style="color: #045dab;">DESCRIPCIÓN</strong><br/> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA6 </p><p></p><p></p></div><div class="container"> <table class="table"> <tbody> <tr> <th style="color: #045dab;">BIOMETRÍA FETAL</th> <th style="text-align: center;">Valor observado</th> <th class="text-center">Pct de Crecimiento</th> <th class="text-center">Rango percentilar</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td style="text-align: center;">:DBPPCT</td><td style="text-align: center;">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td style="text-align: center;">:CCPCT</td><td style="text-align: center;">:CCRANGO</td></tr><tr> <td>CA (Hadlock):</td><td style="text-align: center;">:CA</td><td style="text-align: center;">:CAPCT</td><td style="text-align: center;">:CARANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">LF (Hadlock):</td><td style="text-align: center; padding-bottom: 15px !important;">:LF</td><td style="text-align: center; padding-bottom: 15px !important;">:LFPCT</td><td style="text-align: center; padding-bottom: 15px !important;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td style="text-align: center;">:LHPCT</td><td style="text-align: center;">:LHRANGO</td></tr><tr> <td><strong>Peso Fetal Estimado</strong> según fórmula de Hadlock (CC-CA-LF)</td><td style="text-align: center;">:PFE</td><td style="text-align: center;">:PFEPCT</td><td style="text-align: center;">:PFERANGO</td></tr><tr> <td>Relación CC / CA (Hadlock)</td><td style="text-align: center;">:CCCA</td><td style="text-align: center;">:CCCAPCTVAL</td><td style="text-align: center;">:CCCARANGO</td></tr><tr> <td>Indice Cefálico (DBP / DOF)</td><td style="text-align: center;">:IC</td><td></td><td style="text-align: center;">( 70% - 86% )</td></tr>';
     var CESAPREV = $('#grado-placenta').val();
     InformeString = InformeString.replace(":CESAPREV", CESAPREV);
 
@@ -6525,7 +6520,7 @@ function InfEcoObsSegTrim1Clon(){
     }
 
     if (the("larg.cerv").checked == true){
-        InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td style="text-align:center;"></td><td style="text-align:center;">:LARGCERVTXT</td><td></td></tr>';
+        InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td></td><td style="text-align:center;">:LARGCERVTXT</td></tr>';
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
         InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
         contadorOpcional++;
@@ -6535,7 +6530,7 @@ function InfEcoObsSegTrim1Clon(){
         InformeString += '<tr> <td></td><td></td><td></td><td></td>';
     }
 
-    InformeString += '</tbody> </table></div><div class="container"> <p style="margin-bottom;0px;padding-bottom:0px;margin-bottom:0px;"><strong style="color:#045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style="max-width: 700px;text-align: justify;margin-top:0px;padding-top:0px;">:COMENTARIO</p></div><div class="container"> <p style="text-align:right;margin-top:1rem">Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style="border-top: 1px solid #000;width: 100% !important;display: block;"></span> <hr>Fecha Informe: :DATEINFORME<hr style="margin-top:0px"> <p style="margin-bottom:0;" class="pie-pagina">* Evaluación de crecimiento fetal (Gráfica), según referencia propuesta por Hadlock y col. Radiology 181: 129 - 133; 1991 (Normalidad Pct 10 a 90) <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p style="margin-bottom:0 !important;"><strong>El software tiene por objetivo favorecer análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>';
+    InformeString += '</tbody> </table></div><div class="container"> <p style="margin-bottom;0px;padding-bottom:0px;margin-bottom:0px;"><strong style="color:#045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style="max-width: 700px;text-align: justify;margin-top:0px;padding-top:0px;">:COMENTARIO</p></div><div class="container"> <p style="text-align:right;margin-top:1rem">Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style="border-top: 1px solid #000;width: 100% !important;display: block;"></span> <hr>Fecha Informe: :DATEINFORME<hr style="margin-top:0px"> <p style="margin-bottom:0;" class="pie-pagina">* Evaluación de crecimiento fetal (Gráfica), según referencia propuesta por Hadlock y col. Radiology 181: 129 - 133; 1991 (Normalidad Pct 10 a 90) <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p style="margin-bottom:0 !important;"><strong>El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>';
 
     InformeString = InformeString.replace(":PACIENTE", paciente);
     InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
@@ -6582,11 +6577,6 @@ function InfEcoObsSegTrim1Clon(){
     InformeString = InformeString.replace(":LINEA6", linea6);
     InformeString = InformeString.replace(":COMENTARIO", comentario);
     InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
-
-    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
-    var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
-    InformeString = InformeString.replace(":CIUDAD", CIUDAD);
-    InformeString = InformeString.replace(":LCONTROL", LCONTROL);
 
     return InformeString;
 }
@@ -7544,7 +7534,7 @@ function crearInformeEcoSegTrim2(){
     } else {
         actCard = "con actividad cardiaca";
     }
-    
+
     if (movCorp = 0){
         movCorp = "sin movimientos corporales";
     } else {
@@ -7562,7 +7552,7 @@ function crearInformeEcoSegTrim2(){
         tmpData = lhPct;
     }
     var lhRango = oldProgress(tmpData);
-    
+
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fexamen = new Date(Date.parse(the("fee").value));
@@ -7570,7 +7560,7 @@ function crearInformeEcoSegTrim2(){
     let fpp = new Date(Date.parse(the("fpp").value));
     fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
     let eg = the("semanas").value + "."+ the("dias").value;
-    
+
     var dbp = $( '#dbp').val() + ' mm';
     var dbpPct = the("dbpPct").value;
 
@@ -7618,12 +7608,12 @@ function crearInformeEcoSegTrim2(){
     }
     var cbRango = oldProgress(tmpData);
 
-	var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
+	var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
-    var motivo = $( '#motivo-examen option:selected').text();
-    var ecografista = "Dr. Rudecindo Lagos";
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var motivo = the("motivo-examen").value;
+    var ecografista = the("ecografista").value;
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
+    var edadmaterna = these("edad_materna")[0].value;
 
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
@@ -7641,27 +7631,39 @@ function crearInformeEcoSegTrim2(){
         linea3 += " <br>";
     }
 
-    var linea4 = '<strong>Placenta</strong> de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '.';
+    var linea4 = '<strong>Placenta</strong> grado ' + the("grado").value +', de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '.';
     var linea5 = "<strong>Cordón umbilical</strong> " + the("cordon").value + ", identificandose "+ the("vasos").value +" vasos.";
     var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + the("bvm").value + " mm.";
 
-    var InformeString = '<div class="container"> <h3>Determinación ecográfica de edad gestacional sobre las 14 semana</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr><tr> <td class="p-0"><strong>Lugar de procedencia: </strong>:CIUDAD</td><td class="p-0"><strong>Lugar de control: </strong>:LCONTROL</td><td class="p-0"></td></tr></tbody> </table> <p> <strong>FUM: </strong> :FUR <br/> <strong>EG (UPM): </strong> :EG semanas<br/> <strong>FPP: </strong> :FPP </p></div><div class="container"><p style="margin-bottom: 0;"><strong style="color: #045dab;">DESCRIPCIÓN</strong><br> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA5 <br/> :LINEA6 </p><p></p><p></p></div><div class="container-fluid"> <table class="table"> <tbody> <tr> <th style="line-height: 15px !important; color: #045dab;">BIOMETRIA FETAL</th> <th style="text-align: center;">Valor observado</th> <th style="text-align: center;">Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td style="text-align: center;">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td style="text-align: center;">:CCRANGO</td></tr><tr> <td>CA (Hadlock)* :</td><td style="text-align: center;">:CA</td><td style="text-align: center;">:CARANGO</td></tr><tr> <td>LF (Hadlock):</td><td style="text-align: center;">:LF</td><td style="text-align: center;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td style="text-align: center;">:LHRANGO</td></tr><tr> <td>Cerebelo (Diámetro transverso) (Hill):</td><td style="text-align: center;">:CB</td><td style="text-align: center;">:CBRANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">Indice Cefálico (DBP / DOF)</td><td style="text-align: center; padding-bottom: 15px !important;">:IC</td><td style="text-align: center; padding-bottom: 15px !important;">( 70% - 86% )</td></tr>';
+    var InformeString = '<div class="container"><h3>Determinación ecográfica de edad gestacional sobre las 14 semana</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr></tbody> </table> <p> <strong>FUM: </strong> :FUR <br/> <strong>EG (UPM): </strong> :EG semanas<br/> <strong>FPP: </strong> :FPP </p></div><div class="container"> <p style="margin-bottom: 0;"> <strong style="color: #045dab;">DESCRIPCIÓN</strong><br/> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA5 <br/> :LINEA6 </p><p></p><p></p></div><div class="container-fluid"> <table class="table"> <tbody> <tr> <th style="line-height: 15px !important; color: #045dab;">BIOMETRIA FETAL</th> <th style="text-align: center;">Valor observado</th> <th style="text-align: center;">Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td style="text-align: center;">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td style="text-align: center;">:CCRANGO</td></tr><tr> <td>CA (Hadlock)* :</td><td style="text-align: center;">:CA</td><td style="text-align: center;">:CARANGO</td></tr><tr> <td>LF (Hadlock):</td><td style="text-align: center;">:LF</td><td style="text-align: center;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td style="text-align: center;">:LHRANGO</td></tr><tr> <td>Cerebelo (Diámetro transverso) (Hill):</td><td style="text-align: center;">:CB</td><td style="text-align: center;">:CBRANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">Indice Cefálico (DBP / DOF)</td><td style="text-align: center; padding-bottom: 15px !important;">:IC</td><td style="text-align: center; padding-bottom: 15px !important;">( 70% - 86% )</td></tr>';
 
     if (the("art.ut").checked == true){
         InformeString += "<tr> <td style='padding-bottom: 15px !important;'>IP Promedio Arterias Uterinas:</td><td style='text-align:center;padding-bottom: 15px !important;'>:ARTUT</td><td style='text-align:center;padding-bottom: 15px !important;'>:ARTUTRANGO</td></tr>";
         InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
-        InformeString = InformeString.replace(":ARTUTRANGO", $("#respuesta_uterina_promedio_rango").val());
+
+        let pctUT = $("#respuesta_uterina_promedio_percentil").html();
+        let tmpData = 0;
+        if (pctUT == "&gt; 95" || pctUT == "&lt; 5"){
+            tmpData = 0;
+        }else{
+            tmpData = +pctUT;
+        }
+        var ARTUTRANGO = oldProgress(tmpData);
+
+        InformeString = InformeString.replace(":ARTUTRANGO", ARTUTRANGO);
     }
 
     if (the("larg.cerv").checked == true){
-        InformeString += "<tr> <td style='padding-bottom: 15px !important;'>Largo Cervical</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERV mm</td><td style='text-align:center;padding-bottom: 15px !important;'></td><td style='text-align:center;padding-bottom: 15px !important;'></td></tr>"
+        InformeString += "<tr> <td style='padding-bottom: 15px !important;'>Largo Cervical</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERV mm</td><td style='text-align:center;padding-bottom: 15px !important;'>:LARGCERVTXT</td></tr>"
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
+        InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
+    
     }
 
     InformeString += "<tr> <td style='padding-bottom: 15px !important;'><strong>Edad Gestacional Promedio:</strong></td><td style='text-align:center;padding-bottom: 15px !important;'>:EGPROM</td><td style='text-align:center;padding-bottom: 15px !important;'></td></tr>";
     InformeString = InformeString.replace(":EGPROM", the("egP50").value + " semanas");
 
-    InformeString += "<tr> <td style='border-top:1px dashed #045dab;' colspan='3'>* En cálculo de Edad Gestacional Tardia, la aplicacion excluye el perímetro abdominal, considerando solo CC y LF.</td></tr><tr> <td style='border-top:1px dashed #045dab;'></td><td style='border-top:1px dashed #045dab;'></td><td style='border-top:1px dashed #045dab;'></td></tr></tbody> </table></div><div class='container-fluid'> <p style='margin-top:0.5rem;padding-bottom:0px;margin-bottom:0px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40' style='margin-right:100px;margin-top:4rem;text-align: right;'>Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p style='margin-bottom:0;' class='pie-pagina'><small><strong>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015</strong> <br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf <br>** Determinación de edad gestacional según criterios Hadlock FP. Deter RL., Harris RB Radiology 152:497-501, 1<br>*** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p><p style='margin-bottom:0 !important;'><small><strong>El software tiene por objetivo favorecer análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></small> </p></div>";
+    InformeString += "<tr> <td style='border-top:1px dashed #045dab;' colspan='3'>* En cálculo de Edad Gestacional Tardia, la aplicacion excluye el perímetro abdominal, considerando solo CC y LF.</td></tr><tr> <td style='border-top:1px dashed #045dab;'></td><td style='border-top:1px dashed #045dab;'></td><td style='border-top:1px dashed #045dab;'></td></tr></tbody> </table></div><div class='container-fluid'> <p style='margin-top:0.5rem;padding-bottom:0px;margin-bottom:0px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40' style='margin-right:100px;margin-top:4rem;text-align: right;'>Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p style='margin-bottom:0;' class='pie-pagina'><small><strong>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015</strong> <br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf <br>** Determinación de edad gestacional según criterios Hadlock FP. Deter RL., Harris RB Radiology 152:497-501, 1<br>*** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p><p style='margin-bottom:0 !important;'><small><strong>El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></small> </p></div>";
 
 	var comentario = $('#comentarios-eco-dos-inf-dos').val()
 	comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : '';
@@ -7700,11 +7702,6 @@ function crearInformeEcoSegTrim2(){
 	InformeString = InformeString.replace(":LINEA6", linea6);
 	InformeString = InformeString.replace(":DATEINFORME", dateInf);
 	InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
-
-    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
-    var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
-    InformeString = InformeString.replace(":CIUDAD", CIUDAD);
-    InformeString = InformeString.replace(":LCONTROL", LCONTROL);
 
 	return InformeString;
 }
