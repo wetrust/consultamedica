@@ -137,123 +137,123 @@ function traerPaciente(){
     })
 }
 
+function guardarPaciente(e){
+
+    let nombre = the("nombre-paciente").value
+    let apellido = the("apellido-paciente").value
+    let rut = the("id-paciente").value
+    let edad = these("edad_materna")[0].value
+    let motiv = the("motivo-examen").value
+    let pat = the("patologiaObstetricaUno").value
+
+    the("nombre-paciente").classList.remove("is-invalid");
+    the("apellido-paciente").classList.remove("is-invalid");
+    the("id-paciente").classList.remove("is-invalid");
+    these("edad_materna")[0].classList.remove("is-invalid");
+    the("motivo-examen").classList.remove("is-invalid");
+    the("patologiaObstetricaUno").classList.remove("is-invalid");
+
+    if (String(nombre).length == 0){
+        make.alert("Falta Nombre de paciente", true);
+        the("nombre-paciente").classList.add("is-invalid");
+        e.preventDefault()
+        return false
+    }
+
+    if (String(apellido).length == 0){
+        make.alert("Falta Apellido de paciente", true);
+        the("apellido-paciente").classList.add("is-invalid");
+        e.preventDefault()
+        return false
+    }
+
+    if (String(rut).length == 0){
+        make.alert("Falta RUT de paciente", true);
+        the("id-paciente").classList.add("is-invalid");
+        e.preventDefault()
+        return false
+    }
+
+    if (edad == 0){
+        make.alert("Seleccione edad", true);
+        these("edad_materna")[0].classList.add("is-invalid");
+        e.preventDefault()
+        return false
+    }
+
+    if (motiv == 0){
+        make.alert("Seleccione motivo", true);
+        the("motivo-examen").classList.add("is-invalid");
+        e.preventDefault()
+        return false
+    }
+
+    if (pat == 0){
+        make.alert("Seleccione patología relevante", true);
+        the("patologiaObstetricaUno").classList.add("is-invalid");
+        e.preventDefault()
+        return false
+    }
+
+    let configuracion = new FormData()
+
+    configuracion.append("paciente_fee", the("fee").value)
+    configuracion.append("paciente_eg", the("semanas").value)
+    configuracion.append("paciente_nombre", the("nombre-paciente").value)
+    configuracion.append("paciente_apellido", the("apellido-paciente").value)
+    configuracion.append("paciente_rut", the("id-paciente").value)
+    configuracion.append("paciente_email", the("email-paciente").value)
+
+    let _numero = (isNaN(the("fono-paciente").value) == true || the("fono-paciente").value == "") ? "0" : the("fono-paciente").value
+
+    configuracion.append("paciente_telefono", _numero)
+    configuracion.append("paciente_motivo", the("motivo-examen").value)
+    configuracion.append("paciente_motivo_txt", the("motivo-examen").options[the("motivo-examen").selectedIndex].text)
+    configuracion.append("paciente_patologia", the("patologiaObstetricaUno").value)
+    configuracion.append("paciente_patologia_txt", the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text)
+    configuracion.append("paciente_edad", these("edad_materna")[0].value)
+    configuracion.append("paciente_lugar", the("ciudadpaciente").value)
+    configuracion.append("paciente_lugar_txt", the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text)
+    configuracion.append("paciente_control", the("lcontrolpaciente").value)
+
+    configuracion.append("paciente_control_txt", the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text)
+    configuracion.append("paciente_referente", the("profref").value)
+    configuracion.append("paciente_referente_txt", the("profref").options[the("profref").selectedIndex].text)
+    configuracion.append("paciente_centro", the("centroecograf").value)
+    configuracion.append("paciente_centro_txt", the("centroecograf").options[the("centroecograf").selectedIndex].text)
+
+    configuracion.append("paciente_ecografista", 1)
+    configuracion.append("paciente_ecografista_txt", the("ecografista").value)
+
+    configuracion.append("paciente_fum", the("fum").value)
+
+    the("nombre.ecoprim").value = the("nombre-paciente").value
+    the("apellido.ecoprim").value = the("apellido-paciente").value
+
+    the("nombre.gine").value = the("nombre-paciente").value
+    the("apellido.gine").value = the("apellido-paciente").value
+    the("edad.gine").value = these("edad_materna")[0].value
+
+    the("nombre.crecim").value = the("nombre-paciente").value
+    the("apellido.crecim").value = the("apellido-paciente").value
+
+    the("nombre.doppler").value = the("nombre-paciente").value
+    the("apellido.doppler").value = the("apellido-paciente").value
+
+
+    fetch('https://api.crecimientofetal.cl/config/paciente', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
+        .then(data => {
+            the("notificacionText").innerText = "Paciente Guardado"
+            $('#notificacion').toast('show')
+            loadPacientesTabla();
+        })
+}
+
 $(document).ready(function(){
     loadPacientesTabla();
 
-    the("guardarElPacienteFlecha").onclick = function(){
-        the("guardarElPaciente").onclick();
-    }
-    the("guardarElPaciente").onclick = function(e){
-
-        let nombre = the("nombre-paciente").value
-        let apellido = the("apellido-paciente").value
-        let rut = the("id-paciente").value
-        let edad = these("edad_materna")[0].value
-        let motiv = the("motivo-examen").value
-        let pat = the("patologiaObstetricaUno").value
-
-        the("nombre-paciente").classList.remove("is-invalid");
-        the("apellido-paciente").classList.remove("is-invalid");
-        the("id-paciente").classList.remove("is-invalid");
-        these("edad_materna")[0].classList.remove("is-invalid");
-        the("motivo-examen").classList.remove("is-invalid");
-        the("patologiaObstetricaUno").classList.remove("is-invalid");
-
-        if (String(nombre).length == 0){
-            make.alert("Falta Nombre de paciente", true);
-            the("nombre-paciente").classList.add("is-invalid");
-            e.preventDefault()
-            return false
-        }
-
-        if (String(apellido).length == 0){
-            make.alert("Falta Apellido de paciente", true);
-            the("apellido-paciente").classList.add("is-invalid");
-            e.preventDefault()
-            return false
-        }
-
-        if (String(rut).length == 0){
-            make.alert("Falta RUT de paciente", true);
-            the("id-paciente").classList.add("is-invalid");
-            e.preventDefault()
-            return false
-        }
-
-        if (edad == 0){
-            make.alert("Seleccione edad", true);
-            these("edad_materna")[0].classList.add("is-invalid");
-            e.preventDefault()
-            return false
-        }
-
-        if (motiv == 0){
-            make.alert("Seleccione motivo", true);
-            the("motivo-examen").classList.add("is-invalid");
-            e.preventDefault()
-            return false
-        }
-
-        if (pat == 0){
-            make.alert("Seleccione patología relevante", true);
-            the("patologiaObstetricaUno").classList.add("is-invalid");
-            e.preventDefault()
-            return false
-        }
-
-        let configuracion = new FormData()
-
-        configuracion.append("paciente_fee", the("fee").value)
-        configuracion.append("paciente_eg", the("semanas").value)
-        configuracion.append("paciente_nombre", the("nombre-paciente").value)
-        configuracion.append("paciente_apellido", the("apellido-paciente").value)
-        configuracion.append("paciente_rut", the("id-paciente").value)
-        configuracion.append("paciente_email", the("email-paciente").value)
-
-        let _numero = (isNaN(the("fono-paciente").value) == true || the("fono-paciente").value == "") ? "0" : the("fono-paciente").value
-
-        configuracion.append("paciente_telefono", _numero)
-        configuracion.append("paciente_motivo", the("motivo-examen").value)
-        configuracion.append("paciente_motivo_txt", the("motivo-examen").options[the("motivo-examen").selectedIndex].text)
-        configuracion.append("paciente_patologia", the("patologiaObstetricaUno").value)
-        configuracion.append("paciente_patologia_txt", the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text)
-        configuracion.append("paciente_edad", these("edad_materna")[0].value)
-        configuracion.append("paciente_lugar", the("ciudadpaciente").value)
-        configuracion.append("paciente_lugar_txt", the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text)
-        configuracion.append("paciente_control", the("lcontrolpaciente").value)
-
-        configuracion.append("paciente_control_txt", the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text)
-        configuracion.append("paciente_referente", the("profref").value)
-        configuracion.append("paciente_referente_txt", the("profref").options[the("profref").selectedIndex].text)
-        configuracion.append("paciente_centro", the("centroecograf").value)
-        configuracion.append("paciente_centro_txt", the("centroecograf").options[the("centroecograf").selectedIndex].text)
-
-        configuracion.append("paciente_ecografista", 1)
-        configuracion.append("paciente_ecografista_txt", the("ecografista").value)
-
-        configuracion.append("paciente_fum", the("fum").value)
-
-        the("nombre.ecoprim").value = the("nombre-paciente").value
-        the("apellido.ecoprim").value = the("apellido-paciente").value
-
-        the("nombre.gine").value = the("nombre-paciente").value
-        the("apellido.gine").value = the("apellido-paciente").value
-        the("edad.gine").value = these("edad_materna")[0].value
-
-        the("nombre.crecim").value = the("nombre-paciente").value
-        the("apellido.crecim").value = the("apellido-paciente").value
-
-        the("nombre.doppler").value = the("nombre-paciente").value
-        the("apellido.doppler").value = the("apellido-paciente").value
-
-
-        fetch('https://api.crecimientofetal.cl/config/paciente', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
-            .then(data => {
-                the("notificacionText").innerText = "Paciente Guardado"
-                $('#notificacion').toast('show')
-                loadPacientesTabla();
-            })
-    }
+    the("guardarElPacienteFlecha").onclick = guardarPaciente();
+    the("guardarElPaciente").onclick = guardarPaciente();
 
     the("cleanParson").onclick = function(){
         let _fecha = new Date()
