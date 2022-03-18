@@ -1340,6 +1340,14 @@ $( document ).ready(function() {
         window.open(this.dataset.href, "_blank");
         this.checked = false
     }
+
+    the("imagenes.flujometria.doppler").onclick = function(){
+        if (this.checked == true){
+            this.parentElement.parentElement.children[1].classList.remove("d-none")
+        }else{
+            this.parentElement.parentElement.children[1].classList.add("d-none")
+        }
+    }
 });
 
 // Controlador de input clones
