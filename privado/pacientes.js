@@ -23,8 +23,7 @@ function loadPacientesTabla(){
             let nombre = document.createElement("td")
             let apellido = document.createElement("td")
             let rut = document.createElement("td")
-            let motivo = document.createElement("td")
-            let profesional = document.createElement("td")
+            let tipoEco = document.createElement("td")
 
             let _f = value.paciente_fee
 
@@ -33,8 +32,7 @@ function loadPacientesTabla(){
             eg.innerText = value.paciente_eg
             nombre.innerText = value.paciente_nombre
             rut.innerText = value.paciente_rut
-            motivo.innerText = value.paciente_motivo_txt
-            profesional.innerText = value.paciente_referente_txt
+            tipoEco.innerText = (value.paciente_tipoeco_txt !== "") ? value.paciente_tipoeco_txt : "";
 
             apellido.innerText = value.paciente_apellido
 
@@ -55,8 +53,7 @@ function loadPacientesTabla(){
             tr.appendChild(rut)
             tr.appendChild(nombre)
             tr.appendChild(apellido)
-            tr.appendChild(motivo)
-            tr.appendChild(profesional)
+            tr.appendChild(tipoEco)
             tr.appendChild(ver)
             tr.appendChild(eliminar)
 
@@ -123,7 +120,8 @@ function traerPaciente(){
         }
 
         the("profref").value = data.paciente_referente
-        the("centroecograf").value = data.paciente_centro
+        //the("centroecograf").value = data.paciente_centro
+        the("tipoecografia").value = data.paciente_tipoeco
 
         the("ecografista").value = data.paciente_ecografista_txt
 
@@ -219,8 +217,11 @@ function guardarPaciente(e){
     configuracion.append("paciente_control_txt", the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text)
     configuracion.append("paciente_referente", the("profref").value)
     configuracion.append("paciente_referente_txt", the("profref").options[the("profref").selectedIndex].text)
-    configuracion.append("paciente_centro", the("centroecograf").value)
-    configuracion.append("paciente_centro_txt", the("centroecograf").options[the("centroecograf").selectedIndex].text)
+    //configuracion.append("paciente_centro", the("centroecograf").value)
+    //configuracion.append("paciente_centro_txt", the("centroecograf").options[the("centroecograf").selectedIndex].text)
+
+    configuracion.append("paciente_tipoeco", the("tipoecografia").value)
+    configuracion.append("paciente_tipoeco_txt", the("tipoecografia").options[the("tipoecografia").selectedIndex].text)
 
     configuracion.append("paciente_ecografista", 1)
     configuracion.append("paciente_ecografista_txt", the("ecografista").value)
@@ -281,7 +282,8 @@ $(document).ready(function(){
         the("lcontrolpaciente").value = 1
 
         the("profref").value = 1
-        the("centroecograf").value = 1
+        //the("centroecograf").value = 1
+        the("paciente_tipoeco").value = 0
 
     }
 })
