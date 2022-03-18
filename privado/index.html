@@ -3901,18 +3901,6 @@
                 </div>
                 <div class="d-flex flex-row">
                     <div class="mr-2 align-self-center">
-                        <label class="mb-0">Fono</label>
-                    </div>
-                    <div>
-                        <input class="form-control gris-claro" type="number" id="fono-paciente">
-                    </div>
-                    <div class="ml-3 mr-2 align-self-center">
-                        <label class="mb-0">E-Mail</label>
-                    </div>
-                    <div class="flex-fill">
-                       <input class="form-control gris-claro" type="email"  id="email-paciente">
-                    </div>
-                    <div class="ml-3 mr-2 align-self-center">
                         <label class="mb-0">Edad materna</label>
                     </div>
                     <div>
@@ -3923,27 +3911,40 @@
                     <div class="mx-2 align-self-center">
                         <label class="mb-0">años</label>
                     </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="row mt-2">
-                    <div class="col-2">
-                        <label><small>Motivo del exámen</small></label>
+                    <div class="ml-3 mr-2 align-self-center">
+                        <label>Motivo del exámen</label>
                     </div>
-                    <div class="col-3">
+                    <div class="flex-fill">
                         <select id="motivo-examen" class="form-control bg-verde text-white shadow">
                             <option value="0"></option>
                         </select>
                     </div>
-                    <div class="col-1"></div>
-                    <div class="col-3">
-                        <label><small>Patología Obstétrica Relevante</small></label>
+                    <div class="ml-3 mr-2 align-self-center">
+                        <label>Patología Obstétrica Relevante</label>
                     </div>
-                    <div class="col-3">
+                    <div class="flex-fill">
                         <select id="patologiaObstetricaUno" class="form-control bg-verde text-white shadow">
                             <option value="0"></option>
                         </select>
                     </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row mt-2">
+                    <div class="col-2 mt-3">
+                        <label class="mb-0">Fono</label>
+                    </div>
+                    <div class="col-3 mt-3">
+                        <input class="form-control gris-claro" type="number" id="fono-paciente">
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-3 mt-3">
+                        <label class="mb-0">E-Mail</label>
+                    </div>
+                    <div class="col-3 mt-3">
+                       <input class="form-control gris-claro" type="email"  id="email-paciente">
+                    </div>
+
                     <div class="col-2 mt-3">
                         <label><small>Lugar de procedencia</small></label>
                     </div>
