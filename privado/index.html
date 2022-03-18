@@ -28,6 +28,7 @@
                 fn_error : function(input){
                     input[0].classList.add("is-invalid");
                     let da = document.createElement('small');
+                    da.classList.add("text-danger");
                     da.innerText = "RUT Inválido";
                     input[0].parentElement.appendChild(da);
                 },
