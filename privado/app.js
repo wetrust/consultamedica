@@ -1335,6 +1335,11 @@ $( document ).ready(function() {
             the("nn.oculto").classList.add("d-none") 
         }
     }
+
+    the("ver.ecoObsSegTrim.tablas.biometria").onclick = function(){
+        window.open(this.dataset.href, "_blank");
+        this.checked = false
+    }
 });
 
 // Controlador de input clones
