@@ -27,7 +27,7 @@
             $("#id-paciente").rut({
                 fn_error : function(input){
                     input[0].classList.add("is-invalid")
-                    input[0].parentElement.append("<small>RUT Inválido</small>");
+                    input[0].parentElement.append("RUT Inválido");
                 },
                 fn_validado : function(input){
                     input[0].classList.remove("is-invalid")
