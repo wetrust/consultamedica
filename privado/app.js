@@ -380,7 +380,7 @@ $( document ).ready(function() {
             $("#sacoFlecha").hide();
             $("#sacoModulo").hide();
 
-            if (Number.isNaN(the("lcn")) == true){
+            if (Number.isNaN(the("lcn").value) == true){
                 the("embrion").value =  "no se observa aun"
             }
         }
