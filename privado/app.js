@@ -5856,10 +5856,11 @@ $(document).ready(function(){
 function calcularComentarioEcoPrecoz(){
 
     let comentario = ""
-    if ((the("saco").value == "" && the("embrion").value == "no se observa") || the("embrion").value == "no se observa"){
-        comentario = "";
-    } else if (Number.isNaN(the("saco").value) == false && the("embrion").value == "no se observa aun"){
+
+    if (Number.isNaN(the("saco").value) == false && the("embrion").value == "no se observa aun"){
         comentario = "-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco gestacional\n-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )\n";
+    } else if ((the("saco").value == "" && the("embrion").value == "no se observa") || the("embrion").value == "no se observa"){
+            comentario = "";
     } else if (the("embrion").value != "embrión sin actividad cardiaca"){
         let fur = new Date(Date.parse(the("furAjustada").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
