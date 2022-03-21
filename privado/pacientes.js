@@ -13,53 +13,58 @@ function loadPacientesTabla(){
     fetch('https://api.crecimientofetal.cl/config/pacienteAll').then(response => response.json())
     .then(data => {
 
-        the("tablaListaPacientes").innerHTML = "";
-
-        data.forEach(function myFunction(value, index, array) {
-
-            let tr = document.createElement("tr");
-            let fecha = document.createElement("td")
-            let eg = document.createElement("td")
-            let nombre = document.createElement("td")
-            let apellido = document.createElement("td")
-            let rut = document.createElement("td")
-            let tipoEco = document.createElement("td")
-
-            let _f = value.paciente_fee
-
-            _f = _f.split("-")
-            fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
-            eg.innerText = value.paciente_eg
-            nombre.innerText = value.paciente_nombre
-            rut.innerText = value.paciente_rut
-            tipoEco.innerText = (value.paciente_tipoeco_txt !== "") ? value.paciente_tipoeco_txt : "";
-
-            apellido.innerText = value.paciente_apellido
-
-            let ver = document.createElement("td")
-            ver.dataset.id = value.paciente_id
-            ver.classList.add("click-paciente")
-            ver.innerHTML = iconos["lupa"]
-            ver.onclick = traerPaciente
-
-            let eliminar = document.createElement("td")
-            eliminar.dataset.id = value.paciente_id
-            eliminar.classList.add("click-eliminar")
-            eliminar.innerHTML = iconos["basura"]
-            eliminar.onclick = eliminarPaciente
-
-            tr.appendChild(fecha)
-            tr.appendChild(eg)
-            tr.appendChild(rut)
-            tr.appendChild(nombre)
-            tr.appendChild(apellido)
-            tr.appendChild(tipoEco)
-            tr.appendChild(ver)
-            tr.appendChild(eliminar)
-
-            the("tablaListaPacientes").appendChild(tr);
-        });
+        globalPacientes = data;
+        construirTablaPacientes(data)
     })
+}
+
+export function construirTablaPacientes(data){
+    the("tablaListaPacientes").innerHTML = "";
+
+    data.forEach(function myFunction(value, index, array) {
+
+        let tr = document.createElement("tr");
+        let fecha = document.createElement("td")
+        let eg = document.createElement("td")
+        let nombre = document.createElement("td")
+        let apellido = document.createElement("td")
+        let rut = document.createElement("td")
+        let tipoEco = document.createElement("td")
+
+        let _f = value.paciente_fee
+
+        _f = _f.split("-")
+        fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
+        eg.innerText = value.paciente_eg
+        nombre.innerText = value.paciente_nombre
+        rut.innerText = value.paciente_rut
+        tipoEco.innerText = (value.paciente_tipoeco_txt !== "") ? value.paciente_tipoeco_txt : "";
+
+        apellido.innerText = value.paciente_apellido
+
+        let ver = document.createElement("td")
+        ver.dataset.id = value.paciente_id
+        ver.classList.add("click-paciente")
+        ver.innerHTML = iconos["lupa"]
+        ver.onclick = traerPaciente
+
+        let eliminar = document.createElement("td")
+        eliminar.dataset.id = value.paciente_id
+        eliminar.classList.add("click-eliminar")
+        eliminar.innerHTML = iconos["basura"]
+        eliminar.onclick = eliminarPaciente
+
+        tr.appendChild(fecha)
+        tr.appendChild(eg)
+        tr.appendChild(rut)
+        tr.appendChild(nombre)
+        tr.appendChild(apellido)
+        tr.appendChild(tipoEco)
+        tr.appendChild(ver)
+        tr.appendChild(eliminar)
+
+        the("tablaListaPacientes").appendChild(tr);
+    });
 }
 
 function eliminarPaciente(){
