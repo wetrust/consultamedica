@@ -448,6 +448,8 @@ $( document ).ready(function() {
             fee.setTime(fee.getTime() + (1000*60*60*24*280));
             the("fppAjustada").value = getDate(fee);
         }
+
+        calcularComentarioEcoPrecoz()
     });
 
     $("#saco-vitelino").on("change", function(){
