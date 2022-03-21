@@ -383,6 +383,7 @@ $( document ).ready(function() {
         else{
             $("#sacoFlecha").show();
             $("#sacoModulo").show();
+            the("embrion").value =  "no se observa aun"
         }
         
         calcularComentarioEcoPrecoz();
