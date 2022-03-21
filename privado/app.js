@@ -449,7 +449,7 @@ $( document ).ready(function() {
             the("fppAjustada").value = getDate(fee);
         }
 
-        calcularComentarioEcoPrecoz()
+        calcularComentarioEcoPrecoz();
     });
 
     $("#saco-vitelino").on("change", function(){
