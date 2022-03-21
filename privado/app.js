@@ -6087,7 +6087,7 @@ function infPrecozClon(){
         }
     }
 
-    var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
+    var paciente = the("nombre-paciente").value + " " +the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
     var motivo = $( '#motivo-examen option:selected').text();
     var ecografista = "Dr. Rudecindo Lagos";
@@ -6283,7 +6283,7 @@ function InfEcoObsSegTrim1(){
     var ic = the("dof-dbp").value;
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
 
-    var paciente = the("nombre-paciente").value;
+    var paciente = the("nombre-paciente").value + " " +the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = the("ecografista").value;
@@ -6498,7 +6498,7 @@ function InfEcoObsSegTrim1Clon(){
     var ic = the("dof-dbp").value;
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
 
-    var paciente = the("nombre-paciente").value;
+    var paciente = the("nombre-paciente").value + " " +the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = the("ecografista").value;
@@ -7621,7 +7621,7 @@ function crearInformeEcoSegTrim2(){
     }
     var cbRango = oldProgress(tmpData);
 
-	var paciente = the("nombre-paciente").value;
+    var paciente = the("nombre-paciente").value + " " +the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = the("ecografista").value;
@@ -9262,7 +9262,6 @@ function modalEcoSegTrimInforme(){
         imprInforme(crearInformeEcoSegTrim2());
     }
 }
-
 
 function loadImagenesDICOM(){
     let rut = the("id-paciente").value
