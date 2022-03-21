@@ -379,11 +379,14 @@ $( document ).ready(function() {
         if (+this.value > 0){
             $("#sacoFlecha").hide();
             $("#sacoModulo").hide();
+
+            if (Number.isNaN(the("lcn")) == true){
+                the("embrion").value =  "no se observa aun"
+            }
         }
         else{
             $("#sacoFlecha").show();
             $("#sacoModulo").show();
-            the("embrion").value =  "no se observa aun"
         }
         
         calcularComentarioEcoPrecoz();
