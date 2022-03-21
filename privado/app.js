@@ -6286,7 +6286,7 @@ function InfEcoObsSegTrim1(){
     var paciente = the("nombre-paciente").value + " " +the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = the("ecografista").value;
+    var ecografista = "Dr. Rudecindo Lagos";
 
     var comentario = the("comentarios-eco-dos-inf-dos").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
@@ -6501,7 +6501,7 @@ function InfEcoObsSegTrim1Clon(){
     var paciente = the("nombre-paciente").value + " " +the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = the("ecografista").value;
+    var ecografista = "Dr. Rudecindo Lagos";
 
     var comentario = the("comentarios-eco-dos-inf-dos").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
@@ -7624,7 +7624,7 @@ function crearInformeEcoSegTrim2(){
     var paciente = the("nombre-paciente").value + " " +the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = the("ecografista").value;
+    var ecografista = "Dr. Rudecindo Lagos";
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var edadmaterna = these("edad_materna")[0].value;
 
@@ -8000,7 +8000,6 @@ function informeGinecologico(){
     let ovarIzquier3 = the("ovarIzquier3").value;
 
     let espacioRetro = the("espacioRetro").value;
-
 
     informe = informe.replace(/:MOTIVEXM/g, the("motivo-examen").options[the("motivo-examen").selectedIndex].text)
     informe = informe.replace(/:PATGINEOBS/g, the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text);
