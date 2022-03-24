@@ -361,6 +361,7 @@ function delete_item(){
     $("#"+this.dataset.parent).modal("hide")
     $("#"+this.dataset.modal).modal("hide")
     loadTabla(config)
+    loadDatabase();
 }
 
 function haveDatabase() {
