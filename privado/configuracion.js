@@ -460,10 +460,10 @@ function loadDatabase() {
     $("#correo\\.configuracion").val(configuracion.email);
 
     //centro ecográfico
-    $('#centroecograf').empty();
+    $('#centro\\.ecografico').empty();
     if (configuracion.centro.length > 0) {
         $.each(configuracion.centro, function(i, item) {
-            $('#centroecograf').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
+            $('#centro\\.ecografico').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
         });
     }
 }
