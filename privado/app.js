@@ -1362,6 +1362,14 @@ $( document ).ready(function() {
     the("alternativa.once").onchange = function(){
         calcularComentarioEcoPrecoz();
     }
+
+    the("opcional.prof.referente.check").onclick = function(){
+        if (this.checked == true){
+            the("opcional.prof.referente").classList.remove("d-none");
+        }else{
+            the("opcional.prof.referente").classList.add("d-none");
+        }
+    };
 });
 
 // Controlador de input clones
