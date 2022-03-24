@@ -1370,6 +1370,36 @@ $( document ).ready(function() {
             the("opcional.prof.referente").classList.add("d-none");
         }
     };
+
+    the("ovarDere").onchange = function(){
+        if (this.value == "No se observa"){
+            the("ovarDereMed1").value = ""
+            the("ovarDereMed1").classList.add("d-none");
+            the("ovarDereMed2").value = ""
+            the("ovarDereMed2").classList.add("d-none");
+            the("ovarDereMed3").value = ""
+            the("ovarDereMed3").classList.add("d-none");
+        }else{
+            the("ovarDereMed1").classList.remove("d-none");
+            the("ovarDereMed2").classList.remove("d-none");
+            the("ovarDereMed3").classList.remove("d-none"); 
+        }
+    }
+
+    the("ovarIzquier").onchange = function(){
+        if (this.value == "No se observa"){
+            the("ovarIzquier1").value = ""
+            the("ovarIzquier1").classList.add("d-none");
+            the("ovarIzquier2").value = ""
+            the("ovarIzquier2").classList.add("d-none");
+            the("ovarIzquier3").value = ""
+            the("ovarIzquier3").classList.add("d-none");
+        } else {
+            the("ovarIzquier1").classList.remove("d-none");
+            the("ovarIzquier2").classList.remove("d-none");
+            the("ovarIzquier3").classList.remove("d-none"); 
+        }
+    }
 });
 
 // Controlador de input clones
