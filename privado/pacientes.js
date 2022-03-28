@@ -106,6 +106,7 @@ function traerPaciente(){
         the("apellido.doppler").value = data.paciente_apellido
 
         the("id-paciente").value = data.paciente_rut
+        the("id-paciente").onblur();
         the("email-paciente").value = data.paciente_email
         the("fono-paciente").value = data.paciente_telefono
         the("motivo-examen").value = data.paciente_motivo
@@ -247,18 +248,38 @@ function guardarPaciente(e){
     the("apellido.doppler").value = the("apellido-paciente").value
 
 
-    fetch('https://api.crecimientofetal.cl/config/paciente', {method: 'POST',body: configuracion, mode: 'cors'}).then(response => response.json())
-        .then(data => {
-            the("notificacionText").innerText = "Paciente Guardado"
-            $('#notificacion').toast('show')
-            loadPacientesTabla();
-        })
+    fetch('https://api.crecimientofetal.cl/config/paciente', {method: 'POST',body: configuracion, mode: 'cors'})
+    .then(response => response.json())
+    .then(data => {
+        the("notificacionText").innerText = "Paciente Guardado"
+        $('#notificacion').toast('show')
+        loadPacientesTabla();
+    })
+
+    return true;
 }
 
 $(document).ready(function(){
     loadPacientesTabla();
 
-    the("guardarElPacienteFlecha").onclick = guardarPaciente;
+    the("guardarElPacienteFlecha").onclick = function(){
+        let _guardar = guardarPaciente();
+        let tipoEco =  the("tipoecografia").value;
+
+        if (_guardar == true && tipoEco != ""){
+            if (tipoEco == 0){
+                document.location.hash = "#ecoObsPrimTrim"
+            }else if (tipoEco == 1){
+                document.location.hash = "#ecoObsSegTrim"
+            }else if (tipoEco == 2){
+                document.location.hash = "#ecoDoppler"
+            }else if (tipoEco == 3){
+                document.location.hash = "#ecoGinecologica"
+            }
+
+        }
+    };
+
     the("guardarElPaciente").onclick = guardarPaciente;
 
     the("cleanParson").onclick = function(){
