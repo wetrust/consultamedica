@@ -6009,7 +6009,7 @@ function infPrecoz(){
 
     var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
-    var motivo = $( '#motivo-examen option:selected').text();
+    var motivo = the("motivo-examen").value;
     var ecografista = "Dr. Rudecindo Lagos";
 
     let fexamen = new Date(Date.parse(the("fee").value));
@@ -6152,7 +6152,7 @@ function infPrecozClon(){
 
     var paciente = the("nombre-paciente").value + " " +the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
-    var motivo = $( '#motivo-examen option:selected').text();
+    var motivo = the("motivo-examen").value;
     var ecografista = "Dr. Rudecindo Lagos";
 
     let fexamen = new Date(Date.parse(the("fee").value));
@@ -7861,7 +7861,7 @@ function crearInformeEcoSegTrim2Clon(){
 
 	var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
-    var motivo = $( '#motivo-examen option:selected').text();
+    var motivo = the("motivo-examen").value;
     var ecografista = "Dr. Rudecindo Lagos";
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     var edadmaterna = $( "select[name='edad_materna']").val();
@@ -8046,7 +8046,7 @@ function informeGinecologico(){
 
     let espacioRetro = the("espacioRetro").value;
 
-    informe = informe.replace(/:MOTIVEXM/g, the("motivo-examen").options[the("motivo-examen").selectedIndex].text)
+    informe = informe.replace(/:MOTIVEXM/g, the("motivo-examen").value)
     informe = informe.replace(/:PATGINEOBS/g, the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text);
 
     informe = informe.replace(/:PACIENTE/g, paciente);
@@ -8164,7 +8164,7 @@ function informeMorfologia(){
 
     var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
-    var motivo = $( '#motivo-examen option:selected').text();
+    var motivo = the("motivo-examen").value;
     var ecografista = $( '#ecografista\\.morfologia').val();
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     var edadmaterna = $( "select[name='edad_materna']").val();
@@ -8461,7 +8461,7 @@ function informeMorfologiaClon(){
 
     var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
-    var motivo = $( '#motivo-examen option:selected').text();
+    var motivo = the("motivo-examen").value;
     var ecografista = $( '#ecografista\\.morfologia').val();
     var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
     var edadmaterna = $( "select[name='edad_materna']").val();
@@ -8743,7 +8743,7 @@ function informeDoppler(){
 
     var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
-    var motivo = $( '#motivo-examen option:selected').text();
+    var motivo = the("motivo-examen").value;
     var ecografista = "Dr. Rudecindo Lagos";
 
     let fur = new Date(Date.parse(the("fum").value));
@@ -8917,7 +8917,7 @@ function informeDopplerClon(){
 
     var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
-    var motivo = $( '#motivo-examen option:selected').text();
+    var motivo = the("motivo-examen").value;
     var ecografista = "Dr. Rudecindo Lagos";
 
     let fur = new Date(Date.parse(the("fum").value));

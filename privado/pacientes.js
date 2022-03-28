@@ -184,7 +184,7 @@ function guardarPaciente(e){
         return false
     }
 
-    if (motiv == 0){
+    if (motiv == ""){
         make.alert("Seleccione motivo", true);
         the("motivo-examen").classList.add("is-invalid");
         e.preventDefault()
@@ -211,7 +211,7 @@ function guardarPaciente(e){
 
     configuracion.append("paciente_telefono", _numero)
     configuracion.append("paciente_motivo", the("motivo-examen").value)
-    configuracion.append("paciente_motivo_txt", the("motivo-examen").options[the("motivo-examen").selectedIndex].text)
+    configuracion.append("paciente_motivo_txt", the("motivo-examen").value)
     configuracion.append("paciente_patologia", the("patologiaObstetricaUno").value)
     configuracion.append("paciente_patologia_txt", the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text)
     configuracion.append("paciente_edad", these("edad_materna")[0].value)
@@ -280,7 +280,7 @@ $(document).ready(function(){
         the("id-paciente").value = ""
         the("email-paciente").value = ""
         the("fono-paciente").value = ""
-        the("motivo-examen").value = 1
+        the("motivo-examen").value = ""
         the("patologiaObstetricaUno").value = 1
         these("edad_materna")[0].value = "&lt; 12"
         the("ciudadpaciente").value = ""

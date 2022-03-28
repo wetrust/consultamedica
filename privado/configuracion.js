@@ -412,11 +412,11 @@ function checkDatabase() {
 function loadDatabase() {
     var configuracion = JSON.parse(localStorage["configuracion"]);
 
-    $('#motivo-examen').empty();
+    $('#motivoexamenList').empty();
     if (configuracion.MotivoExamen.length > 0) {
-        $('#motivo-examen').append('<option value="0"></option>');
+        $('#motivoexamenList').append('<option value=""></option>');
         $.each(configuracion.MotivoExamen, function(i, item) {
-            $('#motivo-examen').append('<option value="'+(i+1)+'">'+item+'</option>');
+            $('#motivoexamenList').append('<option value="'+item+'"></option>');
         });
     }
 

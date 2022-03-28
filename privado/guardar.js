@@ -11,7 +11,7 @@ $(document).ready(function() {
         let configuracion = new FormData()
 
         let profesional = the("ecografista").value
-        let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
+        let motivo = the("motivo-examen").value
         let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
         let profRef = the("profref").options[the("profref").selectedIndex].text
@@ -67,7 +67,7 @@ $(document).ready(function() {
         let configuracion = new FormData()
 
         let profesional = the("ecografista").value
-        let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
+        let motivo = the("motivo-examen").value
         let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
         let profRef = the("profref").options[the("profref").selectedIndex].text
@@ -156,7 +156,7 @@ $(document).ready(function() {
         let configuracion = new FormData()
 
         let profesional = the("ecografista").value
-        let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
+        let motivo = the("motivo-examen").value
         let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
         let profRef = the("profref").options[the("profref").selectedIndex].text
@@ -221,7 +221,7 @@ $(document).ready(function() {
         let configuracion = new FormData()
 
         let profesional = "Rudecindo Lagos"
-        let motivo = the("motivo-examen").options[the("motivo-examen").selectedIndex].text
+        let motivo = the("motivo-examen").value
         let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
 
         let profRef = the("profref").options[the("profref").selectedIndex].text
