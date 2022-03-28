@@ -1735,6 +1735,10 @@ $( document ).ready(function() {
             the("ovarIzquier2").value = ""
             the("ovarIzquier3").value = ""
             the("espacioRetro").value = ""
+
+            the("ovarDere").value = ""
+            the("ovarIzquier").value = ""
+
             the("comentario.ginecologica").value = ""
 
             $('#'+modal).modal("hide");
