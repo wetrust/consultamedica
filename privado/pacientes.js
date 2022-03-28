@@ -62,8 +62,8 @@ export function construirTablaPacientes(data){
         tr.appendChild(rut)
         tr.appendChild(nombre)
         tr.appendChild(apellido)
-        tr.appendChild(tipoEco)
         tr.appendChild(centroEco)
+        tr.appendChild(tipoEco)
         tr.appendChild(ver)
         tr.appendChild(eliminar)
 
