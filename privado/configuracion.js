@@ -463,6 +463,7 @@ function loadDatabase() {
     //centro ecográfico
     $('#centro\\.ecografico').empty();
     if (configuracion.centro.length > 0) {
+        $('#centro\\.ecografico').append('<option value=""></option>');
         $.each(configuracion.centro, function(i, item) {
             $('#centro\\.ecografico').append('<option value="'+(i+1)+'">'+item[0]+'</option>');
         });
