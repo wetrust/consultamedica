@@ -329,7 +329,8 @@ $(document).ready(function(){
         these("edad_materna")[0].value = "&lt; 12"
         the("ciudadpaciente").value = ""
         the("lcontrolpaciente").value = ""
-
+        the("centro.ecografico").value = ""
+        the("tipoecografia").value = ""
         the("profref").value = 1
         //the("centroecograf").value = 1
         the("paciente_tipoeco").value = ""
