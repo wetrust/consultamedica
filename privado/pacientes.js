@@ -29,6 +29,7 @@ export function construirTablaPacientes(data){
         let nombre = document.createElement("td")
         let apellido = document.createElement("td")
         let rut = document.createElement("td")
+        let centroEco = document.createElement("td")
         let tipoEco = document.createElement("td")
 
         let _f = value.paciente_fee
@@ -39,6 +40,8 @@ export function construirTablaPacientes(data){
         nombre.innerText = value.paciente_nombre
         rut.innerText = value.paciente_rut
         tipoEco.innerText = (value.paciente_tipoeco_txt !== "") ? value.paciente_tipoeco_txt : "";
+
+        centroEco.innerText = (value.paciente_centroeco !== "") ? value.paciente_centroeco : "";
 
         apellido.innerText = value.paciente_apellido
 
@@ -60,6 +63,7 @@ export function construirTablaPacientes(data){
         tr.appendChild(nombre)
         tr.appendChild(apellido)
         tr.appendChild(tipoEco)
+        tr.appendChild(centroEco)
         tr.appendChild(ver)
         tr.appendChild(eliminar)
 
@@ -106,7 +110,7 @@ function traerPaciente(){
         the("apellido.doppler").value = data.paciente_apellido
 
         the("id-paciente").value = data.paciente_rut
-        the("id-paciente").onblur();
+        $("#id-paciente").trigger("blur");
         the("email-paciente").value = data.paciente_email
         the("fono-paciente").value = data.paciente_telefono
         the("motivo-examen").value = data.paciente_motivo
@@ -328,7 +332,7 @@ $(document).ready(function(){
 
         the("profref").value = 1
         //the("centroecograf").value = 1
-        the("paciente_tipoeco").value = 0
+        the("paciente_tipoeco").value = ""
 
     }
 })
