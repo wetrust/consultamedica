@@ -436,11 +436,11 @@ function loadDatabase() {
         });
     }
 
-    $('#patologiaObstetricaUno').empty();
+    $('#patologiaObstetricaUnoList').empty();
     if (configuracion.PatologiaObstetrica.length > 0) {
-        $('#patologiaObstetricaUno').append('<option value="0"></option>');
+        $('#patologiaObstetricaUnoList').append('<option value=""></option>');
         $.each(configuracion.PatologiaObstetrica, function(i, item) {
-            $('#patologiaObstetricaUno').append('<option value="'+(i+1)+'">'+item+'</option>');
+            $('#patologiaObstetricaUnoList').append('<option value="'+item+'"></option>');
         });
     }
 

@@ -191,7 +191,7 @@ function guardarPaciente(e){
         return false
     }
 
-    if (pat == 0){
+    if (pat == ""){
         make.alert("Seleccione patología relevante", true);
         the("patologiaObstetricaUno").classList.add("is-invalid");
         e.preventDefault()
@@ -213,7 +213,7 @@ function guardarPaciente(e){
     configuracion.append("paciente_motivo", the("motivo-examen").value)
     configuracion.append("paciente_motivo_txt", the("motivo-examen").value)
     configuracion.append("paciente_patologia", the("patologiaObstetricaUno").value)
-    configuracion.append("paciente_patologia_txt", the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text)
+    configuracion.append("paciente_patologia_txt", the("patologiaObstetricaUno").value)
     configuracion.append("paciente_edad", these("edad_materna")[0].value)
     configuracion.append("paciente_lugar", the("ciudadpaciente").value)
     configuracion.append("paciente_lugar_txt", the("ciudadpaciente").value)
@@ -265,7 +265,7 @@ $(document).ready(function(){
         let _fecha = new Date()
 
         the("fee").value = inputDate(_fecha)
-    
+
         the("semanas").value = 10;
         the("dias").value = 0;
 
@@ -281,7 +281,7 @@ $(document).ready(function(){
         the("email-paciente").value = ""
         the("fono-paciente").value = ""
         the("motivo-examen").value = ""
-        the("patologiaObstetricaUno").value = 1
+        the("patologiaObstetricaUno").value = ""
         these("edad_materna")[0].value = "&lt; 12"
         the("ciudadpaciente").value = ""
         the("lcontrolpaciente").value = ""

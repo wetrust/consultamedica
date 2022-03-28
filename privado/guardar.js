@@ -12,7 +12,7 @@ $(document).ready(function() {
 
         let profesional = the("ecografista").value
         let motivo = the("motivo-examen").value
-        let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
+        let patologia = the("patologiaObstetricaUno").value
 
         let profRef = the("profref").options[the("profref").selectedIndex].text
         //let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
@@ -68,7 +68,7 @@ $(document).ready(function() {
 
         let profesional = the("ecografista").value
         let motivo = the("motivo-examen").value
-        let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
+        let patologia = the("patologiaObstetricaUno").value
 
         let profRef = the("profref").options[the("profref").selectedIndex].text
 //        let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
@@ -157,7 +157,7 @@ $(document).ready(function() {
 
         let profesional = the("ecografista").value
         let motivo = the("motivo-examen").value
-        let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
+        let patologia = the("patologiaObstetricaUno").value
 
         let profRef = the("profref").options[the("profref").selectedIndex].text
 //        let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text
@@ -222,7 +222,7 @@ $(document).ready(function() {
 
         let profesional = "Rudecindo Lagos"
         let motivo = the("motivo-examen").value
-        let patologia = the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text
+        let patologia = the("patologiaObstetricaUno").value
 
         let profRef = the("profref").options[the("profref").selectedIndex].text
 //        let centroecograf = the("centroecograf").options[the("centroecograf").selectedIndex].text

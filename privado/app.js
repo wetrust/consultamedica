@@ -6037,7 +6037,7 @@ function infPrecoz(){
     comentario = the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var edadmaterna = $( "select[name='edad_materna']").val();
 
     InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
@@ -6180,7 +6180,7 @@ function infPrecozClon(){
     comentario = the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
 
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var edadmaterna = $( "select[name='edad_materna']").val();
 
     InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
@@ -7863,7 +7863,7 @@ function crearInformeEcoSegTrim2Clon(){
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = "Dr. Rudecindo Lagos";
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var edadmaterna = $( "select[name='edad_materna']").val();
 
     dayHoy = new Date();
@@ -8017,7 +8017,7 @@ function informeGinecologico(){
     let comentario = the("comentario.ginecologica").value;
     comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
 
-    let patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    let patologiaObstetrica = the("patologiaObstetricaUno").value;
     let edadmaterna = $( "select[name='edad_materna']").val();
     let diaciclo = the("diaciclo").value;
 
@@ -8047,7 +8047,7 @@ function informeGinecologico(){
     let espacioRetro = the("espacioRetro").value;
 
     informe = informe.replace(/:MOTIVEXM/g, the("motivo-examen").value)
-    informe = informe.replace(/:PATGINEOBS/g, the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text);
+    informe = informe.replace(/:PATGINEOBS/g, the("patologiaObstetricaUno").value);
 
     informe = informe.replace(/:PACIENTE/g, paciente);
     informe = informe.replace(/:IDPACIENTE/g, idpaciente);
@@ -8166,7 +8166,7 @@ function informeMorfologia(){
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = $( '#ecografista\\.morfologia').val();
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var edadmaterna = $( "select[name='edad_materna']").val();
 
     var ACTCAR = the("actividad.cardiaca.morfologia").value;
@@ -8463,7 +8463,7 @@ function informeMorfologiaClon(){
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = $( '#ecografista\\.morfologia').val();
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var edadmaterna = $( "select[name='edad_materna']").val();
 
     var ACTCAR = the("actividad.cardiaca.morfologia").value;
@@ -8826,7 +8826,7 @@ function informeDoppler(){
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var dvp = the("dv").value;
     dvp = (dvp == "") ? 0 : dvp;
     dvp = parseFloat(dvp);
@@ -9000,7 +9000,7 @@ function informeDopplerClon(){
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
-    var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
+    var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var dvp = the("dv").value;
 
     if (dvp != ""){
