@@ -41,7 +41,7 @@ export function construirTablaPacientes(data){
         rut.innerText = value.paciente_rut
         tipoEco.innerText = (value.paciente_tipoeco_txt !== "") ? value.paciente_tipoeco_txt : "";
 
-        centroEco.innerText = (value.paciente_centro !== "") ? value.paciente_centro : "";
+        centroEco.innerText = (value.paciente_centro_txt !== "") ? value.paciente_centro_txt : "";
 
         apellido.innerText = value.paciente_apellido
 
