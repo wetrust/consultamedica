@@ -149,6 +149,7 @@ function guardarPaciente(e){
     let edad = these("edad_materna")[0].value
     let motiv = the("motivo-examen").value
     let pat = the("patologiaObstetricaUno").value
+    let tipoEco = the("tipoecografia").value
 
     the("nombre-paciente").classList.remove("is-invalid");
     the("apellido-paciente").classList.remove("is-invalid");
@@ -156,6 +157,7 @@ function guardarPaciente(e){
     these("edad_materna")[0].classList.remove("is-invalid");
     the("motivo-examen").classList.remove("is-invalid");
     the("patologiaObstetricaUno").classList.remove("is-invalid");
+    the("tipoecografia").classList.remove("is-invalid");
 
     if (String(nombre).length == 0){
         make.alert("Falta Nombre de paciente", true);
@@ -189,12 +191,19 @@ function guardarPaciente(e){
         make.alert("Seleccione motivo", true);
         the("motivo-examen").classList.add("is-invalid");
         e.preventDefault()
-        return false
+        return false;
     }
 
     if (pat == ""){
         make.alert("Seleccione patología relevante", true);
         the("patologiaObstetricaUno").classList.add("is-invalid");
+        e.preventDefault()
+        return false
+    }
+
+    if (tipoEco == ""){
+        make.alert("Seleccione tipo de Ecografía", true);
+        the("tipoecografia").classList.add("is-invalid");
         e.preventDefault()
         return false
     }
