@@ -216,7 +216,6 @@ function guardarPaciente(e){
         e.preventDefault();
         return false;
     }
-    
 
     let configuracion = new FormData()
 
