@@ -420,10 +420,10 @@ function loadDatabase() {
         });
     }
 
-    $('#lcontrolpaciente').empty();
+    $('#lcontrolpacienteList').empty();
     if (configuracion.lcontrol.length > 0) {
         $.each(configuracion.lcontrol, function(i, item) {
-            $('#lcontrolpaciente').append('<option value="'+(i+1)+'">'+item+'</option>');
+            $('#lcontrolpacienteList').append('<option value="'+item+'"></option>');
         });
     }
 

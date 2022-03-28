@@ -45,8 +45,7 @@ $(document).ready(function() {
         configuracion.append("nombre", the("nombre-paciente").value)
         configuracion.append("ciudad", the("ciudadpaciente").value)
         configuracion.append("eg", the("semanas").value)
-        let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
-        configuracion.append("lugar", lugar)
+        configuracion.append("lugar", the("lcontrolpaciente").value)
         configuracion.append("tipo", "Ecografía obstétrica precoz < 11 semanas")
 
         configuracion.append("correo", "drlagosbarcelona@gmail.com")
@@ -137,8 +136,7 @@ $(document).ready(function() {
         configuracion.append("nombre", the("nombre-paciente").value)
         configuracion.append("ciudad", the("ciudadpaciente").value)
         configuracion.append("eg", the("semanas").value)
-        let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
-        configuracion.append("lugar", lugar)
+        configuracion.append("lugar", the("lcontrolpaciente").value)
         configuracion.append("tipo", "Evaluación del crecimiento fetal")
 
         configuracion.append("correo", "drlagosbarcelona@gmail.com")
@@ -201,8 +199,7 @@ $(document).ready(function() {
         configuracion.append("nombre", the("nombre-paciente").value)
         configuracion.append("ciudad", the("ciudadpaciente").value)
         configuracion.append("eg", the("semanas").value)
-        let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
-        configuracion.append("lugar", lugar)
+        configuracion.append("lugar", the("lcontrolpaciente").value)
         configuracion.append("tipo", "Flujometría Doppler materno / fetal")
 
         configuracion.append("correo", "drlagosbarcelona@gmail.com")
@@ -274,8 +271,7 @@ $(document).ready(function() {
         configuracion.append("nombre", the("nombre-paciente").value)
         configuracion.append("ciudad", the("ciudadpaciente").value)
         configuracion.append("eg", the("semanas").value)
-        let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
-        configuracion.append("lugar", lugar)
+        configuracion.append("lugar", the("lcontrolpaciente").value)
         configuracion.append("tipo", "Ginecologico")
 
         configuracion.append("correo", "drlagosbarcelona@gmail.com")
@@ -401,10 +397,10 @@ function lugar(){
 
     $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
-    $('#lcontrolpaciente').find('option').clone().appendTo('#lcontrol');
+    $('#lcontrolpacienteList').find('option').clone().appendTo('#lcontrol');
 
     $('#'+_modal.button).on("click", function(){
-        document.getElementById("lcontrolpaciente").value = document.getElementById("lcontrol").value
+        the("lcontrolpaciente").value = the("lcontrol").value
         $("#"+this.dataset.modal).modal("hide")
     })
 }
