@@ -41,7 +41,7 @@ export function construirTablaPacientes(data){
         rut.innerText = value.paciente_rut
         tipoEco.innerText = (value.paciente_tipoeco_txt !== "") ? value.paciente_tipoeco_txt : "";
 
-        centroEco.innerText = (value.paciente_centroeco !== "") ? value.paciente_centroeco : "";
+        centroEco.innerText = (value.paciente_centro !== "") ? value.paciente_centro : "";
 
         apellido.innerText = value.paciente_apellido
 
@@ -245,8 +245,8 @@ function guardarPaciente(e){
     configuracion.append("paciente_control_txt", the("lcontrolpaciente").value)
     configuracion.append("paciente_referente", the("profref").value)
     configuracion.append("paciente_referente_txt", the("profref").options[the("profref").selectedIndex].text)
-    //configuracion.append("paciente_centro", the("centroecograf").value)
-    //configuracion.append("paciente_centro_txt", the("centroecograf").options[the("centroecograf").selectedIndex].text)
+    configuracion.append("paciente_centro", the("centro.ecografico").value)
+    configuracion.append("paciente_centro_txt", the("centro.ecografico").value)
 
     configuracion.append("paciente_tipoeco", the("tipoecografia").value)
     configuracion.append("paciente_tipoeco_txt", the("tipoecografia").options[the("tipoecografia").selectedIndex].text)
