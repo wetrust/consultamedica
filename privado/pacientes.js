@@ -130,7 +130,7 @@ function traerPaciente(){
         }
 
         the("profref").value = data.paciente_referente
-        //the("centroecograf").value = data.paciente_centro
+        the("centro.ecografico").value = data.paciente_centro
         the("tipoecografia").value = data.paciente_tipoeco
 
         the("ecografista").value = data.paciente_ecografista_txt
@@ -246,7 +246,7 @@ function guardarPaciente(e){
     configuracion.append("paciente_referente", the("profref").value)
     configuracion.append("paciente_referente_txt", the("profref").options[the("profref").selectedIndex].text)
     configuracion.append("paciente_centro", the("centro.ecografico").value)
-    configuracion.append("paciente_centro_txt", the("centro.ecografico").value)
+    configuracion.append("paciente_centro_txt", the("centro.ecografico").options[the("centro.ecografico").selectedIndex].text)
 
     configuracion.append("paciente_tipoeco", the("tipoecografia").value)
     configuracion.append("paciente_tipoeco_txt", the("tipoecografia").options[the("tipoecografia").selectedIndex].text)
