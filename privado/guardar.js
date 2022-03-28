@@ -43,8 +43,7 @@ $(document).ready(function() {
 
         configuracion.append("rut", the("id-paciente").value)
         configuracion.append("nombre", the("nombre-paciente").value)
-        let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
-        configuracion.append("ciudad", ciudad)
+        configuracion.append("ciudad", the("ciudadpaciente").value)
         configuracion.append("eg", the("semanas").value)
         let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
         configuracion.append("lugar", lugar)
@@ -136,8 +135,7 @@ $(document).ready(function() {
 
         configuracion.append("rut", the("id-paciente").value)
         configuracion.append("nombre", the("nombre-paciente").value)
-        let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
-        configuracion.append("ciudad", ciudad)
+        configuracion.append("ciudad", the("ciudadpaciente").value)
         configuracion.append("eg", the("semanas").value)
         let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
         configuracion.append("lugar", lugar)
@@ -201,8 +199,7 @@ $(document).ready(function() {
 
         configuracion.append("rut", the("id-paciente").value)
         configuracion.append("nombre", the("nombre-paciente").value)
-        let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
-        configuracion.append("ciudad", ciudad)
+        configuracion.append("ciudad", the("ciudadpaciente").value)
         configuracion.append("eg", the("semanas").value)
         let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
         configuracion.append("lugar", lugar)
@@ -275,8 +272,7 @@ $(document).ready(function() {
 
         configuracion.append("rut", the("id-paciente").value)
         configuracion.append("nombre", the("nombre-paciente").value)
-        let ciudad = the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text
-        configuracion.append("ciudad", ciudad)
+        configuracion.append("ciudad", the("ciudadpaciente").value)
         configuracion.append("eg", the("semanas").value)
         let lugar = the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text
         configuracion.append("lugar", lugar)
@@ -383,10 +379,10 @@ function ciudad(){
 
     $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
-    $('#ciudadpaciente').find('option').clone().appendTo('#ciudad');
+    $('#ciudadpacienteList').find('option').clone().appendTo('#ciudad');
 
     $('#'+_modal.button).on("click", function(){
-        document.getElementById("ciudadpaciente").value = document.getElementById("ciudad").value
+        the("ciudadpaciente").value = the("ciudad").value
         $("#"+this.dataset.modal).modal("hide")
     })
 }

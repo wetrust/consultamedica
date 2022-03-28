@@ -428,11 +428,11 @@ function loadDatabase() {
     }
 
     $('#nacionalidad').empty();
-    $('#ciudadpaciente').empty();
+    $('#ciudadpacienteList').empty();
     if (configuracion.nacionalidad.length > 0) {
         $.each(configuracion.nacionalidad, function(i, item) {
             $('#nacionalidad').append('<option value="'+(i+1)+'">'+item+'</option>');
-            $('#ciudadpaciente').append('<option value="'+(i+1)+'">'+item+'</option>');
+            $('#ciudadpacienteList').append('<option value="'+item+'"></option>');
         });
     }
 

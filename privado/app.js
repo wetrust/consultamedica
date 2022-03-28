@@ -6059,7 +6059,7 @@ function infPrecoz(){
     InformeString = InformeString.replace(":DATEINFORME", dateInf);
     InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
 
-    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
+    var CIUDAD =  the("ciudadpaciente").value;
     var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
     InformeString = InformeString.replace(":CIUDAD", CIUDAD);
     InformeString = InformeString.replace(":LCONTROL", LCONTROL);
@@ -6202,7 +6202,7 @@ function infPrecozClon(){
     InformeString = InformeString.replace(":DATEINFORME", dateInf);
     InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
 
-    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
+    var CIUDAD =  the("ciudadpaciente").value;
     var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
     InformeString = InformeString.replace(":CIUDAD", CIUDAD);
     InformeString = InformeString.replace(":LCONTROL", LCONTROL);
@@ -7940,7 +7940,7 @@ function crearInformeEcoSegTrim2Clon(){
 	InformeString = InformeString.replace(":DATEINFORME", dateInf);
 	InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
 
-    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
+    var CIUDAD =  the("ciudadpaciente").value;
     var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
     InformeString = InformeString.replace(":CIUDAD", CIUDAD);
     InformeString = InformeString.replace(":LCONTROL", LCONTROL);
@@ -8305,7 +8305,7 @@ function informeMorfologia(){
     var INDI = the("seguimiento.morfologia").value;
     var COMENTARIO = the("biometria.comentario.morfologia").value +  "<br>" + the("conclusion.morfologia").value + "<br>" + the("morfologia.comentario.morfologia").value;
 
-    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
+    var CIUDAD =  the("ciudadpaciente").value;
     var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
 
     InformeString = InformeString.replace(":FUR", fur);
@@ -8601,7 +8601,7 @@ function informeMorfologiaClon(){
     var INDI = the("seguimiento.morfologia").value;
     var COMENTARIO = the("biometria.comentario.morfologia").value +  "<br>" + the("conclusion.morfologia").value + "<br>" + the("morfologia.comentario.morfologia").value;
 
-    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
+    var CIUDAD =  the("ciudadpaciente").value;
     var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
 
     InformeString = InformeString.replace(":FUR", fur);
@@ -8864,7 +8864,7 @@ function informeDoppler(){
 
     InformeString += '</tbody></table></div><div class="container"> <p style="padding-bottom: 0px; margin-bottom: 0px;"><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container" style="margin-top: 5rem;"> <p class="text-right top40" style="margin-right: 100px;text-align: right;">Ecografista: :ECOGRAFISTA</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p class="pie-pagina"> * Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32 <br/> ** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127 <br/> *** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 </p><p><strong> El software tiene por objetivo favorecer análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
 
-    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
+    var CIUDAD =  the("ciudadpaciente").value;
     var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
 
     InformeString = InformeString.replace(":PACIENTE", paciente);
@@ -9035,7 +9035,7 @@ function informeDopplerClon(){
 
     InformeString += '</tbody></table></div><div class="container"> <p style="padding-bottom: 0px; margin-bottom: 0px;"><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container"> <p style="text-align:right;margin-top:1rem">Ecografista: :ECOGRAFISTA</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span><hr>Fecha Informe: :DATEINFORME<hr style="margin-top:0px"><p class="pie-pagina"> * Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32 <br/> ** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127 <br/> *** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 </p><p><strong> El software tiene por objetivo favorecer análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
 
-    var CIUDAD =  $( '#ciudadpaciente option:selected').text();
+    var CIUDAD =  the("ciudadpaciente").value;
     var LCONTROL =  $( '#lcontrolpaciente option:selected').text();
 
     InformeString = InformeString.replace(":PACIENTE", paciente);

@@ -216,7 +216,7 @@ function guardarPaciente(e){
     configuracion.append("paciente_patologia_txt", the("patologiaObstetricaUno").options[the("patologiaObstetricaUno").selectedIndex].text)
     configuracion.append("paciente_edad", these("edad_materna")[0].value)
     configuracion.append("paciente_lugar", the("ciudadpaciente").value)
-    configuracion.append("paciente_lugar_txt", the("ciudadpaciente").options[the("ciudadpaciente").selectedIndex].text)
+    configuracion.append("paciente_lugar_txt", the("ciudadpaciente").value)
     configuracion.append("paciente_control", the("lcontrolpaciente").value)
 
     configuracion.append("paciente_control_txt", the("lcontrolpaciente").options[the("lcontrolpaciente").selectedIndex].text)
@@ -283,7 +283,7 @@ $(document).ready(function(){
         the("motivo-examen").value = 1
         the("patologiaObstetricaUno").value = 1
         these("edad_materna")[0].value = "&lt; 12"
-        the("ciudadpaciente").value = 1
+        the("ciudadpaciente").value = ""
         the("lcontrolpaciente").value = 1
 
         the("profref").value = 1
