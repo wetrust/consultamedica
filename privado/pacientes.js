@@ -332,9 +332,6 @@ $(document).ready(function(){
         the("centro.ecografico").value = ""
         the("tipoecografia").value = ""
         the("profref").value = 1
-        //the("centroecograf").value = 1
-        the("paciente_tipoeco").value = ""
-
     }
 })
 
