@@ -204,8 +204,8 @@ function guardarPaciente(e){
     if (tipoEco == ""){
         make.alert("Seleccione tipo de Ecografía", true);
         the("tipoecografia").classList.add("is-invalid");
-        e.preventDefault()
-        return false
+        e.preventDefault();
+        return false;
     }
 
     let configuracion = new FormData()
@@ -272,6 +272,7 @@ $(document).ready(function(){
     loadPacientesTabla();
 
     the("guardarElPacienteFlecha").onclick = function(){
+        e.preventDefault();
         let _guardar = guardarPaciente();
         let tipoEco =  the("tipoecografia").value;
 
