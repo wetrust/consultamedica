@@ -150,6 +150,7 @@ function guardarPaciente(e){
     let motiv = the("motivo-examen").value
     let pat = the("patologiaObstetricaUno").value
     let tipoEco = the("tipoecografia").value
+    let cntrEcogr = the("centro.ecografico").value
 
     the("nombre-paciente").classList.remove("is-invalid");
     the("apellido-paciente").classList.remove("is-invalid");
@@ -158,6 +159,7 @@ function guardarPaciente(e){
     the("motivo-examen").classList.remove("is-invalid");
     the("patologiaObstetricaUno").classList.remove("is-invalid");
     the("tipoecografia").classList.remove("is-invalid");
+    the("centro.ecografico").classList.remove("is-invalid");
 
     if (String(nombre).length == 0){
         make.alert("Falta Nombre de paciente", true);
@@ -207,6 +209,14 @@ function guardarPaciente(e){
         e.preventDefault();
         return false;
     }
+
+    if (cntrEcogr == ""){
+        make.alert("Seleccione Centro Ecográfico", true);
+        the("centro.ecografico").classList.add("is-invalid");
+        e.preventDefault();
+        return false;
+    }
+    
 
     let configuracion = new FormData()
 
