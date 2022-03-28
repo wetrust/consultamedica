@@ -264,7 +264,9 @@ $(document).ready(function() {
             'comentario': the("comentario.ginecologica").value,
             'fecha' : the("fee").value,
             'fur' : the("fum").value,
-            'diaciclo' : the("diaciclo").value
+            'diaciclo' : the("diaciclo").value,
+            'ovarIzquier': the("ovarIzquier").value,
+            'ovarDere': the("ovarDere").value,
         }
 
         if (basicDataValid() == false){
@@ -883,9 +885,11 @@ function traerEcoGine(){
         the("endometObs").value = datos.endometObs
         the("anexDerecho").value = datos.anexDerecho
         the("anexIzquierdo").value = datos.anexIzquierdo
+        the("ovarDere").value = datos.ovarDere
         the("ovarDereMed1").value = datos.ovarDereMed1
         the("ovarDereMed2").value = datos.ovarDereMed2
         the("ovarDereMed3").value = datos.ovarDereMed3
+        the("ovarIzquier").value = datos.ovarIzquier
         the("ovarIzquier1").value = datos.ovarIzquier1
         the("ovarIzquier2").value = datos.ovarIzquier2
         the("ovarIzquier3").value = datos.ovarIzquier3
