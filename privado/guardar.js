@@ -191,7 +191,7 @@ $(document).ready(function() {
             'Comentario' : the("comentarios-doppler").value,
         }
 
-        if (basicDataValid() == false){
+        if (basicDataValidAlternat() == false){
             return
         }
 
