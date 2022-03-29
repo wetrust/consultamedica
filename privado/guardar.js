@@ -128,7 +128,7 @@ $(document).ready(function() {
             'trombofilias' : the("trombofilias").value,
         }
 
-        if (basicDataValid() == false){
+        if (basicDataValidAlternat() == false){
             return
         }
 
@@ -405,33 +405,52 @@ function lugar(){
     })
 }
 
-function basicDataValid(){
+function basicDataValidAlternat(){
     if (the("id-paciente").value == ""){
         rut()
-        return false
+        return false;
     }
 
     if (the("nombre-paciente").value == ""){
         nombre()
-        return false
-    }
-
-    if (the("ciudadpaciente").value == 0){
-        ciudad()
-        return false
+        return false;
     }
 
     if (the("semanas").value == 0){
         eg()
-        return false
+        return false;
+    }
+
+    return true;
+}
+
+function basicDataValid(){
+    if (the("id-paciente").value == ""){
+        rut()
+        return false;
+    }
+
+    if (the("nombre-paciente").value == ""){
+        nombre()
+        return false;
+    }
+
+    if (the("ciudadpaciente").value == 0){
+        ciudad()
+        return false;
+    }
+
+    if (the("semanas").value == 0){
+        eg()
+        return false;
     }
 
     if (the("lcontrolpaciente").value == 0){
         lugar()
-        return false
+        return false;
     }
 
-    return true
+    return true;
 }
 
 export function loadEcoPrecozTabla(paciente_rut){
