@@ -301,7 +301,7 @@ $(document).ready(function(){
 
     the("guardarElPacienteFlecha").onclick = function(e){
         e.preventDefault();
-        let _guardar = guardarPaciente();
+        let _guardar = guardarPaciente(e);
         let tipoEco =  the("tipoecografia").value;
 
         if (_guardar == true && tipoEco != ""){
