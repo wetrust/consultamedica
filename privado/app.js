@@ -1739,7 +1739,7 @@ $( document ).ready(function() {
             the("ovarDere").value = ""
             the("ovarIzquier").value = ""
 
-            the("comentario.ginecologica").value = ""
+            the("comentario.ginecologica").value = "- Cuerpo uterino \r\n- Contenido endouterino \r\n- Exploración anexial bilateral \r\n- Espacio retrouterino "
 
             $('#'+modal).modal("hide");
         });
