@@ -155,6 +155,7 @@ function guardarPaciente(e){
     let pat = the("patologiaObstetricaUno").value
     let tipoEco = the("tipoecografia").value
     let cntrEcogr = the("centro.ecografico").value
+    let semanasEG = the("semanas").value
 
     the("nombre-paciente").classList.remove("is-invalid");
     the("apellido-paciente").classList.remove("is-invalid");
@@ -164,6 +165,17 @@ function guardarPaciente(e){
     the("patologiaObstetricaUno").classList.remove("is-invalid");
     the("tipoecografia").classList.remove("is-invalid");
     the("centro.ecografico").classList.remove("is-invalid");
+
+    the("semanas").classList.remove("is-invalid");
+    the("fum").classList.remove("is-invalid");
+
+    if (semanasEG == 0){
+        make.alert("Seleccione FUR o EG", true);
+        the("semanas").classList.add("is-invalid");
+        the("fum").classList.add("is-invalid");
+        e.preventDefault()
+        return false
+    }
 
     if (String(nombre).length == 0){
         make.alert("Falta Nombre de paciente", true);
