@@ -142,6 +142,8 @@ function traerPaciente(){
         loadEcoCrecimientoTabla(data.paciente_rut)
         loadEcoDopplerTabla(data.paciente_rut)
         loadEcoGineTabla(data.paciente_rut)
+
+        globalPreguntoEg = false
     })
 }
 
@@ -155,7 +157,6 @@ function guardarPaciente(e){
     let pat = the("patologiaObstetricaUno").value
     let tipoEco = the("tipoecografia").value
     let cntrEcogr = the("centro.ecografico").value
-    let semanasEG = the("semanas").value
 
     the("nombre-paciente").classList.remove("is-invalid");
     the("apellido-paciente").classList.remove("is-invalid");
@@ -169,11 +170,12 @@ function guardarPaciente(e){
     the("semanas").classList.remove("is-invalid");
     the("fum").classList.remove("is-invalid");
 
-    if (semanasEG == 0){
+    if (globalPreguntoEg == false){
         make.alert("Seleccione FUR o EG", true);
         the("semanas").classList.add("is-invalid");
         the("fum").classList.add("is-invalid");
         e.preventDefault()
+        globalPreguntoEg = true
         return false
     }
 
@@ -290,6 +292,7 @@ function guardarPaciente(e){
         loadPacientesTabla();
     })
 
+    globalPreguntoEg = false
     return true;
 }
 
@@ -344,6 +347,8 @@ $(document).ready(function(){
         the("centro.ecografico").value = ""
         the("tipoecografia").value = ""
         the("profref").value = 1
+
+        globalPreguntoEg = false;
     }
 })
 
