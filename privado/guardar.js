@@ -263,7 +263,7 @@ $(document).ready(function() {
             'ovarDere': the("ovarDere").value,
         }
 
-        if (basicDataValid() == false){
+        if (basicDataValidAlternat() == false){
             return
         }
 
