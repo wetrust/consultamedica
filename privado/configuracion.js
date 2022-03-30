@@ -323,6 +323,24 @@ function modal_edit(){
     
         $("#"+this.dataset.modal).modal("hide")
         loadTabla(config)
+
+                    //////
+
+                    let _configuracion = new FormData()
+                    var _conf = JSON.parse(localStorage["configuracion"]);
+        
+                    _configuracion.append("config_id",_conf.id)
+                    _configuracion.append("config_key", localStorage["configuracion"])
+        
+                    fetch('https://api.crecimientofetal.cl/config/setPrivado', {method: 'POST',body: _configuracion, mode: 'cors'}).then(response => response.json())
+                    .then(data => {
+                        var _conf = JSON.parse(localStorage["configuracion"]);
+                        _conf.id = data.config_id;
+                        localStorage["configuracion"] = JSON.stringify(_conf);
+                    }).catch(function(error) {
+                        console.log("error")
+                    });
+                    ///////
     })
 }
 
@@ -362,6 +380,24 @@ function delete_item(){
     $("#"+this.dataset.modal).modal("hide")
     loadTabla(config)
     loadDatabase();
+
+                //////
+
+                let _configuracion = new FormData()
+                var _conf = JSON.parse(localStorage["configuracion"]);
+    
+                _configuracion.append("config_id",_conf.id)
+                _configuracion.append("config_key", localStorage["configuracion"])
+    
+                fetch('https://api.crecimientofetal.cl/config/setPrivado', {method: 'POST',body: _configuracion, mode: 'cors'}).then(response => response.json())
+                .then(data => {
+                    var _conf = JSON.parse(localStorage["configuracion"]);
+                    _conf.id = data.config_id;
+                    localStorage["configuracion"] = JSON.stringify(_conf);
+                }).catch(function(error) {
+                    console.log("error")
+                });
+                ///////
 }
 
 function haveDatabase() {
