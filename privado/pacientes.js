@@ -171,8 +171,7 @@ function guardarPaciente(e){
     the("fum").classList.remove("is-invalid");
 
     if (globalPreguntoEg == false){
-        make.alert("Seleccione FUR o EG", true);
-        the("semanas").classList.add("is-invalid");
+        make.alert("Seleccione FUR", true);
         the("fum").classList.add("is-invalid");
         e.preventDefault()
         globalPreguntoEg = true

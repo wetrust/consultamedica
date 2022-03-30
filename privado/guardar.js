@@ -362,7 +362,6 @@ function eg(){
     $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 }
 
-
 function basicDataValid(){
     if (the("id-paciente").value == ""){
         rut()
@@ -374,7 +373,7 @@ function basicDataValid(){
         return false;
     }
 
-    if (fechas.sonIguales(fechas.toDate(the("fum").value), fechas.toDate(the("fee").value) ) == true){
+    if (the("semanas").value == 0){
         eg()
         return false;
     }
