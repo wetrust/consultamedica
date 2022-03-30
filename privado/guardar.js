@@ -1,4 +1,4 @@
-import { make, the } from './wetrust.js';
+import { humanDate, make, the } from './wetrust.js';
 import { fechas } from './functionesM.js';
 
 var iconos = {
@@ -400,10 +400,7 @@ export function loadEcoPrecozTabla(paciente_rut){
             let embrion = document.createElement("td")
 
             let datos = JSON.parse(value.caso_data)
-            let _f = datos.Fecha
-
-            _f = _f.split("-")
-            fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
+            fecha.innerText = humanDate(datos.Fecha)
 
             eg.innerText = value.caso_eg
 
@@ -495,10 +492,8 @@ export function loadEcoCrecimientoTabla(paciente_rut){
             let bvm = document.createElement("td")
 
             let datos = JSON.parse(value.caso_data)
-            let _f = datos.fecha
 
-            _f = _f.split("-")
-            fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
+            fecha.innerText = humanDate(datos.Fecha)
             
             eg.innerText = value.caso_eg
 
@@ -653,10 +648,8 @@ export function loadEcoDopplerTabla(paciente_rut){
             let duc = document.createElement("td")
 
             let datos = JSON.parse(value.caso_data)
-            let _f = datos.fecha
 
-            _f = _f.split("-")
-            fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
+            fecha.innerText = humanDate(datos.Fecha)
 
             eg.innerText = value.caso_eg
 
@@ -762,10 +755,8 @@ export function loadEcoGineTabla(paciente_rut){
             let endometGrosor = document.createElement("td")
 
             let datos = JSON.parse(value.caso_data)
-            let _f = datos.fecha
 
-            _f = _f.split("-")
-            fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
+            fecha.innerText = humanDate(datos.Fecha)
 
             diaciclo.innerText = datos.diaciclo
 
