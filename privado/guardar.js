@@ -1,4 +1,5 @@
-import { make, the } from './wetrust.js'
+import { make, the } from './wetrust.js';
+import { fechas } from './functionesM.js';
 
 var iconos = {
     "lupa" : '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>',
@@ -361,49 +362,6 @@ function eg(){
     $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 }
 
-function ciudad(){
-    let _modal = make.modal("Guardar Ciudad")
-    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
-    the(_modal.titulo).innerHTML = "Falta Ciudad";
-    the(_modal.titulo).classList.add("mx-auto");
-    the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
-
-    let _contenido = '<p>No escribió la ciudad de la paciente, escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="ciudad">Ciudad de paciente</label><select class="form-control" id="ciudad"></select></div>'
-
-    the(_modal.contenido).innerHTML = _contenido;
-    the(_modal.id).children[0].classList.remove("modal-lg");
-
-    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-
-    $('#ciudadpacienteList').find('option').clone().appendTo('#ciudad');
-
-    $('#'+_modal.button).on("click", function(){
-        the("ciudadpaciente").value = the("ciudad").value
-        $("#"+this.dataset.modal).modal("hide")
-    })
-}
-
-function lugar(){
-    let _modal = make.modal("Guardar Lugar")
-    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
-    the(_modal.titulo).innerHTML = "Falta Ciudad";
-    the(_modal.titulo).classList.add("mx-auto");
-    the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
-
-    let _contenido = '<p>No escribió el lugar de control de la paciente, escríbalo abajo y vuelva a presionar el botón guardar</p><div class="form-group"><label for="lcontrol">Lugar de control</label><select class="form-control" id="lcontrol"></select></div>'
-
-    the(_modal.contenido).innerHTML = _contenido;
-    the(_modal.id).children[0].classList.remove("modal-lg");
-
-    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-
-    $('#lcontrolpacienteList').find('option').clone().appendTo('#lcontrol');
-
-    $('#'+_modal.button).on("click", function(){
-        the("lcontrolpaciente").value = the("lcontrol").value
-        $("#"+this.dataset.modal).modal("hide")
-    })
-}
 
 function basicDataValid(){
     if (the("id-paciente").value == ""){
@@ -416,7 +374,7 @@ function basicDataValid(){
         return false;
     }
 
-    if (the("semanas").value == 0){
+    if (fechas.sonIguales(fechas.toDate(the("fum").value), fechas.toDate(the("fee").value) ) == true){
         eg()
         return false;
     }

@@ -53,4 +53,11 @@ export class fechas{
 
         return date
     }
+
+    static sonIguales = (someDate, fechaActiva = new Date()) => {
+        
+        return someDate.getDate() == fechaActiva.getDate() &&
+          someDate.getMonth() == fechaActiva.getMonth() &&
+          someDate.getFullYear() == fechaActiva.getFullYear()
+    }
 }
