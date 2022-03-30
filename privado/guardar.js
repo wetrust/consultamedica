@@ -400,7 +400,7 @@ export function loadEcoPrecozTabla(paciente_rut){
             let embrion = document.createElement("td")
 
             let datos = JSON.parse(value.caso_data)
-            fecha.innerText = humanDate(datos.Fecha)
+            fecha.innerText = humanDate(fechas.toDate(datos.Fecha))
 
             eg.innerText = value.caso_eg
 
@@ -493,7 +493,7 @@ export function loadEcoCrecimientoTabla(paciente_rut){
 
             let datos = JSON.parse(value.caso_data)
 
-            fecha.innerText = humanDate(datos.Fecha)
+            fecha.innerText = humanDate(fechas.toDate(datos.Fecha))
             
             eg.innerText = value.caso_eg
 
@@ -649,7 +649,7 @@ export function loadEcoDopplerTabla(paciente_rut){
 
             let datos = JSON.parse(value.caso_data)
 
-            fecha.innerText = humanDate(datos.Fecha)
+            fecha.innerText = humanDate(fechas.toDate(datos.Fecha))
 
             eg.innerText = value.caso_eg
 
@@ -756,7 +756,7 @@ export function loadEcoGineTabla(paciente_rut){
 
             let datos = JSON.parse(value.caso_data)
 
-            fecha.innerText = humanDate(datos.Fecha)
+            fecha.innerText = humanDate(fechas.toDate(datos.Fecha))
 
             diaciclo.innerText = datos.diaciclo
 
