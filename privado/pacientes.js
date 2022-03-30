@@ -167,7 +167,6 @@ function guardarPaciente(e){
     the("tipoecografia").classList.remove("is-invalid");
     the("centro.ecografico").classList.remove("is-invalid");
 
-    the("semanas").classList.remove("is-invalid");
     the("fum").classList.remove("is-invalid");
 
     if (globalPreguntoEg == false){
@@ -240,7 +239,15 @@ function guardarPaciente(e){
     configuracion.append("paciente_eg", the("semanas").value)
     configuracion.append("paciente_nombre", the("nombre-paciente").value)
     configuracion.append("paciente_apellido", the("apellido-paciente").value)
-    configuracion.append("paciente_rut", the("id-paciente").value)
+
+    let idPacienteRut = the("id-paciente").value;
+    //reparar letra k en mayúscula
+    if (idPacienteRut.indexOf("k") != -1){
+        idPacienteRut = idPacienteRut.toUpperCase();
+        the("id-paciente").value = idPacienteRut;
+    }
+
+    configuracion.append("paciente_rut", idPacienteRut)
     configuracion.append("paciente_email", the("email-paciente").value)
 
     let _numero = (isNaN(the("fono-paciente").value) == true || the("fono-paciente").value == "") ? "0" : the("fono-paciente").value
