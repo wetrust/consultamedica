@@ -7,25 +7,25 @@ $( document ).ready(function() {
         let resultado = [];
 
         if (valor != ""){
-            resultado = globalPacientes.filter(eldato => { return eldato.paciente_rut.includes(valor); })
+            resultado = globalPacientes.pacientes.filter(eldato => { return eldato.paciente_rut.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                construirTablaPacientes(resultado)
+                construirTablaPacientes(resultado, globalPacientes.exam)
                 return true
             }
 
-            resultado = globalPacientes.filter(
+            resultado = globalPacientes.pacientes.filter(
                 eldato => { 
                     return (eldato.paciente_nombre.includes(valor) || eldato.paciente_apellido.includes(valor));
                 }
             )
             //filtrar por nombre y apellido
             if (resultado.length > 0){
-                construirTablaPacientes(resultado)
+                construirTablaPacientes(resultado, globalPacientes.exam)
                 return true
             }
         }else{
-            construirTablaPacientes(globalPacientes)
+            construirTablaPacientes(globalPacientes.pacientes, globalPacientes.exam);
         }
 
     }

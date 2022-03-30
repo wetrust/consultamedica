@@ -1,4 +1,4 @@
-import { make, the, these, inputDate } from './wetrust.js'
+import { make, the, these, inputDate, humanDate } from './wetrust.js'
 import { loadEcoPrecozTabla, loadEcoCrecimientoTabla, loadEcoDopplerTabla, loadEcoGineTabla } from './guardar.js'
 import { fechas } from './functionesM.js'
 
@@ -14,11 +14,11 @@ function loadPacientesTabla(){
     .then(data => {
 
         globalPacientes = data;
-        construirTablaPacientes(data)
+        construirTablaPacientes(globalPacientes.pacientes, globalPacientes.exam);
     })
 }
 
-export function construirTablaPacientes(data){
+export function construirTablaPacientes(data, examenes){
     the("tablaListaPacientes").innerHTML = "";
 
     data.forEach(function myFunction(value, index, array) {
@@ -32,10 +32,28 @@ export function construirTablaPacientes(data){
         let centroEco = document.createElement("td")
         let tipoEco = document.createElement("td")
 
-        let _f = value.paciente_fee
+        var _f = fechas.toDate(value.paciente_fee)
 
-        _f = _f.split("-")
-        fecha.innerText = _f[2] + "-" + _f[1]  + "-" + _f[0]
+        var resultado = examenes.filter(examen => { return examen.caso_rut == value.paciente_rut; })
+
+        resultado.forEach(function myFunction(value, index, array) {
+            let datos = value.caso_data;
+            datos = JSON.parse(datos);
+
+            let internalFecha = datos.Fecha
+
+            if (!internalFecha == false){
+                internalFecha = fechas.toDate(internalFecha);
+
+                if (fechas.sonIguales(_f, internalFecha) == false){
+                    if( _f.getTime() < internalFecha.getTime()){
+                        _f = internalFecha;
+                    }
+                }
+            }
+        })
+
+        fecha.innerText = humanDate(_f)
         eg.innerText = value.paciente_eg
         nombre.innerText = value.paciente_nombre
         rut.innerText = value.paciente_rut

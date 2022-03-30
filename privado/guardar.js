@@ -82,7 +82,7 @@ $(document).ready(function() {
             'profesional' : profesional,
             'motivo' : motivo,
             'patologia' : patologia,
-            'fecha' : the("fee").value,
+            'Fecha' : the("fee").value,
             'fur' : the("fum").value,
             'dbp' : the("dbp").value,
             'dbpde' : the("dbpDE").value,
@@ -171,7 +171,7 @@ $(document).ready(function() {
             'profesional' : profesional,
             'motivo' : motivo,
             'patologia' : patologia,
-            'fecha' : the("fee").value,
+            'Fecha' : the("fee").value,
             'fur' : the("fum").value,
             'fcf' : the("fcf-prim").value,
             'utderecha' : the("aud").value,
@@ -257,7 +257,7 @@ $(document).ready(function() {
             'ovarIzquier3': the("ovarIzquier3").value,
             'espacioRetro': the("espacioRetro").value,
             'comentario': the("comentario.ginecologica").value,
-            'fecha' : the("fee").value,
+            'Fecha' : the("fee").value,
             'fur' : the("fum").value,
             'diaciclo' : the("diaciclo").value,
             'ovarIzquier': the("ovarIzquier").value,
@@ -842,13 +842,19 @@ function traerEcoGine(){
 }
 
 function eliminarEcoGine(){
+
     make.deleteModal("la ecografía", this.dataset.id, function(){
-        $("#"+this.dataset.modal).modal("hide")
+        $("#"+this.dataset.modal).modal("hide");
+
         fetch('https://api.crecimientofetal.cl/config/dexamenGinecologico/'+this.dataset.delete).then(response => response.json())
         .then(data => {
+
             the("notificacionText").innerText = "Exámen Eliminado"
-            $('#notificacion').toast('show')
-            loadEcoGineTabla(the("id-paciente").value)
+            $("#notificacion").toast("show");
+            loadEcoGineTabla(the("id-paciente").value);
+
         })
+
     });
+
 }
