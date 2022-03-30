@@ -135,47 +135,51 @@
         </div>
     </div>
     <section class="bg-secondary shadow d-none">
-        <div class="container py-2">
-            <div class="d-flex justify-content-between align-items-center rounded px-3 py-1 shadow-sm" style="background-color: #e9ecef">
-                <h6 class="text-primary mb-0"><em id="titulo">Titulo</em></h6>
-                <a href="#inicio" id="volver"><strong>Volver</strong></a>
-            </div>
-            <div class="row py-2">
-                <div class="col-3">
-                    <div class="form-group mb-0">
-                        <label class="text-white">a) Fecha de última mestruación *</label>
-                        <input class="form-control bg-verde text-white" type="date" id="fum">
+        <div class="container-fluid py-2">
+            <div class="row d-flex">
+                <div class="col-11">
+                    <div class="d-flex justify-content-between align-items-center rounded px-3 py-1 shadow-sm" style="background-color: #e9ecef">
+                        <h6 class="text-primary mb-0"><em id="titulo">Titulo</em></h6>
+                        <a href="#inicio" id="volver"><strong>Volver</strong></a>
                     </div>
-                </div>
-                <div class="col-3">
-                    <div class="form-group mb-0">
-                        <label class="text-white">b) Edad gestacional</label>
-                        <div class="row">
-                            <div class="col">
-                                <select id="semanas" class="form-control bg-verde text-white"></select>
-                            </div>
-                            <div class="col">
-                                <select id="dias" class="form-control" style="background-color:#ebefff;"></select>
+                    <div class="row py-2">
+                        <div class="col-3">
+                            <div class="form-group mb-0">
+                                <label class="text-white">a) Fecha de última mestruación *</label>
+                                <input class="form-control bg-verde text-white" type="date" id="fum">
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-3 d-none ml-auto">
-                    <div class="form-group mb-0">
-                        <label class="text-white">c) Día del ciclo mestrual</label>
-                        <input type="text" class="form-control" id="diaciclo" readonly>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="form-group mb-0">
-                        <label class="text-white">c) Fecha probable de parto</label>
-                        <input type="date" class="form-control" id="fpp" style="background-color:#ebefff;">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="form-group mb-0">
-                        <label class="text-white text-left">d) Fecha de exámen modificable</label>
-                        <input class="form-control" type="date" id="fee" style="background-color:#ebefff;">
+                        <div class="col-3">
+                            <div class="form-group mb-0">
+                                <label class="text-white">b) Edad gestacional</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <select id="semanas" class="form-control bg-verde text-white"></select>
+                                    </div>
+                                    <div class="col">
+                                        <select id="dias" class="form-control" style="background-color:#ebefff;"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 d-none ml-auto">
+                            <div class="form-group mb-0">
+                                <label class="text-white">c) Día del ciclo mestrual</label>
+                                <input type="text" class="form-control" id="diaciclo" readonly>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group mb-0">
+                                <label class="text-white">c) Fecha probable de parto</label>
+                                <input type="date" class="form-control" id="fpp" style="background-color:#ebefff;">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group mb-0">
+                                <label class="text-white text-left">d) Fecha de exámen modificable</label>
+                                <input class="form-control" type="date" id="fee" style="background-color:#ebefff;">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
