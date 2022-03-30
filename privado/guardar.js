@@ -128,7 +128,7 @@ $(document).ready(function() {
             'trombofilias' : the("trombofilias").value,
         }
 
-        if (basicDataValidAlternat() == false){
+        if (basicDataValid() == false){
             return
         }
 
@@ -191,7 +191,7 @@ $(document).ready(function() {
             'Comentario' : the("comentarios-doppler").value,
         }
 
-        if (basicDataValidAlternat() == false){
+        if (basicDataValid() == false){
             return
         }
 
@@ -263,7 +263,7 @@ $(document).ready(function() {
             'ovarDere': the("ovarDere").value,
         }
 
-        if (basicDataValidAlternat() == false){
+        if (basicDataValid() == false){
             return
         }
 
@@ -405,25 +405,6 @@ function lugar(){
     })
 }
 
-function basicDataValidAlternat(){
-    if (the("id-paciente").value == ""){
-        rut()
-        return false;
-    }
-
-    if (the("nombre-paciente").value == ""){
-        nombre()
-        return false;
-    }
-
-    if (the("semanas").value == 0){
-        eg()
-        return false;
-    }
-
-    return true;
-}
-
 function basicDataValid(){
     if (the("id-paciente").value == ""){
         rut()
@@ -435,18 +416,8 @@ function basicDataValid(){
         return false;
     }
 
-    if (the("ciudadpaciente").value == 0){
-        ciudad()
-        return false;
-    }
-
     if (the("semanas").value == 0){
         eg()
-        return false;
-    }
-
-    if (the("lcontrolpaciente").value == 0){
-        lugar()
         return false;
     }
 
