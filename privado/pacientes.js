@@ -36,6 +36,14 @@ export function construirTablaPacientes(data, examenes){
 
         var resultado = examenes.filter(examen => { return examen.caso_rut == value.paciente_rut; })
 
+        if (resultado.length > 0){
+            let _tmpdatos = resultado[0].caso_data;
+            _tmpdatos = JSON.parse(_tmpdatos);
+            if (_tmpdatos.Fecha != ""){
+                _f = fechas.toDate(_tmpdatos.Fecha);
+            }
+        }
+
         resultado.forEach(function myFunction(value, index, array) {
             let datos = value.caso_data;
             datos = JSON.parse(datos);
