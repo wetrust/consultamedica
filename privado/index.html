@@ -34,14 +34,13 @@
                     input[0].parentElement.appendChild(da);
                 },
                 fn_validado : function(input){
-                    input[0].classList.remove("is-invalid")
-                    let _elemento = input[0].parentElement.children
+                    input[0].classList.remove("is-invalid");
+                    let _elemento = input[0].parentElement.children;
                     if (_elemento.length > 1){
                         input[0].parentElement.children[1].remove()
                     }
-                    
                 },
-                placeholder: ""
+                placeholder: "",
             });
         })
     </script>
@@ -198,7 +197,7 @@
                                 </div>
                                 <label class="col-sm-1 col-form-label">Fecha</label>
                                 <div class="col-sm-3">
-                                    <input type="text" id="fecha-consentimiento" class="form-control" data-date-format="dd/mm/yyyy" data-weekStart="1" onfocus="blur();">
+                                    <input type="text" id="fecha-consentimiento" class="form-control" data-date-format="dd/mm/yyyy" data-weekStart="1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -4059,7 +4058,7 @@
                     <caption>Listado de Ultimas ecografías (cambiar)</caption>
                     <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Fecha</th>
+                        <th scope="col">Fecha Ult. Exm.</th>
                         <th scope="col">EG</th>
                         <th scope="col">RUT</th>
                         <th scope="col">Nombre</th>
