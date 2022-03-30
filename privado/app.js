@@ -8037,11 +8037,11 @@ function informeGinecologico(){
 
     let anexDerecho = the("anexDerecho").value;
     let anexIzquierdo = the("anexIzquierdo").value;
-    let ovarDereMed1 = the("ovarDereMed1").value;
+    let ovarDereMed1 = the("ovarDere").value + ", " +the("ovarDereMed1").value;
     let ovarDereMed2 = the("ovarDereMed2").value;
     let ovarDereMed3 = the("ovarDereMed3").value;
 
-    let ovarIzquier1 = the("ovarIzquier1").value;
+    let ovarIzquier1 = the("ovarIzquier").value + ", " +the("ovarIzquier1").value;
     let ovarIzquier2 = the("ovarIzquier2").value;
     let ovarIzquier3 = the("ovarIzquier3").value;
 
@@ -8070,6 +8070,7 @@ function informeGinecologico(){
     informe = informe.replace(/:endometObs/g, endometObs);
     informe = informe.replace(/:anexDerecho/g, anexDerecho);
     informe = informe.replace(/:anexIzquierdo/g, anexIzquierdo);
+
     informe = informe.replace(/:ovarDereMed1/g, ovarDereMed1);
     informe = informe.replace(/:ovarDereMed2/g, ovarDereMed2);
 
