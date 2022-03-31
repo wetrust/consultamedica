@@ -8075,9 +8075,7 @@ function informeGinecologico(){
     informe = informe.replace(/:anexIzquierdo/g, anexIzquierdo);
 
     informe = informe.replace(/:ovarDere/g, ovDer);
-
     informe = informe.replace(/:ovarIzquier/g, ovIzq);
-
     informe = informe.replace(/:espacioRetro/g, espacioRetro);
 
     informe = informe.replace(/:DIACICLO/g, diaciclo);
