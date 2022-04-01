@@ -685,7 +685,8 @@ export function loadEcoDopplerTabla(paciente_rut){
             the("tablaEcoDopper").appendChild(tr);
 
             smallTr.appendChild(smallFecha)
-            smallTr.appendChild(smallFecha)
+            smallTr.appendChild(smallEg)
+            smallTr.appendChild(ver)
 
             the("ecogDopplerTabla").appendChild(smallTr);
         });
