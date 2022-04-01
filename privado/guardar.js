@@ -439,6 +439,7 @@ export function loadEcoPrecozTabla(paciente_rut){
             the("tablaEcoPrecoz").appendChild(tr);
 
             ver = null;
+            ver = document.createElement("td");
             ver.dataset.id = value.caso_id;
             ver.innerHTML = iconos["lupa"];
             ver.onclick = traerEcoPrecoz;
