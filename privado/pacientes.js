@@ -21,7 +21,9 @@ function loadPacientesTabla(){
 export function construirTablaPacientes(data, examenes){
     the("tablaListaPacientes").innerHTML = "";
 
-    data.forEach(function myFunction(value, index, array) {
+    let _datos = ordenarDatos(data, examenes)
+
+    _datos.forEach(function myFunction(value, index, array) {
 
         let tr = document.createElement("tr");
         let fecha = document.createElement("td")
@@ -31,6 +33,51 @@ export function construirTablaPacientes(data, examenes){
         let rut = document.createElement("td")
         let centroEco = document.createElement("td")
         let tipoEco = document.createElement("td")
+
+        fecha.innerText = value.fecha;
+        eg.innerText = value.eg;
+        rut.innerText = value.rut;
+        nombre.innerText = value.nombre;
+        apellido.innerText = value.apellido;
+        centroEco.innerText = value.centro;
+        tipoEco.innerText = tipoEco;
+
+        let ver = document.createElement("td")
+        ver.dataset.id = value.id
+        ver.classList.add("click-paciente")
+        ver.innerHTML = iconos["lupa"]
+        ver.onclick = traerPaciente
+
+        let eliminar = document.createElement("td")
+        eliminar.dataset.id = value.id
+        eliminar.classList.add("click-eliminar")
+        eliminar.innerHTML = iconos["basura"]
+        eliminar.onclick = eliminarPaciente
+
+        tr.appendChild(fecha)
+        tr.appendChild(eg)
+        tr.appendChild(rut)
+        tr.appendChild(nombre)
+        tr.appendChild(apellido)
+        tr.appendChild(centroEco)
+        tr.appendChild(tipoEco)
+        tr.appendChild(ver)
+        tr.appendChild(eliminar)
+
+        the("tablaListaPacientes").appendChild(tr);
+    });
+}
+
+
+export function ordenarDatos(data, examenes){
+
+    var datoOrdenado = [];
+
+    data.forEach(function myFunction(value, index, array) {
+
+        let fila = new Map();
+        let centroEco = ""
+        let tipoEco = ""
 
         var _f = fechas.toDate(value.paciente_fee)
 
@@ -61,41 +108,28 @@ export function construirTablaPacientes(data, examenes){
             }
         })
 
-        fecha.innerText = humanDate(_f)
-        eg.innerText = value.paciente_eg
-        nombre.innerText = value.paciente_nombre
-        rut.innerText = value.paciente_rut
-        tipoEco.innerText = (value.paciente_tipoeco_txt !== "") ? value.paciente_tipoeco_txt : "";
+        tipoEco = (value.paciente_tipoeco_txt !== "") ? value.paciente_tipoeco_txt : "";
+        centroEco = (value.paciente_centro_txt !== "") ? value.paciente_centro_txt : "";
 
-        centroEco.innerText = (value.paciente_centro_txt !== "") ? value.paciente_centro_txt : "";
+        fila.set('id',value.paciente_id);
+        fila.set('fecha',humanDate(_f));
+        fila.set('eg',value.paciente_eg);
+        fila.set('rut',value.paciente_rut);
+        fila.set('nombre',value.paciente_nombre);
+        fila.set('apellido',value.paciente_apellido);
+        fila.set('centro',centroEco);
+        fila.set('tipo',tipoEco);
 
-        apellido.innerText = value.paciente_apellido
+        datoOrdenado.push(fila);
 
-        let ver = document.createElement("td")
-        ver.dataset.id = value.paciente_id
-        ver.classList.add("click-paciente")
-        ver.innerHTML = iconos["lupa"]
-        ver.onclick = traerPaciente
-
-        let eliminar = document.createElement("td")
-        eliminar.dataset.id = value.paciente_id
-        eliminar.classList.add("click-eliminar")
-        eliminar.innerHTML = iconos["basura"]
-        eliminar.onclick = eliminarPaciente
-
-        tr.appendChild(fecha)
-        tr.appendChild(eg)
-        tr.appendChild(rut)
-        tr.appendChild(nombre)
-        tr.appendChild(apellido)
-        tr.appendChild(centroEco)
-        tr.appendChild(tipoEco)
-        tr.appendChild(ver)
-        tr.appendChild(eliminar)
-
-        the("tablaListaPacientes").appendChild(tr);
     });
+
+    datoOrdenado.sort((a, b) => fechas.toDate(b.fecha) - fechas.toDate(a.fecha));
+
+    return datoOrdenado;
 }
+
+
 
 function eliminarPaciente(){
     make.deleteModal("el paciente", this.dataset.id, function(){
