@@ -498,12 +498,16 @@ export function loadEcoCrecimientoTabla(paciente_rut){
     .then(data => {
 
         the("tablaEcoCrecimiento").innerHTML = "";
+        the("ecogSegTrimTabla").innerHTML = "";
 
         data.forEach(function myFunction(value, index, array) {
 
             let tr = document.createElement("tr");
+            let smallTr = document.createElement("tr");
             let fecha = document.createElement("td")
+            let smallFecha = document.createElement("td");
             let eg = document.createElement("td")
+            let smallEg = document.createElement("td");
             let pfe = document.createElement("td")
             let pfePct = document.createElement("td")
             let cccaPct = document.createElement("td")
@@ -512,14 +516,15 @@ export function loadEcoCrecimientoTabla(paciente_rut){
             let datos = JSON.parse(value.caso_data)
 
             fecha.innerText = humanDate(fechas.toDate(datos.Fecha))
-            
+            smallFecha.innerText = humanDate(fechas.toDate(datos.Fecha));
+
             eg.innerText = value.caso_eg
+            smallEg.innerText = value.caso_eg;
 
             pfe.innerText = datos.peso
             pfePct.innerText = datos.pesopct
             cccaPct.innerText = datos.cccapct
             bvm.innerText = datos.bvm
-
 
             let ver = document.createElement("td")
             ver.dataset.id = value.caso_id
@@ -541,8 +546,21 @@ export function loadEcoCrecimientoTabla(paciente_rut){
             tr.appendChild(eliminar)
 
             the("tablaEcoCrecimiento").appendChild(tr);
+
+            ver = null;
+            ver = document.createElement("td");
+            ver.dataset.id = value.caso_id;
+            ver.innerHTML = iconos["lupa"];
+            ver.onclick = traerEcoCrecimiento;
+
+            smallTr.appendChild(smallFecha);
+            smallTr.appendChild(smallEg);
+            smallTr.appendChild(ver);
+
+            the("ecogSegTrimTabla").appendChild(smallTr);
         });
     })
+
 }
 
 function traerEcoCrecimiento(){
