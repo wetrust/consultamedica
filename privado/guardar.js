@@ -640,8 +640,11 @@ export function loadEcoDopplerTabla(paciente_rut){
         data.forEach(function myFunction(value, index, array) {
 
             let tr = document.createElement("tr");
+            let smallTr = document.createElement("tr");
             let fecha = document.createElement("td")
+            let smallFecha = document.createElement("td")
             let eg = document.createElement("td")
+            let smallEg = document.createElement("td")
             let ut = document.createElement("td")
             let umb = document.createElement("td")
             let ccp = document.createElement("td")
@@ -650,8 +653,10 @@ export function loadEcoDopplerTabla(paciente_rut){
             let datos = JSON.parse(value.caso_data)
 
             fecha.innerText = humanDate(fechas.toDate(datos.Fecha))
+            smallFecha.innerText = humanDate(fechas.toDate(datos.Fecha))
 
             eg.innerText = value.caso_eg
+            smallEg.innerText = value.caso_eg
 
             ut.innerText = datos.utpromediopct
             umb.innerText = datos.utumbilicalpct
@@ -678,6 +683,11 @@ export function loadEcoDopplerTabla(paciente_rut){
             tr.appendChild(eliminar)
 
             the("tablaEcoDopper").appendChild(tr);
+
+            smallTr.appendChild(smallFecha)
+            smallTr.appendChild(smallFecha)
+
+            the("ecogDopplerTabla").appendChild(smallTr);
         });
     })
 }
