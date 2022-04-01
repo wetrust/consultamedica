@@ -815,7 +815,7 @@ function traerEcoGine(){
         let datos = JSON.parse(data.caso_data)
 
         document.getElementsByName("edad_materna")[0].value = datos.edadm
-        the("fee").value = datos.fecha
+        the("fee").value = datos.Fecha
         the("fum").value = datos.fur
         $("#fee").trigger("change")
 
