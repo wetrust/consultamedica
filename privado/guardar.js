@@ -387,50 +387,67 @@ export function loadEcoPrecozTabla(paciente_rut){
     .then(data => {
 
         the("tablaEcoPrecoz").innerHTML = "";
+        the("ecogOnceSemTabla").innerHTML = "";
 
         data.forEach(function myFunction(value, index, array) {
 
             let tr = document.createElement("tr");
-            let fecha = document.createElement("td")
-            let eg = document.createElement("td")
-            let lcn = document.createElement("td")
-            let egLcn = document.createElement("td")
-            let saco = document.createElement("td")
-            let egSaco = document.createElement("td")
-            let embrion = document.createElement("td")
+            let smallTr = document.createElement("tr");
+            let fecha = document.createElement("td");
+            let smallFecha = document.createElement("td");
+            let eg = document.createElement("td");
+            let smallEg = document.createElement("td");
+            let lcn = document.createElement("td");
+            let egLcn = document.createElement("td");
+            let saco = document.createElement("td");
+            let egSaco = document.createElement("td");
+            let embrion = document.createElement("td");
 
-            let datos = JSON.parse(value.caso_data)
-            fecha.innerText = humanDate(fechas.toDate(datos.Fecha))
+            let datos = JSON.parse(value.caso_data);
+            fecha.innerText = humanDate(fechas.toDate(datos.Fecha));
+            smallFecha.innerText = humanDate(fechas.toDate(datos.Fecha));
 
-            eg.innerText = value.caso_eg
+            eg.innerText = value.caso_eg;
+            smallEg.innerText = value.caso_eg;
 
-            lcn.innerText = datos.LCN
-            egLcn.innerText = datos.egAjustada
-            saco.innerText = datos.saco
-            egSaco.innerText = datos.egsaco
-            embrion.innerText = datos.embrion
+            lcn.innerText = datos.LCN;
+            egLcn.innerText = datos.egAjustada;
+            saco.innerText = datos.saco;
+            egSaco.innerText = datos.egsaco;
+            embrion.innerText = datos.embrion;
 
-            let ver = document.createElement("td")
-            ver.dataset.id = value.caso_id
-            ver.innerHTML = iconos["lupa"]
-            ver.onclick = traerEcoPrecoz
+            let ver = document.createElement("td");
+            ver.dataset.id = value.caso_id;
+            ver.innerHTML = iconos["lupa"];
+            ver.onclick = traerEcoPrecoz;
 
-            let eliminar = document.createElement("td")
-            eliminar.dataset.id = value.caso_id
-            eliminar.innerHTML = iconos["basura"]
-            eliminar.onclick = eliminarEcoPrecoz
+            let eliminar = document.createElement("td");
+            eliminar.dataset.id = value.caso_id;
+            eliminar.innerHTML = iconos["basura"];
+            eliminar.onclick = eliminarEcoPrecoz;
 
-            tr.appendChild(fecha)
-            tr.appendChild(eg)
-            tr.appendChild(saco)
-            tr.appendChild(egSaco)
-            tr.appendChild(lcn)
-            tr.appendChild(egLcn)
-            tr.appendChild(embrion)
-            tr.appendChild(ver)
-            tr.appendChild(eliminar)
+            tr.appendChild(fecha);
+            tr.appendChild(eg);
+            tr.appendChild(saco);
+            tr.appendChild(egSaco);
+            tr.appendChild(lcn);
+            tr.appendChild(egLcn);
+            tr.appendChild(embrion);
+            tr.appendChild(ver);
+            tr.appendChild(eliminar);
 
             the("tablaEcoPrecoz").appendChild(tr);
+
+            ver = null;
+            ver.dataset.id = value.caso_id;
+            ver.innerHTML = iconos["lupa"];
+            ver.onclick = traerEcoPrecoz;
+
+            smallTr.appendChild(smallFecha);
+            smallTr.appendChild(smallEg);
+            smallTr.appendChild(ver);
+
+            the("ecogOnceSemTabla").appendChild(smallTr);
         });
     })
 }
