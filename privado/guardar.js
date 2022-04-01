@@ -684,6 +684,12 @@ export function loadEcoDopplerTabla(paciente_rut){
 
             the("tablaEcoDopper").appendChild(tr);
 
+            ver = null
+            ver = document.createElement("td")
+            ver.dataset.id = value.caso_id
+            ver.innerHTML = iconos["lupa"]
+            ver.onclick = traerEcoDoppler
+
             smallTr.appendChild(smallFecha)
             smallTr.appendChild(smallEg)
             smallTr.appendChild(ver)
