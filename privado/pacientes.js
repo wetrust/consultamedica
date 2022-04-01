@@ -124,7 +124,7 @@ export function ordenarDatos(data, examenes){
 
     });
 
-    datoOrdenado = datoOrdenado.sort((a, b) => fechas.toDate(b.fecha) - fechas.toDate(a.fecha));
+    datoOrdenado = datoOrdenado.sort((a, b) => fechas.toDate(a.fecha) - fechas.toDate(b.fecha));
 
     return datoOrdenado;
 }
