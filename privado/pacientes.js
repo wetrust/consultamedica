@@ -135,6 +135,28 @@ export function ordenarDatos(data, examenes){
         }
     });
 
+    datoOrdenado = datoOrdenado.sort((a, b) => { 
+        let _a = fechas.toDate(a.fecha);
+        let _b = fechas.toDate(b.fecha);
+
+        if (_a.getTime() > _b.getTime()){
+            return b;
+        }else{
+            return a;
+        }
+    });
+
+    datoOrdenado = datoOrdenado.sort((a, b) => { 
+        let _a = fechas.toDate(a.fecha);
+        let _b = fechas.toDate(b.fecha);
+
+        if (_a.getTime() > _b.getTime()){
+            return b;
+        }else{
+            return a;
+        }
+    });
+
     return datoOrdenado;
 }
 
