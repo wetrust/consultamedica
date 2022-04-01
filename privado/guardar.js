@@ -636,6 +636,7 @@ export function loadEcoDopplerTabla(paciente_rut){
     .then(data => {
 
         the("tablaEcoDopper").innerHTML = "";
+        the("ecogDopplerTabla").innerHTML = "";
 
         data.forEach(function myFunction(value, index, array) {
 
@@ -760,12 +761,16 @@ export function loadEcoGineTabla(paciente_rut){
     .then(data => {
 
         the("tablaGinecologica").innerHTML = "";
+        the("ecogGineTabla").innerHTML = "";
 
         data.forEach(function myFunction(value, index, array) {
 
             let tr = document.createElement("tr");
+            let smallTr = document.createElement("tr");
             let fecha = document.createElement("td")
+            let smallFecha = document.createElement("td")
             let diaciclo = document.createElement("td")
+            let smallDiaciclo = document.createElement("td")
             let uteroDim1 = document.createElement("td")
             let uteroDim2 = document.createElement("td")
             let uteroDim3 = document.createElement("td")
@@ -774,8 +779,10 @@ export function loadEcoGineTabla(paciente_rut){
             let datos = JSON.parse(value.caso_data)
 
             fecha.innerText = humanDate(fechas.toDate(datos.Fecha))
+            smallFecha.innerText = humanDate(fechas.toDate(datos.Fecha))
 
             diaciclo.innerText = datos.diaciclo
+            smallDiaciclo.innerText = datos.diaciclo
 
             uteroDim1.innerText = datos.uteroDim1
             uteroDim2.innerText = datos.uteroDim2
@@ -802,6 +809,18 @@ export function loadEcoGineTabla(paciente_rut){
             tr.appendChild(eliminar)
 
             the("tablaGinecologica").appendChild(tr);
+
+            ver = null
+            ver = document.createElement("td")
+            ver.dataset.id = value.caso_id
+            ver.innerHTML = iconos["lupa"]
+            ver.onclick = traerEcoGine
+
+            smallTr.appendChild(smallFecha)
+            smallTr.appendChild(smallDiaciclo)
+            smallTr.appendChild(ver)
+
+            the("ecogGineTabla").appendChild(smallTr);
         });
     })
 }
