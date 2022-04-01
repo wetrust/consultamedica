@@ -708,7 +708,7 @@ function traerEcoDoppler(){
         let datos = JSON.parse(data.caso_data)
 
         document.getElementsByName("edad_materna")[0].value = datos.edadm
-        the("fee").value = datos.fecha
+        the("fee").value = datos.Fecha
         the("fum").value = datos.fur
         $("#fee").trigger("change")
         the("fcf-prim").value = datos.fcf
