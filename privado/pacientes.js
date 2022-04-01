@@ -34,7 +34,7 @@ export function construirTablaPacientes(data, examenes){
         let centroEco = document.createElement("td")
         let tipoEco = document.createElement("td")
 
-        fecha.innerText = value.fecha;
+        fecha.innerText = humanDate(value.fecha);
         eg.innerText = value.eg;
         rut.innerText = value.rut;
         nombre.innerText = value.nombre;
@@ -112,7 +112,7 @@ export function ordenarDatos(data, examenes){
         centroEco = (value.paciente_centro_txt !== "") ? value.paciente_centro_txt : "";
 
         fila.set('id',value.paciente_id);
-        fila.set('fecha',humanDate(_f));
+        fila.set('fecha',_f);
         fila.set('eg',value.paciente_eg);
         fila.set('rut',value.paciente_rut);
         fila.set('nombre',value.paciente_nombre);
