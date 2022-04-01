@@ -34,22 +34,22 @@ export function construirTablaPacientes(data, examenes){
         let centroEco = document.createElement("td")
         let tipoEco = document.createElement("td")
 
-        fecha.innerText = humanDate(value.fecha);
-        eg.innerText = value.eg;
-        rut.innerText = value.rut;
-        nombre.innerText = value.nombre;
-        apellido.innerText = value.apellido;
-        centroEco.innerText = value.centro;
-        tipoEco.innerText = tipoEco;
+        fecha.innerText = humanDate(value.get("fecha"));
+        eg.innerText = value.get("eg");
+        rut.innerText = value.get("rut");
+        nombre.innerText = value.get("nombre");
+        apellido.innerText = value.get("apellido");
+        centroEco.innerText = value.get("centro");
+        tipoEco.innerText = value.get("tipo");
 
         let ver = document.createElement("td")
-        ver.dataset.id = value.id
+        ver.dataset.id = value.get("id")
         ver.classList.add("click-paciente")
         ver.innerHTML = iconos["lupa"]
         ver.onclick = traerPaciente
 
         let eliminar = document.createElement("td")
-        eliminar.dataset.id = value.id
+        eliminar.dataset.id = value.get("id")
         eliminar.classList.add("click-eliminar")
         eliminar.innerHTML = iconos["basura"]
         eliminar.onclick = eliminarPaciente
