@@ -1,5 +1,5 @@
 import { the } from "../../../wetrust.js";
-import { appBD } from '../app/app.js';
+import { appBD } from '../app.js';
 
 export class headerEvents{
 
