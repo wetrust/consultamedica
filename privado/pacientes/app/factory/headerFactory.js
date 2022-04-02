@@ -28,6 +28,7 @@ export class headerFactory{
             input.name = value.name
             input.dataset.filter = value.filter
             input.placeholder = value.placeholder
+            input.classList.add("form-control");
 
             if (value.type == "date"){
                 input.value = inputDate();
@@ -57,7 +58,16 @@ export class headerFactory{
     }
 
     crearBotonBorrar(){
-        return document.createElement("div");
+        let contenedor = document.createElement("div");
+        contenedor.classList.add("form-group", "mb-0", "text-center");
+
+        let boton = document.createElement("button");
+        boton.classList.add("btn", "btn-primary")
+        boton.type = "button"
+        boton.innerText = "Borrar filtro";
+
+        contenedor.appendChild(boton);
+        return contenedor;
     }
 
 }
