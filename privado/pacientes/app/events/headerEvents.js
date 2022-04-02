@@ -1,5 +1,5 @@
 import { the, humanDate } from "../../../wetrust.js";
-import { fechas } from "../../../functionesM";
+import { fechas } from "../../../functionesM.js";
 import { appBD } from '../app.js';
 
 export class headerEvents{
