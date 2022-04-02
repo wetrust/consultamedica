@@ -30,7 +30,7 @@ export class mainFactory{
         let bodyTabla = document.createElement("tbody");
 
         thHeadElementos.forEach(function(value){
-            let _elemento = document.createElement("tr");
+            let _elemento = document.createElement("td");
             _elemento.innerText = value;
 
             trHeadTabla.appendChild(_elemento);
