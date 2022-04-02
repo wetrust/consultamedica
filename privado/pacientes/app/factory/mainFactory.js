@@ -37,7 +37,7 @@ export class mainFactory{
         headTabla.classList.add("thead-dark");
 
         let trHeadTabla = document.createElement("tr");
-        let thHeadElementos = ["Fecha Ult. Exm.", "EG", "RUT", "Nombre", "Apellido", "Centro Eco", "Tipo de Eco", "Ver", "Elim."];
+        let thHeadElementos = ["Fecha Ult. Exm.", "EG", "RUT", "Nombre", "Apellido", "Centro Eco", "Tipo de Eco"];
 
         thHeadElementos.forEach(function(value){
             let _elemento = document.createElement("th");
@@ -79,18 +79,6 @@ export class mainFactory{
             centroEco.innerText = value.paciente_centro_txt;
             tipoEco.innerText = value.paciente_tipoeco_txt;
 
-            let ver = document.createElement("td")
-            ver.dataset.id = value.paciente_id
-            ver.classList.add("click-paciente")
-            ver.innerHTML = mainConfig.iconLupa
-            //ver.onclick = traerPaciente
-
-            let eliminar = document.createElement("td")
-            eliminar.dataset.id = value.paciente_id
-            eliminar.classList.add("click-eliminar")
-            eliminar.innerHTML = mainConfig.iconBasura
-            //eliminar.onclick = eliminarPaciente
-
             tr.appendChild(fecha)
             tr.appendChild(eg)
             tr.appendChild(rut)
@@ -98,8 +86,6 @@ export class mainFactory{
             tr.appendChild(apellido)
             tr.appendChild(centroEco)
             tr.appendChild(tipoEco)
-            tr.appendChild(ver)
-            tr.appendChild(eliminar)
 
             bodyTabla.appendChild(tr);
         })
