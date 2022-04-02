@@ -8,17 +8,13 @@ export class appBD{
     dataI = dataInterface;
 
     constructor(){
-
         this.dataI = dataInterface.getInterface();
         this.headerC = new headerController;
         this.mainC = new mainController;
-
     }
 
     run(){
-
         this.headerC.run();
         this.mainC.run();
-
     }
 }

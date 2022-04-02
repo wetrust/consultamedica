@@ -54,6 +54,10 @@ export class mainFactory{
     crearContenido(){
         let bodyTabla = document.createElement("tbody");
 
+        if (globalPacientes.length == 0){
+            return bodyTabla;
+        }
+
         globalPacientes.pacientes.forEach(function(value){
             let _elemento = document.createElement("th");
             _elemento.innerText = value;
