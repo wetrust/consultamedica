@@ -19,8 +19,10 @@ export class headerFactory{
 
         tjBody.appendChild(this.crearTitulo());
 
+        let _this = this;
+
         mainConfig.filterElements.forEach(function(value){
-            tjBody.appendChild(this.crearInput(value));
+            tjBody.appendChild(_this.crearInput(value));
 
         })
 
