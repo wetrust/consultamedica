@@ -53,6 +53,7 @@ export class mainFactory{
 
     crearContenido(){
         let bodyTabla = document.createElement("tbody");
+        bodyTabla.id = "tablaPacientesDBbody"
 
         if (globalPacientes.length == 0){ return bodyTabla; }
 
