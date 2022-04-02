@@ -5924,6 +5924,7 @@ function calcularComentarioEcoPrecoz(){
     the("comentarios-eco-uno").value = comentario
 
 }
+
 function infPrecoz(){
 
     let sacovitelinotxt = (the("saco-vitelino").value == "no se observa") ? "." : " de diametro " + the("saco-vitelino-mm").value + " mm.";
