@@ -11,11 +11,10 @@ export class headerFactory{
 
     crearTarjeta(){
         let tj = document.createElement("div");
-        tj.classList.add("card", "mb-3", "mt-2")
+        tj.classList.add("card", "mb-3", "mt-2", "shadow")
 
         let tjBody = document.createElement("div");
         tjBody.classList.add("card-body", "d-flex", "flex-row")
-
 
         tjBody.appendChild(this.crearTitulo());
 
@@ -23,7 +22,6 @@ export class headerFactory{
 
         mainConfig.filterElements.forEach(function(value){
             tjBody.appendChild(_this.crearInput(value));
-
         })
 
         tjBody.appendChild(this.crearBotonBorrar());

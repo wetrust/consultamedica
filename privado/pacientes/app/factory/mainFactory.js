@@ -7,7 +7,7 @@ export class mainFactory{
 
     crearTarjeta(){
         let tj = document.createElement("div");
-        tj.classList.add("card", "mb-3")
+        tj.classList.add("card", "mb-3", "shadow")
 
         let tjBody = document.createElement("div");
         tjBody.classList.add("card-body")
