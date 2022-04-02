@@ -1,4 +1,5 @@
-import { the } from "../../../wetrust.js";
+import { the, humanDate } from "../../../wetrust.js";
+import { fechas } from "../../../functionesM";
 import { appBD } from '../app.js';
 
 export class headerEvents{
