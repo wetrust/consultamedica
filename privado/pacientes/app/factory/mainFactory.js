@@ -22,7 +22,7 @@ export class mainFactory{
         tabla.classList.add("table", "table-striped", "table-hover");
 
         let headTabla = document.createElement("thead");
-        headTabla.classList("thead-dark");
+        headTabla.classList.add("thead-dark");
 
         let trHeadTabla = document.createElement("tr");
         let thHeadElementos = ["Fecha Ult. Exm.", "EG", "RUT", "Nombre", "Apellido", "Centro Eco", "Tipo de Eco", "Ver", "Elim."];
