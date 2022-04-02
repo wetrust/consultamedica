@@ -21,25 +21,31 @@ export class mainFactory{
         let tabla = document.createElement("table");
         tabla.classList.add("table", "table-striped", "table-hover");
 
+        tabla.appendChild(this.crearHeader());
+
+        let bodyTabla = document.createElement("tbody");
+
+        tabla.appendChild(bodyTabla);
+
+        return tabla;
+    }
+
+    crearHeader(){
         let headTabla = document.createElement("thead");
         headTabla.classList.add("thead-dark");
 
         let trHeadTabla = document.createElement("tr");
         let thHeadElementos = ["Fecha Ult. Exm.", "EG", "RUT", "Nombre", "Apellido", "Centro Eco", "Tipo de Eco", "Ver", "Elim."];
 
-        let bodyTabla = document.createElement("tbody");
-
         thHeadElementos.forEach(function(value){
-            let _elemento = document.createElement("td");
+            let _elemento = document.createElement("th");
             _elemento.innerText = value;
 
             trHeadTabla.appendChild(_elemento);
         })
 
         headTabla.appendChild(trHeadTabla);
-        tabla.appendChild(headTabla);
-        tabla.appendChild(bodyTabla);
 
-        return tabla;
+        return headTabla;
     }
 }
