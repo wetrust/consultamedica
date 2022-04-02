@@ -74,7 +74,7 @@ export class mainFactory{
             fecha.innerText = humanDate(fechas.toDate(value.paciente_fee));
             eg.innerText = value.paciente_eg;
             rut.innerText = value.paciente_rut;
-            nombre.innerText = value.paciente_nombrec;
+            nombre.innerText = value.paciente_nombre;
             apellido.innerText = value.paciente_apellido;
             centroEco.innerText = value.paciente_centro_txt;
             tipoEco.innerText = value.paciente_tipoeco_txt;
