@@ -20,25 +20,7 @@ export class headerFactory{
         tjBody.appendChild(this.crearTitulo());
 
         mainConfig.filterElements.forEach(function(value){
-            let contenedor = document.createElement("div");
-            contenedor.classList.add("form-group", "mb-0", "mx-2");
-
-            let input = document.createElement("input");
-            input.type = value.type
-            input.name = value.name
-            input.dataset.filter = value.filter
-            input.placeholder = value.placeholder
-            input.classList.add("form-control");
-
-            if (value.type == "date"){
-                input.value = inputDate();
-            }
-
-            input.onkeyup = headerEvents.inputOnKeyDown
-
-            contenedor.appendChild(input);
-
-            tjBody.appendChild(contenedor);
+            tjBody.appendChild(this.crearInput(value));
 
         })
 
@@ -55,6 +37,26 @@ export class headerFactory{
         titulo.innerHTML = mainConfig.iconFiltro + " Filtrar por:";
 
         return titulo;
+    }
+
+    crearInput(valor){
+        let contenedor = document.createElement("div");
+        contenedor.classList.add("form-group", "mb-0", "mx-2");
+
+        let input = document.createElement("input");
+        input.type = valor.type
+        input.name = valor.name
+        input.dataset.filter = valor.filter
+        input.placeholder = valor.placeholder
+        input.classList.add("form-control");
+
+        if (valor.type == "date"){
+            input.value = inputDate();
+        }
+
+        input.onkeyup = headerEvents.inputOnKeyDown
+
+        contenedor.appendChild(input);
     }
 
     crearBotonBorrar(){

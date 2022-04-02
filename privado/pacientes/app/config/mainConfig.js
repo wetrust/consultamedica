@@ -5,6 +5,8 @@ export class mainConfig {
         {nombre:"Fecha", name: "filtro_fecha", filter:"paciente_fee", placeholder: "", type:"date"},
         {nombre:"Rut", name: "filtro_rut", filter:"paciente_rut", placeholder: "Por RUT", type:"text"},
         {nombre:"Nombre", name: "filtro_nombre", filter:"paciente_nombre", placeholder: "Por Nombre", type:"text"},
-        {nombre:"Apellido", name: "filtro_apellido", filter:"paciente_apellido", placeholder: "Por Apellido", type:"text"}
+        {nombre:"Apellido", name: "filtro_apellido", filter:"paciente_apellido", placeholder: "Por Apellido", type:"text"},
+        {nombre:"Centro", name: "filtro_centro", filter:"paciente_centro", placeholder: "Por centro", type:"text"},
+        {nombre:"Tipo", name: "filtro_tipo", filter:"paciente_tipo", placeholder: "Por Tipo", type:"text"}
     ]
 }
