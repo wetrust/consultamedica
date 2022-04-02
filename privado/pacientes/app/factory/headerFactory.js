@@ -1,7 +1,7 @@
 
-import { inputDate } from "../../../wetrust";
-import { mainConfig } from "../config/mainConfig";
-import { headerEvents } from "../events/headerEvents";
+import { inputDate } from "../../../wetrust.js";
+import { mainConfig } from "../config/mainConfig.js";
+import { headerEvents } from "../events/headerEvents.js";
 
 export class headerFactory{
 
