@@ -35,6 +35,10 @@ export class headerFactory{
 
             input.onkeyup = headerEvents.inputOnKeyDown
 
+            contenedor.appendChild(input);
+
+            tjBody.appendChild(contenedor);
+
         })
 
         tjBody.appendChild(this.crearBotonBorrar());
