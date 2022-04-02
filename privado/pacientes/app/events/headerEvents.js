@@ -24,25 +24,25 @@ export class headerEvents{
                 headerEvents.createTableElement(resultado);
             }
 
-            resultado = pacientes.slice().filter(eldato => { return eldato.paciente_nombre.includes(valor); })
+            resultado = pacientes.slice().filter(eldato => { return eldato.paciente_nombre.includes(valor) || eldato.paciente_nombre.includes(String(valor.uper).toUpperCase()); })
             //filtrar por rut
             if (resultado.length > 0){
                 headerEvents.createTableElement(resultado);
             }
 
-            resultado = pacientes.slice().filter(eldato => { return eldato.paciente_apellido.includes(valor); })
+            resultado = pacientes.slice().filter(eldato => { return eldato.paciente_apellido.includes(valor) || eldato.paciente_apellido.includes(String(valor.uper).toUpperCase()); })
             //filtrar por rut
             if (resultado.length > 0){
                 headerEvents.createTableElement(resultado);
             }
 
-            resultado = pacientes.slice().filter(eldato => { return eldato.paciente_centro_txt.includes(valor); })
+            resultado = pacientes.slice().filter(eldato => { return eldato.paciente_centro_txt.includes(valor) || eldato.paciente_centro_txt.includes(String(valor.uper).toUpperCase()); })
             //filtrar por rut
             if (resultado.length > 0){
                 headerEvents.createTableElement(resultado);
             }
 
-            resultado = pacientes.slice().filter(eldato => { return eldato.paciente_tipoeco_txt.includes(valor); })
+            resultado = pacientes.slice().filter(eldato => { return eldato.paciente_tipoeco_txt.includes(valor) || eldato.paciente_tipoeco_txt.includes(String(valor.uper).toUpperCase()); })
             //filtrar por rut
             if (resultado.length > 0){
                 headerEvents.createTableElement(resultado);
