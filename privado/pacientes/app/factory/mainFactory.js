@@ -54,11 +54,15 @@ export class mainFactory{
     crearContenido(){
         let bodyTabla = document.createElement("tbody");
 
-        if (globalPacientes.length == 0){
-            return bodyTabla;
-        }
+        if (globalPacientes.length == 0){ return bodyTabla; }
 
-        globalPacientes.pacientes.forEach(function(value){
+        let pacientes = globalPacientes.pacientes.slice().sort(function(a, b){
+            if(a.paciente_nombre < b.paciente_nombre) { return -1; }
+            if(a.paciente_nombre > b.paciente_nombre) { return 1; }
+            return 0;
+        })
+
+        pacientes.forEach(function(value){
             let _elemento = document.createElement("th");
             _elemento.innerText = value;
 
