@@ -4,12 +4,12 @@ import { appBD } from '../app.js';
 export class headerEvents{
 
     static inputOnKeyDown(){
-
         let valor = this.value
-
         if (valor != ""){
 
             the("tablaPacientesDBbody").innerHTML = ""
+
+            let hEvents = new headerEvents()
 
             if (globalPacientes.length == 0){ return false; }
 
@@ -22,38 +22,36 @@ export class headerEvents{
             let resultado = pacientes.slice().filter(eldato => { return eldato.paciente_rut.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                this.createTableElement(resultado);
+                hEvents.createTableElement(resultado);
             }
 
             resultado = pacientes.slice().filter(eldato => { return eldato.paciente_nombre.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                this.createTableElement(resultado);
+                hEvents.createTableElement(resultado);
             }
 
             resultado = pacientes.slice().filter(eldato => { return eldato.paciente_apellido.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                this.createTableElement(resultado);
+                hEvents.createTableElement(resultado);
             }
 
             resultado = pacientes.slice().filter(eldato => { return eldato.paciente_centro_txt.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                this.createTableElement(resultado);
+                hEvents.createTableElement(resultado);
             }
 
             resultado = pacientes.slice().filter(eldato => { return eldato.paciente_tipoeco_txt.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                this.createTableElement(resultado);
+                hEvents.createTableElement(resultado);
             }
-
         }
     }
 
     static createTableElement(pacientes){
-
         pacientes.forEach(function(value){
             let _elemento = document.createElement("th");
             _elemento.innerText = value;
@@ -84,13 +82,11 @@ export class headerEvents{
             tr.appendChild(tipoEco)
 
             the("tablaPacientesDBbody").appendChild(tr);
-
         })
     }
 
     static clearFilter(){
         let viewDB = new appBD
-
         viewDB.run();
     }
 }
