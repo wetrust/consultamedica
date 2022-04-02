@@ -11,7 +11,7 @@ export class headerFactory{
 
     crearTarjeta(){
         let tj = document.createElement("div");
-        tj.classList.add("card", "mb-3")
+        tj.classList.add("card", "mb-3", "mt-2")
 
         let tjBody = document.createElement("div");
         tjBody.classList.add("card-body", "d-flex", "flex-row")
@@ -21,7 +21,7 @@ export class headerFactory{
 
         mainConfig.filterElements.forEach(function(value){
             let contenedor = document.createElement("div");
-            contenedor.classList.add("form-group", "mb-0");
+            contenedor.classList.add("form-group", "mb-0", "mx-2");
 
             let input = document.createElement("input");
             input.type = value.type
@@ -59,12 +59,13 @@ export class headerFactory{
 
     crearBotonBorrar(){
         let contenedor = document.createElement("div");
-        contenedor.classList.add("form-group", "mb-0", "text-center");
+        contenedor.classList.add("form-group", "mb-0", "text-center", "ml-auto");
 
         let boton = document.createElement("button");
         boton.classList.add("btn", "btn-primary")
         boton.type = "button"
         boton.innerText = "Borrar filtro";
+        boton.onclick = headerEvents.clearFilter
 
         contenedor.appendChild(boton);
         return contenedor;
