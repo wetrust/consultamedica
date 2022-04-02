@@ -8045,29 +8045,29 @@ function informeGinecologico(){
 
     let ovDer = the("ovarDere").value;
     if(ovDer != "no se observa"){
-        if (the("ovarDereMed1").value != "" && Number.isNaN(the("ovarDereMed1").value) == false){
+        if (the("ovarDereMed1").value != ""){
             ovDer += " " + the("ovarDereMed1").value;
 
-            if (the("ovarDereMed2").value != "" && Number.isNaN(the("ovarDereMed2").value) == false){
+            if (the("ovarDereMed2").value != ""){
                 ovDer += " x ";
             }
         }
 
-        if (the("ovarDereMed2").value != "" && Number.isNaN(the("ovarDereMed2").value) == false){
+        if (the("ovarDereMed2").value != ""){
             ovDer += the("ovarDereMed2").value;
 
-            if (the("ovarDereMed3").value != "" && Number.isNaN(the("ovarDereMed3").value) == false){
+            if (the("ovarDereMed3").value != ""){
                 ovDer += " x ";
             }
         }
 
-        if (the("ovarDereMed3").value != "" && Number.isNaN(the("ovarDereMed3").value) == false){
+        if (the("ovarDereMed3").value != ""){
             ovDer += the("ovarDereMed3").value;
         }
 
-        if (the("ovarDereMed1").value != "" && Number.isNaN(the("ovarDereMed1").value) == false ||
-            the("ovarDereMed2").value != "" && Number.isNaN(the("ovarDereMed2").value) == false ||
-            the("ovarDereMed3").value != "" && Number.isNaN(the("ovarDereMed3").value) == false){
+        if (the("ovarDereMed1").value != "" ||
+            the("ovarDereMed2").value != "" ||
+            the("ovarDereMed3").value != ""){
 
                 ovDer += " mm";
         }
@@ -8075,29 +8075,29 @@ function informeGinecologico(){
 
     let ovIzq = the("ovarIzquier").value;
     if(ovIzq != "no se observa"){
-        if (the("ovarIzquier1").value != "" && Number.isNaN(the("ovarIzquier1").value) == false){
+        if (the("ovarIzquier1").value != ""){
             ovIzq += " " + the("ovarIzquier1").value;
 
-            if (the("ovarIzquier2").value != "" && Number.isNaN(the("ovarIzquier2").value) == false){
+            if (the("ovarIzquier2").value != ""){
                 ovIzq += " x ";
             }
         }
 
-        if (the("ovarIzquier2").value != "" && Number.isNaN(the("ovarIzquier2").value) == false){
+        if (the("ovarIzquier2").value != ""){
             ovIzq += the("ovarIzquier2").value;
 
-            if (the("ovarIzquier3").value != "" && Number.isNaN(the("ovarIzquier3").value) == false){
+            if (the("ovarIzquier3").value != ""){
                 ovIzq += " x ";
             }
         }
 
-        if (the("ovarIzquier3").value != "" && Number.isNaN(the("ovarIzquier3").value) == false){
+        if (the("ovarIzquier3").value != ""){
             ovIzq += the("ovarIzquier3").value;
         }
 
-        if (the("ovarIzquier1").value != "" && Number.isNaN(the("ovarIzquier1").value) == false ||
-            the("ovarIzquier2").value != "" && Number.isNaN(the("ovarIzquier2").value) == false ||
-            the("ovarIzquier3").value != "" && Number.isNaN(the("ovarIzquier3").value) == false){
+        if (the("ovarIzquier1").value != "" ||
+            the("ovarIzquier2").value != "" ||
+            the("ovarIzquier3").value != ""){
 
                 ovIzq += " mm";
         }
