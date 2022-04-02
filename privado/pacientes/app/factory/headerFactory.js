@@ -57,6 +57,8 @@ export class headerFactory{
         input.onkeyup = headerEvents.inputOnKeyDown
 
         contenedor.appendChild(input);
+
+        return contenedor;
     }
 
     crearBotonBorrar(){
