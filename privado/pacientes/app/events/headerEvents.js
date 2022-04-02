@@ -18,7 +18,13 @@ export class headerEvents{
                 return 0;
             })
 
-            let resultado = pacientes.slice().filter(eldato => { return eldato.paciente_rut.includes(valor); })
+            let resultado = pacientes.slice().filter(eldato => { return eldato.paciente_fee.includes(valor); })
+            //filtrar por rut
+            if (resultado.length > 0){
+                headerEvents.createTableElement(resultado);
+            }
+
+            resultado = pacientes.slice().filter(eldato => { return eldato.paciente_rut.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
                 headerEvents.createTableElement(resultado);
