@@ -1,4 +1,4 @@
-import { mainConfig } from "../config/mainConfig";
+import { mainConfig } from "../config/mainConfig.js";
 import { mainFactory } from "../factory/mainFactory.js";
 import { the } from "../../../wetrust.js";
 

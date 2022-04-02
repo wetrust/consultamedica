@@ -8045,12 +8045,62 @@ function informeGinecologico(){
 
     let ovDer = the("ovarDere").value;
     if(ovDer != "no se observa"){
-        ovDer += the("ovarDereMed1").value + " x " + the("ovarDereMed2").value + " x " + the("ovarDereMed3").value + " mm";
+        if (the("ovarDereMed1").value != "" || Number.isNaN(the("ovarDereMed1").value) == false){
+            ovDer += " " + the("ovarDereMed1").value;
+
+            if (the("ovarDereMed2").value != "" || Number.isNaN(the("ovarDereMed2").value) == false){
+                ovDer += " x ";
+            }
+        }
+
+        if (the("ovarDereMed2").value != "" || Number.isNaN(the("ovarDereMed2").value) == false){
+            ovDer += the("ovarDereMed2").value;
+
+            if (the("ovarDereMed3").value != "" || Number.isNaN(the("ovarDereMed3").value) == false){
+                ovDer += " x ";
+            }
+        }
+
+        if (the("ovarDereMed3").value != "" || Number.isNaN(the("ovarDereMed3").value) == false){
+            ovDer += the("ovarDereMed3").value;
+        }
+
+        if (the("ovarDereMed1").value != "" || Number.isNaN(the("ovarDereMed1").value) == false ||
+            the("ovarDereMed2").value != "" || Number.isNaN(the("ovarDereMed2").value) == false ||
+            the("ovarDereMed3").value != "" || Number.isNaN(the("ovarDereMed3").value) == false){
+
+                ovDer += " mm";
+        }
     }
 
     let ovIzq = the("ovarIzquier").value;
     if(ovIzq != "no se observa"){
-        ovIzq += the("ovarIzquier1").value + " x " + the("ovarIzquier2").value + " x " + the("ovarIzquier3").value + " mm";
+        if (the("ovarIzquier1").value != "" || Number.isNaN(the("ovarIzquier1").value) == false){
+            ovIzq += " " + the("ovarIzquier1").value;
+
+            if (the("ovarIzquier2").value != "" || Number.isNaN(the("ovarIzquier2").value) == false){
+                ovIzq += " x ";
+            }
+        }
+
+        if (the("ovarIzquier2").value != "" || Number.isNaN(the("ovarIzquier2").value) == false){
+            ovIzq += the("ovarIzquier2").value;
+
+            if (the("ovarIzquier3").value != "" || Number.isNaN(the("ovarIzquier3").value) == false){
+                ovIzq += " x ";
+            }
+        }
+
+        if (the("ovarIzquier3").value != "" || Number.isNaN(the("ovarIzquier3").value) == false){
+            ovIzq += the("ovarIzquier3").value;
+        }
+
+        if (the("ovarIzquier1").value != "" || Number.isNaN(the("ovarIzquier1").value) == false ||
+            the("ovarIzquier2").value != "" || Number.isNaN(the("ovarIzquier2").value) == false ||
+            the("ovarIzquier3").value != "" || Number.isNaN(the("ovarIzquier3").value) == false){
+
+                ovIzq += " mm";
+        }
     }
 
     let espacioRetro = the("espacioRetro").value;

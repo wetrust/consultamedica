@@ -264,7 +264,7 @@ $(document).ready(function() {
             'ovarDere': the("ovarDere").value,
         }
 
-        if (basicDataValid() == false){
+        if (basicDataValidGine() == false){
             return
         }
 
@@ -375,6 +375,21 @@ function basicDataValid(){
 
     if (the("semanas").value == 0){
         eg()
+        return false;
+    }
+
+    return true;
+}
+
+
+function basicDataValidGine(){
+    if (the("id-paciente").value == ""){
+        rut()
+        return false;
+    }
+
+    if (the("nombre-paciente").value == ""){
+        nombre()
         return false;
     }
 
