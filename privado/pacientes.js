@@ -68,7 +68,6 @@ export function construirTablaPacientes(data, examenes){
     });
 }
 
-
 export function ordenarDatos(data, examenes){
 
     var datoOrdenado = [];
@@ -128,8 +127,6 @@ export function ordenarDatos(data, examenes){
 
     return datoOrdenado;
 }
-
-
 
 function eliminarPaciente(){
     make.deleteModal("el paciente", this.dataset.id, function(){

@@ -1,3 +1,7 @@
+import { fechas } from "../../../functionesM.js";
+import { humanDate } from "../../../wetrust.js";
+import { mainConfig } from "../config/mainConfig.js";
+
 export class mainFactory{
 
     interfaceTabla(){
@@ -23,9 +27,7 @@ export class mainFactory{
 
         tabla.appendChild(this.crearHeader());
 
-        let bodyTabla = document.createElement("tbody");
-
-        tabla.appendChild(bodyTabla);
+        tabla.appendChild(this.crearContenido());
 
         return tabla;
     }
@@ -48,4 +50,56 @@ export class mainFactory{
 
         return headTabla;
     }
+
+    crearContenido(){
+        let bodyTabla = document.createElement("tbody");
+
+        globalPacientes.pacientes.forEach(function(value){
+            let _elemento = document.createElement("th");
+            _elemento.innerText = value;
+
+            let tr = document.createElement("tr");
+            let fecha = document.createElement("td")
+            let eg = document.createElement("td")
+            let nombre = document.createElement("td")
+            let apellido = document.createElement("td")
+            let rut = document.createElement("td")
+            let centroEco = document.createElement("td")
+            let tipoEco = document.createElement("td")
+
+            fecha.innerText = humanDate(fechas.toDate(value.paciente_fee));
+            eg.innerText = value.paciente_eg;
+            rut.innerText = value.paciente_rut;
+            nombre.innerText = value.paciente_nombrec;
+            apellido.innerText = value.paciente_apellido;
+            centroEco.innerText = value.paciente_centro_txt;
+            tipoEco.innerText = value.paciente_tipoeco_txt;
+
+            let ver = document.createElement("td")
+            ver.dataset.id = value.paciente_id
+            ver.classList.add("click-paciente")
+            ver.innerHTML = mainConfig.iconLupa
+            //ver.onclick = traerPaciente
+
+            let eliminar = document.createElement("td")
+            eliminar.dataset.id = value.paciente_id
+            eliminar.classList.add("click-eliminar")
+            eliminar.innerHTML = mainConfig.iconBasura
+            //eliminar.onclick = eliminarPaciente
+
+            tr.appendChild(fecha)
+            tr.appendChild(eg)
+            tr.appendChild(rut)
+            tr.appendChild(nombre)
+            tr.appendChild(apellido)
+            tr.appendChild(centroEco)
+            tr.appendChild(tipoEco)
+            tr.appendChild(ver)
+            tr.appendChild(eliminar)
+
+            bodyTabla.appendChild(tr);
+        })
+
+        return bodyTabla;
+    } 
 }
