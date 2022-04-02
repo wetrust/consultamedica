@@ -9,8 +9,6 @@ export class headerEvents{
 
             the("tablaPacientesDBbody").innerHTML = ""
 
-            let hEvents = new headerEvents()
-
             if (globalPacientes.length == 0){ return false; }
 
             let pacientes = globalPacientes.pacientes.slice().sort(function(a, b){
@@ -22,31 +20,31 @@ export class headerEvents{
             let resultado = pacientes.slice().filter(eldato => { return eldato.paciente_rut.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                hEvents.createTableElement(resultado);
+                headerEvents.createTableElement(resultado);
             }
 
             resultado = pacientes.slice().filter(eldato => { return eldato.paciente_nombre.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                hEvents.createTableElement(resultado);
+                headerEvents.createTableElement(resultado);
             }
 
             resultado = pacientes.slice().filter(eldato => { return eldato.paciente_apellido.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                hEvents.createTableElement(resultado);
+                headerEvents.createTableElement(resultado);
             }
 
             resultado = pacientes.slice().filter(eldato => { return eldato.paciente_centro_txt.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                hEvents.createTableElement(resultado);
+                headerEvents.createTableElement(resultado);
             }
 
             resultado = pacientes.slice().filter(eldato => { return eldato.paciente_tipoeco_txt.includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                hEvents.createTableElement(resultado);
+                headerEvents.createTableElement(resultado);
             }
         }
     }
