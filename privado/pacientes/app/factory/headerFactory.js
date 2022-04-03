@@ -45,7 +45,7 @@ export class headerFactory{
 
         let input = document.createElement("input");
         input.type = valor.type
-        input.name = valor.name
+        input.id = valor.name
         input.dataset.filter = valor.filter
         input.placeholder = valor.placeholder
         input.classList.add("form-control");
@@ -56,6 +56,26 @@ export class headerFactory{
 
         input.onkeyup = headerEvents.inputOnKeyDown
         input.onchange = headerEvents.inputOnKeyDown
+
+        if (valor.special == true){
+            input.setAttribute("list", valor.name+"List");
+
+            let dList = document.createElement("datalist");
+            dList.id = valor.name+"List";
+
+            let conf = JSON.parse(localStorage["configuracion"])
+
+            if (conf[valor.config].length > 0) {
+                for (var i = 0; i < (conf[valor.config].length -1); i++) {
+                    let _m = document.createElement("option")
+                    _m.value = conf[valor.config][i]
+
+                    dList.appendChild(_m);
+                }
+            }
+
+            contenedor.appendChild(dList);
+        }
 
         contenedor.appendChild(input);
 
