@@ -63,16 +63,26 @@ export class headerFactory{
             let dList = document.createElement("datalist");
             dList.id = valor.name+"List";
 
-            let conf = JSON.parse(localStorage["configuracion"])
-
-            if (conf[valor.config].length > 0) {
-                for (var i = 0; i < (conf[valor.config].length -1); i++) {
+            if (valor.advanced == true){
+                for (var i = 0; i < valor.data.length; i++) {
                     let _m = document.createElement("option")
-                    _m.value = conf[valor.config][i]
+                    _m.value = valor.data[i]
 
                     dList.appendChild(_m);
                 }
+            }else{
+                let conf = JSON.parse(localStorage["configuracion"])
+
+                if (conf[valor.config].length > 0) {
+                    for (var i = 0; i < conf[valor.config].length; i++) {
+                        let _m = document.createElement("option")
+                        _m.value = conf[valor.config][i]
+    
+                        dList.appendChild(_m);
+                    }
+                }
             }
+
 
             contenedor.appendChild(dList);
         }
