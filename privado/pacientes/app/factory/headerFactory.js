@@ -55,6 +55,7 @@ export class headerFactory{
         }
 
         input.onkeyup = headerEvents.inputOnKeyDown
+        input.onchange = headerEvents.inputOnKeyDown
 
         contenedor.appendChild(input);
 

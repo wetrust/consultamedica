@@ -57,6 +57,7 @@ export class headerEvents{
     }
 
     static createTableElement(pacientes){
+
         pacientes.forEach(function(value){
             let _elemento = document.createElement("th");
             _elemento.innerText = value;
@@ -78,20 +79,23 @@ export class headerEvents{
             centroEco.innerText = value.paciente_centro_txt;
             tipoEco.innerText = value.paciente_tipoeco_txt;
 
-            tr.appendChild(fecha)
-            tr.appendChild(eg)
-            tr.appendChild(rut)
-            tr.appendChild(nombre)
-            tr.appendChild(apellido)
-            tr.appendChild(centroEco)
-            tr.appendChild(tipoEco)
+            tr.appendChild(fecha);
+            tr.appendChild(eg);
+            tr.appendChild(rut);
+            tr.appendChild(nombre);
+            tr.appendChild(apellido);
+            tr.appendChild(centroEco);
+            tr.appendChild(tipoEco);
 
             the("tablaPacientesDBbody").appendChild(tr);
         })
+
     }
 
     static clearFilter(){
+
         let viewDB = new appBD
         viewDB.run();
+
     }
 }
