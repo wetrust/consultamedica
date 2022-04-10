@@ -9432,7 +9432,7 @@ function loadImagenesDICOM(){
                         btnEliminar.innerText = "Eliminar"
                         btnEliminar.dataset.jpg = value[1]
                         btnEliminar.dataset.dcm = value[1].slice(0, value[1].length - 3) + "dcm"
-                        //btnEliminar.onclick = eliminarUnaImagen
+                        btnEliminar.onclick = eliminarUnaImagen
 
                         divDos.appendChild(btnEliminar)
                         divElementos.appendChild(divDos)
@@ -9446,5 +9446,19 @@ function loadImagenesDICOM(){
         }
     }).catch(function(error) {
 
+    });
+}
+
+function eliminarUnaImagen(){
+    var data = new FormData();
+    //data.append("licencia" , the("licencia").value);
+    data.append("jpg" , this.dataset.jpg);
+    data.append("dcm" , this.dataset.dcm);
+
+    //determinar si el email es seleccionado o escrito
+    fetch('https://servidor.crecimientofetal.cl/configuracion/eliminarEcocat', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+        loadImagenesDICOM()
+    }).catch(function(error) {
+        make.alert("Error al eliminar")
     });
 }
