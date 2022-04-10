@@ -1171,24 +1171,44 @@ $( document ).ready(function() {
 
     the("verImagenGine").onclick = function(){
         the("volver").href = "#ecoGinecologica"
+
+        the("nombreClone").value = the("nombre-paciente").value
+        the("apellidoClone").value = the("apellido-paciente").value
+        the("rutClone").value = the("id-paciente").value
+
         loadImagenesDICOM();
         
     }
 
     the("verImagenPrimTrim").onclick = function(){
         the("volver").href = "#ecoObsPrimTrim"
+
+        the("nombreClone").value = the("nombre-paciente").value
+        the("apellidoClone").value = the("apellido-paciente").value
+        the("rutClone").value = the("id-paciente").value
+
         loadImagenesDICOM();
         
     }
 
     the("verImagenSegTrim").onclick = function(){
         the("volver").href = "#ecoObsSegTrim"
+
+        the("nombreClone").value = the("nombre-paciente").value
+        the("apellidoClone").value = the("apellido-paciente").value
+        the("rutClone").value = the("id-paciente").value
+
         loadImagenesDICOM();
         
     }
 
     the("verImagenDoppler").onclick = function(){
         the("volver").href = "#ecoDoppler"
+
+        the("nombreClone").value = the("nombre-paciente").value
+        the("apellidoClone").value = the("apellido-paciente").value
+        the("rutClone").value = the("id-paciente").value
+
         loadImagenesDICOM();
         
     }

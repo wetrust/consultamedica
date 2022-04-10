@@ -4115,7 +4115,19 @@
         </div>
     </div>
     <div class="container d-none" id="imagenes">
-        <div class="row" id="listDicom"></div>
+        <div class="row">
+            <div class="col-12 ">
+                <form class="form-inline my-2 mx-auto">
+                    <label class="text-secondary align-middle mr-2">Nombre:</label>
+                    <input class="form-control form-control-sm mr-2 bg-verde text-white" type="text" placeholder="" id="nombreClone" readonly="">
+                    <label class="text-secondary align-middle mr-2">Apellido:</label>
+                    <input class="form-control form-control-sm mr-2 bg-verde text-white" type="text" placeholder="" id="apellidoClone" readonly="">
+                    <label class="text-secondary align-middle mr-2">RUT de paciente</label>
+                    <input class="form-control form-control-sm mr-2 bg-verde text-white" type="text" placeholder="" id="rutClone" readonly="">
+                </form>
+            </div>
+        </div>
+        <div class="row mt-2" id="listDicom"></div>
         <div class="row mb-5">
             <div class="col-12 col-lg-4">
                 <button class="btn btn-primary" type="button" id="imprimirImagenes">Imprimir</button>
