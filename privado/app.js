@@ -5899,7 +5899,6 @@ $(document).ready(function(){
 
 })
 
-
 function calcularComentarioEcoPrecoz(){
 
     let comentario = ""
