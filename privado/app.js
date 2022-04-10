@@ -9402,6 +9402,11 @@ function loadImagenesDICOM(){
                             $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
                         }
 
+                        let divElementos = document.createElement("div")
+                        divElementos.classList.add("row")
+                        let divUno = document.createElement("div")
+                        divUno.classList.add("col-6")
+
                         let divCheck = document.createElement("div")
                         divCheck.classList.add("form-group", "form-check")
 
@@ -9416,8 +9421,24 @@ function loadImagenesDICOM(){
                         divCheck.appendChild(_check)
                         divCheck.appendChild(_label)
 
+                        divUno.appendChild(divCheck)
+                        divElementos.appendChild(divUno)
+
+                        let divDos = document.createElement("div")
+                        divDos.classList.add("col-6", "text-right")
+
+                        let btnEliminar = document.createElement("button")
+                        btnEliminar.classList.add("btn", "p-0", "px-2", "btn-danger", "text-white", "border-white")
+                        btnEliminar.innerText = "Eliminar"
+                        btnEliminar.dataset.jpg = value[1]
+                        btnEliminar.dataset.dcm = value[1].slice(0, value[1].length - 3) + "dcm"
+                        //btnEliminar.onclick = eliminarUnaImagen
+
+                        divDos.appendChild(btnEliminar)
+                        divElementos.appendChild(divDos)
+
                         div.appendChild(imagen)
-                        div.appendChild(divCheck)
+                        div.appendChild(divElementos)
                         the("listDicom").appendChild(div)
                     });
                 }
