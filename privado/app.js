@@ -5908,7 +5908,7 @@ function calcularComentarioEcoPrecoz(){
         comentario = "-Calculo inicial (transitorio) de edad gestacional: "+the("sacoPct").value+" semanas según medición de saco gestacional\n-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )\n";
     } else if ((the("saco").value == "" && the("embrion").value == "no se observa") || the("embrion").value == "no se observa"){
             comentario = "";
-    } else if (the("embrion").value != "embrión sin actividad cardiaca"){
+    } else if (the("embrion").value != "sin actividad cardiaca"){
         let fur = new Date(Date.parse(the("furAjustada").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
         let fpp = new Date(Date.parse(the("fppAjustada").value));
@@ -5943,7 +5943,7 @@ function infPrecoz(){
     }
 
     let fcftexto = the("embrion").value;
-    let optiones = ["no se observa","no se observa aun","embrión sin actividad cardiaca"];
+    let optiones = ["no se observa","no se observa aun","sin actividad cardiaca"];
 
     if (optiones.includes(fcftexto)){
         fcftexto = ".";
@@ -6086,7 +6086,7 @@ function infPrecozClon(){
     }
 
     let fcftexto = the("embrion").value;
-    let optiones = ["no se observa","no se observa aun","embrión sin actividad cardiaca"];
+    let optiones = ["no se observa","no se observa aun","sin actividad cardiaca"];
 
     if (optiones.includes(fcftexto)){
         fcftexto = ".";
