@@ -1286,7 +1286,7 @@ $( document ).ready(function() {
             var fotos = [];
 
             the("listDicom").childNodes.forEach(function myFunction(value, index, array) {
-                if (value.children[1].children[0].checked == true){
+                if (value.children[1].children[0].children[0].children[0].checked == true){
                     fotos[fotos.length] = value.children[0].src
                 }
             })
