@@ -1177,7 +1177,6 @@ $( document ).ready(function() {
         the("rutClone").value = the("id-paciente").value
 
         loadImagenesDICOM();
-        
     }
 
     the("verImagenPrimTrim").onclick = function(){
@@ -1188,7 +1187,6 @@ $( document ).ready(function() {
         the("rutClone").value = the("id-paciente").value
 
         loadImagenesDICOM();
-        
     }
 
     the("verImagenSegTrim").onclick = function(){
@@ -1199,7 +1197,6 @@ $( document ).ready(function() {
         the("rutClone").value = the("id-paciente").value
 
         loadImagenesDICOM();
-        
     }
 
     the("verImagenDoppler").onclick = function(){
@@ -1210,18 +1207,15 @@ $( document ).ready(function() {
         the("rutClone").value = the("id-paciente").value
 
         loadImagenesDICOM();
-        
     }
 
     the("art.ut.prim.new").onclick = function(){
-
         if (this.checked == true){
             the("art.ut.div.prim.new").classList.remove("d-none");
             the("respuesta_uterina_derecha").focus();
         }else{
             the("art.ut.div.prim.new").classList.add("d-none");
         }
-        
     }
 
     the("imprimirImagenes").onclick = function(){
