@@ -90,7 +90,7 @@ export class mainFactory{
             //verEco.onclick = traerPaciente
     
             let elimEco = document.createElement("td")
-            elimEco.dataset.id = value.get("id")
+            elimEco.dataset.id = value.paciente_id
             elimEco.innerHTML = mainConfig.iconBasura
             //elimEco.onclick = eliminarPaciente
 
