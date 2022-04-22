@@ -433,7 +433,7 @@ $(document).ready(function(){
                 input[0].parentElement.children[1].remove()
             }
 
-            resultado = globalPacientes.pacientes.filter(eldato => { return eldato.paciente_rut.includes(input[0].value); })
+            let resultado = globalPacientes.pacientes.filter(eldato => { return eldato.paciente_rut.includes(input[0].value); })
             //filtrar por rut
             if (resultado.length > 0){
                 obtenerPacienteServidor(resultado[0].paciente_id)
