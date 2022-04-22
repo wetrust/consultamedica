@@ -436,7 +436,7 @@ $(document).ready(function(){
         placeholder: "",
     });
 
-    $("#id-paciente").on("blur", function(e){
+    the("id-paciente").onblur = function(e){
 
         let valor = this.value
         let resultado = globalPacientes.pacientes.filter(eldato => { return eldato.paciente_rut.includes(valor); })
@@ -444,7 +444,7 @@ $(document).ready(function(){
         if (resultado.length > 0){
             obtenerPacienteServidor(resultado[0].paciente_id)
         }
-    })
+    }
 })
 
 $( document ).ready(function() {
