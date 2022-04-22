@@ -1,4 +1,4 @@
-import { make, the } from "../../../wetrust.js";
+import { make, the, inputDate } from "../../../wetrust.js";
 import { mainFactory } from "../factory/mainFactory.js";
 import { loadEcoPrecozTabla, loadEcoCrecimientoTabla, loadEcoDopplerTabla, loadEcoGineTabla } from "../../../guardar.js";
 import { construirTablaPacientes } from "../../../pacientes.js";
