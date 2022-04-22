@@ -435,17 +435,13 @@ $(document).ready(function(){
         placeholder: "",
     });
 
-    $("#id-paciente").on("keypress",function( e ) {
-
-        if ( e.which == 13 ) {
-           e.preventDefault();
-           $("#id-paciente").on("blur")
-           let valor = this.value
-           let resultado = globalPacientes.pacientes.filter(eldato => { return eldato.paciente_rut.includes(valor); })
-           //filtrar por rut
-           if (resultado.length > 0){
-               obtenerPacienteServidor(resultado[0].paciente_id)
-           }
+    $("#id-paciente").on("blur",function( e ) {
+        e.preventDefault();
+        let valor = this.value
+        let resultado = globalPacientes.pacientes.filter(eldato => { return eldato.paciente_rut.includes(valor); })
+        //filtrar por rut
+        if (resultado.length > 0){
+            obtenerPacienteServidor(resultado[0].paciente_id)
         }
     });
 })
