@@ -40,6 +40,7 @@ export class mainEvents{
     
             the("nombre.ecoprim").value = data.paciente_nombre
             the("apellido.ecoprim").value = data.paciente_apellido
+            the("edad.ecoprim").value = data.paciente_edad
     
             the("nombre.gine").value = data.paciente_nombre
             the("apellido.gine").value = data.paciente_apellido
@@ -47,9 +48,11 @@ export class mainEvents{
     
             the("nombre.crecim").value = data.paciente_nombre
             the("apellido.crecim").value = data.paciente_apellido
+            the("edad.crecim").value = data.paciente_edad
     
             the("nombre.doppler").value = data.paciente_nombre
             the("apellido.doppler").value = data.paciente_apellido
+            the("edad.doppler").value = data.paciente_edad
     
             the("id-paciente").value = data.paciente_rut
             $("#id-paciente").trigger("blur");
