@@ -1,4 +1,3 @@
-import { fechas } from "../../../functionesM.js";
 import { ordenarDatos } from "../../../pacientes.js";
 import { humanDate } from "../../../wetrust.js";
 import { mainConfig } from "../config/mainConfig.js";

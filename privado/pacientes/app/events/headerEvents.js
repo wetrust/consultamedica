@@ -1,8 +1,8 @@
 import { the, humanDate } from "../../../wetrust.js";
-import { fechas } from "../../../functionesM.js";
 import { appBD } from '../app.js';
 import { mainConfig } from "../config/mainConfig.js";
 import { mainEvents } from "./mainEvents.js";
+import { ordenarDatos } from "../../../pacientes.js";
 
 export class headerEvents{
 
