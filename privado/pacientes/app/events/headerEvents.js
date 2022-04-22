@@ -61,7 +61,9 @@ export class headerEvents{
 
     static createTableElement(pacientes){
 
-        pacientes.forEach(function(value){
+        let ordenados = ordenarDatos(pacientes, globalPacientes.exam);
+
+        ordenados.forEach(function(value){
             let _elemento = document.createElement("th");
             _elemento.innerText = value;
 
@@ -74,21 +76,21 @@ export class headerEvents{
             let centroEco = document.createElement("td")
             let tipoEco = document.createElement("td")
 
-            fecha.innerText = humanDate(fechas.toDate(value.paciente_fee));
-            eg.innerText = value.paciente_eg;
-            rut.innerText = value.paciente_rut;
-            nombre.innerText = value.paciente_nombre;
-            apellido.innerText = value.paciente_apellido;
-            centroEco.innerText = value.paciente_centro_txt;
-            tipoEco.innerText = value.paciente_tipoeco_txt;
+            fecha.innerText = humanDate(value.get("fecha"));
+            eg.innerText = value.get("eg");
+            rut.innerText = value.get("rut");
+            nombre.innerText = value.get("nombre");
+            apellido.innerText = value.get("apellido");
+            centroEco.innerText = value.get("centro");
+            tipoEco.innerText = value.get("tipo");
 
             let verEco = document.createElement("td")
-            verEco.dataset.id = value.paciente_id
+            verEco.dataset.id = value.get("id")
             verEco.innerHTML = mainConfig.iconLupa
             verEco.onclick = mainEvents.traerPaciente
     
             let elimEco = document.createElement("td")
-            elimEco.dataset.id = value.paciente_id
+            elimEco.dataset.id = value.get("id")
             elimEco.innerHTML = mainConfig.iconBasura
             elimEco.onclick = mainEvents.eliminarPaciente
 
