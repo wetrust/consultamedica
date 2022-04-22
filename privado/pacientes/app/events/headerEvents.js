@@ -2,6 +2,7 @@ import { the, humanDate } from "../../../wetrust.js";
 import { fechas } from "../../../functionesM.js";
 import { appBD } from '../app.js';
 import { mainConfig } from "../config/mainConfig.js";
+import { mainEvents } from "./mainEvents.js";
 
 export class headerEvents{
 
@@ -89,7 +90,7 @@ export class headerEvents{
             let elimEco = document.createElement("td")
             elimEco.dataset.id = value.paciente_id
             elimEco.innerHTML = mainConfig.iconBasura
-            //elimEco.onclick = eliminarPaciente
+            elimEco.onclick = mainEvents.eliminarPaciente
 
             tr.appendChild(fecha);
             tr.appendChild(eg);

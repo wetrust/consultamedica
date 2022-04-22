@@ -1,6 +1,7 @@
 import { fechas } from "../../../functionesM.js";
 import { humanDate } from "../../../wetrust.js";
 import { mainConfig } from "../config/mainConfig.js";
+import { mainEvents } from "../events/mainEvents.js";
 
 export class mainFactory{
 
@@ -92,7 +93,7 @@ export class mainFactory{
             let elimEco = document.createElement("td")
             elimEco.dataset.id = value.paciente_id
             elimEco.innerHTML = mainConfig.iconBasura
-            //elimEco.onclick = eliminarPaciente
+            elimEco.onclick = mainEvents.eliminarPaciente
 
             tr.appendChild(fecha)
             tr.appendChild(eg)
@@ -108,5 +109,5 @@ export class mainFactory{
         })
 
         return bodyTabla;
-    } 
+    }
 }
