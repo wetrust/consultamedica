@@ -437,11 +437,15 @@ $(document).ready(function(){
     });
 
     $("#id-paciente").on("keyup", function(e){
-        let valor = this.value
-        let resultado = globalPacientes.pacientes.filter(eldato => { return eldato.paciente_rut.includes(valor); })
-        //filtrar por rut
-        if (resultado.length > 0){
-            obtenerPacienteServidor(resultado[0].paciente_id)
+        if ( e.which == 13 ) {
+            e.preventDefault();
+
+            let valor = this.value
+            let resultado = globalPacientes.pacientes.filter(eldato => { return eldato.paciente_rut.includes(valor); })
+            //filtrar por rut
+            if (resultado.length > 0){
+                obtenerPacienteServidor(resultado[0].paciente_id)
+            }
         }
     })
 })
