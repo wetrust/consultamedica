@@ -143,6 +143,10 @@ function eliminarPaciente(){
 function traerPaciente(){
     let id = this.dataset.id
 
+    obtenerPacienteServidor(id)
+}
+
+function obtenerPacienteServidor(id){
     fetch('https://api.crecimientofetal.cl/config/el/'+id).then(response => response.json())
     .then(data => {
 
@@ -413,6 +417,31 @@ $(document).ready(function(){
 
         globalPreguntoEg = false;
     }
+
+    $("#id-paciente").rut({
+        fn_error : function(input){
+            input[0].classList.add("is-invalid");
+            let da = document.createElement('small');
+            da.classList.add("text-danger");
+            da.innerText = "RUT Inválido";
+            input[0].parentElement.appendChild(da);
+        },
+        fn_validado : function(input){
+            input[0].classList.remove("is-invalid");
+            let _elemento = input[0].parentElement.children;
+            if (_elemento.length > 1){
+                input[0].parentElement.children[1].remove()
+            }
+
+            resultado = globalPacientes.pacientes.filter(eldato => { return eldato.paciente_rut.includes(input[0].value); })
+            //filtrar por rut
+            if (resultado.length > 0){
+                obtenerPacienteServidor(resultado[0].paciente_id)
+                return true
+            }
+        },
+        placeholder: "",
+    });
 })
 
 $( document ).ready(function() {
