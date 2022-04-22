@@ -1,4 +1,4 @@
-import { the, humanDate } from "../../../wetrust.js";
+import { the, humanDate, inputDate } from "../../../wetrust.js";
 import { appBD } from '../app.js';
 import { mainConfig } from "../config/mainConfig.js";
 import { mainEvents } from "./mainEvents.js";
@@ -23,7 +23,7 @@ export class headerEvents{
     
             let ordenados = ordenarDatos(pacientes, globalPacientes.exam);
 
-            let resultado = ordenados.slice().filter(eldato => { return String(eldato.get("fecha")).includes(valor); })
+            let resultado = ordenados.slice().filter(eldato => { return String(inputDate(eldato.get("fecha"))).includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
                 headerEvents.createTableElement(resultado);
