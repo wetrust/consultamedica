@@ -437,7 +437,6 @@ $(document).ready(function(){
             //filtrar por rut
             if (resultado.length > 0){
                 obtenerPacienteServidor(resultado[0].paciente_id)
-                return true
             }
         },
         placeholder: "",
