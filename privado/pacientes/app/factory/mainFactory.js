@@ -88,7 +88,7 @@ export class mainFactory{
             let verEco = document.createElement("td")
             verEco.dataset.id = value.paciente_id
             verEco.innerHTML = mainConfig.iconLupa
-            //verEco.onclick = traerPaciente
+            verEco.onclick = mainEvents.traerPaciente
     
             let elimEco = document.createElement("td")
             elimEco.dataset.id = value.paciente_id
