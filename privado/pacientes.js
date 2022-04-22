@@ -171,7 +171,6 @@ function obtenerPacienteServidor(id){
         the("apellido.doppler").value = data.paciente_apellido
 
         the("id-paciente").value = data.paciente_rut
-        $("#id-paciente").trigger("blur");
         the("email-paciente").value = data.paciente_email
         the("fono-paciente").value = data.paciente_telefono
         the("motivo-examen").value = data.paciente_motivo
@@ -436,17 +435,19 @@ $(document).ready(function(){
         placeholder: "",
     });
 
-    the("id-paciente").onblur = function(e){
-        e.preventDefault();
-        let valor = this.value
-        let resultado = globalPacientes.pacientes.filter(eldato => { return eldato.paciente_rut.includes(valor); })
-        //filtrar por rut
-        if (resultado.length > 0){
-            obtenerPacienteServidor(resultado[0].paciente_id)
-            return true
+    $("#id-paciente").on("keypress",function( e ) {
+
+        if ( e.which == 13 ) {
+           e.preventDefault();
+           $("#id-paciente").on("blur")
+           let valor = this.value
+           let resultado = globalPacientes.pacientes.filter(eldato => { return eldato.paciente_rut.includes(valor); })
+           //filtrar por rut
+           if (resultado.length > 0){
+               obtenerPacienteServidor(resultado[0].paciente_id)
+           }
         }
-        return true
-    }
+    });
 })
 
 $( document ).ready(function() {
