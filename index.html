@@ -1550,31 +1550,41 @@
         <div class="row">
             <div class="col-9">
                 <div class="card shadow-sm">
-                    <div class="card-body row">
-                        <div class="col-12 col-sm-6 form-group">
-                            <label class="text-secondary">Útero</label>
-                            <input type="text" class="form-control" id="utero.ginecologica" value="Utero central anterior, aspecto general normal; .... x .... x .... mm."> </div>
-                        <div class="col-12 col-sm-6 form-group">
-                            <label class="text-secondary">Contenido endouterino / Endometrio</label>
-                            <input type="text" class="form-control" id="endometrio.ginecologica" value="Homogéneo de aspecto normal, grosor máximo .... mm."> </div>
-                        <div class="col-12 col-sm-6 form-group">
-                            <label class="text-secondary">Anexo Derecho</label>
-                            <input type="text" class="form-control" id="anexo.derecho.ginecologica" value="Aspecto general normal"> </div>
-                        <div class="col-12 col-sm-6 form-group">
-                            <label class="text-secondary">Anexo Izquierdo</label>
-                            <input type="text" class="form-control" id="anexo.izquierdo.ginecologica" value="Aspecto general normal"> </div>
-                        <div class="col-12 col-sm-6 form-group">
-                            <label class="text-secondary">Ovario Derecho</label>
-                            <input type="text" class="form-control" id="ovario.derecho.ginecologica" value="Aspecto normal .... x .... x .... mm."> </div>
-                        <div class="col-12 col-sm-6 form-group">
-                            <label class="text-secondary">Ovario Izquierdo</label>
-                            <input type="text" class="form-control" id="ovario.izquierdo.ginecologica" value="Aspecto normal .... x .... x .... mm."> </div>
-                        <div class="col-12 col-sm-6 form-group">
-                            <label class="text-secondary">Espacio Retro-uterino (Douglas)</label>
-                            <input type="text" class="form-control" id="douglas.ginecologica" value="Libre"> </div>
-                        <div class="col-12 form-group">
-                            <label class="text-primary">Comentarios y observaciones del profesional ecografista</label>
-                            <textarea class="form-control" id="comentario.ginecologica" rows="5"> - Cuerpo uterino&#13; - Contenido endouterino&#13; - Exploración anexial bilateral&#13; - Espacio retrouterino</textarea></div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="mr-2"><label><small>Nombre:</small></label></div>
+                            <div class="mr-3 w-100"><input class="bg-verde text-white form-control" id="nombre.ecoGinecologica" value="??"></div>
+                            <div class="w-25"><label><small>Edad Materna:</small></label></div>
+                            <div class="mr-2"><input class="bg-verde text-white form-control" id="edad.ecoGinecologica" value="??"></div>
+                            <div class="mr-2"><label><small>años</small></label></div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 form-group">
+                                <label class="text-secondary">Útero</label>
+                                <input type="text" class="form-control" id="utero.ginecologica" value="Utero central anterior, aspecto general normal; .... x .... x .... mm."> </div>
+                            <div class="col-12 col-sm-6 form-group">
+                                <label class="text-secondary">Contenido endouterino / Endometrio</label>
+                                <input type="text" class="form-control" id="endometrio.ginecologica" value="Homogéneo de aspecto normal, grosor máximo .... mm."> </div>
+                            <div class="col-12 col-sm-6 form-group">
+                                <label class="text-secondary">Anexo Derecho</label>
+                                <input type="text" class="form-control" id="anexo.derecho.ginecologica" value="Aspecto general normal"> </div>
+                            <div class="col-12 col-sm-6 form-group">
+                                <label class="text-secondary">Anexo Izquierdo</label>
+                                <input type="text" class="form-control" id="anexo.izquierdo.ginecologica" value="Aspecto general normal"> </div>
+                            <div class="col-12 col-sm-6 form-group">
+                                <label class="text-secondary">Ovario Derecho</label>
+                                <input type="text" class="form-control" id="ovario.derecho.ginecologica" value="Aspecto normal .... x .... x .... mm."> </div>
+                            <div class="col-12 col-sm-6 form-group">
+                                <label class="text-secondary">Ovario Izquierdo</label>
+                                <input type="text" class="form-control" id="ovario.izquierdo.ginecologica" value="Aspecto normal .... x .... x .... mm."> </div>
+                            <div class="col-12 col-sm-6 form-group">
+                                <label class="text-secondary">Espacio Retro-uterino (Douglas)</label>
+                                <input type="text" class="form-control" id="douglas.ginecologica" value="Libre"> </div>
+                            <div class="col-12 form-group">
+                                <label class="text-primary">Comentarios y observaciones del profesional ecografista</label>
+                                <textarea class="form-control" id="comentario.ginecologica" rows="5"> - Cuerpo uterino&#13; - Contenido endouterino&#13; - Exploración anexial bilateral&#13; - Espacio retrouterino</textarea></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2073,11 +2083,12 @@
                     <div class="tab-pane fade show active" id="medidas-eco-prim" role="tabpanel">
                         <div class="card mb-3 shadow-sm">
                             <div class="card-body">
-                                <div class="d-flex flex-row bd-highlight mb-3">
-                                    <div class="p-2 bd-highlight"><label for="nombre.ecoPrimTrim">Nombre:</label></div>
-                                    <div class="p-2 bd-highlight"><input type="text" id="nombre.ecoPrimTrim" class="form-control mx-sm-3 form-control-sm" ></div>
-                                    <div class="p-2 bd-highlight"><label for="edad.ecoPrimTrim">Edad Materna:</label></div>
-                                    <div class="p-2 bd-highlight"><input type="text" id="edad.ecoPrimTrim" class="form-control mx-sm-3 form-control-sm"></div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2"><label><small>Nombre:</small></label></div>
+                                    <div class="mr-3 w-100"><input class="bg-verde text-white form-control" id="nombre.ecoPrimTrim" value="??"></div>
+                                    <div class="w-25"><label><small>Edad Materna:</small></label></div>
+                                    <div class="mr-2"><input class="bg-verde text-white form-control" id="edad.ecoPrimTrim" value="??"></div>
+                                    <div class="mr-2"><label><small>años</small></label></div>
                                 </div>
                                 <hr>
                                 <div class="mb-3">
@@ -2948,6 +2959,14 @@
                     <div class="tab-pane fade show active" id="medidas-eco-seg" role="tabpanel">
                         <div class="card mb-3">
                             <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2"><label><small>Nombre:</small></label></div>
+                                    <div class="mr-3 w-100"><input class="bg-verde text-white form-control" id="nombre.ecoObsSegTrim" value="??"></div>
+                                    <div class="w-25"><label><small>Edad Materna:</small></label></div>
+                                    <div class="mr-2"><input class="bg-verde text-white form-control" id="edad.ecoObsSegTrim" value="??"></div>
+                                    <div class="mr-2"><label><small>años</small></label></div>
+                                </div>
+                                <hr>
                                 <h5 class="card-title">BIOMETRÍA FETAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>( 12 a 42 semanas )</small></h5>
                                 <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="ver.ref"> <label class="form-check-label text-primary" for="art.ut">Ver cuatro referencias <small>(Biometrías, Estimación y categorización de peso mas valoración de líquido amniótico)</small></label> </div>
                                 <div class="row d-none" id="ver.ref.div">
@@ -3681,6 +3700,14 @@
                     <div class="tab-pane fade show active" id="medidas-eco-doppler" role="tabpanel">
                         <div class="card mb-3">
                             <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2"><label><small>Nombre:</small></label></div>
+                                    <div class="mr-3 w-100"><input class="bg-verde text-white form-control" id="nombre.ecoDoppler" value="??"></div>
+                                    <div class="w-25"><label><small>Edad Materna:</small></label></div>
+                                    <div class="mr-2"><input class="bg-verde text-white form-control" id="edad.ecoDoppler" value="??"></div>
+                                    <div class="mr-2"><label><small>años</small></label></div>
+                                </div>
+                                <hr>
                                 <h4 class="card-title">FLUJOMETRÍA DOPPLER MATERNO <small>(Desde las 11 semanas)</small></h4>
                                 <p class="mb-2 text-primary"><small>Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32</small></p>
                                 <div class="form-group row">
@@ -4096,11 +4123,11 @@
                     </div>
                     <div class="col-4 bg-secondary py-2">
                         <label class="mb-0 text-white">N° Registro ( DNI )</label>
-                       <input class="form-control bg-verde text-white m-0" type="text"  id="id-paciente">
+                       <input class="form-control bg-verde text-white m-0" type="text" id="id-paciente">
                     </div>
                     <div class="col-4 bg-secondary py-2">
                         <label class="mb-0 text-white">Edad materna</label>
-                        <input list="edadMaternaList" name="edad_materna" class="form-control bg-verde text-white">
+                        <input list="edadMaternaList" name="edad_materna" class="form-control bg-verde text-white" id="edadMaterna">
                         <datalist id="edadMaternaList"></datalist>
                     </div>
                     <div class="col-4  bg-secondary py-2 pb-4">

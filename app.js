@@ -933,8 +933,6 @@ $( document ).ready(function() {
         }
     })
 
-    $("#nombre-paciente").on("change", function(){ the("nombre.morfologia").value = this.value; })
-
     $("#ecografista").on("change", function(){
         the("ecografista.morfologia").value = this.value;
     })
@@ -1200,6 +1198,18 @@ $( document ).ready(function() {
 
     $("#nombre-paciente").on("blur", function(){
         mayusculas(this)
+        the("nombre.morfologia").value = this.value;
+        the("nombre.ecoPrimTrim").innerText = this.value;
+        the("nombre.ecoObsSegTrim").innerText = this.value;
+        the("nombre.ecoDoppler").innerText = this.value;
+        the("nombre.ecoGinecologica").innerText = this.value;
+    });
+
+    $("#edadMaterna").on("blur", function(){
+        the("edad.ecoPrimTrim").innerText = this.value;
+        the("edad.ecoObsSegTrim").innerText = this.value;
+        the("edad.ecoDoppler").innerText = this.value;
+        the("edad.ecoGinecologica").innerText = this.value;
     });
 });
 
