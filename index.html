@@ -127,22 +127,22 @@
             </div>
         </div>
     </div>
-    <section class="container-fluid bg-secondary shadow d-none">
+    <section class="container-fluid shadow d-none" style="background-color: #e9ecef">
         <div class="row">
             <div class="col-11">
-                <div class="d-flex justify-content-between align-items-center rounded shadow-sm" style="background-color: #e9ecef">
+                <div class="d-flex justify-content-between align-items-center">
                     <h6 class="text-primary p-1 mb-0"><em id="titulo">Titulo</em></h6>
                 </div>
                 <div class="row py-2">
                     <div class="col-3">
                         <div class="form-group mb-0">
-                            <label class="text-white">a) Fecha de última mestruación *</label>
+                            <label class="mb-0"><small>a) Fecha de última mestruación *</small></label>
                             <input class="form-control bg-verde text-white" type="date" id="fum">
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="form-group mb-0">
-                            <label class="text-white">b) Edad gestacional *</label>
+                            <label class="mb-0"><small>b) Edad gestacional *</small></label>
                             <div class="row">
                                 <div class="col">
                                     <select id="semanas" class="form-control bg-verde text-white"></select>
@@ -155,26 +155,28 @@
                     </div>
                     <div class="col d-none">
                         <div class="form-group mb-0">
-                            <label class="text-white">capacidad) Día del ciclo mestrual</label>
+                            <label class="mb-0"><small>c) Día del ciclo mestrual</small></label>
                             <input type="text" class="form-control bg-verde text-white" id="diaciclo" readonly>
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="form-group mb-0">
-                            <label class="text-white">c) Fecha probable de parto</label>
+                            <label class="mb-0"><small>c) Fecha probable de parto</small></label>
                             <input type="date" class="form-control" id="fpp">
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="form-group mb-0">
-                            <label class="text-white text-left">d) Fecha de exámen modificable</label>
+                            <label class="text-left mb-0"><small>d) Fecha de exámen modificable</small></label>
                             <input class="form-control" type="date" id="fee" style="background-color:#ebefff;">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-1">
-                <a href="#inicio" id="volver" class="p-1 px-3 bg-verde text-white"><strong>Volver</strong></a>
+                <div class="d-flex align-items-center h-100">
+                    <a href="#inicio" id="volver" class="btn bg-verde text-white btn-lg shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z"></path></svg><br>Volver</a>
+                </div>
             </div>
         </div>
     </section>
