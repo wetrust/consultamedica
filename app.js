@@ -1211,6 +1211,13 @@ $( document ).ready(function() {
         the("edad.ecoDoppler").value = this.value;
         the("edad.ecoGinecologica").value = this.value;
     });
+
+    $("#id-paciente").on("blur", function(){
+        the("rut.ecoPrimTrim").value = this.value;
+        the("rut.ecoObsSegTrim").value = this.value;
+        the("rut.ecoDoppler").value = this.value;
+        the("rut.ecoGinecologica").value = this.value;
+    });
 });
 
 // Controlador de input clones
