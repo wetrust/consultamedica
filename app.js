@@ -1199,17 +1199,17 @@ $( document ).ready(function() {
     $("#nombre-paciente").on("blur", function(){
         mayusculas(this)
         the("nombre.morfologia").value = this.value;
-        the("nombre.ecoPrimTrim").innerText = this.value;
-        the("nombre.ecoObsSegTrim").innerText = this.value;
-        the("nombre.ecoDoppler").innerText = this.value;
-        the("nombre.ecoGinecologica").innerText = this.value;
+        the("nombre.ecoPrimTrim").value = this.value;
+        the("nombre.ecoObsSegTrim").value = this.value;
+        the("nombre.ecoDoppler").value = this.value;
+        the("nombre.ecoGinecologica").value = this.value;
     });
 
     $("#edadMaterna").on("blur", function(){
-        the("edad.ecoPrimTrim").innerText = this.value;
-        the("edad.ecoObsSegTrim").innerText = this.value;
-        the("edad.ecoDoppler").innerText = this.value;
-        the("edad.ecoGinecologica").innerText = this.value;
+        the("edad.ecoPrimTrim").value = this.value;
+        the("edad.ecoObsSegTrim").value = this.value;
+        the("edad.ecoDoppler").value = this.value;
+        the("edad.ecoGinecologica").value = this.value;
     });
 });
 
