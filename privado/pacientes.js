@@ -236,7 +236,18 @@ function guardarPaciente(e){
         make.alert("Seleccione FUR", true);
         the("fum").classList.add("is-invalid");
         e.preventDefault()
-        globalPreguntoEg = true
+
+        if(the("tipoecografia").value != 3){
+            globalPreguntoEg = true
+        }else{
+            if (globalPreguntoEgContador == 2){
+                globalPreguntoEg = true;
+                globalPreguntoEgContador = 0;
+            }else{
+                globalPreguntoEgContador++;
+            }
+        }
+        
         return false
     }
 

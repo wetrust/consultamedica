@@ -6051,6 +6051,7 @@ function infPrecoz(){
 
     comentario = the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
+    comentario = "<strong><em>" + comentario + "</strong></em>"
 
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var edadmaterna = $( "select[name='edad_materna']").val();
@@ -6194,6 +6195,7 @@ function infPrecozClon(){
 
     comentario = the("comentarios-eco-uno").value;
     comentario =  (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : comentario='';
+    comentario = "<strong><em>" + comentario + "</strong></em>"
 
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var edadmaterna = $( "select[name='edad_materna']").val();
