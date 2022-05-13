@@ -167,6 +167,8 @@ $( document ).ready(function() {
     opt.value = "&gt; 170"; 
     dias.appendChild(opt);
 
+    dias.value = 140
+
     if (storageAvailable('localStorage')) { document.location.hash = "#inicio"; }
 
     //cargar edad materna
@@ -1046,7 +1048,7 @@ $( document ).ready(function() {
             the("egP50").value = ""
             the("presentacion").selectedIndex = 0;
             the("dorso").selectedIndex = 0;
-            the("fcf").selectedIndex = 0;
+            the("fcf").value = 140;
             the("accardSi").checked = true;
             the("movfetSi").checked = true;
             the("ecografia.segtrim.sexo").selectedIndex = 2;
