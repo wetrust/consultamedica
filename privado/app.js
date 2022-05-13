@@ -1417,6 +1417,10 @@ $( document ).ready(function() {
             the("ovarIzquier3").classList.remove("d-none"); 
         }
     }
+
+    the("motivo-examen").onblur = function(){
+        the("motivo-clone").value = this.value
+    }
 });
 
 // Controlador de input clones
@@ -5846,8 +5850,10 @@ $(window).on('hashchange', function(){
                 the("semanas").parentElement.parentElement.parentElement.parentElement.classList.add(d);
                 the("fpp").parentElement.parentElement.classList.add(d);
                 the("diaciclo").parentElement.parentElement.classList.remove(d);
+                the("motivo-clone").parentElement.parentElement.classList.remove(d);
             } else {
                 the("diaciclo").parentElement.parentElement.classList.add(d);
+                the("motivo-clone").parentElement.parentElement.classList.add(d);
                 the("semanas").parentElement.parentElement.parentElement.parentElement.classList.remove(d);
                 the("fpp").parentElement.parentElement.classList.remove(d);
             }
