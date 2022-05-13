@@ -52,7 +52,7 @@ $( document ).ready(function() {
 
     the("fee").value = inputDate(_fecha)
 
-    let _fur = fechas.fur(0, _fecha)
+    let _fur = fechas.fur(10, _fecha)
     the("fum").value = inputDate(_fur)
 
     let _fpp = fechas.fpp(_fur)
@@ -67,7 +67,7 @@ $( document ).ready(function() {
         semanas.appendChild(opt); 
     }
 
-    the("semanas").value = 0
+    the("semanas").value = 10
 
     for (var i = 25; i < 43; i++) {
         let semanas = the("edadGestacional");
