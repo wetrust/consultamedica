@@ -166,6 +166,31 @@ $( document ).ready(function() {
 
     dias.value = 140
 
+        //cargar la frecuencia cardiaca fetal para morfologia 22-24
+        dias = the("frecuencia.cardiaca.morfologia");
+        opt = document.createElement('option');
+        opt.appendChild( document.createTextNode("(+) inicial") );
+        opt.value = "(+) inicial"; 
+        dias.appendChild(opt); 
+        opt = document.createElement('option');
+        opt.appendChild( document.createTextNode("< 90") );
+        opt.value = "&lt; 90"; 
+        dias.appendChild(opt);
+    
+        for (var i = 90; i < 171; i++) {
+            let opt = document.createElement('option');
+            opt.appendChild( document.createTextNode(i) );
+            opt.value = i; 
+            dias.appendChild(opt); 
+        }
+    
+        opt = document.createElement('option');
+        opt.appendChild( document.createTextNode("> 170") );
+        opt.value = "&gt; 170"; 
+        dias.appendChild(opt);
+    
+        dias.value = 140
+
     if (storageAvailable('localStorage')) { document.location.hash = "#inicio"; }
 
     //cargar edad materna
@@ -7886,7 +7911,7 @@ function setCursor(id) {
 }
 
 function informeMorfologia(){
-    let InformeString = '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas fundamentalmente evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"></td></tr></tbody> </table> <p class="mb-0"> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa:</strong> :ANTECESA </p></div><div class="container-fluid mt-4"> <p class="mb-1"><strong style="color: #045dab;">EVALUACIÓN GENERAL</strong></p><p> <strong>Actividad cardíaca:</strong> :ACTCAR , <strong>Movimientos fetales:</strong> :MOVFET , Embarazo: :EMB <br/> <strong>Presentación:</strong> :PRESENT , <strong>Dorso fetal:</strong> :DORSOFET <br/> <strong>Placenta</strong> :GRADO , Ubicación: :PLAUB , Placenta inserción: :PLAIN </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Liquido amniótico</strong></td><td class="p-0">Medicion cualitativa: :BVMCUA .</td></tr><tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Bolsillo Vertical Mayor (BVM): :BVMMED mm</td></tr></tbody> </table></div>';
+    let InformeString = '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas fundamentalmente evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"></td></tr></tbody> </table> <p class="mb-0"> <strong>FUM: </strong>:FUR <br/> <strong>Ege: </strong>:EG semanas <br/> <strong>FPP: </strong>:FPP <br/> <strong>Cesárea previa:</strong> :ANTECESA </p></div><div class="container-fluid mt-4"> <p class="mb-1"><strong style="color: #045dab;">EVALUACIÓN GENERAL</strong></p><p> <strong>Actividad cardíaca:</strong> :ACTCAR , <strong>Frecuencia cardiaca fetal:</strong> :FRECCARD , Embarazo: :EMB <br/> <strong>Presentación:</strong> :PRESENT , <strong>Dorso fetal:</strong> :DORSOFET <br/> <strong>Placenta</strong> :GRADO , Ubicación: :PLAUB , Placenta inserción: :PLAIN </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Liquido amniótico</strong></td><td class="p-0">Medicion cualitativa: :BVMCUA .</td></tr><tr> <td class="p-0"></td><td class="p-0">Medicion semi cuantitativa, Bolsillo Vertical Mayor (BVM): :BVMMED mm</td></tr></tbody> </table></div>';
 
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
@@ -7906,7 +7931,7 @@ function informeMorfologia(){
     var edadmaterna = these("edad_materna")[0].value;
 
     var ACTCAR = the("actividad.cardiaca.morfologia").value;
-    var MOVFET = the("movimientos.fetales.morfologia").value;
+    var FRECCARD = the("frecuencia.cardiaca.morfologia").value;
     var EMB = the("embarazo.morfologica").value;
     var PRESENT = the("presentacion.morfologia").value;
     var DORSOFET = the("dorso.morfologia").value;
@@ -8409,7 +8434,7 @@ function informeMorfologia(){
     InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
 
     InformeString = InformeString.replace(":ACTCAR", ACTCAR);
-    InformeString = InformeString.replace(":MOVFET", MOVFET);
+    InformeString = InformeString.replace(":FRECCARD", FRECCARD);
     InformeString = InformeString.replace(":EMB", EMB);
     InformeString = InformeString.replace(":PRESENT", PRESENT);
     InformeString = InformeString.replace(":DORSOFET", DORSOFET);
