@@ -8213,7 +8213,7 @@ function informeMorfologia(){
         InformeString = InformeString.replace(":PPANTXT", PPANTXT);
     }
 
-    var CUELLO = document.querySelector('input[name="cn.morfologia"]:checked').value;
+    var CUELLO = document.querySelector('input[name="crzn.morfologia"]:checked').value;
 
     if (CUELLO == "normal"){
         CUELLO = "Si"
@@ -8224,7 +8224,7 @@ function informeMorfologia(){
     if (CUELLO != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Corazón tamaño y ubicación normal: :CUELLO</td><td class="p-0 pl-3">:CUELLOTXT</td></tr>';
         InformeString = InformeString.replace(":CUELLO", CUELLO);
-        var CUELLOTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+        var CUELLOTXT = document.querySelector('input[name="crzn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CUELLOTXT", CUELLOTXT);
     }
 
