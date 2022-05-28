@@ -1797,7 +1797,7 @@ $( document ).ready(function() {
 // Controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia", "", "vlp.morfologia", "vld.morfologia"];
+        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","utero.ginecologica","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia", "", "vlp.morfologia", "vld.morfologia", "respuesta_uterina_derecha_prim", "respuesta_uterina_izquierda_prim"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -2596,12 +2596,12 @@ $( document ).ready(function() {
         //Grafico Prom Art. UT. en Exm. primer trimestre
         $('#graficoUterinasPrim').on("click", function(){
             var edadGestacional = the("semanas").value;
-    
+
             if (edadGestacional < 10){
                 alert("Edad Gestacional inferior a 10 semanas");
                 return false;
             }
-    
+
             var modal = makeModal();
             document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
             the(modal.titulo).innerText = "Gráfico Promedio Arterias Uterinas";

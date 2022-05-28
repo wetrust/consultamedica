@@ -1421,6 +1421,29 @@ $( document ).ready(function() {
     the("motivo-examen").onblur = function(){
         the("motivo-clone").value = this.value
     }
+
+    $("#larg\\.cerv\\.prim").on("click", function(){
+        if (this.checked == true){
+            the("larg.cerv.prim.div").classList.remove("d-none");
+            the("largo.cervical.prim").focus();
+        }else{
+            the("larg.cerv.prim.div").classList.add("d-none");
+        }
+    });
+
+    $("#largo\\.cervical\\.prim").on("keyup", function(){
+        let cV = +this.value;
+        if (cV == NaN){
+            the("info.cervix.prim").innerHTML = "";
+            the("info.cervix.prim").classList.add("d-none");
+        }else if (cV < 25){
+            the("info.cervix.prim").innerHTML ='<p class="mb-0">Cérvix corto</p>';
+            the("info.cervix.prim").classList.remove("d-none");
+        }else if(cV > 24){
+            the("info.cervix.prim").innerHTML ='<p class="mb-0">Cérvix normal</p>';
+            the("info.cervix.prim").classList.remove("d-none");
+        }
+    });
 });
 
 // Controlador de input clones
