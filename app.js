@@ -677,10 +677,10 @@ $( document ).ready(function() {
 
     $("#art\\.ut\\.prim").on("click", function(){
         if (this.checked == true){
-            the("art\\.ut\\.prim\\.div").classList.remove("d-none");
+            the("art.ut.prim.div").classList.remove("d-none");
             the("respuesta_uterina_derecha_prim").focus();
         }else{
-            the("art\\.ut\\.prim\\.div").classList.add("d-none");
+            the("art.ut.prim.div").classList.add("d-none");
         }
     });
 
