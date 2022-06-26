@@ -680,6 +680,7 @@ $(document).ready(function() {
         $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
         document.getElementById("AdicionalOculto").classList.add("d-none");
+        document.getElementById("p90Title").textContent = "Pct. 90"
     });
 
     $('#opt2').click(function() {
@@ -702,6 +703,7 @@ $(document).ready(function() {
         $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
         document.getElementById("AdicionalOculto").classList.add("d-none");
+        document.getElementById("p90Title").textContent = "Pct. 90"
     });
 
     $('#opt3').click(function() {
@@ -724,9 +726,11 @@ $(document).ready(function() {
         $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
         document.getElementById("AdicionalOculto").classList.add("d-none");
+        document.getElementById("p90Title").textContent = "Pct. 90"
     });
 
     $('#opt4').click(function(){
+        document.getElementById("p90Title").textContent = "Pct. 10"
         RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val());
         //neutralizat
         $('#pm').val("1");
