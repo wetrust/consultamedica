@@ -681,6 +681,7 @@ $(document).ready(function() {
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
         document.getElementById("AdicionalOculto").classList.add("d-none");
         document.getElementById("p90Title").textContent = "Pct. 90"
+        document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
     });
 
     $('#opt2').click(function() {
@@ -704,6 +705,7 @@ $(document).ready(function() {
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
         document.getElementById("AdicionalOculto").classList.add("d-none");
         document.getElementById("p90Title").textContent = "Pct. 90"
+        document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
     });
 
     $('#opt3').click(function() {
@@ -727,6 +729,7 @@ $(document).ready(function() {
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
         document.getElementById("AdicionalOculto").classList.add("d-none");
         document.getElementById("p90Title").textContent = "Pct. 90"
+        document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
     });
 
     $('#opt4').click(function(){
@@ -752,6 +755,8 @@ $(document).ready(function() {
 
         $("#tituloAjusteBajo").html("P / Eg cond. superior");
 
+        document.getElementById("mensajeGrafico").innerText = "La diferencia observada entre las categorias extremas, a término alcanza a 32 puntos porcentuales ( = 440 grs)"
+
         ege = RN.eg - 24;
         var uno=p90Pso1[ege] - p10Pso1[ege];
         var dos = parseInt(RN.peso) - p10Pso1[ege];
@@ -776,15 +781,9 @@ $(document).ready(function() {
 
         $("#PesoEgeOculto").html(valor);
 
-        if (parseInt(RN.peso) < p10Pso2[ege]){
-            valor = " Peque&ntilde;o.";
-        }
-        else if (parseInt(RN.peso) <= p90Pso2[ege]) {
-            valor = " Adecuado.";
-        }
-        else if (parseInt(RN.peso) > p90Pso2[ege]) {
-        valor = " Grande.";
-        }
+        if (parseInt(RN.peso) < p10Pso2[ege]){ valor = " Peque&ntilde;o."; }
+        else if (parseInt(RN.peso) <= p90Pso2[ege]) { valor = " Adecuado."; }
+        else if (parseInt(RN.peso) > p90Pso2[ege]) { valor = " Grande."; }
 
         $("#PesoEgeCatOculto").html(valor);
 
