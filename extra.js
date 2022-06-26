@@ -788,7 +788,7 @@ $(document).ready(function() {
 
         $("#PesoEgeCatOculto").html(valor);
 
-        tablaPercentilesView(p10Pso1,p10Pso2)
+        tablaPercentilesView(p10Pso2,p10Pso1)
 
         Highcharts.chart('graficoAjustado', {
             title: {
@@ -1086,7 +1086,7 @@ function tablaPercentilesView(p10Pso,p90Pso){
         //if (x == 16){
         //    tabla = '<tr class="'+cuarenta+'"><td class="bg-white">'+i+'</td><td class="celeste">'+Math.trunc(p10Pso[x])+'</td><td class="celeste">'+Math.trunc(p90Pso[x])+'</td></tr>';
         //}else{
-            tabla = '<tr><td class="bg-white">'+i+'</td><td class="celeste">'+Math.trunc(p10Pso[x])+'</td><td class="celeste">'+Math.trunc(p90Pso[x])+'</td></tr>';
+            tabla = '<tr><td class="bg-white">'+i+'</td><td class="celeste text-left">'+Math.trunc(p10Pso[x])+'</td><td class="celeste text-right">'+Math.trunc(p90Pso[x])+'</td></tr>';
         //}
         
         $("#table\\.percentiles\\.ajustado").append(tabla);
