@@ -682,6 +682,8 @@ $(document).ready(function() {
         document.getElementById("AdicionalOculto").classList.add("d-none");
         document.getElementById("p90Title").textContent = "Pct. 90"
         document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
+        document.getElementById("p10Title").textContent = "Pct. 10"
+        document.getElementById("p90Title").textContent = "Pct. 90"
     });
 
     $('#opt2').click(function() {
@@ -706,6 +708,8 @@ $(document).ready(function() {
         document.getElementById("AdicionalOculto").classList.add("d-none");
         document.getElementById("p90Title").textContent = "Pct. 90"
         document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
+        document.getElementById("p10Title").textContent = "Pct. 10"
+        document.getElementById("p90Title").textContent = "Pct. 90"
     });
 
     $('#opt3').click(function() {
@@ -730,10 +734,13 @@ $(document).ready(function() {
         document.getElementById("AdicionalOculto").classList.add("d-none");
         document.getElementById("p90Title").textContent = "Pct. 90"
         document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
+        document.getElementById("p10Title").textContent = "Pct. 10"
+        document.getElementById("p90Title").textContent = "Pct. 90"
     });
 
     $('#opt4').click(function(){
-        document.getElementById("p90Title").textContent = "Pct. 10"
+        document.getElementById("p10Title").textContent = "P. 10 B"
+        document.getElementById("p90Title").textContent = "P. 10 A"
         RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val());
         //neutralizat
         $('#pm').val("1");
