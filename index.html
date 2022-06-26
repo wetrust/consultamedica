@@ -1848,7 +1848,20 @@
                             </select>
                         </div>
                         <p class="text-left mt-2"><small><strong>Ejemplos para valorar potencial individual de crecimiento</strong></small></p>
-                        <div class="row"><div class="col-4"><button id="opt1" class="btn btn-outline-light text-dark shadow"><small>Cond. Neutra</small></button></div><div class="col-4"><button id="opt3" class="btn btn-outline-light text-dark shadow"><small>Potencial bajo</small></button></div><div class="col-4"><button id="opt2" class="btn btn-outline-light text-dark shadow"><small>Potencial alto</small></button></div></div>
+                        <div class="row">
+                            <div class="col-3">
+                                <button id="opt1" class="btn btn-outline-light text-dark shadow"><small>Cond. Neutra</small></button>
+                            </div>
+                            <div class="col-3">
+                                <button id="opt3" class="btn btn-outline-light text-dark shadow"><small>Potencial bajo</small></button>
+                            </div>
+                            <div class="col-3">
+                                <button id="opt2" class="btn btn-outline-light text-dark shadow"><small>Potencial alto</small></button>
+                            </div>
+                            <div class="col-3">
+                                <button id="opt4" class="btn btn-outline-light text-dark shadow"><small>Extremos</small></button>
+                            </div>
+                        </div>
                         <button class="btn btn-outline-info d-none" id="g3">Graficar percentil ajustado</button>
                     </div>
                 </div>
@@ -1867,6 +1880,17 @@
                             </div>
                             <div class="col-4 border border-danger rounded">
                                 <p class="mb-0 text-center"><small id="PesoEgeCAjCat"></small></p>
+                            </div>
+                        </div>
+                        <div class="row d-none" id="AdicionalOculto">
+                            <div class="col-4 border border-danger rounded">
+                                <p class="mb-0 text-center"><small id="tituloAjusteOculto">Pct. peso ajustado</small></p>
+                            </div>
+                            <div class="col-4 border border-danger rounded">
+                                <p class="mb-0 text-center"><small id="PesoEgeOculto"></small></p>
+                            </div>
+                            <div class="col-4 border border-danger rounded">
+                                <p class="mb-0 text-center"><small id="PesoEgeCatOculto"></small></p>
                             </div>
                         </div>
                         <p class="mt-4"><small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small></p>                        

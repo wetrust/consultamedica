@@ -679,6 +679,7 @@ $(document).ready(function() {
         $("#tituloAjusteG").addClass("d-none");
         $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
+        document.getElementById("AdicionalOculto").classList.add("d-none");
     });
 
     $('#opt2').click(function() {
@@ -700,6 +701,7 @@ $(document).ready(function() {
         $("#tituloAjusteG").addClass("d-none");
         $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
+        document.getElementById("AdicionalOculto").classList.add("d-none");
     });
 
     $('#opt3').click(function() {
@@ -721,7 +723,205 @@ $(document).ready(function() {
         $("#tituloAjusteG").addClass("d-none");
         $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
+        document.getElementById("AdicionalOculto").classList.add("d-none");
     });
+
+    $('#opt4').click(function(){
+        RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val());
+        //neutralizat
+        $('#pm').val("1");
+        $('#sn').val("0");
+        $('#tm').val("155");
+        $('#pesom').val("63");
+        $('#em').val("2");
+        $('#apellm').val("1");
+        varMama = new Mama('155', '63', $("#em").val(), $('#apellm').val());
+        varMama.talla = '155';
+        varMama.peso = '63';
+        $('#valorimc').val(varMama.imc());
+        $('#imc').val(varMama.imcCondicion());
+        RN.ajustePequeno = false;
+        RN.ajusteAlto = false;
+        //AjusteArribaAbajo
+        var p10Pso1 = [614.911761594748,688.2409351621351,775.8261252713739,879.2765685663702,1000.14921864602,1139.7859521609507,1299.0982567628794,1478.2976958841446,1676.578914688683,1891.7742075463264,2120.0143470672206,2355.4478861757852,2590.0872856319534,2813.8600915466154,3014.940876697811,3180.418712251241,3297.311672544965,3353.875214095742,3341.073271117301];
+        var p90Pso1 = [845.6847516567528,1019.8791186895171,1215.1332367429115,1430.6549439464502,1664.8783277732855,1915.435357904167,2179.1679353682594,2452.1831280795927,2729.951302092218,3007.4436584447762,3279.3026501881805,3540.0361747837806,3784.224559989481,4006.728359825368,4202.884932894939,4368.682671927062,4500.903482341126,4597.226484532643,4656.288703467283];
+        
+        $("#tituloAjusteBajo").html("P / Eg cond. superior");
+
+        ege = RN.eg - 24;
+        var uno=p90Pso1[ege] - p10Pso1[ege];
+        var dos = parseInt(RN.peso) - p10Pso1[ege];
+        valor = parseInt((80 / (uno)) * (dos)) + 10;
+
+        $("#PesoEgeCAj").html(valor);
+
+        if (parseInt(RN.peso) < p10Pso1[ege]){
+            valor = " Peque&ntilde;o.";
+        }
+        else if (parseInt(RN.peso) <= p90Pso1[ege]) {
+            valor = " Adecuado.";
+        }
+        else if (parseInt(RN.peso) > p90Pso1[ege]) {
+        valor = " Grande.";
+        }
+        $("#PesoEgeCAjCat").html(valor);
+
+        document.getElementById("AdicionalOculto").classList.remove("d-none");
+        var p10Pso2 = [532.7720094718462,596.3058912325178,672.1914745777674,761.8230347419276,866.5495478697786,987.5336430802754,1125.5650517432623,1280.827076703167,1452.6219422120837,1639.0715041903895,1836.8233856299587,2040.8077742235917,2244.1041041316807,2437.985397218539,2612.205863734485,2755.5792133386753,2856.8576426002764,2905.8654410796826,2894.7735782926065];
+        var p90Pso2 = [711.5447194612854,858.108887467441,1022.3923706232943,1203.7286574482926,1400.800215862748,1611.6146255636006,1833.5147159659111,2063.2250404407005,2296.9344422785457,2530.4117758437037,2759.1492925532416,2978.526031047196,3183.981971581188,3371.1928720061205,3536.235665413285,3675.7350538979554,3786.9833875928784,3868.0279180018288,3917.721861188435];
+
+        $("#tituloAjusteOculto").html("P / Eg cond. inferior");
+        ege = RN.eg - 24;
+        var uno=p90Pso2[ege] - p10Pso2[ege];
+        var dos = parseInt(RN.peso) - p10Pso2[ege];
+        valor = parseInt((80 / (uno)) * (dos)) + 10;
+
+        $("#PesoEgeOculto").html(valor);
+
+        if (parseInt(RN.peso) < p10Pso2[ege]){
+            valor = " Peque&ntilde;o.";
+        }
+        else if (parseInt(RN.peso) <= p90Pso2[ege]) {
+            valor = " Adecuado.";
+        }
+        else if (parseInt(RN.peso) > p90Pso2[ege]) {
+        valor = " Grande.";
+        }
+        $("#PesoEgeCatOculto").html(valor);
+
+        document.getElementById("table.percentiles.ajustado").innerHTML = ""
+        Highcharts.chart('graficoAjustado', {
+            title: {
+            text: 'GRAFICO PESO / EG',
+            style: {
+            "color": "#337ab7",
+            }
+            },
+            subtitle: {
+            text: 'TABLA DE AJUSTE AL PESO TEMUCO',
+            style: {
+            "color": "#337ab7",
+            }
+            },
+            chart: {
+            backgroundColor: "rgba(0, 0, 0, 0)"
+            },
+            plotOptions: {
+            series: {
+            enableMouseTracking: false
+            }
+            },
+            yAxis: {
+            title: { text: '' },
+            tickPositions: [400, 860, 1320, 1780, 2240, 2700, 3160, 3620, 4080, 4540,4980],
+            tickColor: "#337ab7",
+            labels: {
+            enabled: true,
+            style: {
+             color: '#337ab7',
+            }
+            }
+            },
+            colors: ['#ff3300', '#ff3300', '#ff3300'],
+            xAxis: {
+            categories:
+            ['24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42'],
+            labels: {
+            enabled: true,
+            style: {
+             color: '#337ab7',
+            }
+            }
+            },
+            credits: { enabled: false },
+            series: [{
+            type: "line",
+            name: 'Pct. 10',
+            marker: { enabled: false },
+            data: (function () {
+             var data = [];
+             for (i = 24; i < 43; i++) {
+              x = i - 24;
+              data.push({
+               y: p10Pso1[x],
+              });
+             }
+             return data;
+            }())
+            }, {
+            type: "line",
+            name: 'Pct. 90',
+            marker: { enabled: false },
+            data: (function () {
+             var data = [];
+             for (i = 24; i < 43; i++) {
+              x = i - 24;
+              data.push({
+               y: p90Pso1[x],
+              });
+             }
+             return data;
+            }())
+            }, {
+            type: "line",
+            name: 'Peso',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (function () {
+             var data = [];
+            
+             for (i = 24; i <= (RN.eg -1); i++) {
+              data.push({
+               y: 0,
+              });
+             }
+             data.push({
+              y: parseInt(RN.peso),
+             });
+             for (i = RN.eg + 1; i <= 39; i++) {
+              data.push({
+               y: 0,
+              });
+             }
+             return data;
+            }())
+            },{
+             type: "line",
+             name: 'Pct. 10',
+                  marker: { enabled: false },
+                  dashStyle: "Dash",
+                  color: '#003d99',
+                  data: (function () {
+                   var data = [];
+                   for (i = 24; i < 43; i++) {
+                    x = i - 24;
+                    data.push({
+                     y: p10Pso2[x],
+                    });
+                   }
+                   return data;
+                  }())
+                 }, {
+                  type: "line",
+                  name: 'Pct. 90',
+                  marker: { enabled: false },
+                  color: '#003d99',
+                  dashStyle: "Dash",
+                  data: (function () {
+                   var data = [];
+                   for (i = 24; i < 43; i++) {
+                    x = i - 24;
+                    data.push({
+                     y: p90Pso2[x],
+                    });
+                   }
+                   return data;
+                  }())
+                 }]
+            });
+
+    })
 
     //cargar inputs de talla
     for (i = 135; i < 190; i++) {
