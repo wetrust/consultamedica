@@ -745,7 +745,7 @@ $(document).ready(function() {
         //AjusteArribaAbajo
         var p10Pso1 = [614.911761594748,688.2409351621351,775.8261252713739,879.2765685663702,1000.14921864602,1139.7859521609507,1299.0982567628794,1478.2976958841446,1676.578914688683,1891.7742075463264,2120.0143470672206,2355.4478861757852,2590.0872856319534,2813.8600915466154,3014.940876697811,3180.418712251241,3297.311672544965,3353.875214095742,3341.073271117301];
         var p90Pso1 = [845.6847516567528,1019.8791186895171,1215.1332367429115,1430.6549439464502,1664.8783277732855,1915.435357904167,2179.1679353682594,2452.1831280795927,2729.951302092218,3007.4436584447762,3279.3026501881805,3540.0361747837806,3784.224559989481,4006.728359825368,4202.884932894939,4368.682671927062,4500.903482341126,4597.226484532643,4656.288703467283];
-        
+
         $("#tituloAjusteBajo").html("P / Eg cond. superior");
 
         ege = RN.eg - 24;
@@ -755,15 +755,9 @@ $(document).ready(function() {
 
         $("#PesoEgeCAj").html(valor);
 
-        if (parseInt(RN.peso) < p10Pso1[ege]){
-            valor = " Peque&ntilde;o.";
-        }
-        else if (parseInt(RN.peso) <= p90Pso1[ege]) {
-            valor = " Adecuado.";
-        }
-        else if (parseInt(RN.peso) > p90Pso1[ege]) {
-        valor = " Grande.";
-        }
+        if (parseInt(RN.peso) < p10Pso1[ege]){ valor = " Peque&ntilde;o."; }
+        else if (parseInt(RN.peso) <= p90Pso1[ege]) { valor = " Adecuado."; }
+        else if (parseInt(RN.peso) > p90Pso1[ege]) { valor = " Grande."; }
         $("#PesoEgeCAjCat").html(valor);
 
         document.getElementById("AdicionalOculto").classList.remove("d-none");
@@ -787,9 +781,11 @@ $(document).ready(function() {
         else if (parseInt(RN.peso) > p90Pso2[ege]) {
         valor = " Grande.";
         }
+
         $("#PesoEgeCatOculto").html(valor);
 
-        document.getElementById("table.percentiles.ajustado").innerHTML = ""
+        tablaPercentilesView(p10Pso1,p10Pso2)
+
         Highcharts.chart('graficoAjustado', {
             title: {
             text: 'GRAFICO PESO / EG',
@@ -919,7 +915,7 @@ $(document).ready(function() {
                    return data;
                   }())
                  }]
-            });
+        });
 
     })
 
@@ -1080,14 +1076,14 @@ function tablaPercentilesView(p10Pso,p90Pso){
     $("#table\\.percentiles\\.ajustado").empty();
     for (i = 24; i < 43; i++) {
         x = i - 24;
-        let cuarenta = "border border-primary rounded";
+        //let cuarenta = "border border-primary rounded";
         let tabla = '';
 
-        if (x == 16){
-            tabla = '<tr class="'+cuarenta+'"><td class="bg-white">'+i+'</td><td class="celeste">'+Math.trunc(p10Pso[x])+'</td><td class="celeste">'+Math.trunc(p90Pso[x])+'</td></tr>';
-        }else{
+        //if (x == 16){
+        //    tabla = '<tr class="'+cuarenta+'"><td class="bg-white">'+i+'</td><td class="celeste">'+Math.trunc(p10Pso[x])+'</td><td class="celeste">'+Math.trunc(p90Pso[x])+'</td></tr>';
+        //}else{
             tabla = '<tr><td class="bg-white">'+i+'</td><td class="celeste">'+Math.trunc(p10Pso[x])+'</td><td class="celeste">'+Math.trunc(p90Pso[x])+'</td></tr>';
-        }
+        //}
         
         $("#table\\.percentiles\\.ajustado").append(tabla);
     }
