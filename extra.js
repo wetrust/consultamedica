@@ -952,7 +952,7 @@ $(document).ready(function() {
                  }]
         });
 
-        document.getElementById("mensajeGrafico").innerText = "La diferencia observada entre las categorias extremas, a término alcanza a 32 puntos porcentuales, aprox. 440 grs"
+        document.getElementById("mensajeGrafico").innerHTML = "La diferencia observada entre las categorias extremas, a término alcanza a 32 puntos porcentuales, aprox. 440 grs<br><small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
     })
 
     //cargar inputs de talla
