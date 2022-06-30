@@ -455,6 +455,9 @@ $(document).ready(function() {
     });
 
     $('#g3').click(function() {
+        if (RN == 0){
+            RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val());
+        }
         tipografico = 0;
         var apell = 0;
         if ($("#apellm").val() == 2) {
@@ -625,6 +628,9 @@ $(document).ready(function() {
                 }())
             }]
         });
+
+        document.getElementById("mensajeGrafico").innerText = "El peso de " + $("#pesoRN").val() +" gramos \n= percentil "+$("#PesoEgeCAj").html()+ " corregido"
+        document.getElementById("AdicionalOculto").classList.add("d-none");
     });
 
     $('#tm').change(function() {
@@ -684,6 +690,10 @@ $(document).ready(function() {
         document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
         document.getElementById("p10Title").textContent = "Pct. 10"
         document.getElementById("p90Title").textContent = "Pct. 90"
+
+        window.setTimeout(function(){
+            document.getElementById("mensajeGrafico").innerText = "El peso de " + $("#pesoRN").val() +" gramos \n= percentil "+$("#PesoEgeCAj").html()+ " corregido"
+        }, 200)
     });
 
     $('#opt2').click(function() {
@@ -710,6 +720,9 @@ $(document).ready(function() {
         document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
         document.getElementById("p10Title").textContent = "Pct. 10"
         document.getElementById("p90Title").textContent = "Pct. 90"
+        window.setTimeout(function(){
+            document.getElementById("mensajeGrafico").innerText = "El peso de " + $("#pesoRN").val() +" gramos \n= percentil "+$("#PesoEgeCAj").html()+ " corregido"
+        }, 200)
     });
 
     $('#opt3').click(function() {
@@ -736,12 +749,12 @@ $(document).ready(function() {
         document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
         document.getElementById("p10Title").textContent = "Pct. 10"
         document.getElementById("p90Title").textContent = "Pct. 90"
+        window.setTimeout(function(){
+            document.getElementById("mensajeGrafico").innerText = "El peso de " + $("#pesoRN").val() +" gramos \n= percentil "+$("#PesoEgeCAj").html()+ " corregido"
+        }, 200)
     });
 
     $('#opt4').click(function(){
-        document.getElementById("p10Title").textContent = "P. 10 B"
-        document.getElementById("p90Title").textContent = "P. 10 A"
-        RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val());
         //neutralizat
         $('#pm').val("1");
         $('#sn').val("0");
@@ -756,43 +769,47 @@ $(document).ready(function() {
         $('#imc').val(varMama.imcCondicion());
         RN.ajustePequeno = false;
         RN.ajusteAlto = false;
+
+        document.getElementById("p10Title").textContent = "P. 10 B"
+        document.getElementById("p90Title").textContent = "P. 10 A"
+
+        if (RN == 0){ RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val()) }
+
         //AjusteArribaAbajo
         var p10Pso1 = [614.911761594748,688.2409351621351,775.8261252713739,879.2765685663702,1000.14921864602,1139.7859521609507,1299.0982567628794,1478.2976958841446,1676.578914688683,1891.7742075463264,2120.0143470672206,2355.4478861757852,2590.0872856319534,2813.8600915466154,3014.940876697811,3180.418712251241,3297.311672544965,3353.875214095742,3341.073271117301];
         var p90Pso1 = [845.6847516567528,1019.8791186895171,1215.1332367429115,1430.6549439464502,1664.8783277732855,1915.435357904167,2179.1679353682594,2452.1831280795927,2729.951302092218,3007.4436584447762,3279.3026501881805,3540.0361747837806,3784.224559989481,4006.728359825368,4202.884932894939,4368.682671927062,4500.903482341126,4597.226484532643,4656.288703467283];
 
-        $("#tituloAjusteBajo").html("P / Eg cond. superior");
-
-        document.getElementById("mensajeGrafico").innerText = "La diferencia observada entre las categorias extremas, a término alcanza a 32 puntos porcentuales ( = 440 grs)"
+        $("#tituloAjusteBajo").html("Categorias Bajas");
 
         ege = RN.eg - 24;
         var uno=p90Pso1[ege] - p10Pso1[ege];
         var dos = parseInt(RN.peso) - p10Pso1[ege];
         valor = parseInt((80 / (uno)) * (dos)) + 10;
 
-        $("#PesoEgeCAj").html(valor);
+        $("#PesoEgeOculto").html(valor);
 
         if (parseInt(RN.peso) < p10Pso1[ege]){ valor = " Peque&ntilde;o."; }
         else if (parseInt(RN.peso) <= p90Pso1[ege]) { valor = " Adecuado."; }
         else if (parseInt(RN.peso) > p90Pso1[ege]) { valor = " Grande."; }
-        $("#PesoEgeCAjCat").html(valor);
+        $("#PesoEgeCatOculto").html(valor);
 
         document.getElementById("AdicionalOculto").classList.remove("d-none");
         var p10Pso2 = [532.7720094718462,596.3058912325178,672.1914745777674,761.8230347419276,866.5495478697786,987.5336430802754,1125.5650517432623,1280.827076703167,1452.6219422120837,1639.0715041903895,1836.8233856299587,2040.8077742235917,2244.1041041316807,2437.985397218539,2612.205863734485,2755.5792133386753,2856.8576426002764,2905.8654410796826,2894.7735782926065];
         var p90Pso2 = [711.5447194612854,858.108887467441,1022.3923706232943,1203.7286574482926,1400.800215862748,1611.6146255636006,1833.5147159659111,2063.2250404407005,2296.9344422785457,2530.4117758437037,2759.1492925532416,2978.526031047196,3183.981971581188,3371.1928720061205,3536.235665413285,3675.7350538979554,3786.9833875928784,3868.0279180018288,3917.721861188435];
 
-        $("#tituloAjusteOculto").html("P / Eg cond. inferior");
+        $("#tituloAjusteOculto").html("Categorias Altas");
         ege = RN.eg - 24;
         var uno=p90Pso2[ege] - p10Pso2[ege];
         var dos = parseInt(RN.peso) - p10Pso2[ege];
         valor = parseInt((80 / (uno)) * (dos)) + 10;
 
-        $("#PesoEgeOculto").html(valor);
+        $("#PesoEgeCAj").html(valor);
 
         if (parseInt(RN.peso) < p10Pso2[ege]){ valor = " Peque&ntilde;o."; }
         else if (parseInt(RN.peso) <= p90Pso2[ege]) { valor = " Adecuado."; }
         else if (parseInt(RN.peso) > p90Pso2[ege]) { valor = " Grande."; }
 
-        $("#PesoEgeCatOculto").html(valor);
+        $("#PesoEgeCAjCat").html(valor);
 
         tablaPercentilesView(p10Pso2,p10Pso1)
 
@@ -800,7 +817,8 @@ $(document).ready(function() {
             title: {
             text: 'GRAFICO PESO / EG',
             style: {
-            "color": "#337ab7",
+                "color": "#337ab7",
+                "fontSize": "14px"
             }
             },
             subtitle: {
@@ -810,7 +828,8 @@ $(document).ready(function() {
             }
             },
             chart: {
-            backgroundColor: "rgba(0, 0, 0, 0)"
+                backgroundColor: "rgba(0, 0, 0, 0)",
+                height: "300"
             },
             plotOptions: {
             series: {
@@ -833,11 +852,17 @@ $(document).ready(function() {
             categories:
             ['24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42'],
             labels: {
-            enabled: true,
-            style: {
-             color: '#337ab7',
-            }
-            }
+                enabled: true,
+                    style: {
+                        color: '#337ab7',
+                    }
+                }
+            },
+            legend:{
+                itemStyle:{
+                    fontSize: "10px",
+                    fontWeight: "normal"
+                }
             },
             credits: { enabled: false },
             series: [{
@@ -927,6 +952,7 @@ $(document).ready(function() {
                  }]
         });
 
+            document.getElementById("mensajeGrafico").innerText = "La diferencia observada entre las categorias extremas, a término alcanza a 32 puntos porcentuales, aprox. 440 grs"
     })
 
     //cargar inputs de talla
