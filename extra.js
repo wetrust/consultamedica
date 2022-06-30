@@ -687,7 +687,7 @@ $(document).ready(function() {
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
         document.getElementById("AdicionalOculto").classList.add("d-none");
         document.getElementById("p90Title").textContent = "Pct. 90"
-        document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
+        //document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
         document.getElementById("p10Title").textContent = "Pct. 10"
         document.getElementById("p90Title").textContent = "Pct. 90"
 
@@ -717,7 +717,7 @@ $(document).ready(function() {
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
         document.getElementById("AdicionalOculto").classList.add("d-none");
         document.getElementById("p90Title").textContent = "Pct. 90"
-        document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
+        //document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
         document.getElementById("p10Title").textContent = "Pct. 10"
         document.getElementById("p90Title").textContent = "Pct. 90"
         window.setTimeout(function(){
@@ -746,7 +746,7 @@ $(document).ready(function() {
         $("#tituloAjusteBajo").html("Pct. Peso ajustado");
         document.getElementById("AdicionalOculto").classList.add("d-none");
         document.getElementById("p90Title").textContent = "Pct. 90"
-        document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
+        //document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
         document.getElementById("p10Title").textContent = "Pct. 10"
         document.getElementById("p90Title").textContent = "Pct. 90"
         window.setTimeout(function(){
@@ -952,7 +952,7 @@ $(document).ready(function() {
                  }]
         });
 
-            document.getElementById("mensajeGrafico").innerText = "La diferencia observada entre las categorias extremas, a término alcanza a 32 puntos porcentuales, aprox. 440 grs"
+        document.getElementById("mensajeGrafico").innerText = "La diferencia observada entre las categorias extremas, a término alcanza a 32 puntos porcentuales, aprox. 440 grs"
     })
 
     //cargar inputs de talla
