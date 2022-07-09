@@ -699,6 +699,8 @@ $(document).ready(function() {
         window.setTimeout(function(){
 
             document.getElementById("mensajeGrafico").innerHTML = "";
+            document.getElementById("mensajeGrafico").classList.add("mt-4")
+            document.getElementById("mensajeGrafico").classList.remove("my-2")
             let _a = document.createElement("li");
             _a.innerText = "Las variables de ajuste al peso, 50% suman y 50% restan potencial de crecimiento."
             document.getElementById("mensajeGrafico").appendChild(_a);
@@ -744,6 +746,8 @@ $(document).ready(function() {
         window.setTimeout(function(){
 
             document.getElementById("mensajeGrafico").innerHTML = "";
+            document.getElementById("mensajeGrafico").classList.add("mt-4")
+            document.getElementById("mensajeGrafico").classList.remove("my-2")
             let _a = document.createElement("li");
             _a.innerText = "Todas las variables de ajuste al peso, aumentan potencial de crecimiento."
             document.getElementById("mensajeGrafico").appendChild(_a);
@@ -787,6 +791,8 @@ $(document).ready(function() {
         window.setTimeout(function(){
 
             document.getElementById("mensajeGrafico").innerHTML = "";
+            document.getElementById("mensajeGrafico").classList.add("mt-4")
+            document.getElementById("mensajeGrafico").classList.remove("my-2")
             let _a = document.createElement("li");
             _a.innerText = "Todas las variables de ajuste al peso, disminuyen potencial de crecimiento."
             document.getElementById("mensajeGrafico").appendChild(_a);
@@ -1000,11 +1006,13 @@ $(document).ready(function() {
         });
 
         document.getElementById("mensajeGrafico").innerHTML = "";
+        document.getElementById("mensajeGrafico").classList.remove("mt-4")
+        document.getElementById("mensajeGrafico").classList.add("my-2")
         let _a = document.createElement("li");
         _a.innerText = "La diferencia observada entre las categorias extremas, a término alcanza a 32 puntos porcentuales, aprox. 440 grs"
         document.getElementById("mensajeGrafico").appendChild(_a);
 
-        document.getElementById("mensajeAjustePeso").classList.add("d-none");
+        document.getElementById("mensajeAjustePeso").classList.remove("d-none");
     })
 
     //cargar inputs de talla
