@@ -707,6 +707,8 @@ $(document).ready(function() {
             _a.innerText = "El peso de " + $("#pesoRN").val() +" gramos = percentil "+$("#PesoEgeCAj").html()+ " corregido."
             document.getElementById("mensajeGrafico").appendChild(_a);
 
+            document.getElementById("mensajeAjustePeso").classList.add("d-none");
+
         }, 200)
 
     });
@@ -743,12 +745,14 @@ $(document).ready(function() {
 
             document.getElementById("mensajeGrafico").innerHTML = "";
             let _a = document.createElement("li");
-            _a.innerText = "Todas las variables de ajuste al peso, disminuyen potencial de crecimiento."
+            _a.innerText = "Todas las variables de ajuste al peso, aumentan potencial de crecimiento."
             document.getElementById("mensajeGrafico").appendChild(_a);
 
             _a = document.createElement("li");
             _a.innerText = "El peso de " + $("#pesoRN").val() +" gramos = percentil "+$("#PesoEgeCAj").html()+ " corregido."
             document.getElementById("mensajeGrafico").appendChild(_a);
+
+            document.getElementById("mensajeAjustePeso").classList.remove("d-none");
 
         }, 200)
 
@@ -784,12 +788,14 @@ $(document).ready(function() {
 
             document.getElementById("mensajeGrafico").innerHTML = "";
             let _a = document.createElement("li");
-            _a.innerText = "Todas las variables de ajuste al peso, aumentan potencial de crecimiento."
+            _a.innerText = "Todas las variables de ajuste al peso, disminuyen potencial de crecimiento."
             document.getElementById("mensajeGrafico").appendChild(_a);
 
             _a = document.createElement("li");
             _a.innerText = "El peso de " + $("#pesoRN").val() +" gramos = percentil "+$("#PesoEgeCAj").html()+ " corregido."
             document.getElementById("mensajeGrafico").appendChild(_a);
+
+            document.getElementById("mensajeAjustePeso").classList.add("d-none");
 
         }, 200)
 
@@ -993,7 +999,12 @@ $(document).ready(function() {
                  }]
         });
 
-        document.getElementById("mensajeGrafico").innerHTML = "La diferencia observada entre las categorias extremas, a término alcanza a 32 puntos porcentuales, aprox. 440 grs<br><br><small>El percentil, es una medida estadística referenciada de 0 a 100, con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
+        document.getElementById("mensajeGrafico").innerHTML = "";
+        let _a = document.createElement("li");
+        _a.innerText = "La diferencia observada entre las categorias extremas, a término alcanza a 32 puntos porcentuales, aprox. 440 grs"
+        document.getElementById("mensajeGrafico").appendChild(_a);
+
+        document.getElementById("mensajeAjustePeso").classList.add("d-none");
     })
 
     //cargar inputs de talla
