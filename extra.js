@@ -668,19 +668,24 @@ $(document).ready(function() {
     });
 
     $('#opt1').click(function() {
+
         $('#pm').val("1");
         $('#sn').val("0");
         $('#tm').val("155");
         $('#pesom').val("63");
         $('#em').val("2");
         $('#apellm').val("1");
+
         varMama = new Mama('155', '63', $("#em").val(), $('#apellm').val());
         varMama.talla = '155';
         varMama.peso = '63';
+
         $('#valorimc').val(varMama.imc());
         $('#imc').val(varMama.imcCondicion());
+
         RN.ajustePequeno = false;
         RN.ajusteAlto = false;
+
         $('#g3').trigger("click");
         $("#tituloAjusteG").addClass("d-none");
         $("#tituloAjusteAlto").html("Pct. peso sin ajuste");
@@ -692,11 +697,22 @@ $(document).ready(function() {
         document.getElementById("p90Title").textContent = "Pct. 90"
 
         window.setTimeout(function(){
-            document.getElementById("mensajeGrafico").innerText = "El peso de " + $("#pesoRN").val() +" gramos \n= percentil "+$("#PesoEgeCAj").html()+ " corregido"
+
+            document.getElementById("mensajeGrafico").innerHTML = "";
+            let _a = document.createElement("li");
+            _a.innerText = "Las variables de ajuste al peso, 50% suman y 50% restan potencial de crecimiento."
+            document.getElementById("mensajeGrafico").appendChild(_a);
+
+            _a = document.createElement("li");
+            _a.innerText = "El peso de " + $("#pesoRN").val() +" gramos = percentil "+$("#PesoEgeCAj").html()+ " corregido."
+            document.getElementById("mensajeGrafico").appendChild(_a);
+
         }, 200)
+
     });
 
     $('#opt2').click(function() {
+
         $('#pm').val("0");
         $('#sn').val("0");
         $('#tm').val("170");
@@ -704,9 +720,11 @@ $(document).ready(function() {
         $('#em').val("6");
         $('#apellm').val("0");
         $('#tm').change();
+
         varMama = new Mama('170', '91', $("#em").val(), $('#apellm').val());
         varMama.talla = '170';
         varMama.peso = '91';
+
         $('#valorimc').val(varMama.imc());
         $('#imc').val(varMama.imcCondicion());
         RN.ajustePequeno = false;
@@ -720,12 +738,24 @@ $(document).ready(function() {
         //document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
         document.getElementById("p10Title").textContent = "Pct. 10"
         document.getElementById("p90Title").textContent = "Pct. 90"
+
         window.setTimeout(function(){
-            document.getElementById("mensajeGrafico").innerText = "El peso de " + $("#pesoRN").val() +" gramos \n= percentil "+$("#PesoEgeCAj").html()+ " corregido"
+
+            document.getElementById("mensajeGrafico").innerHTML = "";
+            let _a = document.createElement("li");
+            _a.innerText = "Todas las variables de ajuste al peso, disminuyen potencial de crecimiento."
+            document.getElementById("mensajeGrafico").appendChild(_a);
+
+            _a = document.createElement("li");
+            _a.innerText = "El peso de " + $("#pesoRN").val() +" gramos = percentil "+$("#PesoEgeCAj").html()+ " corregido."
+            document.getElementById("mensajeGrafico").appendChild(_a);
+
         }, 200)
+
     });
 
     $('#opt3').click(function() {
+
         $('#sn').val("1");
         $('#pm').val("1");
         $('#tm').val("149");
@@ -749,9 +779,20 @@ $(document).ready(function() {
         //document.getElementById("mensajeGrafico").innerHTML = "<small>Percentil, medida estadística referenciada de 0 a 100, <strong>con el propósito de graficar diferencias observadas en categorización del peso ajustado por variables</strong>, se muestran  valores de percentil fuera de rango estándar ( &lt; 0 y &gt; 100 ).</small>"
         document.getElementById("p10Title").textContent = "Pct. 10"
         document.getElementById("p90Title").textContent = "Pct. 90"
+
         window.setTimeout(function(){
-            document.getElementById("mensajeGrafico").innerText = "El peso de " + $("#pesoRN").val() +" gramos \n= percentil "+$("#PesoEgeCAj").html()+ " corregido"
+
+            document.getElementById("mensajeGrafico").innerHTML = "";
+            let _a = document.createElement("li");
+            _a.innerText = "Todas las variables de ajuste al peso, aumentan potencial de crecimiento."
+            document.getElementById("mensajeGrafico").appendChild(_a);
+
+            _a = document.createElement("li");
+            _a.innerText = "El peso de " + $("#pesoRN").val() +" gramos = percentil "+$("#PesoEgeCAj").html()+ " corregido."
+            document.getElementById("mensajeGrafico").appendChild(_a);
+
         }, 200)
+
     });
 
     $('#opt4').click(function(){
