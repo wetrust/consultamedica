@@ -237,16 +237,19 @@ function guardarPaciente(e){
         the("fum").classList.add("is-invalid");
         e.preventDefault()
 
-        if(the("tipoecografia").value != 3){
-            globalPreguntoEg = true
-        }else{
-            if (globalPreguntoEgContador == 2){
-                globalPreguntoEg = true;
-                globalPreguntoEgContador = 0;
-            }else{
-                globalPreguntoEgContador++;
-            }
-        }
+        globalPreguntoEg = true;
+        globalPreguntoEgContador = 0;
+
+        //if(the("tipoecografia").value != 3){
+        //    globalPreguntoEg = true
+        //}else{
+        //    if (globalPreguntoEgContador == 2){
+        //        globalPreguntoEg = true;
+        //        globalPreguntoEgContador = 0;
+        //    }else{
+        //        globalPreguntoEgContador++;
+        //    }
+        //}
         
         return false
     }
