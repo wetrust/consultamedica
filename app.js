@@ -8607,7 +8607,7 @@ function informeMorfologia(){
     }
 
     if (PLPO != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Cerebelo y cisterna posterior: :PLPO</td><td class="p-0 pl-3">:PLPOTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">Placenta posición: :PLPO</td><td class="p-0 pl-3">:PLPOTXT</td></tr>';
         InformeString = InformeString.replace(":PLPO", PLPO);
         var PLPOTXT = document.querySelector('input[name="plpo.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":PLPOTXT", PLPOTXT);
