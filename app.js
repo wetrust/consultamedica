@@ -8437,7 +8437,7 @@ function informeMorfologia(){
     }
 
     if (CORATSAN != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">- Corazón Tracto salida aórtico aspecto normal: :CORATSAN</td><td class="p-0 pl-3">:CORATSANTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">- Corazón Tracto salida aórtico normal: :CORATSAN</td><td class="p-0 pl-3">:CORATSANTXT</td></tr>';
         InformeString = InformeString.replace(":CORATSAN", CORATSAN);
         var CORATSANTXT = document.querySelector('input[name="tsan.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CORATSANTXT", CORATSANTXT);
@@ -8584,7 +8584,7 @@ function informeMorfologia(){
 
 
     var PLPO = the("plpo.morfologia").value;
-    InformeString += '<tr> <td class="p-0 pl-3">Placenta ubicación: :PLPO</td><td class="p-0 pl-3"></td></tr>';
+    InformeString += '<tr> <td class="p-0 pl-3" colspan="2">Placenta ubicación: :PLPO</td></tr>';
     InformeString = InformeString.replace(":PLPO", PLPO);
 
 
