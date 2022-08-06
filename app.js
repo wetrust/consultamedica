@@ -8277,7 +8277,7 @@ function informeMorfologia(){
     if (CTRT != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Corte transtalámico: :CTRT</td><td class="p-0 pl-3">:CTRTTXT</td></tr>';
         InformeString = InformeString.replace(":CTRT", CTRT);
-        var CTRTTXT = document.querySelector('input[name="ccv.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+        var CTRTTXT = document.querySelector('input[name="ctrt.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CTRTTXT", CTRTTXT);
     }
 
