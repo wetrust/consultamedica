@@ -8600,7 +8600,7 @@ function informeMorfologia(){
 
 
     var PLPO = the("plpo.morfologia").value;
-    InformeString += '<tr> <td class="p-0 pl-3">Placenta posición y morfología: :PLPO</td><td class="p-0 pl-3">:PLPOTXT</td></tr>';
+    InformeString += '<tr> <td class="p-0 pl-3">Placenta posición y morfología: :PLPO</td><td class="p-0 pl-3"></td></tr>';
     InformeString = InformeString.replace(":PLPO", PLPO);
 
 
