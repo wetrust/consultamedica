@@ -8595,7 +8595,7 @@ function informeMorfologia(){
     }
 
     var GEN = the("gen.morfologia").value;
-    InformeString += '<tr> <td class="p-0 pl-3">Sexo fetal:</td><td class="p-0 pl-3">:GEN</td></tr>';
+    InformeString += '<tr> <td class="p-0 pl-3">Genitales:</td><td class="p-0 pl-3">:GEN</td></tr>';
     InformeString = InformeString.replace(":GEN", GEN);
 
     var PLPO = document.querySelector('input[name="plpo.morfologia"]:checked').value;
