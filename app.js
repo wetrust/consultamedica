@@ -8407,7 +8407,7 @@ function informeMorfologia(){
     }
 
     if (ESTOV != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">- Cámara gástrica visible, ubicada a la izquierda: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">- Cámara gástrica visible, ubicada a izquierda: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr>';
         InformeString = InformeString.replace(":ESTOV", ESTOV);
         var ESTOVTXT = document.querySelector('input[name="ev.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":ESTOVTXT", ESTOVTXT);
@@ -8422,7 +8422,7 @@ function informeMorfologia(){
     }
 
     if (CORACV != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">- Corte de 4 cámaras visible: :CORACV</td><td class="p-0 pl-3">:CORACVTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">- Corte de 4 cámaras aspecto normal: :CORACV</td><td class="p-0 pl-3">:CORACVTXT</td></tr>';
         InformeString = InformeString.replace(":CORACV", CORACV);
         var CORACVTXT = document.querySelector('input[name="cv.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CORACVTXT", CORACVTXT);
@@ -8437,7 +8437,7 @@ function informeMorfologia(){
     }
 
     if (CORATSAN != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">- Corazón Tracto salida aórtico normal: :CORATSAN</td><td class="p-0 pl-3">:CORATSANTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">- Corazón Tracto salida aórtico aspecto normal: :CORATSAN</td><td class="p-0 pl-3">:CORATSANTXT</td></tr>';
         InformeString = InformeString.replace(":CORATSAN", CORATSAN);
         var CORATSANTXT = document.querySelector('input[name="tsan.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CORATSANTXT", CORATSANTXT);
@@ -8584,7 +8584,7 @@ function informeMorfologia(){
 
 
     var PLPO = the("plpo.morfologia").value;
-    InformeString += '<tr> <td class="p-0 pl-3">Placenta posición y morfología: :PLPO</td><td class="p-0 pl-3"></td></tr>';
+    InformeString += '<tr> <td class="p-0 pl-3">Placenta ubicación: :PLPO</td><td class="p-0 pl-3"></td></tr>';
     InformeString = InformeString.replace(":PLPO", PLPO);
 
 
