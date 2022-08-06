@@ -8579,7 +8579,7 @@ function informeMorfologia(){
     }
 
     var GEN = the("gen.morfologia").value;
-    InformeString += '<tr> <td class="p-0 pl-3">Genitales de aspecto:</td><td class="p-0 pl-3">:GEN</td></tr>';
+    InformeString += '<tr> <td class="p-0 pl-3" colspan="2">Genitales de aspecto: :GEN</td></tr>';
     InformeString = InformeString.replace(":GEN", GEN);
 
 
