@@ -1209,22 +1209,20 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4 col-form-label">Placenta posición</label>
-                            <div class="col-12 col-lg-8">
-                                <div class="d-flex justify-content-start align-items-center">
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-outline-secondary active">
-                                        <input type="radio" name="plpo.morfologia" value="normal" checked="checked"><small>Normal</small>
-                                        </label>
-                                        <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="plpo.morfologia" value="anormal"><small>Anormal</small>
-                                        </label>
-                                        <label class="btn btn-outline-secondary">
-                                            <input type="radio" name="plpo.morfologia" value="eliminar"><small>Excluir</small>
-                                        </label>
-                                    </div>
-                                    <input type="text" class="form-control shadow rounded border-0 ml-2">
-                                </div>
+                            <label class="col-sm-4 col-form-label">Placenta posición y morfología</label>
+                            <div class="col-sm-2">
+                                <input list="plpoList" class="form-control" id="plpo.morfologia">
+                                <datalist id="plpoList">
+                                    <option value="fúndica" selected></option>
+                                    <option value="Lateral derecha"></option>
+                                    <option value="Lateral izquierda"></option>
+                                    <option value="Anterior alta"></option>
+                                    <option value="Anterior baja"></option>
+                                    <option value="Posterior alta"></option>
+                                    <option value="Posterior baja"></option>
+                                    <option value="Previa parcial"></option>
+                                    <option value="Previa total"></option>
+                                </datalist>
                             </div>
                         </div>
                         <div class="form-group row">

@@ -8261,7 +8261,7 @@ function informeMorfologia(){
     }
 
     if (CTRANSV != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Corte transventricular: :CTRANSV</td><td class="p-0 pl-3">:CTRANSVTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">Corte transventricular de aspecto normal: :CTRANSV</td><td class="p-0 pl-3">:CTRANSVTXT</td></tr>';
         InformeString = InformeString.replace(":CTRANSV", CTRANSV);
         var CTRANSVTXT = document.querySelector('input[name="ctrv.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CTRANSVTXT", CTRANSVTXT);
@@ -8275,7 +8275,7 @@ function informeMorfologia(){
     }
 
     if (CTRT != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Corte transtalámico: :CTRT</td><td class="p-0 pl-3">:CTRTTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">Corte transtalámico de aspecto normal: :CTRT</td><td class="p-0 pl-3">:CTRTTXT</td></tr>';
         InformeString = InformeString.replace(":CTRT", CTRT);
         var CTRTTXT = document.querySelector('input[name="ctrt.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CTRTTXT", CTRTTXT);
@@ -8289,7 +8289,7 @@ function informeMorfologia(){
     }
 
     if (CTRC != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Corte transcerebelar: :CTRC</td><td class="p-0 pl-3">:CTRCTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">Corte transcerebelar de aspecto normal: :CTRC</td><td class="p-0 pl-3">:CTRCTXT</td></tr>';
         InformeString = InformeString.replace(":CTRC", CTRC);
         var CTRCTXT = document.querySelector('input[name="ctrc.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CTRCTXT", CTRCTXT);
@@ -8315,11 +8315,11 @@ function informeMorfologia(){
     if (ORBO == "normal"){
         ORBO = "Si"
     }else if (ORBO == "anormal"){
-        ORBO = ""
+        ORBO = "No"
     }
 
     if (ORBO != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Órbitas oculares: :ORBO</td><td class="p-0 pl-3">:ORBOTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">Órbitas oculares de aspecto normal: :ORBO</td><td class="p-0 pl-3">:ORBOTXT</td></tr>';
         InformeString = InformeString.replace(":ORBO", ORBO);
         var ORBOTXT = document.querySelector('input[name="orbo.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":ORBOTXT", ORBOTXT);
@@ -8329,11 +8329,11 @@ function informeMorfologia(){
     if (PERFA == "normal"){
         PERFA = "Si"
     }else if (PERFA == "anormal"){
-        PERFA = ""
+        PERFA = "No"
     }
 
     if (PERFA != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Perfil facial: :PERFA</td><td class="p-0 pl-3">:PERFATXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">Perfil facial de aspecto normal: :PERFA</td><td class="p-0 pl-3">:PERFATXT</td></tr>';
         InformeString = InformeString.replace(":PERFA", PERFA);
         var PERFATXT = document.querySelector('input[name="perfa.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":PERFATXT", PERFATXT);
@@ -8363,7 +8363,7 @@ function informeMorfologia(){
     }
 
     if (CUEL != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Cuello: :CUEL</td><td class="p-0 pl-3">:CUELTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">Cuello aspecto normal: :CUEL</td><td class="p-0 pl-3">:CUELTXT</td></tr>';
         InformeString = InformeString.replace(":CUEL", CUEL);
         var CUELTXT = document.querySelector('input[name="cuel.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CUELTXT", CUELTXT);
@@ -8378,7 +8378,7 @@ function informeMorfologia(){
     }
 
     if (TN != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Tórax aspecto Normal: :TN</td><td class="p-0 pl-3">:TNTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">Tórax aspecto normal: :TN</td><td class="p-0 pl-3">:TNTXT</td></tr>';
         InformeString = InformeString.replace(":TN", TN);
         var TNTXT = document.querySelector('input[name="tn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":TNTXT", TNTXT);
@@ -8423,7 +8423,7 @@ function informeMorfologia(){
     }
 
     if (ESTOV != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Cámara gástrica visible: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr>';
+        InformeString += '<tr> <td class="p-0 pl-3">Cámara gástrica visible, ubicada a la izquierda: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr>';
         InformeString = InformeString.replace(":ESTOV", ESTOV);
         var ESTOVTXT = document.querySelector('input[name="ev.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":ESTOVTXT", ESTOVTXT);
@@ -8595,23 +8595,13 @@ function informeMorfologia(){
     }
 
     var GEN = the("gen.morfologia").value;
-    InformeString += '<tr> <td class="p-0 pl-3">Genitales:</td><td class="p-0 pl-3">:GEN</td></tr>';
+    InformeString += '<tr> <td class="p-0 pl-3">Genitales de aspecto:</td><td class="p-0 pl-3">:GEN</td></tr>';
     InformeString = InformeString.replace(":GEN", GEN);
 
-    var PLPO = document.querySelector('input[name="plpo.morfologia"]:checked').value;
 
-    if (PLPO == "normal"){
-        PLPO = "Si"
-    }else if (PLPO == "anormal"){
-        PLPO = ""
-    }
-
-    if (PLPO != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3">Placenta posición: :PLPO</td><td class="p-0 pl-3">:PLPOTXT</td></tr>';
-        InformeString = InformeString.replace(":PLPO", PLPO);
-        var PLPOTXT = document.querySelector('input[name="plpo.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
-        InformeString = InformeString.replace(":PLPOTXT", PLPOTXT);
-    } 
+    var PLPO = the("plpo.morfologia").value;
+    InformeString += '<tr> <td class="p-0 pl-3">Placenta posición y morfología: :PLPO</td><td class="p-0 pl-3">:PLPOTXT</td></tr>';
+    InformeString = InformeString.replace(":PLPO", PLPO);
 
 
     var INDI = the("seguimiento.morfologia").value;
