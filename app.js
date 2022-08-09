@@ -1407,7 +1407,7 @@ $( document ).ready(function() {
                 the(email.button).dataset.parentmodal = this.dataset.modal;
 
                 $('#'+email.button).on("click", function(){
-                    var InformeString = informeMorfologiaClon();
+                    var InformeString = informeMorfologia();
 
                     var data = new FormData();
                     //data.append("licencia" , the("licencia").value);
