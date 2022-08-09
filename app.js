@@ -406,6 +406,14 @@ $( document ).ready(function() {
         $('#informacionPacienteNo').button('toggle');
     });
 
+    $('#continuarExmEcoSi').on('click', function(){
+        document.location.hash = "inicio";
+    });
+
+    $('#continuarExmEcoSi').on('focusout', function(){
+        $('#continuarExmEcoNo').button('toggle');
+    });
+
     $('#ajusteDosSi').on('click', function(){
         egP50 = String(the("egP50").value);
         if (egP50 != ""){

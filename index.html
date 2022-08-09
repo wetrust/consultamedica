@@ -1601,24 +1601,9 @@
             <p class="text-primary"><em>Configuración general y datos personales</em></p>
             <div class="card mx-5" style="background-color:#ebefff;">
                 <div class="card-body">
-                    <div class="row my-4">
-                        <div class="col-9">
-                            <h5 class="card-title text-dark">A.- Configuración datos personales.</h5>
-                        </div>
-                        <div class="col-3">
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-outline-secondary active" id="informacionPacienteNo" data-value="0">
-                                    <input type="radio" value="0" checked> NO
-                                </label>
-                                <label class="btn btn-outline-secondary" id="informacionPacienteSi" data-value="1">
-                                    <input type="radio" value="1"> SI
-                                </label>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row mb-4">
                         <div class="col-9">
-                            <h5 class="card-title text-dark">B.- Configuración datos generales.</h5>
+                            <h5 class="card-title text-dark">A.- Configuración datos generales.</h5>
                         </div>
                         <div class="col-3">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -1631,12 +1616,34 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-9 text-right">
-                            <a class="btn btn-secondary text-white" href="#inicio">CONTINUAR A EXÁMEN ECOGRÁFICO</a>
+                    <div class="row my-4">
+                        <div class="col-9">
+                            <h5 class="card-title text-dark">B.- Configuración datos personales.</h5>
                         </div>
                         <div class="col-3">
-                            <a href="#inicio"><img src="./img/derecha.png" title="volver a configuracion" style="height:45px"></a>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-outline-secondary active" id="informacionPacienteNo" data-value="0">
+                                    <input type="radio" value="0" checked> NO
+                                </label>
+                                <label class="btn btn-outline-secondary" id="informacionPacienteSi" data-value="1">
+                                    <input type="radio" value="1"> SI
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-9">
+                            <h5 class="card-title text-dark">C.- Continuar a exámen ecográfico.</h5>
+                        </div>
+                        <div class="col-3">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-outline-secondary active" id="continuarExmEcoNo" data-value="0">
+                                    <input type="radio" value="0" checked> NO
+                                </label>
+                                <label class="btn btn-outline-secondary" id="continuarExmEcoSi" data-value="1">
+                                    <input type="radio" value="1"> SI
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
