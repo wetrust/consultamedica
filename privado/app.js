@@ -1499,6 +1499,7 @@ $( document ).ready(function() {
 
                     //determinar si el email es seleccionado o escrito
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+                        makeModalSendEmail()
                         //console.log(response);
                         //response.blob().then((successMessage) => {
                         //    var link = document.createElement('a');
@@ -1548,6 +1549,7 @@ $( document ).ready(function() {
                     if (data.get("email") == null){return false}
 
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+                        makeModalSendEmail()    
                         //console.log(response);
                         //response.blob().then((successMessage) => {
                         //    var link = document.createElement('a');
@@ -1625,6 +1627,7 @@ $( document ).ready(function() {
                     if (data.get("email") == null){return false}
 
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+                        makeModalSendEmail()
                         //console.log(response);
                         //response.blob().then((successMessage) => {
                         //    var link = document.createElement('a');
@@ -1674,6 +1677,7 @@ $( document ).ready(function() {
                     if (data.get("email") == null){return false}
 
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+                        makeModalSendEmail()
                         //console.log(response);
                         //response.blob().then((successMessage) => {
                         //    var link = document.createElement('a');
@@ -1724,6 +1728,7 @@ $( document ).ready(function() {
                     if (data.get("email") == null){return false}
 
                     fetch('https://servidor.crecimientofetal.cl/crecimiento/informe', {method: 'POST',body: data, mode: 'cors'}).then(function(response) {
+                        makeModalSendEmail()
                         //console.log(response);
                         //response.blob().then((successMessage) => {
                         //    var link = document.createElement('a');
@@ -9021,6 +9026,24 @@ function informeDoppler(){
     InformeString = InformeString.replace(":LCONTROL", LCONTROL);
 
     return InformeString;
+}
+
+function makeModalSendEmail(){
+    let _modal = modal();
+
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+    the(_modal.titulo).innerHTML = "Enviado";
+    the(_modal.titulo).classList.add("mx-auto");
+    the(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
+
+    let _contenido = '<p>Informe Enviado</p>'
+
+    the(_modal.contenido).innerHTML = _contenido;
+    the(_modal.id).children[0].classList.remove("modal-lg");
+
+    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+    return _modal;
 }
 
 function informeDopplerClon(){
