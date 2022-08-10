@@ -551,6 +551,11 @@ $( document ).ready(function() {
         }
     });
 
+    $("#embrion\\.clon").on("change", function(){
+        the("embrion").value = this.value
+        $("#embrion").trigger("click")
+    })
+
     $("#embrion, #embrion\\.clon").on("change", function(){
         let optiones = ["no se observa aun", "no se observa"];
         let cardio = ["con act. cardiaca (+)"];
@@ -5940,6 +5945,11 @@ function infPrecoz(){
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
         var LINEA11 = "";
         LINEA12 = "Embrion no se observa";
+    } else if (the("embrion").value == "no se observa aun"){
+        var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
+        var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
+        var LINEA11 = "";
+        LINEA12 = "no se observa aun";
     } else {
         var LINEA9 = "Gestación Inicial<br>Utero " + the("utero-ubic1").value + " " + the("utero-ubic2").value + ", " + the("cuerpo-uterino").value + ".";
         var LINEA10 = "Exploración anexial " + the("anexo-derecho").value;
