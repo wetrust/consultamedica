@@ -1049,9 +1049,13 @@ $( document ).ready(function() {
         //e.target  newly activated tab
         //e.relatedTarget  previous active tab
         if (e.target.id == "morfologia-morfologia-tab"){
+            the("morfologia-paciente").classList.add("d-none")
             the("vlp.morfologia").focus()
         }else if (e.target.id == "morfologia-flujometria-tab"){
             the("art.ut.d.morfologia").focus()
+            the("morfologia-paciente").classList.remove("d-none")
+        }else{
+            the("morfologia-paciente").classList.remove("d-none")
         }
 
     })
