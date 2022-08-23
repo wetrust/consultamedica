@@ -8272,13 +8272,11 @@ function informeMorfologia(){
         CEES = "No"
     }
 
-    if (CEES != "eliminar"){
-        InformeString += '<tr> <td class="p-0 pl-3" style="width: 360px;">Cabeza, estructuras encefálicas simétricas: :CEES</td><td class="p-0 pl-3">:CEESTXT</td></tr>';
-        InformeString = InformeString.replace(":CEES", CEES);
-        var CEESTXT = document.querySelector('input[name="cees.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+    InformeString += '<tr> <td class="p-0 pl-3" style="width: 360px;">Cabeza, estructuras encefálicas simétricas: :CEES</td><td class="p-0 pl-3">:CEESTXT</td></tr>';
+    InformeString = InformeString.replace(":CEES", CEES);
+    var CEESTXT = document.querySelector('input[name="cees.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
 
-        InformeString = InformeString.replace(":CEESTXT", CEESTXT);
-    }
+    InformeString = InformeString.replace(":CEESTXT", CEESTXT);
 
     var CTRANSV = document.querySelector('input[name="ctrv.morfologia"]:checked').value;
     if (CTRANSV == "normal"){
@@ -8287,12 +8285,10 @@ function informeMorfologia(){
         CTRANSV = "No"
     }
 
-    if (CTRANSV != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">- Corte transventricular de aspecto normal: :CTRANSV</td><td class="p-0 pl-3">:CTRANSVTXT</td></tr>';
         InformeString = InformeString.replace(":CTRANSV", CTRANSV);
         var CTRANSVTXT = document.querySelector('input[name="ctrv.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CTRANSVTXT", CTRANSVTXT);
-    }
 
     var CTRT = document.querySelector('input[name="ctrt.morfologia"]:checked').value;
     if (CTRT == "normal"){
@@ -8301,12 +8297,10 @@ function informeMorfologia(){
         CTRT = "No"
     }
 
-    if (CTRT != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">- Corte transtalámico de aspecto normal: :CTRT</td><td class="p-0 pl-3">:CTRTTXT</td></tr>';
         InformeString = InformeString.replace(":CTRT", CTRT);
         var CTRTTXT = document.querySelector('input[name="ctrt.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CTRTTXT", CTRTTXT);
-    }
 
     var CTRC = document.querySelector('input[name="ctrc.morfologia"]:checked').value;
     if (CTRC == "normal"){
@@ -8315,12 +8309,10 @@ function informeMorfologia(){
         CTRC = "No"
     }
 
-    if (CTRC != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">- Corte transcerebelar de aspecto normal: :CTRC</td><td class="p-0 pl-3">:CTRCTXT</td></tr>';
         InformeString = InformeString.replace(":CTRC", CTRC);
         var CTRCTXT = document.querySelector('input[name="ctrc.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CTRCTXT", CTRCTXT);
-    }
 
     var ORBO = document.querySelector('input[name="orbo.morfologia"]:checked').value;
     if (ORBO == "normal"){
@@ -8329,12 +8321,10 @@ function informeMorfologia(){
         ORBO = "No"
     }
 
-    if (ORBO != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Órbitas oculares de aspecto normal: :ORBO</td><td class="p-0 pl-3">:ORBOTXT</td></tr>';
         InformeString = InformeString.replace(":ORBO", ORBO);
         var ORBOTXT = document.querySelector('input[name="orbo.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":ORBOTXT", ORBOTXT);
-    } 
 
     var PERFA = document.querySelector('input[name="perfa.morfologia"]:checked').value;
     if (PERFA == "normal"){
@@ -8343,12 +8333,10 @@ function informeMorfologia(){
         PERFA = "No"
     }
 
-    if (PERFA != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Perfil facial de aspecto normal: :PERFA</td><td class="p-0 pl-3">:PERFATXT</td></tr>';
         InformeString = InformeString.replace(":PERFA", PERFA);
         var PERFATXT = document.querySelector('input[name="perfa.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":PERFATXT", PERFATXT);
-    }
 
     var LNN = document.querySelector('input[name="lnn.morfologia"]:checked').value;
 
@@ -8358,12 +8346,10 @@ function informeMorfologia(){
         LNN = "No"
     }
 
-    if (LNN != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Boca y fosas nasales aspecto normal: :LNN</td><td class="p-0 pl-3">:LNNTXT</td></tr>';
         InformeString = InformeString.replace(":LNN", LNN);
         var LNNTXT = document.querySelector('input[name="lnn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":LNNTXT", LNNTXT);
-    }
 
     var CUEL = document.querySelector('input[name="cuel.morfologia"]:checked').value;
 
@@ -8373,12 +8359,10 @@ function informeMorfologia(){
         CUEL = "No"
     }
 
-    if (CUEL != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Cuello aspecto normal: :CUEL</td><td class="p-0 pl-3">:CUELTXT</td></tr>';
         InformeString = InformeString.replace(":CUEL", CUEL);
         var CUELTXT = document.querySelector('input[name="cuel.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CUELTXT", CUELTXT);
-    }
 
     var TN = document.querySelector('input[name="tn.morfologia"]:checked').value;
 
@@ -8388,12 +8372,10 @@ function informeMorfologia(){
         TN = "No"
     }
 
-    if (TN != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Tórax aspecto normal: :TN</td><td class="p-0 pl-3">:TNTXT</td></tr>';
         InformeString = InformeString.replace(":TN", TN);
         var TNTXT = document.querySelector('input[name="tn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":TNTXT", TNTXT);
-    }
 
     var PPAN = document.querySelector('input[name="ppan.morfologia"]:checked').value;
 
@@ -8403,12 +8385,10 @@ function informeMorfologia(){
         PPAN = "No"
     }
 
-    if (PPAN != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">- Parénquima pulmonar aspecto normal: :PPAN</td><td class="p-0 pl-3">:PPANTXT</td></tr>';
         InformeString = InformeString.replace(":PPAN", PPAN);
         var PPANTXT = document.querySelector('input[name="ppan.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":PPANTXT", PPANTXT);
-    }
 
     var CRZN = document.querySelector('input[name="crzn.morfologia"]:checked').value;
 
@@ -8418,12 +8398,10 @@ function informeMorfologia(){
         CRZN = "No"
     }
 
-    if (CRZN != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Corazón tamaño y ubicación normal: :CRZN</td><td class="p-0 pl-3">:CRZNTXT</td></tr>';
         InformeString = InformeString.replace(":CRZN", CRZN);
         var CRZNTXT = document.querySelector('input[name="crzn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CRZNTXT", CRZNTXT);
-    }
 
     var ESTOV = document.querySelector('input[name="ev.morfologia"]:checked').value;
 
@@ -8433,12 +8411,10 @@ function informeMorfologia(){
         ESTOV = "No"
     }
 
-    if (ESTOV != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">- Cámara gástrica visible, ubicada a izquierda: :ESTOV</td><td class="p-0 pl-3">:ESTOVTXT</td></tr>';
         InformeString = InformeString.replace(":ESTOV", ESTOV);
         var ESTOVTXT = document.querySelector('input[name="ev.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":ESTOVTXT", ESTOVTXT);
-    }
 
     var CORACV = document.querySelector('input[name="cv.morfologia"]:checked').value;
 
@@ -8448,12 +8424,10 @@ function informeMorfologia(){
         CORACV = "No"
     }
 
-    if (CORACV != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">- Corte de 4 cámaras aspecto normal: :CORACV</td><td class="p-0 pl-3">:CORACVTXT</td></tr>';
         InformeString = InformeString.replace(":CORACV", CORACV);
         var CORACVTXT = document.querySelector('input[name="cv.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CORACVTXT", CORACVTXT);
-    }
 
     var CORATSAN = document.querySelector('input[name="tsan.morfologia"]:checked').value;
 
@@ -8463,12 +8437,10 @@ function informeMorfologia(){
         CORATSAN = "No"
     }
 
-    if (CORATSAN != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">- Corazón Tracto salida aórtico normal: :CORATSAN</td><td class="p-0 pl-3">:CORATSANTXT</td></tr>';
         InformeString = InformeString.replace(":CORATSAN", CORATSAN);
         var CORATSANTXT = document.querySelector('input[name="tsan.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CORATSANTXT", CORATSANTXT);
-    }
 
     var CORATSPN = document.querySelector('input[name="tspn.morfologia"]:checked').value;
 
@@ -8478,12 +8450,10 @@ function informeMorfologia(){
         CORATSPN = "No"
     }
 
-    if (CORATSPN != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">- Corazón Tracto de salida pulmonar normal: :CORATSPN</td><td class="p-0 pl-3">:CORATSPNTXT</td></tr>';
         InformeString = InformeString.replace(":CORATSPN", CORATSPN);
         var CORATSPNTXT = document.querySelector('input[name="tspn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CORATSPNTXT", CORATSPNTXT);
-    }
 
     var CORAVTV = document.querySelector('input[name="vtv.morfologia"]:checked').value;
 
@@ -8493,12 +8463,10 @@ function informeMorfologia(){
         CORAVTV = "No"
     }
 
-    if (CORAVTV != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">- Corazón 3 vasos tráquea visible: :CORAVTV</td><td class="p-0 pl-3">:CORAVTVTXT</td></tr>';
         InformeString = InformeString.replace(":CORAVTV", CORAVTV);
         var CORAVTVTXT = document.querySelector('input[name="vtv.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":CORAVTVTXT", CORAVTVTXT);
-    }
 
     var RINOV = document.querySelector('input[name="rv.morfologia"]:checked').value;
 
@@ -8508,12 +8476,10 @@ function informeMorfologia(){
         RINOV = "No"
     }
 
-    if (RINOV != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Riñones visibles, aspecto normal: :RINOV</td><td class="p-0 pl-3">:RINOVTXT</td></tr>';
         InformeString = InformeString.replace(":RINOV", RINOV);
         var RINOVTXT = document.querySelector('input[name="rv.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":RINOVTXT", RINOVTXT);
-    }
 
     var VEJIV = document.querySelector('input[name="vv.morfologia"]:checked').value;
 
@@ -8523,12 +8489,10 @@ function informeMorfologia(){
         VEJIV = "No"
     }
 
-    if (VEJIV != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Vejiga visible, con 2 art. umbilicales: :VEJIV</td><td class="p-0 pl-3">:VEJIVTXT</td></tr>';
         InformeString = InformeString.replace(":VEJIV", VEJIV);
         var VEJIVTXT = document.querySelector('input[name="vv.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":VEJIVTXT", VEJIVTXT);
-    }
 
     var PARNOR = document.querySelector('input[name="pn.morfologia"]:checked').value;
 
@@ -8538,12 +8502,10 @@ function informeMorfologia(){
         PARNOR = "No"
     }
 
-    if (PARNOR != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Pared abdominal aspecto normal: :PARNOR</td><td class="p-0 pl-3">:PARNORTXT</td></tr>';
         InformeString = InformeString.replace(":PARNOR", PARNOR);
         var PARNORTXT = document.querySelector('input[name="pn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":PARNORTXT", PARNORTXT);
-    }
 
     var ABDO = document.querySelector('input[name="abdo.morfologia"]:checked').value;
 
@@ -8553,12 +8515,10 @@ function informeMorfologia(){
         ABDO = "No"
     }
 
-    if (ABDO != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Asas abdominales aspecto normal: :ABDO</td><td class="p-0 pl-3">:ABDOTXT</td></tr>';
         InformeString = InformeString.replace(":ABDO", ABDO);
         var ABDOTXT = document.querySelector('input[name="abdo.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":ABDOTXT", ABDOTXT);
-    }
 
     var COLUMN = document.querySelector('input[name="cn.morfologia"]:checked').value;
 
@@ -8568,12 +8528,10 @@ function informeMorfologia(){
         COLUMN = "No"
     }
 
-    if (COLUMN != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Columna vertebral aspecto normal: :COLUMN</td><td class="p-0 pl-3">:COLUMNTXT</td></tr>';
         InformeString = InformeString.replace(":COLUMN", COLUMN);
         var COLUMNTXT = document.querySelector('input[name="cn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":COLUMNTXT", COLUMNTXT);
-    }
 
     var EXSUP = document.querySelector('input[name="esn.morfologia"]:checked').value;
 
@@ -8583,12 +8541,10 @@ function informeMorfologia(){
         EXSUP = "No"
     }
 
-    if (EXSUP != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Extremidades superiores de aspecto normal: :EXSUP</td><td class="p-0 pl-3">:EXSUPTXT</td></tr>';
         InformeString = InformeString.replace(":EXSUP", EXSUP);
         var EXSUPTXT = document.querySelector('input[name="esn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":EXSUPTXT", EXSUPTXT);
-    }
 
     var EXINF = document.querySelector('input[name="ein.morfologia"]:checked').value;
 
@@ -8598,12 +8554,10 @@ function informeMorfologia(){
         EXINF = "No"
     }
 
-    if (EXINF != "eliminar"){
         InformeString += '<tr> <td class="p-0 pl-3">Extremidades inferiores de aspecto normal: :EXINF</td><td class="p-0 pl-3">:EXINFTXT</td></tr>';
         InformeString = InformeString.replace(":EXINF", EXINF);
         var EXINFTXT = document.querySelector('input[name="ein.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
         InformeString = InformeString.replace(":EXINFTXT", EXINFTXT);
-    }
 
     var GEN = the("gen.morfologia").value;
     InformeString += '<tr> <td class="p-0 pl-3" colspan="2">Genitales de aspecto: :GEN</td></tr>';
