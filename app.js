@@ -1049,13 +1049,9 @@ $( document ).ready(function() {
         //e.target  newly activated tab
         //e.relatedTarget  previous active tab
         if (e.target.id == "morfologia-morfologia-tab"){
-            the("morfologia-paciente").classList.add("d-none")
             the("vlp.morfologia").focus()
-        }else if (e.target.id == "morfologia-flujometria-tab"){
+        }else if(e.target.id == "morfologia-flujometria-tab"){
             the("art.ut.d.morfologia").focus()
-            the("morfologia-paciente").classList.remove("d-none")
-        }else{
-            the("morfologia-paciente").classList.remove("d-none")
         }
 
     })
@@ -8266,7 +8262,7 @@ function informeMorfologia(){
     InformeString += '</tbody></table><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p><div class="newpage" pagebreak="true"></div>'
     var membrete = '<div class="container"><div style="width: 45%; text-align: center;" class="membrete">'+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") +'</div></div>'
     InformeString += membrete;
-    InformeString += '<div class="container-fluid" style="margin-top: 3rem;"><h4 class="page-header text-center">Ecografía 22 - 24 semanas para evaluación de morfología fetal</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"></td></tr></tbody> </table> <p style="color: #045dab; margin-top: 2rem;"><strong>C).- EVALUACIÓN MORFOLOGÍA FETAL (24 cortes)</strong></p><table class="table"> <tbody>';
+    InformeString += '<div class="container-fluid"><p style="color: #045dab; margin-top: 2rem;"><strong>C).- EVALUACIÓN MORFOLOGÍA FETAL (24 cortes)</strong></p><table class="table"> <tbody>';
 
     var CEES = document.querySelector('input[name="cees.morfologia"]:checked').value;
 
