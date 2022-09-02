@@ -8088,6 +8088,7 @@ function informeGinecologico(){
 
     let comentario = the("comentario.ginecologica").value;
     comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
+    comentario = "<strong><em>" + comentario + "</em></strong>"
 
     let patologiaObstetrica = the("patologiaObstetricaUno").value;
     let edadmaterna = $( "select[name='edad_materna']").val();

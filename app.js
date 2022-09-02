@@ -7995,6 +7995,7 @@ function informeGinecologico()
 
     let comentario = the("comentario.ginecologica").value;
     comentario = (typeof comentario !== 'undefined') ? comentario.replace(/\r?\n/g, "<br>") : "";
+    comentario = "<strong><em>" + comentario + "</em></strong>"
 
     let patologiaObstetrica = the("patologiaObstetricaUno").value;
     let edadmaterna = these("edad_materna")[0].value;
