@@ -8568,7 +8568,6 @@ function informeMorfologia(){
     InformeString += '<tr> <td class="p-0 pl-3" colspan="2">Placenta ubicación: :PLPO</td></tr>';
     InformeString = InformeString.replace(":PLPO", PLPO);
 
-
     var INDI = the("seguimiento.morfologia").value;
     INDI =  (typeof INDI !== 'undefined') ? INDI.replace(/\r?\n/g, "<br>") : INDI = '';
 
