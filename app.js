@@ -1351,6 +1351,10 @@ $( document ).ready(function() {
         this.parentElement.children[1].value = this.value
     }
 
+    the("ventr.morfologia").onchange  = function(){
+        this.parentElement.children[1].value = this.value
+    }
+
 });
 
 // Controlador de input clones
