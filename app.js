@@ -727,8 +727,6 @@ $( document ).ready(function() {
         }
     });
 
-
-
     $("#calc\\.test").on("click", function(){
         if (the("calc.test.div").classList.contains("d-none") == true){
             the("calc.test.div").classList.remove("d-none");
@@ -1324,8 +1322,35 @@ $( document ).ready(function() {
     });
 
     the("motivo-examen").onblur = function(){
-        the("motivo-clone").value = this.value
+        the("motivo-clone").value = this.value 
     }
+
+    the("fei.morfologia").onchange  = function(){
+        this.parentElement.children[1].value = this.value
+    }
+    the("hl.morfologia").onchange  = function(){
+        this.parentElement.children[1].value = this.value
+    }
+    the("fc.morfologia").onchange  = function(){
+        this.parentElement.children[1].value = this.value
+    }
+    the("hc.morfologia").onchange  = function(){
+        this.parentElement.children[1].value = this.value
+    }
+    the("ie.morfologia").onchange  = function(){
+        this.parentElement.children[1].value = this.value
+    }
+    the("apn.morfologia").onchange  = function(){
+        this.parentElement.children[1].value = this.value
+    }
+    the("asda.morfologia").onchange  = function(){
+        this.parentElement.children[1].value = this.value
+    }
+
+    the("hnah.morfologia").onchange  = function(){
+        this.parentElement.children[1].value = this.value
+    }
+
 });
 
 // Controlador de input clones
