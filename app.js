@@ -9231,8 +9231,9 @@ function calularRiesgoMorfologiaAPriori(){
     Number(the("hnah.morfologia").value) * 
     Number(the("ventr.morfologia").value)
 
+    the("coe.acum.morfologia").value = sumatoria 
     the("rap.morfologia").innerText = Number(1/Number(the("rapus.morfologia").value)).toFixed(4) 
     the("rapp.morfologia").innerText = (Number(1/Number(the("rapus.morfologia").value)).toFixed(4)) * 100 + " %"
     the("raj.morfologia").innerText = (Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4) 
-    the("rajp.morfologia").innerText = ((Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4)) * 100 +" %" 
+    the("rajp.morfologia").innerText = ((Number(1/Number(the("rapus.morfologia").value)) * sumatoria) * 100).toFixed(4) +" %" 
 }
