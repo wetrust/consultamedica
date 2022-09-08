@@ -1327,32 +1327,41 @@ $( document ).ready(function() {
 
     the("fei.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
+        calularRiesgoMorfologiaAPriori()
     }
     the("hl.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
+        calularRiesgoMorfologiaAPriori()
     }
     the("fc.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
+        calularRiesgoMorfologiaAPriori()
     }
     the("hc.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
+        calularRiesgoMorfologiaAPriori()
     }
     the("ie.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
+        calularRiesgoMorfologiaAPriori()
     }
     the("apn.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
+        calularRiesgoMorfologiaAPriori()
     }
     the("asda.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
+        calularRiesgoMorfologiaAPriori()
     }
 
     the("hnah.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
+        calularRiesgoMorfologiaAPriori()
     }
 
     the("ventr.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
+        calularRiesgoMorfologiaAPriori()
     }
 
 });
@@ -9208,4 +9217,22 @@ function mayusculas(el){
 const capitalize = (s) => {
     if (typeof s !== 'string') return ''
     return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+function calularRiesgoMorfologiaAPriori(){
+    var sumatoria = 
+    Number(the("fei.morfologia").value) * 
+    Number(the("hl.morfologia").value) * 
+    Number(the("fc.morfologia").value) * 
+    Number(the("hc.morfologia").value) * 
+    Number(the("ie.morfologia").value) * 
+    Number(the("apn.morfologia").value) * 
+    Number(the("asda.morfologia").value) * 
+    Number(the("hnah.morfologia").value) * 
+    Number(the("ventr.morfologia").value)
+
+    the("rap.morfologia").innerText = Number(1/Number(the("rapus.morfologia").value)).toFixed(4) 
+    the("rapp.morfologia").innerText = (Number(1/Number(the("rapus.morfologia").value)).toFixed(4)) * 100 + " %"
+    the("raj.morfologia").innerText = (Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4) 
+    the("rajp.morfologia").innerText = ((Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4)) * 100 +" %" 
 }
