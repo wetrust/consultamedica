@@ -390,7 +390,8 @@ function calcularRiesgo(){
         factor=relPrev();
         risk=riskPriori();
          
-        riskT21=Math.round(riskT21);
+		//desactivar redondeo
+        //riskT21=Math.round(riskT21);
 
         var sDownRepetido = $('#examen\\.eco\\.primtrim\\.adicionales\\.translucencia\\.trisomia\\.si').is(':checked');
 
