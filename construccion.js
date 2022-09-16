@@ -1,13 +1,13 @@
 $(document).ready(function(){
     var i;
-    for (i = 14; i <51; i++) {
-        if (i == 20){
-            $("#edadmaternaprimtrim").append('<option value="'+ i +'" selected>' + i + ' años</option>');
-        }
-        else{
-            $("#edadmaternaprimtrim").append('<option value="'+ i +'">' + i + ' años</option>');
-        }
-    }
+    //for (i = 14; i <51; i++) {
+    //    if (i == 20){
+    //        $("#edadmaternaprimtrim").append('<option value="'+ i +'" selected>' + i + ' años</option>');
+    //    }
+    //    else{
+    //        $("#edadmaternaprimtrim").append('<option value="'+ i +'">' + i + ' años</option>');
+    //    }
+    //}
     for (i = 45; i < 84; i++) {
         $("#loncefalocaudal").append('<option value="'+ i +'">' + i + ' mm</option>');
     }
@@ -373,7 +373,7 @@ function cacularLR(mixModCRL,mixModTris){
 function calcularRiesgo(){
     var compr = parseInt($("#loncefalocaudal").val());
     var trasl = parseInt($("#translunucal").val());
-    var age = Number(document.getElementById("edadmaternaprimtrim").value); 
+    var age = Number(document.getElementById("edadmaternaprimtrim").dataset.value); 
         
     if( age!== null  && !Number.isNaN(compr)  ){ 
 

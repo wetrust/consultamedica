@@ -1380,7 +1380,8 @@ $( document ).ready(function() {
 
         months = months - (year * 12)
 
-        the("edadmaternaprimtrim").value = year + (months / 10);
+        the("edadmaternaprimtrim").value = year + " años, y " + months + " meses";
+        the("edadmaternaprimtrim").dataset.value = year + (months / 10);
     }
 
     the("edadMaternaFechaTrisono").onchange();
