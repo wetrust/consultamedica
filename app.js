@@ -244,7 +244,7 @@ $( document ).ready(function() {
     //controlador de botones inicio
     $("#menu\\.modulo\\.activo").on("click", function(){
         var botones = ["menu.modulo.activo.uno", "menu.modulo.activo.dos", "menu.modulo.activo.tres", "menu.modulo.activo.cuatro"];
-        
+
         if (the(botones[0]).classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
                 the(value).classList.remove("d-none");
