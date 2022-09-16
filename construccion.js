@@ -8,7 +8,7 @@ $(document).ready(function(){
     //        $("#edadmaternaprimtrim").append('<option value="'+ i +'">' + i + ' años</option>');
     //    }
     //}
-    for (i = 45; i < 84; i++) {
+    for (i = 45; i < 85; i++) {
         $("#loncefalocaudal").append('<option value="'+ i +'">' + i + ' mm</option>');
     }
     $("#psisTamizaje").on("keyup", function(e){
