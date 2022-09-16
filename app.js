@@ -1364,6 +1364,13 @@ $( document ).ready(function() {
         calularRiesgoMorfologiaAPriori()
     }
 
+    the("edadMaternaFechaTrisono").onchange = function(){
+        let f1 = fechas.toDate(this.value);
+        let f2 = new Date
+
+        the("edadmaternaprimtrim").value = f2.getFullYear() - f1.getFullYear()
+    }
+
 });
 
 // Controlador de input clones
