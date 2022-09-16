@@ -309,16 +309,14 @@ function riskPriori(age,gestation){
     d=0.286;
 
 	// formula antigua
-	//g=c*age;
+	g=c*age;
 
 	//nueva formula que agrega los meses de la edad materna
 	//como los meses van hasta el 12 y los numeros decimales del 1 al 10
-	nAge = (age - Math.trunc(age)) * 10
-	nAge = (1.2 * nAge) / 10
-
-	age = Math.trunc(age) + nAge
-
-	g=c*age
+	//nAge = (age - Math.trunc(age)) * 10
+	//nAge = (1.2 * nAge) / 10
+	//age = Math.trunc(age) + nAge
+	//g=c*age
 
     risk=1/(a+Math.exp(b+(g)) );
     riskFinal=risk*factorG

@@ -1366,10 +1366,24 @@ $( document ).ready(function() {
 
     the("edadMaternaFechaTrisono").onchange = function(){
         let f1 = fechas.toDate(this.value);
-        let f2 = new Date
+        let f2 = new Date;
+        //the("edadmaternaprimtrim").value = f2.getFullYear() - f1.getFullYear()
 
-        the("edadmaternaprimtrim").value = f2.getFullYear() - f1.getFullYear()
+        //impreciso
+        var months;
+        months = (f2.getFullYear() - f1.getFullYear()) * 12;
+        months -= f1.getMonth();
+        months += f2.getMonth();
+        months = months <= 0 ? 0 : months;
+
+        let year = f2.getFullYear() - f1.getFullYear()
+
+        months = months - (year * 12)
+
+        the("edadmaternaprimtrim").value = year + (months / 10);
     }
+
+    the("edadMaternaFechaTrisono").onchange();
 
 });
 
