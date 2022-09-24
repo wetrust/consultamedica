@@ -1449,6 +1449,36 @@ $( document ).ready(function() {
             the("info.cervix.prim").classList.remove("d-none");
         }
     });
+
+    $("#uteroDim1").on("change", function(){
+        let uteroDim1 = Number.isNaN(the("uteroDim1").value) ? 0 : Number(the("uteroDim1").value)
+        let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
+        let uteroDim3 = Number.isNaN(the("uteroDim3").value) ? 0 : Number(the("uteroDim3").value)
+
+        let uternoVolumen = uteroDim1 + uteroDim2 + uteroDim3
+
+        the("uteroDim3").value = uternoVolumen
+    })
+
+    $("#uteroDim2").on("change", function(){
+        let uteroDim1 = Number.isNaN(the("uteroDim1").value) ? 0 : Number(the("uteroDim1").value)
+        let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
+        let uteroDim3 = Number.isNaN(the("uteroDim3").value) ? 0 : Number(the("uteroDim3").value)
+
+        let uternoVolumen = uteroDim1 + uteroDim2 + uteroDim3
+
+        the("uteroDim3").value = uternoVolumen
+    })
+
+    $("#uteroDim3").on("change", function(){
+        let uteroDim1 = Number.isNaN(the("uteroDim1").value) ? 0 : Number(the("uteroDim1").value)
+        let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
+        let uteroDim3 = Number.isNaN(the("uteroDim3").value) ? 0 : Number(the("uteroDim3").value)
+
+        let uternoVolumen = uteroDim1 + uteroDim2 + uteroDim3
+
+        the("uteroDim3").value = uternoVolumen
+    })
 });
 
 // Controlador de input clones
@@ -1775,7 +1805,7 @@ $( document ).ready(function() {
             the("uteroDim1").value = ""
             the("uteroDim2").value = ""
             the("uteroDim3").value = ""
-            the("uteroDiu").value = ""
+            the("uternoVolumen").value = ""
             the("endometDesc1").value = ""
             the("endometDesc2").value = ""
             the("endometGrosor").value = ""
@@ -1803,7 +1833,7 @@ $( document ).ready(function() {
 // Controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia","p.sis.morfologia", "", "vlp.morfologia", "vld.morfologia", "utUbicacion1", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3", "uteroDiu", "endometDesc1", "endometDesc2", "endometGrosor", "endometObs", "anexDerecho", "anexIzquierdo", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "espacioRetro", "comentario.ginecologica", "ut.der.primtrim", "ut.izq.primtrim"];
+        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvm", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia","p.sis.morfologia", "", "vlp.morfologia", "vld.morfologia", "utUbicacion1", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3", "uternoVolumen", "endometDesc1", "endometDesc2", "endometGrosor", "endometObs", "anexDerecho", "anexIzquierdo", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "espacioRetro", "comentario.ginecologica", "ut.der.primtrim", "ut.izq.primtrim"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -8070,10 +8100,10 @@ function valccca() {
 }
 
 function informeGinecologico(){
-    let informe = '<div class="container-fluid"><h4 class="page-header text-center">INFORME ECOGRÁFICO GINECOLÓGICO ALTERNATIVO</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid" style="margin-top: 1rem;"> <p> <strong><em>Datos generales</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0">Nombre de paciente:</td><td class="p-0">:PACIENTE</td><td class="p-0">Edad Materna:</td><td class="p-0">:EDADMATERNA años.</td></tr><tr> <td class="p-0">RUT (DNI):</td><td class="p-0">:IDPACIENTE</td><td class="p-0">Fecha de Exámen:</td><td class="p-0">:FEXAMEN</td></tr><tr> <td class="p-0">Motivo exámen:</td><td class="p-0">:MOTIVEXM</td><td class="p-0"></td><td class="p-0"></td></tr><tr> <td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Antecedentes clínicos</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="w-50 p-0">FUR referida:</td><td class="p-0">:FUM</td></tr><tr> <td class="w-50 p-0">Días del ciclo mestrual:</td><td class="p-0">:DIACICLO días.</td></tr><tr> <td class="w-50 p-0">Patología Gineco - obstétrica:</td><td class="p-0">:PATGINEOBS</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Descripción hallazgos ecográficos</em></strong> </p><p> Utero :utUbicacion1 :utUbicacion2 , cuerpo uterino :cuerpoUterino <br/> Dimensiones uterinas :uteroDim1 x :uteroDim2 x :uteroDim3 mm<br/> DIU: :uteroDiu <br/> Endometrio :endometDesc1 , :endometDesc2 , :endometGrosor mm<br/> :endometObs </p><p> Anexo Derecho :anexDerecho<br/> &nbsp;&nbsp;&nbsp;&nbsp;- Ovario Derecho :ovarDere </p><p> Anexo Izquierdo :anexIzquierdo<br/> &nbsp;&nbsp;&nbsp;&nbsp;- Ovario Izquierdo :ovarIzquier </p><p>Espacio retrouterino ( Douglas ): :espacioRetro</p></div><div class="container-fluid"> <p><strong><em>Comentarios y observaciones:</em></strong></p><p>:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 7rem;"> <p style="text-align: right;" class="top40">Ecografista: <strong>Rudecindo Lagos</strong></p><p style="margin-top: 2rem; border-top: 1px solid #000; width: 100% !important; display: block;">Fecha Informe: :DATEINFORME</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"> <strong> El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
+    let informe = '<div class="container-fluid"><h4 class="page-header text-center">INFORME ECOGRÁFICO GINECOLÓGICO ALTERNATIVO</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid" style="margin-top: 1rem;"> <p> <strong><em>Datos generales</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0">Nombre de paciente:</td><td class="p-0">:PACIENTE</td><td class="p-0">Edad Materna:</td><td class="p-0">:EDADMATERNA años.</td></tr><tr> <td class="p-0">RUT (DNI):</td><td class="p-0">:IDPACIENTE</td><td class="p-0">Fecha de Exámen:</td><td class="p-0">:FEXAMEN</td></tr><tr> <td class="p-0">Motivo exámen:</td><td class="p-0">:MOTIVEXM</td><td class="p-0"></td><td class="p-0"></td></tr><tr> <td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Antecedentes clínicos</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="w-50 p-0">FUR referida:</td><td class="p-0">:FUM</td></tr><tr> <td class="w-50 p-0">Días del ciclo mestrual:</td><td class="p-0">:DIACICLO días.</td></tr><tr> <td class="w-50 p-0">Patología Gineco - obstétrica:</td><td class="p-0">:PATGINEOBS</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Descripción hallazgos ecográficos</em></strong> </p><p> Utero :utUbicacion1 :utUbicacion2 , cuerpo uterino :cuerpoUterino <br/> Dimensiones uterinas :uteroDim1 x :uteroDim2 x :uteroDim3 mm<br/> Endometrio :endometDesc1 , :endometDesc2 , :endometGrosor mm<br/> :endometObs </p><p> Anexo Derecho :anexDerecho<br/> &nbsp;&nbsp;&nbsp;&nbsp;- Ovario Derecho :ovarDere </p><p> Anexo Izquierdo :anexIzquierdo<br/> &nbsp;&nbsp;&nbsp;&nbsp;- Ovario Izquierdo :ovarIzquier </p><p>Espacio retrouterino ( Douglas ): :espacioRetro</p></div><div class="container-fluid"> <p><strong><em>Comentarios y observaciones:</em></strong></p><p>:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 7rem;"> <p style="text-align: right;" class="top40">Ecografista: <strong>Rudecindo Lagos</strong></p><p style="margin-top: 2rem; border-top: 1px solid #000; width: 100% !important; display: block;">Fecha Informe: :DATEINFORME</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"> <strong> El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
 
     if ($("select[name='edad_materna']").val() > 55 || $("select[name='edad_materna']").val() == "&gt; 60"){
-        informe = '<div class="container-fluid"><h4 class="page-header text-center">INFORME ECOGRÁFICO GINECOLÓGICO ALTERNATIVO</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid" style="margin-top: 1rem;"> <p> <strong><em>Datos generales</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0">Nombre de paciente:</td><td class="p-0">:PACIENTE</td><td class="p-0">Edad Materna:</td><td class="p-0">:EDADMATERNA años.</td></tr><tr> <td class="p-0">RUT (DNI):</td><td class="p-0">:IDPACIENTE</td><td class="p-0">Fecha de Exámen:</td><td class="p-0">:FEXAMEN</td></tr><tr> <td class="p-0">Motivo exámen:</td><td class="p-0">:MOTIVEXM</td><td class="p-0"></td><td class="p-0"></td></tr><tr> <td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Antecedentes clínicos</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="w-50 p-0">Patología Gineco - obstétrica:</td><td class="p-0">:PATGINEOBS</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Descripción hallazgos ecográficos</em></strong> </p><p> Utero :utUbicacion1 :utUbicacion2 , cuerpo uterino :cuerpoUterino <br/> Dimensiones uterinas :uteroDim1 x :uteroDim2 x :uteroDim3 mm<br/> DIU: :uteroDiu <br/> Endometrio :endometDesc1 , :endometDesc2 , :endometGrosor mm<br/> :endometObs </p><p> Anexo Derecho :anexDerecho<br/> &nbsp;&nbsp;&nbsp;&nbsp;- Ovario Derecho :ovarDere </p><p> Anexo Izquierdo :anexIzquierdo<br/> &nbsp;&nbsp;&nbsp;&nbsp;- Ovario Izquierdo :ovarIzquier </p><p>Espacio retrouterino ( Douglas ): :espacioRetro</p></div><div class="container-fluid"> <p><strong><em>Comentarios y observaciones:</em></strong></p><p>:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 7rem;"> <p style="text-align: right;" class="top40">Ecografista: <strong>Rudecindo Lagos</strong></p><p style="margin-top: 2rem; border-top: 1px solid #000; width: 100% !important; display: block;">Fecha Informe: :DATEINFORME</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"> <strong> El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>'
+        informe = '<div class="container-fluid"><h4 class="page-header text-center">INFORME ECOGRÁFICO GINECOLÓGICO ALTERNATIVO</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid" style="margin-top: 1rem;"> <p> <strong><em>Datos generales</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0">Nombre de paciente:</td><td class="p-0">:PACIENTE</td><td class="p-0">Edad Materna:</td><td class="p-0">:EDADMATERNA años.</td></tr><tr> <td class="p-0">RUT (DNI):</td><td class="p-0">:IDPACIENTE</td><td class="p-0">Fecha de Exámen:</td><td class="p-0">:FEXAMEN</td></tr><tr> <td class="p-0">Motivo exámen:</td><td class="p-0">:MOTIVEXM</td><td class="p-0"></td><td class="p-0"></td></tr><tr> <td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Antecedentes clínicos</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="w-50 p-0">Patología Gineco - obstétrica:</td><td class="p-0">:PATGINEOBS</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Descripción hallazgos ecográficos</em></strong> </p><p> Utero :utUbicacion1 :utUbicacion2 , cuerpo uterino :cuerpoUterino <br/> Dimensiones uterinas :uteroDim1 x :uteroDim2 x :uteroDim3 mm<br/> Endometrio :endometDesc1 , :endometDesc2 , :endometGrosor mm<br/> :endometObs </p><p> Anexo Derecho :anexDerecho<br/> &nbsp;&nbsp;&nbsp;&nbsp;- Ovario Derecho :ovarDere </p><p> Anexo Izquierdo :anexIzquierdo<br/> &nbsp;&nbsp;&nbsp;&nbsp;- Ovario Izquierdo :ovarIzquier </p><p>Espacio retrouterino ( Douglas ): :espacioRetro</p></div><div class="container-fluid"> <p><strong><em>Comentarios y observaciones:</em></strong></p><p>:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 7rem;"> <p style="text-align: right;" class="top40">Ecografista: <strong>Rudecindo Lagos</strong></p><p style="margin-top: 2rem; border-top: 1px solid #000; width: 100% !important; display: block;">Fecha Informe: :DATEINFORME</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"> <strong> El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>'
     }
 
     let paciente = $( '#nombre-paciente').val() + " " + $( '#apellido-paciente').val()
@@ -8100,7 +8130,6 @@ function informeGinecologico(){
     let uteroDim1 = the("uteroDim1").value;
     let uteroDim2 = the("uteroDim2").value;
     let uteroDim3 = the("uteroDim3").value;
-    let uteroDiu = the("uteroDiu").value;
 
     let endometDesc1 = the("endometDesc1").value;
     let endometDesc2 = the("endometDesc2").value;
@@ -8187,7 +8216,6 @@ function informeGinecologico(){
     informe = informe.replace(/:uteroDim1/g, uteroDim1);
     informe = informe.replace(/:uteroDim2/g, uteroDim2);
     informe = informe.replace(/:uteroDim3/g, uteroDim3);
-    informe = informe.replace(/:uteroDiu/g, uteroDiu);
 
     informe = informe.replace(/:endometDesc1/g, endometDesc1);
     informe = informe.replace(/:endometDesc2/g, endometDesc2);
