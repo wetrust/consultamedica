@@ -1455,7 +1455,7 @@ $( document ).ready(function() {
         let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
         let uteroDim3 = Number.isNaN(the("uteroDim3").value) ? 0 : Number(the("uteroDim3").value)
 
-        let uternoVolumen = uteroDim1 + uteroDim2 + uteroDim3
+        let uternoVolumen = ((uteroDim1 * uteroDim2 * uteroDim3 * 0.525) / 1000).toFixed(2)
 
         the("uternoVolumen").value = uternoVolumen
     })
@@ -1465,7 +1465,7 @@ $( document ).ready(function() {
         let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
         let uteroDim3 = Number.isNaN(the("uteroDim3").value) ? 0 : Number(the("uteroDim3").value)
 
-        let uternoVolumen = uteroDim1 + uteroDim2 + uteroDim3
+        let uternoVolumen = ((uteroDim1 * uteroDim2 * uteroDim3 * 0.525) / 1000).toFixed(2)
 
         the("uternoVolumen").value = uternoVolumen
     })
@@ -1475,7 +1475,7 @@ $( document ).ready(function() {
         let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
         let uteroDim3 = Number.isNaN(the("uteroDim3").value) ? 0 : Number(the("uteroDim3").value)
 
-        let uternoVolumen = uteroDim1 + uteroDim2 + uteroDim3
+        let uternoVolumen = ((uteroDim1 * uteroDim2 * uteroDim3 * 0.525) / 1000).toFixed(2)
 
         the("uternoVolumen").value = uternoVolumen
     })
