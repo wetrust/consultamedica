@@ -1122,14 +1122,6 @@ $( document ).ready(function() {
         }
 	});
 
-    $("#calc\\.oms").on("change", function(){
-        if (this.checked == true){
-            $("#calc\\.oms\\.div").removeClass("d-none")
-        }else{
-            $("#calc\\.oms\\.div").addClass("d-none")
-        }
-    })
-
     $("#activ\\.calculadora\\.pree").on("change", function(){
         if (this.checked == true){
             var URL = "http://medicinafetalbarcelona.org/calc/";
