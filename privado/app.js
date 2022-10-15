@@ -1546,6 +1546,14 @@ $( document ).ready(function() {
             this.checked = false
         }
     })
+
+    $("#alternativa\\.biometrias").on("click", function(){
+        if (this.checked == true){
+            the("alternativa.biometrias.div").classList.remove("d-none");
+        }else{
+            the("alternativa.biometrias.div").classList.add("d-none");
+        }
+    })
 });
 
 // Controlador de input clones
