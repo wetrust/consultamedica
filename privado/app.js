@@ -1540,7 +1540,7 @@ $( document ).ready(function() {
         the("ovarIzquierVol").value = ovarIzquierVol
     })
 
-    $("#alternativa\\.fmf").on("change", function(){
+    $("#alternativa\\.fmf").on("click", function(){
         if (this.checked == true){
             window.open("https://fetalmedicine.org/research/assess/trisomies", '_blank');
             this.checked = false
