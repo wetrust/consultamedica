@@ -23,7 +23,16 @@ export class headerEvents{
     
             let ordenados = ordenarDatos(pacientes, globalPacientes.exam);
 
-            let resultado = ordenados.slice().filter(eldato => { return String(inputDate(eldato.get("fecha"))).includes(valor); })
+            //let resultado = ordenados.slice().filter(eldato => { return String(inputDate(eldato.get("fecha"))).includes(valor); })
+
+            var startDate = new Date(document.getElementById("filtro_fecha_desde").value)
+            var endDate = new Date(document.getElementById("filtro_fecha_hasta").value)
+
+            let resultado = ordenados.slice().filter(eldato => {
+                var date = new Date(inputDate(eldato.get("fecha")));
+                return (date >= startDate && date <= endDate);
+              });
+
             //filtrar por rut
             if (resultado.length > 0){
                 headerEvents.createTableElement(resultado);
