@@ -20,7 +20,7 @@ export class headerEvents{
                 if(a.paciente_nombre > b.paciente_nombre) { return 1; }
                 return 0;
             })
-    
+
             let ordenados = ordenarDatos(pacientes, globalPacientes.exam);
 
             //let resultado = ordenados.slice().filter(eldato => { return String(inputDate(eldato.get("fecha"))).includes(valor); })
@@ -56,13 +56,13 @@ export class headerEvents{
                 headerEvents.createTableElement(resultado);
             }
 
-            resultado = ordenados.slice().filter(eldato => { return String(eldato.get("centro")).includes(valor) || String(eldato.get("centro")).includes(String(valor.uper).toUpperCase()); })
+            resultado = resultado.slice().filter(eldato => { return String(eldato.get("centro")).includes(valor) || String(eldato.get("centro")).includes(String(valor.uper).toUpperCase()); })
             //filtrar por rut
             if (resultado.length > 0){
                 headerEvents.createTableElement(resultado);
             }
 
-            resultado = ordenados.slice().filter(eldato => { return String(eldato.get("tipo")).includes(valor) || String(eldato.get("tipo")).includes(String(valor.uper).toUpperCase()); })
+            resultado = resultado.slice().filter(eldato => { return String(eldato.get("tipo")).includes(valor) || String(eldato.get("tipo")).includes(String(valor.uper).toUpperCase()); })
             //filtrar por rut
             if (resultado.length > 0){
                 headerEvents.createTableElement(resultado);
