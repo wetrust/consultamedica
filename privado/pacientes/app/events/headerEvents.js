@@ -31,46 +31,40 @@ export class headerEvents{
             let resultado = ordenados.slice().filter(eldato => {
                 var date = new Date(inputDate(eldato.get("fecha")));
                 return (date >= startDate && date <= endDate);
-              });
+            });
 
-            //filtrar por rut
+            //filtrar por fecha
             if (resultado.length > 0){
-                resultado = ordenarDatos(resultado, globalPacientes.exam);
                 headerEvents.createTableElement(resultado);
             }
 
             resultado = ordenados.slice().filter(eldato => { return String(eldato.get("rut")).includes(valor); })
             //filtrar por rut
             if (resultado.length > 0){
-                resultado = ordenarDatos(resultado, globalPacientes.exam);
                 headerEvents.createTableElement(resultado);
             }
 
             resultado = ordenados.slice().filter(eldato => { return String(eldato.get("nombre")).includes(valor) || String(eldato.get("nombre")).includes(String(valor.uper).toUpperCase()); })
             //filtrar por rut
             if (resultado.length > 0){
-                resultado = ordenarDatos(resultado, globalPacientes.exam);
                 headerEvents.createTableElement(resultado);
             }
 
             resultado = ordenados.slice().filter(eldato => { return String(eldato.get("apellido")).includes(valor) || String(eldato.get("apellido")).includes(String(valor.uper).toUpperCase()); })
             //filtrar por rut
             if (resultado.length > 0){
-                resultado = ordenarDatos(resultado, globalPacientes.exam);
                 headerEvents.createTableElement(resultado);
             }
 
-            resultado = resultado.slice().filter(eldato => { return String(eldato.get("centro")).includes(valor) || String(eldato.get("centro")).includes(String(valor.uper).toUpperCase()); })
+            resultado = ordenados.slice().filter(eldato => { return String(eldato.get("centro")).includes(valor) || String(eldato.get("centro")).includes(String(valor.uper).toUpperCase()); })
             //filtrar por rut
             if (resultado.length > 0){
-                resultado = ordenarDatos(resultado, globalPacientes.exam);
                 headerEvents.createTableElement(resultado);
             }
 
-            resultado = resultado.slice().filter(eldato => { return String(eldato.get("tipo")).includes(valor) || String(eldato.get("tipo")).includes(String(valor.uper).toUpperCase()); })
+            resultado = ordenados.slice().filter(eldato => { return String(eldato.get("tipo")).includes(valor) || String(eldato.get("tipo")).includes(String(valor.uper).toUpperCase()); })
             //filtrar por rut
             if (resultado.length > 0){
-                resultado = ordenarDatos(resultado, globalPacientes.exam);
                 headerEvents.createTableElement(resultado);
             }
         }
