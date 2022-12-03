@@ -88,9 +88,16 @@ export class mainEvents{
             loadEcoDopplerTabla(data.paciente_rut)
             loadEcoGineTabla(data.paciente_rut)
     
-            globalPreguntoEg = false
+            globalPreguntoEg = true
 
-            document.location.hash = "#paciente"
+            if (data.paciente_tipoeco_txt == "Ecografía obstétrica precoz"){
+                document.location.hash = "#ecoObsPrimTrim"
+            }else if (data.paciente_tipoeco_txt == "Ecografía Ginecológica"){ 
+                document.location.hash = "#ecoGinecologica"
+            }else if (data.paciente_tipoeco_txt == "Evaluación crecimiento"){ 
+                document.location.hash = "#ecoObsSegTrim"
+            }
+
         })
     }
 }
