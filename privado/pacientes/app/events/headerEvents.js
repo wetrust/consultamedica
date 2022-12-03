@@ -10,7 +10,6 @@ export class headerEvents{
 
         let valor = this.value
         if (valor != ""){
-
             the("tablaPacientesDBbody").innerHTML = ""
 
             if (globalPacientes.length == 0){ return false; }
@@ -23,8 +22,6 @@ export class headerEvents{
 
             let ordenados = ordenarDatos(pacientes, globalPacientes.exam);
 
-            //let resultado = ordenados.slice().filter(eldato => { return String(inputDate(eldato.get("fecha"))).includes(valor); })
-
             var startDate = new Date(document.getElementById("filtro_fecha_desde").value)
             var endDate = new Date(document.getElementById("filtro_fecha_hasta").value)
 
@@ -33,45 +30,39 @@ export class headerEvents{
                 return (date >= startDate && date <= endDate);
             });
 
-            //filtrar por fecha
-            if (resultado.length > 0){
-                headerEvents.createTableElement(resultado);
-            }
+            mainConfig.filterElements.forEach(function(value){
+                if (the(value.name).value != ""){
+                    switch (value.filter) {
+                        case 'paciente_rut':
+                            resultado = resultado.filter(eldato => { return String(eldato.get("rut")).includes(valor); })
+                            break;
+                        case 'paciente_nombre':
+                            resultado = resultado.filter(eldato => { return String(eldato.get("nombre")).includes(valor) || String(eldato.get("nombre")).includes(String(valor.uper).toUpperCase()); })
+                            break;
+                        case 'paciente_apellido':
+                            resultado = resultado.filter(eldato => { return String(eldato.get("apellido")).includes(valor) || String(eldato.get("apellido")).includes(String(valor.uper).toUpperCase()); })
+                            // expected output: "Mangoes and papayas are $2.79 a pound."
+                            break;
+                        case 'paciente_centro':
+                            resultado = resultado.filter(eldato => { return String(eldato.get("centro")).includes(valor) || String(eldato.get("centro")).includes(String(valor.uper).toUpperCase()); })
+                            // expected output: "Mangoes and papayas are $2.79 a pound."
+                            break;
+                        case 'paciente_tipo':
+                            resultado = resultado.filter(eldato => { return String(eldato.get("tipo")).includes(valor) || String(eldato.get("tipo")).includes(String(valor.uper).toUpperCase()); })
+                            break;
+                    }
+                }
+            })
 
-            resultado = ordenados.slice().filter(eldato => { return String(eldato.get("rut")).includes(valor); })
-            //filtrar por rut
             if (resultado.length > 0){
                 headerEvents.createTableElement(resultado);
-            }
-
-            resultado = ordenados.slice().filter(eldato => { return String(eldato.get("nombre")).includes(valor) || String(eldato.get("nombre")).includes(String(valor.uper).toUpperCase()); })
-            //filtrar por rut
-            if (resultado.length > 0){
-                headerEvents.createTableElement(resultado);
-            }
-
-            resultado = ordenados.slice().filter(eldato => { return String(eldato.get("apellido")).includes(valor) || String(eldato.get("apellido")).includes(String(valor.uper).toUpperCase()); })
-            //filtrar por rut
-            if (resultado.length > 0){
-                headerEvents.createTableElement(resultado);
-            }
-
-            resultado = ordenados.slice().filter(eldato => { return String(eldato.get("centro")).includes(valor) || String(eldato.get("centro")).includes(String(valor.uper).toUpperCase()); })
-            //filtrar por rut
-            if (resultado.length > 0){
-                headerEvents.createTableElement(resultado);
-            }
-
-            resultado = ordenados.slice().filter(eldato => { return String(eldato.get("tipo")).includes(valor) || String(eldato.get("tipo")).includes(String(valor.uper).toUpperCase()); })
-            //filtrar por rut
-            if (resultado.length > 0){
-                headerEvents.createTableElement(resultado);
+            }else{
+                headerEvents.createTableElement([]); 
             }
         }
     }
 
     static createTableElement(pacientes){
-
 
         pacientes.forEach(function(value){
             let _elemento = document.createElement("th");
@@ -98,7 +89,7 @@ export class headerEvents{
             verEco.dataset.id = value.get("id")
             verEco.innerHTML = mainConfig.iconLupa
             verEco.onclick = mainEvents.traerPaciente
-    
+
             let elimEco = document.createElement("td")
             elimEco.dataset.id = value.get("id")
             elimEco.innerHTML = mainConfig.iconBasura
