@@ -50,8 +50,10 @@ export class headerFactory{
         input.placeholder = valor.placeholder
         input.classList.add("form-control");
 
-        if (valor.type == "date"){
+        if (valor.type == "date" && valor.name == "filtro_fecha_desde"){
             input.value = inputDate();
+        }else if (valor.type == "date"){
+            input.value = inputDate(headerEvents.oldYear());
         }
 
         input.onkeyup = headerEvents.inputOnKeyDown
