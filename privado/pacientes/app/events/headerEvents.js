@@ -19,7 +19,7 @@ export class headerEvents{
             var startDate = new Date(document.getElementById("filtro_fecha_desde").value)
             var endDate = new Date(document.getElementById("filtro_fecha_hasta").value)
 
-            let resultado = ordenados.slice().filter(eldato => {
+            var resultado = ordenados.slice().filter(eldato => {
                 var date = new Date(inputDate(eldato.get("fecha")));
                 return (date >= startDate && date <= endDate);
             });
@@ -28,21 +28,19 @@ export class headerEvents{
                 if (the(value.name).value != ""){
                     switch (value.filter) {
                         case 'paciente_rut':
-                            resultado = resultado.filter(eldato => { return String(eldato.get("rut")).includes(valor); })
+                            resultado = resultado.filter(eldato => { return String(eldato.get("rut")).includes(the(value.name).value); })
                             break;
                         case 'paciente_nombre':
-                            resultado = resultado.filter(eldato => { return String(eldato.get("nombre")).includes(valor) || String(eldato.get("nombre")).includes(String(valor.uper).toUpperCase()); })
+                            resultado = resultado.filter(eldato => { return String(eldato.get("nombre")).toLowerCase().includes(String(the(value.name).value).toLowerCase()); })
                             break;
                         case 'paciente_apellido':
-                            resultado = resultado.filter(eldato => { return String(eldato.get("apellido")).includes(valor) || String(eldato.get("apellido")).includes(String(valor.uper).toUpperCase()); })
-                            // expected output: "Mangoes and papayas are $2.79 a pound."
+                            resultado = resultado.filter(eldato => { return String(eldato.get("apellido")).toLowerCase().includes(String(the(value.name).value).toLowerCase()); })
                             break;
                         case 'paciente_centro':
-                            resultado = resultado.filter(eldato => { return String(eldato.get("centro")).includes(valor) || String(eldato.get("centro")).includes(String(valor.uper).toUpperCase()); })
-                            // expected output: "Mangoes and papayas are $2.79 a pound."
+                            resultado = resultado.filter(eldato => { return String(eldato.get("centro")).toLowerCase().includes(String(the(value.name).value).toLowerCase()); })
                             break;
                         case 'paciente_tipo':
-                            resultado = resultado.filter(eldato => { return String(eldato.get("tipo")).includes(valor) || String(eldato.get("tipo")).includes(String(valor.uper).toUpperCase()); })
+                            resultado = resultado.filter(eldato => { return String(eldato.get("tipo")).toLowerCase().includes(String(the(value.name).value).toLowerCase()); })
                             break;
                     }
                 }
