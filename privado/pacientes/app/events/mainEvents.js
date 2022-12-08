@@ -6,6 +6,7 @@ import { construirTablaPacientes } from "../../../pacientes.js";
 export class mainEvents{
 
     static eliminarPaciente(){
+
         make.deleteModal("el paciente", this.dataset.id, function(){
             $("#"+this.dataset.modal).modal("hide")
             fetch('https://api.crecimientofetal.cl/config/eliminar/'+this.dataset.delete).then(response => response.json())
@@ -23,6 +24,7 @@ export class mainEvents{
                 
             })
         });
+
     }
 
     static traerPaciente(){

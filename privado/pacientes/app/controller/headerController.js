@@ -15,6 +15,6 @@ export class headerController{
 
     construirFiltros(){
         the(mainConfig.container).innerHTML = "";
-        the(mainConfig.container).appendChild(this.headerF.interfaceFiltros());
+        the(mainConfig.container).appendChild(this.headerF.interfaceTarjeta());
     }
 }

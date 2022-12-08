@@ -5,29 +5,55 @@ import { headerEvents } from "../events/headerEvents.js";
 
 export class headerFactory{
 
-    interfaceFiltros(){
+    interfaceTarjeta(){
+
         return this.crearTarjeta();
+
     }
 
     crearTarjeta(){
+
         let tj = document.createElement("div");
         tj.classList.add("card", "mb-3", "mt-2", "shadow-sm")
 
         let tjBody = document.createElement("div");
-        tjBody.classList.add("card-body", "d-flex", "flex-row")
+        tjBody.classList.add("card-body")
 
-        tjBody.appendChild(this.crearTitulo());
+        tjBody.appendChild(this.crearFiltros());
+        tjBody.appendChild(this.crearBotones());
+
+        tj.appendChild(tjBody);
+        return tj;
+
+    }
+
+    crearFiltros(){
+
+        let contenedor = document.createElement("div");
+        contenedor.classList.add("d-flex", "flex-row");
+
+        contenedor.appendChild(this.crearTitulo());
 
         let _this = this;
 
         mainConfig.filterElements.forEach(function(value){
-            tjBody.appendChild(_this.crearInput(value));
+            contenedor.appendChild(_this.crearInput(value));
         })
 
-        tjBody.appendChild(this.crearBotonBorrar());
+        return contenedor;
 
-        tj.appendChild(tjBody);
-        return tj;
+    }
+
+    crearBotones(){
+
+        let contenedor = document.createElement("div");
+        contenedor.classList.add("d-flex", "justify-content-center");
+
+        contenedor.appendChild(this.crearBotonBorrar());
+        contenedor.appendChild(this.crearBotonVerImprimir());
+
+        return contenedor;
+
     }
 
     crearTitulo(){
@@ -94,17 +120,35 @@ export class headerFactory{
     }
 
     crearBotonBorrar(){
+
         let contenedor = document.createElement("div");
-        contenedor.classList.add("form-group", "mb-0", "text-center", "ml-auto");
+        contenedor.classList.add("form-group", "mb-0", "text-center");
 
         let boton = document.createElement("button");
-        boton.classList.add("btn", "btn-primary")
+        boton.classList.add("btn", "btn-primary", "p-1")
         boton.type = "button"
         boton.innerText = "Borrar filtro";
         boton.onclick = headerEvents.clearFilter
 
         contenedor.appendChild(boton);
         return contenedor;
+
+    }
+
+    crearBotonVerImprimir(){
+
+        let contenedor = document.createElement("div");
+        contenedor.classList.add("form-group", "mb-0", "text-center");
+
+        let boton = document.createElement("button");
+        boton.classList.add("btn", "btn-primary", "p-1", "ml-2")
+        boton.type = "button"
+        boton.innerText = "Ver selección";
+        //boton.onclick = headerEvents.clearFilter
+
+        contenedor.appendChild(boton);
+        return contenedor;
+
     }
 
 }

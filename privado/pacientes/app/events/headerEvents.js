@@ -110,8 +110,11 @@ export class headerEvents{
     }
 
     static oldMonth(){
+
         let date = new Date();
         date.setMonth(date.getMonth() - 1);
         return date;
+
     }
+
 }

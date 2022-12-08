@@ -14,6 +14,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
             document.getElementById("viewDB").children[0].classList.add("bg-verde", "text-white")
         }
     }
-
-
 });
