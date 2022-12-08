@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
             viewDB.run();
             //personalización
-            document.getElementById("viewDB").children[0].classList.add("bg-verde")
+            document.getElementById("viewDB").children[0].classList.add("bg-verde", "text-white")
         }
     }
 
