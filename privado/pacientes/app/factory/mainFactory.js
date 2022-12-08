@@ -67,7 +67,7 @@ export class mainFactory{
         var startDate = new Date(document.getElementById("filtro_fecha_desde").value)
         var endDate = new Date(document.getElementById("filtro_fecha_hasta").value)
 
-        let resultado = ordenados.slice().filter(eldato => {
+        let resultado = globalPacientes.pacientes.slice().filter(eldato => {
             var date = new Date(inputDate(eldato.get("fecha")));
             return (date >= startDate && date <= endDate);
         });
