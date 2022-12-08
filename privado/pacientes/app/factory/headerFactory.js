@@ -51,9 +51,9 @@ export class headerFactory{
         input.classList.add("form-control");
 
         if (valor.type == "date" && valor.name == "filtro_fecha_desde"){
-            input.value = inputDate();
-        }else if (valor.type == "date"){
             input.value = inputDate(headerEvents.oldMonth());
+        }else if (valor.type == "date"){
+            input.value = inputDate();
         }
 
         input.onkeyup = headerEvents.inputOnKeyDown
