@@ -58,13 +58,22 @@ export class mainFactory{
 
         if (globalPacientes.length == 0){ return bodyTabla; }
 
-        let pacientes = globalPacientes.pacientes.slice().sort(function(a, b){
+        globalPacientes.pacientes = globalPacientes.pacientes.sort(function(a, b){
             if(a.paciente_nombre < b.paciente_nombre) { return -1; }
             if(a.paciente_nombre > b.paciente_nombre) { return 1; }
             return 0;
         })
 
-        let ordenados = ordenarDatos(pacientes, globalPacientes.exam);
+        var startDate = new Date(document.getElementById("filtro_fecha_desde").value)
+        var endDate = new Date(document.getElementById("filtro_fecha_hasta").value)
+
+        let resultado = ordenados.slice().filter(eldato => {
+            var date = new Date(inputDate(eldato.get("fecha")));
+            return (date >= startDate && date <= endDate);
+        });
+        
+
+        let ordenados = ordenarDatos(resultado, globalPacientes.exam);
 
         ordenados.forEach(function(value){
             let _elemento = document.createElement("th");

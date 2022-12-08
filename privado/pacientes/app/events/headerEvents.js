@@ -14,13 +14,7 @@ export class headerEvents{
 
             if (globalPacientes.length == 0){ return false; }
 
-            let pacientes = globalPacientes.pacientes.slice().sort(function(a, b){
-                if(a.paciente_nombre < b.paciente_nombre) { return -1; }
-                if(a.paciente_nombre > b.paciente_nombre) { return 1; }
-                return 0;
-            })
-
-            let ordenados = ordenarDatos(pacientes, globalPacientes.exam);
+            let ordenados = ordenarDatos(globalPacientes.pacientes, globalPacientes.exam);
 
             var startDate = new Date(document.getElementById("filtro_fecha_desde").value)
             var endDate = new Date(document.getElementById("filtro_fecha_hasta").value)
