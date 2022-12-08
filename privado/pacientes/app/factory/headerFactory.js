@@ -11,7 +11,7 @@ export class headerFactory{
 
     crearTarjeta(){
         let tj = document.createElement("div");
-        tj.classList.add("card", "mb-3", "mt-2", "shadow")
+        tj.classList.add("card", "mb-3", "mt-2", "shadow-sm")
 
         let tjBody = document.createElement("div");
         tjBody.classList.add("card-body", "d-flex", "flex-row")
