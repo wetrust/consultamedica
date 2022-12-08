@@ -144,7 +144,7 @@ export class headerFactory{
         boton.classList.add("btn", "btn-primary", "p-1", "ml-2")
         boton.type = "button"
         boton.innerText = "Ver selección";
-        //boton.onclick = headerEvents.clearFilter
+        boton.onclick = headerEvents.verSeleccion
 
         contenedor.appendChild(boton);
         return contenedor;
