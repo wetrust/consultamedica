@@ -117,9 +117,9 @@ export class headerEvents{
 
     }
 
-    static oldYear(){
+    static oldMonth(){
         let date = new Date();
-        date.setFullYear(date.getFullYear() - 1);
+        date.setMonth(date.getMonth() - 1);
         return date;
     }
 }

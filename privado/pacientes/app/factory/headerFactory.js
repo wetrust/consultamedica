@@ -53,7 +53,7 @@ export class headerFactory{
         if (valor.type == "date" && valor.name == "filtro_fecha_desde"){
             input.value = inputDate();
         }else if (valor.type == "date"){
-            input.value = inputDate(headerEvents.oldYear());
+            input.value = inputDate(headerEvents.oldMonth());
         }
 
         input.onkeyup = headerEvents.inputOnKeyDown
@@ -84,7 +84,6 @@ export class headerFactory{
                     }
                 }
             }
-
 
             contenedor.appendChild(dList);
         }
