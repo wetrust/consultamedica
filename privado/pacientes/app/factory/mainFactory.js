@@ -65,18 +65,18 @@ export class mainFactory{
             return 0;
         })
 
+        let ordenados = ordenarDatos(resultado, globalPacientes.exam);
+
         var startDate = new Date(document.getElementById("filtro_fecha_desde").value)
         var endDate = new Date(document.getElementById("filtro_fecha_hasta").value)
 
-        let resultado = globalPacientes.pacientes.slice().filter(eldato => {
+        let resultado = ordenados.slice().filter(eldato => {
             var date = new Date(inputDate(eldato.get("fecha")));
             return (date >= startDate && date <= endDate);
         });
-        
+    
 
-        let ordenados = ordenarDatos(resultado, globalPacientes.exam);
-
-        ordenados.forEach(function(value){
+        resultado.forEach(function(value){
             let _elemento = document.createElement("th");
             _elemento.innerText = value;
 
