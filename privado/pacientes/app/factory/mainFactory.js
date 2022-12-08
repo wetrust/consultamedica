@@ -65,7 +65,7 @@ export class mainFactory{
             return 0;
         })
 
-        let ordenados = ordenarDatos(resultado, globalPacientes.exam);
+        let ordenados = ordenarDatos(globalPacientes.pacientes, globalPacientes.exam);
 
         var startDate = new Date(document.getElementById("filtro_fecha_desde").value)
         var endDate = new Date(document.getElementById("filtro_fecha_hasta").value)
