@@ -10,9 +10,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             let viewDB = new appBD
 
             viewDB.run();
+            //personalización
+            document.getElementById("viewDB").children[0].classList.add("bg-verde")
         }
     }
 
-    //personalización
-    document.getElementById("viewDB").children[0].classList.add("bg-verde")
+
 });
