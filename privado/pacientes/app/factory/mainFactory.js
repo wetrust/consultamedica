@@ -2,6 +2,7 @@ import { ordenarDatos } from "../../../pacientes.js";
 import { humanDate } from "../../../wetrust.js";
 import { mainConfig } from "../config/mainConfig.js";
 import { mainEvents } from "../events/mainEvents.js";
+import { inputDate } from "../../../wetrust.js";
 
 export class mainFactory{
 
