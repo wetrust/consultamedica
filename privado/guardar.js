@@ -380,7 +380,6 @@ function basicDataValid(){
     return true;
 }
 
-
 function basicDataValidGine(){
     if (the("id-paciente").value == ""){
         rut()
