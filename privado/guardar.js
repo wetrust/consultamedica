@@ -242,7 +242,6 @@ $(document).ready(function() {
             'uteroDim1': the("uteroDim1").value,
             'uteroDim2': the("uteroDim2").value,
             'uteroDim3': the("uteroDim3").value,
-            'uteroDiu': the("uteroDiu").value,
             'endometDesc1': the("endometDesc1").value,
             'endometDesc2': the("endometDesc2").value,
             'endometGrosor': the("endometGrosor").value,
@@ -895,7 +894,6 @@ function traerEcoGine(){
         the("uteroDim1").value = datos.uteroDim1
         the("uteroDim2").value = datos.uteroDim2
         the("uteroDim3").value = datos.uteroDim3
-        the("uteroDiu").value = datos.uteroDiu
         the("endometDesc1").value = datos.endometDesc1
         the("endometDesc2").value = datos.endometDesc2
         the("endometGrosor").value = datos.endometGrosor
