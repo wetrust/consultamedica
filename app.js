@@ -218,7 +218,7 @@ $( document ).ready(function() {
     opt.value = "&lt; 12"; 
     edad.appendChild(opt); 
 
-    for (var i = 12; i < 61; i++) {
+    for (var i = 12; i < 71; i++) {
         edad = the("ptEdadMaterna");
         opt = document.createElement('option');
         opt.appendChild( document.createTextNode(i) );
@@ -228,8 +228,8 @@ $( document ).ready(function() {
 
     edad = the("ptEdadMaterna");
     opt = document.createElement('option');
-    opt.appendChild( document.createTextNode("> 60") );
-    opt.value = "&gt; 60"; 
+    opt.appendChild( document.createTextNode("> 70") );
+    opt.value = "&gt; 70"; 
     edad.appendChild(opt); 
     the("ptEdadMaterna").value = 30
 
