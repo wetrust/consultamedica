@@ -8342,10 +8342,10 @@ function informeMorfologia(){
         CTRANSV = "No"
     }
 
-        InformeString += '<tr> <td class="p-0 pl-3">- Corte transventricular de aspecto normal: :CTRANSV</td><td class="p-0 pl-3">:CTRANSVTXT</td></tr>';
-        InformeString = InformeString.replace(":CTRANSV", CTRANSV);
-        var CTRANSVTXT = document.querySelector('input[name="ctrv.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
-        InformeString = InformeString.replace(":CTRANSVTXT", CTRANSVTXT);
+    InformeString += '<tr> <td class="p-0 pl-3">- Corte transventricular de aspecto normal: :CTRANSV</td><td class="p-0 pl-3">:CTRANSVTXT</td></tr>';
+    InformeString = InformeString.replace(":CTRANSV", CTRANSV);
+    var CTRANSVTXT = document.querySelector('input[name="ctrv.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+    InformeString = InformeString.replace(":CTRANSVTXT", CTRANSVTXT);
 
     var CTRT = document.querySelector('input[name="ctrt.morfologia"]:checked').value;
     if (CTRT == "normal"){
@@ -8354,10 +8354,10 @@ function informeMorfologia(){
         CTRT = "No"
     }
 
-        InformeString += '<tr> <td class="p-0 pl-3">- Corte transtalámico de aspecto normal: :CTRT</td><td class="p-0 pl-3">:CTRTTXT</td></tr>';
-        InformeString = InformeString.replace(":CTRT", CTRT);
-        var CTRTTXT = document.querySelector('input[name="ctrt.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
-        InformeString = InformeString.replace(":CTRTTXT", CTRTTXT);
+    InformeString += '<tr> <td class="p-0 pl-3">- Corte transtalámico de aspecto normal: :CTRT</td><td class="p-0 pl-3">:CTRTTXT</td></tr>';
+    InformeString = InformeString.replace(":CTRT", CTRT);
+    var CTRTTXT = document.querySelector('input[name="ctrt.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+    InformeString = InformeString.replace(":CTRTTXT", CTRTTXT);
 
     var CTRC = document.querySelector('input[name="ctrc.morfologia"]:checked').value;
     if (CTRC == "normal"){
@@ -8366,10 +8366,10 @@ function informeMorfologia(){
         CTRC = "No"
     }
 
-        InformeString += '<tr> <td class="p-0 pl-3">- Corte transcerebelar de aspecto normal: :CTRC</td><td class="p-0 pl-3">:CTRCTXT</td></tr>';
-        InformeString = InformeString.replace(":CTRC", CTRC);
-        var CTRCTXT = document.querySelector('input[name="ctrc.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
-        InformeString = InformeString.replace(":CTRCTXT", CTRCTXT);
+    InformeString += '<tr> <td class="p-0 pl-3">- Corte transcerebelar de aspecto normal: :CTRC</td><td class="p-0 pl-3">:CTRCTXT</td></tr>';
+    InformeString = InformeString.replace(":CTRC", CTRC);
+    var CTRCTXT = document.querySelector('input[name="ctrc.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+    InformeString = InformeString.replace(":CTRCTXT", CTRCTXT);
 
     var ORBO = document.querySelector('input[name="orbo.morfologia"]:checked').value;
     if (ORBO == "normal"){
@@ -8378,10 +8378,10 @@ function informeMorfologia(){
         ORBO = "No"
     }
 
-        InformeString += '<tr> <td class="p-0 pl-3">Órbitas oculares de aspecto normal: :ORBO</td><td class="p-0 pl-3">:ORBOTXT</td></tr>';
-        InformeString = InformeString.replace(":ORBO", ORBO);
-        var ORBOTXT = document.querySelector('input[name="orbo.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
-        InformeString = InformeString.replace(":ORBOTXT", ORBOTXT);
+    InformeString += '<tr> <td class="p-0 pl-3">Órbitas oculares de aspecto normal: :ORBO</td><td class="p-0 pl-3">:ORBOTXT</td></tr>';
+    InformeString = InformeString.replace(":ORBO", ORBO);
+    var ORBOTXT = document.querySelector('input[name="orbo.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+    InformeString = InformeString.replace(":ORBOTXT", ORBOTXT);
 
     var PERFA = document.querySelector('input[name="perfa.morfologia"]:checked').value;
     if (PERFA == "normal"){
@@ -8390,10 +8390,10 @@ function informeMorfologia(){
         PERFA = "No"
     }
 
-        InformeString += '<tr> <td class="p-0 pl-3">Perfil facial de aspecto normal: :PERFA</td><td class="p-0 pl-3">:PERFATXT</td></tr>';
-        InformeString = InformeString.replace(":PERFA", PERFA);
-        var PERFATXT = document.querySelector('input[name="perfa.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
-        InformeString = InformeString.replace(":PERFATXT", PERFATXT);
+    InformeString += '<tr> <td class="p-0 pl-3">Perfil facial de aspecto normal: :PERFA</td><td class="p-0 pl-3">:PERFATXT</td></tr>';
+    InformeString = InformeString.replace(":PERFA", PERFA);
+    var PERFATXT = document.querySelector('input[name="perfa.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+    InformeString = InformeString.replace(":PERFATXT", PERFATXT);
 
     var LNN = document.querySelector('input[name="lnn.morfologia"]:checked').value;
 
@@ -8403,10 +8403,10 @@ function informeMorfologia(){
         LNN = "No"
     }
 
-        InformeString += '<tr> <td class="p-0 pl-3">Boca y fosas nasales aspecto normal: :LNN</td><td class="p-0 pl-3">:LNNTXT</td></tr>';
-        InformeString = InformeString.replace(":LNN", LNN);
-        var LNNTXT = document.querySelector('input[name="lnn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
-        InformeString = InformeString.replace(":LNNTXT", LNNTXT);
+    InformeString += '<tr> <td class="p-0 pl-3">Boca y fosas nasales aspecto normal: :LNN</td><td class="p-0 pl-3">:LNNTXT</td></tr>';
+    InformeString = InformeString.replace(":LNN", LNN);
+    var LNNTXT = document.querySelector('input[name="lnn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+    InformeString = InformeString.replace(":LNNTXT", LNNTXT);
 
     var CUEL = document.querySelector('input[name="cuel.morfologia"]:checked').value;
 
@@ -8416,10 +8416,10 @@ function informeMorfologia(){
         CUEL = "No"
     }
 
-        InformeString += '<tr> <td class="p-0 pl-3">Cuello aspecto normal: :CUEL</td><td class="p-0 pl-3">:CUELTXT</td></tr>';
-        InformeString = InformeString.replace(":CUEL", CUEL);
-        var CUELTXT = document.querySelector('input[name="cuel.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
-        InformeString = InformeString.replace(":CUELTXT", CUELTXT);
+    InformeString += '<tr> <td class="p-0 pl-3">Cuello aspecto normal: :CUEL</td><td class="p-0 pl-3">:CUELTXT</td></tr>';
+    InformeString = InformeString.replace(":CUEL", CUEL);
+    var CUELTXT = document.querySelector('input[name="cuel.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+    InformeString = InformeString.replace(":CUELTXT", CUELTXT);
 
     var TN = document.querySelector('input[name="tn.morfologia"]:checked').value;
 
@@ -8429,10 +8429,10 @@ function informeMorfologia(){
         TN = "No"
     }
 
-        InformeString += '<tr> <td class="p-0 pl-3">Tórax aspecto normal: :TN</td><td class="p-0 pl-3">:TNTXT</td></tr>';
-        InformeString = InformeString.replace(":TN", TN);
-        var TNTXT = document.querySelector('input[name="tn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
-        InformeString = InformeString.replace(":TNTXT", TNTXT);
+    InformeString += '<tr> <td class="p-0 pl-3">Tórax aspecto normal: :TN</td><td class="p-0 pl-3">:TNTXT</td></tr>';
+    InformeString = InformeString.replace(":TN", TN);
+    var TNTXT = document.querySelector('input[name="tn.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+    InformeString = InformeString.replace(":TNTXT", TNTXT);
 
     var PPAN = document.querySelector('input[name="ppan.morfologia"]:checked').value;
 
@@ -8442,10 +8442,10 @@ function informeMorfologia(){
         PPAN = "No"
     }
 
-        InformeString += '<tr> <td class="p-0 pl-3">- Parénquima pulmonar aspecto normal: :PPAN</td><td class="p-0 pl-3">:PPANTXT</td></tr>';
-        InformeString = InformeString.replace(":PPAN", PPAN);
-        var PPANTXT = document.querySelector('input[name="ppan.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
-        InformeString = InformeString.replace(":PPANTXT", PPANTXT);
+    InformeString += '<tr> <td class="p-0 pl-3">- Parénquima pulmonar aspecto normal: :PPAN</td><td class="p-0 pl-3">:PPANTXT</td></tr>';
+    InformeString = InformeString.replace(":PPAN", PPAN);
+    var PPANTXT = document.querySelector('input[name="ppan.morfologia"]:checked').parentElement.parentElement.parentElement.children[1].value;
+    InformeString = InformeString.replace(":PPANTXT", PPANTXT);
 
     var CRZN = document.querySelector('input[name="crzn.morfologia"]:checked').value;
 
@@ -8620,7 +8620,6 @@ function informeMorfologia(){
     InformeString += '<tr> <td class="p-0 pl-3" colspan="2">Genitales de aspecto: :GEN</td></tr>';
     InformeString = InformeString.replace(":GEN", GEN);
 
-
     var PLPO = the("plpo.morfologia").value;
     InformeString += '<tr> <td class="p-0 pl-3" colspan="2">Placenta ubicación: :PLPO</td></tr>';
     InformeString = InformeString.replace(":PLPO", PLPO);
@@ -8630,7 +8629,7 @@ function informeMorfologia(){
 
     var COMENTARIO = the("biometria.comentario.morfologia").value +  "<br>" + the("conclusion.morfologia").value + "<br>" + the("morfologia.comentario.morfologia").value;
     COMENTARIO =  (typeof COMENTARIO !== 'undefined') ? COMENTARIO.replace(/\r?\n/g, "<br>") : COMENTARIO = '';
-    
+
     InformeString += '</tbody> </table><p class="mb-0"><strong style="color: #045dab;">Estudio de riesgo segundo trimestre</strong></p><table class="table"> <tbody><tr> <td class="p-0 pl-3">Foco ecogénico intracardiaco:</td><td class="p-0 pl-3"></td></tr><tr> <td class="p-0 pl-3">Hidronefrosis leve:</td><td class="p-0 pl-3"></td></tr><tr> <td class="p-0 pl-3">Fémur corto:</td><td class="p-0 pl-3"></td></tr><tr> <td class="p-0 pl-3">Intestino ecogénico:</td><td class="p-0 pl-3"></td></tr><tr> <td class="p-0 pl-3">Aumento del pliegue nucal:</td><td class="p-0 pl-3"></td></tr><tr> <td class="p-0 pl-3">Art. Subclavia cerebral aberrante:</td><td class="p-0 pl-3"></td></tr><tr> <td class="p-0 pl-3">HN Ausente o Hipoclasico:</td><td class="p-0 pl-3"></td></tr><tr> <td class="p-0 pl-3">Ventrículomegalia:</td><td class="p-0 pl-3"></td></tr></tbody> </table><p class="mb-0"><strong style="color: #045dab;">COMENTARIOS ( Tres módulos ) </strong></p><div class="container-fluid"><p style="max-width: 800px; text-align: justify;">:COMENTARIO</p></div><p class="mb-0"><strong style="color: #045dab;">OBSERVACIONES</strong>:</p><div class="container-fluid"><p style="max-width: 700px; text-align: justify;">:INDI</p></div><div class="container-fluid" style="margin-top: 5rem; text-align: right;"> <p class="text-right top40" style="text-align: right;">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p></div></div>';
 
     InformeString = InformeString.replace(":FUR", fur);
@@ -9058,7 +9057,7 @@ function makeModalEmail(){
 
 function makeModalError(){
     let _modal = modal();
-            
+
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
     the(_modal.titulo).innerHTML = "ERROR";
     the(_modal.titulo).classList.add("mx-auto");
@@ -9095,7 +9094,7 @@ function verifyEmailSend(_this,data){
 
 function makeModalNoEMail(){
     let _modal = modal();
-            
+    
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
     the(_modal.titulo).innerHTML = "ERROR";
     the(_modal.titulo).classList.add("mx-auto");
@@ -9111,7 +9110,7 @@ function makeModalNoEMail(){
 
 function makeModalNoEMailSelected(){
     let _modal = modal();
-            
+
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
     the(_modal.titulo).innerHTML = "ERROR";
     the(_modal.titulo).classList.add("mx-auto");
