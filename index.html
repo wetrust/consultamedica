@@ -2297,7 +2297,7 @@
                                             <li><small>Determinar corionicidad en gemelar.</small></li>
                                             <li><small>Determinación ecográfica de edad gestacional. *</small></li>
                                         </ul>
-                                        <p><small><small>* Para LCN medida entre 7 y 10 semanas, la variación es tan solo +- 3 días.</small></small></p>
+                                        <p><small><small>*  Datación por LCN es más exacta a partir de la 9º semana.</small></small></p>
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -2578,20 +2578,32 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="form-group form-check mb-0">
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="alternativa.fmf">
+                                            <label class="form-check-label" for="alternativa.fmf">Predicción de riesgo calculadora FMF</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="activ.calculadora.pree">
+                                            <label class="form-check-label" for="activ.calculadora.pree">Predicción de riesgo calculadora, Medicina Fetal - Barcelona</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group form-check">
                                             <input type="checkbox" class="form-check-input" id="art.ut.prim">
-                                            <label class="form-check-label" for="art.ut.prim">Opcional Doppler Promedio de Uterinas y presión arterial media</label>
+                                            <label class="form-check-label" for="art.ut.prim">Cálculo para Doppler promedio de uterinas y presión arterial media</label>
                                         </div>
                                         <div class="row d-none pt-2" id="art.ut.prim.div">
                                             <div class="col form-group"> <label>IP. Uterina derecha</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_derecha_prim"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_derecha_percentil_prim"></div></div></div></div>
                                             <div class="col form-group"> <label>IP. Uterina izquierda</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_izquierda_prim"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil_prim"></div></div></div></div>
-                                            <div class="col form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio_prim" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango_prim"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil_prom"></div></div></div></div>
+                                            <div class="col form-group"> <label><strong>IP. Uterinas promedio</strong></label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio_prim" disabled> <input type="hidden" id="respuesta_uterina_promedio_rango_prim"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil_prom"></div></div></div></div>
                                             <div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasPrim">Ver Gráficas</button></div>
                                             <div class="col-12">
                                                 <div class="row">
-                                                    <div class="col form-group"> <label>Sistólica</label> <div class="input-group"> <input type="text" class="form-control" id=""> <div class="input-group-prepend"> <div class="input-group-text">mmHg</div></div></div></div>
-                                                    <div class="col form-group"> <label>Diastólica</label> <div class="input-group"> <input type="text" class="form-control" id=""> <div class="input-group-prepend"> <div class="input-group-text">mmHg</div></div></div></div>
-                                                    <div class="col form-group"> <label>Media</label> <div class="input-group"> <input type="text" class="form-control" id="" disabled> <div class="input-group-prepend"> <div class="input-group-text">mmHg</div></div></div></div>
+                                                    <div class="col form-group"> <label>Presión Sistólica</label> <div class="input-group"> <input type="text" class="form-control" id="pres.sistolica.primtrim"> <div class="input-group-prepend"> <div class="input-group-text">mmHg</div></div></div></div>
+                                                    <div class="col form-group"> <label>Presión Diastólica</label> <div class="input-group"> <input type="text" class="form-control" id="pres.diastolica.primtrim"> <div class="input-group-prepend"> <div class="input-group-text">mmHg</div></div></div></div>
+                                                    <div class="col form-group"> <label><strong>Presión Arterial Media</strong></label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="pres.media.primtrim" disabled> <div class="input-group-prepend"> <div class="input-group-text">mmHg</div></div></div></div>
                                                     <div class="col-3 pt-4"></div>
                                                 </div>
                                             </div>

@@ -1378,6 +1378,61 @@ $( document ).ready(function() {
 
     the("edadMaternaFechaTrisono").onchange();
 
+    the("pres.sistolica.primtrim").onkeyup = function(e){
+        if ( e.key == "Enter" ) {
+			e.preventDefault();
+			the("pres.diastolica.primtrim").focus()
+		}
+		if (isNaN(this.value) == false){
+			var unTercioPSis = this.value / 3;
+			var unTercioPDias = "";
+			var pMedia = "";
+
+			if (isNaN(the("pres.diastolica.primtrim").value) == false){
+				unTercioPDias = the("pres.diastolica.primtrim").value / 3;
+			}
+
+			if (unTercioPDias > 0){
+				pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
+			}
+
+			the("pres.media.primtrim").value = pMedia;
+		}
+    }
+
+    the("pres.diastolica.primtrim").onkeyup = function(e){
+		if (isNaN(this.value) == false){
+			var unTercioPSis = this.value / 3;
+			var unTercioPDias = "";
+			var pMedia = "";
+
+			if (isNaN(the("pres.sistolica.primtrim").value) == false){
+				unTercioPDias = the("pres.sistolica.primtrim").value / 3;
+			}
+
+			if (unTercioPDias > 0){
+				pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
+			}
+
+			the("pres.media.primtrim").value = pMedia;
+		}
+    }
+
+    the("alternativa.fmf").onclick = function(){
+        if (this.checked == true){
+            window.open("https://fetalmedicine.org/research/assess/trisomies", '_blank');
+            this.checked = false
+        }
+    }
+
+    the("activ.calculadora.pree").onclick = function(){
+        if (this.checked == true){
+            var URL = "http://medicinafetalbarcelona.org/calc/";
+            var win = window.open(URL, "_blank");
+            this.checked == false
+        }
+    }
+
 });
 
 // Controlador de input clones
