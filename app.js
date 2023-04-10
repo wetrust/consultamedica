@@ -8363,8 +8363,6 @@ function informeMorfologia(){
     }
 
     InformeString += '</tbody></table><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"></p><div class="newpage" pagebreak="true"></div>'
-    var membrete = '<div class="container"><div style="width: 45%; text-align: center;" class="membrete">'+$("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />") +'</div></div>'
-    InformeString += membrete;
     InformeString += '<div class="container-fluid"><p style="color: #045dab; margin-top: 2rem;"><strong>C).- EVALUACIÓN MORFOLOGÍA FETAL (24 cortes)</strong></p><table class="table"> <tbody>';
 
     var CEES = document.querySelector('input[name="cees.morfologia"]:checked').value;
