@@ -6929,7 +6929,7 @@ function egSaco(saco) {
     saco = saco.replace(",", ".");
     saco = parseInt(saco);
 
-    if (saco < 5 || saco > 61) {
+    if (saco < 3 || saco > 61) {
         return 0;
     }
     else {
