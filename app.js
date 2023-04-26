@@ -8087,7 +8087,7 @@ function informeGinecologico()
     let paciente = $( '#nombre-paciente').val();
     let idpaciente = $( '#id-paciente').val();
     let motivo = the("motivo-examen").value;
-    let ecografista = "Dr. " + the("ecografista").value;
+    let ecografista = the("ecografista").value;
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fexamen = new Date(Date.parse(the("fee").value));

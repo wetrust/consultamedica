@@ -8387,7 +8387,7 @@ function informeMorfologia(){
     var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = $( '#ecografista\\.morfologia').val();
+    var ecografista = "Dr. Rudecindo Lagos";
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var edadmaterna = $( "select[name='edad_materna']").val();
 
@@ -8684,7 +8684,7 @@ function informeMorfologiaClon(){
     var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = $( '#ecografista\\.morfologia').val();
+    var ecografista = "Dr. Rudecindo Lagos";
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var edadmaterna = $( "select[name='edad_materna']").val();
 
