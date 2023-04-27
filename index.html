@@ -1768,109 +1768,110 @@
             </div>
         </div>
     </div>
-    <div class="container d-none" id="consulta" style="margin-top: 7.3rem;">
-        <div class="card my-3 shadow-sm">
-            <div class="card-body">
-            <hr class="btn-consulta">
-            <p class="text-primary"><em>Configuración general, datos generales y continuar a exámen</em></p>
-            <div class="card px-5 mx-5" style="background-color:#ebefff;">
-                <div class="card-body px-5 mx-5">
-                    <div class="row mb-4">
-                        <div class="col-9">
-                            <h5 class="card-title text-dark">A.- Configuración datos generales.</h5>
-                        </div>
-                        <div class="col-3">
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-outline-secondary active" id="configNoController" data-value="0">
-                                    <input type="radio" value="0" checked> NO
-                                </label>
-                                <label class="btn btn-outline-secondary" id="configSiController" data-value="1">
-                                    <input type="radio" value="1"> SI
-                                </label>
+    <div class="d-none" id="consulta" style="margin-top: 6.4rem;">
+        <div class="mb-3 pt-2 px-4" style="background-color: #e9ecef">
+            <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="ver.consulta"><label class="form-check-label" for="ver.consulta"><strong><em>Instructivo para él modulo determinación de edad gestacional *</em></strong></label></div>
+            <div class="d-none">
+                <div class="justify-content-center">
+                    <div style="background-color: #e9ecef" class="p-2 rounded">
+                        <ul type="a" >
+                            <li>Cálculo de edad gestacional y fecha probable de parto (FPP) según fecha última mestruación (FUM) referida.</li>
+                            <li>De forma inversa, obtener FUM y FPP a partir de edad gestacional referida, determinada previamente.</li>
+                            <li>Para evaluación de exámenes anteriores, el software dispone de la opción &laquo; fecha de examen modificable &raquo;</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card my-3 shadow-sm">
+                <div class="card-body">
+                <hr class="btn-consulta">
+                <p class="text-primary"><em>Configuración general, datos generales y continuar a exámen</em></p>
+                <div class="card px-5 mx-5" style="background-color:#ebefff;">
+                    <div class="card-body px-5 mx-5">
+                        <div class="row mb-4">
+                            <div class="col-9">
+                                <h5 class="card-title text-dark">A.- Configuración datos generales.</h5>
+                            </div>
+                            <div class="col-3">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary active" id="configNoController" data-value="0">
+                                        <input type="radio" value="0" checked> NO
+                                    </label>
+                                    <label class="btn btn-outline-secondary" id="configSiController" data-value="1">
+                                        <input type="radio" value="1"> SI
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row my-4">
-                        <div class="col-9">
-                            <h5 class="card-title text-dark">B.- Configuración datos personales.</h5>
-                        </div>
-                        <div class="col-3">
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-outline-secondary active" id="informacionPacienteNo" data-value="0">
-                                    <input type="radio" value="0" checked> NO
-                                </label>
-                                <label class="btn btn-outline-secondary" id="informacionPacienteSi" data-value="1">
-                                    <input type="radio" value="1"> SI
-                                </label>
+                        <div class="row my-4">
+                            <div class="col-9">
+                                <h5 class="card-title text-dark">B.- Configuración datos personales.</h5>
+                            </div>
+                            <div class="col-3">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary active" id="informacionPacienteNo" data-value="0">
+                                        <input type="radio" value="0" checked> NO
+                                    </label>
+                                    <label class="btn btn-outline-secondary" id="informacionPacienteSi" data-value="1">
+                                        <input type="radio" value="1"> SI
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row my-4">
-                        <div class="col-9">
-                            <h5 class="card-title text-dark">C.- Continuar a exámen ecográfico.</h5>
-                        </div>
-                        <div class="col-3">
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-outline-secondary active" id="continuarExmEcoNo" data-value="0">
-                                    <input type="radio" value="0" checked> NO
-                                </label>
-                                <label class="btn btn-outline-secondary" id="continuarExmEcoSi" data-value="1">
-                                    <input type="radio" value="1"> SI
-                                </label>
+                        <div class="row my-4">
+                            <div class="col-9">
+                                <h5 class="card-title text-dark">C.- Continuar a exámen ecográfico.</h5>
+                            </div>
+                            <div class="col-3">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-outline-secondary active" id="continuarExmEcoNo" data-value="0">
+                                        <input type="radio" value="0" checked> NO
+                                    </label>
+                                    <label class="btn btn-outline-secondary" id="continuarExmEcoSi" data-value="1">
+                                        <input type="radio" value="1"> SI
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <hr class="btn-consulta">
-            <div class="mb-3">
-                <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="ver.consulta"><label class="form-check-label text-primary" for="ver.consulta"><em>Instructivo para él modulo determinación de edad gestacional *</em></label></div>
-                <div class="d-none p-1">
-                    <p><small>* Para Longitud Céfalo Nalga (LCN) medida entre 7 y 10 semanas, la variación es tan solo +- 3 días.</small></p>
-                    <div class="justify-content-center">
-                        <div style="background-color: #e9ecef" class="p-2 rounded">
-                            <ul type="a" >
-                                <li>Cálculo de edad gestacional y fecha probable de parto (FPP) según fecha última mestruación (FUM) referida.</li>
-                                <li>De forma inversa, obtener FUM y FPP a partir de edad gestacional referida, determinada previamente.</li>
-                                <li>Para evaluación de exámenes anteriores, el software dispone de la opción &laquo; fecha de examen modificable &raquo;</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-3 d-none">
-                <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="ver.consulta"><label class="form-check-label text-primary" for="ver.consulta"><em>Referencias perinatales seleccionadas</em></label></div>
-                <div class="d-none" id="pedefes">
-                    <div class="accordion" id="accordionExample">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Documento PDF Referencias fetales
-                        </button>
-                        <div class="card">
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <ul>
-                                    <li><small>Guía práctica ISUOG: Evaluación ecográfica de la biometría y el crecimiento fetal <a id="pdfuno" href="#pdfviebox">Ver PDF</a></small></li>
-                                    <li><small>Guía Práctica ISUOG: Uso de la ecografía Doppler en obstetricia <a id="pdfnuevo" href="#pdfviebox">Ver PDF</a></small></li>
-                                    <li><small>Protocols Medicina materno fetal Hospital Clinic Barcelona; Defectos del crecimiento fetal <a id="pdfdos" href="#pdfviebox">Ver PDF</a></small></li>
-                                </ul>
+                <hr class="btn-consulta">
+                <div class="mb-3 d-none">
+                    <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="ver.consulta"><label class="form-check-label text-primary" for="ver.consulta"><em>Referencias perinatales seleccionadas</em></label></div>
+                    <div class="d-none" id="pedefes">
+                        <div class="accordion" id="accordionExample">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Documento PDF Referencias fetales
+                            </button>
+                            <div class="card">
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <ul>
+                                        <li><small>Guía práctica ISUOG: Evaluación ecográfica de la biometría y el crecimiento fetal <a id="pdfuno" href="#pdfviebox">Ver PDF</a></small></li>
+                                        <li><small>Guía Práctica ISUOG: Uso de la ecografía Doppler en obstetricia <a id="pdfnuevo" href="#pdfviebox">Ver PDF</a></small></li>
+                                        <li><small>Protocols Medicina materno fetal Hospital Clinic Barcelona; Defectos del crecimiento fetal <a id="pdfdos" href="#pdfviebox">Ver PDF</a></small></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Documento PDF Referencias neonatales
-                        </button>
-                        <div class="card">
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                <ul>
-                                    <li><small>Curva Neonatal Chilena: M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274. <a id="pdfnacional" href="#pdfviebox">Ver PDF</a></small><br><small class="text-primary">-- ( Estándar neonatal chileno en uso desde el año 2010 )</small></li>
-                                    <li><small>Curva Regional Araucanía - Chile: Lagos y col. Rev. Chilena Obtet. Ginecol. 2009; 74(4). <a id="pdfregional" href="#pdfviebox">Ver PDF</a></small><br><small class="text-primary">-- ( Curva para ponderar efecto modulador de variables biológicas sobre el peso neonatal )</small></li>
-                                </ul>
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Documento PDF Referencias neonatales
+                            </button>
+                            <div class="card">
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <ul>
+                                        <li><small>Curva Neonatal Chilena: M. Milad. A y Col.; Rev. Chil. Pediatr. 2010; 81(3): 1264-274. <a id="pdfnacional" href="#pdfviebox">Ver PDF</a></small><br><small class="text-primary">-- ( Estándar neonatal chileno en uso desde el año 2010 )</small></li>
+                                        <li><small>Curva Regional Araucanía - Chile: Lagos y col. Rev. Chilena Obtet. Ginecol. 2009; 74(4). <a id="pdfregional" href="#pdfviebox">Ver PDF</a></small><br><small class="text-primary">-- ( Curva para ponderar efecto modulador de variables biológicas sobre el peso neonatal )</small></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Otros documentos de interés:
-                        </button>
-                        <div class="card">
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                <div class="card-body" id="ppt.relacionados"></div>
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Otros documentos de interés:
+                            </button>
+                            <div class="card">
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body" id="ppt.relacionados"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
