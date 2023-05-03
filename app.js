@@ -409,7 +409,7 @@ $( document ).ready(function() {
     $('#continuarExmEcoSi').on('click', function(){
         document.location.hash = "inicio";
         the("menu.modulo.activo").classList.remove("btn-outline-dark")
-        the("menu.modulo.activo").classList.add("btn-oscuro")
+        the("menu.modulo.activo").classList.add("btn-dark")
     });
 
     $('#continuarExmEcoSi').on('focusout', function(){
