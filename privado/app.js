@@ -1224,7 +1224,37 @@ $( document ).ready(function() {
             the("art.ut.prim.div").classList.add("d-none");
         }
     });
-    
+
+    $("#respuesta_uterina_derecha_prim").on("keyup",function(){
+        let ut = pctut(this.value);
+        $("#respuesta_uterina_derecha_percentil_prim").html(ut.pct);
+
+        let aui = parseFloat($("#respuesta_uterina_izquierda_prim").val());
+        let aud = parseFloat(this.value);
+        let utprom = ((aui + aud) / 2);
+        the("respuesta_uterina_promedio_prim").value = utprom.toFixed(2);
+        $("#respuesta_uterina_promedio_prim").trigger("change");
+    });
+
+    $("#respuesta_uterina_izquierda_prim").on("keyup",function(){
+        let ut = pctut(this.value);
+        the("respuesta_uterina_izquierda_percentil_prim").innerText = ut.pct;
+
+        let aui = parseFloat(this.value);
+        let aud = parseFloat($("#respuesta_uterina_derecha_prim").val());
+        let utprom = ((aui + aud) / 2);
+        the("respuesta_uterina_promedio_prim").value = utprom.toFixed(2);
+        $("#respuesta_uterina_promedio_prim").trigger("change");
+    });
+
+    $("#respuesta_uterina_promedio_prim").on("change",function(){
+        if (Number.isNaN(this.value) == false){
+            let ut = pctut(this.value);
+            $("#respuesta_uterina_promedio_percentil_prom").html(ut.pct);
+            $("#respuesta_uterina_promedio_rango_prim").val(ut.rango.min + " - " + ut.rango.max);
+        }
+    });
+
     the("art.ut.prim.new").onclick = function(){
         if (this.checked == true){
             the("art.ut.div.prim.new").classList.remove("d-none");
@@ -5546,6 +5576,46 @@ $(document).ready(function(){
             }
         }
     })
+
+    the("pres.sistolica.primtrim").onkeyup = function(e){
+        if ( e.key == "Enter" ) {
+			e.preventDefault();
+			the("pres.diastolica.primtrim").focus()
+		}
+		if (isNaN(this.value) == false){
+			var unTercioPSis = this.value / 3;
+			var unTercioPDias = "";
+			var pMedia = "";
+
+			if (isNaN(the("pres.diastolica.primtrim").value) == false){
+				unTercioPDias = the("pres.diastolica.primtrim").value / 3;
+			}
+
+			if (unTercioPDias > 0){
+				pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
+			}
+
+			the("pres.media.primtrim").value = pMedia;
+		}
+    }
+
+    the("pres.diastolica.primtrim").onkeyup = function(e){
+		if (isNaN(the("pres.sistolica.primtrim").value) == false){
+			var unTercioPSis = the("pres.sistolica.primtrim").value / 3;
+			var unTercioPDias = "";
+			var pMedia = "";
+
+			if (isNaN(the("pres.diastolica.primtrim").value) == false){
+				unTercioPDias = the("pres.diastolica.primtrim").value / 3;
+			}
+
+			if (unTercioPDias > 0){
+				pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
+			}
+
+			the("pres.media.primtrim").value = pMedia;
+		}
+    }
 
     $("#liquido\\.semi\\.morfologia").on("keyup", function(){
          /* 5 95*/

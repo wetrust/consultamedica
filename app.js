@@ -744,7 +744,7 @@ $( document ).ready(function() {
             the("opt.clinico.div").classList.add("d-none");
         }
     });
-    
+
     $("#larg\\.cerv\\.prim").on("click", function(){
         if (this.checked == true){
             the("larg.cerv.prim.div").classList.remove("d-none");
