@@ -4332,34 +4332,264 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 form-group">
-                                <label class="text-secondary">Útero</label>
-                                <input type="text" class="form-control" id="utero.ginecologica" value="Utero central anterior, aspecto general normal; .... x .... x .... mm."> </div>
-                            <div class="col-12 col-sm-6 form-group">
-                                <label class="text-secondary">Contenido endouterino / Endometrio</label>
-                                <input type="text" class="form-control" id="endometrio.ginecologica" value="Homogéneo de aspecto normal, grosor máximo .... mm."> </div>
-                            <div class="col-12 col-sm-6 form-group">
-                                <label class="text-secondary">Anexo Derecho</label>
-                                <input type="text" class="form-control" id="anexo.derecho.ginecologica" value="Aspecto general normal"> </div>
-                            <div class="col-12 col-sm-6 form-group">
-                                <label class="text-secondary">Anexo Izquierdo</label>
-                                <input type="text" class="form-control" id="anexo.izquierdo.ginecologica" value="Aspecto general normal"> </div>
-                            <div class="col-12 col-sm-6 form-group">
-                                <label class="text-secondary">Ovario Derecho</label>
-                                <input type="text" class="form-control" id="ovario.derecho.ginecologica" value="Aspecto normal .... x .... x .... mm."> </div>
-                            <div class="col-12 col-sm-6 form-group">
-                                <label class="text-secondary">Ovario Izquierdo</label>
-                                <input type="text" class="form-control" id="ovario.izquierdo.ginecologica" value="Aspecto normal .... x .... x .... mm."> </div>
-                            <div class="col-12 col-sm-6 form-group">
-                                <label class="text-secondary">Espacio Retro-uterino (Douglas)</label>
-                                <input type="text" class="form-control" id="douglas.ginecologica" value="Libre"> </div>
-                            <div class="col-12 form-group">
-                                <label class="text-primary">Comentarios y observaciones del profesional ecografista</label>
-                                <textarea class="form-control" id="comentario.ginecologica" rows="5"> - Cuerpo uterino&#13; - Contenido endouterino&#13; - Exploración anexial bilateral&#13; - Espacio retrouterino</textarea></div>
+                    </div>
+                </div>
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-start">
+                            <div class="form-group mr-2">
+                                <label class="text-secondary">Útero ubicación 1</label>
+                                <input type="text" class="form-control" id="utero.ginecologica" value="" list="utUbic1">
+                                <datalist id="utUbic1">
+                                    <option value="central"></option>
+                                    <option value="lateralizado izquierda"></option>
+                                    <option value="lateralizado derecha"></option>
+                                    <option value="pequeño"></option>
+                                    <option value="aumentado"></option>
+                                    <option value="histerectomizada"></option>
+                                </datalist>
+                            </div>
+                            <div class="form-group mr-2">
+                                <label class="text-secondary">Útero ubicación 2</label>
+                                <input type="text" class="form-control" id="utUbicacion2" value="" list="utUbic2">
+                                <datalist id="utUbic2">
+                                    <option value="anterior"></option>
+                                    <option value="posterior"></option>
+                                    <option value="flexion anterior"></option>
+                                    <option value="flexion posterior"></option>
+                                    <option value="pequeño"></option>
+                                    <option value="aumentado"></option>
+                                    <option value="previamente"></option>
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-secondary">Aspecto uterno</label>
+                                <input type="text" class="form-control" id="cuerpoUterino" value="" list="cuerpUterino">
+                                <datalist id="cuerpUterino">
+                                    <option value="simétrico aspecto normal"></option>
+                                    <option value="ausente"></option>
+                                    <option value="pequeño"></option>
+                                    <option value="aumentado"></option>
+                                    <option value="polinodular"></option>
+                                    <option value="parenquima homogeneo"></option>
+                                    <option value="parenquima heterogeneo"></option>
+                                    <option value="nódulo intraparenquimatoso"></option>
+                                    <option value="con calcificaciones multiples"></option>
+                                </datalist>
+                            </div>
+                            <div class="d-flex justify-content-start ml-4">
+                                <div class="form-group mr-2">
+                                    <label class="text-secondary">Dimensiones</label>
+                                    <input type="number" class="form-control" id="uteroDim1" value="">
+                                </div>
+                                <div class="form-group mr-2">
+                                    <label class="text-secondary">Uterinas</label>
+                                    <input type="number" class="form-control" id="uteroDim2" value="">
+                                </div>
+                                <div class="form-group mr-2">
+                                    <label class="text-secondary">&nbsp;</label>
+                                    <input type="number" class="form-control" id="uteroDim3" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-secondary">Volumen uterino</label>
+                                <input type="text" class="form-control" id="uternoVolumen" value="" disabled>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-start">
+                            <div class="form-group mr-3 w-25">
+                                <label class="text-secondary">Endometrio 1</label>
+                                <input type="text" class="form-control" id="endometrio.ginecologica" value="" list="endomDesc1">
+                                <datalist id="endomDesc1">
+                                    <option value="homogeneo"></option>
+                                    <option value="heterogeneo"></option>
+                                    <option value="fino"></option>
+                                    <option value="engrosado"></option>
+                                    <option value="regular"></option>
+                                    <option value="irregular"></option>
+                                    <option value="no procede"></option>
+                                </datalist>
+                            </div>
+                            <div class="form-group mr-3 w-25">
+                                <label class="text-secondary">Endometrio 2</label>
+                                <input type="text" class="form-control" id="endometDesc2" value="" list="endomDesc2">
+                                <datalist id="endomDesc2">
+                                    <option value="aspecto normal"></option>
+                                    <option value="fino"></option>
+                                    <option value="bilaminar"></option>
+                                    <option value="trilaminar"></option>
+                                    <option value="pre ovulatorio"></option>
+                                    <option value="post ovulatorio"></option>
+                                    <option value="menstrual"></option>
+                                    <option value="perimenstrual"></option>
+                                    <option value="con masa ocupante"></option>
+                                    <option value="no procede"></option>
+                                </datalist>
+                            </div>
+                            <div class="form-group mr-3 w-25">
+                                <label class="text-secondary">Grosor endometrial</label>
+                                <input type="number" class="form-control" id="endometGrosor" value="">
+                            </div>
+                            <div class="form-group mr-3 align-self-end">
+                                <label class="text-secondary">mm</label>
+                            </div>
+                            <div class="form-group mr-3 w-100">
+                                <label class="text-secondary">Observaciones y DIU</label>
+                                <textarea class="form-control" id="endometObs" rows="1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-start">
+                            <div class="form-group w-50 mr-2">
+                                <label class="text-secondary"><strong>Anexo Derecho</strong></label>
+                                <input type="text" class="form-control" id="anexo.derecho.ginecologica" value="" list="anexDer">
+                                <datalist id="anexDer">
+                                    <option value="aspecto normal"></option>
+                                    <option value="masa solida"></option>
+                                    <option value="masa eco negativa"></option>
+                                    <option value="masa tabicada"></option>
+                                </datalist>
+                            </div>
+                            <div class="form-group w-50">
+                                <label class="text-secondary"><strong>Anexo Izquierdo</strong></label>
+                                <input type="text" class="form-control" id="anexo.izquierdo.ginecologica" value="" list="anexIzq">
+                                <datalist id="anexIzq">
+                                    <option value="aspecto normal"></option>
+                                    <option value="masa solida"></option>
+                                    <option value="masa eco negativa"></option>
+                                    <option value="masa tabicada"></option>
+                                </datalist>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-start">
+                            <div class="form-group w-50 mr-2">
+                                <div class="row m-0">
+                                    <div class="col-5 pl-0 pr-1">
+                                        <div class="form-group mr-2">
+                                            <label class="text-secondary"><strong>Ov Derecho</strong></label>
+                                            <input type="text" class="form-control" id="ovario.derecho.ginecologica" value="" list="ovarDereList">
+                                            <datalist id="ovarDereList">
+                                                <option value="Aspecto normal"></option>
+                                                <option value="Aumentado"></option>
+                                                <option value="Pequeño"></option>
+                                                <option value="no se observa"></option>
+                                                <option value="extraido previamente"></option>
+                                                <option value="Masa Sólida"></option>
+                                                <option value="Masa Eco Negativa"></option>
+                                                <option value="Tabicado"></option>
+                                                <option value="Ubicación central posterior"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="row">
+                                            <div class="col-3 px-1">
+                                                <div class="form-group">
+                                                    <label class="text-secondary"><small>mm</small></label>
+                                                    <input type="number" class="form-control" id="ovarDereMed1" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-3 px-1">
+                                                <div class="form-group">
+                                                    <label class="text-secondary"><small>mm</small></label>
+                                                    <input type="number" class="form-control" id="ovarDereMed2" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-3 px-1">
+                                                <div class="form-group">
+                                                    <label class="text-secondary"><small>mm</small></label>
+                                                    <input type="number" class="form-control" id="ovarDereMed3" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-3 px-1">
+                                                <div class="form-group">
+                                                    <label class="text-secondary"><small>Vol Cm3</small></label>
+                                                    <input type="text" class="form-control" id="ovarDereVol" value="" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group w-50">
+                                <div class="row m-0">
+                                    <div class="col-5 pl-0 pr-1">
+                                        <div class="form-group">
+                                            <label class="text-secondary"><strong>Ov Izquierdo</strong></label>
+                                            <input type="text" class="form-control" id="ovario.izquierdo.ginecologica" value="" list="ovarIzquierList">
+                                            <datalist id="ovarIzquierList">
+                                                <option value="Aspecto normal"></option>
+                                                <option value="Aumentado"></option>
+                                                <option value="Pequeño"></option>
+                                                <option value="no se observa"></option>
+                                                <option value="extraido previamente"></option>
+                                                <option value="Masa Sólida"></option>
+                                                <option value="Masa Eco Negativa"></option>
+                                                <option value="Tabicado"></option>
+                                                <option value="Ubicación central posterior"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="row">
+                                            <div class="col-3 px-1">
+                                                <div class="form-group">
+                                                    <label class="text-secondary"><small>mm</small></label>
+                                                    <input type="number" class="form-control" id="ovarIzquier1" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-3 px-1">
+                                                <div class="form-group">
+                                                    <label class="text-secondary"><small>mm</small></label>
+                                                    <input type="number" class="form-control" id="ovarIzquier2" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-3 px-1">
+                                                <div class="form-group">
+                                                    <label class="text-secondary"><small>mm</small></label>
+                                                    <input type="number" class="form-control" id="ovarIzquier3" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-3 px-1">
+                                                <div class="form-group">
+                                                    <label class="text-secondary"><small>Vol Cm3</small></label>
+                                                    <input type="text" class="form-control" id="ovarIzquierVol" value="" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="text-secondary">Espacio retrouterino</label>
+                            </div>
+                            <div class="col">
+                                <textarea class="form-control" id="douglas.ginecologica" rows="1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="bg-verde text-white rounded px-2">Comentarios y observaciones del profesional ecografista</label>
+                            <textarea class="form-control" id="comentario.ginecologica" rows="5"> - Cuerpo uterino&#13; - Contenido endouterino&#13; - Exploración anexial bilateral&#13; - Espacio retrouterino</textarea></div>
+                    </div>
+                </div>
+
+
+
+
             </div>
             <div class="col-2 border-left">
                 <h6 class="mt-4">Ver Informe Ginecologico</h6>
