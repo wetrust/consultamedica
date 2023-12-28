@@ -201,7 +201,7 @@ $(document).ready(function() {
         configuracion.append("ciudad", the("ciudadpaciente").value)
         configuracion.append("eg", the("semanas").value)
         configuracion.append("lugar", the("lcontrolpaciente").value)
-        configuracion.append("tipo", "Flujometría Doppler materno / fetal")
+        configuracion.append("tipo", "Flujometría Doppler")
 
         configuracion.append("correo", "drlagosbarcelona@gmail.com")
         configuracion.append("data", JSON.stringify(data))
