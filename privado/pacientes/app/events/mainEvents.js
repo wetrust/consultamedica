@@ -94,6 +94,8 @@ export class mainEvents{
                 document.location.hash = "#ecoGinecologica"
             }else if (data.paciente_tipoeco_txt == "Evaluación crecimiento"){ 
                 document.location.hash = "#ecoObsSegTrim"
+            }else if (data.paciente_tipoeco_txt == "Flujometría Doppler"){ 
+                document.location.hash = "#ecoDoppler"
             }
 
         })
