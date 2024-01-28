@@ -23,6 +23,8 @@ export function construirTablaPacientes(data, examenes){
 
     let _datos = ordenarDatos(data, examenes)
 
+    _datos = _datos.sort((a, b) => fechas.toDate(a.get("fecha")) - fechas.toDate(b.get("fecha")));
+
     _datos.forEach(function myFunction(value, index, array) {
 
         let tr = document.createElement("tr");
