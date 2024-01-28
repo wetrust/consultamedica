@@ -23,7 +23,17 @@ export function construirTablaPacientes(data, examenes){
 
     let _datos = ordenarDatos(data, examenes)
 
-    _datos = _datos.sort((a, b) => fechas.toDate(a.get("fecha")) - fechas.toDate(b.get("fecha")));
+    _datos = _datos.sort((a, b) => {
+        
+        let fa = fechas.toDate(a.get("fecha"))
+        let fb = fechas.toDate(b.get("fecha"))
+
+            if (fa < fb) { return 1; }
+            if (fa > fb) { return -1; }
+        return 0;
+
+    }
+        );
 
     _datos.forEach(function myFunction(value, index, array) {
 
