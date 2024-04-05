@@ -556,6 +556,9 @@ $( document ).ready(function() {
         the("embrion").value = this.value
         $("#embrion").trigger("click")
     })
+    $("#embrion, #embrion\\.clon").on("click", function(){
+        this.onchange()
+    })
 
     $("#embrion, #embrion\\.clon").on("change", function(){
         let optiones = ["no se observa aun", "no se observa"];
