@@ -558,7 +558,7 @@ $( document ).ready(function() {
     })
 
     $("#embrion, #embrion\\.clon").on("click", function(){
-        this.onchange()
+        $(this).trigger("change")
     })
 
     $("#embrion, #embrion\\.clon").on("change", function(){
@@ -566,7 +566,7 @@ $( document ).ready(function() {
         let cardio = ["con act. cardiaca (+)"];
         let embrion = the("embrion").value;
 
-        if (this.id = "embrion"){
+        if (this.id == "embrion"){
             the("embrion.clon").value = the("embrion").value
         }else{
             the("embrion").value = the("embrion.clon").value
