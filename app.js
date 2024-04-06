@@ -5808,25 +5808,6 @@ $(document).ready(function(){
         }
     })
 
-    the("vld.morfologia").onkeyup =  function(){
-        let atrio = this.value;
-        atrio = atrio.toString();
-        atrio = atrio.replace(",", ".");
-
-        if (isNaN(atrio) == false){
-            atrio = parseFloat(atrio);
-            if (atrio < 10){
-                the("vld.txt.morfologia").value = "Normal"
-            }else if (atrio < 13){
-                the("vld.txt.morfologia").value = "Ventriculomegalia Leve"
-            }else if (atrio < 16){
-                the("vld.txt.morfologia").value = "Ventriculomegalia Moderada"
-            }else if (atrio > 15){
-                the("vld.txt.morfologia").value = "Ventriculomegalia Severa"
-            }
-        }
-    }
-
     $("input[type='radio']").on("change",function() {
 
             if (this.value == "eliminar"){
