@@ -1310,7 +1310,7 @@ $( document ).ready(function() {
         }
     });
 
-    $("#respuesta_uterina_derecha_prim").on("keyup",function(){
+    $("#respuesta_uterina_derecha_prim").on("keyup",function(e){
         if ( e.key == "Enter" ) {
 			e.preventDefault();
 			the("respuesta_uterina_izquierda_prim").focus()
