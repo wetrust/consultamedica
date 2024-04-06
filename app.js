@@ -5822,6 +5822,51 @@ $(document).ready(function(){
                 this.parentElement.parentElement.parentElement.children[1].value = ""
             }
     });
+
+    the("pres.sistolica.primtrim").onkeyup = function(e){
+        if ( e.key == "Enter" ) {
+            e.preventDefault();
+            the("pres.diastolica.primtrim").focus()
+        }
+        if (isNaN(this.value) == false){
+            var unTercioPSis = this.value / 3;
+            var unTercioPDias = "";
+            var pMedia = "";
+    
+            if (isNaN(the("pres.diastolica.primtrim").value) == false){
+                unTercioPDias = the("pres.diastolica.primtrim").value / 3;
+            }
+    
+            if (unTercioPDias > 0){
+                pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
+            }
+    
+            the("pres.media.primtrim").value = pMedia;
+        }
+    }
+    
+    the("pres.diastolica.primtrim").onkeyup = function(e){
+        if ( e.key == "Enter" ) {
+            e.preventDefault();
+            the("respuesta_uterina_derecha_prim").focus()
+        }
+    
+        if (isNaN(the("pres.sistolica.primtrim").value) == false){
+            var unTercioPSis = the("pres.sistolica.primtrim").value / 3;
+            var unTercioPDias = "";
+            var pMedia = "";
+    
+            if (isNaN(the("pres.diastolica.primtrim").value) == false){
+                unTercioPDias = the("pres.diastolica.primtrim").value / 3;
+            }
+    
+            if (unTercioPDias > 0){
+                pMedia = Math.trunc((unTercioPDias * 2) + (unTercioPSis));
+            }
+    
+            the("pres.media.primtrim").value = pMedia;
+        }
+    }
 })
 
 $(window).on('hashchange', function(){
