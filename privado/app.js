@@ -5685,6 +5685,10 @@ $(document).ready(function(){
     }
 
     the("pres.diastolica.primtrim").onkeyup = function(e){
+        if ( e.key == "Enter" ) {
+			e.preventDefault();
+			the("respuesta_uterina_derecha_prim").focus()
+		}
 		if (isNaN(the("pres.sistolica.primtrim").value) == false){
 			var unTercioPSis = the("pres.sistolica.primtrim").value / 3;
 			var unTercioPDias = "";
