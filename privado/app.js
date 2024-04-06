@@ -1311,6 +1311,10 @@ $( document ).ready(function() {
     });
 
     $("#respuesta_uterina_derecha_prim").on("keyup",function(){
+        if ( e.key == "Enter" ) {
+			e.preventDefault();
+			the("respuesta_uterina_izquierda_prim").focus()
+		}
         let ut = pctut(this.value);
         $("#respuesta_uterina_derecha_percentil_prim").html(ut.pct);
 
