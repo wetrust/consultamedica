@@ -4370,7 +4370,7 @@
                         <div class="d-flex justify-content-start">
                             <div class="form-group mr-2">
                                 <label class="text-secondary">Útero ubicación 1</label>
-                                <input type="text" class="form-control" id="utero.ginecologica" value="" list="utUbic1">
+                                <input type="text" class="form-control" id="utero.ginecologica" value="central" list="utUbic1">
                                 <datalist id="utUbic1">
                                     <option value="central"></option>
                                     <option value="lateralizado izquierda"></option>
@@ -4382,7 +4382,7 @@
                             </div>
                             <div class="form-group mr-2">
                                 <label class="text-secondary">Útero ubicación 2</label>
-                                <input type="text" class="form-control" id="utUbicacion2" value="" list="utUbic2">
+                                <input type="text" class="form-control" id="utUbicacion2" value="anterior" list="utUbic2">
                                 <datalist id="utUbic2">
                                     <option value="anterior"></option>
                                     <option value="posterior"></option>
@@ -4395,7 +4395,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="text-secondary">Aspecto uterno</label>
-                                <input type="text" class="form-control" id="cuerpoUterino" value="" list="cuerpUterino">
+                                <input type="text" class="form-control" id="cuerpoUterino" value="simétrico aspecto normal" list="cuerpUterino">
                                 <datalist id="cuerpUterino">
                                     <option value="simétrico aspecto normal"></option>
                                     <option value="ausente"></option>
@@ -4408,20 +4408,20 @@
                                     <option value="con calcificaciones multiples"></option>
                                 </datalist>
                             </div>
-                            <div class="d-flex justify-content-start ml-4">
-                                <div class="form-group mr-2">
-                                    <label class="text-secondary">Dimensiones</label>
-                                    <input type="number" class="form-control" id="uteroDim1" value="">
+                            <div class="d-flex flex-column mb-3" style="width: 40%;">
+                                <div class="ml-4 mb-2 text-secondary">Dimensiones Uterinas (Largo x Alto x Ancho)</div>
+                                <div class="d-flex justify-content-start ml-4">
+                                    <div class="form-group mr-2">
+                                        <input type="number" class="form-control" id="uteroDim1" value="">
+                                    </div>
+                                    <div class="form-group mr-2">
+                                        <input type="number" class="form-control" id="uteroDim2" value="">
+                                    </div>
+                                    <div class="form-group mr-2">
+                                        <input type="number" class="form-control" id="uteroDim3" value="">
+                                    </div>
                                 </div>
-                                <div class="form-group mr-2">
-                                    <label class="text-secondary">Uterinas</label>
-                                    <input type="number" class="form-control" id="uteroDim2" value="">
-                                </div>
-                                <div class="form-group mr-2">
-                                    <label class="text-secondary">&nbsp;</label>
-                                    <input type="number" class="form-control" id="uteroDim3" value="">
-                                </div>
-                            </div>
+                              </div>
                             <div class="form-group">
                                 <label class="text-secondary">Volumen uterino</label>
                                 <input type="text" class="form-control" id="uternoVolumen" value="" disabled>
