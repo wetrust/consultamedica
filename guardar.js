@@ -26,19 +26,6 @@ function storageAvailable(type) {
 }
 
 $(document).ready(function() {
-
-    $("input").on("keyup",function( e ) {
-        var key_enter = ["uteroDim1", "uteroDim2", "uteroDim3", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3"];
-
-        if (key_enter.includes(this.id)== true){
-
-            let contenido = String(this.value)
-            if ( contenido.length > 3 ) {
-                this.value = contenido.substr(0, 3)
-            }
-        }
-    });
-    
     if (storageAvailable('localStorage')) {
         var configuracion = JSON.parse(localStorage["configuracion"]);
 
