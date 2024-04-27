@@ -8173,7 +8173,7 @@ function informeGinecologico()
     comentario = "<strong><em>" + comentario + "</em></strong>"
 
     let patologiaObstetrica = the("patologiaObstetricaUno").value;
-    let edadmaterna = $( "select[name='edad_materna']").val();
+    let edadmaterna = the("edad.ecoGinecologica").value;
     let diaciclo = the("diaciclo").value;
 
     let utUbicacion1 = the("utero.ginecologica").value;
