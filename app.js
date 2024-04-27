@@ -4938,6 +4938,66 @@ $(document).ready(function(){
         the("uternoVolumen").value = uternoVolumen
     })
 
+    $("#ovarDereMed1").on("change", function(){
+        let ovarDereMed1 = Number.isNaN(the("ovarDereMed1").value) ? 0 : Number(the("ovarDereMed1").value)
+        let ovarDereMed2 = Number.isNaN(the("ovarDereMed2").value) ? 0 : Number(the("ovarDereMed2").value)
+        let ovarDereMed3 = Number.isNaN(the("ovarDereMed3").value) ? 0 : Number(the("ovarDereMed3").value)
+
+        let ovarDereVol = ((ovarDereMed1 * ovarDereMed2 * ovarDereMed3 * 0.525) / 1000).toFixed(0) + " Cm3"
+
+        the("ovarDereVol").value = ovarDereVol
+    })
+
+    $("#ovarDereMed2").on("change", function(){
+        let ovarDereMed1 = Number.isNaN(the("ovarDereMed1").value) ? 0 : Number(the("ovarDereMed1").value)
+        let ovarDereMed2 = Number.isNaN(the("ovarDereMed2").value) ? 0 : Number(the("ovarDereMed2").value)
+        let ovarDereMed3 = Number.isNaN(the("ovarDereMed3").value) ? 0 : Number(the("ovarDereMed3").value)
+
+        let ovarDereVol = ((ovarDereMed1 * ovarDereMed2 * ovarDereMed3 * 0.525) / 1000).toFixed(0) + " Cm3"
+
+        the("ovarDereVol").value = ovarDereVol
+    })
+
+    $("#ovarDereMed3").on("change", function(){
+        let ovarDereMed1 = Number.isNaN(the("ovarDereMed1").value) ? 0 : Number(the("ovarDereMed1").value)
+        let ovarDereMed2 = Number.isNaN(the("ovarDereMed2").value) ? 0 : Number(the("ovarDereMed2").value)
+        let ovarDereMed3 = Number.isNaN(the("ovarDereMed3").value) ? 0 : Number(the("ovarDereMed3").value)
+
+        let ovarDereVol = ((ovarDereMed1 * ovarDereMed2 * ovarDereMed3 * 0.525) / 1000).toFixed(0) + " Cm3"
+
+        the("ovarDereVol").value = ovarDereVol
+    })
+
+    $("#ovarIzquier1").on("change", function(){
+        let ovarIzquier1 = Number.isNaN(the("ovarIzquier1").value) ? 0 : Number(the("ovarIzquier1").value)
+        let ovarIzquier2 = Number.isNaN(the("ovarIzquier2").value) ? 0 : Number(the("ovarIzquier2").value)
+        let ovarIzquier3 = Number.isNaN(the("ovarIzquier3").value) ? 0 : Number(the("ovarIzquier3").value)
+
+        let ovarIzquierVol = ((ovarIzquier1 * ovarIzquier2 * ovarIzquier3 * 0.525) / 1000).toFixed(0) + " Cm3"
+
+        the("ovarIzquierVol").value = ovarIzquierVol
+    })
+    
+    $("#ovarIzquier2").on("change", function(){
+        let ovarIzquier1 = Number.isNaN(the("ovarIzquier1").value) ? 0 : Number(the("ovarIzquier1").value)
+        let ovarIzquier2 = Number.isNaN(the("ovarIzquier2").value) ? 0 : Number(the("ovarIzquier2").value)
+        let ovarIzquier3 = Number.isNaN(the("ovarIzquier3").value) ? 0 : Number(the("ovarIzquier3").value)
+
+        let ovarIzquierVol = ((ovarIzquier1 * ovarIzquier2 * ovarIzquier3 * 0.525) / 1000).toFixed(0) + " Cm3"
+
+        the("ovarIzquierVol").value = ovarIzquierVol
+    })
+
+    $("#ovarIzquier3").on("change", function(){
+        let ovarIzquier1 = Number.isNaN(the("ovarIzquier1").value) ? 0 : Number(the("ovarIzquier1").value)
+        let ovarIzquier2 = Number.isNaN(the("ovarIzquier2").value) ? 0 : Number(the("ovarIzquier2").value)
+        let ovarIzquier3 = Number.isNaN(the("ovarIzquier3").value) ? 0 : Number(the("ovarIzquier3").value)
+
+        let ovarIzquierVol = ((ovarIzquier1 * ovarIzquier2 * ovarIzquier3 * 0.525) / 1000).toFixed(0) + " Cm3"
+
+        the("ovarIzquierVol").value = ovarIzquierVol
+    })
+
     $("input").on("keypress",function( e ) {
 
         var key_enter = ["uteroDim1", "uteroDim2", "uteroDim3", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3"];
