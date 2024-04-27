@@ -8183,7 +8183,7 @@ function informeGinecologico()
     let uteroDim2 = the("uteroDim2").value;
     let uteroDim3 = the("uteroDim3").value;
 
-    let endometDesc1 = the("endometDesc1").value;
+    let endometDesc1 = the("endometrio.ginecologica").value;
     let endometDesc2 = the("endometDesc2").value;
     let endometGrosor = the("endometGrosor").value;
     let endometObs = the("endometObs").value;
