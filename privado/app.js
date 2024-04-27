@@ -1579,7 +1579,7 @@ $( document ).ready(function() {
         let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
         let uteroDim3 = Number.isNaN(the("uteroDim3").value) ? 0 : Number(the("uteroDim3").value)
 
-        let uternoVolumen = ((uteroDim1 * uteroDim2 * uteroDim3 * 0.525) / 1000).toFixed(2) + " Cm3"
+        let uternoVolumen = ((uteroDim1 * uteroDim2 * uteroDim3 * 0.525) / 1000).toFixed() + " Cm3"
 
         the("uternoVolumen").value = uternoVolumen
     })
@@ -1589,7 +1589,7 @@ $( document ).ready(function() {
         let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
         let uteroDim3 = Number.isNaN(the("uteroDim3").value) ? 0 : Number(the("uteroDim3").value)
 
-        let uternoVolumen = ((uteroDim1 * uteroDim2 * uteroDim3 * 0.525) / 1000).toFixed(2) + " Cm3"
+        let uternoVolumen = ((uteroDim1 * uteroDim2 * uteroDim3 * 0.525) / 1000).toFixed() + " Cm3"
 
         the("uternoVolumen").value = uternoVolumen
     })
@@ -1599,7 +1599,7 @@ $( document ).ready(function() {
         let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
         let uteroDim3 = Number.isNaN(the("uteroDim3").value) ? 0 : Number(the("uteroDim3").value)
 
-        let uternoVolumen = ((uteroDim1 * uteroDim2 * uteroDim3 * 0.525) / 1000).toFixed(2) + " Cm3"
+        let uternoVolumen = ((uteroDim1 * uteroDim2 * uteroDim3 * 0.525) / 1000).toFixed() + " Cm3"
 
         the("uternoVolumen").value = uternoVolumen
     })
@@ -1609,7 +1609,7 @@ $( document ).ready(function() {
         let ovarDereMed2 = Number.isNaN(the("ovarDereMed2").value) ? 0 : Number(the("ovarDereMed2").value)
         let ovarDereMed3 = Number.isNaN(the("ovarDereMed3").value) ? 0 : Number(the("ovarDereMed3").value)
 
-        let ovarDereVol = ((ovarDereMed1 * ovarDereMed2 * ovarDereMed3 * 0.525) / 1000).toFixed(2) + " Cm3"
+        let ovarDereVol = ((ovarDereMed1 * ovarDereMed2 * ovarDereMed3 * 0.525) / 1000).toFixed() + " Cm3"
 
         the("ovarDereVol").value = ovarDereVol
     })
@@ -1619,7 +1619,7 @@ $( document ).ready(function() {
         let ovarDereMed2 = Number.isNaN(the("ovarDereMed2").value) ? 0 : Number(the("ovarDereMed2").value)
         let ovarDereMed3 = Number.isNaN(the("ovarDereMed3").value) ? 0 : Number(the("ovarDereMed3").value)
 
-        let ovarDereVol = ((ovarDereMed1 * ovarDereMed2 * ovarDereMed3 * 0.525) / 1000).toFixed(2) + " Cm3"
+        let ovarDereVol = ((ovarDereMed1 * ovarDereMed2 * ovarDereMed3 * 0.525) / 1000).toFixed() + " Cm3"
 
         the("ovarDereVol").value = ovarDereVol
     })
@@ -1629,7 +1629,7 @@ $( document ).ready(function() {
         let ovarDereMed2 = Number.isNaN(the("ovarDereMed2").value) ? 0 : Number(the("ovarDereMed2").value)
         let ovarDereMed3 = Number.isNaN(the("ovarDereMed3").value) ? 0 : Number(the("ovarDereMed3").value)
 
-        let ovarDereVol = ((ovarDereMed1 * ovarDereMed2 * ovarDereMed3 * 0.525) / 1000).toFixed(2) + " Cm3"
+        let ovarDereVol = ((ovarDereMed1 * ovarDereMed2 * ovarDereMed3 * 0.525) / 1000).toFixed() + " Cm3"
 
         the("ovarDereVol").value = ovarDereVol
     })
@@ -1639,7 +1639,7 @@ $( document ).ready(function() {
         let ovarIzquier2 = Number.isNaN(the("ovarIzquier2").value) ? 0 : Number(the("ovarIzquier2").value)
         let ovarIzquier3 = Number.isNaN(the("ovarIzquier3").value) ? 0 : Number(the("ovarIzquier3").value)
 
-        let ovarIzquierVol = ((ovarIzquier1 * ovarIzquier2 * ovarIzquier3 * 0.525) / 1000).toFixed(2) + " Cm3"
+        let ovarIzquierVol = ((ovarIzquier1 * ovarIzquier2 * ovarIzquier3 * 0.525) / 1000).toFixed() + " Cm3"
 
         the("ovarIzquierVol").value = ovarIzquierVol
     })
@@ -1649,7 +1649,7 @@ $( document ).ready(function() {
         let ovarIzquier2 = Number.isNaN(the("ovarIzquier2").value) ? 0 : Number(the("ovarIzquier2").value)
         let ovarIzquier3 = Number.isNaN(the("ovarIzquier3").value) ? 0 : Number(the("ovarIzquier3").value)
 
-        let ovarIzquierVol = ((ovarIzquier1 * ovarIzquier2 * ovarIzquier3 * 0.525) / 1000).toFixed(2) + " Cm3"
+        let ovarIzquierVol = ((ovarIzquier1 * ovarIzquier2 * ovarIzquier3 * 0.525) / 1000).toFixed() + " Cm3"
 
         the("ovarIzquierVol").value = ovarIzquierVol
     })
@@ -1659,7 +1659,7 @@ $( document ).ready(function() {
         let ovarIzquier2 = Number.isNaN(the("ovarIzquier2").value) ? 0 : Number(the("ovarIzquier2").value)
         let ovarIzquier3 = Number.isNaN(the("ovarIzquier3").value) ? 0 : Number(the("ovarIzquier3").value)
 
-        let ovarIzquierVol = ((ovarIzquier1 * ovarIzquier2 * ovarIzquier3 * 0.525) / 1000).toFixed(2) + " Cm3"
+        let ovarIzquierVol = ((ovarIzquier1 * ovarIzquier2 * ovarIzquier3 * 0.525) / 1000).toFixed() + " Cm3"
 
         the("ovarIzquierVol").value = ovarIzquierVol
     })
