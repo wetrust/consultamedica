@@ -8188,10 +8188,10 @@ function informeGinecologico()
     let endometGrosor = the("endometGrosor").value;
     let endometObs = the("endometObs").value;
 
-    let anexDerecho = the("anexDerecho").value;
-    let anexIzquierdo = the("anexIzquierdo").value;
+    let anexDerecho = the("anexo.derecho.ginecologica").value;
+    let anexIzquierdo = the("anexo.izquierdo.ginecologica").value;
 
-    let ovDer = the("ovarDere").value;
+    let ovDer = the("ovario.derecho.ginecologica").value;
     if(ovDer != "no se observa"){
         if (the("ovarDereMed1").value != ""){
             ovDer += " " + the("ovarDereMed1").value;
@@ -8221,7 +8221,7 @@ function informeGinecologico()
         }
     }
 
-    let ovIzq = the("ovarIzquier").value;
+    let ovIzq = the("ovario.izquierdo.ginecologica").value;
     if(ovIzq != "no se observa"){
         if (the("ovarIzquier1").value != ""){
             ovIzq += " " + the("ovarIzquier1").value;
