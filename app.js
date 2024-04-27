@@ -8176,7 +8176,7 @@ function informeGinecologico()
     let edadmaterna = $( "select[name='edad_materna']").val();
     let diaciclo = the("diaciclo").value;
 
-    let utUbicacion1 = the("utUbicacion1").value;
+    let utUbicacion1 = the("utero.ginecologica").value;
     let utUbicacion2 = the("utUbicacion2").value;
     let cuerpoUterino = the("cuerpoUterino").value;
     let uteroDim1 = the("uteroDim1").value;
