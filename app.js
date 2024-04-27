@@ -8251,7 +8251,7 @@ function informeGinecologico()
         }
     }
 
-    let espacioRetro = the("espacioRetro").value;
+    let espacioRetro = the("douglas.ginecologica").value;
 
     informe = informe.replace(/:MOTIVEXM/g, the("motivo-examen").value)
     informe = informe.replace(/:PATGINEOBS/g, the("patologiaObstetricaUno").value);
