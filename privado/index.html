@@ -1512,7 +1512,7 @@
                         <div class="d-flex justify-content-start">
                             <div class="form-group mr-2">
                                 <label class="text-secondary">Útero ubicación 1</label>
-                                <input type="text" class="form-control" id="utUbicacion1" value="" list="utUbic1">
+                                <input type="text" class="form-control" id="utUbicacion1" value="central" list="utUbic1">
                                 <datalist id="utUbic1">
                                     <option value="central"></option>
                                     <option value="lateralizado izquierda"></option>
@@ -1524,7 +1524,7 @@
                             </div>
                             <div class="form-group mr-2">
                                 <label class="text-secondary">Útero ubicación 2</label>
-                                <input type="text" class="form-control" id="utUbicacion2" value="" list="utUbic2">
+                                <input type="text" class="form-control" id="utUbicacion2" value="anterior" list="utUbic2">
                                 <datalist id="utUbic2">
                                     <option value="anterior"></option>
                                     <option value="posterior"></option>
@@ -1537,7 +1537,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="text-secondary">Aspecto uterno</label>
-                                <input type="text" class="form-control" id="cuerpoUterino" value="" list="cuerpUterino">
+                                <input type="text" class="form-control" id="cuerpoUterino" value="simétrico aspecto normal" list="cuerpUterino">
                                 <datalist id="cuerpUterino">
                                     <option value="simétrico aspecto normal"></option>
                                     <option value="ausente"></option>
@@ -1575,32 +1575,27 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-start">
                             <div class="form-group mr-3 w-25">
-                                <label class="text-secondary">Endometrio 1</label>
-                                <input type="text" class="form-control" id="endometDesc1" value="" list="endomDesc1">
+                                <label class="text-secondary">Endometrio Tipo</label>
+                                <input type="text" class="form-control" id="endometDesc1" value="secretor" list="endomDesc1">
                                 <datalist id="endomDesc1">
-                                    <option value="homogeneo"></option>
-                                    <option value="heterogeneo"></option>
-                                    <option value="fino"></option>
-                                    <option value="engrosado"></option>
-                                    <option value="regular"></option>
-                                    <option value="irregular"></option>
-                                    <option value="no procede"></option>
+                                    <option value="laminar"></option>
+                                    <option value="atrófico"></option>
+                                    <option value="proliferativo"></option>
+                                    <option value="secretor"></option>
+                                    <option value="peri menstrual"></option>
                                 </datalist>
                             </div>
                             <div class="form-group mr-3 w-25">
-                                <label class="text-secondary">Endometrio 2</label>
-                                <input type="text" class="form-control" id="endometDesc2" value="" list="endomDesc2">
+                                <label class="text-secondary">Endometrio Aspecto</label>
+                                <input type="text" class="form-control" id="endometDesc2" value="aspecto normal" list="endomDesc2">
                                 <datalist id="endomDesc2">
-                                    <option value="aspecto normal"></option>
                                     <option value="fino"></option>
-                                    <option value="bilaminar"></option>
-                                    <option value="trilaminar"></option>
-                                    <option value="pre ovulatorio"></option>
-                                    <option value="post ovulatorio"></option>
-                                    <option value="menstrual"></option>
-                                    <option value="perimenstrual"></option>
-                                    <option value="con masa ocupante"></option>
-                                    <option value="no procede"></option>
+                                    <option value="aspecto normal"></option>
+                                    <option value="homogenio"></option>
+                                    <option value="heterogenio"></option>
+                                    <option value="homogenio engrosado"></option>
+                                    <option value="heterogenio engrosado"></option>
+                                    <option value="solo engrosado"></option>
                                 </datalist>
                             </div>
                             <div class="form-group mr-3 w-10">
@@ -1623,7 +1618,7 @@
                         <div class="d-flex justify-content-start">
                             <div class="form-group w-50 mr-2">
                                 <label class="text-secondary"><strong>Anexo Derecho</strong></label>
-                                <input type="text" class="form-control" id="anexDerecho" value="" list="anexDer">
+                                <input type="text" class="form-control" id="anexDerecho" value="aspecto normal" list="anexDer">
                                 <datalist id="anexDer">
                                     <option value="aspecto normal"></option>
                                     <option value="masa solida"></option>
@@ -1633,7 +1628,7 @@
                             </div>
                             <div class="form-group w-50">
                                 <label class="text-secondary"><strong>Anexo Izquierdo</strong></label>
-                                <input type="text" class="form-control" id="anexIzquierdo" value="" list="anexIzq">
+                                <input type="text" class="form-control" id="anexIzquierdo" value="aspecto normal" list="anexIzq">
                                 <datalist id="anexIzq">
                                     <option value="aspecto normal"></option>
                                     <option value="masa solida"></option>
@@ -1649,7 +1644,7 @@
                                     <div class="col-5 pl-0 pr-1">
                                         <div class="form-group mr-2">
                                             <label class="text-secondary"><strong>Ov Derecho</strong></label>
-                                            <input type="text" class="form-control" id="ovarDere" value="" list="ovarDereList">
+                                            <input type="text" class="form-control" id="ovarDere" value="Aspecto normal" list="ovarDereList">
                                             <datalist id="ovarDereList">
                                                 <option value="Aspecto normal"></option>
                                                 <option value="Aumentado"></option>
@@ -1698,7 +1693,7 @@
                                     <div class="col-5 pl-0 pr-1">
                                         <div class="form-group">
                                             <label class="text-secondary"><strong>Ov Izquierdo</strong></label>
-                                            <input type="text" class="form-control" id="ovarIzquier" value="" list="ovarIzquierList">
+                                            <input type="text" class="form-control" id="ovarIzquier" value="Aspecto normal" list="ovarIzquierList">
                                             <datalist id="ovarIzquierList">
                                                 <option value="Aspecto normal"></option>
                                                 <option value="Aumentado"></option>
