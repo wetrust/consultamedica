@@ -8411,10 +8411,6 @@ function informeGinecologico(){
 
                 ovDer += " mm";
         }
-
-        if(ovDer != "Aspecto poliquistico"){
-            ovDer += " mm, " + the("ovarDereVol").value;
-        }
     }
 
     let ovIzq = the("ovarIzquier").value;
@@ -8443,10 +8439,6 @@ function informeGinecologico(){
             the("ovarIzquier2").value != "" ||
             the("ovarIzquier3").value != ""){
                 ovIzq += " mm";
-        }
-
-        if(ovIzq != "Aspecto poliquistico"){
-            ovIzq += " mm, " + the("ovarIzquierVol").value;
         }
     }
 
