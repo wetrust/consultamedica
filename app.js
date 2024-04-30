@@ -8228,7 +8228,7 @@ function informeGinecologico()
     let ovIzq = the("ovario.izquierdo.ginecologica").value;
     if(ovIzq != "no se observa"){
         if (the("ovarIzquier1").value != ""){
-            ovIzq += "<br> Dimensiones " + the("ovarIzquier1").value;
+            ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dimensiones " + the("ovarIzquier1").value;
 
             if (the("ovarIzquier2").value != ""){
                 ovIzq += " x ";
