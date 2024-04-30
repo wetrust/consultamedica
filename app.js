@@ -8194,7 +8194,7 @@ function informeGinecologico()
     let ovDer = the("ovario.derecho.ginecologica").value;
     if(ovDer != "no se observa"){
         if (the("ovarDereMed1").value != ""){
-            ovDer += "<br> Dimensiones " + the("ovarDereMed1").value;
+            ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dimensiones " + the("ovarDereMed1").value;
 
             if (the("ovarDereMed2").value != ""){
                 ovDer += " x ";
