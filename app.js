@@ -8221,7 +8221,7 @@ function informeGinecologico()
         }
 
         if(the("ovario.derecho.ginecologica").value == "aspecto poliquistico"){
-            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen" + the("ovarDereVol").value;
+            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen&nbsp;&nbsp;" + the("ovarDereVol").value;
         }
     }
 
@@ -8255,7 +8255,7 @@ function informeGinecologico()
         }
 
         if(the("ovario.izquierdo.ginecologica").value == "aspecto poliquistico"){
-            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen" + the("ovarIzquierVol").value;
+            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen&nbsp;&nbsp;" + the("ovarIzquierVol").value;
         }
     }
 
