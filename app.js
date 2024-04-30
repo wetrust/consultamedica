@@ -6150,7 +6150,9 @@ function infPrecoz(){
         }
     }
 
-    var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
+    var paciente = (the("nombre-paciente").value == "") ? "" : the("nombre-paciente").value
+    paciente = (the("apellido-paciente").value == "") ? "" : the("apellido-paciente").value
+
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = "Dr. Rudecindo Lagos";
