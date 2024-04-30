@@ -6204,8 +6204,11 @@ function infPrecoz(){
     InformeString = InformeString.replace(":DATEINFORME", dateInf);
     InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
 
-    var CIUDAD =  the("ciudadpaciente").value;
-    var LCONTROL =  the("lcontrolpaciente").value;
+    //var CIUDAD =  the("ciudadpaciente").value;
+    //var LCONTROL =  the("lcontrolpaciente").value;
+
+    var CIUDAD =  "";
+    var LCONTROL =  "";
     InformeString = InformeString.replace(":CIUDAD", CIUDAD);
     InformeString = InformeString.replace(":LCONTROL", LCONTROL);
 
