@@ -8194,7 +8194,7 @@ function informeGinecologico()
     let ovDer = the("ovario.derecho.ginecologica").value;
     if(ovDer != "no se observa"){
         if (the("ovarDereMed1").value != ""){
-            ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dimensiones " + the("ovarDereMed1").value;
+            ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dimensiones " + the("ovarDereMed1").value;
 
             if (the("ovarDereMed2").value != ""){
                 ovDer += " x ";
@@ -8220,15 +8220,15 @@ function informeGinecologico()
                 ovDer += " mm";
         }
 
-        if(the("ovario.derecho.ginecologica").value == "Aspecto poliquistico"){
-            ovDer += " mm, " + the("ovarDereVol").value;
+        if(the("ovario.derecho.ginecologica").value == "aspecto poliquistico"){
+            ovDer += ", volumen" + the("ovarDereVol").value;
         }
     }
 
     let ovIzq = the("ovario.izquierdo.ginecologica").value;
     if(ovIzq != "no se observa"){
         if (the("ovarIzquier1").value != ""){
-            ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dimensiones " + the("ovarIzquier1").value;
+            ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dimensiones " + the("ovarIzquier1").value;
 
             if (the("ovarIzquier2").value != ""){
                 ovIzq += " x ";
@@ -8254,8 +8254,8 @@ function informeGinecologico()
                 ovIzq += " mm";
         }
 
-        if(the("ovario.izquierdo.ginecologica").value == "Aspecto poliquistico"){
-            ovIzq += " mm, " + the("ovarIzquierVol").value;
+        if(the("ovario.izquierdo.ginecologica").value == "aspecto poliquistico"){
+            ovIzq += ", volumen" + the("ovarIzquierVol").value;
         }
     }
 
