@@ -8411,6 +8411,10 @@ function informeGinecologico(){
 
                 ovDer += " mm";
         }
+
+        if (the("ovarDereMed3").value != ""){
+            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen&nbsp;&nbsp;" + the("ovarDereVol").value;
+    }
     }
 
     let ovIzq = the("ovarIzquier").value;
@@ -8439,6 +8443,10 @@ function informeGinecologico(){
             the("ovarIzquier2").value != "" ||
             the("ovarIzquier3").value != ""){
                 ovIzq += " mm";
+        }
+
+        if (the("ovarIzquier3").value != ""){
+            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen&nbsp;&nbsp;" + the("ovarIzquierVol").value;
         }
     }
 
