@@ -8222,6 +8222,12 @@ function informeGinecologico()
             the("ovarDereMed3").value != ""){
 
                 ovDer += " mm";
+        }
+
+        if (the("ovarDereMed1").value != "" || isNaN(Number(the("ovarDereMed1").value)) == false ||
+            the("ovarDereMed2").value != "" || isNaN(Number(the("ovarDereMed2").value)) == false ||
+            the("ovarDereMed3").value != "" || isNaN(Number(the("ovarDereMed3").value)) == false){
+
                 ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen&nbsp;&nbsp;" + the("ovarDereVol").value;
         }
     }
@@ -8253,7 +8259,13 @@ function informeGinecologico()
             the("ovarIzquier3").value != ""){
 
                 ovIzq += " mm";
-                ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen&nbsp;&nbsp;" + the("ovarIzquierVol").value;
+        }
+
+        if (the("ovarIzquier1").value != "" || isNaN(Number(the("ovarIzquier1").value)) == false ||
+        the("ovarIzquier2").value != "" || isNaN(Number(the("ovarIzquier2").value)) == false ||
+        the("ovarIzquier3").value != "" || isNaN(Number(the("ovarIzquier3").value)) == false){
+
+            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen&nbsp;&nbsp;" + the("ovarIzquierVol").value;
         }
     }
 
