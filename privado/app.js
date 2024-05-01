@@ -8386,7 +8386,7 @@ function informeGinecologico(){
     let ovDer = the("ovarDere").value;
     if(ovDer != "no se observa"){
         if (the("ovarDereMed1").value != ""){
-            ovDer += " " + the("ovarDereMed1").value;
+            ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dimensiones " + the("ovarDereMed1").value;
 
             if (the("ovarDereMed2").value != ""){
                 ovDer += " x ";
@@ -8420,7 +8420,7 @@ function informeGinecologico(){
     let ovIzq = the("ovarIzquier").value;
     if(ovIzq != "no se observa"){
         if (the("ovarIzquier1").value != ""){
-            ovIzq += " " + the("ovarIzquier1").value;
+            ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dimensiones " + the("ovarIzquier1").value;
 
             if (the("ovarIzquier2").value != ""){
                 ovIzq += " x ";
