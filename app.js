@@ -8188,7 +8188,7 @@ function informeGinecologico()
     let uteroDim3 = the("uteroDim3").value;
     let volUteroCM = the("uternoVolumen").value;
 
-    let endometDesc1 = the("endometrio.ginecologica").value;
+    let endometDesc1 = " de tipo " + the("endometrio.ginecologica").value;
     let endometDesc2 = the("endometDesc2").value;
     let endometGrosor = the("endometGrosor").value;
     let endometObs = the("endometObs").value;

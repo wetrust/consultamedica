@@ -1643,7 +1643,7 @@ $( document ).ready(function() {
 
         the("ovarIzquierVol").value = ovarIzquierVol
     })
-    
+
     $("#ovarIzquier2").on("change", function(){
         let ovarIzquier1 = Number.isNaN(the("ovarIzquier1").value) ? 0 : Number(the("ovarIzquier1").value)
         let ovarIzquier2 = Number.isNaN(the("ovarIzquier2").value) ? 0 : Number(the("ovarIzquier2").value)
@@ -8377,7 +8377,7 @@ function informeGinecologico(){
     let uteroDim3 = the("uteroDim3").value;
     let volUteroCM = the("uternoVolumen").value;
 
-    let endometDesc1 = the("endometDesc1").value;
+    let endometDesc1 = " de tipo " + the("endometDesc1").value;
     let endometDesc2 = the("endometDesc2").value;
     let endometGrosor = the("endometGrosor").value;
     let endometObs = the("endometObs").value;
@@ -8416,7 +8416,7 @@ function informeGinecologico(){
 
         if (the("ovarDereMed3").value != ""){
             ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen&nbsp;&nbsp;" + the("ovarDereVol").value;
-    }
+        }
     }
 
     let ovIzq = the("ovarIzquier").value;
