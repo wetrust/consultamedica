@@ -453,9 +453,9 @@ $( document ).ready(function() {
             let fur = new Date(Date.parse(the("furAjustada").value));
             fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
             let fpp = new Date(Date.parse(the("fppAjustada").value));
-            fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
+            fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()] + " " + fpp.getFullYear();
             let eg = the("semanasAjustada").value + "."+ the("diasAjustada").value + " semanas.";
-            comentario += "La edad gestacional calculada  =  "+eg+", por tanto fechas operacionales son:\n- FUM ecográfica  =  "+ fur +"\n- Fecha esperada de parto  =  " + fpp + "\n";
+            comentario += "La Edad gestacional calculada  =  "+eg+", por tanto fechas operacionales son:\n- FUM ecográfica  =  "+ fur +"\n- Fecha esperada de parto  =  " + fpp + "\n";
         }
 
         the("comentarios-eco-uno").value = comentario
