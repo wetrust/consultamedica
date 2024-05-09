@@ -2665,20 +2665,22 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="text-secondary">Utero Ubicacion 1</label>
-                                            <select id="utero-ubic1" class="form-control">
-                                                <option value="central">central</option>
-                                                <option value="lateralizado a la izquierda">lateralizado a la izquierda</option>
-                                                <option value="lateralizado a la derecha">lateralizado a la derecha</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="utero-ubic1" value="central" list="utero.ubic1.list">
+                                            <datalist id="utero.ubic1.list">
+                                                <option value="central"></option>
+                                                <option value="lateralizado a la izquierda"></option>
+                                                <option value="lateralizado a la derecha"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="text-secondary">Utero Ubicacion 2</label>
-                                            <select id="utero-ubic2" class="form-control">
-                                                <option value="anterior">anterior</option>
-                                                <option value="posterior">posterior</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="utero-ubic2" value="central" list="utero.ubic2.list">
+                                            <datalist id="utero.ubic2.list">
+                                                <option value="anterior"></option>
+                                                <option value="posterior"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                 </div>
@@ -2686,25 +2688,27 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="text-secondary">Cuerpo uterino</label>
-                                            <select id="cuerpo-uterino" class="form-control">
-                                                <option value="aspecto normal">aspecto normal</option>
-                                                <option value="nodulo unico">nodulo unico</option>
-                                                <option value="múltiples nódulos">múltiples nódulos</option>
-                                                <option value="malformaciones">malformaciones</option>
-                                                <option value="descripcion adicional en observaciones">descripcion adicional en observaciones</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="cuerpo-uterino" value="central" list="cuerpo.uterino.list">
+                                            <datalist id="cuerpo.uterino.list">
+                                                <option value="aspecto normal"></option>
+                                                <option value="nodulo unico"></option>
+                                                <option value="múltiples nódulos"></option>
+                                                <option value="malformaciones"></option>
+                                                <option value="descripcion adicional en observaciones"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="text-secondary">Saco Gestacional</label>
-                                            <select id="saco-gestacional" class="form-control">
-                                                <option value="normal" selected>normal</option>
-                                                <option value="no se observa">no se observa</option>
-                                                <option value="múltiple">múltiple</option>
-                                                <option value="con pseudosaco">con pseudosaco</option>
-                                                <option value="desprendimiento parcial">desprendimiento parcial</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="saco-gestacional" value="central" list="saco.gestacional.list">
+                                            <datalist id="saco.gestacional.list">
+                                                <option value="normal"></option>
+                                                <option value="no se observa"></option>
+                                                <option value="múltiple"></option>
+                                                <option value="con pseudosaco"></option>
+                                                <option value="desprendimiento parcial"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col-3">
@@ -2720,10 +2724,11 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label class="text-secondary">Saco vitelino</label>
-                                            <select id="saco-vitelino" class="form-control">
-                                                <option value="presente">presente</option>
-                                                <option value="no se observa" selected>no se observa </option>
-                                            </select>
+                                            <input type="text" class="form-control" id="saco-vitelino" value="central" list="saco.vitelino.list">
+                                            <datalist id="saco.vitelino.list">
+                                                <option value="presente"></option>
+                                                <option value="no se observa"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col d-none">
@@ -2740,12 +2745,13 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="text-secondary">Embrión</label>
-                                            <select id="embrion.clon" class="form-control">
-                                                <option value="no se observa" selected>Embrión no se observa</option>
-                                                <option value="no se observa aun">Embrión no se observa aun</option>
-                                                <option value="con act. cardiaca (+)">Embrión con act. cardiaca (+)</option>
-                                                <option value="sin actividad cardiaca">Embrión sin actividad cardiaca</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="embrion.clon" value="central" list="embrion.clon.list">
+                                            <datalist id="embrion.clon.list">
+                                                <option value="no se observa"></option>
+                                                <option value="no se observa aun"></option>
+                                                <option value="con act. cardiaca (+)"></option>
+                                                <option value="sin actividad cardiaca"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col-2 d-none">
@@ -2769,23 +2775,25 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="text-secondary">Anexo derecho</label>
-                                            <select id="anexo-derecho" class="form-control">
-                                                <option value="aspecto normal">aspecto normal</option>
-                                                <option value="ovario normal">ovario normal</option>
-                                                <option value="masa sólida">masa sólida</option>
-                                                <option value="masa eco negativa">masa eco negativa</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="anexo-derecho" value="central" list="anexo.derecho.list">
+                                            <datalist id="anexo.derecho.list">
+                                                <option value="aspecto normal"></option>
+                                                <option value="ovario normal"></option>
+                                                <option value="masa sólida"></option>
+                                                <option value="masa eco negativa"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="text-secondary">Anexo izquierdo</label>
-                                            <select id="anexo-izquierdo" class="form-control">
-                                                <option value="aspecto normal">aspecto normal</option>
-                                                <option value="ovario normal">ovario normal</option>
-                                                <option value="masa sólida">masa sólida</option>
-                                                <option value="masa eco negativa">masa eco negativa</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="anexo-izquierdo" value="central" list="anexo.izquierdo.list">
+                                            <datalist id="anexo.izquierdo.list">
+                                                <option value="aspecto normal"></option>
+                                                <option value="ovario normal"></option>
+                                                <option value="masa sólida"></option>
+                                                <option value="masa eco negativa"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                 </div>
@@ -2793,10 +2801,11 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label class="text-secondary">Douglas</label>
-                                            <select id="exploracion-douglas" class="form-control">
-                                                <option value="libre">libre</option>
-                                                <option value="ocupado">ocupado</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="exploracion-douglas" value="central" list="exploracion.douglas.list">
+                                            <datalist id="exploracion.douglas.list">
+                                                <option value="libre"></option>
+                                                <option value="ocupado"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -4494,7 +4503,6 @@
                                 </datalist>
                             </div>
                         </div>
-
                         <div class="d-flex justify-content-start">
                             <div class="form-group w-50 mr-2">
                                 <div class="row m-0">
@@ -4616,10 +4624,6 @@
                             <textarea class="form-control" id="comentario.ginecologica" rows="5"> - Cuerpo uterino&#13; - Contenido endouterino&#13; - Exploración anexial bilateral&#13; - Espacio retrouterino</textarea></div>
                     </div>
                 </div>
-
-
-
-
             </div>
             <div class="col-2 border-left">
                 <h6 class="mt-4">Ver Informe Ginecologico</h6>
