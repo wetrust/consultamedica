@@ -3718,21 +3718,23 @@
                                 <div class="row">
                                     <div class="form-group col">
                                         <label>Presentación</label>
-                                        <select id="presentacion" class="form-control">
-                                            <option value="cefalica">Cefálica</option>
-                                            <option value="podalica">Podálica</option>
-                                            <option value="transversa">transversa</option>
-                                            <option value="indiferente">indiferente</option>
-                                        </select>
+                                        <input type="text" class="form-control" id="presentacion" value="central" list="presentacion.list">
+                                        <datalist id="presentacion.list">
+                                            <option value="cefalica"></option>
+                                            <option value="podalica"></option>
+                                            <option value="transversa"></option>
+                                            <option value="indiferente"></option>
+                                        </datalist>
                                     </div>
                                     <div class="form-group col">
                                         <label>Dorso Fetal</label>
-                                        <select id="dorso" class="form-control">
-                                            <option value="anterior">Anterior</option>
-                                            <option value="lateral izquiedo">Lat. Izquierdo</option>
-                                            <option value="posterior">Posterior</option>
-                                            <option value="lateral derecho">Lat. Derecho</option>
-                                        </select>
+                                        <input type="text" class="form-control" id="dorso" value="central" list="dorso.list">
+                                        <datalist id="dorso.list">
+                                            <option value="anterior"></option>
+                                            <option value="lateral izquiedo"></option>
+                                            <option value="posterior"></option>
+                                            <option value="lateral derecho"></option>
+                                        </datalist>
                                     </div>
                                     <div class="form-group col">
                                         <label>FCF</label>
@@ -3778,36 +3780,39 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Antecedentes Cesárea previa?</label>
-                                            <select id="grado-placenta" class="form-control">
-                                                <option value="sin cesárea previa">Sin cesárea previa</option>
-                                                <option value="una cesárea anterior">Una cesárea anterior</option>
-                                                <option value="DOBLE CESÁREA">DOBLE CESÁREA</option>
-                                                <option value="TRIPLE CESÁREA">TRIPLE CESÁREA</option>
-                                                <option value="CUADRUPLE">CUADRUPLE</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="grado-placenta" value="central" list="grado.placenta.list">
+                                            <datalist id="grado.placenta.list">
+                                                <option value="sin cesárea previa"></option>
+                                                <option value="una cesárea anterior"></option>
+                                                <option value="DOBLE CESÁREA"></option>
+                                                <option value="TRIPLE CESÁREA"></option>
+                                                <option value="CUADRUPLE"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Placenta Inplantaci&oacute;n</label>
-                                            <select id="ubicacion" class="form-control">
-                                                <option value="cara anterior">cara anterior</option>
-                                                <option value="cara posterior">cara posterior</option>
-                                                <option value="fondo">fondo</option>
-                                                <option value="cara lateral derecha">cara lateral derecha</option>
-                                                <option value="cara lateral izquieda">cara lateral izquieda</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="ubicacion" value="central" list="ubicacion.list">
+                                            <datalist id="ubicacion.list">
+                                                <option value="cara anterior"></option>
+                                                <option value="cara posterior"></option>
+                                                <option value="fondo"></option>
+                                                <option value="cara lateral derecha"></option>
+                                                <option value="cara lateral izquieda"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Placenta relación OCI</label>
-                                            <select id="incersion" class="form-control">
-                                                <option value="alta">alta</option>
-                                                <option value="baja">baja</option>
-                                                <option value="previa marginal">previa marginal</option>
-                                                <option value="previa central">previa central</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="incersion" value="central" list="incersion.list">
+                                            <datalist id="incersion.list">
+                                                <option value="alta"></option>
+                                                <option value="baja"></option>
+                                                <option value="previa marginal"></option>
+                                                <option value="previa central"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                 </div>
@@ -3826,12 +3831,13 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Cord&oacute;n umbilical</label>
-                                            <select id="cordon" class="form-control">
-                                                <option value="inserci&oacute;n central">Inserci&oacute;n central</option>
-                                                <option value="inserci&oacute;n marginal">Inserci&oacute;n marginal</option>
-                                                <option value="inserci&oacute;n velamentosa">Inserci&oacute;n velamentosa</option>
-                                                <option value="inserci&oacute;n no evaluable">Inserci&oacute;n no evaluable</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="cordon" value="central" list="cordon.list">
+                                            <datalist id="cordon.list">
+                                                <option value="inserci&oacute;n central"></option>
+                                                <option value="inserci&oacute;n marginal"></option>
+                                                <option value="inserci&oacute;n velamentosa"></option>
+                                                <option value="inserci&oacute;n no evaluable"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -3848,11 +3854,12 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Líquido amniótico evaluación cualitativa</label>
-                                            <select id="liq-cualitativo-eco" class="form-control">
-                                                <option value="normal">Normal</option>
-                                                <option value="disminuido">Disminuido</option>
-                                                <option value="aumentado">Aumentado</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="liq-cualitativo-eco" value="central" list="liq.cualitativo.eco.list">
+                                            <datalist id="liq.cualitativo.eco.list">
+                                                <option value="normal"></option>
+                                                <option value="disminuido"></option>
+                                                <option value="aumentado"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col">
