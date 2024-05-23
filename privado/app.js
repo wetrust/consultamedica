@@ -6228,7 +6228,6 @@ $(document).ready(function(){
 })
 
 function calcularComentarioEcoPrecoz(){
-
     let comentario = ""
 
     if (Number.isNaN(the("saco").value) == false && the("embrion").value == "no se observa aun"){
@@ -6249,11 +6248,9 @@ function calcularComentarioEcoPrecoz(){
     }
 
     the("comentarios-eco-uno").value = comentario
-
 }
 
 function infPrecoz(){
-
     let sacovitelinotxt = (the("saco-vitelino").value == "no se observa") ? "." : " de diametro " + the("saco-vitelino-mm").value + " mm.";
     let sacogestacionaltxt = the("saco").value;
     sacogestacionaltxt = (sacogestacionaltxt > 0) ? " diametro promedio " + sacogestacionaltxt + " mm." : ".";
@@ -6357,7 +6354,7 @@ function infPrecoz(){
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + ' de '+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getUTCMonth()+1] + ' ' + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getUTCMonth()] + ' ' + fpp.getFullYear();
     let eg = the("semanas").value + '.'+ the("dias").value;
     InformeString = InformeString.replace(":FUR", fur);
     InformeString = InformeString.replace(":EG", eg);
@@ -6506,7 +6503,7 @@ function infPrecozClon(){
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + ' de '+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getUTCMonth()+1] + ' ' + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getUTCMonth()] + ' ' + fpp.getFullYear();
     let eg = the("semanas").value + '.'+ the("dias").value;
     InformeString = InformeString.replace(":FUR", fur);
     InformeString = InformeString.replace(":EG", eg);
@@ -6592,7 +6589,7 @@ function InfEcoObsSegTrim1(){
     fexamen = fexamen.getUTCDate() + ' de '+ monthsES[fexamen.getUTCMonth()] + ' ' + fexamen.getFullYear();
 
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getUTCMonth()+1] + ' ' + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getUTCMonth()] + ' ' + fpp.getFullYear();
     let eg = the("semanas").value + '.'+ the("dias").value;
 
     var dbp = the("dbp").value + ' mm';
@@ -6807,7 +6804,7 @@ function InfEcoObsSegTrim1Clon(){
     fexamen = fexamen.getUTCDate() + ' de '+ monthsES[fexamen.getUTCMonth()] + ' ' + fexamen.getFullYear();
 
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getUTCMonth()+1] + ' ' + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + ' de '+ monthsES[fpp.getUTCMonth()] + ' ' + fpp.getFullYear();
     let eg = the("semanas").value + '.'+ the("dias").value;
 
     var dbp = the("dbp").value + ' mm';
@@ -7958,7 +7955,7 @@ function crearInformeEcoSegTrim2(){
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()] + " " + fpp.getFullYear();
     let eg = the("semanas").value + "."+ the("dias").value;
 
     var dbp = $( '#dbp').val() + ' mm';
@@ -8151,7 +8148,7 @@ function crearInformeEcoSegTrim2Clon(){
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()] + " " + fpp.getFullYear();
     let eg = the("semanas").value + "."+ the("dias").value;
 
     var dbp = $( '#dbp').val() + ' mm';
@@ -8560,7 +8557,7 @@ function informeMorfologia(){
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()] + " " + fpp.getFullYear();
     let eg = the("semanas").value + "."+ the("dias").value;
 
     dayHoy = new Date();
@@ -8857,7 +8854,7 @@ function informeMorfologiaClon(){
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()] + " " + fpp.getFullYear();
     let eg = the("semanas").value + "."+ the("dias").value;
 
     dayHoy = new Date();
@@ -9155,7 +9152,7 @@ function informeDoppler(){
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()] + " " + fpp.getFullYear();
     let eg = the("semanas").value + "."+ the("dias").value;
 
     var bvm = the("bvmDoppler").value;
@@ -9347,7 +9344,7 @@ function informeDopplerClon(){
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
     let fpp = new Date(Date.parse(the("fpp").value));
-    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()+1] + " " + fpp.getFullYear();
+    fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()] + " " + fpp.getFullYear();
     let eg = the("semanas").value + "."+ the("dias").value;
 
     var bvm = the("bvmDoppler").value;
