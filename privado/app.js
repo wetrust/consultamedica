@@ -1084,7 +1084,7 @@ $( document ).ready(function() {
             let placenta_com = the("ubicacion").value;
             let placenta_com_ubic = the("incersion").value;
 
-            var linea6 = '- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'.\r\n- Líquido amniótico ' + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvmEcoDos").value + " mm.";
+            var linea6 = '- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'.\r\n- Líquido amniótico ' + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
 
             comentarios = comentarios + linea6 + '\r\n';
             $("#comentarios-eco-dos-inf-dos").val(comentarios);
