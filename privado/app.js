@@ -1079,7 +1079,7 @@ $( document ).ready(function() {
 
             var percentilPeso = $('#pfePctRpt').val();
 			percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
-            var comentarios = '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal Hadlock 3* \r\n';
+            var comentarios = '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal Hadlock * \r\n';
 
             let placenta_com = the("ubicacion").value;
             let placenta_com_ubic = the("incersion").value;
@@ -3103,7 +3103,7 @@ $( document ).ready(function() {
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
-        comentarios = (typeof comentarios == 'undefined') ? '- Crecimiento fetal (peso) en percentil ' + parseInt($('#pfePctRpt').val()) + ', para la gráfica de peso fetal Hadlock 3*<br />- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'<br>- Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
+        comentarios = (typeof comentarios == 'undefined') ? '- Crecimiento fetal (peso) en percentil ' + parseInt($('#pfePctRpt').val()) + ', para la gráfica de peso fetal Hadlock *<br />- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'<br>- Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
         stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
 
         var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
