@@ -1074,19 +1074,21 @@ $( document ).ready(function() {
     })
 
     $("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
-		var sexoFetal = $('#ecografia\\.segtrim\\.sexo').val();
-		
         if ($(this).val() == 1){
             $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
 
             var percentilPeso = $('#pfePctRpt').val();
 			percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
-            var comentarios = 'Crecimiento (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal Hadlock 3* \r\n';
+            var comentarios = '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal Hadlock 3* \r\n';
 
-            var linea6 = "Líquido amniótico " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvmEcoDos").value + " mm.";
+            let placenta_com = the("ubicacion").value;
+            let placenta_com_ubic = the("incersion").value;
+
+            var linea6 = '- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'.\r\n- Líquido amniótico ' + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor " + document.getElementById("bvmEcoDos").value + " mm.";
 
             comentarios = comentarios + linea6 + '\r\n';
             $("#comentarios-eco-dos-inf-dos").val(comentarios);
+
         }
         else if ($(this).val() == 2){
 
@@ -3099,7 +3101,9 @@ $( document ).ready(function() {
         
         var stringGraficos = "<div class='container'> <div style='width:100px;text-align:center;'></div></div><h4 class='text-center d-none'>Gráfica evaluación ecográfica del crecimiento fetal</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none mt-2'></span><div class='row d-none mt-2'> <div class='col-5'> <p style='font-size:10px;'><strong>Nombre: </strong>:PACIENTE </p></div><div class='col-3'> <p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'> <p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row'> <div class='col'> <div id='graficoInfecoObsSegTrimPFEView'></div><div class='row'> <div class='col-12'> <div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col-12'> <div id='graficoBVMView'></div></div></div></div><div class='col'> <div class='row'> <div class='col-12'> <div id='graficoCaView'></div></div><div class='col-12'> <div id='graficoCcCaView'></div></div></div></div></div><div class='row' id='lineclear'> <div class='col'> <p class='d-none' style='font-size:10px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;text-align: right;'>Ecografista: <strong>:ECOGRAFISTA</strong> </p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe Ecográfico: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina d-none'>* Evaluación del crecimiento fetal, según referencia propuesta por Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90) <br>** Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97) <br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 <br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil. <br><strong>Las gráficas de este software tienen por objeto favorecer análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
-        comentarios = (typeof comentarios == 'undefined') ? 'Crecimiento (peso) en percentil ' + parseInt($('#pfePctRpt').val()) + ', para la gráfica de peso fetal Hadlock 3*<br />Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
+        let placenta_com = the("ubicacion").value;
+        let placenta_com_ubic = the("incersion").value;
+        comentarios = (typeof comentarios == 'undefined') ? '- Crecimiento fetal (peso) en percentil ' + parseInt($('#pfePctRpt').val()) + ', para la gráfica de peso fetal Hadlock 3*<br />- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'<br>- Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
         stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
 
         var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
