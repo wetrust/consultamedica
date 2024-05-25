@@ -6029,6 +6029,11 @@ $(window).on('hashchange', function(){
         } else {
             document.getElementsByTagName("header")[0].classList.add("d-none");
         }
+
+        if (hash == "#ecoObsSegTrim") {
+            the("eco.seg.trim.select.comentario").value = 1
+        }
+
     }
     else {
         $(activeHash).addClass(d);

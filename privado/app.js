@@ -6141,6 +6141,7 @@ $(document).ready(function(){
 
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
+
     var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet", "#imagenes", "#viewDB"];
     var div_fecha = ["#consulta","#paciente", "#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet", "#imagenes"];
     let d = "d-none";
@@ -6174,9 +6175,13 @@ $(window).on('hashchange', function(){
             }
         }
 
-        //especial
+        //as as
         if (hash == "#ecoObsPrimTrim" || hash == "#ecoObsSegTrim" || hash == "#inicio" || hash == "#ecoGinecologica" || hash == "#ecoDoppler"){
             $("#volver").attr("href", "#inicio");
+        }
+        //asas_asas 
+        if (hash == "#ecoObsSegTrim"){
+            the("eco.seg.trim.select.comentario").value = 1
         }
 
         //especial para el header
@@ -6186,6 +6191,7 @@ $(window).on('hashchange', function(){
         } else {
             document.getElementsByTagName("header")[0].classList.add("d-none");
         }
+
     }
     else {
         $(activeHash).addClass(d);
