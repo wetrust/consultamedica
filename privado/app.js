@@ -6181,7 +6181,7 @@ $(window).on('hashchange', function(){
         //asas_asas 
         if (hash == "#ecoObsSegTrim"){
             the("eco.seg.trim.select.comentario").value = 1
-            $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("click")
+            $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
         }
 
         //especial para el header
