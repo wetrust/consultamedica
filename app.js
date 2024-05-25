@@ -6032,6 +6032,7 @@ $(window).on('hashchange', function(){
 
         if (hash == "#ecoObsSegTrim") {
             the("eco.seg.trim.select.comentario").value = 1
+            $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("click")
         }
 
     }

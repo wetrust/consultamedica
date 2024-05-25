@@ -1,12 +1,10 @@
 import { fechas } from './functionesM.js'
-import { make, the, inputDate, humanDate, these } from './wetrust.js'
+import { make, the, inputDate, these } from './wetrust.js'
 
 var daysES=["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
 var dayHoy = new Date();
-var day = ("0" + dayHoy.getUTCDate()).slice(-2);
-var month = ("0" + (dayHoy.getUTCMonth() + 1)).slice(-2);
 var activeHash = "#browser";
 
 var titulos = {
@@ -6140,8 +6138,8 @@ $(document).ready(function(){
 })
 
 $(window).on('hashchange', function(){
-    var hash = document.location.hash;
 
+    var hash = document.location.hash;
     var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet", "#imagenes", "#viewDB"];
     var div_fecha = ["#consulta","#paciente", "#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet", "#imagenes"];
     let d = "d-none";
@@ -6179,9 +6177,11 @@ $(window).on('hashchange', function(){
         if (hash == "#ecoObsPrimTrim" || hash == "#ecoObsSegTrim" || hash == "#inicio" || hash == "#ecoGinecologica" || hash == "#ecoDoppler"){
             $("#volver").attr("href", "#inicio");
         }
+
         //asas_asas 
         if (hash == "#ecoObsSegTrim"){
             the("eco.seg.trim.select.comentario").value = 1
+            $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("click")
         }
 
         //especial para el header
@@ -6191,7 +6191,6 @@ $(window).on('hashchange', function(){
         } else {
             document.getElementsByTagName("header")[0].classList.add("d-none");
         }
-
     }
     else {
         $(activeHash).addClass(d);
