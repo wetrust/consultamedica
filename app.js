@@ -1,12 +1,10 @@
 import { fechas } from './functionesM.js'
-import { make, the, inputDate, humanDate, these } from './wetrust.js'
+import { the, inputDate, these } from './wetrust.js'
 
 var daysES=["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
 var dayHoy = new Date();
-var day = ("0" + dayHoy.getUTCDate()).slice(-2);
-var month = ("0" + (dayHoy.getUTCMonth() + 1)).slice(-2);
 var activeHash = "#browser";
 
 var titulos = {
@@ -6820,8 +6818,6 @@ function getDate(today) {
 
 function resetDate(){
     dayHoy = new Date();
-    day = ("0" + dayHoy.getUTCDate()).slice(-2);
-    month = ("0" + (dayHoy.getUTCMonth() + 1)).slice(-2);
 
     the("semanas").value = 0;
     the("dias").value = 0;
