@@ -658,6 +658,8 @@ $( document ).ready(function() {
 
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
+
+        $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
     });
  
     $( '#lh').change( pctlh);
@@ -1055,6 +1057,7 @@ $( document ).ready(function() {
         the("liq-cualitativo-eco").value = txt;
 
         the("bvm").value = (isNumeric(this.value) == true) ? this.value : 0;
+        $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
     })
 
     $("#bvmDoppler").on("keyup", function(){
