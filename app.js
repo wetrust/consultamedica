@@ -318,7 +318,7 @@ $( document ).ready(function() {
             the("semanas").value = semanas;
             the("dias").value = dias;
 
-            the("fpp").value = fechas.fpp(_fur);
+            the("fpp").value = inputDate(fechas.fpp(_fur));
         } else {
             the("diaciclo").value = 0;
             the("semanas").value = 0;
