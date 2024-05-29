@@ -92,12 +92,6 @@ $( document ).ready(function() {
     dias.appendChild(opt); 
 
     opt = document.createElement('option');
-    opt.appendChild( document.createTextNode("no se observa") );
-    opt.value = "no se observa"; 
-    dias.appendChild(opt); 
-
-
-    opt = document.createElement('option');
     opt.appendChild(document.createTextNode("(+) inicial"));
     opt.value = "(+) inicial"; 
     dias.appendChild(opt); 
@@ -123,12 +117,7 @@ $( document ).ready(function() {
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("") );
     opt.value = ""; 
-    dias.appendChild(opt); 
-
-    opt = document.createElement('option');
-    opt.appendChild( document.createTextNode("no se observa") );
-    opt.value = "no se observa"; 
-    dias.appendChild(opt); 
+    dias.appendChild(opt);
 
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("(+) inicial") );
@@ -153,10 +142,17 @@ $( document ).ready(function() {
 
     //cargar la frecuencia cardiaca fetal para segundo trimestre
     dias = the("fcf");
+
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("no se observa") );
+    opt.value = "no se observa"; 
+    dias.appendChild(opt); 
+
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("(+) inicial") );
     opt.value = "(+) inicial"; 
-    dias.appendChild(opt); 
+    dias.appendChild(opt);
+
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 90") );
     opt.value = "&lt; 90"; 
