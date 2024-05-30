@@ -149,11 +149,6 @@ $( document ).ready(function() {
     dias.appendChild(opt); 
 
     opt = document.createElement('option');
-    opt.appendChild( document.createTextNode("(+) inicial") );
-    opt.value = "(+) inicial"; 
-    dias.appendChild(opt);
-
-    opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 90") );
     opt.value = "&lt; 90"; 
     dias.appendChild(opt);

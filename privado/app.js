@@ -149,11 +149,6 @@ $( document ).ready(function() {
     opt.appendChild( document.createTextNode("no se observa") );
     opt.value = "no se observa"; 
     dias.appendChild(opt); 
-    
-    opt = document.createElement('option');
-    opt.appendChild( document.createTextNode("(+) inicial") );
-    opt.value = "(+) inicial"; 
-    dias.appendChild(opt); 
 
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("< 90") );
