@@ -8032,10 +8032,17 @@ function crearInformeEcoSegTrim2(){
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
 	var linea1 = "Feto en presentación " + the("presentacion").value + ", dorso " + the("dorso").value + ", " + actCard + " y " + movCorp + ".";
-    var linea2 = "Frecuencia cardiaca fetal de " + the("fcf").value + " x minuto.";
+    var linea2 = "";
+
+    if (the("fcf").value == "no se observa"){
+        linea2 = "Frecuencia cardiaca fetal no se observa";
+    }else if (the("fcf").value == "(+) inicial"){
+        linea2 = "Frecuencia cardiaca fetal (+) inicial ";
+    }else{
+        linea2 = "Frecuencia cardiaca fetal de " + the("fcf").value + " x minuto.";
+    }
 
 	var anatomiaFetal = $('#ev-morfo').val();
-
 	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
 
     if (anatomiaFetal == "no evaluada dirigidamente, pero el aspecto morfológico general es normal"){
@@ -8047,7 +8054,6 @@ function crearInformeEcoSegTrim2(){
     var linea4 = '<strong>Placenta</strong> ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '.';
     var linea5 = "<strong>Cordón umbilical</strong> " + the("cordon").value + ", identificandose "+ the("vasos").value +" vasos.";
     var linea6 = "<strong>Líquido amniótico**</strong> " + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + the("bvm").value + " mm.";
-
     var InformeString = '<div class="container"><h3>Determinación ecográfica de edad gestacional sobre las 14 semana</h3></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container"> <table class="table table-borderless"> <tbody> <tr> <td class="p-0"><strong>Nombre: </strong>:PACIENTE</td><td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.</td><td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN</td></tr><tr> <td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE</td><td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO</td><td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</td></tr></tbody> </table> <p> <strong>FUM: </strong> :FUR <br/> <strong>EG (UPM): </strong> :EG semanas<br/> <strong>FPP: </strong> :FPP </p></div><div class="container"> <p style="margin-bottom: 0;"> <strong style="color: #045dab;">DESCRIPCIÓN</strong><br/> :LINEA1 <br/> :LINEA2 </p><p style="margin-bottom: 0; word-wrap: break-word;">:LINEA3</p><p> :LINEA4 <br/> :LINEA5 <br/> :LINEA6 </p><p></p><p></p></div><div class="container-fluid"> <table class="table"> <tbody> <tr> <th style="line-height: 15px !important; color: #045dab;">BIOMETRIA FETAL</th> <th style="text-align: center;">Valor observado</th> <th style="text-align: center;">Referencia para Edad</th> </tr><tr> <td>DBP (Hadlock):</td><td style="text-align: center;">:DBP</td><td style="text-align: center;">:DBPRANGO</td></tr><tr> <td>CC (Hadlock):</td><td style="text-align: center;">:CC</td><td style="text-align: center;">:CCRANGO</td></tr><tr> <td>CA (Hadlock)* :</td><td style="text-align: center;">:CA</td><td style="text-align: center;">:CARANGO</td></tr><tr> <td>LF (Hadlock):</td><td style="text-align: center;">:LF</td><td style="text-align: center;">:LFRANGO</td></tr><tr> <td>LH (Jeanty):</td><td style="text-align: center;">:LH</td><td style="text-align: center;">:LHRANGO</td></tr><tr> <td>Cerebelo (Diámetro transverso) (Hill):</td><td style="text-align: center;">:CB</td><td style="text-align: center;">:CBRANGO</td></tr><tr> <td style="padding-bottom: 15px !important;">Indice Cefálico (DBP / DOF)</td><td style="text-align: center; padding-bottom: 15px !important;">:IC</td><td style="text-align: center; padding-bottom: 15px !important;">( 70% - 86% )</td></tr>';
 
     if (the("art.ut").checked == true){
@@ -8225,14 +8231,20 @@ function crearInformeEcoSegTrim2Clon(){
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
 	var linea1 = "Feto en presentación " + the("presentacion").value + ", dorso " + the("dorso").value + ", " + actCard + " y " + movCorp + ".";
-    var linea2 = "Frecuencia cardiaca fetal de " + the("fcf").value + " x minuto.";
+    var linea2 = "";
+    if (the("fcf").value == "no se observa"){
+        linea2 = "Frecuencia cardiaca fetal no se observa";
+    }else if (the("fcf").value == "(+) inicial"){
+        linea2 = "Frecuencia cardiaca fetal (+) inicial ";
+    }else{
+        linea2 = "Frecuencia cardiaca fetal de " + the("fcf").value + " x minuto.";
+    }
 
 	var anatomiaFetal = $('#ev-morfo').val();
 	var linea3 = "<strong>Anatomía fetal *</strong>  " + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
-
     if (anatomiaFetal == "no evaluada dirigidamente, pero el aspecto morfológico general es normal"){
         linea3 += "<br>atrio posterior " + the("atrio.ecoDosTres").value + " mm ( " + the("atrio.desc.ecoDosTres").value + " ), diámetro cerebeloso transverso "+ the("cerebelo").value +" mm, cisterna magna "+ the("cm.ecoDosTres").value + " mm, sexo fetal " + $("#ecografia\\.segtrim\\.sexo").val() + ".";
-    }else{
+    } else {
         linea3 += " <br>";
     }
 
