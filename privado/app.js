@@ -6584,7 +6584,16 @@ function InfEcoObsSegTrim1(){
     movCorp = (movCorp == 0) ? 'sin movimientos corporales': 'con movimientos corporales';
 
     var linea1 = 'Feto en presentación ' + the("presentacion").value + ', dorso ' + the("dorso").value + ', ' + actCard + ' y ' + movCorp + '.';
-    var linea2 = 'Frecuencia cardiaca fetal de ' + the("fcf").value + ' x minuto.';
+    var linea2 = "";
+
+    if (the("fcf").value == "no se observa"){
+        linea2 = "Frecuencia cardiaca fetal no se observa";
+    }else if (the("fcf").value == "(+) inicial"){
+        linea2 = "Frecuencia cardiaca fetal (+) inicial ";
+    }else{
+        linea2 = "Frecuencia cardiaca fetal de " + the("fcf").value + " x minuto.";
+    }
+
     var anatomiaFetal = $('#ev-morfo').val();
 
     var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
@@ -6799,7 +6808,15 @@ function InfEcoObsSegTrim1Clon(){
     movCorp = (movCorp == 0) ? 'sin movimientos corporales': 'con movimientos corporales';
 
     var linea1 = 'Feto en presentación ' + the("presentacion").value + ', dorso ' + the("dorso").value + ', ' + actCard + ' y ' + movCorp + '.';
-    var linea2 = 'Frecuencia cardiaca fetal de ' + the("fcf").value + ' x minuto.';
+    var linea2 = "";
+
+    if (the("fcf").value == "no se observa"){
+        linea2 = "Frecuencia cardiaca fetal no se observa";
+    }else if (the("fcf").value == "(+) inicial"){
+        linea2 = "Frecuencia cardiaca fetal (+) inicial ";
+    }else{
+        linea2 = "Frecuencia cardiaca fetal de " + the("fcf").value + " x minuto.";
+    }
     var anatomiaFetal = $('#ev-morfo').val();
 
     var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
