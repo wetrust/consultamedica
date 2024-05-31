@@ -1114,10 +1114,10 @@ $( document ).ready(function() {
 
                 fur = fur.setDate(fur.getDate() - dias);
 
-                fur = humanDate(fur)
-
                 let fecha2 = new Date()
-                fecha2.setDate(_fexamen.getDate())
+                fecha2.setDate(fur.getDate())
+
+                fur = humanDate(fur)
 
                 fpp = humanDate(fechas.fpp(fecha2))
             }
