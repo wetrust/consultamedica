@@ -645,7 +645,6 @@ $( document ).ready(function() {
     $( '#cc' ).change( function(){
         valccca();
         pctcc();
-        $('#ajusteDosSi').trigger("click")
         $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
     });
 
@@ -655,7 +654,6 @@ $( document ).ready(function() {
     });
 
     $( '#lf' ).change( function(){
-        $('#ajusteDosSi').trigger("click")
         $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
         pctlf()
     });
@@ -1100,12 +1098,27 @@ $( document ).ready(function() {
         }
         else if ($(this).val() == 2){
 
-            let fur = new Date(Date.parse(the("fum").value));
-            fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
-            let fexamen = new Date(Date.parse(the("fee").value));
-            fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
-            let fpp = new Date(Date.parse(the("fpp").value));
-            fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()] + " " + fpp.getFullYear();
+            let egP50 = String(the("egP50").value);
+            let semanas = parseInt(the("semanas").value);
+            let dias = parseInt(the("dias").value);
+            let fur =  ""
+            let fpp = ""
+
+            if (egP50 != ""){
+
+
+                egP50 = egP50.split(".");
+                semanas = egP50[0];
+                if (egP50.length >1){
+                    dias = egP50[1];
+                }
+
+                let _fexamen = fechas.toDate(the("fee").value)
+                _fexamen.setDate(_fexamen.getDate() - (semanas + dias));
+                fur =  inputDate(_fexamen)
+
+                fpp = fechas.fpp(_fexamen)
+            }
             let eg = the("egP50").value;
 
             var comentario = "- Embarazo de " + eg + " semanas, según edad gestacional obtenida de biometría fetal promedio\r\n- Fum operacional: " + fur + "\r\n- Fecha probable de parto: " + fpp + "\r\n";
