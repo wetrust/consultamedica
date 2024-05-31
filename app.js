@@ -1134,7 +1134,7 @@ $( document ).ready(function() {
                 dias = egP50[1];
 
                 let _fexamen = fechas.toDate(the("fee").value)
-                fur =  fechas.fur(semanas, fexamen)
+                fur =  fechas.fur(semanas, _fexamen)
 
                 fur = fur.setDate(fur.getDate() - dias);
 
