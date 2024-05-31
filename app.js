@@ -665,6 +665,7 @@ $( document ).ready(function() {
     $( '#cc' ).change( function(){
         valccca();
         pctcc();
+        $('#ajusteDosSi').trigger("click")
         $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
     });
 
@@ -675,6 +676,7 @@ $( document ).ready(function() {
 
     $( '#lf' ).change( function(){
         pctlf()
+        $('#ajusteDosSi').trigger("click")
         $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
     });
     $( '#cerebelo' ).change( pctcb);
