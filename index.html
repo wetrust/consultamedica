@@ -3659,11 +3659,19 @@
                         </div>
                         <div class="card mb-5">
                             <div class="card-body">
-                                <h6 class="card-title"><strong>DETERMINACIÓN DE EDAD GESTACIONAL</strong></h6>
-                                <ul>
-                                    <li><small class="text-muted">En determinación precoz, (7 a 10 semanas) mediante Longitud Céfalo Nalga (LCN) la variación FUR - ECO, es +- 3 días.</small></li>
-                                    <li><small class="text-muted">Para LCN > 84 mm, determinar edad gestacional mediante biometría de cráneo y largo femoral, adicionalmente diámetro transverso de cerebelo y largo humeral.</small></li>
-                                </ul>
+                                <div class="form-group">
+                                    <div class="row p-2 rounded" style="background-color: #6c757d !important;">
+                                        <div class="col-8 mt-1">
+                                            <h6 class="text-white">Seleccione informe ecográfico deseado: (Crecimiento fetal o Evaluación tardía de edad gestacional)</h6>
+                                        </div>
+                                        <div class="col-4">
+                                            <select id="eco.seg.trim.select.comentario" class="form-control">
+                                                <option value="1" selected>Informe relativo a crecimiento fetal</option>
+                                                <option value="2">Informe relativo a edad gestacional</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="card mx-5" style="background-color:#ebefff;">
                                     <div class="card-body mx-2">
                                         <div class="form-group row mb-0">
@@ -3883,19 +3891,6 @@
                                 </div>
                                 <div class="form-group d-none">
                                     <textarea id="comentarios-anatomia-informe-eg-texto" class="form-control" rows="2"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row p-2 rounded" style="background-color: #6c757d !important;">
-                                        <div class="col-8 mt-1">
-                                            <h6 class="text-white">Seleccione informe ecográfico deseado: (Crecimiento fetal o Evaluación tardía de edad gestacional)</h6>
-                                        </div>
-                                        <div class="col-4">
-                                            <select id="eco.seg.trim.select.comentario" class="form-control">
-                                                <option value="1" selected>Informe relativo a crecimiento fetal</option>
-                                                <option value="2">Informe relativo a edad gestacional</option>
-                                            </select>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="text-primary">Comentarios y observaciones generales del profesional ecografista</label>
