@@ -1126,7 +1126,7 @@ $( document ).ready(function() {
             fpp = fpp.getUTCDate() + " de "+ monthsES[fpp.getUTCMonth()] + " " + fpp.getFullYear();
             let eg = the("egP50").value;
 
-            var comentario = eg + " semanas, según edad gestacional obtenida de biometría fetal promedio\r\nFum operacional: " + fur + "\r\nFecha probable de parto: " + fpp + "\r\n";
+            var comentario = "- Embarazo de " + eg + " semanas, según edad gestacional obtenida de biometría fetal promedio\r\n- Fum operacional: " + fur + "\r\n- Fecha probable de parto: " + fpp + "\r\n";
             $('#comentarios-eco-dos-inf-dos').val(comentario);
         }
 	});
