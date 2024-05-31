@@ -1112,7 +1112,7 @@ $( document ).ready(function() {
                 let _fexamen = fechas.toDate(the("fee").value)
                 fur =  fechas.fur(semanas, _fexamen)
 
-                fur = fur.setDate(fur.getDate() - dias);
+                fur.setDate(fur.getDate() - dias);
 
                 let fecha2 = new Date()
                 fecha2.setDate(fur.getDate())
