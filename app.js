@@ -420,7 +420,7 @@ $( document ).ready(function() {
     });
 
     $('#ajusteDosSi').on('click', function(){
-        egP50 = String(the("egP50").value);
+        let egP50 = String(the("egP50").value);
         if (egP50 != ""){
             egP50 = egP50.split(".");
             the("semanas").value = egP50[0];
