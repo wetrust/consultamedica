@@ -1129,19 +1129,21 @@ $( document ).ready(function() {
             let fpp = ""
 
             if (egP50 != ""){
-
-
                 egP50 = egP50.split(".");
                 semanas = egP50[0];
-                if (egP50.length >1){
-                    dias = egP50[1];
-                }
+                dias = egP50[1];
 
                 let _fexamen = fechas.toDate(the("fee").value)
-                _fexamen.setDate(_fexamen.getDate() - (semanas + dias));
-                fur =  humanDate(_fexamen)
+                fur =  fechas.fur(semanas, fexamen)
 
-                fpp = humanDate(fechas.fpp(_fexamen))
+                fur = fur.setDate(fur.getDate() - dias);
+
+                fur = humanDate(fur)
+
+                let fecha2 = new Date()
+                fecha2.setDate(_fexamen.getDate())
+
+                fpp = humanDate(fechas.fpp(fecha2))
             }
             let eg = the("egP50").value;
 
