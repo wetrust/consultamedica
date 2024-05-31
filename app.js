@@ -665,6 +665,7 @@ $( document ).ready(function() {
     $( '#cc' ).change( function(){
         valccca();
         pctcc();
+        $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
     });
 
     $( '#ca' ).change( function(){
@@ -672,7 +673,10 @@ $( document ).ready(function() {
         pctca();
     });
 
-    $( '#lf' ).change( pctlf);
+    $( '#lf' ).change( function(){
+        pctlf()
+        $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
+    });
     $( '#cerebelo' ).change( pctcb);
     $( "#bvm" ).change(bvm).on("keyup", function(){
         the("bvmEcoDos").value = this.value
