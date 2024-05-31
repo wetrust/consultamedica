@@ -1115,9 +1115,9 @@ $( document ).ready(function() {
 
                 let _fexamen = fechas.toDate(the("fee").value)
                 _fexamen.setDate(_fexamen.getDate() - (semanas + dias));
-                fur =  inputDate(_fexamen)
+                fur =  humanDate(_fexamen)
 
-                fpp = fechas.fpp(_fexamen)
+                fpp = humanDate(fechas.fpp(_fexamen))
             }
             let eg = the("egP50").value;
 

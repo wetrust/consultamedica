@@ -1,5 +1,5 @@
 import { fechas } from './functionesM.js'
-import { the, inputDate, these } from './wetrust.js'
+import { the, inputDate, these, humanDate } from './wetrust.js'
 
 var daysES=["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
@@ -1139,15 +1139,15 @@ $( document ).ready(function() {
 
                 let _fexamen = fechas.toDate(the("fee").value)
                 _fexamen.setDate(_fexamen.getDate() - (semanas + dias));
-                fur =  inputDate(_fexamen)
+                fur =  humanDate(_fexamen)
 
-                fpp = fechas.fpp(_fexamen)
+                fpp = humanDate(fechas.fpp(_fexamen))
             }
             let eg = the("egP50").value;
 
             var comentario = "- Embarazo de " + eg + " semanas, según edad gestacional obtenida de biometría fetal promedio\r\n- Fum operacional: " + fur + "\r\n- Fecha probable de parto: " + fpp + "\r\n";
             $('#comentarios-eco-dos-inf-dos').val(comentario);
-            
+
         }
 	});
 
