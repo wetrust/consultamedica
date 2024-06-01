@@ -1132,6 +1132,8 @@ $( document ).ready(function() {
 
             var comentario = "- Embarazo de " + eg + " semanas, según edad gestacional obtenida de biometría fetal promedio\r\n- Fum operacional: " + fur + "\r\n- Fecha probable de parto: " + fpp + "\r\n";
             $('#comentarios-eco-dos-inf-dos').val(comentario);
+
+            $("#clickInformeEco").trigger("click")
         }
 	});
 
