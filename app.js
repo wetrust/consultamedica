@@ -1129,6 +1129,7 @@ $( document ).ready(function() {
             let fpp = ""
 
             if (egP50 != ""){
+
                 egP50 = egP50.split(".");
                 semanas = parseInt(egP50[0]);
                 dias = parseInt(egP50[1]);
