@@ -1146,7 +1146,7 @@ $( document ).ready(function() {
                 fur.setDate(fur.getDate() - dias);
 
                 let fecha2 = new Date()
-                fecha2.setDate(fur.getDate() +0);
+                fecha2.setTime(fur.getTime() + 0);
 
                 fur = humanDate(fur)
 
