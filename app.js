@@ -1133,13 +1133,8 @@ $( document ).ready(function() {
                 semanas = parseInt(egP50[0]);
                 dias = parseInt(egP50[1]);
 
-                if (isNaN(semanas) == true){
-                    semanas = 0;
-                }
-
-                if (isNaN(dias) == true){
-                    dias = 0;
-                }
+                if (isNaN(semanas) == true){ semanas = 0; }
+                if (isNaN(dias) == true){ dias = 0; }
 
                 let _fexamen = fechas.toDate(the("fee").value)
                 fur = fechas.fur(semanas, _fexamen)
@@ -1149,11 +1144,11 @@ $( document ).ready(function() {
                 fecha2.setTime(fur.getTime() + 0);
 
                 fur = humanDate(fur)
-
                 fpp = humanDate(fechas.fpp(fecha2))
-            }
-            let eg = the("egP50").value;
 
+            }
+
+            let eg = the("egP50").value;
             var comentario = "- Embarazo de " + eg + " semanas, según edad gestacional obtenida de biometría fetal promedio\r\n- Fum operacional: " + fur + "\r\n- Fecha probable de parto: " + fpp + "\r\n";
             $('#comentarios-eco-dos-inf-dos').val(comentario);
 

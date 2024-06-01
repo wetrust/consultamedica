@@ -1106,16 +1106,23 @@ $( document ).ready(function() {
 
             if (egP50 != ""){
                 egP50 = egP50.split(".");
-                semanas = egP50[0];
-                dias = egP50[1];
+                semanas = parseInt(egP50[0]);
+                dias = parseInt(egP50[1]);
+
+                if (isNaN(semanas) == true){
+                    semanas = 0;
+                }
+
+                if (isNaN(dias) == true){
+                    dias = 0;
+                }
 
                 let _fexamen = fechas.toDate(the("fee").value)
-                fur =  fechas.fur(semanas, _fexamen)
-
+                fur = fechas.fur(semanas, _fexamen)
                 fur.setDate(fur.getDate() - dias);
 
                 let fecha2 = new Date()
-                fecha2.setDate(fur.getDate())
+                fecha2.setTime(fur.getTime() + 0);
 
                 fur = humanDate(fur)
 
