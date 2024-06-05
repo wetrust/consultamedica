@@ -1119,6 +1119,8 @@ $( document ).ready(function() {
             comentarios = comentarios + linea6 + '\r\n';
             $("#comentarios-eco-dos-inf-dos").val(comentarios);
 
+            $("#clickInformeEco").trigger("click")
+
         }
         else if ($(this).val() == 2){
 
