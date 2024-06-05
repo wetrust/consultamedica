@@ -6063,12 +6063,6 @@ $(window).on('hashchange', function(){
         } else {
             document.getElementsByTagName("header")[0].classList.add("d-none");
         }
-
-        if (hash == "#ecoObsSegTrim") {
-            //the("eco.seg.trim.select.comentario").value = 1
-            //$("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
-        }
-
     }
     else {
         $(activeHash).addClass(d);

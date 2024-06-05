@@ -1094,7 +1094,7 @@ $( document ).ready(function() {
 
             comentarios = comentarios + linea6 + '\r\n';
             $("#comentarios-eco-dos-inf-dos").val(comentarios);
-
+            $("#clickInformeEco").trigger("click")
         }
         else if ($(this).val() == 2){
 
@@ -6210,12 +6210,6 @@ $(window).on('hashchange', function(){
         //as as
         if (hash == "#ecoObsPrimTrim" || hash == "#ecoObsSegTrim" || hash == "#inicio" || hash == "#ecoGinecologica" || hash == "#ecoDoppler"){
             $("#volver").attr("href", "#inicio");
-        }
-
-        //asas_asas 
-        if (hash == "#ecoObsSegTrim"){
-            the("eco.seg.trim.select.comentario").value = 1
-            $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
         }
 
         //especial para el header

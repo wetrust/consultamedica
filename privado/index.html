@@ -3299,15 +3299,11 @@
                         </div>
                         <div class="card mb-5">
                             <div class="card-body">
-                                <div class="form-group row mb-0">
-                                    <div class="col-8 mb-2">
-                                        <label>Para un crecimiento fetal en percentil 50, la biometría correspondería a</label>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="text" class="form-control text-white text-center" style="background-color: #6c757d !important;" id="egP50" readonly>
-                                            <div class="input-group-append"><div class="input-group-text">semanas</div></div>
-                                        </div>
+                                <div class="d-flex flex-row align-items-center" style="padding-left: 15rem;">
+                                    <label class="mr-2">Para un crecimiento fetal en percentil 50, la biometría promedio correspondería a</label>
+                                    <div class="input-group" style="width: 150px;">
+                                        <input type="text" class="form-control text-white text-center" style="background-color: #6c757d !important;" id="egP50" readonly>
+                                        <div class="input-group-append"><div class="input-group-text">semanas</div></div>
                                     </div>
                                 </div>
                                 <div class="d-none" id="preguntaAjusteEcoSegTrim">
@@ -3322,18 +3318,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p>Recalcular edad gestacional solo al haber discordancia entre Edad Gestacional obstétrica y la edad obtenida mediante biometría ecográfica y/o no exista determinación ecográfica precoz (primer trimestre)</p>
-                                <div class="form-group">
-                                    <div class="row p-2 rounded" style="background-color: #6c757d !important;">
-                                        <div class="col-8 mt-1">
-                                            <h6 class="text-white">Seleccione tipo de informe ecográfico:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Crecimiento fetal o Evaluación de edad gestacional EG)</h6>
-                                        </div>
-                                        <div class="col-4">
-                                            <select id="eco.seg.trim.select.comentario" class="form-control">
-                                                <option value="1" selected>Informe relativo a crecimiento fetal</option><option value="2">Informe relativo a edad gestacional</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                <p style="padding-left: 15rem;"><strong>En ecografía de 2º o 3º trimestre, solo procede ajustar la edad gestacional siempre cuando:</strong><br>a ) No exista confirmación ecográfica precoz de la edad gestacional (1º trimestre) y <br>b ) Se observe gran diferencia entre la edad gestacional esperada y la obtenida por biometría ecográfica actual.</p>
+                                <div class="d-flex flex-row align-items-center justify-content-between" style="margin-left: 15rem;background-color: #6c757d !important;width:calc(300px + 28rem)">
+                                    <h6 class="text-white ml-5">Seleccione tipo de informe ecográfico</h6>
+                                    <select id="eco.seg.trim.select.comentario" class="form-control" style="width: 350px;">
+                                        <option value="1" selected>continuar evaluación de crecimiento fetal</option>
+                                        <option value="2">Ajuste de edad gestacional según bp50</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
