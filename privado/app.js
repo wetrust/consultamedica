@@ -645,7 +645,7 @@ $( document ).ready(function() {
     $( '#cc' ).change( function(){
         valccca();
         pctcc();
-        $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
+        comentarioSegundoTrimestre()
     });
 
     $( '#ca' ).change( function(){
@@ -654,7 +654,7 @@ $( document ).ready(function() {
     });
 
     $( '#lf' ).change( function(){
-        $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
+        comentarioSegundoTrimestre()
         pctlf()
     });
     $( '#cerebelo' ).change( pctcb);
@@ -664,7 +664,7 @@ $( document ).ready(function() {
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
 
-        $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
+        comentarioSegundoTrimestre()
     });
  
     $( '#lh').change( pctlh);
@@ -1062,7 +1062,7 @@ $( document ).ready(function() {
         the("liq-cualitativo-eco").value = txt;
 
         the("bvm").value = (isNumeric(this.value) == true) ? this.value : 0;
-        $("#eco\\.seg\\.trim\\.select\\.comentario").trigger("change")
+        comentarioSegundoTrimestre()
     })
 
     $("#bvmDoppler").on("keyup", function(){
@@ -1080,61 +1080,8 @@ $( document ).ready(function() {
     })
 
     $("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
-        if ($(this).val() == 1){
-            $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
-
-            var percentilPeso = $('#pfePctRpt').val();
-			percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
-            var comentarios = '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal Hadlock * \r\n';
-
-            let placenta_com = the("ubicacion").value;
-            let placenta_com_ubic = the("incersion").value;
-
-            var linea6 = '- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'.\r\n- Líquido amniótico ' + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
-
-            comentarios = comentarios + linea6 + '\r\n';
-            $("#comentarios-eco-dos-inf-dos").val(comentarios);
-            $("#clickInformeEco").trigger("click")
-        }
-        else if ($(this).val() == 2){
-
-            let egP50 = String(the("egP50").value);
-            let semanas = parseInt(the("semanas").value);
-            let dias = parseInt(the("dias").value);
-            let fur =  ""
-            let fpp = ""
-
-            if (egP50 != ""){
-                egP50 = egP50.split(".");
-                semanas = parseInt(egP50[0]);
-                dias = parseInt(egP50[1]);
-
-                if (isNaN(semanas) == true){
-                    semanas = 0;
-                }
-
-                if (isNaN(dias) == true){
-                    dias = 0;
-                }
-
-                let _fexamen = fechas.toDate(the("fee").value)
-                fur = fechas.fur(semanas, _fexamen)
-                fur.setDate(fur.getDate() - dias);
-
-                let fecha2 = new Date()
-                fecha2.setTime(fur.getTime() + 0);
-
-                fur = humanDate(fur)
-
-                fpp = humanDate(fechas.fpp(fecha2))
-            }
-            let eg = the("egP50").value;
-
-            var comentario = "- Embarazo de " + eg + " semanas, según edad gestacional obtenida de biometría fetal promedio\r\n- Fum operacional: " + fur + "\r\n- Fecha probable de parto: " + fpp + "\r\n";
-            $('#comentarios-eco-dos-inf-dos').val(comentario);
-
-            $("#clickInformeEco").trigger("click")
-        }
+        comentarioSegundoTrimestre()
+        $("#clickInformeEco").trigger("click")
 	});
 
     $("#calc\\.oms").on("change", function(){
@@ -9886,4 +9833,54 @@ function eliminarUnaImagen(){
     }).catch(function(error) {
         make.alert("Error al eliminar")
     });
+}
+
+function comentarioSegundoTrimestre(){
+
+    let valorAlternativa = $("#eco\\.seg\\.trim\\.select\\.comentario").val()
+    if (valorAlternativa == 1){
+        $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
+
+        var percentilPeso = $('#pfePctRpt').val();
+        percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
+        var comentarios = '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal Hadlock * \r\n';
+
+        let placenta_com = the("ubicacion").value;
+        let placenta_com_ubic = the("incersion").value;
+
+        var linea6 = '- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'.\r\n- Líquido amniótico ' + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
+
+        comentarios = comentarios + linea6 + '\r\n';
+        $("#comentarios-eco-dos-inf-dos").val(comentarios);
+    } else if (valorAlternativa == 2){
+        let egP50 = String(the("egP50").value);
+        let semanas = parseInt(the("semanas").value);
+        let dias = parseInt(the("dias").value);
+        let fur =  ""
+        let fpp = ""
+
+        if (egP50 != ""){
+
+            egP50 = egP50.split(".");
+            semanas = parseInt(egP50[0]);
+            dias = parseInt(egP50[1]);
+
+            if (isNaN(semanas) == true){ semanas = 0; }
+            if (isNaN(dias) == true){ dias = 0; }
+
+            let _fexamen = fechas.toDate(the("fee").value)
+            fur = fechas.fur(semanas, _fexamen)
+            fur.setDate(fur.getDate() - dias);
+
+            let fecha2 = new Date()
+            fecha2.setTime(fur.getTime() + 0);
+
+            fur = humanDate(fur)
+            fpp = humanDate(fechas.fpp(fecha2))
+        }
+
+        let eg = the("egP50").value;
+        var comentario = "- Embarazo de " + eg + " semanas, según edad gestacional obtenida de biometría fetal promedio\r\n- Fum operacional: " + fur + "\r\n- Fecha probable de parto: " + fpp + "\r\n";
+        $('#comentarios-eco-dos-inf-dos').val(comentario);
+    }
 }

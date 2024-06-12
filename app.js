@@ -1,8 +1,8 @@
 import { fechas } from './functionesM.js'
 import { the, inputDate, these, humanDate } from './wetrust.js'
 
-var daysES=["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-var monthsES=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
 var dayHoy = new Date();
 var activeHash = "#browser";
@@ -40,7 +40,6 @@ function uuidv4() {
 
 // Controlador de funciones base cuando se carga la pagina
 $( document ).ready(function() {
-
     $("#fechaHora").append(daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear());
 
     let _fecha = new Date()
@@ -966,7 +965,7 @@ $( document ).ready(function() {
         $("#pdfviebox").children("ol").children().children().attr("href","#inicio");
     });
 
-    $('#ev-morfo').on('change', function() {
+    $("#ev-morfo").on('change', function() {
         if (this.value == "Descripcion general detallando distintos segmentos") {
             $("#comentarios-anatomia-informe-eg-texto").val("Evaluación anatómica general de aspecto normal; cráneo y estructura internas de aspecto normal, cara cuello normal, labio superior integro, Tórax y abdomen de aspecto normal, corazón cuatro cámaras, tractos de salida de aspecto normal, cámara gástrica y vejiga visibles, riñón derecho e izquierdo de aspecto normal, pared abdominal integra, columna visible en toda su extensión, extremidades con movilidad y tono de aspecto normal, sexo fetal masculino.");
             the("comentarios-anatomia-informe-eg-texto").parentElement.classList.remove("d-none");
@@ -1307,26 +1306,32 @@ $( document ).ready(function() {
         this.parentElement.children[1].value = this.value
         calularRiesgoMorfologiaAPriori()
     }
+
     the("hl.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
         calularRiesgoMorfologiaAPriori()
     }
+
     the("fc.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
         calularRiesgoMorfologiaAPriori()
     }
+
     the("hc.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
         calularRiesgoMorfologiaAPriori()
     }
+
     the("ie.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
         calularRiesgoMorfologiaAPriori()
     }
+
     the("apn.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
         calularRiesgoMorfologiaAPriori()
     }
+
     the("asda.morfologia").onchange  = function(){
         this.parentElement.children[1].value = this.value
         calularRiesgoMorfologiaAPriori()
@@ -1370,6 +1375,7 @@ $( document ).ready(function() {
             this.checked = false
         }
     }
+
 });
 
 // Controlador de input clones
@@ -6799,9 +6805,9 @@ function InfEcoObsSegTrim1Clon(){
 }
 
 function getDate(today) {
-    if (typeof today === typeof undefined){
-        today = dayHoy;
-    }
+
+    if (typeof today === typeof undefined){ today = dayHoy; }
+
     var dd = today.getDate();
     var mm = today.getMonth()+1; //January is 0!
     var yyyy = today.getFullYear();
@@ -9494,6 +9500,7 @@ function calularRiesgoMorfologiaAPriori(){
 }
 
 function comentarioSegundoTrimestre(){
+
     let valorAlternativa = $("#eco\\.seg\\.trim\\.select\\.comentario").val()
     if (valorAlternativa == 1){
         $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
@@ -9509,9 +9516,7 @@ function comentarioSegundoTrimestre(){
 
         comentarios = comentarios + linea6 + '\r\n';
         $("#comentarios-eco-dos-inf-dos").val(comentarios);
-    }
-    else if (valorAlternativa == 2){
-
+    } else if (valorAlternativa == 2){
         let egP50 = String(the("egP50").value);
         let semanas = parseInt(the("semanas").value);
         let dias = parseInt(the("dias").value);
@@ -9536,7 +9541,6 @@ function comentarioSegundoTrimestre(){
 
             fur = humanDate(fur)
             fpp = humanDate(fechas.fpp(fecha2))
-
         }
 
         let eg = the("egP50").value;
