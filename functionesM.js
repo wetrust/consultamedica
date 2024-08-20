@@ -15,7 +15,7 @@ export class fechas{
 
         const utc1 = Date.UTC(fur.getFullYear(), fur.getMonth(), fur.getDate());
         const utc2 = Date.UTC(fexamen.getFullYear(), fexamen.getMonth(), fexamen.getDate());
-      
+
         let diff = Math.floor((utc2 - utc1) / _MS_PER_DAY);
 
         return (diff > 0) ? diff : 0
