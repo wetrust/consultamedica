@@ -519,25 +519,33 @@ $( document ).ready(function() {
             $('#preguntaAjusteEcoPrimTrim').hide();
             $('#resultadoAjusteEcoPrimTrim').hide();
         } else {
-
             var eg1 = new Number((Math.trunc(EGLCN) * 7) + Math.trunc((EGLCN - Math.trunc(EGLCN))* 10));
             var eg2 = parseInt(semanas * 7) +  dias;
             var diferencia = Math.abs(Math.trunc(eg2 - eg1));
             $('#diferenciaEcoPrimTrim').html(diferencia);
-            // no se usa$('#preguntaAjusteEcoPrimTrim').show();
+            //no se usa $('#preguntaAjusteEcoPrimTrim').show();
             $('#resultadoAjusteEcoPrimTrim').show();
 
-            let fee = new Date();
-            fee.setTime(Date.parse(the("fee").value));
-            fee.setTime(fee.getTime() - (1000*60*60*24*eg1));
-
+            let fee = fechas.toDate(the("fee").value);
+            fee = fechas.fur(Math.trunc(EGLCN),fee)
+            //obtener la fecha de exámen, restar las semanas para obtener la fur
+            //si la semana tiene dias, sumar los dias para precision
+            if ((Math.trunc((EGLCN - Math.trunc(EGLCN))* 10))> 0){
+                fee.setDate(fee.getDate() + (Math.trunc((EGLCN - Math.trunc(EGLCN))* 10)));
+            }
             the("furAjustada").value = getDate(fee);
-
             the("semanasAjustada").value = Math.trunc(EGLCN);
+            //let fee = new Date();
+            //fee.setTime(Date.parse(the("fee").value));
+            //fee.setTime(fee.getTime() - (1000*60*60*24*eg1));
+            //the("furAjustada").value = getDate(fee);
+            //the("semanasAjustada").value = Math.trunc(EGLCN);
             the("diasAjustada").value = Math.trunc((EGLCN - Math.trunc(EGLCN))* 10);
 
-            fee.setTime(fee.getTime() + (1000*60*60*24*280));
+            fee = fechas.fpp(fee);
             the("fppAjustada").value = getDate(fee);
+            //fee.setTime(fee.getTime() + (1000*60*60*24*280));
+            //the("fppAjustada").value = getDate(fee);
         }
 
         calcularComentarioEcoPrecoz();

@@ -1109,7 +1109,6 @@ $( document ).ready(function() {
 
     $("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
         comentarioSegundoTrimestre()
-        $("#clickInformeEco").trigger("click")
 	});
 
     $("#activ\\.calculadora\\.pree").on("change", function(){
