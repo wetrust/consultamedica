@@ -510,7 +510,7 @@ $( document ).ready(function() {
             //no se usa $('#preguntaAjusteEcoPrimTrim').show();
             $('#resultadoAjusteEcoPrimTrim').show();
 
-            let fee = toDate(the("fee").value);
+            let fee = fechas.toDate(the("fee").value);
             fee = fechas.fur(eg1,fee)
             the("furAjustada").value = getDate(fee);
             the("semanasAjustada").value = Math.trunc(EGLCN);
