@@ -511,7 +511,12 @@ $( document ).ready(function() {
             $('#resultadoAjusteEcoPrimTrim').show();
 
             let fee = fechas.toDate(the("fee").value);
-            fee = fechas.fur(eg1,fee)
+            fee = fechas.fur(Math.trunc(EGLCN),fee)
+            //obtener la fecha de exámen, restar las semanas para obtener la fur
+            //si la semana tiene dias, sumar los dias para precision
+            if ((Math.trunc((EGLCN - Math.trunc(EGLCN))* 10))> 0){
+                fee.setDate(fee.getDate() + (Math.trunc((EGLCN - Math.trunc(EGLCN))* 10)));
+            }
             the("furAjustada").value = getDate(fee);
             the("semanasAjustada").value = Math.trunc(EGLCN);
             //let fee = new Date();
