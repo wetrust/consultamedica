@@ -503,7 +503,6 @@ $( document ).ready(function() {
             $('#preguntaAjusteEcoPrimTrim').hide();
             $('#resultadoAjusteEcoPrimTrim').hide();
         } else {
-
             var eg1 = new Number((Math.trunc(EGLCN) * 7) + Math.trunc((EGLCN - Math.trunc(EGLCN))* 10));
             var eg2 = parseInt(semanas * 7) +  dias;
             var diferencia = Math.abs(Math.trunc(eg2 - eg1));
@@ -511,17 +510,21 @@ $( document ).ready(function() {
             //no se usa $('#preguntaAjusteEcoPrimTrim').show();
             $('#resultadoAjusteEcoPrimTrim').show();
 
-            let fee = new Date();
-            fee.setTime(Date.parse(the("fee").value));
-            fee.setTime(fee.getTime() - (1000*60*60*24*eg1));
-
+            let fee = toDate(the("fee").value);
+            fee = fechas.fur(eg1,fee)
             the("furAjustada").value = getDate(fee);
-
             the("semanasAjustada").value = Math.trunc(EGLCN);
+            //let fee = new Date();
+            //fee.setTime(Date.parse(the("fee").value));
+            //fee.setTime(fee.getTime() - (1000*60*60*24*eg1));
+            //the("furAjustada").value = getDate(fee);
+            //the("semanasAjustada").value = Math.trunc(EGLCN);
             the("diasAjustada").value = Math.trunc((EGLCN - Math.trunc(EGLCN))* 10);
 
-            fee.setTime(fee.getTime() + (1000*60*60*24*280));
+            fee = fechas.fpp(fee);
             the("fppAjustada").value = getDate(fee);
+            //fee.setTime(fee.getTime() + (1000*60*60*24*280));
+            //the("fppAjustada").value = getDate(fee);
         }
 
         let comentario = ""
@@ -529,11 +532,8 @@ $( document ).ready(function() {
         if (the("saco").value == "" && (the("embrion").value == "no se observa" || the("embrion").value == "no se observa")){
             comentario += "";
         } else if (the("saco").value > 0 && (the("embrion").value == "no se observa" || the("embrion").value == "no se observa")){
-        
             comentario += "-Calculo inicial (transitorio) de edad gestacional = "+the("sacoPct").value+" semanas según medición de saco gestacional\n-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )\n";
-        
         } else if (the("embrion").value != "sin actividad cardiaca"){
-        
             let fur = new Date(Date.parse(the("furAjustada").value));
             fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
             let fpp = new Date(Date.parse(the("fppAjustada").value));
