@@ -1999,6 +1999,7 @@ $( document ).ready(function() {
             the("endometDesc1").value = ""
             the("endometDesc2").value = ""
             the("endometGrosor").value = ""
+            the("endometrioBordes").value = ""
             the("endometObs").value = ""
             the("anexDerecho").value = ""
             the("anexIzquierdo").value = ""
