@@ -681,7 +681,7 @@ $( document ).ready(function() {
     $( '#dof').change( calcdof);
 
 
-    the("monitoreo.ovulatorio").onclick = function(){
+    the("monitoreo.ovulatorio").onchange = function(){
         if (this.value == "si"){
             the("monitoreoOvulatorio").classList.remove("d-none")
         }else{
