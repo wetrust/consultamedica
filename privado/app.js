@@ -8500,7 +8500,6 @@ function informeGinecologico(){
         informe = informe.replace(/:endometObs/g, endometObs);
     }
 
-
     informe = informe.replace(/:anexDerecho/g, anexDerecho);
     informe = informe.replace(/:anexIzquierdo/g, anexIzquierdo);
 
