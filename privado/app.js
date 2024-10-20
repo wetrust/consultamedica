@@ -680,6 +680,15 @@ $( document ).ready(function() {
     $( '#lh').change( pctlh);
     $( '#dof').change( calcdof);
 
+
+    the("monitoreo.ovulatorio").onclick = function(){
+        if (this.value == "si"){
+            the("monitoreoOvulatorio").classList.remove("d-none")
+        }else{
+            the("monitoreoOvulatorio").classList.add("d-none")
+        }
+    }
+
     $("#art\\.ut").on("click", function(){
         if (this.checked == true){
             the("art.ut.div").classList.remove("d-none");
