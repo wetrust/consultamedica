@@ -3431,7 +3431,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input"> <label class="form-check-label" for="calc.oms">Opcional curva de crecimiento ajustada modelo fetaltest.com</label> <a id="calc.test">.</a></div>
+                                <div class="form-group form-check mb-0 d-none"> <input type="checkbox" class="form-check-input"> <label class="form-check-label" for="calc.oms">Opcional curva de crecimiento ajustada modelo fetaltest.com</label> <a id="calc.test">.</a></div>
                                 <div class="form-group row d-none pt-2" id="calc.test.div">
                                     <div class="col-12">
                                         <a target="_blank" href="http://fetaltest.com/cgi-bin/ecopesofetal.cgi" class="btn btn-outline-info">Fetaltest</a>
@@ -3592,7 +3592,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label>Evaluación semi cuantitativa Bolsillo Vertical Mayor</label>
+                                            <label><strong>Líquido amniótico</strong>, evaluación semi cuantitativa BVM Bolsillo Vertical Mayor</label>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <input type="number" class="form-control" id="bvmEcoDos">
                                                 <div class="input-group-append"><div class="input-group-text">mm.</div></div>
@@ -3601,10 +3601,13 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label>Líquido amniótico evaluación cualitativa</label>
-                                            <select id="liq-cualitativo-eco" class="form-control">
-                                                <option value="normal">Normal</option><option value="disminuido">Disminuido</option><option value="aumentado">Aumentado</option>
-                                            </select>
+                                            <label>Evaluación cualitativa de líquido amniótico</label>
+                                            <input type="text" class="form-control" id="liq-cualitativo-eco" value="" list="liq.cualit.list">
+                                            <datalist id="liq.cualit.list">
+                                                <option value="Normal"></option>
+                                                <option value="Disminuido"></option>
+                                                <option value="Aumentado"></option>
+                                            </datalist>
                                         </div>
                                     </div>
                                 </div>

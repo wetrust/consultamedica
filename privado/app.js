@@ -674,7 +674,7 @@ $( document ).ready(function() {
     $( "#bvm" ).change(bvm).on("keyup", function(){
         the("bvmEcoDos").value = this.value
 
-        let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
+        let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "Normal";
         the("liq-cualitativo-eco").value = txt;
 
         comentarioSegundoTrimestre()
@@ -1080,7 +1080,7 @@ $( document ).ready(function() {
     })
 
     $("#bvmEcoDos").on("keyup", function(){
-        let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
+        let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "Normal";
         the("liq-cualitativo-eco").value = txt;
 
         the("bvm").value = (isNumeric(this.value) == true) ? this.value : 0;
@@ -1150,7 +1150,7 @@ $( document ).ready(function() {
             the("grado-placenta").selectedIndex = 0
             the("ubicacion").selectedIndex = 0;
             the("incersion").selectedIndex = 0;
-            the("liq-cualitativo-eco").selectedIndex = 0;
+            the("liq-cualitativo-eco").value = "Normal";
             the("bvmEcoDos").value = "";
             the("cordon").selectedIndex = 0;
             the("vasos").selectedIndex = 0;
@@ -9728,11 +9728,11 @@ function bvmTxt(valor){
         eg = eg - 16;
 
         if (valor < a[eg]) {
-            return "disminuido";
+            return "Disminuido";
         } else if (valor > b[eg]){
-            return "aumentado"
+            return "Aumentado"
         } else{
-            return "normal"
+            return "Normal"
         }
     }
 }
@@ -9916,7 +9916,7 @@ function comentarioSegundoTrimestre(){
             comentarios = comentarios + linea2;
         }
 
-        if (liquido_cua != "" || liquido != ""){
+        if (liquido != "" || liquido_cua != ""){
             comentarios = comentarios + linea3;
         }
 
