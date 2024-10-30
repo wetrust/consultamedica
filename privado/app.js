@@ -9905,10 +9905,25 @@ function comentarioSegundoTrimestre(){
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
 
-        var linea6 = '- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'.\r\n- Líquido amniótico ' + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
+        var linea2 = '- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'.\r\n';
+        
+        let liquido_cua = $('#liq-cualitativo-eco').val()
+        let liquido = document.getElementById("bvmEcoDos").value
+        
+        var linea3 = '- Líquido amniótico ' + liquido_cua + ", con bolsillo vertical mayor de " + liquido + " mm.";
 
-        comentarios = comentarios + linea6 + '\r\n';
+        if (placenta_com != "" || placenta_com_ubic != ""){
+            comentarios = comentarios + linea2;
+        }
+
+        if (liquido_cua != "" || liquido != ""){
+            comentarios = comentarios + linea3;
+        }
+
+
+        comentarios += '\r\n';
         $("#comentarios-eco-dos-inf-dos").val(comentarios);
+
     } else if (valorAlternativa == 2){
         let egP50 = String(the("egP50").value);
         let semanas = parseInt(the("semanas").value);
