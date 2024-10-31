@@ -667,8 +667,8 @@ $( document ).ready(function() {
     });
 
     $( '#lf' ).change( function(){
-        comentarioSegundoTrimestre()
         pctlf()
+        comentarioSegundoTrimestre()
     });
     $( '#cerebelo' ).change( pctcb);
     $( "#bvm" ).change(bvm).on("keyup", function(){
