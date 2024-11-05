@@ -8502,7 +8502,11 @@ function informeGinecologico(){
     }
 
     let espacioRetro = the("espacioRetro").value;
-    let bordes = " bordes " + the("endometrioBordes").value
+    let bordes = the("endometrioBordes").value
+
+    if (the("endometDesc1").value !== ""){
+        bordes = " bordes " + bordes
+    }
 
     informe = informe.replace(/:MOTIVEXM/g, the("motivo-examen").value)
     informe = informe.replace(/:PATGINEOBS/g, the("patologiaObstetricaUno").value);
