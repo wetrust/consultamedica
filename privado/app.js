@@ -1146,7 +1146,7 @@ $( document ).ready(function() {
             the("fcf").value = 140;
             the("accardSi").checked = true;
             the("movfetSi").checked = true;
-            the("ecografia.segtrim.sexo").selectedIndex = 2;
+            the("ecografia.segtrim.sexo").text = "no identificado";
             the("grado-placenta").selectedIndex = 0
             the("ubicacion").selectedIndex = 0;
             the("incersion").selectedIndex = 0;

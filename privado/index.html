@@ -3544,9 +3544,13 @@
                                     </div>
                                     <div class="form-group col">
                                         <label>Sexo fetal</label>
-                                        <select id="ecografia.segtrim.sexo" class="form-control">
-                                            <option value="masculino">Masculino</option><option value="femenino">Femenino</option><option value="no identificado" selected>no identificado</option>
-                                        </select>
+                                        <input type="text" class="form-control" id="ecografia.segtrim.sexo" value="" list="ecografia.segtrim.sexo.list">
+                                            <datalist id="ecografia.segtrim.sexo.list">
+                                                <option value="masculino"></option>
+                                                <option value="femenino"></option>
+                                                <option value="no identificado"></option>
+                                                <option value="no identificado aún"></option>
+                                            </datalist>
                                     </div>
                                 </div>
                                 <div class="row">
