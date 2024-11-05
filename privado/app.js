@@ -8425,10 +8425,8 @@ function informeGinecologico(){
         volUteroCM = the("uternoVolumen").value; 
     }
 
-
-
     let endometDesc1 = " de tipo " + the("endometDesc1").value + ", ";
-    let endometDesc2 = "bordes " + the("endometDesc2").value;
+    let endometDesc2 = the("endometDesc2").value;
     let endometGrosor = "Endometrio grosor " + the("endometGrosor").value + " mm, ";
     let endometObs = the("endometObs").value;
 
@@ -8504,7 +8502,7 @@ function informeGinecologico(){
     }
 
     let espacioRetro = the("espacioRetro").value;
-    let bordes = the("endometrioBordes").value
+    let bordes = " bordes " + the("endometrioBordes").value
 
     informe = informe.replace(/:MOTIVEXM/g, the("motivo-examen").value)
     informe = informe.replace(/:PATGINEOBS/g, the("patologiaObstetricaUno").value);
@@ -8550,6 +8548,7 @@ function informeGinecologico(){
     informe = informe.replace(/:PATOLOGIAOBSTETRICA/g, patologiaObstetrica);
 
     return informe;
+
 }
 
 //destruir
