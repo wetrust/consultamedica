@@ -1106,11 +1106,11 @@ $( document ).ready(function() {
         $("#clickInformeEco").trigger("click")
 	});
 
-    $("#calc\\.oms").on("change", function(){
+    $("#calculadoras").on("change", function(){
         if (this.checked == true){
-            $("#calc\\.oms\\.div").removeClass("d-none")
+            the("calculadoras.div").classList.remove("d-none")
         }else{
-            $("#calc\\.oms\\.div").addClass("d-none")
+            the("calculadoras.div").classList.add("d-none")
         }
     })
 
@@ -1246,14 +1246,6 @@ $( document ).ready(function() {
             $("#menu\\.modulo\\.prim\\.trim\\.no").button("toggle");
             $('#'+modal).modal("hide");
         });
-    });
-
-    $("#calc\\.test").on("click", function(){
-        if (the("calc.test.div").classList.contains("d-none") == true){
-            the("calc.test.div").classList.remove("d-none");
-        }else{
-            the("calc.test.div").classList.add("d-none");
-        }
     });
 
     $("#activ\\.calculadora\\.pree").on("change", function(){
