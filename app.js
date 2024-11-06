@@ -191,7 +191,11 @@ $( document ).ready(function() {
     
         dias.value = 140
 
-    if (storageAvailable('localStorage')) { document.location.hash = "#inicio"; }
+    if (storageAvailable('localStorage')) { 
+        if (document.location.hash == "#browser"){
+            document.location.hash = "#inicio"
+        }
+    }
 
     //cargar edad materna
     let edad = the("edadMaternaList");
