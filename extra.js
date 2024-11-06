@@ -706,6 +706,8 @@ $(document).ready(function() {
         document.getElementById("p10Title").textContent = "Pct. 10"
         document.getElementById("p90Title").textContent = "Pct. 90"
 
+        document.getElementById("tablaAlta").classList.add("d-none")
+
         window.setTimeout(function(){
 
             document.getElementById("mensajeGrafico").innerHTML = "";
@@ -753,6 +755,8 @@ $(document).ready(function() {
         document.getElementById("p10Title").textContent = "Pct. 10"
         document.getElementById("p90Title").textContent = "Pct. 90"
 
+        document.getElementById("tablaAlta").classList.add("d-none")
+
         window.setTimeout(function(){
 
             document.getElementById("mensajeGrafico").innerHTML = "";
@@ -798,6 +802,8 @@ $(document).ready(function() {
         document.getElementById("p10Title").textContent = "Pct. 10"
         document.getElementById("p90Title").textContent = "Pct. 90"
 
+        document.getElementById("tablaAlta").classList.add("d-none")
+
         window.setTimeout(function(){
 
             document.getElementById("mensajeGrafico").innerHTML = "";
@@ -833,8 +839,8 @@ $(document).ready(function() {
         RN.ajustePequeno = false;
         RN.ajusteAlto = false;
 
-        document.getElementById("p10Title").textContent = "P. 10 B"
-        document.getElementById("p90Title").textContent = "P. 10 A"
+        //document.getElementById("p10Title").textContent = "P. 10 B"
+        //document.getElementById("p90Title").textContent = "P. 10 A"
 
         if (RN == 0){ RN = new RecienNacido($("#pesoRN").val(), $("#tallaRN").val(), $("#edadGestacional").val()) }
 
@@ -874,7 +880,9 @@ $(document).ready(function() {
 
         $("#PesoEgeCAjCat").html(valor);
 
-        tablaPercentilesView(p10Pso2,p10Pso1)
+        tablaPercentilesView(p10Pso2,p90Pso2)
+        tablaPercentilesViewAlta(p10Pso1,p90Pso1)
+        document.getElementById("tablaAlta").classList.remove("d-none")
 
         Highcharts.chart('graficoAjustado', {
             title: {
@@ -1192,5 +1200,22 @@ function tablaPercentilesView(p10Pso,p90Pso){
         //}
         
         $("#table\\.percentiles\\.ajustado").append(tabla);
+    }
+}
+
+function tablaPercentilesViewAlta(p10Pso,p90Pso){
+    $("#table\\.percentiles\\.alta").empty();
+    for (i = 24; i < 43; i++) {
+        x = i - 24;
+        //let cuarenta = "border border-primary rounded";
+        let tabla = '';
+
+        //if (x == 16){
+        //    tabla = '<tr class="'+cuarenta+'"><td class="bg-white">'+i+'</td><td class="celeste">'+Math.trunc(p10Pso[x])+'</td><td class="celeste">'+Math.trunc(p90Pso[x])+'</td></tr>';
+        //}else{
+            tabla = '<tr><td class="bg-white">'+i+'</td><td class="celeste text-left">'+Math.trunc(p10Pso[x])+'</td><td class="celeste text-right">'+Math.trunc(p90Pso[x])+'</td></tr>';
+        //}
+        
+        $("#table\\.percentiles\\.alta").append(tabla);
     }
 }
