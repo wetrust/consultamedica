@@ -192,8 +192,10 @@ $( document ).ready(function() {
         dias.value = 140
 
     if (storageAvailable('localStorage')) { 
-        if (document.location.hash == "#browser"){
+        if (document.location.hash == "#browser" || document.location.hash == ""){
             document.location.hash = "#inicio"
+        }else{
+            $(window).trigger('hashchange')
         }
     }
 
