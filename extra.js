@@ -1,4 +1,12 @@
 $(document).ready(function() {
+    $("#pintarProposito").on("click", function(){
+        $("#proposito").addClass("active")
+    })
+
+    $("#proposito").on("blur", function(){
+        $("#proposito").removeClass("active")
+    })
+
     $("#pesoRN").on("keydown", function(e){
         var text = $(this).val();
         
