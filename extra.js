@@ -707,6 +707,10 @@ $(document).ready(function() {
         document.getElementById("p90Title").textContent = "Pct. 90"
 
         document.getElementById("tablaAlta").classList.add("d-none")
+        document.getElementById("botoneraAjuste").classList.remove("col-4")
+        document.getElementById("botoneraAjuste").classList.add("col-5")
+        document.getElementById("graficoAjuste").classList.remove("col-4")
+        document.getElementById("graficoAjuste").classList.add("col-5")
 
         window.setTimeout(function(){
 
@@ -756,6 +760,10 @@ $(document).ready(function() {
         document.getElementById("p90Title").textContent = "Pct. 90"
 
         document.getElementById("tablaAlta").classList.add("d-none")
+        document.getElementById("botoneraAjuste").classList.remove("col-4")
+        document.getElementById("botoneraAjuste").classList.add("col-5")
+        document.getElementById("graficoAjuste").classList.remove("col-4")
+        document.getElementById("graficoAjuste").classList.add("col-5")
 
         window.setTimeout(function(){
 
@@ -803,6 +811,10 @@ $(document).ready(function() {
         document.getElementById("p90Title").textContent = "Pct. 90"
 
         document.getElementById("tablaAlta").classList.add("d-none")
+        document.getElementById("botoneraAjuste").classList.remove("col-4")
+        document.getElementById("botoneraAjuste").classList.add("col-5")
+        document.getElementById("graficoAjuste").classList.remove("col-4")
+        document.getElementById("graficoAjuste").classList.add("col-5")
 
         window.setTimeout(function(){
 
@@ -883,6 +895,10 @@ $(document).ready(function() {
         tablaPercentilesView(p10Pso2,p90Pso2)
         tablaPercentilesViewAlta(p10Pso1,p90Pso1)
         document.getElementById("tablaAlta").classList.remove("d-none")
+        document.getElementById("botoneraAjuste").classList.add("col-4")
+        document.getElementById("botoneraAjuste").classList.remove("col-5")
+        document.getElementById("graficoAjuste").classList.add("col-4")
+        document.getElementById("graficoAjuste").classList.remove("col-5")
 
         Highcharts.chart('graficoAjustado', {
             title: {
