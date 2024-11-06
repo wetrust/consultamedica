@@ -21,7 +21,7 @@ var titulos = {
 }
 
 // Comementario adicional anatomia 
-document.location.hash = "";
+//document.location.hash = "";
 
 //crea id random para los modales
 function uuidv4() {
