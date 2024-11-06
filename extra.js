@@ -3,7 +3,7 @@ $(document).ready(function() {
         $("#proposito").addClass("active")
     })
 
-    $("#proposito").on("blur", function(){
+    $("#proposito").on("click", function(){
         $("#proposito").removeClass("active")
     })
 
