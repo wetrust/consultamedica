@@ -194,6 +194,8 @@ $( document ).ready(function() {
     if (storageAvailable('localStorage')) { 
         if (document.location.hash == "#browser"){
             document.location.hash = "#inicio"
+        }else{
+            window.onhashchange()
         }
     }
 
