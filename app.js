@@ -195,7 +195,7 @@ $( document ).ready(function() {
         if (document.location.hash == "#browser"){
             document.location.hash = "#inicio"
         }else{
-            window.onhashchange()
+            $(window).trigger('hashchange')
         }
     }
 
