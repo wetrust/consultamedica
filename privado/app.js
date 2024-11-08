@@ -1114,6 +1114,17 @@ $( document ).ready(function() {
         }
     })
 
+    $("#otrolink").on("change", function(){
+        if (this.checked == true){
+            var URL = "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-75262023000300183";
+            var win = window.open(URL, "_blank");
+            this.checked == false
+        }
+        
+    })
+
+
+
     $("#btn\\.erase\\.seg\\.trim").on("click", function(){
         var modal = makeModal("Si");
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
