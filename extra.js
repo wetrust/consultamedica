@@ -733,7 +733,7 @@ $(document).ready(function() {
             document.getElementById("mensajeGrafico").appendChild(_a);
 
             _a = document.createElement("li");
-            _a.innerText = "El percentil "+$("#PesoEgeCAj").html()+ " observado para la semana 40 es, " + $("#pesoRN").val() +" gramos."
+            _a.innerText = "El percentil "+$("#PesoEgeCAj").html()+ " observado para la semana 40, en nuestro estudio fue de " + $("#pesoRN").val() +" gramos."
             document.getElementById("mensajeGrafico").appendChild(_a);
 
             document.getElementById("mensajeGraficoContenedor").classList.add("d-none");
@@ -789,11 +789,15 @@ $(document).ready(function() {
             document.getElementById("mensajeGraficoDos").classList.add("mt-4")
             document.getElementById("mensajeGraficoDos").classList.remove("my-2")
             let _a = document.createElement("li");
-            _a.innerText = "Todas las variables de ajuste al peso, aumentan potencial de crecimiento."
+            let _b = document.createElement("small")
+            _b.innerText = "Todas las variables de ajuste al peso, aumentan potencial de crecimiento."
+            _a.appendChild(_b)
             document.getElementById("mensajeGraficoDos").appendChild(_a);
 
             _a = document.createElement("li");
-            _a.innerText = "Para la semana 40, el peso de " + $("#pesoRN").val() +" gramos equivale a percentil "+$("#PesoEgeCAj").html()+ " corregido y el percentil 10 observado = 3297 grs."
+            _b = document.createElement("small")
+            _b.innerText = "Para la semana 40, el peso de " + $("#pesoRN").val() +" gramos equivale a percentil "+$("#PesoEgeCAj").html()+ " corregido y el percentil 10 observado = 3297 grs."
+            _a.appendChild(_b)
             document.getElementById("mensajeGraficoDos").appendChild(_a);
 
             document.getElementById("mensajeGraficoContenedor").classList.remove("d-none");
@@ -1076,11 +1080,15 @@ $(document).ready(function() {
         document.getElementById("mensajeGraficoDos").classList.remove("mt-4")
         document.getElementById("mensajeGraficoDos").classList.add("my-2")
         let _a = document.createElement("li");
+        let _b = document.createElement("small")
         _a.innerText = "La diferencia observada entre las categorias extremas de variables estudiadas es de 32 puntos porcentuales ( 441 grs )"
+        _a.appendChild(_b)
         document.getElementById("mensajeGraficoDos").appendChild(_a);
 
         _a = document.createElement("li");
-        _a.innerText = "Curva OMS para 3500 grs a término, la variable sexo fetal, modifica percentil en 8 puntos, similar a nuestro estudio."
+        _b = document.createElement("small")
+        _a.innerText = "Curva OMS para 3500 grs a término, la variable sexo fetal, modifica el percentil en 8 puntos, similar a lo observado en nuestro estudio ( 7 )."
+        _a.appendChild(_b)
         document.getElementById("mensajeGraficoDos").appendChild(_a);
 
         document.getElementById("mensajeGraficoContenedor").classList.remove("d-none");
