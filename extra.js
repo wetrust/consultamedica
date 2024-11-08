@@ -684,6 +684,11 @@ $(document).ready(function() {
 
     $('#opt1').click(function() {
 
+        this.classList.add("celeste")
+        $('#opt3').removeClass("celeste")
+        $('#opt2').removeClass("celeste")
+        $('#opt4').removeClass("celeste")
+
         $('#pm').val("1");
         $('#sn').val("0");
         $('#tm').val("155");
@@ -738,6 +743,11 @@ $(document).ready(function() {
 
     $('#opt2').click(function() {
 
+        this.classList.add("celeste")
+        $('#opt3').removeClass("celeste")
+        $('#opt1').removeClass("celeste")
+        $('#opt4').removeClass("celeste")
+
         $('#pm').val("0");
         $('#sn').val("0");
         $('#tm').val("170");
@@ -791,6 +801,11 @@ $(document).ready(function() {
 
     $('#opt3').click(function() {
 
+        this.classList.add("celeste")
+        $('#opt2').removeClass("celeste")
+        $('#opt1').removeClass("celeste")
+        $('#opt4').removeClass("celeste")
+
         $('#sn').val("1");
         $('#pm').val("1");
         $('#tm').val("149");
@@ -841,6 +856,12 @@ $(document).ready(function() {
     });
 
     $('#opt4').click(function(){
+
+        this.classList.add("celeste")
+        $('#opt2').removeClass("celeste")
+        $('#opt1').removeClass("celeste")
+        $('#opt3').removeClass("celeste")
+
         //neutralizat
         $('#pm').val("1");
         $('#sn').val("0");
