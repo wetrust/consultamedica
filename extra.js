@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+    $("#irAjustePeso").on("click", function(){
+        $("#opt1").trigger("click")
+    })
+
     $("#pintarProposito").on("click", function(){
         $("#proposito").addClass("active")
     })
