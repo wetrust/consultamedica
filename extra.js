@@ -1081,13 +1081,13 @@ $(document).ready(function() {
         document.getElementById("mensajeGraficoDos").classList.add("my-2")
         let _a = document.createElement("li");
         let _b = document.createElement("small")
-        _a.innerText = "La diferencia observada entre las categorias extremas de variables estudiadas es de 32 puntos porcentuales ( 441 grs )"
+        _b.innerText = "La diferencia observada entre las categorias extremas de variables estudiadas es de 32 puntos porcentuales ( 441 grs )"
         _a.appendChild(_b)
         document.getElementById("mensajeGraficoDos").appendChild(_a);
 
         _a = document.createElement("li");
         _b = document.createElement("small")
-        _a.innerText = "Curva OMS para 3500 grs a término, la variable sexo fetal, modifica el percentil en 8 puntos, similar a lo observado en nuestro estudio ( 7 )."
+        _b.innerText = "Curva OMS para 3500 grs a término, la variable sexo fetal, modifica el percentil en 8 puntos, similar a lo observado en nuestro estudio ( 7 )."
         _a.appendChild(_b)
         document.getElementById("mensajeGraficoDos").appendChild(_a);
 
