@@ -724,6 +724,7 @@ $(document).ready(function() {
 
         window.setTimeout(function(){
 
+            document.getElementById("mensajeGraficoDos").innerHTML = "";
             document.getElementById("mensajeGrafico").innerHTML = "";
             document.getElementById("mensajeGrafico").classList.add("mt-4")
             document.getElementById("mensajeGrafico").classList.remove("my-2")
@@ -732,7 +733,7 @@ $(document).ready(function() {
             document.getElementById("mensajeGrafico").appendChild(_a);
 
             _a = document.createElement("li");
-            _a.innerText = "El peso de " + $("#pesoRN").val() +" gramos = percentil "+$("#PesoEgeCAj").html()+ " corregido."
+            _a.innerText = "El percentil "+$("#PesoEgeCAj").html()+ " observado para la semana 40 es, " + $("#pesoRN").val() +" gramos."
             document.getElementById("mensajeGrafico").appendChild(_a);
 
             document.getElementById("mensajeAjustePeso").classList.add("d-none");
@@ -783,16 +784,18 @@ $(document).ready(function() {
         window.setTimeout(function(){
 
             document.getElementById("mensajeGrafico").innerHTML = "";
-            document.getElementById("mensajeGrafico").classList.add("mt-4")
-            document.getElementById("mensajeGrafico").classList.remove("my-2")
+            document.getElementById("mensajeGraficoDos").innerHTML = "";
+            document.getElementById("mensajeGraficoDos").classList.add("mt-4")
+            document.getElementById("mensajeGraficoDos").classList.remove("my-2")
             let _a = document.createElement("li");
             _a.innerText = "Todas las variables de ajuste al peso, aumentan potencial de crecimiento."
-            document.getElementById("mensajeGrafico").appendChild(_a);
+            document.getElementById("mensajeGraficoDos").appendChild(_a);
 
             _a = document.createElement("li");
-            _a.innerText = "El peso de " + $("#pesoRN").val() +" gramos = percentil "+$("#PesoEgeCAj").html()+ " corregido."
-            document.getElementById("mensajeGrafico").appendChild(_a);
+            _a.innerText = "Para la semana 40, el peso de " + $("#pesoRN").val() +" gramos equivale a percentil "+$("#PesoEgeCAj").html()+ " corregido y el percentil 10 observado = 3297 grs."
+            document.getElementById("mensajeGraficoDos").appendChild(_a);
 
+            document.getElementById("mensajeGraficoContenedor").classList.remove("d-none");
             document.getElementById("mensajeAjustePeso").classList.remove("d-none");
 
         }, 200)
@@ -838,6 +841,7 @@ $(document).ready(function() {
 
         window.setTimeout(function(){
 
+            document.getElementById("mensajeGraficoDos").innerHTML = "";
             document.getElementById("mensajeGrafico").innerHTML = "";
             document.getElementById("mensajeGrafico").classList.add("mt-4")
             document.getElementById("mensajeGrafico").classList.remove("my-2")
@@ -846,7 +850,7 @@ $(document).ready(function() {
             document.getElementById("mensajeGrafico").appendChild(_a);
 
             _a = document.createElement("li");
-            _a.innerText = "El peso de " + $("#pesoRN").val() +" gramos = percentil "+$("#PesoEgeCAj").html()+ " corregido."
+            _a.innerText = "Para la semana 40, el peso de " + $("#pesoRN").val() +" gramos equivale a percentil "+$("#PesoEgeCAj").html()+ " corregido y el percentil 10 observado = 2856 grs."
             document.getElementById("mensajeGrafico").appendChild(_a);
 
             document.getElementById("mensajeAjustePeso").classList.add("d-none");
@@ -1066,12 +1070,18 @@ $(document).ready(function() {
         });
 
         document.getElementById("mensajeGrafico").innerHTML = "";
-        document.getElementById("mensajeGrafico").classList.remove("mt-4")
-        document.getElementById("mensajeGrafico").classList.add("my-2")
+        document.getElementById("mensajeGraficoDos").innerHTML = "";
+        document.getElementById("mensajeGraficoDos").classList.remove("mt-4")
+        document.getElementById("mensajeGraficoDos").classList.add("my-2")
         let _a = document.createElement("li");
-        _a.innerText = "La diferencia observada entre las categorias extremas, a término alcanza a 32 puntos porcentuales, aprox. 440 grs"
-        document.getElementById("mensajeGrafico").appendChild(_a);
+        _a.innerText = "La diferencia observada entre las categorias extremas de variables estudiadas es de 32 puntos porcentuales ( 441 grs )"
+        document.getElementById("mensajeGraficoDos").appendChild(_a);
 
+        _a = document.createElement("li");
+        _a.innerText = "Curva OMS para 3500 grs a término, la variable sexo fetal, modifica percentil en 8 puntos, similar a nuestro estudio."
+        document.getElementById("mensajeGraficoDos").appendChild(_a);
+
+        document.getElementById("mensajeGraficoContenedor").classList.remove("d-none");
         document.getElementById("mensajeAjustePeso").classList.remove("d-none");
     })
 
