@@ -736,6 +736,7 @@ $(document).ready(function() {
             _a.innerText = "El percentil "+$("#PesoEgeCAj").html()+ " observado para la semana 40 es, " + $("#pesoRN").val() +" gramos."
             document.getElementById("mensajeGrafico").appendChild(_a);
 
+            document.getElementById("mensajeGraficoContenedor").classList.add("d-none");
             document.getElementById("mensajeAjustePeso").classList.add("d-none");
 
         }, 200)
@@ -853,6 +854,7 @@ $(document).ready(function() {
             _a.innerText = "Para la semana 40, el peso de " + $("#pesoRN").val() +" gramos equivale a percentil "+$("#PesoEgeCAj").html()+ " corregido y el percentil 10 observado = 2856 grs."
             document.getElementById("mensajeGrafico").appendChild(_a);
 
+            document.getElementById("mensajeGraficoContenedor").classList.add("d-none");
             document.getElementById("mensajeAjustePeso").classList.add("d-none");
 
         }, 200)
