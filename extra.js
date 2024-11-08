@@ -693,7 +693,7 @@ $(document).ready(function() {
         $('#sn').val("0");
         $('#tm').val("155");
         $('#pesom').val("63");
-        $('#em').val("2");
+        $('#em').val("3");
         $('#apellm').val("1");
 
         varMama = new Mama('155', '63', $("#em").val(), $('#apellm').val());
