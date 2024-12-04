@@ -8441,7 +8441,7 @@ function informeGinecologico(){
     let ovDer = the("ovarDere").value;
     if(ovDer != "no se observa"){
         if (the("ovarDereMed1").value != ""){
-            ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dimensiones " + the("ovarDereMed1").value;
+            ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dimensiones " + the("ovarDereMed1").value;
 
             if (the("ovarDereMed2").value != ""){
                 ovDer += " x ";
@@ -8473,18 +8473,22 @@ function informeGinecologico(){
 
     let foliculoDere = the("folicDere").value
     if(foliculoDere != ""){
-        ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº Folículos " + foliculoDere;
+        ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº Folículos " + foliculoDere;
 
-        ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folículo Mayor&nbsp;&nbsp;" + the("foliDereMay").value;
+        if (the("foliDereMay").value != ""){
+            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folículo Mayor&nbsp;&nbsp;" + the("foliDereMay").value + " mm";
+        }
 
-        ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flujo perifolicular&nbsp;&nbsp;" + the("flujoDere").value;
+        if (the("flujoDere").value != ""){
+            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flujo perifolicular&nbsp;&nbsp;" + the("flujoDere").value;
+        }
 
     }
 
     let ovIzq = the("ovarIzquier").value;
     if(ovIzq != "no se observa"){
         if (the("ovarIzquier1").value != ""){
-            ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dimensiones " + the("ovarIzquier1").value;
+            ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dimensiones " + the("ovarIzquier1").value;
 
             if (the("ovarIzquier2").value != ""){
                 ovIzq += " x ";
@@ -8516,9 +8520,15 @@ function informeGinecologico(){
 
     let foliculoIzq = the("folicIzq").value
     if(foliculoIzq != ""){
-        ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº Folículos " + foliculoIzq
-        ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folículo Mayor&nbsp;&nbsp;" + the("foliIzqMay").value;
-        ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flujo perifolicular&nbsp;&nbsp;" + the("flujoIzq").value;
+        ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº Folículos " + foliculoIzq
+        
+        if (the("foliIzqMay").value != ""){
+            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folículo Mayor&nbsp;&nbsp;" + the("foliIzqMay").value + " mm";
+        }
+
+        if (the("flujoIzq").value != ""){
+            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flujo perifolicular&nbsp;&nbsp;" + the("flujoIzq").value;
+        }
     }
 
     let espacioRetro = the("espacioRetro").value;
