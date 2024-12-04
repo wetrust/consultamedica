@@ -8467,20 +8467,20 @@ function informeGinecologico(){
         }
 
         if (the("ovarDereMed3").value != ""){
-            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen&nbsp;&nbsp;" + the("ovarDereVol").value;
+            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen ovárico&nbsp;&nbsp;" + the("ovarDereVol").value;
         }
     }
 
     let foliculoDere = the("folicDere").value
     if(foliculoDere != ""){
-        ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº Folículos " + foliculoDere;
+        ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº folículos " + foliculoDere;
 
         if (the("foliDereMay").value != ""){
-            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folículo Mayor&nbsp;&nbsp;" + the("foliDereMay").value + " mm";
+            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folículo Mayor&nbsp;&nbsp;" + the("foliDereMay").value + " mm";
         }
 
         if (the("flujoDere").value != ""){
-            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flujo perifolicular&nbsp;&nbsp;" + the("flujoDere").value;
+            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flujo &nbsp;&nbsp;" + the("flujoDere").value;
         }
 
     }
@@ -8514,20 +8514,20 @@ function informeGinecologico(){
         }
 
         if (the("ovarIzquier3").value != ""){
-            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen&nbsp;&nbsp;" + the("ovarIzquierVol").value;
+            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen ovárico&nbsp;&nbsp;" + the("ovarIzquierVol").value;
         }
     }
 
     let foliculoIzq = the("folicIzq").value
     if(foliculoIzq != ""){
-        ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº Folículos " + foliculoIzq
+        ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº folículos " + foliculoIzq
         
         if (the("foliIzqMay").value != ""){
-            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folículo Mayor&nbsp;&nbsp;" + the("foliIzqMay").value + " mm";
+            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folículo Mayor&nbsp;&nbsp;" + the("foliIzqMay").value + " mm";
         }
 
         if (the("flujoIzq").value != ""){
-            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flujo perifolicular&nbsp;&nbsp;" + the("flujoIzq").value;
+            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flujo &nbsp;&nbsp;" + the("flujoIzq").value;
         }
     }
 
