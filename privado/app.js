@@ -8514,7 +8514,7 @@ function informeGinecologico(){
         }
     }
 
-    let foliculoIzq = the("folicDere").value
+    let foliculoIzq = the("folicIzq").value
     if(foliculoIzq != ""){
         ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº Folículos " + foliculoIzq
         ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Folículo Mayor&nbsp;&nbsp;" + the("foliIzqMay").value;
