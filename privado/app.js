@@ -8491,7 +8491,7 @@ function informeGinecologico(){
 
     let foliculoDere = the("folicDere").value
     if(foliculoDere != ""){
-        ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aspecto Ovárico " + foliculoDere;
+        ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aspecto ovárico " + foliculoDere;
 
         if (the("foliDereMay").value != ""){
             ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folículo Mayor&nbsp;&nbsp;" + the("foliDereMay").value + " mm";
@@ -8538,7 +8538,7 @@ function informeGinecologico(){
 
     let foliculoIzq = the("folicIzq").value
     if(foliculoIzq != ""){
-        ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aspecto Ovárico " + foliculoIzq
+        ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aspecto ovárico " + foliculoIzq
 
         if (the("foliIzqMay").value != ""){
             ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folículo Mayor&nbsp;&nbsp;" + the("foliIzqMay").value + " mm";
