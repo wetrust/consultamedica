@@ -1989,7 +1989,7 @@ $( document ).ready(function() {
     });
 
     the("folicDere").onchange = function(){
-        let alternativas = ["C. Luteo presente","C. Luteo ausente"]
+        let alternativas = ["C. Luteo presente","C. Luteo ausente","sin folículos"]
 
         if (alternativas.includes(this.value) == true){
             the("foliDereMay").parentElement.parentElement.classList.add("d-none")
@@ -1999,7 +1999,7 @@ $( document ).ready(function() {
     }
 
     the("folicIzq").onchange = function(){
-        let alternativas = ["C. Luteo presente","C. Luteo ausente"]
+        let alternativas = ["C. Luteo presente","C. Luteo ausente","sin folículos"]
 
         if (alternativas.includes(this.value) == true){
             the("foliIzqMay").parentElement.parentElement.classList.add("d-none")
@@ -2017,9 +2017,7 @@ $( document ).ready(function() {
         the(modal.titulo).innerText = "Borrar datos de exámen ginecológico";
         the(modal.contenido).innerHTML = '<h1 class="text-danger text-center">¿Está seguro de borrar los datos?</h1>';
 
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove() });
 
         $("#"+modal.button).on("click", function(){
             let modal =  $(this).data("modal");
@@ -2079,9 +2077,7 @@ $( document ).ready(function() {
         the(modal.titulo).innerText = "Saco Gestacional promedio en milímetros (mm)";
         the(modal.contenido).innerHTML = '<div id="graficoSacoView"></div>';
 
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove() });
 
         $('#graficoSacoView').highcharts({
             title: {text: '',x: -20},
