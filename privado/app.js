@@ -8490,11 +8490,11 @@ function informeGinecologico(){
         ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aspecto ovárico " + foliculoDere;
 
         if (the("foliDereMay").value != ""){
-            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folículo Mayor&nbsp;&nbsp;" + the("foliDereMay").value + " mm";
+            ovDer += ", folículo Mayor&nbsp;&nbsp;" + the("foliDereMay").value + " mm";
         }
 
         if (the("flujoDere").value != ""){
-            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flujo " + the("flujoDere").value;
+            ovDer += ", flujo " + the("flujoDere").value;
         }
 
     }
@@ -8537,11 +8537,11 @@ function informeGinecologico(){
         ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aspecto ovárico " + foliculoIzq
 
         if (the("foliIzqMay").value != ""){
-            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folículo Mayor&nbsp;&nbsp;" + the("foliIzqMay").value + " mm";
+            ovIzq += ", folículo Mayor&nbsp;&nbsp;" + the("foliIzqMay").value + " mm";
         }
 
         if (the("flujoIzq").value != ""){
-            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flujo " + the("flujoIzq").value;
+            ovIzq += ", flujo " + the("flujoIzq").value;
         }
     }
 
