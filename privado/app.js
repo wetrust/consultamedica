@@ -8453,8 +8453,6 @@ function informeGinecologico(){
     let endometGrosor = "Endometrio grosor " + the("endometGrosor").value + " mm, ";
     let endometObs = the("endometObs").value;
 
-
-
     let anexDerecho = the("anexDerecho").value;
     let anexIzquierdo = the("anexIzquierdo").value;
 
@@ -8493,7 +8491,7 @@ function informeGinecologico(){
 
     let foliculoDere = the("folicDere").value
     if(foliculoDere != ""){
-        ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº folículos " + foliculoDere;
+        ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aspecto Ovárico " + foliculoDere;
 
         if (the("foliDereMay").value != ""){
             ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folículo Mayor&nbsp;&nbsp;" + the("foliDereMay").value + " mm";
@@ -8540,8 +8538,8 @@ function informeGinecologico(){
 
     let foliculoIzq = the("folicIzq").value
     if(foliculoIzq != ""){
-        ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº folículos " + foliculoIzq
-        
+        ovIzq += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aspecto Ovárico " + foliculoIzq
+
         if (the("foliIzqMay").value != ""){
             ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folículo Mayor&nbsp;&nbsp;" + the("foliIzqMay").value + " mm";
         }
