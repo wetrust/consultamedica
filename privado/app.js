@@ -8498,7 +8498,7 @@ function informeGinecologico(){
         }
 
         if (the("flujoDere").value != ""){
-            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flujo &nbsp;&nbsp;" + the("flujoDere").value;
+            ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flujo " + the("flujoDere").value;
         }
 
     }
@@ -8545,7 +8545,7 @@ function informeGinecologico(){
         }
 
         if (the("flujoIzq").value != ""){
-            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flujo &nbsp;&nbsp;" + the("flujoIzq").value;
+            ovIzq += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flujo " + the("flujoIzq").value;
         }
     }
 
