@@ -1992,9 +1992,9 @@ $( document ).ready(function() {
         let alternativas = ["C. Luteo presente","C. Luteo ausente"]
 
         if (alternativas.includes(this.value) == true){
-            the("foliDereMay").classList.add("disabled")
+            the("foliDereMay").setAttribute("disabled", "true");
         } else {
-            the("foliDereMay").classList.remove("disabled")
+            the("foliDereMay").removeAttribute("disabled", "true");
         }
     }
 
@@ -2002,9 +2002,9 @@ $( document ).ready(function() {
         let alternativas = ["C. Luteo presente","C. Luteo ausente"]
 
         if (alternativas.includes(this.value) == true){
-            the("foliIzqMay").classList.add("disabled")
+            the("foliIzqMay").setAttribute("disabled", "true");
         } else {
-            the("foliIzqMay").classList.remove("disabled")
+            the("foliIzqMay").removeAttribute("disabled", "true");
         }
     }
 });
