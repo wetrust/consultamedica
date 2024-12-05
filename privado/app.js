@@ -1987,6 +1987,26 @@ $( document ).ready(function() {
             imprInforme(informeGinecologico());
         }
     });
+
+    the("folicDere").onchange = function(){
+        let alternativas = ["C. Luteo presente","C. Luteo ausente"]
+
+        if (alternativas.includes(this.value) == true){
+            the("foliDereMay").classList.add("disabled")
+        } else {
+            the("foliDereMay").classList.remove("disabled")
+        }
+    }
+
+    the("folicIzq").onchange = function(){
+        let alternativas = ["C. Luteo presente","C. Luteo ausente"]
+
+        if (alternativas.includes(this.value) == true){
+            the("foliIzqMay").classList.add("disabled")
+        } else {
+            the("foliIzqMay").classList.remove("disabled")
+        }
+    }
 });
 
 // Controlador de botones reset
