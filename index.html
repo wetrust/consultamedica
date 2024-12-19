@@ -4384,6 +4384,19 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row justify-content-end">
+                            <div class="col-2">
+                                <label class="bg-verde text-white align-middle mb-0 px-2">Ver función ovárica</label>
+                            </div>
+                            <div class="col-1">
+                                <div class="form-group">
+                                    <select id="monitoreo.ovulatorio" class="form-control">
+                                        <option value="no" selected="">No</option>
+                                        <option value="si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="card mb-2">
@@ -4455,38 +4468,49 @@
                         <div class="d-flex justify-content-start">
                             <div class="form-group mr-3 w-25">
                                 <label class="text-secondary">Endometrio Tipo</label>
-                                <input type="text" class="form-control" id="endometrio.ginecologica" value="secretor" list="endomDesc1">
+                                <input type="text" class="form-control" id="endometDesc1" value="" list="endomDesc1">
                                 <datalist id="endomDesc1">
                                     <option value="laminar"></option>
                                     <option value="atrófico"></option>
                                     <option value="proliferativo"></option>
                                     <option value="secretor"></option>
                                     <option value="peri menstrual"></option>
+                                    <option value="no evaluable"></option>
+                                    <option value="no procede"></option>
                                 </datalist>
                             </div>
+                            <div class="form-group mr-3 w-10">
+                                <label class="text-secondary">Grosor</label>
+                                <input type="number" class="form-control" id="endometGrosor" value="">
+                            </div>
                             <div class="form-group mr-3 w-25">
-                                <label class="text-secondary">Endometrio Aspecto</label>
-                                <input type="text" class="form-control" id="endometDesc2" value="aspecto normal" list="endomDesc2">
+                                <label class="text-secondary">Aspecto</label>
+                                <input type="text" class="form-control" id="endometDesc2" value="" list="endomDesc2">
                                 <datalist id="endomDesc2">
                                     <option value="fino"></option>
                                     <option value="aspecto normal"></option>
-                                    <option value="homogenio"></option>
-                                    <option value="heterogenio"></option>
-                                    <option value="homogenio engrosado"></option>
-                                    <option value="heterogenio engrosado"></option>
+                                    <option value="homogéneo"></option>
+                                    <option value="heterogeneo"></option>
+                                    <option value="homogéneo engrosado"></option>
+                                    <option value="heterogeneo engrosado"></option>
                                     <option value="solo engrosado"></option>
+                                    <option value="no evaluable"></option>
                                 </datalist>
                             </div>
                             <div class="form-group mr-3 w-25">
-                                <label class="text-secondary">Grosor endometrial</label>
-                                <input type="number" class="form-control" id="endometGrosor" value="">
-                            </div>
-                            <div class="form-group mr-3 align-self-end">
-                                <label class="text-secondary">mm</label>
+                                <label class="text-secondary">Bordes</label>
+                                <input type="text" class="form-control" id="endometrioBordes" value="" list="endomBordes">
+                                <datalist id="endomBordes">
+                                    <option value="bien definido"></option>
+                                    <option value="mal definido"></option>
+                                    <option value="irregulares"></option>
+                                    <option value="interrumpido"></option>
+                                    <option value="no evaluable"></option>
+                                </datalist>
                             </div>
                             <div class="form-group mr-3 w-100">
-                                <label class="text-secondary">Observaciones y DIU</label>
-                                <textarea class="form-control" id="endometObs" rows="1"></textarea>
+                                <label class="text-secondary">Observaciones</label>
+                                <textarea class="form-control" id="endometObs" rows="1">Obs.</textarea>
                             </div>
                         </div>
                     </div>
@@ -4496,7 +4520,7 @@
                         <div class="d-flex justify-content-start">
                             <div class="form-group w-50 mr-2">
                                 <label class="text-secondary"><strong>Anexo Derecho</strong></label>
-                                <input type="text" class="form-control" id="anexo.derecho.ginecologica" value="aspecto normal" list="anexDer">
+                                <input type="text" class="form-control" id="anexDerecho" value="" list="anexDer">
                                 <datalist id="anexDer">
                                     <option value="aspecto normal"></option>
                                     <option value="masa solida"></option>
@@ -4506,7 +4530,7 @@
                             </div>
                             <div class="form-group w-50">
                                 <label class="text-secondary"><strong>Anexo Izquierdo</strong></label>
-                                <input type="text" class="form-control" id="anexo.izquierdo.ginecologica" value="aspecto normal" list="anexIzq">
+                                <input type="text" class="form-control" id="anexIzquierdo" value="" list="anexIzq">
                                 <datalist id="anexIzq">
                                     <option value="aspecto normal"></option>
                                     <option value="masa solida"></option>
@@ -4521,13 +4545,13 @@
                                     <div class="col-5 pl-0 pr-1">
                                         <div class="form-group mr-2">
                                             <label class="text-secondary"><strong>Ov Derecho</strong></label>
-                                            <input type="text" class="form-control" id="ovario.derecho.ginecologica" value="aspecto normal" list="ovarDereList">
+                                            <input type="text" class="form-control" id="ovarDere" value="" list="ovarDereList">
                                             <datalist id="ovarDereList">
                                                 <option value="aspecto normal"></option>
+                                                <option value="aumentado"></option>
+                                                <option value="pequeño"></option>
                                                 <option value="no se observa"></option>
                                                 <option value="extraido previamente"></option>
-                                                <option value="aumentado"></option>
-                                                <option value="aspecto poliquistico"></option>
                                                 <option value="masa Sólida"></option>
                                                 <option value="masa Eco Negativa"></option>
                                                 <option value="tabicado"></option>
@@ -4570,13 +4594,13 @@
                                     <div class="col-5 pl-0 pr-1">
                                         <div class="form-group">
                                             <label class="text-secondary"><strong>Ov Izquierdo</strong></label>
-                                            <input type="text" class="form-control" id="ovario.izquierdo.ginecologica" value="aspecto normal" list="ovarIzquierList">
+                                            <input type="text" class="form-control" id="ovarIzquier" value="" list="ovarIzquierList">
                                             <datalist id="ovarIzquierList">
                                                 <option value="aspecto normal"></option>
+                                                <option value="aumentado"></option>
+                                                <option value="pequeño"></option>
                                                 <option value="no se observa"></option>
                                                 <option value="extraido previamente"></option>
-                                                <option value="aumentado"></option>
-                                                <option value="aspecto poliquistico"></option>
                                                 <option value="masa Sólida"></option>
                                                 <option value="masa Eco Negativa"></option>
                                                 <option value="tabicado"></option>
@@ -4611,6 +4635,113 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4 d-none" id="monitoreoOvulatorio">
+                            <div class="col-12">
+                                <p class="mb-2 bg-verde text-white rounded px-2">Evaluación de función ovárica</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <label class="text-secondary">Aspecto Ovárico</label>
+                                        <input type="text" class="form-control" id="folicDere" value="" list="folicDereList">
+                                        <datalist id="folicDereList">
+                                            <option value="1 foliculo"></option>
+                                            <option value="2 foliculo"></option>
+                                            <option value="3 foliculo"></option>
+                                            <option value="4 foliculo"></option>
+                                            <option value="5 foliculo"></option>
+                                            <option value="6 foliculo"></option>
+                                            <option value="7 foliculo"></option>
+                                            <option value="8 foliculo"></option>
+                                            <option value="9 foliculo"></option>
+                                            <option value="10 foliculo"></option>
+                                            <option value="11 foliculo"></option>
+                                            <option value="12 foliculo"></option>
+                                            <option value="13 foliculo"></option>
+                                            <option value="14 foliculo"></option>
+                                            <option value="15 foliculo"></option>
+                                            <option value="&gt; 15 folículos"></option>
+                                            <option value="polifolicular"></option>
+                                            <option value="sin folículos"></option>
+                                            <option value="C. Luteo presente"></option>
+                                            <option value="C. Luteo ausente"></option>
+                                        </datalist>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="text-secondary">Folículo mayor</label>
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="foliDereMay">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="text-secondary">Flujo intra - ovarico</label>
+                                        <input type="text" class="form-control" id="flujoDere" value="" list="flujoDereList">
+                                        <datalist id="flujoDereList">
+                                            <option value="perifolicular ausente"></option>
+                                            <option value="perifolicular escaso"></option>
+                                            <option value="perifolicular moderado"></option>
+                                            <option value="perifolicular abundante"></option>
+                                            <option value="estromal ausente"></option>
+                                            <option value="estromal escaso"></option>
+                                            <option value="estromal moderado"></option>
+                                            <option value="estromal abundante"></option>
+                                        </datalist>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row align-items-center">
+                                    <div class="col-4">
+                                        <label class="text-secondary">Aspecto Ovárico</label>
+                                        <input type="text" class="form-control" id="folicIzq" value="" list="folicIzqList">
+                                        <datalist id="folicIzqList">
+                                            <option value="1 foliculo"></option>
+                                            <option value="2 foliculo"></option>
+                                            <option value="3 foliculo"></option>
+                                            <option value="4 foliculo"></option>
+                                            <option value="5 foliculo"></option>
+                                            <option value="6 foliculo"></option>
+                                            <option value="7 foliculo"></option>
+                                            <option value="8 foliculo"></option>
+                                            <option value="9 foliculo"></option>
+                                            <option value="10 foliculo"></option>
+                                            <option value="11 foliculo"></option>
+                                            <option value="12 foliculo"></option>
+                                            <option value="13 foliculo"></option>
+                                            <option value="14 foliculo"></option>
+                                            <option value="15 foliculo"></option>
+                                            <option value="&gt; 15 folículos"></option>
+                                            <option value="polifolicular"></option>
+                                            <option value="sin folículos"></option>
+                                            <option value="C. Luteo presente"></option>
+                                            <option value="C. Luteo ausente"></option>
+                                        </datalist>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="text-secondary">Folículo mayor</label>
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="foliIzqMay">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="text-secondary">Flujo intra - ovárico</label>
+                                        <input type="text" class="form-control" id="flujoIzq" value="" list="flujoIzqList">
+                                        <datalist id="flujoIzqList">
+                                            <option value="perifolicular ausente"></option>
+                                            <option value="perifolicular escaso"></option>
+                                            <option value="perifolicular moderado"></option>
+                                            <option value="perifolicular abundante"></option>
+                                            <option value="estromal ausente"></option>
+                                            <option value="estromal escaso"></option>
+                                            <option value="estromal moderado"></option>
+                                            <option value="estromal abundante"></option>
+                                        </datalist>
                                     </div>
                                 </div>
                             </div>
