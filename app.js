@@ -4914,7 +4914,7 @@ $( document ).ready(function() {
 });
 
 $(document).ready(function(){
-    $("#uteroDim1").on("change", function(){
+    $("#uteroDim1").on("keyup", function(){
 
         let uteroDim1 = Number.isNaN(the("uteroDim1").value) ? 0 : Number(the("uteroDim1").value)
         let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
@@ -4925,7 +4925,7 @@ $(document).ready(function(){
         the("uternoVolumen").value = uternoVolumen
     })
 
-    $("#uteroDim2").on("change", function(){
+    $("#uteroDim2").on("keyup", function(){
 
         let uteroDim1 = Number.isNaN(the("uteroDim1").value) ? 0 : Number(the("uteroDim1").value)
         let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
@@ -4936,7 +4936,7 @@ $(document).ready(function(){
         the("uternoVolumen").value = uternoVolumen
     })
 
-    $("#uteroDim3").on("change", function(){
+    $("#uteroDim3").on("keyup", function(){
 
         let uteroDim1 = Number.isNaN(the("uteroDim1").value) ? 0 : Number(the("uteroDim1").value)
         let uteroDim2 = Number.isNaN(the("uteroDim2").value) ? 0 : Number(the("uteroDim2").value)
@@ -4947,7 +4947,7 @@ $(document).ready(function(){
         the("uternoVolumen").value = uternoVolumen
     })
 
-    $("#ovarDereMed1").on("change", function(){
+    $("#ovarDereMed1").on("keyup", function(){
         let ovarDereMed1 = Number.isNaN(the("ovarDereMed1").value) ? 0 : Number(the("ovarDereMed1").value)
         let ovarDereMed2 = Number.isNaN(the("ovarDereMed2").value) ? 0 : Number(the("ovarDereMed2").value)
         let ovarDereMed3 = Number.isNaN(the("ovarDereMed3").value) ? 0 : Number(the("ovarDereMed3").value)
@@ -4957,7 +4957,7 @@ $(document).ready(function(){
         the("ovarDereVol").value = ovarDereVol
     })
 
-    $("#ovarDereMed2").on("change", function(){
+    $("#ovarDereMed2").on("keyup", function(){
         let ovarDereMed1 = Number.isNaN(the("ovarDereMed1").value) ? 0 : Number(the("ovarDereMed1").value)
         let ovarDereMed2 = Number.isNaN(the("ovarDereMed2").value) ? 0 : Number(the("ovarDereMed2").value)
         let ovarDereMed3 = Number.isNaN(the("ovarDereMed3").value) ? 0 : Number(the("ovarDereMed3").value)
@@ -4967,7 +4967,7 @@ $(document).ready(function(){
         the("ovarDereVol").value = ovarDereVol
     })
 
-    $("#ovarDereMed3").on("change", function(){
+    $("#ovarDereMed3").on("keyup", function(){
         let ovarDereMed1 = Number.isNaN(the("ovarDereMed1").value) ? 0 : Number(the("ovarDereMed1").value)
         let ovarDereMed2 = Number.isNaN(the("ovarDereMed2").value) ? 0 : Number(the("ovarDereMed2").value)
         let ovarDereMed3 = Number.isNaN(the("ovarDereMed3").value) ? 0 : Number(the("ovarDereMed3").value)
@@ -4977,7 +4977,7 @@ $(document).ready(function(){
         the("ovarDereVol").value = ovarDereVol
     })
 
-    $("#ovarIzquier1").on("change", function(){
+    $("#ovarIzquier1").on("keyup", function(){
         let ovarIzquier1 = Number.isNaN(the("ovarIzquier1").value) ? 0 : Number(the("ovarIzquier1").value)
         let ovarIzquier2 = Number.isNaN(the("ovarIzquier2").value) ? 0 : Number(the("ovarIzquier2").value)
         let ovarIzquier3 = Number.isNaN(the("ovarIzquier3").value) ? 0 : Number(the("ovarIzquier3").value)
@@ -4987,7 +4987,7 @@ $(document).ready(function(){
         the("ovarIzquierVol").value = ovarIzquierVol
     })
     
-    $("#ovarIzquier2").on("change", function(){
+    $("#ovarIzquier2").on("keyup", function(){
         let ovarIzquier1 = Number.isNaN(the("ovarIzquier1").value) ? 0 : Number(the("ovarIzquier1").value)
         let ovarIzquier2 = Number.isNaN(the("ovarIzquier2").value) ? 0 : Number(the("ovarIzquier2").value)
         let ovarIzquier3 = Number.isNaN(the("ovarIzquier3").value) ? 0 : Number(the("ovarIzquier3").value)
@@ -4997,7 +4997,7 @@ $(document).ready(function(){
         the("ovarIzquierVol").value = ovarIzquierVol
     })
 
-    $("#ovarIzquier3").on("change", function(){
+    $("#ovarIzquier3").on("keyup", function(){
         let ovarIzquier1 = Number.isNaN(the("ovarIzquier1").value) ? 0 : Number(the("ovarIzquier1").value)
         let ovarIzquier2 = Number.isNaN(the("ovarIzquier2").value) ? 0 : Number(the("ovarIzquier2").value)
         let ovarIzquier3 = Number.isNaN(the("ovarIzquier3").value) ? 0 : Number(the("ovarIzquier3").value)
@@ -8199,6 +8199,7 @@ function valccca() {
 
 function informeGinecologico()
 {
+
     let informe = '<div class="container-fluid"><h4 class="page-header text-center">INFORME ECOGRÁFICO GINECOLÓGICO ALTERNATIVO</h4></div><span style="border-top: 1px solid #000; width: 100% !important; display: block; border-bottom: 2px solid #000; padding-top: 2px; margin-bottom: 15px;"></span><div class="container-fluid" style="margin-top: 1rem;"> <p> <strong><em>Datos generales</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="p-0">Nombre de paciente:</td><td class="p-0">:PACIENTE</td><td class="p-0">Edad Materna:</td><td class="p-0">:EDADMATERNA años.</td></tr><tr> <td class="p-0">RUT (DNI):</td><td class="p-0">:IDPACIENTE</td><td class="p-0">Fecha de Exámen:</td><td class="p-0">:FEXAMEN</td></tr><tr> <td class="p-0">Motivo exámen:</td><td class="p-0">:MOTIVEXM</td><td class="p-0"></td><td class="p-0"></td></tr><tr> <td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td><td class="p-0">&nbsp;</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Antecedentes clínicos</em></strong> </p><table class="table table-borderless"> <tbody> <tr> <td class="w-50 p-0">FUR referida:</td><td class="p-0">:FUM</td></tr><tr> <td class="w-50 p-0">Días del ciclo mestrual:</td><td class="p-0">:DIACICLO días.</td></tr><tr> <td class="w-50 p-0">Patología Gineco - obstétrica:</td><td class="p-0">:PATGINEOBS</td></tr></tbody> </table></div><div class="container-fluid"> <p> <strong><em>Descripción hallazgos ecográficos</em></strong> </p><p>:utUbicacion1 :utUbicacion2 :cuerpoUterino <br/> :dimensionesUterinas  :endometGrosor :endometDesc1 :endometDesc2 :endometrioBordes<br/> :endometObs </p><p> <strong>Anexo Derecho</strong> :anexDerecho<br/>- Ovario Derecho :ovarDere </p><p> <strong>Anexo Izquierdo</strong> :anexIzquierdo<br/>- Ovario Izquierdo :ovarIzquier </p><p>Espacio retrouterino ( Douglas ): :espacioRetro</p></div><div class="container-fluid"> <p> <strong><em>Comentarios y observaciones:</em></strong> </p><p>:COMENTARIO</p></div><div class="container-fluid" style="margin-top: 3rem;"> <p style="text-align: right;" class="top40">Ecografista: <strong>Dr. Rudecindo Lagos</strong></p><p style="margin-top: 2rem; border-top: 1px solid #000; width: 100% !important; display: block;">Fecha Informe Ecográfico: :DATEINFORME</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p style="border-bottom: 0;"> <strong> El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
 
     if (the("post.menopausia").value == "si"){
@@ -8233,6 +8234,7 @@ function informeGinecologico()
     let dimensionesUterinas = "Dimensiones uterinas&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;longitudinal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:uteroDim1 mm<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;anteroposterior: &nbsp;&nbsp;&nbsp;&nbsp;:uteroDim2 mm<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;transverso: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:uteroDim3 mm,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Volumen corporal:&nbsp;&nbsp;&nbsp;:volUteroCM<br/>"
 
     if(the("utUbicacion1").value == "histerectomizada previamente"){
+
         utUbicacion1 = "Histerectomizada previamente";
         utUbicacion2 = "";
         cuerpoUterino = "";
@@ -8241,7 +8243,9 @@ function informeGinecologico()
         uteroDim3 = "";
         volUteroCM = "";
         dimensionesUterinas = ""
+
     }else{
+
         utUbicacion1 = "Utero " + the("utUbicacion1").value;
         utUbicacion2 = the("utUbicacion2").value;
         cuerpoUterino = the("cuerpoUterino").value;
@@ -8249,6 +8253,7 @@ function informeGinecologico()
         uteroDim2 = the("uteroDim2").value;
         uteroDim3 = the("uteroDim3").value;
         volUteroCM = the("uternoVolumen").value; 
+
     }
 
     let endometDesc1 = " de tipo " + the("endometDesc1").value + ", ";
@@ -8261,6 +8266,7 @@ function informeGinecologico()
 
     let ovDer = the("ovarDere").value;
     if(ovDer != "no se observa"){
+
         if (the("ovarDereMed1").value != ""){
             ovDer += "<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dimensiones " + the("ovarDereMed1").value;
 
@@ -8290,6 +8296,7 @@ function informeGinecologico()
         if (the("ovarDereMed3").value != ""){
             ovDer += ", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volumen ovárico&nbsp;&nbsp;" + the("ovarDereVol").value;
         }
+
     }
 
     let foliculoDere = the("folicDere").value
