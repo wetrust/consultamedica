@@ -566,6 +566,14 @@ $( document ).ready(function() {
         }
     });
 
+    the("monitoreo.ovulatorio").onchange = function(){
+        if (this.value == "si"){
+            the("monitoreoOvulatorio").classList.remove("d-none")
+        }else{
+            the("monitoreoOvulatorio").classList.add("d-none")
+        }
+    }
+
     $("#embrion\\.clon").on("change", function(){
         the("embrion").value = this.value
         $("#embrion").trigger("click")
