@@ -413,7 +413,24 @@ $(document).ready(function(){
         }
     };
 
-    the("guardarElPaciente").onclick = guardarPaciente;
+    the("guardarElPaciente").onclick = function(e){
+        e.preventDefault();
+        let _guardar = guardarPaciente(e);
+        let tipoEco =  the("tipoecografia").value;
+
+        if (_guardar == true && tipoEco != ""){
+            if (tipoEco == 0){
+                document.location.hash = "#ecoObsPrimTrim"
+            }else if (tipoEco == 1){
+                document.location.hash = "#ecoObsSegTrim"
+            }else if (tipoEco == 2){
+                document.location.hash = "#ecoDoppler"
+            }else if (tipoEco == 3){
+                document.location.hash = "#ecoGinecologica"
+            }
+
+        }
+    };
 
     the("cleanParson").onclick = function(){
         let _fecha = new Date()
