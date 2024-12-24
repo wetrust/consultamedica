@@ -399,15 +399,15 @@ $( document ).ready(function() {
 
     the("continuarAExamen").onclick = function(){
 
-        let alternativa = the("motivo-examen").value
+        let alternativa = the("tipoEcografia").value
 
-        if (alternativa == "Ecografía obstétrica precoz"){
+        if (alternativa == 0){
             document.location.hash = "#ecoObsPrimTrim"
-        }else if (alternativa == "Evaluación crecimiento"){
+        }else if (alternativa == 1){
             document.location.hash = "#ecoObsSegTrim"
-        }else if (alternativa == "Flujometría Doppler"){
+        }else if (alternativa == 2){
             document.location.hash = "#ecoDoppler"
-        }else if (alternativa == "Ecografía Ginecológica"){
+        }else if (alternativa == 3){
             document.location.hash = "#ecoGinecologica"
         }
 
@@ -415,15 +415,15 @@ $( document ).ready(function() {
 
     the("continuarAExamenBoton").onclick = function(){
 
-        let alternativa = the("motivo-examen").value
+        let alternativa = the("tipoEcografia").value
 
-        if (alternativa == "Ecografía obstétrica precoz"){
+        if (alternativa == 0){
             document.location.hash = "#ecoObsPrimTrim"
-        }else if (alternativa == "Evaluación crecimiento"){
+        }else if (alternativa == 1){
             document.location.hash = "#ecoObsSegTrim"
-        }else if (alternativa == "Flujometría Doppler"){
+        }else if (alternativa == 2){
             document.location.hash = "#ecoDoppler"
-        }else if (alternativa == "Ecografía Ginecológica"){
+        }else if (alternativa == 3){
             document.location.hash = "#ecoGinecologica"
         }
 
