@@ -397,6 +397,38 @@ $( document ).ready(function() {
         $("#fum").trigger("change");
     });
 
+    the("continuarAExamen").onclick = function(){
+
+        let alternativa = the("motivo-examen").value
+
+        if (alternativa == "Ecografía obstétrica precoz"){
+            document.location.hash = "#ecoObsPrimTrim"
+        }else if (alternativa == "Evaluación crecimiento"){
+            document.location.hash = "#ecoObsSegTrim"
+        }else if (alternativa == "Flujometría Doppler"){
+            document.location.hash = "#ecoDoppler"
+        }else if (alternativa == "Ecografía Ginecológica"){
+            document.location.hash = "#ecoGinecologica"
+        }
+
+    }
+
+    the("continuarAExamenBoton").onclick = function(){
+
+        let alternativa = the("motivo-examen").value
+
+        if (alternativa == "Ecografía obstétrica precoz"){
+            document.location.hash = "#ecoObsPrimTrim"
+        }else if (alternativa == "Evaluación crecimiento"){
+            document.location.hash = "#ecoObsSegTrim"
+        }else if (alternativa == "Flujometría Doppler"){
+            document.location.hash = "#ecoDoppler"
+        }else if (alternativa == "Ecografía Ginecológica"){
+            document.location.hash = "#ecoGinecologica"
+        }
+
+    }
+
     //controlador de botones para ver la configuración
     $('#configSiController').on('click', function(){
         document.location.hash = "configuracion";
