@@ -6060,6 +6060,19 @@ $(window).on('hashchange', function(){
             $("#volver").attr("href", "#inicio");
         }
 
+        //cuando salta de ingreso de pacientes a exámenes
+        //y se equivoco de exámen, tiene que aparecer la lista de exámenes
+        //abierta
+        var hash = document.location.hash;
+        let _opcionesIncluidas = ["#ecoDoppler", "#ecoObsSegTrim", "#ecoObsPrimTrim", "#ecoGinecologica"];
+
+        if (activeHash.includes(_opcionesIncluidas)){
+            the("menu.modulo.activo.uno").classList.remove("d-none");
+            the("menu.modulo.activo.dos").classList.remove("d-none");
+            the("menu.modulo.activo.tres").classList.remove("d-none");
+            the("menu.modulo.activo.cuatro").classList.remove("d-none");
+        }
+
         //especial para el header
         let headers = ["#inicio", "#ajustepeso", "#postnatal","#recienacido","#investigacion"]
         if (headers.includes(hash)){
