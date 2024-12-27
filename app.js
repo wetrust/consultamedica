@@ -6029,7 +6029,6 @@ $(window).on('hashchange', function(){
     if (div.includes(hash)){
         $(activeHash).addClass(d);
         $(hash).removeClass(d);
-        activeHash = hash;
 
         if (div_fecha.includes(hash)){
             document.getElementsByTagName("section")[0].classList.remove(d);
@@ -6079,6 +6078,8 @@ $(window).on('hashchange', function(){
         } else {
             document.getElementsByTagName("header")[0].classList.add("d-none");
         }
+
+        activeHash = hash;
     }
     else {
         $(activeHash).addClass(d);
