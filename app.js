@@ -6062,7 +6062,7 @@ $(window).on('hashchange', function(){
         //cuando salta de ingreso de pacientes a exámenes
         //y se equivoco de exámen, tiene que aparecer la lista de exámenes
         //abierta
-        let _opcionesIncluidas = ["#ecoDoppler", "#ecoObsSegTrim", "#ecoObsPrimTrim", "#ecoGinecologica"];
+        let _opcionesIncluidas = ["#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#ecoGinecologica"];
 
         if (activeHash.includes(_opcionesIncluidas)){
             the("menu.modulo.activo.uno").classList.remove("d-none");
