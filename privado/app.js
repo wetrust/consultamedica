@@ -9988,7 +9988,7 @@ function comentarioSegundoTrimestre(){
         var frecuenciaCardiaca = the('fcf').value;
 
         if (fetoPresentacion){
-            comentarios = '- Feto en presentacion ' + fetoPresentacion;
+            comentarios = '- Feto en presentación ' + fetoPresentacion;
 
             if (dorsoFetal){
                 comentarios += ', dorso ' + dorsoFetal;
