@@ -9981,9 +9981,15 @@ function comentarioSegundoTrimestre(){
     if (valorAlternativa == 1){
         $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
 
+        var fetoPresentacion = the('presentacion').value;
+        var dorsoFetal = the('dorso').value;
+        var frecuenciaCardiaca = the('fcf').value;
+
+        var comentarios = '- Feto en presentacion ' + fetoPresentacion + ', dorso ' + dorsoFetal + ', frecuencia cardiaca fetal ' + frecuenciaCardiaca + '\r\n';
+
         var percentilPeso = $('#pfePctRpt').val();
         percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
-        var comentarios = '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal Hadlock * \r\n';
+        comentarios = '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal Hadlock * \r\n';
 
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
