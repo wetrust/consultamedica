@@ -193,6 +193,46 @@ $( document ).ready(function() {
     opt.value = "&gt; 70"; 
     edad.appendChild(opt); 
 
+    the("presentacion").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("dorso").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("ecografia.segtrim.sexo").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("grado-placenta").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("ubicacion").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("incersion").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("bvmEcoDos").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("liq-cualitativo-eco").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("cordon").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("vasos").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
     //funcion rara
     $("#menu\\.modulo\\.activo").mouseout(function(){
         if (the("menu.modulo.activo").classList.contains("btn-dark")){
