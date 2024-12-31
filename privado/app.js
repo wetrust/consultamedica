@@ -9995,7 +9995,7 @@ function comentarioSegundoTrimestre(){
             }
 
             if (frecuenciaCardiaca){
-                comentarios += ', frecuencia cardiaca fetal ' + frecuenciaCardiaca + '\r\n';
+                comentarios += ', frecuencia cardiaca fetal ' + frecuenciaCardiaca;
             }
 
             comentarios += '\r\n';
