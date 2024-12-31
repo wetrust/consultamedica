@@ -6830,7 +6830,7 @@ function InfEcoObsSegTrim1(){
     InformeString = InformeString.replace(":LINEA3", linea3);
     InformeString = InformeString.replace(":LINEA4", linea4);
     InformeString = InformeString.replace(":LINEA6", linea6);
-    InformeString = InformeString.replace(":COMENTARIO", "<strong>"+comentario+"</strong>");
+    InformeString = InformeString.replace(":COMENTARIO", "<strong><em>"+comentario+"</em></strong>");
     InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
 
     return InformeString;
