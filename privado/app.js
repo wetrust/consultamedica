@@ -6785,7 +6785,7 @@ function InfEcoObsSegTrim1(){
         InformeString += '<tr> <td></td><td></td><td></td><td></td>';
     }
 
-    InformeString += '</tbody> </table></div><div class="container"> <p style="margin-bottom;0px;padding-bottom:0px;margin-bottom:0px;"><strong style="color:#045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style="max-width: 700px;text-align: justify;margin-top:0px;padding-top:0px;">:COMENTARIO</p></div><div class="container"> <p class="text-right" style="margin-right:100px;margin-top:5rem;text-align: right;">Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style="border-top: 1px solid #000;width: 100% !important;display: block;"></span> <p>Fecha Informe Ecográfico: :DATEINFORME</p><span style="border-top: 2px solid #000;width: 100% !important;display: block;"></span> <p style="margin-bottom:0;" class="pie-pagina">* Evaluación de crecimiento fetal (Gráfica), según referencia propuesta por Hadlock y col. Radiology 181: 129 - 133; 1991 (Normalidad Pct 10 a 90) <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p style="margin-bottom:0 !important;"><strong>El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>';
+    InformeString += '</tbody> </table></div><div class="container"> <p style="margin-bottom;0px;padding-bottom:0px;margin-bottom:0px;"><strong style="color:#045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style="max-width: 700px;text-align: justify;margin-top:0px;padding-top:0px;">:COMENTARIO</p></div><div class="container"> <p class="text-right" style="margin-right:100px;margin-top:5rem;text-align: right;">Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style="border-top: 1px solid #000;width: 100% !important;display: block;"></span> <p>Fecha Informe Ecográfico: :DATEINFORME</p><span style="border-top: 2px solid #000;width: 100% !important;display: block;"></span> <p style="margin-bottom:0;" class="pie-pagina">* Evaluación de crecimiento fetal (Gráfica), según referencia propuesta por Hadlock y col. Radiology 181: 129 - 133; 1991 (Normalidad Pct 10 a 90)</p><p style="margin-bottom:0 !important;"><strong>El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>';
 
     InformeString = InformeString.replace(":PACIENTE", paciente);
     InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
@@ -8172,7 +8172,7 @@ function crearInformeEcoSegTrim2(){
 	InformeString = InformeString.replace(":IC", ic);
 	InformeString = InformeString.replace(":CB", cb);
 	InformeString = InformeString.replace(":CBRANGO", cbRango);
-	InformeString = InformeString.replace(":COMENTARIO", comentario);
+	InformeString = InformeString.replace(":COMENTARIO", "<strong>"+comentario+"</strong>");
 	InformeString = InformeString.replace(":P50", p50);
 
 	InformeString = InformeString.replace(":LINEA1", linea1);
