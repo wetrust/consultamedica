@@ -9979,13 +9979,27 @@ function comentarioSegundoTrimestre(){
 
     let valorAlternativa = $("#eco\\.seg\\.trim\\.select\\.comentario").val()
     if (valorAlternativa == 1){
+        var comentarios = ""
+
         $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
 
         var fetoPresentacion = the('presentacion').value;
         var dorsoFetal = the('dorso').value;
         var frecuenciaCardiaca = the('fcf').value;
 
-        var comentarios = '- Feto en presentacion ' + fetoPresentacion + ', dorso ' + dorsoFetal + ', frecuencia cardiaca fetal ' + frecuenciaCardiaca + '\r\n';
+        if (fetoPresentacion){
+            comentarios = '- Feto en presentacion ' + fetoPresentacion;
+
+            if (dorsoFetal){
+                comentarios += ', dorso ' + dorsoFetal;
+            }
+
+            if (frecuenciaCardiaca){
+                comentarios += ', frecuencia cardiaca fetal ' + frecuenciaCardiaca + '\r\n';
+            }
+
+            comentarios += '\r\n';
+        }
 
         var percentilPeso = $('#pfePctRpt').val();
         percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
