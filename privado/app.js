@@ -6830,7 +6830,7 @@ function InfEcoObsSegTrim1(){
     InformeString = InformeString.replace(":LINEA3", linea3);
     InformeString = InformeString.replace(":LINEA4", linea4);
     InformeString = InformeString.replace(":LINEA6", linea6);
-    InformeString = InformeString.replace(":COMENTARIO", comentario);
+    InformeString = InformeString.replace(":COMENTARIO", "<strong>"+comentario+"</strong>");
     InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
 
     return InformeString;
@@ -8172,7 +8172,7 @@ function crearInformeEcoSegTrim2(){
 	InformeString = InformeString.replace(":IC", ic);
 	InformeString = InformeString.replace(":CB", cb);
 	InformeString = InformeString.replace(":CBRANGO", cbRango);
-	InformeString = InformeString.replace(":COMENTARIO", "<strong>"+comentario+"</strong>");
+	InformeString = InformeString.replace(":COMENTARIO", comentario);
 	InformeString = InformeString.replace(":P50", p50);
 
 	InformeString = InformeString.replace(":LINEA1", linea1);
