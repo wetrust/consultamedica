@@ -193,6 +193,10 @@ $( document ).ready(function() {
     opt.value = "&gt; 70"; 
     edad.appendChild(opt); 
 
+    the("fcf").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
     the("presentacion").onchange = function(){
         comentarioSegundoTrimestre()
     }
