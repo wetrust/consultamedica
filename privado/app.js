@@ -217,10 +217,6 @@ $( document ).ready(function() {
         comentarioSegundoTrimestre()
     }
 
-    the("bvmEcoDos").onchange = function(){
-        comentarioSegundoTrimestre()
-    }
-
     the("liq-cualitativo-eco").onchange = function(){
         comentarioSegundoTrimestre()
     }
