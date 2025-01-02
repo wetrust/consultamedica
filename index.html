@@ -4868,12 +4868,12 @@
                 <h5 class="text-secondary"><em>DATOS OBLIGADOS *</em></h5>
                 <div class="row">
                     <div class="col-4 bg-secondary py-2">
-                        <label class="mb-0 text-white">Nombre del paciente</label>
-                        <input class="form-control bg-verde text-white m-0" type="text" id="nombre-paciente">
-                    </div>
-                    <div class="col-4 bg-secondary py-2">
                         <label class="mb-0 text-white">N° Registro ( DNI )</label>
                        <input class="form-control bg-verde text-white m-0" type="text" id="id-paciente">
+                    </div>
+                    <div class="col-4 bg-secondary py-2">
+                        <label class="mb-0 text-white">Nombre del paciente</label>
+                        <input class="form-control bg-verde text-white m-0" type="text" id="nombre-paciente">
                     </div>
                     <div class="col-4 bg-secondary py-2">
                         <label class="mb-0 text-white">Edad materna</label>
@@ -4891,6 +4891,12 @@
                         <datalist id="patologiaObstetricaUnoList"></datalist>
                     </div>
                     <div class="col-4 bg-secondary py-2 pb-4">
+                        <label class="mb-0 text-white">Profesional ecografista</label>
+                        <input list="ecografistaList" id="ecografista" class="form-control bg-verde text-white">
+                        <datalist id="ecografistaList"></datalist>
+                    </div>
+                    <div class="col-4 py-2 pb-4"></div>
+                    <div class="col-4 bg-secondary py-2 pb-4">
                         <label class="mb-0 text-white">Tipo de Ecografia</label>
                         <select id="tipoEcografia" class="form-control bg-verde text-white">
                             <option value=""></option>
@@ -4899,11 +4905,6 @@
                             <option value="2">Flujometría Doppler</option>
                             <option value="3">Ecografía Ginecológica</option>
                         </select>
-                    </div>
-                    <div class="col-4 bg-secondary py-2 pb-4">
-                        <label class="mb-0 text-white">Profesional ecografista</label>
-                        <input list="ecografistaList" id="ecografista" class="form-control bg-verde text-white">
-                        <datalist id="ecografistaList"></datalist>
                     </div>
                 </div>
                 <p class="mt-2">* Datos obligados para calculo de biometrías y confección de protocolos ecográficos.</p>
