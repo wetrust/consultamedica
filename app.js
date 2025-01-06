@@ -261,6 +261,10 @@ $( document ).ready(function() {
     
         the("ubicacion").onchange = function(){
             comentarioSegundoTrimestre()
+
+            if (this.value == "fúndica"){
+                the("incersion").value = "alta"
+            }
         }
     
         the("incersion").onchange = function(){
