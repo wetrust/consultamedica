@@ -239,6 +239,15 @@ $( document ).ready(function() {
     edad.appendChild(opt); 
     the("ptEdadMaterna").value = 30
 
+    $("#otrolink").on("change", function(){
+        if (this.checked == true){
+            var URL = "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-75262023000300183";
+            var win = window.open(URL, "_blank");
+            this.checked == false
+        }
+        
+    })
+    
     //funcion rara
     $("#menu\\.modulo\\.activo").mouseout(function(){
         if (the("menu.modulo.activo").classList.contains("btn-oscuro")){
