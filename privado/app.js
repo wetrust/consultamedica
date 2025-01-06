@@ -9974,6 +9974,7 @@ function eliminarUnaImagen(){
 function comentarioSegundoTrimestre(){
 
     let valorAlternativa = $("#eco\\.seg\\.trim\\.select\\.comentario").val()
+
     if (valorAlternativa == 1){
         var comentarios = ""
 
@@ -10005,10 +10006,10 @@ function comentarioSegundoTrimestre(){
         let placenta_com_ubic = the("incersion").value;
 
         var linea2 = '- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'.\r\n';
-        
+
         let liquido_cua = $('#liq-cualitativo-eco').val()
         let liquido = document.getElementById("bvmEcoDos").value
-        
+
         var linea3 = '- Líquido amniótico ' + liquido_cua + ", con bolsillo vertical mayor de " + liquido + " mm.";
 
         if (placenta_com != "" || placenta_com_ubic != ""){
@@ -10018,7 +10019,6 @@ function comentarioSegundoTrimestre(){
         if (liquido != "" || liquido_cua != ""){
             comentarios = comentarios + linea3;
         }
-
 
         comentarios += '\r\n';
         $("#comentarios-eco-dos-inf-dos").val(comentarios);

@@ -239,6 +239,46 @@ $( document ).ready(function() {
     edad.appendChild(opt); 
     the("ptEdadMaterna").value = 30
 
+    the("fcf").onchange = function(){
+            comentarioSegundoTrimestre()
+        }
+    
+        the("presentacion").onchange = function(){
+            comentarioSegundoTrimestre()
+        }
+    
+        the("dorso").onchange = function(){
+            comentarioSegundoTrimestre()
+        }
+    
+        the("ecografia.segtrim.sexo").onchange = function(){
+            comentarioSegundoTrimestre()
+        }
+    
+        the("grado-placenta").onchange = function(){
+            comentarioSegundoTrimestre()
+        }
+    
+        the("ubicacion").onchange = function(){
+            comentarioSegundoTrimestre()
+        }
+    
+        the("incersion").onchange = function(){
+            comentarioSegundoTrimestre()
+        }
+    
+        the("liq-cualitativo-eco").onchange = function(){
+            comentarioSegundoTrimestre()
+        }
+    
+        the("cordon").onchange = function(){
+            comentarioSegundoTrimestre()
+        }
+    
+        the("vasos").onchange = function(){
+            comentarioSegundoTrimestre()
+        }
+
     $("#otrolink").on("change", function(){
         if (this.checked == true){
             var URL = "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-75262023000300183";
@@ -247,7 +287,7 @@ $( document ).ready(function() {
         }
         
     })
-    
+
     //funcion rara
     $("#menu\\.modulo\\.activo").mouseout(function(){
         if (the("menu.modulo.activo").classList.contains("btn-oscuro")){
@@ -9641,8 +9681,29 @@ function calularRiesgoMorfologiaAPriori(){
 function comentarioSegundoTrimestre(){
 
     let valorAlternativa = $("#eco\\.seg\\.trim\\.select\\.comentario").val()
+
     if (valorAlternativa == 1){
+        var comentarios = ""
+
         $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
+
+        var fetoPresentacion = the('presentacion').value;
+        var dorsoFetal = the('dorso').value;
+        var frecuenciaCardiaca = the('fcf').value;
+
+        if (fetoPresentacion){
+            comentarios = '- Feto en presentación ' + fetoPresentacion;
+
+            if (dorsoFetal){
+                comentarios += ', dorso ' + dorsoFetal;
+            }
+
+            if (frecuenciaCardiaca){
+                comentarios += ', frecuencia cardiaca fetal ' + frecuenciaCardiaca;
+            }
+
+            comentarios += '\r\n';
+        }
 
         var percentilPeso = $('#pfePctRpt').val();
         percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
@@ -9651,9 +9712,22 @@ function comentarioSegundoTrimestre(){
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
 
-        var linea6 = '- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'.\r\n- Líquido amniótico ' + $('#liq-cualitativo-eco').val() + ", con bolsillo vertical mayor de " + document.getElementById("bvmEcoDos").value + " mm.";
+        var linea2 = '- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'.\r\n';
 
-        comentarios = comentarios + linea6 + '\r\n';
+        let liquido_cua = $('#liq-cualitativo-eco').val()
+        let liquido = document.getElementById("bvmEcoDos").value
+
+        var linea3 = '- Líquido amniótico ' + liquido_cua + ", con bolsillo vertical mayor de " + liquido + " mm.";
+
+        if (placenta_com != "" || placenta_com_ubic != ""){
+            comentarios = comentarios + linea2;
+        }
+
+        if (liquido != "" || liquido_cua != ""){
+            comentarios = comentarios + linea3;
+        }
+
+        comentarios += '\r\n';
         $("#comentarios-eco-dos-inf-dos").val(comentarios);
     } else if (valorAlternativa == 2){
         let egP50 = String(the("egP50").value);
