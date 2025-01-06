@@ -1146,14 +1146,6 @@ $( document ).ready(function() {
         $("#clickInformeEco").trigger("click")
 	});
 
-    $("#calculadoras").on("change", function(){
-        if (this.checked == true){
-            the("calculadoras.div").classList.remove("d-none")
-        }else{
-            the("calculadoras.div").classList.add("d-none")
-        }
-    })
-
     $("#otrolink").on("change", function(){
         if (this.checked == true){
             var URL = "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-75262023000300183";
