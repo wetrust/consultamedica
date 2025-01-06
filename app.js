@@ -9707,7 +9707,7 @@ function comentarioSegundoTrimestre(){
 
         var percentilPeso = $('#pfePctRpt').val();
         percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
-        var comentarios = '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal Hadlock * \r\n';
+        comentarios += '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal Hadlock * \r\n';
 
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
