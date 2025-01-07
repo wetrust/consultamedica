@@ -3017,6 +3017,17 @@ $( document ).ready(function() {
         });
     });
 
+    $( '#graficoPFEOMS' ).on( 'click', function() {
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        the(modal.titulo).innerText = "";
+        the(modal.contenido).innerHTML = '<img src="img/CHADLOCKOMS.png" class="img img-fluid">';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+    });
+
     $( '#infecoObsSegTrim1' ).on( 'click', function() {
         var edadGestacional = the("semanas").value;
 
