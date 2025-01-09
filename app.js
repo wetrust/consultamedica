@@ -294,9 +294,8 @@ $( document ).ready(function() {
 
     //funcion rara
     $("#menu\\.modulo\\.activo").mouseout(function(){
-        if (the("menu.modulo.activo").classList.contains("btn-oscuro")){
-            the("menu.modulo.activo").classList.remove("btn-oscuro");
-            the("menu.modulo.activo").classList.add("btn-outline-dark");
+        if (the("menu.modulo.activo").classList.contains("active")){
+            the("menu.modulo.activo").classList.remove("active");
         }
     });
 
