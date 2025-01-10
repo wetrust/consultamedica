@@ -1,5 +1,6 @@
 import { fechas } from './functionesM.js'
 import { the, inputDate, these, humanDate } from './wetrust.js'
+import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
 
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
@@ -2930,95 +2931,7 @@ $( document ).ready(function() {
     });
 
     $( '#graficoPFE' ).on( 'click', function() {
-        var edadGestacional = the("semanas").value;
-
-        if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
-
-        var modal = makeModal();
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Gráfico Peso Fetal Estimado";
-        the(modal.contenido).innerHTML = '<div id="graficoPesoView"></div>';
-
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-
-        $('#graficoPesoView').highcharts({
-           title: {
-               text: 'Peso Fetal Estimado grs. *',
-               x: -20 //center
-           },
-           subtitle: {
-               text: 'Kilogramos',
-               x: -20
-           },
-           plotOptions: {
-               series: {
-                   enableMouseTracking: false,
-                   pointInterval: 1
-               }
-           },
-           yAxis: {
-               title: { text: 'Kilogramos' },
-               tickPositions: [100, 560, 1020, 1480, 1940, 2400, 2860, 3320, 3780, 4340, 4900]
-           },
-           colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
-           xAxis: {
-               categories: ['14','15','16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
-           },
-           credits: {enabled: false},
-           series: [{
-               type: "line",
-               name: 'Pct 3',
-               dashStyle: "Dot",
-               marker: {enabled: false},
-               data: [70,88,110,136,167,205,248,299,359,426,503,589,685,791,908,1034,1169,1313,1465,1622,1783,1946,2110,2271,2427,2576,2714]
-           }, {
-               type: "line",
-               name: 'Pct 10',
-               marker: { enabled: false },
-               data: [77,97,121,150,185,227,275,331,398,471,556,652,758,876,1004,1145,1294,1453,1621,1794,1973,2154,2335,2513,2686,2851,2985]
-           },{
-                type: "line",
-                name: 'Pct 50',
-                marker: { enabled: false },
-                data: [93,117,146,181,223,273,331,399,478,568,670,785,913,1055,1210,1379,1559,1751,1953,2161,2377,2595,2813,3028,3236,3435,3619]
-            }, {
-               type: "line",
-               name: 'Pct 90',
-               marker: { enabled: false },
-               data: [109,137,171,212,261,319,387,467,559,665,784,918,1068,1234,1416,1613,1824,2049,2285,2530,2781,3036,3291,3543,3786,4019,4234]
-           }, {
-               type: "line",
-               name: 'Pct 97',
-               dashStyle: "Dot",
-               marker: { enabled: false, },
-               data: [116,146,183,226,279,341,414,499,598,710,838,981,1141,1319,1513,1724,1949,2189,2441,2703,2971,3244,3516,3785,4045,4294,4474]
-           }, {
-               type: "line",
-               name: 'Peso',
-               dashStyle: "Dot",
-               marker: {symbol:'square'},
-               lineWidth: 0,
-               data: (function () {
-                   var data = [];
-                   var edadGest = the("semanas").value;
-    
-                   for (i = 14; i < edadGest; i++) {
-                       data.push({
-                           y: 0,
-                       });
-                   }
-                   data.push({
-                       y: parseFloat($('#pfe').val()),
-                   });
-                   for (i = edadGest + 1; i <= 39; i++) {
-                       data.push({
-                           y: 0,
-                       });
-                   }
-                   return data;
-               }())
-           }]
-        });
+        console.log(graficoPFEMasMenos)
     });
 
     $( '#graficoPFEOMS' ).on( 'click', function() {
