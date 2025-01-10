@@ -4,7 +4,7 @@ export function graficoPFEMasMenos(){
 
     var edadGestacional = the("semanas").value;
     if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
-    if (edadGestacional < 40){ alert("Edad Gestacional superior a 40 semanas"); return false;}
+    if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
 
     let tramo = calcularDosMenos(edadGestacional);
 
