@@ -2932,7 +2932,7 @@ $( document ).ready(function() {
     $( '#graficoPFE' ).on( 'click', function() {
         var edadGestacional = the("semanas").value;
 
-        if (edadGestacional < 16){ alert("Edad Gestacional inferior a 16 semanas"); return false;}
+        if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
