@@ -3002,7 +3002,7 @@ $( document ).ready(function() {
                    var data = [];
                    var edadGest = the("semanas").value;
     
-                   for (i = 16; i < edadGest; i++) {
+                   for (i = 14; i < edadGest; i++) {
                        data.push({
                            y: 0,
                        });
