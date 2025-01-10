@@ -26,6 +26,12 @@ export function graficoPFEMasMenos(){
 
     }
 
+    valores.cinco.sort((a, b) => a - b);
+    valores.cuatro.sort((a, b) => a - b);
+    valores.tres.sort((a, b) => a - b);
+    valores.dos.sort((a, b) => a - b);
+    valores.uno.sort((a, b) => a - b);
+
     return valores
 
 }
