@@ -1,6 +1,6 @@
 import { the } from './wetrust.js'
 
-function graficoPFEMasMenos(){
+export function graficoPFEMasMenos(){
 
     var edadGestacional = the("semanas").value;
     if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
