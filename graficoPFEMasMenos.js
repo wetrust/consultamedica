@@ -33,29 +33,40 @@ export function graficoPFEMasMenos(){
 function calcularDosMenos(eg){
 
     let tramo = [];
+
     if (eg == "14"){
-        tramo = [0,1,2];
+
+        tramo = [14,15,16];
+
     }else if (eg == "40"){
-        tramo = [24,25,26];
+
+        tramo = [38,39,40];
+
     }else{
+
         tramo = [eg];
         eg--
         if (eg >= "14"){
             tramo.push(eg)
         }
+
         eg--
         if (eg >= "14"){
             tramo.push(eg)
         }
         eg += 3
+
         if (eg <= "40"){
             tramo.push(eg)
         }
         eg++
+
         if (eg <= "41"){
             tramo.push(eg)
         }
+
     }
+
     return tramo;
 
 }
