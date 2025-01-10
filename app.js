@@ -2931,7 +2931,7 @@ $( document ).ready(function() {
     });
 
     $( '#graficoPFE' ).on( 'click', function() {
-        console.log(graficoPFEMasMenos)
+        console.log(graficoPFEMasMenos())
     });
 
     $( '#graficoPFEOMS' ).on( 'click', function() {
