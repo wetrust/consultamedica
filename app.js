@@ -2940,7 +2940,7 @@ $( document ).ready(function() {
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Gráfico Peso Fetal Estimado";
+        the(modal.titulo).innerText = "Evaluación de Peso Fetal Estimado por gráfica de Hadlock 1991 Percentiles 3 a 97";
         the(modal.contenido).innerHTML = '<div id="graficoPesoView"></div>';
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
@@ -2951,7 +2951,7 @@ $( document ).ready(function() {
                 x: -20 //center
             },
             subtitle: {
-                text: 'Kilogramos',
+                text: '',
                 x: -20
             },
             plotOptions: {
@@ -2997,7 +2997,7 @@ $( document ).ready(function() {
                 data: []
             }, {
                 type: "line",
-                name: 'Peso',
+                name: 'Peso estimado',
                 dashStyle: "Dot",
                 marker: {symbol:'circle'},
                 lineWidth: 0,
