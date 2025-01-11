@@ -2999,7 +2999,7 @@ $( document ).ready(function() {
                 type: "line",
                 name: 'Peso',
                 dashStyle: "Dot",
-                marker: {symbol:'square'},
+                marker: {symbol:'circle'},
                 lineWidth: 0,
                 data: (function () {
                     var data = [];
