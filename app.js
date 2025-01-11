@@ -2965,7 +2965,7 @@ $( document ).ready(function() {
             },
             colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
             xAxis: {
-                categories: ['14','15','16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+                categories: []
             },
             credits: {enabled: false},
             series: [{
@@ -3029,11 +3029,12 @@ $( document ).ready(function() {
             }]
         }
 
-        _highcharts.series[0].data = _grafico.uno
-        _highcharts.series[1].data = _grafico.dos
-        _highcharts.series[2].data = _grafico.tres
-        _highcharts.series[3].data = _grafico.cuatro
-        _highcharts.series[4].data = _grafico.cinco
+        _highcharts.series[0].data = _grafico.valores.uno
+        _highcharts.series[1].data = _grafico.valores.dos
+        _highcharts.series[2].data = _grafico.valores.tres
+        _highcharts.series[3].data = _grafico.valores.cuatro
+        _highcharts.series[4].data = _grafico.valores.cinco
+        _highcharts.xAxis.categories = _grafico.semanas
 
         $('#graficoPesoView').highcharts(_highcharts);
 
