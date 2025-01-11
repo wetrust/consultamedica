@@ -2906,7 +2906,11 @@ $( document ).ready(function() {
                         // generate an array of random data
                         var data = [];
                         var edadGest = the("semanas").value;
-                        for (i = 10; i < edadGest; i ++ ) {
+                        var partir = edadGest - 2
+                        if (partir < 14){ partir = 14;}
+                        var parar = edadGest + 2
+                        if (parar > 40){ parar = 40;}
+                        for (i = partir; i < edadGest; i ++ ) {
                             data.push({
                                 y: 0,
                             });
@@ -2919,7 +2923,7 @@ $( document ).ready(function() {
                         data.push({
                                 y: aud,
                             });
-                        for (i = (edadGest +1); i < 39; i ++ ) {
+                        for (i = (edadGest +1); i < parar; i ++ ) {
                             data.push({
                                 y: 0,
                             });
