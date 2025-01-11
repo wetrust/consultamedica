@@ -32,7 +32,7 @@ export function graficoPFEMasMenos(){
     valores.dos.sort((a, b) => a - b);
     valores.uno.sort((a, b) => a - b);
 
-    tramo.uno.sort((a, b) => a - b);
+    tramo.sort((a, b) => a - b);
 
     let resultado = {
         valores: valores,
