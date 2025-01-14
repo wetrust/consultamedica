@@ -2963,6 +2963,9 @@ $( document ).ready(function() {
             yAxis: {
                 title: { text: 'Gramos' },
             },
+            xAxis: {
+                categories: [],
+            },
             colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
             credits: {enabled: false},
             series: [{
