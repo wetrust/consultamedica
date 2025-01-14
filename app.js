@@ -2969,7 +2969,7 @@ $( document ).ready(function() {
             legend: {
                 layout: 'vertical',
                 align: 'right',
-                verticalAlign: 'middle'
+                verticalAlign: 'top'
             },
             colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
             credits: {enabled: false},
