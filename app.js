@@ -2966,6 +2966,11 @@ $( document ).ready(function() {
             xAxis: {
                 categories: [],
             },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
             colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
             credits: {enabled: false},
             series: [{
