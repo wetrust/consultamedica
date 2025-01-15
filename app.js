@@ -3040,6 +3040,7 @@ $( document ).ready(function() {
         _highcharts.series[1].data = _grafico.valores.cuatro
         _highcharts.series[0].data = _grafico.valores.cinco
         _highcharts.xAxis.categories = _grafico.semanas
+        _highcharts.title.text = "Percentil de crecimiento: " + the("pfePctRpt").value
 
         $('#graficoPesoView').highcharts(_highcharts);
 
