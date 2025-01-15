@@ -2948,7 +2948,11 @@ $( document ).ready(function() {
         let _highcharts = {
             title: {
                 text: 'Peso Fetal Estimado ( gramos )',
-                x: -20 //center
+                x: -20, //center
+                style: {
+                    color: "#ff0000",
+                    fontWeight: "normal"
+                }
             },
             subtitle: {
                 text: '',
