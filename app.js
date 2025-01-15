@@ -2945,10 +2945,6 @@ $( document ).ready(function() {
             title: {
                 text: '<small>Peso Fetal Estimado ( gramos )</small>',
                 x: -20, //center
-                style: {
-                    color: "#ff0000",
-                    fontWeight: "bold"
-                },
                 useHTML: true
             },
             subtitle: {
