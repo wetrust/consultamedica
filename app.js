@@ -2934,10 +2934,6 @@ $( document ).ready(function() {
 
         let _grafico = graficoPFEMasMenos()
 
-        var edadGestacional = the("semanas").value;
-
-        if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
-
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerText = "Evaluación de Peso Fetal Estimado por gráfica de Hadlock 1991 Percentiles 3 a 97";
