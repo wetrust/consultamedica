@@ -2947,6 +2947,7 @@ $( document ).ready(function() {
                 x: -20, //center
                 style: {
                     color: "#ff0000",
+                    fontWeight: "bold"
                 },
                 useHTML: true
             },
