@@ -2931,7 +2931,7 @@ $( document ).ready(function() {
     });
 
     $( '#graficoPFE' ).on( 'click', function() {
-        
+
         let _grafico = graficoPFEMasMenos()
 
         var edadGestacional = the("semanas").value;
