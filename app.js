@@ -2943,12 +2943,13 @@ $( document ).ready(function() {
 
         let _highcharts = {
             title: {
-                text: 'Peso Fetal Estimado ( gramos )',
+                text: '<small>Peso Fetal Estimado ( gramos )</small>',
                 x: -20, //center
                 style: {
                     color: "#ff0000",
                     fontWeight: "lighter"
-                }
+                },
+                useHTML: true
             },
             subtitle: {
                 text: '',
