@@ -21,18 +21,23 @@ export function graficoPFEMasMenos(){
 
         caja[1] = pTres[tramo[i]-14]
         valores.uno.push(caja);
+        caja = [i,0]
 
         caja[1] = pDies[tramo[i]-14]
         valores.dos.push(caja);
+        caja = [i,0]
 
         caja[1] = pCincuenta[tramo[i]-14]
         valores.tres.push(caja);
+        caja = [i,0]
 
         caja[1] = pNoventa[tramo[i]-14]
         valores.cuatro.push(caja);
+        caja = [i,0]
 
         caja[1] = pNoventaYSiete[tramo[i]-14]
         valores.cinco.push(caja);
+        caja = [i,0]
 
     }
 
