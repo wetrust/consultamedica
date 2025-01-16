@@ -40,7 +40,7 @@ export function graficoPFEMasMenos(){
 
         let total = tramo.length
 
-        let indice = total.indexOf(edadGestacional)
+        let indice = tramo.indexOf(edadGestacional)
         let _dias = [0.1,0.2,0.3,0.4,0.5,0.6]
 
         if (eg == "14"){
