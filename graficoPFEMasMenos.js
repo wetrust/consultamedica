@@ -43,22 +43,22 @@ export function graficoPFEMasMenos(){
         let indice = tramo.indexOf(edadGestacional)
         let _dias = [0.1,0.2,0.3,0.4,0.5,0.6]
 
-        if (eg == "14"){
+        if (edadGestacional == 14){
 
             tramo = [14,14.1,14.2,14.3,14.4,14.5,14.6,15,16];
     
-        }else if (eg == "40"){
+        }else if (edadGestacional == 40){
     
             tramo = [38,39,40,40.1,40.2,40.3,40.4,40.5,40.6];
     
         }else{
 
-            _dias[0] += parseInt(eg)
-            _dias[1] += parseInt(eg)
-            _dias[2] += parseInt(eg)
-            _dias[3] += parseInt(eg)
-            _dias[4] += parseInt(eg)
-            _dias[5] += parseInt(eg)
+            _dias[0] += parseInt(edadGestacional)
+            _dias[1] += parseInt(edadGestacional)
+            _dias[2] += parseInt(edadGestacional)
+            _dias[3] += parseInt(edadGestacional)
+            _dias[4] += parseInt(edadGestacional)
+            _dias[5] += parseInt(edadGestacional)
 
             if ((indice+1) == total){
 
