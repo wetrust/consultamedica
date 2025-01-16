@@ -3009,7 +3009,7 @@ $( document ).ready(function() {
                 lineWidth: 0,
                 data: (function () {
                     var data = [[0,1]];
-                    data[0][0] = _grafico.semanas.indexOf(parseInt(the("semanas").value));
+                    data[0][0] = parseInt(the("semanas").value);
 
                     if (the("dias").value > 0){
                         data[0][0] += "." + the("dias").value;  
