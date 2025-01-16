@@ -20,19 +20,19 @@ export function graficoPFEMasMenos(){
         let caja = [i,0]
 
         caja[1] = pTres[tramo[i]-14]
-        valores.uno.push(_.caja);
+        valores.uno.push(structuredClone(caja));
 
         caja[1] = pDies[tramo[i]-14]
-        valores.dos.push(_.caja);
+        valores.dos.push(structuredClone(caja));
 
         caja[1] = pCincuenta[tramo[i]-14]
-        valores.tres.push(_.caja);
+        valores.tres.push(structuredClone(caja));
 
         caja[1] = pNoventa[tramo[i]-14]
-        valores.cuatro.push(_.caja);
+        valores.cuatro.push(structuredClone(caja));
 
         caja[1] = pNoventaYSiete[tramo[i]-14]
-        valores.cinco.push(_.caja);
+        valores.cinco.push(structuredClone(caja));
 
     }
 
