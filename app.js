@@ -2932,6 +2932,10 @@ $( document ).ready(function() {
 
     $( '#graficoPFE' ).on( 'click', function() {
 
+        var edadGestacional = the("semanas").value;
+        if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
+        if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
+
         let _grafico = graficoPFEMasMenos()
 
         var modal = makeModal();
@@ -3004,27 +3008,14 @@ $( document ).ready(function() {
                 marker: {symbol:'circle'},
                 lineWidth: 0,
                 data: (function () {
-                    var data = [];
-                    var edadGest = the("semanas").value;
-                    var partir = edadGest - 2
-                    if (partir < 14){ partir = 14;}
-                    var parar = edadGest + 2
-                    if (parar > 40){ parar = 40;}
+                    var data = [[0,1]];
+                    data[0][0] = the("semanas").value;
 
-                    for (i = partir; i < edadGest; i ++ ) {
-                        data.push({
-                            y: 0,
-                        });
+                    if (the("dias").value > 0){
+                        data[0][0] += "." + the("dias").value;  
                     }
-                    
-                    data.push({
-                        y: parseFloat($('#pfe').val()),
-                        });
-                    for (i = (edadGest +1); i < parar; i ++ ) {
-                        data.push({
-                            y: 0,
-                        });
-                    }
+
+                    data[0][1] = parseFloat($('#pfe').val());
 
                     return data;
                 }())

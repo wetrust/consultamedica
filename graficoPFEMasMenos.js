@@ -3,8 +3,7 @@ import { the } from './wetrust.js'
 export function graficoPFEMasMenos(){
 
     var edadGestacional = the("semanas").value;
-    if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
-    if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
+    var dias = the("dias").value;
 
     let tramo = calcularDosMenos(edadGestacional);
 
@@ -18,21 +17,69 @@ export function graficoPFEMasMenos(){
 
     for (let i = 0; i < tramo.length; i++) {
 
-        valores.uno.push(pTres[tramo[i]-14]);
-        valores.dos.push(pDies[tramo[i]-14]);
-        valores.tres.push(pCincuenta[tramo[i]-14]);
-        valores.cuatro.push(pNoventa[tramo[i]-14]);
-        valores.cinco.push(pNoventaYSiete[tramo[i]-14]);
+        let caja = [i,0]
+
+        caja[1] = pTres[tramo[i]-14]
+        valores.uno.push(caja);
+
+        caja[1] = pDies[tramo[i]-14]
+        valores.dos.push(caja);
+
+        caja[1] = pCincuenta[tramo[i]-14]
+        valores.tres.push(caja);
+
+        caja[1] = pNoventa[tramo[i]-14]
+        valores.cuatro.push(caja);
+
+        caja[1] = pNoventaYSiete[tramo[i]-14]
+        valores.cinco.push(caja);
 
     }
 
-    valores.cinco.sort((a, b) => a - b);
-    valores.cuatro.sort((a, b) => a - b);
-    valores.tres.sort((a, b) => a - b);
-    valores.dos.sort((a, b) => a - b);
-    valores.uno.sort((a, b) => a - b);
+    if (dias > 0) {
 
-    tramo.sort((a, b) => a - b);
+        let total = tramo.length
+
+        let indice = total.indexOf(edadGestacional)
+        let _dias = [0.1,0.2,0.3,0.4,0.5,0.6]
+
+        if (eg == "14"){
+
+            tramo = [14,14.1,14.2,14.3,14.4,14.5,14.6,15,16];
+    
+        }else if (eg == "40"){
+    
+            tramo = [38,39,40,40.1,40.2,40.3,40.4,40.5,40.6];
+    
+        }else{
+
+            _dias[0] += parseInt(eg)
+            _dias[1] += parseInt(eg)
+            _dias[2] += parseInt(eg)
+            _dias[3] += parseInt(eg)
+            _dias[4] += parseInt(eg)
+            _dias[5] += parseInt(eg)
+
+            if ((indice+1) == total){
+
+                tramo = tramo.concat(_dias)
+
+            }else if (indice == 0){
+                tramo = _dias.concat(tramo)
+            }else{
+                let unPart = tramo.splice(indice +1);
+                let doPart = tramo;
+
+                tramo = doPart.concat(_dias)
+                tramo = tramo.concat(unPart)
+
+                tramo.sort((a, b) => a - b);
+            }
+
+
+        }
+
+    }
 
     let resultado = {
         valores: valores,
@@ -80,6 +127,9 @@ function calcularDosMenos(eg){
 
     }
 
+    tramo.sort((a, b) => a - b);
+
     return tramo;
 
 }
+
