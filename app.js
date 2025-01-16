@@ -2966,11 +2966,17 @@ $( document ).ready(function() {
             },
             xAxis: {
                 categories: [],
+                showEmpty:true
             },
             legend: {
                 layout: 'vertical',
                 align: 'right',
                 verticalAlign: 'middle'
+            },
+            plotOptions: {
+                column: {
+                    grouping: false
+                }
             },
             colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
             credits: {enabled: false},
