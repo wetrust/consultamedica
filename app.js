@@ -3012,7 +3012,8 @@ $( document ).ready(function() {
                     data[0][0] = parseInt(the("semanas").value);
 
                     if (the("dias").value > 0){
-                        data[0][0] += "." + the("dias").value;  
+                        data[0][0] += "." + the("dias").value; 
+                        data[0][0] = parseFloat(data[0][0])
                     }
 
                     data[0][1] = parseFloat(the("pfe").value);
