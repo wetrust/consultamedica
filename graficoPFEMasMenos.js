@@ -2,7 +2,7 @@ import { the } from './wetrust.js'
 
 export function graficoPFEMasMenos(){
 
-    var edadGestacional = the("semanas").value;
+    var edadGestacional = parseInt(the("semanas").value);
     var dias = the("dias").value;
 
     let tramo = calcularDosMenos(edadGestacional);
@@ -94,11 +94,11 @@ function calcularDosMenos(eg){
 
     let tramo = [];
 
-    if (eg == "14"){
+    if (eg == 14){
 
         tramo = [14,15,16];
 
-    }else if (eg == "40"){
+    }else if (eg == 40){
 
         tramo = [38,39,40];
 
@@ -106,22 +106,22 @@ function calcularDosMenos(eg){
 
         tramo = [eg];
         eg--
-        if (eg >= "14"){
+        if (eg >= 14){
             tramo.push(eg)
         }
 
         eg--
-        if (eg >= "14"){
+        if (eg >= 14){
             tramo.push(eg)
         }
         eg += 3
 
-        if (eg <= "40"){
+        if (eg <= 40){
             tramo.push(eg)
         }
         eg++
 
-        if (eg <= "41"){
+        if (eg <= 41){
             tramo.push(eg)
         }
 
@@ -132,4 +132,3 @@ function calcularDosMenos(eg){
     return tramo;
 
 }
-
