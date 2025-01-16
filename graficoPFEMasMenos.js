@@ -17,7 +17,7 @@ export function graficoPFEMasMenos(){
 
     for (let i = 0; i < tramo.length; i++) {
 
-        let caja = [i,0]
+        let caja = [tramo[i],0]
 
         caja[1] = pTres[tramo[i]-14]
         valores.uno.push(structuredClone(caja));
