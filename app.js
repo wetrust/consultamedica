@@ -1,6 +1,6 @@
 import { fechas } from './functionesM.js'
 import { the, inputDate, these, humanDate } from './wetrust.js'
-import { appPesoEG } from './app.pesoEG.js'
+import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
 
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
@@ -2932,16 +2932,111 @@ $( document ).ready(function() {
 
     $( '#graficoPFE' ).on( 'click', function() {
 
+        var edadGestacional = the("semanas").value;
+        if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
+        if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
         var modal = makeModal();
 
+        let _grafico = graficoPFEMasMenos()
         modal.modal = appPesoEG()
 
+        var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        the(modal.titulo).innerText = "Evaluación de Peso Fetal Estimado por gráfica de Hadlock 1991 Percentiles 3 a 97";
+        the(modal.contenido).innerHTML = '<div id="graficoPesoView"></div>';
         document.getElementsByClassName("modal-dialog")[0].classList.remove("modal-lg")
         document.getElementsByClassName("modal-dialog")[0].style.cssText = "max-width:1700px;"
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
+        let _highcharts = {
+            title: {
+                text: '<small>Peso Fetal Estimado ( gramos )</small>',
+                x: -20, //center
+                useHTML: true
+            },
+            subtitle: {
+                text: '',
+                x: -20
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false,
+                    pointInterval: 1
+                }
+            },
+            yAxis: {
+                title: { text: 'Gramos' },
+            },
+            xAxis: {
+                categories: [],
+                showEmpty:true
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+            plotOptions: {
+                column: {
+                    grouping: false
+                }
+            },
+            colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
+            credits: {enabled: false},
+            series: [{
+                type: "line",
+                name: 'Pct 97',
+                dashStyle: "Dot",
+                marker: { enabled: false, },
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 90',
+                marker: { enabled: false },
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 50',
+                marker: { enabled: false },
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 10',
+                marker: { enabled: false },
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 3',
+                dashStyle: "Dot",
+                marker: {enabled: false},
+                data: []
+            },  {
+                type: "line",
+                name: 'Peso estimado',
+                dashStyle: "Dot",
+                marker: {symbol:'circle'},
+                lineWidth: 0,
+                data: (function () {
+                    var data = [[0,1]];
+                    data[0][0] = parseInt(the("semanas").value);
+                    if (the("dias").value > 0){
+                        data[0][0] += "." + the("dias").value; 
+                        data[0][0] = parseFloat(data[0][0])
+                    }
+                    data[0][1] = parseFloat(the("pfe").value);
+                    return data;
+                }())
+            }]
+        }
+        _highcharts.series[4].data = _grafico.valores.uno
+        _highcharts.series[3].data = _grafico.valores.dos
+        _highcharts.series[2].data = _grafico.valores.tres
+        _highcharts.series[1].data = _grafico.valores.cuatro
+        _highcharts.series[0].data = _grafico.valores.cinco
+        _highcharts.xAxis.categories = _grafico.semanas
+        _highcharts.title.text = "<small>PFE = " + the("pfe").value + " grs. percentil " +the("pfePctRpt").value + "</small>";
+        $('#graficoPesoView').highcharts(_highcharts);
     });
 
     $( '#graficoPFEOMS' ).on( 'click', function() {
