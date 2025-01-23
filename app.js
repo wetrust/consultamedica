@@ -2944,8 +2944,8 @@ $( document ).ready(function() {
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerText = "Evaluación de Peso Fetal Estimado por gráfica de Hadlock 1991 Percentiles 3 a 97";
         the(modal.contenido).innerHTML = '<div id="graficoPesoView"></div>';
-        document.getElementsByClassName("modal-dialog")[0].classList.remove("modal-lg")
-        document.getElementsByClassName("modal-dialog")[0].style.cssText = "max-width:1700px;"
+        document.getElementsByClassName("modal-dialog")[2].classList.remove("modal-lg")
+        document.getElementsByClassName("modal-dialog")[2].style.cssText = "max-width:1700px;"
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
