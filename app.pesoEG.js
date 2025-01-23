@@ -1,6 +1,6 @@
 import { the, inputDate, these, humanDate } from './wetrust.js'
 import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
-import { highcharts } from './js/highcharts.js'
+import { Highcharts } from './js/highcharts.js'
 
 export function appPesoEG(){
 
@@ -123,6 +123,6 @@ function crearGrafico(){
     _highcharts.xAxis.categories = _grafico.semanas
     _highcharts.title.text = "<small>PFE = " + the("pfe").value + " grs. percentil " +the("pfePctRpt").value + "</small>";
 
-    return highcharts(_highcharts);
+    return Highcharts.chart(_highcharts);
 
 }
