@@ -1,6 +1,7 @@
 import { fechas } from './functionesM.js'
 import { the, inputDate, these, humanDate } from './wetrust.js'
 import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
+import { appPesoEG } from './app.pesoEG.js'
 
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
@@ -2932,112 +2933,15 @@ $( document ).ready(function() {
 
     $( '#graficoPFE' ).on( 'click', function() {
 
-        var edadGestacional = the("semanas").value;
-        if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
-        if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
-
-        let _grafico = graficoPFEMasMenos()
-
         var modal = makeModal();
+
+        modal.modal = appPesoEG()
+
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Evaluación de Peso Fetal Estimado por gráfica de Hadlock 1991 Percentiles 3 a 97";
-        the(modal.contenido).innerHTML = '<div id="graficoPesoView"></div>';
+        document.getElementsByClassName("modal-dialog")[0].classList.remove("modal-lg")
+        document.getElementsByClassName("modal-dialog")[0].style.cssText = "max-width:1700px;"
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-
-        let _highcharts = {
-            title: {
-                text: '<small>Peso Fetal Estimado ( gramos )</small>',
-                x: -20, //center
-                useHTML: true
-            },
-            subtitle: {
-                text: '',
-                x: -20
-            },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false,
-                    pointInterval: 1
-                }
-            },
-            yAxis: {
-                title: { text: 'Gramos' },
-            },
-            xAxis: {
-                categories: [],
-                showEmpty:true
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle'
-            },
-            plotOptions: {
-                column: {
-                    grouping: false
-                }
-            },
-            colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
-            credits: {enabled: false},
-            series: [{
-                type: "line",
-                name: 'Pct 97',
-                dashStyle: "Dot",
-                marker: { enabled: false, },
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 90',
-                marker: { enabled: false },
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 50',
-                marker: { enabled: false },
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 10',
-                marker: { enabled: false },
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 3',
-                dashStyle: "Dot",
-                marker: {enabled: false},
-                data: []
-            },  {
-                type: "line",
-                name: 'Peso estimado',
-                dashStyle: "Dot",
-                marker: {symbol:'circle'},
-                lineWidth: 0,
-                data: (function () {
-                    var data = [[0,1]];
-                    data[0][0] = parseInt(the("semanas").value);
-
-                    if (the("dias").value > 0){
-                        data[0][0] += "." + the("dias").value; 
-                        data[0][0] = parseFloat(data[0][0])
-                    }
-
-                    data[0][1] = parseFloat(the("pfe").value);
-
-                    return data;
-                }())
-            }]
-        }
-
-        _highcharts.series[4].data = _grafico.valores.uno
-        _highcharts.series[3].data = _grafico.valores.dos
-        _highcharts.series[2].data = _grafico.valores.tres
-        _highcharts.series[1].data = _grafico.valores.cuatro
-        _highcharts.series[0].data = _grafico.valores.cinco
-        _highcharts.xAxis.categories = _grafico.semanas
-        _highcharts.title.text = "<small>PFE = " + the("pfe").value + " grs. percentil " +the("pfePctRpt").value + "</small>";
-
-        $('#graficoPesoView').highcharts(_highcharts);
 
     });
 
@@ -3067,7 +2971,7 @@ $( document ).ready(function() {
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
         });
-        
+
         var stringGraficos = "<div class='container'> <div style='width:100px;text-align:center;'></div></div><h4 class='text-center d-none'>Gráfica evaluación ecográfica del crecimiento fetal</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none mt-2'></span><div class='row d-none mt-2'> <div class='col-5'> <p style='font-size:10px;'><strong>Nombre: </strong>:PACIENTE </p></div><div class='col-3'> <p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'> <p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row'> <div class='col'> <div id='graficoInfecoObsSegTrimPFEView'></div><div class='row'> <div class='col-12'> <div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col-12'> <div id='graficoBVMView'></div></div></div></div><div class='col'> <div class='row'> <div class='col-12'> <div id='graficoCaView'></div></div><div class='col-12'> <div id='graficoCcCaView'></div></div></div></div></div><div class='row' id='lineclear'> <div class='col'> <p class='d-none' style='font-size:10px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;text-align: right;'>Ecografista: <strong>:ECOGRAFISTA</strong> </p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina d-none'>* Evaluación del crecimiento fetal, según referencia propuesta por Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90) <br>** Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97) <br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 <br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil. <br><strong>Las gráficas de este software tienen por objeto favorecer análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
         let placenta_com = the("ubicacion").value;
@@ -3085,7 +2989,7 @@ $( document ).ready(function() {
         stringGraficos = stringGraficos.replace(":PACIENTE", paciente);
         stringGraficos = stringGraficos.replace(":IDPACIENTE", idpaciente);
         stringGraficos = stringGraficos.replace(":FEXAMEN", fexamen);
-        
+
         the(modal.contenido).innerHTML = stringGraficos;
         the(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
