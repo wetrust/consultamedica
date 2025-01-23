@@ -1,3 +1,5 @@
+import { the, inputDate, these, humanDate } from './wetrust.js'
+
 export function appPesoEG(){
 
     return contenedor()
