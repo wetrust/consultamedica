@@ -1,5 +1,6 @@
 import { the, inputDate, these, humanDate } from './wetrust.js'
 import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
+import { highcharts } from './js/highcharts.js'
 
 export function appPesoEG(){
 
