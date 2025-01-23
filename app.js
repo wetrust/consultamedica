@@ -2935,7 +2935,7 @@ $( document ).ready(function() {
         var edadGestacional = the("semanas").value;
         if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
         if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
-        var modal = makeModal();
+        //var modal = makeModal();
 
         let _grafico = graficoPFEMasMenos()
         //modal.modal = appPesoEG()
