@@ -1,6 +1,5 @@
 import { fechas } from './functionesM.js'
 import { the, inputDate, these, humanDate } from './wetrust.js'
-import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
 import { appPesoEG } from './app.pesoEG.js'
 
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
