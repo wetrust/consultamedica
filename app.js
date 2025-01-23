@@ -2938,7 +2938,7 @@ $( document ).ready(function() {
         var modal = makeModal();
 
         let _grafico = graficoPFEMasMenos()
-        modal.modal = appPesoEG()
+        //modal.modal = appPesoEG()
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
