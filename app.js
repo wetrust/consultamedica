@@ -3013,7 +3013,7 @@ $( document ).ready(function() {
                 data: []
             },  {
                 type: "line",
-                name: 'Peso estimado',
+                name: 'PCT de PFE',
                 dashStyle: "Dot",
                 marker: {symbol:'circle'},
                 lineWidth: 0,
@@ -3035,7 +3035,7 @@ $( document ).ready(function() {
         _highcharts.series[1].data = _grafico.valores.cuatro
         _highcharts.series[0].data = _grafico.valores.cinco
         _highcharts.xAxis.categories = _grafico.semanas
-        _highcharts.title.text = "<small>PFE = " + the("pfe").value + " grs. percentil " +the("pfePctRpt").value + "</small>";
+        _highcharts.title.text = "<small>PCT de PFE = " + the("pfe").value + " grs. percentil " +the("pfePctRpt").value + "</small>";
         $('#graficoPesoView').highcharts(_highcharts);
     });
 
