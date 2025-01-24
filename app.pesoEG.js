@@ -44,14 +44,14 @@ function generarDatos(){
     datos += '</div></div><div class="col-6"><div class="form-group"><label for="papapapa">Dias</label>'
     datos += '<input type="number" class="form-control" id="papapapa" value="'+the("dias").value+'">'
 
-    datos += '</div></div></div><div class="row"><div class="col-6"><div class="form-group"><label for="unounouno">Peso en gramos</label>'
+    datos += '</div></div></div><div class="row"><div class="col-6"><div class="form-group"><label for="unounouno">PFE en gramos</label>'
     datos += '<input type="number" class="form-control" id="unounouno" value="'+the("pfe").value+'">'
 
     datos += '</div></div><div class="col-6"><div class="form-group"><label for="dosdosdos">Percentil de PFE</label>'
 
     datos += '<input type="number" class="form-control" id="dosdosdos"></div></div></div>'
 
-    datos += '<div class="form-group"><label for="sexsexsex">Ajuste Sexo Fetal</label><select class="form-control" id="sexsexsex">'
+    datos += '<div class="form-group"><label for="sexsexsex">Ajuste al PFE según Sexo Fetal ( en construcción )</label><select class="form-control" id="sexsexsex">'
     datos += '<option value="no identificado">Desconocido</option><option value="masculino">Hombre</option><option value="femenino">Mujer</option></select></div>'
 
     return datos
