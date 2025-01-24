@@ -1,5 +1,6 @@
 import { fechas } from './functionesM.js'
 import { the, inputDate, these, humanDate } from './wetrust.js'
+import { appPesoEG } from './app.pesoEG.js'
 import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
 
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
@@ -2935,19 +2936,13 @@ $( document ).ready(function() {
         var edadGestacional = the("semanas").value;
         if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
         if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
-        //var modal = makeModal();
+
+        var modal = appPesoEG();
+
+        document.getElementsByTagName("body")[0].appendChild(modal.modal);
+        the("sexsexsex").value = the("ecografia.segtrim.sexo").value
 
         let _grafico = graficoPFEMasMenos()
-        //modal.modal = appPesoEG()
-
-        var modal = makeModal();
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Evaluación de Peso Fetal Estimado por gráfica de Hadlock 1991 Percentiles 3 a 97";
-        the(modal.contenido).innerHTML = '<div class="row"><div class="col-3"><form><div class="row"><div class="col-12"><label for="unounouno">Edad Gestacional</label></div><div class="col-6"><div class="form-group"><label for="cuacuacua">Semanas</label><input type="number" class="form-control" id="cuacuacua"></div></div><div class="col-6"><div class="form-group"><label for="papapapa">Dias</label><input type="number" class="form-control" id="papapapa"></div></div></div><div class="row"><div class="col-6"><div class="form-group"><label for="unounouno">Peso en gramos</label><input type="number" class="form-control" id="unounouno"></div></div><div class="col-6"><div class="form-group"><label for="dosdosdos">Percentil de PFE</label><input type="number" class="form-control" id="dosdosdos"></div></div></div><div class="form-group"><label for="sexsexsex">Ajuste Sexo Fetal</label><select class="form-control" id="sexsexsex"><option>Desconocido</option><option>Hombre</option><option>Mujer</option></select></div></div><div class="col-9"><div id="graficoPesoView"></div></div></div>';
-        document.getElementsByClassName("modal-dialog")[2].classList.remove("modal-lg")
-        document.getElementsByClassName("modal-dialog")[2].style.cssText = "max-width:1700px;"
-
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
         let _highcharts = {
             title: {
@@ -3013,30 +3008,38 @@ $( document ).ready(function() {
                 data: []
             },  {
                 type: "line",
-                name: 'PCT de PFE',
+                name: 'Peso estimado',
                 dashStyle: "Dot",
                 marker: {symbol:'circle'},
                 lineWidth: 0,
                 data: (function () {
                     var data = [[0,1]];
                     data[0][0] = parseInt(the("semanas").value);
+    
                     if (the("dias").value > 0){
                         data[0][0] += "." + the("dias").value; 
                         data[0][0] = parseFloat(data[0][0])
                     }
+    
                     data[0][1] = parseFloat(the("pfe").value);
+    
                     return data;
                 }())
             }]
         }
+    
         _highcharts.series[4].data = _grafico.valores.uno
         _highcharts.series[3].data = _grafico.valores.dos
         _highcharts.series[2].data = _grafico.valores.tres
         _highcharts.series[1].data = _grafico.valores.cuatro
         _highcharts.series[0].data = _grafico.valores.cinco
         _highcharts.xAxis.categories = _grafico.semanas
-        _highcharts.title.text = "<small>PFE = " + the("pfe").value + " grs.   Percentil de PFE = " +the("pfePctRpt").value + "</small>";
-        $('#graficoPesoView').highcharts(_highcharts);
+        _highcharts.title.text = "<small>PFE = " + the("pfe").value + " grs. percentil " +the("pfePctRpt").value + "</small>";
+
+        $('#graficoPFEDinamico').highcharts(_highcharts);
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
     });
 
     $( '#graficoPFEOMS' ).on( 'click', function() {

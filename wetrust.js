@@ -6,25 +6,76 @@ export class make{
     }
 
     static modal(button){
+
         let id = this.uuidv4();
         let titulo = this.uuidv4();
         let contenido = this.uuidv4();
-        let _button = this.uuidv4();
-        let button_string = "";
-        
+        let _buttonID = this.uuidv4();
+        let _button = "";
+
+        let _dive = document.createElement("div")
+        _dive.classList.add("modal", "fade")
+        _dive.tabindex = "-1"
+        _dive.role = "dialog"
+        _dive.id = id
+
+        let _divw = document.createElement("div")
+        _divw.classList.add("modal-dialog", "modal-lg", "modal-dialog-scrollable")
+        _divw.role = "document"
+
+        let _divx = document.createElement("div")
+        _divx.classList.add("modal-content")
+        _divx.id = contenido
+
+        let _divz = document.createElement("div")
+        _divz.classList.add("modal-header")
+        _divz.id = contenido
+
+        let _divv = document.createElement("h5")
+        _divv.classList.add("modal-title")
+        _divv.innerText = "Modal title"
+        _divv.id = titulo
+
+        _divz.appendChild(_divv)
+        _divx.appendChild(_divz)
+
+        let _divy = document.createElement("div")
+        _divy.classList.add("modal-body")
+        _divy.id = contenido
+
+        _divx.appendChild(_divy)
+
+        let _footer = document.createElement("div")
+        _footer.classList.add("modal-footer")
+
         if (typeof button !== typeof undefined){
-            button_string = '<button type="button" class="btn wetrust" id="'+_button+'" data-modal="'+id+'">'+button+'</button>';
+            _button = document.createElement("button")
+            _button.classList.add("btn", "wetrust")
+            _button.type = "button"
+            _button.dataset.modal = id
+            _button.id = _buttonID
+            _button.textContent = button
+
+            _footer.appendChild(_button)
         }
-        
-        let resultado ={
-            id:id,
-            titulo:titulo,
-            contenido:contenido,
-            button:_button,
-            modal:'<div class="modal fade" tabindex="-1" role="dialog" id="'+id+'"><div class="modal-dialog modal-lg modal-dialog-scrollable" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="'+titulo+'">Modal title</h5></div><div class="modal-body" id="'+contenido+'"></div><div class="modal-footer"><button type="button" class="btn btn-outline-secondary" data-dismiss="modal" data-bs-dismiss="modal">Cancelar</button>'+ button_string+'</div></div></div></div>'
-        }
-            
+
+        _button = document.createElement("button")
+        _button.classList.add("btn", "btn-outline-secondary")
+        _button.type = "button"
+        _button.dataset.dismiss = "modal"
+        _button.dataset.bsDismiss = "modal"
+        _button.textContent = "Cancelar"
+
+        _footer.appendChild(_button)
+
+        _divx.appendChild(_footer)
+        _divw.appendChild(_divx)
+        _dive.appendChild(_divw)
+
+        let resultado ={ id: id, titulo: titulo, contenido: contenido, button: _button, modal: _dive }
+
         return resultado;
+
     }
 
     static uuidv4() {

@@ -1,10 +1,17 @@
-import { the } from './wetrust.js'
+import { the, make } from './wetrust.js'
 import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
-import { Highcharts } from './js/highcharts.js'
+//import { Highcharts } from './js/highcharts.js'
 
 export function appPesoEG(){
 
-    return contenedor()
+    var modal = make.modal();
+    modal.modal.children[0].children[0].children[1].appendChild(contenedor());
+
+    modal.modal.children[0].classList.remove("modal-lg")
+    modal.modal.children[0].style.cssText = "max-width:1700px;"
+    modal.modal.children[0].children[0].children[0].children[0].textContent = "Evaluación de Peso Fetal Estimado por gráfica de Hadlock 1991 Percentiles 3 a 97";
+
+    return modal
 
 }
 
@@ -15,16 +22,39 @@ function contenedor(){
 
     let _cUno = document.createElement("div")
     _cUno.classList.add("col-3")
+    _cUno.innerHTML = generarDatos()
     _c.appendChild(_cUno)
 
     let _cDos = document.createElement("div")
 
     _cDos.classList.add("col-3")
-    _cDos.appendChild(crearGrafico())
+    _cDos.id = "graficoPFEDinamico"
+    //_cDos.appendChild(crearGrafico())
     _c.appendChild(_cDos)
 
     return _c
 
+}
+
+function generarDatos(){
+    let datos = '<div class="row"><div class="col-12"><label for="unounouno">Edad Gestacional</label></div><div class="col-6"><div class="form-group"><label for="cuacuacua">Semanas</label>'
+
+    datos += '<input type="number" class="form-control" id="cuacuacua" value="'+the("semanas").value+'">'
+
+    datos += '</div></div><div class="col-6"><div class="form-group"><label for="papapapa">Dias</label>'
+    datos += '<input type="number" class="form-control" id="papapapa" value="'+the("dias").value+'">'
+
+    datos += '</div></div></div><div class="row"><div class="col-6"><div class="form-group"><label for="unounouno">Peso en gramos</label>'
+    datos += '<input type="number" class="form-control" id="unounouno" value="'+the("pfe").value+'">'
+
+    datos += '</div></div><div class="col-6"><div class="form-group"><label for="dosdosdos">Percentil de PFE</label>'
+
+    datos += '<input type="number" class="form-control" id="dosdosdos"></div></div></div>'
+
+    datos += '<div class="form-group"><label for="sexsexsex">Ajuste Sexo Fetal</label><select class="form-control" id="sexsexsex">'
+    datos += '<option value="no identificado">Desconocido</option><option value="masculino">Hombre</option><option value="femenino">Mujer</option></select></div>'
+
+    return datos
 }
 
 function crearGrafico(){
