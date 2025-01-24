@@ -1,4 +1,4 @@
-import { the, inputDate, these, humanDate } from './wetrust.js'
+import { the } from './wetrust.js'
 import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
 import { Highcharts } from './js/highcharts.js'
 
