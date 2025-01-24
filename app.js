@@ -2943,7 +2943,7 @@ $( document ).ready(function() {
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerText = "Evaluación de Peso Fetal Estimado por gráfica de Hadlock 1991 Percentiles 3 a 97";
-        the(modal.contenido).innerHTML = '<div id="graficoPesoView"></div>';
+        the(modal.contenido).innerHTML = '<div class="row"><div class="col-3"></div><div class="col-9"><div id="graficoPesoView"></div></div></div>';
         document.getElementsByClassName("modal-dialog")[2].classList.remove("modal-lg")
         document.getElementsByClassName("modal-dialog")[2].style.cssText = "max-width:1700px;"
 
