@@ -2943,39 +2943,7 @@ $( document ).ready(function() {
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerText = "Evaluación de Peso Fetal Estimado por gráfica de Hadlock 1991 Percentiles 3 a 97";
-        the(modal.contenido).innerHTML = '<div class="row"><div class="col-3"><form><div class="row"><div class="col-12"><label for="unounouno">EG</label></div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <label for="cuacuacua">Sem</label>
-                        <input type="number" class="form-control" id="cuacuacua">
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <label for="papapapa">Dia</label>
-                        <input type="number" class="form-control" id="papapapa">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12"><label for="unounouno">Peso</label></div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <label for="unounouno">Valor</label>
-                        <input type="number" class="form-control" id="unounouno">
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <label for="dosdosdos">Pct</label>
-                        <input type="number" class="form-control" id="dosdosdos">
-                    </div>
-                </div>
-            </div>
-  <div class="form-group">
-    <label for="sexsexsex">Sexo Fetal</label>
-    <select class="form-control" id="sexsexsex"><option>Desconocido</option><option>Hombre</option><option>Mujer</option></select></div>      
-        </div><div class="col-9"><div id="graficoPesoView"></div></div></div>';
+        the(modal.contenido).innerHTML = '<div class="row"><div class="col-3"><form><div class="row"><div class="col-12"><label for="unounouno">EG</label></div><div class="col-6"><div class="form-group"><label for="cuacuacua">Sem</label><input type="number" class="form-control" id="cuacuacua"></div></div><div class="col-6"><div class="form-group"><label for="papapapa">Dia</label><input type="number" class="form-control" id="papapapa"></div></div></div><div class="row"><div class="col-12"><label for="unounouno">Peso</label></div><div class="col-6"><div class="form-group"><label for="unounouno">Valor</label><input type="number" class="form-control" id="unounouno"></div></div><div class="col-6"><div class="form-group"><label for="dosdosdos">Pct</label><input type="number" class="form-control" id="dosdosdos"></div></div></div><div class="form-group"><label for="sexsexsex">Sexo Fetal</label><select class="form-control" id="sexsexsex"><option>Desconocido</option><option>Hombre</option><option>Mujer</option></select></div></div><div class="col-9"><div id="graficoPesoView"></div></div></div>';
         document.getElementsByClassName("modal-dialog")[2].classList.remove("modal-lg")
         document.getElementsByClassName("modal-dialog")[2].style.cssText = "max-width:1700px;"
 
