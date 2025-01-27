@@ -165,6 +165,6 @@ function uuidv4() {
     if (isNaN(uid.charAt(0))){
         return uid
     }else{
-        return this.uuidv4()
+        return uuidv4()
     }
 }
