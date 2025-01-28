@@ -2988,6 +2988,7 @@ $( document ).ready(function() {
             },{
                 type: "line",
                 name: 'Pct 95',
+                dashStyle: "Dot",
                 marker: { enabled: false },
                 data: []
             },{
@@ -2998,12 +2999,12 @@ $( document ).ready(function() {
             },{
                 type: "line",
                 name: 'Pct 75',
+                dashStyle: "Dot",
                 marker: { enabled: false },
                 data: []
             },{
                 type: "line",
                 name: 'Pct 50',
-                dashStyle: "Dot",
                 marker: {enabled: false},
                 data: []
             },{
@@ -3015,7 +3016,6 @@ $( document ).ready(function() {
             },{
                 type: "line",
                 name: 'Pct 10',
-                dashStyle: "Dot",
                 marker: {enabled: false},
                 data: []
             },{
