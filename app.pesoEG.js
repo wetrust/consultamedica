@@ -98,9 +98,14 @@ function crearGrafico(){
         credits: {enabled: false},
         series: [{
             type: "line",
-            name: 'Pct 97',
+            name: 'Pct 97,5',
             dashStyle: "Dot",
             marker: { enabled: false, },
+            data: []
+        },{
+            type: "line",
+            name: 'Pct 95',
+            marker: { enabled: false },
             data: []
         },{
             type: "line",
@@ -109,17 +114,36 @@ function crearGrafico(){
             data: []
         },{
             type: "line",
-            name: 'Pct 50',
+            name: 'Pct 75',
             marker: { enabled: false },
+            data: []
+        },{
+            type: "line",
+            name: 'Pct 50',
+            dashStyle: "Dot",
+            marker: {enabled: false},
+            data: []
+        },{
+            type: "line",
+            name: 'Pct 25',
+            dashStyle: "Dot",
+            marker: {enabled: false},
             data: []
         },{
             type: "line",
             name: 'Pct 10',
-            marker: { enabled: false },
+            dashStyle: "Dot",
+            marker: {enabled: false},
             data: []
         },{
             type: "line",
-            name: 'Pct 3',
+            name: 'Pct 5',
+            dashStyle: "Dot",
+            marker: {enabled: false},
+            data: []
+        },{
+            type: "line",
+            name: 'Pct 2,5',
             dashStyle: "Dot",
             marker: {enabled: false},
             data: []
@@ -145,11 +169,15 @@ function crearGrafico(){
         }]
     }
 
-    _highcharts.series[4].data = _grafico.valores.uno
-    _highcharts.series[3].data = _grafico.valores.dos
-    _highcharts.series[2].data = _grafico.valores.tres
-    _highcharts.series[1].data = _grafico.valores.cuatro
-    _highcharts.series[0].data = _grafico.valores.cinco
+    _highcharts.series[8].data = _grafico.valores.uno
+    _highcharts.series[7].data = _grafico.valores.dos
+    _highcharts.series[6].data = _grafico.valores.tres
+    _highcharts.series[5].data = _grafico.valores.cuatro
+    _highcharts.series[4].data = _grafico.valores.cinco
+    _highcharts.series[3].data = _grafico.valores.seis
+    _highcharts.series[2].data = _grafico.valores.siete
+    _highcharts.series[1].data = _grafico.valores.ocho
+    _highcharts.series[0].data = _grafico.valores.nueve
     _highcharts.xAxis.categories = _grafico.semanas
     _highcharts.title.text = "<small>PFE = " + the("pfe").value + " grs. percentil " +the("pfePctRpt").value + "</small>";
 
