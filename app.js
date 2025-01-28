@@ -2945,6 +2945,10 @@ $( document ).ready(function() {
         let _grafico = graficoPFEMasMenos()
 
         let _highcharts = {
+            chart: {
+                height: 500,
+                type: 'line'
+            },
             title: {
                 text: '<small>Peso Fetal Estimado ( gramos )</small>',
                 x: -20, //center
