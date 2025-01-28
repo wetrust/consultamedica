@@ -3036,7 +3036,7 @@ $( document ).ready(function() {
                 data: []
             },  {
                 type: "line",
-                name: 'PCT de PFE',
+                name: 'Pct de PFE',
                 dashStyle: "Dot",
                 marker: {symbol:'circle'},
                 lineWidth: 0,
