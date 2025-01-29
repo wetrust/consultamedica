@@ -7863,7 +7863,7 @@ function pctpfe() {
             pctPFE = '< 2.5';
         }
         else{
-            pctPFE = pctFinal.toFixed(1);
+            pctPFE = parseFloat(pctFinal.toFixed(1)) +5;
         }
 
         the("pfePctRpt").value = pctPFE
