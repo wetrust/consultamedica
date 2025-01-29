@@ -9,7 +9,7 @@ export function appPesoEG(){
 
     modal.modal.children[0].classList.remove("modal-lg")
     modal.modal.children[0].style.cssText = "max-width:1700px;"
-    modal.modal.children[0].children[0].children[0].children[0].textContent = "Evaluación de Peso Fetal Estimado por gráfica de Hadlock 1991 Percentiles 3 a 97";
+    modal.modal.children[0].children[0].children[0].children[0].textContent = "Evaluación de Peso Fetal Estimado (F = Hadlock-3) categorizado por gráfica de la OMS";
 
     return modal
 
