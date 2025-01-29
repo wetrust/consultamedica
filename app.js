@@ -1480,6 +1480,12 @@ $( document ).ready(function() {
         }
     }
 
+    the("pfe").onkeyup = function(e){
+        if (isNaN(this.value) == false){
+            pctpfe()
+        }
+    }
+
 });
 
 // Controlador de input clones
