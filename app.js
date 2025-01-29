@@ -7848,7 +7848,7 @@ function pctpfe() {
 
         var uno=b[eg] - a[eg];
         var dos=pfe - a[eg];
-        var pctFinal = (97.5 / (uno) * (dos)) + 2.1
+        var pctFinal = (97.5 / (uno) * (dos)) + 2.2
         ajustarProgreso(pctFinal, "pfePct");
 
         var pctPFE = '';
@@ -7861,7 +7861,7 @@ function pctpfe() {
             pctPFE = '< 2.5';
         }
         else{
-            pctPFE = pctFinal.toFixed();
+            pctPFE = pctFinal.toFixed(1);
         }
 
         $('#pfePctRpt').val(pctPFE);
