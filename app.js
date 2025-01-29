@@ -2947,6 +2947,7 @@ $( document ).ready(function() {
 
         document.getElementsByTagName("body")[0].appendChild(modal.modal);
         the("sexsexsex").value = the("ecografia.segtrim.sexo").value
+        the("dosdosdos").value = the("pfePctRpt").value
 
         let _grafico = graficoPFEMasMenos()
 
