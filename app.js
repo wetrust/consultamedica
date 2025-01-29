@@ -7848,7 +7848,7 @@ function pctpfe() {
 
         var uno=b[eg] - a[eg];
         var dos=pfe - a[eg];
-        var pctFinal = (95 / (uno) * (dos)) + 5
+        var pctFinal = (95 / (uno) * (dos)) + 6
         ajustarProgreso(pctFinal, "pfePct");
 
         var pctPFE = '';
