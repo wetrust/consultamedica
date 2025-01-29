@@ -7850,20 +7850,23 @@ function pctpfe() {
         var uno = b[eg] - a[eg];
         var dos = pfe - a[eg];
         var pctFinal = (95 / (uno) * (dos))
-        ajustarProgreso(pctFinal, "pfePct");
 
         var pctPFE = '';
         //truncador de Pct, sobre 100 o bajo 1
         if (pctFinal == 0){
             pctPFE = 5
+            ajustarProgreso(pctFinal, "pfePct");
         }else if (pctFinal > 97.5){
+            ajustarProgreso(pctFinal, "pfePct");
             pctPFE = '> 97.5';
         }
         else if (pctFinal < 2.5){
+            ajustarProgreso(pctFinal, "pfePct");
             pctPFE = '< 2.5';
         }
         else{
             pctPFE = parseFloat(pctFinal.toFixed(1)) +5;
+            ajustarProgreso(pctFinal, "pfePct");
         }
 
         the("pfePctRpt").value = pctPFE
