@@ -3061,7 +3061,7 @@ $( document ).ready(function() {
                 }())
             }]
         }
-    
+
         _highcharts.series[8].data = _grafico.valores.uno
         _highcharts.series[7].data = _grafico.valores.dos
         _highcharts.series[6].data = _grafico.valores.tres
@@ -7831,15 +7831,15 @@ function pctpfe() {
     /* 10 90 */
 	let a = [], b = [];
 
-    a = [70,89,113,141,174,214,260,314,375,445,523,611,707,813,929,1053,1185,1326,1473,1626,1785,1948,2113,2280,2446,2612,2775];
-    b = [113,144,181,225,278,340,413,497,595,705,830,970,1125,1295,1481,1682,1897,2126,2367,2619,2880,3148,3422,3697,3973,4247,4515]; 
+    a = [73,93,117,146,181,223,271,327,392,465,548,641,743,855,977,1108,1247,1394,1548,1708,1872,2038,2205,2372,2536,2696,2849];
+    b = [109,138,174,217,268,328,399,481,575,682,803,938,1087,1251,1429,1622,1828,2046,2276,2516,2764,3018,3277,3538,3799,4058,4312];
 
     let eg = the("semanas").value;
-    let pfe=parseInt($("#pfe").val());
+    let pfe=parseInt(the("pfe").value);
    
     if (eg < 14 || eg > 40) {
 
-        $("#pfePct").val('0');
+        the("pfePct").value = 0
 
     }else {
 
@@ -7848,7 +7848,7 @@ function pctpfe() {
 
         var uno=b[eg] - a[eg];
         var dos=pfe - a[eg];
-        var pctFinal = (97.5 / (uno) * (dos)) + 2.5
+        var pctFinal = (95 / (uno) * (dos)) + 5
         ajustarProgreso(pctFinal, "pfePct");
 
         var pctPFE = '';
@@ -7864,8 +7864,8 @@ function pctpfe() {
             pctPFE = pctFinal.toFixed(1);
         }
 
-        $('#pfePctRpt').val(pctPFE);
-        $('#pfeRango').val(a[eg] + ' - ' +b[eg]);
+        the("pfePctRpt").value = pctPFE
+        the("pfeRango").value = a[eg] + ' - ' +b[eg]
 
     }
 }
