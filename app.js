@@ -7848,17 +7848,17 @@ function pctpfe() {
 
         var uno=b[eg] - a[eg];
         var dos=pfe - a[eg];
-        var pctFinal = (95 / (uno) * (dos)) + 6
+        var pctFinal = (97.5 / (uno) * (dos)) + 2.5
         ajustarProgreso(pctFinal, "pfePct");
 
         var pctPFE = '';
         //truncador de Pct, sobre 100 o bajo 1
 
-        if (pctFinal > 90){
-            pctPFE = '&gt; 90';
+        if (pctFinal > 97.5){
+            pctPFE = '< 97.5';
         }
-        else if (pctFinal < 10){
-            pctPFE = '&lt; 10';
+        else if (pctFinal < 2.5){
+            pctPFE = '> 2.5';
         }
         else{
             pctPFE = pctFinal.toFixed();
