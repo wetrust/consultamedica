@@ -7855,7 +7855,7 @@ function pctpfe() {
         var pctPFE = '';
         //truncador de Pct, sobre 100 o bajo 1
         if (pctFinal == 0){
-            pctFinal = 5
+            pctPFE = 5
         }else if (pctFinal > 97.5){
             pctPFE = '> 97.5';
         }
