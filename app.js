@@ -7837,13 +7837,13 @@ function pctpfe() {
     let eg = the("semanas").value;
     let pfe=parseInt($("#pfe").val());
    
-    if (eg < 15 || eg > 40) {
+    if (eg < 14 || eg > 40) {
 
         $("#pfePct").val('0');
 
     }else {
 
-        eg = eg - 15;
+        eg = eg - 14;
         eg = parseInt(eg);
 
         var uno=b[eg] - a[eg];
