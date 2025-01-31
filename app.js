@@ -7846,7 +7846,7 @@ function pctpfe() {
     }else {
         var pctPFE = percentilOMS(pfe,eg);
 
-        pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 100).toFixed(1) : ""
+        pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : ""
 
         the("pfePctRpt").value = pctPFE
         the("pfeRango").value = a[eg] + ' - ' +b[eg]
