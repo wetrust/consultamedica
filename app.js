@@ -1,7 +1,7 @@
 import { fechas } from './functionesM.js'
 import { the, inputDate, these, humanDate } from './wetrust.js'
 import { appPesoEG } from './app.pesoEG.js'
-import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
+import { graficoPFEMasMenos, percentilOMS } from './graficoPFEMasMenos.js'
 
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
@@ -7837,12 +7837,19 @@ function pctpfe() {
 
     let eg = the("semanas").value;
     let pfe=parseInt(the("pfe").value);
+
    
     if (eg < 14 || eg > 40) {
 
         the("pfePct").value = 0
 
     }else {
+        var pctPFE = percentilOMS(pfe,eg);
+
+        the("pfePctRpt").value = pctPFE
+        the("pfeRango").value = a[eg] + ' - ' +b[eg]
+
+        return true
 
         eg = eg - 14;
         eg = parseInt(eg);
@@ -7851,7 +7858,7 @@ function pctpfe() {
         var dos = pfe - a[eg];
         var pctFinal = (95 / (uno) * (dos))
 
-        var pctPFE = '';
+
         //truncador de Pct, sobre 100 o bajo 1
         if (pctFinal == 0){
             pctPFE = 5
