@@ -48,7 +48,6 @@ function generarDatos(){
     datos += '<input type="number" class="form-control" id="unounouno" value="'+the("pfe").value+'">'
 
     datos += '</div></div><div class="col-6"><div class="form-group"><label for="dosdosdos">Percentil de PFE</label>'
-
     datos += '<input type="number" class="form-control" id="dosdosdos" disabled></div></div></div>'
 
     datos += '<div class="form-group"><label for="sexsexsex">Ajuste al PFE según Sexo Fetal ( en construcción )</label><select class="form-control" id="sexsexsex">'

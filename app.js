@@ -440,6 +440,7 @@ $( document ).ready(function() {
     });
 
     $("#semanas, #dias").on("change", function(){
+
         let semanas = parseInt(the("semanas").value);
         let dias = parseInt(the("dias").value);
         semanas = 7 * semanas;
@@ -450,6 +451,7 @@ $( document ).ready(function() {
 
         $("#fum").trigger("change");
         pctpfe()
+
     });
 
     the("continuarAExamen").onclick = function(){
@@ -7865,7 +7867,7 @@ function pctpfe() {
     }else {
         var pctPFE = percentilOMS(pfe,eg);
 
-        pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : ""
+        pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
         the("pfePctRpt").value = pctPFE
         the("pfeRango").value = a[eg] + ' - ' +b[eg]
