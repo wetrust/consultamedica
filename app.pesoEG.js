@@ -42,7 +42,7 @@ function generarDatos(){
     datos += '<select class="form-control" id="cuacuacua"></select>'
 
     datos += '</div></div><div class="col-6"><div class="form-group"><label for="papapapa">Dias</label>'
-    datos += '<input type="number" class="form-control" id="papapapa" value="'+the("dias").value+'">'
+    datos += '<select class="form-control" id="papapapa"></select>'
 
     datos += '</div></div></div><div class="row"><div class="col-6"><div class="form-group"><label for="unounouno">PFE en gramos</label>'
     datos += '<input type="number" class="form-control" id="unounouno" value="'+the("pfe").value+'">'

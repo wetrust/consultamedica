@@ -2959,6 +2959,16 @@ $( document ).ready(function() {
 
         the("cuacuacua").value = edadGestacional
 
+        for (var i = 0; i < 7; i++) {
+            let dias = the("papapapa");
+            let opt = document.createElement('option');
+            opt.appendChild( document.createTextNode(i) );
+            opt.value = i; 
+            dias.appendChild(opt); 
+        }
+
+        the("papapapa").value =  the("dias").value
+
         let _grafico = graficoPFEMasMenos()
 
         let _highcharts = {
