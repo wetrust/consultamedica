@@ -177,21 +177,21 @@ export function percentilOMS(PFE, EG ){
 
     //determinar PFE en que rango está 
 
-    if (PFE < pNueve[EG] && PFE > pOcho[EG]){
+    if (PFE <= pNueve[EG] && PFE >= pOcho[EG]){
         return rango[7] + (PFE - pOcho[EG]) / (pNueve[EG] - pOcho[EG]) * (rango[8] - rango[7])
-    }else if (PFE < pOcho[EG] && PFE > pSiete[EG]){
+    }else if (PFE <= pOcho[EG] && PFE >= pSiete[EG]){
         return rango[6] + (PFE - pSiete[EG]) / (pOcho[EG] - pSiete[EG]) * (rango[7] - rango[6])
-    }else if (PFE < pSiete[EG] && PFE > pSeis[EG]){
+    }else if (PFE <= pSiete[EG] && PFE >= pSeis[EG]){
         return rango[5] + (PFE - pSeis[EG]) / (pSiete[EG] - pSeis[EG]) * (rango[6] - rango[5])
-    }else if (PFE < pSeis[EG] && PFE > pCinco[EG]){
+    }else if (PFE <= pSeis[EG] && PFE >= pCinco[EG]){
         return rango[4] + (PFE - pCinco[EG]) / (pSeis[EG] - pCinco[EG]) * (rango[5] - rango[4])
-    }else if (PFE < pCinco[EG] && PFE > pCuatro[EG]){
+    }else if (PFE <= pCinco[EG] && PFE >= pCuatro[EG]){
         return rango[3] + (PFE - pCuatro[EG]) / (pCinco[EG] - pCuatro[EG]) * (rango[4] - rango[3])
-    }else if (PFE < pCuatro[EG] && PFE > pTres[EG]){
+    }else if (PFE <= pCuatro[EG] && PFE >= pTres[EG]){
         return rango[2] + (PFE - pTres[EG]) / (pCuatro[EG] - pTres[EG]) * (rango[3] - rango[2])
-    }else if (PFE < pTres[EG] && PFE > pDos[EG]){
+    }else if (PFE <= pTres[EG] && PFE >= pDos[EG]){
         return rango[1] + (PFE - pDos[EG]) / (pTres[EG] - pDos[EG]) * (rango[2] - rango[1])
-    }else if (PFE < pDos[EG] && PFE > pUno[EG]){  
+    }else if (PFE <= pDos[EG] && PFE >= pUno[EG]){  
         return rango[0] + (PFE - pUno[EG]) / (pDos[EG] - pUno[EG]) * (rango[1] - rango[0])
     }
 }
