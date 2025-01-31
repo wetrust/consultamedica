@@ -449,6 +449,7 @@ $( document ).ready(function() {
         the("fum").value = inputDate(_fexamen)
 
         $("#fum").trigger("change");
+        pctpfe()
     });
 
     the("continuarAExamen").onclick = function(){
@@ -6600,7 +6601,6 @@ function InfEcoObsSegTrim1(){
     }
 
     var anatomiaFetal = $('#ev-morfo').val();
-
     var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
 
     if (anatomiaFetal == "no evaluada dirigidamente, pero el aspecto morfológico general es normal"){
@@ -6624,7 +6624,6 @@ function InfEcoObsSegTrim1(){
 
     var dbp = the("dbp").value + ' mm';
     var dbpPct = the("dbpPct").value;
-
     let tmpData = "";
 
     if (dbpPct == "&gt; 99" || dbpPct == "&lt; 1"){
@@ -7872,34 +7871,6 @@ function pctpfe() {
         the("pfeRango").value = a[eg] + ' - ' +b[eg]
 
         return true
-
-        eg = eg - 14;
-        eg = parseInt(eg);
-
-        var uno = b[eg] - a[eg];
-        var dos = pfe - a[eg];
-        var pctFinal = (95 / (uno) * (dos))
-
-
-        //truncador de Pct, sobre 100 o bajo 1
-        if (pctFinal == 0){
-            pctPFE = 5
-            ajustarProgreso(pctFinal, "pfePct");
-        }else if (pctFinal > 97.5){
-            ajustarProgreso(pctFinal, "pfePct");
-            pctPFE = '> 97.5';
-        }
-        else if (pctFinal < 2.5){
-            ajustarProgreso(pctFinal, "pfePct");
-            pctPFE = '< 2.5';
-        }
-        else{
-            pctPFE = parseFloat(pctFinal.toFixed(1)) +5;
-            ajustarProgreso(pctFinal, "pfePct");
-        }
-
-        the("pfePctRpt").value = pctPFE
-        the("pfeRango").value = a[eg] + ' - ' +b[eg]
 
     }
 }
