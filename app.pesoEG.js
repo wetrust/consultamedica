@@ -39,7 +39,7 @@ function contenedor(){
 function generarDatos(){
     let datos = '<div class="row"><div class="col-12"><label for="unounouno">Edad Gestacional</label></div><div class="col-6"><div class="form-group"><label for="cuacuacua">Semanas</label>'
 
-    datos += '<input type="number" class="form-control" id="cuacuacua" value="'+the("semanas").value+'">'
+    datos += '<select class="form-control" id="cuacuacua"></select>'
 
     datos += '</div></div><div class="col-6"><div class="form-group"><label for="papapapa">Dias</label>'
     datos += '<input type="number" class="form-control" id="papapapa" value="'+the("dias").value+'">'

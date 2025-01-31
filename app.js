@@ -2949,6 +2949,16 @@ $( document ).ready(function() {
         the("sexsexsex").value = the("ecografia.segtrim.sexo").value
         the("dosdosdos").value = the("pfePctRpt").value
 
+        for (var i = 14; i < 41; i++) {
+            let semanas = the("cuacuacua");
+            let opt = document.createElement('option');
+            opt.appendChild( document.createTextNode(i) );
+            opt.value = i; 
+            semanas.appendChild(opt); 
+        }
+
+        the("cuacuacua").value = edadGestacional
+
         let _grafico = graficoPFEMasMenos()
 
         let _highcharts = {
