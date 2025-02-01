@@ -177,7 +177,7 @@ export function percentilOMS(PFE, EG ){
 
     //determinar PFE en que rango está 
 
-    if (PFE < 0 ){
+    if (isNaN(PFE) == true || PFE < 0 ){
         return 0;
     }
 
