@@ -2950,7 +2950,7 @@ $( document ).ready(function() {
 
         document.getElementsByTagName("body")[0].appendChild(modal.modal);
         the("sexsexsex").value = the("ecografia.segtrim.sexo").value
-        the("unounouno").onkeyup = the("papapapa").onchange()
+
         the("dosdosdos").value = the("pfePctRpt").value
 
         for (var i = 14; i < 41; i++) {
@@ -3376,6 +3376,8 @@ $( document ).ready(function() {
     
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
+
+        the("unounouno").onkeyup = the("papapapa").onchange()
     });
 
     $( '#graficoPFEOMS' ).on( 'click', function() {
