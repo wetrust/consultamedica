@@ -177,6 +177,10 @@ export function percentilOMS(PFE, EG ){
 
     //determinar PFE en que rango está 
 
+    if (PFE < 0 ){
+        return 0;
+    }
+
     if (PFE <= pNueve[EG] && PFE >= pOcho[EG]){
         return rango[7] + (PFE - pOcho[EG]) / (pNueve[EG] - pOcho[EG]) * (rango[8] - rango[7])
     }else if (PFE <= pOcho[EG] && PFE >= pSiete[EG]){
