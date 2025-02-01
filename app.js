@@ -3377,7 +3377,7 @@ $( document ).ready(function() {
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
 
-        the("unounouno").onkeyup = the("papapapa").onchange()
+        the("unounouno").onkeyup = the("cuacuacua").onchange
     });
 
     $( '#graficoPFEOMS' ).on( 'click', function() {
