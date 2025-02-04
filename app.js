@@ -3390,13 +3390,16 @@ $( document ).ready(function() {
     });
 
     $( '#graficoCCCA' ).on( 'click', function() {
-        $('#graficosTitle').html("Gráfico Relación Cráneo Abdómen (CC/CA)");
-        $('#graficosBody').html("<div id='graficoCCCAView'></div>");
-        $( '#impEcoObsSegTrim1').remove();
-        $( '#impEcoObsSegTrim2').remove();
-        $( '#impDoppler3').remove();
-        $( '#impDoppler2').remove();
-        $( '#impDoppler1').remove();
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        the(modal.titulo).innerText = "Gráfico Relación Cráneo Abdómen (CC/CA)";
+        the(modal.contenido).innerHTML = '<div id="graficoCCCAView"></div>';
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
         $('#graficoCCCAView').highcharts({
            title: {
                text: 'Cc / Ca *',
