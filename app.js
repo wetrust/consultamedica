@@ -3099,7 +3099,7 @@ $( document ).ready(function() {
         _highcharts.xAxis.categories = _grafico.semanas
         _highcharts.title.text = "";
 
-        the("tituloGraficoDinamico").innerHTML = '<small>PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></small>'
+        the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
         $('#graficoPFEDinamico').highcharts(_highcharts);
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
@@ -3240,7 +3240,7 @@ $( document ).ready(function() {
             _highcharts.series[0].data = _grafico.valores.nueve
             _highcharts.xAxis.categories = _grafico.semanas
             _highcharts.title.text = ""
-            the("tituloGraficoDinamico").innerHTML = '<small>PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></small>'
+            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
 
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
@@ -3381,7 +3381,7 @@ $( document ).ready(function() {
             _highcharts.series[0].data = _grafico.valores.nueve
             _highcharts.xAxis.categories = _grafico.semanas
             _highcharts.title.text = "";
-            the("tituloGraficoDinamico").innerHTML = '<small>PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></small>'
+            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
 
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
