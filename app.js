@@ -3114,6 +3114,7 @@ $( document ).ready(function() {
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
             the("dosdosdos").value = pctPFE
+            the("pfePctRpt").value = pctPFE
 
             let _grafico = graficoPFEMasMenos()
 
@@ -3255,6 +3256,7 @@ $( document ).ready(function() {
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
             the("dosdosdos").value = pctPFE
+            the("pfePctRpt").value = pctPFE
 
             let _grafico = graficoPFEMasMenos()
 
