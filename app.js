@@ -3441,7 +3441,7 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = the("semanas").value;
+                   var edadGest = parseFloat(the("semanas").value);
     
                    for (i = 16; i <= edadGest; i++) {
                        data.push({y: 0});
@@ -3456,7 +3456,6 @@ $( document ).ready(function() {
                }())
            }]
         });
-        $('#popupGraficos').modal('show');
     });
 
     $( '#graficoPFEOMS' ).on( 'click', function() {
