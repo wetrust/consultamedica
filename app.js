@@ -3097,8 +3097,9 @@ $( document ).ready(function() {
         _highcharts.series[1].data = _grafico.valores.ocho
         _highcharts.series[0].data = _grafico.valores.nueve
         _highcharts.xAxis.categories = _grafico.semanas
-        _highcharts.title.text = "<small>PFE = " + the("pfe").value + " grs. percentil " +the("pfePctRpt").value + "</small>";
+        _highcharts.title.text = "";
 
+        the("tituloGraficoDinamico").innerHTML = '<small>PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></small>'
         $('#graficoPFEDinamico').highcharts(_highcharts);
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
@@ -3111,7 +3112,7 @@ $( document ).ready(function() {
             var pctPFE = percentilOMS(the("unounouno").value,the("cuacuacua").value);
 
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
-    
+
             the("dosdosdos").value = pctPFE
 
             let _grafico = graficoPFEMasMenos()
@@ -3227,7 +3228,7 @@ $( document ).ready(function() {
                     }())
                 }]
             }
-    
+
             _highcharts.series[8].data = _grafico.valores.uno
             _highcharts.series[7].data = _grafico.valores.dos
             _highcharts.series[6].data = _grafico.valores.tres
@@ -3238,8 +3239,9 @@ $( document ).ready(function() {
             _highcharts.series[1].data = _grafico.valores.ocho
             _highcharts.series[0].data = _grafico.valores.nueve
             _highcharts.xAxis.categories = _grafico.semanas
-            _highcharts.title.text = "<small>PFE = " + the("unounouno").value + " grs. percentil " +the("dosdosdos").value + "</small>";
-    
+            _highcharts.title.text = ""
+            the("tituloGraficoDinamico").innerHTML = '<small>PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></small>'
+
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
 
@@ -3251,7 +3253,7 @@ $( document ).ready(function() {
             var pctPFE = percentilOMS(the("unounouno").value,the("cuacuacua").value);
 
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
-    
+
             the("dosdosdos").value = pctPFE
 
             let _grafico = graficoPFEMasMenos()
@@ -3367,7 +3369,7 @@ $( document ).ready(function() {
                     }())
                 }]
             }
-    
+
             _highcharts.series[8].data = _grafico.valores.uno
             _highcharts.series[7].data = _grafico.valores.dos
             _highcharts.series[6].data = _grafico.valores.tres
@@ -3378,8 +3380,9 @@ $( document ).ready(function() {
             _highcharts.series[1].data = _grafico.valores.ocho
             _highcharts.series[0].data = _grafico.valores.nueve
             _highcharts.xAxis.categories = _grafico.semanas
-            _highcharts.title.text = "<small>PFE = " + the("unounouno").value + " grs. percentil " +the("dosdosdos").value + "</small>";
-    
+            _highcharts.title.text = "";
+            the("tituloGraficoDinamico").innerHTML = '<small>PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></small>'
+
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
 
