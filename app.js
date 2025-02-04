@@ -3389,6 +3389,77 @@ $( document ).ready(function() {
         the("unounouno").onkeyup = the("cuacuacua").onchange
     });
 
+    $( '#graficoCCCA' ).on( 'click', function() {
+        $('#graficosTitle').html("Gráfico Relación Cráneo Abdómen (CC/CA)");
+        $('#graficosBody').html("<div id='graficoCCCAView'></div>");
+        $( '#impEcoObsSegTrim1').remove();
+        $( '#impEcoObsSegTrim2').remove();
+        $( '#impDoppler3').remove();
+        $( '#impDoppler2').remove();
+        $( '#impDoppler1').remove();
+        $('#graficoCCCAView').highcharts({
+           title: {
+               text: 'Cc / Ca *',
+               x: -20 //center
+           },
+           subtitle: {
+               text: '',
+               x: -20
+           },
+           plotOptions: {
+               series: {
+                   enableMouseTracking: false
+               }
+           },
+           yAxis: {
+               title: { text: 'Valor cuociente' },
+               tickPositions: [0.75, 0.82, 0.88, 0.95, 1, 1.07, 1.14, 1.2, 1.27, 1.33]
+           },
+           colors: ['#313131', '#313131', '#313131'],
+           xAxis: {
+               categories: ['15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+           },
+           credits: { enabled: false },
+           series: [{
+               type: "line",
+               name: 'Pct. 3',
+               marker: { enabled: false },
+               data: [1.1,1.09,1.08,1.07,1.06,1.06,1.05,1.04,1.03,1.02,1.01,1,1,0.99,0.98,0.97,0.96,0.95,0.95,0.94,0.93,0.92,0.91,0.9,0.89,0.89]
+           }, {
+               type: "line",
+               name: 'Pct. 97',
+               marker: { enabled: false },
+               data: [1.29,1.28,1.27,1.26,1.25,1.24,1.24,1.23,1.22,1.21,1.2,1.19,1.18,1.18,1.17,1.17,1.16,1.15,1.14,1.13,1.12,1.11,1.1,1.09,1.08,1.08]
+           }, {
+               type: "line",
+               name: 'CC/CA',
+               dashStyle: "Dot",
+               marker: { symbol: 'square' },
+               lineWidth: 0,
+               data: (function () {
+                   var data = [];
+                   var edadGest = parseInt(localStorage.eg) -1;
+    
+                   for (i = 16; i <= edadGest; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+                   data.push({
+                       y: parseFloat($('#ccca').val()),
+                   });
+                   for (i = edadGest + 1; i <= 39; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+                   return data;
+               }())
+           }]
+        });
+        $('#popupGraficos').modal('show');
+    });
+
     $( '#graficoPFEOMS' ).on( 'click', function() {
 
         var modal = makeModal();
