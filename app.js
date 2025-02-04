@@ -3105,6 +3105,9 @@ $( document ).ready(function() {
 
         the("cuacuacua").onchange = function() {
 
+            the("semanas").value = the("cuacuacua").value
+            the("dias").value = the("papapapa").value
+            the("pfe").value = the("unounouno").value
             var pctPFE = percentilOMS(the("unounouno").value,the("cuacuacua").value);
 
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
@@ -3242,6 +3245,9 @@ $( document ).ready(function() {
 
         the("papapapa").onchange = function() {
 
+            the("semanas").value = the("cuacuacua").value
+            the("dias").value = the("papapapa").value
+            the("pfe").value = the("unounouno").value 
             var pctPFE = percentilOMS(the("unounouno").value,the("cuacuacua").value);
 
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
