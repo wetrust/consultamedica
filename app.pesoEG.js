@@ -45,7 +45,7 @@ function generarDatos(){
     datos += '<select class="form-control" id="papapapa"></select>'
 
     datos += '</div></div></div><div class="row"><div class="col-6"><div class="form-group"><label for="unounouno">PFE en gramos</label>'
-    datos += '<input type="number" class="form-control" id="unounouno" value="'+the("pfe").value+'">'
+    datos += '<input type="number" class="form-control text-danger" id="unounouno" value="'+the("pfe").value+'">'
 
     datos += '</div></div><div class="col-6"><div class="form-group"><label for="dosdosdos">Percentil de PFE</label>'
     datos += '<input type="number" class="form-control" id="dosdosdos" disabled></div></div></div>'
