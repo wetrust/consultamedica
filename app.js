@@ -3441,20 +3441,16 @@ $( document ).ready(function() {
                lineWidth: 0,
                data: (function () {
                    var data = [];
-                   var edadGest = parseInt(localStorage.eg) -1;
+                   var edadGest = the("semanas").value;
     
                    for (i = 16; i <= edadGest; i++) {
-                       data.push({
-                           y: 0,
-                       });
+                       data.push({y: 0});
                    }
                    data.push({
-                       y: parseFloat($('#ccca').val()),
+                       y: parseFloat(the('ccca').value),
                    });
                    for (i = edadGest + 1; i <= 39; i++) {
-                       data.push({
-                           y: 0,
-                       });
+                       data.push({y: 0});
                    }
                    return data;
                }())
