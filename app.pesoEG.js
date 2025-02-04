@@ -28,7 +28,15 @@ function contenedor(){
     let _cDos = document.createElement("div")
 
     _cDos.classList.add("col-9")
-    _cDos.id = "graficoPFEDinamico"
+
+    let cTres = document.createElement("p")
+    cTres.classList.add("text-center")
+    cTres.id = "tituloGraficoDinamico"
+    _cDos.appendChild(cTres)
+
+    let cCuatro = document.createElement("div")
+    cCuatro.id = "graficoPFEDinamico"
+    _cDos.appendChild(cCuatro)
     //_cDos.appendChild(crearGrafico())
     _c.appendChild(_cDos)
 
