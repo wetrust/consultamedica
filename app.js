@@ -3115,12 +3115,7 @@ $( document ).ready(function() {
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
 
-            if (pctPFE == "> 90" || pctPFE == "< 10"){
-                tmpData = 0;
-            }else{
-                tmpData = pctPFE;
-            }
-            var pfeRango = oldProgress(tmpData);
+            ajustarProgreso(pctPFE, "pfePct");
 
             let _grafico = graficoPFEMasMenos()
 
@@ -3264,12 +3259,7 @@ $( document ).ready(function() {
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
         
-            if (pctPFE == "> 90" || pctPFE == "< 10"){
-                tmpData = 0;
-            }else{
-                tmpData = pctPFE;
-            }
-            var pfeRango = oldProgress(tmpData);
+            ajustarProgreso(pctPFE, "pfePct");
 
             let _grafico = graficoPFEMasMenos()
 
@@ -8240,13 +8230,7 @@ function pctpfe() {
 
         the("pfePctRpt").value = pctPFE
         the("pfeRango").value = a[eg] + ' - ' +b[eg]
-
-        if (pctPFE == "> 90" || pctPFE == "< 10"){
-            tmpData = 0;
-        }else{
-            tmpData = pctPFE;
-        }
-        var pfeRango = oldProgress(tmpData);
+        ajustarProgreso(pctPFE, "pfePct");
 
         return true
 
