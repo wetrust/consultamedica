@@ -2950,7 +2950,6 @@ $( document ).ready(function() {
 
         document.getElementsByTagName("body")[0].appendChild(modal.modal);
         the("sexsexsex").value = the("ecografia.segtrim.sexo").value
-
         the("dosdosdos").value = the("pfePctRpt").value
 
         for (var i = 14; i < 41; i++) {
@@ -3116,6 +3115,13 @@ $( document ).ready(function() {
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
 
+            if (pctPFE == "> 90" || pctPFE == "< 10"){
+                tmpData = 0;
+            }else{
+                tmpData = pctPFE;
+            }
+            var pfeRango = oldProgress(tmpData);
+
             let _grafico = graficoPFEMasMenos()
 
             let _highcharts = {
@@ -3257,6 +3263,13 @@ $( document ).ready(function() {
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
+        
+            if (pctPFE == "> 90" || pctPFE == "< 10"){
+                tmpData = 0;
+            }else{
+                tmpData = pctPFE;
+            }
+            var pfeRango = oldProgress(tmpData);
 
             let _grafico = graficoPFEMasMenos()
 
@@ -8227,6 +8240,13 @@ function pctpfe() {
 
         the("pfePctRpt").value = pctPFE
         the("pfeRango").value = a[eg] + ' - ' +b[eg]
+
+        if (pctPFE == "> 90" || pctPFE == "< 10"){
+            tmpData = 0;
+        }else{
+            tmpData = pctPFE;
+        }
+        var pfeRango = oldProgress(tmpData);
 
         return true
 
