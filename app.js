@@ -8211,14 +8211,16 @@ function pctpfe() {
     'use strict';
     /* 10 90 */
 	let a = [], b = [];
+    let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
 
-    a = [73,93,117,146,181,223,271,327,392,465,548,641,743,855,977,1108,1247,1394,1548,1708,1872,2038,2205,2372,2536,2696,2849];
-    b = [109,138,174,217,268,328,399,481,575,682,803,938,1087,1251,1429,1622,1828,2046,2276,2516,2764,3018,3277,3538,3799,4058,4312];
+    a = Math.exp(-.230518383014592 + eg * (.400511116318458 + eg * (-.00617993235833267 + eg * (316595762972649e-19 + eg * 0))))
+    b = Math.exp(.408170594889372 + eg * (.381068214664342 + eg * (-.00550913922743603 + eg * (246713147783532e-19 + eg * 0))));
 
-    let eg = the("semanas").value;
+    //let eg = the("semanas").value;
+    // funcion que calcula el v alor de eg y suma los dias
+
     let pfe=parseInt(the("pfe").value);
 
-   
     if (eg < 14 || eg > 40) {
 
         the("pfePct").value = 0
@@ -8229,7 +8231,7 @@ function pctpfe() {
         pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
         the("pfePctRpt").value = pctPFE
-        the("pfeRango").value = a[eg] + ' - ' +b[eg]
+        the("pfeRango").value = a + ' - ' +b
         ajustarProgreso(pctPFE, "pfePct");
 
         return true
