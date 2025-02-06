@@ -3004,7 +3004,7 @@ $( document ).ready(function() {
             legend: {
                 layout: 'vertical',
                 align: 'right',
-                verticalAlign: 'middle'
+                verticalAlign: 'top'
             },
             plotOptions: {
                 column: {
@@ -3149,7 +3149,7 @@ $( document ).ready(function() {
                 legend: {
                     layout: 'vertical',
                     align: 'right',
-                    verticalAlign: 'middle'
+                    verticalAlign: 'top'
                 },
                 plotOptions: {
                     column: {
@@ -3293,7 +3293,7 @@ $( document ).ready(function() {
                 legend: {
                     layout: 'vertical',
                     align: 'right',
-                    verticalAlign: 'middle'
+                    verticalAlign: 'top'
                 },
                 plotOptions: {
                     column: {
