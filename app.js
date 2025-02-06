@@ -3108,7 +3108,8 @@ $( document ).ready(function() {
             the("semanas").value = the("cuacuacua").value
             the("dias").value = the("papapapa").value
             the("pfe").value = the("unounouno").value
-            var pctPFE = percentilOMS(the("unounouno").value,the("cuacuacua").value);
+            let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
+            var pctPFE = percentilOMS(the("unounouno").value,eg);
 
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
@@ -3252,7 +3253,8 @@ $( document ).ready(function() {
             the("semanas").value = the("cuacuacua").value
             the("dias").value = the("papapapa").value
             the("pfe").value = the("unounouno").value 
-            var pctPFE = percentilOMS(the("unounouno").value,the("cuacuacua").value);
+            let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
+            var pctPFE = percentilOMS(the("unounouno").value,eg);
 
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
