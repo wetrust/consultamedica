@@ -3110,7 +3110,7 @@ $( document ).ready(function() {
             the("pfe").value = the("unounouno").value
             let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
             let _sexo = the("sexsexsex").value
-            var pctPFE = percentilOMS(the("unounouno").value,eg, _sexo);
+            var pctPFE = percentilOMS(the("unounouno").value, eg, _sexo);
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
             the("dosdosdos").value = pctPFE
@@ -3260,7 +3260,7 @@ $( document ).ready(function() {
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
-        
+
             ajustarProgreso(pctPFE, "pfePct");
 
             let _grafico = graficoPFEMasMenos()
