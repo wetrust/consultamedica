@@ -3393,7 +3393,7 @@ $( document ).ready(function() {
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
 
-        the("sexsexsex").onkeyup = the("cuacuacua").onchange
+        the("sexsexsex").onchange = the("cuacuacua").onchange
 
         the("unounouno").onkeyup = the("cuacuacua").onchange
     });
