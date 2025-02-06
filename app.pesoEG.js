@@ -59,7 +59,7 @@ function generarDatos(){
     datos += '<input type="number" class="form-control text-danger" id="dosdosdos" disabled></div></div></div>'
 
     datos += '<div class="form-group"><label for="sexsexsex">Ajuste al PFE según Sexo Fetal ( en construcción )</label><select class="form-control" id="sexsexsex">'
-    datos += '<option value="no identificado">Desconocido</option><option value="masculino">Hombre</option><option value="femenino">Mujer</option></select></div>'
+    datos += '<option value="">Desconocido</option><option value="men">Hombre</option><option value="wom">Mujer</option></select></div>'
 
     return datos
 }

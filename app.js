@@ -3109,7 +3109,8 @@ $( document ).ready(function() {
             the("dias").value = the("papapapa").value
             the("pfe").value = the("unounouno").value
             let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
-            var pctPFE = percentilOMS(the("unounouno").value,eg);
+            let _sexo = the("sexsexsex").value
+            var pctPFE = percentilOMS(the("unounouno").value,eg, _sexo);
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
             the("dosdosdos").value = pctPFE
@@ -3253,7 +3254,8 @@ $( document ).ready(function() {
             the("dias").value = the("papapapa").value
             the("pfe").value = the("unounouno").value 
             let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
-            var pctPFE = percentilOMS(the("unounouno").value,eg);
+            let _sexo = the("sexsexsex").value
+            var pctPFE = percentilOMS(the("unounouno").value,eg, _sexo);
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
             the("dosdosdos").value = pctPFE
@@ -3390,6 +3392,8 @@ $( document ).ready(function() {
 
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
+
+        the("sexsexsex").onkeyup = the("cuacuacua").onchange
 
         the("unounouno").onkeyup = the("cuacuacua").onchange
     });
