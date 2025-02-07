@@ -2949,7 +2949,6 @@ $( document ).ready(function() {
         var modal = appPesoEG();
 
         document.getElementsByTagName("body")[0].appendChild(modal.modal);
-        the("sexsexsex").value = the("ecografia.segtrim.sexo").value
         the("dosdosdos").value = the("pfePctRpt").value
 
         for (var i = 14; i < 41; i++) {
@@ -3109,7 +3108,10 @@ $( document ).ready(function() {
             the("dias").value = the("papapapa").value
             the("pfe").value = the("unounouno").value
             let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
-            let _sexo = the("sexsexsex").value
+
+            let _sexo = these("sexsexsex")
+            _sexo = _sexo.forEach(alter => { return (alter.checked == true) ? alter.value : false })
+
             var pctPFE = percentilOMS(the("unounouno").value, eg, _sexo);
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
@@ -3254,7 +3256,8 @@ $( document ).ready(function() {
             the("dias").value = the("papapapa").value
             the("pfe").value = the("unounouno").value 
             let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
-            let _sexo = the("sexsexsex").value
+            let _sexo = these("sexsexsex")
+            _sexo = _sexo.forEach(alter => { return (alter.checked == true) ? alter.value : false })
             var pctPFE = percentilOMS(the("unounouno").value,eg, _sexo);
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
@@ -3392,6 +3395,9 @@ $( document ).ready(function() {
 
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
+
+        let _sexo = these("sexsexsex")
+        _sexo = _sexo.forEach(alter => { alter.onchange = the("cuacuacua").onchange })
 
         the("sexsexsex").onchange = the("cuacuacua").onchange
 
