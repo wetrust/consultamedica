@@ -21,7 +21,7 @@ export function graficoPFEMasMenos(){
         let pNueve = Math.exp(.408170594889372 + EG * (.381068214664342 + EG * (-.00550913922743603 + EG * (246713147783532e-19 + EG * 0))))
     
         let sexo = these("sexsexsex")
-        sexo = sexo.forEach(alter => { alter.onchange = the("cuacuacua").onchange })
+        sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
 
         if (sexo){
 

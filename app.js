@@ -3110,7 +3110,7 @@ $( document ).ready(function() {
             let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
 
             let _sexo = these("sexsexsex")
-            _sexo = _sexo.forEach(alter => { return (alter.checked == true) ? alter.value : false })
+            _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
 
             var pctPFE = percentilOMS(the("unounouno").value, eg, _sexo);
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
@@ -3257,7 +3257,7 @@ $( document ).ready(function() {
             the("pfe").value = the("unounouno").value 
             let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
             let _sexo = these("sexsexsex")
-            _sexo = _sexo.forEach(alter => { return (alter.checked == true) ? alter.value : false })
+            _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
             var pctPFE = percentilOMS(the("unounouno").value,eg, _sexo);
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
 
@@ -3398,8 +3398,6 @@ $( document ).ready(function() {
 
         let _sexo = these("sexsexsex")
         _sexo = _sexo.forEach(alter => { alter.onchange = the("cuacuacua").onchange })
-
-        the("sexsexsex").onchange = the("cuacuacua").onchange
 
         the("unounouno").onkeyup = the("cuacuacua").onchange
     });
