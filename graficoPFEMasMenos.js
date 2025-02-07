@@ -1,4 +1,4 @@
-import { the } from './wetrust.js'
+import { the, these } from './wetrust.js'
 
 export function graficoPFEMasMenos(){
 
@@ -20,7 +20,8 @@ export function graficoPFEMasMenos(){
         let pOcho = Math.exp(.285025055968914 + EG * (.390621472299378 + EG * (-.00582929182402995 + EG * (279088693116937e-19 + EG * 0))))
         let pNueve = Math.exp(.408170594889372 + EG * (.381068214664342 + EG * (-.00550913922743603 + EG * (246713147783532e-19 + EG * 0))))
     
-        let sexo = the("sexsexsex").value
+        let sexo = these("sexsexsex")
+        sexo = sexo.forEach(alter => { alter.onchange = the("cuacuacua").onchange })
 
         if (sexo){
 
