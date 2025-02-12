@@ -3271,7 +3271,7 @@
                         <div class="card mb-3">
                             <div class="card-body">
                                 <h5 class="card-title">BIOMETRÍA FETAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>( 12 a 42 semanas )</small></h5>
-                                <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="ver.ref"> <label class="form-check-label text-primary" for="art.ut">Ver cuatro referencias <small>(Biometrías, Estimación y categorización de peso mas valoración de líquido amniótico)</small></label> </div>
+                                <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="ver.ref"><label class="form-check-label text-primary" for="art.ut">Ver cuatro referencias <small>(Biometrías, Estimación y categorización de peso mas valoración de líquido amniótico)</small></label></div>
                                 <div class="row d-none" id="ver.ref.div">
                                     <div class="col-12">
                                         <p><small class="text-muted">- Biometría: Hadlock FP. y col. Radiology 152: 497 - 501; 1984. *Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>- Peso fetal estimado por formula que incluye: CC, CA, LF; Hadlock FP, et. al.  Am J Obstet Gynecol. 1985 Feb 1;151(3):333-7.<br>- Gráfica de referencia para categorizar peso fetal por curva de Hadlock FP. y col. Radiology 181: 129 - 133; 1991<br>- Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p>
@@ -3430,15 +3430,6 @@
                                         <button class="btn btn-outline-info" id="graficoCCCA">Ver Gráficas</button>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col mb-2"></div><div class="col mb-2"></div>
-                                    <div class="col mb-2">
-                                        <input type="checkbox" class="form-check-input" id="otrolink"> <label class="form-check-label" for="otrolink">Concenso Chileno SOCHOG / SOCHUMB</label>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <button class="btn btn-outline-info" type="button" id="graficoPFEOMS">Ver Gráficas</button>
-                                    </div>
-                                </div>
                                 <div class="form-group row d-none">
                                     <div class="col mb-2">
                                         <label>Talla Fetal Estimada (> 23 sem)
@@ -3563,7 +3554,7 @@
                                         <input type="text" class="form-control" id="atrio.desc.ecoDosTres" disabled>
                                     </div>
                                 </div>
-                                <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="larg.cerv"> <label class="form-check-label" for="larg.cerv">Opcional Largo Cervical</label> </div>
+                                <div class="form-group form-check mb-0"><input type="checkbox" class="form-check-input" id="larg.cerv"><label class="form-check-label" for="larg.cerv">Opcional Largo Cervical</label></div>
                                 <div class="form-group row d-none pt-2" id="larg.cerv.div">
                                     <div class="col mb-2">
                                         <label>Largo Cervical</label>
@@ -3579,9 +3570,9 @@
                                     </div>
                                     <div class="col mb-2"></div>
                                 </div>
-                                <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="art.ut"> <label class="form-check-label" for="art.ut">Opcional Doppler arterias uterinas</label> </div>
-                                <div class="row d-none pt-2" id="art.ut.div"> <div class="col form-group"> <label>IP. Uterina derecha</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_derecha"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterina izquierda</label> <div class="input-group"> <input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div></div>
-                                <div class="form-group form-check mb-0 d-none"> <input type="checkbox" class="form-check-input" id="opt.clinico"> <label class="form-check-label" for="opt.clinico">Opcional Clínico (Examen y antecedentes)</label> </div>
+                                <div class="form-group form-check mb-0"><input type="checkbox" class="form-check-input" id="art.ut"><label class="form-check-label" for="art.ut">Opcional Doppler arterias uterinas</label></div>
+                                <div class="row d-none pt-2" id="art.ut.div"><div class="col form-group"><label>IP. Uterina derecha</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_derecha"><div class="input-group-prepend"><div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col form-group"><label>IP. Uterina izquierda</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div></div>
+                                <div class="form-group form-check mb-0 d-none"><input type="checkbox" class="form-check-input" id="opt.clinico"><label class="form-check-label" for="opt.clinico">Opcional Clínico (Examen y antecedentes)</label></div>
                                 <div class="form-group row d-none pt-2" id="opt.clinico.div">
                                     <div class="col-12">
                                         <p><strong>Presión arterial materna</strong></p>
@@ -3674,7 +3665,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-check mb-0  d-none"> <input type="checkbox" class="form-check-input"> <label class="form-check-label" for="calc.oms">Opcional curva de crecimiento ajustada modelo fetaltest.com</label> <a id="calc.test">.</a></div>
+                                <div class="form-group form-check mb-0  d-none"><input type="checkbox" class="form-check-input"><label class="form-check-label" for="calc.oms">Opcional curva de crecimiento ajustada modelo fetaltest.com</label><a id="calc.test">.</a></div>
                                 <div class="form-group row d-none pt-2" id="calc.test.div">
                                     <div class="col-12">
                                         <a target="_blank" href="http://fetaltest.com/cgi-bin/ecopesofetal.cgi" class="btn btn-outline-info">Fetaltest</a>
@@ -3704,9 +3695,7 @@
                                     </div>
                                 </div>
                                 <p style="padding-left: 15rem;"><strong>En ecografía de 2º o 3º trimestre, solo procede ajustar la edad gestacional siempre cuando:</strong><br>a ) No exista confirmación ecográfica precoz de la edad gestacional (1º trimestre) y <br>b ) Se observe gran diferencia entre la edad gestacional esperada y la obtenida por biometría ecográfica actual.</p>
-                                <div class="d-flex flex-row align-items-center" style="padding-left: 15rem;">
-
-                                </div>
+                                <div class="d-flex flex-row align-items-center" style="padding-left: 15rem;"></div>
                                 <div class="d-flex flex-row align-items-center justify-content-between" style="margin-left: 15rem;background-color: #6c757d !important;width:calc(300px + 28rem)">
                                     <h6 class="text-white ml-5">Seleccione tipo de informe ecográfico</h6>
                                     <select id="eco.seg.trim.select.comentario" class="form-control" style="width: 350px;">
@@ -3972,7 +3961,9 @@
                         <label class="form-check-label" for="ver.ecoObsSegTrim.tablas.biometria">Tablas de biometría</label>
                     </div>
                 </div>
-                
+                <div class="btn-group-vertical d-flex mt-4">
+                    <input type="checkbox" class="form-check-input" id="otrolink"> <label class="form-check-label" for="otrolink">Concenso Chileno SOCHOG / SOCHUMB</label>
+                </div>
             </div>
         </div>
     </div>
