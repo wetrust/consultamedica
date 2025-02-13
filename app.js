@@ -294,6 +294,14 @@ $( document ).ready(function() {
         
     })
 
+    the("calculador.oms").onchange = function(){
+        if (this.checked == true){
+            var URL = "http://srhr.org/fetalgrowthcalculator";
+            var win = window.open(URL, "_blank");
+            this.checked == false
+        }   
+    }
+
     //funcion rara
     $("#menu\\.modulo\\.activo").mouseout(function(){
         if (the("menu.modulo.activo").classList.contains("active")){
