@@ -59,7 +59,7 @@ function generarDatos(){
     datos += '</div></div><div class="col-6"><div class="form-group"><label for="dosdosdos">Percentil de PFE</label>'
     datos += '<input type="number" class="form-control text-danger" id="dosdosdos" disabled></div></div></div>'
 
-    datos += '<label for="sexsexsex">Sexo Fetal</label><br><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-outline-secondary active"><input type="radio" name="sexsexsex" id="option1" value="" checked > Desconocido</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" id="option2" value="men"> Masculino</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" id="option3" value="wom"> Femenino</label></div><div class="row mt-3"><div class="col-12 mb-2 mt-2 text-center"><a class="btn btn-outline-info active" href="#ecoDoppler" id="goto.doppler.grafico">Con PFE menor P10 ir a Dopler</a></div></div>'
+    datos += '<label for="sexsexsex">Sexo Fetal</label><br><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-outline-secondary active"><input type="radio" name="sexsexsex" id="option1" value="" checked > Desconocido</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" id="option2" value="men"> Masculino</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" id="option3" value="wom"> Femenino</label></div><div class="row mt-3"><div class="col-12 mb-2 mt-2"><a class="btn btn-outline-info active" href="#ecoDoppler" id="goto.doppler.grafico">Con PFE &gt; P10 ir a Flujometría Doppler</a></div></div>'
 
     return datos
 
