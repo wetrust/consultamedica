@@ -1186,13 +1186,6 @@ $( document ).ready(function() {
 
     })
 
-    the("goto.doppler.ecodostres").onclick = function(){
-
-        $("#volver").attr("href", "#ecoObsSegTrim");
-        $("#volver").attr("href", "#ecoObsSegTrim");
-
-    }
-
     $("#goto\\.ginecol").on("click", function(){
         //si va de primer trimestre a ginecologico, cambiar el volver para que regrese a
         //primer trimestre
