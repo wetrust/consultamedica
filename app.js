@@ -1186,14 +1186,6 @@ $( document ).ready(function() {
 
     })
 
-    the("goto.doppler.grafico").onclick = function(){
-        //si va de primer trimestre a ginecologico, cambiar el volver para que regrese a
-        //primer trimestre
-
-        $("#volver").attr("href", "#ecoObsSegTrim");
-
-    }
-
     the("goto.doppler.ecodostres").onclick = function(){
 
         $("#volver").attr("href", "#ecoObsSegTrim");
@@ -3437,6 +3429,14 @@ $( document ).ready(function() {
         _sexo = _sexo.forEach(alter => { alter.onchange = the("cuacuacua").onchange })
 
         the("unounouno").onkeyup = the("cuacuacua").onchange
+
+        the("goto.doppler.grafico").onclick = function(){
+            //si va de primer trimestre a ginecologico, cambiar el volver para que regrese a
+            //primer trimestre
+    
+            $("#volver").attr("href", "#ecoObsSegTrim");
+    
+        }
     });
 
     $( '#graficoCCCA' ).on( 'click', function() {
