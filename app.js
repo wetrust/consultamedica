@@ -3430,10 +3430,11 @@ $( document ).ready(function() {
 
         the("unounouno").onkeyup = the("cuacuacua").onchange
 
+        the("goto.doppler.grafico").dataset.modal = modal.id
         the("goto.doppler.grafico").onclick = function(){
             //si va de primer trimestre a ginecologico, cambiar el volver para que regrese a
             //primer trimestre
-    
+            $('#'+this.dataset.modal).modal("hide")
             $("#volver").attr("href", "#ecoObsSegTrim");
     
         }
