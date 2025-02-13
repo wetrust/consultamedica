@@ -1197,6 +1197,7 @@ $( document ).ready(function() {
     the("goto.doppler.ecodostres").onclick = function(){
 
         $("#volver").attr("href", "#ecoObsSegTrim");
+        $("#volver").attr("href", "#ecoObsSegTrim");
 
     }
 
