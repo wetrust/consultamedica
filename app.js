@@ -1,6 +1,6 @@
 import { fechas } from './functionesM.js'
 import { the, inputDate, these, humanDate } from './wetrust.js'
-import { appPesoEG } from './app.pesoEG.js?a'
+import { appPesoEG } from './app.pesoEG.js?A'
 import { graficoPFEMasMenos, percentilOMS } from './graficoPFEMasMenos.js'
 
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
@@ -1180,15 +1180,32 @@ $( document ).ready(function() {
     })
 
     $("#goto\\.doppler").on("click", function(){
+
         $("#morfologia-flujometria-tab").trigger("click");
         window.scrollTo(0, 0)
+
     })
+
+    the("goto.doppler.grafico").onclick = function(){
+        //si va de primer trimestre a ginecologico, cambiar el volver para que regrese a
+        //primer trimestre
+
+        $("#volver").attr("href", "#ecoObsSegTrim");
+
+    }
+
+    the("goto.doppler.ecodostres").onclick = function(){
+
+        $("#volver").attr("href", "#ecoObsSegTrim");
+
+    }
 
     $("#goto\\.ginecol").on("click", function(){
         //si va de primer trimestre a ginecologico, cambiar el volver para que regrese a
         //primer trimestre
 
         $("#volver").attr("href", "#ecoObsPrimTrim");
+
     })
 
     $("#bvmEcoDos").on("keyup", function(){
