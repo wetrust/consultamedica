@@ -33,11 +33,7 @@ function uuidv4() {
     )
 
     // genera infinitamente uuid mientras no comience con una letra
-    if (isNaN(uid.charAt(0))){
-        return uid
-    }else{
-        return uuidv4()
-    }
+    if (isNaN(uid.charAt(0))){ return uid } else { return uuidv4() }
 }
 
 // Controlador de funciones base cuando se carga la pagina
@@ -165,33 +161,32 @@ $( document ).ready(function() {
     opt.appendChild( document.createTextNode("> 170") );
     opt.value = "&gt; 170"; 
     dias.appendChild(opt);
-
     dias.value = 140
 
-        //cargar la frecuencia cardiaca fetal para morfologia 22-24
-        dias = the("frecuencia.cardiaca.morfologia");
-        opt = document.createElement('option');
-        opt.appendChild( document.createTextNode("(+) inicial") );
-        opt.value = "(+) inicial"; 
+    //cargar la frecuencia cardiaca fetal para morfologia 22-24
+    dias = the("frecuencia.cardiaca.morfologia");
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("(+) inicial") );
+    opt.value = "(+) inicial"; 
+    dias.appendChild(opt); 
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("< 90") );
+    opt.value = "&lt; 90"; 
+    dias.appendChild(opt);
+
+    for (var i = 90; i < 171; i++) {
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode(i) );
+        opt.value = i; 
         dias.appendChild(opt); 
-        opt = document.createElement('option');
-        opt.appendChild( document.createTextNode("< 90") );
-        opt.value = "&lt; 90"; 
-        dias.appendChild(opt);
-    
-        for (var i = 90; i < 171; i++) {
-            let opt = document.createElement('option');
-            opt.appendChild( document.createTextNode(i) );
-            opt.value = i; 
-            dias.appendChild(opt); 
-        }
-    
-        opt = document.createElement('option');
-        opt.appendChild( document.createTextNode("> 170") );
-        opt.value = "&gt; 170"; 
-        dias.appendChild(opt);
-    
-        dias.value = 140
+    }
+
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("> 170") );
+    opt.value = "&gt; 170"; 
+    dias.appendChild(opt);
+
+    dias.value = 140
 
     if (storageAvailable('localStorage')) { 
         if (document.location.hash == "#browser" || document.location.hash == ""){
@@ -242,48 +237,48 @@ $( document ).ready(function() {
     the("ptEdadMaterna").value = 30
 
     the("fcf").onchange = function(){
-            comentarioSegundoTrimestre()
-        }
-    
-        the("presentacion").onchange = function(){
-            comentarioSegundoTrimestre()
-        }
-    
-        the("dorso").onchange = function(){
-            comentarioSegundoTrimestre()
-        }
-    
-        the("ecografia.segtrim.sexo").onchange = function(){
-            comentarioSegundoTrimestre()
-        }
-    
-        the("grado-placenta").onchange = function(){
-            comentarioSegundoTrimestre()
-        }
-    
-        the("ubicacion").onchange = function(){
-            comentarioSegundoTrimestre()
+        comentarioSegundoTrimestre()
+    }
 
-            if (this.value == "fúndica"){
-                the("incersion").value = "alta"
-            }
-        }
+    the("presentacion").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("dorso").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("ecografia.segtrim.sexo").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
     
-        the("incersion").onchange = function(){
-            comentarioSegundoTrimestre()
+    the("grado-placenta").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("ubicacion").onchange = function(){
+        comentarioSegundoTrimestre()
+
+        if (this.value == "fúndica"){
+            the("incersion").value = "alta"
         }
+    }
     
-        the("liq-cualitativo-eco").onchange = function(){
-            comentarioSegundoTrimestre()
-        }
-    
-        the("cordon").onchange = function(){
-            comentarioSegundoTrimestre()
-        }
-    
-        the("vasos").onchange = function(){
-            comentarioSegundoTrimestre()
-        }
+    the("incersion").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("liq-cualitativo-eco").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("cordon").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
+
+    the("vasos").onchange = function(){
+        comentarioSegundoTrimestre()
+    }
 
     $("#otrolink").on("change", function(){
         if (this.checked == true){
