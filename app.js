@@ -6608,6 +6608,8 @@ $(window).on('hashchange', function(){
         $(activeHash).addClass(d);
         the("inicio").classList.remove(d);
     }
+
+    window.scrollTo(0, 0);
 });
 
 // Guardar para partos
