@@ -1494,9 +1494,25 @@ $( document ).ready(function() {
 // Controlador de input clones
 // Si se escribe en uno, se refleja en otro
 $( document ).ready(function() {
+
+    the("otras.biometrias").onclick = function(){
+
+        if (this.checked == true){
+
+            the("otras.biometrias.div").classList.remove("d-none")
+
+        }else{
+
+            the("otras.biometrias.div").classList.add("d-none")
+
+        }
+
+    }
+
     $("#lcn").on("change", function(){
         the("lcn.clon").value = the("lcn").value;
     });
+
     $("#saco").on("change", function(){
         the("saco.clon").value = the("saco").value;
     });
