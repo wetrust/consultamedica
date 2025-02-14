@@ -3386,6 +3386,27 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <div class="col mb-2">
+                                        <label>-Largo Humeral</label>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="text" class="form-control" id="lh">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                        </div>
+                                    </div>
+                                    <div class="col mb-2">
+                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhPct">
+                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <input type="hidden" id="lhPctRpt">
+                                        <input type="hidden" id="lhRango">
+                                    </div>
+                                    <div class="col mb-2">
+                                        <button class="btn btn-outline-info" id="graficoLh">Ver Gráficas</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <div class="col-3 mb-2">
                                         <label><strong>PFE</strong> (Hadlock-3), categorización <strong>Curva OMS</strong></label>
                                     </div>
@@ -3415,29 +3436,6 @@
                                             </div>
                                         </div>
                                         <button class="d-none" id="graficoPFE">Ver Gráficas</button>
-                                    </div>
-                                </div>
-                                <div class="form-group row" id="cccaView">
-                                    <div class="col-3 mb-2">
-                                        <label>Relación Cráneo Abdómen</label>
-                                    </div>
-                                    <div class="col mb-2 pr-1">
-                                        <input type="text" class="form-control" id="ccca" readonly>
-                                    </div>
-                                    <div class="col mb-2 pl-1">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="text" class="form-control" id="cccaPctVal" readonly>
-                                            <div class="input-group-append"><div class="input-group-text">Pct</div></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 mb-2">
-                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cccaPct">
-                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <input type="hidden" id="cccaPctVal">
-                                    </div>
-                                    <div class="col-3 mb-2">
-                                        <button class="btn btn-outline-info" id="graficoCCCA">Ver Gráficas</button>
                                     </div>
                                 </div>
                                 <div class="form-group row d-none">
@@ -3485,6 +3483,87 @@
                                     </div>
                                     <div class="col mb-2">
                                         <button class="btn btn-outline-info" id="graficoBVM">Ver Gráficas</button>
+                                    </div>
+                                </div>
+                                <div class="form-group form-check mb-0"><input type="checkbox" class="form-check-input" id="otras.biometrias"><label class="form-check-label" for="otras.biometrias">Otras biometrías fetales</label></div>
+                                <div id="otras.biometrias.div" class="d-none">
+                                    <div class="form-group row">
+                                        <div class="col mb-2">
+                                            <label>- Diámetro cerebeloso transverso</label>
+                                        </div>
+                                        <div class="col mb-2">
+                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                <input type="text" class="form-control" id="cerebelo">
+                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                            </div>
+                                        </div>
+                                        <div class="col mb-2">
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cerebeloPct">
+                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <input type="hidden" id="cerebeloPctRpt">
+                                            <input type="hidden" id="cerebeloRango">
+                                        </div>
+                                        <div class="col mb-2">
+                                            <button class="btn btn-outline-info" id="graficoCerebelo">Ver Gráficas</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col col-form-label">- Cisterna magna</label>
+                                        <div class="col">
+                                            <div class="input-group mb-2">
+                                                <input type="text" class="form-control" id="cm.ecoDosTres">
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text">mm</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="progress my-3 border" id="cmEcoDosTres">
+                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <input type="hidden" class="form-control" id="cm.pct.ecoDosTres">
+                                        </div>
+                                        <div class="col mb-2">
+                                            <button class="btn btn-outline-info" id="graficoCisterna">Ver Gráficas</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-lg-3 col-form-label">- Atrio posterior</label>
+                                        <div class="col-6 col-lg-3">
+                                            <div class="input-group mb-2">
+                                                <input type="number" class="form-control" id="atrio.ecoDosTres">
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text">mm</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-lg-4">
+                                            <input type="text" class="form-control" id="atrio.desc.ecoDosTres" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" id="cccaView">
+                                        <div class="col-3 mb-2">
+                                            <label>Relación Cráneo Abdómen</label>
+                                        </div>
+                                        <div class="col mb-2 pr-1">
+                                            <input type="text" class="form-control" id="ccca" readonly>
+                                        </div>
+                                        <div class="col mb-2 pl-1">
+                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                <input type="text" class="form-control" id="cccaPctVal" readonly>
+                                                <div class="input-group-append"><div class="input-group-text">Pct</div></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-2">
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cccaPct">
+                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <input type="hidden" id="cccaPctVal">
+                                        </div>
+                                        <div class="col-3 mb-2">
+                                            <button class="btn btn-outline-info" id="graficoCCCA">Ver Gráficas</button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group form-check mb-0"><input type="checkbox" class="form-check-input" id="larg.cerv"><label class="form-check-label" for="larg.cerv">Opcional Largo Cervical</label></div>
@@ -3604,85 +3683,7 @@
                                         <a target="_blank" href="http://fetaltest.com/cgi-bin/ecopesofetal.cgi" class="btn btn-outline-info">Fetaltest</a>
                                     </div>
                                 </div>
-                                <div class="form-group form-check mb-0"><input type="checkbox" class="form-check-input" id="otras.biometrias"><label class="form-check-label" for="otras.biometrias">Otras biometrías fetales</label></div>
-                                <div id="otras.biometrias.div" class="d-none">
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label>-Largo Humeral</label>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="lh">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="lhPctRpt">
-                                            <input type="hidden" id="lhRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoLh">Ver Gráficas</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col mb-2">
-                                            <label>- Diámetro cerebeloso transverso</label>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <input type="text" class="form-control" id="cerebelo">
-                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                            </div>
-                                        </div>
-                                        <div class="col mb-2">
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cerebeloPct">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" id="cerebeloPctRpt">
-                                            <input type="hidden" id="cerebeloRango">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoCerebelo">Ver Gráficas</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col col-form-label">- Cisterna magna</label>
-                                        <div class="col">
-                                            <div class="input-group mb-2">
-                                                <input type="text" class="form-control" id="cm.ecoDosTres">
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text">mm</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="progress my-3 border" id="cmEcoDosTres">
-                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <input type="hidden" class="form-control" id="cm.pct.ecoDosTres">
-                                        </div>
-                                        <div class="col mb-2">
-                                            <button class="btn btn-outline-info" id="graficoCisterna">Ver Gráficas</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-12 col-lg-3 col-form-label">- Atrio posterior</label>
-                                        <div class="col-6 col-lg-3">
-                                            <div class="input-group mb-2">
-                                                <input type="number" class="form-control" id="atrio.ecoDosTres">
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text">mm</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-lg-4">
-                                            <input type="text" class="form-control" id="atrio.desc.ecoDosTres" disabled>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="card mb-5">
