@@ -1,10 +1,10 @@
-import { the, make } from './wetrust.js'
+import { the } from './wetrust.js'
 import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
 //import { Highcharts } from './js/highcharts.js'
 
 export function appPesoEG(){
 
-    var modal = make.modal();
+    var modal = modal();
     modal.modal.children[0].children[0].children[1].appendChild(contenedor());
 
     modal.modal.children[0].classList.remove("modal-lg")
@@ -190,5 +190,78 @@ function crearGrafico(){
     _highcharts.title.text = "<small>PFE = " + the("pfe").value + " grs. percentil " +the("pfePctRpt").value + "</small>";
 
     return Highcharts.chart(_highcharts);
+
+}
+
+function modal(button){
+
+    let id = this.uuidv4();
+    let titulo = this.uuidv4();
+    let contenido = this.uuidv4();
+    let _buttonID = this.uuidv4();
+    let _button = "";
+
+    let _dive = document.createElement("div")
+    _dive.classList.add("modal", "fade")
+    _dive.tabindex = "-1"
+    _dive.role = "dialog"
+    _dive.id = id
+
+    let _divw = document.createElement("div")
+    _divw.classList.add("modal-dialog", "modal-lg", "modal-dialog-scrollable")
+    _divw.role = "document"
+
+    let _divx = document.createElement("div")
+    _divx.classList.add("modal-content")
+    _divx.id = contenido
+
+    let _divz = document.createElement("div")
+    _divz.classList.add("modal-header")
+    _divz.id = contenido
+
+    let _divv = document.createElement("h5")
+    _divv.classList.add("modal-title")
+    _divv.innerText = "Modal title"
+    _divv.id = titulo
+
+    _divz.appendChild(_divv)
+    _divx.appendChild(_divz)
+
+    let _divy = document.createElement("div")
+    _divy.classList.add("modal-body")
+    _divy.id = contenido
+
+    _divx.appendChild(_divy)
+
+    let _footer = document.createElement("div")
+    _footer.classList.add("modal-footer")
+
+    if (typeof button !== typeof undefined){
+        _button = document.createElement("button")
+        _button.classList.add("btn", "wetrust")
+        _button.type = "button"
+        _button.dataset.modal = id
+        _button.id = _buttonID
+        _button.textContent = button
+
+        _footer.appendChild(_button)
+    }
+
+    _button = document.createElement("button")
+    _button.classList.add("btn", "btn-outline-info", "active")
+    _button.type = "button"
+    _button.dataset.dismiss = "modal"
+    _button.dataset.bsDismiss = "modal"
+    _button.textContent = "Volver"
+
+    _footer.appendChild(_button)
+
+    _divx.appendChild(_footer)
+    _divw.appendChild(_divx)
+    _dive.appendChild(_divw)
+
+    let resultado ={ id: id, titulo: titulo, contenido: contenido, button: _button, modal: _dive }
+
+    return resultado;
 
 }
