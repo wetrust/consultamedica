@@ -1855,8 +1855,8 @@ $( document ).ready(function() {
     
         let _highcharts = {
             chart: {
-                height: 547,
-                width: 530,
+                height: 447,
+                width: 730,
                 type: 'line'
             },
             title: {
@@ -2005,8 +2005,8 @@ $( document ).ready(function() {
     
             let _highcharts = {
                 chart: {
-                    height: 547,
-                    width: 530,
+                    height: 447,
+                    width: 730,
                     type: 'line'
                 },
                 title: {
@@ -2151,8 +2151,7 @@ $( document ).ready(function() {
             let _grafico = graficoPFEMasMenos()
     
             let _highcharts = {
-                chart: {                    height: 547,
-                    width: 530,type: 'line'},
+                chart: {height: 447, width: 730,type: 'line'},
                 title: {
                     text: '<small>Peso Fetal Estimado ( gramos )</small>',
                     x: -20, //center
