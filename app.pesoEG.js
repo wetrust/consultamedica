@@ -2,19 +2,6 @@ import { the } from './wetrust.js'
 import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
 //import { Highcharts } from './js/highcharts.js'
 
-export function appPesoEG(){
-
-    var modal = modal();
-    modal.modal.children[0].children[0].children[1].appendChild(contenedor());
-
-    modal.modal.children[0].classList.remove("modal-lg")
-    modal.modal.children[0].style.cssText = "max-width:1700px;"
-    modal.modal.children[0].children[0].children[0].children[0].textContent = "Peso Fetal Estimado por formula de Hadlock-3 (CC CA LF) y categorizado mediante gráfica de la OMS";
-
-    return modal
-
-}
-
 function contenedor(){
 
     let _c = document.createElement("div")
@@ -193,7 +180,7 @@ function crearGrafico(){
 
 }
 
-function modal(button){
+function modalx(){
 
     let id = this.uuidv4();
     let titulo = this.uuidv4();
@@ -263,5 +250,18 @@ function modal(button){
     let resultado ={ id: id, titulo: titulo, contenido: contenido, button: _button, modal: _dive }
 
     return resultado;
+
+}
+
+export function appPesoEG(){
+
+    var modal = modalx();
+    modal.modal.children[0].children[0].children[1].appendChild(contenedor());
+
+    modal.modal.children[0].classList.remove("modal-lg")
+    modal.modal.children[0].style.cssText = "max-width:1700px;"
+    modal.modal.children[0].children[0].children[0].children[0].textContent = "Peso Fetal Estimado por formula de Hadlock-3 (CC CA LF) y categorizado mediante gráfica de la OMS";
+
+    return modal
 
 }
