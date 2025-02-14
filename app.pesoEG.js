@@ -273,7 +273,7 @@ export function appPesoEG(){
     modal.modal.children[0].children[0].children[1].appendChild(contenedor());
 
     modal.modal.children[0].classList.remove("modal-lg")
-    modal.modal.children[0].style.cssText = "max-width:1200px;"
+    modal.modal.children[0].style.cssText = "max-width:1300px;"
     modal.modal.children[0].children[0].children[0].children[0].textContent = "Peso Fetal Estimado por formula de Hadlock-3 (CC CA LF) y categorizado mediante gráfica de la OMS";
 
     return modal
