@@ -1495,6 +1495,8 @@ $( document ).ready(function() {
         }
     }
 
+    the("icContainer").style.width = the("graficoCc").style.width
+
 });
 
 // Controlador de input clones
