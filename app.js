@@ -3142,8 +3142,6 @@ $( document ).ready(function() {
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
 
-            ajustarProgreso(pctPFE, "pfePct");
-
             let _grafico = graficoPFEMasMenos()
 
             let _highcharts = {
@@ -3287,8 +3285,6 @@ $( document ).ready(function() {
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
-
-            ajustarProgreso(pctPFE, "pfePct");
 
             let _grafico = graficoPFEMasMenos()
 
@@ -8268,7 +8264,6 @@ function pctpfe() {
 
         the("pfePctRpt").value = pctPFE
         the("pfeRango").value = a + ' - ' +b
-        ajustarProgreso(pctPFE, "pfePct");
 
         return true
 

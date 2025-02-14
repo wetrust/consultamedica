@@ -3090,34 +3090,33 @@ function pctpfe() {
  eg=parseFloat(localStorage.eg);
  pfe=parseInt($("#pfe").val());
 
- if (eg < 15) {  
-   $("#pfePct").val('0');
- }
- else if (eg > 40)
- {
-   $("#pfePct").val('0');
- }
- else {
-  eg = eg - 15;
-  eg = parseInt(eg);
-  var uno=pct90[eg] - pct10[eg];
-  var dos=pfe - pct10[eg];
-  var pctFinal = (80 / (uno) * (dos)) + 10
-  ajustarProgreso(pctFinal, "pfePct");
-	 var pctPFE = '';
-			//truncador de Pct, sobre 100 o bajo 1
-			if (pctFinal > 99){
-				pctPFE = '&gt; 99';
-			}
-			else if (pctFinal < 1){
-				pctPFE = '&lt; 1';
-			}
-			else{
-				pctPFE = pctFinal.toFixed();
-			}
-	 $('#pfePctRpt').val(pctPFE);
-	 $('#pfeRango').val(pct10[eg] + ' - ' +pct90[eg]);
- }
+	if (eg < 15) {  
+		$("#pfePct").val('0');
+	} else if (eg > 40){
+		$("#pfePct").val('0');
+	} else {
+
+		eg = eg - 15;
+		eg = parseInt(eg);
+		var uno=pct90[eg] - pct10[eg];
+		var dos=pfe - pct10[eg];
+		var pctFinal = (80 / (uno) * (dos)) + 10
+		var pctPFE = '';
+
+		//truncador de Pct, sobre 100 o bajo 1
+		if (pctFinal > 99){
+			pctPFE = '&gt; 99';
+		}
+		else if (pctFinal < 1){
+			pctPFE = '&lt; 1';
+		}
+		else{
+			pctPFE = pctFinal.toFixed();
+		}
+
+		$('#pfePctRpt').val(pctPFE);
+		$('#pfeRango').val(pct10[eg] + ' - ' +pct90[eg]);
+	}
 }
 
 function bvm() {
