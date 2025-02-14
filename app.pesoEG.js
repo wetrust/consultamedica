@@ -182,10 +182,10 @@ function crearGrafico(){
 
 function modalx(){
 
-    let id = this.uuidv4();
-    let titulo = this.uuidv4();
-    let contenido = this.uuidv4();
-    let _buttonID = this.uuidv4();
+    let id = uuidv4x();
+    let titulo = uuidv4x();
+    let contenido = uuidv4x();
+    let _buttonID = uuidv4x();
     let _button = "";
 
     let _dive = document.createElement("div")
@@ -251,6 +251,20 @@ function modalx(){
 
     return resultado;
 
+}
+
+function uuidv4x() {
+    //genera un uuid
+    let uid = ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    )
+
+    // genera infinitamente uuid mientras no comience con una letra
+    if (isNaN(uid.charAt(0))){
+        return uid
+    }else{
+        return uuidv4x()
+    }
 }
 
 export function appPesoEG(){
