@@ -796,7 +796,7 @@ $( document ).ready(function() {
         comentarioSegundoTrimestre()
     });
  
-    $( '#lh').change( pctlh);
+    the("lh").onkeyup = function(){ pctlh()};
     $( '#dof').change( calcdof);
 
     $("#art\\.ut").on("click", function(){
