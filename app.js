@@ -1820,6 +1820,471 @@ $( document ).ready(function() {
         window.open(this.dataset.href, "_blank");
         this.checked = false
     }
+
+    the("corregirPercentilSexo").onclick = function(){
+        var edadGestacional = the("semanas").value;
+        if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
+        if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
+    
+        var modal = appPesoEG();
+    
+        document.getElementsByTagName("body")[0].appendChild(modal.modal);
+        the("dosdosdos").value = the("pfePctRpt").value
+    
+        for (var i = 14; i < 41; i++) {
+            let semanas = the("cuacuacua");
+            let opt = document.createElement('option');
+            opt.appendChild( document.createTextNode(i) );
+            opt.value = i; 
+            semanas.appendChild(opt); 
+        }
+    
+        the("cuacuacua").value = edadGestacional
+    
+        for (var i = 0; i < 7; i++) {
+            let dias = the("papapapa");
+            let opt = document.createElement('option');
+            opt.appendChild( document.createTextNode(i) );
+            opt.value = i; 
+            dias.appendChild(opt); 
+        }
+    
+        the("papapapa").value =  the("dias").value
+    
+        let _grafico = graficoPFEMasMenos()
+    
+        let _highcharts = {
+            chart: {
+                height: 500,
+                type: 'line'
+            },
+            title: {
+                text: '<small>Peso Fetal Estimado ( gramos )</small>',
+                x: -20, //center
+                useHTML: true
+            },
+            subtitle: {
+                text: '',
+                x: -20
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false,
+                    pointInterval: 1
+                }
+            },
+            yAxis: {
+                title: { text: 'Gramos' },
+            },
+            xAxis: {
+                categories: [],
+                showEmpty:true
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top'
+            },
+            plotOptions: {
+                column: {
+                    grouping: false
+                }
+            },
+            colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
+            credits: {enabled: false},
+            series: [{
+                type: "line",
+                name: 'Pct 97,5',
+                dashStyle: "Dot",
+                marker: { enabled: false, },
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 95',
+                dashStyle: "Dot",
+                marker: { enabled: false },
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 90',
+                marker: { enabled: false },
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 75',
+                dashStyle: "Dot",
+                marker: { enabled: false },
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 50',
+                marker: {enabled: false},
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 25',
+                dashStyle: "Dot",
+                marker: {enabled: false},
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 10',
+                marker: {enabled: false},
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 5',
+                dashStyle: "Dot",
+                marker: {enabled: false},
+                data: []
+            },{
+                type: "line",
+                name: 'Pct 2,5',
+                dashStyle: "Dot",
+                marker: {enabled: false},
+                data: []
+            },  {
+                type: "line",
+                name: 'Pct de PFE',
+                dashStyle: "Dot",
+                marker: {symbol:'circle'},
+                lineWidth: 0,
+                data: (function () {
+                    var data = [[0,1]];
+                    data[0][0] = parseInt(the("semanas").value);
+    
+                    if (the("dias").value > 0){
+                        data[0][0] += "." + the("dias").value; 
+                        data[0][0] = parseFloat(data[0][0])
+                    }
+    
+                    data[0][1] = parseFloat(the("pfe").value);
+    
+                    return data;
+                }())
+            }]
+        }
+    
+        _highcharts.series[8].data = _grafico.valores.uno
+        _highcharts.series[7].data = _grafico.valores.dos
+        _highcharts.series[6].data = _grafico.valores.tres
+        _highcharts.series[5].data = _grafico.valores.cuatro
+        _highcharts.series[4].data = _grafico.valores.cinco
+        _highcharts.series[3].data = _grafico.valores.seis
+        _highcharts.series[2].data = _grafico.valores.siete
+        _highcharts.series[1].data = _grafico.valores.ocho
+        _highcharts.series[0].data = _grafico.valores.nueve
+        _highcharts.xAxis.categories = _grafico.semanas
+        _highcharts.title.text = "";
+    
+        the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
+        $('#graficoPFEDinamico').highcharts(_highcharts);
+    
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+    
+        the("cuacuacua").onchange = function() {
+    
+            the("semanas").value = the("cuacuacua").value
+            the("dias").value = the("papapapa").value
+            the("pfe").value = the("unounouno").value
+            let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
+    
+            let _sexo = these("sexsexsex")
+            _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
+    
+            var pctPFE = percentilOMS(the("unounouno").value, eg, _sexo);
+            pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
+    
+            the("dosdosdos").value = pctPFE
+            the("pfePctRpt").value = pctPFE
+    
+            let _grafico = graficoPFEMasMenos()
+    
+            let _highcharts = {
+                chart: {
+                    height: 500,
+                    type: 'line'
+                },
+                title: {
+                    text: '<small>Peso Fetal Estimado ( gramos )</small>',
+                    x: -20, //center
+                    useHTML: true
+                },
+                subtitle: {
+                    text: '',
+                    x: -20
+                },
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false,
+                        pointInterval: 1
+                    }
+                },
+                yAxis: {
+                    title: { text: 'Gramos' },
+                },
+                xAxis: {
+                    categories: [],
+                    showEmpty:true
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top'
+                },
+                plotOptions: {
+                    column: {
+                        grouping: false
+                    }
+                },
+                colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
+                credits: {enabled: false},
+                series: [{
+                    type: "line",
+                    name: 'Pct 97,5',
+                    dashStyle: "Dot",
+                    marker: { enabled: false, },
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 95',
+                    dashStyle: "Dot",
+                    marker: { enabled: false },
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 90',
+                    marker: { enabled: false },
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 75',
+                    dashStyle: "Dot",
+                    marker: { enabled: false },
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 50',
+                    marker: {enabled: false},
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 25',
+                    dashStyle: "Dot",
+                    marker: {enabled: false},
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 10',
+                    marker: {enabled: false},
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 5',
+                    dashStyle: "Dot",
+                    marker: {enabled: false},
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 2,5',
+                    dashStyle: "Dot",
+                    marker: {enabled: false},
+                    data: []
+                },  {
+                    type: "line",
+                    name: 'Pct de PFE',
+                    dashStyle: "Dot",
+                    marker: {symbol:'circle'},
+                    lineWidth: 0,
+                    data: (function () {
+                        var data = [[0,1]];
+                        data[0][0] = parseInt(the("cuacuacua").value);
+        
+                        if (the("papapapa").value > 0){
+                            data[0][0] += "." + the("papapapa").value; 
+                            data[0][0] = parseFloat(data[0][0])
+                        }
+        
+                        data[0][1] = parseFloat(the("unounouno").value);
+        
+                        return data;
+                    }())
+                }]
+            }
+    
+            _highcharts.series[8].data = _grafico.valores.uno
+            _highcharts.series[7].data = _grafico.valores.dos
+            _highcharts.series[6].data = _grafico.valores.tres
+            _highcharts.series[5].data = _grafico.valores.cuatro
+            _highcharts.series[4].data = _grafico.valores.cinco
+            _highcharts.series[3].data = _grafico.valores.seis
+            _highcharts.series[2].data = _grafico.valores.siete
+            _highcharts.series[1].data = _grafico.valores.ocho
+            _highcharts.series[0].data = _grafico.valores.nueve
+            _highcharts.xAxis.categories = _grafico.semanas
+            _highcharts.title.text = ""
+            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
+    
+            $('#graficoPFEDinamico').highcharts(_highcharts);
+        }
+    
+        the("papapapa").onchange = function() {
+    
+            the("semanas").value = the("cuacuacua").value
+            the("dias").value = the("papapapa").value
+            the("pfe").value = the("unounouno").value 
+            let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
+            let _sexo = these("sexsexsex")
+            _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
+            var pctPFE = percentilOMS(the("unounouno").value,eg, _sexo);
+            pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
+    
+            the("dosdosdos").value = pctPFE
+            the("pfePctRpt").value = pctPFE
+    
+            let _grafico = graficoPFEMasMenos()
+    
+            let _highcharts = {
+                chart: {height: 500,type: 'line'},
+                title: {
+                    text: '<small>Peso Fetal Estimado ( gramos )</small>',
+                    x: -20, //center
+                    useHTML: true
+                },
+                subtitle: { text: '',x: -20 },
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false,
+                        pointInterval: 1
+                    }
+                },
+                yAxis: { title: { text: 'Gramos' } },
+                xAxis: {
+                    categories: [],
+                    showEmpty:true
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top'
+                },
+                plotOptions: {
+                    column: {
+                        grouping: false
+                    }
+                },
+                colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
+                credits: {enabled: false},
+                series: [{
+                    type: "line",
+                    name: 'Pct 97,5',
+                    dashStyle: "Dot",
+                    marker: { enabled: false, },
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 95',
+                    dashStyle: "Dot",
+                    marker: { enabled: false },
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 90',
+                    marker: { enabled: false },
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 75',
+                    dashStyle: "Dot",
+                    marker: { enabled: false },
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 50',
+                    marker: {enabled: false},
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 25',
+                    dashStyle: "Dot",
+                    marker: {enabled: false},
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 10',
+                    marker: {enabled: false},
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 5',
+                    dashStyle: "Dot",
+                    marker: {enabled: false},
+                    data: []
+                },{
+                    type: "line",
+                    name: 'Pct 2,5',
+                    dashStyle: "Dot",
+                    marker: {enabled: false},
+                    data: []
+                },  {
+                    type: "line",
+                    name: 'Pct de PFE',
+                    dashStyle: "Dot",
+                    marker: {symbol:'circle'},
+                    lineWidth: 0,
+                    data: (function () {
+                        var data = [[0,1]];
+                        data[0][0] = parseInt(the("cuacuacua").value);
+        
+                        if (the("papapapa").value > 0){
+                            data[0][0] += "." + the("papapapa").value; 
+                            data[0][0] = parseFloat(data[0][0])
+                        }
+        
+                        data[0][1] = parseFloat(the("unounouno").value);
+        
+                        return data;
+                    }())
+                }]
+            }
+    
+            _highcharts.series[8].data = _grafico.valores.uno
+            _highcharts.series[7].data = _grafico.valores.dos
+            _highcharts.series[6].data = _grafico.valores.tres
+            _highcharts.series[5].data = _grafico.valores.cuatro
+            _highcharts.series[4].data = _grafico.valores.cinco
+            _highcharts.series[3].data = _grafico.valores.seis
+            _highcharts.series[2].data = _grafico.valores.siete
+            _highcharts.series[1].data = _grafico.valores.ocho
+            _highcharts.series[0].data = _grafico.valores.nueve
+            _highcharts.xAxis.categories = _grafico.semanas
+            _highcharts.title.text = "";
+            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
+    
+            $('#graficoPFEDinamico').highcharts(_highcharts);
+        }
+    
+        let _sexo = these("sexsexsex")
+        _sexo = _sexo.forEach(alter => { alter.onchange = the("cuacuacua").onchange })
+    
+        the("unounouno").onkeyup = the("cuacuacua").onchange
+    
+        the("goto.doppler.grafico").dataset.modal = modal.id
+        the("goto.doppler.grafico").onclick = function(){
+            //si va de primer trimestre a ginecologico, cambiar el volver para que regrese a
+            //primer trimestre
+            $('#'+this.dataset.modal).modal("hide")
+            $("#volver").attr("href", "#ecoObsSegTrim");
+    
+        }
+
+        document.querySelectorAll(`input[name="corrigepercentilsexo"]`).forEach(element => {
+            if (element.value == "no"){
+                element.click()
+            }
+        });
+
+    }
 });
 
 // Controlador de botones reset
@@ -2962,473 +3427,6 @@ $( document ).ready(function() {
                     }())
                 }]
         });
-    });
-
-    $( '#graficoPFE' ).on( 'click', function() {
-
-        var edadGestacional = the("semanas").value;
-        if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
-        if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
-
-        var modal = appPesoEG();
-
-        document.getElementsByTagName("body")[0].appendChild(modal.modal);
-        the("dosdosdos").value = the("pfePctRpt").value
-
-        for (var i = 14; i < 41; i++) {
-            let semanas = the("cuacuacua");
-            let opt = document.createElement('option');
-            opt.appendChild( document.createTextNode(i) );
-            opt.value = i; 
-            semanas.appendChild(opt); 
-        }
-
-        the("cuacuacua").value = edadGestacional
-
-        for (var i = 0; i < 7; i++) {
-            let dias = the("papapapa");
-            let opt = document.createElement('option');
-            opt.appendChild( document.createTextNode(i) );
-            opt.value = i; 
-            dias.appendChild(opt); 
-        }
-
-        the("papapapa").value =  the("dias").value
-
-        let _grafico = graficoPFEMasMenos()
-
-        let _highcharts = {
-            chart: {
-                height: 500,
-                type: 'line'
-            },
-            title: {
-                text: '<small>Peso Fetal Estimado ( gramos )</small>',
-                x: -20, //center
-                useHTML: true
-            },
-            subtitle: {
-                text: '',
-                x: -20
-            },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false,
-                    pointInterval: 1
-                }
-            },
-            yAxis: {
-                title: { text: 'Gramos' },
-            },
-            xAxis: {
-                categories: [],
-                showEmpty:true
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'top'
-            },
-            plotOptions: {
-                column: {
-                    grouping: false
-                }
-            },
-            colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
-            credits: {enabled: false},
-            series: [{
-                type: "line",
-                name: 'Pct 97,5',
-                dashStyle: "Dot",
-                marker: { enabled: false, },
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 95',
-                dashStyle: "Dot",
-                marker: { enabled: false },
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 90',
-                marker: { enabled: false },
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 75',
-                dashStyle: "Dot",
-                marker: { enabled: false },
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 50',
-                marker: {enabled: false},
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 25',
-                dashStyle: "Dot",
-                marker: {enabled: false},
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 10',
-                marker: {enabled: false},
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 5',
-                dashStyle: "Dot",
-                marker: {enabled: false},
-                data: []
-            },{
-                type: "line",
-                name: 'Pct 2,5',
-                dashStyle: "Dot",
-                marker: {enabled: false},
-                data: []
-            },  {
-                type: "line",
-                name: 'Pct de PFE',
-                dashStyle: "Dot",
-                marker: {symbol:'circle'},
-                lineWidth: 0,
-                data: (function () {
-                    var data = [[0,1]];
-                    data[0][0] = parseInt(the("semanas").value);
-    
-                    if (the("dias").value > 0){
-                        data[0][0] += "." + the("dias").value; 
-                        data[0][0] = parseFloat(data[0][0])
-                    }
-    
-                    data[0][1] = parseFloat(the("pfe").value);
-    
-                    return data;
-                }())
-            }]
-        }
-
-        _highcharts.series[8].data = _grafico.valores.uno
-        _highcharts.series[7].data = _grafico.valores.dos
-        _highcharts.series[6].data = _grafico.valores.tres
-        _highcharts.series[5].data = _grafico.valores.cuatro
-        _highcharts.series[4].data = _grafico.valores.cinco
-        _highcharts.series[3].data = _grafico.valores.seis
-        _highcharts.series[2].data = _grafico.valores.siete
-        _highcharts.series[1].data = _grafico.valores.ocho
-        _highcharts.series[0].data = _grafico.valores.nueve
-        _highcharts.xAxis.categories = _grafico.semanas
-        _highcharts.title.text = "";
-
-        the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
-        $('#graficoPFEDinamico').highcharts(_highcharts);
-
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-
-        the("cuacuacua").onchange = function() {
-
-            the("semanas").value = the("cuacuacua").value
-            the("dias").value = the("papapapa").value
-            the("pfe").value = the("unounouno").value
-            let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
-
-            let _sexo = these("sexsexsex")
-            _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
-
-            var pctPFE = percentilOMS(the("unounouno").value, eg, _sexo);
-            pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
-
-            the("dosdosdos").value = pctPFE
-            the("pfePctRpt").value = pctPFE
-
-            let _grafico = graficoPFEMasMenos()
-
-            let _highcharts = {
-                chart: {
-                    height: 500,
-                    type: 'line'
-                },
-                title: {
-                    text: '<small>Peso Fetal Estimado ( gramos )</small>',
-                    x: -20, //center
-                    useHTML: true
-                },
-                subtitle: {
-                    text: '',
-                    x: -20
-                },
-                plotOptions: {
-                    series: {
-                        enableMouseTracking: false,
-                        pointInterval: 1
-                    }
-                },
-                yAxis: {
-                    title: { text: 'Gramos' },
-                },
-                xAxis: {
-                    categories: [],
-                    showEmpty:true
-                },
-                legend: {
-                    layout: 'vertical',
-                    align: 'right',
-                    verticalAlign: 'top'
-                },
-                plotOptions: {
-                    column: {
-                        grouping: false
-                    }
-                },
-                colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
-                credits: {enabled: false},
-                series: [{
-                    type: "line",
-                    name: 'Pct 97,5',
-                    dashStyle: "Dot",
-                    marker: { enabled: false, },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 95',
-                    dashStyle: "Dot",
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 90',
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 75',
-                    dashStyle: "Dot",
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 50',
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 25',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 10',
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 5',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 2,5',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },  {
-                    type: "line",
-                    name: 'Pct de PFE',
-                    dashStyle: "Dot",
-                    marker: {symbol:'circle'},
-                    lineWidth: 0,
-                    data: (function () {
-                        var data = [[0,1]];
-                        data[0][0] = parseInt(the("cuacuacua").value);
-        
-                        if (the("papapapa").value > 0){
-                            data[0][0] += "." + the("papapapa").value; 
-                            data[0][0] = parseFloat(data[0][0])
-                        }
-        
-                        data[0][1] = parseFloat(the("unounouno").value);
-        
-                        return data;
-                    }())
-                }]
-            }
-
-            _highcharts.series[8].data = _grafico.valores.uno
-            _highcharts.series[7].data = _grafico.valores.dos
-            _highcharts.series[6].data = _grafico.valores.tres
-            _highcharts.series[5].data = _grafico.valores.cuatro
-            _highcharts.series[4].data = _grafico.valores.cinco
-            _highcharts.series[3].data = _grafico.valores.seis
-            _highcharts.series[2].data = _grafico.valores.siete
-            _highcharts.series[1].data = _grafico.valores.ocho
-            _highcharts.series[0].data = _grafico.valores.nueve
-            _highcharts.xAxis.categories = _grafico.semanas
-            _highcharts.title.text = ""
-            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
-
-            $('#graficoPFEDinamico').highcharts(_highcharts);
-        }
-
-        the("papapapa").onchange = function() {
-
-            the("semanas").value = the("cuacuacua").value
-            the("dias").value = the("papapapa").value
-            the("pfe").value = the("unounouno").value 
-            let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
-            let _sexo = these("sexsexsex")
-            _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
-            var pctPFE = percentilOMS(the("unounouno").value,eg, _sexo);
-            pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
-
-            the("dosdosdos").value = pctPFE
-            the("pfePctRpt").value = pctPFE
-
-            let _grafico = graficoPFEMasMenos()
-
-            let _highcharts = {
-                chart: {
-                    height: 500,
-                    type: 'line'
-                },
-                title: {
-                    text: '<small>Peso Fetal Estimado ( gramos )</small>',
-                    x: -20, //center
-                    useHTML: true
-                },
-                subtitle: {
-                    text: '',
-                    x: -20
-                },
-                plotOptions: {
-                    series: {
-                        enableMouseTracking: false,
-                        pointInterval: 1
-                    }
-                },
-                yAxis: {
-                    title: { text: 'Gramos' },
-                },
-                xAxis: {
-                    categories: [],
-                    showEmpty:true
-                },
-                legend: {
-                    layout: 'vertical',
-                    align: 'right',
-                    verticalAlign: 'top'
-                },
-                plotOptions: {
-                    column: {
-                        grouping: false
-                    }
-                },
-                colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
-                credits: {enabled: false},
-                series: [{
-                    type: "line",
-                    name: 'Pct 97,5',
-                    dashStyle: "Dot",
-                    marker: { enabled: false, },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 95',
-                    dashStyle: "Dot",
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 90',
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 75',
-                    dashStyle: "Dot",
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 50',
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 25',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 10',
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 5',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 2,5',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },  {
-                    type: "line",
-                    name: 'Pct de PFE',
-                    dashStyle: "Dot",
-                    marker: {symbol:'circle'},
-                    lineWidth: 0,
-                    data: (function () {
-                        var data = [[0,1]];
-                        data[0][0] = parseInt(the("cuacuacua").value);
-        
-                        if (the("papapapa").value > 0){
-                            data[0][0] += "." + the("papapapa").value; 
-                            data[0][0] = parseFloat(data[0][0])
-                        }
-        
-                        data[0][1] = parseFloat(the("unounouno").value);
-        
-                        return data;
-                    }())
-                }]
-            }
-
-            _highcharts.series[8].data = _grafico.valores.uno
-            _highcharts.series[7].data = _grafico.valores.dos
-            _highcharts.series[6].data = _grafico.valores.tres
-            _highcharts.series[5].data = _grafico.valores.cuatro
-            _highcharts.series[4].data = _grafico.valores.cinco
-            _highcharts.series[3].data = _grafico.valores.seis
-            _highcharts.series[2].data = _grafico.valores.siete
-            _highcharts.series[1].data = _grafico.valores.ocho
-            _highcharts.series[0].data = _grafico.valores.nueve
-            _highcharts.xAxis.categories = _grafico.semanas
-            _highcharts.title.text = "";
-            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
-
-            $('#graficoPFEDinamico').highcharts(_highcharts);
-        }
-
-        let _sexo = these("sexsexsex")
-        _sexo = _sexo.forEach(alter => { alter.onchange = the("cuacuacua").onchange })
-
-        the("unounouno").onkeyup = the("cuacuacua").onchange
-
-        the("goto.doppler.grafico").dataset.modal = modal.id
-        the("goto.doppler.grafico").onclick = function(){
-            //si va de primer trimestre a ginecologico, cambiar el volver para que regrese a
-            //primer trimestre
-            $('#'+this.dataset.modal).modal("hide")
-            $("#volver").attr("href", "#ecoObsSegTrim");
-    
-        }
     });
 
     the("graficoPFEAcceso").onclick = function(){
