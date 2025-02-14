@@ -3085,10 +3085,10 @@ function pctpfe() {
  pct90[19] = 2781;pct90[20] = 3036;pct90[21] = 3291;pct90[22] = 3543;pct90[23] = 3786;
  pct90[24] = 4019;pct90[25] = 4234;
 
- var eg=0;
- var pfe=0;
- eg=parseFloat(localStorage.eg);
- pfe=parseInt($("#pfe").val());
+	var eg=0;
+	var pfe=0;
+	eg=parseFloat(localStorage.eg);
+	pfe=parseInt($("#pfe").val());
 
 	if (eg < 15) {  
 		$("#pfePct").val('0');
