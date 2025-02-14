@@ -1495,7 +1495,7 @@ $( document ).ready(function() {
         }
     }
 
-    the("icContainer").style.width = the("graficoCc").style.width
+    the("icContainer").style.width = the("graficoCc").offsetWidth
 
 });
 
