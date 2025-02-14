@@ -3429,10 +3429,6 @@ $( document ).ready(function() {
         });
     });
 
-    the("graficoPFEAcceso").onclick = function(){
-        the("graficoPFE").click()
-    }
-
     $( '#graficoCCCA' ).on( 'click', function() {
 
         var modal = makeModal();
