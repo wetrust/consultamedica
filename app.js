@@ -1855,7 +1855,8 @@ $( document ).ready(function() {
     
         let _highcharts = {
             chart: {
-                height: 500,
+                height: 547,
+                with: 730,
                 type: 'line'
             },
             title: {
@@ -1947,7 +1948,7 @@ $( document ).ready(function() {
                 type: "line",
                 name: 'Pct de PFE',
                 dashStyle: "Dot",
-                marker: {symbol:'circle'},
+                marker: {symbol:'star'},
                 lineWidth: 0,
                 data: (function () {
                     var data = [[0,1]];
