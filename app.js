@@ -1876,6 +1876,8 @@ $( document ).ready(function() {
             },
             yAxis: {
                 title: { text: 'Gramos' },
+                min: 200,
+                max: 2000
             },
             xAxis: {
                 categories: [],
