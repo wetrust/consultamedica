@@ -1972,7 +1972,7 @@ $( document ).ready(function() {
         }
     
 
-        let menor = _grafico.valores.nueve[0][0]
+        let menor = _grafico.valores.uno[0][1]
         let par = false
         let multiplicador = 0
 
