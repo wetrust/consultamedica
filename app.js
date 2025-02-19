@@ -1970,6 +1970,32 @@ $( document ).ready(function() {
             }]
         }
     
+
+        let menor = _grafico.valores.nueve[0]
+        let par = false
+        let multiplicador = 0
+
+        if (menor < 100){
+            menor = menor / 10;
+        }else if (menor < 1000){
+            menor = menor / 100;
+        }else if (menor < 10000){
+            menor = menor / 1000;
+            multiplicador = 1000
+        }
+        par = menor % 2;
+        par = (par > 1) ? false : true
+
+        if (par == true){
+            _highcharts.yAxis.min = menor * multiplicador
+        }else{
+            if (menor > 1){
+                _highcharts.yAxis.min = (menor-1) * multiplicador  
+            }else{
+                _highcharts.yAxis.min = 0
+            }
+        }
+
         _highcharts.series[8].data = _grafico.valores.uno
         _highcharts.series[7].data = _grafico.valores.dos
         _highcharts.series[6].data = _grafico.valores.tres
@@ -2028,6 +2054,8 @@ $( document ).ready(function() {
                 },
                 yAxis: {
                     title: { text: 'Gramos' },
+                    min: 200,
+                    max: 2000
                 },
                 xAxis: {
                     categories: [],
@@ -2166,7 +2194,7 @@ $( document ).ready(function() {
                         pointInterval: 1
                     }
                 },
-                yAxis: { title: { text: 'Gramos' } },
+                yAxis: { title: { text: 'Gramos' }, min: 200,max: 2000 },
                 xAxis: {
                     categories: [],
                     showEmpty:true
