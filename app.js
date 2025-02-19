@@ -1987,7 +1987,7 @@ $( document ).ready(function() {
             multiplicador = 1000
         }
         par = menor % 2;
-        par = (par > 1) ? false : true
+        par = (par > 0) ? false : true
 
         if (par == true){
             _highcharts.yAxis.min = menor * multiplicador
