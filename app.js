@@ -1977,11 +1977,13 @@ $( document ).ready(function() {
         let multiplicador = 0
 
         if (menor < 100){
-            menor = menor / 10;
+            menor = Math.trunc(menor / 10);
+            multiplicador = 10
         }else if (menor < 1000){
-            menor = menor / 100;
+            menor = Math.trunc(menor / 100);
+            multiplicador = 100
         }else if (menor < 10000){
-            menor = menor / 1000;
+            menor = Math.trunc(menor / 1000);
             multiplicador = 1000
         }
         par = menor % 2;
