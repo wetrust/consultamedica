@@ -731,34 +731,54 @@ $( document ).ready(function() {
     });
 
     $("#aud").on("change",function(){
-        let ut = pctut(this.value);
+        let valor = this.value
+        valor = valor.toString().replace(/\,/g,'.');
+        valor = Number(valor);
+
+        let ut = pctut(valor);
+
         $("#audPct").val(ut.pct);
         the("audPctTxt").innerText = "p" + ut.pct;
         $("#audRngo").val(ut.rango.min + " - " + ut.rango.max);
 
-        let aui = parseFloat($("#aui").val());
-        let aud = parseFloat(this.value);
+        let aui = $("#aui").val();
+        aui = aui.toString().replace(/\,/g,'.');
+        aui = Number(aui);
+
+        let aud = valor;
+
         let utprom = ((aui + aud) / 2);
         the("auprom").value = utprom.toFixed(2);
         $("#auprom").trigger("change");
     });
 
     $("#aui").on("change",function(){
-        let ut = pctut(this.value);
+        let valor = this.value
+        valor = valor.toString().replace(/\,/g,'.');
+        valor = Number(valor);
+
+        let ut = pctut(valor);
         $("#auiPct").val(ut.pct);
         the("auiPctTxt").innerText = "p" + ut.pct;
         $("#auiRngo").val(ut.rango.min + " - " + ut.rango.max);
 
-        let aui = parseFloat(this.value);
-        let aud = parseFloat($("#aud").val());
+        let aui = valor;
+        let aud = $("#aud").val();
+        aud = aud.toString().replace(/\,/g,'.');
+        aud = Number(aud);
+
         let utprom = ((aui + aud) / 2);
         the("auprom").value = utprom.toFixed(2);
         $("#auprom").trigger("change");
     });
 
     $("#auprom").on("change",function(){
-        if (this.value > 0){
-            let ut = pctut(this.value);
+        if (this.value != ""){
+            let valor = this.value
+            valor = valor.toString().replace(/\,/g,'.');
+            valor = Number(valor);
+
+            let ut = pctut(valor);
             the("auPctTxt").innerText = "p" + ut.pct;
             $("#auRngo").val(ut.rango.min + " - " + ut.rango.max);
         }
@@ -994,32 +1014,55 @@ $( document ).ready(function() {
     });
 
     $("#respuesta_uterina_derecha").on("keyup",function(){
-        let ut = pctut(this.value);
-        $("#respuesta_uterina_derecha_percentil").html(ut.pct);
+        let valor = this.value
+        valor = valor.toString().replace(/\,/g,'.');
+        valor = Number(valor);
 
-        let aui = parseFloat($("#respuesta_uterina_izquierda").val());
-        let aud = parseFloat(this.value);
+        let ut = pctut(valor);
+        the("respuesta_uterina_derecha_percentil").innerText = ut.pct;
+
+        let aui = the("respuesta_uterina_izquierda").value;
+        aui = aui.toString().replace(/\,/g,'.');
+        aui = Number(aui);
+
+        let aud = valor;
         let utprom = ((aui + aud) / 2);
+
         the("respuesta_uterina_promedio").value = utprom.toFixed(2);
         $("#respuesta_uterina_promedio").trigger("change");
+
     });
 
     $("#respuesta_uterina_izquierda").on("keyup",function(){
-        let ut = pctut(this.value);
+        let valor = this.value
+        valor = valor.toString().replace(/\,/g,'.');
+        valor = Number(valor);
+
+        let ut = pctut(valor);
         the("respuesta_uterina_izquierda_percentil").innerText = ut.pct;
 
-        let aui = parseFloat(this.value);
-        let aud = parseFloat($("#respuesta_uterina_derecha").val());
+        let aui = valor;
+        let aud = the("respuesta_uterina_derecha").value;
+        aud = aud.toString().replace(/\,/g,'.');
+        aud = Number(aui);
+
         let utprom = ((aui + aud) / 2);
         the("respuesta_uterina_promedio").value = utprom.toFixed(2);
         $("#respuesta_uterina_promedio").trigger("change");
+
     });
 
     $("#respuesta_uterina_promedio").on("change",function(){
-        if (Number.isNaN(this.value) == false){
-            let ut = pctut(this.value);
+        if (this.value != ""){
+
+            let ut = this.value
+            vautlor = ut.toString().replace(/\,/g,'.');
+            ut = Number(ut);
+            ut = pctut(this.value);
+
             $("#respuesta_uterina_promedio_percentil").html(ut.pct);
             $("#respuesta_uterina_promedio_rango").val(ut.rango.min + " - " + ut.rango.max);
+
         }
     });
 
@@ -9626,7 +9669,7 @@ function informeDoppler(){
     InformeString = InformeString.replace(":MOTIVO", motivo);
     InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
     InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
-        
+
     InformeString = InformeString.replace(":FUM", fur);
     InformeString = InformeString.replace(":FEXAMEN", fexamen);
     InformeString = InformeString.replace(":EG", eg);
