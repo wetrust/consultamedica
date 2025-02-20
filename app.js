@@ -785,7 +785,7 @@ $( document ).ready(function() {
     });
 
     the("dv").onkeyup = pctdv;
-    
+
     $("#ipau").change( pctau);
     $("#ipacm").change( pctacm);
 
@@ -1866,12 +1866,12 @@ $( document ).ready(function() {
         var edadGestacional = the("semanas").value;
         if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
         if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
-    
+
         var modal = appPesoEG();
-    
+
         document.getElementsByTagName("body")[0].appendChild(modal.modal);
         the("dosdosdos").value = the("pfePctRpt").value
-    
+
         for (var i = 14; i < 41; i++) {
             let semanas = the("cuacuacua");
             let opt = document.createElement('option');
@@ -1879,9 +1879,9 @@ $( document ).ready(function() {
             opt.value = i; 
             semanas.appendChild(opt); 
         }
-    
+
         the("cuacuacua").value = edadGestacional
-    
+
         for (var i = 0; i < 7; i++) {
             let dias = the("papapapa");
             let opt = document.createElement('option');
@@ -1889,11 +1889,11 @@ $( document ).ready(function() {
             opt.value = i; 
             dias.appendChild(opt); 
         }
-    
+
         the("papapapa").value =  the("dias").value
-    
+
         let _grafico = graficoPFEMasMenos()
-    
+
         let _highcharts = {
             chart: {
                 height: 447,
@@ -1993,7 +1993,7 @@ $( document ).ready(function() {
                 name: 'Pct de PFE',
                 dashStyle: "Dot",
                 marker: {
-                    symbol: 'url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktYXN0ZXJpc2siIHZpZXdCb3g9IjAgMCAxNiAxNiI+CiAgICA8cGF0aCBkPSJNOCAwYTEgMSAwIDAgMSAxIDF2NS4yNjhsNC41NjItMi42MzRhMSAxIDAgMSAxIDEgMS43MzJMMTAgOGw0LjU2MiAyLjYzNGExIDEgMCAxIDEtMSAxLjczMkw5IDkuNzMyVjE1YTEgMSAwIDEgMS0yIDBWOS43MzJsLTQuNTYyIDIuNjM0YTEgMSAwIDEgMS0xLTEuNzMyTDYgOCAxLjQzOCA1LjM2NmExIDEgMCAwIDEgMS0xLjczMkw3IDYuMjY4VjFhMSAxIDAgMCAxIDEtMSIvPgogIDwvc3ZnPg==)'
+                    enabled : true,
                 },
                 lineWidth: 0,
                 data: (function () {
@@ -2011,7 +2011,6 @@ $( document ).ready(function() {
                 }())
             }]
         }
-    
 
         let menor = _grafico.valores.uno[0][1]
         let par = false
@@ -2027,6 +2026,7 @@ $( document ).ready(function() {
             menor = Math.trunc(menor / 1000);
             multiplicador = 1000
         }
+
         par = menor % 2;
         par = (par > 0) ? false : true
 
