@@ -784,7 +784,8 @@ $( document ).ready(function() {
         }
     });
 
-    $("#dv").change( pctdv);
+    the("dv").onkeyup = pctdv;
+    
     $("#ipau").change( pctau);
     $("#ipacm").change( pctacm);
 
