@@ -733,7 +733,7 @@ $( document ).ready(function() {
     $("#aud").on("change",function(){
         let ut = pctut(this.value);
         $("#audPct").val(ut.pct);
-        the("audPctTxt").innerText = ut.pct;
+        the("audPctTxt").innerText = "p" + ut.pct;
         $("#audRngo").val(ut.rango.min + " - " + ut.rango.max);
 
         let aui = parseFloat($("#aui").val());
@@ -746,7 +746,7 @@ $( document ).ready(function() {
     $("#aui").on("change",function(){
         let ut = pctut(this.value);
         $("#auiPct").val(ut.pct);
-        the("auiPctTxt").innerText = ut.pct;
+        the("auiPctTxt").innerText = "p" + ut.pct;
         $("#auiRngo").val(ut.rango.min + " - " + ut.rango.max);
 
         let aui = parseFloat(this.value);
@@ -759,7 +759,7 @@ $( document ).ready(function() {
     $("#auprom").on("change",function(){
         if (this.value > 0){
             let ut = pctut(this.value);
-            the("auPctTxt").innerText = ut.pct;
+            the("auPctTxt").innerText = "p" + ut.pct;
             $("#auRngo").val(ut.rango.min + " - " + ut.rango.max);
         }
     });
