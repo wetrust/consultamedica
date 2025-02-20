@@ -733,9 +733,8 @@ $( document ).ready(function() {
     $("#aud").on("change",function(){
         let ut = pctut(this.value);
         $("#audPct").val(ut.pct);
-        $("#audPctTxt").val(ut.pct);
+        the("audPctTxt").innerText = ut.pct;
         $("#audRngo").val(ut.rango.min + " - " + ut.rango.max);
-        ajustarProgreso(ut.raw, "audPct");
 
         let aui = parseFloat($("#aui").val());
         let aud = parseFloat(this.value);
@@ -747,9 +746,8 @@ $( document ).ready(function() {
     $("#aui").on("change",function(){
         let ut = pctut(this.value);
         $("#auiPct").val(ut.pct);
-        $("#auiPctTxt").val(ut.pct);
+        the("auiPctTxt").innerText = ut.pct;
         $("#auiRngo").val(ut.rango.min + " - " + ut.rango.max);
-        ajustarProgreso(ut.raw, "auiPct");
 
         let aui = parseFloat(this.value);
         let aud = parseFloat($("#aud").val());
@@ -761,9 +759,8 @@ $( document ).ready(function() {
     $("#auprom").on("change",function(){
         if (this.value > 0){
             let ut = pctut(this.value);
-            $("#auPctTxt").val(ut.pct);
+            the("auPctTxt").innerText = ut.pct;
             $("#auRngo").val(ut.rango.min + " - " + ut.rango.max);
-            ajustarProgreso(ut.raw, "auPct");
         }
     });
 
@@ -2058,7 +2055,8 @@ $( document ).ready(function() {
                 yAxis: {
                     title: { text: 'Gramos' },
                     min: 200,
-                    max: 2000
+                    max: 2000,
+                    tickInterval:200,
                 },
                 xAxis: {
                     categories: [],
@@ -2150,6 +2148,33 @@ $( document ).ready(function() {
                     }())
                 }]
             }
+
+            let menor = _grafico.valores.uno[0][1]
+            let par = false
+            let multiplicador = 0
+
+            if (menor < 100){
+                menor = Math.trunc(menor / 10);
+                multiplicador = 10
+            }else if (menor < 1000){
+                menor = Math.trunc(menor / 100);
+                multiplicador = 100
+            }else if (menor < 10000){
+                menor = Math.trunc(menor / 1000);
+                multiplicador = 1000
+            }
+            par = menor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _highcharts.yAxis.min = menor * multiplicador
+            }else{
+                if (menor > 1){
+                    _highcharts.yAxis.min = (menor-1) * multiplicador  
+                }else{
+                    _highcharts.yAxis.min = 0
+                }
+            }
     
             _highcharts.series[8].data = _grafico.valores.uno
             _highcharts.series[7].data = _grafico.valores.dos
@@ -2197,7 +2222,11 @@ $( document ).ready(function() {
                         pointInterval: 1
                     }
                 },
-                yAxis: { title: { text: 'Gramos' }, min: 200,max: 2000 },
+                yAxis: { title: { text: 'Gramos' },
+                    min: 200,
+                    max: 2000,
+                    tickInterval:200
+                },
                 xAxis: {
                     categories: [],
                     showEmpty:true
@@ -2287,6 +2316,33 @@ $( document ).ready(function() {
                         return data;
                     }())
                 }]
+            }
+
+            let menor = _grafico.valores.uno[0][1]
+            let par = false
+            let multiplicador = 0
+
+            if (menor < 100){
+                menor = Math.trunc(menor / 10);
+                multiplicador = 10
+            }else if (menor < 1000){
+                menor = Math.trunc(menor / 100);
+                multiplicador = 100
+            }else if (menor < 10000){
+                menor = Math.trunc(menor / 1000);
+                multiplicador = 1000
+            }
+            par = menor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _highcharts.yAxis.min = menor * multiplicador
+            }else{
+                if (menor > 1){
+                    _highcharts.yAxis.min = (menor-1) * multiplicador  
+                }else{
+                    _highcharts.yAxis.min = 0
+                }
             }
     
             _highcharts.series[8].data = _grafico.valores.uno
@@ -4345,174 +4401,6 @@ $( document ).ready(function() {
         });
     });
 
-    $("#graficoAud").on( 'click', function() {
-        var edadGestacional = the("semanas").value;
-
-        if (edadGestacional < 10){
-            alert("Edad Gestacional inferior a 10 semanas");
-            return false;
-        }
-
-        var modal = makeModal();
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Gráfico Arteria Uterina Derecha";
-        the(modal.contenido).innerHTML = '<div id="graficoArtUtDerView"></div>';
-
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
-
-        $('#graficoArtUtDerView').highcharts({
-            title: {
-                text: 'IP Arterias Uterinas Derecha',
-                x: -20,
-                    style: {
-                    fontSize: '10px'
-                }
-            },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false
-                }
-            },
-            yAxis: {
-                title: { text: 'Valor IP' },
-                tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
-            },
-            colors: ['#313131', '#313131', '#313131'],
-            xAxis: {
-                categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
-            },
-            credits: { enabled: false },
-            series: [{
-                type: "line",
-                name: 'Pct. 5',
-                marker: { enabled: false },
-                data: [1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47]
-            }, {
-                type: "line",
-                name: 'Pct. 95',
-                marker: { enabled: false },
-                data: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
-            }, {
-                type: "line",
-                    name: 'Arteria Promedio',
-                    dashStyle: "Dot",
-                    marker: { symbol: 'square' },
-                    lineWidth: 0,
-                data: (function () {
-                        // generate an array of random data
-                        var data = [];
-                        var edadGest = the("semanas").value;
-                        for (i = 10; i < edadGest; i ++ ) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
-                        var aud = $("#aud").val();
-                        aud = aud.toString();
-                        aud = aud.replace(",", ".");
-                        aud = parseFloat(aud);
-                        
-                        data.push({
-                                y: aud,
-                            });
-                        for (i = (edadGest +1); i < 39; i ++ ) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
-                        return data;
-                    }())
-                }]
-        });
-    });
-
-    $("#graficoAui").on( 'click', function() {
-        var edadGestacional = the("semanas").value;
-
-        if (edadGestacional < 10){
-            alert("Edad Gestacional inferior a 10 semanas");
-            return false;
-        }
-
-        var modal = makeModal();
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Gráfico Arteria Uterina Izquierda";
-        the(modal.contenido).innerHTML = '<div id="graficoArtUtIzqView"></div>';
-
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
-
-        $('#graficoArtUtIzqView').highcharts({
-            title: {
-                text: 'IP Arterias Uterinas Izquierda',
-                x: -20,
-                    style: {
-                fontSize: '10px'
-            }
-            },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false
-                }
-            },
-            yAxis: {
-                title: { text: 'Valor IP' },
-                tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
-            },
-            colors: ['#313131', '#313131', '#313131'],
-            xAxis: {
-                categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
-            },
-            credits: { enabled: false },
-            series: [{
-                type: "line",
-                name: 'Pct. 5',
-                marker: { enabled: false },
-                data: [1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47]
-            }, {
-                type: "line",
-                name: 'Pct. 95',
-                marker: { enabled: false },
-                data: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
-            }, {
-                type: "line",
-                    name: 'Arteria Promedio',
-                    dashStyle: "Dot",
-                    marker: { symbol: 'square' },
-                    lineWidth: 0,
-                data: (function () {
-                        // generate an array of random data
-                        var data = [];
-                        var edadGest = the("semanas").value;
-    
-                        for (i = 10; i < edadGest; i ++ ) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
-                        
-                        var aui = $("#aui").val();
-                        aui = aui.toString();
-                        aui = aui.replace(",", ".");
-                        aui = parseFloat(aui);
-                        
-                        data.push({
-                                y: aui,
-                            });
-                        for (i = (edadGest +1); i < 40; i ++ ) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
-                        return data;
-                    }())
-                }]
-        });
-    });
-
     $("#graficoAu").on( 'click', function() {
         var edadGestacional = the("semanas").value;
 
@@ -5037,7 +4925,7 @@ $( document ).ready(function() {
 
         if(typeof comentarios == 'undefined'){
         if ($('#auprom').val() > 0){
-            comentarios = 'F. Doppler materno (promedio uterinas), IP percentil ' + $('#auPctTxt').val() + '<br />';
+            comentarios = 'F. Doppler materno (promedio uterinas), IP percentil ' + the("auPctTxt").innerText + '<br />';
         }
         if ($('#ipau').val() > 0){
             comentarios = comentarios + 'F. Doppler fetal, IP de CCP percentil ' + $('#ccpPctTxt').val() + '<br />';
@@ -9632,7 +9520,7 @@ function informeDoppler(){
     var ubicacion = the("ubicacion-doppler").value;
     var liquido = the("liqAmnioDoppler").value;
     var ud = the("aud").value;
-    var udTxt = the("audPctTxt").value;
+    var udTxt = the("audPctTxt").innerText;
 
     let tmpData = "";
 
@@ -9644,7 +9532,7 @@ function informeDoppler(){
     var udRgo = oldProgress(tmpData);
 
     var ui = the("aui").value;
-    var uiTxt = the("auiPctTxt").value;
+    var uiTxt = the("auiPctTxt").innerText;
     if (uiTxt == "&gt; 95" || uiTxt == "&lt; 5"){
         tmpData = 0;
     }else{
@@ -9653,11 +9541,11 @@ function informeDoppler(){
     var uiRgo = oldProgress(tmpData);
 
     var uprom = '<strong>' + the("auprom").value + '</strong>';
-    var upromTxt = '<strong>' + the("auPctTxt").value + '</strong>';
-    if (the("auPctTxt").value == "&gt; 95" || the("auPctTxt").value == "&lt; 5"){
+    var upromTxt = '<strong>' + the("auPctTxt").innerText + '</strong>';
+    if (the("auPctTxt").innerText == "&gt; 95" || the("auPctTxt").innerText == "&lt; 5"){
         tmpData = 0;
     }else{
-        tmpData = the("auPctTxt").value;
+        tmpData = the("auPctTxt").innerText;
     }
     var upromRgo = oldProgress(tmpData);
 
@@ -9802,7 +9690,7 @@ function informeDopplerClon(){
     var ubicacion = the("ubicacion-doppler").value;
     var liquido = the("liqAmnioDoppler").value;
     var ud = the("aud").value;
-    var udTxt = the("audPctTxt").value;
+    var udTxt = the("audPctTxt").innerText;
 
     let tmpData = "";
 
@@ -9814,7 +9702,7 @@ function informeDopplerClon(){
     var udRgo = oldProgress(tmpData);
 
     var ui = the("aui").value;
-    var uiTxt = the("auiPctTxt").value;
+    var uiTxt = the("auiPctTxt").innerText;
     if (uiTxt == "&gt; 95" || uiTxt == "&lt; 5"){
         tmpData = 0;
     }else{
@@ -9823,11 +9711,11 @@ function informeDopplerClon(){
     var uiRgo = oldProgress(tmpData);
 
     var uprom = '<strong>' + the("auprom").value + '</strong>';
-    var upromTxt = '<strong>' + the("auPctTxt").value + '</strong>';
-    if (the("auPctTxt").value == "&gt; 95" || the("auPctTxt").value == "&lt; 5"){
+    var upromTxt = '<strong>' + the("auPctTxt").innerText + '</strong>';
+    if (the("auPctTxt").innerText == "&gt; 95" || the("auPctTxt").innerText == "&lt; 5"){
         tmpData = 0;
     }else{
-        tmpData = the("auPctTxt").value;
+        tmpData = the("auPctTxt").innerText;
     }
     var upromRgo = oldProgress(tmpData);
 
