@@ -2171,9 +2171,7 @@ $( document ).ready(function() {
                     type: "line",
                     name: 'Pct de PFE',
                     dashStyle: "Dot",
-                    marker: {
-                        symbol: 'url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktYXN0ZXJpc2siIHZpZXdCb3g9IjAgMCAxNiAxNiI+CiAgICA8cGF0aCBkPSJNOCAwYTEgMSAwIDAgMSAxIDF2NS4yNjhsNC41NjItMi42MzRhMSAxIDAgMSAxIDEgMS43MzJMMTAgOGw0LjU2MiAyLjYzNGExIDEgMCAxIDEtMSAxLjczMkw5IDkuNzMyVjE1YTEgMSAwIDEgMS0yIDBWOS43MzJsLTQuNTYyIDIuNjM0YTEgMSAwIDEgMS0xLTEuNzMyTDYgOCAxLjQzOCA1LjM2NmExIDEgMCAwIDEgMS0xLjczMkw3IDYuMjY4VjFhMSAxIDAgMCAxIDEtMSIvPgogIDwvc3ZnPg==)'
-                    },
+                    marker: { enabled : true },
                     lineWidth: 0,
                     data: (function () {
                         var data = [[0,1]];
@@ -2340,9 +2338,7 @@ $( document ).ready(function() {
                     type: "line",
                     name: 'Pct de PFE',
                     dashStyle: "Dot",
-                    marker: {
-                        symbol: 'url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktYXN0ZXJpc2siIHZpZXdCb3g9IjAgMCAxNiAxNiI+CiAgICA8cGF0aCBkPSJNOCAwYTEgMSAwIDAgMSAxIDF2NS4yNjhsNC41NjItMi42MzRhMSAxIDAgMSAxIDEgMS43MzJMMTAgOGw0LjU2MiAyLjYzNGExIDEgMCAxIDEtMSAxLjczMkw5IDkuNzMyVjE1YTEgMSAwIDEgMS0yIDBWOS43MzJsLTQuNTYyIDIuNjM0YTEgMSAwIDEgMS0xLTEuNzMyTDYgOCAxLjQzOCA1LjM2NmExIDEgMCAwIDEgMS0xLjczMkw3IDYuMjY4VjFhMSAxIDAgMCAxIDEtMSIvPgogIDwvc3ZnPg==)'
-                    },
+                    marker: { enabled : true },
                     lineWidth: 0,
                     data: (function () {
                         var data = [[0,1]];

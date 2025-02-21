@@ -146,7 +146,7 @@ function crearGrafico(){
             type: "line",
             name: 'Peso estimado',
             dashStyle: "Dot",
-            marker: {symbol:'circle'},
+            marker: { enabled : true },
             lineWidth: 0,
             data: (function () {
                 var data = [[0,1]];
