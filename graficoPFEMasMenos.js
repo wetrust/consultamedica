@@ -1,5 +1,11 @@
 import { the, these } from './wetrust.js'
 
+var MAX_SAFE_INTEGER = 9007199254740991; // Math.pow(2, 53) - 1;
+
+function isSafeInteger(value) {
+   return Number.isInteger(value) && Math.abs(value) <= MAX_SAFE_INTEGER;
+};
+
 export function graficoPFEMasMenos(){
 
     let tramo = calcularDosMenos(Number(the("semanas").value));
@@ -9,7 +15,7 @@ export function graficoPFEMasMenos(){
 
         let EG = tramo[i];
 
-        if (Number(EG).isSafeInteger() == false){
+        if (isSafeInteger(EG) == false){
             EG = Number(the("semanas").value) + (0 + (Number(((number - Math.trunc(number)) *10).toFixed(0)) || 0)) / 7;
         }        
 
