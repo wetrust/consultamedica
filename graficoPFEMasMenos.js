@@ -3,12 +3,15 @@ import { the, these } from './wetrust.js'
 export function graficoPFEMasMenos(){
 
     let tramo = calcularDosMenos(Number(the("semanas").value));
-
     let valores = {"uno" : [], "dos" : [], "tres" : [], "cuatro" : [], "cinco" : [], "seis" : [], "siete" : [], "ocho" : [], "nueve" : []};
 
     for (let i = 0; i < tramo.length; i++) {
 
         let EG = tramo[i];
+
+        if (EG.isSafeInteger() == false){
+            EG = Number(the("semanas").value) + (0 + (Number(((number - Math.trunc(number)) *10).toFixed(0)) || 0)) / 7;
+        }        
 
         let pUno = Math.exp(-.230518383014592 + EG * (.400511116318458 + EG * (-.00617993235833267 + EG * (316595762972649e-19 + EG * 0))))
         let pDos = Math.exp(-.162057103557898 + EG * (.393965369913166 + EG * (-.00579733056422172 + EG * (255319128239087e-19 + EG * 0))))
@@ -19,7 +22,7 @@ export function graficoPFEMasMenos(){
         let pSiete = Math.exp(.353142227490073 + EG * (.376486874470206 + EG * (-.00528742945785833 + EG * (214760212556463e-19 + EG * 0))))
         let pOcho = Math.exp(.285025055968914 + EG * (.390621472299378 + EG * (-.00582929182402995 + EG * (279088693116937e-19 + EG * 0))))
         let pNueve = Math.exp(.408170594889372 + EG * (.381068214664342 + EG * (-.00550913922743603 + EG * (246713147783532e-19 + EG * 0))))
-    
+
         let sexo = these("sexsexsex")
         sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
 
@@ -80,7 +83,6 @@ export function graficoPFEMasMenos(){
 
         caja[1] = pNueve
         valores.nueve.push(structuredClone(caja));
-
     }
 
     let dias = Number(the("dias").value)
@@ -142,15 +144,33 @@ function calcularDosMenos(eg){
 
     if (eg == 14){
 
-        tramo = [14,15,16];
+        if (dias > 0){
+            tramo = [14,14.1,14.2,14.3,14.4,14.5,14.6,15,16];
+        }else{
+            tramo = [14,15,16];
+        }
+
 
     }else if (eg == 40){
 
-        tramo = [38,39,40];
+        if (dias > 0){
+            tramo = [38,39,40,40.1,40.2,40.3,40.4,40.5,40.6];
+        }else{
+            tramo = [38,39,40];
+        }
 
     }else{
 
         tramo = [eg];
+        if (dias > 0){
+            tramo.push(eg + 0.1)
+            tramo.push(eg + 0.2)
+            tramo.push(eg + 0.3)
+            tramo.push(eg + 0.4)
+            tramo.push(eg + 0.5)
+            tramo.push(eg + 0.6)
+        }
+
         eg--
         if (eg >= 14){
             tramo.push(eg)
@@ -170,7 +190,6 @@ function calcularDosMenos(eg){
         if (eg <= 41){
             tramo.push(eg)
         }
-
     }
 
     tramo.sort((a, b) => a - b);
