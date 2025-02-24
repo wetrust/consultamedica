@@ -143,6 +143,7 @@ export function graficoPFEMasMenos(){
 function calcularDosMenos(eg){
 
     let tramo = [];
+    let dias = Number(the("dias").value)
 
     if (eg == 14){
 
