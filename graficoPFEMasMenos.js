@@ -9,7 +9,7 @@ export function graficoPFEMasMenos(){
 
         let EG = tramo[i];
 
-        if (EG.isSafeInteger() == false){
+        if (Number(EG).isSafeInteger() == false){
             EG = Number(the("semanas").value) + (0 + (Number(((number - Math.trunc(number)) *10).toFixed(0)) || 0)) / 7;
         }        
 
