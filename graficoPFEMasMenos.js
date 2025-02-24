@@ -13,7 +13,7 @@ export function graficoPFEMasMenos(){
     for (let i = 0; i < tramo.length; i++) {
 
         let EG = tramo[i];
-        if (isSafeInteger(EG) == false){ EG = Number(EG) + (0 + (Number((EG + "").split(".")[1]) || 0)) / 7; }
+        if (isSafeInteger(EG) == false){ EG = Number(EG) + (0 + (Number(EG + "").split(".")[1]) || 0) / 7; }
 
         let pUno = Math.exp(-.230518383014592 + EG * (.400511116318458 + EG * (-.00617993235833267 + EG * (316595762972649e-19 + EG * 0))))
         let pDos = Math.exp(-.162057103557898 + EG * (.393965369913166 + EG * (-.00579733056422172 + EG * (255319128239087e-19 + EG * 0))))
