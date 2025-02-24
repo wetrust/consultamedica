@@ -3,6 +3,13 @@ import { the, inputDate, these, humanDate } from './wetrust.js'
 import { appPesoEG } from './app.pesoEG.js?d'
 import { graficoPFEMasMenos, percentilOMS } from './graficoPFEMasMenos.js'
 
+if (!Number.MAX_SAFE_INTEGER) {
+    Number.MAX_SAFE_INTEGER = 9007199254740991; // Math.pow(2, 53) - 1;
+}
+Number.isSafeInteger = Number.isSafeInteger || function (value) {
+   return Number.isInteger(value) && Math.abs(value) <= Number.MAX_SAFE_INTEGER;
+};
+
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
