@@ -1,5 +1,5 @@
 import { the } from './wetrust.js'
-import { graficoPFEMasMenos } from './graficoPFEMasMenos.js'
+import { graficoPFEMasMenos } from './graficoPFEMasMenos.js?H'
 //import { Highcharts } from './js/highcharts.js'
 
 function contenedor(){
