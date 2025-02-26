@@ -227,7 +227,7 @@ function calcularDosMenos(eg){
         }
     }
 
-    tramo.sort((a, b) => a - b);
+    tramo.sort((a, b) => {return a - b})
 
     return tramo;
 
