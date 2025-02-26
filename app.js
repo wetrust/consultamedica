@@ -1991,7 +1991,7 @@ $( document ).ready(function() {
             }]
         }
 
-        let menor = _grafico.valores.uno[0][1]
+        let menor = _grafico.valores.uno[0]
         let par = false
         let multiplicador = 0
 
@@ -2151,7 +2151,7 @@ $( document ).ready(function() {
                 }]
             }
 
-            let menor = _grafico.valores.uno[0][1]
+            let menor = _grafico.valores.uno[0]
             let par = false
             let multiplicador = 0
 
@@ -2299,7 +2299,7 @@ $( document ).ready(function() {
                 }]
             }
 
-            let menor = _grafico.valores.uno[0][1]
+            let menor = _grafico.valores.uno[0]
             let par = false
             let multiplicador = 0
 
