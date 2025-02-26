@@ -105,12 +105,12 @@ export function graficoPFEMasMenos(){
         }else{
 
             for (let i = 0; i < _tramo.length; i++) {
-                tramo.push(_tramo[i] + _dias[0])
-                tramo.push(_tramo[i] + _dias[1])
-                tramo.push(_tramo[i] + _dias[2])
-                tramo.push(_tramo[i] + _dias[3])
-                tramo.push(_tramo[i] + _dias[4])
-                tramo.push(_tramo[i] + _dias[5])
+                tramo.push(Number(_tramo[i] + _dias[0]))
+                tramo.push(Number(_tramo[i] + _dias[1]))
+                tramo.push(Number(_tramo[i] + _dias[2]))
+                tramo.push(Number(_tramo[i] + _dias[3]))
+                tramo.push(Number(_tramo[i] + _dias[4]))
+                tramo.push(Number(_tramo[i] + _dias[5]))
             }
 
         }
