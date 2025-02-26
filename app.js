@@ -1988,25 +1988,6 @@ $( document ).ready(function() {
                 dashStyle: "Dot",
                 marker: {enabled: false},
                 data: []
-            }, {
-                type: "line",
-                name: 'Pct de PFE',
-                dashStyle: "Dot",
-                marker: { enabled : true },
-                lineWidth: 0,
-                data: (function () {
-                    var data = [[0,1]];
-                    data[0][0] = parseInt(the("semanas").value);
-
-                    if (the("dias").value > 0){
-                        data[0][0] += "." + the("dias").value; 
-                        data[0][0] = parseFloat(data[0][0])
-                    }
-
-                    data[0][1] = parseFloat(the("pfe").value);
-
-                    return data;
-                }())
             }]
         }
 
@@ -2167,25 +2148,6 @@ $( document ).ready(function() {
                     dashStyle: "Dot",
                     marker: {enabled: false},
                     data: []
-                },  {
-                    type: "line",
-                    name: 'Pct de PFE',
-                    dashStyle: "Dot",
-                    marker: { enabled : true },
-                    lineWidth: 0,
-                    data: (function () {
-                        var data = [[0,1]];
-                        data[0][0] = parseInt(the("cuacuacua").value);
-        
-                        if (the("papapapa").value > 0){
-                            data[0][0] += "." + the("papapapa").value; 
-                            data[0][0] = parseFloat(data[0][0])
-                        }
-        
-                        data[0][1] = parseFloat(the("unounouno").value);
-        
-                        return data;
-                    }())
                 }]
             }
 
@@ -2334,25 +2296,6 @@ $( document ).ready(function() {
                     dashStyle: "Dot",
                     marker: {enabled: false},
                     data: []
-                },  {
-                    type: "line",
-                    name: 'Pct de PFE',
-                    dashStyle: "Dot",
-                    marker: { enabled : true },
-                    lineWidth: 0,
-                    data: (function () {
-                        var data = [[0,1]];
-                        data[0][0] = parseInt(the("cuacuacua").value);
-        
-                        if (the("papapapa").value > 0){
-                            data[0][0] += "." + the("papapapa").value; 
-                            data[0][0] = parseFloat(data[0][0])
-                        }
-        
-                        data[0][1] = parseFloat(the("unounouno").value);
-        
-                        return data;
-                    }())
                 }]
             }
 
