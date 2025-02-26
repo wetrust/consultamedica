@@ -91,9 +91,7 @@ export function graficoPFEMasMenos(){
 
     if (dias > 0) {
 
-        let total = tramo.length
-
-        let indice = tramo.indexOf(edadGestacional)
+        let _tramo = structuredClone(tramo)
         let _dias = [0.1,0.2,0.3,0.4,0.5,0.6]
 
         if (edadGestacional == 14){
@@ -106,29 +104,14 @@ export function graficoPFEMasMenos(){
     
         }else{
 
-            _dias[0] += parseInt(edadGestacional)
-            _dias[1] += parseInt(edadGestacional)
-            _dias[2] += parseInt(edadGestacional)
-            _dias[3] += parseInt(edadGestacional)
-            _dias[4] += parseInt(edadGestacional)
-            _dias[5] += parseInt(edadGestacional)
-
-            if ((indice+1) == total){
-
-                tramo = tramo.concat(_dias)
-
-            }else if (indice == 0){
-                tramo = _dias.concat(tramo)
-            }else{
-                let unPart = tramo.splice(indice +1);
-                let doPart = tramo;
-
-                tramo = doPart.concat(_dias)
-                tramo = tramo.concat(unPart)
-
-                tramo.sort((a, b) => a - b);
+            for (let i = 0; i < _tramo.length; i++) {
+                tramo.push(_tramo[i] + _dias[0])
+                tramo.push(_tramo[i] + _dias[1])
+                tramo.push(_tramo[i] + _dias[2])
+                tramo.push(_tramo[i] + _dias[3])
+                tramo.push(_tramo[i] + _dias[4])
+                tramo.push(_tramo[i] + _dias[5])
             }
-
 
         }
 
