@@ -105,7 +105,7 @@ export function graficoPFEMasMenos(){
     //    }else{
 
             for (let i = 0; i < _tramo.length; i++) {
-                tramo[i] = Number(tramo[i]).toString()
+                tramo[i] = tramo[i]
     //            tramo.push(Number(_tramo[i] + _dias[1]))
     //            tramo.push(Number(_tramo[i] + _dias[2]))
     //            tramo.push(Number(_tramo[i] + _dias[3]))
