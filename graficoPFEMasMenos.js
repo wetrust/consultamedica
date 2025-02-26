@@ -60,31 +60,31 @@ export function graficoPFEMasMenos(){
         let caja = [tramo[i],0]
 
         caja[1] = pUno
-        valores.uno.push(structuredClone(caja));
+        valores.uno.push(pUno);
 
         caja[1] = pDos
-        valores.dos.push(structuredClone(caja));
+        valores.dos.push(pDos);
 
         caja[1] = pTres
-        valores.tres.push(structuredClone(caja));
+        valores.tres.push(pTres);
 
         caja[1] = pCuatro
-        valores.cuatro.push(structuredClone(caja));
+        valores.cuatro.push(pCuatro);
 
         caja[1] = pCinco
-        valores.cinco.push(structuredClone(caja));
+        valores.cinco.push(pCinco);
 
         caja[1] = pSeis
-        valores.seis.push(structuredClone(caja));
+        valores.seis.push(pSeis);
 
         caja[1] = pSiete
-        valores.siete.push(structuredClone(caja));
+        valores.siete.push(pSiete);
 
         caja[1] = pOcho
-        valores.ocho.push(structuredClone(caja));
+        valores.ocho.push(pOcho);
 
         caja[1] = pNueve
-        valores.nueve.push(structuredClone(caja));
+        valores.nueve.push(pNueve);
     }
 
     //let dias = Number(the("dias").value)
