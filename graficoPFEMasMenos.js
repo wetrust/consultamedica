@@ -12,7 +12,7 @@ export function graficoPFEMasMenos(){
 
     for (let i = 0; i < tramo.length; i++) {
 
-        let EG = tramo[i];
+        let EG = structuredClone(tramo[i]);
         if (isSafeInteger(EG) == false){ EG = Number(Math.trunc(EG)) + (0 + (Number((EG + "").split(".")[1])) || 0) / 7; }
 
         let pUno = Math.exp(-.230518383014592 + EG * (.400511116318458 + EG * (-.00617993235833267 + EG * (316595762972649e-19 + EG * 0))))
