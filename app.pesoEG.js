@@ -142,25 +142,6 @@ function crearGrafico(){
             dashStyle: "Dot",
             marker: {enabled: false},
             data: []
-        },  {
-            type: "line",
-            name: 'Peso estimado',
-            dashStyle: "Dot",
-            marker: { enabled : true },
-            lineWidth: 0,
-            data: (function () {
-                var data = [[0,1]];
-                data[0][0] = parseInt(the("semanas").value);
-
-                if (the("dias").value > 0){
-                    data[0][0] += "." + the("dias").value; 
-                    data[0][0] = parseFloat(data[0][0])
-                }
-
-                data[0][1] = parseFloat(the("pfe").value);
-
-                return data;
-            }())
         }]
     }
 
