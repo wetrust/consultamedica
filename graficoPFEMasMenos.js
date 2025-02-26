@@ -91,7 +91,7 @@ export function graficoPFEMasMenos(){
 
     //if (dias > 0) {
 
-    //    let _tramo = structuredClone(tramo)
+        let _tramo = structuredClone(tramo)
     //    let _dias = [0.1,0.2,0.3,0.4,0.5,0.6]
 
     //    if (edadGestacional == 14){
@@ -104,14 +104,14 @@ export function graficoPFEMasMenos(){
 
     //    }else{
 
-    //        for (let i = 0; i < _tramo.length; i++) {
-    //            tramo.push(Number(_tramo[i] + _dias[0]))
+            for (let i = 0; i < _tramo.length; i++) {
+                tramo[i] = Number(tramo[i]).toString()
     //            tramo.push(Number(_tramo[i] + _dias[1]))
     //            tramo.push(Number(_tramo[i] + _dias[2]))
     //            tramo.push(Number(_tramo[i] + _dias[3]))
     //            tramo.push(Number(_tramo[i] + _dias[4]))
     //            tramo.push(Number(_tramo[i] + _dias[5]))
-    //        }
+            }
 
     //    }
 
