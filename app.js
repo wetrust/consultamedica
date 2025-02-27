@@ -1896,13 +1896,10 @@ $( document ).ready(function() {
 
         let _highcharts = {
             title: {
-                text: '<small>Peso Fetal Estimado ( gramos )</small>',
-                x: -20, //center
-                useHTML: true
+                text: '<small>Peso Fetal Estimado ( gramos )</small>', x: -20, useHTML: true
             },
             subtitle: {
-                text: '',
-                x: -20
+                text: '', x: -20
             },
             plotOptions: {
                 series: {
@@ -1918,7 +1915,9 @@ $( document ).ready(function() {
             },
             xAxis: {
                 categories: [],
-                showEmpty:true
+                showEmpty: true,
+                min: undefined,
+                max: undefined
             },
             legend: {
                 layout: 'vertical',
@@ -2022,7 +2021,6 @@ $( document ).ready(function() {
             }
         }
 
-
         if (mayor > 100){
             mayor = Math.trunc(mayor / 10);
             multiplicador = 10
@@ -2058,13 +2056,18 @@ $( document ).ready(function() {
         _highcharts.series[0].data = _grafico.valores.nueve
         _highcharts.xAxis.categories = _grafico.semanas
 
+        if(the("dias").value == 0){
+            _highcharts.xAxis.min = _grafico.semanas[0]
+            _highcharts.xAxis.max = _grafico.semanas[ _grafico.semanas.length-1]
+        }
+
         _highcharts.title.text = "";
-    
+
         the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
         $('#graficoPFEDinamico').highcharts(_highcharts);
-    
+
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-    
+
         the("cuacuacua").onchange = function() {
     
             the("semanas").value = the("cuacuacua").value
@@ -2107,7 +2110,9 @@ $( document ).ready(function() {
                 },
                 xAxis: {
                     categories: [],
-                    showEmpty:true
+                    showEmpty: true,
+                    min: undefined,
+                    max: undefined
                 },
                 legend: {
                     layout: 'vertical',
@@ -2249,9 +2254,14 @@ $( document ).ready(function() {
             _highcharts.title.text = ""
             the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
     
+            if(the("dias").value == 0){
+                _highcharts.xAxis.min = _grafico.semanas[0]
+                _highcharts.xAxis.max = _grafico.semanas[ _grafico.semanas.length-1]
+            }
+
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
-    
+
         the("papapapa").onchange = function() {
     
             the("semanas").value = the("cuacuacua").value
@@ -2288,7 +2298,9 @@ $( document ).ready(function() {
                 },
                 xAxis: {
                     categories: [],
-                    showEmpty:true
+                    showEmpty: true,
+                    min: undefined,
+                    max: undefined
                 },
                 legend: {
                     layout: 'vertical',
@@ -2429,14 +2441,18 @@ $( document ).ready(function() {
             _highcharts.title.text = "";
             the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
     
+            if(the("dias").value == 0){
+                _highcharts.xAxis.min = _grafico.semanas[0]
+                _highcharts.xAxis.max = _grafico.semanas[ _grafico.semanas.length-1]
+            }
+
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
-    
+
         let _sexo = these("sexsexsex")
         _sexo = _sexo.forEach(alter => { alter.onchange = the("cuacuacua").onchange })
-    
+
         the("unounouno").onkeyup = the("cuacuacua").onchange
-    
         the("goto.doppler.grafico").dataset.modal = modal.id
         the("goto.doppler.grafico").onclick = function(){
             //si va de primer trimestre a ginecologico, cambiar el volver para que regrese a
