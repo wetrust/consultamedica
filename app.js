@@ -1916,8 +1916,8 @@ $( document ).ready(function() {
             xAxis: {
                 categories: [],
                 showEmpty: true,
-                min: undefined,
-                max: undefined
+                showFirstLabel: true,
+                showLastLabel: true
             },
             legend: {
                 layout: 'vertical',
@@ -2111,8 +2111,8 @@ $( document ).ready(function() {
                 xAxis: {
                     categories: [],
                     showEmpty: true,
-                    min: undefined,
-                    max: undefined
+                    showFirstLabel: true,
+                    showLastLabel: true
                 },
                 legend: {
                     layout: 'vertical',
@@ -2299,8 +2299,8 @@ $( document ).ready(function() {
                 xAxis: {
                     categories: [],
                     showEmpty: true,
-                    min: undefined,
-                    max: undefined
+                    showFirstLabel: true,
+                    showLastLabel: true
                 },
                 legend: {
                     layout: 'vertical',
