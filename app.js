@@ -2026,9 +2026,8 @@ $( document ).ready(function() {
             }
         }
         let eg = Number(the("semanas").value + "." + the("dias").value);
-        let indice = _grafico.semanas.indexOf(eg)
 
-        _highcharts.series[9].data = [eg,parseFloat(the("pfe").value)]
+        _highcharts.series[9].data = [[eg,parseFloat(the("pfe").value)]]
         _highcharts.series[8].data = _grafico.valores.uno
         _highcharts.series[7].data = _grafico.valores.dos
         _highcharts.series[6].data = _grafico.valores.tres
@@ -2199,9 +2198,8 @@ $( document ).ready(function() {
             }
         
             eg = Number(the("semanas").value + "." + the("dias").value);
-            let indice = _grafico.semanas.indexOf(eg)
 
-            _highcharts.series[9].data = [indice,parseFloat(the("pfe").value)]
+            _highcharts.series[9].data = [[eg,parseFloat(the("pfe").value)]]
             _highcharts.series[8].data = _grafico.valores.uno
             _highcharts.series[7].data = _grafico.valores.dos
             _highcharts.series[6].data = _grafico.valores.tres
@@ -2358,9 +2356,8 @@ $( document ).ready(function() {
             }
 
             eg = Number(the("semanas").value + "." + the("dias").value);
-            let indice = _grafico.semanas.indexOf(eg)
 
-            _highcharts.series[9].data = [indice,parseFloat(the("pfe").value)]
+            _highcharts.series[9].data = [[eg,parseFloat(the("pfe").value)]]
             _highcharts.series[8].data = _grafico.valores.uno
             _highcharts.series[7].data = _grafico.valores.dos
             _highcharts.series[6].data = _grafico.valores.tres
