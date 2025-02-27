@@ -1988,6 +1988,13 @@ $( document ).ready(function() {
                 dashStyle: "Dot",
                 marker: {enabled: false},
                 data: []
+            },  {
+                type: "line",
+                name: 'Peso estimado',
+                dashStyle: "Dot",
+                marker: { enabled : true },
+                lineWidth: 0,
+                data: []
             }]
         }
 
@@ -2019,6 +2026,9 @@ $( document ).ready(function() {
             }
         }
 
+        let indice = _grafico.semanas.indexOf(edadGestacional)
+
+        _highcharts.series[9].data = [indice,parseFloat(the("pfe").value)]
         _highcharts.series[8].data = _grafico.valores.uno
         _highcharts.series[7].data = _grafico.valores.dos
         _highcharts.series[6].data = _grafico.valores.tres
@@ -2029,6 +2039,9 @@ $( document ).ready(function() {
         _highcharts.series[1].data = _grafico.valores.ocho
         _highcharts.series[0].data = _grafico.valores.nueve
         _highcharts.xAxis.categories = _grafico.semanas
+
+
+
         _highcharts.title.text = "";
     
         the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
@@ -2148,6 +2161,13 @@ $( document ).ready(function() {
                     dashStyle: "Dot",
                     marker: {enabled: false},
                     data: []
+                },  {
+                    type: "line",
+                    name: 'Peso estimado',
+                    dashStyle: "Dot",
+                    marker: { enabled : true },
+                    lineWidth: 0,
+                    data: []
                 }]
             }
 
@@ -2178,6 +2198,9 @@ $( document ).ready(function() {
                 }
             }
     
+            let indice = _grafico.semanas.indexOf(edadGestacional)
+
+            _highcharts.series[9].data = [indice,parseFloat(the("pfe").value)]
             _highcharts.series[8].data = _grafico.valores.uno
             _highcharts.series[7].data = _grafico.valores.dos
             _highcharts.series[6].data = _grafico.valores.tres
@@ -2296,6 +2319,13 @@ $( document ).ready(function() {
                     dashStyle: "Dot",
                     marker: {enabled: false},
                     data: []
+                },  {
+                    type: "line",
+                    name: 'Peso estimado',
+                    dashStyle: "Dot",
+                    marker: { enabled : true },
+                    lineWidth: 0,
+                    data: []
                 }]
             }
 
@@ -2325,7 +2355,10 @@ $( document ).ready(function() {
                     _highcharts.yAxis.min = 0
                 }
             }
-    
+
+            let indice = _grafico.semanas.indexOf(edadGestacional)
+
+            _highcharts.series[9].data = [indice,parseFloat(the("pfe").value)]
             _highcharts.series[8].data = _grafico.valores.uno
             _highcharts.series[7].data = _grafico.valores.dos
             _highcharts.series[6].data = _grafico.valores.tres
