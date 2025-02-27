@@ -1994,6 +1994,7 @@ $( document ).ready(function() {
         }
 
         let menor = _grafico.valores.uno[0]
+        let mayor = _grafico.valores.nueve[0]
         let par = false
         let multiplicador = 0
 
@@ -2020,6 +2021,28 @@ $( document ).ready(function() {
                 _highcharts.yAxis.min = 0
             }
         }
+
+
+        if (mayor > 100){
+            mayor = Math.trunc(mayor / 10);
+            multiplicador = 10
+        }else if (mayor > 1000){
+            mayor = Math.trunc(mayor / 100);
+            multiplicador = 100
+        }else if (mayor > 10000){
+            mayor = Math.trunc(mayor / 1000);
+            multiplicador = 1000
+        }
+
+        par = mayor % 2;
+        par = (par > 0) ? false : true
+
+        if (par == true){
+            _highcharts.yAxis.max = mayor * multiplicador
+        }else{
+            _highcharts.yAxis.max = (mayor+1) * multiplicador  
+        }
+
         let eg = Number(the("semanas").value + "." + the("dias").value);
         let indice = _grafico.semanas.indexOf(eg)
 
