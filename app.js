@@ -2025,8 +2025,8 @@ $( document ).ready(function() {
                 _highcharts.yAxis.min = 0
             }
         }
-
-        let indice = _grafico.semanas.indexOf(edadGestacional)
+        let eg = Number(the("semanas").value + "0." + the("dias").value);
+        let indice = _grafico.semanas.indexOf(eg)
 
         _highcharts.series[9].data = [indice,parseFloat(the("pfe").value)]
         _highcharts.series[8].data = _grafico.valores.uno
@@ -2197,8 +2197,9 @@ $( document ).ready(function() {
                     _highcharts.yAxis.min = 0
                 }
             }
-    
-            let indice = _grafico.semanas.indexOf(edadGestacional)
+        
+            eg = Number(the("semanas").value + "0." + the("dias").value);
+            let indice = _grafico.semanas.indexOf(eg)
 
             _highcharts.series[9].data = [indice,parseFloat(the("pfe").value)]
             _highcharts.series[8].data = _grafico.valores.uno
@@ -2356,7 +2357,8 @@ $( document ).ready(function() {
                 }
             }
 
-            let indice = _grafico.semanas.indexOf(edadGestacional)
+            eg = Number(the("semanas").value + "0." + the("dias").value);
+            let indice = _grafico.semanas.indexOf(eg)
 
             _highcharts.series[9].data = [indice,parseFloat(the("pfe").value)]
             _highcharts.series[8].data = _grafico.valores.uno
