@@ -2005,7 +2005,7 @@ $( document ).ready(function() {
             menor = Math.trunc(menor / 100);
             multiplicador = 100
         }else if (menor < 10000){
-            menor = Math.trunc(menor / 1000);
+            menor = menor / 1000;
             multiplicador = 1000
         }
 
@@ -2194,7 +2194,7 @@ $( document ).ready(function() {
                 menor = Math.trunc(menor / 100);
                 multiplicador = 100
             }else if (menor < 10000){
-                menor = Math.trunc(menor / 1000);
+                menor = menor / 1000;
                 multiplicador = 1000
             }
     
@@ -2375,7 +2375,7 @@ $( document ).ready(function() {
                 menor = Math.trunc(menor / 100);
                 multiplicador = 100
             }else if (menor < 10000){
-                menor = Math.trunc(menor / 1000);
+                menor = menor / 1000;
                 multiplicador = 1000
             }
 
