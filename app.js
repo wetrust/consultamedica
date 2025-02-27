@@ -1994,7 +1994,7 @@ $( document ).ready(function() {
         }
 
         let menor = _grafico.valores.uno[0]
-        let mayor = _grafico.valores.nueve[0]
+        let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
         let par = false
         let multiplicador = 0
 
