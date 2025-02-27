@@ -2183,9 +2183,10 @@ $( document ).ready(function() {
             }
 
             let menor = _grafico.valores.uno[0]
+            let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
             let par = false
             let multiplicador = 0
-
+    
             if (menor < 100){
                 menor = Math.trunc(menor / 10);
                 multiplicador = 10
@@ -2196,9 +2197,10 @@ $( document ).ready(function() {
                 menor = Math.trunc(menor / 1000);
                 multiplicador = 1000
             }
+    
             par = menor % 2;
             par = (par > 0) ? false : true
-
+    
             if (par == true){
                 _highcharts.yAxis.min = menor * multiplicador
             }else{
@@ -2207,6 +2209,27 @@ $( document ).ready(function() {
                 }else{
                     _highcharts.yAxis.min = 0
                 }
+            }
+    
+    
+            if (mayor > 100){
+                mayor = Math.trunc(mayor / 10);
+                multiplicador = 10
+            }else if (mayor > 1000){
+                mayor = Math.trunc(mayor / 100);
+                multiplicador = 100
+            }else if (mayor > 10000){
+                mayor = Math.trunc(mayor / 1000);
+                multiplicador = 1000
+            }
+    
+            par = mayor % 2;
+            par = (par > 0) ? false : true
+    
+            if (par == true){
+                _highcharts.yAxis.max = mayor * multiplicador
+            }else{
+                _highcharts.yAxis.max = (mayor+1) * multiplicador  
             }
         
             eg = Number(the("semanas").value + "." + the("dias").value);
@@ -2341,6 +2364,7 @@ $( document ).ready(function() {
             }
 
             let menor = _grafico.valores.uno[0]
+            let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
             let par = false
             let multiplicador = 0
 
@@ -2354,6 +2378,7 @@ $( document ).ready(function() {
                 menor = Math.trunc(menor / 1000);
                 multiplicador = 1000
             }
+
             par = menor % 2;
             par = (par > 0) ? false : true
 
@@ -2365,6 +2390,26 @@ $( document ).ready(function() {
                 }else{
                     _highcharts.yAxis.min = 0
                 }
+            }
+
+            if (mayor > 100){
+                mayor = Math.trunc(mayor / 10);
+                multiplicador = 10
+            }else if (mayor > 1000){
+                mayor = Math.trunc(mayor / 100);
+                multiplicador = 100
+            }else if (mayor > 10000){
+                mayor = Math.trunc(mayor / 1000);
+                multiplicador = 1000
+            }
+
+            par = mayor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _highcharts.yAxis.max = mayor * multiplicador
+            }else{
+                _highcharts.yAxis.max = (mayor+1) * multiplicador  
             }
 
             eg = Number(the("semanas").value + "." + the("dias").value);
