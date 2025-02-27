@@ -1915,7 +1915,6 @@ $( document ).ready(function() {
             },
             xAxis: {
                 categories: [],
-                showEmpty: true,
                 showFirstLabel: true,
                 showLastLabel: true
             },
@@ -2056,11 +2055,6 @@ $( document ).ready(function() {
         _highcharts.series[0].data = _grafico.valores.nueve
         _highcharts.xAxis.categories = _grafico.semanas
 
-        if(the("dias").value == 0){
-            _highcharts.xAxis.min = _grafico.semanas[0]
-            _highcharts.xAxis.max = _grafico.semanas[ _grafico.semanas.length-1]
-        }
-
         _highcharts.title.text = "";
 
         the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
@@ -2110,7 +2104,6 @@ $( document ).ready(function() {
                 },
                 xAxis: {
                     categories: [],
-                    showEmpty: true,
                     showFirstLabel: true,
                     showLastLabel: true
                 },
@@ -2253,11 +2246,6 @@ $( document ).ready(function() {
             _highcharts.xAxis.categories = _grafico.semanas
             _highcharts.title.text = ""
             the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
-    
-            if(the("dias").value == 0){
-                _highcharts.xAxis.min = _grafico.semanas[0]
-                _highcharts.xAxis.max = _grafico.semanas[ _grafico.semanas.length-1]
-            }
 
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
@@ -2298,7 +2286,6 @@ $( document ).ready(function() {
                 },
                 xAxis: {
                     categories: [],
-                    showEmpty: true,
                     showFirstLabel: true,
                     showLastLabel: true
                 },
@@ -2440,11 +2427,6 @@ $( document ).ready(function() {
             _highcharts.xAxis.categories = _grafico.semanas
             _highcharts.title.text = "";
             the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
-    
-            if(the("dias").value == 0){
-                _highcharts.xAxis.min = _grafico.semanas[0]
-                _highcharts.xAxis.max = _grafico.semanas[ _grafico.semanas.length-1]
-            }
 
             $('#graficoPFEDinamico').highcharts(_highcharts);
         }
