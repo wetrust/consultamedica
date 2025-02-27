@@ -1992,7 +1992,7 @@ $( document ).ready(function() {
                 type: "line",
                 name: 'Peso estimado',
                 dashStyle: "Dot",
-                marker: { enabled : true },
+                marker: { enabled : true, symbol:'circle' },
                 lineWidth: 0,
                 data: []
             }]
@@ -2163,7 +2163,7 @@ $( document ).ready(function() {
                     type: "line",
                     name: 'Peso estimado',
                     dashStyle: "Dot",
-                    marker: { enabled : true },
+                    marker: { enabled : true, symbol:'circle' },
                     lineWidth: 0,
                     data: []
                 }]
@@ -2322,7 +2322,7 @@ $( document ).ready(function() {
                     type: "line",
                     name: 'Peso estimado',
                     dashStyle: "Dot",
-                    marker: { enabled : true },
+                    marker: { enabled : true, symbol:'circle' },
                     lineWidth: 0,
                     data: []
                 }]
