@@ -7,6 +7,7 @@ function isSafeInteger(value) {
 };
 
 export function graficoPFEMasMenos(){
+
     let tramo = calcularDosMenos(Number(the("semanas").value));
     let valores = {"uno" : [], "dos" : [], "tres" : [], "cuatro" : [], "cinco" : [], "seis" : [], "siete" : [], "ocho" : [], "nueve" : []};
 
@@ -213,7 +214,6 @@ export function percentilOMS(PFE, EG, sexo = null){
 
     if (sexo){
         if (sexo == "men"){
-
             pUno = Math.exp(-.52610096513854 + EG * (.44906549056954 + EG * (-.0089009550762548 + EG * (9868293523919e-17 + EG * -6.1862373692705e-7))))
             pDos = Math.exp(-.264562353403465 + EG * (.412210701662848 + EG * (-.00659353966698675 + EG * (387085414793403e-19 + EG * -5.92167006518022e-8))))
             pTres = Math.exp(-.0631025226657407 + EG * (.390993877846881 + EG * (-.00560764189001381 + EG * (190944627895524e-19 + EG * 8.84241803692905e-8))))
@@ -223,9 +223,7 @@ export function percentilOMS(PFE, EG, sexo = null){
             pSiete = Math.exp(.240213697127957 + EG * (.391178494734445 + EG * (-.00579538706713982 + EG * (275733050639858e-19 + EG * -1.90970772277149e-8))))
             pOcho = Math.exp(.238080920038937 + EG * (.394765675971259 + EG * (-.00581267491399174 + EG * (231531669574572e-19 + EG * 6.85345268671191e-8))))
             pNueve = Math.exp(.79018076483077 + EG * (.32585025131141 + EG * (-.0025559098706069 + EG * (-42038969571238e-18 + EG * 5.4228420412733e-7))))
-
         } else if (sexo == "wom"){
-
             pUno = Math.exp(-.915523725804273 + EG * (.529374415518249 + EG * (-.0147446585943781 + EG * (.000269201219853759 + EG * -23537061714461e-19))))
             pDos = Math.exp(-.0356552265566936 + EG * (.376064209229977 + EG * (-.00496950115937874 + EG * (100880399508847e-19 + EG * 8.87897379966417e-8))))
             pTres = Math.exp(.155170122624531 + EG * (.356594762998776 + EG * (-.00401282727802378 + EG * (-114891004630409e-19 + EG * 2.91905926442287e-7))))
@@ -235,18 +233,13 @@ export function percentilOMS(PFE, EG, sexo = null){
             pSiete = Math.exp(286538459425835 + EG * (.387048945293849 + EG * (-.00606592437416756 + EG * (419335923075893e-19 + EG * -1.64397771502855e-7))))
             pOcho = Math.exp(.381320788764689 + EG * (.376613696575359 + EG * (-.00528117982372732 + EG * (181818929490566e-19 + EG * 7.60085577423407e-8))))
             pNueve = Math.exp(.32551154984358 + EG * (.40214557617585 + EG * (-.0074145176202411 + EG * (88196644838898e-18 + EG * -7.1015932637436e-7))))
-
         }
     }
     let rango = [0.0025, 0.005, 0.01, 0.025, 0.05, 0.075, 0.09, 0.095, 0.0975]
 
     //determinar si es mayor a p97.5 o es menor a p2.5
 
-    if(PFE < pUno){
-        return "< 2.5"
-    }else if(PFE > pNueve){
-        return "> 97.5"
-    }
+    if(PFE < pUno){ return "< 2.5" }else if(PFE > pNueve){ return "> 97.5" }
 
     //determinar PFE en que rango está 
 
@@ -271,4 +264,5 @@ export function percentilOMS(PFE, EG, sexo = null){
     }else if (PFE <= pDos && PFE >= pUno){  
         return rango[0] + (PFE - pUno) / (pDos - pUno) * (rango[1] - rango[0])
     }
+
 }
