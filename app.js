@@ -1898,15 +1898,6 @@ $( document ).ready(function() {
             title: {
                 text: '<small>Peso Fetal Estimado ( gramos )</small>', x: -20, useHTML: true
             },
-            subtitle: {
-                text: '', x: -20
-            },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false,
-                    pointInterval: 1
-                }
-            },
             yAxis: {
                 title: { text: 'Gramos' },
                 min: 200,
@@ -1914,21 +1905,12 @@ $( document ).ready(function() {
                 tickInterval:200,
             },
             xAxis: {
-                categories: [],
-                endOnTick: false,
-                showFirstLabel: true,
-                showLastLabel: true,
-                startOnTick: false
+                categories: []
             },
             legend: {
                 layout: 'vertical',
                 align: 'right',
                 verticalAlign: 'top'
-            },
-            plotOptions: {
-                column: {
-                    grouping: false
-                }
             },
             colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
             credits: {enabled: false},
