@@ -1915,8 +1915,10 @@ $( document ).ready(function() {
             },
             xAxis: {
                 categories: [],
-                startOnTick: true,
-                endOnTick: true
+                endOnTick: false,
+                showFirstLabel: true,
+                showLastLabel: true,
+                startOnTick: false
             },
             legend: {
                 layout: 'vertical',
