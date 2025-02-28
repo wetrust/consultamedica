@@ -211,9 +211,6 @@ export function percentilOMS(PFE, EG, sexo = null){
 }
 
 export const baseGraficoPFE = {
-    title: {
-        text: '<small>Peso Fetal Estimado ( gramos )</small>', x: -20, useHTML: true
-    },
     subtitle: { text: '', x: -20 },
     plotOptions: {
         series: {
