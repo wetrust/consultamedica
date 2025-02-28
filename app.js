@@ -2037,7 +2037,7 @@ $( document ).ready(function() {
         _highcharts.series[2].data = _grafico.valores.siete
         _highcharts.series[1].data = _grafico.valores.ocho
         _highcharts.series[0].data = _grafico.valores.nueve
-        _highcharts.xAxis.categories = _grafico.semanas
+        //_highcharts.xAxis.categories = _grafico.semanas
 
         _highcharts.title.text = "";
 
