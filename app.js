@@ -2024,7 +2024,7 @@ $( document ).ready(function() {
 
             $('#graficoPFEDinamico').highcharts(_highcharts);
 
-            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
+            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs.       Percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
             let txtOMS = '<strong>Feto '
 
             let sexo = these("sexsexsex")
@@ -2128,7 +2128,7 @@ $( document ).ready(function() {
 
             $('#graficoPFEDinamico').highcharts(_highcharts);
 
-            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
+            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs.       Percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
             let txtOMS = '<strong>Feto '
 
             let sexo = these("sexsexsex")
@@ -2169,7 +2169,7 @@ $( document ).ready(function() {
             }
         });
 
-        the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
+        the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs.       Percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
         let txtOMS = '<strong>Feto '
 
         let sexo = these("sexsexsex")
