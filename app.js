@@ -1891,7 +1891,6 @@ $( document ).ready(function() {
         the("papapapa").value =  the("dias").value
 
         let _grafico = graficoPFEMasMenos()
-
         let _highcharts = baseGraficoPFE
 
         let menor = _grafico.valores.uno[0]
@@ -1982,106 +1981,7 @@ $( document ).ready(function() {
             the("pfePctRpt").value = pctPFE
     
             let _grafico = graficoPFEMasMenos()
-    
-            let _highcharts = {
-                title: {
-                    text: '<small>Peso Fetal Estimado ( gramos )</small>',
-                    x: -20, //center
-                    useHTML: true
-                },
-                subtitle: {
-                    text: '',
-                    x: -20
-                },
-                plotOptions: {
-                    series: {
-                        enableMouseTracking: false,
-                        pointInterval: 1
-                    }
-                },
-                yAxis: {
-                    title: { text: 'Gramos' },
-                    min: 200,
-                    max: 2000,
-                    tickInterval:200,
-                },
-                xAxis: {
-                    categories: [],
-                    showFirstLabel: true,
-                    showLastLabel: true
-                },
-                legend: {
-                    layout: 'vertical',
-                    align: 'right',
-                    verticalAlign: 'top'
-                },
-                plotOptions: {
-                    column: {
-                        grouping: false
-                    }
-                },
-                colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
-                credits: {enabled: false},
-                series: [{
-                    type: "line",
-                    name: 'Pct 97,5',
-                    dashStyle: "Dot",
-                    marker: { enabled: false, },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 95',
-                    dashStyle: "Dot",
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 90',
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 75',
-                    dashStyle: "Dot",
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 50',
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 25',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 10',
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 5',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 2,5',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },  {
-                    type: "line",
-                    name: 'Peso estimado',
-                    dashStyle: "Dot",
-                    marker: { enabled : true, symbol:'circle' },
-                    lineWidth: 0,
-                    data: []
-                }]
-            }
+            let _highcharts = baseGraficoPFE
 
             let menor = _grafico.valores.uno[0]
             let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
@@ -2111,8 +2011,7 @@ $( document ).ready(function() {
                     _highcharts.yAxis.min = 0
                 }
             }
-    
-    
+
             if (mayor > 100){
                 mayor = Math.trunc(mayor / 10);
                 multiplicador = 10
@@ -2123,10 +2022,10 @@ $( document ).ready(function() {
                 mayor = Math.trunc(mayor / 1000);
                 multiplicador = 1000
             }
-    
+
             par = mayor % 2;
             par = (par > 0) ? false : true
-    
+
             if (par == true){
                 _highcharts.yAxis.max = mayor * multiplicador
             }else{
@@ -2168,103 +2067,7 @@ $( document ).ready(function() {
             the("pfePctRpt").value = pctPFE
     
             let _grafico = graficoPFEMasMenos()
-    
-            let _highcharts = {
-                title: {
-                    text: '<small>Peso Fetal Estimado ( gramos )</small>',
-                    x: -20, //center
-                    useHTML: true
-                },
-                subtitle: { text: '',x: -20 },
-                plotOptions: {
-                    series: {
-                        enableMouseTracking: false,
-                        pointInterval: 1
-                    }
-                },
-                yAxis: { title: { text: 'Gramos' },
-                    min: 200,
-                    max: 2000,
-                    tickInterval:200
-                },
-                xAxis: {
-                    categories: [],
-                    showEmpty: true,
-                    showFirstLabel: true,
-                    showLastLabel: true
-                },
-                legend: {
-                    layout: 'vertical',
-                    align: 'right',
-                    verticalAlign: 'top'
-                },
-                plotOptions: {
-                    column: {
-                        grouping: false
-                    }
-                },
-                colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
-                credits: {enabled: false},
-                series: [{
-                    type: "line",
-                    name: 'Pct 97,5',
-                    dashStyle: "Dot",
-                    marker: { enabled: false, },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 95',
-                    dashStyle: "Dot",
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 90',
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 75',
-                    dashStyle: "Dot",
-                    marker: { enabled: false },
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 50',
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 25',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 10',
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 5',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },{
-                    type: "line",
-                    name: 'Pct 2,5',
-                    dashStyle: "Dot",
-                    marker: {enabled: false},
-                    data: []
-                },  {
-                    type: "line",
-                    name: 'Peso estimado',
-                    dashStyle: "Dot",
-                    marker: { enabled : true, symbol:'circle' },
-                    lineWidth: 0,
-                    data: []
-                }]
-            }
+            let _highcharts = baseGraficoPFE
 
             let menor = _grafico.valores.uno[0]
             let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
