@@ -7,12 +7,10 @@ function isSafeInteger(value) {
 };
 
 export function graficoPFEMasMenos(){
-
     let tramo = calcularDosMenos(Number(the("semanas").value));
     let valores = {"uno" : [], "dos" : [], "tres" : [], "cuatro" : [], "cinco" : [], "seis" : [], "siete" : [], "ocho" : [], "nueve" : []};
 
     for (let i = 0; i < tramo.length; i++) {
-
         let EG = structuredClone(tramo[i]);
         if (isSafeInteger(EG) == false){ EG = Number(Math.trunc(EG)) + (0 + (Number((EG + "").split(".")[1])) || 0) / 7; }
 
@@ -78,30 +76,20 @@ export function graficoPFEMasMenos(){
         valores.ocho.push(pOcho);
         caja[1] = pNueve
         valores.nueve.push(pNueve);
-
     }
 
     let resultado = {valores: valores, semanas: tramo}
-
     return resultado
 }
 
 function calcularDosMenos(eg){
-
     let tramo = [];
-    let dias = Number(the("dias").value)
 
     if (eg == 14){
-
         tramo = [14,14.1,14.2,14.3,14.4,14.5,14.6,15,15.1,15.2,15.3,15.4,15.5,15.6,16,16.1,16.2,16.3,16.4,16.5,16.6];
-
-
     }else if (eg == 40){
-
         tramo = [38,38.1,38.2,38.3,38.4,38.5,38.6,39,39.1,39.2,39.3,39.4,39.5,39.6,40,40.1,40.2,40.3,40.4,40.5,40.6];
-
     }else{
-
         tramo = [eg];
         tramo.push(eg + 0.1)
         tramo.push(eg + 0.2)
@@ -156,13 +144,10 @@ function calcularDosMenos(eg){
     }
 
     tramo.sort((a, b) => {return a - b})
-
     return tramo;
-
 }
 
 export function percentilOMS(PFE, EG, sexo = null){
-
     let pUno = Math.exp(-.230518383014592 + EG * (.400511116318458 + EG * (-.00617993235833267 + EG * (316595762972649e-19 + EG * 0))))
     let pDos = Math.exp(-.162057103557898 + EG * (.393965369913166 + EG * (-.00579733056422172 + EG * (255319128239087e-19 + EG * 0))))
     let pTres = Math.exp(-.0455887642525626 + EG * (.389314052082164 + EG * (-.00574527674062641 + EG * (265557891064333e-19 + EG * 0))))
@@ -199,11 +184,9 @@ export function percentilOMS(PFE, EG, sexo = null){
     let rango = [0.0025, 0.005, 0.01, 0.025, 0.05, 0.075, 0.09, 0.095, 0.0975]
 
     //determinar si es mayor a p97.5 o es menor a p2.5
-
     if(PFE < pUno){ return "< 2.5" }else if(PFE > pNueve){ return "> 97.5" }
 
     //determinar PFE en que rango está 
-
     if (isNaN(PFE) == true || PFE < 0 ){
         return 0;
     }
@@ -225,11 +208,9 @@ export function percentilOMS(PFE, EG, sexo = null){
     }else if (PFE <= pDos && PFE >= pUno){  
         return rango[0] + (PFE - pUno) / (pDos - pUno) * (rango[1] - rango[0])
     }
-
 }
 
 export const baseGraficoPFE = {
-
     title: {
         text: '<small>Peso Fetal Estimado ( gramos )</small>', x: -20, useHTML: true
     },
