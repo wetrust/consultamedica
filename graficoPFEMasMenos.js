@@ -81,27 +81,6 @@ export function graficoPFEMasMenos(){
 
     }
 
-    //let dias = Number(the("dias").value)
-    //if (dias > 0) {
-
-    //let _tramo = structuredClone(tramo)
-    //    let _dias = [0.1,0.2,0.3,0.4,0.5,0.6]
-    //    if (edadGestacional == 14){
-    //        tramo = [14,14.1,14.2,14.3,14.4,14.5,14.6,15,15.1,15.2,15.3,15.4,15.5,15.6,16,16.1,16.2,16.3,16.4,16.5,16.6];
-    //    }else if (edadGestacional == 40){
-    //        tramo = [38,38.1,38.2,38.3,38.4,38.5,38.6,39,39.1,39.2,39.3,39.4,39.5,39.6,40,40.1,40.2,40.3,40.4,40.5,40.6];
-    //    }else{
-    //for (let i = 0; i < _tramo.length; i++) {
-    //    tramo[i] = tramo[i];
-    //            tramo.push(Number(_tramo[i] + _dias[1]))
-    //            tramo.push(Number(_tramo[i] + _dias[2]))
-    //            tramo.push(Number(_tramo[i] + _dias[3]))
-    //            tramo.push(Number(_tramo[i] + _dias[4]))
-    //            tramo.push(Number(_tramo[i] + _dias[5]))
-    //}
-    //    }
-    //}
-
     let resultado = {valores: valores, semanas: tramo}
 
     return resultado
@@ -114,25 +93,26 @@ function calcularDosMenos(eg){
 
     if (eg == 14){
 
-        if (dias > 0){
-            tramo = [14,14.1,14.2,14.3,14.4,14.5,14.6,15,15.1,15.2,15.3,15.4,15.5,15.6,16,16.1,16.2,16.3,16.4,16.5,16.6];
-        }else{
-            tramo = [14,15,16];
-        }
+        tramo = [14,14.1,14.2,14.3,14.4,14.5,14.6,15,15.1,15.2,15.3,15.4,15.5,15.6,16,16.1,16.2,16.3,16.4,16.5,16.6];
 
 
     }else if (eg == 40){
 
-        if (dias > 0){
-            tramo = [38,38.1,38.2,38.3,38.4,38.5,38.6,39,39.1,39.2,39.3,39.4,39.5,39.6,40,40.1,40.2,40.3,40.4,40.5,40.6];
-        }else{
-            tramo = [38,39,40];
-        }
+        tramo = [38,38.1,38.2,38.3,38.4,38.5,38.6,39,39.1,39.2,39.3,39.4,39.5,39.6,40,40.1,40.2,40.3,40.4,40.5,40.6];
 
     }else{
 
         tramo = [eg];
-        if (dias > 0){
+        tramo.push(eg + 0.1)
+        tramo.push(eg + 0.2)
+        tramo.push(eg + 0.3)
+        tramo.push(eg + 0.4)
+        tramo.push(eg + 0.5)
+        tramo.push(eg + 0.6)
+
+        eg--
+        if (eg >= 14){
+            tramo.push(eg)
             tramo.push(eg + 0.1)
             tramo.push(eg + 0.2)
             tramo.push(eg + 0.3)
@@ -144,53 +124,34 @@ function calcularDosMenos(eg){
         eg--
         if (eg >= 14){
             tramo.push(eg)
-            if (dias > 0){
-                tramo.push(eg + 0.1)
-                tramo.push(eg + 0.2)
-                tramo.push(eg + 0.3)
-                tramo.push(eg + 0.4)
-                tramo.push(eg + 0.5)
-                tramo.push(eg + 0.6)
-            }
-        }
-
-        eg--
-        if (eg >= 14){
-            tramo.push(eg)
-            if (dias > 0){
-                tramo.push(eg + 0.1)
-                tramo.push(eg + 0.2)
-                tramo.push(eg + 0.3)
-                tramo.push(eg + 0.4)
-                tramo.push(eg + 0.5)
-                tramo.push(eg + 0.6)
-            }
+            tramo.push(eg + 0.1)
+            tramo.push(eg + 0.2)
+            tramo.push(eg + 0.3)
+            tramo.push(eg + 0.4)
+            tramo.push(eg + 0.5)
+            tramo.push(eg + 0.6)
         }
         eg += 3
 
         if (eg <= 40){
             tramo.push(eg)
-            if (dias > 0){
-                tramo.push(eg + 0.1)
-                tramo.push(eg + 0.2)
-                tramo.push(eg + 0.3)
-                tramo.push(eg + 0.4)
-                tramo.push(eg + 0.5)
-                tramo.push(eg + 0.6)
-            }
+            tramo.push(eg + 0.1)
+            tramo.push(eg + 0.2)
+            tramo.push(eg + 0.3)
+            tramo.push(eg + 0.4)
+            tramo.push(eg + 0.5)
+            tramo.push(eg + 0.6)
         }
         eg++
 
         if (eg <= 41){
             tramo.push(eg)
-            if (dias > 0){
-                tramo.push(eg + 0.1)
-                tramo.push(eg + 0.2)
-                tramo.push(eg + 0.3)
-                tramo.push(eg + 0.4)
-                tramo.push(eg + 0.5)
-                tramo.push(eg + 0.6)
-            }
+            tramo.push(eg + 0.1)
+            tramo.push(eg + 0.2)
+            tramo.push(eg + 0.3)
+            tramo.push(eg + 0.4)
+            tramo.push(eg + 0.5)
+            tramo.push(eg + 0.6)
         }
     }
 
