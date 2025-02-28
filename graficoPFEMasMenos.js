@@ -211,6 +211,7 @@ export function percentilOMS(PFE, EG, sexo = null){
 }
 
 export const baseGraficoPFE = {
+    title: { text: '' },
     subtitle: { text: '', x: -20 },
     plotOptions: {
         series: {
