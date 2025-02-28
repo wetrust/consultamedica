@@ -441,7 +441,6 @@ $( document ).ready(function() {
     });
 
     $("#semanas, #dias").on("change", function(){
-
         let semanas = parseInt(the("semanas").value);
         let dias = parseInt(the("dias").value);
         semanas = 7 * semanas;
@@ -456,7 +455,6 @@ $( document ).ready(function() {
     });
 
     the("continuarAExamen").onclick = function(){
-
         let alternativa = the("tipoEcografia").value
 
         if (alternativa == 0){
@@ -472,7 +470,6 @@ $( document ).ready(function() {
     }
 
     the("continuarAExamenBoton").onclick = function(){
-
         let alternativa = the("tipoEcografia").value
 
         if (alternativa == 0){
@@ -651,9 +648,7 @@ $( document ).ready(function() {
             the("valor-saco-vitelino").parentElement.classList.add("d-none");
             the("saco-vitelino-mm").value = 0;
         }
-        else{
-            the("valor-saco-vitelino").parentElement.classList.remove("d-none");
-        }
+        else{ the("valor-saco-vitelino").parentElement.classList.remove("d-none"); }
     });
 
     the("monitoreo.ovulatorio").onchange = function(){
@@ -706,11 +701,8 @@ $( document ).ready(function() {
         if (the("saco").value == "" && (the("embrion").value == "no se observa" || the("embrion").value == "no se observa")){
             comentario += "";
         } else if (the("saco").value > 0 && (the("embrion").value == "no se observa" || the("embrion").value == "no se observa")){
-
             comentario += "-Calculo inicial (transitorio) de edad gestacional = "+the("sacoPct").value+" semanas según medición de saco gestacional\n-Se sugiere agendar próxima ecografía para determinar edad gestacional ecográfica ( por LCN )\n";
-
         } else if (the("embrion").value != "sin actividad cardiaca"){
-
             let fur = new Date(Date.parse(the("furAjustada").value));
             fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
             let fpp = new Date(Date.parse(the("fppAjustada").value));
@@ -718,7 +710,6 @@ $( document ).ready(function() {
             let eg = the("semanasAjustada").value + "."+ the("diasAjustada").value + " semanas.";
             comentario += "La Edad gestacional calculada  =  "+eg+", por tanto fechas operacionales son:\n- FUM ecográfica  =  "+ fur +"\n- Fecha esperada de parto  =  " + fpp + "\n";
         }
-
         the("comentarios-eco-uno").value = comentario
     });
 
@@ -2198,7 +2189,7 @@ $( document ).ready(function() {
 
         eg = Number(the("semanas").value + "." + the("dias").value);
 
-        the("textoTipoOMS").innerHTML += 'de ' + the("semanas").value + " semanas"
+        the("textoTipoOMS").innerHTML += ' de ' + the("semanas").value + " semanas"
 
         if (the("papapapa").value > 0){
             the("textoTipoOMS").innerHTML += ' y ' + the("papapapa").value + " dias "  
