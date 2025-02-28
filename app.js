@@ -6,10 +6,8 @@ import { baseGraficoPFE } from './graficoPFEMasMenos.js';
 
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-
 var dayHoy = new Date();
 var activeHash = "#browser";
-
 var titulos = {
     "#consulta": "CONFIGURACIÓN DE EDAD GESTACIONAL Y DATOS DE ACCESO",
     "#paciente": "INGRESO DE DATOS PERSONALES",
@@ -25,7 +23,6 @@ var titulos = {
 
 // Comementario adicional anatomia 
 //document.location.hash = "";
-
 //crea id random para los modales
 function uuidv4() {
     //genera un uuid
@@ -7306,21 +7303,15 @@ function InfEcoObsSegTrim1Clon(){
 }
 
 function getDate(today) {
-
     if (typeof today === typeof undefined){ today = dayHoy; }
 
     var dd = today.getDate();
     var mm = today.getMonth()+1; //January is 0!
     var yyyy = today.getFullYear();
-  
-    if(dd<10) {
-        dd = '0'+dd
-    } 
-  
-    if(mm<10) {
-        mm = '0'+mm
-    } 
-  
+
+    if(dd<10) { dd = '0'+dd } 
+    if(mm<10) { mm = '0'+mm }
+
     today = yyyy + '-' + mm + '-' + dd;
     return today;
 }
