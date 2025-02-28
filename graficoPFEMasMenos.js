@@ -244,7 +244,6 @@ export const baseGraficoPFE = {
     series: [{
         type: "line",
         name: 'Pct 97,5',
-        dashStyle: "Dot",
         marker: { enabled: false, },
         data: [],
         color: '#FF0000'
@@ -259,33 +258,33 @@ export const baseGraficoPFE = {
         name: 'Pct 90',
         marker: { enabled: false },
         data: [],
-        color: '#318ce7'
+        color: '#007bff'
     },{
         type: "line",
         name: 'Pct 75',
         dashStyle: "Dot",
         marker: { enabled: false },
         data: [],
-        color: '#009688'
+        color: '#28a745'
     },{
         type: "line",
         name: 'Pct 50',
         marker: {enabled: false},
         data: [],
-        color: '#318ce7'
+        color: '#007bff'
     },{
         type: "line",
         name: 'Pct 25',
         dashStyle: "Dot",
         marker: {enabled: false},
         data: [],
-        color: '#009688'
+        color: '#28a745'
     },{
         type: "line",
         name: 'Pct 10',
         marker: {enabled: false},
         data: [],
-        color: '#318ce7'
+        color: '#007bff'
     },{
         type: "line",
         name: 'Pct 5',
@@ -295,7 +294,6 @@ export const baseGraficoPFE = {
     }, {
         type: "line",
         name: 'Pct 2,5',
-        dashStyle: "Dot",
         marker: {enabled: false},
         data: [],
         color: '#FF0000'
