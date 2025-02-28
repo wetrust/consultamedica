@@ -240,14 +240,14 @@ export const baseGraficoPFE = {
         align: 'right',
         verticalAlign: 'top'
     },
-    colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
     credits: {enabled: false},
     series: [{
         type: "line",
         name: 'Pct 97,5',
         dashStyle: "Dot",
         marker: { enabled: false, },
-        data: []
+        data: [],
+        color: '#FF0000'
     },{
         type: "line",
         name: 'Pct 95',
@@ -258,29 +258,34 @@ export const baseGraficoPFE = {
         type: "line",
         name: 'Pct 90',
         marker: { enabled: false },
-        data: []
+        data: [],
+        color: '#318ce7'
     },{
         type: "line",
         name: 'Pct 75',
         dashStyle: "Dot",
         marker: { enabled: false },
-        data: []
+        data: [],
+        color: '#009688'
     },{
         type: "line",
         name: 'Pct 50',
         marker: {enabled: false},
-        data: []
+        data: [],
+        color: '#318ce7'
     },{
         type: "line",
         name: 'Pct 25',
         dashStyle: "Dot",
         marker: {enabled: false},
-        data: []
+        data: [],
+        color: '#009688'
     },{
         type: "line",
         name: 'Pct 10',
         marker: {enabled: false},
-        data: []
+        data: [],
+        color: '#318ce7'
     },{
         type: "line",
         name: 'Pct 5',
@@ -292,13 +297,15 @@ export const baseGraficoPFE = {
         name: 'Pct 2,5',
         dashStyle: "Dot",
         marker: {enabled: false},
-        data: []
+        data: [],
+        color: '#FF0000'
     },  {
         type: "line",
-        name: 'Peso estimado',
+        name: 'Pct PFE',
         dashStyle: "Dot",
         marker: { enabled : true, symbol:'circle' },
         lineWidth: 0,
-        data: []
+        data: [],
+        color: '#FF0000'
     }]
 }
