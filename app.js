@@ -1888,16 +1888,9 @@ $( document ).ready(function() {
         let par = false
         let multiplicador = 0
 
-        if (menor < 100){
-            menor = Math.trunc(menor / 10);
-            multiplicador = 10
-        }else if (menor < 1000){
-            menor = Math.trunc(menor / 100);
-            multiplicador = 100
-        }else if (menor < 10000){
-            menor = menor / 1000;
-            multiplicador = 1000
-        }
+        if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
+        }else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
+        }else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
 
         par = menor % 2;
         par = (par > 0) ? false : true
@@ -1913,14 +1906,11 @@ $( document ).ready(function() {
         }
 
         if (mayor > 100){
-            mayor = Math.trunc(mayor / 10);
-            multiplicador = 10
+            mayor = Math.trunc(mayor / 10); multiplicador = 10;
         }else if (mayor > 1000){
-            mayor = Math.trunc(mayor / 100);
-            multiplicador = 100
+            mayor = Math.trunc(mayor / 100); multiplicador = 100;
         }else if (mayor > 10000){
-            mayor = Math.trunc(mayor / 1000);
-            multiplicador = 1000
+            mayor = Math.trunc(mayor / 1000); multiplicador = 1000;
         }
 
         par = mayor % 2;
@@ -1948,25 +1938,23 @@ $( document ).ready(function() {
         _highcharts.xAxis.categories = _grafico.semanas
 
         $('#graficoPFEDinamico').highcharts(_highcharts);
-
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
         the("cuacuacua").onchange = function() {
-    
             the("semanas").value = the("cuacuacua").value
             the("dias").value = the("papapapa").value
             the("pfe").value = the("unounouno").value
             let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
-    
+
             let _sexo = these("sexsexsex")
             _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
-    
+
             var pctPFE = percentilOMS(the("unounouno").value, eg, _sexo);
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
-    
+
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
-    
+
             let _grafico = graficoPFEMasMenos()
             let _highcharts = baseGraficoPFE
 
@@ -1974,7 +1962,7 @@ $( document ).ready(function() {
             let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
             let par = false
             let multiplicador = 0
-    
+
             if (menor < 100){
                 menor = Math.trunc(menor / 10);
                 multiplicador = 10
@@ -1985,10 +1973,10 @@ $( document ).ready(function() {
                 menor = menor / 1000;
                 multiplicador = 1000
             }
-    
+
             par = menor % 2;
             par = (par > 0) ? false : true
-    
+
             if (par == true){
                 _highcharts.yAxis.min = menor * multiplicador
             }else{
@@ -2018,7 +2006,7 @@ $( document ).ready(function() {
             }else{
                 _highcharts.yAxis.max = (mayor+1) * multiplicador  
             }
-        
+
             eg = Number(the("semanas").value + "." + the("dias").value);
             let indice = _grafico.semanas.indexOf(eg)
 
@@ -2037,7 +2025,7 @@ $( document ).ready(function() {
             $('#graficoPFEDinamico').highcharts(_highcharts);
 
             the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
-            the("textoTipoOMS").innerHTML = 'Feto '
+            the("textoTipoOMS").innerHTML = '<strong>Feto '
 
             let sexo = these("sexsexsex")
             sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
@@ -2047,17 +2035,16 @@ $( document ).ready(function() {
             }
 
             eg = Number(the("semanas").value + "." + the("dias").value);
-
-            the("textoTipoOMS").innerHTML += 'de ' + the("semanas").value + " semanas"
+            the("textoTipoOMS").innerHTML += ' de ' + the("semanas").value + " semanas"
 
             if (the("papapapa").value > 0){
                 the("textoTipoOMS").innerHTML += ' y ' + the("papapapa").value + " dias "  
             }
 
+            the("textoTipoOMS").innerHTML += '</strong>'
         }
 
         the("papapapa").onchange = function() {
-    
             the("semanas").value = the("cuacuacua").value
             the("dias").value = the("papapapa").value
             the("pfe").value = the("unounouno").value 
@@ -2066,10 +2053,10 @@ $( document ).ready(function() {
             _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
             var pctPFE = percentilOMS(the("unounouno").value,eg, _sexo);
             pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
-    
+
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
-    
+
             let _grafico = graficoPFEMasMenos()
             let _highcharts = baseGraficoPFE
 
@@ -2140,7 +2127,7 @@ $( document ).ready(function() {
             $('#graficoPFEDinamico').highcharts(_highcharts);
 
             the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
-            the("textoTipoOMS").innerHTML = 'Feto '
+            the("textoTipoOMS").innerHTML = '<strong>Feto '
 
             let sexo = these("sexsexsex")
             sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
@@ -2151,11 +2138,12 @@ $( document ).ready(function() {
 
             eg = Number(the("semanas").value + "." + the("dias").value);
 
-            the("textoTipoOMS").innerHTML += 'de ' + the("semanas").value + " semanas"
+            the("textoTipoOMS").innerHTML += ' de ' + the("semanas").value + " semanas"
 
             if (the("papapapa").value > 0){
                 the("textoTipoOMS").innerHTML += ' y ' + the("papapapa").value + " dias "  
             }
+            the("textoTipoOMS").innerHTML += '</strong>'
         }
 
         let _sexo = these("sexsexsex")
@@ -2178,7 +2166,7 @@ $( document ).ready(function() {
         });
 
         the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
-        the("textoTipoOMS").innerHTML = 'Feto '
+        the("textoTipoOMS").innerHTML = '<strong>Feto '
 
         let sexo = these("sexsexsex")
         sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
@@ -2194,6 +2182,7 @@ $( document ).ready(function() {
         if (the("papapapa").value > 0){
             the("textoTipoOMS").innerHTML += ' y ' + the("papapapa").value + " dias "  
         }
+        the("textoTipoOMS").innerHTML += '</strong>'
     }
 });
 

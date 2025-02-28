@@ -205,7 +205,7 @@ function modalx(){
     _divz.classList.add("modal-header")
     _divz.id = contenido
 
-    let _divv = document.createElement("h5")
+    let _divv = document.createElement("h6")
     _divv.classList.add("modal-title")
     _divv.innerText = "Modal title"
     _divv.id = titulo
@@ -267,14 +267,12 @@ function uuidv4x() {
 }
 
 export function appPesoEG(){
-
     var modal = modalx();
     modal.modal.children[0].children[0].children[1].appendChild(contenedor());
 
     modal.modal.children[0].classList.remove("modal-lg")
     modal.modal.children[0].style.cssText = "max-width:1300px;"
-    modal.modal.children[0].children[0].children[0].children[0].textContent = "Peso Fetal Estimado por formula de Hadlock-3 (CC CA LF) y categorizado mediante gráfica de la OMS";
+    modal.modal.children[0].children[0].children[0].children[0].innerHTML = "Peso Fetal Estimado (PFE) por formula de Hadlock-3 <small>(CC CA LF)</small> y categorizado mediante gráfica de la OMS";
 
     return modal
-
 }
