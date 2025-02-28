@@ -1898,6 +1898,15 @@ $( document ).ready(function() {
             title: {
                 text: '<small>Peso Fetal Estimado ( gramos )</small>', x: -20, useHTML: true
             },
+            subtitle: {
+                text: '', x: -20
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false,
+                    pointInterval: 1
+                }
+            },
             yAxis: {
                 title: { text: 'Gramos' },
                 min: 200,
@@ -1905,12 +1914,19 @@ $( document ).ready(function() {
                 tickInterval:200,
             },
             xAxis: {
-                categories: []
+                categories: [],
+                showFirstLabel: true,
+                showLastLabel: true
             },
             legend: {
                 layout: 'vertical',
                 align: 'right',
                 verticalAlign: 'top'
+            },
+            plotOptions: {
+                column: {
+                    grouping: false
+                }
             },
             colors: ['#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#313131', '#FF0000'],
             credits: {enabled: false},
@@ -2037,7 +2053,7 @@ $( document ).ready(function() {
         _highcharts.series[2].data = _grafico.valores.siete
         _highcharts.series[1].data = _grafico.valores.ocho
         _highcharts.series[0].data = _grafico.valores.nueve
-        //_highcharts.xAxis.categories = _grafico.semanas
+        _highcharts.xAxis.categories = _grafico.semanas
 
         _highcharts.title.text = "";
 
@@ -2227,7 +2243,7 @@ $( document ).ready(function() {
             _highcharts.series[2].data = _grafico.valores.siete
             _highcharts.series[1].data = _grafico.valores.ocho
             _highcharts.series[0].data = _grafico.valores.nueve
-            //_highcharts.xAxis.categories = _grafico.semanas
+            _highcharts.xAxis.categories = _grafico.semanas
             _highcharts.title.text = ""
             the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
 
@@ -2270,6 +2286,7 @@ $( document ).ready(function() {
                 },
                 xAxis: {
                     categories: [],
+                    showEmpty: true,
                     showFirstLabel: true,
                     showLastLabel: true
                 },
