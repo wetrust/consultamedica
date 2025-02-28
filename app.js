@@ -1915,8 +1915,8 @@ $( document ).ready(function() {
             },
             xAxis: {
                 categories: [],
-                showFirstLabel: true,
-                showLastLabel: true
+                startOnTick: true,
+                endOnTick: true
             },
             legend: {
                 layout: 'vertical',
