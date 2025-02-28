@@ -2046,6 +2046,23 @@ $( document ).ready(function() {
             $('#graficoPFEDinamico').highcharts(_highcharts);
 
             the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
+            the("textoTipoOMS").innerHTML = 'Feto '
+
+            let sexo = these("sexsexsex")
+            sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
+
+            if(sexo == "men" || sexo == "wom"){
+                the("textoTipoOMS").innerHTML += (sexo == "men") ? 'masculino' : 'femenino';
+            }
+
+            eg = Number(the("semanas").value + "." + the("dias").value);
+
+            the("textoTipoOMS").innerHTML += 'de ' + the("semanas").value + " semanas"
+
+            if (the("papapapa").value > 0){
+                the("textoTipoOMS").innerHTML += ' y ' + the("papapapa").value + " dias "  
+            }
+
         }
 
         the("papapapa").onchange = function() {
@@ -2132,6 +2149,22 @@ $( document ).ready(function() {
             $('#graficoPFEDinamico').highcharts(_highcharts);
 
             the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
+            the("textoTipoOMS").innerHTML = 'Feto '
+
+            let sexo = these("sexsexsex")
+            sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
+
+            if(sexo == "men" || sexo == "wom"){
+                the("textoTipoOMS").innerHTML += (sexo == "men") ? 'masculino' : 'femenino';
+            }
+
+            eg = Number(the("semanas").value + "." + the("dias").value);
+
+            the("textoTipoOMS").innerHTML += 'de ' + the("semanas").value + " semanas"
+
+            if (the("papapapa").value > 0){
+                the("textoTipoOMS").innerHTML += ' y ' + the("papapapa").value + " dias "  
+            }
         }
 
         let _sexo = these("sexsexsex")
@@ -2154,6 +2187,22 @@ $( document ).ready(function() {
         });
 
         the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
+        the("textoTipoOMS").innerHTML = 'Feto '
+
+        let sexo = these("sexsexsex")
+        sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
+
+        if(sexo == "men" || sexo == "wom"){
+            the("textoTipoOMS").innerHTML += (sexo == "men") ? 'masculino' : 'femenino';
+        }
+
+        eg = Number(the("semanas").value + "." + the("dias").value);
+
+        the("textoTipoOMS").innerHTML += 'de ' + the("semanas").value + " semanas"
+
+        if (the("papapapa").value > 0){
+            the("textoTipoOMS").innerHTML += ' y ' + the("papapapa").value + " dias "  
+        }
     }
 });
 

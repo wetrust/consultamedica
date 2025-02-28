@@ -22,9 +22,13 @@ function contenedor(){
     let _cHLeft = document.createElement("div")
     _cHLeft.classList.add("col-6")
 
+    let cCinco = document.createElement("p")
+    cCinco.classList.add("text-center")
+    cCinco.id = "textoTipoOMS"
+    _cHLeft.appendChild(cCinco)
+
     let _cHRight = document.createElement("div")
     _cHRight.classList.add("col-6")
-
 
     let cTres = document.createElement("p")
     cTres.classList.add("text-center")
