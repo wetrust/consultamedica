@@ -1866,7 +1866,6 @@ $( document ).ready(function() {
         if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
 
         var modal = appPesoEG();
-
         document.getElementsByTagName("body")[0].appendChild(modal.modal);
         the("dosdosdos").value = the("pfePctRpt").value
 
@@ -1957,9 +1956,6 @@ $( document ).ready(function() {
         _highcharts.series[0].data = _grafico.valores.nueve
         _highcharts.xAxis.categories = _grafico.semanas
 
-        _highcharts.title.text = "";
-
-        the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
         $('#graficoPFEDinamico').highcharts(_highcharts);
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
@@ -2046,10 +2042,10 @@ $( document ).ready(function() {
             _highcharts.series[1].data = _grafico.valores.ocho
             _highcharts.series[0].data = _grafico.valores.nueve
             _highcharts.xAxis.categories = _grafico.semanas
-            _highcharts.title.text = ""
-            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
 
             $('#graficoPFEDinamico').highcharts(_highcharts);
+
+            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
         }
 
         the("papapapa").onchange = function() {
@@ -2132,10 +2128,10 @@ $( document ).ready(function() {
             _highcharts.series[1].data = _grafico.valores.ocho
             _highcharts.series[0].data = _grafico.valores.nueve
             _highcharts.xAxis.categories = _grafico.semanas
-            _highcharts.title.text = "";
-            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
 
             $('#graficoPFEDinamico').highcharts(_highcharts);
+
+            the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
         }
 
         let _sexo = these("sexsexsex")
@@ -2156,6 +2152,8 @@ $( document ).ready(function() {
                 element.click()
             }
         });
+
+        the("tituloGraficoDinamico").innerHTML = 'PFE = ' + the("pfe").value + ' grs. percentil <span class="text-danger">' +the("pfePctRpt").value + '</span>'
     }
 });
 

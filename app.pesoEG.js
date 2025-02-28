@@ -16,10 +16,24 @@ function contenedor(){
 
     _cDos.classList.add("col-9")
 
+    let _cHead = document.createElement("div")
+    _cHead.classList.add("row")
+
+    let _cHLeft = document.createElement("div")
+    _cHLeft.classList.add("col-6")
+
+    let _cHRight = document.createElement("div")
+    _cHRight.classList.add("col-6")
+
+
     let cTres = document.createElement("p")
     cTres.classList.add("text-center")
     cTres.id = "tituloGraficoDinamico"
-    _cDos.appendChild(cTres)
+    _cHRight.appendChild(cTres)
+
+    _cHead.appendChild(_cHLeft)
+    _cHead.appendChild(_cHRight)
+    _cDos.appendChild(_cHead)
 
     let cCuatro = document.createElement("div")
     cCuatro.id = "graficoPFEDinamico"
