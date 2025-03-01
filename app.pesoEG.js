@@ -222,6 +222,10 @@ function modalx(){
     let _footer = document.createElement("div")
     _footer.classList.add("modal-footer")
 
+    let _mensaje = document.createElement("p")
+    _mensaje.innerText = "El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento."
+    _footer.appendChild(_mensaje)
+    
     if (typeof button !== typeof undefined){
         _button = document.createElement("button")
         _button.classList.add("btn", "wetrust")
