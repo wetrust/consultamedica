@@ -947,14 +947,6 @@ $( document ).ready(function() {
         }
     });
 
-    the("imagenes.flujometria.doppler").onclick = function(){
-        if (this.checked == true){
-            this.parentElement.parentElement.children[1].classList.remove("d-none")
-        }else{
-            this.parentElement.parentElement.children[1].classList.add("d-none")
-        }
-    }
-
     $("#ver\\.ecoPrimTrim, #ver\\.ecoPrimTrim\\.snoopy, #ver\\.ecoObsSegTrim\\.snoopy, #ver\\.ecoDoppler\\.snoopy, #ver\\.ecoGinecologica\\.snoopy, #ver\\.ecoPrimTrim\\.new, #ver\\.ila\\.morfologia").on("click", function(){
         if (this.checked == true){
             this.parentElement.parentElement.children[1].classList.remove("d-none");
