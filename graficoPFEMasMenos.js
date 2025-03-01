@@ -229,6 +229,7 @@ export const baseGraficoPFE = {
         tickInterval:200,
     },
     xAxis: {
+        title: { text: 'Semanas de gestación' },
         categories: [],
         showFirstLabel: true,
         showLastLabel: true
