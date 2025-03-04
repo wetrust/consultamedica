@@ -1229,10 +1229,6 @@ $( document ).ready(function() {
         $("#fcf-prim").val(this.value)
     })
 
-    $("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
-        comentarioSegundoTrimestre()
-	});
-
     $("#activ\\.calculadora\\.pree").on("change", function(){
         if (this.checked == true){
             var URL = "http://medicinafetalbarcelona.org/calc/";
@@ -2308,7 +2304,7 @@ $( document ).ready(function() {
             the("vasos").selectedIndex = 0;
             the("ev-morfo").selectedIndex = 0;
             the("comentarios-anatomia-informe-eg-texto").value = "";
-            the("eco.seg.trim.select.comentario").selectedIndex = 0;
+
             the("comentarios-eco-dos-inf-dos").value = "";
             the("grado").selectedIndex = 0;
             resetDate();
@@ -9874,7 +9870,8 @@ function calularRiesgoMorfologiaAPriori(){
 
 function comentarioSegundoTrimestre(){
 
-    let valorAlternativa = $("#eco\\.seg\\.trim\\.select\\.comentario").val()
+    //let valorAlternativa = $("#eco\\.seg\\.trim\\.select\\.comentario").val()
+    let valorAlternativa = 1
 
     if (valorAlternativa == 1){
         var comentarios = ""
