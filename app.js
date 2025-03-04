@@ -806,15 +806,6 @@ $( document ).ready(function() {
     the("lh").onkeyup = function(){ pctlh()};
     $( '#dof').change( calcdof);
 
-    $("#art\\.ut").on("click", function(){
-        if (this.checked == true){
-            the("art.ut.div").classList.remove("d-none");
-            the("respuesta_uterina_derecha").focus();
-        }else{
-            the("art.ut.div").classList.add("d-none");
-        }
-    });
-
     $("#art\\.ut\\.prim").on("click", function(){
         if (this.checked == true){
             the("art.ut.prim.div").classList.remove("d-none");
