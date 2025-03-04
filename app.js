@@ -2356,7 +2356,7 @@ $( document ).ready(function() {
 // Controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["utero.ginecologica", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3", "endometrio.ginecologica", "endometDesc2", "endometGrosor", "anexo.derecho.ginecologica", "anexo.izquierdo.ginecologica","ovario.derecho.ginecologica", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovario.izquierdo.ginecologica", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "douglas.ginecologica", "comentario.ginecologica", "saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "lh", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","aud", "psmACM","", "modalPreInfEcoDoppler","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia", "", "vlp.morfologia", "vld.morfologia", "respuesta_uterina_derecha_prim", "respuesta_uterina_izquierda_prim"];
+        var key_enter = ["utero.ginecologica", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3", "endometrio.ginecologica", "endometDesc2", "endometGrosor", "anexo.derecho.ginecologica", "anexo.izquierdo.ginecologica","ovario.derecho.ginecologica", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovario.izquierdo.ginecologica", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "douglas.ginecologica", "comentario.ginecologica", "saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "pfe", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","aud", "psmACM","", "modalPreInfEcoDoppler","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia", "", "vlp.morfologia", "vld.morfologia", "respuesta_uterina_derecha_prim", "respuesta_uterina_izquierda_prim"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -3409,7 +3409,7 @@ $( document ).ready(function() {
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
-        comentarios = (typeof comentarios == 'undefined') ? '- Crecimiento fetal (peso) en percentil ' + parseInt($('#pfePctRpt').val()) + ', para la gráfica de peso fetal OMS *<br />- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'<br>- Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
+        comentarios = (typeof comentarios == 'undefined') ? '- Crecimiento fetal (peso) en percentil ' + Math.trunc(Number(the("pfePctRpt").value)) + ', para la gráfica de peso fetal OMS *<br />- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'<br>- Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
         stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
 
         var paciente = the("nombre-paciente").value;
@@ -9901,7 +9901,7 @@ function comentarioSegundoTrimestre(){
             comentarios += '\r\n';
         }
 
-        var percentilPeso = $('#pfePctRpt').val();
+        var percentilPeso = Math.trunc(number(the("pfePctRpt").value));
         percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
         comentarios += '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal OMS * \r\n';
 
