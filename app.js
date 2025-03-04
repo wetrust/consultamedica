@@ -9899,7 +9899,7 @@ function comentarioSegundoTrimestre(){
             comentarios += '\r\n';
         }
 
-        var percentilPeso = Math.trunc(number(the("pfePctRpt").value));
+        var percentilPeso = Math.trunc(Number(the("pfePctRpt").value));
         percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
         comentarios += '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal OMS * \r\n';
 
