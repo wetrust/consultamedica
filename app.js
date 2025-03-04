@@ -1521,11 +1521,11 @@ $( document ).ready(function() {
         if (this.checked == true){
 
             the("otras.biometrias.div").classList.remove("d-none")
-
+            the("modalPreInfEcoObsSegTrim2").classList.remove("d-none")
         }else{
 
             the("otras.biometrias.div").classList.add("d-none")
-
+            the("modalPreInfEcoObsSegTrim2").classList.add("d-none")
         }
 
     }
