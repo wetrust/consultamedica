@@ -3405,7 +3405,7 @@ $( document ).ready(function() {
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
-        comentarios = (typeof comentarios == 'undefined') ? '- Crecimiento fetal (peso) en percentil ' + Math.trunc(Number(the("pfePctRpt").value)) + ', para la gráfica de peso fetal OMS *<br />- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'<br>- Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
+        comentarios = (typeof comentarios == 'undefined') ? '- Crecimiento fetal (peso) en percentil ' + Math.trunc(Number(the("pfePctRpt").value)) + ', para gráfica de peso fetal de la OMS *<br />- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'<br>- Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
         stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
 
         var paciente = the("nombre-paciente").value;
@@ -9898,7 +9898,7 @@ function comentarioSegundoTrimestre(){
 
         var percentilPeso = Math.trunc(Number(the("pfePctRpt").value)).toString();
         percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
-        comentarios += '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal OMS * \r\n';
+        comentarios += '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para gráfica de peso fetal de la OMS * \r\n';
 
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
