@@ -3386,27 +3386,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col mb-2">
-                                        <label>-Largo Humeral</label>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="text" class="form-control" id="lh">
-                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhPct">
-                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <input type="hidden" id="lhPctRpt">
-                                        <input type="hidden" id="lhRango">
-                                    </div>
-                                    <div class="col mb-2">
-                                        <button class="btn btn-outline-info" id="graficoLh">Ver Gráficas</button>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <div class="col-3 mb-2">
                                         <label><strong>PFE</strong> (Hadlock-3), categorización <strong>Curva OMS</strong></label>
                                     </div>
@@ -3605,6 +3584,27 @@
                                 <div id="otras.biometrias.div" class="d-none">
                                     <div class="form-group row">
                                         <div class="col mb-2">
+                                            <label>-Largo Humeral</label>
+                                        </div>
+                                        <div class="col mb-2">
+                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                <input type="text" class="form-control" id="lh">
+                                                <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                            </div>
+                                        </div>
+                                        <div class="col mb-2">
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhPct">
+                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <input type="hidden" id="lhPctRpt">
+                                            <input type="hidden" id="lhRango">
+                                        </div>
+                                        <div class="col mb-2">
+                                            <button class="btn btn-outline-info" id="graficoLh">Ver Gráficas</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-2">
                                             <label>- Diámetro cerebeloso transverso</label>
                                         </div>
                                         <div class="col mb-2">
@@ -3681,38 +3681,34 @@
                                             <button class="btn btn-outline-info" id="graficoCCCA">Ver Gráficas</button>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-5">
-                            <div class="card-body">
-                                <div class="d-flex flex-row align-items-center" style="padding-left: 15rem;">
-                                    <label class="mr-2">Para un crecimiento fetal en percentil 50, la biometría promedio correspondería a</label>
-                                    <div class="input-group" style="width: 150px;">
-                                        <input type="text" class="form-control text-white text-center" style="background-color: #6c757d !important;" id="egP50" readonly>
-                                        <div class="input-group-append"><div class="input-group-text">semanas</div></div>
-                                    </div>
-                                </div>
-                                <div class="d-none" id="preguntaAjusteEcoSegTrim">
-                                    <div class="col-8 text-muted">¿Desea recalcular la edad gestacional?
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                            <label class="btn btn-outline-consulta active">
-                                            <input type="radio" value="0" checked="">NO</label>
-                                            <label class="btn btn-outline-consulta" id="ajusteDosSi">
-                                            <input type="radio" value="1">SI</label>
+                                    <div class="d-flex flex-row align-items-center" style="padding-left: 15rem;">
+                                        <label class="mr-2">Para un crecimiento fetal en percentil 50, la biometría promedio correspondería a</label>
+                                        <div class="input-group" style="width: 150px;">
+                                            <input type="text" class="form-control text-white text-center" style="background-color: #6c757d !important;" id="egP50" readonly>
+                                            <div class="input-group-append"><div class="input-group-text">semanas</div></div>
                                         </div>
                                     </div>
-                                </div>
-                                <p style="padding-left: 15rem;"><strong>En ecografía de 2º o 3º trimestre, solo procede ajustar la edad gestacional siempre cuando:</strong><br>a ) No exista confirmación ecográfica precoz de la edad gestacional (1º trimestre) y <br>b ) Se observe gran diferencia entre la edad gestacional esperada y la obtenida por biometría ecográfica actual.</p>
-                                <div class="d-flex flex-row align-items-center" style="padding-left: 15rem;"></div>
-                                <div class="d-flex flex-row align-items-center justify-content-between" style="margin-left: 15rem;background-color: #6c757d !important;width:calc(300px + 28rem)">
-                                    <h6 class="text-white ml-5">Seleccione tipo de informe ecográfico</h6>
-                                    <select id="eco.seg.trim.select.comentario" class="form-control" style="width: 350px;">
-                                        <option value="1" selected>continuar evaluación de crecimiento fetal</option>
-                                        <option value="2">Ajuste de edad gestacional según bp50</option>
-                                    </select>
+                                    <div class="d-none" id="preguntaAjusteEcoSegTrim">
+                                        <div class="col-8 text-muted">¿Desea recalcular la edad gestacional?
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-outline-consulta active">
+                                                <input type="radio" value="0" checked="">NO</label>
+                                                <label class="btn btn-outline-consulta" id="ajusteDosSi">
+                                                <input type="radio" value="1">SI</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p style="padding-left: 15rem;"><strong>En ecografía de 2º o 3º trimestre, solo procede ajustar la edad gestacional siempre cuando:</strong><br>a ) No exista confirmación ecográfica precoz de la edad gestacional (1º trimestre) y <br>b ) Se observe gran diferencia entre la edad gestacional esperada y la obtenida por biometría ecográfica actual.</p>
+                                    <div class="d-flex flex-row align-items-center" style="padding-left: 15rem;"></div>
+                                    <div class="d-flex flex-row align-items-center justify-content-between" style="margin-left: 15rem;background-color: #6c757d !important;width:calc(300px + 28rem)">
+                                        <h6 class="text-white ml-5">Seleccione tipo de informe ecográfico</h6>
+                                        <select id="eco.seg.trim.select.comentario" class="form-control" style="width: 350px;">
+                                            <option value="1" selected>continuar evaluación de crecimiento fetal</option>
+                                            <option value="2">Ajuste de edad gestacional según bp50</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
