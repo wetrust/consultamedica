@@ -2160,10 +2160,13 @@ $( document ).ready(function() {
 
         if (sexo == "masculino"){
             _sexo[1].checked = true
+            _sexo[1].parentElement.classList.add("active")
         }else if (sexo == "femenino"){
             _sexo[2].checked = true
+            _sexo[2].parentElement.classList.add("active")
         }else{
             _sexo[0].checked = true
+            _sexo[0].parentElement.classList.add("active")
         }
 
         _sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
