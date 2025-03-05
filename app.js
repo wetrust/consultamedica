@@ -2134,7 +2134,19 @@ $( document ).ready(function() {
         }
 
         let _sexo = these("sexsexsex")
-        _sexo = _sexo.forEach(alter => { alter.onchange = the("cuacuacua").onchange })
+        _sexo = _sexo.forEach(alter => { alter.onchange = function(){  
+                the("cuacuacua").onchange();
+                the("ecografia.segtrim.sexo").value
+
+                if (sexo == "men"){
+                    the("ecografia.segtrim.sexo").value = "masculino"
+                }else if (sexo == "wom"){
+                    the("ecografia.segtrim.sexo").value = "femenino"
+                }else{
+                    the("ecografia.segtrim.sexo").value = "no identificado"
+                }
+            }
+        })
 
         the("unounouno").onkeyup = the("cuacuacua").onchange
         the("goto.doppler.grafico").dataset.modal = modal.id
