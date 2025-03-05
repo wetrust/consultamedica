@@ -2155,8 +2155,18 @@ $( document ).ready(function() {
         the("tituloGraficoDinamico").innerHTML = '<strong>PFE = ' + the("pfe").value + ' grs.       Percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></strong>'
         let txtOMS = '<strong>Feto '
 
-        let sexo = these("sexsexsex")
-        sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
+        let sexo = the("ecografia.segtrim.sexo").value
+        _sexo = these("sexsexsex")
+
+        if (sexo == "masculino"){
+            _sexo[1].checked = true
+        }else if (sexo == "femenino"){
+            _sexo[2].checked = true
+        }else{
+            _sexo[0].checked = true
+        }
+
+        _sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
 
         if(sexo == "men" || sexo == "wom"){
             txtOMS += (sexo == "men") ? 'masculino' : 'femenino';
@@ -2170,7 +2180,7 @@ $( document ).ready(function() {
             txtOMS += ' y ' + the("papapapa").value + " dias "  
         }
         txtOMS += '</strong>'
-
+ 
         the("textoTipoOMS").innerHTML = txtOMS
     }
 });
