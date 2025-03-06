@@ -5390,6 +5390,21 @@ $(document).ready(function(){
         }
     });
 
+    $('#liquido\\.ila\\.uno, #liquido\\.ila\\.dos, #liquido\\.ila\\.tres, #liquido\\.ila\\.cuatro').on("keyup", function(){
+        var uno = the("liquido.ila.uno").value;
+        var dos = the("liquido.ila.dos").value;
+        var tres = the("liquido.ila.tres").value;
+        var cuatro = the("liquido.ila.cuatro").value;
+
+        uno = (uno.length > 0) ? +uno : 0;
+        dos = (dos.length > 0) ? +dos : 0;
+        tres = (tres.length > 0) ? +tres : 0;
+        cuatro = (cuatro.length > 0) ? +cuatro : 0;
+
+        var suma = (uno + dos + tres + cuatro);
+        the("liquido.ila.suma").value = suma;
+    });
+
     $('#dbp\\.morfologia').on("keyup", function(){
         /* 3 97*/
         let a = [], b = [];
