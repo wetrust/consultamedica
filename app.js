@@ -2988,7 +2988,7 @@ $( document ).ready(function() {
                              });
                          }
                          data.push({
-                                 y: parseFloat($('#bvm').val()),
+                                 y: parseFloat($('#bvmEcoDos').val()),
                              });
                          for (i = edadGest +1; i <= 39; i ++ ) {
                              data.push({
