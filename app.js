@@ -1652,29 +1652,29 @@ $( document ).ready(function() {
     })
 
     $("#modalPreInfEcoObsSegTrim2").on("click", function(){
-        var cb = parseInt($('#cerebelo').val());
-        var lh = parseInt($('#lh').val());
+        //var cb = parseInt($('#cerebelo').val());
+        //var lh = parseInt($('#lh').val());
 
-        if (isNaN(cb) || isNaN(lh)){
-            var modal = makeModal();
-            document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-            the(modal.titulo).innerText = "Información";
-            the(modal.contenido).innerHTML = "<p><strong>Desde 14 semanas en adelante, para el cálculo de edad gestacional es excluido el Abdómen, considerando solo biometrías de Cráneo y Fémur.</strong><br>Para mayor exactitud es recomendable ingresar mediciones de Humero y Cerebelo.<br>¿Desea ingresar biometrías de Humero y Cerebelo?</p><div class='btn-group btn-group-toggle' data-toggle='buttons'><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verNO' aria-pressed='true' data-modal='"+modal.id+"'><input type='radio' value='0' checked=''> NO</label><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verSi' aria-pressed='true' data-modal='"+modal.id+"'><input type='radio' value='1'> SI</label></div>";
+        //if (isNaN(cb) || isNaN(lh)){
+        //    var modal = makeModal();
+        //    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        //    the(modal.titulo).innerText = "Información";
+        //    the(modal.contenido).innerHTML = "<p><strong>Desde 14 semanas en adelante, para el cálculo de edad gestacional es excluido el Abdómen, considerando solo biometrías de Cráneo y Fémur.</strong><br>Para mayor exactitud es recomendable ingresar mediciones de Humero y Cerebelo.<br>¿Desea ingresar biometrías de Humero y Cerebelo?</p><div class='btn-group btn-group-toggle' data-toggle='buttons'><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verNO' aria-pressed='true' data-modal='"+modal.id+"'><input type='radio' value='0' checked=''> NO</label><label class='btn btn-outline-primary p-3' id='infEcoObsSegTrim2verSi' aria-pressed='true' data-modal='"+modal.id+"'><input type='radio' value='1'> SI</label></div>";
 
-            $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {$(this).remove();});
+        //    $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {$(this).remove();});
 
-            $("#infEcoObsSegTrim2verNO").on("click", function(){
-                $('#'+this.dataset.modal).modal('hide');
-                modalEcoSegTrimInforme()
-            });
+        //    $("#infEcoObsSegTrim2verNO").on("click", function(){
+        //        $('#'+this.dataset.modal).modal('hide');
+        //        modalEcoSegTrimInforme()
+        //    });
 
-            $("#infEcoObsSegTrim2verSi").on("click", function(){
-                $('#'+this.dataset.modal).modal('hide');
-                $('#lh').focus();
-            });
-        }else{
+        //    $("#infEcoObsSegTrim2verSi").on("click", function(){
+        //        $('#'+this.dataset.modal).modal('hide');
+        //        $('#lh').focus();
+        //    });
+        //}else{
             modalEcoSegTrimInforme()
-        }
+        //}
     });
 
     $("#modalPreInfEcoObsSegTrim1").on("click", function() {
