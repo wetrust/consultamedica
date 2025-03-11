@@ -215,12 +215,12 @@ function loadTabla(config){
 }
 
 function modal_edit(){
-    let modal = makeModal("Guardar")
+    let _modal = makeModal("Guardar")
 
-    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-    the(modal.titulo).innerHTML = "Modificar Item";
-    the(modal.titulo).classList.add("mx-auto");
-    the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+    the(_modal.titulo).innerHTML = "Modificar Item";
+    the(_modal.titulo).classList.add("mx-auto");
+    the(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
 
     let z = this.dataset.config
     let id = this.dataset.id
@@ -265,18 +265,18 @@ function modal_edit(){
     let _btn_delete = make.uuidv4()
     _contenido += '<button class="btn btn-outline-danger" data-id="'+id+'" data-config="'+z+'" id="'+_btn_delete+'">Eliminar</button>'
 
-    the(modal.contenido).innerHTML = _contenido;
-    the(modal.id).children[0].classList.remove("modal-lg");
+    the(_modal.contenido).innerHTML = _contenido;
+    the(_modal.id).children[0].classList.remove("modal-lg");
 
-    $('#'+modal.id).modal("show");
-    //$('#'+modal.id).on('hidden.bs.modal', function (e) { $(this).remove(); });
-    the(_btn_delete).dataset.modal = modal.id
+    $('#'+_modal.id).modal("show");
+    //$('#'+_modal.id).on('hidden.bs.modal', function (e) { $(this).remove(); });
+    the(_btn_delete).dataset.modal = _modal.id
     $("#"+_btn_delete).on("click", preDelete_item)
 
-    the(modal.button).dataset.id = id
-    the(modal.button).dataset.config = z
-    the(modal.button).dataset.inputs = inputs
-    $("#"+modal.button).on("click", function(){
+    the(_modal.button).dataset.id = id
+    the(_modal.button).dataset.config = z
+    the(_modal.button).dataset.inputs = inputs
+    $("#"+_modal.button).on("click", function(){
         let z = this.dataset.config
         let id = this.dataset.id
 
@@ -300,21 +300,21 @@ function preDelete_item(){
     let z = this.dataset.config
     let id = this.dataset.id
 
-    let modal = makeModal("Eliminar")
+    let _modal = makeModal("Eliminar")
 
-    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-    the(modal.titulo).innerHTML = "Eliminar Item";
-    the(modal.titulo).classList.add("mx-auto");
-    the(modal.titulo).parentElement.classList.add("bg-danger", "text-white");
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+    the(_modal.titulo).innerHTML = "Eliminar Item";
+    the(_modal.titulo).classList.add("mx-auto");
+    the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
 
-    the(modal.contenido).innerHTML = "<p>Está seguro de eliminar el ítem</p>";
-    the(modal.id).children[0].classList.remove("modal-lg");
+    the(_modal.contenido).innerHTML = "<p>Está seguro de eliminar el ítem</p>";
+    the(_modal.id).children[0].classList.remove("modal-lg");
 
-    $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-    the(modal.button).dataset.config = z
-    the(modal.button).dataset.id = id
-    the(modal.button).dataset.parent = this.dataset.modal
-    $("#"+modal.button).on("click", delete_item)
+    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+    the(_modal.button).dataset.config = z
+    the(_modal.button).dataset.id = id
+    the(_modal.button).dataset.parent = this.dataset.modal
+    $("#"+_modal.button).on("click", delete_item)
 }
 
 function delete_item(){
@@ -469,21 +469,21 @@ $(document).ready(function() {
             return false;
         }
 
-        let modal = makeModal("Cargar datos")
+        let _modal = makeModal("Cargar datos")
 
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
-        the(modal.titulo).classList.add("mx-auto");
-        the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+        the(_modal.titulo).innerHTML = "Cargar datos desde el servidor";
+        the(_modal.titulo).classList.add("mx-auto");
+        the(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
 
         let _contenido = '<p>La aplicación revisará en el servidor si hay configuraciones asociadas al correo escrito, y si encuentra configuraciones las cargará a esta computadora</p><h6>¿Continuar?</h6>'
 
-        the(modal.contenido).innerHTML = _contenido;
-        the(modal.id).children[0].classList.remove("modal-lg");
+        the(_modal.contenido).innerHTML = _contenido;
+        the(_modal.id).children[0].classList.remove("modal-lg");
 
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+        $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
-        $('#'+modal.button).on("click", function(){
+        $('#'+_modal.button).on("click", function(){
 
             let email = the("correo.configuracion").value
             email = email.replace(/\s+/g, '');
@@ -501,7 +501,7 @@ $(document).ready(function() {
                 ordenarAlfabeto()
                 loadTabla(config)
                 loadDatabase();
-                $('#'+modal.id).modal("hide")
+                $('#'+_modal.id).modal("hide")
             }).catch(function(error) {
                 alert("error")
             });
@@ -523,21 +523,21 @@ $(document).ready(function() {
             return false;
         }
 
-        let modal = makeModal("Guardar datos")
+        let _modal = makeModal("Guardar datos")
 
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerHTML = "Guardar datos en servidor";
-        the(modal.titulo).classList.add("mx-auto");
-        the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+        the(_modal.titulo).innerHTML = "Guardar datos en servidor";
+        the(_modal.titulo).classList.add("mx-auto");
+        the(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
 
         let _contenido = '<p>La aplicación guardará en el servidor las configuraciones actuales y quedaran asociadas al correo escrito, si ya guardó anteriormente información, los datos serán sobrescritos</p><h6>¿Continuar?</h6>'
 
-        the(modal.contenido).innerHTML = _contenido;
-        the(modal.id).children[0].classList.remove("modal-lg");
+        the(_modal.contenido).innerHTML = _contenido;
+        the(_modal.id).children[0].classList.remove("modal-lg");
     
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+        $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
-        $('#'+modal.button).on("click", function(){
+        $('#'+_modal.button).on("click", function(){
 
             var _conf = JSON.parse(localStorage["configuracion"]);
             let email = the("correo.configuracion").value
@@ -557,7 +557,7 @@ $(document).ready(function() {
                 var _conf = JSON.parse(localStorage["configuracion"]);
                 _conf.id = data.config_id;
                 localStorage["configuracion"] = JSON.stringify(_conf);
-                $('#'+modal.id).modal("hide")
+                $('#'+_modal.id).modal("hide")
             }).catch(function(error) {
                 alert("error")
             });
@@ -573,19 +573,19 @@ $(document).ready(function() {
 })
 
 function errorCorreo(){
-    let modal = makeModal()
+    let _modal = makeModal()
 
-    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-    the(modal.titulo).innerHTML = "Error";
-    the(modal.titulo).classList.add("mx-auto");
-    the(modal.titulo).parentElement.classList.add("bg-danger", "text-white");
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+    the(_modal.titulo).innerHTML = "Error";
+    the(_modal.titulo).classList.add("mx-auto");
+    the(_modal.titulo).parentElement.classList.add("bg-danger", "text-white");
 
     let _contenido = '<p>Escriba un email válido</p>'
 
-    the(modal.contenido).innerHTML = _contenido;
-    the(modal.id).children[0].classList.remove("modal-lg");
+    the(_modal.contenido).innerHTML = _contenido;
+    the(_modal.id).children[0].classList.remove("modal-lg");
 
-    $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+    $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 }
 
 function validateEmail(email) {
