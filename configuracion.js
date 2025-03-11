@@ -272,27 +272,27 @@ function modal_edit(){
     the(_btn_delete).dataset.modal = modal.id
     $("#"+_btn_delete).on("click", preDelete_item)
 
-    the(modal.button).dataset.id = id
-    the(modal.button).dataset.config = z
-    the(modal.button).dataset.inputs = inputs
-    $("#"+modal.button).on("click", function(){
-        let z = this.dataset.config
-        let id = this.dataset.id
+    // the(modal.button).dataset.id = id
+    // the(modal.button).dataset.config = z
+    // the(modal.button).dataset.inputs = inputs
+    // $("#"+modal.button).on("click", function(){
+    //     let z = this.dataset.config
+    //     let id = this.dataset.id
     
-        var configuracion = JSON.parse(localStorage["configuracion"]);
-        let data = configuracion[config.config[z].data][id]
+    //     var configuracion = JSON.parse(localStorage["configuracion"]);
+    //     let data = configuracion[config.config[z].data][id]
 
-        for (var y = 0; y < inputs.length; y++){
-            data[y] = the(inputs[y]).value
-        }
+    //     for (var y = 0; y < inputs.length; y++){
+    //         data[y] = the(inputs[y]).value
+    //     }
 
-        configuracion[config.config[z].data][id] = data
+    //     configuracion[config.config[z].data][id] = data
     
-        localStorage["configuracion"] = JSON.stringify(configuracion);
+    //     localStorage["configuracion"] = JSON.stringify(configuracion);
     
-        $("#"+this.dataset.modal).modal("hide")
-        loadTabla(config)
-    })
+    //     $("#"+this.dataset.modal).modal("hide")
+    //     loadTabla(config)
+    // })
 }
 
 function preDelete_item(){
