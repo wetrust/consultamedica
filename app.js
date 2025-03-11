@@ -1547,7 +1547,7 @@ $( document ).ready(function() {
 
 // Controlador de los informes
 $( document ).ready(function() {
-    $("#btn\\.informe\\.precoz").on("click", function (){
+    the("btn.informe.precoz").onclick = function (){
 
         //if (the("licencia").parentElement.classList.contains("active")){
         if (true){
@@ -1597,7 +1597,7 @@ $( document ).ready(function() {
         } else {
             imprInforme(infPrecoz());
         }
-    });
+    }
 
     $("#informe\\.morfologia").on("click", function(){
         //if (the("licencia").parentElement.classList.contains("active")){
@@ -6504,7 +6504,7 @@ function infPrecoz(){
 
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
-    var ecografista = "Dr. Rudecindo Lagos";
+    var ecografista = the("ecografista").value;
 
     let fexamen = new Date(Date.parse(the("fee").value));
     fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
