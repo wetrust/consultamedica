@@ -217,7 +217,7 @@ function loadTabla(config){
 function modal_edit(){
     let modal = make.modal("Guardar")
 
-    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+    document.getElementsByTagName("body")[0].insertAdjacentElement( 'beforeend', modal.modal);
     the(modal.titulo).innerHTML = "Modificar Item";
     the(modal.titulo).classList.add("mx-auto");
     the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
@@ -470,7 +470,7 @@ $(document).ready(function() {
 
         let modal = make.modal("Cargar datos")
 
-        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        document.getElementsByTagName("body")[0].insertAdjacentElement( 'beforeend', modal.modal);
         the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
         the(modal.titulo).classList.add("mx-auto");
         the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
@@ -574,7 +574,7 @@ $(document).ready(function() {
 function errorCorreo(){
     let modal = make.modal()
 
-    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+    document.getElementsByTagName("body")[0].insertAdjacentElement( 'beforeend', modal.modal);
     the(modal.titulo).innerHTML = "Error";
     the(modal.titulo).classList.add("mx-auto");
     the(modal.titulo).parentElement.classList.add("bg-danger", "text-white");
