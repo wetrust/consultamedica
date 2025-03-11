@@ -215,9 +215,9 @@ function loadTabla(config){
 }
 
 function modal_edit(){
-    let modal = make.modal("Guardar")
+    let modal = makeModal("Guardar")
 
-    document.getElementsByTagName("body")[0].insertAdjacentElement( 'beforeend', modal.modal);
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
     the(modal.titulo).innerHTML = "Modificar Item";
     the(modal.titulo).classList.add("mx-auto");
     the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
@@ -268,38 +268,39 @@ function modal_edit(){
     the(modal.contenido).innerHTML = _contenido;
     the(modal.id).children[0].classList.remove("modal-lg");
 
-    $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+    $('#'+modal.id).modal("show");
+    //$('#'+modal.id).on('hidden.bs.modal', function (e) { $(this).remove(); });
     the(_btn_delete).dataset.modal = modal.id
     $("#"+_btn_delete).on("click", preDelete_item)
 
-    // the(modal.button).dataset.id = id
-    // the(modal.button).dataset.config = z
-    // the(modal.button).dataset.inputs = inputs
-    // $("#"+modal.button).on("click", function(){
-    //     let z = this.dataset.config
-    //     let id = this.dataset.id
-    
-    //     var configuracion = JSON.parse(localStorage["configuracion"]);
-    //     let data = configuracion[config.config[z].data][id]
+    the(modal.button).dataset.id = id
+    the(modal.button).dataset.config = z
+    the(modal.button).dataset.inputs = inputs
+    $("#"+modal.button).on("click", function(){
+        let z = this.dataset.config
+        let id = this.dataset.id
 
-    //     for (var y = 0; y < inputs.length; y++){
-    //         data[y] = the(inputs[y]).value
-    //     }
+        var configuracion = JSON.parse(localStorage["configuracion"]);
+        let data = configuracion[config.config[z].data][id]
 
-    //     configuracion[config.config[z].data][id] = data
+        for (var y = 0; y < inputs.length; y++){
+            data[y] = the(inputs[y]).value
+        }
+
+        configuracion[config.config[z].data][id] = data
     
-    //     localStorage["configuracion"] = JSON.stringify(configuracion);
+        localStorage["configuracion"] = JSON.stringify(configuracion);
     
-    //     $("#"+this.dataset.modal).modal("hide")
-    //     loadTabla(config)
-    // })
+        $("#"+this.dataset.modal).modal("hide")
+        loadTabla(config)
+    })
 }
 
 function preDelete_item(){
     let z = this.dataset.config
     let id = this.dataset.id
 
-    let modal = make.modal("Eliminar")
+    let modal = makeModal("Eliminar")
 
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
     the(modal.titulo).innerHTML = "Eliminar Item";
@@ -468,9 +469,9 @@ $(document).ready(function() {
             return false;
         }
 
-        let modal = make.modal("Cargar datos")
+        let modal = makeModal("Cargar datos")
 
-        document.getElementsByTagName("body")[0].insertAdjacentElement( 'beforeend', modal.modal);
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerHTML = "Cargar datos desde el servidor";
         the(modal.titulo).classList.add("mx-auto");
         the(modal.titulo).parentElement.classList.add("bg-success", "text-white");
@@ -522,7 +523,7 @@ $(document).ready(function() {
             return false;
         }
 
-        let modal = make.modal("Guardar datos")
+        let modal = makeModal("Guardar datos")
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerHTML = "Guardar datos en servidor";
@@ -572,9 +573,9 @@ $(document).ready(function() {
 })
 
 function errorCorreo(){
-    let modal = make.modal()
+    let modal = makeModal()
 
-    document.getElementsByTagName("body")[0].insertAdjacentElement( 'beforeend', modal.modal);
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
     the(modal.titulo).innerHTML = "Error";
     the(modal.titulo).classList.add("mx-auto");
     the(modal.titulo).parentElement.classList.add("bg-danger", "text-white");
@@ -649,4 +650,26 @@ function loadOnly(name){
         $("#"+config.config[0].input[0].id).val(configuracion.membrete);
         $("#correo\\.configuracion").val(configuracion.email);
     }
+}
+
+function makeModal(button){
+    let id = uuidv4();
+    let titulo = uuidv4();
+    let contenido = uuidv4();
+    let _button = uuidv4();
+    let button_string = "";
+    
+    if (typeof button !== typeof undefined){
+        button_string = '<button type="button" class="btn btn-primary" id="'+_button+'" data-modal="'+id+'">'+button+'</button>';
+    }
+    
+    let resultado ={
+        id:id,
+        titulo:titulo,
+        contenido:contenido,
+        button:_button,
+        modal:'<div class="modal fade" tabindex="-1" role="dialog" id="'+id+'"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="'+titulo+'">Modal title</h5></div><div class="modal-body" id="'+contenido+'"></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>'+ button_string+'</div></div></div></div>'
+    }
+        
+    return resultado;
 }
