@@ -3042,7 +3042,6 @@ $( document ).ready(function() {
              },
              yAxis: {
                 title: { text: 'Milimetros (mm)' },
-                tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
              },
              colors: ['#313131','#313131','#313131'],
              xAxis: {
