@@ -653,10 +653,10 @@ function loadOnly(name){
 }
 
 function makeModalConfig(button){
-    let id = uuidv4();
-    let titulo = uuidv4();
-    let contenido = uuidv4();
-    let _button = uuidv4();
+    let id = make.uuidv4();
+    let titulo = make.uuidv4();
+    let contenido = make.uuidv4();
+    let _button = make.uuidv4();
     let button_string = "";
     
     if (typeof button !== typeof undefined){
