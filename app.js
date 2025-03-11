@@ -3078,7 +3078,7 @@ $( document ).ready(function() {
                              });
                          }
                          data.push({
-                                 y: parseFloat(the('liquido.ila.cuatro').value),
+                                 y: parseFloat(the('liquido.ila.suma').value),
                              });
                          for (i = edadGest +1; i <= 39; i ++ ) {
                              data.push({
