@@ -215,7 +215,7 @@ function loadTabla(config){
 }
 
 function modal_edit(){
-    let _modal = makeModal("Guardar")
+    let _modal = makeModalConfig("Guardar")
 
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
     the(_modal.titulo).innerHTML = "Modificar Item";
@@ -300,7 +300,7 @@ function preDelete_item(){
     let z = this.dataset.config
     let id = this.dataset.id
 
-    let _modal = makeModal("Eliminar")
+    let _modal = makeModalConfig("Eliminar")
 
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
     the(_modal.titulo).innerHTML = "Eliminar Item";
@@ -469,7 +469,7 @@ $(document).ready(function() {
             return false;
         }
 
-        let _modal = makeModal("Cargar datos")
+        let _modal = makeModalConfig("Cargar datos")
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
         the(_modal.titulo).innerHTML = "Cargar datos desde el servidor";
@@ -523,7 +523,7 @@ $(document).ready(function() {
             return false;
         }
 
-        let _modal = makeModal("Guardar datos")
+        let _modal = makeModalConfig("Guardar datos")
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
         the(_modal.titulo).innerHTML = "Guardar datos en servidor";
@@ -573,7 +573,7 @@ $(document).ready(function() {
 })
 
 function errorCorreo(){
-    let _modal = makeModal()
+    let _modal = makeModalConfig()
 
     document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
     the(_modal.titulo).innerHTML = "Error";
@@ -652,7 +652,7 @@ function loadOnly(name){
     }
 }
 
-function makeModal(button){
+function makeModalConfig(button){
     let id = uuidv4();
     let titulo = uuidv4();
     let contenido = uuidv4();
