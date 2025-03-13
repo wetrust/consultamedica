@@ -5511,10 +5511,10 @@ $(document).ready(function(){
 
         var suma = (uno + dos + tres + cuatro);
         the("liquido.ila.suma").value = suma;
-        $('#liquido\\.ila\\.percentil').trigger("keyup")
+        $('#liquido\\.ila\\.suma').trigger("keyup")
     });
 
-    $('#liquido\\.ila\\.percentil').on("keyup", function(){
+    $('#liquido\\.ila\\.suma').on("keyup", function(){
 
         var suma = this.value;
 
