@@ -798,6 +798,8 @@ $( document ).ready(function() {
     $( "#bvm" ).change(bvm).on("keyup", function(){
         the("bvmEcoDos").value = this.value
 
+
+
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
         comentarioSegundoTrimestre()
@@ -1207,7 +1209,13 @@ $( document ).ready(function() {
 
     })
 
-    $("#bvmEcoDos").on("keyup", function(){
+    $("#bvmEcoDos").on("keyup", function(e){
+        let suma = this.value
+
+        if (suma > 999){
+            e.preventDefault();
+        }
+
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
 
@@ -5514,9 +5522,13 @@ $(document).ready(function(){
         $('#liquido\\.ila\\.suma').trigger("keyup")
     });
 
-    $('#liquido\\.ila\\.suma').on("keyup", function(){
+    $('#liquido\\.ila\\.suma').on("keyup", function(e){
 
         var suma = this.value;
+
+        if (suma > 999){
+            e.preventDefault();
+        }
 
         let pct5ILA = [], pct95ILA = [];
 
