@@ -3846,10 +3846,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12 border-bottom">
-                                        <label><strong>Evaluación de liquido amniótico</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.- Cualitativa y B.- Semicuantitativa: Bolsillo vertical mayor  (BVM) e Indice de líquido amniótico (ILA)</label>
+                                        <label><strong>Evaluación de liquido amniótico</strong>[Semicuantitativa: Bolsillo vertical mayor  (BVM) e Indice de líquido amniótico (ILA)]</label>
                                     </div>
                                     <div class="col-3 mt-2">
-                                        <label>Evaluación cualitativa</label>
+                                        <label>1.- Evaluación cualitativa</label>
                                         <div class="form-group m-0">
                                             <input type="text" class="form-control" id="liq-cualitativo-eco" value="normal" list="liq.cualitativo.eco.list">
                                             <datalist id="liq.cualitativo.eco.list">
@@ -3859,43 +3859,47 @@
                                             </datalist>
                                         </div>
                                     </div>
-                                    <div class="col-9 mt-2">
+                                    <div class="col-9 mt-2 h-100">
+                                        <label>2.- Evaluación Semicuantitativa</label>
                                         <div class="d-flex align-items-end h-100">
-                                            <label class="mr-2">BVM</label>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <label class="mr-2 text-nowrap" style="width: 4rem;">A.- BVM</label>
+                                            <div class="input-group w-25 mr-auto" >
                                                 <input type="number" class="form-control" id="bvmEcoDos">
                                                 <div class="input-group-append"><div class="input-group-text">mm.</div></div>
                                             </div>
-                                            <label class="ml-4 mr-2">Percentil</label>
-                                            <input type="number" class="form-control" id="bvmEcoDosPCT" disabled>
-                                            <button class="btn btn-outline-info text-nowrap ml-4" id="graficoBVM">Gráfico BVM</button>
+                                            <label class="ml-auto mr-2 text-nowrap">Percentil</label>
+                                            <input type="number" class="form-control w-25" id="bvmEcoDosPCT" disabled>
+                                            <button class="btn btn-outline-info text-nowrap ml-4" style="width: 7rem;" id="graficoBVM">Gráfica BVM</button>
                                         </div>
                                     </div>
                                     <div class="col-3 my-3"></div>
-                                    <div class="col-9 my-3">
+                                    <div class="col-9 my-3 h-100">
                                         <div class="d-flex align-items-end h-100">
-                                            <label class="mr-2">ILA</label>
-                                            <div class="input-group mx-2 ">
+                                            <label class="mr-2 text-nowrap" style="width: 4rem;">B.- ILA</label>
+                                            <div class="input-group mb-2 w-25 mr-auto">
                                                 <input type="number" class="form-control" id="liquido.ila.suma" >
                                                 <div class="input-group-append">
                                                     <div class="input-group-text">mm</div>
                                                 </div>
                                             </div>
-                                            <label class="ml-4 mr-2">Percentil</label>
-                                            <input type="number" class="form-control" id="liquido.ila.percentil" disabled>
-                                            <button class="btn btn-outline-info text-nowrap ml-4" id="graficoILA">Gráfico ILA</button>
+                                            <label class="ml-auto mr-2 text-nowrap">Percentil</label>
+                                            <input type="number" class="form-control w-25" id="liquido.ila.percentil" disabled>
+                                            <button class="btn btn-outline-info text-nowrap ml-4" style="width: 7rem;" id="graficoILA">Gráfica ILA</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex flex-row">
-                                    <label class="text-nowrap mr-3 mb-0">Sumatoria 4 cuadrantes (ILA)</label>
-                                    <input type="number" class="form-control m-0 mx-2 p-0" id="liquido.ila.uno">
-                                    <span class="text-center">+</span>
-                                    <input type="number" class="form-control m-0 mx-2 p-0" id="liquido.ila.dos">
-                                    <span class="text-center">+</span>
-                                    <input type="number" class="form-control m-0 mx-2 p-0" id="liquido.ila.tres">
-                                    <span class="text-center">+</span>
-                                    <input type="number" class="form-control m-0 mx-2 p-0" id="liquido.ila.cuatro">
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="ver.ecoObsSegTrim.snoopy">
+                                        <label class="form-check-label" for="ver.ecoObsSegTrim.snoopy">Sumatoria 4 cuadrantes</label>
+                                    </div>
+                                    <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.uno">
+                                    <span class="text-center d-none">+</span>
+                                    <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.dos">
+                                    <span class="text-center d-none">+</span>
+                                    <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.tres">
+                                    <span class="text-center d-none">+</span>
+                                    <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.cuatro">
 
                                 </div>
                                 <div class="d-none">
