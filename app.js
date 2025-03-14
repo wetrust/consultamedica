@@ -2975,6 +2975,7 @@ $( document ).ready(function() {
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerText = "Gráfico BVM";
         the(modal.contenido).innerHTML = '<div id="graficoBVMView"></div>';
+        the(modal.id).children[0].classList.remove("modal-lg");
 
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
