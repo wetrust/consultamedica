@@ -315,6 +315,14 @@ $( document ).ready(function() {
         }
     }
 
+    the("referenciabvmilaPunto").onclick = function(){
+        if (the("referenciabvmila").classList.contains("d-none")){
+            the("referenciabvmila").classList.remove("d-none")
+        }else{
+            the("referenciabvmila").classList.add("d-none")
+        }
+    }
+
     //funcion rara
     $("#menu\\.modulo\\.activo").mouseout(function(){
         if (the("menu.modulo.activo").classList.contains("active")){
