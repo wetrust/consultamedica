@@ -296,7 +296,7 @@ $( document ).ready(function() {
     }
 
     the("ver.sumatoria.cuadrantes").onclick = function(){
-        if (this.checked = true){
+        if (this.checked == true){
             the("liquido.ila.uno").classList.remove("d-none")
             the("liquido.ila.dos").classList.remove("d-none")
             the("liquido.ila.tres").classList.remove("d-none")
