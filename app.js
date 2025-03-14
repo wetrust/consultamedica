@@ -6726,7 +6726,7 @@ function infPrecoz(){
     comentario = "<strong><em>" + comentario + "</strong></em>"
 
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
-    var edadmaterna = $( "select[name='edad_materna']").val();
+    var edadmaterna = the("edad.ecoPrimTrim").value;
 
     InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
     InformeString = InformeString.replace(":FEXAMEN", fexamen);
@@ -6878,7 +6878,7 @@ function infPrecozClon(){
     comentario = "<strong><em>" + comentario + "</strong></em>"
 
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
-    var edadmaterna = these("edad_materna")[0].value;
+    var edadmaterna = the("edad.ecoPrimTrim").value;
 
     InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
     InformeString = InformeString.replace(":FEXAMEN", fexamen);
@@ -8718,7 +8718,7 @@ function informeGinecologico()
     comentario = "<strong><em>" + comentario + "</em></strong>"
 
     let patologiaObstetrica = the("patologiaObstetricaUno").value;
-    let edadmaterna = $( "select[name='edad_materna']").val();
+    let edadmaterna = the("edad.ecoGinecologica").value;
     let diaciclo = the("diaciclo").value;
 
     let utUbicacion1 = "Utero " + the("utUbicacion1").value;
