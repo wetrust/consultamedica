@@ -6454,6 +6454,8 @@ $(document).ready(function(){
     
             if (this.value == "no" || this.value == "anormal"){
                 this.parentElement.parentElement.parentElement.children[1].value = "Comentario: "
+            }else if (this.value == "nada"){
+                console.log("nada")
             }else{
                 this.parentElement.parentElement.parentElement.children[1].value = ""
             }
