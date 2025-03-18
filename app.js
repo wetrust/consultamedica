@@ -539,16 +539,15 @@ $( document ).ready(function() {
         $('#continuarExmEcoNo').button('toggle');
     });
 
-    the("ajusteDosSiDos").onclick = function(){
-
-        the("otras.biometrias.div").classList.remove("d-none")
-        the("modalPreInfEcoObsSegTrim2").classList.remove("d-none")
-
-        the("ajusteDosSi").onclick()
-
+    the("ajusteDosNo").onclick = function(){
+        the("otras.biometrias.div").classList.add("d-none")
+        the("modalPreInfEcoObsSegTrim2").classList.add("d-none") 
     }
 
     $('#ajusteDosSi').on('click', function(){
+        the("otras.biometrias.div").classList.remove("d-none")
+        the("modalPreInfEcoObsSegTrim2").classList.remove("d-none")
+
         let egP50 = String(the("egP50").value);
         if (egP50 != ""){
             egP50 = egP50.split(".");
@@ -8117,7 +8116,6 @@ function p50() {
 
     egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
     $('#egP50').val(egbio);
-    $('#egP50Dos').val(egbio);
 }
 
 function psohdlk() {
