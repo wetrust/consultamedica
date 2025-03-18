@@ -544,7 +544,7 @@ $( document ).ready(function() {
         the("otras.biometrias.div").classList.remove("d-none")
         the("modalPreInfEcoObsSegTrim2").classList.remove("d-none")
 
-        the("ajusteDosSiDos").onclick()
+        the("ajusteDosSi").onclick()
 
     }
     
