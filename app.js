@@ -6446,6 +6446,8 @@ $(document).ready(function(){
 
             if (this.value == "eliminar"){
                 this.parentElement.parentElement.parentElement.children[1].classList.add("d-none");
+            }else if (this.value == "nada"){
+                console.log("nada")
             }else if (this.value == "normal" || this.value == "anormal"){
                 this.parentElement.parentElement.parentElement.children[1].classList.remove("d-none");
             }
