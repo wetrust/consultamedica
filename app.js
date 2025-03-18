@@ -539,7 +539,17 @@ $( document ).ready(function() {
         $('#continuarExmEcoNo').button('toggle');
     });
 
-    the("ajusteDosSiDos").onclick = the("ajusteDosSiDos").onclick
+    the("ajusteDosSiDos").onclick = function(){
+
+        the("otras.biometrias.div").classList.remove("d-none")
+        the("modalPreInfEcoObsSegTrim2").classList.remove("d-none")
+
+        the("ajusteDosSiDos").onclick()
+
+    }
+    
+    
+
 
     $('#ajusteDosSi').on('click', function(){
         let egP50 = String(the("egP50").value);
@@ -1566,20 +1576,6 @@ $( document ).ready(function() {
 // Controlador de input clones
 // Si se escribe en uno, se refleja en otro
 $( document ).ready(function() {
-
-    the("otras.biometrias").onclick = function(){
-
-        if (this.checked == true){
-
-            the("otras.biometrias.div").classList.remove("d-none")
-            the("modalPreInfEcoObsSegTrim2").classList.remove("d-none")
-        }else{
-
-            the("otras.biometrias.div").classList.add("d-none")
-            the("modalPreInfEcoObsSegTrim2").classList.add("d-none")
-        }
-
-    }
 
     $("#lcn").on("change", function(){
         the("lcn.clon").value = the("lcn").value;
