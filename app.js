@@ -539,6 +539,8 @@ $( document ).ready(function() {
         $('#continuarExmEcoNo').button('toggle');
     });
 
+    the("ajusteDosSiDos").onclick = the("ajusteDosSiDos").onclick
+
     $('#ajusteDosSi').on('click', function(){
         let egP50 = String(the("egP50").value);
         if (egP50 != ""){
@@ -8122,6 +8124,7 @@ function p50() {
 
     egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
     $('#egP50').val(egbio);
+    $('#egP50Dos').val(egbio);
 }
 
 function psohdlk() {
