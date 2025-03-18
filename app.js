@@ -547,9 +547,6 @@ $( document ).ready(function() {
         the("ajusteDosSi").onclick()
 
     }
-    
-    
-
 
     $('#ajusteDosSi').on('click', function(){
         let egP50 = String(the("egP50").value);
