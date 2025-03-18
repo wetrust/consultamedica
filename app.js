@@ -8118,8 +8118,13 @@ function p50() {
         egbio = (lhdias + egbio) /2;
     }
 
+    let diasDiferencia = (Number(the("").value) * 7) + Number(the("").value)
+    diasDiferencia = (   Number(Math.floor(egbio / 7) *7) + Number(Math.floor(egbio - (Math.floor(egbio/7) *7)))   ) - diasDiferencia
+
     egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
     $('#egP50').val(egbio);
+
+    the("egP50Dias").value = diasDiferencia
 }
 
 function psohdlk() {
