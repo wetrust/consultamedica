@@ -3424,7 +3424,7 @@
                                     </div>
                                 </div>
                                 <p style="padding-left: 15rem;" class="mb-0"><strong>En ecografía de 2º o 3º trimestre, solo procede ajustar la edad gestacional siempre cuando:</strong><br>a ) No exista confirmación ecográfica precoz de la edad gestacional (1º trimestre) y <br>b ) Se observe gran diferencia entre la edad gestacional esperada y la obtenida por biometría ecográfica actual.</p>
-                                <div class="row mb-4 mt-0">
+                                <div class="row mt-0">
                                     <div class="col-9" style="padding-left: 15rem;"><p><strong>¿Desea realizar ajuste de la edad gestacional?</strong></p></div>
                                     <div class="col-3">
                                         <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
@@ -3435,8 +3435,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="form-group row d-none">
                                     <div class="col mb-2">
                                         <label>Talla Fetal Estimada (> 23 sem)
@@ -3483,23 +3481,6 @@
                                     <div class="col mb-2">
                                         <button class="btn btn-outline-info">Ver Gráficas</button>
                                     </div>
-                                </div>
-                                <div class="form-group form-check mb-0"><input type="checkbox" class="form-check-input" id="larg.cerv"><label class="form-check-label" for="larg.cerv">Opcional Cervicometría  y Doppler arterias uterinas</label></div>
-                                <div class="form-group row d-none pt-2" id="larg.cerv.div">
-                                    <div class="col-3 mb-2">
-                                        <label>Largo Cervical</label>
-                                    </div>
-                                    <div class="col-3 mb-2">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="number" class="form-control" id="largo.cervical.segundo" min="1" max="999">
-                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 mb-2">
-                                        <div class="alert text-info border-info mb-0 p-2 d-none" id="info.cervix"></div>
-                                    </div>
-                                    <div class="col-3 mb-2"></div>
-                                    <div class="col-3 form-group"><label>IP. Uterina derecha</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_derecha"><div class="input-group-prepend"><div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col-3 form-group"><label>IP. Uterina izquierda</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col-3 form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div>
                                 </div>
                                 <div class="form-group form-check mb-0 d-none"><input type="checkbox" class="form-check-input" id="opt.clinico"><label class="form-check-label" for="opt.clinico">Opcional Clínico (Examen y antecedentes)</label></div>
                                 <div class="form-group row d-none pt-2" id="opt.clinico.div">
@@ -3593,6 +3574,23 @@
                                             </div> 
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group form-check mb-0"><input type="checkbox" class="form-check-input" id="larg.cerv"><label class="form-check-label" for="larg.cerv">Opcional Cervicometría  y Doppler arterias uterinas</label></div>
+                                <div class="form-group row d-none pt-2" id="larg.cerv.div">
+                                    <div class="col-3 mb-2">
+                                        <label>Largo Cervical</label>
+                                    </div>
+                                    <div class="col-3 mb-2">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <input type="number" class="form-control" id="largo.cervical.segundo" min="1" max="999">
+                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-2">
+                                        <div class="alert text-info border-info mb-0 p-2 d-none" id="info.cervix"></div>
+                                    </div>
+                                    <div class="col-3 mb-2"></div>
+                                    <div class="col-3 form-group"><label>IP. Uterina derecha</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_derecha"><div class="input-group-prepend"><div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col-3 form-group"><label>IP. Uterina izquierda</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col-3 form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div>
                                 </div>
                                 <div class="form-group form-check mb-0  d-none"><input type="checkbox" class="form-check-input"><label class="form-check-label" for="calc.oms">Opcional curva de crecimiento ajustada modelo fetaltest.com</label><a id="calc.test">.</a></div>
                                 <div class="form-group row d-none pt-2" id="calc.test.div">
