@@ -3888,7 +3888,12 @@
                                             <button class="btn btn-outline-info text-nowrap ml-4" style="width: 7rem;" id="graficoBVM">Gráfica BVM</button>
                                         </div>
                                     </div>
-                                    <div class="col-3 my-3"></div>
+                                    <div class="col-3 my-3">
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="ver.sumatoria.cuadrantes">
+                                            <label class="form-check-label text-nowrap" for="ver.sumatoria.cuadrantes">Sumatoria 4 cuadrantes</label>
+                                        </div>
+                                    </div>
                                     <div class="col-9 my-3 h-100">
                                         <div class="d-flex align-items-end h-100">
                                             <label class="mr-2 text-nowrap" style="width: 4rem;">B.- ILA</label>
@@ -3905,20 +3910,17 @@
                                     </div>
                                     <div class="col-3"></div>
                                     <div class="col-9"><p id="referenciabvmila" class="d-none text-primary">BVM: Magann EF y col. Am J O & G 1982: 1581, 2000 <br>ILA: Moore y col. Am J. O &amp; G. 1990; 162 : 1168 - 1173</p></div>
-                                </div>
-                                <div class="d-flex flex-row">
-                                    <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input" id="ver.sumatoria.cuadrantes">
-                                        <label class="form-check-label text-nowrap" for="ver.sumatoria.cuadrantes">Sumatoria 4 cuadrantes</label>
+                                    <div class="col-10 h-100">
+                                        <div class="d-flex flex-row">
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.uno">
+                                            <span class="text-center d-none" id="liquido.ila.uno.mas">+</span>
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.dos">
+                                            <span class="text-center d-none" id="liquido.ila.dos.mas">+</span>
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.tres">
+                                            <span class="text-center d-none" id="liquido.ila.tres.mas">+</span>
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.cuatro">
+                                        </div>
                                     </div>
-                                    <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.uno">
-                                    <span class="text-center d-none" id="liquido.ila.uno.mas">+</span>
-                                    <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.dos">
-                                    <span class="text-center d-none" id="liquido.ila.dos.mas">+</span>
-                                    <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.tres">
-                                    <span class="text-center d-none" id="liquido.ila.tres.mas">+</span>
-                                    <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.cuatro">
-
                                 </div>
                                 <div class="d-none">
                                     <div class="form-group">
@@ -3940,7 +3942,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group d-none">
-                                    <textarea id="comentarios-anatomia-informe-eg-texto" class="form-control" rows="2"></textarea>
+                                    <textarea id="comentarios-anatomia-informe-eg-texto" class="form-control" rows="4"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label class="text-primary">Comentarios y observaciones generales predefinidas, modificables por el profesional ecografista</label>
