@@ -8119,7 +8119,7 @@ function p50() {
     }
 
     let diasDiferencia = (Number(the("semanas").value) * 7) + Number(the("dias").value)
-    diasDiferencia = Math.trunc(   Number(Math.floor(egbio / 7) *7) + Number(Math.floor(egbio - (Math.floor(egbio/7) *7)))   ) - diasDiferencia
+    diasDiferencia = Math.abs(   Number(Math.floor(egbio / 7) *7) + Number(Math.floor(egbio - (Math.floor(egbio/7) *7)))   ) - diasDiferencia
 
     egbio = Math.floor(egbio / 7)+"."+ Math.floor(egbio - (Math.floor(egbio/7) *7));
     $('#egP50').val(egbio);
