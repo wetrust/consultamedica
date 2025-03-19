@@ -270,6 +270,15 @@ $( document ).ready(function() {
         comentarioSegundoTrimestre()
     }
 
+    the("liq-cualitativo-eco").onkeydown = function(e){
+
+        if (/[a-zA-Z ]/i.test(e.key) == false) {
+            e.preventDefault()
+
+            return false
+        }        
+    }
+
     the("cordon").onchange = function(){
         comentarioSegundoTrimestre()
     }
