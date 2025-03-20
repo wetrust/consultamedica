@@ -566,9 +566,9 @@ $( document ).ready(function() {
             }
             $("#semanas").trigger("change");
         }
-
+    }).on("blur", function(){
         comentarioSegundoTrimestre()
-    });
+    })
 
     //controlador de ecografía de primer trimestre
     $("#saco").on("change", function(){
