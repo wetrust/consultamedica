@@ -3415,6 +3415,75 @@
                                         <button class="d-none" id="graficoPFE">Ver Gráficas</button>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-12 border-bottom">
+                                        <div class="d-flex h-100">
+                                            <label><strong>Liquido amniótico</strong></label>
+                                            <div class="form-group form-check ml-3">
+                                                <input type="checkbox" class="form-check-input" id="referenciabvmilaPunto">
+                                                <label class="form-check-label text-nowrap text-primary" for="referenciabvmilaPunto">ver referencia</label>
+                                            </div>
+                                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evaluación Semicuantitativa: A.- Bolsillo vertical mayor (BVM) y B.-  Indice de líquido amniótico (ILA)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mt-2">
+                                        <label>1.- Evaluación cualitativa</label>
+                                        <div class="form-group m-0">
+                                            <input type="text" class="form-control" id="liq-cualitativo-eco" list="liq.cualitativo.eco.list">
+                                            <datalist id="liq.cualitativo.eco.list">
+                                                <option value="normal"></option>
+                                                <option value="disminuido"></option>
+                                                <option value="aumentado"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div class="col-9 mt-2 h-100">
+                                        <label>2.- Evaluación Semicuantitativa</label>
+                                        <div class="d-flex align-items-end h-100">
+                                            <label class="mr-2 text-nowrap" style="width: 4rem;">A.- BVM</label>
+                                            <div class="input-group w-25 mr-auto" >
+                                                <input type="number" class="form-control" id="bvmEcoDos">
+                                                <div class="input-group-append"><div class="input-group-text">mm.</div></div>
+                                            </div>
+                                            <label class="ml-auto mr-2 text-nowrap">Percentil</label>
+                                            <input type="number" class="form-control w-25" id="bvmEcoDosPCT" disabled>
+                                            <button class="btn btn-outline-info text-nowrap ml-4" style="width: 7rem;" id="graficoBVM">Gráfica BVM</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 my-3">
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="ver.sumatoria.cuadrantes">
+                                            <label class="form-check-label text-nowrap" for="ver.sumatoria.cuadrantes">Sumatoria 4 cuadrantes</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-9 my-3 h-100">
+                                        <div class="d-flex align-items-end h-100">
+                                            <label class="mr-2 text-nowrap" style="width: 4rem;">B.- ILA</label>
+                                            <div class="input-group mb-2 w-25 mr-auto">
+                                                <input type="number" class="form-control" id="liquido.ila.suma" >
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text">mm</div>
+                                                </div>
+                                            </div>
+                                            <label class="ml-auto mr-2 text-nowrap">Percentil</label>
+                                            <input type="number" class="form-control w-25" id="liquido.ila.percentil" disabled>
+                                            <button class="btn btn-outline-info text-nowrap ml-4" style="width: 7rem;" id="graficoILA">Gráfica ILA</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-3"></div>
+                                    <div class="col-9"><p id="referenciabvmila" class="d-none text-primary">BVM: Magann EF y col. Am J O & G 1982: 1581, 2000 <br>ILA: Moore y col. Am J. O &amp; G. 1990; 162 : 1168 - 1173</p></div>
+                                    <div class="col h-100" style="max-width:88%">
+                                        <div class="d-flex flex-row">
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.uno">
+                                            <span class="text-center d-none" id="liquido.ila.uno.mas">+</span>
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.dos">
+                                            <span class="text-center d-none" id="liquido.ila.dos.mas">+</span>
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.tres">
+                                            <span class="text-center d-none" id="liquido.ila.tres.mas">+</span>
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.cuatro">
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="d-flex flex-row align-items-center" style="padding-left: 12rem;">
                                     <label class="mr-2">Para un crecimiento fetal en percentil 50, la biometría promedio correspondería a</label>
@@ -3440,9 +3509,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
                                 <div class="form-group row d-none">
                                     <div class="col mb-2">
                                         <label>Talla Fetal Estimada (> 23 sem)
@@ -3854,75 +3920,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12 border-bottom">
-                                        <div class="d-flex h-100">
-                                            <label><strong>Liquido amniótico</strong></label>
-                                            <div class="form-group form-check ml-3">
-                                                <input type="checkbox" class="form-check-input" id="referenciabvmilaPunto">
-                                                <label class="form-check-label text-nowrap text-primary" for="referenciabvmilaPunto">ver referencia</label>
-                                            </div>
-                                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evaluación Semicuantitativa: A.- Bolsillo vertical mayor (BVM) y B.-  Indice de líquido amniótico (ILA)</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 mt-2">
-                                        <label>1.- Evaluación cualitativa</label>
-                                        <div class="form-group m-0">
-                                            <input type="text" class="form-control" id="liq-cualitativo-eco" list="liq.cualitativo.eco.list">
-                                            <datalist id="liq.cualitativo.eco.list">
-                                                <option value="normal"></option>
-                                                <option value="disminuido"></option>
-                                                <option value="aumentado"></option>
-                                            </datalist>
-                                        </div>
-                                    </div>
-                                    <div class="col-9 mt-2 h-100">
-                                        <label>2.- Evaluación Semicuantitativa</label>
-                                        <div class="d-flex align-items-end h-100">
-                                            <label class="mr-2 text-nowrap" style="width: 4rem;">A.- BVM</label>
-                                            <div class="input-group w-25 mr-auto" >
-                                                <input type="number" class="form-control" id="bvmEcoDos">
-                                                <div class="input-group-append"><div class="input-group-text">mm.</div></div>
-                                            </div>
-                                            <label class="ml-auto mr-2 text-nowrap">Percentil</label>
-                                            <input type="number" class="form-control w-25" id="bvmEcoDosPCT" disabled>
-                                            <button class="btn btn-outline-info text-nowrap ml-4" style="width: 7rem;" id="graficoBVM">Gráfica BVM</button>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 my-3">
-                                        <div class="form-group form-check">
-                                            <input type="checkbox" class="form-check-input" id="ver.sumatoria.cuadrantes">
-                                            <label class="form-check-label text-nowrap" for="ver.sumatoria.cuadrantes">Sumatoria 4 cuadrantes</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-9 my-3 h-100">
-                                        <div class="d-flex align-items-end h-100">
-                                            <label class="mr-2 text-nowrap" style="width: 4rem;">B.- ILA</label>
-                                            <div class="input-group mb-2 w-25 mr-auto">
-                                                <input type="number" class="form-control" id="liquido.ila.suma" >
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text">mm</div>
-                                                </div>
-                                            </div>
-                                            <label class="ml-auto mr-2 text-nowrap">Percentil</label>
-                                            <input type="number" class="form-control w-25" id="liquido.ila.percentil" disabled>
-                                            <button class="btn btn-outline-info text-nowrap ml-4" style="width: 7rem;" id="graficoILA">Gráfica ILA</button>
-                                        </div>
-                                    </div>
-                                    <div class="col-3"></div>
-                                    <div class="col-9"><p id="referenciabvmila" class="d-none text-primary">BVM: Magann EF y col. Am J O & G 1982: 1581, 2000 <br>ILA: Moore y col. Am J. O &amp; G. 1990; 162 : 1168 - 1173</p></div>
-                                    <div class="col h-100" style="max-width:88%">
-                                        <div class="d-flex flex-row">
-                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.uno">
-                                            <span class="text-center d-none" id="liquido.ila.uno.mas">+</span>
-                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.dos">
-                                            <span class="text-center d-none" id="liquido.ila.dos.mas">+</span>
-                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.tres">
-                                            <span class="text-center d-none" id="liquido.ila.tres.mas">+</span>
-                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.cuatro">
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <div class="d-none">
                                     <div class="form-group">
                                         <label>Placenta ( GRADO )</label>
