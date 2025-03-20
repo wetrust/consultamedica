@@ -566,6 +566,8 @@ $( document ).ready(function() {
             }
             $("#semanas").trigger("change");
         }
+
+        comentarioSegundoTrimestre()
     });
 
     //controlador de ecografía de primer trimestre
