@@ -570,8 +570,6 @@ $( document ).ready(function() {
         comentarioSegundoTrimestre()
     })
 
-    the("ajusteDosSi").
-
     //controlador de ecografía de primer trimestre
     $("#saco").on("change", function(){
         the("sacoPct").value = egSaco(this.value);
