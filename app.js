@@ -556,6 +556,7 @@ $( document ).ready(function() {
     $('#ajusteDosSi').on('click', function(){
         the("otras.biometrias.div").classList.remove("d-none")
         the("modalPreInfEcoObsSegTrim2").classList.remove("d-none")
+        this.classList.add("active")
 
         let egP50 = String(the("egP50").value);
         if (egP50 != ""){
@@ -566,9 +567,10 @@ $( document ).ready(function() {
             }
             $("#semanas").trigger("change");
         }
-    }).on("blur", function(){
         comentarioSegundoTrimestre()
     })
+
+    the("ajusteDosSi").
 
     //controlador de ecografía de primer trimestre
     $("#saco").on("change", function(){
