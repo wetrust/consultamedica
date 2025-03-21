@@ -21,6 +21,8 @@ var titulos = {
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
 }
 
+var _highcharts
+
 // Comementario adicional anatomia 
 //document.location.hash = "";
 //crea id random para los modales
@@ -1918,7 +1920,7 @@ $( document ).ready(function() {
         the("papapapa").value =  the("dias").value
 
         let _grafico = graficoPFEMasMenos()
-        let _highcharts = baseGraficoPFE
+        _highcharts = baseGraficoPFE
 
         let menor = _grafico.valores.uno[0]
         let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
@@ -1993,7 +1995,7 @@ $( document ).ready(function() {
             the("pfePctRpt").value = pctPFE
 
             let _grafico = graficoPFEMasMenos()
-            let _highcharts = baseGraficoPFE
+            _highcharts = baseGraficoPFE
 
             let menor = _grafico.valores.uno[0]
             let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
@@ -2099,7 +2101,7 @@ $( document ).ready(function() {
             the("pfePctRpt").value = pctPFE
 
             let _grafico = graficoPFEMasMenos()
-            let _highcharts = baseGraficoPFE
+            _highcharts = baseGraficoPFE
 
             let menor = _grafico.valores.uno[0]
             let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
@@ -3574,12 +3576,12 @@ $( document ).ready(function() {
         var modal = makeModal("Ver Impresion");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Gráfica evaluación ecográfica del crecimiento fetal";
+        the(modal.titulo).innerText = "Gráfica evaluación ecográfica del crecimiento fetal y liquido amniótico";
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
         });
 
-        var stringGraficos = "<div class='container'><div style='width:100px;text-align:center'></div></div><h4 class='d-none text-center'>Evaluación ecográfica del crecimiento fetal y líquido amniótico</h4><span class='d-none mt-2'style='border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px'></span><div class='d-none mt-2 row'><div class='col-5'><p style='font-size:15px'><strong>Nombre: </strong>:PACIENTE</div><div class='col-7'><p style='font-size:15px'><strong>Fecha de Exámen: </strong>:FEXAMEN</div></div><div class='d-none mt-2 row'><div class='col-5'><p style='font-size:15px'><strong>Peso Fetal Estimado: </strong>:PESO gramos</div><div class='col-7'><p style='font-size:15px'><strong>Percentil: </strong>:PERCENTIL</div></div><div class='row'><div class='col-12'><div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col-6'><div id='graficoCaView'></div><div id='graficoCcCaView'></div></div><div class='col-6'><div id='graficoBVMView'></div></div></div><div class='row'id='lineclear'><div class='col'><p style='font-size:10px'class='d-none'><strong style='color:#045dab'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS<p style='margin-right:100px;font-size:12px;text-align:right'class='d-none text-right top40'>Ecografista: <strong>:ECOGRAFISTA</strong></p><span class='d-none'style='border-top:1px solid #000;width:100%!important;display:block'></span><p style='margin-bottom:0;font-size:11px'class='d-none'>Fecha Informe: :DATEINFORME</p><span class='d-none'style='border-top:1px solid #000;width:100%!important;display:block'></span><p class='d-none pie-pagina'>* Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97)<br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></div></div>";
+        var stringGraficos = "<div class='container'><div style='width:100px;text-align:center'></div></div><h4 class='d-none text-center'>Evaluación ecográfica del crecimiento fetal y líquido amniótico</h4><span class='d-none mt-2'style='border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px'></span><div class='d-none mt-2 row'><div class='col-5'><p style='font-size:15px'><strong>Nombre: </strong>:PACIENTE</div><div class='col-7'><p style='font-size:15px'><strong>Fecha de Exámen: </strong>:FEXAMEN</div></div><div class='d-none mt-2 row'><div class='col-4'><p style='font-size:15px'><strong>Edad Gestacional: </strong>:EGestacional</div><div class='col-4'><p style='font-size:15px'><strong>Peso Fetal Estimado: </strong>:PESO gramos</div><div class='col-4'><p style='font-size:15px'><strong>Percentil: </strong>:PERCENTIL</div></div><div class='row'><div class='col-12'><div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col-6'><div id='graficoCaView'></div><div id='graficoCcCaView'></div></div><div class='col-6'><div id='graficoBVMView'></div></div></div><div class='row'id='lineclear'><div class='col'><p style='font-size:10px'class='d-none'><strong style='color:#045dab'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS<p style='margin-right:100px;font-size:12px;text-align:right'class='d-none text-right top40'>Ecografista: <strong>:ECOGRAFISTA</strong></p><span class='d-none'style='border-top:1px solid #000;width:100%!important;display:block'></span><p style='margin-bottom:0;font-size:11px'class='d-none'>Fecha Informe: :DATEINFORME</p><span class='d-none'style='border-top:1px solid #000;width:100%!important;display:block'></span><p class='d-none pie-pagina'>* Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97)<br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>Las gráficas de este software tienen por objeto favorecer análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></div></div>";
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
@@ -3605,11 +3607,12 @@ $( document ).ready(function() {
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
             the("graficoInfecoObsSegTrimPFEView").style.width = 580 + 'px';
+            _highcharts.reflow();
             imprSelec(modal);
         });
 
         let _grafico = graficoPFEMasMenos()
-        let _highcharts = baseGraficoPFE
+        _highcharts = baseGraficoPFE
 
         let menor = _grafico.valores.uno[0]
         let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
