@@ -3563,7 +3563,7 @@ $( document ).ready(function() {
     });
 
     $( '#infecoObsSegTrim1' ).on( 'click', function() {
-
+        
         var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 16){
@@ -3604,6 +3604,7 @@ $( document ).ready(function() {
         the(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
+            the("graficoInfecoObsSegTrimPFEView").style.width = 180 + 'px';
             imprSelec(modal);
         });
 
@@ -3663,7 +3664,7 @@ $( document ).ready(function() {
         _highcharts.series[1].data = _grafico.valores.ocho
         _highcharts.series[0].data = _grafico.valores.nueve
         _highcharts.xAxis.categories = _grafico.semanas
-        _highcharts.chart = { height: 200 }
+        _highcharts.chart = { height: 250 }
 
         $('#graficoInfecoObsSegTrimPFEView').highcharts(_highcharts);
 
