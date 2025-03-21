@@ -3604,7 +3604,7 @@ $( document ).ready(function() {
         the(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
-            the("graficoInfecoObsSegTrimPFEView").style.width = 580 + 'px';
+            the("graficoInfecoObsSegTrimPFEView").style.width = 780 + 'px';
             _highcharts.reflow();
             imprSelec(modal);
         });
