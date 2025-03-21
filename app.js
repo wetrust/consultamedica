@@ -3603,75 +3603,66 @@ $( document ).ready(function() {
             imprSelec(modal);
         });
 
+        let _grafico = graficoPFEMasMenos()
+        let _highcharts = baseGraficoPFE
 
-        $('#graficoInfecoObsSegTrimPFEView').highcharts({
-            chart: { height: 250 },
-            title: {
-                text: 'Peso Fetal Estimado grs. *',
-                x: -20,
-                style: { fontSize: '12px' }
-            },
-            legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight:'normal'
-                }
-            },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false,
-                    pointInterval: 1
-                }
-            },
-            yAxis: {
-                title: { text: 'Kilogramos' },
-                tickPositions: [100, 560, 1020, 1940, 2400, 2860, 3320, 3780, 4500]
-            },
-            colors: ['#313131', '#313131', '#313131'],
-            xAxis: {
-                categories: ['16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
-            },
-           credits: {enabled: false},
-           series: [{
-               type: "line",
-               name: 'Pct 10',
-               dashStyle: "Dot",
-               marker: { enabled: false },
-               data: [121,150,185,227,275,331,398,471,556,652,758,876,1004,1145,1294,1453,1621,1794,1973,2154,2335,2513,2686,2851,2985]
-           }, {
-               type: "line",
-               name: 'Pct 90',
-               dashStyle: "Dot",
-               marker: { enabled: false },
-               data: [171,212,261,319,387,467,559,665,784,918,1068,1234,1416,1613,1824,2049,2285,2530,2781,3036,3291,3543,3786,4019,4234]
-           }, {
-               type: "line",
-               name: 'Peso',
-               dashStyle: "Dot",
-               marker: {symbol:'square'},
-               lineWidth: 0,
-               data: (function () {
-                   var data = [];
-                   var edadGest = the("semanas").value;
-                   edadGest = parseInt(edadGest);
-    
-                   for (i = 16; i < edadGest; i++) {
-                       data.push({
-                           y: 0,
-                       });
-                   }
-                   data.push({
-                       y: parseFloat($('#pfe').val()),
-                   });
-                   for (i = edadGest + 1; i < 40; i++) {
-                       data.push({
-                           y: 0,
-                       });
-                   }
-                   return data;
-               }())
-           }]
-        });
+        let menor = _grafico.valores.uno[0]
+        let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
+        let par = false
+        let multiplicador = 0
+
+        if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
+        }else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
+        }else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
+
+        par = menor % 2;
+        par = (par > 0) ? false : true
+
+        if (par == true){
+            _highcharts.yAxis.min = menor * multiplicador
+        }else{
+            if (menor > 1){
+                _highcharts.yAxis.min = (menor-1) * multiplicador  
+            }else{
+                _highcharts.yAxis.min = 0
+            }
+        }
+
+        if (mayor > 100){
+            mayor = Math.trunc(mayor / 10); multiplicador = 10;
+        }else if (mayor > 1000){
+            mayor = Math.trunc(mayor / 100); multiplicador = 100;
+        }else if (mayor > 10000){
+            mayor = Math.trunc(mayor / 1000); multiplicador = 1000;
+        }
+
+        par = mayor % 2;
+        par = (par > 0) ? false : true
+
+        if (par == true){
+            _highcharts.yAxis.max = mayor * multiplicador
+        }else{
+            _highcharts.yAxis.max = (mayor+1) * multiplicador  
+        }
+
+        let eg = Number(the("semanas").value + "." + the("dias").value);
+        let indice = _grafico.semanas.indexOf(eg)
+
+        _highcharts.series[9].data = [[indice,parseFloat(the("pfe").value)]]
+        _highcharts.series[8].data = _grafico.valores.uno
+        _highcharts.series[7].data = _grafico.valores.dos
+        _highcharts.series[6].data = _grafico.valores.tres
+        _highcharts.series[5].data = _grafico.valores.cuatro
+        _highcharts.series[4].data = _grafico.valores.cinco
+        _highcharts.series[3].data = _grafico.valores.seis
+        _highcharts.series[2].data = _grafico.valores.siete
+        _highcharts.series[1].data = _grafico.valores.ocho
+        _highcharts.series[0].data = _grafico.valores.nueve
+        _highcharts.xAxis.categories = _grafico.semanas
+        _highcharts.chart = { height: 250 }
+
+        $('#graficoInfecoObsSegTrimPFEView').highcharts(_highcharts);
+
         $('#graficoCaView').highcharts({
             chart: { height: 250 },
             title: {
