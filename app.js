@@ -3565,7 +3565,6 @@ $( document ).ready(function() {
     });
 
     $( '#infecoObsSegTrim1' ).on( 'click', function() {
-
         var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 16){
@@ -3598,7 +3597,6 @@ $( document ).ready(function() {
         stringGraficos = stringGraficos.replace(":PACIENTE", paciente);
         stringGraficos = stringGraficos.replace(":IDPACIENTE", idpaciente);
         stringGraficos = stringGraficos.replace(":FEXAMEN", fexamen);
-
         stringGraficos = stringGraficos.replace(":PESO", the("pfe").value);
         stringGraficos = stringGraficos.replace(":PERCENTIL", the("pfePctRpt").value);
 
@@ -3669,7 +3667,7 @@ $( document ).ready(function() {
         _highcharts.xAxis.categories = _grafico.semanas
         _highcharts.chart = { height: 250 }
 
-        $('#graficoInfecoObsSegTrimPFEView').highcharts(_highcharts);
+        Highcharts.chart('graficoInfecoObsSegTrimPFEView', _highcharts)
 
         $('#graficoCaView').highcharts({
             chart: { height: 250 },
@@ -3689,132 +3687,130 @@ $( document ).ready(function() {
                     enableMouseTracking: false
                 }
             },
-           yAxis: {
-               title: { text: 'Milimetros (mm)' },
-               tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
-           },
-           colors: ['#313131', '#313131', '#313131'],
-           xAxis: {
-               categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
-           },
-           credits: { enabled: false },
-           series: [{
-               type: "line",
-               name: 'Pct. 3',
-               dashStyle: "Dot",
-               marker: { enabled: false },
-               data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
-           }, {
-               type: "line",
-               name: 'Pct 97',
-               dashStyle: "Dot",
-               marker: { enabled: false },
-               data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
-           }, {
-               type: "line",
-               name: 'CA',
-               dashStyle: "Dot",
-               marker: { symbol: 'square' },
-               lineWidth: 0,
-               data: (function () {
-                   var data = [];
-                   var edadGest = the("semanas").value;
-                   edadGest = parseInt(edadGest);
-                   for (i = 12; i < edadGest; i++) {
-                       data.push({
-                           y: 0,
-                       });
-                   }
+            yAxis: {
+                title: { text: 'Milimetros (mm)' },
+                tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            },
+            credits: { enabled: false },
+            series: [{
+                type: "line",
+                name: 'Pct. 3',
+                dashStyle: "Dot",
+                marker: { enabled: false },
+                data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
+            }, {
+                type: "line",
+                name: 'Pct 97',
+                dashStyle: "Dot",
+                marker: { enabled: false },
+                data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
+            }, {
+                type: "line",
+                name: 'CA',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    var data = [];
+                    var edadGest = the("semanas").value;
+                    edadGest = parseInt(edadGest);
+                    for (i = 12; i < edadGest; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
     
-                   var ca = $("#ca").val();
-                   ca = ca.toString();
-                   ca = ca.replace(",", ".");
-                   ca = parseFloat(ca);
+                    var ca = $("#ca").val();
+                    ca = ca.toString();
+                    ca = ca.replace(",", ".");
+                    ca = parseFloat(ca);
     
-                   data.push({
-                       y:ca,
-                   });
-                   for (i = edadGest + 1; i < 40; i++) {
-                       data.push({
-                           y: 0,
-                       });
-                   }
-                   return data;
-               }())
-           }]
-       }); 
+                    data.push({y:ca});
+                    for (i = edadGest + 1; i < 40; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+        }); 
 
-       $('#graficoBVMView').highcharts({
-        chart: {
-        height: 250
-    },
-    title: {
-        text: 'Profundidad del bolsillo mayor (Liq. Amniótico)',
-        x: -20,
-            style: {
-        fontSize: '12px'
-    }
-    },
-    plotOptions: {
-        series: {
-            enableMouseTracking: false
-        }
-    },
-        legend: {
-        itemStyle: {
-            fontSize: '10px',
-            fontWeight:'normal'
-        }
-    },
-    yAxis: {
-        title: { text: 'Milimetros (mm)' },
-        tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
-    },
-    colors: ['#313131','#313131','#313131'],
-    xAxis: {
-        categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
-    },
-    credits: {enabled:false},
-    series: [{
-        type: "line",
-        name: 'Pct. 5',
-        dashStyle: "Dot",
-        marker: {enabled:false},
-        data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
-    }, {
-        type: "line",
-        name: 'Pct. 95',
-        dashStyle: "Dot",
-        marker: { enabled: false },
-        data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
-    }, {
-        type: "line",
-        name: 'BVM',
-        dashStyle: "Dot",
-        marker: { symbol: 'square' },
-        lineWidth: 0,
-        data: (
-            function () {
-                var data = [];
-                var edadGest = the("semanas").value;
-                edadGest = parseInt(edadGest);
-                for (i = 16; i < edadGest; i ++ ) {
-                    data.push({
-                        y: 0,
-                    });
+        $('#graficoBVMView').highcharts({
+            chart: {
+                height: 250
+            },
+            title: {
+                text: 'Profundidad del bolsillo mayor (Liq. Amniótico)',
+                x: -20,
+                style: {
+                    fontSize: '12px'
                 }
-                data.push({
-                        y: parseFloat($('#bvm').val()),
-                    });
-                for (i = (edadGest +1); i < 40; i ++ ) {
-                    data.push({
-                        y: 0,
-                    });
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
                 }
-                return data;
-            }())
-        }]
-    });
+            },
+            legend: {
+                itemStyle: {
+                    fontSize: '10px',
+                    fontWeight:'normal'
+                }
+            },
+            yAxis: {
+                title: { text: 'Milimetros (mm)' },
+                tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
+            },
+            colors: ['#313131','#313131','#313131'],
+            xAxis: {
+                categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            },
+            credits: {enabled:false},
+            series: [{
+                type: "line",
+                name: 'Pct. 5',
+                dashStyle: "Dot",
+                marker: {enabled:false},
+                data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
+            }, {
+                type: "line",
+                name: 'Pct. 95',
+                dashStyle: "Dot",
+                marker: { enabled: false },
+                data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
+            }, {
+                type: "line",
+                name: 'BVM',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (
+                    function () {
+                        var data = [];
+                        var edadGest = the("semanas").value;
+                        edadGest = parseInt(edadGest);
+                        for (i = 16; i < edadGest; i ++ ) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        data.push({
+                                y: parseFloat($('#bvm').val()),
+                            });
+                        for (i = (edadGest +1); i < 40; i ++ ) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        return data;
+                    }())
+            }]
+        });
        
        let uterinasData = {
            min:[1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47],
