@@ -3667,7 +3667,7 @@ $( document ).ready(function() {
         _highcharts.xAxis.categories = _grafico.semanas
         _highcharts.chart = { height: 250 }
 
-        Highcharts.chart('graficoInfecoObsSegTrimPFEView', _highcharts)
+        _highcharts = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _highcharts)
 
         $('#graficoCaView').highcharts({
             chart: { height: 250 },
