@@ -1266,7 +1266,7 @@ $( document ).ready(function() {
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
 
-        the("bvm").value = (isNumeric(this.value) == true) ? this.value : 0;
+        the("bvm").value = (isNumeric(this.value) == true) ? this.value : "";
         comentarioSegundoTrimestre()
 
         let a = [], b = [];
