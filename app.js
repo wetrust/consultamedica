@@ -3563,6 +3563,7 @@ $( document ).ready(function() {
     });
 
     $( '#infecoObsSegTrim1' ).on( 'click', function() {
+
         var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 16){
@@ -3596,7 +3597,6 @@ $( document ).ready(function() {
         stringGraficos = stringGraficos.replace(":IDPACIENTE", idpaciente);
         stringGraficos = stringGraficos.replace(":FEXAMEN", fexamen);
 
-        
         stringGraficos = stringGraficos.replace(":PESO", the("pfe").value);
         stringGraficos = stringGraficos.replace(":PERCENTIL", the("pfePctRpt").value);
 
