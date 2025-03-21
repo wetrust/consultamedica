@@ -3663,7 +3663,7 @@ $( document ).ready(function() {
         _highcharts.series[1].data = _grafico.valores.ocho
         _highcharts.series[0].data = _grafico.valores.nueve
         _highcharts.xAxis.categories = _grafico.semanas
-        _highcharts.chart = { height: 250 }
+        _highcharts.chart = { height: 200 }
 
         $('#graficoInfecoObsSegTrimPFEView').highcharts(_highcharts);
 
