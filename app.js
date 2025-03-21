@@ -3565,7 +3565,7 @@ $( document ).ready(function() {
     });
 
     $( '#infecoObsSegTrim1' ).on( 'click', function() {
-        
+
         var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 16){
