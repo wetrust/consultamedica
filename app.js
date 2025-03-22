@@ -3599,6 +3599,7 @@ $( document ).ready(function() {
         stringGraficos = stringGraficos.replace(":FEXAMEN", fexamen);
         stringGraficos = stringGraficos.replace(":PESO", the("pfe").value);
         stringGraficos = stringGraficos.replace(":PERCENTIL", the("pfePctRpt").value);
+        stringGraficos = stringGraficos.replace(":EGestacional", the("semanas").value + " semanas, " + the("dias").value + " dias");
 
         the(modal.contenido).innerHTML = stringGraficos;
         the(modal.button).dataset.id = modal.contenido;
