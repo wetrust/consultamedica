@@ -3609,7 +3609,11 @@ $( document ).ready(function() {
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
             the("graficoInfecoObsSegTrimPFEView").style.width = 780 + 'px';
+            the("graficoCaView").style.width = 380 + 'px';
+            the("graficoBVMView").style.width = 380 + 'px';
             _hchartsUno.reflow();
+            _hchartsDos.reflow();
+            _hchartsTres.reflow();
             imprSelec(modal);
         });
 
@@ -3673,7 +3677,7 @@ $( document ).ready(function() {
 
         _hchartsUno = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _hchartsUno)
 
-        $('#graficoCaView').highcharts({
+        _hchartsDos = {
             chart: { height: 250 },
             title: {
                 text: 'Circunferencia Abdominal **',
@@ -3742,9 +3746,11 @@ $( document ).ready(function() {
                     return data;
                 }())
             }]
-        }); 
+        };
 
-        $('#graficoBVMView').highcharts({
+        _hchartsDos = Highcharts.chart('graficoCaView', _hchartsDos)
+
+        _hchartsTres = {
             chart: {
                 height: 250
             },
@@ -3814,7 +3820,9 @@ $( document ).ready(function() {
                         return data;
                     }())
             }]
-        });
+        };
+
+        _hchartsTres = Highcharts.chart('graficoBVMView', _hchartsTres)
        
        let uterinasData = {
            min:[1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47],
@@ -7145,7 +7153,7 @@ function InfEcoObsSegTrim1Clon(){
             actCard = elem[i].value;
         }
 
-    elem=document.getElementsByName('movfet');
+    elem = document.getElementsByName('movfet');
     for(i=0;i<elem.length;i++)
         if (elem[i].checked) {
             movCorp = elem[i].value;
@@ -7166,7 +7174,6 @@ function InfEcoObsSegTrim1Clon(){
     }
 
     var anatomiaFetal = $('#ev-morfo').val();
-
     var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
 
     if (anatomiaFetal == "no evaluada dirigidamente, pero el aspecto morfológico general es normal"){
