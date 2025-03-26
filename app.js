@@ -21,7 +21,10 @@ var titulos = {
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
 }
 
-var _highcharts
+var _hchartsUno
+var _hchartsDos
+var _hchartsTres
+var _hchartsCuatro
 
 // Comementario adicional anatomia 
 //document.location.hash = "";
@@ -1920,7 +1923,7 @@ $( document ).ready(function() {
         the("papapapa").value =  the("dias").value
 
         let _grafico = graficoPFEMasMenos()
-        _highcharts = baseGraficoPFE
+        _hchartsUno = baseGraficoPFE
 
         let menor = _grafico.valores.uno[0]
         let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
@@ -1935,12 +1938,12 @@ $( document ).ready(function() {
         par = (par > 0) ? false : true
 
         if (par == true){
-            _highcharts.yAxis.min = menor * multiplicador
+            _hchartsUno.yAxis.min = menor * multiplicador
         }else{
             if (menor > 1){
-                _highcharts.yAxis.min = (menor-1) * multiplicador  
+                _hchartsUno.yAxis.min = (menor-1) * multiplicador  
             }else{
-                _highcharts.yAxis.min = 0
+                _hchartsUno.yAxis.min = 0
             }
         }
 
@@ -1956,27 +1959,27 @@ $( document ).ready(function() {
         par = (par > 0) ? false : true
 
         if (par == true){
-            _highcharts.yAxis.max = mayor * multiplicador
+            _hchartsUno.yAxis.max = mayor * multiplicador
         }else{
-            _highcharts.yAxis.max = (mayor+1) * multiplicador  
+            _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
         }
 
         let eg = Number(the("semanas").value + "." + the("dias").value);
         let indice = _grafico.semanas.indexOf(eg)
 
-        _highcharts.series[9].data = [[indice,parseFloat(the("pfe").value)]]
-        _highcharts.series[8].data = _grafico.valores.uno
-        _highcharts.series[7].data = _grafico.valores.dos
-        _highcharts.series[6].data = _grafico.valores.tres
-        _highcharts.series[5].data = _grafico.valores.cuatro
-        _highcharts.series[4].data = _grafico.valores.cinco
-        _highcharts.series[3].data = _grafico.valores.seis
-        _highcharts.series[2].data = _grafico.valores.siete
-        _highcharts.series[1].data = _grafico.valores.ocho
-        _highcharts.series[0].data = _grafico.valores.nueve
-        _highcharts.xAxis.categories = _grafico.semanas
+        _hchartsUno.series[9].data = [[indice,parseFloat(the("pfe").value)]]
+        _hchartsUno.series[8].data = _grafico.valores.uno
+        _hchartsUno.series[7].data = _grafico.valores.dos
+        _hchartsUno.series[6].data = _grafico.valores.tres
+        _hchartsUno.series[5].data = _grafico.valores.cuatro
+        _hchartsUno.series[4].data = _grafico.valores.cinco
+        _hchartsUno.series[3].data = _grafico.valores.seis
+        _hchartsUno.series[2].data = _grafico.valores.siete
+        _hchartsUno.series[1].data = _grafico.valores.ocho
+        _hchartsUno.series[0].data = _grafico.valores.nueve
+        _hchartsUno.xAxis.categories = _grafico.semanas
 
-        $('#graficoPFEDinamico').highcharts(_highcharts);
+        $('#graficoPFEDinamico').highcharts(_hchartsUno);
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
         the("cuacuacua").onchange = function() {
@@ -1995,7 +1998,7 @@ $( document ).ready(function() {
             the("pfePctRpt").value = pctPFE
 
             let _grafico = graficoPFEMasMenos()
-            _highcharts = baseGraficoPFE
+            _hchartsUno = baseGraficoPFE
 
             let menor = _grafico.valores.uno[0]
             let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
@@ -2017,12 +2020,12 @@ $( document ).ready(function() {
             par = (par > 0) ? false : true
 
             if (par == true){
-                _highcharts.yAxis.min = menor * multiplicador
+                _hchartsUno.yAxis.min = menor * multiplicador
             }else{
                 if (menor > 1){
-                    _highcharts.yAxis.min = (menor-1) * multiplicador  
+                    _hchartsUno.yAxis.min = (menor-1) * multiplicador  
                 }else{
-                    _highcharts.yAxis.min = 0
+                    _hchartsUno.yAxis.min = 0
                 }
             }
 
@@ -2041,27 +2044,27 @@ $( document ).ready(function() {
             par = (par > 0) ? false : true
 
             if (par == true){
-                _highcharts.yAxis.max = mayor * multiplicador
+                _hchartsUno.yAxis.max = mayor * multiplicador
             }else{
-                _highcharts.yAxis.max = (mayor+1) * multiplicador  
+                _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
             }
 
             eg = Number(the("semanas").value + "." + the("dias").value);
             let indice = _grafico.semanas.indexOf(eg)
 
-            _highcharts.series[9].data = [[indice,parseFloat(the("pfe").value)]]
-            _highcharts.series[8].data = _grafico.valores.uno
-            _highcharts.series[7].data = _grafico.valores.dos
-            _highcharts.series[6].data = _grafico.valores.tres
-            _highcharts.series[5].data = _grafico.valores.cuatro
-            _highcharts.series[4].data = _grafico.valores.cinco
-            _highcharts.series[3].data = _grafico.valores.seis
-            _highcharts.series[2].data = _grafico.valores.siete
-            _highcharts.series[1].data = _grafico.valores.ocho
-            _highcharts.series[0].data = _grafico.valores.nueve
-            _highcharts.xAxis.categories = _grafico.semanas
+            _hchartsUno.series[9].data = [[indice,parseFloat(the("pfe").value)]]
+            _hchartsUno.series[8].data = _grafico.valores.uno
+            _hchartsUno.series[7].data = _grafico.valores.dos
+            _hchartsUno.series[6].data = _grafico.valores.tres
+            _hchartsUno.series[5].data = _grafico.valores.cuatro
+            _hchartsUno.series[4].data = _grafico.valores.cinco
+            _hchartsUno.series[3].data = _grafico.valores.seis
+            _hchartsUno.series[2].data = _grafico.valores.siete
+            _hchartsUno.series[1].data = _grafico.valores.ocho
+            _hchartsUno.series[0].data = _grafico.valores.nueve
+            _hchartsUno.xAxis.categories = _grafico.semanas
 
-            $('#graficoPFEDinamico').highcharts(_highcharts);
+            $('#graficoPFEDinamico').highcharts(_hchartsUno);
 
             the("tituloGraficoDinamico").innerHTML = '<strong>PFE = ' + the("pfe").value + ' grs.       Percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></strong>'
             let txtOMS = '<strong>Feto '
@@ -2101,7 +2104,7 @@ $( document ).ready(function() {
             the("pfePctRpt").value = pctPFE
 
             let _grafico = graficoPFEMasMenos()
-            _highcharts = baseGraficoPFE
+            _hchartsUno = baseGraficoPFE
 
             let menor = _grafico.valores.uno[0]
             let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
@@ -2123,12 +2126,12 @@ $( document ).ready(function() {
             par = (par > 0) ? false : true
 
             if (par == true){
-                _highcharts.yAxis.min = menor * multiplicador
+                _hchartsUno.yAxis.min = menor * multiplicador
             }else{
                 if (menor > 1){
-                    _highcharts.yAxis.min = (menor-1) * multiplicador  
+                    _hchartsUno.yAxis.min = (menor-1) * multiplicador  
                 }else{
-                    _highcharts.yAxis.min = 0
+                    _hchartsUno.yAxis.min = 0
                 }
             }
 
@@ -2147,27 +2150,27 @@ $( document ).ready(function() {
             par = (par > 0) ? false : true
 
             if (par == true){
-                _highcharts.yAxis.max = mayor * multiplicador
+                _hchartsUno.yAxis.max = mayor * multiplicador
             }else{
-                _highcharts.yAxis.max = (mayor+1) * multiplicador  
+                _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
             }
 
             eg = Number(the("semanas").value + "." + the("dias").value);
             let indice = _grafico.semanas.indexOf(eg)
 
-            _highcharts.series[9].data = [[indice,parseFloat(the("pfe").value)]]
-            _highcharts.series[8].data = _grafico.valores.uno
-            _highcharts.series[7].data = _grafico.valores.dos
-            _highcharts.series[6].data = _grafico.valores.tres
-            _highcharts.series[5].data = _grafico.valores.cuatro
-            _highcharts.series[4].data = _grafico.valores.cinco
-            _highcharts.series[3].data = _grafico.valores.seis
-            _highcharts.series[2].data = _grafico.valores.siete
-            _highcharts.series[1].data = _grafico.valores.ocho
-            _highcharts.series[0].data = _grafico.valores.nueve
-            _highcharts.xAxis.categories = _grafico.semanas
+            _hchartsUno.series[9].data = [[indice,parseFloat(the("pfe").value)]]
+            _hchartsUno.series[8].data = _grafico.valores.uno
+            _hchartsUno.series[7].data = _grafico.valores.dos
+            _hchartsUno.series[6].data = _grafico.valores.tres
+            _hchartsUno.series[5].data = _grafico.valores.cuatro
+            _hchartsUno.series[4].data = _grafico.valores.cinco
+            _hchartsUno.series[3].data = _grafico.valores.seis
+            _hchartsUno.series[2].data = _grafico.valores.siete
+            _hchartsUno.series[1].data = _grafico.valores.ocho
+            _hchartsUno.series[0].data = _grafico.valores.nueve
+            _hchartsUno.xAxis.categories = _grafico.semanas
 
-            $('#graficoPFEDinamico').highcharts(_highcharts);
+            $('#graficoPFEDinamico').highcharts(_hchartsUno);
 
             the("tituloGraficoDinamico").innerHTML = '<strong>PFE = ' + the("pfe").value + ' grs.       Percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></strong>'
             let txtOMS = '<strong>Feto '
@@ -3606,12 +3609,12 @@ $( document ).ready(function() {
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
             the("graficoInfecoObsSegTrimPFEView").style.width = 780 + 'px';
-            _highcharts.reflow();
+            _hchartsUno.reflow();
             imprSelec(modal);
         });
 
         let _grafico = graficoPFEMasMenos()
-        _highcharts = baseGraficoPFE
+        _hchartsUno = baseGraficoPFE
 
         let menor = _grafico.valores.uno[0]
         let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
@@ -3626,12 +3629,12 @@ $( document ).ready(function() {
         par = (par > 0) ? false : true
 
         if (par == true){
-            _highcharts.yAxis.min = menor * multiplicador
+            _hchartsUno.yAxis.min = menor * multiplicador
         }else{
             if (menor > 1){
-                _highcharts.yAxis.min = (menor-1) * multiplicador  
+                _hchartsUno.yAxis.min = (menor-1) * multiplicador  
             }else{
-                _highcharts.yAxis.min = 0
+                _hchartsUno.yAxis.min = 0
             }
         }
 
@@ -3647,28 +3650,28 @@ $( document ).ready(function() {
         par = (par > 0) ? false : true
 
         if (par == true){
-            _highcharts.yAxis.max = mayor * multiplicador
+            _hchartsUno.yAxis.max = mayor * multiplicador
         }else{
-            _highcharts.yAxis.max = (mayor+1) * multiplicador  
+            _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
         }
 
         let eg = Number(the("semanas").value + "." + the("dias").value);
         let indice = _grafico.semanas.indexOf(eg)
 
-        _highcharts.series[9].data = [[indice,parseFloat(the("pfe").value)]]
-        _highcharts.series[8].data = _grafico.valores.uno
-        _highcharts.series[7].data = _grafico.valores.dos
-        _highcharts.series[6].data = _grafico.valores.tres
-        _highcharts.series[5].data = _grafico.valores.cuatro
-        _highcharts.series[4].data = _grafico.valores.cinco
-        _highcharts.series[3].data = _grafico.valores.seis
-        _highcharts.series[2].data = _grafico.valores.siete
-        _highcharts.series[1].data = _grafico.valores.ocho
-        _highcharts.series[0].data = _grafico.valores.nueve
-        _highcharts.xAxis.categories = _grafico.semanas
-        _highcharts.chart = { height: 250 }
+        _hchartsUno.series[9].data = [[indice,parseFloat(the("pfe").value)]]
+        _hchartsUno.series[8].data = _grafico.valores.uno
+        _hchartsUno.series[7].data = _grafico.valores.dos
+        _hchartsUno.series[6].data = _grafico.valores.tres
+        _hchartsUno.series[5].data = _grafico.valores.cuatro
+        _hchartsUno.series[4].data = _grafico.valores.cinco
+        _hchartsUno.series[3].data = _grafico.valores.seis
+        _hchartsUno.series[2].data = _grafico.valores.siete
+        _hchartsUno.series[1].data = _grafico.valores.ocho
+        _hchartsUno.series[0].data = _grafico.valores.nueve
+        _hchartsUno.xAxis.categories = _grafico.semanas
+        _hchartsUno.chart = { height: 250 }
 
-        _highcharts = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _highcharts)
+        _hchartsUno = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _hchartsUno)
 
         $('#graficoCaView').highcharts({
             chart: { height: 250 },
@@ -4908,10 +4911,18 @@ $( document ).ready(function() {
         the(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
+            the("graficoIpArtUtView").style.width = 380 + 'px';
+            the("graficoIpArtUmbView").style.width = 380 + 'px';
+            the("graficoIpArtCMView").style.width = 380 + 'px';
+            the("graficoIpCCPView").style.width = 380 + 'px';
+            _hchartsUno.reflow();
+            _hchartsDos.reflow();
+            _hchartsTres.reflow();
+            _hchartsCuatro.reflow();
             imprSelec(modal);
         });
 
-        let graficoUno = Highcharts.chart('graficoIpArtUtView', {
+        _hchartsUno = Highcharts.chart('graficoIpArtUtView', {
             chart: {
                 height: 250
             },
@@ -4988,7 +4999,7 @@ $( document ).ready(function() {
         });
         
         //$('#graficoIpArtUmbView').highcharts({
-        let graficoDos = Highcharts.chart('graficoIpArtUmbView', {
+        _hchartsDos = Highcharts.chart('graficoIpArtUmbView', {
                 chart: {
                 height: 250
             },
@@ -5062,7 +5073,7 @@ $( document ).ready(function() {
              }]
         });
         //$('#graficoIpArtCMView').highcharts({
-        let graficoTres = Highcharts.chart('graficoIpArtCMView', {
+        _hchartsTres = Highcharts.chart('graficoIpArtCMView', {
                 chart: {
                 height: 250
             },
@@ -5143,7 +5154,7 @@ $( document ).ready(function() {
         var dvp = the("dv").value;
 
         if (dvp != ""){
-            let graficoCuatro = Highcharts.chart('graficoIpCCPView', {
+            _hchartsCuatro = Highcharts.chart('graficoIpCCPView', {
                 chart: { height: 250 },
                 title: {
                     text: 'IP Ductus Venoso',
@@ -5216,7 +5227,7 @@ $( document ).ready(function() {
                 }]
             });
         }else{
-            let graficoCuatro = Highcharts.chart('graficoIpCCPView', {
+            _hchartsCuatro = Highcharts.chart('graficoIpCCPView', {
                 chart: { height: 250 },
                 title: {
                     text: 'IP de CCP (Indice ACM / AU) **',
