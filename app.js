@@ -3608,9 +3608,9 @@ $( document ).ready(function() {
         the(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
-            the("graficoInfecoObsSegTrimPFEView").style.width = 780 + 'px';
-            the("graficoCaView").style.width = 340 + 'px';
-            the("graficoBVMView").style.width = 340 + 'px';
+            the("graficoInfecoObsSegTrimPFEView").style.width = 700 + 'px';
+            the("graficoCaView").style.width = 300 + 'px';
+            the("graficoBVMView").style.width = 300 + 'px';
             _hchartsUno.reflow();
             _hchartsDos.reflow();
             _hchartsTres.reflow();
@@ -4919,10 +4919,10 @@ $( document ).ready(function() {
         the(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
-            the("graficoIpArtUtView").style.width = 380 + 'px';
-            the("graficoIpArtUmbView").style.width = 380 + 'px';
-            the("graficoIpArtCMView").style.width = 380 + 'px';
-            the("graficoIpCCPView").style.width = 380 + 'px';
+            the("graficoIpArtUtView").style.width = 300 + 'px';
+            the("graficoIpArtUmbView").style.width = 300 + 'px';
+            the("graficoIpArtCMView").style.width = 300 + 'px';
+            the("graficoIpCCPView").style.width = 300 + 'px';
             _hchartsUno.reflow();
             _hchartsDos.reflow();
             _hchartsTres.reflow();
