@@ -3609,8 +3609,8 @@ $( document ).ready(function() {
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
             the("graficoInfecoObsSegTrimPFEView").style.width = 780 + 'px';
-            the("graficoCaView").style.width = 380 + 'px';
-            the("graficoBVMView").style.width = 380 + 'px';
+            the("graficoCaView").style.width = 340 + 'px';
+            the("graficoBVMView").style.width = 340 + 'px';
             _hchartsUno.reflow();
             _hchartsDos.reflow();
             _hchartsTres.reflow();
