@@ -3739,8 +3739,10 @@ $( document ).ready(function() {
                 data: (function () {
                     var data = [];
                     var edadGest = the("semanas").value;
-                    edadGest = parseInt(edadGest);
-                    for (i = 12; i < edadGest; i++) {
+                    edadGest = parseInt(edadGest) - 14;
+                    let _edadGest = (parseInt(the("semanas").value) - 14) +2;
+
+                    for (i = edadGest - 2; i < edadGest; i++) {
                         data.push({
                             y: 0,
                         });
@@ -3752,7 +3754,7 @@ $( document ).ready(function() {
                     ca = parseFloat(ca);
 
                     data.push({y:ca});
-                    for (i = edadGest + 1; i < 40; i++) {
+                    for (i = edadGest + 1; i < _edadGest; i++) {
                         data.push({
                             y: 0,
                         });
