@@ -3845,159 +3845,159 @@ $( document ).ready(function() {
         };
 
         _hchartsTres = Highcharts.chart('graficoBVMView', _hchartsTres)
-       
-       let uterinasData = {
-           min:[1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47],
-           max: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
-       }
-            if (the("art.ut").checked == true){
-                $('#graficoCcCaView').highcharts({
-                    chart: {
-                        height: 250
-                    },
-                    title: {
-                        text: 'IP Promedio Arterias Uterinas',
-                        x: -20,
-                        style: {
-                            fontSize: '12px'
-                        }
-                    },
-                    plotOptions: {
-                        series: {
-                            enableMouseTracking: false
-                        }
-                    },
-                    yAxis: {
-                        title: { text: 'Valor IP' },
-                        tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
-                    },
-                    legend: {
-                        itemStyle: {
-                            fontSize: '10px',
-                            fontWeight:'normal'
-                        }
-                    },
-                    colors: ['#313131', '#313131', '#313131'],
-                    xAxis: {
-                        categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
-                    },
-                    credits: { enabled: false },
-                    series: [{
-                        type: "line",
-                        name: 'Pct. 5',
-                        dashStyle: "Dot",
-                        marker: { enabled: false },
-                        data: uterinasData.min
-                    }, {
-                        type: "line",
-                        name: 'Pct. 95',
-                        dashStyle: "Dot",
-                        marker: { enabled: false },
-                        data: uterinasData.max
-                    }, {
-                        type: "line",
-                        name: 'IP Promedio',
-                        dashStyle: "Dot",
-                        marker: { symbol: 'square' },
-                        lineWidth: 0,
-                        data: (function () {
-                            // generate an array of random data
-                            var data = [];
-                            var edadGest = the("semanas").value;
-                            edadGest = parseInt(edadGest);
-                            for (i = 10; i < edadGest; i ++ ) {
-                                data.push({
-                                    y: 0,
-                                });
-                            }
-                            var aud = $("#respuesta_uterina_promedio").val();
-                            aud = aud.toString();
-                            aud = aud.replace(",", ".");
-                            aud = parseFloat(aud);
-                                
+
+        let uterinasData = {
+            min:[1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47],
+            max: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
+        }
+        if (the("art.ut").checked == true){
+            $('#graficoCcCaView').highcharts({
+                chart: {
+                    height: 250
+                },
+                title: {
+                    text: 'IP Promedio Arterias Uterinas',
+                    x: -20,
+                    style: {
+                        fontSize: '12px'
+                    }
+                },
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
+                    }
+                },
+                yAxis: {
+                    title: { text: 'Valor IP' },
+                    tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
+                },
+                legend: {
+                    itemStyle: {
+                        fontSize: '10px',
+                        fontWeight:'normal'
+                    }
+                },
+                colors: ['#313131', '#313131', '#313131'],
+                xAxis: {
+                    categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
+                },
+                credits: { enabled: false },
+                series: [{
+                    type: "line",
+                    name: 'Pct. 5',
+                    dashStyle: "Dot",
+                    marker: { enabled: false },
+                    data: uterinasData.min
+                }, {
+                    type: "line",
+                    name: 'Pct. 95',
+                    dashStyle: "Dot",
+                    marker: { enabled: false },
+                    data: uterinasData.max
+                }, {
+                    type: "line",
+                    name: 'IP Promedio',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                    data: (function () {
+                        // generate an array of random data
+                        var data = [];
+                        var edadGest = the("semanas").value;
+                        edadGest = parseInt(edadGest);
+                        for (i = 10; i < edadGest; i ++ ) {
                             data.push({
-                                y: aud,
+                                y: 0,
                             });
-                            for (i = (edadGest +1); i < 39; i ++ ) {
-                                data.push({
-                                    y: 0,
-                                });
-                            }
-                            return data;
-                        }())
-                    }]
+                        }
+                        var aud = $("#respuesta_uterina_promedio").val();
+                        aud = aud.toString();
+                        aud = aud.replace(",", ".");
+                        aud = parseFloat(aud);
+                            
+                        data.push({
+                            y: aud,
+                        });
+                        for (i = (edadGest +1); i < 39; i ++ ) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        return data;
+                    }())
+                }]
+            });
+        }else{
+            $('#graficoCcCaView').highcharts({
+                chart: {
+                    height: 250
+                },
+                title: {
+                    text: 'Relación Craneo / Abdómen',
+                    x: -20,
+                    style: {fontSize: '12px'}
+                },
+                plotOptions: { series: { enableMouseTracking: false }},
+                legend: {
+                    itemStyle: {
+                        fontSize: '10px',
+                        fontWeight:'normal'
+                    }
+                },
+                yAxis: {
+                    title: { text: 'Valor cuociente' },
+                    tickPositions: [0.75, 0.82, 0.88, 0.95, 1, 1.07, 1.14, 1.2, 1.27, 1.33]
+                },
+                colors: ['#313131', '#313131', '#313131'],
+                xAxis: {
+                    categories: ['15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+                },
+                credits: { enabled: false },
+                series: [{
+                    type: "line",
+                    name: 'Pct. 3',
+                    dashStyle: "Dot",
+                    marker: { enabled: false },
+                    data: [1.1,1.09,1.08,1.07,1.06,1.06,1.05,1.04,1.03,1.02,1.01,1,1,0.99,0.98,0.97,0.96,0.95,0.95,0.94,0.93,0.92,0.91,0.9,0.89,0.89]
+                }, {
+                    type: "line",
+                    name: 'Pct. 97',
+                    dashStyle: "Dot",
+                    marker: { enabled: false },
+                    data: [1.29,1.28,1.27,1.26,1.25,1.24,1.24,1.23,1.22,1.21,1.2,1.19,1.18,1.18,1.17,1.17,1.16,1.15,1.14,1.13,1.12,1.11,1.1,1.09,1.08,1.08]
+                }, {
+                    type: "line",
+                    name: 'CC/CA',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                    data: (function () {
+                        var data = [];
+                        var edadGest = the("semanas").value;
+                        edadGest = parseInt(edadGest);
+
+                        for (i = 16; i < edadGest; i++) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        var ccca = parseInt($('#cc').val()) / parseInt($('#ca').val());
+                        ccca = ccca.toFixed(2);
+                        ccca = parseFloat(ccca);
+
+                        data.push({
+                            y: ccca,
+                        });
+                        for (i = (edadGest + 1); i <= 39; i++) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        return data;
+                    }())
+                }]
                 });
-            }else{
-                $('#graficoCcCaView').highcharts({
-                    chart: {
-                        height: 250
-                    },
-                    title: {
-                        text: 'Relación Craneo / Abdómen',
-                        x: -20,
-                        style: {fontSize: '12px'}
-                    },
-                    plotOptions: { series: { enableMouseTracking: false }},
-                    legend: {
-                        itemStyle: {
-                            fontSize: '10px',
-                            fontWeight:'normal'
-                        }
-                    },
-                    yAxis: {
-                        title: { text: 'Valor cuociente' },
-                        tickPositions: [0.75, 0.82, 0.88, 0.95, 1, 1.07, 1.14, 1.2, 1.27, 1.33]
-                    },
-                    colors: ['#313131', '#313131', '#313131'],
-                    xAxis: {
-                        categories: ['15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
-                    },
-                    credits: { enabled: false },
-                    series: [{
-                        type: "line",
-                        name: 'Pct. 3',
-                        dashStyle: "Dot",
-                        marker: { enabled: false },
-                        data: [1.1,1.09,1.08,1.07,1.06,1.06,1.05,1.04,1.03,1.02,1.01,1,1,0.99,0.98,0.97,0.96,0.95,0.95,0.94,0.93,0.92,0.91,0.9,0.89,0.89]
-                    }, {
-                        type: "line",
-                        name: 'Pct. 97',
-                        dashStyle: "Dot",
-                        marker: { enabled: false },
-                        data: [1.29,1.28,1.27,1.26,1.25,1.24,1.24,1.23,1.22,1.21,1.2,1.19,1.18,1.18,1.17,1.17,1.16,1.15,1.14,1.13,1.12,1.11,1.1,1.09,1.08,1.08]
-                    }, {
-                        type: "line",
-                        name: 'CC/CA',
-                        dashStyle: "Dot",
-                        marker: { symbol: 'square' },
-                        lineWidth: 0,
-                        data: (function () {
-                            var data = [];
-                            var edadGest = the("semanas").value;
-                            edadGest = parseInt(edadGest);
-
-                            for (i = 16; i < edadGest; i++) {
-                                data.push({
-                                    y: 0,
-                                });
-                            }
-                            var ccca = parseInt($('#cc').val()) / parseInt($('#ca').val());
-                            ccca = ccca.toFixed(2);
-                            ccca = parseFloat(ccca);
-
-                            data.push({
-                                y: ccca,
-                            });
-                            for (i = (edadGest + 1); i <= 39; i++) {
-                                data.push({
-                                    y: 0,
-                                });
-                            }
-                            return data;
-                        }())
-                    }]
-                 });
-            }
+        }
     });
 
     $( '#infecoObsSegTrim2' ).on( 'click', function() {
