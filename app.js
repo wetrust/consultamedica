@@ -3766,8 +3766,8 @@ $( document ).ready(function() {
 
         let dataCA = dataGraphCA()
         _hchartsDos.xAxis.categories = dataCA.eg
-        _hchartsDos.series[0].data = dataCA.p10
-        _hchartsDos.series[1].data = dataCA.p10
+        _hchartsDos.series[0].data = dataCA.p3
+        _hchartsDos.series[1].data = dataCA.p97
 
         _hchartsDos = Highcharts.chart('graficoCaView', _hchartsDos)
 
