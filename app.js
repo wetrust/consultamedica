@@ -3719,6 +3719,9 @@ $( document ).ready(function() {
             plotOptions: {
                 series: {
                     enableMouseTracking: false
+                },
+                column: {
+                    grouping: false
                 }
             },
             yAxis: {
@@ -3790,6 +3793,9 @@ $( document ).ready(function() {
             plotOptions: {
                 series: {
                     enableMouseTracking: false
+                },
+                column: {
+                    grouping: false
                 }
             },
             legend: {
