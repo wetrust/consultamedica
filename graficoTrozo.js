@@ -13,7 +13,7 @@ export function dataGraphCA(){
 
     data.eg = calcularDosMenos(Number(the("semanas").value))
 
-    for (let i = 0; i < tramo.length; i++) {
+    for (let i = 0; i < data.eg.length; i++) {
         data.p10.push(p10[tramo[i]-14])
         data.p90.push(p90[tramo[i]-14])
     }
