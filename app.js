@@ -3771,6 +3771,8 @@ $( document ).ready(function() {
         _hchartsDos.series[0].data = dataCA.p3
         _hchartsDos.series[1].data = dataCA.p97
 
+        _hchartsDos.yAxis.max = dataCA.p97[dataCA.p97.length] + 50
+
         _hchartsDos = Highcharts.chart('graficoCaView', _hchartsDos)
 
         _hchartsTres = {
