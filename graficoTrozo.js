@@ -19,6 +19,7 @@ export function dataGraphCA(){
 }
 
 function calcularDosMenos(eg){
+
     let tramo = [];
 
     if (eg == 12){
@@ -51,4 +52,5 @@ function calcularDosMenos(eg){
 
     tramo.sort((a, b) => {return a - b})
     return tramo;
+
 }

@@ -3711,7 +3711,9 @@ $( document ).ready(function() {
             plotOptions: { series: { enableMouseTracking: false }, column: { grouping: false } },
             yAxis: {
                 title: { text: 'Milimetros (mm)' },
-                tickPositions: [ 60, 100, 140, 180, 220, 260, 300, 340, 400]
+                min: 60,
+                max: 400,
+                tickInterval:50,
             },
             colors: ['#313131', '#313131', '#313131'],
             xAxis: {

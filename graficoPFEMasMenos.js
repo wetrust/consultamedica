@@ -3,10 +3,13 @@ import { the, these } from './wetrust.js'
 var MAX_SAFE_INTEGER = 9007199254740991; // Math.pow(2, 53) - 1;
 
 function isSafeInteger(value) {
+
    return Number.isInteger(value) && Math.abs(value) <= MAX_SAFE_INTEGER;
+
 };
 
 export function graficoPFEMasMenos(){
+
     let tramo = calcularDosMenos(Number(the("semanas").value));
     let valores = {"uno" : [], "dos" : [], "tres" : [], "cuatro" : [], "cinco" : [], "seis" : [], "siete" : [], "ocho" : [], "nueve" : []};
 
@@ -80,9 +83,11 @@ export function graficoPFEMasMenos(){
 
     let resultado = {valores: valores, semanas: tramo}
     return resultado
+
 }
 
 function calcularDosMenos(eg){
+
     let tramo = [];
 
     if (eg == 14){
@@ -145,9 +150,11 @@ function calcularDosMenos(eg){
 
     tramo.sort((a, b) => {return a - b})
     return tramo;
+
 }
 
 export function percentilOMS(PFE, EG, sexo = null){
+
     let pUno = Math.exp(-.230518383014592 + EG * (.400511116318458 + EG * (-.00617993235833267 + EG * (316595762972649e-19 + EG * 0))))
     let pDos = Math.exp(-.162057103557898 + EG * (.393965369913166 + EG * (-.00579733056422172 + EG * (255319128239087e-19 + EG * 0))))
     let pTres = Math.exp(-.0455887642525626 + EG * (.389314052082164 + EG * (-.00574527674062641 + EG * (265557891064333e-19 + EG * 0))))
@@ -181,6 +188,7 @@ export function percentilOMS(PFE, EG, sexo = null){
             pNueve = Math.exp(.32551154984358 + EG * (.40214557617585 + EG * (-.0074145176202411 + EG * (88196644838898e-18 + EG * -7.1015932637436e-7))))
         }
     }
+
     let rango = [0.0025, 0.005, 0.01, 0.025, 0.05, 0.075, 0.09, 0.095, 0.0975]
 
     //determinar si es mayor a p97.5 o es menor a p2.5
@@ -208,6 +216,7 @@ export function percentilOMS(PFE, EG, sexo = null){
     }else if (PFE <= pDos && PFE >= pUno){  
         return rango[0] + (PFE - pUno) / (pDos - pUno) * (rango[1] - rango[0])
     }
+
 }
 
 export const baseGraficoPFE = {
