@@ -4041,9 +4041,9 @@ $( document ).ready(function() {
         stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
 
         the(modal.contenido).innerHTML = stringGraficos;
-        the(modal.button).dataset.id = modal.contenido;
+        the(modal.button).dataset.contenido = modal.contenido;
         $("#"+modal.button).on("click", function(){
-            let modal =  this.dataset.id;
+            let modal =  this.dataset.contenido;
             imprSelec(modal);
         });
 
