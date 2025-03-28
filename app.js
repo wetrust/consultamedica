@@ -3,6 +3,7 @@ import { the, inputDate, these, humanDate } from './wetrust.js'
 import { appPesoEG } from './app.pesoEG.js?d'
 import { graficoPFEMasMenos, percentilOMS } from './graficoPFEMasMenos.js?H'
 import { baseGraficoPFE } from './graficoPFEMasMenos.js';
+import { dataGraphCA } from './graficoTrozo.js';
 
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
@@ -3705,25 +3706,9 @@ $( document ).ready(function() {
 
         _hchartsDos = {
             chart: { height: 250 },
-            title: {
-                text: 'Circunferencia Abdominal **',
-                x: -20,
-                style: {fontSize: '12px'}
-            },
-            legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight:'normal'
-                }
-            },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false
-                },
-                column: {
-                    grouping: false
-                }
-            },
+            title: { text: 'Circunferencia Abdominal **', x: -20, style: {fontSize: '12px'} },
+            legend: { itemStyle: { fontSize: '10px', fontWeight:'normal' } },
+            plotOptions: { series: { enableMouseTracking: false }, column: { grouping: false } },
             yAxis: {
                 title: { text: 'Milimetros (mm)' },
                 tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
@@ -3738,13 +3723,13 @@ $( document ).ready(function() {
                 name: 'Pct. 3',
                 dashStyle: "Dot",
                 marker: { enabled: false },
-                data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
+                data: []
             }, {
                 type: "line",
                 name: 'Pct 97',
                 dashStyle: "Dot",
                 marker: { enabled: false },
-                data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
+                data: []
             }, {
                 type: "line",
                 name: 'CA',
@@ -3760,12 +3745,12 @@ $( document ).ready(function() {
                             y: 0,
                         });
                     }
-    
-                    var ca = $("#ca").val();
+
+                    var ca = the("ca").value;
                     ca = ca.toString();
                     ca = ca.replace(",", ".");
                     ca = parseFloat(ca);
-    
+
                     data.push({y:ca});
                     for (i = edadGest + 1; i < 40; i++) {
                         data.push({
@@ -3776,6 +3761,11 @@ $( document ).ready(function() {
                 }())
             }]
         };
+
+        let dataCA = dataGraphCA()
+        _hchartsDos.xAxis.categories = dataCA.eg
+        _hchartsDos.series[0].data = dataCA.p10
+        _hchartsDos.series[1].data = dataCA.p10
 
         _hchartsDos = Highcharts.chart('graficoCaView', _hchartsDos)
 
