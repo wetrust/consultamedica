@@ -47,7 +47,7 @@ $( document ).ready(function() {
 
     the("fee").value = inputDate(_fecha)
 
-    let _fur = fechas.fur(10, _fecha)
+    let _fur = fechas.fur(0, _fecha)
     the("fum").value = inputDate(_fur)
 
     let _fpp = fechas.fpp(_fur)
@@ -62,7 +62,7 @@ $( document ).ready(function() {
         semanas.appendChild(opt); 
     }
 
-    the("semanas").value = 10
+    the("semanas").value = 0
 
     for (var i = 25; i < 43; i++) {
         let semanas = the("edadGestacional");
@@ -338,9 +338,9 @@ $( document ).ready(function() {
     }
 
     //funcion rara
-    $("#menu\\.modulo\\.activo").mouseout(function(){
-        if (the("menu.modulo.activo").classList.contains("active")){
-            the("menu.modulo.activo").classList.remove("active");
+    $("#boton\\.datos\\.iniciales").mouseout(function(){
+        if (the("boton.datos.iniciales").classList.contains("active")){
+            the("boton.datos.iniciales").classList.remove("active");
         }
     });
 
@@ -483,6 +483,7 @@ $( document ).ready(function() {
     });
 
     $("#semanas, #dias").on("change", function(){
+
         let semanas = parseInt(the("semanas").value);
         let dias = parseInt(the("dias").value);
         semanas = 7 * semanas;
@@ -497,6 +498,19 @@ $( document ).ready(function() {
     });
 
     the("continuarAExamen").onclick = function(){
+
+        if (the("semanas").value == 0){
+            var modal = makeModal();
+            document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+            the(modal.titulo).innerText = "Aviso";
+            the(modal.contenido).innerHTML = '<h1 class="text-danger text-center">Debe Ingresar FUR</h1>';
+            the(modal.id).children[0].classList.remove("modal-lg");
+    
+            $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+                $(this).remove();
+            });
+        }
+
         let alternativa = the("tipoEcografia").value
 
         if (alternativa == 0){
@@ -514,6 +528,18 @@ $( document ).ready(function() {
     the("continuarAExamenBoton").onclick = function(){
         let alternativa = the("tipoEcografia").value
 
+        if (the("semanas").value == 0){
+            var modal = makeModal();
+            document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+            the(modal.titulo).innerText = "Aviso";
+            the(modal.contenido).innerHTML = '<h1 class="text-danger text-center">Debe Ingresar FUR</h1>';
+            the(modal.id).children[0].classList.remove("modal-lg");
+    
+            $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+                $(this).remove();
+            });
+        }
+        
         if (alternativa == 0){
             document.location.hash = "#ecoObsPrimTrim"
         }else if (alternativa == 1){
