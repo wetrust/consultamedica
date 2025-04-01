@@ -4949,14 +4949,14 @@ $( document ).ready(function() {
         the(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
-            the("graficoIpArtUtView").style.width = 290 + 'px';
-            the("graficoIpArtUmbView").style.width = 290 + 'px';
-            the("graficoIpArtCMView").style.width = 290 + 'px';
-            the("graficoIpCCPView").style.width = 290 + 'px';
-            _hchartsUno.reflow();
-            _hchartsDos.reflow();
-            _hchartsTres.reflow();
-            _hchartsCuatro.reflow();
+            //the("graficoIpArtUtView").style.width = 1000 + 'px';
+            //the("graficoIpArtUmbView").style.width = 1000 + 'px';
+            //the("graficoIpArtCMView").style.width = 1000 + 'px';
+            //the("graficoIpCCPView").style.width = 1000 + 'px';
+            //_hchartsUno.reflow();
+            //_hchartsDos.reflow();
+            //_hchartsTres.reflow();
+            //_hchartsCuatro.reflow();
             imprSelec(modal);
         });
 
