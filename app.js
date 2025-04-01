@@ -4946,9 +4946,9 @@ $( document ).ready(function() {
             $(this).remove();
         });
 
-        the(modal.button).dataset.id = modal.contenido;
+        the(modal.button).dataset.contenido = modal.contenido;
         $("#"+modal.button).on("click", function(){
-            let modal =  this.dataset.id;
+            let modal =  this.dataset.contenido;
             the("graficoIpArtUtView").style.width = 450 + 'px';
             the("graficoIpArtUtView").style.height = 450 + 'px';
             the("graficoIpArtUmbView").style.width = 450 + 'px';
@@ -4957,11 +4957,13 @@ $( document ).ready(function() {
             the("graficoIpArtCMView").style.height = 450 + 'px';
             the("graficoIpCCPView").style.width = 450 + 'px';
             the("graficoIpCCPView").style.height = 450 + 'px';
+            _hchartsUno.yAxis.tickPositions = [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
             _hchartsUno.reflow();
             _hchartsDos.reflow();
             _hchartsTres.reflow();
             _hchartsCuatro.reflow();
             imprSelec(modal);
+            $('#'+this.dataset.modal).modal("hidden")
         });
 
         _hchartsUno = Highcharts.chart('graficoIpArtUtView', {
