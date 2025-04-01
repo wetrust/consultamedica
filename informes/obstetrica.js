@@ -1,3 +1,8 @@
+import { the, inputDate, these, humanDate } from '../wetrust.js'
+var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+var dayHoy = new Date();
+
 export function InfEcoObsSegTrim1(){
     var actCard;
     var movCorp;
@@ -211,4 +216,34 @@ export function InfEcoObsSegTrim1(){
     InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
 
     return InformeString;
+}
+
+function oldProgress(value){
+    let step = [0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100]
+
+    let result = "[";
+    let footer = "]"
+
+    step.forEach(element => {
+        if (element < 50 || (element > 50 && element < 100)){
+            if (value > element && value < (element +5) || (value == (element + 5) && value != 50 && value != 100)){
+                result += "x";
+
+            }else{
+                result += "-";
+            }
+
+        }else if (element == 50){
+            if (value >= element && value <= (element +5)){
+                result += "x";
+            }else{
+                result += "|";
+            }
+
+        }else if (element == 100){
+            result += footer;
+        }
+    })
+
+    return result;
 }
