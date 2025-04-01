@@ -3601,14 +3601,11 @@ $( document ).ready(function() {
         var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 16){ alert("Edad Gestacional inferior a 16 semanas"); return false; }
-
         var modal = makeModal("Ver Impresion");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerText = "Gráfica evaluación ecográfica del crecimiento fetal y liquido amniótico";
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove() });
 
         var stringGraficos = "<div class='container'><div style='width:100px;text-align:center'></div></div><h4 class='d-none text-center'>Evaluación ecográfica del crecimiento fetal y líquido amniótico</h4><span class='d-none mt-2'style='border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px'></span><div class='d-none mt-2 row'><div class='col-4'><p style='font-size:13px'><strong>Nombre: </strong>:PACIENTE</p></div><div class='col-4'><p style='font-size:13px'><strong>RUT: </strong>:RUT</p></div><div class='col-4'><p style='font-size:13px'><strong>Fecha de Exámen: </strong>:FEXAMEN</p></div></div><div class='d-none mt-2 row'><div class='col-4'><p style='font-size:13px'><strong>E. Gestacional: </strong>:EGestacional</div><div class='col-4'><p style='font-size:13px'><strong>Peso Fetal Estimado: </strong>:PESO gramos</div><div class='col-4'><p style='font-size:13px'><strong>Percentil: </strong>:PERCENTIL</div></div><div class='row'><div class='col-12'><div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col-6'><div id='graficoCaView'></div><div id='graficoCcCaView'></div></div><div class='col-6'><div id='graficoBVMView'></div></div></div><div class='row'id='lineclear'><div class='col'><p style='font-size:10px'class='d-none'><strong style='color:#045dab'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS<p style='margin-right:100px;font-size:12px;text-align:right'class='d-none text-right top40'>Ecografista: <strong>:ECOGRAFISTA</strong></p><span class='d-none'style='border-top:1px solid #000;width:100%!important;display:block'></span><p style='margin-bottom:0;font-size:11px'class='d-none'>Fecha Informe: :DATEINFORME</p><span class='d-none'style='border-top:1px solid #000;width:100%!important;display:block'></span><p class='d-none pie-pagina'>* Tablas de crecimiento fetal Organización Mundial de la Salud: https://www.ajog.org/article/S0002-9378%2817%2932485-7/fulltext.<br>** Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97)<br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.</div></div>";
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
@@ -3636,9 +3633,11 @@ $( document ).ready(function() {
         the(modal.button).dataset.id = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.id;
-            the("graficoInfecoObsSegTrimPFEView").style.width = 700 + 'px';
-            the("graficoCaView").style.width = 290 + 'px';
-            the("graficoBVMView").style.width = 290 + 'px';
+            the("graficoInfecoObsSegTrimPFEView").style.width = 1000 + 'px';
+            the("graficoInfecoObsSegTrimPFEView").style.height = 450 + 'px';
+            _hchartsUno.yAxis.tickInterval = 100
+            the("graficoCaView").style.width = 450 + 'px';
+            the("graficoBVMView").style.width = 450 + 'px';
             _hchartsUno.reflow();
             _hchartsDos.reflow();
             _hchartsTres.reflow();
@@ -3702,7 +3701,6 @@ $( document ).ready(function() {
         _hchartsUno.series[0].data = _grafico.valores.nueve
         _hchartsUno.xAxis.categories = _grafico.semanas
         _hchartsUno.chart = { height: 250 }
-
         _hchartsUno = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _hchartsUno)
 
         _hchartsDos = {
@@ -3771,9 +3769,7 @@ $( document ).ready(function() {
         _hchartsDos.xAxis.categories = dataCA.eg
         _hchartsDos.series[0].data = dataCA.p3
         _hchartsDos.series[1].data = dataCA.p97
-
         _hchartsDos.yAxis.max = dataCA.p97[dataCA.p97.length-1] + 50
-
         _hchartsDos = Highcharts.chart('graficoCaView', _hchartsDos)
 
         _hchartsTres = {
@@ -3922,10 +3918,8 @@ $( document ).ready(function() {
                         aud = aud.toString();
                         aud = aud.replace(",", ".");
                         aud = parseFloat(aud);
-                            
-                        data.push({
-                            y: aud,
-                        });
+   
+                        data.push({ y: aud });
                         for (i = (edadGest +1); i < 39; i ++ ) {
                             data.push({
                                 y: 0,
@@ -4006,6 +4000,7 @@ $( document ).ready(function() {
                 }]
                 });
         }
+
     });
 
     $( '#infecoObsSegTrim2' ).on( 'click', function() {
@@ -9472,7 +9467,7 @@ function informeDoppler(){
     }
 
     InformeString += '<tr><td>Arteria Uterina Derecha*</td><td style="text-align: center;">:UD</td><td style="text-align: center;">:UDTXT</td><td style="text-align: center;">:UDRGO</td></tr><tr><td>Arteria Uterina Izquierda*</td><td style="text-align: center;">:UI</td><td style="text-align: center;">:UITXT</td><td style="text-align: center;">:UIRGO</td></tr><tr><td>Promedio Arterias Uterinas*</td><td style="text-align: center;">:UPROM</td><td style="text-align: center;">:UPROMTXT</td><td style="text-align: center;">:UPROMRGO</td></tr>'
-    InformeString += '</tbody></table></div><div class="container"> <p style="padding-bottom: 0px; margin-bottom: 0px;"><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container" style="margin-top: 5rem;"> <p class="text-right top40" style="margin-right: 100px; text-align: right;">Ecografista: :ECOGRAFISTA</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p class="pie-pagina"> * Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32 <br/> ** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127 <br/> *** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 </p><p> <strong> El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
+    InformeString += '</tbody></table></div><div class="container"> <p style="padding-bottom: 0px; margin-bottom: 0px;"><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container" style="margin-top: 3rem;"> <p class="text-right top40" style="margin-right: 100px; text-align: right;">Ecografista: :ECOGRAFISTA</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p class="pie-pagina"> * Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32 <br/> ** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127 <br/> *** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 <br> <strong> El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
 
     InformeString = InformeString.replace(":PACIENTE", paciente);
     InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
@@ -9513,7 +9508,7 @@ function informeDoppler(){
     InformeString = InformeString.replace(":COMENTARIO", comentario);
     InformeString = InformeString.replace(":DATEINFORME", dateInf);
     InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
-        
+
     return InformeString;
 }
 
