@@ -807,7 +807,7 @@ $( document ).ready(function() {
         let ut = pctut(valor);
 
         $("#audPct").val(ut.pct);
-        the("audPctTxt").innerText = "p" + ut.pct;
+        the("audPctTxt").innerText = ut.pct;
         $("#audRngo").val(ut.rango.min + " - " + ut.rango.max);
 
         let aui = $("#aui").val();
@@ -828,7 +828,7 @@ $( document ).ready(function() {
 
         let ut = pctut(valor);
         $("#auiPct").val(ut.pct);
-        the("auiPctTxt").innerText = "p" + ut.pct;
+        the("auiPctTxt").innerText = ut.pct;
         $("#auiRngo").val(ut.rango.min + " - " + ut.rango.max);
 
         let aui = valor;
@@ -848,7 +848,7 @@ $( document ).ready(function() {
             valor = Number(valor);
 
             let ut = pctut(valor);
-            the("auPctTxt").innerText = "p" + ut.pct;
+            the("auPctTxt").innerText = ut.pct;
             $("#auRngo").val(ut.rango.min + " - " + ut.rango.max);
         }
 
@@ -9342,7 +9342,7 @@ function informeMorfologia(){
 }
 
 function informeDoppler(){
-    var InformeString = '<div class="container"><h3>Evaluación de Flujometria Doppler Materno Fetal</h3></div><span style="border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px;margin-bottom:15px"></span><div class="container"><table class="table table-borderless"><tr><td class="p-0"><strong>Nombre: </strong>:PACIENTE<td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.<td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN<tr><td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE<td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO<td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</table><p><strong>FUM: </strong>:FUM<br><strong>Ege: </strong>:EG semanas<br><strong>FPP: </strong>:FPP</div><div class="container"><p><strong style="color:#045dab">ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small><p>Motivo del exámen: :MOTIVODOPPLER<br>Antecedentes Obstétricos: :ANTECEDENTES<br>Feto en Presentación: :PRESENTACION<br>Motilidad Fetal: :MOTILIDAD<br>Ubicación Placentaria: :UBICACION<br>Líquido Amniótico***: :LIQUIDO<br>Medida única de BVM***: :BVM</div><div class="container"><table class="table"><thead><tr><th style="color:#045dab">FLUJOMETRIA DOPPLER<th style="text-align:center">IP Observado<th style="text-align:center">Percentiles de IP<th style="text-align:center">Rango percentilar<tbody><tr><td>Arteria Umbilical**<td style="text-align:center">:AU<td style="text-align:center">:AUTXT<td style="text-align:center">:AURGO<tr><td style="padding-bottom:15px!important">Arteria Cerebral Media**<td style="text-align:center;padding-bottom:15px!important">:ACM<td style="text-align:center;padding-bottom:15px!important">:ACMTXT<td style="text-align:center;padding-bottom:15px!important">:ACMRGO<tr><td>Cuociente Cerebro Placentario ( CCP )**<td style="text-align:center">:CCP<td style="text-align:center">:CCPTXT<td style="text-align:center">:CCPRGO</td></tr>';
+    var InformeString = '<div class="container"><h3>Evaluación de Flujometria Doppler Materno Fetal</h3></div><span style="border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px;margin-bottom:15px"></span><div class="container"><table class="table table-borderless"><tr><td class="p-0"><strong>Nombre: </strong>:PACIENTE<td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.<td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN<tr><td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE<td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO<td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</table><p><strong>FUM: </strong>:FUM<br><strong>Ege: </strong>:EG semanas<br><strong>FPP: </strong>:FPP</div><div class="container"><p><strong style="color:#045dab">ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small><p>Motivo del exámen: :MOTIVODOPPLER<br>Antecedentes Obstétricos: :ANTECEDENTES<br>Feto en Presentación: :PRESENTACION<br>Motilidad Fetal: :MOTILIDAD<br>Ubicación Placentaria: :UBICACION<br>Líquido Amniótico***: :LIQUIDO<br>Medida única de BVM***: :BVM</div><div class="container"><table class="table"><tr><th style="color:#045dab">FLUJOMETRIA DOPPLER</th><th style="text-align:center">IP Observado</th><th style="text-align:center">Percentiles de IP</th><th style="text-align:center">Rango percentilar</th></tr><tr><td>Arteria Umbilical**<td style="text-align:center">:AU<td style="text-align:center">:AUTXT<td style="text-align:center">:AURGO<tr><td style="padding-bottom:15px!important">Arteria Cerebral Media**<td style="text-align:center;padding-bottom:15px!important">:ACM<td style="text-align:center;padding-bottom:15px!important">:ACMTXT<td style="text-align:center;padding-bottom:15px!important">:ACMRGO<tr><td>Cuociente Cerebro Placentario ( CCP )**<td style="text-align:center">:CCP<td style="text-align:center">:CCPTXT<td style="text-align:center">:CCPRGO</td></tr>';
 
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
@@ -9467,7 +9467,7 @@ function informeDoppler(){
     }
 
     InformeString += '<tr><td>Arteria Uterina Derecha*</td><td style="text-align: center;">:UD</td><td style="text-align: center;">:UDTXT</td><td style="text-align: center;">:UDRGO</td></tr><tr><td>Arteria Uterina Izquierda*</td><td style="text-align: center;">:UI</td><td style="text-align: center;">:UITXT</td><td style="text-align: center;">:UIRGO</td></tr><tr><td>Promedio Arterias Uterinas*</td><td style="text-align: center;">:UPROM</td><td style="text-align: center;">:UPROMTXT</td><td style="text-align: center;">:UPROMRGO</td></tr>'
-    InformeString += '</tbody></table></div><div class="container"> <p style="padding-bottom: 0px; margin-bottom: 0px;"><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container" style="margin-top: 3rem;"> <p class="text-right top40" style="margin-right: 100px; text-align: right;">Ecografista: :ECOGRAFISTA</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p class="pie-pagina"> * Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32 <br/> ** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127 <br/> *** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 <br> <strong> El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
+    InformeString += '</tbody></table></div><div class="container"> <p style="padding-bottom: 0px; margin-bottom: 0px;"><strong style="color: #045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small></p><p style="max-width: 700px; text-align: justify;">:COMENTARIO</p></div><div class="container" style="margin-top: 1rem;"> <p class="text-right top40" style="margin-right: 100px; text-align: right;">Ecografista: :ECOGRAFISTA</p><span style="border-top: 1px solid #000; width: 100% !important; display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000; width: 100% !important; display: block;"></span> <p class="pie-pagina"> * Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32 <br/> ** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127 <br/> *** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 <br> <strong> El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </p></div>';
 
     InformeString = InformeString.replace(":PACIENTE", paciente);
     InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
