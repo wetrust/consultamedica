@@ -2226,9 +2226,9 @@ $( document ).ready(function() {
         }
 
         let _sexo = these("sexsexsex")
-        _sexo = _sexo.forEach(alter => { alter.onchange = function(){  
+        _sexo = _sexo.forEach(alter => { alter.parentElement.onchange = function(){  
                 the("cuacuacua").onchange();
-                the("ecografia.segtrim.sexo").value
+                let sexo = this.children[0].value
 
                 if (sexo == "men"){
                     the("ecografia.segtrim.sexo").value = "masculino"
@@ -2237,6 +2237,7 @@ $( document ).ready(function() {
                 }else{
                     the("ecografia.segtrim.sexo").value = "no identificado"
                 }
+
             }
         })
 
@@ -3273,86 +3274,75 @@ $( document ).ready(function() {
     $( '#graficoCerebelo' ).on( 'click', function() {
         var edadGestacional = the("semanas").value;
 
-        if (edadGestacional < 15){
-            alert("Edad Gestacional inferior a 15 semanas");
-            return false;
-        }
+        if (edadGestacional < 15){ alert("Edad Gestacional inferior a 15 semanas"); return false; }
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerText = "Gráfico Cerebelo";
         the(modal.contenido).innerHTML = '<div id="graficoCerebeloView"></div>';
 
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
         $('#graficoCerebeloView').highcharts({
-                title: {
-                    text: 'Diámetro de Cerebelo',
-                    x: -20
-                },
-                subtitle: {
-                    text: 'Milimetros (mm)',
-                    x: -20
-                },
-                plotOptions: {
-                    series: {
-                        enableMouseTracking: false
+            title: {
+                text: 'Diámetro de Cerebelo',
+                x: -20
+            },
+            subtitle: {
+                text: 'Milimetros (mm)',
+                x: -20
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Milimetros (mm)' },
+                tickPositions: [5, 10,20,30,40,50,60,70]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories:['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            },
+            credits: {enabled: false},
+            series: [{
+                type: "line",
+                name: '-2DE',
+                marker: {enabled: false},
+                data: [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
+            }, {
+                type: "line",
+                name: 'media',
+                marker: {enabled: false},
+                data: [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
+            }, {
+                type: "line",
+                name: '+2DE',
+                marker: {enabled: false},
+                data: [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
+            }, {
+                type: "line",
+                name: 'Cerebelo',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    var data = [];
+                    var edadGest = the("semanas").value;
+    
+                    for (i = 15; i < edadGest; i++) {
+                        data.push({ y: 0 });
                     }
-                },
-                yAxis: {
-                    title: { text: 'Milimetros (mm)' },
-                    tickPositions: [5, 10,20,30,40,50,60,70]
-                },
-                colors: ['#313131', '#313131', '#313131'],
-                xAxis: {
-                    categories:['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
-                },
-                credits: {enabled: false},
-                series: [{
-                    type: "line",
-                    name: '-2DE',
-                    marker: {enabled: false},
-                    data: [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
-                }, {
-                    type: "line",
-                    name: 'media',
-                    marker: {enabled: false},
-                    data: [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
-                }, {
-                    type: "line",
-                    name: '+2DE',
-                    marker: {enabled: false},
-                    data: [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
-                }, {
-                    type: "line",
-                    name: 'Cerebelo',
-                    dashStyle: "Dot",
-                    marker: { symbol: 'square' },
-                    lineWidth: 0,
-                    data: (function () {
-                        var data = [];
-                        var edadGest = the("semanas").value;
     
-                        for (i = 15; i < edadGest; i++) {
-                            data.push({
-                                y: 0,
-                            });
-                        }
+                    var cerebelo = $("#cerebelo").val();
+                    cerebelo = cerebelo.toString();
+                    cerebelo = cerebelo.replace(",", ".");
+                    cerebelo = parseFloat(cerebelo);
     
-                       var cerebelo = $("#cerebelo").val();
-                       cerebelo = cerebelo.toString();
-                       cerebelo = cerebelo.replace(",", ".");
-                       cerebelo = parseFloat(cerebelo);
-    
-                        data.push({
-                            y: cerebelo,
-                        });
+                    data.push({ y: cerebelo });
                         for (i = edadGest + 1; i <= 39; i++) {
-                            data.push({
-                                y: 0,
-                            });
+                            data.push({ y: 0 });
                         }
                         return data;
                     }())
@@ -3363,21 +3353,17 @@ $( document ).ready(function() {
         //Grafico Prom Art. UT. en Exm. primer trimestre
         $('#graficoUterinasPrim').on("click", function(){
             var edadGestacional = the("semanas").value;
-
-            if (edadGestacional < 10){
-                alert("Edad Gestacional inferior a 10 semanas");
-                return false;
-            }
+            if (edadGestacional < 10){ alert("Edad Gestacional inferior a 10 semanas"); return false; }
 
             var modal = makeModal();
             document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
             the(modal.titulo).innerText = "Gráfico Promedio Arterias Uterinas";
             the(modal.contenido).innerHTML = '<div id="graficoArtUtDerView"></div>';
-    
+
             $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
                 $(this).remove();
             });
-    
+
             $('#graficoArtUtDerView').highcharts({
                 title: {
                     text: 'IP Promedio Arterias Uterinas',
@@ -3442,6 +3428,7 @@ $( document ).ready(function() {
                         }())
                     }]
             });
+
         });
 
     //Grafico Prom Art. UT. en Exm. seg Terc. Trim
