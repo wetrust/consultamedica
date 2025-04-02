@@ -2022,7 +2022,7 @@ $( document ).ready(function() {
             _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
 
             var pctPFE = percentilOMS(the("unounouno").value, eg, _sexo);
-            pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
+            pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
@@ -2128,7 +2128,7 @@ $( document ).ready(function() {
             let _sexo = these("sexsexsex")
             _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
             var pctPFE = percentilOMS(the("unounouno").value,eg, _sexo);
-            pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
+            pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
@@ -8033,7 +8033,7 @@ function pctpfe() {
     }else {
         var pctPFE = percentilOMS(pfe,eg);
 
-        pctPFE = ("number" == typeof pctPFE) ? (pctPFE * 1000).toFixed(1) : pctPFE
+        pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
 
         the("pfePctRpt").value = pctPFE
         the("pfeRango").value = a + ' - ' +b
