@@ -3617,18 +3617,18 @@ $( document ).ready(function() {
         stringGraficos = stringGraficos.replace(":EGestacional", the("semanas").value + " sem, " + the("dias").value + " dias");
 
         the(modal.contenido).innerHTML = stringGraficos;
-        the(modal.button).dataset.id = modal.contenido;
+        the(modal.button).dataset.contenido = modal.contenido;
         $("#"+modal.button).on("click", function(){
-            let modal =  this.dataset.id;
-            the("graficoInfecoObsSegTrimPFEView").style.width = 1000 + 'px';
-            the("graficoInfecoObsSegTrimPFEView").style.height = 450 + 'px';
+            let modal =  this.dataset.contenido;
             _hchartsUno.yAxis.tickInterval = 100
-            the("graficoCaView").style.width = 450 + 'px';
-            the("graficoBVMView").style.width = 450 + 'px';
+            _hchartsUno.setSize(950, 390, false); 
+            _hchartsDos.setSize(390, 390, false); 
+            _hchartsTres.setSize(390, 390, false); 
             _hchartsUno.reflow();
             _hchartsDos.reflow();
             _hchartsTres.reflow();
             imprSelec(modal);
+            $('#'+this.dataset.modal).modal("hidden")
         });
 
         let _grafico = graficoPFEMasMenos()
@@ -9907,7 +9907,7 @@ function actualizarComentarioDoppler(){
     comentario += '\r\n';
     comentario += '- Arteria Cerebral Media IP = ' + the("ipacmPctTxt").value;
     comentario += '\r\n';
-    comentario += '- Cuociente Cerebro Placentario = ' + the("ccpPctTxt").value;
+    comentario += '- Cuociente Cerebro Placentario IP = ' + the("ccpPctTxt").value;
     comentario += '\r\n';
 
     let a = the("auprom").value
