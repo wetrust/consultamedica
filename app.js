@@ -4931,19 +4931,17 @@ $( document ).ready(function() {
         the(modal.button).dataset.contenido = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.contenido;
-            the("graficoIpArtUtView").style.width = 450 + 'px';
-            the("graficoIpArtUtView").style.height = 450 + 'px';
-            the("graficoIpArtUmbView").style.width = 450 + 'px';
-            the("graficoIpArtUmbView").style.height = 450 + 'px';
-            the("graficoIpArtCMView").style.width = 450 + 'px';
-            the("graficoIpArtCMView").style.height = 450 + 'px';
-            the("graficoIpCCPView").style.width = 450 + 'px';
-            the("graficoIpCCPView").style.height = 450 + 'px';
+
             _hchartsUno.yAxis.tickPositions = [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
             _hchartsUno.reflow();
             _hchartsDos.reflow();
             _hchartsTres.reflow();
             _hchartsCuatro.reflow();
+
+            _hchartsUno.setSize(450, 450, false); 
+            _hchartsDos.setSize(450, 450, false); 
+            _hchartsTres.setSize(450, 450, false); 
+            _hchartsCuatro.setSize(450, 450, false); 
             imprSelec(modal);
             $('#'+this.dataset.modal).modal("hidden")
         });
