@@ -3628,7 +3628,7 @@ $( document ).ready(function() {
             _hchartsDos.reflow();
             _hchartsTres.reflow();
             imprSelec(modal);
-            $('#'+this.dataset.modal).modal("hidden")
+            $('#'+this.dataset.modal).modal("hide")
         });
 
         let _grafico = graficoPFEMasMenos()
@@ -4943,7 +4943,7 @@ $( document ).ready(function() {
             _hchartsTres.setSize(450, 450, false); 
             _hchartsCuatro.setSize(450, 450, false); 
             imprSelec(modal);
-            $('#'+this.dataset.modal).modal("hidden")
+            $('#'+this.dataset.modal).modal("hide")
         });
 
         _hchartsUno = Highcharts.chart('graficoIpArtUtView', {
