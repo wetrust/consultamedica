@@ -3186,8 +3186,6 @@ $( document ).ready(function() {
          });
     });
 
-
-
     $( '#graficoLh' ).on( 'click', function() {
         var edadGestacional = the("semanas").value;
 
@@ -3347,89 +3345,89 @@ $( document ).ready(function() {
                         return data;
                     }())
                 }]
-            });
+        });
     });
 
-        //Grafico Prom Art. UT. en Exm. primer trimestre
-        $('#graficoUterinasPrim').on("click", function(){
-            var edadGestacional = the("semanas").value;
-            if (edadGestacional < 10){ alert("Edad Gestacional inferior a 10 semanas"); return false; }
+    //Grafico Prom Art. UT. en Exm. primer trimestre
+    $('#graficoUterinasPrim').on("click", function(){
+        var edadGestacional = the("semanas").value;
+        if (edadGestacional < 10){ alert("Edad Gestacional inferior a 10 semanas"); return false; }
 
-            var modal = makeModal();
-            document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-            the(modal.titulo).innerText = "Gráfico Promedio Arterias Uterinas";
-            the(modal.contenido).innerHTML = '<div id="graficoArtUtDerView"></div>';
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        the(modal.titulo).innerText = "Gráfico Promedio Arterias Uterinas";
+        the(modal.contenido).innerHTML = '<div id="graficoArtUtDerView"></div>';
 
-            $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-                $(this).remove();
-            });
-
-            $('#graficoArtUtDerView').highcharts({
-                title: {
-                    text: 'IP Promedio Arterias Uterinas',
-                    x: -20,
-                        style: {
-                        fontSize: '10px'
-                    }
-                },
-                plotOptions: {
-                    series: {
-                        enableMouseTracking: false
-                    }
-                },
-                yAxis: {
-                    title: { text: 'Valor IP' },
-                    tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
-                },
-                colors: ['#313131', '#313131', '#313131'],
-                xAxis: {
-                    categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
-                },
-                credits: { enabled: false },
-                series: [{
-                    type: "line",
-                    name: 'Pct. 5',
-                    marker: { enabled: false },
-                    data: [1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47]
-                }, {
-                    type: "line",
-                    name: 'Pct. 95',
-                    marker: { enabled: false },
-                    data: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
-                }, {
-                    type: "line",
-                        name: 'Arteria Promedio',
-                        dashStyle: "Dot",
-                        marker: { symbol: 'square' },
-                        lineWidth: 0,
-                    data: (function () {
-                            // generate an array of random data
-                            var data = [];
-                            var edadGest = the("semanas").value;
-                            for (i = 10; i < edadGest; i ++ ) {
-                                data.push({
-                                    y: 0,
-                                });
-                            }
-                            var aud = the("respuesta_uterina_promedio_prim").value;
-                            aud = aud.toString();
-                            aud = aud.replace(",", ".");
-                            aud = parseFloat(aud);
-                            
-                            data.push({
-                                    y: aud,
-                                });
-                            for (i = (edadGest +1); i < 39; i ++ ) {
-                                data.push({
-                                    y: 0,
-                                });
-                            }
-                            return data;
-                        }())
-                    }]
-            });
-
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
         });
+
+        $('#graficoArtUtDerView').highcharts({
+            title: {
+                text: 'IP Promedio Arterias Uterinas',
+                x: -20,
+                    style: {
+                    fontSize: '10px'
+                }
+            },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+            },
+            yAxis: {
+                title: { text: 'Valor IP' },
+                tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
+            },
+            colors: ['#313131', '#313131', '#313131'],
+            xAxis: {
+                categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
+            },
+            credits: { enabled: false },
+            series: [{
+                type: "line",
+                name: 'Pct. 5',
+                marker: { enabled: false },
+                data: [1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47]
+            }, {
+                type: "line",
+                name: 'Pct. 95',
+                marker: { enabled: false },
+                data: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
+            }, {
+                type: "line",
+                    name: 'Arteria Promedio',
+                    dashStyle: "Dot",
+                    marker: { symbol: 'square' },
+                    lineWidth: 0,
+                data: (function () {
+                        // generate an array of random data
+                        var data = [];
+                        var edadGest = the("semanas").value;
+                        for (i = 10; i < edadGest; i ++ ) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        var aud = the("respuesta_uterina_promedio_prim").value;
+                        aud = aud.toString();
+                        aud = aud.replace(",", ".");
+                        aud = parseFloat(aud);
+                        
+                        data.push({
+                                y: aud,
+                            });
+                        for (i = (edadGest +1); i < 39; i ++ ) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        return data;
+                    }())
+                }]
+        });
+
+    });
 
     //Grafico Prom Art. UT. en Exm. seg Terc. Trim
     $('#graficoUterinasCrecimiento').on("click", function(){
@@ -3594,7 +3592,7 @@ $( document ).ready(function() {
         the(modal.titulo).innerText = "Gráfica evaluación ecográfica del crecimiento fetal y liquido amniótico";
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove() });
 
-        var stringGraficos = "<div class='container'><div style='width:100px;text-align:center'></div></div><h4 class='d-none text-center'>Evaluación ecográfica del crecimiento fetal y líquido amniótico</h4><span class='d-none mt-2'style='border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px'></span><div class='d-none mt-2 row'><div class='col-4'><p style='font-size:13px'><strong>Nombre: </strong>:PACIENTE</p></div><div class='col-4'><p style='font-size:13px'><strong>RUT: </strong>:RUT</p></div><div class='col-4'><p style='font-size:13px'><strong>Fecha de Exámen: </strong>:FEXAMEN</p></div></div><div class='d-none mt-2 row'><div class='col-4'><p style='font-size:13px'><strong>E. Gestacional: </strong>:EGestacional</div><div class='col-4'><p style='font-size:13px'><strong>Peso Fetal Estimado: </strong>:PESO gramos</div><div class='col-4'><p style='font-size:13px'><strong>Percentil: </strong>:PERCENTIL</div></div><div class='row'><div class='col-12'><div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col-6'><div id='graficoCaView'></div><div id='graficoCcCaView'></div></div><div class='col-6'><div id='graficoBVMView'></div></div></div><div class='row'id='lineclear'><div class='col'><p style='font-size:10px'class='d-none'><strong style='color:#045dab'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS<p style='margin-right:100px;font-size:12px;text-align:right'class='d-none text-right top40'>Ecografista: <strong>:ECOGRAFISTA</strong></p><span class='d-none'style='border-top:1px solid #000;width:100%!important;display:block'></span><p style='margin-bottom:0;font-size:11px'class='d-none'>Fecha Informe: :DATEINFORME</p><span class='d-none'style='border-top:1px solid #000;width:100%!important;display:block'></span><p class='d-none pie-pagina'>* Tablas de crecimiento fetal Organización Mundial de la Salud: https://www.ajog.org/article/S0002-9378%2817%2932485-7/fulltext.<br>** Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97)<br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.</div></div>";
+        var stringGraficos = "<div class='container'><div style='width:100px;text-align:center'></div></div><h4 class='d-none text-center'>Evaluación ecográfica del crecimiento fetal y líquido amniótico</h4><span class='d-none mt-2'style='border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px'></span><div class='d-none mt-2 row'><div class='col-4'><p style='font-size:13px'><strong>Nombre: </strong>:PACIENTE</div><div class='col-4'><p style='font-size:13px'><strong>RUT: </strong>:RUT</div><div class='col-4'><p style='font-size:13px'><strong>Fecha de Exámen: </strong>:FEXAMEN</div></div><div class='d-none mt-2 row'><div class='col-4'><p style='font-size:13px'><strong>E. Gestacional: </strong>:EGestacional</div><div class='col-4'><p style='font-size:13px'><strong>Peso Fetal Estimado: </strong>:PESO gramos</div><div class='col-4'><p style='font-size:13px'><strong>Percentil: </strong>:PERCENTIL</div></div><div class='row'><div class='col-12'><div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col-12'><div class='row'><div class='col-6'><div id='graficoCaView'></div><div id='graficoCcCaView'></div></div><div class='col-6'><div id='graficoBVMView'></div></div></div></div></div><div class='row'id='lineclear'><div class='col'><p style='font-size:10px'class='d-none'><strong style='color:#045dab'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS<p style='margin-right:100px;font-size:12px;text-align:right'class='d-none text-right top40'>Ecografista: <strong>:ECOGRAFISTA</strong></p><span class='d-none'style='border-top:1px solid #000;width:100%!important;display:block'></span><p style='margin-bottom:0;font-size:11px'class='d-none'>Fecha Informe: :DATEINFORME</p><span class='d-none'style='border-top:1px solid #000;width:100%!important;display:block'></span><p class='d-none pie-pagina'>* Tablas de crecimiento fetal Organización Mundial de la Salud: https://www.ajog.org/article/S0002-9378%2817%2932485-7/fulltext.<br>** Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97)<br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.</div></div>";
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
@@ -3621,9 +3619,17 @@ $( document ).ready(function() {
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.contenido;
             _hchartsUno.yAxis.tickInterval = 100
-            _hchartsUno.setSize(950, 390, false); 
-            _hchartsDos.setSize(390, 390, false); 
-            _hchartsTres.setSize(390, 390, false); 
+            the("graficoInfecoObsSegTrimPFEView").parentElement.classList.remove("col-12");
+            the("graficoInfecoObsSegTrimPFEView").parentElement.classList.add("col-6");
+            _hchartsUno.setSize(390, 950, false);
+            _hchartsDos.setSize(390, 390, false);
+            the("graficoCaView").parentElement.parentElement.classList.remove("col-12");
+            the("graficoCaView").parentElement.parentElement.classList.add("col-6");
+            the("graficoCaView").parentElement.classList.remove("col-6");
+            the("graficoCaView").parentElement.classList.add("col-12");
+            _hchartsTres.setSize(390, 390, false);
+            the("graficoBVMView").parentElement.classList.remove("col-6");
+            the("graficoBVMView").parentElement.classList.add("col-12");
             _hchartsUno.reflow();
             _hchartsDos.reflow();
             _hchartsTres.reflow();
@@ -4944,6 +4950,7 @@ $( document ).ready(function() {
             _hchartsCuatro.setSize(450, 450, false); 
             imprSelec(modal);
             $('#'+this.dataset.modal).modal("hide")
+
         });
 
         _hchartsUno = Highcharts.chart('graficoIpArtUtView', {
