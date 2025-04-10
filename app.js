@@ -3634,7 +3634,7 @@ $( document ).ready(function() {
             _hchartsUno.reflow();
             _hchartsDos.reflow();
             _hchartsTres.reflow();
-            //imprSelec(modal);
+            imprSelec(modal);
             $('#'+this.dataset.modal).modal("hide");
         });
 
