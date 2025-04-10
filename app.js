@@ -3617,12 +3617,12 @@ $( document ).ready(function() {
         the(modal.contenido).innerHTML = stringGraficos;
         the(modal.button).dataset.contenido = modal.contenido;
         $("#"+modal.button).on("click", function(){
-            let modal =  this.dataset.contenido;
-            _hchartsUno.yAxis.tickInterval = 100;
+            let modal = this.dataset.contenido;
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.remove("col-12");
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.add("col-6");
             _hchartsUno.setSize(530, 800, false);
             _hchartsUno.legend.enabled = false;
+            _hchartsUno.yAxis.tickInterval = 100;
             _hchartsDos.setSize(390, 390, false);
             the("graficoCaView").parentElement.parentElement.parentElement.classList.remove("col-12");
             the("graficoCaView").parentElement.parentElement.parentElement.classList.add("col-6");
