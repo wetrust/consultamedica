@@ -3621,7 +3621,7 @@ $( document ).ready(function() {
             _hchartsUno.yAxis.tickInterval = 100;
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.remove("col-12");
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.add("col-6");
-            _hchartsUno.setSize(390, 950, false);
+            _hchartsUno.setSize(400, 950, false);
             _hchartsDos.setSize(390, 390, false);
             the("graficoCaView").parentElement.parentElement.parentElement.classList.remove("col-12");
             the("graficoCaView").parentElement.parentElement.parentElement.classList.add("col-6");
