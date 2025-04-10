@@ -3620,7 +3620,7 @@ $( document ).ready(function() {
             let modal = this.dataset.contenido;
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.remove("col-12");
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.add("col-6");
-            _hchartsUno.setSize(530, 800, false);
+            _hchartsUno.setSize(550, 800, false);
             _hchartsUno.legend.enabled = false;
             _hchartsUno.yAxis.tickInterval = 100;
             _hchartsDos.setSize(390, 390, false);
