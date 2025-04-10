@@ -3623,7 +3623,7 @@ $( document ).ready(function() {
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.add("col-6");
             _hchartsUno.setSize(390, 950, false);
             _hchartsDos.setSize(390, 390, false);
-            the("graficoCaView").parentElement.parentElement.classList.remove("col-12");
+            the("graficoCaView").parentElement.parentElement.parentElement.classList.remove("col-12");
             the("graficoCaView").parentElement.parentElement.parentElement.classList.add("col-6");
             the("graficoCaView").parentElement.classList.remove("col-6");
             the("graficoCaView").parentElement.classList.add("col-12");
