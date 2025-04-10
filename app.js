@@ -3618,13 +3618,13 @@ $( document ).ready(function() {
         the(modal.button).dataset.contenido = modal.contenido;
         $("#"+modal.button).on("click", function(){
             let modal =  this.dataset.contenido;
-            _hchartsUno.yAxis.tickInterval = 100
+            _hchartsUno.yAxis.tickInterval = 100;
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.remove("col-12");
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.add("col-6");
             _hchartsUno.setSize(390, 950, false);
             _hchartsDos.setSize(390, 390, false);
             the("graficoCaView").parentElement.parentElement.classList.remove("col-12");
-            the("graficoCaView").parentElement.parentElement.classList.add("col-6");
+            the("graficoCaView").parentElement.parentElement.parentElement.classList.add("col-6");
             the("graficoCaView").parentElement.classList.remove("col-6");
             the("graficoCaView").parentElement.classList.add("col-12");
             _hchartsTres.setSize(390, 390, false);
@@ -3634,7 +3634,7 @@ $( document ).ready(function() {
             _hchartsDos.reflow();
             _hchartsTres.reflow();
             imprSelec(modal);
-            $('#'+this.dataset.modal).modal("hide")
+            $('#'+this.dataset.modal).modal("hide");
         });
 
         let _grafico = graficoPFEMasMenos()
