@@ -51,7 +51,13 @@ export function InfEcoObsSegTrim1(){
     }
 
     var linea4 = '<strong>Placenta</strong> grado ' + the("grado").value + ', de ubicación ' + the("ubicacion").value + ', ' + the("incersion").value + '. Cordón umbilical ' + the("cordon").value + ', identificandose '+ the("vasos").value +' vasos.';
-    var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + the("bvm").value + ' mm.';
+    var linea6 = '<strong>Líquido amniótico **</strong>' + $('#liq-cualitativo-eco').val() + ', con bolsillo vertical mayor de ' + the("bvm").value + ' mm';
+
+    if (the("liquido.ila.suma").value != ""){
+        linea6 += ' e ILA de '+ the("liquido.ila.suma").value + ' mm'
+    }else{
+        linea6 += '.' 
+    }
 
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + ' de '+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
