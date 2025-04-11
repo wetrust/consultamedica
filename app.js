@@ -3695,7 +3695,7 @@ $( document ).ready(function() {
             the("graficoBVMView").parentElement.classList.add("col-12");
             _hchartsDos.reflow();
             _hchartsTres.reflow();
-            imprInforme(the("modal").innerHTML);
+            imprInforme(the(modal).innerHTML);
             $('#'+this.dataset.modal).modal("hide");
         });
 
