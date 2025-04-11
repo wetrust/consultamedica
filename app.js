@@ -3634,7 +3634,7 @@ $( document ).ready(function() {
             _hchartsUno.yAxis.tickInterval = 400;
             _hchartsUno.yAxis.min = 0;
 
-            _hchartsUno.series[9].data = {x:Number(the("semanas").value),y:Number(the("pfe").value)}
+            _hchartsUno.series[9].data = [{x:Number(the("semanas").value),y:Number(the("pfe").value)}]
             _hchartsUno.series[8].data = _grafico.valores.uno
             _hchartsUno.series[8].animation = false
             _hchartsUno.series[7].data = _grafico.valores.dos
