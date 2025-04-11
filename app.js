@@ -254,6 +254,7 @@ $( document ).ready(function() {
     }
 
     the("ecografia.segtrim.sexo").onchange = function(){
+        pctpfe()
         comentarioSegundoTrimestre()
     }
     
@@ -2207,22 +2208,23 @@ $( document ).ready(function() {
 
             let sexo = these("sexsexsex")
             sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
-    
+
             if(sexo == "men" || sexo == "wom"){
                 txtOMS += (sexo == "men") ? 'masculino' : 'femenino';
             }
-    
+
             eg = Number(the("semanas").value + "." + the("dias").value);
-    
+
             txtOMS += ' de ' + the("semanas").value + " semanas"
-    
+
             if (the("papapapa").value > 0){
                 txtOMS += ' y ' + the("papapapa").value + " dias "  
             }
             txtOMS += '</strong>'
-    
+
             the("textoTipoOMS").innerHTML = txtOMS
             comentarioSegundoTrimestre()
+
         }
 
         let _sexo = these("sexsexsex")
@@ -8018,6 +8020,7 @@ function p50() {
 }
 
 function psohdlk() {
+
     let CC = parseFloat($("#cc").val());
     let CA = parseInt($("#ca").val());
     let LF = parseInt($("#lf").val());
@@ -8027,17 +8030,18 @@ function psohdlk() {
     LF = LF / 10;
     var psoP = Math.pow(10, (1.326 + 0.0107 * CC + 0.0438 * CA + 0.158 * LF - 0.00326 * CA * LF));
 
-    if (isNaN(psoP) != true) {
+    if ( isNaN( psoP ) != true ) {
         $("#pfe").val(Math.trunc(psoP));
         pctpfe();
-    }
-    else{
+    } else {
         $("#pfe").val(0);
         pctpfe();
     }
+
 }
 
 function psohdlkMorfologia() {
+
     let CC = the("pc.morfologia").value;
     let CA = the("pa.morfologia").value;
     let LF = the("femur.morfologia").value;
@@ -8050,11 +8054,11 @@ function psohdlkMorfologia() {
     if (isNaN(psoP) != true) {
         the("pfe.morfologia").value = Math.trunc(psoP);
         pctpfeMorfologia();
-    }
-    else{
+    } else {
         the("pfe.morfologia").value = 0;
         pctpfeMorfologia();
     }
+
 }
 
 function pctpfe() {
@@ -8063,8 +8067,21 @@ function pctpfe() {
 	let a = [], b = [];
     let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
 
-    a = Math.exp(-.230518383014592 + eg * (.400511116318458 + eg * (-.00617993235833267 + eg * (316595762972649e-19 + eg * 0))))
-    b = Math.exp(.408170594889372 + eg * (.381068214664342 + eg * (-.00550913922743603 + eg * (246713147783532e-19 + eg * 0))));
+    let sexo = the("ecografia.segtrim.sexo").value
+    if (sexo == "masculino"){
+        sexo = "men"
+        a = Math.exp(-.52610096513854 + eg * (.44906549056954 + eg * (-.0089009550762548 + eg * (9868293523919e-17 + eg * -6.1862373692705e-7))))
+        b = Math.exp(.79018076483077 + eg * (.32585025131141 + eg * (-.0025559098706069 + eg * (-42038969571238e-18 + eg * 5.4228420412733e-7))))
+    } else if (sexo == "femenino"){
+        sexo = "wom"
+        a = Math.exp(-.915523725804273 + eg * (.529374415518249 + eg * (-.0147446585943781 + eg * (.000269201219853759 + eg * -23537061714461e-19))))
+        b = Math.exp(.32551154984358 + eg * (.40214557617585 + eg * (-.0074145176202411 + eg * (88196644838898e-18 + eg * -7.1015932637436e-7))))
+    } else {
+        sexo = "z"
+        a = Math.exp(-.230518383014592 + eg * (.400511116318458 + eg * (-.00617993235833267 + eg * (316595762972649e-19 + eg * 0))))
+        b = Math.exp(.408170594889372 + eg * (.381068214664342 + eg * (-.00550913922743603 + eg * (246713147783532e-19 + eg * 0))));
+    }
+    
 
     //let eg = the("semanas").value;
     // funcion que calcula el v alor de eg y suma los dias
@@ -8076,7 +8093,7 @@ function pctpfe() {
         the("pfePct").value = 0
 
     }else {
-        var pctPFE = percentilOMS(pfe,eg);
+        var pctPFE = percentilOMS(pfe,eg, sexo);
 
         pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
 
@@ -10005,6 +10022,7 @@ function calularRiesgoMorfologiaAPriori(){
     the("rapp.morfologia").innerText = (Number(1/Number(the("rapus.morfologia").value)).toFixed(4)) * 100 + " %"
     the("raj.morfologia").innerText = (Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4) 
     the("rajp.morfologia").innerText = ((Number(1/Number(the("rapus.morfologia").value)) * sumatoria) * 100).toFixed(4) +" %" 
+
 }
 
 function comentarioSegundoTrimestre(){
