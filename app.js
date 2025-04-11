@@ -3585,7 +3585,7 @@ $( document ).ready(function() {
     $( '#infecoObsSegTrim1' ).on( 'click', function() {
         var edadGestacional = the("semanas").value;
 
-        if (edadGestacional < 16){ alert("Edad Gestacional inferior a 16 semanas"); return false; }
+        if (edadGestacional < 13){ alert("Edad Gestacional inferior a 16 semanas"); return false; }
         var modal = makeModal("Ver Impresion");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
@@ -3634,6 +3634,7 @@ $( document ).ready(function() {
             _hchartsUno.yAxis.tickInterval = 400;
             _hchartsUno.yAxis.min = 0;
 
+            _hchartsUno.series[9].data = {x:Number(the("semanas").value),y:Number(the("pfe").value)}
             _hchartsUno.series[8].data = _grafico.valores.uno
             _hchartsUno.series[8].animation = false
             _hchartsUno.series[7].data = _grafico.valores.dos
