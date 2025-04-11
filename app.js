@@ -613,10 +613,13 @@ $( document ).ready(function() {
         if (+this.value > 0){
             $("#sacoFlecha").hide();
             $("#sacoModulo").hide();
-        }
-        else{
+        } else {
             $("#sacoFlecha").show();
             $("#sacoModulo").show();
+        }
+
+        if (the("saco").value != "" && the("lcn").value == ""){
+            the("saco-vitelino").value = "no se observa"
         }
 
         let comentario = ""
