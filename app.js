@@ -2,7 +2,7 @@ import { fechas } from './functionesM.js'
 import { the, inputDate, these } from './wetrust.js'
 import { appPesoEG } from './app.pesoEG.js?d'
 import { graficoPFEMasMenos, percentilOMS } from './graficoPFEMasMenos.js?H'
-import { baseGraficoPFE } from './graficoPFEMasMenos.js';
+import { baseGraficoPFE, graficoPFECompleto } from './graficoPFEMasMenos.js';
 import { dataGraphCA } from './graficoTrozo.js';
 import { InfEcoObsSegTrim1 } from './informes/obstetrica.js'
 
@@ -1953,7 +1953,7 @@ $( document ).ready(function() {
         the("papapapa").value =  the("dias").value
 
         let _grafico = graficoPFEMasMenos()
-        _hchartsUno = baseGraficoPFE
+        _hchartsUno = structuredClone(baseGraficoPFE)
 
         let menor = _grafico.valores.uno[0]
         let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
@@ -2028,7 +2028,7 @@ $( document ).ready(function() {
             the("pfePctRpt").value = pctPFE
 
             let _grafico = graficoPFEMasMenos()
-            _hchartsUno = baseGraficoPFE
+            _hchartsUno = structuredClone(baseGraficoPFE)
 
             let menor = _grafico.valores.uno[0]
             let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
@@ -2134,7 +2134,7 @@ $( document ).ready(function() {
             the("pfePctRpt").value = pctPFE
 
             let _grafico = graficoPFEMasMenos()
-            _hchartsUno = baseGraficoPFE
+            _hchartsUno = structuredClone(baseGraficoPFE)
 
             let menor = _grafico.valores.uno[0]
             let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
@@ -3620,9 +3620,60 @@ $( document ).ready(function() {
             let modal = this.dataset.contenido;
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.remove("col-12");
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.add("col-6");
-            _hchartsUno.setSize(650, 800, false);
-            _hchartsUno.legend.enabled = false;
-            _hchartsUno.yAxis.tickInterval = 100;
+            let _grafico = graficoPFECompleto()
+
+            _hchartsUno = structuredClone(baseGraficoPFE)
+
+            _hchartsUno.legend.align = 'left'
+            _hchartsUno.legend.verticalAlign = 'top'
+            _hchartsUno.legend.x = 70
+            _hchartsUno.legend.y = 50
+            _hchartsUno.legend.floating = true
+            var chart = { width: 470, height:750, animation: false }
+            _hchartsUno.chart = chart
+            _hchartsUno.yAxis.tickInterval = 400;
+            _hchartsUno.yAxis.min = 0;
+
+            _hchartsUno.series[8].data = _grafico.valores.uno
+            _hchartsUno.series[8].animation = false
+            _hchartsUno.series[7].data = _grafico.valores.dos
+            _hchartsUno.series[7].animation = false
+            _hchartsUno.series[6].data = _grafico.valores.tres
+            _hchartsUno.series[6].animation = false
+            _hchartsUno.series[5].data = _grafico.valores.cuatro
+            _hchartsUno.series[5].animation = false
+            _hchartsUno.series[4].data = _grafico.valores.cinco
+            _hchartsUno.series[4].animation = false
+            _hchartsUno.series[3].data = _grafico.valores.seis
+            _hchartsUno.series[3].animation = false
+            _hchartsUno.series[2].data = _grafico.valores.siete
+            _hchartsUno.series[2].animation = false
+            _hchartsUno.series[1].data = _grafico.valores.ocho
+            _hchartsUno.series[1].animation = false
+            _hchartsUno.series[0].data = _grafico.valores.nueve
+            _hchartsUno.series[0].animation = false
+            //_hchartsUno.xAxis.categories = _grafico.semanas
+
+            let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1].y
+            if (mayor > 100){
+                mayor = Math.trunc(mayor / 10); multiplicador = 10;
+            }else if (mayor > 1000){
+                mayor = Math.trunc(mayor / 100); multiplicador = 100;
+            }else if (mayor > 10000){
+                mayor = Math.trunc(mayor / 1000); multiplicador = 1000;
+            }
+    
+            let par = mayor % 2;
+            par = (par > 0) ? false : true
+    
+            if (par == true){
+                _hchartsUno.yAxis.max = mayor * multiplicador
+            }else{
+                _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
+            }
+
+            _hchartsUno = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _hchartsUno)
+
             _hchartsDos.setSize(390, 390, false);
             the("graficoCaView").parentElement.parentElement.parentElement.classList.remove("col-12");
             the("graficoCaView").parentElement.parentElement.parentElement.classList.add("col-6");
@@ -3631,7 +3682,6 @@ $( document ).ready(function() {
             _hchartsTres.setSize(390, 390, false);
             the("graficoBVMView").parentElement.classList.remove("col-6");
             the("graficoBVMView").parentElement.classList.add("col-12");
-            _hchartsUno.reflow();
             _hchartsDos.reflow();
             _hchartsTres.reflow();
             imprSelec(modal);
@@ -3639,7 +3689,7 @@ $( document ).ready(function() {
         });
 
         let _grafico = graficoPFEMasMenos()
-        _hchartsUno = baseGraficoPFE
+        _hchartsUno = structuredClone(baseGraficoPFE)
 
         let menor = _grafico.valores.uno[0]
         let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
