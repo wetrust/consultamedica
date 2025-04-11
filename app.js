@@ -255,6 +255,9 @@ $( document ).ready(function() {
 
     the("ecografia.segtrim.sexo").onchange = function(){
         pctpfe()
+        if ($("#ev-morfo").val() == "Descripcion general detallando distintos segmentos, "){
+            $("#ev-morfo").trigger("change")
+        }
         comentarioSegundoTrimestre()
     }
     
@@ -1175,8 +1178,8 @@ $( document ).ready(function() {
     });
 
     $("#ev-morfo").on('change', function() {
-        if (this.value == "Descripcion general detallando distintos segmentos") {
-            $("#comentarios-anatomia-informe-eg-texto").val("Evaluación anatómica general de aspecto normal; cráneo y estructura internas de aspecto normal, cara cuello normal, labio superior integro, Tórax y abdomen de aspecto normal, corazón cuatro cámaras, tractos de salida de aspecto normal, cámara gástrica y vejiga visibles, riñón derecho e izquierdo de aspecto normal, pared abdominal integra, columna visible en toda su extensión, extremidades con movilidad y tono de aspecto normal, sexo fetal masculino.");
+        if (this.value == "Descripcion general detallando distintos segmentos, ") {
+            $("#comentarios-anatomia-informe-eg-texto").val("evaluación anatómica general de aspecto normal; cráneo y estructura internas de aspecto normal, cara cuello normal, labio superior integro, Tórax y abdomen de aspecto normal, corazón cuatro cámaras, tractos de salida de aspecto normal, cámara gástrica y vejiga visibles, riñón derecho e izquierdo de aspecto normal, pared abdominal integra, columna visible en toda su extensión, extremidades con movilidad y tono de aspecto normal, sexo fetal masculino.");
             the("comentarios-anatomia-informe-eg-texto").parentElement.classList.remove("d-none");
         }else if (this.value == "hallazgos de siguientes patologías:"){
             $("#comentarios-anatomia-informe-eg-texto").val('');
