@@ -45,7 +45,7 @@ export function InfEcoObsSegTrim1(){
     var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
 
     if (anatomiaFetal == "no evaluada dirigidamente, pero el aspecto morfológico general es normal"){
-        linea3 += "<br>atrio posterior " + the("atrio.ecoDosTres").value + " mm ( " + the("atrio.desc.ecoDosTres").value + " ), diámetro cerebeloso transverso "+ the("cerebelo").value +" mm, cisterna magna "+ the("cm.ecoDosTres").value + " mm, sexo fetal " + $("#ecografia\\.segtrim\\.sexo").val() + ".";
+        linea3 += "<br>sexo fetal " + $("#ecografia\\.segtrim\\.sexo").val() + ".";
     }else{
         linea3 += " <br>";
     }
