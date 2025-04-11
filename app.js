@@ -3585,7 +3585,7 @@ $( document ).ready(function() {
     $( '#infecoObsSegTrim1' ).on( 'click', function() {
         var edadGestacional = the("semanas").value;
 
-        if (edadGestacional < 13){ alert("Edad Gestacional inferior a 16 semanas"); return false; }
+        if (edadGestacional < 13){ alert("Edad Gestacional inferior a 14 semanas"); return false; }
         var modal = makeModal("Ver Impresion");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
@@ -10016,6 +10016,7 @@ function comentarioSegundoTrimestre(){
         var fetoPresentacion = the('presentacion').value;
         var dorsoFetal = the('dorso').value;
         var frecuenciaCardiaca = the('fcf').value;
+        var sexo = the('ecografia.segtrim.sexo').value;
 
         if (fetoPresentacion){
             comentarios = '- Feto en presentación ' + fetoPresentacion;
@@ -10024,8 +10025,12 @@ function comentarioSegundoTrimestre(){
                 comentarios += ', dorso ' + dorsoFetal;
             }
 
+            if (sexo){
+                comentarios += ', sexo ' + sexo;
+            }
+
             if (frecuenciaCardiaca){
-                comentarios += ', frecuencia cardiaca fetal ' + frecuenciaCardiaca;
+                comentarios += ', frecuencia cardiaca ' + frecuenciaCardiaca;
             }
 
             comentarios += '\r\n';
