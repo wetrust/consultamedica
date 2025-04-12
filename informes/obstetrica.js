@@ -42,9 +42,9 @@ export function InfEcoObsSegTrim1(){
     }
 
     var anatomiaFetal = $('#ev-morfo').val();
-    var linea3 = '<strong>Anatomía fetal ***</strong>  ' + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
+    var linea3 = '<strong>Anatomía fetal</strong>  ' + anatomiaFetal + $('#comentarios-anatomia-informe-eg-texto').val();
 
-    if (anatomiaFetal == "no evaluada dirigidamente, pero el aspecto morfológico general es normal"){
+    if (anatomiaFetal == "no evaluada dirigidamente, pero de aspecto morfológico general normal"){
         linea3 += "<br>sexo fetal " + $("#ecografia\\.segtrim\\.sexo").val() + ".";
     }else{
         linea3 += " <br>";
