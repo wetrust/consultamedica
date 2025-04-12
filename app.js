@@ -3638,7 +3638,7 @@ $( document ).ready(function() {
             _hchartsUno.legend.x = 70
             _hchartsUno.legend.y = 50
             _hchartsUno.legend.floating = true
-            var chart = { width: 470, height:750, animation: false }
+            var chart = { width: 470, height:600, animation: false }
             _hchartsUno.chart = chart
             _hchartsUno.yAxis.tickInterval = 400;
             _hchartsUno.yAxis.min = 0;
@@ -3685,12 +3685,12 @@ $( document ).ready(function() {
 
             _hchartsUno = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _hchartsUno)
 
-            _hchartsDos.setSize(390, 390, false);
+            _hchartsDos.setSize(390, 300, false);
             the("graficoCaView").parentElement.parentElement.parentElement.classList.remove("col-12");
             the("graficoCaView").parentElement.parentElement.parentElement.classList.add("col-6");
             the("graficoCaView").parentElement.classList.remove("col-6");
             the("graficoCaView").parentElement.classList.add("col-12");
-            _hchartsTres.setSize(390, 390, false);
+            _hchartsTres.setSize(390, 300, false);
             the("graficoBVMView").parentElement.classList.remove("col-6");
             the("graficoBVMView").parentElement.classList.add("col-12");
             _hchartsDos.reflow();
