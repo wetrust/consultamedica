@@ -9985,11 +9985,20 @@ function actualizarComentarioDoppler(){
     let comentario = "Flujometria Doppler Materno Fetal:"
 
     comentario += '\r\n';
-    comentario += '- Arteria Umbilical IP = ' + the("ipauPctTxt").value;
+    comentario += '- Arteria Umbilical IP = ' + the("ipauPctTxt").value; 
+    if (the("ipauPctTxt").value == "&gt; 95"){
+        comentario += ', alterada';
+    }
     comentario += '\r\n';
     comentario += '- Arteria Cerebral Media IP = ' + the("ipacmPctTxt").value;
+    if (the("ipacmPctTxt").value == "&lt; 5"){
+        comentario += ', alterada';
+    }
     comentario += '\r\n';
     comentario += '- Cuociente Cerebro Placentario IP = ' + the("ccpPctTxt").value;
+    if (the("ccpPctTxt").value == "&lt; 5"){
+        comentario += ', alterado';
+    } 
     comentario += '\r\n';
 
     let a = the("auprom").value
@@ -10002,6 +10011,9 @@ function actualizarComentarioDoppler(){
     }
 
     comentario += '- Promedio de Arterias Uterinas IP = ' + a;
+    if (a == "&gt; 95"){
+        comentario += ', alterado';
+    }
     comentario += '\r\n';
 
     the("comentarios-doppler").value = comentario
