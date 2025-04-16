@@ -9963,14 +9963,30 @@ function actualizarComentarioDoppler(){
     }else{
         comentario += ' normal';  
     }
-    comentario += '\r\n';
-    comentario += '- IP Cuociente Cerebro Placentario ';
-    if (the("ccpPctTxt").value == "&lt; 5"){
-        comentario += ' alterado';
+
+    if (the("dv").value != ""){
+
+        comentario += '\r\n';
+        comentario += '- IP Ductus venoso ';
+        if (the("ccpPctTxt").value == "&gt; 95"){
+            comentario += ' alterado';
+        }else{
+            comentario += ' normal';  
+        }
+        comentario += '\r\n';
+
     }else{
-        comentario += ' normal';  
+
+        comentario += '\r\n';
+        comentario += '- IP Cuociente Cerebro Placentario ';
+        if (the("ccpPctTxt").value == "&lt; 5"){
+            comentario += ' alterado';
+        }else{
+            comentario += ' normal';  
+        }
+        comentario += '\r\n';
+
     }
-    comentario += '\r\n';
 
     let a = the("auprom").value
     if (a != ""){
