@@ -2480,7 +2480,7 @@ $( document ).ready(function() {
 // Controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["liquido.ila.uno", "liquido.ila.dos", "liquido.ila.tres", "liquido.ila.cuatro", "utero.ginecologica", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3", "endometrio.ginecologica", "endometDesc2", "endometGrosor", "anexo.derecho.ginecologica", "anexo.izquierdo.ginecologica","ovario.derecho.ginecologica", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovario.izquierdo.ginecologica", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "douglas.ginecologica", "comentario.ginecologica", "saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "pfe", "bvmEcoDos", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","aud", "psmACM","", "modalPreInfEcoDoppler","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia", "", "vlp.morfologia", "vld.morfologia", "respuesta_uterina_derecha_prim", "respuesta_uterina_izquierda_prim"];
+        var key_enter = ["liquido.ila.uno", "liquido.ila.dos", "liquido.ila.tres", "liquido.ila.cuatro", "utero.ginecologica", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3", "endometrio.ginecologica", "endometDesc2", "endometGrosor", "anexo.derecho.ginecologica", "anexo.izquierdo.ginecologica","ovario.derecho.ginecologica", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovario.izquierdo.ginecologica", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "douglas.ginecologica", "comentario.ginecologica", "saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "pfe", "bvmEcoDos", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","aud", "psmACM","", "modalPreInfEcoDoppler","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia", "", "vlp.morfologia", "vld.morfologia", "respuesta_uterina_derecha_prim", "respuesta_uterina_izquierda_prim"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -5022,17 +5022,10 @@ $( document ).ready(function() {
             title: {
                 text: 'IP Promedio Arteria Uterinas *',
                 x: -20,
-                style: { fontSize: '12px' }
             },
             plotOptions: {
                 series: {
                     enableMouseTracking: false
-                }
-            },
-            legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight:'normal'
                 }
             },
             yAxis: {
@@ -5099,7 +5092,6 @@ $( document ).ready(function() {
              title: {
                  text: 'IP Arteria Umbilical **',
                  x: -20,
-                 style: { fontSize: '12px' }
              },
              plotOptions: {
                  series: {
@@ -5114,12 +5106,6 @@ $( document ).ready(function() {
              xAxis: {
                  categories:['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
              },
-             legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight:'normal'
-                }
-            },
              credits: { enabled: false },
              series: [{
                  type: "line",
@@ -5173,7 +5159,6 @@ $( document ).ready(function() {
             title: {
                  text: 'IP Arteria Cerebral Media **',
                  x: -20,
-                 style: { fontSize: '12px' }
              },
              plotOptions: {
                  series: {
@@ -5188,12 +5173,6 @@ $( document ).ready(function() {
              xAxis: {
                  categories: ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
              },
-             legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight:'normal'
-                }
-            },
              credits: {
                  enabled: false
              },
@@ -5252,7 +5231,6 @@ $( document ).ready(function() {
                 title: {
                     text: 'IP Ductus Venoso',
                     x: -20, //center
-                    style: { fontSize: '12px' }
                 },
                 plotOptions: {
                     series: {
@@ -5262,12 +5240,6 @@ $( document ).ready(function() {
                 yAxis: {
                     title: { text: 'Valor IP' },
                     tickPositions: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
-                },
-                legend: {
-                    itemStyle: {
-                        fontSize: '10px',
-                        fontWeight:'normal'
-                    }
                 },
                 colors: ['#313131', '#313131', '#313131'],
                 xAxis: {
@@ -5325,7 +5297,6 @@ $( document ).ready(function() {
                 title: {
                     text: 'IP de CCP (Indice ACM / AU) **',
                     x: -20,
-                    style: { fontSize: '12px' }
                 },
                 plotOptions: {
                     series: {
@@ -5335,12 +5306,6 @@ $( document ).ready(function() {
                 yAxis: {
                     title: { text: 'Valor IP' },
                     tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
-                },
-                legend: {
-                    itemStyle: {
-                        fontSize: '10px',
-                        fontWeight:'normal'
-                    }
                 },
                 colors: ['#313131', '#313131', '#313131'],
                 xAxis: {
