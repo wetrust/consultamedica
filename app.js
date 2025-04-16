@@ -7436,6 +7436,7 @@ function pctdv() {
          $("#dvPctTxt").val(pctDV);
          $("#dvRngo").val( a[eg] + " - " + b[eg]);
     }
+    actualizarComentarioDoppler()
 }
 
 function pctau() {
