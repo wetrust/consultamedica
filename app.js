@@ -3702,8 +3702,8 @@ $( document ).ready(function() {
         let _grafico = graficoPFECompleto()
         _hchartsUno = structuredClone(baseGraficoPFE)
 
-        let menor = _grafico.valores.uno[0]
-        let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
+        let menor = _grafico.valores.uno[0].y
+        let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1].y
         let par = false
         let multiplicador = 0
 
