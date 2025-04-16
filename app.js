@@ -9969,7 +9969,7 @@ function actualizarComentarioDoppler(){
 
         comentario += '\r\n';
         comentario += '- IP Ductus venoso ';
-        if (the("ccpPctTxt").value == "&gt; 95"){
+        if (the("ccpPctTxt").value == "&gt; 99" || the("ccpPctTxt").value > 95){
             comentario += ' alterado';
         }else{
             comentario += ' normal';  
