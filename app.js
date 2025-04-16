@@ -3699,7 +3699,7 @@ $( document ).ready(function() {
             $('#'+this.dataset.modal).modal("hide");
         });
 
-        let _grafico = graficoPFEMasMenos()
+        let _grafico = graficoPFECompleto()
         _hchartsUno = structuredClone(baseGraficoPFE)
 
         let menor = _grafico.valores.uno[0]
@@ -3741,10 +3741,7 @@ $( document ).ready(function() {
             _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
         }
 
-        let eg = Number(the("semanas").value + "." + the("dias").value);
-        let indice = _grafico.semanas.indexOf(eg)
-
-        _hchartsUno.series[9].data = [[indice,parseFloat(the("pfe").value)]]
+        _hchartsUno.series[9].data = [{x:Number(the("semanas").value),y:Number(the("pfe").value)}]
         _hchartsUno.series[8].data = _grafico.valores.uno
         _hchartsUno.series[7].data = _grafico.valores.dos
         _hchartsUno.series[6].data = _grafico.valores.tres
@@ -4055,6 +4052,9 @@ $( document ).ready(function() {
                 }]
                 });
         }
+
+
+        the(modal.contenido).parentElement.childNodes[2].insertAdjacentElement('afterbegin',document.createElement("p"))
 
     });
 
@@ -7264,6 +7264,28 @@ function makeModal(button){
         contenido:contenido,
         button:_button,
         modal:'<div class="modal fade" tabindex="-1" role="dialog" id="'+id+'"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="'+titulo+'">Modal title</h5></div><div class="modal-body" id="'+contenido+'"></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>'+ button_string+'</div></div></div></div>'
+    }
+        
+    return resultado;
+}
+
+function makeModalGraficosEcoDosTres(button){
+    let id = uuidv4();
+    let titulo = uuidv4();
+    let contenido = uuidv4();
+    let _button = uuidv4();
+    let button_string = "";
+    
+    if (typeof button !== typeof undefined){
+        button_string = '<button type="button" class="btn btn-primary" id="'+_button+'" data-modal="'+id+'">'+button+'</button>';
+    }
+    
+    let resultado ={
+        id:id,
+        titulo:titulo,
+        contenido:contenido,
+        button:_button,
+        modal:'<div class="modal fade" tabindex="-1" role="dialog" id="'+id+'"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="'+titulo+'">Modal title</h5></div><div class="modal-body" id="'+contenido+'"></div><div class="modal-footer justify-content-between"><div><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>'+ button_string+'</div></div></div></div></div>'
     }
         
     return resultado;
