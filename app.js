@@ -3595,7 +3595,7 @@ $( document ).ready(function() {
         var edadGestacional = the("semanas").value;
 
         if (edadGestacional < 13){ alert("Edad Gestacional inferior a 14 semanas"); return false; }
-        var modal = makeModal("Ver Impresion");
+        var modal = makeModalGraficosEcoDosTres("Ver Impresion");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerText = "Gráfica evaluación ecográfica del crecimiento fetal y liquido amniótico";
