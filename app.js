@@ -3625,6 +3625,10 @@ $( document ).ready(function() {
 
         the(modal.contenido).innerHTML = stringGraficos;
         the(modal.button).dataset.contenido = modal.contenido;
+
+        let sexoHTML = '<label for="sexsexsex">Sexo Fetal</label><br><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="des"> Desconocido</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="men"> Masculino</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="wom"> Femenino</label></div>'
+        the(modal.contenido).parentElement.childNodes[2].insertAdjacentHTML('afterbegin',sexoHTML)
+        
         $("#"+modal.button).on("click", function(){
             let modal = this.dataset.contenido;
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.remove("col-12");
@@ -4052,9 +4056,6 @@ $( document ).ready(function() {
                 }]
                 });
         }
-
-        let sexoHTML = '<label for="sexsexsex">Sexo Fetal</label><br><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="des"> Desconocido</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="men"> Masculino</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="wom"> Femenino</label></div>'
-        the(modal.contenido).parentElement.childNodes[2].insertAdjacentHTML('afterbegin',sexoHTML)
 
     });
 
