@@ -3618,8 +3618,8 @@ $( document ).ready(function() {
         stringGraficos = stringGraficos.replace(":IDPACIENTE", idpaciente);
         stringGraficos = stringGraficos.replace(":RUT", the("id-paciente").value);
         stringGraficos = stringGraficos.replace(":FEXAMEN", fexamen);
-        stringGraficos = stringGraficos.replace(":PESO", the("pfe").value);
-        stringGraficos = stringGraficos.replace(":PERCENTIL", the("pfePctRpt").value);
+        stringGraficos = stringGraficos.replace(/:PESO/g, the("pfe").value);
+        stringGraficos = stringGraficos.replace(/:PERCENTIL/g, the("pfePctRpt").value);
         stringGraficos = stringGraficos.replace(":EGestacional", the("semanas").value + " sem, " + the("dias").value + " dias");
 
         the(modal.contenido).innerHTML = stringGraficos;
