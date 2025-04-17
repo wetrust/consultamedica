@@ -2231,7 +2231,6 @@ $( document ).ready(function() {
 
             the("textoTipoOMS").innerHTML = txtOMS
             comentarioSegundoTrimestre()
-
         }
 
         let _sexo = these("sexsexsex")
@@ -3628,6 +3627,20 @@ $( document ).ready(function() {
 
         let sexoHTML = '<div><label for="sexsexsex">Sexo Fetal</label><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="des"> Desconocido</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="men"> Masculino</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="wom"> Femenino</label></div></div>'
         the(modal.contenido).parentElement.childNodes[2].insertAdjacentHTML('afterbegin',sexoHTML)
+
+        let sexo = the("ecografia.segtrim.sexo").value
+        _sexo = these("sexsexsex")
+
+        if (sexo == "masculino"){
+            _sexo[1].checked = true
+            _sexo[1].parentElement.classList.add("active")
+        }else if (sexo == "femenino"){
+            _sexo[2].checked = true
+            _sexo[2].parentElement.classList.add("active")
+        }else{
+            _sexo[0].checked = true
+            _sexo[0].parentElement.classList.add("active")
+        }
 
         $("#"+modal.button).on("click", function(){
             let modal = this.dataset.contenido;
