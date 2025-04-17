@@ -3716,7 +3716,7 @@ $( document ).ready(function() {
             $('#'+this.dataset.modal).modal("hide");
         });
 
-        let _grafico = graficoPFECompleto()
+        let _grafico = graficoPFEMasMenosSinDias()
         _hchartsUno = structuredClone(baseGraficoPFE)
 
         let menor = _grafico.valores.uno[0].y
@@ -3928,7 +3928,7 @@ $( document ).ready(function() {
                 the("ecografia.segtrim.sexo").value = "no identificado"
             }
 
-            let _grafico = graficoPFECompleto()
+            let _grafico = graficoPFEMasMenosSinDias()
             _hchartsUno = structuredClone(baseGraficoPFE)
 
             let menor = _grafico.valores.uno[0].y
