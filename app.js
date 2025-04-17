@@ -3626,9 +3626,9 @@ $( document ).ready(function() {
         the(modal.contenido).innerHTML = stringGraficos;
         the(modal.button).dataset.contenido = modal.contenido;
 
-        let sexoHTML = '<label for="sexsexsex">Sexo Fetal</label><br><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="des"> Desconocido</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="men"> Masculino</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="wom"> Femenino</label></div>'
+        let sexoHTML = '<div><label for="sexsexsex">Sexo Fetal</label><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="des"> Desconocido</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="men"> Masculino</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="wom"> Femenino</label></div></div>'
         the(modal.contenido).parentElement.childNodes[2].insertAdjacentHTML('afterbegin',sexoHTML)
-        
+
         $("#"+modal.button).on("click", function(){
             let modal = this.dataset.contenido;
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.remove("col-12");
@@ -3755,7 +3755,6 @@ $( document ).ready(function() {
         _hchartsUno.series[2].data = _grafico.valores.siete
         _hchartsUno.series[1].data = _grafico.valores.ocho
         _hchartsUno.series[0].data = _grafico.valores.nueve
-        _hchartsUno.xAxis.categories = _grafico.semanas
         _hchartsUno.chart = { height: 250 }
         _hchartsUno = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _hchartsUno)
 
