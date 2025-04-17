@@ -3774,7 +3774,6 @@ $( document ).ready(function() {
         _hchartsDos = {
             chart: { height: 250 },
             title: { text: 'Circunferencia Abdominal **', x: -20, style: {fontSize: '12px'} },
-            legend: { itemStyle: { fontSize: '10px', fontWeight:'normal' } },
             plotOptions: { series: { enableMouseTracking: false }, column: { grouping: false } },
             yAxis: {
                 title: { text: 'Milimetros (mm)' },
@@ -3857,12 +3856,6 @@ $( document ).ready(function() {
                 },
                 column: {
                     grouping: false
-                }
-            },
-            legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight:'normal'
                 }
             },
             yAxis: {
