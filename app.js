@@ -3781,6 +3781,7 @@ $( document ).ready(function() {
                 max: 400,
                 tickInterval:50,
             },
+            legend: {enabled: false},
             colors: ['#313131', '#313131', '#313131'],
             xAxis: {
                 categories:[]
@@ -3850,6 +3851,7 @@ $( document ).ready(function() {
                     fontSize: '12px'
                 }
             },
+            legend: {enabled: false},
             plotOptions: {
                 series: {
                     enableMouseTracking: false
