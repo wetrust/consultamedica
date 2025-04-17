@@ -3773,7 +3773,7 @@ $( document ).ready(function() {
         _hchartsUno = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _hchartsUno)
 
         _hchartsDos = {
-            chart: { height: 250 },
+            chart: { height: 200 },
             title: { text: 'Circunferencia Abdominal **', x: -20, style: {fontSize: '12px'} },
             plotOptions: { series: { enableMouseTracking: false }, column: { grouping: false } },
             yAxis: {
@@ -3843,7 +3843,7 @@ $( document ).ready(function() {
 
         _hchartsTres = {
             chart: {
-                height: 250
+                height: 200
             },
             title: {
                 text: 'Profundidad del bolsillo mayor (Liq. Amniótico)',
