@@ -3629,7 +3629,7 @@ $( document ).ready(function() {
         the(modal.contenido).parentElement.childNodes[2].insertAdjacentHTML('afterbegin',sexoHTML)
 
         let sexo = the("ecografia.segtrim.sexo").value
-        _sexo = these("sexsexsex")
+        let _sexo = these("sexsexsex")
 
         if (sexo == "masculino"){
             _sexo[1].checked = true
