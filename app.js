@@ -4053,8 +4053,8 @@ $( document ).ready(function() {
                 });
         }
 
-
-        the(modal.contenido).parentElement.childNodes[2].insertAdjacentElement('afterbegin',document.createElement("p"))
+        let sexoHTML = '<label for="sexsexsex">Sexo Fetal</label><br><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="des"> Desconocido</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="men"> Masculino</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="wom"> Femenino</label></div>'
+        the(modal.contenido).parentElement.childNodes[2].insertAdjacentHTML('afterbegin',sexoHTML)
 
     });
 
