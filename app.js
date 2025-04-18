@@ -2,7 +2,7 @@ import { fechas } from './functionesM.js'
 import { the, inputDate, these } from './wetrust.js'
 import { appPesoEG } from './app.pesoEG.js?d'
 import { graficoPFEMasMenos, percentilOMS } from './graficoPFEMasMenos.js?H'
-import { baseGraficoPFE, graficoPFECompleto, graficoPFEMasMenosSinDias } from './graficoPFEMasMenos.js';
+import { baseGraficoPFE, graficoPFECompleto, graficoPFEMasMenosSinDias, graficoPFEMasMenosSinDiasCuatroDias } from './graficoPFEMasMenos.js';
 import { dataGraphCA } from './graficoTrozo.js';
 import { InfEcoObsSegTrim1 } from './informes/obstetrica.js'
 
@@ -3647,7 +3647,7 @@ $( document ).ready(function() {
             let modal = this.dataset.contenido;
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.remove("col-12");
             the("graficoInfecoObsSegTrimPFEView").parentElement.classList.add("col-6");
-            let _grafico = graficoPFECompleto()
+            let _grafico = graficoPFEMasMenosSinDiasCuatroDias()
 
             _hchartsUno = structuredClone(baseGraficoPFE)
 

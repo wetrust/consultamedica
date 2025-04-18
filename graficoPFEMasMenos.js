@@ -507,3 +507,127 @@ function tramoCompleto(){
     return tramo;
 
 }
+
+export function graficoPFEMasMenosSinDiasCuatroDias(){
+
+    let tramo = calcularCuatroMenosSinDias(Number(the("semanas").value));
+    let valores = {"uno" : [], "dos" : [], "tres" : [], "cuatro" : [], "cinco" : [], "seis" : [], "siete" : [], "ocho" : [], "nueve" : []};
+
+    for (let i = 0; i < tramo.length; i++) {
+        let EG = structuredClone(tramo[i]);
+        if (isSafeInteger(EG) == false){ EG = Number(Math.trunc(EG)) + (0 + (Number((EG + "").split(".")[1])) || 0) / 7; }
+
+        let pUno = Math.exp(-.230518383014592 + EG * (.400511116318458 + EG * (-.00617993235833267 + EG * (316595762972649e-19 + EG * 0))))
+        let pDos = Math.exp(-.162057103557898 + EG * (.393965369913166 + EG * (-.00579733056422172 + EG * (255319128239087e-19 + EG * 0))))
+        let pTres = Math.exp(-.0455887642525626 + EG * (.389314052082164 + EG * (-.00574527674062641 + EG * (265557891064333e-19 + EG * 0))))
+        let pCuatro = Math.exp(-.012258767992062 + EG * (.393836404898322 + EG * (-.00592304885519551 + EG * (28863017896588e-18 + EG * 0))))
+        let pCinco = Math.exp(.157310086966445 + EG * (.383067935520509 + EG * (-.00554046846639963 + EG * (246570062800598e-19 + EG * 0))))
+        let pSeis = Math.exp(.293297386426919 + EG * (.376096229210412 + EG * (-.00529255036113726 + EG * (218372277641981e-19 + EG * 0))))
+        let pSiete = Math.exp(.353142227490073 + EG * (.376486874470206 + EG * (-.00528742945785833 + EG * (214760212556463e-19 + EG * 0))))
+        let pOcho = Math.exp(.285025055968914 + EG * (.390621472299378 + EG * (-.00582929182402995 + EG * (279088693116937e-19 + EG * 0))))
+        let pNueve = Math.exp(.408170594889372 + EG * (.381068214664342 + EG * (-.00550913922743603 + EG * (246713147783532e-19 + EG * 0))))
+
+        let sexo = the("ecografia.segtrim.sexo").value
+
+        if (sexo){
+
+            if (sexo == "masculino"){
+    
+                pUno = Math.exp(-.52610096513854 + EG * (.44906549056954 + EG * (-.0089009550762548 + EG * (9868293523919e-17 + EG * -6.1862373692705e-7))))
+                pDos = Math.exp(-.264562353403465 + EG * (.412210701662848 + EG * (-.00659353966698675 + EG * (387085414793403e-19 + EG * -5.92167006518022e-8))))
+                pTres = Math.exp(-.0631025226657407 + EG * (.390993877846881 + EG * (-.00560764189001381 + EG * (190944627895524e-19 + EG * 8.84241803692905e-8))))
+                pCuatro = Math.exp(-.136872920737678 + EG * (.411385471212291 + EG * (-.00662710457053528 + EG * (401078967104191e-19 + EG * -6.09266544869339e-8))))
+                pCinco = Math.exp(.222999048464601 + EG * (.372888830200871 + EG * (-.00482835487505679 + EG * (538927935557086e-20 + EG * 1.72630247811947e-7))))
+                pSeis = Math.exp(.274568726691847 + EG * (.381231662554576 + EG * (-.00557248890309729 + EG * (2934934995138e-17 + EG * -8.27628809790136e-8))))
+                pSiete = Math.exp(.240213697127957 + EG * (.391178494734445 + EG * (-.00579538706713982 + EG * (275733050639858e-19 + EG * -1.90970772277149e-8))))
+                pOcho = Math.exp(.238080920038937 + EG * (.394765675971259 + EG * (-.00581267491399174 + EG * (231531669574572e-19 + EG * 6.85345268671191e-8))))
+                pNueve = Math.exp(.79018076483077 + EG * (.32585025131141 + EG * (-.0025559098706069 + EG * (-42038969571238e-18 + EG * 5.4228420412733e-7))))
+    
+            } else if (sexo == "femenino"){
+    
+                pUno = Math.exp(-.915523725804273 + EG * (.529374415518249 + EG * (-.0147446585943781 + EG * (.000269201219853759 + EG * -23537061714461e-19))))
+                pDos = Math.exp(-.0356552265566936 + EG * (.376064209229977 + EG * (-.00496950115937874 + EG * (100880399508847e-19 + EG * 8.87897379966417e-8))))
+                pTres = Math.exp(.155170122624531 + EG * (.356594762998776 + EG * (-.00401282727802378 + EG * (-114891004630409e-19 + EG * 2.91905926442287e-7))))
+                pCuatro = Math.exp(-.00617926685323766 + EG * (.391489315579454 + EG * (-.00583983363713264 + EG * (274701265932854e-19 + EG * 1.25218741602196e-8))))
+                pCinco = Math.exp(.247277418113423 + EG * (.370440200280727 + EG * (-.00507278668575342 + EG * (179658724333519e-19 + EG * 3.17102018612384e-8))))
+                pSeis = Math.exp(.376784712355285 + EG * (.361976162764535 + EG * (-.00463535949504953 + EG * (851326693543256e-20 + EG * 1.04436638183705e-7))))
+                pSiete = Math.exp(.286538459425835 + EG * (.387048945293849 + EG * (-.00606592437416756 + EG * (419335923075893e-19 + EG * -1.64397771502855e-7))))
+                pOcho = Math.exp(.381320788764689 + EG * (.376613696575359 + EG * (-.00528117982372732 + EG * (181818929490566e-19 + EG * 7.60085577423407e-8))))
+                pNueve = Math.exp(.32551154984358 + EG * (.40214557617585 + EG * (-.0074145176202411 + EG * (88196644838898e-18 + EG * -7.1015932637436e-7))))
+
+            }
+        }
+
+        let caja = {x:tramo[i],y:0}
+
+        caja.y = pUno
+        valores.uno.push(structuredClone(caja));
+        caja.y = pDos
+        valores.dos.push(structuredClone(caja));
+        caja.y = pTres
+        valores.tres.push(structuredClone(caja));
+        caja.y = pCuatro
+        valores.cuatro.push(structuredClone(caja));
+        caja.y = pCinco
+        valores.cinco.push(structuredClone(caja));
+        caja.y = pSeis
+        valores.seis.push(structuredClone(caja));
+        caja.y = pSiete
+        valores.siete.push(structuredClone(caja));
+        caja.y = pOcho
+        valores.ocho.push(structuredClone(caja));
+        caja.y = pNueve
+        valores.nueve.push(structuredClone(caja));
+    }
+
+    let resultado = {valores: valores, semanas: tramo}
+    return resultado
+
+}
+
+function calcularCuatroMenosSinDias(eg){
+
+    let tramo = [];
+
+    if (eg == 14){
+        tramo = [14,15,16,17,18,19,20,21,22];
+    }else if (eg == 40){
+        tramo = [32,33,34,35,36,37,38,39,40];
+    }else{
+        tramo = [eg];
+
+        eg--
+        if (eg >= 14){
+            tramo.push(eg)
+        }
+
+        eg--
+        if (eg >= 14){
+            tramo.push(eg)
+        }
+        eg--
+        if (eg >= 14){
+            tramo.push(eg)
+        }
+        
+        eg += 4
+
+        if (eg <= 40){
+            tramo.push(eg)
+        }
+        eg++
+
+        if (eg <= 41){
+            tramo.push(eg)
+        }
+        eg++
+
+        if (eg <= 41){
+            tramo.push(eg)
+        }
+    }
+
+    tramo.sort((a, b) => {return a - b})
+    return tramo;
+
+}
