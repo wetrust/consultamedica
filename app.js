@@ -3939,11 +3939,21 @@ $( document ).ready(function() {
                 the("ecografia.segtrim.sexo").value = "no identificado"
             }
 
+            sexo = the("ecografia.segtrim.sexo").value
+            if (sexo == "masculino"){
+                sexo = "men"
+            } else if (sexo == "femenino"){
+                sexo = "wom"
+            } else {
+                sexo = "z"
+            }
+
             var pctPFE = percentilOMS(parseInt(the("pfe").value), Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7, sexo);
             pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
 
             the("sexotexto").innerText = the("ecografia.segtrim.sexo").value
             the("percentiltexto").innerText = pctPFE
+            the("pfePctRpt").value = pctPFE
 
             let _grafico = graficoPFEMasMenosSinDias()
             _hchartsUno = structuredClone(baseGraficoPFE)
