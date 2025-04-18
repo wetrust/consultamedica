@@ -609,10 +609,19 @@ function calcularCuatroMenosSinDias(eg){
         if (eg >= 14){
             tramo.push(eg)
         }
+        eg--
+        if (eg >= 14){
+            tramo.push(eg)
+        }
         
-        eg += 4
+        eg += 5
 
         if (eg <= 40){
+            tramo.push(eg)
+        }
+        eg++
+
+        if (eg <= 41){
             tramo.push(eg)
         }
         eg++
