@@ -3931,7 +3931,6 @@ $( document ).ready(function() {
             }else{
                 the("ecografia.segtrim.sexo").value = "no identificado"
             }
-            comentarioSegundoTrimestre()
 
             var pctPFE = percentilOMS(parseInt(the("pfe").value), Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7, sexo);
             pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
@@ -3993,6 +3992,7 @@ $( document ).ready(function() {
             _hchartsUno.series[0].data = _grafico.valores.nueve
             _hchartsUno.chart = { height: 250 }
             _hchartsUno = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _hchartsUno)
+            comentarioSegundoTrimestre()
 
         }})
 
