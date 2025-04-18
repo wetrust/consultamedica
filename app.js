@@ -3212,19 +3212,9 @@ $( document ).ready(function() {
         });
 
         $('#graficoLhView').highcharts({
-                title: {
-                    text: 'Largo Humeral',
-                    x: -20
-                },
-                subtitle: {
-                    text: 'Milimetros (mm)',
-                    x: -20
-                },
-                plotOptions: {
-                    series: {
-                        enableMouseTracking: false
-                    }
-                },
+                title: { text: 'Largo Humeral', x: -20 },
+                subtitle: { text: 'Milimetros (mm)', x: -20 },
+                plotOptions: { series: { enableMouseTracking: false }},
                 yAxis: {
                     title: { text: 'Milimetros (mm)' },
                     tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80]
@@ -3253,23 +3243,19 @@ $( document ).ready(function() {
                     data: (function () {
                         var data = [];
                         var edadGest = the("semanas").value;
-    
+
                         for (i = 12; i < edadGest; i++) {
                             data.push({ y: 0, });
                         }
-     
+
                         var lh = $("#lh").val();
                         lh = lh.toString();
                         lh = lh.replace(",", ".");
                         lh = parseFloat(lh);
-                            
-                        data.push({
-                            y: lh,
-                        });
+
+                        data.push({ y: lh });
                         for (i = edadGest + 1; i <= 39; i++) {
-                            data.push({
-                                y: 0,
-                            });
+                            data.push({ y: 0 });
                         }
                         return data;
                     }())
