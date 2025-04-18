@@ -5394,6 +5394,7 @@ $( document ).ready(function() {
 });
 
 $(document).ready(function(){
+
     $("#uteroDim1").on("keyup", function(){
 
         let uteroDim1 = Number.isNaN(the("uteroDim1").value) ? 0 : Number(the("uteroDim1").value)
@@ -5466,7 +5467,7 @@ $(document).ready(function(){
 
         the("ovarIzquierVol").value = ovarIzquierVol
     })
-    
+
     $("#ovarIzquier2").on("keyup", function(){
         let ovarIzquier1 = Number.isNaN(the("ovarIzquier1").value) ? 0 : Number(the("ovarIzquier1").value)
         let ovarIzquier2 = Number.isNaN(the("ovarIzquier2").value) ? 0 : Number(the("ovarIzquier2").value)
@@ -5500,7 +5501,7 @@ $(document).ready(function(){
         }
 
     });
-   
+
 })
 
 // Controlador de morfología
