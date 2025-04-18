@@ -3931,7 +3931,7 @@ $( document ).ready(function() {
             }else{
                 the("ecografia.segtrim.sexo").value = "no identificado"
             }
-            the("ecografia.segtrim.sexo").onchange()
+            comentarioSegundoTrimestre()
 
             var pctPFE = percentilOMS(parseInt(the("pfe").value), Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7, sexo);
             pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
