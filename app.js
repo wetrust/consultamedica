@@ -3639,7 +3639,7 @@ $( document ).ready(function() {
             let placenta_com_ubic = the("incersion").value;
             comentarios = (typeof comentarios == 'undefined') ? '- Crecimiento fetal (peso) en percentil ' + Math.round(Number(the("pfePctRpt").value)) + ', para gráfica peso fetal de la OMS *<br />- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'<br>- Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
 
-            the("comentariosTextoInforme").innerHTML = stringGraficos
+            the("comentariosTextoInforme").innerHTML = comentarios
             let _grafico = graficoPFEMasMenosSinDiasCuatroDias()
 
             _hchartsUno = structuredClone(baseGraficoPFE)
