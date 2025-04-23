@@ -683,7 +683,7 @@ $( document ).ready(function() {
             $('#preguntaAjusteEcoPrimTrim').hide();
             $('#resultadoAjusteEcoPrimTrim').hide();
         } else {
-            var eg1 = new Number((Math.trunc(EGLCN) * 7) + Math.trunc((EGLCN - Math.trunc(EGLCN))* 10));
+            var eg1 = Number(Number(Math.trunc(EGLCN) * 7) + Number(Math.trunc((EGLCN - Math.trunc(EGLCN)) * 10)));
             var eg2 = parseInt(semanas * 7) +  dias;
             var diferencia = Math.abs(Math.trunc(eg2 - eg1));
             $('#diferenciaEcoPrimTrim').html(diferencia);
