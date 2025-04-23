@@ -113,7 +113,6 @@ $( document ).ready(function() {
     opt.appendChild( document.createTextNode("> 180") );
     opt.value = "&gt; 180"; 
     dias.appendChild(opt);
-
     dias = the("fcf-prim-dos");
 
     opt = document.createElement('option');
@@ -144,7 +143,6 @@ $( document ).ready(function() {
 
     //cargar la frecuencia cardiaca fetal para segundo trimestre
     dias = the("fcf");
-
     opt = document.createElement('option');
     opt.appendChild( document.createTextNode("no se observa") );
     opt.value = "no se observa"; 
@@ -689,15 +687,12 @@ $( document ).ready(function() {
             $('#diferenciaEcoPrimTrim').html(diferencia);
             //no se usa $('#preguntaAjusteEcoPrimTrim').show();
             $('#resultadoAjusteEcoPrimTrim').show();
+    
+            let _fexamen = fechas.toDate(the("fee").value)
+            _fexamen.setDate(_fexamen.getDate() - eg1);
+            the("fum").value = inputDate(_fexamen)
 
-            let fee = fechas.toDate(the("fee").value);
-            fee = fechas.fur(Math.trunc(EGLCN),fee)
-            //obtener la fecha de exámen, restar las semanas para obtener la fur
-            //si la semana tiene dias, sumar los dias para precision
-            if ((Math.trunc((EGLCN - Math.trunc(EGLCN))* 10))> 0){
-                fee.setDate(fee.getDate() + (Math.trunc((EGLCN - Math.trunc(EGLCN))* 10)));
-            }
-            the("furAjustada").value = getDate(fee);
+            the("furAjustada").value = inputDate(_fexamen);
             the("semanasAjustada").value = Math.trunc(EGLCN);
             //let fee = new Date();
             //fee.setTime(Date.parse(the("fee").value));
@@ -706,7 +701,7 @@ $( document ).ready(function() {
             //the("semanasAjustada").value = Math.trunc(EGLCN);
             the("diasAjustada").value = Math.trunc((EGLCN - Math.trunc(EGLCN))* 10);
 
-            fee = fechas.fpp(fee);
+            fee = fechas.fpp(_fexamen);
             the("fppAjustada").value = getDate(fee);
             //fee.setTime(fee.getTime() + (1000*60*60*24*280));
             //the("fppAjustada").value = getDate(fee);
