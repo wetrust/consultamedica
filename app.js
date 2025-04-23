@@ -8016,8 +8016,8 @@ function psohdlkMorfologia() {
 
 function pctpfe() {
     'use strict';
-    /* 10 90 */
-	let a = [], b = [];
+
+    let a = [], b = [];
     let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
 
     let sexo = the("ecografia.segtrim.sexo").value
@@ -8034,27 +8034,19 @@ function pctpfe() {
         a = Math.exp(-.230518383014592 + eg * (.400511116318458 + eg * (-.00617993235833267 + eg * (316595762972649e-19 + eg * 0))))
         b = Math.exp(.408170594889372 + eg * (.381068214664342 + eg * (-.00550913922743603 + eg * (246713147783532e-19 + eg * 0))));
     }
-    
 
     //let eg = the("semanas").value;
     // funcion que calcula el v alor de eg y suma los dias
 
-    let pfe=parseInt(the("pfe").value);
-
+    let pfe = parseInt(the("pfe").value);
     if (eg < 14 || eg > 40) {
-
         the("pfePct").value = 0
-
-    }else {
+    } else {
         var pctPFE = percentilOMS(pfe,eg, sexo);
-
         pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
-
         the("pfePctRpt").value = pctPFE
         the("pfeRango").value = a + ' - ' +b
-
         return true
-
     }
 }
 
