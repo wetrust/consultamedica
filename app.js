@@ -660,12 +660,10 @@ $( document ).ready(function() {
         if (+this.value > 0){
             the("embrion").value = "con act. cardiaca (+)"
             $("#embrion").trigger("change");
-
             $("#mensajeSaco").hide();
             $("#sacoFlecha").hide();
             $("#sacoModulo").hide();
-        }
-        else{
+        } else {
             $("#mensajeSaco").show();
             $("#sacoFlecha").show();
             $("#sacoModulo").show();
@@ -687,10 +685,10 @@ $( document ).ready(function() {
             $('#diferenciaEcoPrimTrim').html(diferencia);
             //no se usa $('#preguntaAjusteEcoPrimTrim').show();
             $('#resultadoAjusteEcoPrimTrim').show();
-    
+
             let _fexamen = fechas.toDate(the("fee").value)
             _fexamen.setDate(_fexamen.getDate() - eg1);
-            the("fum").value = inputDate(_fexamen)
+            //the("fum").value = inputDate(_fexamen)
 
             the("furAjustada").value = inputDate(_fexamen);
             the("semanasAjustada").value = Math.trunc(EGLCN);
@@ -2572,9 +2570,7 @@ $( document ).ready(function() {
         the(modal.titulo).innerText = "Longitud Cefalo Nalgas (LCN) en milimetros";
         the(modal.contenido).innerHTML = '<div id="graficoLcnBaseView"></div>';
 
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove() });
 
         $('#graficoLcnBaseView').highcharts({
             title: {text: '',x: -20},
@@ -2625,10 +2621,10 @@ $( document ).ready(function() {
                     lcn = lcn.toString();
                     lcn = lcn.replace(",", ".");
                     lcn = parseFloat(lcn);
-    
+
                     var lcnegx = [];
                     var flag = false;
-    
+
                     lcnegx[1] = 6;
                     lcnegx[2] = 7;
                     lcnegx[3] = 8;
@@ -2669,19 +2665,14 @@ $( document ).ready(function() {
     $( '#graficoDbp' ).on( 'click', function() {
         var edadGestacional = the("semanas").value;
 
-        if (edadGestacional < 12){
-            alert("Edad Gestacional inferior a 12 semanas");
-            return false;
-        }
+        if (edadGestacional < 12){ alert("Edad Gestacional inferior a 12 semanas"); return false; }
 
         var modal = makeModal();
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
         the(modal.titulo).innerText = "Gráfico DBP";
         the(modal.contenido).innerHTML = '<div id="graficoDbpView"></div>';
 
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
         $('#graficoDbpView').highcharts({
            title: {
