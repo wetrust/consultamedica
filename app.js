@@ -699,7 +699,7 @@ $( document ).ready(function() {
             //the("semanasAjustada").value = Math.trunc(EGLCN);
             the("diasAjustada").value = Math.trunc((EGLCN - Math.trunc(EGLCN))* 10);
 
-            fee = fechas.fpp(_fexamen);
+            let fee = fechas.fpp(_fexamen);
             the("fppAjustada").value = getDate(fee);
             //fee.setTime(fee.getTime() + (1000*60*60*24*280));
             //the("fppAjustada").value = getDate(fee);
