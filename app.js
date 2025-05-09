@@ -4949,11 +4949,11 @@ $( document ).ready(function() {
             _hchartsTres.reflow();
             _hchartsCuatro.reflow();
 
-            _hchartsUno.setSize(450, 450, false); 
-            _hchartsDos.setSize(450, 450, false); 
-            _hchartsTres.setSize(450, 450, false); 
-            _hchartsCuatro.setSize(450, 450, false); 
-            imprSelec(modal);
+            _hchartsUno.setSize(390, 300, false); 
+            _hchartsDos.setSize(390, 300, false); 
+            _hchartsTres.setSize(390, 300, false); 
+            _hchartsCuatro.setSize(390, 300, false); 
+            imprInforme(the(modal).innerHTML);
             $('#'+this.dataset.modal).modal("hide")
 
         });
