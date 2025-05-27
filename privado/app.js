@@ -1,5 +1,8 @@
 import { fechas } from './functionesM.js'
 import { make, the, inputDate, these, humanDate } from './wetrust.js'
+import { graficoPFEMasMenos, percentilOMS } from '../graficoPFEMasMenos.js?H'
+import { baseGraficoPFE, graficoPFECompleto, graficoPFEMasMenosSinDias, graficoPFEMasMenosSinDiasCuatroDias } from '../graficoPFEMasMenos.js';
+import { dataGraphCA } from '../graficoTrozo.js';
 
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
@@ -20,6 +23,11 @@ var titulos = {
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>',
     "#imagenes" : 'Imágenes DICOM'
 }
+
+var _hchartsUno
+var _hchartsDos
+var _hchartsTres
+var _hchartsCuatro
 
 // Comementario adicional anatomia 
 document.location.hash = "";
@@ -3150,408 +3158,440 @@ $( document ).ready(function() {
     $( '#infecoObsSegTrim1' ).on( 'click', function() {
         var edadGestacional = the("semanas").value;
 
-        if (edadGestacional < 16){
-            alert("Edad Gestacional inferior a 16 semanas");
-            return false;
-        }
-
-        var modal = makeModal("Ver Impresion");
+        if (edadGestacional < 13){ alert("Edad Gestacional inferior a 14 semanas"); return false; }
+        var modal = makeModalGraficosEcoDosTres("Ver Impresion");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerText = "Gráfica evaluación ecográfica del crecimiento fetal";
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
-        
-        var stringGraficos = "<div class='container'> <div style='width:100px;text-align:center;'></div></div><h4 class='text-center d-none'>Gráfica evaluación ecográfica del crecimiento fetal</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none mt-2'></span><div class='row d-none mt-2'> <div class='col-5'> <p style='font-size:10px;'><strong>Nombre: </strong>:PACIENTE </p></div><div class='col-3'> <p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'> <p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row'> <div class='col'> <div id='graficoInfecoObsSegTrimPFEView'></div><div class='row'> <div class='col-12'> <div id='graficoInfecoObsSegTrimPFEView'></div></div><div class='col-12'> <div id='graficoBVMView'></div></div></div></div><div class='col'> <div class='row'> <div class='col-12'> <div id='graficoCaView'></div></div><div class='col-12'> <div id='graficoCcCaView'></div></div></div></div></div><div class='row' id='lineclear'> <div class='col'> <p class='d-none' style='font-size:10px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> <br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;text-align: right;'>Ecografista: <strong>:ECOGRAFISTA</strong> </p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe Ecográfico: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina d-none'>* Evaluación del crecimiento fetal, según referencia propuesta por Hadlock y col. Radiology 181:129 - 133. 1991 (Normalidad pct. 10 a 90) <br>** Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97) <br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000 <br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil. <br><strong>Las gráficas de este software tienen por objeto favorecer análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></p></div></div>";
+        the(modal.titulo).innerText = "Gráfica evaluación ecográfica del crecimiento fetal y liquido amniótico";
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove() });
+
+        var stringGraficos = '<h4 class="d-none d-print-block text-center">Evaluación ecográfica del crecimiento fetal y líquido amniótico</h4><span class="d-none d-print-block mt-2" style="border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px"></span><div class="d-none d-print-flex mt-2 row"><div class="col-4"><p style="font-size:13px"><strong>Nombre: </strong>:PACIENTE</div><div class="col-4"><p style="font-size:13px"><strong>RUT: </strong>:RUT</div><div class="col-4"><p style="font-size:13px"><strong>Fecha de Exámen: </strong>:FEXAMEN</div></div><div class="d-none d-print-flex mt-2 row"><div class="col-4"><p style="font-size:13px"><strong>E. Gestacional: </strong>:EGestacional</div><div class="col-4"><p style="font-size:13px"><strong>Peso Fetal Estimado: </strong>:PESO gramos</div><div class="col-4"><p style="font-size:13px"><strong>Percentil: </strong>:PERCENTIL</div></div><div class="row"><div class="col-12"><p class="d-print-none">Sexo <span id="sexotexto">:SEXOFETAL</span>, PFE: <span class="text-danger">:PESO</span> gramos, PCT: <span id="percentiltexto" class="text-danger">:PERCENTIL</span></p><div id="graficoInfecoObsSegTrimPFEView"></div></div><div class="col-12"><div class="row"><div class="col-6"><div id="graficoCaView"></div><div id="graficoCcCaView"></div></div><div class="col-6"><div id="graficoBVMView"></div></div></div></div></div><div class="row pt-5" id="lineclear"><div class="col"><p class="d-none d-print-block"><strong style="color:#045dab">COMENTARIOS Y OBSERVACIONES</strong><br><span id="comentariosTextoInforme">:COMENTARIOS</span></p><p style="margin-right:100px;font-size:12px;text-align:right"class="d-none d-print-block text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span class="d-none d-print-block"style="border-top:1px solid #000;width:100%!important;display:block"></span><p style="margin-bottom:0;font-size:11px"class="d-none d-print-block">Fecha Informe: :DATEINFORME</p><span class="d-none d-print-block"style="border-top:1px solid #000;width:100%!important;display:block"></span><p class="d-none d-print-block pie-pagina">* Tablas de crecimiento fetal Organización Mundial de la Salud: https://www.ajog.org/article/S0002-9378%2817%2932485-7/fulltext.<br>** Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97)<br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.</div></div>';
         var comentarios = $("#comentarios-eco-dos-inf-dos").val();
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
-        comentarios = (typeof comentarios == 'undefined') ? '- Crecimiento fetal (peso) en percentil ' + parseInt($('#pfePctRpt').val()) + ', para la gráfica de peso fetal Hadlock *<br />- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'<br>- Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
+        comentarios = (typeof comentarios == 'undefined') ? '- Crecimiento fetal (peso) en percentil ' + Math.round(Number(the("pfePctRpt").value)) + ', para gráfica peso fetal de la OMS *<br />- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'<br>- Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
         stringGraficos = stringGraficos.replace(":COMENTARIOS", comentarios);
 
-        var paciente = the("nombre-paciente").value + " "+the("apellido-paciente").value
+        var paciente = the("nombre-paciente").value;
         var idpaciente = the("id-paciente").value;
-        var ecografista = "Dr. Rudecindo Lagos";
+        var ecografista = the("ecografista").value;
         let fexamen = new Date(Date.parse(the("fee").value));
         fexamen = fexamen.getUTCDate() + " de "+ monthsES[fexamen.getUTCMonth()] + " " + fexamen.getFullYear();
 
         stringGraficos = stringGraficos.replace(":ECOGRAFISTA", ecografista);
         stringGraficos = stringGraficos.replace(":PACIENTE", paciente);
         stringGraficos = stringGraficos.replace(":IDPACIENTE", idpaciente);
+        stringGraficos = stringGraficos.replace(":RUT", the("id-paciente").value);
         stringGraficos = stringGraficos.replace(":FEXAMEN", fexamen);
-        
+        stringGraficos = stringGraficos.replace(/:PESO/g, the("pfe").value);
+        stringGraficos = stringGraficos.replace(/:PERCENTIL/g, the("pfePctRpt").value);
+        stringGraficos = stringGraficos.replace(/:SEXOFETAL/g, the("ecografia.segtrim.sexo").value);
+        stringGraficos = stringGraficos.replace(":EGestacional", the("semanas").value + " sem, " + the("dias").value + " dias");
+
         the(modal.contenido).innerHTML = stringGraficos;
-        the(modal.button).dataset.id = modal.contenido;
+        the(modal.button).dataset.contenido = modal.contenido;
+
+        let sexoHTML = '<div><label for="sexsexsex" class="mr-2">Sexo Fetal</label><div class="btn-group btn-group-toggle" data-toggle="buttons"><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="des"> Desconocido</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="men"> Masculino</label><label class="btn btn-outline-secondary"><input type="radio" name="sexsexsex" value="wom"> Femenino</label></div></div>'
+        the(modal.contenido).parentElement.childNodes[2].insertAdjacentHTML('afterbegin',sexoHTML)
+
+        let sexo = the("ecografia.segtrim.sexo").value
+        let _sexo = these("sexsexsex")
+
+        if (sexo == "masculino"){
+            _sexo[1].checked = true
+            _sexo[1].parentElement.classList.add("active")
+        }else if (sexo == "femenino"){
+            _sexo[2].checked = true
+            _sexo[2].parentElement.classList.add("active")
+        }else{
+            _sexo[0].checked = true
+            _sexo[0].parentElement.classList.add("active")
+        }
+
         $("#"+modal.button).on("click", function(){
-            let modal =  this.dataset.id;
-            imprSelec(modal);
+            let modal = this.dataset.contenido;
+            the("graficoInfecoObsSegTrimPFEView").parentElement.classList.remove("col-12");
+            the("graficoInfecoObsSegTrimPFEView").parentElement.classList.add("col-6");
+
+            var comentarios = $("#comentarios-eco-dos-inf-dos").val();
+            let placenta_com = the("ubicacion").value;
+            let placenta_com_ubic = the("incersion").value;
+            comentarios = (typeof comentarios == 'undefined') ? '- Crecimiento fetal (peso) en percentil ' + Math.round(Number(the("pfePctRpt").value)) + ', para gráfica peso fetal de la OMS *<br />- Placenta de implantación '+placenta_com+', y ubicación '+placenta_com_ubic+'<br>- Bolsillo vertical mayor de ' + the("bvm").value + ' mm' : $("#comentarios-eco-dos-inf-dos").val().replace(/\r\n|\r|\n/g,"<br />");
+
+            the("comentariosTextoInforme").innerHTML = comentarios
+            let _grafico = graficoPFEMasMenosSinDiasCuatroDias()
+
+            _hchartsUno = structuredClone(baseGraficoPFE)
+
+            _hchartsUno.legend.align = 'left'
+            _hchartsUno.legend.verticalAlign = 'top'
+            _hchartsUno.legend.x = 70
+            _hchartsUno.legend.y = 50
+            _hchartsUno.legend.floating = true
+            var chart = { width: 470, height:600, animation: false }
+            _hchartsUno.chart = chart
+            _hchartsUno.yAxis.tickInterval = 400;
+            _hchartsUno.yAxis.min = 0;
+
+            _hchartsUno.series[9].data = [{x:Number(the("semanas").value),y:Number(the("pfe").value)}]
+            _hchartsUno.series[9].animation = false
+            _hchartsUno.series[8].data = _grafico.valores.uno
+            _hchartsUno.series[8].animation = false
+            _hchartsUno.series[7].data = _grafico.valores.dos
+            _hchartsUno.series[7].animation = false
+            _hchartsUno.series[6].data = _grafico.valores.tres
+            _hchartsUno.series[6].animation = false
+            _hchartsUno.series[5].data = _grafico.valores.cuatro
+            _hchartsUno.series[5].animation = false
+            _hchartsUno.series[4].data = _grafico.valores.cinco
+            _hchartsUno.series[4].animation = false
+            _hchartsUno.series[3].data = _grafico.valores.seis
+            _hchartsUno.series[3].animation = false
+            _hchartsUno.series[2].data = _grafico.valores.siete
+            _hchartsUno.series[2].animation = false
+            _hchartsUno.series[1].data = _grafico.valores.ocho
+            _hchartsUno.series[1].animation = false
+            _hchartsUno.series[0].data = _grafico.valores.nueve
+            _hchartsUno.series[0].animation = false
+            //_hchartsUno.xAxis.categories = _grafico.semanas
+
+            let menor = _grafico.valores.uno[0].y
+            let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1].y
+            let par = false
+            let multiplicador = 0
+
+            if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
+            }else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
+            }else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
+    
+            par = menor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _hchartsUno.yAxis.min = menor * multiplicador
+            }else{
+                if (menor > 1){
+                    _hchartsUno.yAxis.min = (menor-1) * multiplicador  
+                }else{
+                    _hchartsUno.yAxis.min = 0
+                }
+            }
+
+            if (mayor > 100){
+                mayor = Math.trunc(mayor / 10); multiplicador = 10;
+            }else if (mayor > 1000){
+                mayor = Math.trunc(mayor / 100); multiplicador = 100;
+            }else if (mayor > 10000){
+                mayor = Math.trunc(mayor / 1000); multiplicador = 1000;
+            }
+    
+            par = mayor % 2;
+            par = (par > 0) ? false : true
+    
+            if (par == true){
+                _hchartsUno.yAxis.max = mayor * multiplicador
+            }else{
+                _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
+            }
+
+            _hchartsUno = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _hchartsUno)
+
+            _hchartsDos.setSize(390, 300, false);
+            the("graficoCaView").parentElement.parentElement.parentElement.classList.remove("col-12");
+            the("graficoCaView").parentElement.parentElement.parentElement.classList.add("col-6");
+            the("graficoCaView").parentElement.classList.remove("col-6");
+            the("graficoCaView").parentElement.classList.add("col-12");
+            _hchartsTres.setSize(390, 300, false);
+            the("graficoBVMView").parentElement.classList.remove("col-6");
+            the("graficoBVMView").parentElement.classList.add("col-12");
+            _hchartsDos.reflow();
+            _hchartsTres.reflow();
+            imprInforme(the(modal).innerHTML);
+            $('#'+this.dataset.modal).modal("hide");
         });
 
+        let _grafico = graficoPFEMasMenosSinDias()
+        _hchartsUno = structuredClone(baseGraficoPFE)
 
-        $('#graficoInfecoObsSegTrimPFEView').highcharts({
-            chart: { height: 250 },
-            title: {
-                text: 'Peso Fetal Estimado grs. *',
-                x: -20,
-                style: { fontSize: '12px' }
-            },
-            legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight:'normal'
-                }
-            },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false,
-                    pointInterval: 1
-                }
-            },
+        let menor = _grafico.valores.uno[0].y
+        let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1].y
+        let par = false
+        let multiplicador = 0
+
+        if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
+        }else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
+        }else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
+
+        par = menor % 2;
+        par = (par > 0) ? false : true
+
+        if (par == true){
+            _hchartsUno.yAxis.min = menor * multiplicador
+        }else{
+            if (menor > 1){
+                _hchartsUno.yAxis.min = (menor-1) * multiplicador  
+            }else{
+                _hchartsUno.yAxis.min = 0
+            }
+        }
+
+        if (mayor > 100){
+            mayor = Math.trunc(mayor / 10); multiplicador = 10;
+        }else if (mayor > 1000){
+            mayor = Math.trunc(mayor / 100); multiplicador = 100;
+        }else if (mayor > 10000){
+            mayor = Math.trunc(mayor / 1000); multiplicador = 1000;
+        }
+
+        par = mayor % 2;
+        par = (par > 0) ? false : true
+
+        if (par == true){
+            _hchartsUno.yAxis.max = mayor * multiplicador
+        }else{
+            _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
+        }
+
+        _hchartsUno.series[9].data = [{x:Number(the("semanas").value),y:Number(the("pfe").value)}]
+        _hchartsUno.series[8].data = _grafico.valores.uno
+        _hchartsUno.series[7].data = _grafico.valores.dos
+        _hchartsUno.series[6].data = _grafico.valores.tres
+        _hchartsUno.series[5].data = _grafico.valores.cuatro
+        _hchartsUno.series[4].data = _grafico.valores.cinco
+        _hchartsUno.series[3].data = _grafico.valores.seis
+        _hchartsUno.series[2].data = _grafico.valores.siete
+        _hchartsUno.series[1].data = _grafico.valores.ocho
+        _hchartsUno.series[0].data = _grafico.valores.nueve
+        _hchartsUno.chart = { height: 250 }
+        _hchartsUno = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _hchartsUno)
+
+        _hchartsDos = {
+            chart: { height: 200 },
+            title: { text: 'Circunferencia Abdominal **', x: -20, style: {fontSize: '12px'} },
+            plotOptions: { series: { enableMouseTracking: false }, column: { grouping: false } },
             yAxis: {
-                title: { text: 'Kilogramos' },
-                tickPositions: [100, 560, 1020, 1940, 2400, 2860, 3320, 3780, 4500]
+                title: { text: 'Milimetros (mm)' },
+                min: 60,
+                max: 400,
+                tickInterval:50,
             },
+            legend: {enabled: false},
             colors: ['#313131', '#313131', '#313131'],
             xAxis: {
-                categories: ['16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+                categories:[]
             },
-           credits: {enabled: false},
-           series: [{
-               type: "line",
-               name: 'Pct 10',
-               dashStyle: "Dot",
-               marker: { enabled: false },
-               data: [121,150,185,227,275,331,398,471,556,652,758,876,1004,1145,1294,1453,1621,1794,1973,2154,2335,2513,2686,2851,2985]
-           }, {
-               type: "line",
-               name: 'Pct 90',
-               dashStyle: "Dot",
-               marker: { enabled: false },
-               data: [171,212,261,319,387,467,559,665,784,918,1068,1234,1416,1613,1824,2049,2285,2530,2781,3036,3291,3543,3786,4019,4234]
-           }, {
-               type: "line",
-               name: 'Peso',
-               dashStyle: "Dot",
-               marker: {symbol:'square'},
-               lineWidth: 0,
-               data: (function () {
-                   var data = [];
-                   var edadGest = the("semanas").value;
-                   edadGest = parseInt(edadGest);
-    
-                   for (i = 16; i < edadGest; i++) {
-                       data.push({
-                           y: 0,
-                       });
-                   }
-                   data.push({
-                       y: parseFloat($('#pfe').val()),
-                   });
-                   for (i = edadGest + 1; i < 40; i++) {
-                       data.push({
-                           y: 0,
-                       });
-                   }
-                   return data;
-               }())
-           }]
-        });
-        $('#graficoCaView').highcharts({
-            chart: { height: 250 },
+            credits: { enabled: false },
+            series: [{
+                type: "line",
+                name: 'Pct. 3',
+                dashStyle: "Dot",
+                marker: { enabled: false },
+                data: []
+            }, {
+                type: "line",
+                name: 'Pct 97',
+                dashStyle: "Dot",
+                marker: { enabled: false },
+                data: []
+            }, {
+                type: "line",
+                name: 'CA',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (function () {
+                    var data = [];
+                    var edadGest = the("semanas").value;
+                    edadGest = parseInt(edadGest) - 14;
+                    let _edadGest = (parseInt(the("semanas").value) - 14) +2;
+
+                    for (i = edadGest - 2; i < edadGest; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+
+                    var ca = the("ca").value;
+                    ca = ca.toString();
+                    ca = ca.replace(",", ".");
+                    ca = parseFloat(ca);
+
+                    data.push({y:ca});
+                    for (i = edadGest + 1; i < _edadGest; i++) {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                    return data;
+                }())
+            }]
+        };
+
+        let dataCA = dataGraphCA()
+        _hchartsDos.xAxis.categories = dataCA.eg
+        _hchartsDos.series[0].data = dataCA.p3
+        _hchartsDos.series[1].data = dataCA.p97
+        _hchartsDos.yAxis.max = dataCA.p97[dataCA.p97.length-1] + 50
+        _hchartsDos = Highcharts.chart('graficoCaView', _hchartsDos)
+
+        _hchartsTres = {
+            chart: {
+                height: 200
+            },
             title: {
-                text: 'Circunferencia Abdominal **',
+                text: 'Profundidad del bolsillo mayor (Liq. Amniótico)',
                 x: -20,
-                style: {fontSize: '12px'}
-            },
-            legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight:'normal'
+                style: {
+                    fontSize: '12px'
                 }
             },
+            legend: {enabled: false},
             plotOptions: {
                 series: {
                     enableMouseTracking: false
+                },
+                column: {
+                    grouping: false
                 }
             },
-           yAxis: {
-               title: { text: 'Milimetros (mm)' },
-               tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
-           },
-           colors: ['#313131', '#313131', '#313131'],
-           xAxis: {
-               categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
-           },
-           credits: { enabled: false },
-           series: [{
-               type: "line",
-               name: 'Pct. 3',
-               dashStyle: "Dot",
-               marker: { enabled: false },
-               data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
-           }, {
-               type: "line",
-               name: 'Pct 97',
-               dashStyle: "Dot",
-               marker: { enabled: false },
-               data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
-           }, {
-               type: "line",
-               name: 'CA',
-               dashStyle: "Dot",
-               marker: { symbol: 'square' },
-               lineWidth: 0,
-               data: (function () {
-                   var data = [];
-                   var edadGest = the("semanas").value;
-                   edadGest = parseInt(edadGest);
-                   for (i = 12; i < edadGest; i++) {
-                       data.push({
-                           y: 0,
-                       });
-                   }
-    
-                   var ca = $("#ca").val();
-                   ca = ca.toString();
-                   ca = ca.replace(",", ".");
-                   ca = parseFloat(ca);
-    
-                   data.push({
-                       y:ca,
-                   });
-                   for (i = edadGest + 1; i < 40; i++) {
-                       data.push({
-                           y: 0,
-                       });
-                   }
-                   return data;
-               }())
-           }]
-       }); 
-
-       $('#graficoBVMView').highcharts({
-        chart: {
-        height: 250
-    },
-    title: {
-        text: 'Profundidad del bolsillo mayor (Liq. Amniótico)',
-        x: -20,
-            style: {
-        fontSize: '12px'
-    }
-    },
-    plotOptions: {
-        series: {
-            enableMouseTracking: false
-        }
-    },
-        legend: {
-        itemStyle: {
-            fontSize: '10px',
-            fontWeight:'normal'
-        }
-    },
-    yAxis: {
-        title: { text: 'Milimetros (mm)' },
-        tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
-    },
-    colors: ['#313131','#313131','#313131'],
-    xAxis: {
-        categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
-    },
-    credits: {enabled:false},
-    series: [{
-        type: "line",
-        name: 'Pct. 5',
-        dashStyle: "Dot",
-        marker: {enabled:false},
-        data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
-    }, {
-        type: "line",
-        name: 'Pct. 95',
-        dashStyle: "Dot",
-        marker: { enabled: false },
-        data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
-    }, {
-        type: "line",
-        name: 'BVM',
-        dashStyle: "Dot",
-        marker: { symbol: 'square' },
-        lineWidth: 0,
-        data: (
-            function () {
-                var data = [];
-                var edadGest = the("semanas").value;
-                edadGest = parseInt(edadGest);
-                for (i = 16; i < edadGest; i ++ ) {
-                    data.push({
-                        y: 0,
-                    });
-                }
-                data.push({
-                        y: parseFloat($('#bvm').val()),
-                    });
-                for (i = (edadGest +1); i < 40; i ++ ) {
-                    data.push({
-                        y: 0,
-                    });
-                }
-                return data;
-            }())
-        }]
-    });
-       
-       let uterinasData = {
-           min:[1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47],
-           max: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
-       }
-            if (the("art.ut").checked == true){
-                $('#graficoCcCaView').highcharts({
-                    chart: {
-                        height: 250
-                    },
-                    title: {
-                        text: 'IP Promedio Arterias Uterinas',
-                        x: -20,
-                        style: {
-                            fontSize: '12px'
-                        }
-                    },
-                    plotOptions: {
-                        series: {
-                            enableMouseTracking: false
-                        }
-                    },
-                    yAxis: {
-                        title: { text: 'Valor IP' },
-                        tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
-                    },
-                    legend: {
-                        itemStyle: {
-                            fontSize: '10px',
-                            fontWeight:'normal'
-                        }
-                    },
-                    colors: ['#313131', '#313131', '#313131'],
-                    xAxis: {
-                        categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
-                    },
-                    credits: { enabled: false },
-                    series: [{
-                        type: "line",
-                        name: 'Pct. 5',
-                        dashStyle: "Dot",
-                        marker: { enabled: false },
-                        data: uterinasData.min
-                    }, {
-                        type: "line",
-                        name: 'Pct. 95',
-                        dashStyle: "Dot",
-                        marker: { enabled: false },
-                        data: uterinasData.max
-                    }, {
-                        type: "line",
-                        name: 'IP Promedio',
-                        dashStyle: "Dot",
-                        marker: { symbol: 'square' },
-                        lineWidth: 0,
-                        data: (function () {
-                            // generate an array of random data
-                            var data = [];
-                            var edadGest = the("semanas").value;
-                            edadGest = parseInt(edadGest);
-                            for (i = 10; i < edadGest; i ++ ) {
-                                data.push({
-                                    y: 0,
-                                });
-                            }
-                            var aud = $("#respuesta_uterina_promedio").val();
-                            aud = aud.toString();
-                            aud = aud.replace(",", ".");
-                            aud = parseFloat(aud);
-                                
+            yAxis: {
+                title: { text: 'Milimetros (mm)' },
+                tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
+            },
+            colors: ['#313131','#313131','#313131'],
+            xAxis: {
+                categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            },
+            credits: {enabled:false},
+            series: [{
+                type: "line",
+                name: 'Pct. 5',
+                dashStyle: "Dot",
+                marker: {enabled:false},
+                data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
+            }, {
+                type: "line",
+                name: 'Pct. 95',
+                dashStyle: "Dot",
+                marker: { enabled: false },
+                data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
+            }, {
+                type: "line",
+                name: 'BVM',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (
+                    function () {
+                        var data = [];
+                        var edadGest = the("semanas").value;
+                        edadGest = parseInt(edadGest);
+                        for (i = 16; i < edadGest; i ++ ) {
                             data.push({
-                                y: aud,
+                                y: 0,
                             });
-                            for (i = (edadGest +1); i < 39; i ++ ) {
-                                data.push({
-                                    y: 0,
-                                });
-                            }
-                            return data;
-                        }())
-                    }]
-                });
+                        }
+                        data.push({
+                                y: parseFloat($('#bvm').val()),
+                            });
+                        for (i = (edadGest +1); i < 40; i ++ ) {
+                            data.push({
+                                y: 0,
+                            });
+                        }
+                        return data;
+                    }())
+            }]
+        };
+
+        _hchartsTres = Highcharts.chart('graficoBVMView', _hchartsTres)
+
+        _sexo = these("sexsexsex")
+        _sexo = _sexo.forEach(alter => { alter.parentElement.onchange = function(){  
+            let sexo = this.children[0].value
+
+            if (sexo == "men"){
+                the("ecografia.segtrim.sexo").value = "masculino"
+            }else if (sexo == "wom"){
+                the("ecografia.segtrim.sexo").value = "femenino"
             }else{
-                $('#graficoCcCaView').highcharts({
-                    chart: {
-                        height: 250
-                    },
-                    title: {
-                        text: 'Relación Craneo / Abdómen',
-                        x: -20,
-                        style: {fontSize: '12px'}
-                    },
-                    plotOptions: { series: { enableMouseTracking: false }},
-                    legend: {
-                        itemStyle: {
-                            fontSize: '10px',
-                            fontWeight:'normal'
-                        }
-                    },
-                    yAxis: {
-                        title: { text: 'Valor cuociente' },
-                        tickPositions: [0.75, 0.82, 0.88, 0.95, 1, 1.07, 1.14, 1.2, 1.27, 1.33]
-                    },
-                    colors: ['#313131', '#313131', '#313131'],
-                    xAxis: {
-                        categories: ['15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
-                    },
-                    credits: { enabled: false },
-                    series: [{
-                        type: "line",
-                        name: 'Pct. 3',
-                        dashStyle: "Dot",
-                        marker: { enabled: false },
-                        data: [1.1,1.09,1.08,1.07,1.06,1.06,1.05,1.04,1.03,1.02,1.01,1,1,0.99,0.98,0.97,0.96,0.95,0.95,0.94,0.93,0.92,0.91,0.9,0.89,0.89]
-                    }, {
-                        type: "line",
-                        name: 'Pct. 97',
-                        dashStyle: "Dot",
-                        marker: { enabled: false },
-                        data: [1.29,1.28,1.27,1.26,1.25,1.24,1.24,1.23,1.22,1.21,1.2,1.19,1.18,1.18,1.17,1.17,1.16,1.15,1.14,1.13,1.12,1.11,1.1,1.09,1.08,1.08]
-                    }, {
-                        type: "line",
-                        name: 'CC/CA',
-                        dashStyle: "Dot",
-                        marker: { symbol: 'square' },
-                        lineWidth: 0,
-                        data: (function () {
-                            var data = [];
-                            var edadGest = the("semanas").value;
-                            edadGest = parseInt(edadGest);
-
-                            for (i = 16; i < edadGest; i++) {
-                                data.push({
-                                    y: 0,
-                                });
-                            }
-                            var ccca = parseInt($('#cc').val()) / parseInt($('#ca').val());
-                            ccca = ccca.toFixed(2);
-                            ccca = parseFloat(ccca);
-
-                            data.push({
-                                y: ccca,
-                            });
-                            for (i = (edadGest + 1); i <= 39; i++) {
-                                data.push({
-                                    y: 0,
-                                });
-                            }
-                            return data;
-                        }())
-                    }]
-                 });
+                the("ecografia.segtrim.sexo").value = "no identificado"
             }
+
+            sexo = the("ecografia.segtrim.sexo").value
+            if (sexo == "masculino"){
+                sexo = "men"
+            } else if (sexo == "femenino"){
+                sexo = "wom"
+            } else {
+                sexo = "z"
+            }
+
+            var pctPFE = percentilOMS(parseInt(the("pfe").value), Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7, sexo);
+            pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
+
+            the("sexotexto").innerText = the("ecografia.segtrim.sexo").value
+            the("percentiltexto").innerText = pctPFE
+            the("pfePctRpt").value = pctPFE
+
+            let _grafico = graficoPFEMasMenosSinDias()
+            _hchartsUno = structuredClone(baseGraficoPFE)
+
+            let menor = _grafico.valores.uno[0].y
+            let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1].y
+            let par = false
+            let multiplicador = 0
+
+            if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
+            }else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
+            }else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
+
+            par = menor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _hchartsUno.yAxis.min = menor * multiplicador
+            }else{
+                if (menor > 1){
+                    _hchartsUno.yAxis.min = (menor-1) * multiplicador  
+                }else{
+                    _hchartsUno.yAxis.min = 0
+                }
+            }
+
+            if (mayor > 100){
+                mayor = Math.trunc(mayor / 10); multiplicador = 10;
+            }else if (mayor > 1000){
+                mayor = Math.trunc(mayor / 100); multiplicador = 100;
+            }else if (mayor > 10000){
+                mayor = Math.trunc(mayor / 1000); multiplicador = 1000;
+            }
+
+            par = mayor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _hchartsUno.yAxis.max = mayor * multiplicador
+            }else{
+                _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
+            }
+
+            _hchartsUno.series[9].data = [{x:Number(the("semanas").value),y:Number(the("pfe").value)}]
+            _hchartsUno.series[8].data = _grafico.valores.uno
+            _hchartsUno.series[7].data = _grafico.valores.dos
+            _hchartsUno.series[6].data = _grafico.valores.tres
+            _hchartsUno.series[5].data = _grafico.valores.cuatro
+            _hchartsUno.series[4].data = _grafico.valores.cinco
+            _hchartsUno.series[3].data = _grafico.valores.seis
+            _hchartsUno.series[2].data = _grafico.valores.siete
+            _hchartsUno.series[1].data = _grafico.valores.ocho
+            _hchartsUno.series[0].data = _grafico.valores.nueve
+            _hchartsUno.chart = { height: 250 }
+            _hchartsUno = Highcharts.chart('graficoInfecoObsSegTrimPFEView', _hchartsUno)
+            comentarioSegundoTrimestre()
+
+        }})
+
     });
 
     $( '#infecoObsSegTrim2' ).on( 'click', function() {
@@ -10064,4 +10104,26 @@ function comentarioSegundoTrimestre(){
         var comentario = "- Embarazo de " + eg + " semanas, según edad gestacional obtenida de biometría fetal promedio\r\n- Fum operacional: " + fur + "\r\n- Fecha probable de parto: " + fpp + "\r\n";
         $('#comentarios-eco-dos-inf-dos').val(comentario);
     }
+}
+
+function makeModalGraficosEcoDosTres(button){
+    let id = uuidv4();
+    let titulo = uuidv4();
+    let contenido = uuidv4();
+    let _button = uuidv4();
+    let button_string = "";
+    
+    if (typeof button !== typeof undefined){
+        button_string = '<button type="button" class="btn btn-primary" id="'+_button+'" data-modal="'+id+'">'+button+'</button>';
+    }
+    
+    let resultado ={
+        id:id,
+        titulo:titulo,
+        contenido:contenido,
+        button:_button,
+        modal:'<div class="modal fade" tabindex="-1" role="dialog" id="'+id+'"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="'+titulo+'">Modal title</h5></div><div class="modal-body" id="'+contenido+'"></div><div class="modal-footer justify-content-between"><div><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>'+ button_string+'</div></div></div></div></div>'
+    }
+        
+    return resultado;
 }
