@@ -672,7 +672,7 @@ $( document ).ready(function() {
         var eg = parseFloat(the("semanas").value + "." +the("dias").value);
         let semanas = parseInt(the("semanas").value);
         let dias = parseInt(the("dias").value);
-        var EGLCN = the("lcnPct").value;
+        var EGLCN = Number(the("lcnPct").value);
 
         if (isNaN(this.value) | this.value < 1 | isNaN(eg) | eg < 1) {
             $('#diferenciaEcoPrimTrim').html('0');
