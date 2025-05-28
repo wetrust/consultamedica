@@ -680,7 +680,7 @@ $( document ).ready(function() {
             $('#resultadoAjusteEcoPrimTrim').hide();
         } else {
             var eg1 = Number(Math.trunc(EGLCN) * 7);
-            var _otro = Number(Math.trunc((EGLCN - Math.trunc(EGLCN)) * 10));
+            var _otro =  Math.trunc((Math.abs(((Number(EGLCN.toFixed(0))) - EGLCN) ) + 0.02) * 10);
             eg1 += _otro;
             var eg2 = parseInt(semanas * 7) +  dias;
             var diferencia = Math.abs(Math.trunc(eg2 - eg1));
@@ -689,7 +689,7 @@ $( document ).ready(function() {
             $('#resultadoAjusteEcoPrimTrim').show();
 
             let _fexamen = fechas.toDate(the("fee").value)
-            _fexamen.setDate(_fexamen.getDate() - eg1);
+            _fexamen.setDate(_fexamen.getUTCDate() - eg1);
             //the("fum").value = inputDate(_fexamen)
 
             the("furAjustada").value = inputDate(_fexamen);
@@ -699,7 +699,7 @@ $( document ).ready(function() {
             //fee.setTime(fee.getTime() - (1000*60*60*24*eg1));
             //the("furAjustada").value = getDate(fee);
             //the("semanasAjustada").value = Math.trunc(EGLCN);
-            the("diasAjustada").value = Math.trunc((EGLCN - Math.trunc(EGLCN))* 10);
+            the("diasAjustada").value = _otro;
 
             let fee = fechas.fpp(_fexamen);
             the("fppAjustada").value = getDate(fee);
