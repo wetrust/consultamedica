@@ -606,7 +606,7 @@ $( document ).ready(function() {
     })
 
     //controlador de ecografía de primer trimestre
-    $("#saco").on("change", function(){
+    $("#saco").on("keyup", function(){
         the("sacoPct").value = egSaco(this.value);
         if (+this.value > 0){
             $("#sacoFlecha").hide();
