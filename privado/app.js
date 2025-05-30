@@ -743,15 +743,6 @@ $( document ).ready(function() {
         }
     }
 
-    $("#art\\.ut").on("click", function(){
-        if (this.checked == true){
-            the("art.ut.div").classList.remove("d-none");
-            the("respuesta_uterina_derecha").focus();
-        }else{
-            the("art.ut.div").classList.add("d-none");
-        }
-    });
-
     $("#opt\\.clinico").on("click", function(){
         if (this.checked == true){
             the("opt.clinico.div").classList.remove("d-none");
