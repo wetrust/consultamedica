@@ -1143,11 +1143,6 @@ $( document ).ready(function() {
         $("#fcf-prim").val(this.value)
     })
 
-    $("#eco\\.seg\\.trim\\.select\\.comentario").on("change", function(){
-        comentarioSegundoTrimestre()
-        $("#clickInformeEco").trigger("click")
-	});
-
     $("#otrolink").on("change", function(){
         if (this.checked == true){
             var URL = "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-75262023000300183";
@@ -1201,7 +1196,6 @@ $( document ).ready(function() {
             the("vasos").selectedIndex = 0;
             the("ev-morfo").selectedIndex = 0;
             the("comentarios-anatomia-informe-eg-texto").value = "";
-            the("eco.seg.trim.select.comentario").selectedIndex = 0;
             the("comentarios-eco-dos-inf-dos").value = "";
 
             the("respuesta_uterina_derecha").value = "";
@@ -10012,10 +10006,6 @@ function eliminarUnaImagen(){
 }
 
 function comentarioSegundoTrimestre(){
-
-    let valorAlternativa = $("#eco\\.seg\\.trim\\.select\\.comentario").val()
-
-    if (valorAlternativa == 1){
         var comentarios = ""
 
         $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
@@ -10023,6 +10013,7 @@ function comentarioSegundoTrimestre(){
         var fetoPresentacion = the('presentacion').value;
         var dorsoFetal = the('dorso').value;
         var frecuenciaCardiaca = the('fcf').value;
+        var sexo = the('ecografia.segtrim.sexo').value;
 
         if (fetoPresentacion){
             comentarios = '- Feto en presentación ' + fetoPresentacion;
@@ -10031,16 +10022,25 @@ function comentarioSegundoTrimestre(){
                 comentarios += ', dorso ' + dorsoFetal;
             }
 
+            if (sexo){
+                comentarios += ', sexo ' + sexo;
+            }
+
             if (frecuenciaCardiaca){
-                comentarios += ', frecuencia cardiaca fetal ' + frecuenciaCardiaca;
+                comentarios += ', frecuencia cardiaca ' + frecuenciaCardiaca;
             }
 
             comentarios += '\r\n';
         }
 
-        var percentilPeso = $('#pfePctRpt').val();
+        var percentilPeso = Math.round(Number(the("pfePctRpt").value)).toString();
         percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
-        comentarios += '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para la gráfica de peso fetal Hadlock * \r\n';
+        if (the("ajusteDosSi").classList.contains("active")){
+            comentarios += '- Edad gestacional según biometría promedio corresponde a ' + the("egP50").value + ' semanas \r\n';
+        }else{
+            comentarios += '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para gráfica peso fetal de la OMS * \r\n';
+        }
+
 
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
@@ -10062,38 +10062,6 @@ function comentarioSegundoTrimestre(){
 
         comentarios += '\r\n';
         $("#comentarios-eco-dos-inf-dos").val(comentarios);
-
-    } else if (valorAlternativa == 2){
-        let egP50 = String(the("egP50").value);
-        let semanas = parseInt(the("semanas").value);
-        let dias = parseInt(the("dias").value);
-        let fur =  ""
-        let fpp = ""
-
-        if (egP50 != ""){
-
-            egP50 = egP50.split(".");
-            semanas = parseInt(egP50[0]);
-            dias = parseInt(egP50[1]);
-
-            if (isNaN(semanas) == true){ semanas = 0; }
-            if (isNaN(dias) == true){ dias = 0; }
-
-            let _fexamen = fechas.toDate(the("fee").value)
-            fur = fechas.fur(semanas, _fexamen)
-            fur.setDate(fur.getDate() - dias);
-
-            let fecha2 = new Date()
-            fecha2.setTime(fur.getTime() + 0);
-
-            fur = humanDate(fur)
-            fpp = humanDate(fechas.fpp(fecha2))
-        }
-
-        let eg = the("egP50").value;
-        var comentario = "- Embarazo de " + eg + " semanas, según edad gestacional obtenida de biometría fetal promedio\r\n- Fum operacional: " + fur + "\r\n- Fecha probable de parto: " + fpp + "\r\n";
-        $('#comentarios-eco-dos-inf-dos').val(comentario);
-    }
 }
 
 function makeModalGraficosEcoDosTres(button){
