@@ -503,9 +503,17 @@ $( document ).ready(function() {
         $('#informacionPacienteNo').button('toggle');
     });
 
+    the("ajusteDosNo").onclick = function(){
+        the("otras.biometrias.div").classList.add("d-none")
+        the("modalPreInfEcoObsSegTrim2").classList.add("d-none")
+        the("ajusteDosSi").classList.add("active")
+        this.classList.add("active")
+    }
+
     $('#ajusteDosSi').on('click', function(){
         the("otras.biometrias.div").classList.remove("d-none")
         the("modalPreInfEcoObsSegTrim2").classList.remove("d-none")
+        the("ajusteDosNo").classList.add("active")
         this.classList.add("active")
 
         let egP50 = String(the("egP50").value);
