@@ -1737,6 +1737,26 @@ $( document ).ready(function() {
         }
     }
 
+    the("ver.sumatoria.cuadrantes").onclick = function(){
+        if (this.checked == true){
+            the("liquido.ila.uno").classList.remove("d-none")
+            the("liquido.ila.dos").classList.remove("d-none")
+            the("liquido.ila.tres").classList.remove("d-none")
+            the("liquido.ila.cuatro").classList.remove("d-none")
+            the("liquido.ila.uno.mas").classList.remove("d-none")
+            the("liquido.ila.dos.mas").classList.remove("d-none")
+            the("liquido.ila.tres.mas").classList.remove("d-none")
+        }else{
+            the("liquido.ila.uno").classList.add("d-none")
+            the("liquido.ila.dos").classList.add("d-none")
+            the("liquido.ila.tres").classList.add("d-none")
+            the("liquido.ila.cuatro").classList.add("d-none")
+            the("liquido.ila.uno.mas").classList.add("d-none")
+            the("liquido.ila.dos.mas").classList.add("d-none")
+            the("liquido.ila.tres.mas").classList.add("d-none")
+        }
+    }
+
 });
 
 // Controlador de input clones
