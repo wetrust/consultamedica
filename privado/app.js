@@ -1712,6 +1712,9 @@ $( document ).ready(function() {
             the("alternativa.biometrias.div").classList.add("d-none");
         }
     })
+
+    the("icContainer").style.width = the("graficoDbp").offsetWidth +"px"
+
 });
 
 // Controlador de input clones
