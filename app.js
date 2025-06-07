@@ -602,6 +602,7 @@ $( document ).ready(function() {
             }
             $("#semanas").trigger("change");
         }
+
         comentarioSegundoTrimestre()
     })
 
