@@ -1729,6 +1729,14 @@ $( document ).ready(function() {
 
     the("icContainer").style.width = the("graficoDbp").offsetWidth +"px"
 
+    the("referenciabvmilaPunto").onclick = function(){
+        if (the("referenciabvmila").classList.contains("d-none")){
+            the("referenciabvmila").classList.remove("d-none")
+        }else{
+            the("referenciabvmila").classList.add("d-none")
+        }
+    }
+
 });
 
 // Controlador de input clones

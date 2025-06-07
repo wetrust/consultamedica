@@ -3157,8 +3157,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col mb-2">
-                                        <label><strong>Peso Fetal Estimado</strong> 
-                                        </label>
+                                        <label><strong>PFE</strong> (Hadlock-3), categorización <strong>Curva OMS</strong></label>
                                     </div>
                                     <div class="col mb-2">
                                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -3177,6 +3176,95 @@
                                         <button class="btn btn-outline-info" id="graficoPFE">Ver Gráficas</button>
                                     </div>
                                 </div>
+
+                                <div class="row py-3" style="border-bottom:3px solid #dee2e6!important;border-top:3px solid #dee2e6!important;">
+                                    <div class="col-12">
+                                        <div class="d-flex h-100">
+                                            <label><strong>Liquido amniótico</strong></label>
+                                            <div class="form-group form-check ml-3">
+                                                <input type="checkbox" class="form-check-input" id="referenciabvmilaPunto">
+                                                <label class="form-check-label text-nowrap text-primary" for="referenciabvmilaPunto">ver referencia</label>
+                                            </div>
+                                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evaluación Semicuantitativa: A.- Bolsillo vertical mayor (BVM) y B.-  Indice de líquido amniótico (ILA)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-3">
+                                        <label>1.- Evaluación cualitativa</label>
+                                        <div class="form-group mb-0">
+                                            <input type="text" class="form-control" id="liq-cualitativo-eco" list="liq.cualitativo.eco.list">
+                                            <datalist id="liq.cualitativo.eco.list">
+                                                <option value="normal"></option>
+                                                <option value="disminuido"></option>
+                                                <option value="aumentado"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div class="col mb-3">
+                                        <label>2.- Evaluación Semicuantitativa</label>
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <label>A.- BVM</label>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" id="bvmEcoDos">
+                                                    <div class="input-group-append"><div class="input-group-text">mm.</div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 align-self-end mb-3">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <label class="mr-2">Percentil</label>
+                                            <input type="number" class="form-control" id="bvmEcoDosPCT" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 align-self-end mb-3">
+                                        <button class="btn btn-outline-info" id="graficoBVM">Gráfica BVM</button>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="ver.sumatoria.cuadrantes">
+                                            <label class="form-check-label text-nowrap" for="ver.sumatoria.cuadrantes">Sumatoria 4 cuadrantes</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <label>B.- ILA</label>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" id="liquido.ila.suma">
+                                                    <div class="input-group-append"><div class="input-group-text">mm.</div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 align-self-end">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <label class="ml-auto mr-2 text-nowrap">Percentil</label>
+                                            <input type="number" class="form-control w-25" id="liquido.ila.percentil" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 align-self-end">
+                                        <button class="btn btn-outline-info" id="graficoILA">Gráfica ILA</button>
+                                    </div>
+                                    <div class="col-3"></div>
+                                    <div class="col-9"><p id="referenciabvmila" class="d-none text-primary">BVM: Magann EF y col. Am J O & G 1982: 1581, 2000 <br>ILA: Moore y col. Am J. O &amp; G. 1990; 162 : 1168 - 1173</p></div>
+                                    <div class="col h-100 mt-2" style="max-width:88%">
+                                        <div class="d-flex flex-row">
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.uno">
+                                            <span class="text-center d-none" id="liquido.ila.uno.mas">+</span>
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.dos">
+                                            <span class="text-center d-none" id="liquido.ila.dos.mas">+</span>
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.tres">
+                                            <span class="text-center d-none" id="liquido.ila.tres.mas">+</span>
+                                            <input type="number" class="form-control m-0 mx-2 p-0 d-none" id="liquido.ila.cuatro">
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="form-group row d-none">
                                     <div class="col mb-2">
                                         <label>Talla Fetal Estimada (> 23 sem)
@@ -3222,20 +3310,6 @@
                                     </div>
                                     <div class="col mb-2">
                                         <button class="btn btn-outline-info" id="graficoBVM">Ver Gráficas</button>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col mb-2">
-                                        <label>Categorizacion peso fetal estimado  <strong>curva OMS</strong></label>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <a href="http://srhr.org/fetalgrowthcalculator" class="btn btn-outline-info mb-2">Activar calculador OMS</a>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <input type="checkbox" class="form-check-input" id="otrolink"> <label class="form-check-label" for="otrolink">Concenso Chileno SOCHOG / SOCHUMB</label>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <button class="btn btn-outline-info" type="button">Ver Gráficas</button>
                                     </div>
                                 </div>
                                 <div class="form-group form-check mb-0"> <input type="checkbox" class="form-check-input" id="larg.cerv"> <label class="form-check-label" for="larg.cerv">Opcional Cervicometría y Doppler arterias uterinas</label> </div>
