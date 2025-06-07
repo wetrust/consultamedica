@@ -1757,6 +1757,71 @@ $( document ).ready(function() {
         }
     }
 
+    $('#liquido\\.ila\\.uno, #liquido\\.ila\\.dos, #liquido\\.ila\\.tres, #liquido\\.ila\\.cuatro').on("keyup", function(){
+        var uno = the("liquido.ila.uno").value;
+        var dos = the("liquido.ila.dos").value;
+        var tres = the("liquido.ila.tres").value;
+        var cuatro = the("liquido.ila.cuatro").value;
+
+        uno = (uno.length > 0) ? +uno : 0;
+        dos = (dos.length > 0) ? +dos : 0;
+        tres = (tres.length > 0) ? +tres : 0;
+        cuatro = (cuatro.length > 0) ? +cuatro : 0;
+
+        var suma = (uno + dos + tres + cuatro);
+        the("liquido.ila.suma").value = suma;
+        $('#liquido\\.ila\\.suma').trigger("keyup")
+    });
+
+    $('#liquido\\.ila\\.suma').on("keyup", function(e){
+
+        var suma = this.value;
+
+        if (suma > 999){
+            e.preventDefault();
+        }
+
+        let pct5ILA = [], pct95ILA = [];
+
+        pct5ILA[16] = 79; pct5ILA[17] = 83; pct5ILA[18] = 87;
+        pct5ILA[19] = 90; pct5ILA[20] = 93; pct5ILA[21] = 95;
+        pct5ILA[22] = 97; pct5ILA[23] = 98; pct5ILA[24] = 98;
+        pct5ILA[25] = 97; pct5ILA[26] = 97; pct5ILA[27] = 95;
+        pct5ILA[28] = 94; pct5ILA[29] = 92; pct5ILA[30] = 90;
+        pct5ILA[31] = 88; pct5ILA[32] = 86; pct5ILA[33] = 83;
+        pct5ILA[34] = 81; pct5ILA[35] = 79; pct5ILA[36] = 77;
+        pct5ILA[37] = 75; pct5ILA[38] = 73; pct5ILA[39] = 72;
+        pct5ILA[40] = 71; pct5ILA[41] = 70; pct5ILA[42] = 72;
+
+        pct95ILA[16] = 185; pct95ILA[17] = 194; pct95ILA[18] = 200;
+        pct95ILA[19] = 204; pct95ILA[20] = 208; pct95ILA[21] = 212;
+        pct95ILA[22] = 214; pct95ILA[23] = 217; pct95ILA[24] = 218;
+        pct95ILA[25] = 221; pct95ILA[26] = 223; pct95ILA[27] = 226;
+        pct95ILA[28] = 228; pct95ILA[29] = 231; pct95ILA[30] = 234;
+        pct95ILA[31] = 238; pct95ILA[32] = 242; pct95ILA[33] = 245;
+        pct95ILA[34] = 248; pct95ILA[35] = 249; pct95ILA[36] = 249;
+        pct95ILA[37] = 244; pct95ILA[38] = 239; pct95ILA[39] = 226;
+        pct95ILA[40] = 214; pct95ILA[41] = 194; pct95ILA[42] = 179;
+
+        let eg = the("semanas").value;
+        let ila = suma;
+        the("liquido.ila.percentil").classList.remove("is-valid", "is-invalid");
+        if (eg > 15 || eg < 41){
+            eg = parseInt(eg);
+            var uno = pct95ILA[eg] - pct5ILA[eg];
+            var dos = ila - pct5ILA[eg];
+            var resultado = parseInt(90 / (uno) * (dos) + 5);
+            $("#liquido\\.ila\\.percentil").val(resultado);
+
+            if (resultado < 10 || resultado > 90){
+                the("liquido.ila.percentil").classList.add("is-invalid");
+            }else{
+                the("liquido.ila.percentil").classList.add("is-valid");
+            }
+        }
+
+    });
+
 });
 
 // Controlador de input clones
@@ -2130,7 +2195,7 @@ $( document ).ready(function() {
 // Controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia","p.sis.morfologia", "", "vlp.morfologia", "vld.morfologia", "utUbicacion1", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3",  "endometDesc1", "endometDesc2", "endometGrosor", "cervixNuevo", "anexDerecho", "anexIzquierdo", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "espacioRetro", "comentario.ginecologica", "ut.der.primtrim", "ut.izq.primtrim"];
+        var key_enter = ["liquido.ila.uno", "liquido.ila.dos", "liquido.ila.tres", "liquido.ila.cuatro", "saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia","p.sis.morfologia", "", "vlp.morfologia", "vld.morfologia", "utUbicacion1", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3",  "endometDesc1", "endometDesc2", "endometGrosor", "cervixNuevo", "anexDerecho", "anexIzquierdo", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "espacioRetro", "comentario.ginecologica", "ut.der.primtrim", "ut.izq.primtrim"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -2139,6 +2204,7 @@ $( document ).ready(function() {
                 the(key_enter[pos+1]).focus();
            }
         }
+
     });  
 });
 
