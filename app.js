@@ -1614,7 +1614,7 @@ $( document ).ready(function() {
         }
     }
 
-    the("icContainer").style.width = the("graficoCc").offsetWidth +"px"
+    the("icContainer").style.width = the("graficoDbp").offsetWidth +"px"
 
 });
 
