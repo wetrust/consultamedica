@@ -8163,10 +8163,10 @@ function pctpfe() {
         var pctPFE = '';
         //truncador de Pct, sobre 100 o bajo 1
         if (pctFinal > 90){
-            pctPFE = '&gt; 90';
+            pctPFE = '> 90';
         }
         else if (pctFinal < 10){
-            pctPFE = '&lt; 10';
+            pctPFE = '< 10';
         }
         else{
             pctPFE = pctFinal.toFixed();
