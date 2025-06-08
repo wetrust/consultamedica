@@ -1934,6 +1934,13 @@ $( document ).ready(function() {
 
     });
 
+    the("pfe").onkeyup = function(e){
+        if (isNaN(this.value) == false){
+            pctpfe()
+            comentarioSegundoTrimestre()
+        }
+    }
+
 });
 
 // Controlador de input clones
