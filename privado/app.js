@@ -8160,7 +8160,6 @@ function pctpfe() {
         var uno=b[eg] - a[eg];
         var dos=pfe - a[eg];
         var pctFinal = (80 / (uno) * (dos)) + 10
-        ajustarProgreso(pctFinal, "pfePct");
         var pctPFE = '';
         //truncador de Pct, sobre 100 o bajo 1
         if (pctFinal > 90){
