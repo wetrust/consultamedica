@@ -1164,6 +1164,97 @@ $( document ).ready(function() {
         }
     })
 
+    $( '#graficoILA' ).on( 'click', function() {
+        var edadGestacional = the("semanas").value;
+
+        if (edadGestacional < 16){
+            alert("Edad Gestacional inferior a 16 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        the(modal.titulo).innerText = "Gráfico ILA";
+        the(modal.contenido).innerHTML = '<div id="graficoILAView"></div>';
+        the(modal.id).children[0].classList.remove("modal-lg");
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoILAView').highcharts({
+                    chart: {
+                    height: 250
+                },
+                title: {
+                    text: 'ILA',
+                    x: -20,
+                        style: {
+                    fontSize: '14px'
+                }
+                },
+            plotOptions: {
+                series: {
+                    enableMouseTracking: false
+                }
+                },
+                legend: {
+                itemStyle: {
+                    fontSize: '10px',
+                    fontWeight:'normal'
+                }
+                },
+                yAxis: {
+                title: { text: 'Milimetros (mm)' },
+                tickPositions: [5, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250,275, 300]
+                },
+                colors: ['#313131','#313131','#313131'],
+                xAxis: {
+                categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+                },
+                credits: {enabled:false},
+                series: [{
+                type: "line",
+                name: 'Pct. 5',
+                dashStyle: "Dot",
+                marker: {enabled:false},
+                data: [79, 83, 87, 90, 93, 95, 97, 98, 98, 97, 97, 95, 94, 92,90,88, 86, 83, 81, 79, 77, 75, 73, 72, 71]
+                }, {
+                type: "line",
+                name: 'Pct. 95',
+                dashStyle: "Dot",
+                marker: { enabled: false },
+                data: [185, 194, 200, 204, 208, 212, 214, 217, 218, 221, 223, 226, 228, 231, 234, 238, 242, 245, 248, 249, 249, 244, 239, 226, 214]
+                }, {
+                type: "line",
+                name: 'ILA',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: (
+                        function () {
+                            var data = [];
+                            var edadGest = the("semanas").value;
+        
+                            for (i = 16; i < edadGest; i ++ ) {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                            data.push({
+                                    y: parseFloat(the('liquido.ila.suma').value),
+                                });
+                            for (i = edadGest +1; i <= 39; i ++ ) {
+                                data.push({
+                                    y: 0,
+                                });
+                            }
+                            return data;
+                        }())
+                    }]
+            });
+    });
+
     $("#bvmDoppler").on("keyup", function(){
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liqAmnioDoppler").value = txt;
