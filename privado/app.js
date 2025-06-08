@@ -1139,7 +1139,7 @@ $( document ).ready(function() {
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "Normal";
         the("liq-cualitativo-eco").value = txt;
 
-        the("bvm").value = (isNumeric(this.value) == true) ? this.value : 0;
+        the("bvm").value = (isNumeric(this.value) == true) ? this.value : "";
         comentarioSegundoTrimestre()
     })
 
