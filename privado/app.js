@@ -1941,6 +1941,374 @@ $( document ).ready(function() {
         }
     }
 
+    the("corregirPercentilSexo").onclick = function(){
+        var edadGestacional = the("semanas").value;
+        if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
+        if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
+
+        var modal = appPesoEG();
+        document.getElementsByTagName("body")[0].appendChild(modal.modal);
+        the("dosdosdos").value = the("pfePctRpt").value
+
+        for (var i = 14; i < 41; i++) {
+            let semanas = the("cuacuacua");
+            let opt = document.createElement('option');
+            opt.appendChild( document.createTextNode(i) );
+            opt.value = i; 
+            semanas.appendChild(opt); 
+        }
+
+        the("cuacuacua").value = edadGestacional
+
+        for (var i = 0; i < 7; i++) {
+            let dias = the("papapapa");
+            let opt = document.createElement('option');
+            opt.appendChild( document.createTextNode(i) );
+            opt.value = i; 
+            dias.appendChild(opt); 
+        }
+
+        the("papapapa").value =  the("dias").value
+
+        let _grafico = graficoPFEMasMenos()
+        _hchartsUno = structuredClone(baseGraficoPFE)
+
+        let menor = _grafico.valores.uno[0]
+        let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
+        let par = false
+        let multiplicador = 0
+
+        if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
+        }else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
+        }else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
+
+        par = menor % 2;
+        par = (par > 0) ? false : true
+
+        if (par == true){
+            _hchartsUno.yAxis.min = menor * multiplicador
+        }else{
+            if (menor > 1){
+                _hchartsUno.yAxis.min = (menor-1) * multiplicador  
+            }else{
+                _hchartsUno.yAxis.min = 0
+            }
+        }
+
+        if (mayor > 100){
+            mayor = Math.trunc(mayor / 10); multiplicador = 10;
+        }else if (mayor > 1000){
+            mayor = Math.trunc(mayor / 100); multiplicador = 100;
+        }else if (mayor > 10000){
+            mayor = Math.trunc(mayor / 1000); multiplicador = 1000;
+        }
+
+        par = mayor % 2;
+        par = (par > 0) ? false : true
+
+        if (par == true){
+            _hchartsUno.yAxis.max = mayor * multiplicador
+        }else{
+            _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
+        }
+
+        let eg = Number(the("semanas").value + "." + the("dias").value);
+        let indice = _grafico.semanas.indexOf(eg)
+
+        _hchartsUno.series[9].data = [[indice,parseFloat(the("pfe").value)]]
+        _hchartsUno.series[8].data = _grafico.valores.uno
+        _hchartsUno.series[7].data = _grafico.valores.dos
+        _hchartsUno.series[6].data = _grafico.valores.tres
+        _hchartsUno.series[5].data = _grafico.valores.cuatro
+        _hchartsUno.series[4].data = _grafico.valores.cinco
+        _hchartsUno.series[3].data = _grafico.valores.seis
+        _hchartsUno.series[2].data = _grafico.valores.siete
+        _hchartsUno.series[1].data = _grafico.valores.ocho
+        _hchartsUno.series[0].data = _grafico.valores.nueve
+        _hchartsUno.xAxis.categories = _grafico.semanas
+
+        $('#graficoPFEDinamico').highcharts(_hchartsUno);
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+        the("cuacuacua").onchange = function() {
+            the("semanas").value = the("cuacuacua").value
+            the("dias").value = the("papapapa").value
+            the("pfe").value = the("unounouno").value
+            let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
+
+            let _sexo = these("sexsexsex")
+            _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
+
+            var pctPFE = percentilOMS(the("unounouno").value, eg, _sexo);
+            pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
+
+            the("dosdosdos").value = pctPFE
+            the("pfePctRpt").value = pctPFE
+
+            let _grafico = graficoPFEMasMenos()
+            _hchartsUno = structuredClone(baseGraficoPFE)
+
+            let menor = _grafico.valores.uno[0]
+            let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
+            let par = false
+            let multiplicador = 0
+
+            if (menor < 100){
+                menor = Math.trunc(menor / 10);
+                multiplicador = 10
+            }else if (menor < 1000){
+                menor = Math.trunc(menor / 100);
+                multiplicador = 100
+            }else if (menor < 10000){
+                menor = menor / 1000;
+                multiplicador = 1000
+            }
+
+            par = menor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _hchartsUno.yAxis.min = menor * multiplicador
+            }else{
+                if (menor > 1){
+                    _hchartsUno.yAxis.min = (menor-1) * multiplicador  
+                }else{
+                    _hchartsUno.yAxis.min = 0
+                }
+            }
+
+            if (mayor > 100){
+                mayor = Math.trunc(mayor / 10);
+                multiplicador = 10
+            }else if (mayor > 1000){
+                mayor = Math.trunc(mayor / 100);
+                multiplicador = 100
+            }else if (mayor > 10000){
+                mayor = Math.trunc(mayor / 1000);
+                multiplicador = 1000
+            }
+
+            par = mayor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _hchartsUno.yAxis.max = mayor * multiplicador
+            }else{
+                _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
+            }
+
+            eg = Number(the("semanas").value + "." + the("dias").value);
+            let indice = _grafico.semanas.indexOf(eg)
+
+            _hchartsUno.series[9].data = [[indice,parseFloat(the("pfe").value)]]
+            _hchartsUno.series[8].data = _grafico.valores.uno
+            _hchartsUno.series[7].data = _grafico.valores.dos
+            _hchartsUno.series[6].data = _grafico.valores.tres
+            _hchartsUno.series[5].data = _grafico.valores.cuatro
+            _hchartsUno.series[4].data = _grafico.valores.cinco
+            _hchartsUno.series[3].data = _grafico.valores.seis
+            _hchartsUno.series[2].data = _grafico.valores.siete
+            _hchartsUno.series[1].data = _grafico.valores.ocho
+            _hchartsUno.series[0].data = _grafico.valores.nueve
+            _hchartsUno.xAxis.categories = _grafico.semanas
+
+            $('#graficoPFEDinamico').highcharts(_hchartsUno);
+
+            the("tituloGraficoDinamico").innerHTML = '<strong>PFE = ' + the("pfe").value + ' grs.       Percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></strong>'
+            let txtOMS = '<strong>Feto '
+
+            let sexo = these("sexsexsex")
+            sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
+    
+            if(sexo == "men" || sexo == "wom"){
+                txtOMS += (sexo == "men") ? 'masculino' : 'femenino';
+            }
+    
+            eg = Number(the("semanas").value + "." + the("dias").value);
+    
+            txtOMS += ' de ' + the("semanas").value + " semanas"
+    
+            if (the("papapapa").value > 0){
+                txtOMS += ' y ' + the("papapapa").value + " dias "  
+            }
+            txtOMS += '</strong>'
+    
+            the("textoTipoOMS").innerHTML = txtOMS
+
+            comentarioSegundoTrimestre()
+        }
+
+        the("papapapa").onchange = function() {
+            the("semanas").value = the("cuacuacua").value
+            the("dias").value = the("papapapa").value
+            the("pfe").value = the("unounouno").value 
+            let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
+            let _sexo = these("sexsexsex")
+            _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
+            var pctPFE = percentilOMS(the("unounouno").value,eg, _sexo);
+            pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
+
+            the("dosdosdos").value = pctPFE
+            the("pfePctRpt").value = pctPFE
+
+            let _grafico = graficoPFEMasMenos()
+            _hchartsUno = structuredClone(baseGraficoPFE)
+
+            let menor = _grafico.valores.uno[0]
+            let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1]
+            let par = false
+            let multiplicador = 0
+
+            if (menor < 100){
+                menor = Math.trunc(menor / 10);
+                multiplicador = 10
+            }else if (menor < 1000){
+                menor = Math.trunc(menor / 100);
+                multiplicador = 100
+            }else if (menor < 10000){
+                menor = menor / 1000;
+                multiplicador = 1000
+            }
+
+            par = menor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _hchartsUno.yAxis.min = menor * multiplicador
+            }else{
+                if (menor > 1){
+                    _hchartsUno.yAxis.min = (menor-1) * multiplicador  
+                }else{
+                    _hchartsUno.yAxis.min = 0
+                }
+            }
+
+            if (mayor > 100){
+                mayor = Math.trunc(mayor / 10);
+                multiplicador = 10
+            }else if (mayor > 1000){
+                mayor = Math.trunc(mayor / 100);
+                multiplicador = 100
+            }else if (mayor > 10000){
+                mayor = Math.trunc(mayor / 1000);
+                multiplicador = 1000
+            }
+
+            par = mayor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _hchartsUno.yAxis.max = mayor * multiplicador
+            }else{
+                _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
+            }
+
+            eg = Number(the("semanas").value + "." + the("dias").value);
+            let indice = _grafico.semanas.indexOf(eg)
+
+            _hchartsUno.series[9].data = [[indice,parseFloat(the("pfe").value)]]
+            _hchartsUno.series[8].data = _grafico.valores.uno
+            _hchartsUno.series[7].data = _grafico.valores.dos
+            _hchartsUno.series[6].data = _grafico.valores.tres
+            _hchartsUno.series[5].data = _grafico.valores.cuatro
+            _hchartsUno.series[4].data = _grafico.valores.cinco
+            _hchartsUno.series[3].data = _grafico.valores.seis
+            _hchartsUno.series[2].data = _grafico.valores.siete
+            _hchartsUno.series[1].data = _grafico.valores.ocho
+            _hchartsUno.series[0].data = _grafico.valores.nueve
+            _hchartsUno.xAxis.categories = _grafico.semanas
+
+            $('#graficoPFEDinamico').highcharts(_hchartsUno);
+
+            the("tituloGraficoDinamico").innerHTML = '<strong>PFE = ' + the("pfe").value + ' grs.       Percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></strong>'
+            let txtOMS = '<strong>Feto '
+
+            let sexo = these("sexsexsex")
+            sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
+
+            if(sexo == "men" || sexo == "wom"){
+                txtOMS += (sexo == "men") ? 'masculino' : 'femenino';
+            }
+
+            eg = Number(the("semanas").value + "." + the("dias").value);
+
+            txtOMS += ' de ' + the("semanas").value + " semanas"
+
+            if (the("papapapa").value > 0){
+                txtOMS += ' y ' + the("papapapa").value + " dias "  
+            }
+            txtOMS += '</strong>'
+
+            the("textoTipoOMS").innerHTML = txtOMS
+            comentarioSegundoTrimestre()
+        }
+
+        let _sexo = these("sexsexsex")
+        _sexo = _sexo.forEach(alter => { alter.parentElement.onchange = function(){  
+                the("cuacuacua").onchange();
+                let sexo = this.children[0].value
+
+                if (sexo == "men"){
+                    the("ecografia.segtrim.sexo").value = "masculino"
+                }else if (sexo == "wom"){
+                    the("ecografia.segtrim.sexo").value = "femenino"
+                }else{
+                    the("ecografia.segtrim.sexo").value = "no identificado"
+                }
+
+            }
+        })
+
+        the("unounouno").onkeyup = the("cuacuacua").onchange
+        the("goto.doppler.grafico").dataset.modal = modal.id
+        the("goto.doppler.grafico").onclick = function(){
+            //si va de primer trimestre a ginecologico, cambiar el volver para que regrese a
+            //primer trimestre
+            $('#'+this.dataset.modal).modal("hide")
+            $("#volver").attr("href", "#ecoObsSegTrim");
+    
+        }
+
+        document.querySelectorAll(`input[name="corrigepercentilsexo"]`).forEach(element => {
+            if (element.value == "no"){
+                element.click()
+            }
+        });
+
+        the("tituloGraficoDinamico").innerHTML = '<strong>PFE = ' + the("pfe").value + ' grs.       Percentil <span class="text-danger">' +the("pfePctRpt").value + '</span></strong>'
+        let txtOMS = '<strong>Feto '
+
+        let sexo = the("ecografia.segtrim.sexo").value
+        _sexo = these("sexsexsex")
+
+        if (sexo == "masculino"){
+            _sexo[1].checked = true
+            _sexo[1].parentElement.classList.add("active")
+        }else if (sexo == "femenino"){
+            _sexo[2].checked = true
+            _sexo[2].parentElement.classList.add("active")
+        }else{
+            _sexo[0].checked = true
+            _sexo[0].parentElement.classList.add("active")
+        }
+
+        _sexo.forEach(alter => { return (alter.checked == true) ? sexo = alter.value : false })
+
+        if(sexo == "men" || sexo == "wom"){
+            txtOMS += (sexo == "men") ? 'masculino' : 'femenino';
+        }
+
+        eg = Number(the("semanas").value + "." + the("dias").value);
+
+        txtOMS += ' de ' + the("semanas").value + " semanas"
+
+        if (the("papapapa").value > 0){
+            txtOMS += ' y ' + the("papapapa").value + " dias "  
+        }
+        txtOMS += '</strong>'
+    
+        the("textoTipoOMS").innerHTML = txtOMS
+    }
 });
 
 // Controlador de input clones
