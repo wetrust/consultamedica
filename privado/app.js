@@ -267,6 +267,8 @@ $( document ).ready(function() {
                 the(value).classList.add("d-none");
             });
         }
+
+
     });
 
     $("#menu\\.modulo\\.activo\\.cinco").on("click", function(){
@@ -1839,7 +1841,7 @@ $( document ).ready(function() {
         }
     })
 
-    the("icContainer").style.width = the("graficoDbp").offsetWidth +"px"
+    the("icContainer").style.width = the("graficoDbp").style.width +"px"
 
     the("referenciabvmilaPunto").onclick = function(){
         if (the("referenciabvmila").classList.contains("d-none")){
