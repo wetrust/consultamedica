@@ -1841,7 +1841,7 @@ $( document ).ready(function() {
         }
     })
 
-    the("icContainer").style.width = the("graficoDbp").style.width +"px"
+    the("icContainer").style.width = the("graficoDbp").getBoundingClientRect().width +"px"
 
     the("referenciabvmilaPunto").onclick = function(){
         if (the("referenciabvmila").classList.contains("d-none")){
