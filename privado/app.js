@@ -1,5 +1,6 @@
 import { fechas } from './functionesM.js'
 import { make, the, inputDate, these, humanDate } from './wetrust.js'
+import { appPesoEG } from '../app.pesoEG.js?d'
 import { graficoPFEMasMenos, percentilOMS } from '../graficoPFEMasMenos.js?H'
 import { baseGraficoPFE, graficoPFECompleto, graficoPFEMasMenosSinDias, graficoPFEMasMenosSinDiasCuatroDias } from '../graficoPFEMasMenos.js';
 import { dataGraphCA } from '../graficoTrozo.js';
@@ -1180,32 +1181,22 @@ $( document ).ready(function() {
         the(modal.contenido).innerHTML = '<div id="graficoILAView"></div>';
         the(modal.id).children[0].classList.remove("modal-lg");
 
-        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
-            $(this).remove();
-        });
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove() });
 
-        $('#graficoILAView').highcharts({
-                    chart: {
-                    height: 250
-                },
+        $('#graficoILAView').highcharts(
+            {
+                chart: { height: 250 },
                 title: {
                     text: 'ILA',
                     x: -20,
-                        style: {
-                    fontSize: '14px'
-                }
+                    style: {fontSize: '14px'}
                 },
-            plotOptions: {
-                series: {
-                    enableMouseTracking: false
-                }
+                plotOptions: {
+                    series: {
+                        enableMouseTracking: false
+                    }
                 },
-                legend: {
-                itemStyle: {
-                    fontSize: '10px',
-                    fontWeight:'normal'
-                }
-                },
+                legend: {itemStyle: { fontSize: '10px', fontWeight:'normal' }},
                 yAxis: {
                 title: { text: 'Milimetros (mm)' },
                 tickPositions: [5, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250,275, 300]
@@ -1254,7 +1245,7 @@ $( document ).ready(function() {
                             return data;
                         }())
                     }]
-            });
+        });
     });
 
     $("#bvmDoppler").on("keyup", function(){
@@ -2301,7 +2292,6 @@ $( document ).ready(function() {
         }
 
         eg = Number(the("semanas").value + "." + the("dias").value);
-
         txtOMS += ' de ' + the("semanas").value + " semanas"
 
         if (the("papapapa").value > 0){
