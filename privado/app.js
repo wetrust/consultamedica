@@ -1943,6 +1943,8 @@ $( document ).ready(function() {
         document.getElementsByTagName("body")[0].appendChild(modal.modal);
         the("dosdosdos").value = the("pfePctRpt").value
 
+        the("goto.doppler.grafico").parentElement.children[0].src = "../img/PFE.png"
+
         for (var i = 14; i < 41; i++) {
             let semanas = the("cuacuacua");
             let opt = document.createElement('option');
@@ -7369,7 +7371,7 @@ function InfEcoObsSegTrim1(){
     InformeString = InformeString.replace(":CESAPREV", CESAPREV);
 
     var contadorOpcional = 0;
-    if (the("art.ut").checked == true){
+    if (the("larg.cerv").checked == true){
         InformeString += '<tr> <td><strong>IP Promedio Arterias Uterinas</strong></td><td style="text-align:center;">:ARTUT</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTPCTVAL</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTRANGO</td></tr>';
 
         InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
@@ -7379,16 +7381,16 @@ function InfEcoObsSegTrim1(){
 
         if (pctUT == "&gt; 95" || pctUT == "&lt; 5"){
             tmpData = 0;
-        }else{
-            tmpData = +pctUT;
+        }
+        else
+        {
+            tmpData = +pctUT; 
         }
         var ARTUTRANGO = oldProgress(tmpData);
 
         InformeString = InformeString.replace(":ARTUTRANGO", ARTUTRANGO);
         contadorOpcional++;
-    }
 
-    if (the("larg.cerv").checked == true){
         InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td class="text-center" style="border-top:1px dashed #045dab;"></td><td class="text-center" style="border-top:1px dashed #045dab;">:LARGCERVTXT</td></tr>';
 
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
