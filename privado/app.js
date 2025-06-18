@@ -1165,6 +1165,8 @@ $( document ).ready(function() {
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             the("bvmEcoDosPCT").value = resultado;
         }
+
+        the("bvmEcoDosCopia").value = (isNumeric(this.value) == true) ? this.value : "";
     })
 
     $( '#graficoILA' ).on( 'click', function() {
@@ -2676,7 +2678,7 @@ $( document ).ready(function() {
 // Controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["liquido.ila.uno", "liquido.ila.dos", "liquido.ila.tres", "liquido.ila.cuatro", "saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvmEcoDos", "liquido.ila.suma", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia","p.sis.morfologia", "", "vlp.morfologia", "vld.morfologia", "utUbicacion1", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3",  "endometDesc1", "endometDesc2", "endometGrosor", "cervixNuevo", "anexDerecho", "anexIzquierdo", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "espacioRetro", "comentario.ginecologica", "ut.der.primtrim", "ut.izq.primtrim"];
+        var key_enter = ["liquido.ila.uno", "liquido.ila.dos", "liquido.ila.tres", "liquido.ila.cuatro", "saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp","dof", "ca", "lf", "bvmEcoDos", "bvmEcoDos", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","dv","psmACM","", "modalPreInfEcoDoppler","comentario.ginecologica","liquido.semi.morfologia", "liquido.ila.uno.morfologia", "liquido.ila.dos.morfologia", "liquido.ila.tres.morfologia", "liquido.ila.cuatro.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia","p.sis.morfologia", "", "vlp.morfologia", "vld.morfologia", "utUbicacion1", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3",  "endometDesc1", "endometDesc2", "endometGrosor", "cervixNuevo", "anexDerecho", "anexIzquierdo", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "espacioRetro", "comentario.ginecologica", "ut.der.primtrim", "ut.izq.primtrim"];
 
         if ( e.which == 13 ) {
            e.preventDefault();
@@ -10603,40 +10605,28 @@ function eliminarUnaImagen(){
 }
 
 function comentarioSegundoTrimestre(){
-        var comentarios = ""
+    var comentarios = ""
+    $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
+    var fetoPresentacion = the('presentacion').value;
+    var dorsoFetal = the('dorso').value;
+    var frecuenciaCardiaca = the('fcf').value;
+    var sexo = the('ecografia.segtrim.sexo').value;
 
-        $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
+    if (fetoPresentacion){
+        comentarios = '- Feto en presentación ' + fetoPresentacion;
+        if (dorsoFetal){ comentarios += ', dorso ' + dorsoFetal;}
+        if (sexo){ comentarios += ', sexo ' + sexo }
+        if (frecuenciaCardiaca){ comentarios += ', frecuencia cardiaca ' + frecuenciaCardiaca }
+        comentarios += '\r\n';
+    }
 
-        var fetoPresentacion = the('presentacion').value;
-        var dorsoFetal = the('dorso').value;
-        var frecuenciaCardiaca = the('fcf').value;
-        var sexo = the('ecografia.segtrim.sexo').value;
-
-        if (fetoPresentacion){
-            comentarios = '- Feto en presentación ' + fetoPresentacion;
-
-            if (dorsoFetal){
-                comentarios += ', dorso ' + dorsoFetal;
-            }
-
-            if (sexo){
-                comentarios += ', sexo ' + sexo;
-            }
-
-            if (frecuenciaCardiaca){
-                comentarios += ', frecuencia cardiaca ' + frecuenciaCardiaca;
-            }
-
-            comentarios += '\r\n';
-        }
-
-        var percentilPeso = Math.round(Number(the("pfePctRpt").value)).toString();
-        percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
-        if (the("ajusteDosSi").classList.contains("active")){
-            comentarios += '- Edad gestacional según biometría promedio corresponde a ' + the("egP50").value + ' semanas \r\n';
-        }else{
-            comentarios += '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para gráfica peso fetal de la OMS * \r\n';
-        }
+    var percentilPeso = Math.round(Number(the("pfePctRpt").value)).toString();
+    percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
+    if (the("ajusteDosSi").classList.contains("active")){
+        comentarios += '- Edad gestacional según biometría promedio corresponde a ' + the("egP50").value + ' semanas \r\n';
+    }else{
+        comentarios += '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para gráfica peso fetal de la OMS * \r\n';
+    }
 
 
         let placenta_com = the("ubicacion").value;
