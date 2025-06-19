@@ -883,8 +883,6 @@ $( document ).ready(function() {
     $( "#bvm" ).change(bvm).on("keyup", function(){
         the("bvmEcoDos").value = this.value
 
-
-
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
         comentarioSegundoTrimestre()
@@ -9997,11 +9995,8 @@ function calularRiesgoMorfologiaAPriori(){
 }
 
 function comentarioSegundoTrimestre(){
-
         var comentarios = ""
-
         $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
-
         var fetoPresentacion = the('presentacion').value;
         var dorsoFetal = the('dorso').value;
         var frecuenciaCardiaca = the('fcf').value;
@@ -10009,19 +10004,9 @@ function comentarioSegundoTrimestre(){
 
         if (fetoPresentacion){
             comentarios = '- Feto en presentación ' + fetoPresentacion;
-
-            if (dorsoFetal){
-                comentarios += ', dorso ' + dorsoFetal;
-            }
-
-            if (sexo){
-                comentarios += ', sexo ' + sexo;
-            }
-
-            if (frecuenciaCardiaca){
-                comentarios += ', frecuencia cardiaca ' + frecuenciaCardiaca;
-            }
-
+            if (dorsoFetal){ comentarios += ', dorso ' + dorsoFetal; }
+            if (sexo){comentarios += ', sexo ' + sexo;}
+            if (frecuenciaCardiaca){comentarios += ', frecuencia cardiaca ' + frecuenciaCardiaca; }
             comentarios += '\r\n';
         }
 
