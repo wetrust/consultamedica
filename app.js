@@ -5570,9 +5570,7 @@ $(document).ready(function(){
     $('#liquido\\.ila\\.suma').on("keyup", function(e){
         var suma = this.value;
         if (suma > 999){ e.preventDefault(); }
-
         let pct5ILA = [], pct95ILA = [];
-
         pct5ILA[16] = 79; pct5ILA[17] = 83; pct5ILA[18] = 87;
         pct5ILA[19] = 90; pct5ILA[20] = 93; pct5ILA[21] = 95;
         pct5ILA[22] = 97; pct5ILA[23] = 98; pct5ILA[24] = 98;
@@ -5582,7 +5580,6 @@ $(document).ready(function(){
         pct5ILA[34] = 81; pct5ILA[35] = 79; pct5ILA[36] = 77;
         pct5ILA[37] = 75; pct5ILA[38] = 73; pct5ILA[39] = 72;
         pct5ILA[40] = 71; pct5ILA[41] = 70; pct5ILA[42] = 72;
-
         pct95ILA[16] = 185; pct95ILA[17] = 194; pct95ILA[18] = 200;
         pct95ILA[19] = 204; pct95ILA[20] = 208; pct95ILA[21] = 212;
         pct95ILA[22] = 214; pct95ILA[23] = 217; pct95ILA[24] = 218;
