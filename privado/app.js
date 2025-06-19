@@ -10427,7 +10427,7 @@ function comentarioSegundoTrimestre(){
         let liquido_cua = $('#liq-cualitativo-eco').val()
         let liquido = document.getElementById("bvmEcoDos").value
 
-        var linea3 = '- Líquido amniótico ' + liquido_cua + ", con bolsillo vertical mayor de " + liquido + " mm.";
+        var linea3 = '- Líquido amniótico ' + liquido_cua + ", con bolsillo vertical mayor de " + liquido + " mm";
 
         if (placenta_com != "" || placenta_com_ubic != ""){
             comentarios = comentarios + linea2;
@@ -10435,6 +10435,12 @@ function comentarioSegundoTrimestre(){
 
         if (liquido != "" || liquido_cua != ""){
             comentarios = comentarios + linea3;
+
+            if(the("liquido.ila.suma").value){
+                comentarios = comentarios + ", ILA " + the("liquido.ila.suma").value + " mm.";
+            }
+
+            comentarios = comentarios + ".";
         }
 
         comentarios += '\r\n';
