@@ -5568,12 +5568,8 @@ $(document).ready(function(){
     });
 
     $('#liquido\\.ila\\.suma').on("keyup", function(e){
-
         var suma = this.value;
-
-        if (suma > 999){
-            e.preventDefault();
-        }
+        if (suma > 999){ e.preventDefault(); }
 
         let pct5ILA = [], pct95ILA = [];
 
@@ -5613,6 +5609,7 @@ $(document).ready(function(){
                 the("liquido.ila.percentil").classList.add("is-valid");
             }
         }
+        comentarioSegundoTrimestre()
     });
 
     $('#dbp\\.morfologia').on("keyup", function(){
