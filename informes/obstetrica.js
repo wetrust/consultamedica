@@ -157,21 +157,24 @@ export function InfEcoObsSegTrim1(){
         InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
         contadorOpcional++;
 
-        InformeString += '<tr> <td><strong>IP Promedio Arterias Uterinas</strong></td><td style="text-align:center;">:ARTUT</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTPCTVAL</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTRANGO</td></tr>';
+        if ($("#respuesta_uterina_promedio").val()){
+            InformeString += '<tr> <td><strong>IP Promedio Arterias Uterinas</strong></td><td style="text-align:center;">:ARTUT</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTPCTVAL</td><td class="text-center" style="border-top:1px dashed #045dab;">:ARTUTRANGO</td></tr>';
 
-        InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
-        InformeString = InformeString.replace(":ARTUTPCTVAL", $("#respuesta_uterina_promedio_percentil").html());
+            InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
+            InformeString = InformeString.replace(":ARTUTPCTVAL", $("#respuesta_uterina_promedio_percentil").html());
 
-        let pctUT = $("#respuesta_uterina_promedio_percentil").html();
+            let pctUT = $("#respuesta_uterina_promedio_percentil").html();
 
-        if (pctUT == "&gt; 95" || pctUT == "&lt; 5"){
-            tmpData = 0;
-        }else{
-            tmpData = +pctUT;
+            if (pctUT == "&gt; 95" || pctUT == "&lt; 5"){
+                tmpData = 0;
+            }else{
+                tmpData = +pctUT;
+            }
+            var ARTUTRANGO = oldProgress(tmpData);
+
+            InformeString = InformeString.replace(":ARTUTRANGO", ARTUTRANGO);
         }
-        var ARTUTRANGO = oldProgress(tmpData);
 
-        InformeString = InformeString.replace(":ARTUTRANGO", ARTUTRANGO);
         contadorOpcional++;
     }
 
