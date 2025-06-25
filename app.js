@@ -990,6 +990,7 @@ $( document ).ready(function() {
             the("info.cervix").innerHTML ='<p class="mb-0">Cérvix normal</p>';
             the("info.cervix").classList.remove("d-none");
         }
+        comentarioSegundoTrimestre()
     })
 
     $("#doppler\\.larg\\.cerv").on("click", function(){
@@ -10029,17 +10030,17 @@ function comentarioSegundoTrimestre(){
             comentarios = comentarios + linea3;
 
             if(the("liquido.ila.suma").value){
-                comentarios = comentarios + ", ILA " + the("liquido.ila.suma").value + " mm.";
+                comentarios = comentarios + ", ILA " + the("liquido.ila.suma").value + " mm"
             }
 
-            comentarios = comentarios + ".";
+            comentarios = comentarios +'.\r\n';
         }
 
         var largoCervical = the("largo.cervical.segundo").value
-        var linea4 = '- Cuello cerrado, largo cervical ' + largoCervical + " mm";
+        var linea4 = '- Cuello cerrado, largo cervical ' + largoCervical + " mm"
 
         if (largoCervical != "" ){
-            comentarios = comentarios + linea4;
+            comentarios = comentarios + linea4+'.\r\n';
         }
 
         comentarios += '\r\n';
