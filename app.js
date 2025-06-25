@@ -10035,6 +10035,13 @@ function comentarioSegundoTrimestre(){
             comentarios = comentarios + ".";
         }
 
+        var largoCervical = the("largo.cervical.segundo").value
+        var linea4 = '- Cuello cerrado, largo cervical ' + largoCervical + " mm";
+
+        if (largoCervical != "" ){
+            comentarios = comentarios + linea4;
+        }
+
         comentarios += '\r\n';
         $("#comentarios-eco-dos-inf-dos").val(comentarios);
 }
