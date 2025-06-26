@@ -9332,13 +9332,12 @@ function informeMorfologia(){
 }
 
 function informeDoppler(){
-    var InformeString = '<div class="container"><h3>Evaluación de Flujometria Doppler Materno Fetal</h3></div><span style="border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px;margin-bottom:15px"></span><div class="container"><table class="table table-borderless"><tr><td class="p-0"><strong>Nombre: </strong>:PACIENTE<td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.<td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN<tr><td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE<td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO<td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</table><p><strong>FUM: </strong>:FUM<br><strong>Ege: </strong>:EG semanas<br><strong>FPP: </strong>:FPP</div><div class="container"><p><strong style="color:#045dab">ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small><p>Motivo del exámen: :MOTIVODOPPLER<br>Antecedentes Obstétricos: :ANTECEDENTES<br>Feto en Presentación: :PRESENTACION<br>Motilidad Fetal: :MOTILIDAD<br>Ubicación Placentaria: :UBICACION<br>Líquido Amniótico: :LIQUIDO, con bolsillo vertical mayor de :BVM mm</div><div class="container"><table class="table"><tr><th style="color:#045dab">FLUJOMETRIA DOPPLER</th><th style="text-align:center">IP Observado</th><th style="text-align:center">Percentiles de IP</th><th style="text-align:center">Rango percentilar</th></tr><tr><td>Arteria Umbilical**<td style="text-align:center">:AU<td style="text-align:center">:AUTXT<td style="text-align:center">:AURGO<tr><td style="padding-bottom:15px!important">Arteria Cerebral Media**<td style="text-align:center;padding-bottom:15px!important">:ACM<td style="text-align:center;padding-bottom:15px!important">:ACMTXT<td style="text-align:center;padding-bottom:15px!important">:ACMRGO<tr><td>Cuociente Cerebro Placentario ( CCP )**<td style="text-align:center">:CCP<td style="text-align:center">:CCPTXT<td style="text-align:center">:CCPRGO</td></tr>';
-
+    var InformeString = '<div class="container"><h3>Evaluación de Flujometria Doppler Materno Fetal</h3></div><span style="border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px;margin-bottom:15px"></span><div class="container"><table class="table table-borderless"><tr><td class="p-0"><strong>Nombre: </strong>:PACIENTE<td class="p-0"><strong>Edad Materna: </strong>:EDADMATERNA años.<td class="p-0"><strong>Fecha de Exámen: </strong>:FEXAMEN<tr><td class="p-0"><strong>ID Paciente: </strong>:IDPACIENTE<td class="p-0"><strong>Motivo de exámen: </strong>:MOTIVO<td class="p-0"><strong>Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</table><p><strong>FUM: </strong>:FUM<br><strong>Ege: </strong>:EG semanas<br><strong>FPP: </strong>:FPP</div><div class="container"><p><strong style="color:#045dab">ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small><p>Motivo del exámen: :MOTIVODOPPLER<br>Antecedentes Obstétricos: :ANTECEDENTES<br>Feto en Presentación: :PRESENTACION<br>Motilidad Fetal: :MOTILIDAD<br>Ubicación Placentaria: :UBICACION<br>Líquido Amniótico: :LIQUIDO, con bolsillo vertical mayor de :BVM mm<br>ILA: :ILADOPPLER mm</div><div class="container"><table class="table"><tr><th style="color:#045dab">FLUJOMETRIA DOPPLER</th><th style="text-align:center">IP Observado</th><th style="text-align:center">Percentiles de IP</th><th style="text-align:center">Rango percentilar</th></tr><tr><td>Arteria Umbilical**<td style="text-align:center">:AU<td style="text-align:center">:AUTXT<td style="text-align:center">:AURGO<tr><td style="padding-bottom:15px!important">Arteria Cerebral Media**<td style="text-align:center;padding-bottom:15px!important">:ACM<td style="text-align:center;padding-bottom:15px!important">:ACMTXT<td style="text-align:center;padding-bottom:15px!important">:ACMRGO<tr><td>Cuociente Cerebro Placentario ( CCP )**<td style="text-align:center">:CCP<td style="text-align:center">:CCPTXT<td style="text-align:center">:CCPRGO</td></tr>';
     var paciente = the("nombre-paciente").value;
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = the("ecografista").value;
-
+    
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fexamen = new Date(Date.parse(the("fee").value));
@@ -9358,9 +9357,9 @@ function informeDoppler(){
     var liquido = the("liqAmnioDoppler").value;
     var ud = the("aud").value;
     var udTxt = the("audPctTxt").innerText;
+    var iladoppler = the("ila.doppler").value
 
     let tmpData = "";
-
     if (udTxt == "&gt; 95" || udTxt == "&lt; 5"){
         tmpData = 0;
     }else{
@@ -9394,7 +9393,6 @@ function informeDoppler(){
         tmpData = +auTxt;
     }
     var auRgo = oldProgress(tmpData);
-
     var acm =the("ipacm").value;
     var acmTxt = the("ipacmPctTxt").value;
     if (acmTxt == "&gt; 95" || acmTxt == "&lt; 5"){
@@ -9403,7 +9401,6 @@ function informeDoppler(){
         tmpData = acmTxt;
     }
     var acmRgo = oldProgress(tmpData);
-
     var ccp = '<strong>' + the("ccp").value + '</strong>';
     var ccpTxt = '<strong>' + the("ccpPctTxt").value + '</strong>';
     if (the("ccpPctTxt").value == "&gt; 95" || the("ccpPctTxt").value == "&lt; 5"){
@@ -9412,7 +9409,6 @@ function informeDoppler(){
         tmpData = +the("ccpPctTxt").value;
     }
     var ccpRgo = oldProgress(tmpData);
-
     var presentacion = the("presentacion-doppler").value;
     var edadmaterna = these("edad_materna")[0].value;
 
@@ -9477,6 +9473,7 @@ function informeDoppler(){
     InformeString = InformeString.replace(":LIQUIDO", liquido);
     InformeString = InformeString.replace(":PRESENTACION", presentacion);
     InformeString = InformeString.replace(":BVM", bvm);
+    InformeString = InformeString.replace(":ILADOPPLER", iladoppler);
     InformeString = InformeString.replace(":UD", ud);
     InformeString = InformeString.replace(":UDRGO", udRgo);
     InformeString = InformeString.replace(":UDTXT", udTxt);
