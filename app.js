@@ -882,6 +882,7 @@ $( document ).ready(function() {
     $( '#cerebelo' ).change( pctcb);
     $( "#bvm" ).change(bvm).on("keyup", function(){
         the("bvmEcoDos").value = this.value
+        the("bvmDoppler").value = this.value
 
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
@@ -1296,11 +1297,9 @@ $( document ).ready(function() {
 
     $("#bvmEcoDos").on("keyup", function(e){
         let suma = this.value
+        if (suma > 999){ e.preventDefault() }
 
-        if (suma > 999){
-            e.preventDefault();
-        }
-
+        the("bvmDoppler").value = this.value
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
 
@@ -1310,7 +1309,7 @@ $( document ).ready(function() {
         let a = [], b = [];
         a[0]=23; a[1]=25; a[2]=27; a[3]=28; a[4]=29; a[5]=29; a[6]=30; a[7]=30; a[8]=30; a[9]=30; a[10]=30; a[11]=30; a[12]=30; a[13]=29; a[14]=29; a[15]=29; a[16]=29; a[17]=29; a[18]=28; a[19]=28; a[20]=27; a[21]=26; a[22]=24; a[23]=23; a[24]=21;
         b[0]=59; b[1]=62; b[2]=64; b[3]=66; b[4]=67; b[5]=68; b[6]=68; b[7]=68; b[8]=68; b[9]=68; b[10]=68; b[11]=69; b[12]=69; b[13]=69; b[14]=69; b[15]=70; b[16]=71; b[17]=72; b[18]=72; b[19]=72; b[20]=71; b[21]=70; b[22]=68; b[23]=66; b[24]=62;
-    
+
         let eg = the("semanas").value;
         let bvm = parseInt(this.value);
         if (eg > 15 || eg < 41){
@@ -1321,7 +1320,6 @@ $( document ).ready(function() {
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             the("bvmEcoDosPCT").value = resultado;
         }
-
     })
 
     $("#bvmDoppler").on("keyup", function(){
@@ -5565,6 +5563,7 @@ $(document).ready(function(){
 
         var suma = (uno + dos + tres + cuatro);
         the("liquido.ila.suma").value = suma;
+        the("ila.doppler").value = suma;
         $('#liquido\\.ila\\.suma').trigger("keyup")
     });
 
@@ -5607,6 +5606,7 @@ $(document).ready(function(){
                 the("liquido.ila.percentil").classList.add("is-valid");
             }
         }
+        the("ila.doppler").value = ila;
         comentarioSegundoTrimestre()
     });
 
@@ -9337,7 +9337,7 @@ function informeDoppler(){
     var idpaciente = the("id-paciente").value;
     var motivo = the("motivo-examen").value;
     var ecografista = the("ecografista").value;
-    
+
     let fur = new Date(Date.parse(the("fum").value));
     fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
     let fexamen = new Date(Date.parse(the("fee").value));
@@ -9384,7 +9384,6 @@ function informeDoppler(){
         tmpData = the("auPctTxt").innerText;
     }
     var upromRgo = oldProgress(tmpData);
-
     var au = the("ipau").value;
     var auTxt = the("ipauPctTxt").value;
     if (auTxt == "&gt; 95" || auTxt == "&lt; 5"){
@@ -9408,13 +9407,13 @@ function informeDoppler(){
     }else{
         tmpData = +the("ccpPctTxt").value;
     }
+
     var ccpRgo = oldProgress(tmpData);
     var presentacion = the("presentacion-doppler").value;
     var edadmaterna = these("edad_materna")[0].value;
 
     dayHoy = new Date();
-    let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
-
+    var dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
     var patologiaObstetrica = the("patologiaObstetricaUno").value;
     var dvp = the("dv").value;
     dvp = (dvp == "") ? 0 : dvp;
