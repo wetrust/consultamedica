@@ -2054,16 +2054,20 @@ $( document ).ready(function() {
                 if(pctPFE < 10){
                     the("letrero").classList.remove("d-none")
                     the("goto.doppler.grafico").classList.remove("d-none")
+                    the("linkCalculadora").classList.remove("d-none")
                 }else{
                     the("letrero").classList.add("d-none")
                     the("goto.doppler.grafico").classList.add("d-none")
+                    the("linkCalculadora").classList.add("d-none")
                 }
             }else if ("< 2.5" == pctPFE){
                 the("letrero").classList.remove("d-none")
                 the("goto.doppler.grafico").classList.remove("d-none")
+                the("linkCalculadora").classList.remove("d-none")
             }else{
                 the("letrero").classList.add("d-none")
                 the("goto.doppler.grafico").classList.add("d-none")
+                the("linkCalculadora").classList.add("d-none")
             }
 
             let _grafico = graficoPFEMasMenos()
@@ -2176,16 +2180,20 @@ $( document ).ready(function() {
                 if(pctPFE < 10){
                     the("letrero").classList.remove("d-none")
                     the("goto.doppler.grafico").classList.remove("d-none")
+                    the("linkCalculadora").classList.remove("d-none")
                 }else{
                     the("letrero").classList.add("d-none")
                     the("goto.doppler.grafico").classList.add("d-none")
+                    the("linkCalculadora").classList.add("d-none")
                 }
             }else if ("< 2.5" == pctPFE){
                 the("letrero").classList.remove("d-none")
                 the("goto.doppler.grafico").classList.remove("d-none")
+                the("linkCalculadora").classList.remove("d-none")
             }else{
                 the("letrero").classList.add("d-none")
                 the("goto.doppler.grafico").classList.add("d-none")
+                the("linkCalculadora").classList.add("d-none")
             }
 
             let _grafico = graficoPFEMasMenos()
