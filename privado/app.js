@@ -8291,36 +8291,37 @@ function psohdlkMorfologia() {
 
 function pctpfe() {
     'use strict';
-    /* 10 90 */
-	let a = [], b = [];
-   
-    a[0]=97;a[1]=121;a[2]=150;a[3]=185;a[4]=227;a[5]=275; a[6]=331;a[7]=398;a[8]=471;a[9]=556;a[10]=652;a[11]=758; a[12]=876;a[13]=1004;a[14]=1145;a[15]=1294;a[16]=1453; a[17]=1621;a[18]=1794;a[19]=1973;a[20]=2154;a[21]=2335; a[22]=2513; a[23]=2686; a[24]=2851; a[25]=2985;
-    b[0]=137;b[1]=171;b[2]=212;b[3]=261;b[4]=319; b[5]=387;b[6]=467;b[7]=559;b[8]=665;b[9]=784; b[10]=918;b[11]=1068;b[12]=1234;b[13]=1416;b[14]=1613; b[15]=1824;b[16]=2049;b[17]=2285;b[18]=2530; b[19]=2781;b[20]=3036;b[21]=3291;b[22]=3543;b[23]=3786; b[24]=4019;b[25]=4234;   
 
-    let eg = the("semanas").value;
-    let pfe=parseInt($("#pfe").val());
-   
-    if (eg < 15 || eg > 40) {  
-        $("#pfePct").val('0');
-    }else {
-        eg = eg - 15;
-        eg = parseInt(eg);
-        var uno=b[eg] - a[eg];
-        var dos=pfe - a[eg];
-        var pctFinal = (80 / (uno) * (dos)) + 10
-        var pctPFE = '';
-        //truncador de Pct, sobre 100 o bajo 1
-        if (pctFinal > 90){
-            pctPFE = '> 90';
-        }
-        else if (pctFinal < 10){
-            pctPFE = '< 10';
-        }
-        else{
-            pctPFE = pctFinal.toFixed();
-        }
-        $('#pfePctRpt').val(pctPFE);
-        $('#pfeRango').val(a[eg] + ' - ' +b[eg]);
+    let a = [], b = [];
+    let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
+
+    let sexo = the("ecografia.segtrim.sexo").value
+    if (sexo == "masculino"){
+        sexo = "men"
+        a = Math.exp(-.52610096513854 + eg * (.44906549056954 + eg * (-.0089009550762548 + eg * (9868293523919e-17 + eg * -6.1862373692705e-7))))
+        b = Math.exp(.79018076483077 + eg * (.32585025131141 + eg * (-.0025559098706069 + eg * (-42038969571238e-18 + eg * 5.4228420412733e-7))))
+    } else if (sexo == "femenino"){
+        sexo = "wom"
+        a = Math.exp(-.915523725804273 + eg * (.529374415518249 + eg * (-.0147446585943781 + eg * (.000269201219853759 + eg * -23537061714461e-19))))
+        b = Math.exp(.32551154984358 + eg * (.40214557617585 + eg * (-.0074145176202411 + eg * (88196644838898e-18 + eg * -7.1015932637436e-7))))
+    } else {
+        sexo = "z"
+        a = Math.exp(-.230518383014592 + eg * (.400511116318458 + eg * (-.00617993235833267 + eg * (316595762972649e-19 + eg * 0))))
+        b = Math.exp(.408170594889372 + eg * (.381068214664342 + eg * (-.00550913922743603 + eg * (246713147783532e-19 + eg * 0))));
+    }
+
+    //let eg = the("semanas").value;
+    // funcion que calcula el v alor de eg y suma los dias
+
+    let pfe = parseInt(the("pfe").value);
+    if (eg < 14 || eg > 40) {
+        the("pfePct").value = 0
+    } else {
+        var pctPFE = percentilOMS(pfe,eg, sexo);
+        pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
+        the("pfePctRpt").value = pctPFE
+        the("pfeRango").value = a + ' - ' +b
+        return true
     }
 }
 
