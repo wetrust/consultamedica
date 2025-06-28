@@ -2028,6 +2028,22 @@ $( document ).ready(function() {
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
 
+            if ("number" == typeof pctPFE){
+                if(pctPFE < 10){
+                    the("letrero").classList.remove("d-none")
+                    the("goto.doppler.grafico").classList.remove("d-none")
+                }else{
+                    the("letrero").classList.add("d-none")
+                    the("goto.doppler.grafico").classList.add("d-none")
+                }
+            }else if ("< 2.5" == pctPFE){
+                the("letrero").classList.remove("d-none")
+                the("goto.doppler.grafico").classList.remove("d-none")
+            }else{
+                the("letrero").classList.add("d-none")
+                the("goto.doppler.grafico").classList.add("d-none")
+            }
+
             let _grafico = graficoPFEMasMenos()
             _hchartsUno = structuredClone(baseGraficoPFE)
 
@@ -2133,6 +2149,22 @@ $( document ).ready(function() {
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
+
+            if ("number" == typeof pctPFE){
+                if(pctPFE < 10){
+                    the("letrero").classList.remove("d-none")
+                    the("goto.doppler.grafico").classList.remove("d-none")
+                }else{
+                    the("letrero").classList.add("d-none")
+                    the("goto.doppler.grafico").classList.add("d-none")
+                }
+            }else if ("< 2.5" == pctPFE){
+                the("letrero").classList.remove("d-none")
+                the("goto.doppler.grafico").classList.remove("d-none")
+            }else{
+                the("letrero").classList.add("d-none")
+                the("goto.doppler.grafico").classList.add("d-none")
+            }
 
             let _grafico = graficoPFEMasMenos()
             _hchartsUno = structuredClone(baseGraficoPFE)
