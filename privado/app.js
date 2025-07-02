@@ -755,6 +755,7 @@ $( document ).ready(function() {
     $( '#cerebelo' ).change( pctcb);
     $( "#bvm" ).change(bvm).on("keyup", function(){
         the("bvmEcoDos").value = this.value
+        the("bvmDoppler").value = this.value
 
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "Normal";
         the("liq-cualitativo-eco").value = txt;
@@ -1155,11 +1156,9 @@ $( document ).ready(function() {
 
     $("#bvmEcoDos").on("keyup", function(){
         let suma = this.value
+        if (suma > 999){ e.preventDefault() }
 
-        if (suma > 999){
-            e.preventDefault();
-        }
-
+        the("bvmDoppler").value = this.value
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "Normal";
         the("liq-cualitativo-eco").value = txt;
 
