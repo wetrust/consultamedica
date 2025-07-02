@@ -6861,11 +6861,23 @@ $(document).ready(function(){
     })
 
     $("input[type='radio']").on("change",function() {
-        if (this.value == "si"){
-            this.parentElement.parentElement.parentElement.parentElement.children[2].classList.add("d-none");
-        }else if (this.value == "no"){
-            this.parentElement.parentElement.parentElement.parentElement.children[2].classList.remove("d-none");
-        }
+
+            if (this.value == "eliminar"){
+                this.parentElement.parentElement.parentElement.children[1].classList.add("d-none");
+            }else if (this.value == "nada"){
+                console.log("nada")
+            }else if (this.value == "normal" || this.value == "anormal"){
+                this.parentElement.parentElement.parentElement.children[1].classList.remove("d-none");
+            }
+    
+            if (this.value == "no" || this.value == "anormal"){
+                this.parentElement.parentElement.parentElement.children[1].value = "Comentario: "
+            }else if (this.value == "nada"){
+                console.log("nada")
+            }else{
+                this.parentElement.parentElement.parentElement.children[1].value = ""
+            }
+
     });  
 })
 
