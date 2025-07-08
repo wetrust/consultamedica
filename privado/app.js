@@ -10461,7 +10461,12 @@ function comentarioSegundoTrimestre(){
     }
 
     var percentilPeso = Math.round(Number(the("pfePctRpt").value)).toString();
-    percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
+
+    if (Number.isNaN(percentilPeso)){
+        percentilPeso = the("pfePctRpt").value
+        percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
+    }
+
     if (the("ajusteDosSi").classList.contains("active")){
         comentarios += '- Edad gestacional según biometría promedio corresponde a ' + the("egP50").value + ' semanas \r\n';
     }else{
