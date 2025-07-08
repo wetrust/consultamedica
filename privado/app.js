@@ -10462,7 +10462,7 @@ function comentarioSegundoTrimestre(){
 
     var percentilPeso = Math.round(Number(the("pfePctRpt").value)).toString();
 
-    if (Number.isNaN(percentilPeso)){
+    if ("NaN" == percentilPeso){
         percentilPeso = the("pfePctRpt").value
         percentilPeso = percentilPeso.replace('&lt;', '<').replace('&gt;', '>');
     }
