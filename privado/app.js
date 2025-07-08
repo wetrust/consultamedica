@@ -10473,7 +10473,6 @@ function comentarioSegundoTrimestre(){
         comentarios += '- Crecimiento fetal (peso) en percentil ' + percentilPeso + ', para gráfica peso fetal de la OMS * \r\n';
     }
 
-
         let placenta_com = the("ubicacion").value;
         let placenta_com_ubic = the("incersion").value;
 
