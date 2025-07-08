@@ -356,13 +356,37 @@ $( document ).ready(function() {
             botones.forEach(function myFunction(value, index, array) {
                 the(value).classList.remove("d-none");
             });
+            the("punto.morfologia").classList.remove("d-none");
         }
         else{
             botones.forEach(function myFunction(value, index, array) {
                 the(value).classList.add("d-none");
             });
+            the("punto.morfologia").classList.add("d-none");
         }
     });
+
+    the("punto.morfologia").onclick = function(){
+
+        let _modal = makeModal("Ingresar");
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+        the(_modal.titulo).innerText = "Ingresar Código Acceso";
+        the(_modal.contenido).innerHTML = '<div class="form-group"><label for="Ica">Código Acceso</label><input type="password" class="form-control" id="Ica"><small id="emailHelp" class="form-text text-muted">Ingrese código de acceso para plataforma.</small></div>';
+
+        the("Ica").dataset.modal = _modal.id
+
+        the("Ica").onkeyup = function(){
+            if ("barcelona" == this.value){
+                document.location.hash = "#morfologiafet"
+                $("#" + this.dataset.modal).modal("hide")
+            } 
+        }
+
+        $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+    }
 
     $("#menu\\.modulo\\.activo\\.cinco").on("click", function(){
         var botones = ["menu.modulo.activo.cinco.uno","menu.modulo.activo.cinco.tres","menu.modulo.activo.cinco.cuatro"];
