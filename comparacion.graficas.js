@@ -74,7 +74,7 @@ let columnaCounter = 1;
             pctElements.forEach(pct => {
                 pct.textContent = 'mm';
             });
-            
+
             // Resetear los selects
             const selects = nuevaColumna.querySelectorAll('select');
             selects.forEach(select => {
@@ -85,11 +85,11 @@ let columnaCounter = 1;
             const eliminarBtn = nuevaColumna.querySelectorAll('[id$="comparador.eliminar.'+columnaCounter+'"]')
             eliminarBtn.classList.add("btn", "btn-danger")
             eliminarBtn.classList.remove("d-none")
-            
+
             // Insertar la nueva columna antes de comparador.final
             const final = document.getElementById('comparador.final');
             final.parentNode.insertBefore(nuevaColumna, final);
-            
+
             // Agregar event listeners a la nueva columna
             agregarEventListeners(columnaCounter);
         }
