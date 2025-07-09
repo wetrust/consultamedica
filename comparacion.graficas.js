@@ -80,6 +80,11 @@ let columnaCounter = 1;
             selects.forEach(select => {
                 select.selectedIndex = 0;
             });
+
+            //visualizar el eliminar
+            const eliminarBtn = nuevaColumna.querySelectorAll('[id="comparador.eliminar.'+columnaCounter+'"]')
+            eliminarBtn.classList.add("btn", "btn-danger")
+            eliminarBtn.classList.remove("d-none")
             
             // Insertar la nueva columna antes de comparador.final
             const final = document.getElementById('comparador.final');
