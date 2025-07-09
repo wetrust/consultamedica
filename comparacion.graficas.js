@@ -82,7 +82,7 @@ let columnaCounter = 1;
             });
 
             //visualizar el eliminar
-            const eliminarBtn = nuevaColumna.querySelectorAll('[id$="comparador.eliminar.'+columnaCounter+'"]')
+            const eliminarBtn = nuevaColumna.querySelectorAll('[id$="comparador.eliminar.'+columnaCounter+'"]')[0]
             eliminarBtn.classList.add("btn", "btn-danger")
             eliminarBtn.classList.remove("d-none")
 
