@@ -171,4 +171,6 @@ let columnaCounter = 1;
             
             // Event listener para el botón obtener valores
             document.getElementById('obtener.valores').addEventListener('click', obtenerValores);
+            clonarColumna()
+            clonarColumna()
         });
