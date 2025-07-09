@@ -25,6 +25,7 @@
     <script src="app.js?qw" type="module"></script>
     <script src="graficoPFEMasMenos.js?z" type="module"></script>
     <script src="app.pesoEG.js?b" type="module"></script>
+    <script src="comparacion.graficas.js?a" type="module"></script>
     <script>
         $( document ).ready(function() {
             $("#id-paciente").rut({
@@ -3517,6 +3518,80 @@
                                     <div class="col-3 mb-2"></div>
                                     <div class="col-3 form-group"><label>IP. Uterina derecha</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_derecha"><div class="input-group-prepend"><div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col-3 form-group"><label>IP. Uterina izquierda</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col-3 form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div>
                                 </div>
+
+                                <div class="form-group form-check mb-4"><input type="checkbox" class="form-check-input" id="comparacion.graficas"><label class="form-check-label" for="comparacion.graficas">Opcional comparación de gráficas</label></div>
+                                <div class="d-flex flex-row border scroll-container d-none" id="comparacion.graficas.div">
+                                    <div class="border">
+                                        <div class="d-flex flex-column mb-3">
+                                            <div class="p-1 align-content-center text-nowrap border" style="height: 48px;">Edad gestacional</div>
+                                            <div class="p-1 align-content-center text-nowrap border" style="height: 53px;">DBP</div>
+                                            <div class="p-1 align-content-center text-nowrap border" style="height: 53px;">C. Cráneo</div>
+                                            <div class="p-1 align-content-center text-nowrap border" style="height: 53px;">C. Abdomen</div>
+                                            <div class="p-1 align-content-center text-nowrap border" style="height: 53px;">L. Fémur</div>
+                                            <div class="p-1 align-content-center text-nowrap border" style="height: 53px;">PFE</div>
+                                            <div class="p-1 align-content-center text-nowrap border" style="height: 53px;">Acciones</div>
+                                        </div>
+                                    </div>
+                                    <div class="border flex-grow-1 column-container" id="comparador.columna.1">
+                                        <div class="d-flex flex-column mb-3">
+                                            <div class="text-nowrap">
+                                                <div class="d-flex flex-row border">
+                                                    <select id="comparador.semanas.1" class="form-control m-1" style="width: 70px;"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option></select>
+                                                    <select id="comparador.dias.1" class="form-control m-1" style="width: 70px;"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select>
+                                                </div>
+                                            </div>
+                                            <div class="p-1 text-nowrap">
+                                                <div class="input-group mb-2">
+                                                    <input type="text" class="form-control" id="comparador.dbp.1">
+                                                    <div class="input-group-append"><div class="input-group-text" id="comparador.dbp.pct.1">mm</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="p-1 text-nowrap">
+                                                <div class="input-group mb-2">
+                                                    <input type="text" class="form-control" id="comparador.cc.1">
+                                                    <div class="input-group-append"><div class="input-group-text" id="comparador.cc.pct.1">mm</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="p-1 text-nowrap">
+                                                <div class="input-group mb-2">
+                                                    <input type="text" class="form-control" id="comparador.ca.1">
+                                                    <div class="input-group-append"><div class="input-group-text" id="comparador.ca.pct.1">mm</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="p-1 text-nowrap">
+                                                <div class="input-group mb-2">
+                                                    <input type="text" class="form-control" id="comparador.lf.1">
+                                                    <div class="input-group-append"><div class="input-group-text" id="comparador.lf.pct.1">mm</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="p-1 text-nowrap">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="comparador.pfe.1">
+                                                    <div class="input-group-append"><div class="input-group-text" id="comparador.pfe.pct.1">mm</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="p-1 text-nowrap">
+                                                <button type="button" class="btn btn-danger" id="comparador.eliminar.1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/><path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/></svg></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="border flex-grow-1" id="comparador.final">
+                                        <div class="d-flex flex-column mb-3">
+                                            <div class="text-nowrap p-2">
+                                                <button id="comparador.agregar" type="button" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/></svg></button>
+                                            </div>
+                                            <div class="text-nowrap p-2">
+                                                <button id="obtener.valores" type="button" class="btn btn-primary">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
+                                                        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"/>
+                                                    </svg>
+                                                    Obtener Valores
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="row mb-5">
                                     <div class="col-8" style="padding-left: 12rem;">
                                         <div class="d-flex flex-row align-items-center">
