@@ -26,7 +26,7 @@ let columnaCounter = 1;
                         const valor = parseFloat(this.value);
                         if (!isNaN(valor)) {
                             const funcion = this.dataset.funcion
-                            const semanas = document.getElementById(`comparador.semanas.${columnaId}`)
+                            const semanas = document.getElementById(`comparador.semanas.${columnaId}`).value
                             var resultado
                             if(funcion == 'dbp'){
                                 resultado = comparacionDBP(parseFloat(semanas), valor)
