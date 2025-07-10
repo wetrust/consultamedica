@@ -39,7 +39,7 @@ let columnaCounter = 1;
                             }else if(funcion == 'pfe'){
                                 resultado = comparacionDBP(parseFloat(semanas), valor)
                             }
-                            pctElement.textContent = resultado.toFixed(2);
+                            pctElement.textContent = (('string' == typeof resultado) ? resultado : resultado.toFixed(2));
                         } else {
                             pctElement.textContent = 'mm';
                         }
