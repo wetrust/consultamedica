@@ -1,4 +1,5 @@
 import { the } from './wetrust.js'
+import { percentilOMS } from './graficoPFEMasMenos.js?H'
 
 
 the("comparacion.graficas").onclick = function(){
@@ -27,17 +28,18 @@ let columnaCounter = 1;
                         if (!isNaN(valor)) {
                             const funcion = this.dataset.funcion
                             const semanas = document.getElementById(`comparador.semanas.${columnaId}`).value
+                            const dias = document.getElementById(`comparador.dias.${columnaId}`).value
                             var resultado
                             if(funcion == 'dbp'){
                                 resultado = comparacionDBP(parseFloat(semanas), valor)
                             }else if(funcion == 'cc'){
-                                resultado = comparacionDBP(parseFloat(semanas), valor)
+                                resultado = comparacionCC(parseFloat(semanas), valor)
                             }else if(funcion == 'ca'){
-                                resultado = comparacionDBP(parseFloat(semanas), valor)
+                                resultado = comparacionCA(parseFloat(semanas), valor)
                             }else if(funcion == 'lf'){
-                                resultado = comparacionDBP(parseFloat(semanas), valor)
+                                resultado = comparacionLF(parseFloat(semanas), valor)
                             }else if(funcion == 'pfe'){
-                                resultado = comparacionDBP(parseFloat(semanas), valor)
+                                resultado = comparacionPFE(parseFloat(semanas), parseFloat(dias), valor)
                             }
                             pctElement.textContent = (('string' == typeof resultado) ? resultado : resultado.toFixed(2));
                         } else {
@@ -212,14 +214,146 @@ function comparacionDBP(eg,dbp) {
 
         //truncador de Pct, sobre 100 o bajo 1
         if (resultado > 99){
-            return '&gt; 99';
+            return '> 99';
         }
         else if (resultado < 1){
-            return '&lt; 1';
+            return '< 1';
         }
         else {
             return resultado;
         }
         //p50();
+    }
+}
+
+function comparacionCC(eg, cc) {
+    /* 3 97 */
+    'use strict';
+    let a = [], b = [];
+    a[0]=64;a[1]=74;a[2]=88;a[3]=100;a[4]=113;a[5]=126; a[6]=137;a[7]=149;a[8]=161;a[9]=172;a[10]=183; a[11]=194;a[12]=204;a[13]=214;a[14]=224;a[15]=233; a[16]=242;a[17]=250;a[18]=258;a[19]=267;a[20]=274; a[21]=280;a[22]=287;a[23]=293;a[24]=299;a[25]=303; a[26]=308;a[27]=311;a[28]=315;
+    b[0]=81;b[1]=94;b[2]=106;b[3]=120;b[4]=135; b[5]=150;b[6]=165;b[7]=179;b[8]=193;b[9]=206; b[10]=219;b[11]=232;b[12]=243;b[13]=256;b[14]=268; b[15]=279;b[16]=290;b[17]=300;b[18]=310;b[19]=319; b[20]=328;b[21]=336;b[22]=343;b[23]=351;b[24]=358; b[25]=363;b[26]=368;b[27]=373;b[28]=377;
+
+    if (eg < 12 || eg > 40){ 
+        return 0;
+    }
+    else {
+        eg = eg - 12;
+        eg = parseInt(eg);
+        var uno=b[eg] - a[eg];
+        var dos=cc - a[eg];
+
+        var resultado = parseInt(95 / (uno) * (dos) + 3);
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 97){
+            return '> 97';
+        }
+        else if (resultado < 3){
+            return '< 3';
+        }
+        else{
+            return resultado;
+        }
+
+        // psohdlk();
+        //p50();
+    }
+}
+
+function comparacionCA(eg, ca) {
+    /* 3 97 */
+    'use strict';
+    let a = [], b = [];
+    a[0]=42;a[1]=52;a[2]=64;a[3]=75;a[4]=86; a[5]=97;a[6]=109;a[7]=119;a[8]=131;a[9]=141; a[10]=151;a[11]=161;a[12]=171;a[13]=181; a[14]=191;a[15]=200;a[16]=209;a[17]=218;a[18]=227; a[19]=236;a[20]=245;a[21]=253;a[22]=261;a[23]=269; a[24]=277;a[25]=285;a[26]=292;a[27]=299;a[28]=307;
+    b[0]=71;b[1]=79;b[2]=92;b[3]=102;b[4]=113; b[5]=127;b[6]=141;b[7]=155;b[8]=170; b[9]=183;b[10]=192;b[11]=209;b[12]=223; b[13]=235;b[14]=248;b[15]=260;b[16]=271;b[17]=284; b[18]=295;b[19]=306;b[20]=318;b[21]=329;b[22]=339; b[23]=349;b[24]=359;b[25]=370;b[26]=380;b[27]=389; b[28]=399;
+   
+    if (eg < 12 || eg > 40){ 
+        return 0;
+    }
+    else {
+        eg = eg - 12;
+        eg = parseInt(eg);
+        var uno=b[eg] - a[eg];
+        var dos=ca - a[eg];
+        var resultado = parseInt(95 / (uno) * (dos) + 3);
+
+
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 97){
+            return '> 97';
+        }
+        else if (resultado < 3){
+            return '< 3';
+        }
+        else{
+            return resultado;
+        }
+
+        //psohdlk();
+        //p50();
+    }
+}
+
+function comparacionLF(eg, lf) {
+    /* 3 97 */
+    'use strict';
+    let a = [], b = [];
+   
+    a[0]=7;a[1]=9;a[2]=12;a[3]=15;a[4]=17;a[5]=21; a[6]=23;a[7]=26;a[8]=28;a[9]=30;a[10]=33;a[11]=35; a[12]=38;a[13]=40;a[14]=42;a[15]=44;a[16]=46; a[17]=48;a[18]=50;a[19]=52;a[20]=53;a[21]=55; a[22]=57;a[23]=59;a[24]=60;a[25]=62;a[26]=64; a[27]=65;a[28]=66;
+    b[0]=12;b[1]=14;b[2]=17;b[3]=20;b[4]=23;b[5]=27; b[6]=31;b[7]=34;b[8]=38;b[9]=40;b[10]=43;b[11]=47; b[12]=50;b[13]=52;b[14]=56;b[15]=58;b[16]=62; b[17]=64;b[18]=66;b[19]=68;b[20]=71;b[21]=73; b[22]=75;b[23]=78;b[24]=80;b[25]=82;b[26]=84; b[27]=86;b[28]=88;
+   
+    if (eg < 12 || eg > 40){ 
+        return 0;
+    }else {
+        eg = eg - 12;
+        eg = parseInt(eg);
+        var uno=b[eg] - a[eg];
+        var dos=lf - a[eg];
+        var resultado = parseInt(95 / (uno) * (dos) + 3);
+
+
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 97){
+            return '> 97';
+        }else if (resultado < 3){
+            return '< 3';
+        }else{
+            return resultado;
+        }
+
+        //psohdlk();
+        //p50();
+    }
+}
+
+function comparacionPFE(eg, dias, pfe) {
+    'use strict';
+
+    let a = [], b = [];
+    let eg = eg + (0 + (dias || 0)) / 7;
+
+    let sexo = the("ecografia.segtrim.sexo").value
+    if (sexo == "masculino"){
+        sexo = "men"
+        a = Math.exp(-.52610096513854 + eg * (.44906549056954 + eg * (-.0089009550762548 + eg * (9868293523919e-17 + eg * -6.1862373692705e-7))))
+        b = Math.exp(.79018076483077 + eg * (.32585025131141 + eg * (-.0025559098706069 + eg * (-42038969571238e-18 + eg * 5.4228420412733e-7))))
+    } else if (sexo == "femenino"){
+        sexo = "wom"
+        a = Math.exp(-.915523725804273 + eg * (.529374415518249 + eg * (-.0147446585943781 + eg * (.000269201219853759 + eg * -23537061714461e-19))))
+        b = Math.exp(.32551154984358 + eg * (.40214557617585 + eg * (-.0074145176202411 + eg * (88196644838898e-18 + eg * -7.1015932637436e-7))))
+    } else {
+        sexo = "z"
+        a = Math.exp(-.230518383014592 + eg * (.400511116318458 + eg * (-.00617993235833267 + eg * (316595762972649e-19 + eg * 0))))
+        b = Math.exp(.408170594889372 + eg * (.381068214664342 + eg * (-.00550913922743603 + eg * (246713147783532e-19 + eg * 0))));
+    }
+
+    //let eg = the("semanas").value;
+    // funcion que calcula el v alor de eg y suma los dias
+
+    if (eg < 14 || eg > 40) {
+        return 0
+    } else {
+        var pctPFE = percentilOMS(pfe,eg, sexo);
+        return ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
+
     }
 }
