@@ -25,7 +25,20 @@ let columnaCounter = 1;
                     inputElement.addEventListener('input', function() {
                         const valor = parseFloat(this.value);
                         if (!isNaN(valor)) {
-                            const resultado = valor * 2;
+                            const funcion = this.dataset.funcion
+                            const semanas = document.getElementById(`comparador.semanas.${columnaId}`)
+                            var resultado
+                            if(funcion == 'dbp'){
+                                resultado = comparacionDBP(parseFloat(semanas), valor)
+                            }else if(funcion == 'cc'){
+                                resultado = comparacionDBP(parseFloat(semanas), valor)
+                            }else if(funcion == 'ca'){
+                                resultado = comparacionDBP(parseFloat(semanas), valor)
+                            }else if(funcion == 'lf'){
+                                resultado = comparacionDBP(parseFloat(semanas), valor)
+                            }else if(funcion == 'pfe'){
+                                resultado = comparacionDBP(parseFloat(semanas), valor)
+                            }
                             pctElement.textContent = resultado.toFixed(2);
                         } else {
                             pctElement.textContent = 'mm';
@@ -174,3 +187,39 @@ let columnaCounter = 1;
             clonarColumna()
             clonarColumna()
         });
+
+function comparacionDBP(eg,dbp) {
+    'use strict';
+    let a = [], b = [];
+
+    a[0]=14;a[1]=17;a[2]=19;a[3]=25;a[4]=29;a[5]=33;a[6]=34;a[7]=38;a[8]=41;a[9]=43;a[10]=46;a[11]=49;a[12]=52;a[13]=54;a[14]=57;a[15]=61;a[16]=63;a[17]=65;a[18]=69;a[19]=69;a[20]=74;a[21]=74;a[22]=77;a[23]=78;a[24]=78;a[25]=81;a[26]=85;a[27]=88;
+    b[0]=25;b[1]=29;b[2]=33;b[3]=35;b[4]=41;b[5]=42;b[6]=46;b[7]=50;b[8]=52;b[9]=56;b[10]=59;b[11]=63;b[12]=66;b[13]=70;b[14]=71;b[15]=75;b[16]=77;b[17]=81;b[18]=83;b[19]=87;b[20]=88;b[21]=91;b[22]=94;b[23]=95;b[24]=97;b[25]=99;b[26]=97;b[27]=106;
+    
+    dbp = dbp.toString();
+    dbp = dbp.replace(",", ".");
+    dbp = parseFloat(dbp);
+
+    if (eg < 12 || eg > 40){
+        return 0;
+    }
+    else {
+        eg = eg - 12;
+        eg = parseInt(eg);
+
+        var uno = b[eg] - a[eg];
+        var dos = dbp - a[eg];
+        var resultado = (parseInt(95 / (uno) * (dos) + 3));
+
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 99){
+            return '&gt; 99';
+        }
+        else if (resultado < 1){
+            return '&lt; 1';
+        }
+        else {
+            return resultado;
+        }
+        //p50();
+    }
+}
