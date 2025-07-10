@@ -329,7 +329,7 @@ function comparacionPFE(eg, dias, pfe) {
     'use strict';
 
     let a = [], b = [];
-    let eg = eg + (0 + (dias || 0)) / 7;
+    eg = eg + (0 + (dias || 0)) / 7;
 
     let sexo = the("ecografia.segtrim.sexo").value
     if (sexo == "masculino"){
