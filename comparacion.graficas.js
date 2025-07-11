@@ -1,5 +1,6 @@
 import { the } from './wetrust.js'
 import { percentilOMS } from './graficoPFEMasMenos.js?H'
+import { baseGraficoPFE, graficoPFECompleto, graficoPFEMasMenosSinDias, graficoPFEMasMenosSinDiasCuatroDias } from './graficoPFEMasMenos.js';
 
 
 the("comparacion.graficas").onclick = function(){
@@ -127,8 +128,8 @@ let columnaCounter = 1;
                 // Obtener edad gestacional
                 const semanas = document.getElementById(`comparador.semanas.${id}`).value;
                 const dias = document.getElementById(`comparador.dias.${id}`).value;
-                datos['Edad Gestacional'].push(`${semanas}s ${dias}d`);
-                
+                datos['Edad Gestacional'].push(Number(semanas));
+
                 // Obtener valores y sus cálculos
                 const campos = ['dbp', 'cc', 'ca', 'lf', 'pfe'];
                 const nombres = ['DBP', 'C. Cráneo', 'C. Abdomen', 'L. Fémur', 'PFE'];
@@ -138,9 +139,7 @@ let columnaCounter = 1;
                     const calculo = document.getElementById(`comparador.${campo}.pct.${id}`).textContent;
                     
                     if (valor) {
-                        datos[nombres[index]].push(`${valor}mm (calc: ${calculo})`);
-                    } else {
-                        datos[nombres[index]].push('No ingresado');
+                        datos[nombres[index]].push(Number(valor));
                     }
                 });
             });
@@ -151,26 +150,72 @@ let columnaCounter = 1;
 
         // Función para mostrar valores en el modal
         function mostrarValoresEnModal(datos) {
-            const content = document.getElementById('valoresContent');
-            let html = '<div class="table-responsive"><table class="table table-striped"><thead><tr><th>Categoría</th>';
+
+            let _grafico = graficoPFECompleto()
+            let _hchartsUno = structuredClone(baseGraficoPFE)
+
+            let menor = _grafico.valores.uno[0].y
+            let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1].y
+            let par = false
+            let multiplicador = 0
+
+            if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
+            }else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
+            }else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
+
+            par = menor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _hchartsUno.yAxis.min = menor * multiplicador
+            }else{
+                if (menor > 1){
+                    _hchartsUno.yAxis.min = (menor-1) * multiplicador  
+                }else{
+                    _hchartsUno.yAxis.min = 0
+                }
+            }
+
+            if (mayor > 100){
+                mayor = Math.trunc(mayor / 10); multiplicador = 10;
+            }else if (mayor > 1000){
+                mayor = Math.trunc(mayor / 100); multiplicador = 100;
+            }else if (mayor > 10000){
+                mayor = Math.trunc(mayor / 1000); multiplicador = 1000;
+            }
+
+            par = mayor % 2;
+            par = (par > 0) ? false : true
+
+            if (par == true){
+                _hchartsUno.yAxis.max = mayor * multiplicador
+            }else{
+                _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
+            }
             
+            let _datos = []
             // Agregar headers para cada columna
             for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
-                html += `<th>Columna ${i + 1}</th>`;
+                let _laEG = datos['Edad Gestacional'][i]
+                let _laValor = datos['PFE'][i]
+
+                _datos.push({x:_laEG, y:_laValor});
             }
-            html += '</tr></thead><tbody>';
-            
-            // Agregar filas para cada categoría
-            Object.keys(datos).forEach(categoria => {
-                html += `<tr><td><strong>${categoria}</strong></td>`;
-                datos[categoria].forEach(valor => {
-                    html += `<td>${valor}</td>`;
-                });
-                html += '</tr>';
-            });
-            
-            html += '</tbody></table></div>';
-            content.innerHTML = html;
+
+            _hchartsUno.series[9].data = _datos
+            _hchartsUno.series[8].data = _grafico.valores.uno
+            _hchartsUno.series[7].data = _grafico.valores.dos
+            _hchartsUno.series[6].data = _grafico.valores.tres
+            _hchartsUno.series[5].data = _grafico.valores.cuatro
+            _hchartsUno.series[4].data = _grafico.valores.cinco
+            _hchartsUno.series[3].data = _grafico.valores.seis
+            _hchartsUno.series[2].data = _grafico.valores.siete
+            _hchartsUno.series[1].data = _grafico.valores.ocho
+            _hchartsUno.series[0].data = _grafico.valores.nueve
+            _hchartsUno.xAxis.categories = _grafico.semanas
+
+            $('#valoresContent').highcharts(_hchartsUno);
+
             
             // Mostrar el modal
             $('#valoresModal').modal('show');
