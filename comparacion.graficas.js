@@ -183,13 +183,13 @@ let columnaCounter = 1;
 
             let _datos = []
             // Agregar headers para cada columna
-            let leyenda = '<table class="table table-dark"><thead><tr><th scope="col">Semanas</th><th scope="col">Percentil</th></tr></thead><tbody>'
+            let leyenda = '<table class="table table-dark text-danger"><thead><tr><th scope="col">Semanas</th><th scope="col">Percentil</th></tr></thead><tbody>'
             for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
                 let _laEG = datos['Edad Gestacional'][i]
                 let _laValor = datos['PFE'][i][0]
 
                 _datos.push({x:_laEG, y:_laValor});
-                leyenda += '<tr><th scope="row">'+_laEG+'</th><td>'+datos['PFE'][i][1]+'</td></tr>'
+                leyenda += '<tr><th scope="row">'+_laEG+'</th><td>'+Number(datos['PFE'][i][1]).toFixed(0)+'</td></tr>'
             }
             leyenda += '</tbody></table>'
 
@@ -250,7 +250,7 @@ let columnaCounter = 1;
 
             let caption = {
                 floating:true,
-                x: 60,
+                x: 70,
                 y: -250,
                 useHTML:true,
                 text: leyenda
