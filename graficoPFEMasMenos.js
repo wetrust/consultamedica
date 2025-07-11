@@ -9,7 +9,6 @@ function isSafeInteger(value) {
 };
 
 export function graficoPFEMasMenos(){
-
     let tramo = calcularDosMenos(Number(the("semanas").value));
     let valores = {"uno" : [], "dos" : [], "tres" : [], "cuatro" : [], "cinco" : [], "seis" : [], "siete" : [], "ocho" : [], "nueve" : []};
 
@@ -83,11 +82,9 @@ export function graficoPFEMasMenos(){
 
     let resultado = {valores: valores, semanas: tramo}
     return resultado
-
 }
 
 export function graficoPFEMasMenosSinDias(){
-
     let tramo = calcularDosMenosSinDias(Number(the("semanas").value));
     let valores = {"uno" : [], "dos" : [], "tres" : [], "cuatro" : [], "cinco" : [], "seis" : [], "siete" : [], "ocho" : [], "nueve" : []};
 
@@ -160,11 +157,9 @@ export function graficoPFEMasMenosSinDias(){
 
     let resultado = {valores: valores, semanas: tramo}
     return resultado
-
 }
 
 function calcularDosMenos(eg){
-
     let tramo = [];
 
     if (eg == 14){

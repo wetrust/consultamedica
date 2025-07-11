@@ -160,8 +160,8 @@ let columnaCounter = 1;
             let multiplicador = 0
 
             if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
-            }else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
-            }else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
+            } else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
+            } else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
 
             par = menor % 2;
             par = (par > 0) ? false : true
@@ -171,7 +171,7 @@ let columnaCounter = 1;
             }else{
                 if (menor > 1){
                     _hchartsUno.yAxis.min = (menor-1) * multiplicador  
-                }else{
+                } else {
                     _hchartsUno.yAxis.min = 0
                 }
             }
@@ -192,7 +192,7 @@ let columnaCounter = 1;
             }else{
                 _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
             }
-            
+
             let _datos = []
             // Agregar headers para cada columna
             for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
@@ -212,12 +212,11 @@ let columnaCounter = 1;
             _hchartsUno.series[2].data = _grafico.valores.siete
             _hchartsUno.series[1].data = _grafico.valores.ocho
             _hchartsUno.series[0].data = _grafico.valores.nueve
-            _hchartsUno.xAxis.categories = _grafico.semanas
+            _hchartsUno.xAxis.floor = _datos[0].x
+            _hchartsUno.xAxis.ceiling = 40
 
             $('#valoresContent').highcharts(_hchartsUno);
 
-            
-            // Mostrar el modal
             $('#valoresModal').modal('show');
         }
 
