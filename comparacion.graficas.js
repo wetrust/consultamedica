@@ -1,17 +1,13 @@
 import { the } from './wetrust.js'
 import { baseGraficoPFE, graficoPFECompleto, percentilOMS } from './graficoPFEMasMenos.js';
 
-$("input").on("keypress",function( e ) {
-    var key_enter = ["liquido.ila.uno", "liquido.ila.dos", "liquido.ila.tres", "liquido.ila.cuatro", "utero.ginecologica", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3", "endometrio.ginecologica", "endometDesc2", "endometGrosor", "anexo.derecho.ginecologica", "anexo.izquierdo.ginecologica","ovario.derecho.ginecologica", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovario.izquierdo.ginecologica", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "douglas.ginecologica", "comentario.ginecologica", "saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp", "cc", "ca", "lf", "bvmEcoDos", "pfe", "bvmEcoDos", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","aud", "psmACM","", "modalPreInfEcoDoppler","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia", "", "vlp.morfologia", "vld.morfologia", "respuesta_uterina_derecha_prim", "respuesta_uterina_izquierda_prim"];
-
-    if ( e.which == 13 ) {
-        e.preventDefault();
-        if (key_enter.includes(this.id)== true){
-            let pos = key_enter.indexOf(this.id);
-            the(key_enter[pos+1]).focus();
-        }
+the("ver.ref.otro").onclick = function(){
+    if (this.checked == true){
+        the("ver.ref.otro.div").classList.remove("d-none");
+    }else{
+        the("ver.ref.otro.div").classList.add("d-none");
     }
-});  
+}
 
 
 the("comparacion.graficas").onclick = function(){
@@ -59,18 +55,21 @@ let columnaCounter = 1;
                         }
                     });
 
-                    inputElement.addEventListener('keyup', function(){
-                        var key_enter = ["dbp", "cc", "ca", "lf", "pfe"];
-                        let id = this.id
-                        id = id.split(".")
-                        if (key_enter.includes(id[1])){
-                            let pos = key_enter.indexOf(id[1]);
-                            pos++
-                            if (pos < key_enter.length){
-                                let idNew = "comparador."+key_enter[pos]+"."+id[2]
-                                the(idNew).focus();
+                    inputElement.addEventListener('keyup', function(e){
+                            if ( e.key === "Enter" ) {
+                                e.preventDefault();
+                                var key_enter = ["dbp", "cc", "ca", "lf", "pfe"];
+                                let id = this.id
+                                id = id.split(".")
+                                if (key_enter.includes(id[1])){
+                                    let pos = key_enter.indexOf(id[1]);
+                                    pos++
+                                    if (pos < key_enter.length){
+                                        let idNew = "comparador."+key_enter[pos]+"."+id[2]
+                                        the(idNew).focus();
+                                    }
+                                }
                             }
-                        }
                     })
                 }
             });
