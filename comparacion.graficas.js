@@ -165,7 +165,7 @@ let columnaCounter = 1;
                     const calculo = document.getElementById(`comparador.${campo}.pct.${id}`).textContent;
                     
                     if (valor) {
-                        datos[nombres[index]].push(Number(valor));
+                        datos[nombres[index]].push([Number(valor), calculo]);
                     }
                 });
             });
@@ -183,12 +183,15 @@ let columnaCounter = 1;
 
             let _datos = []
             // Agregar headers para cada columna
+            let leyenda = '<table class="table"><thead><tr><th scope="col">Semanas</th><th scope="col">Percentil</th></tr></thead><tbody>'
             for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
                 let _laEG = datos['Edad Gestacional'][i]
-                let _laValor = datos['PFE'][i]
+                let _laValor = datos['PFE'][i][0]
 
                 _datos.push({x:_laEG, y:_laValor});
+                leyenda += '<tr><th scope="row">'+_laEG+'</th><td>'+datos['PFE'][i][1]+'</td></tr>'
             }
+            leyenda += '</tbody></table>'
 
             let menor = ((_datos[0].y - 50) <= 0) ? 0 : (_datos[0].y - 50)
             let mayor = 0
@@ -244,6 +247,16 @@ let columnaCounter = 1;
             _hchartsUno.xAxis.floor = _datos[0].x
             _hchartsUno.xAxis.ceiling = _datos[_datos.length-1].x
             _hchartsUno.yAxis.gridLineWidth = 0
+
+            let caption = {
+                floating:true,
+                x: 50,
+                y: -250,
+                useHTML:true,
+                text: leyenda
+            }
+
+            _hchartsUno.caption = caption
 
             $('#valoresContent').highcharts(_hchartsUno);
             $('#valoresModal').modal('show');
