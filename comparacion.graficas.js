@@ -1,7 +1,5 @@
 import { the } from './wetrust.js'
-import { percentilOMS } from './graficoPFEMasMenos.js?H'
-import { baseGraficoPFE, graficoPFECompleto, graficoPFEMasMenosSinDias, graficoPFEMasMenosSinDiasCuatroDias } from './graficoPFEMasMenos.js';
-
+import { baseGraficoPFE, graficoPFECompleto, percentilOMS } from './graficoPFEMasMenos.js';
 
 the("comparacion.graficas").onclick = function(){
     if (this.checked == true){
@@ -150,14 +148,22 @@ let columnaCounter = 1;
 
         // Función para mostrar valores en el modal
         function mostrarValoresEnModal(datos) {
-
             let _grafico = graficoPFECompleto()
             let _hchartsUno = structuredClone(baseGraficoPFE)
-
-            let menor = _grafico.valores.uno[0].y
-            let mayor = _grafico.valores.nueve[_grafico.valores.nueve.length-1].y
             let par = false
             let multiplicador = 0
+
+            let _datos = []
+            // Agregar headers para cada columna
+            for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
+                let _laEG = datos['Edad Gestacional'][i]
+                let _laValor = datos['PFE'][i]
+
+                _datos.push({x:_laEG, y:_laValor});
+            }
+
+            let menor = ((_datos[0].y - 50) <= 0) ? 0 : (_datos[0].y - 50)
+            let mayor = (_datos[_datos.length-1].y + 100)
 
             if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
             } else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
@@ -193,15 +199,6 @@ let columnaCounter = 1;
                 _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
             }
 
-            let _datos = []
-            // Agregar headers para cada columna
-            for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
-                let _laEG = datos['Edad Gestacional'][i]
-                let _laValor = datos['PFE'][i]
-
-                _datos.push({x:_laEG, y:_laValor});
-            }
-
             _hchartsUno.series[9].data = _datos
             _hchartsUno.series[8].data = _grafico.valores.uno
             _hchartsUno.series[7].data = _grafico.valores.dos
@@ -213,10 +210,10 @@ let columnaCounter = 1;
             _hchartsUno.series[1].data = _grafico.valores.ocho
             _hchartsUno.series[0].data = _grafico.valores.nueve
             _hchartsUno.xAxis.floor = _datos[0].x
-            _hchartsUno.xAxis.ceiling = 40
+            _hchartsUno.xAxis.ceiling = _datos[_datos.length-1].x
+            _hchartsUno.yAxis.gridLineWidth = 0
 
             $('#valoresContent').highcharts(_hchartsUno);
-
             $('#valoresModal').modal('show');
         }
 
