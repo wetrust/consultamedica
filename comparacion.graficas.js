@@ -183,7 +183,7 @@ let columnaCounter = 1;
 
             let _datos = []
             // Agregar headers para cada columna
-            let leyenda = '<table class="table"><thead><tr><th scope="col">Semanas</th><th scope="col">Percentil</th></tr></thead><tbody>'
+            let leyenda = '<table class="table table-dark"><thead><tr><th scope="col">Semanas</th><th scope="col">Percentil</th></tr></thead><tbody>'
             for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
                 let _laEG = datos['Edad Gestacional'][i]
                 let _laValor = datos['PFE'][i][0]
