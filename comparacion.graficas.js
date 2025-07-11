@@ -122,17 +122,19 @@ let columnaCounter = 1;
                 select.selectedIndex = 0;
             });
 
-            //visualizar el eliminar
-            const eliminarBtn = nuevaColumna.querySelectorAll('[id$="comparador.eliminar.'+columnaCounter+'"]')[0]
-            eliminarBtn.classList.add("btn", "btn-danger")
-            eliminarBtn.classList.remove("d-none")
-
             // Insertar la nueva columna antes de comparador.final
             const final = document.getElementById('comparador.final');
             final.parentNode.insertBefore(nuevaColumna, final);
 
             // Agregar event listeners a la nueva columna
             agregarEventListeners(columnaCounter);
+        }
+
+        function eliminarColumna(){
+            const final = document.getElementById('comparador.final');
+            const preFinal = final.previousElementSibling;
+
+            if (preFinal.id !== "comparador.columna.1"){ preFinal.remove() }
         }
 
         // Función para obtener todos los valores organizados
@@ -193,9 +195,7 @@ let columnaCounter = 1;
             let mayor = 0
 
             _grafico.valores.nueve.forEach(clave =>{
-                if (clave.x == _datos[_datos.length-1].x){
-                    mayor = clave.y
-                }
+                if (clave.x == _datos[_datos.length-1].x){ mayor = clave.y }
             })
 
             if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
@@ -254,13 +254,15 @@ let columnaCounter = 1;
         document.addEventListener('DOMContentLoaded', function() {
             // Agregar event listeners a la primera columna
             agregarEventListeners(1);
-            
+
             // Event listener para el botón agregar
             document.getElementById('comparador.agregar').addEventListener('click', clonarColumna);
-            
+
+            // Event listener para el botón eliminar
+            document.getElementById('comparador.eliminar').addEventListener('click', eliminarColumna);
+
             // Event listener para el botón obtener valores
             document.getElementById('obtener.valores').addEventListener('click', obtenerValores);
-            clonarColumna()
             clonarColumna()
         });
 
