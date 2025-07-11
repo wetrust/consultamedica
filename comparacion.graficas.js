@@ -163,7 +163,13 @@ let columnaCounter = 1;
             }
 
             let menor = ((_datos[0].y - 50) <= 0) ? 0 : (_datos[0].y - 50)
-            let mayor = (_datos[_datos.length-1].y + 100)
+            let mayor = 0
+
+            _grafico.valores.nueve.forEach(clave =>{
+                if (clave.x == _datos[_datos.length-1].x){
+                    mayor = clave.y
+                }
+            })
 
             if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
             } else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
