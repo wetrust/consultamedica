@@ -250,7 +250,7 @@ let columnaCounter = 1;
 
             let caption = {
                 floating:true,
-                x: 50,
+                x: 60,
                 y: -250,
                 useHTML:true,
                 text: leyenda
