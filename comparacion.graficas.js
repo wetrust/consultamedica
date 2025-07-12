@@ -257,7 +257,7 @@ let columnaCounter = 1;
                 text: leyenda
             }
 
-            _hchartsUno.caption = caption
+            //_hchartsUno.caption = caption
 
             $('#valoresContent').highcharts(_hchartsUno);
             $('#valoresModal').modal('show');
