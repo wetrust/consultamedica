@@ -9,7 +9,6 @@ the("ver.ref.otro").onclick = function(){
     }
 }
 
-
 the("comparacion.graficas").onclick = function(){
     if (this.checked == true){
         the("comparacion.graficas.div").classList.remove("d-none");
