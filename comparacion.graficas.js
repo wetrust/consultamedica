@@ -14,9 +14,11 @@ the("comparacion.graficas").onclick = function(){
     if (this.checked == true){
         the("comparacion.graficas.div").classList.remove("d-none");
         the("comparacion.graficas.div").classList.add("d-flex");
+       the("ver.ref.otro.container").classList.remove("d-none");
     }else{
         the("comparacion.graficas.div").classList.add("d-none");
         the("comparacion.graficas.div").classList.remove("d-flex");
+        the("ver.ref.otro.container").classList.add("d-none");
     }
 }
 
@@ -183,7 +185,7 @@ let columnaCounter = 1;
 
             let _datos = []
             // Agregar headers para cada columna
-            let leyenda = '<table class="table table-dark text-danger"><thead><tr><th scope="col">Semanas</th><th scope="col">Percentil</th></tr></thead><tbody>'
+            let leyenda = '<table class="table text-danger"><thead><tr><th scope="col">Semanas</th><th scope="col">Percentil</th></tr></thead><tbody>'
             for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
                 let _laEG = datos['Edad Gestacional'][i]
                 let _laValor = datos['PFE'][i][0]
