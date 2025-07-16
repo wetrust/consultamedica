@@ -3622,37 +3622,36 @@
     </div>
 
 
-                                <div class="row mb-5 mt-3">
-                                    <div class="col-8" style="padding-left: 12rem;">
-                                        <div class="d-flex flex-row align-items-center">
-                                            <label class="text-white bg-secondary mb-0 p-2 rounded text-center">Para un crecimiento fetal en percentil 50, la biometría promedio correspondería a</label>
-                                            <div class="input-group" style="width: 150px;">
+                                <div class="card mb-5" style="border-width: 4px;border-radius: 40px;">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-row mb-3">
+                                            <label class="text-white bg-secondary mb-0 rounded text-nowrap p-1 border border-dark" style="border-width: 2px !important;"><em>Biometría promedio para crecimiento en percentil 50, corresponde a:</em></label>
+                                            <div class="input-group mx-2">
                                                 <input type="text" class="form-control text-white text-center" style="background-color: #6c757d !important;" id="egP50" readonly>
                                                 <div class="input-group-append"><div class="input-group-text">semanas</div></div>
                                             </div>
+                                            <div class="input-group mx-2">
+                                                <div class="input-group-prepend"><div class="input-group-text">dias de diferencia</div></div>
+                                                <input type="text" class="form-control text-white text-center" style="background-color: #6c757d !important;" id="egP50Dias" readonly>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend"><div class="input-group-text">dias de diferencia</div></div>
-                                            <input type="text" class="form-control text-white text-center" style="background-color: #6c757d !important;" id="egP50Dias" readonly>
+                                        <label class="text-white bg-secondary mb-0 rounded text-nowrap p-1 border border-dark" style="border-width: 2px !important;"><em>En ecografía de 2º o 3º trimestre, solo procede ajustar la edad gestacional siempre cuando:</strong><br></em></label>
+                                        <p>a ) No exista confirmación ecográfica precoz de la edad gestacional (1º trimestre) y <br>b ) Primera ecografía de este embarazo muestre gran diferencia entre edad gestacional por FUR y la obtenida por ecografía actual.</p>
+                                        <hr class="border border-dark">
+                                        <div class="d-flex flex-row justify-content-between">
+                                            <label class="text-white bg-secondary mb-0 rounded text-nowrap p-2 px-4 border border-dark"><em>¿Desea realizar ajuste de la edad gestacional?</em></label>
+                                            <div class="">
+                                                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
+                                                    <label class="btn btn btn-outline-secondary active" id="ajusteDosNo" >
+                                                    <input type="radio" checked="" value="nada">NO</label>
+                                                    <label class="btn btn-outline-secondary" id="ajusteDosSi">
+                                                    <input type="radio"  value="nada">SI</label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <p style="padding-left: 12rem;"><strong>En ecografía de 2º o 3º trimestre, solo procede ajustar la edad gestacional siempre cuando:</strong><br>a ) No exista confirmación ecográfica precoz de la edad gestacional (1º trimestre) y <br>b ) Primera ecografía de este embarazo muestre gran diferencia entre edad gestacional por FUR y la obtenida por ecografía actual.</p>
-                                <div class="row mb-5">
-                                    <div class="col-4"></div>
-                                    <div class="col-5" style="padding-left: 5rem;"><p><strong>¿Desea realizar ajuste de la edad gestacional?</strong></p></div>
-                                    <div class="col-3">
-                                        <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
-                                            <label class="btn btn btn-outline-secondary active" id="ajusteDosNo" >
-                                            <input type="radio" checked="" value="nada">NO</label>
-                                            <label class="btn btn-outline-secondary" id="ajusteDosSi">
-                                            <input type="radio"  value="nada">SI</label>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="form-group row d-none">
                                     <div class="col mb-2">
                                         <label>Talla Fetal Estimada (> 23 sem)
