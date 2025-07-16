@@ -184,15 +184,14 @@ let columnaCounter = 1;
 
             let _datos = []
             // Agregar headers para cada columna
-            let leyenda = '<table class="table text-danger"><thead><tr><th scope="col">Semanas</th><th scope="col">Percentil</th></tr></thead><tbody>'
+            let leyenda = ''
             for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
                 let _laEG = datos['Edad Gestacional'][i]
                 let _laValor = datos['PFE'][i][0]
 
                 _datos.push({x:_laEG, y:_laValor});
-                leyenda += '<tr><th scope="row">'+_laEG+'</th><td>'+Number(datos['PFE'][i][1]).toFixed(0)+'</td></tr>'
+                leyenda += '<tr><th scope="row">'+_laEG+'</th><td>'+Number(datos['PFE'][i][0])+'</td><td>'+ (('string' == typeof datos['PFE'][i][1]) ? datos['PFE'][i][1] : Number(datos['PFE'][i][1]).toFixed(0)) +'</td></tr>'
             }
-            leyenda += '</tbody></table>'
 
             let menor = ((_datos[0].y - 50) <= 0) ? 0 : (_datos[0].y - 50)
             let mayor = 0
@@ -249,18 +248,30 @@ let columnaCounter = 1;
             _hchartsUno.xAxis.ceiling = _datos[_datos.length-1].x
             _hchartsUno.yAxis.gridLineWidth = 0
 
-            let caption = {
-                floating:true,
-                x: 70,
-                y: -250,
-                useHTML:true,
-                text: leyenda
-            }
+            //let caption = {
+            //    floating:true,
+            //    x: 70,
+            //    y: -250,
+            //    useHTML:true,
+            //    text: leyenda
+            //}
 
             //_hchartsUno.caption = caption
 
+            the("valoresTabla").innerHTML = leyenda
+
             $('#valoresContent').highcharts(_hchartsUno);
             $('#valoresModal').modal('show');
+
+            the("verValoresTabla").onclick = function(){
+                if(the("valoresTabla").parentElement.classList.contains("d-none")){
+                    the("valoresTabla").parentElement.classList.remove("d-none")
+                    the("valoresContent").classList.add("d-none")
+                } else {
+                    the("valoresTabla").parentElement.classList.add("d-none")
+                    the("valoresContent").classList.remove("d-none")
+                }
+            }
         }
 
         // Event listeners iniciales
@@ -309,7 +320,7 @@ function comparacionDBP(eg,dbp) {
             return '< 1';
         }
         else {
-            return resultado;
+            return Number(resultado);
         }
         //p50();
     }
@@ -340,7 +351,7 @@ function comparacionCC(eg, cc) {
             return '< 3';
         }
         else{
-            return resultado;
+            return Number(resultado);
         }
 
         // psohdlk();
@@ -374,7 +385,7 @@ function comparacionCA(eg, ca) {
             return '< 3';
         }
         else{
-            return resultado;
+            return Number(resultado);
         }
 
         //psohdlk();
@@ -406,7 +417,7 @@ function comparacionLF(eg, lf) {
         }else if (resultado < 3){
             return '< 3';
         }else{
-            return resultado;
+            return Number(resultado);
         }
 
         //psohdlk();
