@@ -326,7 +326,7 @@ function comparacionDBP(eg,dbp) {
             return '< 1';
         }
         else {
-            return Number(resultado);
+            return Number(resultado).toFixed(0);
         }
         //p50();
     }
@@ -357,7 +357,7 @@ function comparacionCC(eg, cc) {
             return '< 3';
         }
         else{
-            return Number(resultado);
+            return Number(resultado).toFixed(0);
         }
 
         // psohdlk();
@@ -391,7 +391,7 @@ function comparacionCA(eg, ca) {
             return '< 3';
         }
         else{
-            return Number(resultado);
+            return Number(resultado).toFixed(0);
         }
 
         //psohdlk();
@@ -423,7 +423,7 @@ function comparacionLF(eg, lf) {
         }else if (resultado < 3){
             return '< 3';
         }else{
-            return Number(resultado);
+            return Number(resultado).toFixed(0);
         }
 
         //psohdlk();
