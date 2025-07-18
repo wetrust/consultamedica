@@ -69,6 +69,7 @@ let columnaCounter = 1;
                                         let idNew = "comparador."+key_enter[pos]+"."+id[2]
                                         the(idNew).focus();
                                     }
+                                    the("comparador.pfe"+"."+id[2]).value = psohdlk(id[2])
                                 }
                             }
                     })
@@ -456,4 +457,23 @@ function comparacionPFE(eg, dias, pfe) {
         return ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
 
     }
+}
+
+function psohdlk(id) {
+
+    let CC = parseFloat(the("comparador.cc."+id).value);
+    let CA = parseInt(the("comparador.ca."+id).value);
+    let LF = parseInt(the("comparador.lf."+id).value);
+
+    CC = CC / 10;
+    CA = CA / 10;
+    LF = LF / 10;
+    var psoP = Math.pow(10, (1.326 + 0.0107 * CC + 0.0438 * CA + 0.158 * LF - 0.00326 * CA * LF));
+
+    if ( isNaN( psoP ) != true ) {
+        return Math.trunc(psoP)
+    } else {
+        return 0;
+    }
+
 }
