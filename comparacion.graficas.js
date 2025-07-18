@@ -69,7 +69,12 @@ let columnaCounter = 1;
                                         let idNew = "comparador."+key_enter[pos]+"."+id[2]
                                         the(idNew).focus();
                                     }
-                                    the("comparador.pfe"+"."+id[2]).value = psohdlk(id[2])
+                                    let peso = psohdlk(id[2])
+                                    let semanas = the("comparador.semanas"+"."+id[2]).value
+                                    let dias = the("comparador.dias"+"."+id[2]).value
+
+                                    the("comparador.pfe"+"."+id[2]).value = peso
+                                    the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso)
                                 }
                             }
                     })
