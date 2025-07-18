@@ -8036,7 +8036,6 @@ function psohdlk() {
         $("#pfe").val(0);
         pctpfe();
     }
-
 }
 
 function psohdlkMorfologia() {
