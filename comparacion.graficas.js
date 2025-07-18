@@ -459,7 +459,7 @@ function comparacionPFE(eg, dias, pfe) {
         return 0
     } else {
         var pctPFE = percentilOMS(pfe,eg, sexo);
-        return ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
+        return ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000).toFixed(0) : pctPFE
 
     }
 }
