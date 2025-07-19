@@ -234,7 +234,7 @@ let columnaCounter = 1;
                 let _laValor = datos['PFE'][i][0]
 
                 leyenda += '<tr><th scope="row">'+_laEG+'</th><td>'+Number(datos['PFE'][i][0])+'</td><td>'+ (('string' == typeof datos['PFE'][i][1]) ? datos['PFE'][i][1] : Number(datos['PFE'][i][1]).toFixed(0)) +'</td></tr>'
-            
+
                 _laEG = Number(Number(_laEG).toFixed(0))
                 _datos.push({x:_laEG, y:_laValor});
             }
