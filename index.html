@@ -3518,7 +3518,7 @@
                                     <div class="col-3 form-group"><label>IP. Uterina derecha</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_derecha"><div class="input-group-prepend"><div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col-3 form-group"><label>IP. Uterina izquierda</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col-3 form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div>
                                 </div>
                                 <div class="form-group form-check mb-4">
-                                    <input type="checkbox" class="form-check-input" id="comparacion.graficas"><label class="form-check-label" for="comparacion.graficas">Opcional curva de crecimiento (percentiles) según edad gestacional</label>
+                                    <input type="checkbox" class="form-check-input" id="comparacion.graficas"><label class="form-check-label" for="comparacion.graficas">Opcional evaluación de crecimiento fetal individual, percentiles según edad gestacional (buscando RCF oculta)</label>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
@@ -3602,28 +3602,28 @@
                                     </div>
                                 </div>
 
-                                    <!-- Modal para mostrar los valores -->
-    <div class="modal fade" id="valoresModal" tabindex="-1" role="dialog" aria-labelledby="valoresModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="valoresModalLabel">Graficas curvas de crecimiento</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div id="valoresContent"></div>
-                    <table class="table text-danger d-none"><thead><tr><th scope="col">Semanas</th><th scope="col">Peso Estimado</th><th scope="col">Pct Peso</th><th scope="col">IP Umbilical</th><th scope="col">IP ccp</th></tr></thead><tbody id="valoresTabla"></tbody></table>
+<!-- Modal para mostrar los valores -->
+<div class="modal fade" id="valoresModal" tabindex="-1" role="dialog" aria-labelledby="valoresModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="valoresModalLabel">Graficas curvas de crecimiento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="valoresContent"></div>
+                <table class="table text-danger d-none"><thead><tr><th scope="col">Semanas</th><th scope="col">Peso Estimado</th><th scope="col">Pct Peso</th><th scope="col">IP Umbilical</th><th scope="col">IP ccp</th></tr></thead><tbody id="valoresTabla"></tbody></table>
 
-                </div>
-                <div class="modal-footer">
-                    <button id="verValoresTabla" class="btn btn-info mr-auto">Ver Datos</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="verValoresTabla" class="btn btn-info mr-auto">Ver Datos</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
+</div>
 
 
                                 <div class="card mb-5" style="border-width: 4px;border-radius: 40px;">
