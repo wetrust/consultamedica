@@ -92,7 +92,7 @@ let columnaCounter = 1;
                 });
             }
 
-            the(`comparador.semanas.${columnaId}`).onclick = function(){
+            the(`comparador.semanas.${columnaId}`).onchange = function(){
                 let id = this.id
                 id = id.split(".")
 
@@ -104,7 +104,7 @@ let columnaCounter = 1;
                 the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso)
             }
 
-            the(`comparador.dias.${columnaId}`).onclick = function(){
+            the(`comparador.dias.${columnaId}`).onchange = function(){
                 let id = this.id
                 id = id.split(".")
 
