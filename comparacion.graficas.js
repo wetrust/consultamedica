@@ -91,6 +91,30 @@ let columnaCounter = 1;
                     }
                 });
             }
+
+            the(`comparador.semanas.${columnaId}`).onclick = function(){
+                let id = this.id
+                id = id.split(".")
+
+                let peso = psohdlk(id[2])
+                let semanas = the("comparador.semanas"+"."+id[2]).value
+                let dias = the("comparador.dias"+"."+id[2]).value
+
+                the("comparador.pfe"+"."+id[2]).value = peso
+                the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso)
+            }
+
+            the(`comparador.dias.${columnaId}`).onclick = function(){
+                let id = this.id
+                id = id.split(".")
+
+                let peso = psohdlk(id[2])
+                let semanas = the("comparador.semanas"+"."+id[2]).value
+                let dias = the("comparador.dias"+"."+id[2]).value
+
+                the("comparador.pfe"+"."+id[2]).value = peso
+                the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso) 
+            }
         }
 
         // Función para clonar una columna
