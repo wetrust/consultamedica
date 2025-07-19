@@ -297,9 +297,11 @@ let columnaCounter = 1;
                 if(the("valoresTabla").parentElement.classList.contains("d-none")){
                     the("valoresTabla").parentElement.classList.remove("d-none")
                     the("valoresContent").classList.add("d-none")
+                    this.innerHTML = "Ver Gráficas"
                 } else {
                     the("valoresTabla").parentElement.classList.add("d-none")
                     the("valoresContent").classList.remove("d-none")
+                    this.innerHTML = "Ver Datos"
                 }
             }
         }
