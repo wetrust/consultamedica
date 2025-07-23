@@ -84,7 +84,8 @@ let columnaCounter = 1;
                                     the(idNew).focus();
                                 }
 
-                                if (the("comparador.pfe"+"."+id[2]).value = ""){
+                                let identificador = "comparador.pfe"+"."+id[2]
+                                if (the(identificador).value = ""){
                                     let peso = psohdlk(id[2])
                                     let semanas = the("comparador.semanas"+"."+id[2]).value
                                     let dias = the("comparador.dias"+"."+id[2]).value
