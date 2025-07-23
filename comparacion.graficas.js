@@ -219,6 +219,8 @@ let columnaCounter = 1;
 
                     if (valor) {
                         datos[nombres[index]].push([Number(valor), calculo]);
+                    }else{
+                        datos[nombres[index]].push(["", ""]);
                     }
                 });
             });
@@ -257,6 +259,7 @@ let columnaCounter = 1;
 
                 _laEG = Number(Number(_laEG).toFixed(0))
                 _datos.push({x:_laEG, y:_laValor});
+
             }
 
             let menor = ((_datos[0].y - 50) <= 0) ? 0 : (_datos[0].y - 50)
