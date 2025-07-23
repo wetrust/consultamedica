@@ -337,10 +337,12 @@ let columnaCounter = 1;
                     the("valoresTabla").parentElement.classList.remove("d-none")
                     the("valoresContent").classList.add("d-none")
                     this.innerHTML = "Ver Gráficas"
+                    the("valoresModalLabel").innerHTML = "Tabla evolución percentiles de crecimiento y flujometría Doppler materno fetal"
                 } else {
                     the("valoresTabla").parentElement.classList.add("d-none")
                     the("valoresContent").classList.remove("d-none")
                     this.innerHTML = "Ver Datos"
+                    the("valoresModalLabel").innerHTML = "Graficas curvas de crecimiento"
                 }
             }
         }
