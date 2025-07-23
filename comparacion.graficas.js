@@ -71,18 +71,20 @@ let columnaCounter = 1;
                     });
 
                     inputElement.addEventListener('keyup', function(e){
-                            if ( e.key === "Enter" ) {
-                                e.preventDefault();
-                                var key_enter = ["dbp", "cc", "ca", "lf", "pfe"];
-                                let id = this.id
-                                id = id.split(".")
-                                if (key_enter.includes(id[1])){
-                                    let pos = key_enter.indexOf(id[1]);
-                                    pos++
-                                    if (pos < key_enter.length){
-                                        let idNew = "comparador."+key_enter[pos]+"."+id[2]
-                                        the(idNew).focus();
-                                    }
+                        if ( e.key === "Enter" ) {
+                            e.preventDefault();
+                            var key_enter = ["dbp", "cc", "ca", "lf", "pfe"];
+                            let id = this.id
+                            id = id.split(".")
+                            if (key_enter.includes(id[1])){
+                                let pos = key_enter.indexOf(id[1]);
+                                pos++
+                                if (pos < key_enter.length){
+                                    let idNew = "comparador."+key_enter[pos]+"."+id[2]
+                                    the(idNew).focus();
+                                }
+
+                                if (the("comparador.pfe"+"."+id[2]).value = ""){
                                     let peso = psohdlk(id[2])
                                     let semanas = the("comparador.semanas"+"."+id[2]).value
                                     let dias = the("comparador.dias"+"."+id[2]).value
@@ -91,6 +93,7 @@ let columnaCounter = 1;
                                     the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso)
                                 }
                             }
+                        }
                     })
                 }
             });
