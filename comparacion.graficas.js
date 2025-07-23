@@ -190,25 +190,29 @@ let columnaCounter = 1;
                 'C. Cráneo': [],
                 'C. Abdomen': [],
                 'L. Fémur': [],
-                'PFE': []
+                'PFE': [],
+                'Umbilical': [],
+                'Cerebral Media': [],
+                'Cuociente Placentario': [],
+                'Uterinas': []
             };
 
             columnas.forEach(columna => {
                 const id = columna.id.split('.')[2];
-                
+
                 // Obtener edad gestacional
                 const semanas = document.getElementById(`comparador.semanas.${id}`).value;
                 const dias = document.getElementById(`comparador.dias.${id}`).value;
                 datos['Edad Gestacional'].push(Number(semanas)+'.'+Number(dias));
 
                 // Obtener valores y sus cálculos
-                const campos = ['dbp', 'cc', 'ca', 'lf', 'pfe'];
-                const nombres = ['DBP', 'C. Cráneo', 'C. Abdomen', 'L. Fémur', 'PFE'];
-                
+                const campos = ['dbp', 'cc', 'ca', 'lf', 'pfe', 'umb','acm','ccp','uterinas'];
+                const nombres = ['DBP', 'C. Cráneo', 'C. Abdomen', 'L. Fémur', 'PFE', 'Umbilical','Cerebral Media', 'Cuociente Placentario', 'Uterinas'];
+
                 campos.forEach((campo, index) => {
                     const valor = document.getElementById(`comparador.${campo}.${id}`).value;
                     const calculo = document.getElementById(`comparador.${campo}.pct.${id}`).textContent;
-                    
+
                     if (valor) {
                         datos[nombres[index]].push([Number(valor), calculo]);
                     }
@@ -231,12 +235,33 @@ let columnaCounter = 1;
             let leyenda = ''
             for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
                 let _laEG = datos['Edad Gestacional'][i]
-                let _laValor = datos['PFE'][i][0]
+                let _laValor = (datos['PFE'].length > 0) ? datos['PFE'][i][0] : 0
 
-                leyenda += '<tr><th scope="row">'+_laEG+'</th><td>'+Number(datos['PFE'][i][0])+'</td><td>'+ (('string' == typeof datos['PFE'][i][1]) ? datos['PFE'][i][1] : Number(datos['PFE'][i][1]).toFixed(0)) +'</td></tr>'
+                let pfe = 0
+                let umbilical = 0
+                let umbilicalPct = 0
+                let cmedia = 0
+                let cmediaPct = 0
+                let cplacentario = 0
+                let cplacentarioPct = 0
+                let uterinas = 0
+                let uterinasPct = 0
+
+                pfe = (datos['PFE'].length > 0) ? (('string' == typeof datos['PFE'][i][1]) ? datos['PFE'][i][1] : Number(datos['PFE'][i][1]).toFixed(0)) : 0
+                umbilical = (datos['Umbilical'].length > 0) ? (('string' == typeof datos['Umbilical'][i][0]) ? datos['Umbilical'][i][0] : Number(datos['Umbilical'][i][0]).toFixed(0)) : 0
+                umbilicalPct = (datos['Umbilical'].length > 0) ? (('string' == typeof datos['Umbilical'][i][1]) ? datos['Umbilical'][i][1] : Number(datos['Umbilical'][i][1]).toFixed(0)) : 0
+                cmedia = (datos['Cerebral Media'].length > 0) ? (('string' == typeof datos['Cerebral Media'][i][0]) ? datos['Cerebral Media'][i][0] : Number(datos['Cerebral Media'][i][0]).toFixed(0)) : 0
+                cmediaPct = (datos['Cerebral Media'].length > 0) ? (('string' == typeof datos['Cerebral Media'][i][1]) ? datos['Cerebral Media'][i][1] : Number(datos['Cerebral Media'][i][1]).toFixed(0)) : 0
+                cplacentario = (datos['Cuociente Placentario'].length > 0) ? (('string' == typeof datos['Cuociente Placentario'][i][0]) ? datos['Cuociente Placentario'][i][0] : Number(datos['Cuociente Placentario'][i][0]).toFixed(0)) : 0
+                cplacentarioPct = (datos['Cuociente Placentario'].length > 0) ? (('string' == typeof datos['Cuociente Placentario'][i][1]) ? datos['Cuociente Placentario'][i][1] : Number(datos['Cuociente Placentario'][i][1]).toFixed(0)) : 0
+                uterinas = (datos['Uterinas'].length > 0) ? (('string' == typeof datos['Uterinas'][i][0]) ? datos['Uterinas'][i][0] : Number(datos['Uterinas'][i][0]).toFixed(0)) : 0
+                uterinasPct = (datos['Uterinas'].length > 0) ? (('string' == typeof datos['Uterinas'][i][1]) ? datos['Uterinas'][i][1] : Number(datos['Uterinas'][i][1]).toFixed(0)) : 0
+ 
+                leyenda += '<tr><th scope="row">'+_laEG+'</th><td>'+ pfe +'</td><td>'+ umbilical +'</td><td>'+ umbilicalPct +'</td><td>'+ cmedia +'</td><td>'+ cmediaPct +'</td><td>'+ cplacentario +'</td><td>'+ cplacentarioPct +'</td><td>'+ uterinas +'</td><td>'+ uterinasPct +'</td></tr>'
 
                 _laEG = Number(Number(_laEG).toFixed(0))
                 _datos.push({x:_laEG, y:_laValor});
+
             }
 
             let menor = ((_datos[0].y - 50) <= 0) ? 0 : (_datos[0].y - 50)
