@@ -238,30 +238,21 @@ let columnaCounter = 1;
                 let _laValor = (datos['PFE'].length > 0) ? datos['PFE'][i][0] : 0
 
                 let pfe = 0
-                let umbilical = 0
                 let umbilicalPct = 0
-                let cmedia = 0
                 let cmediaPct = 0
-                let cplacentario = 0
                 let cplacentarioPct = 0
-                let uterinas = 0
                 let uterinasPct = 0
 
                 pfe = (datos['PFE'].length > 0) ? (('string' == typeof datos['PFE'][i][1]) ? datos['PFE'][i][1] : Number(datos['PFE'][i][1]).toFixed(0)) : 0
-                umbilical = (datos['Umbilical'].length > 0) ? (('string' == typeof datos['Umbilical'][i][0]) ? datos['Umbilical'][i][0] : Number(datos['Umbilical'][i][0]).toFixed(0)) : 0
                 umbilicalPct = (datos['Umbilical'].length > 0) ? (('string' == typeof datos['Umbilical'][i][1]) ? datos['Umbilical'][i][1] : Number(datos['Umbilical'][i][1]).toFixed(0)) : 0
-                cmedia = (datos['Cerebral Media'].length > 0) ? (('string' == typeof datos['Cerebral Media'][i][0]) ? datos['Cerebral Media'][i][0] : Number(datos['Cerebral Media'][i][0]).toFixed(0)) : 0
                 cmediaPct = (datos['Cerebral Media'].length > 0) ? (('string' == typeof datos['Cerebral Media'][i][1]) ? datos['Cerebral Media'][i][1] : Number(datos['Cerebral Media'][i][1]).toFixed(0)) : 0
-                cplacentario = (datos['Cuociente Placentario'].length > 0) ? (('string' == typeof datos['Cuociente Placentario'][i][0]) ? datos['Cuociente Placentario'][i][0] : Number(datos['Cuociente Placentario'][i][0]).toFixed(0)) : 0
                 cplacentarioPct = (datos['Cuociente Placentario'].length > 0) ? (('string' == typeof datos['Cuociente Placentario'][i][1]) ? datos['Cuociente Placentario'][i][1] : Number(datos['Cuociente Placentario'][i][1]).toFixed(0)) : 0
-                uterinas = (datos['Uterinas'].length > 0) ? (('string' == typeof datos['Uterinas'][i][0]) ? datos['Uterinas'][i][0] : Number(datos['Uterinas'][i][0]).toFixed(0)) : 0
                 uterinasPct = (datos['Uterinas'].length > 0) ? (('string' == typeof datos['Uterinas'][i][1]) ? datos['Uterinas'][i][1] : Number(datos['Uterinas'][i][1]).toFixed(0)) : 0
  
-                leyenda += '<tr><th scope="row">'+_laEG+'</th><td>'+ pfe +'</td><td>'+ umbilical +'</td><td>'+ umbilicalPct +'</td><td>'+ cmedia +'</td><td>'+ cmediaPct +'</td><td>'+ cplacentario +'</td><td>'+ cplacentarioPct +'</td><td>'+ uterinas +'</td><td>'+ uterinasPct +'</td></tr>'
+                leyenda += '<tr><th scope="row">'+_laEG+'</th><td>'+ pfe +'</td><td>'+ umbilicalPct +'</td><td>'+ cmediaPct +'</td><td>'+ cplacentarioPct +'</td><td>'+ uterinasPct +'</td></tr>'
 
                 _laEG = Number(Number(_laEG).toFixed(0))
                 _datos.push({x:_laEG, y:_laValor});
-
             }
 
             let menor = ((_datos[0].y - 50) <= 0) ? 0 : (_datos[0].y - 50)
