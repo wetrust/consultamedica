@@ -63,6 +63,8 @@ let columnaCounter = 1;
                                 resultado = comparacionLF(parseFloat(semanas), valor)
                             }else if(funcion == 'pfe'){
                                 resultado = comparacionPFE(parseFloat(semanas), parseFloat(dias), valor)
+                            }else if(funcion == 'umb'){
+                                resultado = comparacionAu(parseFloat(semanas), valor)
                             }
                             pctElement.textContent = (('string' == typeof resultado) ? resultado : resultado.toFixed(2));
                         } else {
@@ -470,10 +472,10 @@ function comparacionLF(eg, lf) {
     /* 3 97 */
     'use strict';
     let a = [], b = [];
-   
+
     a[0]=7;a[1]=9;a[2]=12;a[3]=15;a[4]=17;a[5]=21; a[6]=23;a[7]=26;a[8]=28;a[9]=30;a[10]=33;a[11]=35; a[12]=38;a[13]=40;a[14]=42;a[15]=44;a[16]=46; a[17]=48;a[18]=50;a[19]=52;a[20]=53;a[21]=55; a[22]=57;a[23]=59;a[24]=60;a[25]=62;a[26]=64; a[27]=65;a[28]=66;
     b[0]=12;b[1]=14;b[2]=17;b[3]=20;b[4]=23;b[5]=27; b[6]=31;b[7]=34;b[8]=38;b[9]=40;b[10]=43;b[11]=47; b[12]=50;b[13]=52;b[14]=56;b[15]=58;b[16]=62; b[17]=64;b[18]=66;b[19]=68;b[20]=71;b[21]=73; b[22]=75;b[23]=78;b[24]=80;b[25]=82;b[26]=84; b[27]=86;b[28]=88;
-   
+
     if (eg < 12 || eg > 40){ 
         return 0;
     }else {
@@ -483,7 +485,6 @@ function comparacionLF(eg, lf) {
         var dos=lf - a[eg];
         var resultado = parseInt(95 / (uno) * (dos) + 3);
 
-
         //truncador de Pct, sobre 100 o bajo 1
         if (resultado > 97){
             return '> 97';
@@ -492,9 +493,6 @@ function comparacionLF(eg, lf) {
         }else{
             return Number(resultado).toFixed(0);
         }
-
-        //psohdlk();
-        //p50();
     }
 }
 
@@ -548,4 +546,36 @@ function psohdlk(id) {
         return 0;
     }
 
+}
+
+function comparacionAu(eg, aumb) {
+    /* 5 95 */
+    'use strict';
+    let a = [],b = [];
+
+    a[0]=0.97;a[1]=0.95;a[2]=0.94;a[3]=0.92;a[4]=0.9;a[5]=0.89;a[6]=0.87;a[7]=0.85;a[8]=0.82;a[9]=0.8;a[10]=0.78; a[11]=0.75;a[12]=0.73; a[13]=0.7;a[14]=0.67; a[15]=0.65;a[16]=0.62; a[17]=0.58;a[18]=0.55; a[19]=0.52;a[20]=0.49;
+    b[0]=1.6;b[1]=1.56;b[2]=1.53; b[3]=1.5;b[4]=1.46; b[5]=1.43;b[6]=1.4;b[7]=1.37;b[8]=1.35; b[9]=1.32;b[10]=1.29; b[11]=1.27;b[12]=1.25; b[13]=1.22;b[14]=1.2; b[15]=1.18;b[16]=1.16; b[17]=1.14;b[18]=1.13; b[19]=1.11;b[20]=1.09;
+ 
+    if (eg < 20 || eg > 40)
+    {
+        return 0;
+    }
+    else {
+        eg = eg - 20;
+        eg = parseInt(eg);
+        var uno=b[eg] - a[eg];
+        var dos=aumb - a[eg];
+        var resultado = parseInt(90 / (uno) * (dos) + 5);
+
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 95){
+            return '> 97';
+        }
+        else if (resultado < 5){
+            return '< 3';
+        }
+        else{
+            return resultado;
+        }
+    }
 }
