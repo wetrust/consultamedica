@@ -39,7 +39,7 @@ let columnaCounter = 1;
 
         // Función para agregar event listeners a los inputs de una columna
         function agregarEventListeners(columnaId) {
-            const inputs = ['dbp', 'cc', 'ca', 'lf', 'pfe'];
+            const inputs = ['dbp', 'cc', 'ca', 'lf', 'pfe','umb'];
 
             inputs.forEach(input => {
                 const inputElement = document.getElementById(`comparador.${input}.${columnaId}`);
