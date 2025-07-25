@@ -209,6 +209,9 @@ let columnaCounter = 1;
             const final = document.getElementById('comparador.final');
             final.parentNode.insertBefore(nuevaColumna, final);
 
+            const finalDoppler = document.getElementById('comparador.doppler.final');
+            finalDoppler.parentNode.insertBefore(nuevaColumnaDoppler, finalDoppler);
+
             // Agregar event listeners a la nueva columna
             agregarEventListeners(columnaCounter);
         }
