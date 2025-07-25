@@ -227,7 +227,7 @@ let columnaCounter = 1;
             if (preFinal.id !== "comparador.columna.1"){ preFinal.remove() }
 
             const finalDoppler = document.getElementById('comparador.doppler.final');
-            const preFinalDoppler = final.previousElementSibling;
+            const preFinalDoppler = finalDoppler.previousElementSibling;
 
             if (preFinalDoppler.id !== "comparador.doppler.columna.1"){ preFinalDoppler.remove() }
         }
