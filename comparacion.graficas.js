@@ -39,7 +39,7 @@ let columnaCounter = 1;
 
         // Función para agregar event listeners a los inputs de una columna
         function agregarEventListeners(columnaId) {
-            const inputs = ['dbp', 'cc', 'ca', 'lf', 'pfe','umb'];
+            const inputs = ['dbp', 'cc', 'ca', 'lf', 'pfe','umb', 'acm','ccp','uterinas'];
 
             inputs.forEach(input => {
                 const inputElement = document.getElementById(`comparador.${input}.${columnaId}`);
@@ -65,7 +65,14 @@ let columnaCounter = 1;
                                 resultado = comparacionPFE(parseFloat(semanas), parseFloat(dias), valor)
                             }else if(funcion == 'umb'){
                                 resultado = comparacionAu(parseFloat(semanas), valor)
+                            }else if(funcion == 'acm'){
+                                resultado = comparacionAcm(parseFloat(semanas), valor)
+                            }else if(funcion == 'ccp'){
+                                resultado = comparacionCcp(parseFloat(semanas), valor)
+                            }else if(funcion == 'uterinas'){
+                                resultado = comparacionUt(parseFloat(semanas), valor)
                             }
+                            
                             pctElement.textContent = (('string' == typeof resultado) ? resultado : resultado.toFixed(2));
                         } else {
                             pctElement.textContent = 'mm';
@@ -142,13 +149,24 @@ let columnaCounter = 1;
             columnaCounter++;
             const columnaOriginal = document.getElementById('comparador.columna.1');
             const nuevaColumna = columnaOriginal.cloneNode(true);
+
+            const columnaOriginalDoppler = document.getElementById('comparador.doppler.columna.1');
+            const nuevaColumnaDoppler = columnaOriginalDoppler.cloneNode(true);
             
             // Cambiar el ID de la nueva columna
             nuevaColumna.id = `comparador.columna.${columnaCounter}`;
+            nuevaColumnaDoppler.id = `comparador.doppler.columna.${columnaCounter}`;
             
             // Cambiar todos los IDs internos
             const elementos = nuevaColumna.querySelectorAll('[id]');
             elementos.forEach(elemento => {
+                const oldId = elemento.id;
+                const newId = oldId.replace('.1', `.${columnaCounter}`);
+                elemento.id = newId;
+            });
+
+            const elementosDoppler = nuevaColumnaDoppler.querySelectorAll('[id]');
+            elementosDoppler.forEach(elemento => {
                 const oldId = elemento.id;
                 const newId = oldId.replace('.1', `.${columnaCounter}`);
                 elemento.id = newId;
@@ -159,6 +177,11 @@ let columnaCounter = 1;
             inputs.forEach(input => {
                 input.value = '';
             });
+
+            const inputsDoppler = nuevaColumnaDoppler.querySelectorAll('input');
+            inputsDoppler.forEach(input => {
+                input.value = '';
+            });
             
             // Resetear los textos de los percentiles
             const pctElements = nuevaColumna.querySelectorAll('[id$=".pct.' + columnaCounter + '"]');
@@ -166,9 +189,19 @@ let columnaCounter = 1;
                 pct.textContent = 'mm';
             });
 
+            const pctElementsDoppler = nuevaColumnaDoppler.querySelectorAll('[id$=".pct.' + columnaCounter + '"]');
+            pctElementsDoppler.forEach(pct => {
+                pct.textContent = 'mm';
+            });
+
             // Resetear los selects
             const selects = nuevaColumna.querySelectorAll('select');
             selects.forEach(select => {
+                select.selectedIndex = 0;
+            });
+
+            const selectsDoppler = nuevaColumnaDoppler.querySelectorAll('select');
+            selectsDoppler.forEach(select => {
                 select.selectedIndex = 0;
             });
 
@@ -576,6 +609,107 @@ function comparacionAu(eg, aumb) {
         }
         else{
             return resultado;
+        }
+    }
+}
+
+function comparacionAcm(eg, acm) {
+    /* 5 95 */
+    'use strict';
+    var a = [],b = [];
+
+    a[0]=1.24;a[1]=1.29;a[2]=1.34;a[3]=1.37;a[4]=1.4;a[5]=1.43;a[6]=1.44;a[7]=1.45;a[8]=1.45;a[9]=1.44;a[10]=1.43;a[11]=1.41;a[12]=1.38;a[13]=1.34;a[14]=1.3;a[15]=1.25;a[16]=1.19;a[17]=1.13;a[18]=1.05;a[19]=0.98;a[20]=0.89;
+    b[0]=1.98;b[1]=2.12;b[2]=2.25;b[3]=2.36;b[4]=2.45;b[5]=2.53;b[6]=2.59;b[7]=2.63;b[8]=2.66;b[9]=2.67;b[10]=2.67;b[11]=2.65;b[12]=2.62;b[13]=2.56;b[14]=2.5;b[15]=2.41;b[16]=2.31;b[17]=2.2;b[18]=2.07;b[19]=1.92;b[20]=1.76;
+
+    if (eg < 20 || eg > 40)
+    {
+        return 0;
+    }
+    else {
+        eg = eg - 20;
+        eg = parseInt(eg);
+        var uno = b[eg] - a[eg];
+        var dos = acm - a[eg];
+        var resultado = parseInt(90 / (uno) * (dos) + 5);
+
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 95){
+            return '> 95';
+        }
+        else if (resultado < 5){
+            return '< 5';
+        }
+        else{
+            return resultado;
+        }
+
+    }
+
+}
+
+function comparacionCcp(eg, ccp) {
+    /* 5 95 */
+    'use strict';
+    let a = [],b = [];
+
+    a[20]=0.78; a[21]=0.87; a[22]=0.95; a[23]=1.02;a[24]=1.09; a[25]=1.15; a[26]=1.2; a[27]=1.24;a[28]=1.28; a[29]=1.31; a[30]=1.33; a[31]=1.35;a[32]=1.36; a[33]=1.36; a[34]=1.36; a[35]=1.34;a[36]=1.32; a[37]=1.3; a[38]=1.26; a[39]=1.22;a[40]=1.18;
+    b[20]=1.68; b[21]=1.88; b[22]=2.06; b[23]=2.22;b[24]=2.36; b[25]=2.49; b[26]=2.6;b[27]=2.7;b[28]=2.78; b[29]=2.84; b[30]=2.89; b[31]=2.92;b[32]=2.93; b[33]=2.93; b[34]=2.91; b[35]=2.87;b[36]=2.82; b[37]=2.75; b[38]=2.67; b[39]=2.57;
+ 
+    if (eg < 20 || eg > 40)
+    {
+        return 0;
+    }
+    else {
+        eg = parseInt(eg);
+        var uno=b[eg] - a[eg];
+        var dos=ccp - a[eg];
+        var resultado = parseInt(90 / (uno) * (dos) + 5);
+
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 95){
+            return '> 95';
+        }
+        else if (resultado < 5){
+            return '< 5';
+        }
+        else{
+            return resultado;
+        }
+
+    }
+
+}
+
+function comparacionUt(eg, uterina) {
+    'use strict';
+
+	let a = [1.18, 1.11, 1.05, 0.99, 0.94, 0.89, 0.85, 0.81, 0.78, 0.74, 0.71, 0.69, 0.66, 0.64, 0.62, 0.6, 0.58, 0.56, 0.55, 0.54, 0.52, 0.51, 0.51, 0.51, 0.49, 0.48, 0.48, 0.47, 0.47, 0.47, 0.89];
+	let b = [2.71, 2.53, 2.38, 2.24, 2.11, 1.99, 1.88, 1.79, 1.71, 1.61, 1.54, 1.47, 1.41, 1.35, 1.3, 1.25, 1.21, 1.17, 1.13, 1.11, 1.06, 1.04, 1.01, 0.99, 0.97, 0.95, 0.94, 0.92, 0.91, 0.91, 0.47];
+
+    if (eg < 11 || eg > 40) {
+        return 0;
+	}
+	else {
+		eg = eg - 11;
+        let uno = 0, dos = 0;
+        
+		if (uterina > 0){
+			eg = parseInt(eg);
+			uno = b[eg] - a[eg];
+			dos = uterina - a[eg];
+			uterina = parseInt(90 / (uno) * (dos) + 5);
+
+			if (uterina > 95){
+				return '> 95';
+			}
+			else if (uterina < 5){
+				return '< 5';
+            }else {
+                return uterina;
+            }
+
+        }else {
+            return 0;
         }
     }
 }
