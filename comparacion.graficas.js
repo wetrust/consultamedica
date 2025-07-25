@@ -113,8 +113,12 @@ let columnaCounter = 1;
             if (eliminarBtn) {
                 eliminarBtn.addEventListener('click', function() {
                     const columna = document.getElementById(`comparador.columna.${columnaId}`);
+                    const columnaDoppler = document.getElementById(`comparador.doppler.columna.${columnaId}`);
                     if (columna) {
                         columna.remove();
+                    }
+                    if (columnaDoppler) {
+                        columnaDoppler.remove();
                     }
                 });
             }
