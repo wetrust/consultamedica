@@ -576,7 +576,7 @@ function psohdlk(id) {
     if ( isNaN( psoP ) != true ) {
         return Math.trunc(psoP)
     } else {
-        return 0;
+        return "";
     }
 
 }
