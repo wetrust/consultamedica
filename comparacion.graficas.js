@@ -229,7 +229,7 @@ let columnaCounter = 1;
             const finalDoppler = document.getElementById('comparador.doppler.final');
             const preFinalDoppler = final.previousElementSibling;
 
-            if (finalDoppler.id !== "comparador.doppler.columna.1"){ finalDoppler.remove() }
+            if (preFinalDoppler.id !== "comparador.doppler.columna.1"){ preFinalDoppler.remove() }
         }
 
         // Función para obtener todos los valores organizados
