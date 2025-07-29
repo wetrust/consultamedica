@@ -109,7 +109,7 @@ let columnaCounter = 1;
                                     let _b = Number(the("comparador.acm"+"."+id[2]).value)
 
                                     let _re = (_b / _a);
-                                    the("comparador.ccp"+"."+id[2]).value = _re.toFixed(0)
+                                    the("comparador.ccp"+"."+id[2]).value = (_re <= 0) ? "" : _re.toFixed(0)
                                     the("comparador.ccp"+"."+id[2]).oninput()
                                 }
                             }
