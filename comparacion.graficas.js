@@ -94,9 +94,9 @@ let columnaCounter = 1;
                                 }
 
                                 let identificador = "comparador.pfe"+"."+id[2]
+                                let semanas = the("comparador.semanas"+"."+id[2]).value
                                 if (the(identificador).value == ""){
                                     let peso = psohdlk(id[2])
-                                    let semanas = the("comparador.semanas"+"."+id[2]).value
                                     let dias = the("comparador.dias"+"."+id[2]).value
 
                                     the("comparador.pfe"+"."+id[2]).value = peso
@@ -109,8 +109,9 @@ let columnaCounter = 1;
                                     let _b = Number(the("comparador.acm"+"."+id[2]).value)
 
                                     let _re = (_b / _a);
-                                    the("comparador.ccp"+"."+id[2]).value = (_re <= 0) ? "" : _re.toFixed(0)
-                                    the("comparador.ccp"+"."+id[2]).oninput()
+                                    the("comparador.ccp"+"."+id[2]).value = (_re <= 0) ? "" : _re.toFixed(2)
+                                    _re = comparacionCcp(parseFloat(semanas), _re)
+                                    the("comparador.ccp.pct."+id[2]).textContent = (('string' == typeof _re) ? _re : _re.toFixed(2));
                                 }
                             }
                         }
