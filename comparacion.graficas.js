@@ -14,12 +14,12 @@ the("comparacion.graficas").onclick = function(){
         the("comparacion.graficas.div").classList.remove("d-none");
         the("comparacion.graficas.div").classList.add("d-flex");
         the("ver.ref.otro.container").classList.remove("d-none");
-        the("opcional.flujometria.basico").classList.remove("d-none");
+        the("opcional.flujometria.basico.div").classList.remove("d-none");
     }else{
         the("comparacion.graficas.div").classList.add("d-none");
         the("comparacion.graficas.div").classList.remove("d-flex");
         the("ver.ref.otro.container").classList.add("d-none");
-        the("opcional.flujometria.basico").classList.add("d-none");
+        the("opcional.flujometria.basico.div").classList.add("d-none");
     }
 }
 
