@@ -23,18 +23,6 @@ the("comparacion.graficas").onclick = function(){
     }
 }
 
-the("opcional.flujometria.basico.input").onclick = function(){
-    if (this.checked == true){
-
-        the("opcional.flujometria.basico.div").classList.remove("d-none");
-
-    }else{
-
-        the("opcional.flujometria.basico.div").classList.add("d-none");
-
-    }
-}
-
 let columnaCounter = 1;
 
         // Función para agregar event listeners a los inputs de una columna
