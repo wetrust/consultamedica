@@ -318,7 +318,7 @@ function mostrarValoresEnModal(datos) {
         _laEG = Number(Number(_laEG).toFixed(0))
         _datos.push({x:_laEG, y:_laValor});
 
-        _laValor = (datos['Umbilical'].length > 0) ? datos['C. Abdomen'][i][0] : 0
+        _laValor = (datos['Umbilical'].length > 0) ? datos['Umbilical'][i][0] : 0
         _datosUmb.push({x:_laEG, y:_laValor});
 
     }
