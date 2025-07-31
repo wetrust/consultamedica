@@ -397,7 +397,7 @@ function mostrarValoresEnModal(datos) {
     let _hchartsDos = graficoArtUmb()
     _hchartsDos.series[2].data = _datosUmb
 
-    let _hchartsTres = graficoArtUmb()
+    let _hchartsTres = graficoCcp()
     _hchartsTres.series[2].data = _datosCCP
 
     $('#valoresContent').highcharts(_hchartsUno);
