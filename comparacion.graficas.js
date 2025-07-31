@@ -295,6 +295,7 @@ function mostrarValoresEnModal(datos) {
 
     let _datos = []
     let _datosUmb = []
+    let _datosCCP = []
     // Agregar headers para cada columna
     let leyenda = ''
     for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
@@ -320,6 +321,9 @@ function mostrarValoresEnModal(datos) {
 
         _laValor = (datos['Umbilical'].length > 0) ? datos['Umbilical'][i][0] : 0
         _datosUmb.push({x:_laEG, y:_laValor});
+
+        _laValor = (datos['Cuociente Placentario'].length > 0) ? datos['Cuociente Placentario'][i][0] : 0
+        _datosCCP.push({x:_laEG, y:_laValor});
 
     }
 
@@ -393,8 +397,12 @@ function mostrarValoresEnModal(datos) {
     let _hchartsDos = graficoArtUmb()
     _hchartsDos.series[2].data = _datosUmb
 
+    let _hchartsTres = graficoArtUmb()
+    _hchartsTres.series[2].data = _datosCCP
+
     $('#valoresContent').highcharts(_hchartsUno);
-    $('#valoresCCaList').highcharts(_hchartsDos);
+    $('#valoresUMBList').highcharts(_hchartsDos);
+    $('#valoresCCPList').highcharts(_hchartsTres);
     $('#valoresModal').modal('show');
 
     the("verValoresTabla").onclick = function(){
@@ -746,6 +754,7 @@ function comparacionUt(eg, uterina) {
 
 function graficoArtUmb()
 {
+
     let estructura = {
         title: {
             text: 'IP Arteria Umbilical **',
@@ -764,9 +773,6 @@ function graficoArtUmb()
             tickPositions: [0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]
         },
         colors: ['#313131', '#313131', '#313131'],
-        //xAxis: {
-        //    categories:['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
-        //},
         credits: { enabled: false },
         series: [{
                 type: "line",
@@ -787,6 +793,43 @@ function graficoArtUmb()
                 data: []
             }]
        }
+
+    return estructura
+}
+
+function graficoCcp()
+{
+    let estructura = {
+        title: {
+            text: 'IP de CCP (Indice ACM / AU) **',
+            x: -20 //center
+        },
+        plotOptions: { series: { enableMouseTracking: false}},
+        yAxis: {
+            title: { text: 'Valor IP' },
+            tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Pct. 5',
+            marker: { enabled: false },
+            data: [{x:20, y:0.78},{x:21, y:0.87},{x:22, y:0.95},{x:23, y:1.02},{x:24, y:1.09},{x:25, y:1.15},{x:26, y:1.2},{x:27, y:1.24},{x:28, y:1.28},{x:29, y:1.31},{x:30, y:1.33},{x:31, y:1.35},{x:32, y:1.36},{x:33, y:1.36},{x:34, y:1.36},{x:35, y:1.34},{x:36, y:1.32},{x:37, y:1.3},{x:38, y:1.26},{x:39, y:1.22},{x:40, y:1.18}]
+        }, {
+            type: "line",
+            name: 'Pct. 95',
+            marker: { enabled: false },
+            data: [{x:20, y:1.68},{x:21, y:1.88},{x:22, y:2.06},{x:23, y:2.22},{x:24, y:2.36},{x:25, y:2.49},{x:26, y:2.6},{x:27, y:2.7},{x:28, y:2.78},{x:29, y:2.84},{x:30, y:2.89},{x:31, y:2.92},{x:32, y:2.93},{x:33, y:2.93},{x:34, y:2.91},{x:35, y:2.87},{x:36, y:2.82},{x:37, y:2.75},{x:38, y:2.67},{x:39, y:2.57},{x:40, y:2.45}]
+        }, {
+            type: "line",
+            name: 'Cuociente',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: []
+        }]
+    }
 
     return estructura
 }
