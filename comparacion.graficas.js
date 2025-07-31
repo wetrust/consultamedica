@@ -294,7 +294,7 @@ function mostrarValoresEnModal(datos) {
     let multiplicador = 0
 
     let _datos = []
-    let _datosCA = []
+    let _datosUmb = []
     // Agregar headers para cada columna
     let leyenda = ''
     for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
@@ -318,8 +318,8 @@ function mostrarValoresEnModal(datos) {
         _laEG = Number(Number(_laEG).toFixed(0))
         _datos.push({x:_laEG, y:_laValor});
 
-        _laValor = (datos['C. Abdomen'].length > 0) ? datos['C. Abdomen'][i][0] : 0
-        _datosCA.push({x:_laEG, y:_laValor});
+        _laValor = (datos['Umbilical'].length > 0) ? datos['C. Abdomen'][i][0] : 0
+        _datosUmb.push({x:_laEG, y:_laValor});
 
     }
 
@@ -390,8 +390,8 @@ function mostrarValoresEnModal(datos) {
 
     the("valoresTabla").innerHTML = leyenda
 
-    let _hchartsDos = graficoCa()
-    _hchartsDos.series[2].data = _datosCA
+    let _hchartsDos = graficoArtUmb()
+    _hchartsDos.series[2].data = _datosUmb
 
     $('#valoresContent').highcharts(_hchartsUno);
     $('#valoresCCaList').highcharts(_hchartsDos);
@@ -744,47 +744,49 @@ function comparacionUt(eg, uterina) {
     }
 }
 
-function graficoCa()
+function graficoArtUmb()
 {
     let estructura = {
         title: {
-            text: 'CA**',
-            x: -20
-        },
-        subtitle: {
-            text: 'Milimetros (mm)',
-           x: -20
+            text: 'IP Arteria Umbilical **',
+            x: -20, //center
+            style: {
+                fontSize: '10px'
+            }
         },
         plotOptions: {
-            series: { enableMouseTracking: false }
+            series: {
+                enableMouseTracking: false
+            }
         },
         yAxis: {
-            title: { text: 'Milimetros (mm)' },
-           tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
-       },
+            title: { text: 'Valor IP' },
+            tickPositions: [0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]
+        },
         colors: ['#313131', '#313131', '#313131'],
         xAxis: {
-            categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            categories:['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
         },
         credits: { enabled: false },
         series: [{
-            type: "line",
-            name: 'Pct. 3',
-            marker: { enabled: false },
-            data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
-        }, {
-            type: "line",
-            name: 'Pct 97',
-            marker: { enabled: false },
-            data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
-        }, {
-            type: "line",
-            name: 'CA',
-            dashStyle: "Dot",
-            marker: { symbol: 'square' },
-            lineWidth: 0,
-            data: []
-        }]}
+                type: "line",
+                name: 'Pct. 5',
+                marker: { enabled: false },
+                data: [0.97,0.95,0.94,0.92,0.9,0.89,0.87,0.85,0.82,0.8,0.78,0.75,0.73,0.7,0.67,0.65,0.62,0.58,0.55,0.52,0.49]
+            }, {
+                type: "line",
+                name: 'Pct. 95',
+                marker: { enabled: false },
+                data: [1.6,1.56,1.53,1.5,1.46,1.43,1.4,1.37,1.35,1.32,1.29,1.27,1.25,1.22,1.2,1.18,1.16,1.14,1.13,1.11,1.09]
+            }, {
+                type: "line",
+                name: 'Arteria',
+                dashStyle: "Dot",
+                marker: { symbol: 'square' },
+                lineWidth: 0,
+                data: []
+            }]
+       }
 
     return estructura
 }
