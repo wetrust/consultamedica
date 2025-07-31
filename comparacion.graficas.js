@@ -10,408 +10,423 @@ the("ver.ref.otro").onclick = function(){
 }
 
 the("comparacion.graficas").onclick = function(){
+    let listOne = ["comparacion.graficas.div", "ver.ref.otro.container", "opcional.flujometria.basico.div", "opcional.flujometria.basico"]
+    let listTwo = ["comparacion.graficas.div", "opcional.flujometria.basico.div"]
     if (this.checked == true){
-        the("comparacion.graficas.div").classList.remove("d-none");
-        the("comparacion.graficas.div").classList.add("d-flex");
-        the("ver.ref.otro.container").classList.remove("d-none");
-        the("opcional.flujometria.basico.div").classList.add("d-flex");
-        the("opcional.flujometria.basico.div").classList.remove("d-none");
-        the("opcional.flujometria.basico").classList.remove("d-none");
-    }else{
-        the("comparacion.graficas.div").classList.add("d-none");
-        the("comparacion.graficas.div").classList.remove("d-flex");
-        the("ver.ref.otro.container").classList.add("d-none");
-        the("opcional.flujometria.basico.div").classList.add("d-none");
-        the("opcional.flujometria.basico.div").classList.remove("d-flex");
-        the("opcional.flujometria.basico").classList.add("d-none");
+
+        listOne.forEach(item => {
+            the(item).classList.remove("d-none");
+        })
+
+        listTwo.forEach(item => {
+            the(item).classList.add("d-flex");
+        })
+
+    } else {
+
+        listOne.forEach(item => {
+            the(item).classList.add("d-none");
+        })
+
+        listTwo.forEach(item => {
+            the(item).classList.remove("d-flex");
+        })
     }
 }
 
 let columnaCounter = 1;
 
-        // Función para agregar event listeners a los inputs de una columna
-        function agregarEventListeners(columnaId) {
-            const inputs = ['dbp', 'cc', 'ca', 'lf', 'pfe','umb', 'acm','ccp','uterinas'];
+// Función para agregar event listeners a los inputs de una columna
+function agregarEventListeners(columnaId) {
+    const inputs = ['dbp', 'cc', 'ca', 'lf', 'pfe','umb', 'acm','ccp','uterinas'];
 
-            inputs.forEach(input => {
-                const inputElement = document.getElementById(`comparador.${input}.${columnaId}`);
-                const pctElement = document.getElementById(`comparador.${input}.pct.${columnaId}`);
+    inputs.forEach(input => {
+        const inputElement = document.getElementById(`comparador.${input}.${columnaId}`);
+        const pctElement = document.getElementById(`comparador.${input}.pct.${columnaId}`);
 
-                if (inputElement && pctElement) {
-                    inputElement.addEventListener('input', function() {
-                        const valor = parseFloat(this.value);
-                        if (!isNaN(valor)) {
-                            const funcion = this.dataset.funcion
-                            const semanas = document.getElementById(`comparador.semanas.${columnaId}`).value
-                            const dias = document.getElementById(`comparador.dias.${columnaId}`).value
-                            var resultado
-                            if(funcion == 'dbp'){
-                                resultado = comparacionDBP(parseFloat(semanas), valor)
-                            }else if(funcion == 'cc'){
-                                resultado = comparacionCC(parseFloat(semanas), valor)
-                            }else if(funcion == 'ca'){
-                                resultado = comparacionCA(parseFloat(semanas), valor)
-                            }else if(funcion == 'lf'){
-                                resultado = comparacionLF(parseFloat(semanas), valor)
-                            }else if(funcion == 'pfe'){
-                                resultado = comparacionPFE(parseFloat(semanas), parseFloat(dias), valor)
-                            }else if(funcion == 'umb'){
-                                resultado = comparacionAu(parseFloat(semanas), valor)
-                            }else if(funcion == 'acm'){
-                                resultado = comparacionAcm(parseFloat(semanas), valor)
-                            }else if(funcion == 'ccp'){
-                                resultado = comparacionCcp(parseFloat(semanas), valor)
-                            }else if(funcion == 'uterinas'){
-                                resultado = comparacionUt(parseFloat(semanas), valor)
-                            }
-                            
-                            pctElement.textContent = (('string' == typeof resultado) ? resultado : resultado.toFixed(2));
-                        } else {
-                            pctElement.textContent = 'mm';
-                        }
-                    });
-
-                    inputElement.addEventListener('keyup', function(e){
-                        if ( e.key === "Enter" ) {
-                            e.preventDefault();
-                            var key_enter = ["dbp", "cc", "ca", "lf", "pfe", "umb", "acm","ccp","uterinas"];
-                            let id = this.id
-                            id = id.split(".")
-                            if (key_enter.includes(id[1])){
-                                let pos = key_enter.indexOf(id[1]);
-                                pos++
-                                if (pos < key_enter.length){
-                                    let idNew = "comparador."+key_enter[pos]+"."+id[2]
-                                    the(idNew).focus();
-                                }
-
-                                let identificador = "comparador.pfe"+"."+id[2]
-                                let semanas = the("comparador.semanas"+"."+id[2]).value
-                                if (the(identificador).value == ""){
-                                    let peso = psohdlk(id[2])
-                                    let dias = the("comparador.dias"+"."+id[2]).value
-
-                                    the("comparador.pfe"+"."+id[2]).value = peso
-                                    the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso)
-                                }
-
-                                identificador = "comparador.ccp"+"."+id[2]
-                                if ((id[1] == "umb" || id[1] == "acm") && the(identificador).value == ""){
-                                    let _a = Number(the("comparador.umb"+"."+id[2]).value)
-                                    let _b = Number(the("comparador.acm"+"."+id[2]).value)
-
-                                    let _re = (_b / _a);
-                                    the("comparador.ccp"+"."+id[2]).value = (_re <= 0) ? "" : _re.toFixed(2)
-                                    _re = comparacionCcp(parseFloat(semanas), _re)
-                                    the("comparador.ccp.pct."+id[2]).textContent = (('string' == typeof _re) ? _re : _re.toFixed(2));
-                                }
-                            }
-                        }
-                    })
+        if (inputElement && pctElement) {
+            inputElement.addEventListener('input', function() {
+                const valor = parseFloat(this.value);
+                if (!isNaN(valor)) {
+                    const funcion = this.dataset.funcion
+                    const semanas = document.getElementById(`comparador.semanas.${columnaId}`).value
+                    const dias = document.getElementById(`comparador.dias.${columnaId}`).value
+                    var resultado
+                    if(funcion == 'dbp'){
+                        resultado = comparacionDBP(parseFloat(semanas), valor)
+                    }else if(funcion == 'cc'){
+                        resultado = comparacionCC(parseFloat(semanas), valor)
+                    }else if(funcion == 'ca'){
+                        resultado = comparacionCA(parseFloat(semanas), valor)
+                    }else if(funcion == 'lf'){
+                        resultado = comparacionLF(parseFloat(semanas), valor)
+                    }else if(funcion == 'pfe'){
+                        resultado = comparacionPFE(parseFloat(semanas), parseFloat(dias), valor)
+                    }else if(funcion == 'umb'){
+                        resultado = comparacionAu(parseFloat(semanas), valor)
+                    }else if(funcion == 'acm'){
+                        resultado = comparacionAcm(parseFloat(semanas), valor)
+                    }else if(funcion == 'ccp'){
+                        resultado = comparacionCcp(parseFloat(semanas), valor)
+                    }else if(funcion == 'uterinas'){
+                        resultado = comparacionUt(parseFloat(semanas), valor)
+                    }
+                    
+                    pctElement.textContent = (('string' == typeof resultado) ? resultado : resultado.toFixed(2));
+                } else {
+                    pctElement.textContent = 'mm';
                 }
             });
 
-            // Event listener para el botón eliminar
-            const eliminarBtn = document.getElementById(`comparador.eliminar.${columnaId}`);
-            if (eliminarBtn) {
-                eliminarBtn.addEventListener('click', function() {
-                    const columna = document.getElementById(`comparador.columna.${columnaId}`);
-                    const columnaDoppler = document.getElementById(`comparador.doppler.columna.${columnaId}`);
-                    if (columna) {
-                        columna.remove();
+            inputElement.addEventListener('keyup', function(e){
+                if ( e.key === "Enter" ) {
+                    e.preventDefault();
+                    var key_enter = ["dbp", "cc", "ca", "lf", "pfe", "umb", "acm","ccp","uterinas"];
+                    let id = this.id
+                    id = id.split(".")
+                    if (key_enter.includes(id[1])){
+                        let pos = key_enter.indexOf(id[1]);
+                        pos++
+                        if (pos < key_enter.length){
+                            let idNew = "comparador."+key_enter[pos]+"."+id[2]
+                            the(idNew).focus();
+                        }
+
+                        let identificador = "comparador.pfe"+"."+id[2]
+                        let semanas = the("comparador.semanas"+"."+id[2]).value
+                        if (the(identificador).value == ""){
+                            let peso = psohdlk(id[2])
+                            let dias = the("comparador.dias"+"."+id[2]).value
+
+                            the("comparador.pfe"+"."+id[2]).value = peso
+                            the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso)
+                        }
+
+                        identificador = "comparador.ccp"+"."+id[2]
+                        if ((id[1] == "umb" || id[1] == "acm") && the(identificador).value == ""){
+                            let _a = Number(the("comparador.umb"+"."+id[2]).value)
+                            let _b = Number(the("comparador.acm"+"."+id[2]).value)
+
+                            let _re = (_b / _a);
+                            the("comparador.ccp"+"."+id[2]).value = (_re <= 0) ? "" : _re.toFixed(2)
+                            _re = comparacionCcp(parseFloat(semanas), _re)
+                            the("comparador.ccp.pct."+id[2]).textContent = (('string' == typeof _re) ? _re : _re.toFixed(2));
+                        }
                     }
-                    if (columnaDoppler) {
-                        columnaDoppler.remove();
-                    }
-                });
-            }
-
-            the(`comparador.semanas.${columnaId}`).onchange = function(){
-                let id = this.id
-                id = id.split(".")
-
-                let peso = psohdlk(id[2])
-                let semanas = the("comparador.semanas"+"."+id[2]).value
-                let dias = the("comparador.dias"+"."+id[2]).value
-
-                the("comparador.pfe"+"."+id[2]).value = peso
-                the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso)
-            }
-
-            the(`comparador.dias.${columnaId}`).onchange = function(){
-                let id = this.id
-                id = id.split(".")
-
-                let peso = psohdlk(id[2])
-                let semanas = the("comparador.semanas"+"."+id[2]).value
-                let dias = the("comparador.dias"+"."+id[2]).value
-
-                the("comparador.pfe"+"."+id[2]).value = peso
-                the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso) 
-            }
-        }
-
-        // Función para clonar una columna
-        function clonarColumna() {
-            columnaCounter++;
-            const columnaOriginal = document.getElementById('comparador.columna.1');
-            const nuevaColumna = columnaOriginal.cloneNode(true);
-
-            const columnaOriginalDoppler = document.getElementById('comparador.doppler.columna.1');
-            const nuevaColumnaDoppler = columnaOriginalDoppler.cloneNode(true);
-            
-            // Cambiar el ID de la nueva columna
-            nuevaColumna.id = `comparador.columna.${columnaCounter}`;
-            nuevaColumnaDoppler.id = `comparador.doppler.columna.${columnaCounter}`;
-            
-            // Cambiar todos los IDs internos
-            const elementos = nuevaColumna.querySelectorAll('[id]');
-            elementos.forEach(elemento => {
-                const oldId = elemento.id;
-                const newId = oldId.replace('.1', `.${columnaCounter}`);
-                elemento.id = newId;
-            });
-
-            const elementosDoppler = nuevaColumnaDoppler.querySelectorAll('[id]');
-            elementosDoppler.forEach(elemento => {
-                const oldId = elemento.id;
-                const newId = oldId.replace('.1', `.${columnaCounter}`);
-                elemento.id = newId;
-            });
-            
-            // Limpiar los valores de los inputs
-            const inputs = nuevaColumna.querySelectorAll('input');
-            inputs.forEach(input => {
-                input.value = '';
-            });
-
-            const inputsDoppler = nuevaColumnaDoppler.querySelectorAll('input');
-            inputsDoppler.forEach(input => {
-                input.value = '';
-            });
-            
-            // Resetear los textos de los percentiles
-            const pctElements = nuevaColumna.querySelectorAll('[id$=".pct.' + columnaCounter + '"]');
-            pctElements.forEach(pct => {
-                pct.textContent = 'mm';
-            });
-
-            const pctElementsDoppler = nuevaColumnaDoppler.querySelectorAll('[id$=".pct.' + columnaCounter + '"]');
-            pctElementsDoppler.forEach(pct => {
-                pct.textContent = 'mm';
-            });
-
-            // Resetear los selects
-            const selects = nuevaColumna.querySelectorAll('select');
-            selects.forEach(select => {
-                select.selectedIndex = 0;
-            });
-
-            const selectsDoppler = nuevaColumnaDoppler.querySelectorAll('select');
-            selectsDoppler.forEach(select => {
-                select.selectedIndex = 0;
-            });
-
-            // Insertar la nueva columna antes de comparador.final
-            const final = document.getElementById('comparador.final');
-            final.parentNode.insertBefore(nuevaColumna, final);
-
-            const finalDoppler = document.getElementById('comparador.doppler.final');
-            finalDoppler.parentNode.insertBefore(nuevaColumnaDoppler, finalDoppler);
-
-            // Agregar event listeners a la nueva columna
-            agregarEventListeners(columnaCounter);
-        }
-
-        function eliminarColumna(){
-            const final = document.getElementById('comparador.final');
-            const preFinal = final.previousElementSibling;
-
-            if (preFinal.id !== "comparador.columna.1"){ preFinal.remove() }
-
-            const finalDoppler = document.getElementById('comparador.doppler.final');
-            const preFinalDoppler = finalDoppler.previousElementSibling;
-
-            if (preFinalDoppler.id !== "comparador.doppler.columna.1"){ preFinalDoppler.remove() }
-        }
-
-        // Función para obtener todos los valores organizados
-        function obtenerValores() {
-            const columnas = document.querySelectorAll('[id^="comparador.columna."]');
-            const datos = {
-                'Edad Gestacional': [],
-                'DBP': [],
-                'C. Cráneo': [],
-                'C. Abdomen': [],
-                'L. Fémur': [],
-                'PFE': [],
-                'Umbilical': [],
-                'Cerebral Media': [],
-                'Cuociente Placentario': [],
-                'Uterinas': []
-            };
-
-            columnas.forEach(columna => {
-                const id = columna.id.split('.')[2];
-
-                // Obtener edad gestacional
-                const semanas = document.getElementById(`comparador.semanas.${id}`).value;
-                const dias = document.getElementById(`comparador.dias.${id}`).value;
-                datos['Edad Gestacional'].push(Number(semanas)+'.'+Number(dias));
-
-                // Obtener valores y sus cálculos
-                const campos = ['dbp', 'cc', 'ca', 'lf', 'pfe', 'umb','acm','ccp','uterinas'];
-                const nombres = ['DBP', 'C. Cráneo', 'C. Abdomen', 'L. Fémur', 'PFE', 'Umbilical','Cerebral Media', 'Cuociente Placentario', 'Uterinas'];
-
-                campos.forEach((campo, index) => {
-                    const valor = document.getElementById(`comparador.${campo}.${id}`).value;
-                    const calculo = document.getElementById(`comparador.${campo}.pct.${id}`).textContent;
-
-                    if (valor) {
-                        datos[nombres[index]].push([Number(valor), calculo]);
-                    }else{
-                        datos[nombres[index]].push(["", ""]);
-                    }
-                });
-            });
-
-            // Mostrar los datos en el modal
-            mostrarValoresEnModal(datos);
-        }
-
-        // Función para mostrar valores en el modal
-        function mostrarValoresEnModal(datos) {
-            let _grafico = graficoPFECompleto()
-            let _hchartsUno = structuredClone(baseGraficoPFE)
-            let par = false
-            let multiplicador = 0
-
-            let _datos = []
-            // Agregar headers para cada columna
-            let leyenda = ''
-            for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
-                let _laEG = datos['Edad Gestacional'][i]
-                let _laValor = (datos['PFE'].length > 0) ? datos['PFE'][i][0] : 0
-
-                let pfe = 0
-                let umbilicalPct = 0
-                let cmediaPct = 0
-                let cplacentarioPct = 0
-                let uterinasPct = 0
-
-                pfe = (datos['PFE'].length > 0) ? (('string' == typeof datos['PFE'][i][1]) ? datos['PFE'][i][1] : Number(datos['PFE'][i][1]).toFixed(0)) : 0
-                umbilicalPct = (datos['Umbilical'].length > 0) ? (('string' == typeof datos['Umbilical'][i][1]) ? datos['Umbilical'][i][1] : Number(datos['Umbilical'][i][1]).toFixed(0)) : 0
-                cmediaPct = (datos['Cerebral Media'].length > 0) ? (('string' == typeof datos['Cerebral Media'][i][1]) ? datos['Cerebral Media'][i][1] : Number(datos['Cerebral Media'][i][1]).toFixed(0)) : 0
-                cplacentarioPct = (datos['Cuociente Placentario'].length > 0) ? (('string' == typeof datos['Cuociente Placentario'][i][1]) ? datos['Cuociente Placentario'][i][1] : Number(datos['Cuociente Placentario'][i][1]).toFixed(0)) : 0
-                uterinasPct = (datos['Uterinas'].length > 0) ? (('string' == typeof datos['Uterinas'][i][1]) ? datos['Uterinas'][i][1] : Number(datos['Uterinas'][i][1]).toFixed(0)) : 0
- 
-                leyenda += '<tr><th scope="row" class="text-danger text-center">'+_laEG+'</th><th class="text-danger text-center">'+ pfe +'</td><th class="text-danger text-center">'+ umbilicalPct +'</td><td class="text-center">'+ cmediaPct +'</td><th class="text-danger text-center">'+ cplacentarioPct +'</td><td class="text-center">'+ uterinasPct +'</td></tr>'
-
-                _laEG = Number(Number(_laEG).toFixed(0))
-                _datos.push({x:_laEG, y:_laValor});
-
-            }
-
-            let menor = ((_datos[0].y - 50) <= 0) ? 0 : (_datos[0].y - 50)
-            let mayor = 0
-
-            _grafico.valores.nueve.forEach(clave =>{
-                if (clave.x == _datos[_datos.length-1].x){ mayor = clave.y }
+                }
             })
-
-            if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
-            } else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
-            } else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
-
-            par = menor % 2;
-            par = (par > 0) ? false : true
-
-            if (par == true){
-                _hchartsUno.yAxis.min = menor * multiplicador
-            }else{
-                if (menor > 1){
-                    _hchartsUno.yAxis.min = (menor-1) * multiplicador  
-                } else {
-                    _hchartsUno.yAxis.min = 0
-                }
-            }
-
-            if (mayor > 100){
-                mayor = Math.trunc(mayor / 10); multiplicador = 10;
-            }else if (mayor > 1000){
-                mayor = Math.trunc(mayor / 100); multiplicador = 100;
-            }else if (mayor > 10000){
-                mayor = Math.trunc(mayor / 1000); multiplicador = 1000;
-            }
-
-            par = mayor % 2;
-            par = (par > 0) ? false : true
-
-            if (par == true){
-                _hchartsUno.yAxis.max = mayor * multiplicador
-            }else{
-                _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
-            }
-
-            _hchartsUno.series[9].data = _datos
-            _hchartsUno.series[8].data = _grafico.valores.uno
-            _hchartsUno.series[7].data = _grafico.valores.dos
-            _hchartsUno.series[6].data = _grafico.valores.tres
-            _hchartsUno.series[5].data = _grafico.valores.cuatro
-            _hchartsUno.series[4].data = _grafico.valores.cinco
-            _hchartsUno.series[3].data = _grafico.valores.seis
-            _hchartsUno.series[2].data = _grafico.valores.siete
-            _hchartsUno.series[1].data = _grafico.valores.ocho
-            _hchartsUno.series[0].data = _grafico.valores.nueve
-            _hchartsUno.xAxis.floor = _datos[0].x
-            _hchartsUno.xAxis.ceiling = _datos[_datos.length-1].x
-            _hchartsUno.yAxis.gridLineWidth = 0
-
-            //let caption = {
-            //    floating:true,
-            //    x: 70,
-            //    y: -250,
-            //    useHTML:true,
-            //    text: leyenda
-            //}
-
-            //_hchartsUno.caption = caption
-
-            the("valoresTabla").innerHTML = leyenda
-
-            $('#valoresContent').highcharts(_hchartsUno);
-            $('#valoresModal').modal('show');
-
-            the("verValoresTabla").onclick = function(){
-                if(the("valoresTabla").parentElement.classList.contains("d-none")){
-                    the("valoresTabla").parentElement.classList.remove("d-none")
-                    the("valoresContent").classList.add("d-none")
-                    this.innerHTML = "Ver Gráficas"
-                    the("valoresModalLabel").innerHTML = "Tabla evolución percentiles de crecimiento y flujometría Doppler materno fetal"
-                } else {
-                    the("valoresTabla").parentElement.classList.add("d-none")
-                    the("valoresContent").classList.remove("d-none")
-                    this.innerHTML = "Ver Datos"
-                    the("valoresModalLabel").innerHTML = "Graficas curvas de crecimiento"
-                }
-            }
         }
+    });
 
-        // Event listeners iniciales
-        document.addEventListener('DOMContentLoaded', function() {
-            // Agregar event listeners a la primera columna
-            agregarEventListeners(1);
-
-            // Event listener para el botón agregar
-            document.getElementById('comparador.agregar').addEventListener('click', clonarColumna);
-
-            // Event listener para el botón eliminar
-            document.getElementById('comparador.eliminar').addEventListener('click', eliminarColumna);
-
-            // Event listener para el botón obtener valores
-            document.getElementById('obtener.valores').addEventListener('click', obtenerValores);
-            clonarColumna()
+    // Event listener para el botón eliminar
+    const eliminarBtn = document.getElementById(`comparador.eliminar.${columnaId}`);
+    if (eliminarBtn) {
+        eliminarBtn.addEventListener('click', function() {
+            const columna = document.getElementById(`comparador.columna.${columnaId}`);
+            const columnaDoppler = document.getElementById(`comparador.doppler.columna.${columnaId}`);
+            if (columna) {
+                columna.remove();
+            }
+            if (columnaDoppler) {
+                columnaDoppler.remove();
+            }
         });
+    }
+
+    the(`comparador.semanas.${columnaId}`).onchange = function(){
+        let id = this.id
+        id = id.split(".")
+
+        let peso = psohdlk(id[2])
+        let semanas = the("comparador.semanas"+"."+id[2]).value
+        let dias = the("comparador.dias"+"."+id[2]).value
+
+        the("comparador.pfe"+"."+id[2]).value = peso
+        the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso)
+    }
+
+    the(`comparador.dias.${columnaId}`).onchange = function(){
+        let id = this.id
+        id = id.split(".")
+
+        let peso = psohdlk(id[2])
+        let semanas = the("comparador.semanas"+"."+id[2]).value
+        let dias = the("comparador.dias"+"."+id[2]).value
+
+        the("comparador.pfe"+"."+id[2]).value = peso
+        the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso) 
+    }
+}
+
+// Función para clonar una columna
+function clonarColumna() {
+    columnaCounter++;
+    const columnaOriginal = document.getElementById('comparador.columna.1');
+    const nuevaColumna = columnaOriginal.cloneNode(true);
+
+    const columnaOriginalDoppler = document.getElementById('comparador.doppler.columna.1');
+    const nuevaColumnaDoppler = columnaOriginalDoppler.cloneNode(true);
+    
+    // Cambiar el ID de la nueva columna
+    nuevaColumna.id = `comparador.columna.${columnaCounter}`;
+    nuevaColumnaDoppler.id = `comparador.doppler.columna.${columnaCounter}`;
+    
+    // Cambiar todos los IDs internos
+    const elementos = nuevaColumna.querySelectorAll('[id]');
+    elementos.forEach(elemento => {
+        const oldId = elemento.id;
+        const newId = oldId.replace('.1', `.${columnaCounter}`);
+        elemento.id = newId;
+    });
+
+    const elementosDoppler = nuevaColumnaDoppler.querySelectorAll('[id]');
+    elementosDoppler.forEach(elemento => {
+        const oldId = elemento.id;
+        const newId = oldId.replace('.1', `.${columnaCounter}`);
+        elemento.id = newId;
+    });
+    
+    // Limpiar los valores de los inputs
+    const inputs = nuevaColumna.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.value = '';
+    });
+
+    const inputsDoppler = nuevaColumnaDoppler.querySelectorAll('input');
+    inputsDoppler.forEach(input => {
+        input.value = '';
+    });
+    
+    // Resetear los textos de los percentiles
+    const pctElements = nuevaColumna.querySelectorAll('[id$=".pct.' + columnaCounter + '"]');
+    pctElements.forEach(pct => {
+        pct.textContent = 'mm';
+    });
+
+    const pctElementsDoppler = nuevaColumnaDoppler.querySelectorAll('[id$=".pct.' + columnaCounter + '"]');
+    pctElementsDoppler.forEach(pct => {
+        pct.textContent = 'mm';
+    });
+
+    // Resetear los selects
+    const selects = nuevaColumna.querySelectorAll('select');
+    selects.forEach(select => {
+        select.selectedIndex = 0;
+    });
+
+    const selectsDoppler = nuevaColumnaDoppler.querySelectorAll('select');
+    selectsDoppler.forEach(select => {
+        select.selectedIndex = 0;
+    });
+
+    // Insertar la nueva columna antes de comparador.final
+    const final = document.getElementById('comparador.final');
+    final.parentNode.insertBefore(nuevaColumna, final);
+
+    const finalDoppler = document.getElementById('comparador.doppler.final');
+    finalDoppler.parentNode.insertBefore(nuevaColumnaDoppler, finalDoppler);
+
+    // Agregar event listeners a la nueva columna
+    agregarEventListeners(columnaCounter);
+}
+
+function eliminarColumna(){
+    const final = document.getElementById('comparador.final');
+    const preFinal = final.previousElementSibling;
+
+    if (preFinal.id !== "comparador.columna.1"){ preFinal.remove() }
+
+    const finalDoppler = document.getElementById('comparador.doppler.final');
+    const preFinalDoppler = finalDoppler.previousElementSibling;
+
+    if (preFinalDoppler.id !== "comparador.doppler.columna.1"){ preFinalDoppler.remove() }
+}
+
+// Función para obtener todos los valores organizados
+function obtenerValores() {
+    const columnas = document.querySelectorAll('[id^="comparador.columna."]');
+    const datos = {
+        'Edad Gestacional': [],
+        'DBP': [],
+        'C. Cráneo': [],
+        'C. Abdomen': [],
+        'L. Fémur': [],
+        'PFE': [],
+        'Umbilical': [],
+        'Cerebral Media': [],
+        'Cuociente Placentario': [],
+        'Uterinas': []
+    };
+
+    columnas.forEach(columna => {
+        const id = columna.id.split('.')[2];
+
+        // Obtener edad gestacional
+        const semanas = document.getElementById(`comparador.semanas.${id}`).value;
+        const dias = document.getElementById(`comparador.dias.${id}`).value;
+        datos['Edad Gestacional'].push(Number(semanas)+'.'+Number(dias));
+
+        // Obtener valores y sus cálculos
+        const campos = ['dbp', 'cc', 'ca', 'lf', 'pfe', 'umb','acm','ccp','uterinas'];
+        const nombres = ['DBP', 'C. Cráneo', 'C. Abdomen', 'L. Fémur', 'PFE', 'Umbilical','Cerebral Media', 'Cuociente Placentario', 'Uterinas'];
+
+        campos.forEach((campo, index) => {
+            const valor = document.getElementById(`comparador.${campo}.${id}`).value;
+            const calculo = document.getElementById(`comparador.${campo}.pct.${id}`).textContent;
+
+            if (valor) {
+                datos[nombres[index]].push([Number(valor), calculo]);
+            }else{
+                datos[nombres[index]].push(["", ""]);
+            }
+        });
+    });
+
+    // Mostrar los datos en el modal
+    mostrarValoresEnModal(datos);
+}
+
+// Función para mostrar valores en el modal
+function mostrarValoresEnModal(datos) {
+    let _grafico = graficoPFECompleto()
+    let _hchartsUno = structuredClone(baseGraficoPFE)
+    let par = false
+    let multiplicador = 0
+
+    let _datos = []
+    let _datosCA = []
+    // Agregar headers para cada columna
+    let leyenda = ''
+    for (let i = 0; i < datos['Edad Gestacional'].length; i++) {
+        let _laEG = datos['Edad Gestacional'][i]
+        let _laValor = (datos['PFE'].length > 0) ? datos['PFE'][i][0] : 0
+
+        let pfe = 0
+        let umbilicalPct = 0
+        let cmediaPct = 0
+        let cplacentarioPct = 0
+        let uterinasPct = 0
+
+        pfe = (datos['PFE'].length > 0) ? (('string' == typeof datos['PFE'][i][1]) ? datos['PFE'][i][1] : Number(datos['PFE'][i][1]).toFixed(0)) : 0
+        umbilicalPct = (datos['Umbilical'].length > 0) ? (('string' == typeof datos['Umbilical'][i][1]) ? datos['Umbilical'][i][1] : Number(datos['Umbilical'][i][1]).toFixed(0)) : 0
+        cmediaPct = (datos['Cerebral Media'].length > 0) ? (('string' == typeof datos['Cerebral Media'][i][1]) ? datos['Cerebral Media'][i][1] : Number(datos['Cerebral Media'][i][1]).toFixed(0)) : 0
+        cplacentarioPct = (datos['Cuociente Placentario'].length > 0) ? (('string' == typeof datos['Cuociente Placentario'][i][1]) ? datos['Cuociente Placentario'][i][1] : Number(datos['Cuociente Placentario'][i][1]).toFixed(0)) : 0
+        uterinasPct = (datos['Uterinas'].length > 0) ? (('string' == typeof datos['Uterinas'][i][1]) ? datos['Uterinas'][i][1] : Number(datos['Uterinas'][i][1]).toFixed(0)) : 0
+
+        leyenda += '<tr><th scope="row" class="text-danger text-center">'+_laEG+'</th><th class="text-danger text-center">'+ pfe +'</td><th class="text-danger text-center">'+ umbilicalPct +'</td><td class="text-center">'+ cmediaPct +'</td><th class="text-danger text-center">'+ cplacentarioPct +'</td><td class="text-center">'+ uterinasPct +'</td></tr>'
+
+        _laEG = Number(Number(_laEG).toFixed(0))
+        _datos.push({x:_laEG, y:_laValor});
+
+        _laValor = (datos['C. Abdomen'].length > 0) ? datos['C. Abdomen'][i][0] : 0
+        _datosCA.push({x:_laEG, y:_laValor});
+
+    }
+
+    let menor = ((_datos[0].y - 50) <= 0) ? 0 : (_datos[0].y - 50)
+    let mayor = 0
+
+    _grafico.valores.nueve.forEach(clave =>{
+        if (clave.x == _datos[_datos.length-1].x){ mayor = clave.y }
+    })
+
+    if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
+    } else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
+    } else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
+
+    par = menor % 2;
+    par = (par > 0) ? false : true
+
+    if (par == true){
+        _hchartsUno.yAxis.min = menor * multiplicador
+    }else{
+        if (menor > 1){
+            _hchartsUno.yAxis.min = (menor-1) * multiplicador  
+        } else {
+            _hchartsUno.yAxis.min = 0
+        }
+    }
+
+    if (mayor > 100){
+        mayor = Math.trunc(mayor / 10); multiplicador = 10;
+    }else if (mayor > 1000){
+        mayor = Math.trunc(mayor / 100); multiplicador = 100;
+    }else if (mayor > 10000){
+        mayor = Math.trunc(mayor / 1000); multiplicador = 1000;
+    }
+
+    par = mayor % 2;
+    par = (par > 0) ? false : true
+
+    if (par == true){
+        _hchartsUno.yAxis.max = mayor * multiplicador
+    }else{
+        _hchartsUno.yAxis.max = (mayor+1) * multiplicador  
+    }
+
+    _hchartsUno.series[9].data = _datos
+    _hchartsUno.series[8].data = _grafico.valores.uno
+    _hchartsUno.series[7].data = _grafico.valores.dos
+    _hchartsUno.series[6].data = _grafico.valores.tres
+    _hchartsUno.series[5].data = _grafico.valores.cuatro
+    _hchartsUno.series[4].data = _grafico.valores.cinco
+    _hchartsUno.series[3].data = _grafico.valores.seis
+    _hchartsUno.series[2].data = _grafico.valores.siete
+    _hchartsUno.series[1].data = _grafico.valores.ocho
+    _hchartsUno.series[0].data = _grafico.valores.nueve
+    _hchartsUno.xAxis.floor = _datos[0].x
+    _hchartsUno.xAxis.ceiling = _datos[_datos.length-1].x
+    _hchartsUno.yAxis.gridLineWidth = 0
+
+    //let caption = {
+    //    floating:true,
+    //    x: 70,
+    //    y: -250,
+    //    useHTML:true,
+    //    text: leyenda
+    //}
+
+    //_hchartsUno.caption = caption
+
+    the("valoresTabla").innerHTML = leyenda
+
+    let _hchartsDos = graficoCa()
+    _hchartsDos.series[2].data = _datosCA
+
+    $('#valoresContent').highcharts(_hchartsUno);
+    $('#valoresCCaList').highcharts(_hchartsDos);
+    $('#valoresModal').modal('show');
+
+    the("verValoresTabla").onclick = function(){
+        if(the("valoresTabla").parentElement.classList.contains("d-none")){
+            the("valoresTabla").parentElement.classList.remove("d-none")
+            the("valoresContent").classList.add("d-none")
+            this.innerHTML = "Ver Gráficas"
+            the("valoresModalLabel").innerHTML = "Tabla evolución percentiles de crecimiento y flujometría Doppler materno fetal"
+        } else {
+            the("valoresTabla").parentElement.classList.add("d-none")
+            the("valoresContent").classList.remove("d-none")
+            this.innerHTML = "Ver Datos"
+            the("valoresModalLabel").innerHTML = "Graficas curvas de crecimiento"
+        }
+    }
+}
+
+// Event listeners iniciales
+document.addEventListener('DOMContentLoaded', function() {
+    // Agregar event listeners a la primera columna
+    agregarEventListeners(1);
+
+    // Event listener para el botón agregar
+    document.getElementById('comparador.agregar').addEventListener('click', clonarColumna);
+
+    // Event listener para el botón eliminar
+    document.getElementById('comparador.eliminar').addEventListener('click', eliminarColumna);
+
+    // Event listener para el botón obtener valores
+    document.getElementById('obtener.valores').addEventListener('click', obtenerValores);
+    clonarColumna()
+});
 
 function comparacionDBP(eg,dbp) {
     'use strict';
@@ -727,4 +742,49 @@ function comparacionUt(eg, uterina) {
             return 0;
         }
     }
+}
+
+function graficoCa()
+{
+    let estructura = {
+        title: {
+            text: 'CA**',
+            x: -20
+        },
+        subtitle: {
+            text: 'Milimetros (mm)',
+           x: -20
+        },
+        plotOptions: {
+            series: { enableMouseTracking: false }
+        },
+        yAxis: {
+            title: { text: 'Milimetros (mm)' },
+           tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
+       },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Pct. 3',
+            marker: { enabled: false },
+            data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
+        }, {
+            type: "line",
+            name: 'Pct 97',
+            marker: { enabled: false },
+            data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
+        }, {
+            type: "line",
+            name: 'CA',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: []
+        }]}
+
+    return estructura
 }
