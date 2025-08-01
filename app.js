@@ -9644,7 +9644,7 @@ function informeDopplerClon(){
 
     var presentacion = the("presentacion-doppler").value;
     var edadmaterna = these("edad_materna")[0].value;
-        
+ 
     dayHoy = new Date();
     let dateInf = daysES[dayHoy.getDay()] + ", " + dayHoy.getUTCDate() + " de "+ monthsES[dayHoy.getUTCMonth()] + " " + dayHoy.getFullYear();
 
@@ -9689,7 +9689,7 @@ function informeDopplerClon(){
     InformeString = InformeString.replace(":MOTIVO", motivo);
     InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
     InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
-        
+
     InformeString = InformeString.replace(":FUM", fur);
     InformeString = InformeString.replace(":FEXAMEN", fexamen);
     InformeString = InformeString.replace(":EG", eg);
@@ -9723,7 +9723,7 @@ function informeDopplerClon(){
     InformeString = InformeString.replace(":COMENTARIO", comentario);
     InformeString = InformeString.replace(":DATEINFORME", dateInf);
     InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
-        
+  
     return InformeString;
 }
 

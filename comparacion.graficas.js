@@ -434,6 +434,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener para el botón obtener valores
     document.getElementById('obtener.valores').addEventListener('click', obtenerValores);
     clonarColumna()
+
+    document.getElementById('verInformeGrafica').addEventListener('click', informeComparacion);
+
 });
 
 function comparacionDBP(eg,dbp) {
@@ -825,4 +828,23 @@ function graficoCcp()
     }
 
     return estructura
+}
+
+function informeComparacion(){
+
+    const _peso = the("valoresContent").cloneNode(true);
+    const _umb = the("valoresUMBList").cloneNode(true);
+    const _ccp = the("valoresCCPList").cloneNode(true);
+
+    const _tabla = the("valoresTabla").parentElement.cloneNode(true);
+
+    var stringGraficos = '<h4 class="text-center">Evaluación ecográfica del crecimiento fetal y líquido amniótico</h4><span class="mt-2" style="border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px"></span><div class="mt-2 row"><div class="col-4"><p style="font-size:13px"><strong>Nombre: </strong>:PACIENTE</div><div class="col-4"><p style="font-size:13px"><strong>RUT: </strong>:RUT</div><div class="col-4"><p style="font-size:13px"><strong>Fecha de Exámen: </strong>:FEXAMEN</div></div><div class="row"><div class="col-12"><div>:graficoUno</div></div><div class="col-12"><div class="row"><div class="col-6"><div>:graficoDos</div></div><div class="col-6"><div>:graficoTres</div></div></div></div></div><div class="row pt-5" id="lineclear"><div class="col"> :tablaDatos <p style="margin-right:100px;font-size:12px;text-align:right"class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top:1px solid #000;width:100%!important;display:block"></span><p style="margin-bottom:0;font-size:11px">Fecha Informe: :DATEINFORME</p><span style="border-top:1px solid #000;width:100%!important;display:block"></span><p class="pie-pagina">* Tablas de crecimiento fetal Organización Mundial de la Salud: https://www.ajog.org/article/S0002-9378%2817%2932485-7/fulltext.<br>** Circunferencia Ambominal según referencia de Hadlock y col. Radiology 152:497 - 501, 1984. (Normalidad Pct 3 a 97)<br>*** Liquido Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.</div></div>'
+
+    stringGraficos = stringGraficos.replace(":graficoUno", _peso.innerHTML);
+    stringGraficos = stringGraficos.replace(":graficoDos", _umb.innerHTML);
+    stringGraficos = stringGraficos.replace(":graficoTres", _ccp.innerHTML);
+    stringGraficos = stringGraficos.replace(":tablaDatos", _tabla.innerHTML);
+
+
+    imprInforme(the(modal).innerHTML);
 }
