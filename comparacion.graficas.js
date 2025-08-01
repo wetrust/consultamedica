@@ -856,7 +856,7 @@ function imprInforme(datos){
 	var membrete = $("#"+config.config[0].input[0].id).val().replace(/\r\n|\r|\n/g,"<br />");
 	document = document.replace(/:DATOS/g, datos);
 	document = document.replace(/:ESTILO/g, estilo);
-	document = document.replace(/:FUNCION/g, funcion);
+	//document = document.replace(/:FUNCION/g, funcion);
 	document = document.replace(new RegExp('invisible', 'g'), "");
 	document = document.replace(":MEMBRETE", membrete);
     var ventimp = window.open(" ","popimpr");
