@@ -759,15 +759,8 @@ function graficoArtUmb()
         title: {
             text: 'IP Arteria Umbilical **',
             x: -20, //center
-            style: {
-                fontSize: '10px'
-            }
         },
-        plotOptions: {
-            series: {
-                enableMouseTracking: false
-            }
-        },
+        plotOptions: { series: { enableMouseTracking: false }},
         yAxis: {
             title: { text: 'Valor IP' },
             tickPositions: [0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]
