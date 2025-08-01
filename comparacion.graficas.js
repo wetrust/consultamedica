@@ -846,7 +846,7 @@ function informeComparacion(){
     stringGraficos = stringGraficos.replace(":tablaDatos", _tabla.innerHTML);
 
 
-    imprInforme(the(modal).innerHTML);
+    imprInforme(stringGraficos);
 }
 
 function imprInforme(datos){
