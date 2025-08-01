@@ -102,8 +102,7 @@ function agregarEventListeners(columnaId) {
                             the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso)
                         }
 
-                        identificador = "comparador.ccp"+"."+id[2]
-                        if ((id[1] == "umb" || id[1] == "acm") && the(identificador).value == ""){
+                        if ((id[1] == "umb" || id[1] == "acm")){
                             let _a = Number(the("comparador.umb"+"."+id[2]).value)
                             let _b = Number(the("comparador.acm"+"."+id[2]).value)
 
