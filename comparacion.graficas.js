@@ -81,7 +81,7 @@ function agregarEventListeners(columnaId) {
             inputElement.addEventListener('keyup', function(e){
                 if ( e.key === "Enter" ) {
                     e.preventDefault();
-                    var key_enter = ["dbp", "cc", "ca", "lf", "pfe", "umb", "acm","ccp","uterinas"];
+                    var key_enter = ["dbp", "cc", "ca", "lf", "pfe", "umb", "acm","uterinas"];
                     let id = this.id
                     id = id.split(".")
                     if (key_enter.includes(id[1])){
