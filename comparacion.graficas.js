@@ -313,7 +313,7 @@ function mostrarValoresEnModal(datos) {
         cplacentarioPct = (datos['Cuociente Placentario'].length > 0) ? (('string' == typeof datos['Cuociente Placentario'][i][1]) ? datos['Cuociente Placentario'][i][1] : Number(datos['Cuociente Placentario'][i][1]).toFixed(0)) : 0
         uterinasPct = (datos['Uterinas'].length > 0) ? (('string' == typeof datos['Uterinas'][i][1]) ? datos['Uterinas'][i][1] : Number(datos['Uterinas'][i][1]).toFixed(0)) : 0
 
-        leyenda += '<tr><th scope="row" class="text-danger text-center">'+_laEG+'</th><th class="text-danger text-center">'+ pfe +'</td><th class="text-danger text-center">'+ umbilicalPct +'</td><td class="text-center">'+ cmediaPct +'</td><th class="text-danger text-center">'+ cplacentarioPct +'</td><td class="text-center">'+ uterinasPct +'</td></tr>'
+        leyenda += '<tr><td scope="row" class="text-center">'+_laEG+'</td><td class="text-danger text-center">'+ pfe +'</td><td class="text-danger text-center">'+ umbilicalPct +'</td><td class="text-center">'+ cmediaPct +'</td><td class="text-danger text-center">'+ cplacentarioPct +'</td><td class="text-center">'+ uterinasPct +'</td></tr>'
 
         _laEG = Number(Number(_laEG).toFixed(0))
         _datos.push({x:_laEG, y:_laValor});
