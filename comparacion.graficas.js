@@ -408,11 +408,15 @@ function mostrarValoresEnModal(datos) {
         if(the("valoresTabla").parentElement.classList.contains("d-none")){
             the("valoresTabla").parentElement.classList.remove("d-none")
             the("valoresContent").classList.add("d-none")
+            the("valoresUMBList").classList.add("d-none")
+            the("valoresCCPList").classList.add("d-none")
             this.innerHTML = "Ver Gráficas"
             the("valoresModalLabel").innerHTML = "Tabla evolución percentiles de crecimiento y flujometría Doppler materno fetal"
         } else {
             the("valoresTabla").parentElement.classList.add("d-none")
             the("valoresContent").classList.remove("d-none")
+            the("valoresUMBList").classList.remove("d-none")
+            the("valoresCCPList").classList.remove("d-none")
             this.innerHTML = "Ver Datos"
             the("valoresModalLabel").innerHTML = "Graficas curvas de crecimiento"
         }
@@ -831,15 +835,18 @@ function graficoCcp()
 
 function informeComparacion(){
 
-    const _peso = the("valoresContent").cloneNode(true);
-    const _umb = the("valoresUMBList").cloneNode(true);
-    const _ccp = the("valoresCCPList").cloneNode(true);
+    let _peso = the("valoresContent").cloneNode(true);
+    _peso.classList.remove("d-none")
+    let _umb = the("valoresUMBList").cloneNode(true);
+    _umb.classList.remove("d-none")
+    let _ccp = the("valoresCCPList").cloneNode(true);
+    _ccp.classList.remove("d-none")
 
     let _tabla = the("valoresTabla").parentElement.cloneNode(true);
     _tabla.classList.remove("d-none")
 
     var _informe = document.createElement("div");
-    _informe.innerHTML = '<h4 class="text-center">Evaluación ecográfica del crecimiento fetal y líquido amniótico</h4><span class="mt-2" style="border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px"></span><div class="mt-2 row"><div class="col-4"><p style="font-size:13px"><strong>Nombre: </strong>:PACIENTE</div><div class="col-4"><p style="font-size:13px"><strong>RUT: </strong>:RUT</div><div class="col-4"><p style="font-size:13px"><strong>Fecha de Exámen: </strong>:FEXAMEN</div></div><div class="row"><div class="col-12"><div id="graficoUno"></div></div><div class="col-12"><div class="row" id="graficoDos"></div></div></div><div class="row pt-5" id="lineclear"><div class="col-12" id="tablaDatos"></div><div class="col-12"><p style="margin-right:100px;font-size:12px;text-align:right" class="text-right top40">Ecografista: <strong>:ECOGRAFISTA</strong></p><span style="border-top:1px solid #000;width:100%!important;display:block"></span><p style="margin-bottom:0;font-size:11px">Fecha Informe: :DATEINFORME</p><span style="border-top:1px solid #000;width:100%!important;display:block"></span></div></div>'
+    _informe.innerHTML = '<h4 class="text-center">Evaluación ecográfica del crecimiento fetal y líquido amniótico</h4><span class="mt-2" style="border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px"></span><div class="mt-2 row"><div class="col-4"><p style="font-size:13px"><strong>Nombre: </strong>:PACIENTE</div><div class="col-4"><p style="font-size:13px"><strong>RUT: </strong>:RUT</div><div class="col-4"><p style="font-size:13px"><strong>Fecha de Exámen: </strong>:FEXAMEN</div></div><div class="row"><div class="col-12"><div id="graficoUno"></div></div><div class="col-12"><div class="row" id="graficoDos"></div></div></div><div class="row pt-5" id="lineclear"><div class="col-12" id="tablaDatos"></div></div>'
 
     _informe.querySelectorAll('[id$="graficoUno"')[0].append(_peso);
     _informe.querySelectorAll('[id$="graficoDos"')[0].append(_umb)
