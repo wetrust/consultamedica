@@ -71,7 +71,7 @@ function agregarEventListeners(columnaId) {
                     }else if(funcion == 'uterinas'){
                         resultado = comparacionUt(parseFloat(semanas), valor)
                     }
-                    
+
                     pctElement.textContent = (('string' == typeof resultado) ? resultado : resultado.toFixed(2));
                 } else {
                     pctElement.textContent = 'mm';
@@ -845,13 +845,23 @@ function informeComparacion(){
     let _tabla = the("valoresTabla").parentElement.cloneNode(true);
     _tabla.classList.remove("d-none")
 
+    let childElements = _tabla.querySelectorAll('*');
+
+     childElements.forEach(child => {
+        child.classList.remove('text-danger');
+    });
+
+
     var _informe = document.createElement("div");
-    _informe.innerHTML = '<h4 class="text-center">Evolución percentil de Peso Fetal Estimado y Flujometría Doppler Materno/Fetal</h4><span class="mt-2" style="border-top:1px solid #000;width:100%!important;display:block;border-bottom:2px solid #000;padding-top:2px"></span><div class="mt-2 row"><div class="col-4"><p style="font-size:13px"><strong>Nombre: </strong>:PACIENTE</div><div class="col-4"><p style="font-size:13px"><strong>RUT: </strong>:RUT</div><div class="col-4"><p style="font-size:13px"><strong>Fecha de Exámen: </strong>:FEXAMEN</div></div><div class="row"><div class="col-12"><div id="graficoUno"></div></div><div class="col-12"><div class="row" id="graficoDos"></div></div></div><div class="row pt-5" id="lineclear"><div class="col-12" id="tablaDatos"></div></div>'
+    _informe.innerHTML = '<h4 class="text-center">Evolución percentil de Peso Fetal Estimado y Flujometría Doppler Materno/Fetal</h4><span class="mt-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="mt-2 row"><div class="col-4"><p style="font-size:13px"><strong>Nombre: </strong><span id="paciente"></div><div class="col-4"><p style="font-size:13px"><strong>RUT: </strong><span id="rut"></span></div><div class="col-4"><p style="font-size:13px"><strong>Fecha de Exámen: </strong>:FEXAMEN</div></div><div class="row"><div class="col-12"><div id="graficoUno"></div></div><div class="col-12"><div class="row" id="graficoDos"></div></div></div><div class="row pt-5" id="lineclear"><div class="col-12"><h6>IP de percentiles de PFE más Doppler de UMB, ACM, CCP y promedio de uterinas</h6></div><div class="col-12" id="tablaDatos"></div></div>'
 
     _informe.querySelectorAll('[id$="graficoUno"')[0].append(_peso);
     _informe.querySelectorAll('[id$="graficoDos"')[0].append(_umb)
     _informe.querySelectorAll('[id$="graficoDos"')[0].append(_ccp)
     _informe.querySelectorAll('[id$="tablaDatos"')[0].append(_tabla)
+
+    _informe.querySelectorAll('[id$="paciente"')[0].innerHTML = the("nombre.ecoObsSegTrim").value;
+    _informe.querySelectorAll('[id$="rut"')[0].innerHTML = the("rut.ecoObsSegTrim").value;
 
     imprInforme(_informe.innerHTML);
 
