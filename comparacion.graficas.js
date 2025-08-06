@@ -400,10 +400,8 @@ function mostrarValoresEnModal(datos) {
     let _hchartsTres = graficoCcp()
     _hchartsTres.series[2].data = _datosCCP
 
-    _hchartsUno.setSize(470, 600, false);
-    _hchartsUno.reflow();
+    _hchartsUno = Highcharts.chart('valoresContent', _hchartsUno)
 
-    $('#valoresContent').highcharts(_hchartsUno);
     $('#valoresUMBList').highcharts(_hchartsDos);
     $('#valoresCCPList').highcharts(_hchartsTres);
     $('#valoresModal').modal('show');
@@ -838,6 +836,9 @@ function graficoCcp()
 }
 
 function informeComparacion(){
+
+    _hchartsUno.setSize(470, 600, false);
+    _hchartsUno.reflow();
 
     let _peso = the("valoresContent").cloneNode(true);
     _peso.classList.remove("d-none")
