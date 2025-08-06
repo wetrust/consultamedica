@@ -289,7 +289,7 @@ function obtenerValores() {
 // Función para mostrar valores en el modal
 function mostrarValoresEnModal(datos) {
     let _grafico = graficoPFECompleto()
-    let _hchartsUno = structuredClone(baseGraficoPFE)
+    _hchartsUno = structuredClone(baseGraficoPFE)
     let par = false
     let multiplicador = 0
 
