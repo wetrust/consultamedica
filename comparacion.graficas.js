@@ -837,7 +837,7 @@ function graficoCcp()
 
 function informeComparacion(){
 
-    _hchartsUno.setSize(700, 300, false);
+    _hchartsUno.setSize(900, 340, false);
     _hchartsUno.reflow();
 
     let _peso = the("valoresContent").cloneNode(true);
