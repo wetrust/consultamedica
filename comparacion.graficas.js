@@ -843,10 +843,10 @@ function informeComparacion(){
     _hchartsUno.setSize(950, 340, false);
     _hchartsUno.reflow();
 
-    _hchartsDos.setSize(340, 340, false);
+    _hchartsDos.setSize(250, 250, false);
     _hchartsDos.reflow();
 
-    _hchartsTres.setSize(340, 340, false);
+    _hchartsTres.setSize(250, 250, false);
     _hchartsTres.reflow();
 
     let _peso = the("valoresContent").cloneNode(true);
