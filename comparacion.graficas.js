@@ -35,7 +35,9 @@ the("comparacion.graficas").onclick = function(){
 }
 
 let columnaCounter = 1;
-var _hchartsUno 
+var _hchartsUno = null
+var _hchartsDos = null
+var _hchartsTres = null
 
 // Función para agregar event listeners a los inputs de una columna
 function agregarEventListeners(columnaId) {
@@ -394,16 +396,17 @@ function mostrarValoresEnModal(datos) {
 
     the("valoresTabla").innerHTML = leyenda
 
-    let _hchartsDos = graficoArtUmb()
+    _hchartsDos = graficoArtUmb()
     _hchartsDos.series[2].data = _datosUmb
 
-    let _hchartsTres = graficoCcp()
+    _hchartsTres = graficoCcp()
     _hchartsTres.series[2].data = _datosCCP
 
     _hchartsUno = Highcharts.chart('valoresContent', _hchartsUno)
 
-    $('#valoresUMBList').highcharts(_hchartsDos);
-    $('#valoresCCPList').highcharts(_hchartsTres);
+    _hchartsDos = Highcharts.chart('valoresUMBList', _hchartsDos)
+    _hchartsTres = Highcharts.chart('valoresCCPList', _hchartsTres)
+
     $('#valoresModal').modal('show');
 
     the("verValoresTabla").onclick = function(){
@@ -839,6 +842,12 @@ function informeComparacion(){
 
     _hchartsUno.setSize(950, 340, false);
     _hchartsUno.reflow();
+
+    _hchartsDos.setSize(340, 340, false);
+    _hchartsDos.reflow();
+
+    _hchartsTres.setSize(340, 340, false);
+    _hchartsTres.reflow();
 
     let _peso = the("valoresContent").cloneNode(true);
     _peso.classList.remove("d-none")
