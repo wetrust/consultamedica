@@ -840,7 +840,7 @@ function graficoCcp()
 
 function informeComparacion(){
 
-    _hchartsUno.setSize(1000, 340, false);
+    _hchartsUno.setSize(980, 340, false);
     _hchartsUno.reflow();
 
     _hchartsDos.setSize(430, 250, false);
@@ -861,12 +861,10 @@ function informeComparacion(){
 
     let childElements = _tabla.querySelectorAll('*');
 
-    childElements.forEach(child => {
-        child.classList.remove('text-danger');
-    });
+    childElements.forEach(child => { child.classList.remove('text-danger'); });
 
     var _informe = document.createElement("div");
-    _informe.innerHTML = '<h5 class="text-center">Graficas evolución percentiles de peso fetal estimado (PFE) y flujometría Doppler Materno / Fetal</h5><span class="mt-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="mt-2 row"><div class="col-4"><p style="font-size:13px"><strong>Nombre: </strong><span id="paciente"></div><div class="col-4"><p style="font-size:13px"><strong>RUT: </strong><span id="rut"></span></div></div><div class="row"><div class="col-12"><div id="graficoUno"></div></div><div class="col-12"><div class="row" id="graficoDos"></div></div></div><h5 class="text-center mt-5">Tabla percentiles de PFE más indice de pulsatilidad (IP) para Doppler de Uterinas, UMB, ACM, CCP.</h5><span class="my-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="row" id="lineclear"><div class="col-12" id="tablaDatos"></div></div>'
+    _informe.innerHTML = '<h5 class="text-center">Graficas evolución percentiles de peso fetal estimado (PFE) y flujometría Doppler Materno / Fetal</h5><span class="mt-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="mt-2 row"><div class="col-4"><p style="font-size:13px"><strong>Nombre: </strong><span id="paciente"></div><div class="col-4"><p style="font-size:13px"><strong>RUT: </strong><span id="rut"></span></div></div><div class="row"><div class="col-12"><div id="graficoUno"></div></div><div class="col-12"><div class="row" id="graficoDos"></div></div></div><h5 class="text-center mt-5" style="padding-top:2px">Tabla percentiles de PFE más indice de pulsatilidad (IP) para Doppler de Uterinas, UMB, ACM, CCP.</h5><span class="my-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="row" id="lineclear"><div class="col-12" id="tablaDatos"></div></div>'
 
     _informe.querySelectorAll('[id$="graficoUno"')[0].append(_peso);
     _informe.querySelectorAll('[id$="graficoDos"')[0].append(_umb)
