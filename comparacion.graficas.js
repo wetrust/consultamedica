@@ -392,13 +392,16 @@ function mostrarValoresEnModal(datos) {
     _hchartsTres = graficoCcp()
     _hchartsTres.series[2].data = _datosCCP
 
-    let style = {fontSize: '18px'};
+    let style = {style: {fontSize: '18px'}};
 
     Object.assign(_hchartsUno.xAxis.title, style)
 
     _hchartsUno = Highcharts.chart('valoresContent', _hchartsUno)
 
+    Object.assign(_hchartsDos.title, style)
     _hchartsDos = Highcharts.chart('valoresUMBList', _hchartsDos)
+
+    Object.assign(_hchartsTres.title, style)
     _hchartsTres = Highcharts.chart('valoresCCPList', _hchartsTres)
 
     $('#valoresModal').modal('show');
