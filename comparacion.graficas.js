@@ -384,16 +384,6 @@ function mostrarValoresEnModal(datos) {
     _hchartsUno.xAxis.ceiling = _datos[_datos.length-1].x
     _hchartsUno.yAxis.gridLineWidth = 0
 
-    //let caption = {
-    //    floating:true,
-    //    x: 70,
-    //    y: -250,
-    //    useHTML:true,
-    //    text: leyenda
-    //}
-
-    //_hchartsUno.caption = caption
-
     the("valoresTabla").innerHTML = leyenda
 
     _hchartsDos = graficoArtUmb()
@@ -402,7 +392,9 @@ function mostrarValoresEnModal(datos) {
     _hchartsTres = graficoCcp()
     _hchartsTres.series[2].data = _datosCCP
 
-    Object.assign(_hchartsUno.xAxis.title, {fontSize: '14px'})
+    let style = {fontSize: '18px'};
+
+    Object.assign(_hchartsUno.xAxis.title, style)
 
     _hchartsUno = Highcharts.chart('valoresContent', _hchartsUno)
 
