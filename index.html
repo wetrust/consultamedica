@@ -3615,14 +3615,20 @@
                                         <div class="flex-row scroll-container d-none" id="opcional.flujometria.basico.div">
                                             <div>
                                                 <div class="d-flex flex-column mb-3">
+                                                    <div class="p-1 align-content-center text-nowrap" style="height: 53px;">IP - Uterinas</div>
                                                     <div class="p-1 align-content-center text-nowrap" style="height: 48px;">IP - UMB</div>
                                                     <div class="p-1 align-content-center text-nowrap" style="height: 53px;">IP - ACM</div>
                                                     <div class="p-1 align-content-center text-nowrap" style="height: 53px;">IP - CCP</div>
-                                                    <div class="p-1 align-content-center text-nowrap" style="height: 53px;">IP - Uterinas</div>
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1 column-container" id="comparador.doppler.columna.1">
                                                 <div class="d-flex flex-column mb-3">
+                                                    <div class="p-1 text-nowrap">
+                                                        <div class="input-group mb-2">
+                                                            <input type="text" class="form-control" id="comparador.uterinas.1"  data-funcion="uterinas">
+                                                            <div class="input-group-append"><div class="input-group-text" id="comparador.uterinas.pct.1">mm</div></div>
+                                                        </div>
+                                                    </div>
                                                     <div class="p-1 text-nowrap">
                                                         <div class="input-group mb-2">
                                                             <input type="text" class="form-control" id="comparador.umb.1" data-funcion="umb">
@@ -3639,12 +3645,6 @@
                                                         <div class="input-group mb-2">
                                                             <input type="text" class="form-control" id="comparador.ccp.1"  data-funcion="ccp">
                                                             <div class="input-group-append"><div class="input-group-text" id="comparador.ccp.pct.1">mm</div></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-1 text-nowrap">
-                                                        <div class="input-group mb-2">
-                                                            <input type="text" class="form-control" id="comparador.uterinas.1"  data-funcion="uterinas">
-                                                            <div class="input-group-append"><div class="input-group-text" id="comparador.uterinas.pct.1">mm</div></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -3681,7 +3681,7 @@
                     <div class="col-6" id="valoresUMBList"></div>
                     <div class="col-6" id="valoresCCPList"></div>
                 </div>
-                <table class="table table-bordered d-none"><thead class="thead-dark"><tr><th scope="col">Semanas</th><th scope="col">Percentil PFE</th><th scope="col">Pct IP Uterinas</th><th scope="col">Pct IP UMB</th><th scope="col">Pct IP ACM</th><th scope="col">Pct IP CCP</th></tr></thead><tbody id="valoresTabla"></tbody></table>
+                <table class="table table-bordered d-none"><thead class="thead-dark"><tr><th scope="col">Semanas</th><th scope="col">Percentil de PFE</th><th scope="col">Pct IP Uterinas</th><th scope="col">Pct IP UMB</th><th scope="col">Pct IP ACM</th><th scope="col">Pct IP CCP</th></tr></thead><tbody id="valoresTabla"></tbody></table>
             </div>
             <div class="modal-footer d-flex justify-content-between">
                 <button id="verValoresTabla" class="btn btn-info">Ver Datos</button>

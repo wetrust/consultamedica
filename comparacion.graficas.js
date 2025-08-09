@@ -425,6 +425,7 @@ function mostrarValoresEnModal(datos) {
             the("valoresModalLabel").innerHTML = "Graficas curvas de crecimiento"
         }
     }
+
 }
 
 // Event listeners iniciales
