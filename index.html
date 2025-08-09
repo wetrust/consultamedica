@@ -3670,18 +3670,18 @@
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="valoresModalLabel">Graficas curvas de crecimiento fetal y flujometría Doppler fetal</h5>
+                <h5 class="modal-title" id="valoresModalLabel">Tabla percentiles de PFE + Indice de pulsatilidad (IP) para Doppler de Uterinas, UMB, ACM, CCP</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <div id="valoresContent"></div>
+                <div id="valoresContent" class="d-none"></div>
                 <div class="row">
-                    <div class="col-6" id="valoresUMBList"></div>
-                    <div class="col-6" id="valoresCCPList"></div>
+                    <div class="col-6 d-none" id="valoresUMBList"></div>
+                    <div class="col-6 d-none" id="valoresCCPList"></div>
                 </div>
-                <table class="table table-bordered d-none"><thead class="thead-dark"><tr><th scope="col">Semanas</th><th scope="col">Percentil de PFE</th><th scope="col">Pct IP Uterinas</th><th scope="col">Pct IP UMB</th><th scope="col">Pct IP ACM</th><th scope="col">Pct IP CCP</th></tr></thead><tbody id="valoresTabla"></tbody></table>
+                <table class="table table-bordered"><thead class="thead-dark"><tr><th scope="col">Semanas</th><th scope="col">Percentil de PFE</th><th scope="col">Pct IP Uterinas</th><th scope="col">Pct IP UMB</th><th scope="col">Pct IP ACM</th><th scope="col">Pct IP CCP</th></tr></thead><tbody id="valoresTabla"></tbody></table>
             </div>
             <div class="modal-footer d-flex justify-content-between">
                 <button id="verValoresTabla" class="btn btn-info">Ver Datos</button>
