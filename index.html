@@ -3500,7 +3500,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group form-check mb-4"><input type="checkbox" class="form-check-input" id="larg.cerv"><label class="text-white bg-secondary mb-0 rounded text-nowrap p-2 px-4 border border-dark" for="larg.cerv">¿Desea realizar Cervicometría y Doppler arterias uterinas?</label></div>
+
+                                <div class="d-flex flex-row justify-content-between">
+                                    <label class="text-white bg-secondary mb-0 rounded text-nowrap p-2 px-4 border border-dark"><em>¿Desea realizar Cervicometría y Doppler arterias uterinas?</em></label>
+                                    <div>
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
+                                            <label class="btn btn btn-outline-secondary active" id="larg.cerv.no" >
+                                            <input type="radio" checked="" value="nada">NO</label>
+                                            <label class="btn btn-outline-secondary" id="larg.cerv.si">
+                                            <input type="radio"  value="nada">SI</label>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group row d-none pt-2" id="larg.cerv.div">
                                     <div class="col-3 mb-2">
                                         <label>Largo Cervical</label>
@@ -3517,8 +3528,16 @@
                                     <div class="col-3 mb-2"></div>
                                     <div class="col-3 form-group"><label>IP. Uterina derecha</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_derecha"><div class="input-group-prepend"><div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div><div class="col-3 form-group"><label>IP. Uterina izquierda</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div><div class="col-3 form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div><div class="col-3 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div>
                                 </div>
-                                <div class="form-group form-check mb-4">
-                                    <input type="checkbox" class="form-check-input" id="comparacion.graficas"><label class="text-white bg-secondary mb-0 rounded text-nowrap p-2 px-4 border border-dark" for="comparacion.graficas">¿Desea realizar resumen de evaluación de crecimiento fetal y flujometría doppler materno fetal?</label>
+                                <div class="d-flex flex-row justify-content-between">
+                                    <label class="text-white bg-secondary mb-0 rounded text-nowrap p-2 px-4 border border-dark"><em>¿Desea realizar resumen de evaluación de crecimiento fetal y flujometría doppler materno fetal?</em></label>
+                                    <div>
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
+                                            <label class="btn btn btn-outline-secondary active" id="comparacion.graficas.no" >
+                                            <input type="radio" checked="" value="nada">NO</label>
+                                            <label class="btn btn-outline-secondary" id="comparacion.graficas.si">
+                                            <input type="radio"  value="nada">SI</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
@@ -3636,11 +3655,11 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group form-check mb-4 d-none" id="ver.ref.otro.container">
-                                            <input type="checkbox" class="form-check-input" id="ver.ref.otro"><label class="form-check-label text-primary" for="ver.ref.otro">Ver referencias <small>(Biometrías, Estimación y categorización de peso)</small></label>
+                                            <input type="checkbox" class="form-check-input" id="ver.ref.otro"><label class="form-check-label text-primary" for="ver.ref.otro">Ver referencias de Biometrías y flujometría Doppler</small></label>
                                         </div>
                                         <div class="row d-none" id="ver.ref.otro.div">
                                             <div class="col-12">
-                                                <p><small class="text-primary">- Biometría: Hadlock FP. y col. Radiology 152: 497 - 501; 1984. *Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>- Peso fetal estimado por formula que incluye: CC, CA, LF; Hadlock FP, et. al.  Am J Obstet Gynecol. 1985 Feb 1;151(3):333-7.<br>- Peso Fetal categorizado por curva fetal de la OMS https://www.scielo.cl/scielo.php?script=sci_arttext&#x26;pid=S0717-75262023000300183</small></p>
+                                                <p><small class="text-primary">- Biometría: Hadlock FP. y col. Radiology 152: 497 - 501; 1984. *Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>- Peso fetal estimado por formula que incluye: CC, CA, LF; Hadlock FP, et. al.  Am J Obstet Gynecol. 1985 Feb 1;151(3):333-7.<br>- Peso Fetal categorizado por curva fetal de la OMS https://www.scielo.cl/scielo.php?script=sci_arttext&#x26;pid=S0717-75262023000300183<br>- Doppler Uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M., Martinez JM., Puerto B., Gratacos E., UOG 2008; 32: 128c - 32<br>- Doppler Fetal: Baschat AA, Gembruch U, Ultrasound Obstet. Ginecol. 2003; 21 : 124 - 127</small></p>
                                             </div>
                                         </div>
                                         <hr class="border mb-4">

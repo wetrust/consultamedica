@@ -9,20 +9,9 @@ the("ver.ref.otro").onclick = function(){
     }
 }
 
-the("comparacion.graficas").onclick = function(){
+the("comparacion.graficas.no").onclick = function(){
     let listOne = ["comparacion.graficas.div", "ver.ref.otro.container", "opcional.flujometria.basico.div", "opcional.flujometria.basico"]
     let listTwo = ["comparacion.graficas.div", "opcional.flujometria.basico.div"]
-    if (this.checked == true){
-
-        listOne.forEach(item => {
-            the(item).classList.remove("d-none");
-        })
-
-        listTwo.forEach(item => {
-            the(item).classList.add("d-flex");
-        })
-
-    } else {
 
         listOne.forEach(item => {
             the(item).classList.add("d-none");
@@ -31,7 +20,20 @@ the("comparacion.graficas").onclick = function(){
         listTwo.forEach(item => {
             the(item).classList.remove("d-flex");
         })
-    }
+}
+
+the("comparacion.graficas.si").onclick = function(){
+    let listOne = ["comparacion.graficas.div", "ver.ref.otro.container", "opcional.flujometria.basico.div", "opcional.flujometria.basico"]
+    let listTwo = ["comparacion.graficas.div", "opcional.flujometria.basico.div"]
+
+    listOne.forEach(item => {
+        the(item).classList.remove("d-none");
+    })
+
+    listTwo.forEach(item => {
+        the(item).classList.add("d-flex");
+    })
+
 }
 
 let columnaCounter = 1;

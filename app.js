@@ -994,14 +994,14 @@ $( document ).ready(function() {
         }
     });
 
-    $("#larg\\.cerv").on("click", function(){
-        if (this.checked == true){
-            the("larg.cerv.div").classList.remove("d-none");
-            the("largo.cervical.segundo").focus();
-        }else{
-            the("larg.cerv.div").classList.add("d-none");
-        }
-    });
+    the("larg.cerv.no").onclick = function(){
+        the("larg.cerv.div").classList.add("d-none");
+    }
+
+    the("larg.cerv.si").onclick = function(){
+        the("larg.cerv.div").classList.remove("d-none");
+        the("largo.cervical.segundo").focus();
+    }
 
     $("#largo\\.cervical\\.segundo").on("keyup", function(){
         let cV = +this.value;
