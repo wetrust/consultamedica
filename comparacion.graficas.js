@@ -318,7 +318,7 @@ function mostrarValoresEnModal(datos) {
         cplacentarioPct = (datos['Cuociente Placentario'].length > 0) ? (('string' == typeof datos['Cuociente Placentario'][i][1]) ? datos['Cuociente Placentario'][i][1] : Number(datos['Cuociente Placentario'][i][1]).toFixed(0)) : 0
         uterinasPct = (datos['Uterinas'].length > 0) ? (('string' == typeof datos['Uterinas'][i][1]) ? datos['Uterinas'][i][1] : Number(datos['Uterinas'][i][1]).toFixed(0)) : 0
 
-        leyenda += '<tr><th class="text-center pan" style="background-color: #e9ecef;">'+_laEG+'</th><th class="text-center pan" style="background-color: #e9ecef;">'+ pfe +'</th><td class="text-center">'+ uterinasPct +'</td><th class="text-center pan" style="background-color: #e9ecef;">'+ umbilicalPct +'</th><td class="text-center">'+ cmediaPct +'</td><th class="text-center pan" style="background-color: #e9ecef;">'+ cplacentarioPct +'</th></tr>'
+        leyenda += '<tr><th class="text-center pan" style="background-color: #e9ecef;">'+_laEG+'</th><td class="text-center pan" style="background-color: #e9ecef;">'+ pfe +'</td><th class="text-center">'+ uterinasPct +'</th><td class="text-center pan" style="background-color: #e9ecef;">'+ umbilicalPct +'</td><th class="text-center">'+ cmediaPct +'</th><td class="text-center pan" style="background-color: #e9ecef;">'+ cplacentarioPct +'</td></tr>'
 
         _laEG = Number(Number(_laEG).toFixed(0))
         _datos.push({x:_laEG, y:_laValor});
@@ -415,7 +415,7 @@ function mostrarValoresEnModal(datos) {
             the("valoresUMBList").classList.add("d-none")
             the("valoresCCPList").classList.add("d-none")
             this.innerHTML = "Ver Gráficas"
-            the("valoresModalLabel").innerHTML = "Tabla evolución percentiles de crecimiento y flujometría Doppler materno fetal"
+            the("valoresModalLabel").innerHTML = "Tabla percentiles de PFE + Indice de pulsatilidad (IP) para Doppler de Uterinas, UMB, ACM, CCP"
         } else {
             the("valoresTabla").parentElement.classList.add("d-none")
             the("valoresContent").classList.remove("d-none")
