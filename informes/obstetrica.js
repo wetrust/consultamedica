@@ -149,7 +149,7 @@ export function InfEcoObsSegTrim1(){
     var CESAPREV = $('#grado-placenta').val();
     InformeString = InformeString.replace(":CESAPREV", CESAPREV);
     var contadorOpcional = 0;
-    if (the("larg.cerv").checked == true){
+    if (the("larg.cerv.si").classList.contains("active")){
 
         InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td class="text-center" style="border-top:1px dashed #045dab;"></td><td class="text-center" style="border-top:1px dashed #045dab;">:LARGCERVTXT</td></tr>';
 
