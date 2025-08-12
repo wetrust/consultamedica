@@ -1,5 +1,6 @@
 import { the } from './wetrust.js'
 import { baseGraficoPFE, graficoPFECompleto, percentilOMS } from './graficoPFEMasMenos.js';
+import { fechas } from './functionesM.js';
 
 the("ver.ref.otro").onclick = function(){
     if (this.checked == true){
@@ -883,8 +884,8 @@ function informeComparacion(){
     _informe.querySelectorAll('[id$="paciente"')[0].innerHTML = the("nombre.ecoObsSegTrim").value;
     _informe.querySelectorAll('[id$="rut"')[0].innerHTML = the("rut.ecoObsSegTrim").value;
 
-    _informe.querySelectorAll('[id$="examinador"')[0].innerHTML = the("nombre.ecoObsSegTrim").value;
-    _informe.querySelectorAll('[id$="fechaImpresion"')[0].innerHTML = the("rut.ecoObsSegTrim").value;
+    _informe.querySelectorAll('[id$="examinador"')[0].innerHTML = the("ecografista").value;
+    _informe.querySelectorAll('[id$="fechaImpresion"')[0].innerHTML = humanDate(fechas.toDate(the("fee").value));
 
     imprInforme(_informe.innerHTML);
 
