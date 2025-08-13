@@ -337,7 +337,7 @@ function mostrarValoresEnModal(datos) {
 
     }
 
-    let menor = ((_datos[0].y) <= 0) ? 0 : _datos[0].y
+    let menor = ((_grafico.valores.uno[0].y) <= 70) ? 70 : _grafico.valores.uno[0].y
     let mayor = 0
 
     _grafico.valores.nueve.forEach(clave =>{
