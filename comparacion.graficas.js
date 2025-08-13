@@ -1,6 +1,7 @@
 import { the } from './wetrust.js'
 import { baseGraficoPFE, graficoPFECompleto, percentilOMS } from './graficoPFEMasMenos.js';
 import { fechas } from './functionesM.js';
+import { humanDate } from './wetrust.js'
 
 the("ver.ref.otro").onclick = function(){
     if (this.checked == true){
