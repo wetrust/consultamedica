@@ -337,7 +337,7 @@ function mostrarValoresEnModal(datos) {
 
     }
 
-    let menor = ((_datos[0].y - 50) <= 0) ? 0 : (_datos[0].y - 50)
+    let menor = ((_datos[0].y) <= 0) ? 0 : _datos[0].y
     let mayor = 0
 
     _grafico.valores.nueve.forEach(clave =>{
@@ -885,7 +885,7 @@ function informeComparacion()
         _informe.innerHTML += '<h5 class="text-center">Graficas percentiles de peso fetal estimado (PFE) y flujometría Doppler Materno / Fetal</h5>'
     }
 
-    _informe.innerHTML += '<span class="mt-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="mt-5 row"><div class="col-6"><p style="font-size: 15px"><strong>Identificación de paciente: </strong><span id="paciente" class="text-right"></span></p></div><div class="col-6"><p style="font-size: 15px"><strong>DNI: </strong><span id="rut"></span></p></div></div><div class="row"><div class="col-12"><div id="graficoUno"></div></div><div class="col-12 mt-5"><div id="graficoDos" class="row"></div></div></div><h5 class="text-center mt-5" style="padding-top:2px">Tabla percentiles de PFE más indice de pulsatilidad (IP) para Doppler de Uterinas, UMB, ACM, CCP.</h5><span class="my-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="row" id="lineclear"><div class="col-12" id="tablaDatos"></div></div>'
+    _informe.innerHTML += '<span class="mt-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="mt-5 row"><div class="col-6"><p style="font-size: 15px"><strong>Identificación de paciente: </strong><span id="paciente"></span></p></div><div class="col-6"><p style="font-size: 15px" class="text-right"><strong>DNI: </strong><span id="rut"></span></p></div></div><div class="row"><div class="col-12"><div id="graficoUno"></div></div><div class="col-12 mt-5"><div id="graficoDos" class="row"></div></div></div><h5 class="text-center mt-5" style="padding-top:2px">Tabla percentiles de PFE más indice de pulsatilidad (IP) para Doppler de Uterinas, UMB, ACM, CCP.</h5><span class="my-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="row" id="lineclear"><div class="col-12" id="tablaDatos"></div></div>'
     _informe.innerHTML += '<hr><div class="mt-5 row"><div class="col-6"><p style="font-size: 15px"><strong>Médico examinador: </strong><span id="examinador"></span></p></div><div class="col-6"><p style="font-size: 15px" class="text-right"><strong>Fecha de Impresion: </strong><span id="fechaImpresion"></span></p></div></div>'
 
     _informe.querySelectorAll('[id$="graficoUno"')[0].append(_peso);
