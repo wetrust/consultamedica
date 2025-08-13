@@ -326,10 +326,14 @@ function mostrarValoresEnModal(datos) {
         _datos.push({x:_laEG, y:_laValor});
 
         _laValor = (datos['Umbilical'].length > 0) ? datos['Umbilical'][i][0] : 0
-        _datosUmb.push({x:_laEG, y:_laValor});
+        if (_laValor > 0){
+            _datosUmb.push({x:_laEG, y:_laValor});
+        }
 
         _laValor = (datos['Cuociente Placentario'].length > 0) ? datos['Cuociente Placentario'][i][0] : 0
-        _datosCCP.push({x:_laEG, y:_laValor});
+        if (_laValor > 0){
+            _datosCCP.push({x:_laEG, y:_laValor});
+        }
 
     }
 
@@ -402,8 +406,10 @@ function mostrarValoresEnModal(datos) {
 
     _hchartsUno = Highcharts.chart('valoresContent', _hchartsUno)
 
-    Object.assign(_hchartsDos.title, style)
-    _hchartsDos = Highcharts.chart('valoresUMBList', _hchartsDos)
+    if(_datosUmb.length > 0){
+        Object.assign(_hchartsDos.title, style)
+        _hchartsDos = Highcharts.chart('valoresUMBList', _hchartsDos)
+    }
 
     if(_datosCCP.length > 0){
         Object.assign(_hchartsTres.title, style)
@@ -847,11 +853,15 @@ function informeComparacion()
     _hchartsUno.setSize(980, 340, false);
     _hchartsUno.reflow();
 
-    _hchartsDos.setSize(430, 250, false);
-    _hchartsDos.reflow();
+    if (_hchartsDos.hasOwnProperty('axes') !== null){
+        _hchartsDos.setSize(430, 250, false);
+        _hchartsDos.reflow();
+    }
 
-    _hchartsTres.setSize(430, 250, false);
-    _hchartsTres.reflow();
+    if (_hchartsTres.hasOwnProperty('axes') !== null){
+        _hchartsTres.setSize(430, 250, false);
+        _hchartsTres.reflow();
+    }
 
     let _peso = the("valoresContent").cloneNode(true);
     _peso.classList.remove("d-none")
