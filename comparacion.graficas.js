@@ -853,12 +853,12 @@ function informeComparacion()
     _hchartsUno.setSize(980, 340, false);
     _hchartsUno.reflow();
 
-    if (_hchartsDos.hasOwnProperty('axes') !== null){
+    if (_hchartsDos.hasOwnProperty('axes') !== false){
         _hchartsDos.setSize(430, 250, false);
         _hchartsDos.reflow();
     }
 
-    if (_hchartsTres.hasOwnProperty('axes') !== null){
+    if (_hchartsTres.hasOwnProperty('axes') !== false){
         _hchartsTres.setSize(430, 250, false);
         _hchartsTres.reflow();
     }
