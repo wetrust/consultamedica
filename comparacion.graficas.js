@@ -451,7 +451,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener para el botón obtener valores
     document.getElementById('obtener.valores').addEventListener('click', obtenerValores);
-    clonarColumna()
 
     document.getElementById('verInformeGrafica').addEventListener('click', informeComparacion);
 
