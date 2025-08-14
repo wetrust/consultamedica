@@ -8,7 +8,9 @@ function isSafeInteger(value) {
 
 };
 
-export function graficoPFEMasMenos(){
+export function graficoPFEMasMenos()
+{
+    // Esta función calcula los percentiles de PFE para la gráfica de más menos
     let tramo = calcularDosMenos(Number(the("semanas").value));
     let valores = {"uno" : [], "dos" : [], "tres" : [], "cuatro" : [], "cinco" : [], "seis" : [], "siete" : [], "ocho" : [], "nueve" : []};
 
@@ -60,31 +62,35 @@ export function graficoPFEMasMenos(){
 
         let caja = [tramo[i],0]
 
-        caja[1] = pUno
+        caja[1] = pUno;
         valores.uno.push(pUno);
-        caja[1] = pDos
+        caja[1] = pDos;
         valores.dos.push(pDos);
-        caja[1] = pTres
+        caja[1] = pTres;
         valores.tres.push(pTres);
-        caja[1] = pCuatro
+        caja[1] = pCuatro;
         valores.cuatro.push(pCuatro);
-        caja[1] = pCinco
+        caja[1] = pCinco;
         valores.cinco.push(pCinco);
-        caja[1] = pSeis
+        caja[1] = pSeis;
         valores.seis.push(pSeis);
-        caja[1] = pSiete
+        caja[1] = pSiete;
         valores.siete.push(pSiete);
-        caja[1] = pOcho
+        caja[1] = pOcho;
         valores.ocho.push(pOcho);
-        caja[1] = pNueve
+        caja[1] = pNueve;
         valores.nueve.push(pNueve);
+
     }
 
     let resultado = {valores: valores, semanas: tramo}
     return resultado
+
 }
 
-export function graficoPFEMasMenosSinDias(){
+export function graficoPFEMasMenosSinDias()
+{
+    // Esta función calcula los percentiles de PFE para la gráfica de más menos sin días
     let tramo = calcularDosMenosSinDias(Number(the("semanas").value));
     let valores = {"uno" : [], "dos" : [], "tres" : [], "cuatro" : [], "cinco" : [], "seis" : [], "siete" : [], "ocho" : [], "nueve" : []};
 
@@ -157,6 +163,7 @@ export function graficoPFEMasMenosSinDias(){
 
     let resultado = {valores: valores, semanas: tramo}
     return resultado
+
 }
 
 function calcularDosMenos(eg){

@@ -44,7 +44,9 @@ var _hchartsDos = null
 var _hchartsTres = null
 
 // Función para agregar event listeners a los inputs de una columna
-function agregarEventListeners(columnaId) {
+function agregarEventListeners(columnaId)
+{
+
     const inputs = ['dbp', 'cc', 'ca', 'lf', 'pfe','umb', 'acm','ccp','uterinas'];
 
     inputs.forEach(input => {
@@ -162,6 +164,7 @@ function agregarEventListeners(columnaId) {
         the("comparador.pfe"+"."+id[2]).value = peso
         the("comparador.pfe.pct"+"."+id[2]).innerHTML = comparacionPFE(parseFloat(semanas), parseFloat(dias), peso) 
     }
+
 }
 
 // Función para clonar una columna
@@ -852,15 +855,8 @@ function informeComparacion()
     _hchartsUno.setSize(980, 340, false);
     _hchartsUno.reflow();
 
-    if (_hchartsDos.hasOwnProperty('axes') !== false){
-        _hchartsDos.setSize(430, 250, false);
-        _hchartsDos.reflow();
-    }
-
-    if (_hchartsTres.hasOwnProperty('axes') !== false){
-        _hchartsTres.setSize(430, 250, false);
-        _hchartsTres.reflow();
-    }
+    if (_hchartsDos.hasOwnProperty('axes') !== false){ _hchartsDos.setSize(430, 250, false); _hchartsDos.reflow(); }
+    if (_hchartsTres.hasOwnProperty('axes') !== false){ _hchartsTres.setSize(430, 250, false); _hchartsTres.reflow(); }
 
     let _peso = the("valoresContent").cloneNode(true);
     _peso.classList.remove("d-none")
@@ -870,28 +866,27 @@ function informeComparacion()
     _ccp.classList.remove("d-none")
 
     let _tabla = the("valoresTabla").parentElement.cloneNode(true);
-    _tabla.classList.remove("d-none")
+    _tabla.classList.remove("d-none");
 
     let childElements = _tabla.querySelectorAll('*');
-
     childElements.forEach(child => { if (child.classList.contains('pam')){ child.classList.add('bg-secondary'); } });
 
     const columnas = document.querySelectorAll('[id^="comparador.columna."]');
-
     var _informe = document.createElement("div");
+
     if (columnas.length > 1){
-        _informe.innerHTML = '<h5 class="text-center">Graficas evolución percentiles de peso fetal estimado (PFE) y flujometría Doppler Materno / Fetal</h5>'
+        _informe.innerHTML = '<h5 class="text-center">Graficas evolución percentiles de peso fetal estimado (PFE) y flujometría Doppler Materno / Fetal</h5>';
     }else{
-        _informe.innerHTML += '<h5 class="text-center">Graficas percentiles de peso fetal estimado (PFE) y flujometría Doppler Materno / Fetal</h5>'
+        _informe.innerHTML += '<h5 class="text-center">Graficas percentiles de peso fetal estimado (PFE) y flujometría Doppler Materno / Fetal</h5>';
     }
 
-    _informe.innerHTML += '<span class="mt-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="mt-5 row"><div class="col-6"><p style="font-size: 15px"><strong>Identificación de paciente: </strong><span id="paciente"></span></p></div><div class="col-6"><p style="font-size: 15px" class="text-right"><strong>DNI: </strong><span id="rut"></span></p></div></div><div class="row"><div class="col-12"><div id="graficoUno"></div></div><div class="col-12 mt-5"><div id="graficoDos" class="row"></div></div></div><h5 class="text-center mt-5" style="padding-top:2px">Tabla percentiles de PFE más indice de pulsatilidad (IP) para Doppler de Uterinas, UMB, ACM, CCP.</h5><span class="my-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="row" id="lineclear"><div class="col-12" id="tablaDatos"></div></div>'
+    _informe.innerHTML += '<span class="mt-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="row"><div class="col-6"><p style="font-size: 15px"><strong>Identificación de paciente: </strong><span id="paciente"></span></p></div><div class="col-6"><p style="font-size: 15px" class="text-right"><strong>DNI: </strong><span id="rut"></span></p></div></div><div class="row"><div class="col-12"><div id="graficoUno"></div></div><div class="col-12 mt-5"><div id="graficoDos" class="row"></div></div></div><h5 class="text-center mt-5" style="padding-top:2px">Tabla percentiles de PFE más indice de pulsatilidad (IP) para Doppler de Uterinas, UMB, ACM, CCP.</h5><span class="my-2" style="border-top:1px solid #000;width:100%!important;display:block;padding-top:2px"></span><div class="row" id="lineclear"><div class="col-12" id="tablaDatos"></div></div>'
     _informe.innerHTML += '<hr><div class="mt-5 row"><div class="col-6"><p style="font-size: 15px"><strong>Médico examinador: </strong><span id="examinador"></span></p></div><div class="col-6"><p style="font-size: 15px" class="text-right"><strong>Fecha de Impresion: </strong><span id="fechaImpresion"></span></p></div></div>'
 
     _informe.querySelectorAll('[id$="graficoUno"')[0].append(_peso);
-    _informe.querySelectorAll('[id$="graficoDos"')[0].append(_umb)
-    _informe.querySelectorAll('[id$="graficoDos"')[0].append(_ccp)
-    _informe.querySelectorAll('[id$="tablaDatos"')[0].append(_tabla)
+    _informe.querySelectorAll('[id$="graficoDos"')[0].append(_umb);
+    _informe.querySelectorAll('[id$="graficoDos"')[0].append(_ccp);
+    _informe.querySelectorAll('[id$="tablaDatos"')[0].append(_tabla);
 
     _informe.querySelectorAll('[id$="paciente"')[0].innerHTML = the("nombre.ecoObsSegTrim").value;
     _informe.querySelectorAll('[id$="rut"')[0].innerHTML = the("rut.ecoObsSegTrim").value;
