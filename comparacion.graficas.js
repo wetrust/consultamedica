@@ -440,8 +440,8 @@ function mostrarValoresEnModal(datos) {
     }
 
     the("valoresContent").classList.add("d-none")
-    the("valoresUMBList").classList.remove("d-none")
-    the("valoresCCPList").classList.remove("d-none")
+    the("valoresUMBList").classList.add("d-none")
+    the("valoresCCPList").classList.add("d-none")
     the("valoresTabla").parentElement.classList.remove("d-none")
 
 }
