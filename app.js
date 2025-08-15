@@ -7198,6 +7198,7 @@ function InfEcoObsSegTrim1Clon(){
     InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
 
     return InformeString;
+
 }
 
 function getDate(today) {

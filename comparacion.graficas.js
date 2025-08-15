@@ -434,10 +434,15 @@ function mostrarValoresEnModal(datos) {
             the("valoresContent").classList.remove("d-none")
             the("valoresUMBList").classList.remove("d-none")
             the("valoresCCPList").classList.remove("d-none")
-            this.innerHTML = "Ver Datos"
+            this.innerHTML = "Ver Tabla"
             the("valoresModalLabel").innerHTML = "Graficas curvas de crecimiento"
         }
     }
+
+    the("valoresContent").classList.add("d-none")
+    the("valoresUMBList").classList.remove("d-none")
+    the("valoresCCPList").classList.remove("d-none")
+    the("valoresTabla").parentElement.classList.remove("d-none")
 
 }
 
@@ -916,3 +921,15 @@ function imprInforme(datos)
 	ventimp.document.close();
 
 }
+
+the("down.no").addEventListener("click", function () {
+
+    the("down.div").classList.add("d-none");
+
+})
+
+the("down.si").addEventListener("click", function () {
+
+    the("down.div").classList.remove("d-none");
+
+})
