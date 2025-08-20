@@ -388,6 +388,10 @@ $( document ).ready(function() {
 
     }
 
+    the("punto.morfologia.clon").onclick = function(){
+        the("punto.morfologia").onclick()
+    }
+
     $("#menu\\.modulo\\.activo\\.cinco").on("click", function(){
         var botones = ["menu.modulo.activo.cinco.uno","menu.modulo.activo.cinco.tres","menu.modulo.activo.cinco.cuatro"];
         
