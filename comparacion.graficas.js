@@ -921,15 +921,3 @@ function imprInforme(datos)
 	ventimp.document.close();
 
 }
-
-the("down.no").addEventListener("click", function () {
-
-    the("down.div").classList.add("d-none");
-
-})
-
-the("down.si").addEventListener("click", function () {
-
-    the("down.div").classList.remove("d-none");
-
-})
