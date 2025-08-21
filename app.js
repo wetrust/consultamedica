@@ -346,6 +346,20 @@ $( document ).ready(function() {
         }
     });
 
+    the("menu.modulo.datos.parto").onclick = function(){       
+        var botones = ["menu.modulo.datos.parto.uno", "menu.modulo.datos.parto.dos"];
+
+        if (the(botones[0]).classList.contains("d-none")){
+            botones.forEach(function myFunction(value, index, array) {
+                the(value).classList.remove("d-none");
+            });
+        }else{
+            botones.forEach(function myFunction(value, index, array) {
+                the(value).classList.add("d-none");
+            });
+        }
+    }
+
     the("punto.morfologia").onclick = function(){
 
         let _modal = makeModal("Ingresar");
@@ -6585,7 +6599,7 @@ $(document).ready(function(){
 
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
-    var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet"];
+    var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet","#elparto"];
     var div_fecha = ["#consulta","#paciente", "#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet"];
     let d = "d-none";
 

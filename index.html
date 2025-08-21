@@ -1583,7 +1583,7 @@
                             </ul>
                         </div>
                         <div class="d-flex justify-content-between align-items-center py-1">
-                            <a class="btn btn-outline-dark rounded text-left w-100 my-1 " id="menu.modulo.activo"><small>Módulos de trabajo</small></a>
+                            <a class="btn btn-outline-dark rounded text-left w-100 my-1 " id="menu.modulo.activo"><small>Módulos obstétrico ( ecográfico )</small></a>
                             <ul class="mb-0">
                                 <li class="azul-li" id="punto.dos"></li>
                             </ul>
@@ -1593,11 +1593,13 @@
                         <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.tres" href="#ecoDoppler"><small>&gt; Flujometría Doppler materno / fetal</small></a>
                         <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cuatro" href="#ecoGinecologica"><small>&gt; Ecografía Ginecológica adicional</small></a>
                         <div class="d-flex justify-content-between align-items-center py-1">
-                            <a class="btn btn-outline-dark rounded text-left w-100 my-1 " id="menu.modulo.datos.parto" href="#postnatal"><small>Datos del parto y recien nacido</small></a>
+                            <a class="btn btn-outline-dark rounded text-left w-100 my-1 " id="menu.modulo.datos.parto"><small>Módulos neonatal ( Parto y RN )</small></a>
                             <ul class="mb-0">
                                 <li class="azul-li"></li>
                             </ul>
                         </div>
+                        <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.datos.parto.uno" href="#elparto"><small>&gt; Datos del parto y recien nacido</small></a>
+                        <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.datos.parto.dos" href="#postnatal"><small>&gt; Ajuste al peso neonatal</small></a>
                         <div class="d-none justify-content-between align-items-center py-1">
                             <a class="btn btn-outline-dark rounded text-left w-100 my-1" id="menu.modulo.construccion"><small>Módulos en construcción</small></a>
                             <ul class="mb-0">
@@ -3701,20 +3703,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="d-flex flex-row justify-content-between">
-                                            <label><em>D.- Evaluación Post - Natal ( Biometría y salud Neonatal )</em></label>
-                                            <div class="d-flex flex-row align-items-center">
-                                                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
-                                                    <label class="btn btn btn-outline-secondary active" >
-                                                    <input type="radio" checked="" value="nada">NO</label>
-                                                    <label class="btn btn-outline-secondary">
-                                                    <input type="radio"  value="nada">SI</label>
-                                                </div>
-                                                <ul class="mb-0">
-                                                    <li class="azul-li"></li>
-                                                </ul>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <h5 class="mt-3 mb-0">Módulo en construcción</h5>
@@ -5124,6 +5112,17 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid d-none" id="elparto">
+        <ol class="breadcrumb">
+            <li class="ml-auto"><a href="#inicio"><strong>Volver</strong></a></li>
+        </ol>
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="text-secondary"><em>En construccion</em></h5>
+                
+            </div>
+        </div>
+    </div>
     <div class="modal" id="popupGenerico">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -5170,42 +5169,21 @@
         </div>
         <div id="cf"></div>
     </div>
-    <div class="container pt-2 d-none" id="paciente" style="margin-top: 7.3rem;">
+    <div class="container-fluid pt-2 d-none" id="paciente" style="margin-top: 7.3rem;">
         <div class="card">
             <div class="card-body">
-                <h5 class="text-secondary"><em>DATOS OBLIGADOS *</em></h5>
+                <h5 class="text-secondary"><em>DATOS PARA REGISTRO DEL EXÁMEN ECOGRÁFICO *</em></h5>
                 <div class="row">
-                    <div class="col-4 py-2">
+                    <div class="col-3 py-2">
                         <label class="mb-0"><strong>N° Registro ( DNI )</strong></label>
                        <input class="form-control bg-verde text-white m-0" type="text" id="id-paciente">
                     </div>
-                    <div class="col-4 py-2">
+                    <div class="col-3 py-2">
                         <label class="mb-0"><strong>Nombre del paciente</strong></label>
                         <input class="form-control bg-verde text-white m-0" type="text" id="nombre-paciente">
                     </div>
-                    <div class="col-4 py-2">
-                        <label class="mb-0">Edad materna</label>
-                        <input list="edadMaternaList" name="edad_materna" class="form-control bg-verde text-white" id="edadMaterna">
-                        <datalist id="edadMaternaList"></datalist>
-                    </div>
-                    <div class="col-4 py-2 pb-4">
-                        <label class="mb-0">Motivo del exámen</label>
-                        <input list="motivoExamenList" id="motivo-examen" class="form-control bg-verde text-white">
-                        <datalist id="motivoExamenList"></datalist>
-                    </div>
-                    <div class="col-4 py-2 pb-4">
-                        <label class="mb-0">Patología Gineco - obstétrica Relevante</label>
-                        <input list="patologiaObstetricaUnoList" id="patologiaObstetricaUno" class="form-control bg-verde text-white">
-                        <datalist id="patologiaObstetricaUnoList"></datalist>
-                    </div>
-                    <div class="col-4 py-2 pb-4">
-                        <label class="mb-0"><strong>Profesional ecografista</strong></label>
-                        <input list="ecografistaList" id="ecografista" class="form-control bg-verde text-white">
-                        <datalist id="ecografistaList"></datalist>
-                    </div>
-                    <div class="col-4 py-2 pb-4"></div>
-                    <div class="col-4 py-2 pb-4">
-                        <label class="mb-0"><strong>Tipo de Ecografia</strong></label>
+                    <div class="col-3 py-2">
+                        <label class="mb-0"><strong>Tipo de exámen ecografico</strong></label>
                         <select id="tipoEcografia" class="form-control bg-verde text-white">
                             <option value=""></option>
                             <option value="0">Ecografía obstétrica precoz</option>
@@ -5214,24 +5192,49 @@
                             <option value="3">Ecografía Ginecológica</option>
                         </select>
                     </div>
+                    <div class="col-3 py-2">
+                        <label class="mb-0"><strong>Profesional ecografista</strong></label>
+                        <input list="ecografistaList" id="ecografista" class="form-control bg-verde text-white">
+                        <datalist id="ecografistaList"></datalist>
+                    </div>
+                    <div class="col-4 py-2">
+                        <label class="mb-0">Edad materna</label>
+                        <input list="edadMaternaList" name="edad_materna" class="form-control bg-verde text-white" id="edadMaterna">
+                        <datalist id="edadMaternaList"></datalist>
+                    </div>
+                    <div class="col-4 pt-2">
+                        <label class="mb-0">Motivo del exámen</label>
+                        <input list="motivoExamenList" id="motivo-examen" class="form-control bg-verde text-white">
+                        <datalist id="motivoExamenList"></datalist>
+                    </div>
+                    <div class="col-4 pt-2">
+                        <label class="mb-0">Patología Gineco - obstétrica Relevante</label>
+                        <input list="patologiaObstetricaUnoList" id="patologiaObstetricaUno" class="form-control bg-verde text-white">
+                        <datalist id="patologiaObstetricaUnoList"></datalist>
+                    </div>
+                    <div class="col-4 pt-2"></div>
                 </div>
-                <p class="mt-2 p-2 bg-secondary text-white text-center rounded mx-5">* Datos obligados para calculo de biometrías y confección de protocolos ecográficos.</p>
-                <div class="row mb-2 justify-content-md-center">
-                    <div class="col-1 mt-4 text-center">
+                <p class="p-2 bg-secondary text-white text-center rounded">* Datos obligados para calculo de biometrías y confección de protocolos ecográficos.</p>
+                <div class="row justify-content-md-center">
+                    <div class="col-1 text-center">
                         <a href="#configuracion"><img src="./img/izquierda.png" title="volver a configuracion" style="height:35px" role="button" ></a>
                     </div>
-                    <div class="col-4 mt-4 text-center">
+                    <div class="col-4 text-center">
                         <a class="btn btn-secondary text-white" href="#configuracion">VOLVER A CONFIGURACIÓN DE DATOS</a>
                     </div>
                     <div class="col-1"></div>
-                    <div class="col-4 mt-4 text-center">
+                    <div class="col-4 text-center">
                         <a class="btn btn-secondary text-white" id="continuarAExamen">CONTINUAR A EXÁMEN ECOGRÁFICO</a>
                     </div>
-                    <div class="col-1 mt-4 text-center">
+                    <div class="col-1 text-center">
                         <a id="continuarAExamenBoton"><img src="./img/derecha.png" title="volver a configuracion" style="height:45px"></a>
                     </div>
                 </div>
-                <div class="row mb-2 justify-content-md-center"></div>
+            </div>
+        </div>
+        <div class="card mt-1">
+            <div class="card-body">
+                <h5 class="text-secondary"><em>DATOS REGISTRO PARTO Y RECIEN NACIDO ( EN CONSTRUCCIÓN)</em></h5>
             </div>
         </div>
     </div>
