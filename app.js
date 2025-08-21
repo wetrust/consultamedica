@@ -2533,7 +2533,7 @@ $( document ).ready(function() {
         if ( e.key === "Enter") {
             e.preventDefault();
             if (this.id == "bvmEcoDos"){
-                this("clickInformeEco").onclick();
+                the("clickInformeEco").onclick();
             }
 
             if (key_enter.includes(this.id)== true){
