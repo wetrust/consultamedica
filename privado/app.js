@@ -7452,7 +7452,7 @@ function InfEcoObsSegTrim1Clon(){
         contadorOpcional++;
     }
 
-    if (the("larg.cerv.si").classList.contains("active")){
+    if ($("#largo\\.cervical\\.segundo").val() != "" && $("#largo\\.cervical\\.segundo").val() != "0"){
         InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td></td><td style="text-align:center;">:LARGCERVTXT</td></tr>';
         InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
         InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
