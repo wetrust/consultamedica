@@ -313,26 +313,6 @@ $( document ).ready(function() {
         }   
     }
 
-    the("ver.sumatoria.cuadrantes").onclick = function(){
-        if (this.checked == true){
-            the("liquido.ila.uno").classList.remove("d-none")
-            the("liquido.ila.dos").classList.remove("d-none")
-            the("liquido.ila.tres").classList.remove("d-none")
-            the("liquido.ila.cuatro").classList.remove("d-none")
-            the("liquido.ila.uno.mas").classList.remove("d-none")
-            the("liquido.ila.dos.mas").classList.remove("d-none")
-            the("liquido.ila.tres.mas").classList.remove("d-none")
-        }else{
-            the("liquido.ila.uno").classList.add("d-none")
-            the("liquido.ila.dos").classList.add("d-none")
-            the("liquido.ila.tres").classList.add("d-none")
-            the("liquido.ila.cuatro").classList.add("d-none")
-            the("liquido.ila.uno.mas").classList.add("d-none")
-            the("liquido.ila.dos.mas").classList.add("d-none")
-            the("liquido.ila.tres.mas").classList.add("d-none")
-        }
-    }
-
     the("referenciabvmilaPunto").onclick = function(){
         if (the("referenciabvmila").classList.contains("d-none")){
             the("referenciabvmila").classList.remove("d-none")
@@ -1000,6 +980,15 @@ $( document ).ready(function() {
 
     the("larg.cerv.no").onclick = function(){
         the("larg.cerv.div").classList.add("d-none");
+    }
+
+    the("sumatoria.cuatro.cuadrantes.si").onclick = function(){
+        the("sumatoria.cuatro.cuadrantes.div").classList.remove("d-none");
+        the("largo.cervical.segundo").focus();
+    }
+
+    the("sumatoria.cuatro.cuadrantes.no").onclick = function(){
+        the("sumatoria.cuatro.cuadrantes.div").classList.add("d-none");
     }
 
     the("larg.cerv.si").onclick = function(){
