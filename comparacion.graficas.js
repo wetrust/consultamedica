@@ -327,6 +327,7 @@ function mostrarValoresEnModal(datos) {
         let _laValor = (datos['PFE'].length > 0) ? datos['PFE'][i][0] : 0
 
         let pfe = 0
+        let pfePCT = 0
         let umbilicalPct = 0
         let cmediaPct = 0
         let cplacentarioPct = 0
