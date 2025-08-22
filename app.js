@@ -370,7 +370,7 @@ $( document ).ready(function() {
         the("Ica").dataset.modal = _modal.id
 
         the("Ica").onkeyup = function(){
-            if ("barcelona" == this.value){
+            if ("2020" == this.value){
                 document.location.hash = "#morfologiafet"
                 $("#" + this.dataset.modal).modal("hide")
             } 

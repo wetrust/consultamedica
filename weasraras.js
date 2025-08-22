@@ -83,7 +83,7 @@ $(document).ready(function(){
         the(_modal.contenido).innerHTML = '<div class="form-group"><label for="Ica">Código Acceso</label><input type="password" class="form-control" id="Ica"><small id="emailHelp" class="form-text text-muted">Ingrese código de acceso para plataforma.</small></div>';
 
         the("Ica").onkeyup = function(){
-            ("barcelona" == this.value) ? window.location.href = "https://crecimientofetal.cl/privado" : "";
+            ("2020" == this.value) ? window.location.href = "https://crecimientofetal.cl/privado" : "";
         }
 
         $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) {
