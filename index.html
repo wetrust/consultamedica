@@ -1641,14 +1641,14 @@
                         </div>
                     </div>
                 </div>
-                        <div class="d-none justify-content-left align-items-center">
-                            <div class="d-flex justify-content-start align-items-center">
-                                <a class=" text-center my-1"><small>Ver modulos habilitados</small></a>
-                                <ul class="mb-0 m-0">
-                                    <li class="text-azul" id="punto.nn"></li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="d-none justify-content-left align-items-center">
+                    <div class="d-flex justify-content-start align-items-center">
+                        <a class=" text-center my-1"><small>Ver modulos habilitados</small></a>
+                        <ul class="mb-0 m-0">
+                            <li class="text-azul" id="punto.nn"></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="col-12 col-md-8">
                 <div class="card border-0 card-minimo" >
@@ -3741,7 +3741,7 @@
                     <div class="col-6 d-none" id="valoresUMBList"></div>
                     <div class="col-6 d-none" id="valoresCCPList"></div>
                 </div>
-                <table class="table table-bordered"><thead><tr><th scope="col">Semanas</th><th scope="col">PFE ( Gramos /</th><th scope="col">Percentil )</th><th scope="col">Pct IP Uterinas</th><th scope="col">Pct IP UMB</th><th scope="col">Pct IP ACM</th><th scope="col">Pct IP CCP</th></tr></thead><tbody id="valoresTabla"></tbody></table>
+                <table class="table table-bordered"><thead><tr><th scope="col">Semanas</th><th scope="col">PFE ( Gramos )</th><th scope="col">( Percentil )</th><th scope="col">Pct IP Uterinas</th><th scope="col">Pct IP UMB</th><th scope="col">Pct IP ACM</th><th scope="col">Pct IP CCP</th></tr></thead><tbody id="valoresTabla"></tbody></table>
             </div>
             <div class="modal-footer d-flex justify-content-between">
                 <button id="verValoresTabla" class="btn btn-info">Ver Grafica</button>
@@ -5116,10 +5116,26 @@
         <ol class="breadcrumb">
             <li class="ml-auto"><a href="#inicio"><strong>Volver</strong></a></li>
         </ol>
-        <div class="card shadow">
-            <div class="card-body">
-                <h5 class="text-secondary"><em>En construccion</em></h5>
-                
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="uno.parto.tab" data-toggle="tab" data-target="#uno.parto" type="button" role="tab" aria-controls="uno.parto" aria-selected="true">Uno</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="dos.parto.tab" data-toggle="tab" data-target="#dos.parto" type="button" role="tab" aria-controls="dos.parto" aria-selected="false">Dos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tres.parto.tab" data-toggle="tab" data-target="#tres.parto" type="button" role="tab" aria-controls="tres.parto" aria-selected="false">Tres</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="uno.parto" role="tabpanel" aria-labelledby="dos.parto.tab">
+
+            </div>
+            <div class="tab-pane fade" id="dos.parto" role="tabpanel" aria-labelledby="dos.parto.tab">
+
+            </div>
+            <div class="tab-pane fade" id="tres.parto" role="tabpanel" aria-labelledby="tres.parto.tab">
+
             </div>
         </div>
     </div>
