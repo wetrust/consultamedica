@@ -142,7 +142,7 @@ function reiniciarMensajes(){
     the("mensaje.tres").classList.add("d-none");
     the("mensaje.cuatro").classList.add("d-none");
     the("mensaje.cinco").classList.add("d-none");
-    the("mensaje.seis").classList.remove("active");
+    the("mensaje.seis").classList.add("active");
     the("pedefes").classList.add("d-none");
 }
 
