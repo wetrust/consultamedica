@@ -54,7 +54,7 @@ $(document).ready(function(){
             reiniciaPuntitos();
         }
     });
-    the("punto.cinco").on("click", function(){
+    the("punto.seis").onclick = function(){
         reiniciaBotones();
         reiniciarMensajes();
         if (this.classList.contains("active") == false){
@@ -66,7 +66,7 @@ $(document).ready(function(){
         }else{
             reiniciaPuntitos();
         }
-    });
+    };
 
     $("#punto\\.cinco").on("click", function(){
         reiniciaBotones();
@@ -122,7 +122,7 @@ function reiniciaPuntitos(){
     the("punto.tres").classList.remove("active");
     the("punto.cuatro").classList.remove("active");
     the("punto.cinco").classList.remove("active");
-    
+    the("punto.seis").classList.remove("active");
 }
 
 function reiniciaBotones(){
