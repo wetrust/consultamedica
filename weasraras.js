@@ -54,6 +54,7 @@ $(document).ready(function(){
             reiniciaPuntitos();
         }
     });
+
     the("punto.seis").onclick = function(){
         reiniciaBotones();
         reiniciarMensajes();
