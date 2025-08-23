@@ -54,6 +54,20 @@ $(document).ready(function(){
             reiniciaPuntitos();
         }
     });
+    the("punto.cinco").on("click", function(){
+        reiniciaBotones();
+        reiniciarMensajes();
+        if (this.classList.contains("active") == false){
+            reiniciaPuntitos();
+            the("menu.modulo.datos.parto").classList.add("active");
+            this.classList.add("active");
+            ocultarPrincipal();
+            the("mensaje.seis").classList.remove("d-none");
+        }else{
+            reiniciaPuntitos();
+        }
+    });
+
     $("#punto\\.cinco").on("click", function(){
         reiniciaBotones();
         reiniciarMensajes();
@@ -108,6 +122,7 @@ function reiniciaPuntitos(){
     the("punto.tres").classList.remove("active");
     the("punto.cuatro").classList.remove("active");
     the("punto.cinco").classList.remove("active");
+    
 }
 
 function reiniciaBotones(){
@@ -126,6 +141,7 @@ function reiniciarMensajes(){
     the("mensaje.tres").classList.add("d-none");
     the("mensaje.cuatro").classList.add("d-none");
     the("mensaje.cinco").classList.add("d-none");
+    the("mensaje.seis").classList.remove("active");
     the("pedefes").classList.add("d-none");
 }
 
