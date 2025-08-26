@@ -7132,7 +7132,7 @@ function InfEcoObsSegTrim1Clon(){
     InformeString = InformeString.replace(":CESAPREV", CESAPREV);
 
     var contadorOpcional = 0;
-    if (the("larg.cerv").checked == true){
+    if (the("larg.cerv.si").classList.contains("active") == true){
         InformeString += '<tr> <td><strong>IP Promedio Arterias Uterinas</strong></td><td style="text-align:center;">:ARTUT</td><td style="text-align:center;">:ARTUTPCTVAL</td><td style="text-align:center;">:ARTUTRANGO</td></tr>';
 
         InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
