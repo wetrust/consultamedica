@@ -1812,7 +1812,8 @@ $( document ).ready(function() {
                 the(email.button).dataset.parentmodal = this.dataset.modal;
 
                 $('#'+email.button).on("click", function(){
-                    var InformeString = InfEcoObsSegTrim1Clon();
+                    //var InformeString = InfEcoObsSegTrim1Clon();
+                    var InformeString = InfEcoObsSegTrim1();
 
                     var data = new FormData();
                     //data.append("licencia" , the("licencia").value);
