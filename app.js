@@ -1138,7 +1138,7 @@ $( document ).ready(function() {
         if (this.value != ""){
 
             let ut = this.value
-            vautlor = ut.toString().replace(/\,/g,'.');
+            ut = ut.toString().replace(/\,/g,'.');
             ut = Number(ut);
             ut = pctut(this.value);
 
@@ -7126,10 +7126,7 @@ function InfEcoObsSegTrim1Clon(){
     var contadorOpcional = 0;
     InformeString += '<tr> <td><strong>IP Promedio Arterias Uterinas</strong></td><td style="text-align:center;">:ARTUT</td><td style="text-align:center;">:ARTUTPCTVAL</td><td style="text-align:center;">:ARTUTRANGO</td></tr>';
 
-    InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
-    InformeString = InformeString.replace(":ARTUTPCTVAL", $("#respuesta_uterina_promedio_percentil").html());
-
-    let pctUT = $("#respuesta_uterina_promedio_percentil").html();
+    let pctUT = the("respuesta_uterina_promedio_percentil").innerHTML;
 
     if (pctUT == "&gt; 95" || pctUT == "&lt; 5"){
         tmpData = 0;
@@ -7137,6 +7134,8 @@ function InfEcoObsSegTrim1Clon(){
         tmpData = +pctUT;
     }
 
+    InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
+    InformeString = InformeString.replace(":ARTUTPCTVAL", pctUT);
     var ARTUTRANGO = oldProgress(tmpData);
     InformeString = InformeString.replace(":ARTUTRANGO", ARTUTRANGO);
     contadorOpcional++;
