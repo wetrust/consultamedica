@@ -992,10 +992,6 @@ $( document ).ready(function() {
         }
     });
 
-    the("larg.cerv.no").onclick = function(){
-        the("larg.cerv.div").classList.add("d-none");
-    }
-
     the("sumatoria.cuatro.cuadrantes.si").onclick = function(){
         the("sumatoria.cuatro.cuadrantes.div").classList.remove("d-none");
         the("largo.cervical.segundo").focus();
@@ -1003,11 +999,6 @@ $( document ).ready(function() {
 
     the("sumatoria.cuatro.cuadrantes.no").onclick = function(){
         the("sumatoria.cuatro.cuadrantes.div").classList.add("d-none");
-    }
-
-    the("larg.cerv.si").onclick = function(){
-        the("larg.cerv.div").classList.remove("d-none");
-        the("largo.cervical.segundo").focus();
     }
 
     $("#largo\\.cervical\\.segundo").on("keyup", function(){
@@ -2544,10 +2535,10 @@ $( document ).ready(function() {
 // Controlador de los keypress
 $( document ).ready(function() {
     $("input").on("keypress",function( e ) {
-        var key_enter = ["liquido.ila.uno", "liquido.ila.dos", "liquido.ila.tres", "liquido.ila.cuatro", "utero.ginecologica", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3", "endometrio.ginecologica", "endometDesc2", "endometGrosor", "anexo.derecho.ginecologica", "anexo.izquierdo.ginecologica","ovario.derecho.ginecologica", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovario.izquierdo.ginecologica", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "douglas.ginecologica", "comentario.ginecologica", "saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp", "cc", "ca", "lf", "bvmEcoDos", "pfe", "bvmEcoDos", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","aud", "psmACM","", "modalPreInfEcoDoppler","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia", "", "vlp.morfologia", "vld.morfologia", "respuesta_uterina_derecha_prim", "respuesta_uterina_izquierda_prim"];
+        var key_enter = ["liquido.ila.uno", "liquido.ila.dos", "liquido.ila.tres", "liquido.ila.cuatro", "utero.ginecologica", "utUbicacion2", "cuerpoUterino", "uteroDim1", "uteroDim2", "uteroDim3", "endometrio.ginecologica", "endometDesc2", "endometGrosor", "anexo.derecho.ginecologica", "anexo.izquierdo.ginecologica","ovario.derecho.ginecologica", "ovarDereMed1", "ovarDereMed2", "ovarDereMed3", "ovario.izquierdo.ginecologica", "ovarIzquier1", "ovarIzquier2", "ovarIzquier3", "douglas.ginecologica", "comentario.ginecologica", "saco","embrion","lcn","btn.informe.precoz","utero-ubic1","utero-ubic2", "cuerpo-uterino", "saco-gestacional", "saco-vitelino","fcf-prim","anexo-derecho","anexo-izquierdo","exploracion-douglas","comentarios-eco-uno","dbp", "cc", "ca", "lf", "pfe", "bvmEcoDos", "largo.cervical.segundo", "lh", "cerebelo", "cm.ecoDosTres", "atrio.ecoDosTres", "", "respuesta_uterina_derecha", "respuesta_uterina_izquierda", "","aud","aui","ipau","ipacm","aud", "psmACM","", "modalPreInfEcoDoppler","endometrio.ginecologica", "anexo.izquierdo.ginecologica","anexo.derecho.ginecologica","ovario.izquierdo.ginecologica","ovario.derecho.ginecologica","douglas.ginecologica","comentario.ginecologica","liquido.semi.morfologia", "dbp.morfologia", "dof.morfologia", "pa.morfologia", "femur.morfologia", "humero.morfologia", "tc.morfologia", "cm.morfologia","art.ut.d.morfologia","art.ut.i.morfologia","lc.morfologia", "art.umb.morfologia","art.cm.morfologia","dv.morfologia", "", "vlp.morfologia", "vld.morfologia", "respuesta_uterina_derecha_prim", "respuesta_uterina_izquierda_prim"];
         if ( e.key === "Enter") {
             e.preventDefault();
-            if (this.id == "bvmEcoDos"){
+            if (this.id == "largo.cervical.segundo"){
                 $("#clickInformeEco").tab('show');
             }
 
@@ -7133,29 +7124,27 @@ function InfEcoObsSegTrim1Clon(){
     InformeString = InformeString.replace(":CESAPREV", CESAPREV);
 
     var contadorOpcional = 0;
-    if (the("larg.cerv.si").classList.contains("active") == true){
-        InformeString += '<tr> <td><strong>IP Promedio Arterias Uterinas</strong></td><td style="text-align:center;">:ARTUT</td><td style="text-align:center;">:ARTUTPCTVAL</td><td style="text-align:center;">:ARTUTRANGO</td></tr>';
+    InformeString += '<tr> <td><strong>IP Promedio Arterias Uterinas</strong></td><td style="text-align:center;">:ARTUT</td><td style="text-align:center;">:ARTUTPCTVAL</td><td style="text-align:center;">:ARTUTRANGO</td></tr>';
 
-        InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
-        InformeString = InformeString.replace(":ARTUTPCTVAL", $("#respuesta_uterina_promedio_percentil").html());
+    InformeString = InformeString.replace(":ARTUT", $("#respuesta_uterina_promedio").val());
+    InformeString = InformeString.replace(":ARTUTPCTVAL", $("#respuesta_uterina_promedio_percentil").html());
 
-        let pctUT = $("#respuesta_uterina_promedio_percentil").html();
+    let pctUT = $("#respuesta_uterina_promedio_percentil").html();
 
-        if (pctUT == "&gt; 95" || pctUT == "&lt; 5"){
-            tmpData = 0;
-        }else{
-            tmpData = +pctUT;
-        }
-
-        var ARTUTRANGO = oldProgress(tmpData);
-        InformeString = InformeString.replace(":ARTUTRANGO", ARTUTRANGO);
-        contadorOpcional++;
-
-        InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td></td><td style="text-align:center;">:LARGCERVTXT</td></tr>';
-        InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
-        InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
-        contadorOpcional++;
+    if (pctUT == "&gt; 95" || pctUT == "&lt; 5"){
+        tmpData = 0;
+    }else{
+        tmpData = +pctUT;
     }
+
+    var ARTUTRANGO = oldProgress(tmpData);
+    InformeString = InformeString.replace(":ARTUTRANGO", ARTUTRANGO);
+    contadorOpcional++;
+
+    InformeString += '<tr> <td><strong>Largo Cervical</strong></td><td style="text-align:center;">:LARGCERV mm</td><td></td><td style="text-align:center;">:LARGCERVTXT</td></tr>';
+    InformeString = InformeString.replace(":LARGCERV", $("#largo\\.cervical\\.segundo").val());
+    InformeString = InformeString.replace(":LARGCERVTXT", the("info.cervix").children[0].innerHTML);
+    contadorOpcional++;
 
     if (contadorOpcional == 1){
         InformeString += '<tr> <td></td><td></td><td></td><td></td>';
@@ -7194,6 +7183,7 @@ function InfEcoObsSegTrim1Clon(){
     InformeString = InformeString.replace(":PFE", pfe);
     InformeString = InformeString.replace(":PFEPCT", pfePct);
     InformeString = InformeString.replace(":PFERANGO", pfeRango);
+    InformeString = InformeString.replace(":IC", ic);
     InformeString = InformeString.replace(":IC", ic);
 
     dayHoy = new Date();
