@@ -1136,7 +1136,6 @@ $( document ).ready(function() {
 
     $("#respuesta_uterina_promedio").on("change",function(){
         if (this.value != ""){
-
             let ut = this.value
             ut = ut.toString().replace(/\,/g,'.');
             ut = Number(ut);
@@ -1144,7 +1143,6 @@ $( document ).ready(function() {
 
             $("#respuesta_uterina_promedio_percentil").html(ut.pct);
             $("#respuesta_uterina_promedio_rango").val(ut.rango.min + " - " + ut.rango.max);
-
         }
     });
 
@@ -10092,20 +10090,28 @@ function comentarioSegundoTrimestre(){
         }
 
         if (liquido != "" || liquido_cua != ""){
+
             comentarios = comentarios + linea3;
 
             if(the("liquido.ila.suma").value){
                 comentarios = comentarios + ", ILA " + the("liquido.ila.suma").value + " mm"
             }
-
             comentarios = comentarios +'.\r\n';
         }
 
         var largoCervical = the("largo.cervical.segundo").value
         var linea4 = '- Cuello cerrado, largo cervical ' + largoCervical + " mm"
 
-        if (largoCervical != "" ){
+        if (largoCervical != "" ){ 
             comentarios = comentarios + linea4+'.\r\n';
+        }
+
+        var _ipPromedio = the("respuesta_uterina_promedio").value;
+        var _ipPctPromedio = the("respuesta_uterina_promedio_percentil").innerHTML;
+
+        if (_ipPromedio != "" || _ipPctPromedio != ""){
+            comentarios = comentarios + ', IP. Uterinas promedio ' + _ipPromedio +', Pct : ' + _ipPctPromedio
+            comentarios = comentarios +'.\r\n';
         }
 
         comentarios += '\r\n';
