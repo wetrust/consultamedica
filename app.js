@@ -10110,7 +10110,7 @@ function comentarioSegundoTrimestre(){
         var _ipPctPromedio = the("respuesta_uterina_promedio_percentil").innerHTML;
 
         if (_ipPromedio != "" || _ipPctPromedio != ""){
-            comentarios = comentarios + ', IP. Uterinas promedio ' + _ipPromedio +', Pct : ' + _ipPctPromedio
+            comentarios = comentarios + '- IP. Uterinas promedio ' + _ipPromedio +', Pct : ' + _ipPctPromedio
             comentarios = comentarios +'.\r\n';
         }
 
