@@ -807,7 +807,7 @@ function graficoArtUmb()
         plotOptions: { series: { enableMouseTracking: false }},
         yAxis: {
             title: { text: 'Valor IP' },
-            tickPositions: [0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]
+            tickPositions: [0,0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2,2.2,2.4]
         },
         colors: ['#313131', '#313131', '#313131'],
         credits: { enabled: false },
