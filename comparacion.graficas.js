@@ -340,7 +340,7 @@ function mostrarValoresEnModal(datos) {
         cplacentarioPct = (datos['Cuociente Placentario'].length > 0) ? (('string' == typeof datos['Cuociente Placentario'][i][1]) ? datos['Cuociente Placentario'][i][1] : Number(datos['Cuociente Placentario'][i][1]).toFixed(0)) : 0
         uterinasPct = (datos['Uterinas'].length > 0) ? (('string' == typeof datos['Uterinas'][i][1]) ? datos['Uterinas'][i][1] : Number(datos['Uterinas'][i][1]).toFixed(0)) : 0
 
-        leyenda += '<tr><td class="text-center pan" style="background-color: #e9ecef;">'+_laEG+'</td><td class="text-center">'+ pfe +'</td><td class="text-center" style="background-color: #e9ecef;"><strong>'+ pfePCT +'</strong></td><td class="text-center pan">'+ uterinasPct +'</td><td class="text-center" style="background-color: #e9ecef;"><strong>'+ umbilicalPct +'</strong></td><td class="text-center pan">'+ cmediaPct +'</td><td class="text-center" style="background-color: #e9ecef;"><strong>'+ cplacentarioPct +'</strong></td></tr>'
+        leyenda += '<tr><td class="text-center pan" style="background-color: #e9ecef;">'+_laEG+'</td><td class="text-center">'+ pfe +'</td><td class="text-center pintar-negro" style="background-color: #e9ecef;"><strong>'+ pfePCT +'</strong></td><td class="text-center pan">'+ uterinasPct +'</td><td class="text-center pintar-negro" style="background-color: #e9ecef;"><strong>'+ umbilicalPct +'</strong></td><td class="text-center pan">'+ cmediaPct +'</td><td class="text-center pintar-negro" style="background-color: #e9ecef;"><strong>'+ cplacentarioPct +'</strong></td></tr>'
 
         _laEG = Number(Number(_laEG).toFixed(0))
         _datos.push({x:_laEG, y:_laValor});
@@ -844,7 +844,7 @@ function graficoCcp()
         plotOptions: { series: { enableMouseTracking: false}},
         yAxis: {
             title: { text: 'Valor IP' },
-            tickPositions: [0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
+            tickPositions: [0, 0.35, 0.7, 1.05, 1.4, 1.75, 2.1, 2.45, 2.8, 3.15, 3.5]
         },
         colors: ['#313131', '#313131', '#313131'],
         credits: { enabled: false },
@@ -892,6 +892,7 @@ function informeComparacion()
 
     let childElements = _tabla.querySelectorAll('*');
     childElements.forEach(child => { if (child.classList.contains('pam')){ child.classList.add('bg-secondary'); } });
+        childElements.forEach(child => { if (child.classList.contains('pintar-negro')){ child.style.backgroundColor = "#00000"; } });
 
     const columnas = document.querySelectorAll('[id^="comparador.columna."]');
     var _informe = document.createElement("div");
