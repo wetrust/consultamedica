@@ -6651,6 +6651,14 @@ $(window).on('hashchange', function(){
         the("inicio").classList.remove(d);
     }
 
+    if (hash == "#ecoObsSegTrim"){
+        the("semanas").classList.add("bg-secondary")
+        the("dias").classList.add("bg-secondary", "text-white")
+    }else{
+        the("semanas").classList.remove("bg-secondary")
+        the("dias").classList.remove("bg-secondary", "text-white")
+    }
+
     window.scrollTo(0, 0);
 });
 
