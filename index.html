@@ -149,7 +149,7 @@
                                     <select id="semanas" class="form-control bg-verde text-white"></select>
                                 </div>
                                 <div class="col">
-                                    <label class="mb-0"><small>b) Días *</small></label>
+                                    <label class="mb-0"><small>Más ... Días *</small></label>
                                     <select id="dias" class="form-control"></select>
                                 </div>
                             </div>
@@ -2425,11 +2425,11 @@
                                                 <div class="form-group mb-0">
                                                     <div class="row">
                                                         <div class="col">
-                                                            <label class="text-white"><small>E Gestac. Semanas</small></label>
+                                                            <label class="text-white"><small>E Gestacional Semanas</small></label>
                                                             <input class="form-control bg-verde text-white" type="text" id="semanasAjustada" disabled>
                                                         </div>
                                                         <div class="col">
-                                                            <label class="text-white"><small>E Gestac. Días</small></label>
+                                                            <label class="text-white"><small>E Gestacional Días</small></label>
                                                             <input class="form-control bg-verde text-white" type="text" id="diasAjustada" disabled>
                                                         </div>
                                                     </div>
@@ -3286,145 +3286,154 @@
                                         <p><small class="text-muted">- Biometría: Hadlock FP. y col. Radiology 152: 497 - 501; 1984. *Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>- Peso fetal estimado por formula que incluye: CC, CA, LF; Hadlock FP, et. al.  Am J Obstet Gynecol. 1985 Feb 1;151(3):333-7.<br>- Peso Fetal categorizado por curva fetal de la OMS https://www.scielo.cl/scielo.php?script=sci_arttext&#x26;pid=S0717-75262023000300183<br>- Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col mb-2">
-                                        <label>DBP</label>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="text" class="form-control" id="dbp">
-                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dbpDE">
-                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <input type="hidden" id="dbpPct">
-                                        <input type="hidden" id="dbpRango">
-                                    </div>
-                                    <div class="col mb-2">
-                                        <button class="btn btn-outline-info" id="graficoDbp">Ver Gráficas</button>
-                                    </div>
-                                </div>
-                                <div class="form-group d-none">
-                                    <div class="col-3 mb-2">
-                                        <label>DOF</label>
-                                    </div>
-                                    <div class="col-3 mb-2">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="text" class="form-control" id="dof">
-                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 mb-2">
-                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dofPct">
-                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <input type="hidden" id="dofPctRpt">
-                                        <input type="hidden" id="dofRango">
-                                    </div>
-                                    <div class="col-3 mb-2">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0" id="icContainer">
-                                            <div class="input-group-prepend"><div class="input-group-text">IC</div></div>
-                                            <input type="text" class="form-control" id="ic" readonly="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col mb-2">
-                                        <label>C. Cráneo</label>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="text" class="form-control bg-light" id="cc">
-                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ccPct">
-                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <input type="hidden" id="ccPctRpt">
-                                        <input type="hidden" id="ccRango">
-                                    </div>
-                                    <div class="col mb-2">
-                                        <button class="btn btn-outline-info" id="graficoCc">Ver Gráficas</button>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col mb-2">
-                                        <label>C. Abdomen</label>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="text" class="form-control bg-light" id="ca">
-                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="caPct">
-                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <input type="hidden" id="caPctRpt">
-                                        <input type="hidden" id="caRango">
-                                    </div>
-                                    <div class="col">
-                                        <button class="btn btn-outline-info" id="graficoCa">Ver Gráficas</button>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col mb-2">
-                                        <label>L. Fémur</label>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="text" class="form-control bg-light" id="lf">
-                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-2">
-                                        <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lfPct">
-                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <input type="hidden" id="lfPctRpt">
-                                        <input type="hidden" id="lfRango">
-                                    </div>
-                                    <div class="col mb-2">
-                                        <button class="btn btn-outline-info" id="graficoLf">Ver Gráficas</button>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-3 mb-2">
-                                        <label><strong>PFE</strong> (Hadlock-3), categorización <strong>Curva OMS</strong></label>
-                                    </div>
-                                    <div class="col mb-2 pr-1">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="text" class="form-control" id="pfe">
-                                            <div class="input-group-append"><div class="input-group-text">Gr</div></div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-2 pl-1">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="text" class="form-control" id="pfePctRpt" disabled>
-                                            <div class="input-group-append"><div class="input-group-text">Pct</div></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 mb-2">
-                                        <p class="text-white bg-secondary mb-0 p-2 rounded text-center">Corrige percentil según sexo fetal?</p>
-                                        <input type="hidden" id="pfeRango">
-                                    </div>
-                                    <div class="col-3 mb-2">
-                                        <div class="form-group">
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label"><input class="form-check-input" type="radio" checked="checked" name="corrigepercentilsexo" value="si" id="corregirPercentilSexo"> Si</label>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <div class="form-group row">
+                                            <div class="col mb-2">
+                                                <label>DBP</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label"><input class="form-check-input" type="radio" name="corrigepercentilsexo" value="no" checked> No</label>
+                                            <div class="col mb-2">
+                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                    <input type="text" class="form-control" id="dbp">
+                                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-2">
+                                                <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dbpDE">
+                                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <input type="hidden" id="dbpPct">
+                                                <input type="hidden" id="dbpRango">
+                                            </div>
+                                            <div class="col-2 mb-2">
+                                                <button class="btn btn-outline-info" id="graficoDbp">Ver Gráficas</button>
                                             </div>
                                         </div>
-                                        <button class="d-none" id="graficoPFE">Ver Gráficas</button>
+                                        <div class="form-group d-none">
+                                            <div class="col-3 mb-2">
+                                                <label>DOF</label>
+                                            </div>
+                                            <div class="col-3 mb-2">
+                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                    <input type="text" class="form-control" id="dof">
+                                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mb-2">
+                                                <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dofPct">
+                                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <input type="hidden" id="dofPctRpt">
+                                                <input type="hidden" id="dofRango">
+                                            </div>
+                                            <div class="col-3 mb-2">
+                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0" id="icContainer">
+                                                    <div class="input-group-prepend"><div class="input-group-text">IC</div></div>
+                                                    <input type="text" class="form-control" id="ic" readonly="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col mb-2">
+                                                <label>C. Cráneo</label>
+                                            </div>
+                                            <div class="col mb-2">
+                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                    <input type="text" class="form-control bg-light" id="cc">
+                                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-2">
+                                                <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ccPct">
+                                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <input type="hidden" id="ccPctRpt">
+                                                <input type="hidden" id="ccRango">
+                                            </div>
+                                            <div class="col-2 mb-2">
+                                                <button class="btn btn-outline-info" id="graficoCc">Ver Gráficas</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col mb-2">
+                                                <label>C. Abdomen</label>
+                                            </div>
+                                            <div class="col mb-2">
+                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                    <input type="text" class="form-control bg-light" id="ca">
+                                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-2">
+                                                <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="caPct">
+                                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <input type="hidden" id="caPctRpt">
+                                                <input type="hidden" id="caRango">
+                                            </div>
+                                            <div class="col-2">
+                                                <button class="btn btn-outline-info" id="graficoCa">Ver Gráficas</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col mb-2">
+                                                <label>L. Fémur</label>
+                                            </div>
+                                            <div class="col mb-2">
+                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                    <input type="text" class="form-control bg-light" id="lf">
+                                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-2">
+                                                <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lfPct">
+                                                    <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <input type="hidden" id="lfPctRpt">
+                                                <input type="hidden" id="lfRango">
+                                            </div>
+                                            <div class="col-2 mb-2">
+                                                <button class="btn btn-outline-info" id="graficoLf">Ver Gráficas</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col mb-2">
+                                                <label><strong>PFE</strong> (Hadlock-3), categorización <strong>Curva OMS</strong></label>
+                                            </div>
+                                            <div class="col mb-2">
+                                                <div class="row">
+                                                    <div class="col mb-2 pr-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="pfe">
+                                                            <div class="input-group-append"><div class="input-group-text">Gr</div></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col mb-2 pl-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="pfePctRpt" disabled>
+                                                            <div class="input-group-append"><div class="input-group-text">Pct</div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-2">
+                                                <p class="text-white bg-secondary mb-0 p-2 rounded text-center">Corrige percentil según sexo fetal?</p>
+                                                <input type="hidden" id="pfeRango">
+                                            </div>
+                                            <div class="col-2 mb-2">
+                                                <div class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label"><input class="form-check-input" type="radio" checked="checked" name="corrigepercentilsexo" value="si" id="corregirPercentilSexo"> Si</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label"><input class="form-check-input" type="radio" name="corrigepercentilsexo" value="no" checked> No</label>
+                                                    </div>
+                                                </div>
+                                                <button class="d-none" id="graficoPFE">Ver Gráficas</button>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="col-2"></div>
                                 </div>
                                 <div class="row py-3" style="border-bottom:3px solid #dee2e6!important;border-top:3px solid #dee2e6!important;">
                                     <div class="col-12">
