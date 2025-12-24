@@ -6524,16 +6524,20 @@ $(document).ready(function(){
 
             if (this.value == "eliminar"){
                 this.parentElement.parentElement.parentElement.children[1].classList.add("d-none");
-            }else if (this.value == "nada"){
-                console.log("nada")
+            }else if (this.value == "mostrar"){
+                the("morfo.eco.dostres.uno").classList.remove("d-none")
+                the("morfo.eco.dostres.dos").classList.remove("d-none")
+                the("morfo.eco.dostres.tres").classList.remove("d-none")
             }else if (this.value == "normal" || this.value == "anormal"){
                 this.parentElement.parentElement.parentElement.children[1].classList.remove("d-none");
             }
     
             if (this.value == "no" || this.value == "anormal"){
                 this.parentElement.parentElement.parentElement.children[1].value = "Comentario: "
-            }else if (this.value == "nada"){
-                console.log("nada")
+            }else if (this.value == "ocultar"){
+                the("morfo.eco.dostres.uno").classList.add("d-none")
+                the("morfo.eco.dostres.dos").classList.add("d-none")
+                the("morfo.eco.dostres.tres").classList.add("d-none")
             }else{
                 this.parentElement.parentElement.parentElement.children[1].value = ""
             }

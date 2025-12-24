@@ -3716,18 +3716,182 @@
                                             <div class="d-flex flex-row align-items-center">
                                                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
                                                     <label class="btn btn btn-outline-secondary active" >
-                                                    <input type="radio" checked="" value="nada">NO</label>
+                                                    <input type="radio" checked="" value="ocultar">NO</label>
                                                     <label class="btn btn-outline-secondary">
-                                                    <input type="radio"  value="nada">SI</label>
+                                                    <input type="radio"  value="mostrar">SI</label>
                                                 </div>
                                                 <ul class="mb-0">
-                                                    <li class="azul-li" id="punto.morfologia.clon"></li>
+                                                    <li class="azul-li"></li>
                                                 </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row d-none pb-4" id="morfo.eco.dostres.uno">
+                                            <div class="col-7">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-6 col-form-label">Foco ecogénico intracardiaco</label>
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="d-flex justify-content-start align-items-center"> 
+                                                            <select class="form-control" id="fei.morfologia">
+                                                                <option value="5.83">presente</option>
+                                                                <option value="0.8" selected>ausente</option>
+                                                                <option value="1">no conocida</option>
+                                                            </select>
+                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="0.8" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-6 col-form-label">Hidronefrosis leve</label>
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <select class="form-control" id="hl.morfologia">
+                                                                <option value="7.63">presente</option>
+                                                                <option value="0.92" selected>ausente</option>
+                                                                <option value="1">no conocida</option>
+                                                            </select>
+                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="0.92" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-6 col-form-label">Fémur corto</label>
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <select class="form-control" id="fc.morfologia">
+                                                                <option value="3.72">presente</option>
+                                                                <option value="0.8" 0.92>ausente</option>
+                                                                <option value="1">no conocida</option>
+                                                            </select>
+                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="0.8" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-6 col-form-label">Húmero corto</label>
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <select class="form-control" id="hc.morfologia">
+                                                                <option value="4.81">presente</option>
+                                                                <option value="0.74" selected>ausente</option>
+                                                                <option value="1">no conocida</option>
+                                                            </select>
+                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="0.74" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-6 col-form-label">Intestino ecogénico</label>
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <select class="form-control" id="ie.morfologia">
+                                                                <option value="11.44">presente</option>
+                                                                <option value="0.9" selected>ausente</option>
+                                                                <option value="1">no conocida</option>
+                                                            </select>
+                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="0.9" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-6 col-form-label">Aumento del pliegue nucal</label>
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <select class="form-control" id="apn.morfologia">
+                                                                <option value="23.3">presente</option>
+                                                                <option value="0.8" selected>ausente</option>
+                                                                <option value="1">no conocida</option>
+                                                            </select>
+                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="0.8" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-6 col-form-label">Art. subclavia derecha aberrante</label>
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <select class="form-control" id="asda.morfologia">
+                                                                <option value="22.48">presente</option>
+                                                                <option value="0.71" selected>ausente</option>
+                                                                <option value="1">no conocida</option>
+                                                            </select>
+                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="0.71" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-6 col-form-label">HN Ausente o Hipoplásico</label>
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <select class="form-control" id="hnah.morfologia">
+                                                                <option value="23.27">presente</option>
+                                                                <option value="0.46" selected>ausente</option>
+                                                                <option value="1">no conocida</option>
+                                                            </select>
+                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="0.46" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-5">
+                                                <img src="/img/tabla_calculador_riesgo.jpg" class="img-fluid" alt="Tabla calculador Riesgo aneuploidía en segundo trimestre ">
+                                            </div>
+                                        </div>
+                                        <div class="row d-none" id="morfo.eco.dostres.dos">
+                                            <div class="col-7">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-6  col-form-label">Ventrículomegalia</label>
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <select class="form-control" id="ventr.morfologia">
+                                                                <option value="27.52">presente</option>
+                                                                <option value="0.94" selected>ausente</option>
+                                                                <option value="1">no conocida</option>
+                                                            </select>
+                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="0.94" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-5">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-1"></div>
+                                                    <label class="col-sm-4  col-form-label">Riesgo a priori</label>
+                                                    <div class="col-12 col-lg-4 pl-4">
+                                                        <input type="text" id="rapus.morfologia" class="form-control shadow rounded border-0 ml-2" value="110" style="background-color:#fce5d7">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-7">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-6  col-form-label">Coef Acum:</label>
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="0.94" disabled id="coe.acum.morfologia">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row d-none" id="morfo.eco.dostres.tres">
+                                            <div class="col-7">
+                                                <table class="table">
+                                                    <tbody>
+                                                    <tr>
+                                                        <th scope="row">Riesgo a priori</th>
+                                                        <td id="rap.morfologia">0.0091</td>
+                                                        <td id="rapp.morfologia">0.91 %</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Riesgo ajustado</th>
+                                                        <td id="raj.morfologia">0.0041</td>
+                                                        <td id="rajp.morfologia">0.41 %</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
 <div class="modal fade" id="valoresModal" tabindex="-1" role="dialog" aria-labelledby="valoresModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
@@ -3755,7 +3919,6 @@
         </div>
     </div>
 </div>
-
                                 <div class="card mb-5 " style="border-width: 2px;border-radius: 40px;border-color: #000;">
                                     <div class="card-body pl-4">
                                         <div class="d-flex flex-row mb-3">
