@@ -10127,3 +10127,67 @@ function comentarioSegundoTrimestre(){
         comentarios += '\r\n';
         $("#comentarios-eco-dos-inf-dos").val(comentarios);
 }
+
+function calularRiesgoMorfologiaAPrioriEcoSegundo(){
+    var sumatoria = 
+    Number(the("fei.morfologia.EcoSegundo").value) * 
+    Number(the("hl.morfologia.EcoSegundo").value) * 
+    Number(the("fc.morfologia.EcoSegundo").value) * 
+    Number(the("hc.morfologia.EcoSegundo").value) * 
+    Number(the("ie.morfologia.EcoSegundo").value) * 
+    Number(the("apn.morfologia.EcoSegundo").value) * 
+    Number(the("asda.morfologia.EcoSegundo").value) * 
+    Number(the("hnah.morfologia.EcoSegundo").value) * 
+    Number(the("ventr.morfologia.EcoSegundo").value)
+
+    the("coe.acum.morfologia.EcoSegundo").value = sumatoria 
+    the("rap.morfologia.EcoSegundo").innerText = Number(1/Number(the("rapus.morfologia").value)).toFixed(4) 
+    the("rapp.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)).toFixed(4)) * 100 + " %"
+    the("raj.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4) 
+    the("rajp.morfologia.EcoSegundo").innerText = ((Number(1/Number(the("rapus.morfologia").value)) * sumatoria) * 100).toFixed(4) +" %" 
+}
+
+the("fei.morfologia.EcoSegundo").onchange  = function(){
+    this.parentElement.children[1].value = this.value
+    calularRiesgoMorfologiaAPrioriEcoSegundo()
+}
+
+the("hl.morfologia.EcoSegundo").onchange  = function(){
+    this.parentElement.children[1].value = this.value
+    calularRiesgoMorfologiaAPrioriEcoSegundo()
+}
+
+the("fc.morfologia.EcoSegundo").onchange  = function(){
+    this.parentElement.children[1].value = this.value
+    calularRiesgoMorfologiaAPrioriEcoSegundo()
+}
+
+the("hc.morfologia.EcoSegundo").onchange  = function(){
+    this.parentElement.children[1].value = this.value
+    calularRiesgoMorfologiaAPrioriEcoSegundo()
+}
+
+the("ie.morfologia.EcoSegundo").onchange  = function(){
+    this.parentElement.children[1].value = this.value
+    calularRiesgoMorfologiaAPrioriEcoSegundo()
+}
+
+the("apn.morfologia.EcoSegundo").onchange  = function(){
+    this.parentElement.children[1].value = this.value
+    calularRiesgoMorfologiaAPrioriEcoSegundo()
+}
+
+the("asda.morfologia.EcoSegundo").onchange  = function(){
+    this.parentElement.children[1].value = this.value
+    calularRiesgoMorfologiaAPrioriEcoSegundo()
+}
+
+the("hnah.morfologia.EcoSegundo").onchange  = function(){
+    this.parentElement.children[1].value = this.value
+    calularRiesgoMorfologiaAPrioriEcoSegundo()
+}
+
+the("ventr.morfologia.EcoSegundo").onchange  = function(){
+    this.parentElement.children[1].value = this.value
+    calularRiesgoMorfologiaAPrioriEcoSegundo()
+}
