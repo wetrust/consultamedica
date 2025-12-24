@@ -10198,7 +10198,7 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
 }
-the("edad.materna.EcoSegundo").onchange  = function(){
+the("edad.materna.EcoSegundo").onkeyup  = function(e){
     the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edad.materna.EcoSegundo").value)
 }
 
