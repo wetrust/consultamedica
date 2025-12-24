@@ -382,10 +382,6 @@ $( document ).ready(function() {
 
     }
 
-    the("punto.morfologia.clon").onclick = function(){
-        the("punto.morfologia").onclick()
-    }
-
     $("#menu\\.modulo\\.activo\\.cinco").on("click", function(){
         var botones = ["menu.modulo.activo.cinco.uno","menu.modulo.activo.cinco.tres","menu.modulo.activo.cinco.cuatro"];
         
@@ -6528,6 +6524,7 @@ $(document).ready(function(){
                 the("morfo.eco.dostres.uno").classList.remove("d-none")
                 the("morfo.eco.dostres.dos").classList.remove("d-none")
                 the("morfo.eco.dostres.tres").classList.remove("d-none")
+                the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value, the("semanas").value)
             }else if (this.value == "normal" || this.value == "anormal"){
                 this.parentElement.parentElement.parentElement.children[1].classList.remove("d-none");
             }
@@ -10150,16 +10147,19 @@ function calularRiesgoMorfologiaAPrioriEcoSegundo(){
 the("fei.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
+    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value, the("semanas").value)
 }
 
 the("hl.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
+    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value, the("semanas").value)
 }
 
 the("fc.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
+    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value, the("semanas").value)
 }
 
 the("hc.morfologia.EcoSegundo").onchange  = function(){
@@ -10170,24 +10170,66 @@ the("hc.morfologia.EcoSegundo").onchange  = function(){
 the("ie.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
+    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value, the("semanas").value)
 }
 
 the("apn.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
+    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value, the("semanas").value)
 }
 
 the("asda.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
+    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value, the("semanas").value)
 }
 
 the("hnah.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
+    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value, the("semanas").value)
 }
 
 the("ventr.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
+    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value, the("semanas").value)
 }
+
+
+// Tabla de riesgo a priori
+const riesgoTabla = {
+  20: { 12: 1100, 20: 1300, 40: 1500 },
+  25: { 12: 1000, 20: 1100, 40: 1400 },
+  30: { 12: 650,  20: 750,  40: 900  },
+  31: { 12: 550,  20: 650,  40: 800  },
+  32: { 12: 500,  20: 550,  40: 650  },
+  33: { 12: 400,  20: 450,  40: 600  },
+  34: { 12: 300,  20: 350,  40: 500  },
+  35: { 12: 250,  20: 300,  40: 350  },
+  36: { 12: 200,  20: 250,  40: 300  },
+  37: { 12: 150,  20: 185,  40: 220  },
+  38: { 12: 120,  20: 150,  40: 180  },
+  39: { 12: 100,  20: 130,  40: 160  },
+  40: { 12: 85,   20: 110,  40: 140  },
+  41: { 12: 60,   20: 75,   40: 85   },
+  42: { 12: 45,   20: 55,   40: 55   }
+};
+
+/**
+ * Obtiene el riesgo a priori según edad materna y semanas de gestación.
+ * @param {number} edad - Edad de la madre (20 a 42).
+ * @param {number} semanas - Semanas de gestación (12, 20 o 40).
+ * @returns {number|null} - Valor de riesgo o null si no se encuentra.
+ */
+function obtenerRiesgo(edad, semanas) {
+  const edadData = riesgoTabla[edad];
+  if (!edadData || !edadData[semanas]) {
+    return null; // Edad o semanas no válidas
+  }
+  return edadData[semanas];
+}
+
+// Ejemplo de uso
+console.log(obtenerRiesgo(35, 20)); // Devuelve 300
