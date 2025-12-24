@@ -517,6 +517,8 @@ $( document ).ready(function() {
         $("#fum").trigger("change");
         pctpfe()
 
+            the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edad.materna.EcoSegundo").value, the("semanas").value)
+
     });
 
     the("continuarAExamen").onclick = function(){
@@ -10195,6 +10197,9 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value, the("semanas").value)
+}
+the("edad.materna.EcoSegundo").onchange  = function(){
+    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edad.materna.EcoSegundo").value, the("semanas").value)
 }
 
 
