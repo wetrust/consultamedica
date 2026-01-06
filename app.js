@@ -9967,9 +9967,11 @@ function mayusculas(el){
     }else{
         el.value = capitalize(el.value)
     }
+
 }
 
 function actualizarComentarioDoppler(){
+
     let comentario = "Flujometria Doppler Materno Fetal:"
 
     comentario += '\r\n';
@@ -10029,14 +10031,18 @@ function actualizarComentarioDoppler(){
     comentario += '\r\n';
 
     the("comentarios-doppler").value = comentario
+
 }
 
 const capitalize = (s) => {
+
     if (typeof s !== 'string') return ''
     return s.charAt(0).toUpperCase() + s.slice(1)
+
 }
 
 function calularRiesgoMorfologiaAPriori(){
+
     var sumatoria = 
     Number(the("fei.morfologia").value) * 
     Number(the("hl.morfologia").value) * 
@@ -10057,6 +10063,7 @@ function calularRiesgoMorfologiaAPriori(){
 }
 
 function comentarioSegundoTrimestre(){
+
         var comentarios = ""
         $('#bvmEcoDos').val($('#bvm').val()).trigger('change');
         var fetoPresentacion = the('presentacion').value;
