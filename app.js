@@ -10202,11 +10202,11 @@ function sumarLosSelect(){
         const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
 
         if (tipo === 'presente') {
-        productoPresentes *= valor;
-        hayPresentes = true;
+            productoPresentes *= valor;
+            hayPresentes = true;
         } else if (tipo === 'ausente') {
-        productoAusentes *= valor;
-        hayAusentes = true;
+            productoAusentes *= valor;
+            hayAusentes = true;
         }
     });
 
@@ -10226,27 +10226,78 @@ function posiNegaResul(sumando){
 
     resultado = 1 * sumando[0] * sumando[1];
 
-    resultado = Number(resultado).toFixed(2) + " / " + riesgo;
-
-    the("el.resultado").value = resultado
+    the("el.resultado").value = Number(resultado).toFixed(2) + " / " + riesgo
+    if (Number(resultado).toFixed(2) == 0 || riesgo == 0){
+        return "";
+    }
+    let fracSimpli = simplificarFraccion(Number(resultado).toFixed(2), riesgo);
+    the("el.reducido").value = fracSimpli.numerador.toFixed(0) + " / " + fracSimpli.denominador.toFixed(0);
 }
+
+// Función para calcular el Máximo Común Divisor (MCD)
+//incluye manejo para los decimales
+function gcd(a, b) {
+    if (b < 0.00000001 && b > -0.00000001) return a; // Caso base para punto flotante
+    return gcd(b, a % b);
+}
+
+function gcdDecimal(a, b) {
+    // Función para contar decimales
+    const countDecimals = (num) => {
+        if (Math.floor(num) === num) return 0;
+        return num.toString().split(".")[1].length || 0;
+    };
+
+    const precision = Math.max(countDecimals(a), countDecimals(b));
+    const factor = Math.pow(10, precision);
+
+    // Convertimos a enteros multiplicando por el factor
+    const mcdEntero = gcd(Math.round(a * factor), Math.round(b * factor));
+    
+    // Devolvemos el resultado a la escala original
+    return mcdEntero / factor;
+}
+//
+
+function simplificarFraccion(numerador, denominador) {
+    // Asegurarse de que ambos sean números positivos para el MCD
+    const num = Math.abs(numerador);
+    const den = Math.abs(denominador);
+
+    // Calcular el MCD
+    const mcd = gcdDecimal(num, den);
+
+    // Dividir numerador y denominador por el MCD
+    const nuevoNumerador = numerador / mcd;
+    const nuevoDenominador = denominador / mcd;
+
+    // Devolver un objeto o un array con la fracción simplificada
+    return { numerador: nuevoNumerador, denominador: nuevoDenominador };
+}
+
 
 the("fei.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    if (Number(the("edadMaterna").value) != 0){
+        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    }
 }
 
 the("hl.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    if (Number(the("edadMaterna").value) != 0){
+        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    }
 }
 
 the("fc.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    if (Number(the("edadMaterna").value) != 0){
+        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    }
 }
 
 the("hc.morfologia.EcoSegundo").onchange  = function(){
@@ -10257,31 +10308,41 @@ the("hc.morfologia.EcoSegundo").onchange  = function(){
 the("ie.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    if (Number(the("edadMaterna").value) != 0){
+        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    }
 }
 
 the("apn.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    if (Number(the("edadMaterna").value) != 0){
+        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    }
 }
 
 the("asda.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    if (Number(the("edadMaterna").value) != 0){
+        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    }
 }
 
 the("hnah.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    if (Number(the("edadMaterna").value) != 0){
+        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    }
 }
 
 the("ventr.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    if (Number(the("edadMaterna").value) != 0){
+        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+    }
 }
 the("edad.materna.EcoSegundo").onkeyup  = function(e){
     the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edad.materna.EcoSegundo").value)
