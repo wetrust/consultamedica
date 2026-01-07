@@ -6526,6 +6526,8 @@ $(document).ready(function(){
                 the("morfo.eco.dostres.uno").classList.remove("d-none")
                 the("morfo.eco.dostres.dos").classList.remove("d-none")
                 the("morfo.eco.dostres.tres").classList.remove("d-none")
+
+                the("ventr.morfologia.EcoSegundo").onchange();
                 the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
             }else if (this.value == "normal" || this.value == "anormal"){
                 this.parentElement.parentElement.parentElement.children[1].classList.remove("d-none");
@@ -10363,12 +10365,14 @@ the("morfo.eco.dostres.default").onchange = function(){
 
         for (let i = 0; i < select.length; i++){
             the(select[i]).selectedIndex = 1;
+            the(select[i]).dispatchEvent(new Event('change'));
         }
 
     }else if (this.value == "desconocido"){
 
         for (let i = 0; i < select.length; i++){
-            the(select[i]).value = 1
+            the(select[i]).value = 1;
+            the(select[i]).dispatchEvent(new Event('change'));
         }
 
     }
