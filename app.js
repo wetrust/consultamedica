@@ -10353,6 +10353,27 @@ the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
     posiNegaResul(sumarLosSelect());
 }
 
+the("morfo.eco.dostres.default").onchange = function(){
+
+    let select = ["ventr.morfologia.EcoSegundo", "apn.morfologia.EcoSegundo", "hl.morfologia.EcoSegundo", "fc.morfologia.EcoSegundo", 
+        "hc.morfologia.EcoSegundo", "fei.morfologia.EcoSegundo", "ie.morfologia.EcoSegundo",
+        "asda.morfologia.EcoSegundo", "hnah.morfologia.EcoSegundo"]
+
+    if (this.value == "ausente"){
+
+        for (let i = 0; i < select.length; i++){
+            the(select[i]).selectedIndex = 1;
+        }
+
+    }else if (this.value == "desconocido"){
+
+        for (let i = 0; i < select.length; i++){
+            the(select[i]).value = 1
+        }
+
+    }
+}
+
 
 // Tabla de riesgo a priori
 const riesgoTabla = {
