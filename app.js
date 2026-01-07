@@ -10151,6 +10151,84 @@ function calularRiesgoMorfologiaAPrioriEcoSegundo(){
     the("rapp.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)).toFixed(4)) * 100 + " %"
     the("raj.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4) 
     the("rajp.morfologia.EcoSegundo").innerText = ((Number(1/Number(the("rapus.morfologia").value)) * sumatoria) * 100).toFixed(4) +" %" 
+
+    posiNegaResul(sumarLosSelect());
+}
+
+function sumarLosSelect(){
+    //let sumaPosi = 0;
+    //let sumaNega = 0;
+
+    //let select = ["ventr.morfologia.EcoSegundo", "apn.morfologia.EcoSegundo", "hl.morfologia.EcoSegundo", "fc.morfologia.EcoSegundo", 
+    //    "hc.morfologia.EcoSegundo", "fei.morfologia.EcoSegundo", "ie.morfologia.EcoSegundo",
+    //    "asda.morfologia.EcoSegundo", "hnah.morfologia.EcoSegundo"]
+
+    //for (let i = 0; i < (select.length -1); i++){
+
+    //    if (the(select[i]).options[the(select[i]).selectedIndex].innerText == "ausente"){
+
+    //        if (sumaNega == 0){
+    //            sumaNega = Number(the(select[i]).value)
+    //        }else{
+    //            sumaNega *= Number(the(select[i]).value)
+    //        }
+
+    //    }else{
+
+    //        if (the(select[i]).options[the(select[i]).selectedIndex].innerText == "presente"){
+    //            if (sumaPosi == 0){
+    //                sumaPosi = Number(the(select[i]).value)
+    //            }else{
+    //                sumaPosi *= Number(the(select[i]).value)
+    //            }
+    //        }
+
+    //    }
+
+    //}
+
+    const selects = document.querySelectorAll('.selector-datos');
+    
+    let productoPresentes = 1;
+    let productoAusentes = 1;
+    
+    // Variables para saber si hubo al menos uno de cada tipo (opcional)
+    let hayPresentes = false;
+    let hayAusentes = false;
+
+    selects.forEach(select => {
+        const opcionSeleccionada = select.options[select.selectedIndex];
+        const valor = parseFloat(opcionSeleccionada.value);
+        const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
+
+        if (tipo === 'presente') {
+        productoPresentes *= valor;
+        hayPresentes = true;
+        } else if (tipo === 'ausente') {
+        productoAusentes *= valor;
+        hayAusentes = true;
+        }
+    });
+
+    console.log("Total Presentes:", hayPresentes ? productoPresentes : 0);
+    console.log("Total Ausentes:", hayAusentes ? productoAusentes : 0);
+
+    the("los.positivos").value = Number((hayPresentes) ? productoPresentes : 0).toFixed(2)
+    the("los.negativos").value = Number((hayAusentes) ? productoAusentes : 0).toFixed(2)
+
+    return [hayPresentes ? productoPresentes : 0, hayAusentes ? productoAusentes : 0];
+}
+
+function posiNegaResul(sumando){
+    let resultado = 0;
+
+    let riesgo = (Number(the("rapus.morfologia.EcoSegundo").value) != NaN ) ? Number(the("rapus.morfologia.EcoSegundo").value) : 0
+
+    resultado = 1 * sumando[0] * sumando[1];
+
+    resultado = Number(resultado).toFixed(2) + " / " + riesgo;
+
+    the("el.resultado").value = resultado
 }
 
 the("fei.morfologia.EcoSegundo").onchange  = function(){
@@ -10207,6 +10285,11 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
 }
 the("edad.materna.EcoSegundo").onkeyup  = function(e){
     the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edad.materna.EcoSegundo").value)
+        posiNegaResul(sumarLosSelect());
+}
+
+the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
+    posiNegaResul(sumarLosSelect());
 }
 
 
@@ -10236,6 +10319,7 @@ const riesgoTabla = {
  * @returns {number|null} - Valor de riesgo o null si no se encuentra.
  */
 function obtenerRiesgo(edad) {
+
   const edadData = riesgoTabla[edad];
   if (!edadData || !edadData[20]) {
     return null; // Edad o semanas no válidas
