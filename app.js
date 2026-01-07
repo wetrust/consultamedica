@@ -10232,8 +10232,8 @@ function posiNegaResul(sumando){
     if (Number(resultado).toFixed(2) == 0 || riesgo == 0){
         return "";
     }
-    let fracSimpli = simplificarFraccion(Number(resultado).toFixed(2), riesgo);
-    the("el.reducido").value = fracSimpli.numerador.toFixed(0) + " / " + fracSimpli.denominador.toFixed(0);
+    //let fracSimpli = simplificarFraccion(Number(resultado).toFixed(2), riesgo);
+    the("el.reducido").value = 1 + " / " + (riesgo / resultado).toFixed(0);
 }
 
 // Función para calcular el Máximo Común Divisor (MCD)
@@ -10361,14 +10361,14 @@ the("morfo.eco.dostres.default").onchange = function(){
         "hc.morfologia.EcoSegundo", "fei.morfologia.EcoSegundo", "ie.morfologia.EcoSegundo",
         "asda.morfologia.EcoSegundo", "hnah.morfologia.EcoSegundo"]
 
-    if (this.value == "ausente"){
+    if (the("morfo.eco.dostres.default").value == "ausente"){
 
         for (let i = 0; i < select.length; i++){
             the(select[i]).selectedIndex = 1;
             the(select[i]).dispatchEvent(new Event('change'));
         }
 
-    }else if (this.value == "desconocido"){
+    }else if (the("morfo.eco.dostres.default").value == "desconocido"){
 
         for (let i = 0; i < select.length; i++){
             the(select[i]).value = 1;
