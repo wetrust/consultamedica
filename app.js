@@ -10226,7 +10226,7 @@ function posiNegaResul(sumando){
 
     let riesgo = (Number(the("rapus.morfologia.EcoSegundo").value) != NaN ) ? Number(the("rapus.morfologia.EcoSegundo").value) : 0
 
-    resultado = 1 * sumando[0] * sumando[1];
+    resultado = sumando[0] * sumando[1] * 1;
 
     the("el.resultado").value = Number(resultado).toFixed(2) + " / " + riesgo
     if (Number(resultado).toFixed(2) == 0 || riesgo == 0){
@@ -10238,47 +10238,6 @@ function posiNegaResul(sumando){
 
 //formula de google (1/250)×11.0×1.8×0.3×0.6=Riesgo Final
 //1/250 a aproximadamente 1/35.
-
-// Función para calcular el Máximo Común Divisor (MCD)
-//incluye manejo para los decimales
-function gcd(a, b) {
-    if (b < 0.00000001 && b > -0.00000001) return a; // Caso base para punto flotante
-    return gcd(b, a % b);
-}
-
-function gcdDecimal(a, b) {
-    // Función para contar decimales
-    const countDecimals = (num) => {
-        if (Math.floor(num) === num) return 0;
-        return num.toString().split(".")[1].length || 0;
-    };
-
-    const precision = Math.max(countDecimals(a), countDecimals(b));
-    const factor = Math.pow(10, precision);
-
-    // Convertimos a enteros multiplicando por el factor
-    const mcdEntero = gcd(Math.round(a * factor), Math.round(b * factor));
-    
-    // Devolvemos el resultado a la escala original
-    return mcdEntero / factor;
-}
-//
-
-function simplificarFraccion(numerador, denominador) {
-    // Asegurarse de que ambos sean números positivos para el MCD
-    const num = Math.abs(numerador);
-    const den = Math.abs(denominador);
-
-    // Calcular el MCD
-    const mcd = gcdDecimal(num, den);
-
-    // Dividir numerador y denominador por el MCD
-    const nuevoNumerador = numerador / mcd;
-    const nuevoDenominador = denominador / mcd;
-
-    // Devolver un objeto o un array con la fracción simplificada
-    return { numerador: nuevoNumerador, denominador: nuevoDenominador };
-}
 
 
 the("fei.morfologia.EcoSegundo").onchange  = function(){
