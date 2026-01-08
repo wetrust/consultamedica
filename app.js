@@ -10309,8 +10309,10 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
     }
 }
 the("edad.materna.EcoSegundo").onkeyup  = function(e){
-    the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edad.materna.EcoSegundo").value)
+    if (e.key == "Enter"){
+        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edad.materna.EcoSegundo").value)
         posiNegaResul(sumarLosSelect());
+    }
 }
 
 the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
