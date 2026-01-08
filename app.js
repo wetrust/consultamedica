@@ -517,7 +517,7 @@ $( document ).ready(function() {
         $("#fum").trigger("change");
         pctpfe()
 
-            the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edad.materna.EcoSegundo").value)
+        completarRapus()
 
     });
 
@@ -6528,7 +6528,7 @@ $(document).ready(function(){
                 the("morfo.eco.dostres.tres").classList.remove("d-none")
 
                 the("ventr.morfologia.EcoSegundo").onchange();
-                the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+                completarRapus()
             }else if (this.value == "normal" || this.value == "anormal"){
                 this.parentElement.parentElement.parentElement.children[1].classList.remove("d-none");
             }
@@ -10149,8 +10149,8 @@ function calularRiesgoMorfologiaAPrioriEcoSegundo(){
     Number(the("ventr.morfologia.EcoSegundo").value)
 
     the("coe.acum.morfologia.EcoSegundo").value = sumatoria.toFixed(4)
-    the("rap.morfologia.EcoSegundo").innerText = Number(1/Number(the("rapus.morfologia").value)).toFixed(4) 
-    the("rapp.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)).toFixed(4)) * 100 + " %"
+    //the("rap.morfologia.EcoSegundo").innerText = Number(1/Number(the("rapus.morfologia").value)).toFixed(4) 
+    //the("rapp.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)).toFixed(4)) * 100 + " %"
     the("raj.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4) 
     the("rajp.morfologia.EcoSegundo").innerText = ((Number(1/Number(the("rapus.morfologia").value)) * sumatoria) * 100).toFixed(4) +" %" 
 
@@ -10244,7 +10244,7 @@ the("fei.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
-        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+        completarRapus()
     }
 }
 
@@ -10252,7 +10252,7 @@ the("hl.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
-        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+        completarRapus()
     }
 }
 
@@ -10260,7 +10260,7 @@ the("fc.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
-        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+        completarRapus()
     }
 }
 
@@ -10273,7 +10273,7 @@ the("ie.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
-        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+        completarRapus()
     }
 }
 
@@ -10281,7 +10281,7 @@ the("apn.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
-        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+        completarRapus()
     }
 }
 
@@ -10289,7 +10289,7 @@ the("asda.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
-        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+        completarRapus()
     }
 }
 
@@ -10297,7 +10297,7 @@ the("hnah.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
-        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+        completarRapus()
     }
 }
 
@@ -10305,17 +10305,18 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
-        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edadMaterna").value)
+        completarRapus()
     }
 }
 the("edad.materna.EcoSegundo").onkeyup  = function(e){
     if (e.key == "Enter"){
-        the("rapus.morfologia.EcoSegundo").value = obtenerRiesgo(the("edad.materna.EcoSegundo").value)
+        completarRapus()
         posiNegaResul(sumarLosSelect());
     }
 }
 
 the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
+    the("rapus.morfologia.EcoSegundo.clone").innerHTML = this.value
     posiNegaResul(sumarLosSelect());
 }
 
@@ -10395,4 +10396,18 @@ function obtenerRiesgo(edad) {
     return null; // Edad o semanas no válidas
   }
   return edadData[20];
+}
+
+
+function completarRapus(){
+
+    let _resultado =  obtenerRiesgo(the("edad.materna.EcoSegundo").value)
+    the("rapus.morfologia.EcoSegundo").value = _resultado
+    if (_resultado == null){
+         the("rapus.morfologia.EcoSegundo.clone").innerHTML = ""
+    }else{
+        the("rapus.morfologia.EcoSegundo.clone").innerHTML = 1+"/"+ _resultado
+    }
+
+
 }
