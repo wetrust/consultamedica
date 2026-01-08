@@ -10406,7 +10406,7 @@ function completarRapus(){
     if (_resultado == null){
          the("rapus.morfologia.EcoSegundo.clone").innerHTML = ""
     }else{
-        the("rapus.morfologia.EcoSegundo.clone").innerHTML = 1+"/"+ _resultado
+        the("rapus.morfologia.EcoSegundo.clone").innerHTML = 1+" / "+ _resultado
     }
 
 
