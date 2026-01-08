@@ -10148,7 +10148,7 @@ function calularRiesgoMorfologiaAPrioriEcoSegundo(){
     Number(the("hnah.morfologia.EcoSegundo").value) * 
     Number(the("ventr.morfologia.EcoSegundo").value)
 
-    the("coe.acum.morfologia.EcoSegundo").value = sumatoria 
+    the("coe.acum.morfologia.EcoSegundo").value = sumatoria.toFixed(4)
     the("rap.morfologia.EcoSegundo").innerText = Number(1/Number(the("rapus.morfologia").value)).toFixed(4) 
     the("rapp.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)).toFixed(4)) * 100 + " %"
     the("raj.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4) 
