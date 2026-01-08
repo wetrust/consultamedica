@@ -10236,6 +10236,9 @@ function posiNegaResul(sumando){
     the("el.reducido").value = 1 + " / " + (riesgo / resultado).toFixed(0);
 }
 
+//formula de google (1/250)×11.0×1.8×0.3×0.6=Riesgo Final
+//1/250 a aproximadamente 1/35.
+
 // Función para calcular el Máximo Común Divisor (MCD)
 //incluye manejo para los decimales
 function gcd(a, b) {
@@ -10372,6 +10375,13 @@ the("morfo.eco.dostres.default").onchange = function(){
 
         for (let i = 0; i < select.length; i++){
             the(select[i]).value = 1;
+            the(select[i]).dispatchEvent(new Event('change'));
+        }
+
+    }else if (the("morfo.eco.dostres.default").value == "presente"){
+
+        for (let i = 0; i < select.length; i++){
+            the(select[i]).selectedIndex = 0;
             the(select[i]).dispatchEvent(new Event('change'));
         }
 
