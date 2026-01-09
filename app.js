@@ -6524,8 +6524,9 @@ $(document).ready(function(){
                 this.parentElement.parentElement.parentElement.children[1].classList.add("d-none");
             }else if (this.value == "mostrar"){
                 the("morfo.eco.dostres.uno").classList.remove("d-none")
-                the("morfo.eco.dostres.dos").classList.remove("d-none")
-                the("morfo.eco.dostres.tres").classList.remove("d-none")
+
+                the("elementosOcultos").style.top = the("morfo.eco.dostres.uno").offsetHeight
+                the("elementosOcultos").classList.remove("d-none")
 
                 the("ventr.morfologia.EcoSegundo").onchange();
                 completarRapus()
@@ -6537,8 +6538,7 @@ $(document).ready(function(){
                 this.parentElement.parentElement.parentElement.children[1].value = "Comentario: "
             }else if (this.value == "ocultar"){
                 the("morfo.eco.dostres.uno").classList.add("d-none")
-                the("morfo.eco.dostres.dos").classList.add("d-none")
-                the("morfo.eco.dostres.tres").classList.add("d-none")
+                the("elementosOcultos").classList.add("d-none")
             }else{
                 this.parentElement.parentElement.parentElement.children[1].value = ""
             }
@@ -10238,18 +10238,18 @@ function sumarLosSelect(){
 }
 
 function posiNegaResul(sumando){
+
     let resultado = 0;
 
     let riesgo = (Number(the("rapus.morfologia.EcoSegundo").value) != NaN ) ? Number(the("rapus.morfologia.EcoSegundo").value) : 0
-
     resultado = sumando[0] * sumando[1] * 1;
 
     the("el.resultado").value = Number(resultado).toFixed(2) + " / " + riesgo
-    if (Number(resultado).toFixed(2) == 0 || riesgo == 0){
-        return "";
-    }
+    if (Number(resultado).toFixed(2) == 0 || riesgo == 0){ return ""; }
+
     //let fracSimpli = simplificarFraccion(Number(resultado).toFixed(2), riesgo);
     the("el.reducido").value = (riesgo / resultado).toFixed(0);
+
 }
 
 //formula de google (1/250)×11.0×1.8×0.3×0.6=Riesgo Final
