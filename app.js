@@ -10249,7 +10249,7 @@ function posiNegaResul(sumando){
         return "";
     }
     //let fracSimpli = simplificarFraccion(Number(resultado).toFixed(2), riesgo);
-    the("el.reducido").value = 1 + " / " + (riesgo / resultado).toFixed(0);
+    the("el.reducido").value = (riesgo / resultado).toFixed(0);
 }
 
 //formula de google (1/250)×11.0×1.8×0.3×0.6=Riesgo Final
