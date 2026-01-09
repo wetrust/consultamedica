@@ -6560,6 +6560,14 @@ $(document).ready(function(){
         }
     }
 
+    the("ver.ecodos.foto3").onchange = function(){
+        if (this.checked == true){
+            this.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].classList.remove("d-none")
+        }else{
+            this.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].classList.add("d-none")
+        }
+    }
+
     the("pres.sistolica.primtrim").onkeyup = function(e){
         if ( e.key == "Enter" ) {
             e.preventDefault();
