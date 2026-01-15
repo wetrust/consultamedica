@@ -10276,8 +10276,11 @@ the("fei.morfologia.EcoSegundo").onchange  = function(){
         completarRapus()
     }
 
-    if (this.dataset.tipo == "presente"){
-        this.classList.add("morfologia-ecosegundo")
+    const opcionSeleccionada = this.options[this.selectedIndex];
+    const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
+
+    if (tipo == "presente"){
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
         this.classList.remove("morfologia-ecosegundo")
     }
@@ -10290,8 +10293,11 @@ the("hl.morfologia.EcoSegundo").onchange  = function(){
         completarRapus()
     }
 
-    if (this.dataset.tipo == "presente"){
-        this.classList.add("morfologia-ecosegundo")
+    const opcionSeleccionada = this.options[this.selectedIndex];
+    const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
+
+    if (tipo == "presente"){
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
         this.classList.remove("morfologia-ecosegundo")
     }
@@ -10304,8 +10310,11 @@ the("fc.morfologia.EcoSegundo").onchange  = function(){
         completarRapus()
     }
 
-    if (this.dataset.tipo == "presente"){
-        this.classList.add("morfologia-ecosegundo")
+    const opcionSeleccionada = this.options[this.selectedIndex];
+    const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
+
+    if (tipo == "presente"){
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
         this.classList.remove("morfologia-ecosegundo")
     }
@@ -10315,8 +10324,11 @@ the("hc.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
 
-    if (this.dataset.tipo == "presente"){
-        this.classList.add("morfologia-ecosegundo")
+    const opcionSeleccionada = this.options[this.selectedIndex];
+    const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
+
+    if (tipo == "presente"){
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
         this.classList.remove("morfologia-ecosegundo")
     }
@@ -10329,8 +10341,11 @@ the("ie.morfologia.EcoSegundo").onchange  = function(){
         completarRapus()
     }
 
-    if (this.dataset.tipo == "presente"){
-        this.classList.add("morfologia-ecosegundo")
+    const opcionSeleccionada = this.options[this.selectedIndex];
+    const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
+
+    if (tipo == "presente"){
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
         this.classList.remove("morfologia-ecosegundo")
     }
@@ -10343,8 +10358,11 @@ the("apn.morfologia.EcoSegundo").onchange  = function(){
         completarRapus()
     }
 
-    if (this.dataset.tipo == "presente"){
-        this.classList.add("morfologia-ecosegundo")
+    const opcionSeleccionada = this.options[this.selectedIndex];
+    const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
+
+    if (tipo == "presente"){
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
         this.classList.remove("morfologia-ecosegundo")
     }
@@ -10357,8 +10375,11 @@ the("asda.morfologia.EcoSegundo").onchange  = function(){
         completarRapus()
     }
 
-    if (this.dataset.tipo == "presente"){
-        this.classList.add("morfologia-ecosegundo")
+    const opcionSeleccionada = this.options[this.selectedIndex];
+    const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
+
+    if (tipo == "presente"){
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
         this.classList.remove("morfologia-ecosegundo")
     }
@@ -10371,8 +10392,11 @@ the("hnah.morfologia.EcoSegundo").onchange  = function(){
         completarRapus()
     }
 
-    if (this.dataset.tipo == "presente"){
-        this.classList.add("morfologia-ecosegundo")
+    const opcionSeleccionada = this.options[this.selectedIndex];
+    const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
+
+    if (tipo == "presente"){
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
         this.classList.remove("morfologia-ecosegundo")
     }
@@ -10385,8 +10409,11 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
         completarRapus()
     }
 
-    if (this.dataset.tipo == "presente"){
-        this.classList.add("morfologia-ecosegundo")
+    const opcionSeleccionada = this.options[this.selectedIndex];
+    const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
+
+    if (tipo == "presente"){
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
         this.classList.remove("morfologia-ecosegundo")
     }
