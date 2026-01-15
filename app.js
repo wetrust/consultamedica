@@ -10282,7 +10282,7 @@ the("fei.morfologia.EcoSegundo").onchange  = function(){
     if (tipo == "presente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
-        this.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
     }
 }
 
@@ -10299,7 +10299,7 @@ the("hl.morfologia.EcoSegundo").onchange  = function(){
     if (tipo == "presente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
-        this.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
     }
 }
 
@@ -10316,7 +10316,7 @@ the("fc.morfologia.EcoSegundo").onchange  = function(){
     if (tipo == "presente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
-        this.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
     }
 }
 
@@ -10330,7 +10330,7 @@ the("hc.morfologia.EcoSegundo").onchange  = function(){
     if (tipo == "presente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
-        this.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
     }
 }
 
@@ -10347,7 +10347,7 @@ the("ie.morfologia.EcoSegundo").onchange  = function(){
     if (tipo == "presente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
-        this.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
     }
 }
 
@@ -10364,7 +10364,7 @@ the("apn.morfologia.EcoSegundo").onchange  = function(){
     if (tipo == "presente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
-        this.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
     }
 }
 
@@ -10381,7 +10381,7 @@ the("asda.morfologia.EcoSegundo").onchange  = function(){
     if (tipo == "presente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
-        this.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
     }
 }
 
@@ -10398,7 +10398,7 @@ the("hnah.morfologia.EcoSegundo").onchange  = function(){
     if (tipo == "presente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
-        this.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
     }
 }
 
@@ -10415,7 +10415,7 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
     if (tipo == "presente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
     } else {
-        this.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
     }
 }
 the("edad.materna.EcoSegundo").onkeyup  = function(e){
