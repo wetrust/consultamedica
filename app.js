@@ -898,6 +898,7 @@ $( document ).ready(function() {
     $( '#lf' ).change( function(){
         pctlf()
         comentarioSegundoTrimestre()
+
     });
     $( '#cerebelo' ).change( pctcb);
     $( "#bvm" ).change(bvm).on("keyup", function(){
@@ -5932,6 +5933,8 @@ $(document).ready(function(){
             }
             else if (resultado < 3){
                 pctLF = '< 3';
+                the("fc.morfologia.EcoSegundo").value = 3.72
+                the("fc.morfologia.EcoSegundo").onchange()
             }
             else{
                 pctLF = resultado;
@@ -5990,6 +5993,8 @@ $(document).ready(function(){
             }
             else if (resultado < 5){
                 pctLH = '< 5';
+                the("hc.morfologia.EcoSegundo").value = 4.81
+                the("hc.morfologia.EcoSegundo").onchange()
             }
             else{
                pctLH = resultado;
@@ -10354,13 +10359,6 @@ the("morfo.eco.dostres.default").onchange = function(){
 
         for (let i = 0; i < select.length; i++){
             the(select[i]).selectedIndex = 1;
-            the(select[i]).dispatchEvent(new Event('change'));
-        }
-
-    }else if (the("morfo.eco.dostres.default").value == "desconocido"){
-
-        for (let i = 0; i < select.length; i++){
-            the(select[i]).value = 1;
             the(select[i]).dispatchEvent(new Event('change'));
         }
 
