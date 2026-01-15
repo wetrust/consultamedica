@@ -5933,8 +5933,6 @@ $(document).ready(function(){
             }
             else if (resultado < 3){
                 pctLF = '< 3';
-                the("fc.morfologia.EcoSegundo").value = 3.72
-                the("fc.morfologia.EcoSegundo").onchange()
             }
             else{
                 pctLF = resultado;
@@ -5993,8 +5991,6 @@ $(document).ready(function(){
             }
             else if (resultado < 5){
                 pctLH = '< 5';
-                the("hc.morfologia.EcoSegundo").value = 4.81
-                the("hc.morfologia.EcoSegundo").onchange()
             }
             else{
                pctLH = resultado;
@@ -7890,6 +7886,8 @@ function pctlf() {
             pctLF = '&gt; 97';
         }else if (resultado < 3){
             pctLF = '&lt; 3';
+            the("fc.morfologia.EcoSegundo").value = 3.72
+            the("fc.morfologia.EcoSegundo").onchange()
         }else{
             pctLF = resultado;
         }
@@ -7995,6 +7993,8 @@ function pctlh() {
             pctLH = '&gt; 95';
         }else if (resultado < 5){
             pctLH = '&lt; 5';
+            the("hc.morfologia.EcoSegundo").value = 4.81
+            the("hc.morfologia.EcoSegundo").onchange()
         }else{
             pctLH = resultado;
         }
@@ -10275,6 +10275,12 @@ the("fei.morfologia.EcoSegundo").onchange  = function(){
     if (Number(the("edadMaterna").value) != 0){
         completarRapus()
     }
+
+    if (this.dataset.tipo == "presente"){
+        this.classList.add("morfologia-ecosegundo")
+    } else {
+        this.classList.remove("morfologia-ecosegundo")
+    }
 }
 
 the("hl.morfologia.EcoSegundo").onchange  = function(){
@@ -10282,6 +10288,12 @@ the("hl.morfologia.EcoSegundo").onchange  = function(){
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
         completarRapus()
+    }
+
+    if (this.dataset.tipo == "presente"){
+        this.classList.add("morfologia-ecosegundo")
+    } else {
+        this.classList.remove("morfologia-ecosegundo")
     }
 }
 
@@ -10291,11 +10303,23 @@ the("fc.morfologia.EcoSegundo").onchange  = function(){
     if (Number(the("edadMaterna").value) != 0){
         completarRapus()
     }
+
+    if (this.dataset.tipo == "presente"){
+        this.classList.add("morfologia-ecosegundo")
+    } else {
+        this.classList.remove("morfologia-ecosegundo")
+    }
 }
 
 the("hc.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
+
+    if (this.dataset.tipo == "presente"){
+        this.classList.add("morfologia-ecosegundo")
+    } else {
+        this.classList.remove("morfologia-ecosegundo")
+    }
 }
 
 the("ie.morfologia.EcoSegundo").onchange  = function(){
@@ -10303,6 +10327,12 @@ the("ie.morfologia.EcoSegundo").onchange  = function(){
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
         completarRapus()
+    }
+
+    if (this.dataset.tipo == "presente"){
+        this.classList.add("morfologia-ecosegundo")
+    } else {
+        this.classList.remove("morfologia-ecosegundo")
     }
 }
 
@@ -10312,6 +10342,12 @@ the("apn.morfologia.EcoSegundo").onchange  = function(){
     if (Number(the("edadMaterna").value) != 0){
         completarRapus()
     }
+
+    if (this.dataset.tipo == "presente"){
+        this.classList.add("morfologia-ecosegundo")
+    } else {
+        this.classList.remove("morfologia-ecosegundo")
+    }
 }
 
 the("asda.morfologia.EcoSegundo").onchange  = function(){
@@ -10319,6 +10355,12 @@ the("asda.morfologia.EcoSegundo").onchange  = function(){
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
         completarRapus()
+    }
+
+    if (this.dataset.tipo == "presente"){
+        this.classList.add("morfologia-ecosegundo")
+    } else {
+        this.classList.remove("morfologia-ecosegundo")
     }
 }
 
@@ -10328,6 +10370,12 @@ the("hnah.morfologia.EcoSegundo").onchange  = function(){
     if (Number(the("edadMaterna").value) != 0){
         completarRapus()
     }
+
+    if (this.dataset.tipo == "presente"){
+        this.classList.add("morfologia-ecosegundo")
+    } else {
+        this.classList.remove("morfologia-ecosegundo")
+    }
 }
 
 the("ventr.morfologia.EcoSegundo").onchange  = function(){
@@ -10335,6 +10383,12 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
     calularRiesgoMorfologiaAPrioriEcoSegundo()
     if (Number(the("edadMaterna").value) != 0){
         completarRapus()
+    }
+
+    if (this.dataset.tipo == "presente"){
+        this.classList.add("morfologia-ecosegundo")
+    } else {
+        this.classList.remove("morfologia-ecosegundo")
     }
 }
 the("edad.materna.EcoSegundo").onkeyup  = function(e){
