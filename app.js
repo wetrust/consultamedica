@@ -7884,13 +7884,15 @@ function pctlf() {
         //truncador de Pct, sobre 100 o bajo 1
         if (resultado > 97){
             pctLF = '&gt; 97';
+            the("fc.morfologia.EcoSegundo").value = 0.8
         }else if (resultado < 3){
             pctLF = '&lt; 3';
             the("fc.morfologia.EcoSegundo").value = 3.72
-            the("fc.morfologia.EcoSegundo").onchange()
         }else{
             pctLF = resultado;
+            the("fc.morfologia.EcoSegundo").value = 0.8
         }
+        the("fc.morfologia.EcoSegundo").onchange()
         $('#lfPctRpt').val(pctLF);
         $('#lfRango').val(a[eg] + ' - ' + b[eg]);
         psohdlk();
@@ -7991,13 +7993,15 @@ function pctlh() {
         //truncador de Pct, sobre 100 o bajo 1
         if (resultado > 95){
             pctLH = '&gt; 95';
+            the("hc.morfologia.EcoSegundo").value = 0.74
         }else if (resultado < 5){
             pctLH = '&lt; 5';
             the("hc.morfologia.EcoSegundo").value = 4.81
-            the("hc.morfologia.EcoSegundo").onchange()
         }else{
             pctLH = resultado;
+            the("hc.morfologia.EcoSegundo").value = 0.74
         }
+        the("hc.morfologia.EcoSegundo").onchange()
         $('#lhPctRpt').val(pctLH);
         $('#lhRango').val(a[eg] + ' - ' + b[eg]);
         ajustarProgreso(resultado, "lhPct");
@@ -10280,9 +10284,13 @@ the("fei.morfologia.EcoSegundo").onchange  = function(){
     const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
 
     if (tipo == "presente"){
-        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("bg-danger")
+        this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
     } else {
-        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
     }
 }
 
@@ -10297,9 +10305,13 @@ the("hl.morfologia.EcoSegundo").onchange  = function(){
     const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
 
     if (tipo == "presente"){
-        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("bg-danger")
+        this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
     } else {
-        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
     }
 }
 
@@ -10314,9 +10326,13 @@ the("fc.morfologia.EcoSegundo").onchange  = function(){
     const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
 
     if (tipo == "presente"){
-        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("bg-danger")
+        this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
     } else {
-        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
     }
 }
 
@@ -10328,9 +10344,13 @@ the("hc.morfologia.EcoSegundo").onchange  = function(){
     const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
 
     if (tipo == "presente"){
-        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("bg-danger")
+        this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
     } else {
-        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
     }
 }
 
@@ -10345,9 +10365,13 @@ the("ie.morfologia.EcoSegundo").onchange  = function(){
     const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
 
     if (tipo == "presente"){
-        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("bg-danger")
+        this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
     } else {
-        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
     }
 }
 
@@ -10362,9 +10386,13 @@ the("apn.morfologia.EcoSegundo").onchange  = function(){
     const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
 
     if (tipo == "presente"){
-        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("bg-danger")
+        this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
     } else {
-        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
     }
 }
 
@@ -10379,9 +10407,13 @@ the("asda.morfologia.EcoSegundo").onchange  = function(){
     const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
 
     if (tipo == "presente"){
-        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("bg-danger")
+        this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
     } else {
-        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
     }
 }
 
@@ -10396,9 +10428,13 @@ the("hnah.morfologia.EcoSegundo").onchange  = function(){
     const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
 
     if (tipo == "presente"){
-        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("bg-danger")
+        this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
     } else {
-        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
     }
 }
 
@@ -10413,9 +10449,13 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
     const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
 
     if (tipo == "presente"){
-        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("bg-danger")
+        this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
     } else {
-        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
     }
 }
 the("edad.materna.EcoSegundo").onkeyup  = function(e){
