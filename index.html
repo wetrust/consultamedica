@@ -3733,22 +3733,27 @@
                                     </div>
                                 </div>
                                 <div class="d-flex flex-row justify-content-between mt-2">
-                                    <h5 class="mt-3 mb-0">Modulos en construcción &nbsp;&nbsp;&nbsp;&nbsp;<small>(Marcadores Ecograficos menores de T21 para segundo trimestre de la gestación)</small></h5>
-                                    <div class="d-flex flex-row align-items-center">
-                                        <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
-                                            <label class="btn btn btn-outline-secondary active" >
-                                            <input type="radio" checked="" value="ocultar">NO</label>
-                                            <label class="btn btn-outline-secondary">
-                                            <input type="radio"  value="mostrar">SI</label>
-                                        </div>
-                                        <ul class="mb-0">
-                                            <li class="azul-li"></li>
-                                        </ul>
-                                    </div>
+                                    <h5 class="mt-3 mb-0">Modulos en construcción</h5>
                                 </div>
-                                <div class="card mb-3 d-none" style="border-width: 2px;border-radius: 30px;border-color: #000;" id="morfo.eco.dostres.uno">
+                                <div class="card mb-3" style="border-width: 2px;border-radius: 30px;border-color: #000;">
+                                    <div class="card-body pl-4 pb-0">
+                                        <div class="d-flex flex-row justify-content-between mt-2">
+                                            <p class="mt-3 mb-0">(Marcadores Ecograficos menores de T21 para segundo trimestre de la gestación)</p>
+                                            <div class="d-flex flex-row align-items-center">
+                                                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
+                                                    <label class="btn btn btn-outline-secondary active" >
+                                                    <input type="radio" checked="" value="ocultar">NO</label>
+                                                    <label class="btn btn-outline-secondary">
+                                                    <input type="radio"  value="mostrar">SI</label>
+                                                </div>
+                                                <ul class="mb-0">
+                                                    <li class="azul-li"></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="card-body pl-4">
-                                        <div class="row pb-4 mt-2">
+                                        <div class="row mt-2 d-none" id="morfo.eco.dostres.uno">
                                             <div class="col-12">
                                                 <div class="form-group row mb-2 p-1 morfologia-ecosegundo-azul rounded">
                                                     <label class="col-9 mb-0">Ventrículomegalia &gt; 10 mm (asimetría V Dif &gt; 2.5 mm)</label>
@@ -3867,7 +3872,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <div class="form-group row">
                                                     <label class="col-3 col-form-label pr-0"><small><strong>Marcadores de cromosomopatia presentes (+):</strong></small></label>
                                                     <div class="col-2 p-0">
@@ -3910,7 +3914,7 @@
                                                         <input type="text" id="el.reducido" class="form-control shadow rounded border-0 ml-2 text-left" value="" style="background-color:#fce5d7">
                                                     </div>
                                                 </div>
-                                                <table class="table">
+                                                <table class="table d-none">
                                                     <tbody>
                                                     <tr class="d-none">
                                                         <th scope="row">Riesgo a priori (según edad materna)</th>
@@ -3925,7 +3929,7 @@
                                                     </tr>
                                                     </tbody>
                                                 </table>
-                                                <div class="row">
+                                                <div class="row d-none">
                                                     <div class="col-3 px-2">
                                                         <label>&nbsp;</label>
                                                         <input type="text" id="el.resultado" class="form-control shadow rounded border-0 ml-2 d-none" value="">
