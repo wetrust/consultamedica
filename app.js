@@ -10287,10 +10287,14 @@ the("fei.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
-    } else {
+    } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+    }else{
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
     }
 }
 
@@ -10308,10 +10312,14 @@ the("hl.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
-    } else {
+    } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+    }else{
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
     }
 }
 
@@ -10329,10 +10337,14 @@ the("fc.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
-    } else {
+    } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+    }else{
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
     }
 }
 
@@ -10347,10 +10359,14 @@ the("hc.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
-    } else {
+    } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+    }else{
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
     }
 }
 
@@ -10368,10 +10384,14 @@ the("ie.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
-    } else {
+    } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+    }else{
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
     }
 }
 
@@ -10389,10 +10409,14 @@ the("apn.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
-    } else {
+    } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+    }else{
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
     }
 }
 
@@ -10410,10 +10434,14 @@ the("asda.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
-    } else {
+    } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+    }else{
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
     }
 }
 
@@ -10431,10 +10459,14 @@ the("hnah.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
-    } else {
+    } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+    }else{
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
     }
 }
 
@@ -10452,10 +10484,14 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
-    } else {
+    } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+    }else{
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
     }
 }
 the("edad.materna.EcoSegundo").onkeyup  = function(e){
