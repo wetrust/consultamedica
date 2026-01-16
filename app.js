@@ -10248,8 +10248,8 @@ function sumarLosSelect(){
     console.log("Total Presentes:", hayPresentes ? productoPresentes : 0);
     console.log("Total Ausentes:", hayAusentes ? productoAusentes : 0);
 
-    the("los.positivos").value = Number((hayPresentes) ? productoPresentes : 0).toFixed(2)
-    the("los.negativos").value = Number((hayAusentes) ? productoAusentes : 0).toFixed(2)
+    the("los.positivos").value = Number((hayPresentes) ? productoPresentes : 0).toFixed(7)
+    the("los.negativos").value = Number((hayAusentes) ? productoAusentes : 0).toFixed(7)
 
     return [hayPresentes ? productoPresentes : 0, hayAusentes ? productoAusentes : 0];
 }
