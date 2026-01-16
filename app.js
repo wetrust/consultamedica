@@ -10490,6 +10490,17 @@ the("morfo.eco.dostres.default").onchange = function(){
             the(select[i]).dispatchEvent(new Event('change'));
         }
 
+    }else if (the("morfo.eco.dostres.default").value == "no"){
+
+        for (let i = 0; i < select.length; i++){
+            the(select[i]).selectedIndex = 2;
+            the(select[i]).dispatchEvent(new Event('change'));
+        }
+
+        the("edad.materna.EcoSegundo").value = ""
+        the("rapus.morfologia.EcoSegundo").value = ""
+        the("el.reducido").value = ""
+
     }
 }
 
