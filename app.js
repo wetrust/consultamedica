@@ -1618,6 +1618,13 @@ $( document ).ready(function() {
 
     the("edadMaternaFechaTrisono").onchange();
 
+    the("alternativa.calculadora.barcelona").onclick = function(){
+        if (this.checked == true){
+            window.open("https://fetalmedicinebarcelona.org/calc/", '_blank');
+            this.checked = false
+        }
+    }
+
     the("alternativa.fmf").onclick = function(){
         if (this.checked == true){
             window.open("https://fetalmedicine.org/research/assess/trisomies", '_blank');
