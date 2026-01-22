@@ -10466,14 +10466,17 @@ the("hnah.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+                this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-amarillo")
     } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+                this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-amarillo")
     }else{
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-amarillo")
     }
 }
 
