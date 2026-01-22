@@ -10177,6 +10177,7 @@ function comentarioSegundoTrimestre(){
 }
 
 function calularRiesgoMorfologiaAPrioriEcoSegundo(){
+
     var sumatoria = 
     Number(the("fei.morfologia.EcoSegundo").value) * 
     Number(the("hl.morfologia.EcoSegundo").value) * 
@@ -10188,13 +10189,14 @@ function calularRiesgoMorfologiaAPrioriEcoSegundo(){
     Number(the("hnah.morfologia.EcoSegundo").value) * 
     Number(the("ventr.morfologia.EcoSegundo").value)
 
-    the("coe.acum.morfologia.EcoSegundo").value = sumatoria.toFixed(4)
+    the("coe.acum.morfologia.EcoSegundo").value = sumatoria.toFixed(7)
     //the("rap.morfologia.EcoSegundo").innerText = Number(1/Number(the("rapus.morfologia").value)).toFixed(4) 
     //the("rapp.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)).toFixed(4)) * 100 + " %"
     the("raj.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4) 
     the("rajp.morfologia.EcoSegundo").innerText = ((Number(1/Number(the("rapus.morfologia").value)) * sumatoria) * 100).toFixed(4) +" %" 
 
     posiNegaResul(sumarLosSelect());
+
 }
 
 function sumarLosSelect(){
