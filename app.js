@@ -10294,14 +10294,17 @@ the("fei.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     }else{
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
-        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-gris") 
     }
 }
 
@@ -10319,14 +10322,17 @@ the("hl.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     }else{
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
-        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-gris")
     }
 }
 
@@ -10344,14 +10350,17 @@ the("fc.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     }else{
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
-        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-gris")
     }
 }
 
@@ -10366,14 +10375,17 @@ the("hc.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     }else{
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
-        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-gris")
     }
 }
 
@@ -10391,14 +10403,17 @@ the("ie.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     }else{
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
-        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-gris")
     }
 }
 
@@ -10416,14 +10431,17 @@ the("apn.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     }else{
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
-        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-gris")
     }
 }
 
@@ -10441,14 +10459,17 @@ the("asda.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     }else{
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
-        this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
+        this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-gris")
     }
 }
 
@@ -10466,12 +10487,12 @@ the("hnah.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
-                this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
-                this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     }else{
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
@@ -10494,14 +10515,17 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("bg-danger")
         this.parentElement.parentElement.parentElement.children[0].classList.add("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     } else if (tipo == "ausente"){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger")
+        this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-gris")
     }else{
         this.parentElement.parentElement.parentElement.classList.remove("morfologia-ecosegundo-azul")
         this.parentElement.parentElement.parentElement.children[0].classList.remove("text-white")
         this.parentElement.parentElement.parentElement.classList.remove("bg-danger") 
+        this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-gris")
     }
 }
 the("edad.materna.EcoSegundo").onkeyup  = function(e){
