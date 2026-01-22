@@ -5751,6 +5751,11 @@ $(document).ready(function(){
         }
     })
 
+    the("marcadores.restablecer").onclick = function(){
+        the("morfo.eco.dostres.default").value = "no"
+        the("morfo.eco.dostres.default").onchange()
+    }
+
     $('#dof\\.morfologia').on("keyup", function(){
         /* 3 97*/
         let a = [], b = [];
@@ -10198,6 +10203,8 @@ function calularRiesgoMorfologiaAPrioriEcoSegundo(){
     posiNegaResul(sumarLosSelect());
 
 }
+
+
 
 function sumarLosSelect(){
     //let sumaPosi = 0;
