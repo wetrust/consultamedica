@@ -10200,7 +10200,8 @@ function calularRiesgoMorfologiaAPrioriEcoSegundo(){
     the("raj.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4) 
     the("rajp.morfologia.EcoSegundo").innerText = ((Number(1/Number(the("rapus.morfologia").value)) * sumatoria) * 100).toFixed(4) +" %" 
 
-    posiNegaResul(sumarLosSelect());
+    //posiNegaResul(sumarLosSelect());
+    posiNegaResul(sumatoria.toFixed(2))
 
 }
 
@@ -10270,12 +10271,12 @@ function sumarLosSelect(){
     return [hayPresentes ? productoPresentes : 0, hayAusentes ? productoAusentes : 0];
 }
 
-function posiNegaResul(sumando){
+function posiNegaResul(resultado){
 
-    let resultado = 0;
+    //let resultado = 0;
 
     let riesgo = (Number(the("rapus.morfologia.EcoSegundo").value) != NaN ) ? Number(the("rapus.morfologia.EcoSegundo").value) : 0
-    resultado = sumando[0] * sumando[1] * 1;
+    //resultado = sumando[0] * sumando[1] * 1;
 
     the("el.resultado").value = Number(resultado).toFixed(2) + " / " + riesgo
     if (Number(resultado).toFixed(2) == 0 || riesgo == 0){ return ""; }
