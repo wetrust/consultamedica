@@ -10200,75 +10200,8 @@ function calularRiesgoMorfologiaAPrioriEcoSegundo(){
     the("raj.morfologia.EcoSegundo").innerText = (Number(1/Number(the("rapus.morfologia").value)) * sumatoria).toFixed(4) 
     the("rajp.morfologia.EcoSegundo").innerText = ((Number(1/Number(the("rapus.morfologia").value)) * sumatoria) * 100).toFixed(4) +" %" 
 
-    //posiNegaResul(sumarLosSelect());
     posiNegaResul(sumatoria.toFixed(2))
 
-}
-
-
-
-function sumarLosSelect(){
-    //let sumaPosi = 0;
-    //let sumaNega = 0;
-
-    //let select = ["ventr.morfologia.EcoSegundo", "apn.morfologia.EcoSegundo", "hl.morfologia.EcoSegundo", "fc.morfologia.EcoSegundo", 
-    //    "hc.morfologia.EcoSegundo", "fei.morfologia.EcoSegundo", "ie.morfologia.EcoSegundo",
-    //    "asda.morfologia.EcoSegundo", "hnah.morfologia.EcoSegundo"]
-
-    //for (let i = 0; i < (select.length -1); i++){
-
-    //    if (the(select[i]).options[the(select[i]).selectedIndex].innerText == "ausente"){
-
-    //        if (sumaNega == 0){
-    //            sumaNega = Number(the(select[i]).value)
-    //        }else{
-    //            sumaNega *= Number(the(select[i]).value)
-    //        }
-
-    //    }else{
-
-    //        if (the(select[i]).options[the(select[i]).selectedIndex].innerText == "presente"){
-    //            if (sumaPosi == 0){
-    //                sumaPosi = Number(the(select[i]).value)
-    //            }else{
-    //                sumaPosi *= Number(the(select[i]).value)
-    //            }
-    //        }
-
-    //    }
-
-    //}
-
-    const selects = document.querySelectorAll('.selector-datos');
-    
-    let productoPresentes = 1;
-    let productoAusentes = 1;
-    
-    // Variables para saber si hubo al menos uno de cada tipo (opcional)
-    let hayPresentes = false;
-    let hayAusentes = false;
-
-    selects.forEach(select => {
-        const opcionSeleccionada = select.options[select.selectedIndex];
-        const valor = parseFloat(opcionSeleccionada.value);
-        const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
-
-        if (tipo === 'presente') {
-            productoPresentes *= valor;
-            hayPresentes = true;
-        } else if (tipo === 'ausente') {
-            productoAusentes *= valor;
-            hayAusentes = true;
-        }
-    });
-
-    console.log("Total Presentes:", hayPresentes ? productoPresentes : 0);
-    console.log("Total Ausentes:", hayAusentes ? productoAusentes : 0);
-
-    the("los.positivos").value = Number((hayPresentes) ? productoPresentes : 0).toFixed(7)
-    the("los.negativos").value = Number((hayAusentes) ? productoAusentes : 0).toFixed(7)
-
-    return [hayPresentes ? productoPresentes : 0, hayAusentes ? productoAusentes : 0];
 }
 
 function posiNegaResul(resultado){
@@ -10277,12 +10210,22 @@ function posiNegaResul(resultado){
 
     let riesgo = (Number(the("rapus.morfologia.EcoSegundo").value) != NaN ) ? Number(the("rapus.morfologia.EcoSegundo").value) : 0
     //resultado = sumando[0] * sumando[1] * 1;
+    console.log(riesgo)
 
     the("el.resultado").value = Number(resultado).toFixed(2) + " / " + riesgo
     if (Number(resultado).toFixed(2) == 0 || riesgo == 0){ return ""; }
 
     //let fracSimpli = simplificarFraccion(Number(resultado).toFixed(2), riesgo);
-    the("el.reducido").value = (riesgo / resultado).toFixed(0);
+    let final = (riesgo / resultado).toFixed(0)
+
+    the("el.reducido").value = final;
+
+    if (Number(final) < 250){
+        the("el.reducido").classList.add("text-danger")
+    }else{
+        the("el.reducido").classList.remove("text-danger")
+    }
+
 
 }
 
@@ -10541,13 +10484,13 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
 the("edad.materna.EcoSegundo").onkeyup  = function(e){
     if (e.key == "Enter"){
         completarRapus()
-        posiNegaResul(sumarLosSelect());
+        calularRiesgoMorfologiaAPrioriEcoSegundo()
     }
 }
 
 the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
     the("rapus.morfologia.EcoSegundo.clone").innerHTML = this.value
-    posiNegaResul(sumarLosSelect());
+    calularRiesgoMorfologiaAPrioriEcoSegundo();
 }
 
 the("morfo.eco.dostres.default").onchange = function(){
