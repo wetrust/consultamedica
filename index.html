@@ -3746,7 +3746,7 @@
                                         <div class="d-flex flex-row justify-content-between">
                                             <div>
                                                 <p class="mb-0"><strong>Marcadores ecograficos menores de T-21 para 2do trimestre de gestación, tamizaje debe realizarse evaluando todos los marcadores.</strong></p>
-                                                <p class="mb-0 text-center">Sensibilidad tamizaje 11-14 = 90%, Sensibilidad tamizaje 20-24 = 70%</p>
+                                                <p class="mb-0 text-center">(Marcadores de cromosomopatías para T 21 en segundo trimestre - Agathokleous et al. UOG 2013; 41 : 247 - 261)</p>
                                             </div>
                                             <div class="d-flex flex-row align-items-center">
                                                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
@@ -3891,41 +3891,42 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <p class="col-12 text-center">(Marcadores de cromosomopatías para T 21 en segundo trimestre - Agathokleous et al. UOG 2013; 41 : 247 - 261)</p>
+                                                    <label class="col-6 col-form-label">Coeficiente Acumulado ( Multiplicación de LK positivos por LK Negativos ) :</label>
+                                                    <div class="col-2 offset-4 p-0">
+                                                        <div class="d-flex justify-content-start align-items-center d-none">
+                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 text-right bg-white" value="1" disabled id="coe.acum.morfologia.EcoSegundo">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-2 col-form-label"><small><strong>Marcadores con LK (+) :</strong></small></label>
-                                                    <div class="col-2">
-                                                        <input type="text" class="form-control shadow rounded border-0" value="">
-                                                    </div>
-                                                    <label class="col-6 col-form-label"><small><strong>Edad Materna (EM)</strong> en años cumplidos</small></label>
+                                                    <label class="col-2 col-form-label"><strong>Edad Materna</strong></label>
                                                     <div class="col-2 input-group shadow pr-0 pl-0">
                                                         <input type="number" class="form-control" id="edad.materna.EcoSegundo">
                                                         <div class="input-group-append"><div class="input-group-text">años</div></div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-2 col-form-label"><small><strong>Marcadores con LK (-) :</strong></small></label>
-                                                    <div class="col-2">
-                                                        <input type="text" class="form-control shadow rounded border-0" value="">
-                                                    </div>
-                                                    <label class="col-5 col-form-label"><small><strong>Riesgo a priori</strong> por EM (factible ingresar riesgo encontrado en tamizaje 11-14)</small></label>
+                                                    <label class="col-5 col-form-label"><strong>Riesgo a priori *</strong></label>
                                                     <div class="col-1 p-0 text-right">1 /</div>
                                                     <div class="col-2">
                                                         <input type="text" id="rapus.morfologia.EcoSegundo" class="form-control shadow rounded border-0 ml-2 text-left" value="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-2 col-form-label"><small><strong>Coeficiente Acumulado :</strong></small></label>
-                                                    <div class="col-2 p-0">
-                                                        <div class="d-flex justify-content-start align-items-center d-none">
-                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 text-right bg-white" value="1" disabled id="coe.acum.morfologia.EcoSegundo">
-                                                        </div>
-                                                    </div>
-                                                    <label class="col-5 col-form-label pr-0"><small><strong>Riesgo ajustado</strong> (por riesgo a priori y marcadores ecográficos)</small></label>
-                                                    <div class="col-1 p-0 text-right">1 /</div>
+                                                    <label class="col-5 col-form-label pr-0"><small><strong>Riesgo ajustado ** </strong> (Riesgo a priori por coeficiente acumulado)</small></label>
+                                                    <div class="col-1 offset-4 p-0 text-right">1 /</div>
                                                     <div class="col-2">
                                                         <input type="text" id="el.reducido" class="form-control shadow rounded border-0 ml-2 text-left font-weight-bold" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label"><small><strong>Marcadores con LK (+) :</strong></small></label>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control shadow rounded border-0" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label"><small><strong>Marcadores con LK (-) :</strong></small></label>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control shadow rounded border-0" value="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mb-0 mt-5">
