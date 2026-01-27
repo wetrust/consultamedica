@@ -10593,6 +10593,8 @@ function completarRapus(){
         the("rapus.morfologia.EcoSegundo.clone").innerHTML = 1+" / "+ _resultado
 		the("rapus.morfologia.EcoSegundo.division").value = Number(1/_resultado).toFixed(7)
 		the("rapus.morfologia.EcoSegundo.division.ajustada").value = Number(Number(the("coe.acum.morfologia.EcoSegundo").value) * Number(Number(1/_resultado).toFixed(7))).toFixed(7)
+		the("rapus.morfologia.EcoSegundo.division.porcentaje").value = Number(Number(Number(1/_resultado).toFixed(7)) * 100).toFixed(2) + " %"
+		the("rapus.morfologia.EcoSegundo.division.ajustada.porcentaje").value = Number((Number(Number(Number(the("coe.acum.morfologia.EcoSegundo").value) * Number(Number(1/_resultado).toFixed(7))).toFixed(7)) * 100).toFixed(2) + " %"
     }
 
 }
