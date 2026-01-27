@@ -5,7 +5,7 @@ import { graficoPFEMasMenos, percentilOMS } from './graficoPFEMasMenos.js?H'
 import { baseGraficoPFE, graficoPFECompleto, graficoPFEMasMenosSinDias, graficoPFEMasMenosSinDiasCuatroDias } from './graficoPFEMasMenos.js';
 import { dataGraphCA } from './graficoTrozo.js';
 import { InfEcoObsSegTrim1 } from './informes/obstetrica.js'
-
+ 
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 var dayHoy = new Date();
