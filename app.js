@@ -10592,7 +10592,7 @@ function completarRapus(){
     }else{
         the("rapus.morfologia.EcoSegundo.clone").innerHTML = 1+" / "+ _resultado
 		the("rapus.morfologia.EcoSegundo.division").value = Number(1/_resultado).toFixed(7)
-		the("rapus.morfologia.EcoSegundo.division.ajustada").value = (the("coe.acum.morfologia.EcoSegundo").value * Number(Number(1/_resultado).toFixed(7)))
+		the("rapus.morfologia.EcoSegundo.division.ajustada").value = (Number(the("coe.acum.morfologia.EcoSegundo").value) * Number(Number(1/_resultado).toFixed(7)))
     }
 
 }
