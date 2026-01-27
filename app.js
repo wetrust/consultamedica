@@ -10585,11 +10585,12 @@ function completarRapus(){
 
     let _resultado =  obtenerRiesgo(the("edad.materna.EcoSegundo").value)
     the("rapus.morfologia.EcoSegundo").value = _resultado
-	the("rapus.morfologia.EcoSegundo.division").value = (Number.isNaN(_resultado) == false ? Number(1/_resultado) : 0);
     if (_resultado == null){
          the("rapus.morfologia.EcoSegundo.clone").innerHTML = ""
+			the("rapus.morfologia.EcoSegundo.division").value = "";
     }else{
         the("rapus.morfologia.EcoSegundo.clone").innerHTML = 1+" / "+ _resultado
+			the("rapus.morfologia.EcoSegundo.division").value = 1/_resultado
     }
 
 
