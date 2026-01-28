@@ -5751,9 +5751,45 @@ $(document).ready(function(){
         }
     })
 
+    the("marcadores.ausente").onclick = function(){
+        let select = ["ventr.morfologia.EcoSegundo", "apn.morfologia.EcoSegundo", "hl.morfologia.EcoSegundo", "fc.morfologia.EcoSegundo", 
+        "hc.morfologia.EcoSegundo", "fei.morfologia.EcoSegundo", "ie.morfologia.EcoSegundo",
+        "asda.morfologia.EcoSegundo", "hnah.morfologia.EcoSegundo"]
+
+        for (let i = 0; i < select.length; i++){
+            the(select[i]).selectedIndex = 1;
+            the(select[i]).dispatchEvent(new Event('change'));
+        }
+
+    }
+
+    the("marcadores.presente").onclick = function(){
+        let select = ["ventr.morfologia.EcoSegundo", "apn.morfologia.EcoSegundo", "hl.morfologia.EcoSegundo", "fc.morfologia.EcoSegundo", 
+        "hc.morfologia.EcoSegundo", "fei.morfologia.EcoSegundo", "ie.morfologia.EcoSegundo",
+        "asda.morfologia.EcoSegundo", "hnah.morfologia.EcoSegundo"]
+
+        for (let i = 0; i < select.length; i++){
+            the(select[i]).selectedIndex = 0;
+            the(select[i]).dispatchEvent(new Event('change'));
+        }
+    }
+
+    the("marcadores.no.conocida").onclick = function(){
+        let select = ["ventr.morfologia.EcoSegundo", "apn.morfologia.EcoSegundo", "hl.morfologia.EcoSegundo", "fc.morfologia.EcoSegundo", 
+        "hc.morfologia.EcoSegundo", "fei.morfologia.EcoSegundo", "ie.morfologia.EcoSegundo",
+        "asda.morfologia.EcoSegundo", "hnah.morfologia.EcoSegundo"]
+
+        for (let i = 0; i < select.length; i++){
+            the(select[i]).selectedIndex = 2;
+            the(select[i]).dispatchEvent(new Event('change'));
+        }
+    }
+
     the("marcadores.restablecer").onclick = function(){
-        the("morfo.eco.dostres.default").value = "no"
-        the("morfo.eco.dostres.default").onchange()
+        the("marcadores.no.conocida").onclick()
+        the("edad.materna.EcoSegundo").value = ""
+        the("rapus.morfologia.EcoSegundo").value = ""
+        the("el.reducido").value = ""
         the("rapus.morfologia.EcoSegundo.division").value = ""
         the("rapus.morfologia.EcoSegundo.division.porcentaje").value = ""
         the("rapus.morfologia.EcoSegundo.division.ajustada").value = ""
@@ -10523,41 +10559,6 @@ the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
     the("rapus.morfologia.EcoSegundo.clone").innerHTML = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo();
 }
-
-the("morfo.eco.dostres.default").onchange = function(){
-
-    let select = ["ventr.morfologia.EcoSegundo", "apn.morfologia.EcoSegundo", "hl.morfologia.EcoSegundo", "fc.morfologia.EcoSegundo", 
-        "hc.morfologia.EcoSegundo", "fei.morfologia.EcoSegundo", "ie.morfologia.EcoSegundo",
-        "asda.morfologia.EcoSegundo", "hnah.morfologia.EcoSegundo"]
-
-    if (the("morfo.eco.dostres.default").value == "ausente"){
-
-        for (let i = 0; i < select.length; i++){
-            the(select[i]).selectedIndex = 1;
-            the(select[i]).dispatchEvent(new Event('change'));
-        }
-
-    }else if (the("morfo.eco.dostres.default").value == "presente"){
-
-        for (let i = 0; i < select.length; i++){
-            the(select[i]).selectedIndex = 0;
-            the(select[i]).dispatchEvent(new Event('change'));
-        }
-
-    }else if (the("morfo.eco.dostres.default").value == "no"){
-
-        for (let i = 0; i < select.length; i++){
-            the(select[i]).selectedIndex = 2;
-            the(select[i]).dispatchEvent(new Event('change'));
-        }
-
-        the("edad.materna.EcoSegundo").value = ""
-        the("rapus.morfologia.EcoSegundo").value = ""
-        the("el.reducido").value = ""
-
-    }
-}
-
 
 // Tabla de riesgo a priori
 const riesgoTabla = {
