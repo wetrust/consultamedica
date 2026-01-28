@@ -6615,9 +6615,9 @@ $(document).ready(function(){
 
     the("ver.ecodos.foto3").onchange = function(){
         if (this.checked == true){
-            this.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].classList.remove("d-none")
-        }else{
-            this.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].classList.add("d-none")
+            var URL = "img/clase_marcadores_lucia.pdf";
+            var win = window.open(URL, "_blank");
+            this.checked == false
         }
     }
 
