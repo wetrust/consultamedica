@@ -330,7 +330,7 @@ $( document ).ready(function() {
 
     //controlador de botones inicio
     $("#menu\\.modulo\\.activo").on("click", function(){
-        var botones = ["menu.modulo.activo.uno", "menu.modulo.activo.dos", "menu.modulo.activo.tres", "menu.modulo.activo.cuatro"];
+        var botones = ["menu.modulo.activo.uno", "menu.modulo.activo.dos", "menu.modulo.activo.tres", "menu.modulo.activo.cuatro", "menu.modulo.activo.cinco"];
 
         if (the(botones[0]).classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
@@ -6629,9 +6629,10 @@ $(document).ready(function(){
 
 $(window).on('hashchange', function(){
     var hash = document.location.hash;
-    var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet","#elparto"];
-    var div_fecha = ["#consulta","#paciente", "#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet"];
+    var div = ["#inicio","#consulta","#paciente","#ajustepeso","#about","#tipoExamen","#ecoDoppler","#ecoObsSegTrim", "#ecoObsSegTrimTamizaje", "#ecoObsPrimTrim","#configuracion","#postnatal","#recienacido","#investigacion","#hipoglicemia","#pdfviebox","#registro","#consentimiento","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet","#elparto"];
+    var div_fecha = ["#consulta","#paciente", "#tipoExamen","#ecoDoppler","#ecoObsSegTrim","#ecoObsSegTrimTamizaje", "#ecoObsPrimTrim","#construccion","#ecoGinecologica","#ecoObsPrimTrimTrisomia", "#morfologiafet"];
     let d = "d-none";
+    let wScroll = false;
 
     if (div.includes(hash)){
         $(activeHash).addClass(d);
@@ -6664,6 +6665,26 @@ $(window).on('hashchange', function(){
         //especial
         if (hash == "#ecoObsPrimTrim" || hash == "#ecoObsSegTrim" || hash == "#inicio"){
             $("#volver").attr("href", "#inicio");
+        }
+
+        if (hash == "#ecoObsSegTrimTamizaje"){
+            $("#ecoObsSegTrimTamizaje").addClass(d);
+            $("#ecoObsSegTrim").removeClass(d);
+
+            window.scrollTo(0, 1250);
+            wScroll = true
+            the("morfo.eco.dostres.uno").classList.remove("d-none")
+
+            the("elementosOcultos").style.top = the("morfo.eco.dostres.uno").offsetHeight
+            the("elementosOcultos").classList.remove("d-none")
+
+            the("ventr.morfologia.EcoSegundo").onchange();
+            completarRapus()
+
+        }
+
+        if (activeHash == "#ecoObsSegTrimTamizaje"){
+            $("#ecoObsSegTrim").addClass(d);
         }
 
         //cuando salta de ingreso de pacientes a exámenes
@@ -6701,7 +6722,10 @@ $(window).on('hashchange', function(){
         the("dias").classList.remove("bg-secondary", "text-white")
     }
 
-    window.scrollTo(0, 0);
+    if (wScroll == false){
+        window.scrollTo(0, 0);
+    }
+
 });
 
 // Guardar para partos
