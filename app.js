@@ -5754,6 +5754,10 @@ $(document).ready(function(){
     the("marcadores.restablecer").onclick = function(){
         the("morfo.eco.dostres.default").value = "no"
         the("morfo.eco.dostres.default").onchange()
+        the("rapus.morfologia.EcoSegundo.division").value = ""
+        the("rapus.morfologia.EcoSegundo.division.porcentaje").value = ""
+        the("rapus.morfologia.EcoSegundo.division.ajustada").value = ""
+        the("rapus.morfologia.EcoSegundo.division.ajustada.porcentaje").value = ""
     }
 
     $('#dof\\.morfologia').on("keyup", function(){
@@ -6685,6 +6689,9 @@ $(window).on('hashchange', function(){
 
         if (activeHash == "#ecoObsSegTrimTamizaje"){
             $("#ecoObsSegTrim").addClass(d);
+            the("morfo.eco.dostres.uno").classList.add("d-none")
+            the("elementosOcultos").classList.add("d-none")
+            the("marcadores.restablecer").onclick()
         }
 
         //cuando salta de ingreso de pacientes a exámenes
