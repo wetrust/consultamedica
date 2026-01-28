@@ -5,7 +5,7 @@ import { graficoPFEMasMenos, percentilOMS } from './graficoPFEMasMenos.js?H'
 import { baseGraficoPFE, graficoPFECompleto, graficoPFEMasMenosSinDias, graficoPFEMasMenosSinDiasCuatroDias } from './graficoPFEMasMenos.js';
 import { dataGraphCA } from './graficoTrozo.js';
 import { InfEcoObsSegTrim1 } from './informes/obstetrica.js'
-
+  
 var daysES = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 var monthsES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 var dayHoy = new Date();
@@ -10611,9 +10611,14 @@ function completarRapus(){
     the("rapus.morfologia.EcoSegundo").value = _resultado
     if (_resultado == null){
          the("rapus.morfologia.EcoSegundo.clone").innerHTML = ""
+		the("rapus.morfologia.EcoSegundo.division").value = "";
+		the("rapus.morfologia.EcoSegundo.division.ajustada").value = "";
     }else{
         the("rapus.morfologia.EcoSegundo.clone").innerHTML = 1+" / "+ _resultado
+		the("rapus.morfologia.EcoSegundo.division").value = Number(1/_resultado).toFixed(7)
+		the("rapus.morfologia.EcoSegundo.division.ajustada").value = Number(Number(the("coe.acum.morfologia.EcoSegundo").value) * Number(Number(1/_resultado).toFixed(7))).toFixed(7)
+		the("rapus.morfologia.EcoSegundo.division.porcentaje").value = Number(Number(Number(1/_resultado).toFixed(7)) * 100).toFixed(2) + " %"
+		the("rapus.morfologia.EcoSegundo.division.ajustada.porcentaje").value = Number(Number(Number(Number(the("coe.acum.morfologia.EcoSegundo").value) * Number(Number(1/_resultado).toFixed(7))).toFixed(7)) * 100).toFixed(2) + " %"
     }
-
 
 }
