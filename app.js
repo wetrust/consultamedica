@@ -6580,6 +6580,7 @@ $(document).ready(function(){
 
                 the("elementosOcultos").style.top = the("morfo.eco.dostres.uno").offsetHeight
                 the("elementosOcultos").classList.remove("d-none")
+                the("elementosOcultosDos").classList.remove("d-none")
 
                 the("ventr.morfologia.EcoSegundo").onchange();
                 completarRapus()
@@ -6592,6 +6593,7 @@ $(document).ready(function(){
             }else if (this.value == "ocultar"){
                 the("morfo.eco.dostres.uno").classList.add("d-none")
                 the("elementosOcultos").classList.add("d-none")
+                the("elementosOcultosDos").classList.add("d-none")
             }else{
                 this.parentElement.parentElement.parentElement.children[1].value = ""
             }
@@ -6717,6 +6719,7 @@ $(window).on('hashchange', function(){
 
             the("elementosOcultos").style.top = the("morfo.eco.dostres.uno").offsetHeight
             the("elementosOcultos").classList.remove("d-none")
+            the("elementosOcultosDos").classList.remove("d-none")
 
             the("ventr.morfologia.EcoSegundo").onchange();
             completarRapus()
