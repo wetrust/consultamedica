@@ -7976,6 +7976,7 @@ function pctlf() {
             the("fc.morfologia.EcoSegundo").value = 0.8
         }
         the("fc.morfologia.EcoSegundo").onchange()
+        completarRapus()
         $('#lfPctRpt').val(pctLF);
         $('#lfRango').val(a[eg] + ' - ' + b[eg]);
         psohdlk();
@@ -10363,7 +10364,7 @@ the("hl.morfologia.EcoSegundo").onchange  = function(){
 the("fc.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    if (Number(the("edadMaterna").value) != 0){
+    if (Number(the("edad.materna.EcoSegundo").value) != 0){
         completarRapus()
     }
 
