@@ -5758,8 +5758,9 @@ $(document).ready(function(){
 
         for (let i = 0; i < select.length; i++){
             the(select[i]).selectedIndex = 1;
-            the(select[i]).dispatchEvent(new Event('change'));
+            the(select[i]).onchange()
         }
+        completarRapus()
 
     }
 
@@ -5770,8 +5771,9 @@ $(document).ready(function(){
 
         for (let i = 0; i < select.length; i++){
             the(select[i]).selectedIndex = 0;
-            the(select[i]).dispatchEvent(new Event('change'));
+            the(select[i]).onchange()
         }
+        completarRapus()
     }
 
     the("marcadores.no.conocida").onclick = function(){
@@ -5781,8 +5783,9 @@ $(document).ready(function(){
 
         for (let i = 0; i < select.length; i++){
             the(select[i]).selectedIndex = 2;
-            the(select[i]).dispatchEvent(new Event('change'));
+            the(select[i]).onchange()
         }
+        completarRapus()
     }
 
     the("marcadores.restablecer").onclick = function(){
@@ -5794,6 +5797,7 @@ $(document).ready(function(){
         the("rapus.morfologia.EcoSegundo.division.porcentaje").value = ""
         the("rapus.morfologia.EcoSegundo.division.ajustada").value = ""
         the("rapus.morfologia.EcoSegundo.division.ajustada.porcentaje").value = ""
+        completarRapus()
     }
 
     $('#dof\\.morfologia').on("keyup", function(){
