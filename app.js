@@ -10392,6 +10392,9 @@ the("fc.morfologia.EcoSegundo").onchange  = function(){
 the("hc.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
+    if (Number(the("edad.materna.EcoSegundo").value) != 0){
+        completarRapus()
+    }
 
     const opcionSeleccionada = this.options[this.selectedIndex];
     const tipo = opcionSeleccionada.dataset.tipo; // Lee el atributo data-tipo
