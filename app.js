@@ -10303,7 +10303,7 @@ function posiNegaResul(resultado){
 the("fei.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    if (Number(the("edadMaterna").value) != 0){
+    if (Number(the("edad.materna.EcoSegundo").value) != 0){
         completarRapus()
     }
 
@@ -10331,7 +10331,7 @@ the("fei.morfologia.EcoSegundo").onchange  = function(){
 the("hl.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    if (Number(the("edadMaterna").value) != 0){
+    if (Number(the("edad.materna.EcoSegundo").value) != 0){
         completarRapus()
     }
 
@@ -10412,7 +10412,7 @@ the("hc.morfologia.EcoSegundo").onchange  = function(){
 the("ie.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    if (Number(the("edadMaterna").value) != 0){
+    if (Number(the("edad.materna.EcoSegundo").value) != 0){
         completarRapus()
     }
 
@@ -10440,7 +10440,7 @@ the("ie.morfologia.EcoSegundo").onchange  = function(){
 the("apn.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    if (Number(the("edadMaterna").value) != 0){
+    if (Number(the("edad.materna.EcoSegundo").value) != 0){
         completarRapus()
     }
 
@@ -10468,7 +10468,7 @@ the("apn.morfologia.EcoSegundo").onchange  = function(){
 the("asda.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    if (Number(the("edadMaterna").value) != 0){
+    if (Number(the("edad.materna.EcoSegundo").value) != 0){
         completarRapus()
     }
 
@@ -10496,7 +10496,7 @@ the("asda.morfologia.EcoSegundo").onchange  = function(){
 the("hnah.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    if (Number(the("edadMaterna").value) != 0){
+    if (Number(the("edad.materna.EcoSegundo").value) != 0){
         completarRapus()
     }
 
@@ -10524,7 +10524,7 @@ the("hnah.morfologia.EcoSegundo").onchange  = function(){
 the("ventr.morfologia.EcoSegundo").onchange  = function(){
     this.parentElement.children[1].value = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo()
-    if (Number(the("edadMaterna").value) != 0){
+    if (Number(the("edad.materna.EcoSegundo").value) != 0){
         completarRapus()
     }
 
@@ -10550,8 +10550,8 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
 }
 the("edad.materna.EcoSegundo").onkeyup  = function(e){
     if (e.key == "Enter"){
-        completarRapus()
         calularRiesgoMorfologiaAPrioriEcoSegundo()
+        completarRapus()
     }
 }
 
