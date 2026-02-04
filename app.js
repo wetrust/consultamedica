@@ -7187,7 +7187,7 @@ function InfEcoObsSegTrim1Clon(){
     var ccRango = oldProgress(tmpData);
     var ca = the("ca").value + ' mm';
     var caPct = the("caPctRpt").value;
-    if (caPct == "&gt; 97" || caPct == "&lt; 3"){
+    if (caPct == "> 97" || caPct == "< 3"){
         tmpData = 0;
     }else{
         tmpData = caPct;
@@ -7774,8 +7774,7 @@ function deDBP() {
 	if (eg < 12 || eg > 40){
 		$("#dbpDE").val('0');
 		$('#dbpPct').val('0');
-	}
-	else {
+	} else {
 		eg = eg - 12;
 		eg = parseInt(eg);
 
@@ -7786,10 +7785,10 @@ function deDBP() {
 		var pctDBP = '';
 		//truncador de Pct, sobre 100 o bajo 1
 		if (resultado > 99){
-			pctDBP = '&gt; 99';
+			pctDBP = '> 99';
 		}
 		else if (resultado < 1){
-			pctDBP = '&lt; 1';
+			pctDBP = '< 1';
 		}
 		else{
 			pctDBP = resultado;
@@ -7887,10 +7886,10 @@ function pctcc() {
         var pctCC = '';
         //truncador de Pct, sobre 100 o bajo 1
         if (resultado > 97){
-            pctCC = '&gt; 97';
+            pctCC = '> 97';
         }
         else if (resultado < 3){
-            pctCC = '&lt; 3';
+            pctCC = '< 3';
         }
         else{
             pctCC = resultado;
@@ -7927,10 +7926,10 @@ function pctca() {
         var pctCA = '';
         //truncador de Pct, sobre 100 o bajo 1
         if (resultado > 97){
-            pctCA = '&gt; 97';
+            pctCA = '> 97';
         }
         else if (resultado < 3){
-            pctCA = '&lt; 3';
+            pctCA = '< 3';
         }
         else{
             pctCA = resultado;
@@ -7966,10 +7965,10 @@ function pctlf() {
         var pctLF = '';
         //truncador de Pct, sobre 100 o bajo 1
         if (resultado > 97){
-            pctLF = '&gt; 97';
+            pctLF = '> 97';
             the("fc.morfologia.EcoSegundo").value = 0.8
         }else if (resultado < 3){
-            pctLF = '&lt; 3';
+            pctLF = '< 3';
             the("fc.morfologia.EcoSegundo").value = 3.72
         }else{
             pctLF = resultado;
@@ -8076,10 +8075,10 @@ function pctlh() {
         var pctLH = '';
         //truncador de Pct, sobre 100 o bajo 1
         if (resultado > 95){
-            pctLH = '&gt; 95';
+            pctLH = '> 95';
             the("hc.morfologia.EcoSegundo").value = 0.74
         }else if (resultado < 5){
-            pctLH = '&lt; 5';
+            pctLH = '< 5';
             the("hc.morfologia.EcoSegundo").value = 4.81
         }else{
             pctLH = resultado;

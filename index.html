@@ -3288,7 +3288,7 @@
                         <div class="card mb-3">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-10">
+                                    <div class="col-12">
                                         <h5 class="card-title">BIOMETRÍA FETAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>( 14 a 40 semanas )</small></h5>
                                         <div class="form-group form-check"><input type="checkbox" class="form-check-input" id="ver.ref"><label class="form-check-label text-primary" for="art.ut">Ver cuatro referencias <small>(Biometrías, Estimación y categorización de peso mas valoración de líquido amniótico)</small></label></div>
                                         <div class="row d-none" id="ver.ref.div">
@@ -3301,16 +3301,25 @@
                                                 <label>DBP</label>
                                             </div>
                                             <div class="col mb-2">
-                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                    <input type="text" class="form-control" id="dbp">
-                                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                <div class="row">
+                                                    <div class="col mb-2 pr-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="dbp">
+                                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col mb-2 pl-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="dbpPct" disabled>
+                                                            <div class="input-group-append"><div class="input-group-text">Pct</div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-2">
                                                 <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dbpDE">
                                                     <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
-                                                <input type="hidden" id="dbpPct">
                                                 <input type="hidden" id="dbpRango">
                                             </div>
                                             <div class="col-2 mb-2">
@@ -3346,16 +3355,25 @@
                                                 <label>C. Cráneo</label>
                                             </div>
                                             <div class="col mb-2">
-                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                    <input type="text" class="form-control bg-light" id="cc">
-                                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                <div class="row">
+                                                    <div class="col mb-2 pr-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="cc">
+                                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col mb-2 pl-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="ccPctRpt" disabled>
+                                                            <div class="input-group-append"><div class="input-group-text">Pct</div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-2">
                                                 <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ccPct">
                                                     <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
-                                                <input type="hidden" id="ccPctRpt">
                                                 <input type="hidden" id="ccRango">
                                             </div>
                                             <div class="col-2 mb-2">
@@ -3367,16 +3385,25 @@
                                                 <label>C. Abdomen</label>
                                             </div>
                                             <div class="col mb-2">
-                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                    <input type="text" class="form-control bg-light" id="ca">
-                                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                <div class="row">
+                                                    <div class="col mb-2 pr-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="ca">
+                                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col mb-2 pl-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="caPctRpt" disabled>
+                                                            <div class="input-group-append"><div class="input-group-text">Pct</div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-2">
                                                 <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="caPct">
                                                     <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
-                                                <input type="hidden" id="caPctRpt">
                                                 <input type="hidden" id="caRango">
                                             </div>
                                             <div class="col-2">
@@ -3388,16 +3415,25 @@
                                                 <label>L. Fémur</label>
                                             </div>
                                             <div class="col mb-2">
-                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                    <input type="text" class="form-control bg-light" id="lf">
-                                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                <div class="row">
+                                                    <div class="col mb-2 pr-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="lf">
+                                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col mb-2 pl-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="lfPctRpt" disabled>
+                                                            <div class="input-group-append"><div class="input-group-text">Pct</div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-2">
                                                 <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lfPct">
                                                     <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
-                                                <input type="hidden" id="lfPctRpt">
                                                 <input type="hidden" id="lfRango">
                                             </div>
                                             <div class="col-2 mb-2">
@@ -3409,16 +3445,25 @@
                                                 <label>Largo Humeral</label>
                                             </div>
                                             <div class="col mb-2">
-                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                    <input type="text" class="form-control" id="lh">
-                                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                <div class="row">
+                                                    <div class="col mb-2 pr-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="lh">
+                                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col mb-2 pl-1">
+                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                            <input type="text" class="form-control" id="lhPctRpt" disabled>
+                                                            <div class="input-group-append"><div class="input-group-text">Pct</div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-2">
                                                 <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhPct">
                                                     <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
-                                                <input type="hidden" id="lhPctRpt">
                                                 <input type="hidden" id="lhRango">
                                             </div>
                                             <div class="col-2 mb-2">
