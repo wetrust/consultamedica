@@ -10578,14 +10578,6 @@ the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
         }
     }
 
-    if (Number(this.value) > riesgoTabla[18][20]){
-        the("edad.materna.EcoSegundo").value = ""
-    }
-
-    if (Number(this.value) < riesgoTabla[50][20]){
-        the("edad.materna.EcoSegundo").value = ""
-    }
-
     the("rapus.morfologia.EcoSegundo.clone").innerHTML = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo();
     completarRapus()
