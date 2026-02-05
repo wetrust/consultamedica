@@ -10575,12 +10575,12 @@ the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
         if (Number(this.value) == valor || (Number(this.value) > valor && Number(this.value) <= valorMenor)){
             the("edad.materna.EcoSegundo").value = i
             i = 52
+            completarRapus()
         }
     }
 
     the("rapus.morfologia.EcoSegundo.clone").innerHTML = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo();
-    completarRapus()
 
 }
 
