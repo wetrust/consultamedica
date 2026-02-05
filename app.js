@@ -10563,7 +10563,7 @@ the("edad.materna.EcoSegundo").onkeyup  = function(e){
 
 the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
 
-    if (Number(this.value) > riesgoTabla[18][20] || Number(this.value) < riesgoTabla[50][20]){
+    if (Number(this.value) < riesgoTabla[18][20] || Number(this.value) > riesgoTabla[50][20]){
         for (let i = 18; i < 51; i++) {
             let valor = riesgoTabla[i][20];
 
@@ -10572,7 +10572,7 @@ the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
                 i = 52
             }
         }
-    }else{
+    } else {
         the("edad.materna.EcoSegundo").value = ""
     }
 
