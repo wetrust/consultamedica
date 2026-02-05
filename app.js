@@ -10566,8 +10566,17 @@ the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
     the("rapus.morfologia.EcoSegundo.clone").innerHTML = this.value
     calularRiesgoMorfologiaAPrioriEcoSegundo();
 
-    if (eg > 18 || eg < 50) {
-        riesgoTabla[edad][20]
+    if (Number(this.value) > riesgoTabla[18][20] || Number(this.value) < riesgoTabla[50][20]){
+        for (let i = 18; i < 51; i++) {
+            let valor = riesgoTabla[i][20];
+
+            if (Number(this.value) == valor || (Number(this.value) > valor && Number(this.value) <= riesgoTabla[i-1][20])){
+                the("edad.materna.EcoSegundo").value = i
+                i = 52
+            }
+        }
+    }else{
+        the("edad.materna.EcoSegundo").value = ""
     }
 
 }
