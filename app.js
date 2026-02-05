@@ -10554,6 +10554,10 @@ the("ventr.morfologia.EcoSegundo").onchange  = function(){
         this.parentElement.parentElement.parentElement.classList.add("morfologia-ecosegundo-gris")
     }
 }
+the("edad.materna.EcoSegundo").onkeyup  = function(e){
+    calularRiesgoMorfologiaAPrioriEcoSegundo()
+    completarRapus()
+}
 
 the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
 
