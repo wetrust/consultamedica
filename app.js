@@ -10563,16 +10563,28 @@ the("edad.materna.EcoSegundo").onkeyup  = function(e){
 
 the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
 
-    if (Number(this.value) < riesgoTabla[18][20] || Number(this.value) > riesgoTabla[50][20]){
-        for (let i = 18; i < 51; i++) {
-            let valor = riesgoTabla[i][20];
+    for (let i = 18; i < 51; i++) {
+        let valor = riesgoTabla[i][20];
 
-            if (Number(this.value) == valor || (Number(this.value) > valor && Number(this.value) <= riesgoTabla[i-1][20])){
-                the("edad.materna.EcoSegundo").value = i
-                i = 52
-            }
+        let valorMenor = 0
+
+        if (i-1 == 17){
+            valorMenor = riesgoTabla[18][20]
+        }else{
+            valorMenor = riesgoTabla[i-1][20]
         }
-    } else {
+
+        if (Number(this.value) == valor || (Number(this.value) > valor && Number(this.value) <= valorMenor)){
+            the("edad.materna.EcoSegundo").value = i
+            i = 52
+        }
+    }
+
+    if (Number(this.value) > riesgoTabla[18][20]){
+        the("edad.materna.EcoSegundo").value = ""
+    }
+
+    if (Number(this.value) < riesgoTabla[50][20]){
         the("edad.materna.EcoSegundo").value = ""
     }
 
