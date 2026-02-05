@@ -10561,6 +10561,7 @@ the("edad.materna.EcoSegundo").onkeyup  = function(e){
 
 the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
 
+    the("edad.materna.EcoSegundo").value = ""
     for (let i = 18; i < 51; i++) {
         let valor = riesgoTabla[i][20];
 
@@ -10575,7 +10576,12 @@ the("rapus.morfologia.EcoSegundo").onkeyup = function(e){
         if (Number(this.value) == valor || (Number(this.value) > valor && Number(this.value) <= valorMenor)){
             the("edad.materna.EcoSegundo").value = i
             i = 52
-            completarRapus()
+
+            the("rapus.morfologia.EcoSegundo.clone").innerHTML = 1+" / "+ Number(this.value)
+		    the("rapus.morfologia.EcoSegundo.division").value = Number(1/Number(this.value)).toFixed(7)
+		    the("rapus.morfologia.EcoSegundo.division.ajustada").value = Number(Number(the("coe.acum.morfologia.EcoSegundo").value) * Number(Number(1/Number(this.value)).toFixed(7))).toFixed(7)
+		    the("rapus.morfologia.EcoSegundo.division.porcentaje").value = Number(Number(Number(1/Number(this.value)).toFixed(7)) * 100).toFixed(2) + " %"
+		    the("rapus.morfologia.EcoSegundo.division.ajustada.porcentaje").value = Number(Number(Number(Number(the("coe.acum.morfologia.EcoSegundo").value) * Number(Number(1/Number(this.value)).toFixed(7))).toFixed(7)) * 100).toFixed(2) + " %"
         }
     }
 
