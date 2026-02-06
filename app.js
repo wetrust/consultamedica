@@ -4075,7 +4075,7 @@ $( document ).ready(function() {
         var modal = makeModal("Ver Impresion");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
-        the(modal.titulo).innerHTML = "<p>Cuatro biometrías principales de crecimiento fetal<br><small>Para cráneo, abdomen y femur referencia de Hadlock y col. 1984, Humero referencia de J. Jeanty y col.</small></p>";
+        the(modal.titulo).innerHTML = "Cuatro biometrías principales de crecimiento fetal<br><small>Para cráneo, abdomen y femur referencia de Hadlock y col. 1984, Humero referencia de J. Jeanty y col.</small>";
         $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
             $(this).remove();
         });
