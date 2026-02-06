@@ -1594,7 +1594,7 @@
                         <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cuatro" href="#ecoGinecologica"><small>&gt; Ecografía Ginecológica adicional</small></a>
                         <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.dos" href="#ecoObsSegTrim" style="border-width: 2px;border-color: #000;"><small>&gt; Evaluación del crecimiento fetal</small></a>
                         <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.tres" href="#ecoDoppler" style="border-width: 2px;border-color: #000;"><small>&gt; Flujometría Doppler materno / fetal</small></a>
-                        <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cinco" href="#ecoObsSegTrimTamizaje" style="border-width: 2px;border-color: #000;"><small>&gt; Módulo en construcción</small></a>
+                        <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cinco" href="#enconstruccion" style="border-width: 2px;border-color: #000;"><small>&gt; Módulo en construcción</small></a>
                         <div class="d-flex justify-content-between align-items-center py-1">
                             <a class="btn btn-outline-dark rounded text-left w-100 my-1" href="#about" id="boton.acerca.de"><small>Acerca de la plataforma y autor</small></a>
                             <ul class="mb-0">
@@ -3793,234 +3793,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex flex-row justify-content-between mb-2">
-                                    <div>
-                                        <p class="mt-3 mb-0"><span class="h5">Modulo en construcción</span> Marcadores ecograficos de 2do trimestre para Trisomía 21</p>
-                                        <p class="text-center">-Análisis de riesgo basado en metaanálisis de Agathokleous et al. UOG 2013; 41 : 247 - 261 <a class="text-decoration-none" href="https://pubmed.ncbi.nlm.nih.gov/23208748/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/></svg></a></p>
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center">
-                                        <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
-                                            <label class="btn btn btn-outline-secondary active" >
-                                            <input type="radio" checked="" value="ocultar">NO</label>
-                                            <label class="btn btn-outline-secondary">
-                                            <input type="radio"  value="mostrar">SI</label>
-                                        </div>
-                                        <ul class="mb-0">
-                                            <li class="azul-li"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="card mb-5" style="border-width: 2px;border-radius: 30px;border-color: #000;">
-                                    <div class="card-body pl-4 pb-3">
-                                        <div class="d-flex flex-row justify-content-between">
-                                            <div>
-                                                <ul>
-                                                    <li class="mb-0"><em>Cada marcador se asocia con una razon de probabilidad positiva y una negativa. La presencia de marcadores aumenta el riesgo de trimonia 21. Mientras que su ausencia lo reduce. Para el evento de evaluar los nueve marcadores</em></li>
-                                                    <li class="mb-0"><em><strong>El descubrimiento de alguno de estos marcadores justifica la realizacion de ecografía estructural detallada</strong>, para excluir existencia de marcadores adicionales o malformaciones fetales. No obstante, <strong>su hallasgo no supone una herramienta diagnostica.</strong></em></li>
-                                                    <li class="mb-0"><em><strong>Los procedimientos diagnosticos son pruebas invasivas</strong> como es biopsia de vellocidades coriales o amniosentesis genétrica, prodecimientos que se realizan en primer o segundo trimestre respectivamente,</em></li>
-                                                    <li class="mb-0"><em>Importante señalar que <strong>ADN fetal</strong> libre en sangre materna es una <strong>prueba de tamizaje con alta sensibilidad</strong> (99%) y bajos falsos positivos (01-02%) para t21</em></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body pl-4 d-none pt-0" id="morfo.eco.dostres.uno">
-                                        <div class="row mt-1">
-                                            <div class="col-12">
-                                                <div class="form-group row mb-2 p-1 rounded">
-                                                    <label class="col-8 mb-0">-Análisis de riesgo basado en metaanálisis de Agathokleous et al. UOG 2013; 41 : 247 - 261 <a class="text-decoration-none" href="https://pubmed.ncbi.nlm.nih.gov/23208748/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/></svg></a></label>
-                                                    <div class="col-2 text-right">
-                                                        Estado
-                                                    </div>
-                                                    <div class="col-2 text-right">
-                                                        Valor de LK
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
-                                                    <label class="col-9 mb-0">HN Ausente o hipoplásico ( &lt; 2.5 mm, en vista perpendicular al transductor)</label>
-                                                    <div class="col-3">
-                                                        <div class="d-flex justify-content-start align-items-center">
-                                                            <select class="form-control selector-datos" id="hnah.morfologia.EcoSegundo">
-                                                                <option value="23.27" data-tipo="presente">presente</option>
-                                                                <option value="0.46" data-tipo="ausente">ausente</option>
-                                                                <option value="1" selected>no conocida</option>
-                                                            </select>
-                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
-                                                    <label class="col-9 mb-0">Ventrículomegalia (&gt; 10 mm, asimetría ventricular diferencia &gt; 2.5 mm)</label>
-                                                    <div class="col-3">
-                                                        <div class="d-flex justify-content-start align-items-center">
-                                                            <select class="form-control selector-datos" id="ventr.morfologia.EcoSegundo">
-                                                                <option value="27.52" data-tipo="presente">presente</option>
-                                                                <option value="0.94" data-tipo="ausente">ausente</option>
-                                                                <option value="1" selected>no conocida</option>
-                                                            </select>
-                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
-                                                    <label class="col-9 mb-0">Aumento del pliegue nucal (&gt; 6 mm, evaluado en corte trancerebelar)</label>
-                                                    <div class="col-3">
-                                                        <div class="d-flex justify-content-start align-items-center">
-                                                            <select class="form-control selector-datos" id="apn.morfologia.EcoSegundo">
-                                                                <option value="23.30" data-tipo="presente">presente</option>
-                                                                <option value="0.8" data-tipo="ausente">ausente</option>
-                                                                <option value="1" selected>no conocida</option>
-                                                            </select>
-                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
-                                                    <label class="col-9 mb-0">Ectasia piélica bilateral &gt; 4.5 mm. (reevaluar a 30 semanas)</label>
-                                                    <div class="col-3">
-                                                        <div class="d-flex justify-content-start align-items-center">
-                                                            <select class="form-control selector-datos" id="hl.morfologia.EcoSegundo">
-                                                                <option value="7.63" data-tipo="presente">presente</option>
-                                                                <option value="0.92" data-tipo="ausente">ausente</option>
-                                                                <option value="1" selected>no conocida</option>
-                                                            </select>
-                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
-                                                    <label class="col-9 mb-0">Húmero corto &lt; Pct. 5 (hueso vista horizontal)</label>
-                                                    <div class="col-3">
-                                                        <div class="d-flex justify-content-start align-items-center">
-                                                            <select class="form-control selector-datos" id="hc.morfologia.EcoSegundo">
-                                                                <option value="4.81" data-tipo="presente">presente</option>
-                                                                <option value="0.74" data-tipo="ausente">ausente</option>
-                                                                <option value="1" selected>no conocida</option>
-                                                            </select>
-                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
-                                                    <label class="col-9 mb-0">Fémur corto &lt; Pct. 5 (hueso vista horizontal)</label>
-                                                    <div class="col-3">
-                                                        <div class="d-flex justify-content-start align-items-center">
-                                                            <select class="form-control selector-datos" id="fc.morfologia.EcoSegundo">
-                                                                <option value="3.72" data-tipo="presente">presente</option>
-                                                                <option value="0.8" data-tipo="ausente">ausente</option>
-                                                                <option value="1" selected>no conocida</option>
-                                                            </select>
-                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
-                                                    <label class="col-9 mb-0">Foco ecogénico intracardiaco Corte 4 cámaras de ventrículo Izquierdo (en dos vistas)</label>
-                                                    <div class="col-3">
-                                                        <div class="d-flex justify-content-start align-items-center"> 
-                                                            <select class="form-control selector-datos" id="fei.morfologia.EcoSegundo">
-                                                                <option value="5.83" data-tipo="presente">presente</option>
-                                                                <option value="0.8" data-tipo="ausente">ausente</option>
-                                                                <option value="1" selected>no conocida</option>
-                                                            </select>
-                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
-                                                    <label class="col-9 mb-0">Intestino Hiperecogénico, más ecogénico que el hueso iliaco</label>
-                                                    <div class="col-3">
-                                                        <div class="d-flex justify-content-start align-items-center">
-                                                            <select class="form-control selector-datos" id="ie.morfologia.EcoSegundo">
-                                                                <option value="11.44" data-tipo="presente">presente</option>
-                                                                <option value="0.9" data-tipo="ausente">ausente</option>
-                                                                <option value="1" selected>no conocida</option>
-                                                            </select>
-                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
-                                                    <label class="col-9 mb-0">ARSA = Art. subclavia derecha aberrante en corte de 3 V-tráquea (vaso hacia posterior)</label>
-                                                    <div class="col-3">
-                                                        <div class="d-flex justify-content-start align-items-center">
-                                                            <select class="form-control selector-datos" id="asda.morfologia.EcoSegundo">
-                                                                <option value="21.48" data-tipo="presente">presente</option>
-                                                                <option value="0.71" data-tipo="ausente">ausente</option>
-                                                                <option value="1" selected>no conocida</option>
-                                                            </select>
-                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-6 col-form-label pl-0 ml-0"><strong>Coeficiente Acumulado</strong> ( Multiplicación de LK positivos por LK Negativos ) :</label>
-                                                    <div class="col-2 offset-4 p-0">
-                                                        <div class="d-flex justify-content-start align-items-center d-none">
-                                                            <input type="text" class="form-control shadow rounded border-0 ml-2 text-right bg-white" value="1" disabled id="coe.acum.morfologia.EcoSegundo">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-1 col-form-label pl-0 ml-0"><small><strong>Edad Materna</strong></small></label>
-                                                    <div class="col-2 input-group shadow pr-0 pl-0">
-                                                        <input type="number" class="form-control text-center" id="edad.materna.EcoSegundo" style="background-color:#e1f0ff;">
-                                                        <div class="input-group-append"><div class="input-group-text">años</div></div>
-                                                    </div>
-                                                    <label class="col-2 col-form-label pr-0 mr-0 pl-5"><small><strong>Riesgo a priori</strong> <a target="_blank" href="https://crecimientofetal.cl/img/riesgot21.jpg" title="Tabla riesgo a priori de T21">ver tabla</a></small></label>
-                                                    <div class="col-2">
-                                                        <input type="text" class="form-control shadow rounded border-0 text-center" value="" id="rapus.morfologia.EcoSegundo.division">
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <input type="text" class="form-control shadow rounded border-0 text-center" value="" id="rapus.morfologia.EcoSegundo.division.porcentaje">
-                                                    </div>
-                                                    <div class="col-1 p-0 text-right">1 /</div>
-                                                    <div class="col-2">
-                                                        <input type="text" id="rapus.morfologia.EcoSegundo" class="form-control shadow rounded border-0 ml-2 text-center" value="" style="background-color:#e1f0ff;">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-5 col-form-label pl-0 ml-0"><strong>Riesgo ajustado </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(zona de riesgo = fracción en <strong class="text-danger">color rojo</strong>)</label>
-                                                    <div class="col-2">
-                                                        <input type="text" class="form-control shadow rounded border-0 text-center" value="" id="rapus.morfologia.EcoSegundo.division.ajustada">
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <input type="text" class="form-control shadow rounded border-0 text-center" value="" id="rapus.morfologia.EcoSegundo.division.ajustada.porcentaje">
-                                                    </div>
-                                                    <div class="col-1 p-0 text-right">1 /</div>
-                                                    <div class="col-2">
-                                                        <input type="text" id="el.reducido" class="form-control shadow rounded border-0 ml-2 text-center font-weight-bold" value="">
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-0 mt-5">
-                                                    <ul>
-                                                        <li class="text-primary"><em>Opción <strong>riesgo a priori dado por edad materna</strong>, permite digitar otro valor, ejemplo riesgo encontrado en tamizaje de 11-14 semanas</em></li>
-                                                    </ul>
-                                                </div>
-                                                <table class="table d-none">
-                                                    <tbody>
-                                                    <tr class="d-none">
-                                                        <th scope="row">Riesgo a priori (según edad materna)</th>
-                                                        <td class="d-none" id="rap.morfologia.EcoSegundo">0.0091</td>
-                                                        <td class="d-none" id="rapp.morfologia.EcoSegundo">0.91 %</td>
-                                                        <td colspan="2" id="rapus.morfologia.EcoSegundo.clone"></td>
-                                                    </tr>
-                                                    <tr class="d-none">
-                                                        <th scope="row">Riesgo ajustado (x edad y marcadores)</th>
-                                                        <td id="raj.morfologia.EcoSegundo">0.0091</td>
-                                                        <td id="rajp.morfologia.EcoSegundo">0.9091 %</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                                <div class="row d-none">
-                                                    <div class="col-3 px-2">
-                                                        <label>&nbsp;</label>
-                                                        <input type="text" id="el.resultado" class="form-control shadow rounded border-0 ml-2 d-none" value="">
-                                                    </div>
-                                                </div>                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="modal fade" id="valoresModal" tabindex="-1" role="dialog" aria-labelledby="valoresModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-xl" role="document">
                                         <div class="modal-content">
@@ -4579,72 +4351,6 @@
                         </div>
                         <div class="col-12">
                             <a href="img/2PROTOCOLO_BARCELONA_2024.pdf" target="_blank"><img src="img/2PROTOCOLO_BARCELONA_2024.jpg" class="w-75 mt-2 d-block mx-auto" alt="poster"></a>
-                        </div>
-                    </div>
-                </div>
-                <div id="elementosOcultos" class="d-none" style="top: 1500px; position: absolute;">
-                    <div class="form-group row">
-                        <label class="col-12 col-form-label m-0 p-1 morfologia-ecosegundo-gris">Agrupar marcadores en:</label>
-                        <div class="col-12 text-center">
-                            <button id="marcadores.ausente" class="btn btn-outline-secondary mt-2" style="min-width: 147px;">Todos Ausentes</button>
-                        </div>
-                        <div class="col-12 text-center">
-                            <button id="marcadores.presente" class="btn btn-outline-secondary mt-2" style="min-width: 147px;">Todos Presentes</button>
-                        </div>
-                        <div class="col-12 text-center">
-                            <button id="marcadores.no.conocida" class="btn btn-outline-secondary mt-2" style="min-width: 147px;">No conocida</button>
-                        </div>
-                        <div class="col-12 text-center">
-                            <button id="marcadores.restablecer" class="btn btn-outline-secondary mt-2" style="min-width: 147px;">Volver al inicio</button>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-12 col-form-label m-0 p-1 morfologia-ecosegundo-gris">Ver documento en PDF:</label>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input" id="ver.ecodos.foto1">
-                                        <label class="form-check-label" for="ver.ecodos.foto1">Tabla riesgo a priori de T21</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 d-none">
-                            <div class="col-12">
-                                <a href="img/riesgot21.jpg" target="_blank"><img src="img/riesgot21.jpg" class="w-75 mt-2 d-block mx-auto" alt="snoopy"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input" id="ver.ecodos.foto2">
-                                        <label class="form-check-label" for="ver.ecodos.foto2">Tabla marcadores para t21</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row d-none">
-                            <div class="col-12">
-                                <a href="img/marcadorest21.jpg" target="_blank"><img src="img/marcadorest21.jpg" class="w-75 mt-2 d-block mx-auto" alt="snoopy"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input" id="ver.ecodos.foto3">
-                                        <label class="form-check-label" for="ver.ecodos.foto3">Marcadores ecográficos 2º Trim.</label>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -5631,6 +5337,289 @@
         <div class="card mt-1" style="border-width: 1px;border-color: #000;">
             <div class="card-body">
                 <h5 class="text-secondary"><em>OPCIONAL REGISTRO DE DATOS POST - PARTO ( EN CONSTRUCCIÓN )</em></h5>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pt-2" style="margin-top: 7.3rem;" id="enconstruccion">
+        <div class="row">
+            <div class="col-10">
+                <div class="card mb-5" style="border-width: 2px;border-radius: 30px;border-color: #000;">
+                    <div class="card-body pl-4 pb-3">
+                        <p class="mt-3 mb-0"><span class="h5">Modulo en construcción</span> Marcadores ecograficos de 2do trimestre para Trisomía 21</p>
+                        <p class="text-center">-Análisis de riesgo basado en metaanálisis de Agathokleous et al. UOG 2013; 41 : 247 - 261 <a class="text-decoration-none" href="https://pubmed.ncbi.nlm.nih.gov/23208748/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/></svg></a></p>
+                        <div class="d-flex flex-row justify-content-between">
+                            <div>
+                                <ul>
+                                    <li class="mb-0"><em>Cada marcador se asocia con una razon de probabilidad positiva y una negativa. La presencia de marcadores aumenta el riesgo de trimonia 21. Mientras que su ausencia lo reduce. Para el evento de evaluar los nueve marcadores</em></li>
+                                    <li class="mb-0"><em><strong>El descubrimiento de alguno de estos marcadores justifica la realizacion de ecografía estructural detallada</strong>, para excluir existencia de marcadores adicionales o malformaciones fetales. No obstante, <strong>su hallasgo no supone una herramienta diagnostica.</strong></em></li>
+                                    <li class="mb-0"><em><strong>Los procedimientos diagnosticos son pruebas invasivas</strong> como es biopsia de vellocidades coriales o amniosentesis genétrica, prodecimientos que se realizan en primer o segundo trimestre respectivamente,</em></li>
+                                    <li class="mb-0"><em>Importante señalar que <strong>ADN fetal</strong> libre en sangre materna es una <strong>prueba de tamizaje con alta sensibilidad</strong> (99%) y bajos falsos positivos (01-02%) para t21</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-12">
+                                <div class="form-group row mb-2 p-1 rounded">
+                                    <label class="col-8 mb-0">-Análisis de riesgo basado en metaanálisis de Agathokleous et al. UOG 2013; 41 : 247 - 261 <a class="text-decoration-none" href="https://pubmed.ncbi.nlm.nih.gov/23208748/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/></svg></a></label>
+                                    <div class="col-2 text-right">
+                                        Estado
+                                    </div>
+                                    <div class="col-2 text-right">
+                                        Valor de LK
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
+                                    <label class="col-9 mb-0">HN Ausente o hipoplásico ( &lt; 2.5 mm, en vista perpendicular al transductor)</label>
+                                    <div class="col-3">
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            <select class="form-control selector-datos" id="hnah.morfologia.EcoSegundo">
+                                                <option value="23.27" data-tipo="presente">presente</option>
+                                                <option value="0.46" data-tipo="ausente">ausente</option>
+                                                <option value="1" selected>no conocida</option>
+                                            </select>
+                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
+                                    <label class="col-9 mb-0">Ventrículomegalia (&gt; 10 mm, asimetría ventricular diferencia &gt; 2.5 mm)</label>
+                                    <div class="col-3">
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            <select class="form-control selector-datos" id="ventr.morfologia.EcoSegundo">
+                                                <option value="27.52" data-tipo="presente">presente</option>
+                                                <option value="0.94" data-tipo="ausente">ausente</option>
+                                                <option value="1" selected>no conocida</option>
+                                            </select>
+                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
+                                    <label class="col-9 mb-0">Aumento del pliegue nucal (&gt; 6 mm, evaluado en corte trancerebelar)</label>
+                                    <div class="col-3">
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            <select class="form-control selector-datos" id="apn.morfologia.EcoSegundo">
+                                                <option value="23.30" data-tipo="presente">presente</option>
+                                                <option value="0.8" data-tipo="ausente">ausente</option>
+                                                <option value="1" selected>no conocida</option>
+                                            </select>
+                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
+                                    <label class="col-9 mb-0">Ectasia piélica bilateral &gt; 4.5 mm. (reevaluar a 30 semanas)</label>
+                                    <div class="col-3">
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            <select class="form-control selector-datos" id="hl.morfologia.EcoSegundo">
+                                                <option value="7.63" data-tipo="presente">presente</option>
+                                                <option value="0.92" data-tipo="ausente">ausente</option>
+                                                <option value="1" selected>no conocida</option>
+                                            </select>
+                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
+                                    <label class="col-9 mb-0">Húmero corto &lt; Pct. 5 (hueso vista horizontal)</label>
+                                    <div class="col-3">
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            <select class="form-control selector-datos" id="hc.morfologia.EcoSegundo">
+                                                <option value="4.81" data-tipo="presente">presente</option>
+                                                <option value="0.74" data-tipo="ausente">ausente</option>
+                                                <option value="1" selected>no conocida</option>
+                                            </select>
+                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
+                                    <label class="col-9 mb-0">Fémur corto &lt; Pct. 5 (hueso vista horizontal)</label>
+                                    <div class="col-3">
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            <select class="form-control selector-datos" id="fc.morfologia.EcoSegundo">
+                                                <option value="3.72" data-tipo="presente">presente</option>
+                                                <option value="0.8" data-tipo="ausente">ausente</option>
+                                                <option value="1" selected>no conocida</option>
+                                            </select>
+                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
+                                    <label class="col-9 mb-0">Foco ecogénico intracardiaco Corte 4 cámaras de ventrículo Izquierdo (en dos vistas)</label>
+                                    <div class="col-3">
+                                        <div class="d-flex justify-content-start align-items-center"> 
+                                            <select class="form-control selector-datos" id="fei.morfologia.EcoSegundo">
+                                                <option value="5.83" data-tipo="presente">presente</option>
+                                                <option value="0.8" data-tipo="ausente">ausente</option>
+                                                <option value="1" selected>no conocida</option>
+                                            </select>
+                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
+                                    <label class="col-9 mb-0">Intestino Hiperecogénico, más ecogénico que el hueso iliaco</label>
+                                    <div class="col-3">
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            <select class="form-control selector-datos" id="ie.morfologia.EcoSegundo">
+                                                <option value="11.44" data-tipo="presente">presente</option>
+                                                <option value="0.9" data-tipo="ausente">ausente</option>
+                                                <option value="1" selected>no conocida</option>
+                                            </select>
+                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2 p-1 rounded morfologia-ecosegundo-gris">
+                                    <label class="col-9 mb-0">ARSA = Art. subclavia derecha aberrante en corte de 3 V-tráquea (vaso hacia posterior)</label>
+                                    <div class="col-3">
+                                        <div class="d-flex justify-content-start align-items-center">
+                                            <select class="form-control selector-datos" id="asda.morfologia.EcoSegundo">
+                                                <option value="21.48" data-tipo="presente">presente</option>
+                                                <option value="0.71" data-tipo="ausente">ausente</option>
+                                                <option value="1" selected>no conocida</option>
+                                            </select>
+                                            <input type="text" class="form-control shadow rounded border-0 ml-2 bg-white text-dark" value="1" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-6 col-form-label pl-0 ml-0"><strong>Coeficiente Acumulado</strong> ( Multiplicación de LK positivos por LK Negativos ) :</label>
+                                    <div class="col-2 offset-4 p-0">
+                                        <div class="d-flex justify-content-start align-items-center d-none">
+                                            <input type="text" class="form-control shadow rounded border-0 ml-2 text-right bg-white" value="1" disabled id="coe.acum.morfologia.EcoSegundo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-1 col-form-label pl-0 ml-0"><small><strong>Edad Materna</strong></small></label>
+                                    <div class="col-2 input-group shadow pr-0 pl-0">
+                                        <input type="number" class="form-control text-center" id="edad.materna.EcoSegundo" style="background-color:#e1f0ff;">
+                                        <div class="input-group-append"><div class="input-group-text">años</div></div>
+                                    </div>
+                                    <label class="col-2 col-form-label pr-0 mr-0 pl-5"><small><strong>Riesgo a priori</strong> <a target="_blank" href="https://crecimientofetal.cl/img/riesgot21.jpg" title="Tabla riesgo a priori de T21">ver tabla</a></small></label>
+                                    <div class="col-2">
+                                        <input type="text" class="form-control shadow rounded border-0 text-center" value="" id="rapus.morfologia.EcoSegundo.division">
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="text" class="form-control shadow rounded border-0 text-center" value="" id="rapus.morfologia.EcoSegundo.division.porcentaje">
+                                    </div>
+                                    <div class="col-1 p-0 text-right">1 /</div>
+                                    <div class="col-2">
+                                        <input type="text" id="rapus.morfologia.EcoSegundo" class="form-control shadow rounded border-0 ml-2 text-center" value="" style="background-color:#e1f0ff;">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-5 col-form-label pl-0 ml-0"><strong>Riesgo ajustado </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(zona de riesgo = fracción en <strong class="text-danger">color rojo</strong>)</label>
+                                    <div class="col-2">
+                                        <input type="text" class="form-control shadow rounded border-0 text-center" value="" id="rapus.morfologia.EcoSegundo.division.ajustada">
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="text" class="form-control shadow rounded border-0 text-center" value="" id="rapus.morfologia.EcoSegundo.division.ajustada.porcentaje">
+                                    </div>
+                                    <div class="col-1 p-0 text-right">1 /</div>
+                                    <div class="col-2">
+                                        <input type="text" id="el.reducido" class="form-control shadow rounded border-0 ml-2 text-center font-weight-bold" value="">
+                                    </div>
+                                </div>
+                                <div class="row mb-0 mt-5">
+                                    <ul>
+                                        <li class="text-primary"><em>Opción <strong>riesgo a priori dado por edad materna</strong>, permite digitar otro valor, ejemplo riesgo encontrado en tamizaje de 11-14 semanas</em></li>
+                                    </ul>
+                                </div>
+                                <table class="table d-none">
+                                    <tbody>
+                                    <tr class="d-none">
+                                        <th scope="row">Riesgo a priori (según edad materna)</th>
+                                        <td class="d-none" id="rap.morfologia.EcoSegundo">0.0091</td>
+                                        <td class="d-none" id="rapp.morfologia.EcoSegundo">0.91 %</td>
+                                        <td colspan="2" id="rapus.morfologia.EcoSegundo.clone"></td>
+                                    </tr>
+                                    <tr class="d-none">
+                                        <th scope="row">Riesgo ajustado (x edad y marcadores)</th>
+                                        <td id="raj.morfologia.EcoSegundo">0.0091</td>
+                                        <td id="rajp.morfologia.EcoSegundo">0.9091 %</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="row d-none">
+                                    <div class="col-3 px-2">
+                                        <label>&nbsp;</label>
+                                        <input type="text" id="el.resultado" class="form-control shadow rounded border-0 ml-2 d-none" value="">
+                                    </div>
+                                </div>                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="form-group row">
+                    <label class="col-12 col-form-label m-0 p-1 morfologia-ecosegundo-gris">Agrupar marcadores en:</label>
+                    <div class="col-12 text-center">
+                        <button id="marcadores.ausente" class="btn btn-outline-secondary mt-2" style="min-width: 147px;">Todos Ausentes</button>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button id="marcadores.presente" class="btn btn-outline-secondary mt-2" style="min-width: 147px;">Todos Presentes</button>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button id="marcadores.no.conocida" class="btn btn-outline-secondary mt-2" style="min-width: 147px;">No conocida</button>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button id="marcadores.restablecer" class="btn btn-outline-secondary mt-2" style="min-width: 147px;">Volver al inicio</button>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-form-label m-0 p-1 morfologia-ecosegundo-gris">Ver documento en PDF:</label>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="ver.ecodos.foto1">
+                                    <label class="form-check-label" for="ver.ecodos.foto1">Tabla riesgo a priori de T21</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-none">
+                        <div class="col-12">
+                            <a href="img/riesgot21.jpg" target="_blank"><img src="img/riesgot21.jpg" class="w-75 mt-2 d-block mx-auto" alt="snoopy"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="ver.ecodos.foto2">
+                                    <label class="form-check-label" for="ver.ecodos.foto2">Tabla marcadores para t21</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-none">
+                        <div class="col-12">
+                            <a href="img/marcadorest21.jpg" target="_blank"><img src="img/marcadorest21.jpg" class="w-75 mt-2 d-block mx-auto" alt="snoopy"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="ver.ecodos.foto3">
+                                    <label class="form-check-label" for="ver.ecodos.foto3">Marcadores ecográficos 2º Trim.</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
