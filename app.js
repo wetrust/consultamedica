@@ -4070,7 +4070,6 @@ $( document ).ready(function() {
     });
 
     $( '#infecoObsSegTrim2' ).on( 'click', function() {
-
         var edadGestacional = the("semanas").value;
 
         var modal = makeModal("Ver Impresion");
@@ -4081,7 +4080,7 @@ $( document ).ready(function() {
             $(this).remove();
         });
 
-        var stringGraficos = "<div class='container'><div style='width:100px;text-align:center;'></div></div><h4 class='text-center d-none'>Gráfica evaluación ecográfica del crecimiento fetal</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none mt-2'></span><div class='row d-none mt-2'> <div class='col-5'><p style='font-size:10px;'><strong>Nombre: </strong>:PACIENTE </p></div><div class='col-3'><p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'><p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row mt-2'> <div class='col'><div id='graficoCcView'></div></div><div class='col'><div id='graficoCerebeloView'></div></div></div><div class='row'><div class='col'><div id='graficoLfView'></div></div><div class='col'><div id='graficoLhView'></div></div></div><div class='row' id='lineclear'><div class='col'><p class='d-none' style='font-size:12px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;text-align: right;'>Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;' class='d-none'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Tablas de crecimiento fetal Organización Mundial de la Salud: https://www.ajog.org/article/S0002-9378%2817%2932485-7/fulltext.<br>** Referencias: CC y LF Hadlock y col. 1984; LH Jeanty y col.<br>*** Diámetro cerebeloso transverso Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br></p></div></div>";
+        var stringGraficos = "<div class='container'><div style='width:100px;text-align:center;'></div></div><h4 class='text-center d-none'>Gráfica evaluación ecográfica del crecimiento fetal</h4><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;' class='d-none mt-2'></span><div class='row d-none mt-2'> <div class='col-5'><p style='font-size:10px;'><strong>Nombre: </strong>:PACIENTE </p></div><div class='col-3'><p style='font-size:10px;'><strong>RUT: </strong>:IDPACIENTE </p></div><div class='col-4'><p style='font-size:10px;'><strong>Fecha de Exámen: </strong>:FEXAMEN </p></div></div><div class='row mt-2'> <div class='col'><div id='graficoCcView'></div></div><div class='col'><div id='graficoCaView'></div></div></div><div class='row'><div class='col'><div id='graficoLfView'></div></div><div class='col'><div id='graficoLhView'></div></div></div><div class='row' id='lineclear'><div class='col'><p class='d-none' style='font-size:12px;'><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong><br>:COMENTARIOS</p><p class='d-none text-right top40' style='margin-right:100px; font-size: 12px;text-align: right;'>Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;' class='d-none'></span><p class='d-none' style='margin-bottom:0;font-size:11px;'>Fecha Informe: :DATEINFORME</p><span class='d-none' style='border-top: 1px solid #000;width: 100% !important;display: block;'></span><p class='pie-pagina d-none'>* Tablas de crecimiento fetal Organización Mundial de la Salud: https://www.ajog.org/article/S0002-9378%2817%2932485-7/fulltext.<br>** Referencias: CC y LF Hadlock y col. 1984; LH Jeanty y col.<br>*** Diámetro cerebeloso transverso Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5<br>**** Referencia liq. amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista  y Cristopher Castro G. Ingenieria Civil.<br></p></div></div>";
         let fur = new Date(Date.parse(the("fum").value));
         fur = fur.getUTCDate() + " de "+ monthsES[fur.getUTCMonth()] + " " + fur.getFullYear();
         let fpp = new Date(Date.parse(the("fpp").value));
@@ -4179,83 +4178,80 @@ $( document ).ready(function() {
                }())
            }]
        });
-                $('#graficoCerebeloView').highcharts({
-                    chart: {
-                        height: 250
-                    },
-                        title: {
-                            text: 'Diámetro de Cerebelo',
-                            x: -20,
-                                style: {
-                        fontSize: '12px'
-                    }
-                        },
-                        plotOptions: {
-                            series: {
-                                enableMouseTracking: false
-                            }
-                        },
-                        yAxis: {
-                            title: { text: 'Milimetros (mm)' },
-                            tickPositions: [5, 10,20,30,40,50,60,70]
-                        },
-                    legend: {
-                        itemStyle: {
-                            fontSize: '10px',
-                            fontWeight:'normal'
-                        }
-                    },
-                        colors: ['#313131', '#313131', '#313131'],
-                        xAxis: {
-                            categories:['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
-                        },
-                        credits: {enabled: false},
-                        series: [{
-                            type: "line",
-                            name: '-2DE',
-                            dashStyle: "Dot",
-                            marker: {enabled: false},
-                            data: [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
-                        }, {
-                            type: "line",
-                            name: 'media',
-                            dashStyle: "Dot",
-                            marker: {enabled: false},
-                            data: [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
-                        }, {
-                            type: "line",
-                            name: '+2DE',
-                            dashStyle: "Dot",
-                            marker: {enabled: false},
-                            data: [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
-                        }, {
-                            type: "line",
-                            name: 'Cerebelo',
-                            dashStyle: "Dot",
-                            marker: { symbol: 'square' },
-                            lineWidth: 0,
-                            data: (function () {
-                                var data = [];
-                                var edadGest = the("semanas").value;
-            
-                                for (i = 15; i < edadGest; i++) {
-                                    data.push({
-                                        y: 0,
-                                    });
-                                }
-                                data.push({
-                                    y: parseInt(the("cerebelo").value),
-                                });
-                                for (i = edadGest + 1; i < 40; i++) {
-                                    data.push({
-                                        y: 0,
-                                    });
-                                }
-                                return data;
-                            }())
-                        }]
-            });
-        
+        $('#graficoCaView').highcharts({
+            chart: {
+                height: 250
+            },
+           title: {
+               text: 'CA**',
+               x: -20,
+                   style: {
+                fontSize: '12px'
+            }
+           },
+           plotOptions: {
+               series: {
+                   enableMouseTracking: false
+               }
+           },
+           yAxis: {
+               title: { text: 'Milimetros (mm)' },
+               tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
+           },
+            legend: {
+                itemStyle: {
+                    fontSize: '10px',
+                    fontWeight:'normal'
+                }
+            },
+           colors: ['#313131', '#313131', '#313131'],
+           xAxis: {
+               categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+           },
+           credits: { enabled: false },
+           series: [{
+               type: "line",
+               name: 'Pct. 3',
+               marker: { enabled: false },
+               data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
+           }, {
+               type: "line",
+               name: 'Pct 97',
+               marker: { enabled: false },
+               data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
+           }, {
+               type: "line",
+               name: 'CA',
+               dashStyle: "Dot",
+               marker: { symbol: 'square' },
+               lineWidth: 0,
+               data: (function () {
+                   var data = [];
+                   var edadGest = the("semanas").value;
+    
+                   for (i = 12; i < edadGest; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+    
+                   var ca = $("#ca").val();
+                   ca = ca.toString();
+                   ca = ca.replace(",", ".");
+                   ca = parseFloat(ca);
+    
+                   data.push({
+                       y:ca,
+                   });
+                   for (i = edadGest + 1; i <= 39; i++) {
+                       data.push({
+                           y: 0,
+                       });
+                   }
+                   return data;
+               }())
+           }]
+       });
         $('#graficoLfView').highcharts({
                 chart: {
                 height: 250
