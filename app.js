@@ -4183,7 +4183,7 @@ $( document ).ready(function() {
                 height: 250
             },
            title: {
-               text: 'CA**',
+               text: 'Circunferencia de Abdomen',
                x: -20,
                    style: {
                 fontSize: '12px'
@@ -4346,7 +4346,7 @@ $( document ).ready(function() {
             },
                 yAxis: {
                     title: { text: 'Milimetros (mm)' },
-                    tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80]
+                    tickPositions: [5, 10, 20, 30, 40, 50, 60, 70]
                 },
                 colors: ['#313131', '#313131', '#313131'],
                 xAxis: {
