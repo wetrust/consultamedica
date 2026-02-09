@@ -6525,17 +6525,17 @@ $(document).ready(function(){
 
     the("ver.ecodos.foto1").onchange = function(){
         if (this.checked == true){
-            this.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].classList.remove("d-none")
+            the("ver.ecodos.foto1.div").classList.remove("d-none")
         }else{
-            this.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].classList.add("d-none")
+            the("ver.ecodos.foto1.div").classList.add("d-none")
         }
     }
 
     the("ver.ecodos.foto2").onchange = function(){
         if (this.checked == true){
-            this.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].classList.remove("d-none")
-        }else{
-            this.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].classList.add("d-none")
+            the("ver.ecodos.foto2.div").classList.remove("d-none")
+        } else {
+            the("ver.ecodos.foto2.div").classList.add("d-none")
         }
     }
 
