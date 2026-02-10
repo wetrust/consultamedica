@@ -9986,61 +9986,77 @@ function actualizarComentarioDoppler(){
 
     let comentario = "Flujometria Doppler Materno Fetal:"
 
-    comentario += '\r\n';
-    comentario += '- IP Arteria Umbilical ' 
-    if (the("ipauPctTxt").value == "&gt; 95"){
-        comentario += 'alterado';
-    }else{
-        comentario += 'normal';  
+    if (the("ipau").value != ""){
+        if (isNaN(Number(the("ipau").value)) == false){
+            comentario += '\r\n';
+            comentario += '- IP Arteria Umbilical ' 
+            if (the("ipauPctTxt").value == "&gt; 95"){
+                comentario += 'alterado';
+            }else{
+                comentario += 'normal';  
+            }
+        }
     }
-    comentario += '\r\n';
-    comentario += '- IP Arteria Cerebral Media ';
-    if (the("ipacmPctTxt").value == "&lt; 5"){
-        comentario += ' alterado';
-    }else{
-        comentario += ' normal';  
+
+    if (the("ipacm").value != ""){
+        if (isNaN(Number(the("ipacm").value)) == false){
+
+            comentario += '\r\n';
+            comentario += '- IP Arteria Cerebral Media ';
+            if (the("ipacmPctTxt").value == "&lt; 5"){
+                comentario += 'alterado';
+            }else{
+                comentario += 'normal';  
+            }
+
+        }
     }
 
     if (the("dv").value != ""){
-
-        comentario += '\r\n';
-        comentario += '- IP Ductus venoso ';
-        if (the("dvPctTxt").value == "&gt; 99" || the("dvPctTxt").value > 95){
-            comentario += ' alterado';
-        }else{
-            comentario += ' normal';  
+        if (isNaN(Number(the("dv").value)) == false){
+            comentario += '\r\n';
+            comentario += '- IP Ductus venoso ';
+            if (the("dvPctTxt").value == "&gt; 99" || the("dvPctTxt").value > 95){
+                comentario += 'alterado';
+            }else{
+                comentario += 'normal';  
+            }
+            comentario += '\r\n';
         }
-        comentario += '\r\n';
+    } else if (the("ccp").value != ""){
+        if (isNaN(Number(the("ccp").value)) == false){
 
-    }else{
-
-        comentario += '\r\n';
-        comentario += '- IP Cuociente Cerebro Placentario ';
-        if (the("ccpPctTxt").value == "&lt; 5"){
-            comentario += ' alterado';
-        }else{
-            comentario += ' normal';  
+            comentario += '\r\n';
+            comentario += '- IP Cuociente Cerebro Placentario ';
+            if (the("ccpPctTxt").value == "&lt; 5"){
+                comentario += 'alterado';
+            }else{
+                comentario += 'normal';  
+            }
+            comentario += '\r\n';
         }
-        comentario += '\r\n';
-
     }
 
-    let a = the("auprom").value
-    if (a != ""){
-        a = a.toString().replace(/\,/g,'.');
-        a = Number(a);
+    if (the("auprom").value != ""){
+        if (isNaN(Number(the("auprom").value)) == false){
+            let a = the("auprom").value
+            if (a != ""){
+                a = a.toString().replace(/\,/g,'.');
+                a = Number(a);
 
-        let ut = pctut(a);
-        a = ut.pct;
-    }
+                let ut = pctut(a);
+                a = ut.pct;
+            }
 
-    comentario += '- IP Promedio de Arterias Uterinas ';
-    if (a == "> 95"){
-        comentario += ' alterado';
-    }else{
-        comentario += ' normal';  
+            comentario += '- IP Promedio de Arterias Uterinas ';
+            if (a == "> 95"){
+                comentario += 'alterado';
+            }else{
+                comentario += 'normal';  
+            }
+            comentario += '\r\n';
+        }
     }
-    comentario += '\r\n';
 
     the("comentarios-doppler").value = comentario
 
