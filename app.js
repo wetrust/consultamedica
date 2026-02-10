@@ -330,7 +330,7 @@ $( document ).ready(function() {
 
     //controlador de botones inicio
     $("#menu\\.modulo\\.activo").on("click", function(){
-        var botones = ["menu.modulo.activo.uno", "menu.modulo.activo.dos", "menu.modulo.activo.tres", "menu.modulo.activo.cuatro", "menu.modulo.activo.cinco"];
+        var botones = ["menu.modulo.activo.uno", "menu.modulo.activo.dos", "menu.modulo.activo.tres", "menu.modulo.activo.cuatro"];
 
         if (the(botones[0]).classList.contains("d-none")){
             botones.forEach(function myFunction(value, index, array) {
@@ -345,6 +345,23 @@ $( document ).ready(function() {
             the("punto.morfologia").classList.add("d-none");
         }
     });
+
+    the("menu.modulo.en.constru").onclick =  function(){
+        var botones = ["menu.modulo.en.constru.uno", "menu.modulo.en.constru.dos"];
+
+        if (the(botones[0]).classList.contains("d-none")){
+            botones.forEach(function myFunction(value, index, array) {
+                the(value).classList.remove("d-none");
+            });
+            the("punto.morfologia").classList.remove("d-none");
+        }
+        else{
+            botones.forEach(function myFunction(value, index, array) {
+                the(value).classList.add("d-none");
+            });
+            the("punto.morfologia").classList.add("d-none");
+        }
+    };
 
     the("menu.modulo.datos.parto").onclick = function(){       
         var botones = ["menu.modulo.datos.parto.uno", "menu.modulo.datos.parto.dos"];
@@ -381,21 +398,6 @@ $( document ).ready(function() {
         });
 
     }
-
-    $("#menu\\.modulo\\.activo\\.cinco").on("click", function(){
-        var botones = ["menu.modulo.activo.cinco.uno","menu.modulo.activo.cinco.tres","menu.modulo.activo.cinco.cuatro"];
-        
-        if (the(botones[0]).classList.contains("d-none")){
-            botones.forEach(function myFunction(value, index, array) {
-                the(value).classList.remove("d-none");
-            });
-        }
-        else{
-            botones.forEach(function myFunction(value, index, array) {
-                the(value).classList.add("d-none");
-            });
-        }
-    });
 
     $("#menu\\.modulo\\.activo\\.seis").on("click", function(){
         var botones = ["menu.modulo.activo.seis.uno", "menu.modulo.activo.seis.dos","menu.modulo.activo.seis.tres"];
