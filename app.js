@@ -10203,7 +10203,7 @@ function posiNegaResul(resultado)
 
     the("el.reducido").value = final;
 
-    if (Number(final) < 250){
+    if (Number(final) < 275){
         the("el.reducido").classList.add("text-danger")
     }else{
         the("el.reducido").classList.remove("text-danger")
