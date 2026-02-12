@@ -3531,14 +3531,14 @@
                                     </div>
                                 </div>
                                 <div class="row py-3" style="border-bottom:3px solid #dee2e6!important;border-top:3px solid #dee2e6!important;">
-                                    <div class="col-12">
+                                    <div class="col-12 mb-3">
                                         <div class="d-flex h-100">
                                             <label><strong>Evaluación de Liquido amniótico:</strong></label>
-                                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.- Evaluación Semicuantitativa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.- Bolsillo vertical mayor (BVM)</label>
+                                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.- Evaluación Semicuantitativa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.- Bolsillo vertical mayor (BVM)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C.- Evaluación índice de Líquido amniótico (ILA)</label>
                                         </div>
                                     </div>
-                                    <div class="col-3 mb-3">
-                                        <label>1.- Evaluación cualitativa</label>
+                                    <div class="col mb-2">
+                                        <label>A.- Evaluación cualitativa</label>
                                         <div class="form-group mb-0">
                                             <input type="text" class="form-control" id="liq-cualitativo-eco" list="liq.cualitativo.eco.list">
                                             <datalist id="liq.cualitativo.eco.list">
@@ -3548,11 +3548,11 @@
                                             </datalist>
                                         </div>
                                     </div>
-                                    <div class="col mb-3">
-                                        <label>2.- Evaluación Semicuantitativa</label>
+                                    <div class="col mb-2">
+                                        <label>B.- Evaluación Semicuantitativa</label>
                                         <div class="row">
                                             <div class="col-4">
-                                                <label>A.- BVM</label>
+                                                <label>BVM</label>
                                             </div>
                                             <div class="col-8">
                                                 <div class="input-group">
@@ -3562,18 +3562,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3 align-self-end mb-3">
+                                    <div class="col align-self-end mb-3">
                                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                             <label class="mr-2">Percentil</label>
                                             <input type="number" class="form-control" id="bvmEcoDosPCT" disabled>
                                         </div>
                                     </div>
-                                    <div class="col-3 align-self-end mb-3">
+                                    <div class="col-2 align-self-end mb-3">
                                         <button class="btn btn-outline-info" id="graficoBVM">Gráfica BVM</button>
                                     </div>
                                     <div class="col-12">
                                         <div class="d-flex flex-row justify-content-between mb-2">
-                                            <label><em>Opcional evaluación sumatoria 4 cuadrantes de Liquido Amniótico ( ILA )</em></label>
+                                            <label><em>C.- Opcional evaluación sumatoria 4 cuadrantes de Liquido Amniótico ( ILA )</em></label>
                                             <div class="d-flex flex-row align-items-center">
                                                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;">
                                                     <label class="btn btn btn-outline-secondary active" id="sumatoria.cuatro.cuadrantes.no" >
@@ -3587,7 +3587,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row d-none pt-2 mt-2" id="sumatoria.cuatro.cuadrantes.div">
-                                            <div class="col-5 mb-2"><p class="text-primary">ILA: Moore y col. Am J. O &amp; G. 1990; 162 : 1168 - 1173</p></div>
+                                            <div class="col-5 mb-2"></div>
                                             <div class="col-3 mb-2">
                                                 <div class="row">
                                                     <div class="col-4">
@@ -3633,7 +3633,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-9">
-                                                <p id="referenciabvmila" class="text-primary d-none">BVM: Magann EF y col. Am J O & G 1982: 1581, 2000</p>
+                                                <p id="referenciabvmila" class="text-primary d-none">BVM: Magann EF y col. Am J O & G 1982: 1581, 2000, <small id="referenciaIla" class="d-none">ILA: Moore y col. Am J. O &amp; G. 1990; 162 : 1168 - 1173</small></p>
                                             </div>
                                         </div>
                                     </div>

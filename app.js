@@ -996,10 +996,12 @@ $( document ).ready(function() {
     the("sumatoria.cuatro.cuadrantes.si").onclick = function(){
         the("sumatoria.cuatro.cuadrantes.div").classList.remove("d-none");
         the("largo.cervical.segundo").focus();
+        the("referenciaIla").classList.remove("d-none");
     }
 
     the("sumatoria.cuatro.cuadrantes.no").onclick = function(){
         the("sumatoria.cuatro.cuadrantes.div").classList.add("d-none");
+        the("referenciaIla").classList.add("d-none");
     }
 
     $("#largo\\.cervical\\.segundo").on("keyup", function(){
