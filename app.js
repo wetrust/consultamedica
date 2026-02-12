@@ -993,15 +993,6 @@ $( document ).ready(function() {
         }
     });
 
-    the("sumatoria.cuatro.cuadrantes.si").onclick = function(){
-        the("sumatoria.cuatro.cuadrantes.div").classList.remove("d-none");
-        the("largo.cervical.segundo").focus();
-    }
-
-    the("sumatoria.cuatro.cuadrantes.no").onclick = function(){
-        the("sumatoria.cuatro.cuadrantes.div").classList.add("d-none");
-    }
-
     $("#largo\\.cervical\\.segundo").on("keyup", function(){
         let cV = +this.value;
         if (cV == NaN){
