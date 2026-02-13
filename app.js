@@ -20,7 +20,8 @@ var titulos = {
     "#morfologiafet": 'Ecografía 22 - 24 semanas para evaluación de morfología fetal <span class="text-animado"><strong>(Gentileza Dr. Edgardo Corral y equipo de trabajo)</strong></span>',
     "#construccion": 'Módulo en construcción',
     "#ecoGinecologica": "Informe ecográfico ginecológico (Adicional al exámen ecográfico obstétrico)",
-    "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>'
+    "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>',
+    "#ecoEstructural": 'Ecografía 22 - 24 semanas para evaluación de morfología fetal (Gentileza Dr. Edgardo Corral y equipo de trabajo)'
 }
 
 var _hchartsUno
