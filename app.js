@@ -3867,31 +3867,7 @@ $( document ).ready(function() {
                 dashStyle: "Dot",
                 marker: { symbol: 'square' },
                 lineWidth: 0,
-                data: (function () {
-                    var data = [];
-                    var edadGest = the("semanas").value;
-                    edadGest = parseInt(edadGest) - 14;
-                    let _edadGest = (parseInt(the("semanas").value) - 14) +2;
-
-                    for (i = edadGest - 2; i < edadGest; i++) {
-                        data.push({
-                            y: 0,
-                        });
-                    }
-
-                    var ca = the("ca").value;
-                    ca = ca.toString();
-                    ca = ca.replace(",", ".");
-                    ca = parseFloat(ca);
-
-                    data.push({y:ca});
-                    for (i = edadGest + 1; i < _edadGest; i++) {
-                        data.push({
-                            y: 0,
-                        });
-                    }
-                    return data;
-                }())
+                data:[]
             }]
         };
 
@@ -3900,7 +3876,19 @@ $( document ).ready(function() {
         _hchartsDos.series[0].data = dataCA.p3
         _hchartsDos.series[1].data = dataCA.p97
         _hchartsDos.yAxis.max = dataCA.p97[dataCA.p97.length-1] + 50
+
+        let indiceCA = dataCA.eg.indexOf(Number(the("semanas").value))
+
+        var _ca = the("ca").value;
+        _ca = _ca.toString();
+        _ca = _ca.replace(",", ".");
+        _ca = parseFloat(_ca);
+
+        _hchartsDos.series[2].data = [[indiceCA,_ca]]
+        //_hchartsDos.series[2].data = [{x:Number(the("semanas").value),y:_ca}]
+
         _hchartsDos = Highcharts.chart('graficoCaView', _hchartsDos)
+
 
         _hchartsTres = {
             chart: {
