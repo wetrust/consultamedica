@@ -2537,7 +2537,7 @@ $( document ).ready(function() {
         if ( e.key === "Enter") {
             e.preventDefault();
 
-            if (key_enter.includes(this.id)== true){
+            if (key_enter.includes(this.id)== true) {
                 let pos = key_enter.indexOf(this.id);
                 the(key_enter[pos+1]).focus();
             }
