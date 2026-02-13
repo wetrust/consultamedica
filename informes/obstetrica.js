@@ -121,7 +121,6 @@ export function InfEcoObsSegTrim1(){
     }
     var cccaRango = oldProgress(tmpData);
 
-
     var lh = the("lh").value + ' mm';
     var lhPct = the("lhPctRpt").value;
     if (lhPct == "&gt; 97" || caPct == "&lt; 3"){
@@ -192,8 +191,8 @@ export function InfEcoObsSegTrim1(){
         InformeString += '<tr> <td></td><td></td><td></td><td></td>';
     }
 
-    InformeString += '</tbody> </table></div><div class="container"> <p style="margin-bottom;0px;padding-bottom:0px;margin-bottom:0px;"><strong style="color:#045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style="max-width: 700px;text-align: justify;margin-top:0px;padding-top:0px;margin-bottom:0px">:COMENTARIO</p></div><div class="container"> <p class="text-right" style="margin-right:100px;margin-top:2rem;text-align: right;">Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style="border-top: 1px solid #000;width: 100% !important;display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000;width: 100% !important;display: block;"></span> <p style="margin-bottom:0;" class="pie-pagina">* Tablas de crecimiento fetal Organización Mundial de la Salud: https://www.ajog.org/article/S0002-9378%2817%2932485-7/fulltext. <br>** Referencia medición líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p style="margin-bottom:0 !important;">';
-    
+    InformeString += '</tbody> </table></div><div class="container"> <p style="margin-bottom;0px;padding-bottom:0px;margin-bottom:0px;"><strong style="color:#045dab;">COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style="max-width: 600px;text-align: justify;margin-top:0px;padding-top:0px;margin-bottom:0px">:COMENTARIO</p></div><div class="container"> <p class="text-right" style="margin-right:100px;margin-top:2rem;text-align: right;">Ecografista: <strong>:ECOGRAFISTA</strong> </p><span style="border-top: 1px solid #000;width: 100% !important;display: block;"></span> <p>Fecha Informe: :DATEINFORME</p><span style="border-top: 2px solid #000;width: 100% !important;display: block;"></span> <p style="margin-bottom:0;" class="pie-pagina">* Tablas de crecimiento fetal Organización Mundial de la Salud: https://www.ajog.org/article/S0002-9378%2817%2932485-7/fulltext. <br>** Referencia medición líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p style="margin-bottom:0 !important;">';
+
     if (the("ev-morfo").value = "Descripcion general detallando distintos segmentos, "){ InformeString += "*** Referencia, Guías Perinatales 2015: MINSAL-Chile<br>" }
 
     InformeString += '<strong>El software tiene por objetivo favorecer análisis preliminar de datos obtenidos en exámen ecográfico, la interpretación clínica de los mismos, inicialmente es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p>'
@@ -203,7 +202,6 @@ export function InfEcoObsSegTrim1(){
     InformeString = InformeString.replace(":MOTIVO", motivo);
     InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
     InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
-
     InformeString = InformeString.replace(":FUR", fur);
     InformeString = InformeString.replace(":FEXAMEN", fexamen);
     InformeString = InformeString.replace(":EG", eg);
@@ -234,7 +232,6 @@ export function InfEcoObsSegTrim1(){
     let dateInf = daysES[dayHoy.getDay()] + ', ' + dayHoy.getUTCDate() + ' de '+ monthsES[dayHoy.getUTCMonth()] + ' ' + dayHoy.getFullYear();
 
     InformeString = InformeString.replace(":DATEINFORME", dateInf);
-
     InformeString = InformeString.replace(":LINEA1", linea1);
     InformeString = InformeString.replace(":LINEA2", linea2);
     InformeString = InformeString.replace(":LINEA3", linea3);
