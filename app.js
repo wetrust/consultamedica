@@ -2354,6 +2354,11 @@ $( document ).ready(function() {
  
         the("textoTipoOMS").innerHTML = txtOMS
     }
+
+    the("pillsTab").onclick = function(){
+        $('#pillsTab li:nth-child(2) button').tab('show')
+        //$('#pillsTab').tab('show')
+    }
 });
 
 // Controlador de botones reset
