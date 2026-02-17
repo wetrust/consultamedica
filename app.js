@@ -1333,6 +1333,7 @@ $( document ).ready(function() {
             var dos = bvm - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             the("bvmEcoDosPCT").value = resultado;
+            the("bvmIncrustadoTexto").value = resultado;
         }
     })
 
@@ -2049,6 +2050,7 @@ $( document ).ready(function() {
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
+            the("pfeIncrustadoTexto").value = pctPFE
 
             if ("number" == typeof pctPFE){
                 if(pctPFE < 10){
@@ -2175,6 +2177,7 @@ $( document ).ready(function() {
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
+            the("pfeIncrustadoTexto").value = pctPFE
 
             if ("number" == typeof pctPFE){
                 if(pctPFE < 10){
@@ -3999,6 +4002,7 @@ $( document ).ready(function() {
             the("sexotexto").innerText = the("ecografia.segtrim.sexo").value
             the("percentiltexto").innerText = pctPFE
             the("pfePctRpt").value = pctPFE
+            the("pfeIncrustadoTexto").value = pctPFE
 
             let _grafico = graficoPFEMasMenosSinDias()
             _hchartsUno = structuredClone(baseGraficoPFE)
@@ -5513,7 +5517,7 @@ $(document).ready(function(){
         pct95ILA[34] = 248; pct95ILA[35] = 249; pct95ILA[36] = 249;
         pct95ILA[37] = 244; pct95ILA[38] = 239; pct95ILA[39] = 226;
         pct95ILA[40] = 214; pct95ILA[41] = 194; pct95ILA[42] = 179;
-    
+
         let eg = the("semanas").value;
         let ila = suma;
         the("liquido.ila.percentil.morfologia").classList.remove("is-valid", "is-invalid");
@@ -5522,7 +5526,7 @@ $(document).ready(function(){
             var uno = pct95ILA[eg] - pct5ILA[eg];
             var dos = ila - pct5ILA[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
-            $("#liquido\\.ila\\.percentil\\.morfologia").val(resultado);
+            the("liquido.ila.percentil.morfologia").value = resultado;
 
             if (resultado < 10 || resultado > 90){
                 the("liquido.ila.percentil.morfologia").classList.add("is-invalid");
@@ -5580,13 +5584,16 @@ $(document).ready(function(){
             var uno = pct95ILA[eg] - pct5ILA[eg];
             var dos = ila - pct5ILA[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
-            $("#liquido\\.ila\\.percentil").val(resultado);
+            the("liquido.ila.percentil").value = resultado;
+            the("ilaIncrustadoTexto").value = resultado;
 
             if (resultado < 10 || resultado > 90){
                 the("liquido.ila.percentil").classList.add("is-invalid");
             }else{
                 the("liquido.ila.percentil").classList.add("is-valid");
             }
+        }else{
+            the("ilaIncrustadoTexto").value = resultado;
         }
         the("ila.doppler").value = ila;
         comentarioSegundoTrimestre()
@@ -8102,6 +8109,7 @@ function pctpfe() {
         var pctPFE = percentilOMS(pfe,eg, sexo);
         pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
         the("pfePctRpt").value = pctPFE
+        the("pfeIncrustadoTexto").value = pctPFE
         the("pfeRango").value = a + ' - ' +b
         return true
     }
