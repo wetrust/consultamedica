@@ -8104,6 +8104,7 @@ function pctpfe() {
     //let eg = the("semanas").value;
     // funcion que calcula el v alor de eg y suma los dias
 
+    
     let pfe = parseInt(the("pfe").value);
     if (eg < 14 || eg > 40) {
         the("pfePct").value = 0
