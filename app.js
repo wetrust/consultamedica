@@ -1333,9 +1333,9 @@ $( document ).ready(function() {
             var dos = bvm - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             the("bvmEcoDosPCT").value = resultado;
-            the("bvmIncrustadoTexto").innerText = resultado;
+            the("bvmIncrustadoTexto").value = resultado;
         }else{
-            the("bvmIncrustadoTexto").innerText = ""
+            the("bvmIncrustadoTexto").value = ""
         }
     })
 
@@ -2052,7 +2052,7 @@ $( document ).ready(function() {
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
-            the("pfeIncrustadoTexto").innerText = pctPFE
+            the("pfeIncrustadoTexto").value = pctPFE
 
             if ("number" == typeof pctPFE){
                 if(pctPFE < 10){
@@ -2179,7 +2179,7 @@ $( document ).ready(function() {
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
-            the("pfeIncrustadoTexto").innerText = pctPFE
+            the("pfeIncrustadoTexto").value = pctPFE
 
             if ("number" == typeof pctPFE){
                 if(pctPFE < 10){
@@ -4004,7 +4004,7 @@ $( document ).ready(function() {
             the("sexotexto").innerText = the("ecografia.segtrim.sexo").value
             the("percentiltexto").innerText = pctPFE
             the("pfePctRpt").value = pctPFE
-            the("pfeIncrustadoTexto").innerText = pctPFE
+            the("pfeIncrustadoTexto").value = pctPFE
 
             let _grafico = graficoPFEMasMenosSinDias()
             _hchartsUno = structuredClone(baseGraficoPFE)
@@ -5587,7 +5587,7 @@ $(document).ready(function(){
             var dos = ila - pct5ILA[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             the("liquido.ila.percentil").value = resultado;
-            the("ilaIncrustadoTexto").innerText = resultado;
+            the("ilaIncrustadoTexto").value = resultado;
 
             if (resultado < 10 || resultado > 90){
                 the("liquido.ila.percentil").classList.add("is-invalid");
@@ -5595,7 +5595,7 @@ $(document).ready(function(){
                 the("liquido.ila.percentil").classList.add("is-valid");
             }
         }else{
-            the("ilaIncrustadoTexto").innerText = "";
+            the("ilaIncrustadoTexto").value = "";
         }
         the("ila.doppler").value = ila;
         comentarioSegundoTrimestre()
@@ -8107,12 +8107,12 @@ function pctpfe() {
     let pfe = parseInt(the("pfe").value);
     if (eg < 14 || eg > 40) {
         the("pfePct").value = 0
-        the("pfeIncrustadoTexto").innerText = ""
+        the("pfeIncrustadoTexto").value = ""
     } else {
         var pctPFE = percentilOMS(pfe,eg, sexo);
         pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
         the("pfePctRpt").value = pctPFE
-        the("pfeIncrustadoTexto").innerText = pctPFE
+        the("pfeIncrustadoTexto").value = pctPFE
         the("pfeRango").value = a + ' - ' +b
         return true
     }
