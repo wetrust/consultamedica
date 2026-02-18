@@ -1333,8 +1333,10 @@ $( document ).ready(function() {
             var dos = bvm - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             the("bvmEcoDosPCT").value = resultado;
+            the("LiquidoIncrustadoTexto").value = the("liq-cualitativo-eco").value
             the("bvmIncrustadoTexto").value = resultado;
         }else{
+            the("LiquidoIncrustadoTexto").value = the("liq-cualitativo-eco").value
             the("bvmIncrustadoTexto").value = ""
         }
     })
@@ -5587,16 +5589,14 @@ $(document).ready(function(){
             var dos = ila - pct5ILA[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             the("liquido.ila.percentil").value = resultado;
-            the("ilaIncrustadoTexto").value = resultado;
 
             if (resultado < 10 || resultado > 90){
                 the("liquido.ila.percentil").classList.add("is-invalid");
             }else{
                 the("liquido.ila.percentil").classList.add("is-valid");
             }
-        }else{
-            the("ilaIncrustadoTexto").value = "";
         }
+
         the("ila.doppler").value = ila;
         comentarioSegundoTrimestre()
     });
