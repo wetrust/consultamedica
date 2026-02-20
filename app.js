@@ -25,10 +25,14 @@ var titulos = {
     "#enconstruccion": 'Ecografía de Tamizaje T 21 en 2º Trimestre'
 }
 
+var validaClave = false;
+
 var _hchartsUno
 var _hchartsDos
 var _hchartsTres
 var _hchartsCuatro
+
+
 
 // Comementario adicional anatomia 
 //document.location.hash = "";
@@ -2361,11 +2365,6 @@ $( document ).ready(function() {
         txtOMS += '</strong>'
  
         the("textoTipoOMS").innerHTML = txtOMS
-    }
-
-    the("pillsTab").onclick = function(){
-        $('#pillsTab li:nth-child(2) button').tab('show')
-        //$('#pillsTab').tab('show')
     }
 });
 
@@ -6666,7 +6665,49 @@ $(window).on('hashchange', function(){
         the("dias").classList.remove("bg-secondary", "text-white")
     }
 
+    if (hash == "#ecoEstructural" && validaClave == false || hash == "#enconstruccion" && validaClave == false){
+
+        let _modal = makeModal("ingresar");
+
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
+        the(_modal.titulo).innerHTML = "Protegido";
+        the(_modal.titulo).classList.add("mx-auto");
+        the(_modal.titulo).parentElement.classList.add("bg-success", "text-white");
+
+        let contrase = uuidv4();
+        let _contenido = '<div class="form-group"><label for="'+contrase+'">Código Acceso</label><input type="password" class="form-control" id="'+contrase+'"><small class="form-text text-muted">Ingrese código de acceso para plataforma.</small></div>'
+
+        the(_modal.contenido).innerHTML = _contenido;
+        the(_modal.id).children[0].classList.remove("modal-lg");
+
+        the(_modal.button).dataset.vista = hash
+        the(_modal.button).dataset.clave = contrase
+        the(_modal.button).onclick =  function(){
+
+            if (the(this.dataset.clave).value == "2020"){
+                document.location.hash = this.dataset.vista
+                $('#'+this.dataset.modal).modal('hide');
+
+                validaClave = true
+            }
+
+        }
+
+        $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
+
+        activeHash = "#inicio"
+        hash = "#inicio"
+        document.location.hash = "#inicio"
+
+        the("ecoEstructural").classList.add("d-none")
+        the("enconstruccion").classList.add("d-none")
+
+
+    }
+
     window.scrollTo(0, 0);
+
+    validaClave = false
 
 });
 

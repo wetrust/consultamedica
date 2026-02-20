@@ -26,6 +26,7 @@
     <script src="graficoPFEMasMenos.js?z" type="module"></script>
     <script src="app.pesoEG.js?b" type="module"></script>
     <script src="comparacion.graficas.js?E" type="module"></script>
+    <script src="eco.estructural.js" type="module"></script>
     <script>
         $( document ).ready(function() {
             $("#id-paciente").rut({
@@ -5346,7 +5347,7 @@
                         <div class="d-flex flex-row justify-content-between">
                             <div>
                                 <ul>
-                                    <li class="mb-0"><em>Pruebas de tamizaje con baja tasa de detección (< 70%), de allí su uso actual es controversial, el descubrimiento de algunos de estos marcadores justifica la realización de ecografía estructural detallada para incluir malformaciones fetales.</em></li>
+                                    <li class="mb-0"><em>Pruebas de tamizaje con baja tasa de detección (< 70%), de allí su uso actual es controversial, el hallazgo de algunos de estos marcadores justifica la realización de un exámen ecografico estructural detallado para detectar malformaciones fetales.</em></li>
                                     <li class="mb-0"><em>Las pruebas de tamizaje aún cuando tengan alta tasa de detección como es el ADN libre en sangre materna, son sólo para detección de riesgo, ellas no constituyen confirmación diagnóstica</em> <a href="img/MARCADORES_BLANDO_PARA_T-21.png" class="btn btn-outline-secondary py-0" target="_blank">Ver detalle</a></li>
                                 </ul>
                             </div>
@@ -5521,7 +5522,7 @@
                                 <hr style="border-top:solid 1px black;">
                                 <div class="row">
                                     <div class="col-12">
-                                        <p>Consideraciones clínicas adicionales importante valorar:</p>
+                                        <p><strong>Consideraciones clínicas adicionales importante valorar:</strong></p>
                                     </div>
                                     <div class="col-4">
                                         <p>Presencia de malformaciones mayores</p>
@@ -5657,10 +5658,10 @@
     </div>
     <div class="container-fluid d-none vh-100" style="margin-top: 7.3rem;" id="ecoEstructural">
         <ul class="nav nav-tabs mt-5 justify-content-center" id="pillsTab" role="tablist">
-            <li class="nav-item" role="presentation">
+            <li class="nav-item mr-4" role="presentation">
                 <button style="background-color:#009688 !important" class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Módulo 1 | Biometría</button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item mr-4" role="presentation">
                 <button style="background-color:#009688 !important" class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Módulo 2 | Flujometría</button>
             </li>
             <li class="nav-item" role="presentation">
