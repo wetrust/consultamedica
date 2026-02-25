@@ -1596,7 +1596,7 @@
                         <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.dos" href="#ecoObsSegTrim" style="border-width: 2px;border-color: #000;"><small>&gt; Evaluación del crecimiento fetal</small></a>
                         <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.tres" href="#ecoDoppler" style="border-width: 2px;border-color: #000;"><small>&gt; Flujometría Doppler materno / fetal</small></a>
                         <div class="d-flex justify-content-between align-items-center py-1">
-                            <a class="btn btn-outline-dark rounded text-left w-100 my-1 " id="menu.modulo.en.constru"><small>Módulos en construcción (Eco 2º Trim.)</small></a>
+                            <a class="btn btn-outline-dark rounded text-left w-100 my-1 " id="menu.modulo.en.constru"><small>Módulos en construcción</small></a>
                             <ul class="mb-0">
                                 <li class="azul-li"></li>
                             </ul>
@@ -5342,13 +5342,13 @@
             <div class="col-10">
                 <div class="card mb-5" style="border-width: 2px;border-radius: 30px;border-color: #000;">
                     <div class="card-body pl-4 pb-3">
-                        <h4 class="card-title text-center">Marcadores ecograficos blandos de 2do trimestre para tamizaje de Trisomía 21</h4>
+                        <h4 class="card-title text-center">Marcadores ecográficos blandos de 2do trimestre para tamizaje de trisomía 21</h4>
                         <p class="text-center">-Análisis de riesgo basado en metaanálisis de Agathokleous et al. UOG 2013; 41 : 247 - 261 <a class="btn btn-outline-secondary py-0" href="https://pubmed.ncbi.nlm.nih.gov/23208748/" target="_blank">Referencia</a></p>
                         <div class="d-flex flex-row justify-content-between">
                             <div>
                                 <ul>
-                                    <li class="mb-0"><em>Pruebas de tamizaje con baja tasa de detección (< 70%), de allí su uso actual es controversial, el hallazgo de algunos de estos marcadores justifica la realización de un exámen ecografico estructural detallado para detectar malformaciones fetales.</em></li>
-                                    <li class="mb-0"><em>Las pruebas de tamizaje aún cuando tengan alta tasa de detección como es el ADN libre en sangre materna, son sólo para detección de riesgo, ellas no constituyen confirmación diagnóstica</em> <a href="img/MARCADORES_BLANDO_PARA_T-21.png" class="btn btn-outline-secondary py-0" target="_blank">Ver detalle</a></li>
+                                    <li class="mb-0"><em>Marcadores ecográficos de 2do trimestre <strong>son pruebas de tamizaje con baja tasa de detección</strong> (&gt; 70%), actualmente su <strong>uso es controversial</strong>, el hallazgo de algunos de estos marcadores obliga a <strong>reevaluación ecográfica estructural detallada</strong> al objeto de detectar otros marcadores blando y/o defectos estructurales fetales.</em></li>
+                                    <li class="mb-0"><em>Aun cunado una tasa de detección sea alta, <strong>las pruebas de tamizaje no constituyen pruebas de confirmación diagnóstica</strong>, el ADN libre en sangre materna, con alta sensibilidad y bajos falsos (+), es un complemento importante a la hora de indicar pruebas invasivas para confirmación diagnostica. </em> <a href="img/MARCADORES_BLANDO_PARA_T-21.png" class="btn btn-outline-secondary py-0" target="_blank">Ver detalle</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -5521,44 +5521,50 @@
                                 </div>
                                 <hr style="border-top:solid 1px black;">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <p><strong>Consideraciones clínicas adicionales importante valorar:</strong></p>
+                                    <div class="col-6">
+                                        <p class="mb-2 p-2 rounded morfologia-ecosegundo-gris border border-dark">Con uno o más marcadores de aneuploidía, es<br>mandatorio buscar: 1, 2, 3 ...</p>
                                     </div>
-                                    <div class="col-4">
-                                        <p>Presencia de malformaciones mayores</p>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-group">
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label"><input class="form-check-input" type="radio" name="pmm" value="1"> Si</label>
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p>1.- Presencia de malformaciones mayores</p>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label"><input class="form-check-input" type="radio" name="pmm" value="0"> No</label>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label"><input class="form-check-input" type="radio" name="pmm" value="1"> Si</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label"><input class="form-check-input" type="radio" name="pmm" value="0"> No</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <p>Presencia de malformaciones menores</p>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-group">
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label"><input class="form-check-input" type="radio" name="pmme" value="1"> Si</label>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p>2.- Presencia de malformaciones menores</p>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label"><input class="form-check-input" type="radio" name="pmme" value="0"> No</label>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label"><input class="form-check-input" type="radio" name="pmme" value="1"> Si</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label"><input class="form-check-input" type="radio" name="pmme" value="0"> No</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex flex-row mb-0 align-items-center">
                                     <a class="btn btn-outline-danger" href="#ecoObsSegTrim">ir a</a> 
-                                    <p class="align-self-center mb-0 ml-2 mr-4">Valoración peso fetal y de líquido amniótico:</p>
-                                    <p class="align-self-center mb-0 mx-2 mr-2"><small>Peso fetal Percentil</small></p>
+                                    <p class="align-self-center mb-0 ml-2 mr-4">3.- Valoración del peso fetal y liquido amniótico (LA):</p>
+                                    <p class="align-self-center mb-0 mx-2 mr-2">Pct de PFE</p>
                                     <input type="text" id="pfeIncrustadoTexto" class="shadow rounded border-0 text-center" style="max-width: 5%;margin-right: 100px;" value="">
-                                    <p class="align-self-center mb-0 mr-2">Liq. Amniotico:</p>
+                                    <p class="align-self-center mb-0 mr-2">LA:</p>
                                     <input type="text" id="LiquidoIncrustadoTexto" class="shadow rounded border-0 text-center mr-5" style="max-width: 10%;margin-right: 100px" value="">
-                                    <p class="align-self-center mb-0 mr-2">BVM Percentil:</p>
+                                    <p class="align-self-center mb-0 mr-2">Percentil de BVM:</p>
                                     <input type="text" id="bvmIncrustadoTexto" class="shadow rounded border-0 text-center" style="max-width: 5%;" value="">
                                 </div>
                                 
