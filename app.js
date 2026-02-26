@@ -283,6 +283,7 @@ $( document ).ready(function() {
 
     the("liq-cualitativo-eco").onchange = function(){
         comentarioSegundoTrimestre()
+        the("liquidoIncrustadoSelect").value = this.value
     }
 
     the("liq-cualitativo-eco").onkeydown = function(e){
