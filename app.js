@@ -916,6 +916,7 @@ $( document ).ready(function() {
 
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
+        the("liquidoIncrustadoSelect").value = txt
         comentarioSegundoTrimestre()
     });
  
@@ -1322,6 +1323,7 @@ $( document ).ready(function() {
         the("bvmDoppler").value = this.value
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
+        the("liquidoIncrustadoSelect").value = txt
 
         the("bvm").value = (isNumeric(this.value) == true) ? this.value : "";
         comentarioSegundoTrimestre()
@@ -1339,7 +1341,7 @@ $( document ).ready(function() {
             var dos = bvm - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             the("bvmEcoDosPCT").value = resultado;
-            the("bvmIncrustadoTexto").value = resultado;
+            the("bvmIncrustadoTexto").value = bvm;
         }else{
             the("bvmIncrustadoTexto").value = "";
         }
