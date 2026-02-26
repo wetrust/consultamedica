@@ -25,7 +25,7 @@ var titulos = {
     "#enconstruccion": 'Ecografía de Tamizaje T 21 en 2º Trimestre'
 }
 
-var validaClave = false;
+var validaClave = true;
 
 var _hchartsUno
 var _hchartsDos
@@ -6707,7 +6707,7 @@ $(window).on('hashchange', function(){
 
     window.scrollTo(0, 0);
 
-    validaClave = false
+    //validaClave = false
 
 });
 
