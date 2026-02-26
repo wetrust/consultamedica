@@ -25,7 +25,7 @@ var titulos = {
     "#enconstruccion": 'Ecografía de Tamizaje T 21 en 2º Trimestre'
 }
 
-var validaClave = true;
+var validaClave = false;
 
 var _hchartsUno
 var _hchartsDos
@@ -6666,7 +6666,7 @@ $(window).on('hashchange', function(){
         the("dias").classList.remove("bg-secondary", "text-white")
     }
 
-    if (hash == "#ecoEstructural" && validaClave == false || hash == "#enconstruccion" && validaClave == false){
+    if (hash == "#ecoEstructural" && validaClave == false){
 
         let _modal = makeModal("ingresar");
 
@@ -6708,7 +6708,7 @@ $(window).on('hashchange', function(){
 
     window.scrollTo(0, 0);
 
-    //validaClave = false
+    validaClave = false
 
 });
 
