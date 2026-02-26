@@ -1339,6 +1339,9 @@ $( document ).ready(function() {
             var dos = bvm - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             the("bvmEcoDosPCT").value = resultado;
+            the("bvmIncrustadoTexto").value = resultado;
+        }else{
+            the("bvmIncrustadoTexto").value = "";
         }
     })
 
@@ -5533,9 +5536,6 @@ $(document).ready(function(){
             }else{
                 the("liquido.ila.percentil.morfologia").classList.add("is-valid");
             }
-            the("bvmIncrustadoTexto").value = ila;
-        }else{
-            the("bvmIncrustadoTexto").value = "";
         }
     });
 
