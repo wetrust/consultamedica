@@ -8154,15 +8154,16 @@ function pctpfe() {
         the("pfeIncrustadoTexto").value = ""
         the("pfeIncrustadoSelect").value = "adecuado"
     } else {
+
         var pctPFE = percentilOMS(pfe,eg, sexo);
         pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
         the("pfePctRpt").value = pctPFE
         the("pfeIncrustadoTexto").value = pctPFE
         the("pfeRango").value = a + ' - ' +b
 
-        if (pctPFE > 95){
+        if (pctPFE > 95 || pctPFE == "> 97.5"){
             the("pfeIncrustadoSelect").value = "grande"
-        }else if (pctPFE < 5){
+        }else if (pctPFE < 5 || pctPFE == "< 2.5"){
             the("pfeIncrustadoSelect").value = "pequeño"
         }else{
             the("pfeIncrustadoSelect").value = "adecuado"
