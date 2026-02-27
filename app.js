@@ -5908,11 +5908,11 @@ $(document).ready(function(){
             ajustarProgreso(resultado, "femurMorfologia");
             var pctLF = '';
             //truncador de Pct, sobre 100 o bajo 1
-            if (resultado > 97){
-                pctLF = '> 97';
+            if (resultado > 95){
+                pctLF = '> 95';
             }
-            else if (resultado < 3){
-                pctLF = '< 3';
+            else if (resultado < 5){
+                pctLF = '< 5';
             }
             else{
                 pctLF = resultado;
