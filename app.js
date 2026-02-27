@@ -284,6 +284,15 @@ $( document ).ready(function() {
     the("liq-cualitativo-eco").onchange = function(){
         comentarioSegundoTrimestre()
         the("liquidoIncrustadoSelect").value = this.value
+
+        if (this.value == "disminuido"){
+            the("liquidoIncrustadoSelect").classList.remove("d-none")
+        } else if (this.value == "aumentado"){
+            the("liquidoIncrustadoSelect").classList.add("text-primary")
+        } else {
+            the("liquidoIncrustadoSelect").classList.remove("d-none")
+        }
+
     }
 
     the("liq-cualitativo-eco").onkeydown = function(e){
@@ -917,7 +926,17 @@ $( document ).ready(function() {
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
         the("liquidoIncrustadoSelect").value = txt
+
+        if (this.value == "disminuido"){
+            the("liquidoIncrustadoSelect").classList.remove("d-none")
+        } else if (this.value == "aumentado"){
+            the("liquidoIncrustadoSelect").classList.add("text-primary")
+        } else {
+            the("liquidoIncrustadoSelect").classList.remove("d-none")
+        }
+
         comentarioSegundoTrimestre()
+
     });
  
     the("lh").onkeyup = function(){ pctlh()};
@@ -1325,6 +1344,14 @@ $( document ).ready(function() {
         the("liq-cualitativo-eco").value = txt;
         the("liquidoIncrustadoSelect").value = txt
 
+        if (this.value == "disminuido"){
+            the("liquidoIncrustadoSelect").classList.remove("d-none")
+        } else if (this.value == "aumentado"){
+            the("liquidoIncrustadoSelect").classList.add("text-primary")
+        } else {
+            the("liquidoIncrustadoSelect").classList.remove("d-none")
+        }
+
         the("bvm").value = (isNumeric(this.value) == true) ? this.value : "";
         comentarioSegundoTrimestre()
 
@@ -1341,9 +1368,13 @@ $( document ).ready(function() {
             var dos = bvm - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
             the("bvmEcoDosPCT").value = resultado;
+    
             the("bvmIncrustadoTexto").value = bvm;
+
         }else{
+
             the("bvmIncrustadoTexto").value = "";
+
         }
     })
 
@@ -8131,28 +8162,36 @@ function pctpfe() {
 
     let sexo = the("ecografia.segtrim.sexo").value
     if (sexo == "masculino"){
+
         sexo = "men"
         a = Math.exp(-.52610096513854 + eg * (.44906549056954 + eg * (-.0089009550762548 + eg * (9868293523919e-17 + eg * -6.1862373692705e-7))))
         b = Math.exp(.79018076483077 + eg * (.32585025131141 + eg * (-.0025559098706069 + eg * (-42038969571238e-18 + eg * 5.4228420412733e-7))))
+
     } else if (sexo == "femenino"){
+
         sexo = "wom"
         a = Math.exp(-.915523725804273 + eg * (.529374415518249 + eg * (-.0147446585943781 + eg * (.000269201219853759 + eg * -23537061714461e-19))))
         b = Math.exp(.32551154984358 + eg * (.40214557617585 + eg * (-.0074145176202411 + eg * (88196644838898e-18 + eg * -7.1015932637436e-7))))
+
     } else {
+
         sexo = "z"
         a = Math.exp(-.230518383014592 + eg * (.400511116318458 + eg * (-.00617993235833267 + eg * (316595762972649e-19 + eg * 0))))
         b = Math.exp(.408170594889372 + eg * (.381068214664342 + eg * (-.00550913922743603 + eg * (246713147783532e-19 + eg * 0))));
+
     }
 
     //let eg = the("semanas").value;
     // funcion que calcula el v alor de eg y suma los dias
 
-    
     let pfe = parseInt(the("pfe").value);
+
     if (eg < 14 || eg > 40) {
+
         the("pfePct").value = 0
         the("pfeIncrustadoTexto").value = ""
         the("pfeIncrustadoSelect").value = "adecuado"
+
     } else {
 
         var pctPFE = percentilOMS(pfe,eg, sexo);
@@ -8163,14 +8202,19 @@ function pctpfe() {
 
         if (pctPFE > 95 || pctPFE == "> 97.5"){
             the("pfeIncrustadoSelect").value = "grande"
+            the("pfeIncrustadoSelect").classList.remove("d-none")
         }else if (pctPFE < 5 || pctPFE == "< 2.5"){
             the("pfeIncrustadoSelect").value = "pequeño"
+            the("pfeIncrustadoSelect").classList.add("text-primary")
         }else{
             the("pfeIncrustadoSelect").value = "adecuado"
+            the("pfeIncrustadoSelect").classList.remove("d-none")
         }
 
         return true
+
     }
+
 }
 
 function pctpfeMorfologia() {
@@ -9966,6 +10010,7 @@ function bvmTxt(valor){
         } else{
             return "normal"
         }
+
     }
 }
 

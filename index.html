@@ -5530,36 +5530,27 @@
                                 <div class="d-flex flex-row mb-0 align-items-center">
                                     <a class="btn btn-outline-danger" href="#ecoObsSegTrim">ir a</a> 
                                     <p class="align-self-center mb-0 mx-2 mr-5">Peso / EG</p>
-                                    <select id="pfeIncrustadoSelect" class="shadow rounded border-0 text-center" style="max-width: 9%;margin-right: 100px;">
-                                        <option value="adecuado">Adecuado</option>
-                                        <option value="pequeño">Pequeño</option>
-                                        <option value="grande">Grande</option>
-                                    </select>
+                                    <input type="text" id="pfeIncrustadoSelect" class="shadow rounded border-0 text-center" style="max-width: 9%;margin-right: 100px;" value="">
                                     <p class="align-self-center mb-0 mx-2 mr-5">Percentil de PFE</p>
                                     <input type="text" id="pfeIncrustadoTexto" class="shadow rounded border-0 text-center" style="max-width: 5%;margin-right: 100px;" value="">
                                     <p class="align-self-center mb-0 mr-2">Líquido amniótico:</p>
-                                    <select class="shadow rounded border-0 text-center" id="liquidoIncrustadoSelect" style="max-width: 9%;margin-right: 100px;">
-                                        <option value="normal">Normal</option>
-                                        <option value="aumentado">Aumentado</option>
-                                        <option value="disminuido">Disminuido</option>
-                                    </select>
+                                    <input type="text" id="liquidoIncrustadoSelect" class="shadow rounded border-0 text-center" style="max-width: 9%;margin-right: 100px;" value="">
                                     <p class="align-self-center mb-0 mr-5">Bolsillo mayor de LA (mm)</p>
                                     <input type="text" id="bvmIncrustadoTexto" class="shadow rounded border-0 text-center" style="max-width: 5%;" value="">
                                 </div>
-                                
                                 <table class="table d-none">
                                     <tbody>
-                                    <tr class="d-none">
-                                        <th scope="row">Riesgo a priori (según edad materna)</th>
-                                        <td class="d-none" id="rap.morfologia.EcoSegundo">0.0091</td>
-                                        <td class="d-none" id="rapp.morfologia.EcoSegundo">0.91 %</td>
-                                        <td colspan="2" id="rapus.morfologia.EcoSegundo.clone"></td>
-                                    </tr>
-                                    <tr class="d-none">
-                                        <th scope="row">Riesgo ajustado (x edad y marcadores)</th>
-                                        <td id="raj.morfologia.EcoSegundo">0.0091</td>
-                                        <td id="rajp.morfologia.EcoSegundo">0.9091 %</td>
-                                    </tr>
+                                        <tr class="d-none">
+                                            <th scope="row">Riesgo a priori (según edad materna)</th>
+                                            <td class="d-none" id="rap.morfologia.EcoSegundo">0.0091</td>
+                                            <td class="d-none" id="rapp.morfologia.EcoSegundo">0.91 %</td>
+                                            <td colspan="2" id="rapus.morfologia.EcoSegundo.clone"></td>
+                                        </tr>
+                                        <tr class="d-none">
+                                            <th scope="row">Riesgo ajustado (x edad y marcadores)</th>
+                                            <td id="raj.morfologia.EcoSegundo">0.0091</td>
+                                            <td id="rajp.morfologia.EcoSegundo">0.9091 %</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 <div class="row d-none">
