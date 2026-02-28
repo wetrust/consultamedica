@@ -8202,13 +8202,13 @@ function pctpfe() {
 
         if (pctPFE > 95 || pctPFE == "> 97.5"){
             the("pfeIncrustadoSelect").value = "grande"
-            the("pfeIncrustadoSelect").classList.remove("d-none")
+            the("pfeIncrustadoSelect").classList.remove("text-danger")
         }else if (pctPFE < 5 || pctPFE == "< 2.5"){
             the("pfeIncrustadoSelect").value = "pequeño"
-            the("pfeIncrustadoSelect").classList.add("text-primary")
+            the("pfeIncrustadoSelect").classList.add("text-danger")
         }else{
             the("pfeIncrustadoSelect").value = "adecuado"
-            the("pfeIncrustadoSelect").classList.remove("d-none")
+            the("pfeIncrustadoSelect").classList.remove("text-danger")
         }
 
         return true
