@@ -1345,9 +1345,9 @@ $( document ).ready(function() {
         the("liq-cualitativo-eco").value = txt;
         the("liquidoIncrustadoSelect").value = txt
 
-        if (this.value == "disminuido"){
+        if (txt == "disminuido"){
             the("liquidoIncrustadoSelect").classList.remove("text-danger")
-        } else if (this.value == "aumentado"){
+        } else if (txt == "aumentado"){
             the("liquidoIncrustadoSelect").classList.add("text-danger")
         } else {
             the("liquidoIncrustadoSelect").classList.remove("text-danger")
