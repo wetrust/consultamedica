@@ -276,7 +276,7 @@ $( document ).ready(function() {
             the("incersion").value = "alta"
         }
     }
-    
+
     the("incersion").onchange = function(){
         comentarioSegundoTrimestre()
     }
@@ -286,11 +286,11 @@ $( document ).ready(function() {
         the("liquidoIncrustadoSelect").value = this.value
 
         if (this.value == "disminuido"){
-            the("liquidoIncrustadoSelect").classList.remove("d-none")
+            the("liquidoIncrustadoSelect").classList.remove("text-danger")
         } else if (this.value == "aumentado"){
-            the("liquidoIncrustadoSelect").classList.add("text-primary")
+            the("liquidoIncrustadoSelect").classList.add("text-danger")
         } else {
-            the("liquidoIncrustadoSelect").classList.remove("d-none")
+            the("liquidoIncrustadoSelect").classList.remove("text-danger")
         }
 
     }
@@ -928,11 +928,11 @@ $( document ).ready(function() {
         the("liquidoIncrustadoSelect").value = txt
 
         if (this.value == "disminuido"){
-            the("liquidoIncrustadoSelect").classList.remove("d-none")
+            the("liquidoIncrustadoSelect").classList.remove("text-danger")
         } else if (this.value == "aumentado"){
-            the("liquidoIncrustadoSelect").classList.add("text-primary")
+            the("liquidoIncrustadoSelect").classList.add("text-danger")
         } else {
-            the("liquidoIncrustadoSelect").classList.remove("d-none")
+            the("liquidoIncrustadoSelect").classList.remove("text-danger")
         }
 
         comentarioSegundoTrimestre()
@@ -1345,11 +1345,11 @@ $( document ).ready(function() {
         the("liquidoIncrustadoSelect").value = txt
 
         if (this.value == "disminuido"){
-            the("liquidoIncrustadoSelect").classList.remove("d-none")
+            the("liquidoIncrustadoSelect").classList.remove("text-danger")
         } else if (this.value == "aumentado"){
-            the("liquidoIncrustadoSelect").classList.add("text-primary")
+            the("liquidoIncrustadoSelect").classList.add("text-danger")
         } else {
-            the("liquidoIncrustadoSelect").classList.remove("d-none")
+            the("liquidoIncrustadoSelect").classList.remove("text-danger")
         }
 
         the("bvm").value = (isNumeric(this.value) == true) ? this.value : "";
