@@ -927,9 +927,9 @@ $( document ).ready(function() {
         the("liq-cualitativo-eco").value = txt;
         the("liquidoIncrustadoSelect").value = txt
 
-        if (this.value == "disminuido"){
+        if (txt == "disminuido"){
             the("liquidoIncrustadoSelect").classList.remove("text-danger")
-        } else if (this.value == "aumentado"){
+        } else if (txt == "aumentado"){
             the("liquidoIncrustadoSelect").classList.add("text-danger")
         } else {
             the("liquidoIncrustadoSelect").classList.remove("text-danger")
@@ -8200,10 +8200,10 @@ function pctpfe() {
         the("pfeIncrustadoTexto").value = pctPFE
         the("pfeRango").value = a + ' - ' +b
 
-        if (pctPFE > 95 || pctPFE == "> 97.5"){
+        if (pctPFE > 90 || pctPFE == "> 97.5"){
             the("pfeIncrustadoSelect").value = "grande"
             the("pfeIncrustadoSelect").classList.remove("text-danger")
-        }else if (pctPFE < 5 || pctPFE == "< 2.5"){
+        }else if (pctPFE < 10 || pctPFE == "< 2.5"){
             the("pfeIncrustadoSelect").value = "pequeño"
             the("pfeIncrustadoSelect").classList.add("text-danger")
         }else{
