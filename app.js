@@ -919,6 +919,7 @@ $( document ).ready(function() {
 
     });
     $( '#cerebelo' ).change( pctcb);
+
     $( "#bvm" ).change(bvm).on("keyup", function(){
         the("bvmEcoDos").value = this.value
         the("bvmDoppler").value = this.value
