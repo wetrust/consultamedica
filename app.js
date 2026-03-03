@@ -1,6 +1,6 @@
 import { fechas } from './functionesM.js'
 import { the, inputDate, these } from './wetrust.js'
-import { appPesoEG } from './app.pesoEG.js?e'
+import { appPesoEG } from './app.pesoEG.js?f'
 import { graficoPFEMasMenos, percentilOMS } from './graficoPFEMasMenos.js?H'
 import { baseGraficoPFE, graficoPFECompleto, graficoPFEMasMenosSinDias, graficoPFEMasMenosSinDiasCuatroDias } from './graficoPFEMasMenos.js';
 import { dataGraphCA } from './graficoTrozo.js?b';
@@ -5635,9 +5635,9 @@ $(document).ready(function(){
         pct95ILA[40] = 214; pct95ILA[41] = 194; pct95ILA[42] = 179;
 
         let eg = the("semanas").value;
-        let ila = suma;
+        let ila = (suma == 0) ? "" : Number(suma);
         the("liquido.ila.percentil").classList.remove("is-valid", "is-invalid");
-        if (eg > 15 || eg < 41){
+        if ((eg > 15 || eg < 41) && number == typeof ila ){
             eg = parseInt(eg);
             var uno = pct95ILA[eg] - pct5ILA[eg];
             var dos = ila - pct5ILA[eg];
@@ -5649,6 +5649,7 @@ $(document).ready(function(){
             }else{
                 the("liquido.ila.percentil").classList.add("is-valid");
             }
+
         } else {
            the("liquido.ila.percentil").value = ""; 
         }
