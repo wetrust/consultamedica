@@ -1,6 +1,6 @@
 import { fechas } from './functionesM.js'
 import { the, inputDate, these } from './wetrust.js'
-import { appPesoEG } from './app.pesoEG.js?d'
+import { appPesoEG } from './app.pesoEG.js?e'
 import { graficoPFEMasMenos, percentilOMS } from './graficoPFEMasMenos.js?H'
 import { baseGraficoPFE, graficoPFECompleto, graficoPFEMasMenosSinDias, graficoPFEMasMenosSinDiasCuatroDias } from './graficoPFEMasMenos.js';
 import { dataGraphCA } from './graficoTrozo.js?b';
@@ -5649,6 +5649,8 @@ $(document).ready(function(){
             }else{
                 the("liquido.ila.percentil").classList.add("is-valid");
             }
+        } else {
+           the("liquido.ila.percentil").value = ""; 
         }
 
         the("ila.doppler").value = ila;

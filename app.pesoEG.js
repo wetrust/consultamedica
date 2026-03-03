@@ -62,7 +62,7 @@ function generarDatos(){
     datos += '<input type="number" class="form-control" id="unounouno" value="'+the("pfe").value+'">'
 
     datos += '</div></div><div class="col-6"><div class="form-group"><label for="dosdosdos">Percentil de PFE</label>'
-    datos += '<input type="number" class="form-control text-danger" id="dosdosdos" disabled></div></div></div>'
+    datos += '<input type="number" class="form-control" id="dosdosdos" disabled></div></div></div>'
 
     datos += '<label for="relPesoEgeAjustOms">Relación Peso / EGE</label>'
     datos += '<input type="text" class="form-control" id="relPesoEgeAjustOms" disabled>'
