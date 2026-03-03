@@ -316,7 +316,13 @@ $( document ).ready(function() {
             var win = window.open(URL, "_blank");
             this.checked == false
         }
-        
+    })
+
+    $("#iraT21Rapido").on("change", function(){
+        if (this.checked == true){
+            document.location.hash = "#enconstruccion"
+            this.checked == false
+        }
     })
 
     the("calculador.oms").onchange = function(){
@@ -6726,13 +6732,12 @@ $(window).on('hashchange', function(){
     if (hash == "#ecoObsSegTrim"){
         the("semanas").classList.add("bg-secondary")
         the("dias").classList.add("bg-secondary", "text-white")
-    }else{
+    } else {
         the("semanas").classList.remove("bg-secondary")
         the("dias").classList.remove("bg-secondary", "text-white")
     }
 
     if (hash == "#ecoEstructural" && validaClave == false){
-
         let _modal = makeModal("ingresar");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
@@ -6749,14 +6754,12 @@ $(window).on('hashchange', function(){
         the(_modal.button).dataset.vista = hash
         the(_modal.button).dataset.clave = contrase
         the(_modal.button).onclick =  function(){
-
             if (the(this.dataset.clave).value == "2020"){
                 document.location.hash = this.dataset.vista
                 $('#'+this.dataset.modal).modal('hide');
 
                 validaClave = true
             }
-
         }
 
         $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
@@ -6767,8 +6770,6 @@ $(window).on('hashchange', function(){
 
         the("ecoEstructural").classList.add("d-none")
         the("enconstruccion").classList.add("d-none")
-
-
     }
 
     window.scrollTo(0, 0);
