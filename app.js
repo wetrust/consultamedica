@@ -2201,10 +2201,21 @@ $( document ).ready(function() {
                 txtOMS += ' y ' + the("papapapa").value + " dias "  
             }
             txtOMS += '</strong>'
-    
-            the("textoTipoOMS").innerHTML = txtOMS
 
+            the("textoTipoOMS").innerHTML = txtOMS
             comentarioSegundoTrimestre()
+
+            if (pctPFE > 90 || pctPFE == "> 97.5"){
+                the("relPesoEgeAjustOms").value = "grande"
+                the("relPesoEgeAjustOms").classList.remove("text-danger")
+            }else if (pctPFE < 10 || pctPFE == "< 2.5"){
+                the("relPesoEgeAjustOms").value = "pequeño"
+                the("relPesoEgeAjustOms").classList.add("text-danger")
+            }else{
+                the("relPesoEgeAjustOms").value = "adecuado"
+                the("relPesoEgeAjustOms").classList.remove("text-danger")
+            }
+
         }
 
         the("papapapa").onchange = function() {
@@ -2398,6 +2409,17 @@ $( document ).ready(function() {
         txtOMS += '</strong>'
  
         the("textoTipoOMS").innerHTML = txtOMS
+
+        if (the("pfePctRpt").value > 90 || the("pfePctRpt").value == "> 97.5"){
+            the("relPesoEgeAjustOms").value = "grande"
+            the("relPesoEgeAjustOms").classList.remove("text-danger")
+        }else if (the("pfePctRpt").value < 10 || the("pfePctRpt").value == "< 2.5"){
+            the("relPesoEgeAjustOms").value = "pequeño"
+            the("relPesoEgeAjustOms").classList.add("text-danger")
+        }else{
+            the("relPesoEgeAjustOms").value = "adecuado"
+            the("relPesoEgeAjustOms").classList.remove("text-danger")
+        }
     }
 });
 
@@ -3938,7 +3960,6 @@ $( document ).ready(function() {
         //_hchartsDos.series[2].data = [{x:Number(the("semanas").value),y:_ca}]
 
         _hchartsDos = Highcharts.chart('graficoCaView', _hchartsDos)
-
 
         _hchartsTres = {
             chart: {
@@ -8191,7 +8212,7 @@ function pctpfe() {
 
         the("pfePct").value = 0
         the("pfeIncrustadoTexto").value = ""
-        the("pfeIncrustadoSelect").value = "adecuado"
+        the("pfeIncrustadoSelect").value = ""
 
     } else {
 
