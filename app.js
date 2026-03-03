@@ -2250,6 +2250,17 @@ $( document ).ready(function() {
                 the("linkCalculadora").classList.add("d-none")
             }
 
+            if (pctPFE > 90 || pctPFE == "> 97.5"){
+                the("relPesoEgeAjustOms").value = "grande"
+                the("relPesoEgeAjustOms").classList.remove("text-danger")
+            }else if (pctPFE < 10 || pctPFE == "< 2.5"){
+                the("relPesoEgeAjustOms").value = "pequeño"
+                the("relPesoEgeAjustOms").classList.add("text-danger")
+            }else{
+                the("relPesoEgeAjustOms").value = "adecuado"
+                the("relPesoEgeAjustOms").classList.remove("text-danger")
+            }
+
             let _grafico = graficoPFEMasMenos()
             _hchartsUno = structuredClone(baseGraficoPFE)
 
