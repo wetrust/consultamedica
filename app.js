@@ -318,12 +318,12 @@ $( document ).ready(function() {
         }
     })
 
-    $("#iraT21Rapido").on("change", function(){
+    the("iraT21Rapido").onchange = function(){
         if (this.checked == true){
             document.location.hash = "#enconstruccion"
-            this.checked == false
         }
-    })
+        this.checked == false
+    }
 
     the("calculador.oms").onchange = function(){
         if (this.checked == true){
