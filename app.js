@@ -1372,7 +1372,12 @@ $( document ).ready(function() {
             var uno = b[eg] - a[eg];
             var dos = bvm - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
-            the("bvmEcoDosPCT").value = resultado;
+
+            if (resultado > 95){
+                the("bvmEcoDosPCT").value = "> 95";
+            }else{
+                the("bvmEcoDosPCT").value = resultado;
+            }
     
             the("bvmIncrustadoTexto").value = bvm;
 
@@ -5657,7 +5662,12 @@ $(document).ready(function(){
             var uno = pct95ILA[eg] - pct5ILA[eg];
             var dos = ila - pct5ILA[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
-            the("liquido.ila.percentil").value = resultado;
+
+            if (resultado > 95){
+                the("liquido.ila.percentil").value = "> 95 ";
+            }else{
+                the("liquido.ila.percentil").value = resultado;
+            }
 
             if (resultado < 10 || resultado > 90){
                 the("liquido.ila.percentil").classList.add("is-invalid");
