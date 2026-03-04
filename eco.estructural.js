@@ -47,6 +47,7 @@ the("dbp.ecoEstructural").onkeyup = function(){
     
     if (eg < 12 || eg > 40){
         the("dbp.pct.ecoEstructural").value
+        ajustarProgreso(0, "dbpEcoEstructural");
     } else {
         eg = eg - 12;
         eg = parseInt(eg);
@@ -93,9 +94,9 @@ the("pc.ecoEstructural").onkeyup = function(){
     if (eg < 12 || eg > 40){
 
         the("pc.pct.ecoEstructural").value = "";
+        ajustarProgreso(0, "pcecoEstructural");
 
-    }
-    else {
+    } else {
 
         eg = eg - 12;
         eg = parseInt(eg);
@@ -117,6 +118,176 @@ the("pc.ecoEstructural").onkeyup = function(){
         
         the("pc.pct.ecoEstructural").value = pctCC;
         psohdlk();
+
+    }
+}
+
+the("pa.ecoEstructural").onkeyup = function(){
+    /* 3 97 */
+    'use strict';
+    let a = [], b = [];
+    a[0]=42;a[1]=52;a[2]=64;a[3]=75;a[4]=86; a[5]=97;a[6]=109;a[7]=119;a[8]=131;a[9]=141; a[10]=151;a[11]=161;a[12]=171;a[13]=181; a[14]=191;a[15]=200;a[16]=209;a[17]=218;a[18]=227; a[19]=236;a[20]=245;a[21]=253;a[22]=261;a[23]=269; a[24]=277;a[25]=285;a[26]=292;a[27]=299;a[28]=307;
+    b[0]=71;b[1]=79;b[2]=92;b[3]=102;b[4]=113; b[5]=127;b[6]=141;b[7]=155;b[8]=170; b[9]=183;b[10]=192;b[11]=209;b[12]=223; b[13]=235;b[14]=248;b[15]=260;b[16]=271;b[17]=284; b[18]=295;b[19]=306;b[20]=318;b[21]=329;b[22]=339; b[23]=349;b[24]=359;b[25]=370;b[26]=380;b[27]=389; b[28]=399;
+
+    let eg = the("semanas").value;
+    let ca = parseInt(this.value);
+
+    if (eg < 12 || eg > 40){ 
+
+        the("pa.pct.ecoEstructural").value = "";
+        ajustarProgreso(0, "paecoEstructural");
+
+    } else {
+
+        eg = eg - 12;
+        eg = parseInt(eg);
+        var uno=b[eg] - a[eg];
+        var dos=ca - a[eg];
+        var resultado = parseInt(95 / (uno) * (dos) + 3);
+        ajustarProgreso(resultado, "paecoEstructural");
+        var pctCA = '';
+
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 97){
+            pctCA = '> 97';
+        } else if (resultado < 3){
+            pctCA = '< 3';
+        } else {
+            pctCA = resultado;
+        }
+
+        the("pa.pct.ecoEstructural").value = pctCA;
+        psohdlk();
+
+    }
+}
+
+the("femur.ecoEstructural").onkeyup = function(){
+    /* 3 97 */
+    'use strict';
+    let a = [], b = [];
+
+    a[0]=7;a[1]=9;a[2]=12;a[3]=15;a[4]=17;a[5]=21; a[6]=23;a[7]=26;a[8]=28;a[9]=30;a[10]=33;a[11]=35; a[12]=38;a[13]=40;a[14]=42;a[15]=44;a[16]=46; a[17]=48;a[18]=50;a[19]=52;a[20]=53;a[21]=55; a[22]=57;a[23]=59;a[24]=60;a[25]=62;a[26]=64; a[27]=65;a[28]=66;
+    b[0]=12;b[1]=14;b[2]=17;b[3]=20;b[4]=23;b[5]=27; b[6]=31;b[7]=34;b[8]=38;b[9]=40;b[10]=43;b[11]=47; b[12]=50;b[13]=52;b[14]=56;b[15]=58;b[16]=62; b[17]=64;b[18]=66;b[19]=68;b[20]=71;b[21]=73; b[22]=75;b[23]=78;b[24]=80;b[25]=82;b[26]=84; b[27]=86;b[28]=88;
+
+    let eg = the("semanas").value;
+    let lf = parseInt(this.value);
+
+    if (eg < 12 || eg > 40){ 
+        the("femur.pct.ecoEstructural").value = "";
+        ajustarProgreso(0, "femurecoEstructural");
+    } else {
+        eg = eg - 12;
+        eg = parseInt(eg);
+        var uno=b[eg] - a[eg];
+        var dos=lf - a[eg];
+        var resultado = parseInt(95 / (uno) * (dos) + 3);
+        ajustarProgreso(resultado, "femurecoEstructural");
+        var pctLF = '';
+
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 95){
+            pctLF = '> 95';
+            the("femur.pct.ecoEstructural").value = pctLF
+        }else if (resultado < 5){
+            pctLF = '< 5';
+            the("femur.pct.ecoEstructural").value = pctLF
+        }else{
+            the("femur.pct.ecoEstructural").value = resultado
+        }
+
+        psohdlk();
+    }
+}
+
+the("humero.ecoEstructural").onkeyup = function() {
+    /* 5 95 */
+    'use strict';
+    let a = [], b = [];
+
+    a[12] = 3;   b[12] = 11; a[13] = 5;   b[13] = 14;
+    a[14] = 8;   b[14] = 17; a[15] = 11;  b[15] = 20;
+    a[16] = 14;  b[16] = 22; a[17] = 16;  b[17] = 25;
+    a[18] = 19;  b[18] = 28; a[19] = 22;  b[19] = 30;
+    a[20] = 24;  b[20] = 33; a[21] = 26;  b[21] = 35;
+    a[22] = 29;  b[22] = 37; a[23] = 31;  b[23] = 39;
+    a[24] = 33;  b[24] = 42; a[25] = 35;  b[25] = 44;
+    a[26] = 36;  b[26] = 46; a[27] = 39;  b[27] = 47;
+    a[28] = 41;  b[28] = 49; a[29] = 43;  b[29] = 51;
+    a[30] = 44;  b[30] = 53; a[31] = 46;  b[31] = 54;
+    a[32] = 47;  b[32] = 56; a[33] = 49;  b[33] = 57;
+    a[34] = 50;  b[34] = 59; a[35] = 52;  b[35] = 60;
+    a[36] = 53;  b[36] = 61; a[37] = 54;  b[37] = 63;
+    a[38] = 55;  b[38] = 64; a[39] = 56;  b[39] = 65;
+    a[40] = 57;  b[40] = 66;
+
+    let eg = the("semanas").value;
+    var lh = parseInt(this.value);
+
+    if (eg < 12 || eg > 40) {
+
+        the("humero.pct.ecoEstructural").value = "";
+        ajustarProgreso(0, "humeroecoEstructural");
+
+    }else {
+
+        eg = parseInt(eg);
+        var uno = b[eg] - a[eg];
+        var dos = lh - a[eg];
+        var resultado = (parseInt(95 / (uno) * (dos) + 5));
+        var pctLH = '';
+
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 95){
+            pctLH = '> 95';
+            the("humero.pct.ecoEstructural").value = pctLH
+        }else if (resultado < 5){
+            pctLH = '< 5';
+            the("humero.pct.ecoEstructural").value = pctLH
+        }else{
+            the("humero.pct.ecoEstructural").value = resultado
+        }
+
+        ajustarProgreso(resultado, "humeroecoEstructural");
+        p50();
+    }
+}
+
+the("dof.ecoEstructural").onkeyup = function(){
+    'use strict';
+    let a = [], b = [];
+    let dof = this.value;
+
+    a[10]=7;a[11]=11; a[12]=16; a[13]=20;a[14]=24; a[15]=29; a[16]=33; a[17]=37;a[18]=41; a[19]=46; a[20]=50; a[21]=54;a[22]=58; a[23]=62; a[24]=65; a[25]=69;a[26]=73; a[27]=76; a[28]=80; a[29]=83;a[30]=86; a[31]=89; a[32]=92; a[33]=95;a[34]=97; a[35]=99; a[36]=102; a[37]=104;a[38]=105; a[39]=107; a[40]=108;
+    b[10]=21; b[11]=25; b[12]=30; b[13]=34;b[14]=38; b[15]=43; b[16]=47; b[17]=51;b[18]=55; b[19]=60; b[20]=64; b[21]=68;b[22]=72; b[23]=76; b[24]=79; b[25]=83;b[26]=87; b[27]=90; b[28]=94; b[29]=97;b[30]=100; b[31]=103; b[32]=106; b[33]=108;b[34]=111; b[35]=113; b[36]=116; b[37]=118;b[38]=119; b[39]=121; b[40]=122;
+
+    let eg = the("semanas").value;
+
+    if (eg > 9 && dof > 0){
+
+        var uno = b[eg] - a[eg];
+        var dos = dof - a[eg];
+        var resultado = (parseInt(95 / (uno) * (dos) + 3));
+        ajustarProgreso(0, "dofecoEstructural");
+        var pctDOF = '';
+
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 99){
+            pctDOF = '&gt; 99';
+        }
+        else if (resultado < 1){
+            pctDOF = '&lt; 1';
+        }
+        else{
+            pctDOF = resultado;
+        }
+
+        the("dof.pct.ecoEstructural").value = pctDOF;
+
+    } else {
+
+        ajustarProgreso(0, "dofecoEstructural");
+        the("dof.pct.ecoEstructural").value = "";
 
     }
 }
@@ -203,7 +374,6 @@ function pctpfe() {
 
 }
 
-
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
@@ -214,5 +384,3 @@ function ajustarProgreso(valor, objeto){
 	valor = valor + "%";
 	the(objeto).children[0].style.width = valor;
 }
-
-
