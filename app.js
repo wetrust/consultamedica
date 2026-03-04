@@ -5657,7 +5657,7 @@ $(document).ready(function(){
         let eg = the("semanas").value;
         let ila = (suma == 0) ? "" : Number(suma);
         the("liquido.ila.percentil").classList.remove("is-valid", "is-invalid");
-        if ((eg > 15 || eg < 41) && number == typeof ila ){
+        if ((eg > 15 || eg < 41) && "number" == typeof ila ){
             eg = parseInt(eg);
             var uno = pct95ILA[eg] - pct5ILA[eg];
             var dos = ila - pct5ILA[eg];
