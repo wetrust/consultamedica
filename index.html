@@ -5534,26 +5534,83 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="d-flex flex-row">
-                                    <div><div class="row"><div class="col-6">Otros Marcadores blando</div><div class="col-6"></div></div></div>
-                                    <div>
-                                        <div class="row"><div class="col-6">Defectos estructurales Mayores o menores</div><div class="col-6"></div></div>
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="row">
+                                            <div class="col-6">Otros Marcadores blando</div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="otrosMarcadoresBlandos" value="si">
+                                                    <label class="form-check-label">
+                                                        Si
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="otrosMarcadoresBlandos" value="No">
+                                                    <label class="form-check-label">
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="row"><div class="col-6">Feto pequeño para la edad</div><div class="col-6"></div></div>
+                                    <div class="flex-fill">
+                                        <div class="row">
+                                            <div class="col-6">Defectos estructurales Mayores o menores</div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="defectosEstructuralesMayores" value="Si">
+                                                    <label class="form-check-label">
+                                                        Si
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="defectosEstructuralesMayores" value="No">
+                                                    <label class="form-check-label">
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>Polihidramnios</div>
-                                </div>
-                                <div class="d-flex flex-row mb-0 align-items-center">
-                                    <a class="btn btn-outline-dark" href="#ecoObsSegTrim">ir a</a> 
-                                    <p class="align-self-center mb-0 mx-2 mr-5">Peso / EG</p>
-                                    <input type="text" id="pfeIncrustadoSelect" class="shadow rounded border-0 text-center" style="max-width: 9%;margin-right: 100px;font-weight: bold;" value="">
-                                    <p class="align-self-center mb-0 mx-2 mr-5">Percentil de PFE</p>
-                                    <input type="text" id="pfeIncrustadoTexto" class="shadow rounded border-0 text-center" style="max-width: 5%;margin-right: 100px;" value="">
-                                    <p class="align-self-center mb-0 mr-2">Líquido amniótico:</p>
-                                    <input type="text" id="liquidoIncrustadoSelect" class="shadow rounded border-0 text-center" style="max-width: 9%;margin-right: 100px;font-weight: bold;" value="">
-                                    <p class="align-self-center mb-0 mr-5">Bolsillo mayor de LA (mm)</p>
-                                    <input type="text" id="bvmIncrustadoTexto" class="shadow rounded border-0 text-center" style="max-width: 5%;" value="">
+                                    <div class="flex-fill">
+                                        <div class="row">
+                                            <div class="col-6">Feto pequeño para la edad</div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fetoPequenoEdad" value="Si">
+                                                    <label class="form-check-label">
+                                                        Si
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fetoPequenoEdad" value="No">
+                                                    <label class="form-check-label">
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <div class="row">
+                                            <div class="col-6">Polihidramnios</div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="polihidramnios" value="Si">
+                                                    <label class="form-check-label">
+                                                        Si
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="polihidramnios" value="No">
+                                                    <label class="form-check-label">
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <table class="table d-none">
                                     <tbody>
@@ -5646,6 +5703,18 @@
                         <p class="text-center mb-0"><small><strong>Ingresar riesgo a Priori<br>de tamizaje 11 - 14</strong></small></p>
                     </div>
                 </div>
+
+
+                <a class="rounded rounded-pill shadow shadow-lg p-3 text-decoration-none" href="#ecoObsSegTrim" style="top: 930px; position: absolute;background-color:#e1f0ff;">
+                    <div class="row align-items-center">
+                        <div class="col-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-caret-left-square align-items-center" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M10.205 12.456A.5.5 0 0 0 10.5 12V4a.5.5 0 0 0-.832-.374l-4.5 4a.5.5 0 0 0 0 .748l4.5 4a.5.5 0 0 0 .537.082"/></svg>
+                        </div>
+                        <div class="col-8">
+                            <p class="mb-0"><small><strong>ir a<br>Biometrías</strong></small></p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

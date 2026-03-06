@@ -281,16 +281,6 @@ $( document ).ready(function() {
 
     the("liq-cualitativo-eco").onchange = function(){
         comentarioSegundoTrimestre()
-        the("liquidoIncrustadoSelect").value = this.value
-
-        if (this.value == "disminuido"){
-            the("liquidoIncrustadoSelect").classList.remove("text-danger")
-        } else if (this.value == "aumentado"){
-            the("liquidoIncrustadoSelect").classList.add("text-danger")
-        } else {
-            the("liquidoIncrustadoSelect").classList.remove("text-danger")
-        }
-
     }
 
     the("liq-cualitativo-eco").onkeydown = function(e){
@@ -930,15 +920,6 @@ $( document ).ready(function() {
 
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
-        the("liquidoIncrustadoSelect").value = txt
-
-        if (txt == "disminuido"){
-            the("liquidoIncrustadoSelect").classList.remove("text-danger")
-        } else if (txt == "aumentado"){
-            the("liquidoIncrustadoSelect").classList.add("text-danger")
-        } else {
-            the("liquidoIncrustadoSelect").classList.remove("text-danger")
-        }
 
         comentarioSegundoTrimestre()
 
@@ -1347,15 +1328,6 @@ $( document ).ready(function() {
         the("bvmDoppler").value = this.value
         let txt = (isNumeric(this.value) == true) ? bvmTxt(this.value) : "normal";
         the("liq-cualitativo-eco").value = txt;
-        the("liquidoIncrustadoSelect").value = txt
-
-        if (txt == "disminuido"){
-            the("liquidoIncrustadoSelect").classList.remove("text-danger")
-        } else if (txt == "aumentado"){
-            the("liquidoIncrustadoSelect").classList.add("text-danger")
-        } else {
-            the("liquidoIncrustadoSelect").classList.remove("text-danger")
-        }
 
         the("bvm").value = (isNumeric(this.value) == true) ? this.value : "";
         comentarioSegundoTrimestre()
@@ -1378,12 +1350,6 @@ $( document ).ready(function() {
             }else{
                 the("bvmEcoDosPCT").value = resultado;
             }
-    
-            the("bvmIncrustadoTexto").value = bvm;
-
-        }else{
-
-            the("bvmIncrustadoTexto").value = "";
 
         }
     })
@@ -2101,7 +2067,6 @@ $( document ).ready(function() {
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
-            the("pfeIncrustadoTexto").value = pctPFE
 
             if ("number" == typeof pctPFE){
                 if(pctPFE < 10){
@@ -2239,7 +2204,6 @@ $( document ).ready(function() {
 
             the("dosdosdos").value = pctPFE
             the("pfePctRpt").value = pctPFE
-            the("pfeIncrustadoTexto").value = pctPFE
 
             if ("number" == typeof pctPFE){
                 if(pctPFE < 10){
@@ -4080,7 +4044,6 @@ $( document ).ready(function() {
             the("sexotexto").innerText = the("ecografia.segtrim.sexo").value
             the("percentiltexto").innerText = pctPFE
             the("pfePctRpt").value = pctPFE
-            the("pfeIncrustadoTexto").value = pctPFE
 
             let _grafico = graficoPFEMasMenosSinDias()
             _hchartsUno = structuredClone(baseGraficoPFE)
@@ -8234,27 +8197,13 @@ function pctpfe() {
     if (eg < 14 || eg > 40) {
 
         the("pfePct").value = 0
-        the("pfeIncrustadoTexto").value = ""
-        the("pfeIncrustadoSelect").value = ""
 
     } else {
 
         var pctPFE = percentilOMS(pfe,eg, sexo);
         pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
         the("pfePctRpt").value = pctPFE
-        the("pfeIncrustadoTexto").value = pctPFE
         the("pfeRango").value = a + ' - ' +b
-
-        if (pctPFE > 90 || pctPFE == "> 97.5"){
-            the("pfeIncrustadoSelect").value = "grande"
-            the("pfeIncrustadoSelect").classList.remove("text-danger")
-        }else if (pctPFE < 10 || pctPFE == "< 2.5"){
-            the("pfeIncrustadoSelect").value = "pequeño"
-            the("pfeIncrustadoSelect").classList.add("text-danger")
-        }else{
-            the("pfeIncrustadoSelect").value = "adecuado"
-            the("pfeIncrustadoSelect").classList.remove("text-danger")
-        }
 
         return true
 
