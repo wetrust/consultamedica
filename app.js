@@ -6563,6 +6563,13 @@ $(document).ready(function(){
             this.parentElement.parentElement.parentElement.children[1].value = ""
 
         }
+
+        if (this.value == "SIRojo") {
+            this.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
+        } else if (this.value == "NORojo") {
+            this.parentElement.parentElement.children[0].children[1].classList.remove("text-danger", "font-weight-bold")
+        }
+
     });
 
     the("ver.ecodos.foto1").onchange = function(){
