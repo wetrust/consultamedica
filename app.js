@@ -2093,7 +2093,7 @@ $( document ).ready(function() {
 
             if (pctPFE < 10 || "< 2.5" == pctPFE){
                 elementsArray.forEach(element => {
-                    if (element.value = "SIRojo"){
+                    if (element.value == "SIRojo"){
                         element.checked = true
                     }
                 });
@@ -2254,7 +2254,7 @@ $( document ).ready(function() {
             
             if (pctPFE < 10 || "< 2.5" == pctPFE){
                 elementsArray.forEach(element => {
-                    if (element.value = "SIRojo"){
+                    if (element.value == "SIRojo"){
                         element.checked = true
                     }
                 });
@@ -4078,7 +4078,7 @@ $( document ).ready(function() {
             
             if (pctPFE < 10 || "< 2.5" == pctPFE){
                 elementsArray.forEach(element => {
-                    if (element.value = "SIRojo"){
+                    if (element.value == "SIRojo"){
                         element.checked = true
                     }
                 });
@@ -8257,7 +8257,7 @@ function pctpfe() {
 
         if (pctPFE < 10 || "< 2.5" == pctPFE) {
             elementsArray.forEach(element => {
-                if (element.value = "SIRojo"){
+                if (element.value == "SIRojo"){
                     element.checked = true
                 }
             });
@@ -8320,7 +8320,7 @@ function pctpfeMorfologia() {
 
         if (pctPFE < 10 || "< 2.5" == pctPFE){
             elementsArray.forEach(element => {
-                if (element.value = "SIRojo"){
+                if (element.value == "SIRojo"){
                     element.checked = true
                 }
             });
