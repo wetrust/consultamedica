@@ -2069,23 +2069,38 @@ $( document ).ready(function() {
             the("pfePctRpt").value = pctPFE
 
             if ("number" == typeof pctPFE){
-                if(pctPFE < 10){
+                if (pctPFE < 10) {
                     the("letrero").classList.remove("d-none")
                     the("goto.doppler.grafico").classList.remove("d-none")
                     the("linkCalculadora").classList.remove("d-none")
-                }else{
+                } else {
                     the("letrero").classList.add("d-none")
                     the("goto.doppler.grafico").classList.add("d-none")
                     the("linkCalculadora").classList.add("d-none")
                 }
-            }else if ("< 2.5" == pctPFE){
+            } else if ("< 2.5" == pctPFE){
                 the("letrero").classList.remove("d-none")
                 the("goto.doppler.grafico").classList.remove("d-none")
                 the("linkCalculadora").classList.remove("d-none")
-            }else{
+            } else {
                 the("letrero").classList.add("d-none")
                 the("goto.doppler.grafico").classList.add("d-none")
                 the("linkCalculadora").classList.add("d-none")
+            }
+
+            const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
+            const elementsArray = Array.from(elements);
+
+            if (pctPFE < 10 || "< 2.5" == pctPFE){
+                elementsArray.forEach(element => {
+                    if (element.value = "SIRojo"){
+                        element.checked = true
+                    }
+                });
+            } else {
+                elementsArray.forEach(element => {
+                    element.checked = false
+                });
             }
 
             let _grafico = graficoPFEMasMenos()
@@ -2166,11 +2181,10 @@ $( document ).ready(function() {
             if(sexo == "men" || sexo == "wom"){
                 txtOMS += (sexo == "men") ? 'masculino' : 'femenino';
             }
-    
+
             eg = Number(the("semanas").value + "." + the("dias").value);
-    
             txtOMS += ' de ' + the("semanas").value + " semanas"
-    
+
             if (the("papapapa").value > 0){
                 txtOMS += ' y ' + the("papapapa").value + " dias "  
             }
@@ -2189,7 +2203,6 @@ $( document ).ready(function() {
                 the("relPesoEgeAjustOms").value = "adecuado"
                 the("relPesoEgeAjustOms").classList.remove("text-danger")
             }
-
         }
 
         the("papapapa").onchange = function() {
@@ -2234,6 +2247,21 @@ $( document ).ready(function() {
             }else{
                 the("relPesoEgeAjustOms").value = "adecuado"
                 the("relPesoEgeAjustOms").classList.remove("text-danger")
+            }
+
+            const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
+            const elementsArray = Array.from(elements);
+            
+            if (pctPFE < 10 || "< 2.5" == pctPFE){
+                elementsArray.forEach(element => {
+                    if (element.value = "SIRojo"){
+                        element.checked = true
+                    }
+                });
+            } else {
+                elementsArray.forEach(element => {
+                    element.checked = false
+                });
             }
 
             let _grafico = graficoPFEMasMenos()
@@ -4044,6 +4072,21 @@ $( document ).ready(function() {
             the("sexotexto").innerText = the("ecografia.segtrim.sexo").value
             the("percentiltexto").innerText = pctPFE
             the("pfePctRpt").value = pctPFE
+
+            const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
+            const elementsArray = Array.from(elements);
+            
+            if (pctPFE < 10 || "< 2.5" == pctPFE){
+                elementsArray.forEach(element => {
+                    if (element.value = "SIRojo"){
+                        element.checked = true
+                    }
+                });
+            } else {
+                elementsArray.forEach(element => {
+                    element.checked = false
+                });
+            }
 
             let _grafico = graficoPFEMasMenosSinDias()
             _hchartsUno = structuredClone(baseGraficoPFE)
@@ -6545,23 +6588,15 @@ $(document).ready(function(){
 
     $("input[type='radio']").on("change",function() {
         if (this.value == "eliminar"){
-
             this.parentElement.parentElement.parentElement.children[1].classList.add("d-none");
-
         }else if (this.value == "normal" || this.value == "anormal"){
-
             this.parentElement.parentElement.parentElement.children[1].classList.remove("d-none");
-
         }
 
         if (this.value == "no" || this.value == "anormal"){
-
             this.parentElement.parentElement.parentElement.children[1].value = "Comentario: "
-
         }else{
-
             this.parentElement.parentElement.parentElement.children[1].value = ""
-
         }
 
         if (this.value == "SIRojo") {
@@ -6569,7 +6604,6 @@ $(document).ready(function(){
         } else if (this.value == "NORojo") {
             this.parentElement.parentElement.children[0].children[1].classList.remove("text-danger", "font-weight-bold")
         }
-
     });
 
     the("ver.ecodos.foto1").onchange = function(){
@@ -8198,22 +8232,42 @@ function pctpfe() {
 
     //let eg = the("semanas").value;
     // funcion que calcula el v alor de eg y suma los dias
-
     let pfe = parseInt(the("pfe").value);
 
     if (eg < 14 || eg > 40) {
 
         the("pfePct").value = 0
 
+        const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
+        const elementsArray = Array.from(elements);
+
+        elementsArray.forEach(element => {
+            element.checked = false
+        });
+
     } else {
 
-        var pctPFE = percentilOMS(pfe,eg, sexo);
+        var pctPFE = percentilOMS(pfe, eg, sexo);
         pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
         the("pfePctRpt").value = pctPFE
-        the("pfeRango").value = a + ' - ' +b
+        the("pfeRango").value = a + ' - ' + b
 
-        return true
+        const elements = document.getElementsByName('fetoPequenoEdad');
+        const elementsArray = Array.from(elements);
 
+        if (pctPFE < 10 || "< 2.5" == pctPFE) {
+            elementsArray.forEach(element => {
+                if (element.value = "SIRojo"){
+                    element.checked = true
+                }
+            });
+        } else {
+            elementsArray.forEach(element => {
+                element.checked = false
+            });
+        }
+
+        return true;
     }
 
 }
@@ -8259,6 +8313,21 @@ function pctpfeMorfologia() {
             the("pfe.pct.morfologia").classList.add("is-invalid");
         }else{
             the("pfe.pct.morfologia").classList.add("is-valid");
+        }
+
+        const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
+        const elementsArray = Array.from(elements);
+
+        if (pctPFE < 10 || "< 2.5" == pctPFE){
+            elementsArray.forEach(element => {
+                if (element.value = "SIRojo"){
+                    element.checked = true
+                }
+            });
+        } else {
+            elementsArray.forEach(element => {
+                element.checked = false
+            });
         }
     }
 }
