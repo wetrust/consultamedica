@@ -2095,11 +2095,13 @@ $( document ).ready(function() {
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
+                        element.onchange()
                     }
                 });
             } else {
                 elementsArray.forEach(element => {
                     element.checked = false
+                    element.onchange()
                 });
             }
 
@@ -2256,11 +2258,13 @@ $( document ).ready(function() {
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
+                        element.onchange()
                     }
                 });
             } else {
                 elementsArray.forEach(element => {
                     element.checked = false
+                    element.onchange()
                 });
             }
 
@@ -4080,11 +4084,13 @@ $( document ).ready(function() {
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
+                        element.onchange()
                     }
                 });
             } else {
                 elementsArray.forEach(element => {
                     element.checked = false
+                    element.onchange()
                 });
             }
 
@@ -8259,11 +8265,13 @@ function pctpfe() {
             elementsArray.forEach(element => {
                 if (element.value == "SIRojo"){
                     element.checked = true
+                    element.onchange()
                 }
             });
         } else {
             elementsArray.forEach(element => {
                 element.checked = false
+                element.onchange()
             });
         }
 
@@ -8322,11 +8330,13 @@ function pctpfeMorfologia() {
             elementsArray.forEach(element => {
                 if (element.value == "SIRojo"){
                     element.checked = true
+                    element.onchange()
                 }
             });
         } else {
             elementsArray.forEach(element => {
                 element.checked = false
+                element.onchange()
             });
         }
     }
