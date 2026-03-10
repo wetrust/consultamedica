@@ -2091,17 +2091,17 @@ $( document ).ready(function() {
             const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
             const elementsArray = Array.from(elements);
 
-            if (pctPFE < 10 || "< 2.5" == pctPFE){
+            if (pctPFE != 0 || pctPFE < 10 || "< 2.5" == pctPFE){
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
-                        this.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
+                        element.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                     }
                 });
             } else {
                 elementsArray.forEach(element => {
                     element.checked = false
-                    this.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
+                    element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
                 });
             }
 
@@ -2254,17 +2254,17 @@ $( document ).ready(function() {
             const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
             const elementsArray = Array.from(elements);
             
-            if (pctPFE < 10 || "< 2.5" == pctPFE){
+            if (pctPFE != 0 || pctPFE < 10 || "< 2.5" == pctPFE){
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
-                        this.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
+                        element.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                     }
                 });
             } else {
                 elementsArray.forEach(element => {
                     element.checked = false
-                    this.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
+                    element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
                 });
             }
 
@@ -4080,17 +4080,17 @@ $( document ).ready(function() {
             const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
             const elementsArray = Array.from(elements);
             
-            if (pctPFE < 10 || "< 2.5" == pctPFE){
+            if (pctPFE != 0 || pctPFE < 10 || "< 2.5" == pctPFE){
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
-                        this.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
+                        element.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                     }
                 });
             } else {
                 elementsArray.forEach(element => {
                     element.checked = false
-                    this.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
+                    element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
                 });
             }
 
@@ -5644,9 +5644,11 @@ $(document).ready(function(){
     });
 
     $('#liquido\\.ila\\.suma').on("keyup", function(e){
+
         var suma = this.value;
         if (suma > 999){ e.preventDefault(); }
         let pct5ILA = [], pct95ILA = [];
+
         pct5ILA[16] = 79; pct5ILA[17] = 83; pct5ILA[18] = 87;
         pct5ILA[19] = 90; pct5ILA[20] = 93; pct5ILA[21] = 95;
         pct5ILA[22] = 97; pct5ILA[23] = 98; pct5ILA[24] = 98;
@@ -5656,6 +5658,7 @@ $(document).ready(function(){
         pct5ILA[34] = 81; pct5ILA[35] = 79; pct5ILA[36] = 77;
         pct5ILA[37] = 75; pct5ILA[38] = 73; pct5ILA[39] = 72;
         pct5ILA[40] = 71; pct5ILA[41] = 70; pct5ILA[42] = 72;
+
         pct95ILA[16] = 185; pct95ILA[17] = 194; pct95ILA[18] = 200;
         pct95ILA[19] = 204; pct95ILA[20] = 208; pct95ILA[21] = 212;
         pct95ILA[22] = 214; pct95ILA[23] = 217; pct95ILA[24] = 218;
@@ -5668,31 +5671,63 @@ $(document).ready(function(){
 
         let eg = the("semanas").value;
         let ila = (suma == 0) ? "" : Number(suma);
+
         the("liquido.ila.percentil").classList.remove("is-valid", "is-invalid");
+
         if ((eg > 15 || eg < 41) && "number" == typeof ila ){
+
             eg = parseInt(eg);
+
             var uno = pct95ILA[eg] - pct5ILA[eg];
             var dos = ila - pct5ILA[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
 
+            const elements = document.getElementsByName('polihidramnios');
+            const elementsArray = Array.from(elements);
+
             if (resultado > 95){
+
                 the("liquido.ila.percentil").value = "> 95 ";
-            }else{
+
+                elementsArray.forEach(element => {
+
+                    if (element.value == "SIRojo"){
+                        element.checked = true
+                        element.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
+                    }
+
+                });
+
+            } else {
+
+                elementsArray.forEach(element => {
+                    element.checked = false
+                    element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
+                });
+
                 the("liquido.ila.percentil").value = resultado;
+
             }
 
             if (resultado < 10 || resultado > 90){
+
                 the("liquido.ila.percentil").classList.add("is-invalid");
+
             }else{
+
                 the("liquido.ila.percentil").classList.add("is-valid");
+
             }
 
         } else {
-           the("liquido.ila.percentil").value = ""; 
+
+           the("liquido.ila.percentil").value = "";
+
         }
 
         the("ila.doppler").value = ila;
         comentarioSegundoTrimestre()
+
     });
 
     $('#dbp\\.morfologia').on("keyup", function(){
@@ -8261,21 +8296,26 @@ function pctpfe() {
         const elements = document.getElementsByName('fetoPequenoEdad');
         const elementsArray = Array.from(elements);
 
-        if (pctPFE < 10 || "< 2.5" == pctPFE){
+        if (pctPFE != 0 || pctPFE < 10 || "< 2.5" == pctPFE){
+
             elementsArray.forEach(element => {
                 if (element.value == "SIRojo"){
                     element.checked = true
-                    this.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
+                    element.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                 }
             });
+
         } else {
+
             elementsArray.forEach(element => {
                 element.checked = false
-                this.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
+                element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
             });
+
         }
 
         return true;
+
     }
 
 }
@@ -8309,6 +8349,7 @@ function pctpfeMorfologia() {
         if (pctFinal > 90){
             pctPFE = '> 90';
         }
+
         else if (pctFinal < 10){
             pctPFE = '< 10';
         } else{
@@ -8316,29 +8357,34 @@ function pctpfeMorfologia() {
         }
 
         the("pfe.pct.morfologia").value = pctPFE;
-        
+
         if (pctFinal < 10 || pctFinal > 90){
             the("pfe.pct.morfologia").classList.add("is-invalid");
-        }else{
+        } else {
             the("pfe.pct.morfologia").classList.add("is-valid");
         }
 
         const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
         const elementsArray = Array.from(elements);
 
-        if (pctPFE < 10 || "< 2.5" == pctPFE){
+        if (pctPFE != 0 || pctPFE < 10 || "< 2.5" == pctPFE){
+
             elementsArray.forEach(element => {
                 if (element.value == "SIRojo"){
                     element.checked = true
-                    this.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
+                    element.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                 }
             });
+
         } else {
+
             elementsArray.forEach(element => {
                 element.checked = false
-                this.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
+                element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
             });
+
         }
+
     }
 }
 
