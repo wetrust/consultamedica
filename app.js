@@ -2095,13 +2095,13 @@ $( document ).ready(function() {
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
-                        element.onchange()
+                        this.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                     }
                 });
             } else {
                 elementsArray.forEach(element => {
                     element.checked = false
-                    element.onchange()
+                    this.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
                 });
             }
 
@@ -2258,13 +2258,13 @@ $( document ).ready(function() {
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
-                        element.onchange()
+                        this.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                     }
                 });
             } else {
                 elementsArray.forEach(element => {
                     element.checked = false
-                    element.onchange()
+                    this.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
                 });
             }
 
@@ -4084,13 +4084,13 @@ $( document ).ready(function() {
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
-                        element.onchange()
+                        this.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                     }
                 });
             } else {
                 elementsArray.forEach(element => {
                     element.checked = false
-                    element.onchange()
+                    this.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
                 });
             }
 
@@ -8261,17 +8261,17 @@ function pctpfe() {
         const elements = document.getElementsByName('fetoPequenoEdad');
         const elementsArray = Array.from(elements);
 
-        if (pctPFE < 10 || "< 2.5" == pctPFE) {
+        if (pctPFE < 10 || "< 2.5" == pctPFE){
             elementsArray.forEach(element => {
                 if (element.value == "SIRojo"){
                     element.checked = true
-                    element.onchange()
+                    this.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                 }
             });
         } else {
             elementsArray.forEach(element => {
                 element.checked = false
-                element.onchange()
+                this.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
             });
         }
 
@@ -8330,13 +8330,13 @@ function pctpfeMorfologia() {
             elementsArray.forEach(element => {
                 if (element.value == "SIRojo"){
                     element.checked = true
-                    element.onchange()
+                    this.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                 }
             });
         } else {
             elementsArray.forEach(element => {
                 element.checked = false
-                element.onchange()
+                this.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
             });
         }
     }
