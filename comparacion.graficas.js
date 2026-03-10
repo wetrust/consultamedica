@@ -932,7 +932,7 @@ function imprInforme(datos)
 
     document = document.replace(/:DATOS/g, datos);
 	document = document.replace(/:ESTILO/g, estilo);
-	//document = document.replace(/:FUNCION/g, funcion);
+	document = document.replace(/:FUNCION/g, funcion);
 	document = document.replace(new RegExp('invisible', 'g'), "");
 	document = document.replace(":MEMBRETE", membrete);
     var ventimp = window.open(" ","popimpr");
