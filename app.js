@@ -1345,10 +1345,35 @@ $( document ).ready(function() {
             var dos = bvm - a[eg];
             var resultado = parseInt(90 / (uno) * (dos) + 5);
 
+            const elements = document.getElementsByName('polihidramnios');
+            const elementsArray = Array.from(elements);
+
             if (resultado > 95){
+
                 the("bvmEcoDosPCT").value = "> 95";
+
+                elementsArray.forEach(element => {
+
+                    if (element.value == "SIRojo"){
+
+                        element.checked = true
+                        element.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
+
+                    }
+
+                });
+
             }else{
+
+                elementsArray.forEach(element => {
+
+                    element.checked = false
+                    element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
+
+                });
+
                 the("bvmEcoDosPCT").value = resultado;
+
             }
 
         }
