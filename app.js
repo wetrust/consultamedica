@@ -317,10 +317,14 @@ $( document ).ready(function() {
     }
 
     the("referenciabvmilaPunto").onclick = function(){
-        if (the("referenciabvmila").classList.contains("d-none")){
-            the("referenciabvmila").classList.remove("d-none")
+        if (the("referenciabvm").classList.contains("d-none")){
+            the("referenciabvm").classList.remove("d-none")
+            if(the("verElIlaEscondido").checked == true){
+                the("referenciaila").classList.remove("d-none")
+            }
         }else{
-            the("referenciabvmila").classList.add("d-none")
+            the("referenciabvm").classList.add("d-none")
+            the("referenciaila").classList.add("d-none")
         }
     }
 
@@ -6706,6 +6710,14 @@ $(document).ready(function(){
             this.parentElement.parentElement.children[0].children[1].classList.remove("text-danger", "font-weight-bold")
         }
     });
+
+    the("verElIlaEscondido").onclick = function(){
+        if (this.checked == true){
+            the("ilaOcultoEnEcoCrecimiento").classList.remove("d-none")
+        }else{
+            the("ilaOcultoEnEcoCrecimiento").classList.add("d-none")
+        }
+    }
 
     the("ver.ecodos.foto1").onchange = function(){
         if (this.checked == true){
