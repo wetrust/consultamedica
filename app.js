@@ -1994,6 +1994,7 @@ $( document ).ready(function() {
     }
 
     the("corregirPercentilSexo").onclick = function(){
+
         var edadGestacional = the("semanas").value;
         if (edadGestacional < 14){ alert("Edad Gestacional inferior a 14 semanas"); return false;}
         if (edadGestacional > 41){ alert("Edad Gestacional superior a 40 semanas"); return false;}
@@ -2003,21 +2004,25 @@ $( document ).ready(function() {
         the("dosdosdos").value = the("pfePctRpt").value
 
         for (var i = 14; i < 41; i++) {
+
             let semanas = the("cuacuacua");
             let opt = document.createElement('option');
             opt.appendChild( document.createTextNode(i) );
             opt.value = i; 
-            semanas.appendChild(opt); 
+            semanas.appendChild(opt);
+
         }
 
         the("cuacuacua").value = edadGestacional
 
         for (var i = 0; i < 7; i++) {
+
             let dias = the("papapapa");
             let opt = document.createElement('option');
             opt.appendChild( document.createTextNode(i) );
             opt.value = i; 
-            dias.appendChild(opt); 
+            dias.appendChild(opt);
+
         }
 
         the("papapapa").value =  the("dias").value
@@ -2030,9 +2035,13 @@ $( document ).ready(function() {
         let par = false
         let multiplicador = 0
 
-        if (menor < 100){ menor = Math.trunc(menor / 10); multiplicador = 10;
-        }else if (menor < 1000){ menor = Math.trunc(menor / 100); multiplicador = 100;
-        }else if (menor < 10000){ menor = menor / 1000; multiplicador = 1000; }
+        if (menor < 100){ 
+            menor = Math.trunc(menor / 10); multiplicador = 10;
+        }else if (menor < 1000){ 
+            menor = Math.trunc(menor / 100); multiplicador = 100;
+        }else if (menor < 10000){ 
+            menor = menor / 1000; multiplicador = 1000;
+        }
 
         par = menor % 2;
         par = (par > 0) ? false : true
@@ -2120,7 +2129,7 @@ $( document ).ready(function() {
             const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
             const elementsArray = Array.from(elements);
 
-            if ((isNumeric(pctPFE) &&  pctPFE != 0) || pctPFE < 10 || "< 2.5" == pctPFE){
+            if ((isNumeric(pctPFE) &&  pctPFE != 0) || (isNumeric(pctPFE) && pctPFE < 10 &&  pctPFE != 0) || "< 2.5" == pctPFE){
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
@@ -2254,6 +2263,7 @@ $( document ).ready(function() {
             the("pfePctRpt").value = pctPFE
 
             if ("number" == typeof pctPFE){
+
                 if(pctPFE < 10){
                     the("letrero").classList.remove("d-none")
                     the("goto.doppler.grafico").classList.remove("d-none")
@@ -2263,6 +2273,7 @@ $( document ).ready(function() {
                     the("goto.doppler.grafico").classList.add("d-none")
                     the("linkCalculadora").classList.add("d-none")
                 }
+
             }else if ("< 2.5" == pctPFE){
                 the("letrero").classList.remove("d-none")
                 the("goto.doppler.grafico").classList.remove("d-none")
@@ -2286,8 +2297,8 @@ $( document ).ready(function() {
 
             const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
             const elementsArray = Array.from(elements);
-            
-            if ((isNumeric(pctPFE) &&  pctPFE != 0) || pctPFE < 10 || "< 2.5" == pctPFE){
+
+            if ((isNumeric(pctPFE) &&  pctPFE != 0) || (isNumeric(pctPFE) && pctPFE < 10 &&  pctPFE != 0) || "< 2.5" == pctPFE){
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
@@ -2298,11 +2309,9 @@ $( document ).ready(function() {
                 elementsArray.forEach(element => {
                     element.checked = false
                     element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
-
                     if (element.value == "NORojo"){
                         element.checked = true
                     }
-
                 });
             }
 
@@ -4118,7 +4127,7 @@ $( document ).ready(function() {
             const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
             const elementsArray = Array.from(elements);
             
-            if ((isNumeric(pctPFE) &&  pctPFE != 0) || pctPFE < 10 || "< 2.5" == pctPFE){
+            if ((isNumeric(pctPFE) &&  pctPFE != 0) || (isNumeric(pctPFE) && pctPFE < 10 &&  pctPFE != 0) || "< 2.5" == pctPFE){
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
@@ -8331,6 +8340,7 @@ function pctpfe() {
 
         elementsArray.forEach(element => {
             element.checked = false
+            element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
         });
 
     } else {
@@ -8343,7 +8353,7 @@ function pctpfe() {
         const elements = document.getElementsByName('fetoPequenoEdad');
         const elementsArray = Array.from(elements);
 
-        if ((isNumeric(pctPFE) &&  pctPFE != 0) || pctPFE < 10 || "< 2.5" == pctPFE){
+        if ((isNumeric(pctPFE) &&  pctPFE != 0) || (isNumeric(pctPFE) && pctPFE < 10 &&  pctPFE != 0) || "< 2.5" == pctPFE){
 
             elementsArray.forEach(element => {
 
@@ -8426,7 +8436,7 @@ function pctpfeMorfologia() {
         const elements = document.getElementsByName('fetoPequenoEdad'); // Example: get all <p> elements
         const elementsArray = Array.from(elements);
 
-        if ((isNumeric(pctPFE) &&  pctPFE != 0) || pctPFE < 10 || "< 2.5" == pctPFE){
+        if ((isNumeric(pctPFE) &&  pctPFE != 0) || (isNumeric(pctPFE) && pctPFE < 10 &&  pctPFE != 0) || "< 2.5" == pctPFE){
 
             elementsArray.forEach(element => {
 
