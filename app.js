@@ -1372,7 +1372,6 @@ $( document ).ready(function() {
 
                     if (element.value == "NORojo"){
                         element.checked = true
-                        element.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                     }
 
                 });
@@ -5750,7 +5749,6 @@ $(document).ready(function(){
 
                     if (element.value == "NORojo"){
                         element.checked = true
-                        element.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                     }
                 });
 
