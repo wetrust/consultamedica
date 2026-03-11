@@ -2142,7 +2142,9 @@ $( document ).ready(function() {
                     element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
 
                     if (element.value == "NORojo"){
-                        element.checked = true
+                        if ((isNumeric(pctPFE) &&  pctPFE != 0) || (isNumeric(pctPFE) && pctPFE > 10 &&  pctPFE != 0) || "> 97.5" == pctPFE){
+                            element.checked = true
+                        }
                     }
                 });
             }
@@ -2310,7 +2312,9 @@ $( document ).ready(function() {
                     element.checked = false
                     element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
                     if (element.value == "NORojo"){
-                        element.checked = true
+                        if ((isNumeric(pctPFE) &&  pctPFE != 0) || (isNumeric(pctPFE) && pctPFE > 10 &&  pctPFE != 0) || "> 97.5" == pctPFE){
+                            element.checked = true
+                        }
                     }
                 });
             }
@@ -4128,19 +4132,25 @@ $( document ).ready(function() {
             const elementsArray = Array.from(elements);
             
             if ((isNumeric(pctPFE) &&  pctPFE != 0) || (isNumeric(pctPFE) && pctPFE < 10 &&  pctPFE != 0) || "< 2.5" == pctPFE){
+
                 elementsArray.forEach(element => {
                     if (element.value == "SIRojo"){
                         element.checked = true
                         element.parentElement.children[1].classList.add("text-danger", "font-weight-bold")
                     }
                 });
+
             } else {
+
                 elementsArray.forEach(element => {
+
                     element.checked = false
                     element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
 
                     if (element.value == "NORojo"){
-                        element.checked = true
+                        if ((isNumeric(pctPFE) &&  pctPFE != 0) || (isNumeric(pctPFE) && pctPFE > 10 &&  pctPFE != 0) || "> 97.5" == pctPFE){
+                            element.checked = true
+                        }
                     }
 
                 });
@@ -5759,6 +5769,7 @@ $(document).ready(function(){
                     if (element.value == "NORojo"){
                         element.checked = true
                     }
+
                 });
 
                 the("liquido.ila.percentil").value = resultado;
@@ -8375,7 +8386,9 @@ function pctpfe() {
 
                 if (element.value == "NORojo"){
 
-                    element.checked = true
+                    if ((isNumeric(pctPFE) &&  pctPFE != 0) || (isNumeric(pctPFE) && pctPFE > 10 &&  pctPFE != 0) || "> 97.5" == pctPFE){
+                        element.checked = true
+                    }
 
                 }
 
@@ -8456,7 +8469,9 @@ function pctpfeMorfologia() {
                 element.parentElement.children[1].classList.remove("text-danger", "font-weight-bold")
 
                 if (element.value == "NORojo"){
-                    element.checked = true
+                    if ((isNumeric(pctPFE) &&  pctPFE != 0) || (isNumeric(pctPFE) && pctPFE > 10 &&  pctPFE != 0) || "> 97.5" == pctPFE){
+                        element.checked = true
+                    }
                 }
 
             });
