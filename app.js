@@ -308,13 +308,6 @@ $( document ).ready(function() {
         }
     })
 
-    the("iraT21Rapido").onchange = function(){
-        if (this.checked == true){
-            document.location.hash = "#enconstruccion"
-        }
-        this.checked == false
-    }
-
     the("calculador.oms").onchange = function(){
         if (this.checked == true){
             var URL = "http://srhr.org/fetalgrowthcalculator";
