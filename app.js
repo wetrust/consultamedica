@@ -6709,6 +6709,20 @@ $(document).ready(function(){
         } else if (this.value == "NORojo") {
             this.parentElement.parentElement.children[0].children[1].classList.remove("text-danger", "font-weight-bold")
         }
+
+        if (this.value == "siAdicionalDoppler") {
+            the("art.umb.div").classList.remove("d-none");
+            the("art.cm.div").classList.remove("d-none");
+            the("ind.cp.div").classList.remove("d-none");
+            the("dv.div").classList.remove("d-none");
+            the("p.sis.div").classList.remove("d-none");
+        } else if (this.value == "noAdicionalDoppler") {
+            the("art.umb.div").classList.add("d-none");
+            the("art.cm.div").classList.add("d-none");
+            the("ind.cp.div").classList.add("d-none");
+            the("dv.div").classList.add("d-none");
+            the("p.sis.div").classList.add("d-none");
+        }
     });
 
     the("verElIlaEscondido").onclick = function(){
@@ -6932,22 +6946,6 @@ $(document).ready(function(){
     });
 
 })
-
-the("verAdicionalDopplerFetal").onclick = function(){
-    if (this.checked == true){
-        the("art.umb.div").classList.remove("d-none");
-        the("art.cm.div").classList.remove("d-none");
-        the("ind.cp.div").classList.remove("d-none");
-        the("dv.div").classList.remove("d-none");
-        the("p.sis.div").classList.remove("d-none");
-    } else {
-        the("art.umb.div").classList.add("d-none");
-        the("art.cm.div").classList.add("d-none");
-        the("ind.cp.div").classList.add("d-none");
-        the("dv.div").classList.add("d-none");
-        the("p.sis.div").classList.add("d-none");
-    }
-}
 
 function infPrecoz(){
 

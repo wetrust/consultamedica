@@ -6253,12 +6253,17 @@
                                 <input type="text" class="form-control" id="lc.pct.ecoEstructural" disabled>
                             </div>
                         </div>
-                        <div class="d-flex h-100">
-                            <div class="form-check">
-                                <input class="form-check-input border border-dark" type="checkbox" value="verAdicionalDopplerFetal" id="verAdicionalDopplerFetal">
-                                <label class="form-check-label" for="verAdicionalDopplerFetal">
-                                    <strong>B) Adicional Dopper fetal</strong>
-                                </label>
+                        <div class="form-group row">
+                            <label for="verAdicionalDopplerFetal" class="col-sm-3 col-form-label"><strong>B) Adicional Dopper fetal</strong></label>
+                            <div class="col-6 col-lg-2">
+                                <div class="form-group">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label"><input class="form-check-input" type="radio" checked="checked" name="verAdicionalDopplerFetal" value="siAdicionalDoppler" id="verAdicionalDopplerFetal"><strong>Si</strong></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label"><input class="form-check-input" type="radio" name="verAdicionalDopplerFetal" value="noAdicionalDoppler" checked=""><strong>No</strong></label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row d-none" id="art.umb.div">

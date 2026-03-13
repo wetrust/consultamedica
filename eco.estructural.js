@@ -29,7 +29,6 @@ the("liquido.semi.ecoEstructural").onkeyup = function(){
     }
 }
 
-
 the("dbp.ecoEstructural").onkeyup = function(){
     'use strict';
     let a = [], b = [];
@@ -40,15 +39,18 @@ the("dbp.ecoEstructural").onkeyup = function(){
     let eg = the("semanas").value;
     let dbp = this.value;
     let dof = the("dof.ecoEstructural").value;
-        
+
     dbp = dbp.toString();
     dbp = dbp.replace(",", ".");
     dbp = parseFloat(dbp);
-    
+
     if (eg < 12 || eg > 40){
+
         the("dbp.pct.ecoEstructural").value
         ajustarProgreso(0, "dbpEcoEstructural");
+
     } else {
+
         eg = eg - 12;
         eg = parseInt(eg);
 
@@ -56,6 +58,7 @@ the("dbp.ecoEstructural").onkeyup = function(){
         var dos = dbp - a[eg];
         var resultado = (parseInt(95 / (uno) * (dos) + 3));
         ajustarProgreso(resultado, "dbpEcoEstructural");
+
         var pctDBP = '';
         //truncador de Pct, sobre 100 o bajo 1
         if (resultado > 99){
@@ -273,10 +276,10 @@ the("dof.ecoEstructural").onkeyup = function(){
 
         //truncador de Pct, sobre 100 o bajo 1
         if (resultado > 99){
-            pctDOF = '&gt; 99';
+            pctDOF = '> 99';
         }
         else if (resultado < 1){
-            pctDOF = '&lt; 1';
+            pctDOF = '< 1';
         }
         else{
             pctDOF = resultado;
@@ -290,8 +293,141 @@ the("dof.ecoEstructural").onkeyup = function(){
         the("dof.pct.ecoEstructural").value = "";
 
     }
+
+    let dbp = the("dbp.ecoEstructural").value;
+
+    if (dbp > 0 && dof > 0){
+        var valor = ((dbp/dof)*100);
+        the("dof.ic.ecoEstructural").value = valor.toFixed(0) + "%";
+    } else {
+        the("dof.ic.ecoEstructural").value = "";
+    }
 }
 
+the("tc.ecoEstructural").onkeyup = function(){
+    /* 3 97*/
+    //cerebelo segun Hill
+    var pct2ds = [];
+    var pctmedia = [];
+    var pct2dsmas = [];
+    
+    pct2ds[0] = 12;pct2ds[1] = 14;pct2ds[2] = 15;pct2ds[3] = 16;pct2ds[4] = 17;pct2ds[5] = 18;
+    pct2ds[6] = 19;pct2ds[7] = 20;pct2ds[8] = 21;pct2ds[9] = 22;pct2ds[10] = 24;
+    pct2ds[11] = 26;pct2ds[12] = 27;pct2ds[13] = 29;pct2ds[14] = 30;pct2ds[15] = 31;
+    pct2ds[16] = 33;pct2ds[17] = 36;pct2ds[18] = 37;pct2ds[19] = 38;pct2ds[20] = 40;
+    pct2ds[21] = 40;pct2ds[22] = 40;pct2ds[23] = 41;pct2ds[24] = 42;pct2ds[25] = 44;
+    
+    pctmedia[0] = 15;pctmedia[1] = 16;pctmedia[2] = 17;pctmedia[3] = 18;pctmedia[4] = 20;
+    pctmedia[5] = 20;pctmedia[6] = 22;pctmedia[7] = 23;pctmedia[8] = 24;pctmedia[9] = 26;
+    pctmedia[10] = 28;pctmedia[11] = 30;pctmedia[12] = 31;pctmedia[13] = 33;pctmedia[14] = 34;
+    pctmedia[15] = 37;pctmedia[16] = 39;pctmedia[17] = 41;pctmedia[18] = 43;pctmedia[19] = 46;
+    pctmedia[20] = 47;pctmedia[21] = 49;pctmedia[22] = 51;pctmedia[23] = 51;pctmedia[24] = 52;
+    pctmedia[25] = 52
+        
+    pct2dsmas[0] = 18;pct2dsmas[1] = 18;pct2dsmas[2] = 19;pct2dsmas[3] = 20;pct2dsmas[4] = 22;
+    pct2dsmas[5] = 23;pct2dsmas[6] = 25;pct2dsmas[7] = 26;pct2dsmas[8] = 27;pct2dsmas[9] = 30;
+    pct2dsmas[10] = 32;pct2dsmas[11] = 34;pct2dsmas[12] = 34;pct2dsmas[13] = 37;pct2dsmas[14] = 38;
+    pct2dsmas[15] = 41;pct2dsmas[16] = 43;pct2dsmas[17] = 46;pct2dsmas[18] = 48;pct2dsmas[19] = 53;
+    pct2dsmas[20] = 56;pct2dsmas[21] = 58;pct2dsmas[22] = 60;pct2dsmas[23] = 62;pct2dsmas[24] = 62;
+    pct2dsmas[25] = 62;
+
+    var cb = 0;
+    let eg = the("semanas").value;
+    cb = parseInt(this.value);
+
+    if (eg < 15 ||eg > 40) {
+        the("tc.pct.ecoEstructural").value = 0
+        ajustarProgreso(0, "tcecoEstructural");
+    }else {
+        eg = eg - 15;
+        eg = parseInt(eg);
+        var uno=pct2dsmas[eg] - pct2ds[eg];
+        var dos=cb - pct2ds[eg];
+        var resultado = parseInt(95 / (uno) * (dos) + 3);
+        var pctCB = '';
+
+        the("tc.pct.real.ecoEstructural").value = resultado;
+        ajustarProgreso(resultado, "tcecoEstructural");
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 97){
+            pctCB = '> 97';
+        }
+        else if (resultado < 3){
+            pctCB = '< 3';
+        }
+        else{
+            pctCB = resultado;
+        }
+
+        the("tc.pct.ecoEstructural").value = resultado;
+
+        ajustarProgreso(resultado, "tcMorfologia");
+    }
+}
+
+the("cm.ecoEstructural").onkeyup = function(){
+    /* esta es 5 95 corregir el algoritmo de calculo de porcentaje*/
+    var cisM10 = [];
+    var cisM90 = [];
+
+    cisM10[14] = 1.69; cisM10[15] = 2.1; cisM10[16] = 2.4; cisM10[17] = 2.6;
+    cisM10[18] = 2.8; cisM10[19] = 3.1; cisM10[20] = 3.3; cisM10[21] = 3.5;
+    cisM10[22] = 3.7; cisM10[23] = 3.9; cisM10[24] = 4.1; cisM10[25] = 4.3;
+    cisM10[26] = 4.4; cisM10[27] = 4.6; cisM10[28] = 4.7; cisM10[29] = 4.9;
+    cisM10[30] = 5.0; cisM10[31] = 5.1; cisM10[32] = 5.2; cisM10[33] = 5.3;
+    cisM10[34] = 5.3; cisM10[35] = 5.4; cisM10[36] = 5.4; cisM10[37] = 5.4;
+    cisM10[38] = 5.5; cisM10[39] = 5.5;
+
+    cisM90[14] = 5.3; cisM90[15] = 5.7; cisM90[16] = 6; cisM90[17] = 6.3;
+    cisM90[18] = 6.6; cisM90[19] = 6.9; cisM90[20] = 7.2; cisM90[21] = 7.5;
+    cisM90[22] = 7.7; cisM90[23] = 8; cisM90[24] = 8.2; cisM90[25] = 8.5;
+    cisM90[26] = 8.7; cisM90[27] = 8.9; cisM90[28] = 9.1; cisM90[29] = 9.3;
+    cisM90[30] = 9.4; cisM90[31] = 9.6; cisM90[32] = 9.7; cisM90[33] = 9.8;
+    cisM90[34] = 9.9; cisM90[35] = 10; cisM90[36] = 10; cisM90[37] = 10.1;
+    cisM90[38] = 10.1; cisM90[39] = 10.1;
+
+    let eg = the("semanas").value;
+    let cm = this.value;
+
+    cm = cm.toString();
+    cm = cm.replace(",", ".");
+    cm = parseFloat(cm);
+
+    if (eg < 14 ||eg > 39) {
+
+        the("cm.pct.ecoEstructural").value = 0
+        ajustarProgreso(0, "cmecoEstructural");
+
+    }else {
+
+        eg = parseInt(eg);
+        var uno = cisM90[eg] - cisM10[eg];
+        var dos = cm - cisM10[eg];
+        var resultado = (parseInt(90 / (uno) * (dos) + 5));
+
+        the("cm.pct.real.ecoEstructural").value = resultado;
+
+        var pctCISM = '';
+        //truncador de Pct, sobre 100 o bajo 1
+        if (resultado > 95){
+            pctCISM = '> 95';
+        }
+        else if (resultado < 5){
+            pctCISM = '< 5';
+        }
+        else{
+            pctCISM = resultado;
+        }
+
+        the("cm.pct.ecoEstructural").value = pctCISM;
+
+    }
+}
+
+//Flujometría
+the("art.ut.d.ecoEstructural").onkeyup = function(){
+
+}
 
 function bvmTxt(valor){
     'use strict';
@@ -312,7 +448,6 @@ function bvmTxt(valor){
         }
     }
 }
-
 
 function psohdlk() {
 
