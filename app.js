@@ -6905,9 +6905,6 @@ $(window).on('hashchange', function(){
 
 });
 
-
-
-
 // Guardar para partos
 $(document).ready(function(){
 
