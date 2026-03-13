@@ -3629,27 +3629,32 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <h5>Evaluación adicional de Cervicometría y Flujometría Doppler de arterias uterinas</h5>
-                                    </div>
-                                    <div class="col mb-2" style="max-width: 27.8%;">
-                                        <label>Largo Cervical</label>
-                                    </div>
-                                    <div class="col mb-2 " style="max-width: 27.8%;">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input type="number" class="form-control" id="largo.cervical.segundo" min="1" max="999">
-                                            <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                </div>
+                                <h5  class="mt-3 mb-0">Evaluación adicional de Cervicometría y Flujometría Doppler de arterias uterinas</h5>
+                                <div class="card mb-3" style="border-width: 2px;border-radius: 40px;border-color: #000;">
+                                    <div class="card-body pl-4">
+                                        <div class="row">
+                                            <div class="col mb-2" style="max-width: 27.8%;">
+                                                <label>Largo Cervical</label>
+                                            </div>
+                                            <div class="col mb-2 " style="max-width: 27.8%;">
+                                                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                    <input type="number" class="form-control" id="largo.cervical.segundo" min="1" max="999">
+                                                    <div class="input-group-append"><div class="input-group-text">mm</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-2 align-self-center" style="padding-right: 7em;">
+                                                <div class="alert border-info mb-0 p-2 d-none ml-auto text-center" id="info.cervix" style="max-width: 220px;"></div>
+                                            </div>
+                                            <div class="col-12"></div>
+                                            <div class="col form-group"><label>IP. Uterina derecha</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_derecha"><div class="input-group-prepend"><div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div>
+                                            <div class="col form-group"><label>IP. Uterina izquierda</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div>
+                                            <div class="col form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div>
+                                            <div class="col-2 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div>
                                         </div>
                                     </div>
-                                    <div class="col mb-2 align-self-center" style="padding-right: 7em;">
-                                        <div class="alert border-info mb-0 p-2 d-none ml-auto text-center" id="info.cervix" style="max-width: 220px;"></div>
-                                    </div>
-                                    <div class="col-12"></div>
-                                    <div class="col form-group"><label>IP. Uterina derecha</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_derecha"><div class="input-group-prepend"><div class="input-group-text" id="respuesta_uterina_derecha_percentil"></div></div></div></div>
-                                    <div class="col form-group"><label>IP. Uterina izquierda</label><div class="input-group"><input type="text" class="form-control" id="respuesta_uterina_izquierda"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_izquierda_percentil"></div></div></div></div>
-                                    <div class="col form-group"> <label>IP. Uterinas promedio</label> <div class="input-group"> <input type="text" class="form-control bg-secondary text-white" id="respuesta_uterina_promedio" disabled=""> <input type="hidden" id="respuesta_uterina_promedio_rango"> <div class="input-group-prepend"> <div class="input-group-text" id="respuesta_uterina_promedio_percentil"></div></div></div></div>
-                                    <div class="col-2 pt-4"><button class="btn btn-outline-info" id="graficoUterinasCrecimiento">Ver Gráficas</button></div>
                                 </div>
+
                                 <h5 class="mt-3 mb-0">Opcional Valoración de multiples exámenes ecográficos</h5>
                                 <div class="card mb-3" style="border-width: 2px;border-radius: 40px;border-color: #000;">
                                     <div class="card-body pl-4">
@@ -6248,8 +6253,15 @@
                                 <input type="text" class="form-control" id="lc.pct.ecoEstructural" disabled>
                             </div>
                         </div>
-                        <p><strong>B) Adicional Dopper fetal</strong></p>
-                        <div class="form-group row">
+                        <div class="d-flex h-100">
+                            <div class="form-check">
+                                <input class="form-check-input border border-dark" type="checkbox" value="verAdicionalDopplerFetal" id="verAdicionalDopplerFetal">
+                                <label class="form-check-label" for="verAdicionalDopplerFetal">
+                                    <strong>B) Adicional Dopper fetal</strong>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group row d-none" id="art.umb.div">
                             <label for="art.umb.ecoEstructural" class="col-sm-3 col-form-label">IP Arteria Umbilical</label>
                             <div class="col-6 col-lg-3">
                                 <div class="input-group mb-2 shadow rounded">
@@ -6269,7 +6281,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row d-none" id="art.cm.div">
                             <label for="art.cm.ecoEstructural" class="col-sm-3 col-form-label">IP Arteria cerebral media</label>
                             <div class="col-6 col-lg-3">
                                 <div class="input-group mb-2 shadow rounded">
@@ -6289,7 +6301,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row d-none" id="ind.cp.div">
                             <label for="ind.cp.ecoEstructural" class="col-sm-3 col-form-label">IP Índice cerebro placentario</label>
                             <div class="col-6 col-lg-3">
                                 <div class="input-group mb-2 shadow rounded">
@@ -6309,7 +6321,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row d-none" id="dv.div">
                             <label for="dv.ecoEstructural" class="col-sm-3 col-form-label">Ductus venoso</label>
                             <div class="col-6 col-lg-3">
                                 <div class="input-group mb-2 shadow rounded">
@@ -6329,7 +6341,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row d-none" id="p.sis.div">
                             <label for="p.sis.ecoEstructural" class="col-sm-3 col-form-label">Peak sistólico de ACM</label>
                             <div class="col-6 col-lg-3">
                                 <div class="input-group mb-2 shadow rounded">
