@@ -1007,13 +1007,10 @@ $( document ).ready(function() {
         let cV = +this.value;
         if (cV == NaN){
             the("info.cervix").innerHTML = "";
-            the("info.cervix").classList.add("d-none");
         }else if (cV < 25){
             the("info.cervix").innerHTML ='<p class="mb-0">Cérvix corto</p>';
-            the("info.cervix").classList.remove("d-none");
         }else if(cV > 24){
             the("info.cervix").innerHTML ='<p class="mb-0">Cérvix normal</p>';
-            the("info.cervix").classList.remove("d-none");
         }
         comentarioSegundoTrimestre()
     })
