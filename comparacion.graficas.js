@@ -15,7 +15,7 @@ the("ver.ref.otro").onclick = function(){
 
 the("comparacion.graficas.no").onclick = function(){
 
-    let listOne = ["comparacion.graficas.div", "ver.ref.otro.container", "opcional.flujometria.basico.div", "opcional.flujometria.basico"]
+    let listOne = ["comparacion.graficas.div", "ver.ref.otro.container", "opcional.flujometria.basico.div", "opcional.flujometria.basico", "opcional.comparacion"]
     let listTwo = ["comparacion.graficas.div", "opcional.flujometria.basico.div"]
 
     listOne.forEach(item => {
@@ -30,7 +30,7 @@ the("comparacion.graficas.no").onclick = function(){
 
 the("comparacion.graficas.si").onclick = function(){
 
-    let listOne = ["comparacion.graficas.div", "ver.ref.otro.container", "opcional.flujometria.basico.div", "opcional.flujometria.basico"]
+    let listOne = ["comparacion.graficas.div", "ver.ref.otro.container", "opcional.flujometria.basico.div", "opcional.flujometria.basico", "opcional.comparacion"]
     let listTwo = ["comparacion.graficas.div", "opcional.flujometria.basico.div"]
 
     listOne.forEach(item => {
