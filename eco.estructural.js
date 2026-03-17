@@ -1,4 +1,5 @@
 import { the, these } from "./wetrust.js";
+import { percentilOMS } from "./graficoPFEMasMenos.js?H"
 
 the("liquido.semi.ecoEstructural").onkeyup = function(){
     let suma = this.value
@@ -424,6 +425,15 @@ the("cm.ecoEstructural").onkeyup = function(){
     }
 }
 
+the("pfe.ecoEstructural").onkeyup = function(){
+    pctpfe()
+}
+
+
+the("sexo.ecoEstructural").onchange = function(){
+    pctpfe()
+}
+
 //Flujometría
 the("art.ut.d.ecoEstructural").onkeyup = function(){
 
@@ -476,7 +486,7 @@ function pctpfe() {
     let a = [], b = [];
     let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
 
-    let sexo = the("ecografia.segtrim.sexo").value
+    let sexo = the("sexo.ecoEstructural").value
     if (sexo == "masculino"){
         sexo = "men"
         a = Math.exp(-.52610096513854 + eg * (.44906549056954 + eg * (-.0089009550762548 + eg * (9868293523919e-17 + eg * -6.1862373692705e-7))))
@@ -498,12 +508,12 @@ function pctpfe() {
     let pfe = parseInt(the("pfe.ecoEstructural").value);
     if (eg < 14 || eg > 40) {
         the("pfe.pct.ecoEstructural").value = 0
-        ajustarProgreso(0, "pcecoEstructural");
+        ajustarProgreso(0, "pfeecoEstructural");
     } else {
         var pctPFE = percentilOMS(pfe,eg, sexo);
         pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
         the("pfe.pct.ecoEstructural").value = pctPFE
-        ajustarProgreso(pctPFE, "pcecoEstructural");
+        ajustarProgreso(pctPFE, "pfeecoEstructural");
         return true
     }
 

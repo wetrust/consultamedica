@@ -4378,7 +4378,7 @@
                     </div>
                 </a>
 
-                <div class="row d-none" style="top: 1210px; position: absolute;background-color:#e1f0ff;" id="opcional.comparacion">
+                <div class="row d-none" style="top: 1210px; position: absolute;" id="opcional.comparacion">
                     <div class="col-8">
                         <p><em>Agregar exámenes</em></p>
                     </div>
@@ -4391,7 +4391,7 @@
                     <div class="col-4">
                         <button id="comparador.eliminar" type="button" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16"><path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/></svg></button>
                     </div>
-                    <div class="col-8"><p><em>Tablas y graficas</em></p></div>
+                    <div class="col-8"><p><em>Ver tablas y graficas</em></p></div>
                     <div class="col-4">
                         <button id="obtener.valores" type="button" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/></svg></button>
                     </div>
@@ -5566,7 +5566,7 @@
                                     </div>
                                 </div>
                                 <hr style="border-top:solid 1px black;">
-                                <div class="d-flex flex-row justify-content-md-center morfologia-ecosegundo-gris border rounded-pill p-3 mb-2">
+                                <div class="d-flex flex-row justify-content-md-centermorfologia-ecosegundo-gris-claro border rounded-pill p-3 mb-2">
                                     <div class="mb-0">
                                         <ul class="mb-0">
                                             <li class="mb-0 lead"><em><strong>Fuera del metaanálisis, hallazgos ecográficos clínicamente relevantes en el tamizaje  de segundo trimestre:</strong></em></li>
@@ -5675,7 +5675,7 @@
                                 <div class="d-flex flex-row justify-content-md-center morfologia-ecosegundo-gris-claro rounded-pill p-1 mt-3">
                                     <div class="mb-0">
                                         <ul class="mb-0">
-                                            <li class="mb-0 lead"><em><strong>Los algoritmos son herramientas que ayudan a tomar decisiones, idealmente acompañados de un buen juicio clínico</strong></em></li>
+                                            <li class="mb-0 lead"><em><strong>Los algoritmos son herramientas que ayudan a tomar decisiones, idealmente acompañados de un buen juicio clínico.</strong></em></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -6119,7 +6119,7 @@
                                         <input type="text" class="form-control" id="dof.ic.ecoEstructural" disabled>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-3">
+                                <div class="form-group row d-none">
                                     <label class="col-12 col-lg-3 col-form-label">Transverso cerebeloso</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow rounded">
@@ -6139,7 +6139,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row my-3">
+                                <div class="form-group row d-none">
                                     <label class="col-12 col-lg-3 col-form-label">Cisterna magna</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow rounded">
@@ -6160,10 +6160,20 @@
                                     </div>
                                 </div>
                                 <div class="form-group row my-3">
-                                    <label class="col-12 col-lg-3 col-form-label">Peso Fetal estimado</label>
+                                    <label class="col-12 col-lg-3 col-form-label">Sexo fetal</label>
+                                    <div class="col-6 col-lg-3 px-lg-1">
+                                        <select class="form-control" id="sexo.ecoEstructural">
+                                            <option value="desconocido">Desconocido</option>
+                                            <option value="femenino">Masculino</option>
+                                            <option value="masculino">Femenino</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row my-3">
+                                    <label class="col-12 col-lg-3 col-form-label">PFE categorizado por curva OMS</label>
                                     <div class="col-6 col-lg-3 px-lg-1">
                                         <div class="input-group mb-2 shadow rounded">
-                                            <input type="number" class="form-control border-0" id="pfe.ecoEstructural" disabled>
+                                            <input type="number" class="form-control border-0" id="pfe.ecoEstructural">
                                             <div class="input-group-append">
                                                 <div class="input-group-text border-0">grs</div>
                                             </div>
