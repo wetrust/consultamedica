@@ -429,15 +429,13 @@ the("pfe.ecoEstructural").onkeyup = function(){
     pctpfe()
 }
 
-
-the("sexo.ecoEstructural").onchange = function(){
-    pctpfe()
-}
-
 //Flujometría
 the("art.ut.d.ecoEstructural").onkeyup = function(){
 
 }
+
+let sexo_ecoEstructural = these("sexo.ecoEstructural")
+sexo_ecoEstructural.forEach(input => { input.parentElement.onchange = function(){pctpfe()}})
 
 function bvmTxt(valor){
     'use strict';
@@ -486,17 +484,19 @@ function pctpfe() {
     let a = [], b = [];
     let eg = Number(the("semanas").value) + (0 + (Number(the("dias").value) || 0)) / 7;
 
-    let sexo = the("sexo.ecoEstructural").value
-    if (sexo == "masculino"){
-        sexo = "men"
+    let _sexo = these("sexo.ecoEstructural")
+    _sexo.forEach(alter => { return (alter.checked == true) ? _sexo = alter.value : false })
+
+    if (_sexo == "masculino"){
+        _sexo = "men"
         a = Math.exp(-.52610096513854 + eg * (.44906549056954 + eg * (-.0089009550762548 + eg * (9868293523919e-17 + eg * -6.1862373692705e-7))))
         b = Math.exp(.79018076483077 + eg * (.32585025131141 + eg * (-.0025559098706069 + eg * (-42038969571238e-18 + eg * 5.4228420412733e-7))))
-    } else if (sexo == "femenino"){
-        sexo = "wom"
+    } else if (_sexo == "femenino"){
+        _sexo = "wom"
         a = Math.exp(-.915523725804273 + eg * (.529374415518249 + eg * (-.0147446585943781 + eg * (.000269201219853759 + eg * -23537061714461e-19))))
         b = Math.exp(.32551154984358 + eg * (.40214557617585 + eg * (-.0074145176202411 + eg * (88196644838898e-18 + eg * -7.1015932637436e-7))))
     } else {
-        sexo = "z"
+        _sexo = "z"
         a = Math.exp(-.230518383014592 + eg * (.400511116318458 + eg * (-.00617993235833267 + eg * (316595762972649e-19 + eg * 0))))
         b = Math.exp(.408170594889372 + eg * (.381068214664342 + eg * (-.00550913922743603 + eg * (246713147783532e-19 + eg * 0))));
     }
@@ -510,7 +510,7 @@ function pctpfe() {
         the("pfe.pct.ecoEstructural").value = 0
         ajustarProgreso(0, "pfeecoEstructural");
     } else {
-        var pctPFE = percentilOMS(pfe,eg, sexo);
+        var pctPFE = percentilOMS(pfe,eg, _sexo);
         pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
         the("pfe.pct.ecoEstructural").value = pctPFE
         ajustarProgreso(pctPFE, "pfeecoEstructural");

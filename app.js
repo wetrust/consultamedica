@@ -6697,7 +6697,7 @@ $(document).ready(function(){
 
         if (this.value == "no" || this.value == "anormal"){
             this.parentElement.parentElement.parentElement.children[1].value = "Comentario: "
-        }else{
+        }else if (the("morfologiafet").classList.contains("d-none") == false){
             this.parentElement.parentElement.parentElement.children[1].value = ""
         }
 
