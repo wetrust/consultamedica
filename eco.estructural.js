@@ -22,13 +22,102 @@ the("liquido.semi.ecoEstructural").onkeyup = function(){
         var dos = bvm - a[eg];
         var resultado = parseInt(90 / (uno) * (dos) + 5);
         the("liquido.semi.pct.ecoEstructural").value = resultado;
-        ajustarProgreso(resultado, "bvmMorfologia.ecoEstructural");
 
     }else{
         the("liquido.semi.pct.ecoEstructural").value = ""
-        ajustarProgreso(0, "bvmMorfologia.ecoEstructural");
     }
 }
+
+the("graficoBVM.ecoEstructural").onclick =  function() {
+        var edadGestacional = the("semanas").value;
+
+        if (edadGestacional < 16){
+            alert("Edad Gestacional inferior a 16 semanas");
+            return false;
+        }
+
+        var modal = makeModal();
+        document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+        the(modal.titulo).innerText = "Gráfico BVM";
+        the(modal.contenido).innerHTML = '<div id="graficoBVMView"></div>';
+        the(modal.id).children[0].classList.remove("modal-lg");
+
+        $('#'+modal.id).modal("show").on('hidden.bs.modal', function (e) {
+            $(this).remove();
+        });
+
+        $('#graficoBVMView').highcharts({
+                 chart: {
+                 height: 250
+             },
+             title: {
+                 text: 'BVM de Líquido Amniótico ***',
+                 x: -20,
+                     style: {
+                 fontSize: '14px'
+             }
+             },
+             plotOptions: {
+                 series: {
+                     enableMouseTracking: false
+                 }
+             },
+                 legend: {
+                 itemStyle: {
+                     fontSize: '10px',
+                     fontWeight:'normal'
+                 }
+             },
+             yAxis: {
+                 title: { text: 'Milimetros (mm)' },
+                 tickPositions: [5, 16, 27, 38, 49, 60, 71, 82, 93, 104]
+             },
+             colors: ['#313131','#313131','#313131'],
+             xAxis: {
+                 categories: ['16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+             },
+             credits: {enabled:false},
+             series: [{
+                 type: "line",
+                 name: 'Pct. 5',
+                 dashStyle: "Dot",
+                 marker: {enabled:false},
+                 data: [23,25,27,28,29,29,30,30,30,30,30,30,30,29,29,29,29,29,28,28,27,26,24,23,21]
+             }, {
+                 type: "line",
+                 name: 'Pct. 95',
+                 dashStyle: "Dot",
+                 marker: { enabled: false },
+                 data: [59,62,64,66,67,68,68,68,68,68,68,69,69,69,69,70,71,72,72,72,71,70,68,66,62]
+             }, {
+                 type: "line",
+                 name: 'BVM',
+                 dashStyle: "Dot",
+                 marker: { symbol: 'square' },
+                 lineWidth: 0,
+                 data: (
+                    function () {
+                         var data = [];
+                         var edadGest = the("semanas").value;
+     
+                         for (i = 16; i < edadGest; i ++ ) {
+                             data.push({
+                                 y: 0,
+                             });
+                         }
+                         data.push({
+                            y: Number(the("liquido.semi.pct.ecoEstructural").value),
+                            });
+                         for (i = edadGest +1; i <= 39; i ++ ) {
+                             data.push({
+                                 y: 0,
+                             });
+                         }
+                         return data;
+                     }())
+                 }]
+         });
+};
 
 the("dbp.ecoEstructural").onkeyup = function(){
     'use strict';
@@ -538,4 +627,36 @@ function ajustarProgreso(valor, objeto){
     valor = (isNaN(valor)== true) ? 0 : valor;
 	valor = valor + "%";
 	the(objeto).children[0].style.width = valor;
+}
+
+function makeModal(button){
+    let id = uuidv4();
+    let titulo = uuidv4();
+    let contenido = uuidv4();
+    let _button = uuidv4();
+    let button_string = "";
+    
+    if (typeof button !== typeof undefined){
+        button_string = '<button type="button" class="btn btn-primary" id="'+_button+'" data-modal="'+id+'">'+button+'</button>';
+    }
+    
+    let resultado ={
+        id:id,
+        titulo:titulo,
+        contenido:contenido,
+        button:_button,
+        modal:'<div class="modal fade" tabindex="-1" role="dialog" id="'+id+'"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="'+titulo+'">Modal title</h5></div><div class="modal-body" id="'+contenido+'"></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>'+ button_string+'</div></div></div></div>'
+    }
+        
+    return resultado;
+}
+
+function uuidv4() {
+    //genera un uuid
+    let uid = ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    )
+
+    // genera infinitamente uuid mientras no comience con una letra
+    if (isNaN(uid.charAt(0))){ return uid } else { return uuidv4() }
 }

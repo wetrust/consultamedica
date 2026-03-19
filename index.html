@@ -5819,8 +5819,8 @@
                 <div class="card">
                     <div class="card-body pb-5">
                         <div class="alert alert-dismissible fade show text-center" role="alert">
-                                <p class="mb-0">- Tres biometríaas; Perímetro de cráneo, abodmen y longitud femoral.</p>
-                                <p class="mb-0">- Peso Fetal Estimado (PFE) mediante formula de Hadlock 3.</p>
+                                <p class="mb-0">- Con tres biometrías; Perímetro de cráneo, abodmen y longitud femoral.</p>
+                                <p class="mb-0">- Se obtiene peso Fetal Estimado (PFE) mediante formula de Hadlock 3.</p>
                                 <p class="mb-0">- Categorización del PFE mediante curva de OMS, con ajuste según sexo fetal.</p>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -5899,7 +5899,7 @@
                             </div>
                         </div>
                         <div class="row my-3">
-                            <div class="col-12 col-sm-6">
+                            <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <label for="liquido.cualitativo.ecoEstructural" class="col-12 col-form-label">Liquido amniótico Medicion cualitativa</label>
                                     <div class="col-12">
@@ -5911,6 +5911,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-12 col-sm-2"></div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group row">
                                     <label for="liquido.semi.ecoEstructural" class="col-12 col-form-label">Liquido Amniótico Medicion Única Bolsillo Mayor (BVM)</label>
@@ -5926,14 +5927,12 @@
                                         <input type="text" class="form-control" id="liquido.semi.pct.ecoEstructural" disabled>
                                     </div>
                                     <div class="col-12 col-lg-5">
-                                        <div class="progress my-3 border" id="bvmMorfologia.ecoEstructural">
-                                            <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
+                                        <button class="btn btn-outline-info" id="graficoBVM.ecoEstructural">Gráfica BVM</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <p class="text-muted"><small>- Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p>
+                                <p class="text-primary"><small>- Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p>
                             </div>
                         </div>
                         <div>
@@ -6193,13 +6192,11 @@
                                         <input type="text" class="form-control" id="pfe.pct.ecoEstructural" disabled>
                                         <input type="hidden" class="form-control" id="pfe.pct.real.ecoEstructural">
                                     </div>
-
                                     <div class="col-12 col-lg-4 px-lg-1">
                                         <div class="input-group mb-2 shadow rounded">
                                             <input type="text" class="form-control border-0 text-center" id="pfeecoEstructural">
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="col-12">
