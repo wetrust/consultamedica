@@ -508,12 +508,22 @@ function pctpfe() {
     let pfe = parseInt(the("pfe.ecoEstructural").value);
     if (eg < 14 || eg > 40) {
         the("pfe.pct.ecoEstructural").value = 0
-        ajustarProgreso(0, "pfeecoEstructural");
     } else {
         var pctPFE = percentilOMS(pfe,eg, _sexo);
         pctPFE = ("number" == typeof pctPFE) ? Math.round(pctPFE * 1000) : pctPFE
         the("pfe.pct.ecoEstructural").value = pctPFE
-        ajustarProgreso(pctPFE, "pfeecoEstructural");
+
+        if (pctPFE > 90 || pctPFE == "> 97.5"){
+            the("pfeecoEstructural").value = "grande"
+            the("pfeecoEstructural").classList.remove("text-danger")
+        }else if (pctPFE < 10 || pctPFE == "< 2.5"){
+            the("pfeecoEstructural").value = "pequeño"
+            the("pfeecoEstructural").classList.add("text-danger")
+        }else{
+            the("pfeecoEstructural").value = "adecuado"
+            the("pfeecoEstructural").classList.remove("text-danger")
+        }
+
         return true
     }
 
