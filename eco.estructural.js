@@ -106,7 +106,7 @@ the("graficoBVM.ecoEstructural").onclick =  function() {
                              });
                          }
                          data.push({
-                            y: Number(the("liquido.semi.pct.ecoEstructural").value),
+                            y: Number(the("liquido.semi.ecoEstructural").value),
                             });
                          for (i = edadGest +1; i <= 39; i ++ ) {
                              data.push({
