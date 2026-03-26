@@ -88,7 +88,7 @@ $(document).ready(function(){
         reiniciarMensajes();
         if (this.classList.contains("active") == false){
             reiniciaPuntitos();
-            the("menu.modulo.activo.cinco").classList.add("active");
+            the("menu.modulo.en.constru").classList.add("active");
             this.classList.add("active");
             ocultarPrincipal();
             the("mensaje.siete").classList.remove("d-none");
@@ -147,6 +147,8 @@ function reiniciaBotones(){
     the("menu.modulo.construccion").classList.remove("active");
     the("boton.acerca.de").classList.remove("active");
     the("menu.modulo.activo.cinco").classList.remove("active");
+    the("menu.modulo.en.constru").classList.remove("active");
+    the("menu.modulo.datos.parto").classList.remove("active");
 }
 
 function reiniciarMensajes(){
