@@ -1581,13 +1581,13 @@
                         <h5 class="mb-3">Ingresar a plataforma</h5>
                         <div class="d-flex justify-content-start align-items-center py-1">
                             <a class="btn btn-outline-dark rounded text-left w-100 my-1 active" href="#consulta" id="boton.datos.iniciales"><small><em>Configuración datos iniciales</em></small></a>
-                            <ul class="mb-0">
+                            <ul class="mb-0 personalizado">
                                 <li class="azul-li" id="punto.uno"></li>
                             </ul>
                         </div>
                         <div class="d-flex justify-content-between align-items-center py-1">
                             <a class="btn btn-outline-dark rounded text-left w-100 my-1 " id="menu.modulo.activo"><strong><em>Ecografía obstétrica Básica</em></strong></a>
-                            <ul class="mb-0">
+                            <ul class="mb-0 personali">
                                 <li class="azul-li" id="punto.dos"></li>
                             </ul>
                         </div>
@@ -1596,13 +1596,13 @@
                         <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.tres" href="#ecoDoppler" style="border-width: 2px;border-color: #000;"><small>&gt; Flujometría Doppler materno / fetal</small></a>
                         <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.activo.cuatro" href="#ecoGinecologica"><small>&gt; Ecografía Ginecológica adicional</small></a>
                         <div class="d-flex justify-content-between align-items-center py-1">
-                            <a class="btn btn-outline-dark rounded text-left w-100 my-1 " id="menu.modulo.en.constru"><small><em>Tamizaje 2° trimestre.(en construcción)</em></small></a>
+                            <a class="btn btn-outline-dark rounded text-left w-100 my-1 " id="menu.modulo.en.constru"><small><em>Modulo Tamizaje 2° trimestre.</em></small></a>
                             <ul class="mb-0">
-                                <li class="azul-li"></li>
+                                <li class="azul-li" id="punto.siete"></li>
                             </ul>
                         </div>
                         <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.en.constru.dos" href="#ecoEstructural" style="border-width: 2px;border-color: #000;"><small>&gt; Tamizaje ecográfico 20 - 24 semanas</small></a>
-                        <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.en.constru.uno" href="#enconstruccion" style="border-width: 2px;border-color: #000;"><small>&gt; Tamizaje de T-21 en 20 - 24 semanas</small></a>
+                        <a class="btn btn-outline-primary rounded text-left w-100 my-1 ml-3 d-none" id="menu.modulo.en.constru.uno" href="#enconstruccion" style="border-width: 2px;border-color: #000;"><small>&gt; Tamizaje T-21 de 2° trimestre (en construcción)</small></a>
                         <div class="d-flex justify-content-between align-items-center py-1">
                             <a class="btn btn-outline-dark rounded text-left w-100 my-1" id="menu.modulo.datos.parto"><small><em>Módulos Neonatales (en construcción)</em></small></a>
                             <ul class="mb-0">
@@ -1757,6 +1757,18 @@
                         <div class="row d-none" id="mensaje.seis">
                             <div class="col-12 text-center">
                                 <img src="img/modulo_neonatal.jpg" class="img-fluid w-75">
+                            </div>
+                        </div>
+                        <div class="row d-none" id="mensaje.siete">
+                            <div class="d-flex justify-content-center w-100">
+                                <ul>
+                                    <li>Tamizaje inicial de crecimiento</li>
+                                    <li>Tamizaje estructural 2º trimestre</li>
+                                    <li>Tamizaje de PE y Parto prematuro</li>
+                                </ul>
+                            </div>
+                            <div class="col-12 text-center">
+                                <img src="img/EcosTaMIZAJE2doTrimestre.png" class="img-fluid w-50">
                             </div>
                         </div>
                     </div>
@@ -2311,6 +2323,7 @@
                     <div class="mr-2"><label><small>años</small></label></div>
                 </div>
                 <hr>
+                <p class="text-primary text-center"><em>El módulo ecografía precoz ( menor 11 semanas ), tiene por objeto identificar el localización de saco gestacional, determinar vitalidad embrionaria<br> y edad gestacional, además valorar corionicidad en embarazos gemelares.</em></p>
                 <ul class="nav nav-tabs justify-content-center" role="tablist" id="ecoPrimTrim">
                     <li class="nav-item verde">
                         <a style="background-color:#009688 !important" class="nav-link active text-center" data-toggle="tab" href="#medidas-eco-prim" role="tab">Página 1 - Mediciones</a>
@@ -2333,7 +2346,7 @@
                         <div class="card mb-3 shadow-sm">
                             <div class="card-body">
                                 <div class="mb-3">
-                                    <div class="form-group form-check">
+                                    <div class="form-group form-check d-none">
                                         <input type="checkbox" class="form-check-input" id="ver.ecoPrimTrim">
                                         <label class="form-check-label text-primary" for="ver.ecoPrimTrim"><small>Indicación para ecografía obstétrica precoz (menor 11 semanas) en gestantes asintomáticas.</small></label>
                                     </div>
@@ -3280,8 +3293,8 @@
                     <div class="mr-2"><label><small>años</small></label></div>
                 </div>
                 <hr>
-                <ul class="nav nav-tabs justify-content-center" role="tablist">
-                    <li class="nav-item">
+                <ul class="nav nav-tabs justify-content-start" role="tablist">
+                    <li class="nav-item ml-4">
                         <a style="background-color:#009688 !important" class="nav-link active" data-toggle="tab" href="#medidas-eco-seg" role="tab">Página 1 - Mediciones</a>
                     </li>
                     <li class="nav-item mx-1">
@@ -3290,6 +3303,7 @@
                     <li class="nav-item ml-3">
                         <a style="background-color:#009688 !important" class="nav-link text-white" data-toggle="tab" href="#informe-eco-seg" role="tab" id="clickInformeEco">Página 2 - Protocolo</a>
                     </li>
+                    <p class="text-primary text-center ml-4 mb-0"><em>Valoración del crecimiento fetal, ubicación placentaria y estimación de líquido amniótico,<br> adicionalmente cervicometría y flujometría Doppler de arterias uterinas</em></p>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="medidas-eco-seg" role="tabpanel">
@@ -4413,8 +4427,8 @@
                     <div class="mr-2"><label><small>años</small></label></div>
                 </div>
                 <hr>
-                <ul class="nav nav-tabs justify-content-center" role="tablist">
-                    <li class="nav-item">
+                <ul class="nav nav-tabs justify-content-start" role="tablist">
+                    <li class="nav-item ml-4">
                         <a style="background-color:#009688 !important" class="nav-link text-white active" data-toggle="tab" href="#medidas-eco-doppler" role="tab">Página 1 - Mediciones</a>
                     </li>
                     <li class="nav-item mx-1">
@@ -4423,6 +4437,7 @@
                     <li class="nav-item ml-3">
                         <a style="background-color:#009688 !important" class="nav-link text-white" data-toggle="tab" href="#informe-eco-doppler" role="tab">Página 2 - Protocolo</a>
                     </li>
+                    <p class="text-primary text-center mb-0 ml-4"><em>Flujometría Doppler materno fetal básico: IP de arterias uterinas, umbilical, cerebral media,<br> ductos venoso y cálculo de cociente cerebro placentario.</em></p>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="medidas-eco-doppler" role="tabpanel">
@@ -4798,6 +4813,7 @@
                             </div>
                         </div>
                         <div class="row justify-content-end mt-2">
+                            <p class="mb-0 text-center text-primary"><em>Encontrar signos de embarazo realizar ecografía ginecológica detallada de útero y anexos.<br>Protocolo útil además para exploración ginecológica habitual en la no gestante</em></p>
                             <div class="col-2 pr-0 text-right">
                                 <label class="bg-verde text-white align-middle mb-0 px-2 mr-3"><small>Ver función ovárica</small></label>
                             </div>

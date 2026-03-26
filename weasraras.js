@@ -83,6 +83,20 @@ $(document).ready(function(){
         }
     });
 
+        $("#punto\\.siete").on("click", function(){
+        reiniciaBotones();
+        reiniciarMensajes();
+        if (this.classList.contains("active") == false){
+            reiniciaPuntitos();
+            the("menu.modulo.activo.cinco").classList.add("active");
+            this.classList.add("active");
+            ocultarPrincipal();
+            the("mensaje.siete").classList.remove("d-none");
+        }else{
+            reiniciaPuntitos();
+        }
+    });
+
     $("#ver\\.consulta").on("click", function(){
         if (this.checked == true){
             the("pedefes").classList.remove("d-none");
@@ -124,6 +138,7 @@ function reiniciaPuntitos(){
     the("punto.cuatro").classList.remove("active");
     the("punto.cinco").classList.remove("active");
     the("punto.seis").classList.remove("active");
+    the("punto.siete").classList.remove("active");
 }
 
 function reiniciaBotones(){
@@ -143,6 +158,7 @@ function reiniciarMensajes(){
     the("mensaje.cuatro").classList.add("d-none");
     the("mensaje.cinco").classList.add("d-none");
     the("mensaje.seis").classList.add("d-none");
+    the("mensaje.siete").classList.add("d-none");
     the("pedefes").classList.add("d-none");
 }
 
