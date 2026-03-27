@@ -5783,19 +5783,22 @@
             <p class="mr-2 h2">Tamizaje de:</p>
             <img src="img/derecha.png" alt="flechas bidireccionales" style="width: 40px;">
             <li class="nav-item mx-2" role="presentation">
-                <button class="nav-link active lead" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">1- Biometría y crecimiento fetal</button>
+                <button class="nav-link active lead" id="texto.uno.ecoEstructural.tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">1- Biometría y crecimiento fetal</button>
             </li>
             <li><img src="img/bidirectional-arrow.png" alt="flechas bidireccionales" style="width: 70px;"></li>
             <li class="nav-item mx-2 lead" role="presentation">
-                <button class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">2- Doppler uterinas y cervicometria</button>
+                <button class="nav-link" id="texto.dos.ecoEstructural.tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">2- Doppler uterinas y cervicometria</button>
             </li>
             <li><img src="img/bidirectional-arrow.png" alt="flechas bidireccionales" style="width: 70px;"></li>
             <li class="nav-item mx-2 lead" role="presentation">
-                <button class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">3- Evaluación estructural 2do trimestre</button>
+                <button class="nav-link" id="texto.tres.ecoEstructural.tab" data-toggle="pill" data-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">3- Evaluación estructural 2do trimestre</button>
             </li>
         </ul>
         <div class="card mb-2">
             <div class="card-body">
+                <p id="texto.uno.ecoEstructural" class="text-primary"><em>T. Crecimiento Fetal: Valorar circunferencia de cráneo, abdomen y longitud de fémur, mediante fórmula de Hadlock 3 se obtiene peso fetal estimado, categorizando el (PFE) mediante curva de crecimiento de OMS, con ajuste según sexo fetal.</em></p>
+                <p id="texto.dos.ecoEstructural" class="text-primary d-none"><em>T. PE y parto prematuro: IP promedio flujometría Doppler de uterinas, previa optimización de la muestra y ángulo de insolación &lt; 30° cervicometría, vía transvaginal ( requiere consentimiento del embarazada) cérvix normal &ge; 25 mm.</em></p>
+                <p id="texto.tres.ecoEstructural" class="text-primary d-none"><em>T. Defectos estructurales: Requerimientos mínimos, estandarizar 16 cortes y 70 puntos de seguridad diagnóstica (PSD), para evaluación de la anatomía fetal detallada, buscando maximizar detección de malformaciones congénitas. Ejemplo <a href="https://obgyn-onlinelibrary-wiley-com.translate.goog/doi/10.1002/uog.24888?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc" target="_blank">guías ISUOG de 2º trimestre</a></em></p>
                 <div class="row">
                     <div class="col-12 col-sm-4">
                         <div class="form-group row">
@@ -5831,17 +5834,9 @@
             </div>
         </div>
         <div class="tab-content" id="pillsTabContent">
-            <div class="tab-pane fade show active bg-light pb-5" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="tab-pane fade show active bg-light pb-5" id="pills-home" role="tabpanel" aria-labelledby="texto.uno.ecoEstructural.tab">
                 <div class="card">
                     <div class="card-body pb-5">
-                        <div class="alert alert-dismissible fade show text-center" role="alert">
-                                <p class="mb-0">- Con tres biometrías; Perímetro de cráneo, abodmen y longitud femoral.</p>
-                                <p class="mb-0">- Se obtiene peso Fetal Estimado (PFE) mediante formula de Hadlock 3.</p>
-                                <p class="mb-0">- Categorización del PFE mediante curva de OMS, con ajuste según sexo fetal.</p>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
                         <div class="row my-3">
                             <div class="col-12 col-sm-4">
                                 <div class="form-group row">
@@ -6230,17 +6225,9 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade pb-5" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="tab-pane fade pb-5" id="pills-profile" role="tabpanel" aria-labelledby="texto.dos.ecoEstructural.tab">
                 <div class="card">
                     <div class="card-body">
-                        <div class="alert alert-dismissible fade show text-center" role="alert">
-                                <p class="mb-0">- Flujometria Doppler de uterinas con optimización de la muestra.</p>
-                                <p class="mb-0">- Cervicometría transvaginal, medición luego de pujo materno.</p>
-                                <p class="mb-0">- Señalar estado del orificio cervical interno ( OCI ).</p>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="ver.ref.doppler.ecoEstructural">
                             <label class="form-check-label text-primary" for="ver.ref.doppler.ecoEstructural">Ver referencias para flujometría Doppler</label>
@@ -6444,7 +6431,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade pb-5" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="tab-pane fade pb-5" id="pills-contact" role="tabpanel" aria-labelledby="texto.tres.ecoEstructural.tab">
                 <div class="card">
                     <div class="card-body">
                         <div class="alert fade show text-center" role="alert">

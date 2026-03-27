@@ -1678,6 +1678,27 @@ $( document ).ready(function() {
 
 });
 
+$( document ).ready(function() {
+    the("texto.uno.ecoEstructural.tab").onclick = function(){
+        resetTextTabs()
+        the("texto.uno.ecoEstructural").classList.remove("d-none")
+    }
+    the("texto.dos.ecoEstructural.tab").onclick = function(){
+        resetTextTabs()
+        the("texto.dos.ecoEstructural").classList.remove("d-none")
+    }
+    the("texto.tres.ecoEstructural.tab").onclick = function(){
+        resetTextTabs()
+        the("texto.tres.ecoEstructural").classList.remove("d-none")
+    }
+})
+
+function resetTextTabs(){
+    the("texto.uno.ecoEstructural").classList.add("d-none")
+    the("texto.dos.ecoEstructural").classList.add("d-none")
+    the("texto.tres.ecoEstructural").classList.add("d-none")
+}
+
 // Controlador de input clones
 // Si se escribe en uno, se refleja en otro
 $( document ).ready(function() {
