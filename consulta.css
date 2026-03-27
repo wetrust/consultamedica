@@ -141,11 +141,6 @@ input[type=number] {
     color: white !important;
 }
 
-#pillsTab.nav-tabs .nav-link {
-    background-color: white !important;
-    color: black !important;
-}
-
 #pillsTab.nav-tabs .nav-link.active{
     background-color: #009688 !important;
     color: white !important;
