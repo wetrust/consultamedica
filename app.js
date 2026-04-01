@@ -170,7 +170,7 @@ $( document ).ready(function() {
     dias.appendChild(opt);
     dias.value = 140
 
-    //cargar frecuencia cardiaca fetal primer trimestre
+    //cargar frecuencia cardiaca fetal Eco Estructural
     dias = the("latidos.cardiofetales.ecoEstructural");
     opt = document.createElement('option');
 
@@ -191,7 +191,7 @@ $( document ).ready(function() {
 
     for (var i = 90; i < 171; i++) {
         let opt = document.createElement('option');
-        opt.appendChild( document.createTextNode(i) );
+        opt.appendChild( document.createTextNode(i + " x Min.") );
         opt.value = i; 
         dias.appendChild(opt); 
     }
