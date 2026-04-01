@@ -1598,6 +1598,7 @@ $( document ).ready(function() {
         the("nombre.ecoObsSegTrim").value = this.value;
         the("nombre.ecoDoppler").value = this.value;
         the("nombre.ecoGinecologica").value = this.value;
+        the("nombre.ecoEstructural").value = this.value;
     });
 
     $("#edadMaterna").on("blur", function(){
