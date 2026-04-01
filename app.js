@@ -6743,6 +6743,15 @@ $(document).ready(function(){
     })
 
     $("input[type='radio']").on("change",function() {
+
+        if (this.value == "si.ecoEstructural"){
+            this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = ""
+            this.parentElement.parentElement.parentElement.parentElement.children[2].classList.add("d-none")
+        }else if (this.value == "no.ecoEstructural"){
+            this.parentElement.parentElement.parentElement.parentElement.children[2].children[0].value = "Comentario: "
+            this.parentElement.parentElement.parentElement.parentElement.children[2].classList.remove("d-none")
+        }
+
         if (this.value == "eliminar"){
             this.parentElement.parentElement.parentElement.children[1].classList.add("d-none");
         }else if (this.value == "normal" || this.value == "anormal"){
