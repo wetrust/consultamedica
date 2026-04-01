@@ -14,14 +14,14 @@ var titulos = {
     "#consulta": "CONFIGURACIÓN DE EDAD GESTACIONAL Y DATOS DE ACCESO",
     "#paciente": "INGRESO DE DATOS PERSONALES",
     "#tipoExamen": "Módulos de la aplicación",
-    "#ecoDoppler": "Flujometría Doppler materno / fetal",
+    "#ecoDoppler": "Evaluación Flujometría Doppler materno / fetal",
     "#ecoObsSegTrim": "Evaluación del crecimiento fetal",
-    "#ecoObsPrimTrim": "Ecografía obstétrica precoz < 11 semanas",
+    "#ecoObsPrimTrim": "Exámen ecografico obstétrica precoz < 11 semanas",
     "#morfologiafet": 'Ecografía 22 - 24 semanas para evaluación de morfología fetal <span class="text-animado"><strong>(Gentileza Dr. Edgardo Corral y equipo de trabajo)</strong></span>',
     "#construccion": 'Módulo en construcción',
     "#ecoGinecologica": "Informe ecográfico ginecológico (Adicional al exámen ecográfico obstétrico)",
     "#ecoObsPrimTrimTrisomia": 'Ecografía 11 - 14 semanas, tamizaje de preeclampsia y cromosomopatía <span class="text-animado"><strong>(Módulo en construcción)</strong></span>',
-    "#ecoEstructural": 'Ecografía 22 - 24 semanas para evaluación de morfología fetal (Gentileza Dr. Edgardo Corral y equipo de trabajo)',
+    "#ecoEstructural": 'Exámen ecografico para 20 - 24 semanas para evaluación de morfología fetal (Gentileza Dr. Edgardo Corral y equipo de trabajo)',
     "#enconstruccion": 'Ecografía de Tamizaje T 21 en 2º Trimestre'
 }
 
