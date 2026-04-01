@@ -5800,7 +5800,7 @@
                 <p id="texto.dos.ecoEstructural" class="text-primary d-none"><em><strong>Tamizaje de Preclampsia y parto prematuro:</strong> IP promedio flujometría Doppler de uterinas, previa optimización de la muestra y ángulo de insolación &lt; 30° cervicometría, vía transvaginal ( requiere consentimiento del embarazada) cérvix normal &ge; 25 mm.</em></p>
                 <p id="texto.tres.ecoEstructural" class="text-primary d-none"><em><strong>Tamizaje de defectos estructurales:</strong> Requerimientos mínimos, estandarizar 16 cortes y 70 puntos de seguridad diagnóstica (PSD), para evaluación de la anatomía fetal detallada, buscando maximizar detección de malformaciones congénitas. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplo <a href="img/GUIAS_ISUOG_2do-TRIMESTRE_2024.pdf" target="_blank">guías ISUOG de 2º trimestre</a></em></p>
                 <div class="row">
-                    <div class="col-12 col-sm-4">
+                    <div class="col-12 col-sm-3">
                         <div class="form-group row">
                             <label for="nombre.ecoEstructural" class="col-12 col-form-label">Nombre paciente</label>
                             <div class="col-12">
@@ -5808,24 +5808,38 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-4">
+                    <div class="col-12 col-sm-3">
                         <div class="form-group row">
-                            <label for="actividad.cardiaca.ecoEstructural" class="col-12 col-form-label">Actividad cardiaca</label>
+                            <label for="embarazo.ecoEstructural" class="col-12 col-form-label">Embarazo</label>
                             <div class="col-12">
-                                <select class="form-control" id="actividad.cardiaca.ecoEstructural">
-                                    <option>Presente</option>
-                                    <option>Ausente</option>
+                                <select class="form-control" id="embarazo.ecoEstructural">
+                                    <option>Único</option>
+                                    <option>Multiple</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-4">
+                    <div class="col-12 col-sm-3">
                         <div class="form-group row">
-                            <label for="movimientos.fetales.ecoEstructural" class="col-12 col-form-label">Movimientos fetales</label>
+                            <label for="presentacion.ecoEstructural" class="col-12 col-form-label">Presentación</label>
                             <div class="col-12">
-                                <select class="form-control" id="movimientos.fetales.ecoEstructural">
-                                    <option>Presente</option>
-                                    <option>Ausente</option>
+                                <select class="form-control" id="presentacion.ecoEstructural">
+                                    <option>Cefálica</option>
+                                    <option>Podálica</option>
+                                    <option>Transversa</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-3">
+                        <div class="form-group row">
+                            <label for="presentacion.ecoEstructural" class="col-12 col-form-label">Dorso fetal</label>
+                            <div class="col-12">
+                                <select class="form-control" id="dorso.ecoEstructural">
+                                    <option>Anterior</option>
+                                    <option>Posterior</option>
+                                    <option>Lat. izquierdo</option>
+                                    <option>Lat. derecho</option>
                                 </select>
                             </div>
                         </div>
@@ -5838,45 +5852,7 @@
                 <div class="card">
                     <div class="card-body pb-5">
                         <div class="row my-3">
-                            <div class="col-12 col-sm-4">
-                                <div class="form-group row">
-                                    <label for="embarazo.ecoEstructural" class="col-12 col-form-label">Embarazo</label>
-                                    <div class="col-12">
-                                        <select class="form-control" id="embarazo.ecoEstructural">
-                                            <option>Único</option>
-                                            <option>Multiple</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4">
-                                <div class="form-group row">
-                                    <label for="presentacion.ecoEstructural" class="col-12 col-form-label">Presentación</label>
-                                    <div class="col-12">
-                                        <select class="form-control" id="presentacion.ecoEstructural">
-                                            <option>Cefálica</option>
-                                            <option>Podálica</option>
-                                            <option>Transversa</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4">
-                                <div class="form-group row">
-                                    <label for="presentacion.ecoEstructural" class="col-12 col-form-label">Dorso fetal</label>
-                                    <div class="col-12">
-                                        <select class="form-control" id="dorso.ecoEstructural">
-                                            <option>Anterior</option>
-                                            <option>Posterior</option>
-                                            <option>Lat. izquierdo</option>
-                                            <option>Lat. derecho</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-sm-4">
+                            <div class="col-12 col-sm-3">
                                 <div class="form-group">
                                     <label>Antecedentes Cesárea previa?</label>
                                     <select class="form-control" id="antecedentes.cesarea.ecoEstructural">
@@ -5888,7 +5864,44 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-4">
+                            <div class="col-12 col-sm-3">
+                                <div class="form-group row">
+                                    <label for="actividad.cardiaca.ecoEstructural" class="col-12 col-form-label">Actividad cardiaca</label>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <div class="form-check form-check-inline">
+                                                <label class="form-check-label"><input class="form-check-input" type="radio" checked="checked" name="activ.cardiaca.ecoEstructural" value="1" id="actividad.cardiaca.si.ecoEstructural"> Si</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <label class="form-check-label"><input class="form-check-input" type="radio" name="activ.cardiaca.ecoEstructural" value="0" id="actividad.cardiaca.no.ecoEstructural"> No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-3">
+                                <div class="form-group row">
+                                    <label for="movimientos.fetales.ecoEstructural" class="col-12 col-form-label">Movimientos fetales</label>
+                                    <div class="col-12">
+                                        <select class="form-control" id="movimientos.fetales.ecoEstructural">
+                                            <option>Presente</option>
+                                            <option>Ausente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-3">
+                                <div class="form-group row">
+                                    <label for="movimientos.fetales.ecoEstructural" class="col-12 col-form-label">Latidos Cardiofetales</label>
+                                    <div class="col-12">
+                                        <select class="form-control" id="latidos.cardiofetales.ecoEstructural">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-3">
                                 <div class="form-group">
                                     <label>Placenta Ubicaci&oacute;n</label>
                                     <select class="form-control" id="placenta.ubicacion.ecoEstructural" >
@@ -5899,12 +5912,32 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-4">
+                            <div class="col-12 col-sm-3">
                                 <div class="form-group">
                                     <label>Placenta inserción</label>
                                     <select class="form-control" id="placenta.insercion.ecoEstructural">
                                         <option value="normo inserta">normo inserta</option>
                                         <option value="sospecha de ACRETISMO">sospecha de ACRETISMO</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-3">
+                                <div class="form-group">
+                                    <label>Cordón inserción</label>
+                                    <select class="form-control" id="cordon.insercion.ecoEstructural">
+                                        <option value="inserción central">inserción central</option>
+                                        <option value="inserción marginal">inserción marginal</option>
+                                        <option value="inserción velamentosa">inserción velamentosa</option>
+                                        <option value="inserción no evaluable">inserción no evaluable</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-3">
+                                <div class="form-group">
+                                    <label>Nº vasos del cordón</label>
+                                    <select class="form-control" id="vasos.cordon.ecoEstructural">
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
                                     </select>
                                 </div>
                             </div>

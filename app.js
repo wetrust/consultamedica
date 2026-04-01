@@ -170,6 +170,38 @@ $( document ).ready(function() {
     dias.appendChild(opt);
     dias.value = 140
 
+    //cargar frecuencia cardiaca fetal primer trimestre
+    dias = the("latidos.cardiofetales.ecoEstructural");
+    opt = document.createElement('option');
+
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("") );
+    opt.value = ""; 
+    dias.appendChild(opt);
+
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("no se observa") );
+    opt.value = "no se observa"; 
+    dias.appendChild(opt); 
+
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("< 90") );
+    opt.value = "&lt; 90"; 
+    dias.appendChild(opt);
+
+    for (var i = 90; i < 171; i++) {
+        let opt = document.createElement('option');
+        opt.appendChild( document.createTextNode(i) );
+        opt.value = i; 
+        dias.appendChild(opt); 
+    }
+
+    opt = document.createElement('option');
+    opt.appendChild( document.createTextNode("> 170") );
+    opt.value = "&gt; 170"; 
+    dias.appendChild(opt);
+    dias.value = 140
+
     //cargar la frecuencia cardiaca fetal para morfologia 22-24
     dias = the("frecuencia.cardiaca.morfologia");
     opt = document.createElement('option');
