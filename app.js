@@ -1695,7 +1695,7 @@ $( document ).ready(function() {
 
     the("alternativa.fmf").onclick = function(){
         if (this.checked == true){
-            window.open("https://fetalmedicine.org/research/assess/trisomies", '_blank');
+            window.open("https://www.fetalmedicine.org/website/#/calculators", '_blank');
             this.checked = false
         }
     }
