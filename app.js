@@ -6863,6 +6863,10 @@ $(document).ready(function(){
     }
 })
 
+the("autorizaVolver").onclick = function(){
+    validaClave = true;
+}
+
 $(window).on('hashchange', function(){
 
     var hash = document.location.hash;
