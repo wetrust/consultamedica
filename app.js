@@ -6981,6 +6981,7 @@ $(window).on('hashchange', function(){
 
         the("ecoEstructural").classList.add("d-none")
         the("enconstruccion").classList.add("d-none")
+        the("elparto").classList.add("d-none")
     }
 
     window.scrollTo(0, 0);
