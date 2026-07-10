@@ -25,7 +25,7 @@ var titulos = {
     "#enconstruccion": 'Ecografía de Tamizaje T 21 en 2º Trimestre'
 }
 
-var validaClave = true;
+var validaClave = false;
 
 var _hchartsUno
 var _hchartsDos
@@ -6938,7 +6938,7 @@ $(window).on('hashchange', function(){
         the("dias").classList.remove("bg-secondary", "text-white")
     }
 
-    if (hash == "#ecoEstructural" && validaClave == false){
+    if ((hash == "#ecoEstructural" && validaClave == false) || (hash == "#enconstruccion" && validaClave == false)){
         let _modal = makeModal("ingresar");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
@@ -6955,7 +6955,7 @@ $(window).on('hashchange', function(){
         the(_modal.button).dataset.vista = hash
         the(_modal.button).dataset.clave = contrase
         the(_modal.button).onclick =  function(){
-            if (the(this.dataset.clave).value == "2020"){
+            if (the(this.dataset.clave).value == "holandesa"){
                 document.location.hash = this.dataset.vista
                 $('#'+this.dataset.modal).modal('hide');
 
@@ -6975,7 +6975,7 @@ $(window).on('hashchange', function(){
 
     window.scrollTo(0, 0);
 
-    //validaClave = false
+    validaClave = false
 
 });
 
