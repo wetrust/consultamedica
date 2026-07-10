@@ -6938,7 +6938,9 @@ $(window).on('hashchange', function(){
         the("dias").classList.remove("bg-secondary", "text-white")
     }
 
-    if ((hash == "#ecoEstructural" && validaClave == false) || (hash == "#enconstruccion" && validaClave == false)){
+    if ((hash == "#ecoEstructural" && validaClave == false) || 
+        (hash == "#enconstruccion" && validaClave == false) ||
+        (hash == "#elparto" && validaClave == false) ){
         let _modal = makeModal("ingresar");
 
         document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', _modal.modal);
