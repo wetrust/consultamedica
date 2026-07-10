@@ -6965,6 +6965,14 @@ $(window).on('hashchange', function(){
             }
         }
 
+        the(contrase).dataset.button = _modal.button
+        the(contrase).onkeyup = function(e){
+            if ( e.key == "Enter" ) {
+                e.preventDefault();
+                the(this.dataset.button).click()
+            }
+        }
+
         $('#'+_modal.id).modal("show").on('hidden.bs.modal', function (e) { $(this).remove(); });
 
         activeHash = "#inicio"
