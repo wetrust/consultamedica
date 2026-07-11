@@ -9242,7 +9242,7 @@ function informeGinecologico()
 
     var interfaceEMUno = the("interfaceEMUno").value;
     var interfaceEMDos = the("interfaceEMDos").value;
-    var interfaceGrosor = " grosor" + the("interfaceGrosor").value + " mm";
+    var interfaceGrosor = " grosor maximo " + the("interfaceGrosor").value + " mm";
     var interfaceObs = the("interfaceObs").value;
 
     informe = informe.replace(/:interfaceEMUno/g, interfaceEMUno);
