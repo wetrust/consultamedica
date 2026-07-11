@@ -9094,9 +9094,9 @@ function informeGinecologico()
 
     }
 
-    let endometDesc1 = " de tipo " + the("endometDesc1").value + ", ";
+    let endometDesc1 = "Endometrio  de tipo " + the("endometDesc1").value + ", ";
     let endometDesc2 = the("endometDesc2").value;
-    let endometGrosor = "Endometrio grosor " + the("endometGrosor").value + " mm, ";
+    let endometGrosor = " grosor " + the("endometGrosor").value + " mm, ";
     let endometObs = the("endometObs").value;
 
     let anexDerecho = the("anexDerecho").value;
